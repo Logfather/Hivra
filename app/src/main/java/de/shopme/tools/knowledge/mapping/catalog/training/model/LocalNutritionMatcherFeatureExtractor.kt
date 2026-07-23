@@ -5,7 +5,8 @@ import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTraini
 import kotlin.math.max
 import kotlin.math.min
 
-class LocalNutritionMatcherFeatureExtractor {
+class LocalNutritionMatcherFeatureExtractor :
+    LocalNutritionMatcherFeatureProvider {
 
     /**
      * diagnostic_score_available ist bewusst kein Feature.
@@ -23,12 +24,19 @@ class LocalNutritionMatcherFeatureExtractor {
      * domainMismatchFeatures.reportRelationshipPresent
      *     Beschreibt die Verfügbarkeit beziehungsweise Herkunft der
      *     Reportbeziehung und nicht die semantische Qualität des Matches.
+     *
+     * domainMismatchFeatures.observationCount
+     * domainMismatchFeatures.knownSemanticObservationCount
+     * domainMismatchFeatures.unknownSemanticObservationCount
+     *     Beschreiben primär Umfang beziehungsweise Verfügbarkeit der
+     *     Domain-Analyse und nicht unmittelbar die semantische Qualität
+     *     des konkreten Catalog-Server-Matches.
      */
-    val featureNames: List<String> =
+    override val featureNames: List<String> =
         BASE_FEATURE_NAMES +
                 DOMAIN_MISMATCH_FEATURE_NAMES
 
-    fun extract(
+    override fun extract(
         example: NutritionMatcherTrainingExample,
         diagnosticScoreImputationValue: Double,
     ): DoubleArray {
@@ -58,7 +66,7 @@ class LocalNutritionMatcherFeatureExtractor {
         )
     }
 
-    fun extract(
+    override fun extract(
         candidate: LocalNutritionMatcherCandidate,
         diagnosticScoreImputationValue: Double,
     ): DoubleArray {
@@ -102,12 +110,14 @@ class LocalNutritionMatcherFeatureExtractor {
 
         val catalogTokens =
             tokenize(
-                value = candidate.catalogKey,
+                value =
+                    candidate.catalogKey,
             )
 
         val serverTokens =
             tokenize(
-                value = candidate.serverKey,
+                value =
+                    candidate.serverKey,
             )
 
         val calculatedSharedTokens =
@@ -150,12 +160,14 @@ class LocalNutritionMatcherFeatureExtractor {
             doubleArrayOf(
                 diagnosticScore,
                 safeDivide(
-                    numerator = 1.0,
+                    numerator =
+                        1.0,
                     denominator =
                         candidate.candidateRank.toDouble(),
                 ),
                 safeDivide(
-                    numerator = 1.0,
+                    numerator =
+                        1.0,
                     denominator =
                         candidate.candidateCount.toDouble(),
                 ),
@@ -246,16 +258,43 @@ class LocalNutritionMatcherFeatureExtractor {
 
         if (features == null) {
             return DoubleArray(
-                DOMAIN_MISMATCH_FEATURE_NAMES.size,
+                DOMAIN_MISMATCH_FEATURE_COUNT,
             )
         }
 
-        require(features.version == DOMAIN_MISMATCH_FEATURE_VERSION) {
+        require(
+            features.version ==
+                    DOMAIN_MISMATCH_FEATURE_VERSION,
+        ) {
             "Unsupported nutrition Domain-Mismatch feature version: " +
                     features.version
         }
 
-        val values =
+        validateDomainMismatchFeatures(
+            features =
+                features,
+        )
+
+        return doubleArrayOf(
+            features.dietOrSubstituteDifferenceCount.toDouble(),
+            features.crossDomainMismatchCount.toDouble(),
+            features.sameDomainDifferentEntityCount.toDouble(),
+            features.formOrProcessingDifferenceCount.toDouble(),
+            features.regionOrStyleDifferenceCount.toDouble(),
+            features.compatibleDomainRelationshipCount.toDouble(),
+            features.unknownTokenInvolvedCount.toDouble(),
+            features.nonSemanticTokenDifferenceCount.toDouble(),
+            features.unknownMismatchCount.toDouble(),
+            features.identityConflictCount.toDouble(),
+            features.modifierDifferenceCount.toDouble(),
+        )
+    }
+
+    private fun validateDomainMismatchFeatures(
+        features: NutritionDomainMismatchFeatures,
+    ) {
+
+        val allPersistedCounts =
             intArrayOf(
                 features.observationCount,
                 features.dietOrSubstituteDifferenceCount,
@@ -274,7 +313,7 @@ class LocalNutritionMatcherFeatureExtractor {
             )
 
         require(
-            values.all {
+            allPersistedCounts.all {
                 it >= 0
             },
         ) {
@@ -290,12 +329,6 @@ class LocalNutritionMatcherFeatureExtractor {
             "Known and unknown semantic observations exceed " +
                     "the total Domain-Mismatch observation count."
         }
-
-        return values
-            .map {
-                it.toDouble()
-            }
-            .toDoubleArray()
     }
 
     private fun tokenize(
@@ -309,7 +342,8 @@ class LocalNutritionMatcherFeatureExtractor {
                 it.trim()
             }
             .filter {
-                it.length >= MIN_TOKEN_LENGTH
+                it.length >=
+                        MIN_TOKEN_LENGTH
             }
             .filterNot {
                 it in STOP_TOKENS
@@ -362,7 +396,7 @@ class LocalNutritionMatcherFeatureExtractor {
             11
 
         const val DOMAIN_MISMATCH_FEATURE_COUNT =
-            14
+            11
 
         const val FEATURE_COUNT =
             BASE_FEATURE_COUNT +
@@ -388,7 +422,6 @@ class LocalNutritionMatcherFeatureExtractor {
 
         val DOMAIN_MISMATCH_FEATURE_NAMES: List<String> =
             listOf(
-                "domain_observation_count",
                 "domain_diet_or_substitute_difference_count",
                 "domain_cross_domain_mismatch_count",
                 "domain_same_domain_different_entity_count",
@@ -400,8 +433,6 @@ class LocalNutritionMatcherFeatureExtractor {
                 "domain_unknown_mismatch_count",
                 "domain_identity_conflict_count",
                 "domain_modifier_difference_count",
-                "domain_known_semantic_observation_count",
-                "domain_unknown_semantic_observation_count",
             )
 
         private const val MIN_TOKEN_LENGTH =
