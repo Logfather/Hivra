@@ -37,8 +37,14 @@ class RunLocalNutritionMatcherModelTrainingTest {
                     datasetFile.absolutePath
         }
 
+        val featureExtractor =
+            LocalNutritionMatcherFeatureExtractor()
+
         val result =
-            LocalNutritionMatcherModelTrainer()
+            LocalNutritionMatcherModelTrainer(
+                featureExtractor =
+                    featureExtractor,
+            )
                 .train(
                     datasetFile =
                         datasetFile,
@@ -75,28 +81,24 @@ class RunLocalNutritionMatcherModelTrainingTest {
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor.FEATURE_COUNT,
+                featureExtractor.featureNames.size,
             actual =
                 model.featureNames.size,
         )
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_NAMES,
+                featureExtractor.featureNames,
             actual =
-                model.featureNames.take(
-                    LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_COUNT,
-                ),
+                model.featureNames,
         )
 
-        assertEquals(
-            expected =
-                LocalNutritionMatcherFeatureExtractor
-                    .DOMAIN_MISMATCH_FEATURE_NAMES,
-            actual =
-                model.featureNames.drop(
-                    LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_COUNT,
-                ),
+        assertTrue(
+            LocalNutritionMatcherFeatureExtractor
+                .DOMAIN_MISMATCH_FEATURE_NAMES
+                .all {
+                    it in model.featureNames
+                },
         )
 
         assertEquals(
@@ -169,6 +171,20 @@ class RunLocalNutritionMatcherModelTrainingTest {
                     0.0..1.0,
         )
 
+        assertEquals(
+            expected =
+                featureExtractor.featureNames,
+            actual =
+                model.featureNames,
+        )
+
+        assertEquals(
+            expected =
+                featureExtractor.featureNames.size,
+            actual =
+                model.coefficients.size,
+        )
+
         assertTrue(
             model.metrics.test.f1 in
                     0.0..1.0,
@@ -221,7 +237,7 @@ class RunLocalNutritionMatcherModelTrainingTest {
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor.FEATURE_COUNT,
+                featureExtractor.featureNames.size,
             actual =
                 persisted["featureNames"]
                     .asJsonArray

@@ -14,11 +14,69 @@ import kotlin.math.ln
 import kotlin.math.max
 import kotlin.math.sqrt
 
+
 class LocalNutritionMatcherModelTrainer(
     private val featureExtractor:
-    LocalNutritionMatcherFeatureExtractor =
-        LocalNutritionMatcherFeatureExtractor()
+    LocalNutritionMatcherFeatureProvider =
+        LocalNutritionMatcherFeatureSubsetExtractor(
+            delegate =
+                LocalNutritionMatcherFeatureExtractor(),
+            selectedFeatureNames =
+                LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_NAMES,
+        ),
+    private val supportedFeatureNames: List<String> =
+        featureExtractor.featureNames,
 ) {
+
+
+
+    init {
+        require(
+            supportedFeatureNames.isNotEmpty(),
+        ) {
+            "Supported local nutrition matcher feature names must not be empty."
+        }
+
+        require(
+            supportedFeatureNames.distinct().size ==
+                    supportedFeatureNames.size,
+        ) {
+            "Supported local nutrition matcher feature names must not contain duplicates."
+        }
+
+        val knownFeatureNames =
+            (
+                    LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_NAMES +
+                            LocalNutritionMatcherFeatureExtractor.DOMAIN_MISMATCH_FEATURE_NAMES
+                    )
+                .toSet()
+
+        val unknownSupportedFeatureNames =
+            supportedFeatureNames
+                .filterNot {
+                    it in knownFeatureNames
+                }
+
+        require(
+            unknownSupportedFeatureNames.isEmpty(),
+        ) {
+            "Supported local nutrition matcher feature names contain unknown features: " +
+                    unknownSupportedFeatureNames
+                        .sorted()
+                        .joinToString()
+        }
+
+        require(
+            featureExtractor.featureNames ==
+                    supportedFeatureNames,
+        ) {
+            "Local nutrition matcher feature extractor and supported feature contract differ. " +
+                    "Extractor features: " +
+                    featureExtractor.featureNames.joinToString() +
+                    "; supported features: " +
+                    supportedFeatureNames.joinToString()
+        }
+    }
 
     fun train(
         datasetFile: File,
@@ -950,7 +1008,7 @@ class LocalNutritionMatcherModelTrainer(
     }
 
     private fun validateModel(
-        model: LocalNutritionMatcherModel
+        model: LocalNutritionMatcherModel,
     ) {
         val featureCount =
             model.featureNames.size
@@ -961,14 +1019,27 @@ class LocalNutritionMatcherModelTrainer(
         }
 
         require(
-            model.diagnosticScoreImputationValue.isFinite()
+            model.diagnosticScoreImputationValue.isFinite(),
         ) {
             "Diagnostic score imputation value must be finite."
         }
 
         require(
+            model.featureNames.isNotEmpty(),
+        ) {
+            "Local nutrition matcher model must contain at least one feature."
+        }
+
+        require(
+            model.featureNames.size ==
+                    model.featureNames.distinct().size,
+        ) {
+            "Local nutrition matcher model must not contain duplicate features."
+        }
+
+        require(
             "diagnostic_score_available" !in
-                    model.featureNames
+                    model.featureNames,
         ) {
             "diagnostic_score_available must not be a model feature."
         }
@@ -984,8 +1055,7 @@ class LocalNutritionMatcherModelTrainer(
             "domain_report_relationship_present" !in
                     model.featureNames,
         ) {
-            "Domain-Mismatch report availability must not be a " +
-                    "model feature."
+            "Domain-Mismatch report availability must not be a model feature."
         }
 
         require(
@@ -996,77 +1066,169 @@ class LocalNutritionMatcherModelTrainer(
                     "differs from the active feature extractor."
         }
 
+        val supportedFeatureNames =
+            featureExtractor.featureNames
+
+        val supportedFeatureNameSet =
+            supportedFeatureNames.toSet()
+
+        val unsupportedFeatureNames =
+            model.featureNames
+                .filterNot {
+                    it in supportedFeatureNameSet
+                }
+
         require(
-            model.featureNames.size ==
-                    LocalNutritionMatcherFeatureExtractor.FEATURE_COUNT,
+            unsupportedFeatureNames.isEmpty(),
         ) {
-            "Domain-aware local nutrition matcher must have " +
-                    "${LocalNutritionMatcherFeatureExtractor.FEATURE_COUNT} " +
-                    "features."
+            "Local nutrition matcher model contains unsupported features: " +
+                    unsupportedFeatureNames
+                        .sorted()
+                        .joinToString()
         }
 
         require(
+            model.featureNames ==
+                    featureExtractor.featureNames,
+        ) {
+            "Local nutrition matcher model feature contract differs from the feature extractor. " +
+                    "Expected: " +
+                    featureExtractor.featureNames.joinToString() +
+                    "; actual: " +
+                    model.featureNames.joinToString()
+        }
+
+        val expectedBaseFeatureNames =
+            LocalNutritionMatcherFeatureExtractor
+                .BASE_FEATURE_NAMES
+
+        require(
+            featureCount >=
+                    expectedBaseFeatureNames.size,
+        ) {
+            "Local nutrition matcher model contains fewer features " +
+                    "than the required base-feature contract."
+        }
+
+        val actualBaseFeatureNames =
             model.featureNames.take(
-                LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_COUNT,
-            ) ==
-                    LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_NAMES,
-        ) {
-            "The original local nutrition matcher feature prefix " +
-                    "has changed."
-        }
+                LocalNutritionMatcherFeatureExtractor
+                    .BASE_FEATURE_COUNT,
+            )
 
         require(
-            model.featureNames.drop(
-                LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_COUNT,
-            ) ==
-                    LocalNutritionMatcherFeatureExtractor
-                        .DOMAIN_MISMATCH_FEATURE_NAMES,
+            actualBaseFeatureNames ==
+                    expectedBaseFeatureNames,
         ) {
-            "The Nutrition Domain-Mismatch feature suffix differs " +
+            "The Nutrition base-feature prefix differs " +
                     "from the expected contract."
         }
 
-        require(featureCount > 0)
+        val actualDomainFeatureNames =
+            model.featureNames.drop(
+                LocalNutritionMatcherFeatureExtractor
+                    .BASE_FEATURE_COUNT,
+            )
+
+        val supportedDomainFeatureNames =
+            LocalNutritionMatcherFeatureExtractor
+                .DOMAIN_MISMATCH_FEATURE_NAMES
+
+        val unsupportedDomainFeatureNames =
+            actualDomainFeatureNames
+                .filterNot {
+                    it in supportedDomainFeatureNames
+                }
+
+        require(
+            unsupportedDomainFeatureNames.isEmpty(),
+        ) {
+            "The Nutrition model contains unsupported " +
+                    "Domain-Mismatch features: " +
+                    unsupportedDomainFeatureNames
+                        .sorted()
+                        .joinToString()
+        }
+
+        require(
+            actualDomainFeatureNames.size ==
+                    actualDomainFeatureNames.distinct().size,
+        ) {
+            "The Nutrition model contains duplicate " +
+                    "Domain-Mismatch features."
+        }
+
+        val expectedDomainFeatureOrder =
+            supportedDomainFeatureNames
+                .filter {
+                    it in actualDomainFeatureNames
+                }
+
+        require(
+            actualDomainFeatureNames ==
+                    expectedDomainFeatureOrder,
+        ) {
+            "The Nutrition Domain-Mismatch features differ " +
+                    "from the expected deterministic order."
+        }
 
         require(
             model.featureMeans.size ==
-                    featureCount
-        )
+                    featureCount,
+        ) {
+            "Feature-mean count differs from feature count."
+        }
 
         require(
             model.featureStandardDeviations.size ==
-                    featureCount
-        )
+                    featureCount,
+        ) {
+            "Feature-standard-deviation count differs from feature count."
+        }
 
         require(
             model.coefficients.size ==
-                    featureCount
-        )
+                    featureCount,
+        ) {
+            "Coefficient count differs from feature count."
+        }
 
         require(
             model.featureMeans.all {
                 it.isFinite()
-            }
-        )
+            },
+        ) {
+            "All feature means must be finite."
+        }
 
         require(
             model.featureStandardDeviations.all {
                 it.isFinite() &&
                         it > 0.0
-            }
-        )
+            },
+        ) {
+            "All feature standard deviations must be finite and positive."
+        }
 
         require(
             model.coefficients.all {
                 it.isFinite()
-            }
-        )
-
-        require(model.intercept.isFinite())
+            },
+        ) {
+            "All coefficients must be finite."
+        }
 
         require(
-            model.decisionThreshold in 0.0..1.0
-        )
+            model.intercept.isFinite(),
+        ) {
+            "Model intercept must be finite."
+        }
+
+        require(
+            model.decisionThreshold in 0.0..1.0,
+        ) {
+            "Decision threshold must be between 0.0 and 1.0."
+        }
     }
 
     private fun writeModel(

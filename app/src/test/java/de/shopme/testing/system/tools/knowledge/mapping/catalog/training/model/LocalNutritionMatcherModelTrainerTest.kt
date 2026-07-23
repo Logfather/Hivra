@@ -16,7 +16,6 @@ import kotlin.io.path.createTempDirectory
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
-import de.shopme.tools.knowledge.mapping.catalog.training.NutritionDomainMismatchFeatures
 
 class LocalNutritionMatcherModelTrainerTest {
 
@@ -104,22 +103,14 @@ class LocalNutritionMatcherModelTrainerTest {
 
             assertEquals(
                 expected =
-                    LocalNutritionMatcherFeatureExtractor.FEATURE_COUNT,
+                        LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_COUNT,
                 actual =
                     first.model.featureNames.size,
             )
 
             assertEquals(
                 expected =
-                    LocalNutritionMatcherFeatureExtractor.FEATURE_COUNT,
-                actual =
-                    first.model.featureNames.size,
-            )
-
-            assertEquals(
-                expected =
-                    LocalNutritionMatcherFeatureExtractor()
-                        .featureNames,
+                    LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_NAMES,
                 actual =
                     first.model.featureNames,
             )
@@ -161,15 +152,12 @@ class LocalNutritionMatcherModelTrainerTest {
                     ),
             )
 
-            assertEquals(
-                expected =
-                    LocalNutritionMatcherFeatureExtractor
-                        .DOMAIN_MISMATCH_FEATURE_NAMES,
-                actual =
-                    first.model.featureNames.drop(
-                        LocalNutritionMatcherFeatureExtractor
-                            .BASE_FEATURE_COUNT,
-                    ),
+            assertTrue(
+                first.model.featureNames.none { featureName ->
+                    featureName in
+                            LocalNutritionMatcherFeatureExtractor
+                                .DOMAIN_MISMATCH_FEATURE_NAMES
+                },
             )
 
             assertTrue(
