@@ -14,7 +14,6 @@ import kotlin.math.ln
 import kotlin.math.max
 import kotlin.math.sqrt
 
-
 class LocalNutritionMatcherModelTrainer(
     private val featureExtractor:
     LocalNutritionMatcherFeatureProvider =
@@ -22,110 +21,99 @@ class LocalNutritionMatcherModelTrainer(
             delegate =
                 LocalNutritionMatcherFeatureExtractor(),
             selectedFeatureNames =
-                LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_NAMES,
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_NAMES,
         ),
     private val supportedFeatureNames: List<String> =
-        featureExtractor.featureNames,
+        LocalNutritionMatcherFeatureContract
+            .ACTIVE_FEATURE_NAMES,
+    private val thresholdOptimizationPolicy:
+    NutritionMatcherThresholdOptimizationPolicy =
+        NutritionMatcherThresholdOptimizationPolicy(
+            minimumPrecision =
+                MINIMUM_THRESHOLD_PRECISION,
+            maximumFalsePositiveRate =
+                MAXIMUM_THRESHOLD_FALSE_POSITIVE_RATE,
+            minimumPredictedPositiveCount =
+                MINIMUM_THRESHOLD_PREDICTED_POSITIVE_COUNT,
+        ),
 ) {
 
-
-
     init {
-        require(
-            supportedFeatureNames.isNotEmpty(),
-        ) {
-            "Supported local nutrition matcher feature names must not be empty."
-        }
-
-        require(
-            supportedFeatureNames.distinct().size ==
-                    supportedFeatureNames.size,
-        ) {
-            "Supported local nutrition matcher feature names must not contain duplicates."
-        }
-
-        val knownFeatureNames =
-            (
-                    LocalNutritionMatcherFeatureExtractor.BASE_FEATURE_NAMES +
-                            LocalNutritionMatcherFeatureExtractor.DOMAIN_MISMATCH_FEATURE_NAMES
-                    )
-                .toSet()
-
-        val unknownSupportedFeatureNames =
-            supportedFeatureNames
-                .filterNot {
-                    it in knownFeatureNames
-                }
-
-        require(
-            unknownSupportedFeatureNames.isEmpty(),
-        ) {
-            "Supported local nutrition matcher feature names contain unknown features: " +
-                    unknownSupportedFeatureNames
-                        .sorted()
-                        .joinToString()
-        }
-
         require(
             featureExtractor.featureNames ==
                     supportedFeatureNames,
         ) {
-            "Local nutrition matcher feature extractor and supported feature contract differ. " +
-                    "Extractor features: " +
-                    featureExtractor.featureNames.joinToString() +
-                    "; supported features: " +
-                    supportedFeatureNames.joinToString()
+            "Feature extractor contract differs from trainer contract. " +
+                    "Expected: " +
+                    supportedFeatureNames.joinToString() +
+                    "; actual: " +
+                    featureExtractor.featureNames.joinToString()
         }
+
+        LocalNutritionMatcherFeatureContract
+            .validateTrainingFeatureSubset(
+                featureNames =
+                    supportedFeatureNames,
+            )
     }
 
     fun train(
         datasetFile: File,
         outputFile: File,
-        output: PrintStream = System.out
+        output: PrintStream = System.out,
     ): TrainLocalNutritionMatcherModelResult {
 
-        require(datasetFile.isFile) {
+        require(
+            datasetFile.isFile,
+        ) {
             "Nutrition matcher training dataset does not exist: " +
                     datasetFile.absolutePath
         }
 
         val dataset =
             readDataset(
-                datasetFile = datasetFile
+                datasetFile =
+                    datasetFile,
             )
 
-        require(dataset.version == DATASET_VERSION) {
+        require(
+            dataset.version ==
+                    DATASET_VERSION,
+        ) {
             "Unsupported nutrition matcher dataset version: " +
                     dataset.version
         }
 
         require(
             dataset.datasetType ==
-                    EXPECTED_DATASET_TYPE
+                    EXPECTED_DATASET_TYPE,
         ) {
             "Unsupported nutrition matcher dataset type: " +
                     dataset.datasetType
         }
 
-        require(dataset.examples.isNotEmpty()) {
+        require(
+            dataset.examples.isNotEmpty(),
+        ) {
             "Nutrition matcher training dataset is empty."
         }
 
         require(
-            dataset.examples.any {
-                it.label ==
+            dataset.examples.any { example ->
+                example.label ==
                         NutritionMatcherTrainingLabel.POSITIVE
-            }
+            },
         ) {
             "Nutrition matcher training dataset has no " +
                     "positive examples."
         }
 
         require(
-            dataset.examples.any {
-                it.label ==
+            dataset.examples.any { example ->
+                example.label ==
                         NutritionMatcherTrainingLabel.NEGATIVE
-            }
+            },
         ) {
             "Nutrition matcher training dataset has no " +
                     "negative examples."
@@ -134,35 +122,35 @@ class LocalNutritionMatcherModelTrainer(
         val split =
             splitByCatalogKey(
                 examples =
-                    dataset.examples
+                    dataset.examples,
             )
 
         require(
-            split.trainingExamples.isNotEmpty()
+            split.trainingExamples.isNotEmpty(),
         ) {
             "Local matcher training split is empty."
         }
 
         require(
-            split.testExamples.isNotEmpty()
+            split.testExamples.isNotEmpty(),
         ) {
             "Local matcher test split is empty."
         }
 
         require(
-            split.trainingExamples.any {
-                it.label ==
+            split.trainingExamples.any { example ->
+                example.label ==
                         NutritionMatcherTrainingLabel.POSITIVE
-            }
+            },
         ) {
             "Training split has no positive examples."
         }
 
         require(
-            split.trainingExamples.any {
-                it.label ==
+            split.trainingExamples.any { example ->
+                example.label ==
                         NutritionMatcherTrainingLabel.NEGATIVE
-            }
+            },
         ) {
             "Training split has no negative examples."
         }
@@ -170,67 +158,75 @@ class LocalNutritionMatcherModelTrainer(
         val diagnosticScoreImputationValue =
             calculateDiagnosticScoreImputationValue(
                 trainingExamples =
-                    split.trainingExamples
+                    split.trainingExamples,
             )
 
         val trainingRaw =
-            split.trainingExamples.map {
+            split.trainingExamples.map { example ->
                 RawTrainingExample(
                     source =
-                        it,
+                        example,
                     features =
                         featureExtractor.extract(
                             example =
-                                it,
+                                example,
                             diagnosticScoreImputationValue =
-                                diagnosticScoreImputationValue
+                                diagnosticScoreImputationValue,
                         ),
                     target =
-                        targetOf(it)
+                        targetOf(
+                            example =
+                                example,
+                        ),
                 )
             }
 
         val testRaw =
-            split.testExamples.map {
+            split.testExamples.map { example ->
                 RawTrainingExample(
                     source =
-                        it,
+                        example,
                     features =
                         featureExtractor.extract(
                             example =
-                                it,
+                                example,
                             diagnosticScoreImputationValue =
-                                diagnosticScoreImputationValue
+                                diagnosticScoreImputationValue,
                         ),
                     target =
-                        targetOf(it)
+                        targetOf(
+                            example =
+                                example,
+                        ),
                 )
             }
 
         val scaling =
             calculateScaling(
                 trainingExamples =
-                    trainingRaw
+                    trainingRaw,
             )
 
         val trainingExamples =
-            trainingRaw.map {
-                it.toScaled(
-                    scaling = scaling
+            trainingRaw.map { example ->
+                example.toScaled(
+                    scaling =
+                        scaling,
                 )
             }
 
         val testExamples =
-            testRaw.map {
-                it.toScaled(
-                    scaling = scaling
+            testRaw.map { example ->
+                example.toScaled(
+                    scaling =
+                        scaling,
                 )
             }
 
         val classWeights =
             calculateClassWeights(
                 examples =
-                    trainingExamples
+                    trainingExamples,
             )
 
         val trained =
@@ -240,8 +236,39 @@ class LocalNutritionMatcherModelTrainer(
                 positiveClassWeight =
                     classWeights.positive,
                 negativeClassWeight =
-                    classWeights.negative
+                    classWeights.negative,
             )
+
+        val trainingScoredLabels =
+            trainingExamples.map { example ->
+                NutritionMatcherScoredLabel(
+                    score =
+                        predictProbability(
+                            example =
+                                example,
+                            coefficients =
+                                trained.coefficients,
+                            intercept =
+                                trained.intercept,
+                        ),
+                    positive =
+                        example.target ==
+                                1.0,
+                )
+            }
+
+        val thresholdOptimization =
+            NutritionMatcherDecisionThresholdOptimizer(
+                policy =
+                    thresholdOptimizationPolicy,
+            )
+                .optimize(
+                    scoredLabels =
+                        trainingScoredLabels,
+                )
+
+        val decisionThreshold =
+            thresholdOptimization.selectedThreshold
 
         val trainingMetrics =
             calculateMetrics(
@@ -250,7 +277,9 @@ class LocalNutritionMatcherModelTrainer(
                 coefficients =
                     trained.coefficients,
                 intercept =
-                    trained.intercept
+                    trained.intercept,
+                decisionThreshold =
+                    decisionThreshold,
             )
 
         val testMetrics =
@@ -260,7 +289,9 @@ class LocalNutritionMatcherModelTrainer(
                 coefficients =
                     trained.coefficients,
                 intercept =
-                    trained.intercept
+                    trained.intercept,
+                decisionThreshold =
+                    decisionThreshold,
             )
 
         val trainingByRole =
@@ -270,7 +301,9 @@ class LocalNutritionMatcherModelTrainer(
                 coefficients =
                     trained.coefficients,
                 intercept =
-                    trained.intercept
+                    trained.intercept,
+                decisionThreshold =
+                    decisionThreshold,
             )
 
         val testByRole =
@@ -280,11 +313,16 @@ class LocalNutritionMatcherModelTrainer(
                 coefficients =
                     trained.coefficients,
                 intercept =
-                    trained.intercept
+                    trained.intercept,
+                decisionThreshold =
+                    decisionThreshold,
             )
 
         val model =
             LocalNutritionMatcherModel(
+                version =
+                    LocalNutritionMatcherModelContract
+                        .CURRENT_VERSION,
                 featureNames =
                     featureExtractor.featureNames,
                 featureMeans =
@@ -296,7 +334,59 @@ class LocalNutritionMatcherModelTrainer(
                 intercept =
                     trained.intercept,
                 decisionThreshold =
-                    DECISION_THRESHOLD,
+                    decisionThreshold,
+                decisionThresholdOptimization =
+                    LocalNutritionMatcherThresholdOptimizationMetadata(
+                        calibrationExampleCount =
+                            trainingScoredLabels.size,
+                        minimumPrecision =
+                            thresholdOptimizationPolicy
+                                .minimumPrecision,
+                        maximumFalsePositiveRate =
+                            thresholdOptimizationPolicy
+                                .maximumFalsePositiveRate,
+                        minimumPredictedPositiveCount =
+                            thresholdOptimizationPolicy
+                                .minimumPredictedPositiveCount,
+                        policySatisfied =
+                            thresholdOptimization
+                                .policySatisfied,
+                        evaluatedThresholdCount =
+                            thresholdOptimization
+                                .evaluatedThresholdCount,
+                        selectedPrecision =
+                            thresholdOptimization
+                                .selectedMetrics
+                                .precision,
+                        selectedRecall =
+                            thresholdOptimization
+                                .selectedMetrics
+                                .recall,
+                        selectedFalsePositiveRate =
+                            thresholdOptimization
+                                .selectedMetrics
+                                .falsePositiveRate,
+                        selectedF1 =
+                            thresholdOptimization
+                                .selectedMetrics
+                                .f1,
+                        selectedTruePositiveCount =
+                            thresholdOptimization
+                                .selectedMetrics
+                                .truePositiveCount,
+                        selectedFalsePositiveCount =
+                            thresholdOptimization
+                                .selectedMetrics
+                                .falsePositiveCount,
+                        selectedTrueNegativeCount =
+                            thresholdOptimization
+                                .selectedMetrics
+                                .trueNegativeCount,
+                        selectedFalseNegativeCount =
+                            thresholdOptimization
+                                .selectedMetrics
+                                .falseNegativeCount,
+                    ),
                 diagnosticScoreImputationValue =
                     diagnosticScoreImputationValue,
                 training =
@@ -328,7 +418,7 @@ class LocalNutritionMatcherModelTrainer(
                         splitModulo =
                             SPLIT_MODULO,
                         testBuckets =
-                            TEST_BUCKETS.sorted()
+                            TEST_BUCKETS.sorted(),
                     ),
                 metrics =
                     LocalNutritionMatcherModelMetrics(
@@ -339,55 +429,65 @@ class LocalNutritionMatcherModelTrainer(
                         trainingByRole =
                             trainingByRole,
                         testByRole =
-                            testByRole
-                    )
+                            testByRole,
+                    ),
             )
 
         validateModel(
-            model = model
+            model =
+                model,
         )
 
         writeModel(
-            model = model,
-            outputFile = outputFile
+            model =
+                model,
+            outputFile =
+                outputFile,
         )
 
         printResult(
-            model = model,
-            outputFile = outputFile,
-            output = output
+            model =
+                model,
+            outputFile =
+                outputFile,
+            output =
+                output,
         )
 
         return TrainLocalNutritionMatcherModelResult(
-            model = model,
-            outputFile = outputFile.absolutePath
+            model =
+                model,
+            outputFile =
+                outputFile.absolutePath,
         )
     }
 
     private fun calculateDiagnosticScoreImputationValue(
         trainingExamples:
-        List<NutritionMatcherTrainingExample>
+        List<NutritionMatcherTrainingExample>,
     ): Double {
 
         val availableScores =
             trainingExamples
                 .asSequence()
-                .filter {
-                    it.diagnosticScoreAvailable
+                .filter { example ->
+                    example.diagnosticScoreAvailable
                 }
-                .map {
-                    it.diagnosticScore
+                .map { example ->
+                    example.diagnosticScore
                 }
                 .toList()
 
-        require(availableScores.isNotEmpty()) {
+        require(
+            availableScores.isNotEmpty(),
+        ) {
             "Training split contains no available diagnostic scores."
         }
 
         require(
-            availableScores.all {
-                it.isFinite()
-            }
+            availableScores.all { score ->
+                score.isFinite()
+            },
         ) {
             "Training split contains a non-finite diagnostic score."
         }
@@ -398,20 +498,20 @@ class LocalNutritionMatcherModelTrainer(
     private fun calculateRoleMetrics(
         examples: List<ScaledTrainingExample>,
         coefficients: DoubleArray,
-        intercept: Double
+        intercept: Double,
+        decisionThreshold: Double,
     ): List<LocalNutritionMatcherRoleMetrics> {
 
         return examples
-            .groupBy {
-                it.source.role
+            .groupBy { example ->
+                example.source.role
             }
             .toSortedMap(
-                compareBy {
-                    it.name
-                }
+                compareBy { role ->
+                    role.name
+                },
             )
             .map { (role, roleExamples) ->
-
                 calculateRoleMetrics(
                     role =
                         role,
@@ -420,7 +520,9 @@ class LocalNutritionMatcherModelTrainer(
                     coefficients =
                         coefficients,
                     intercept =
-                        intercept
+                        intercept,
+                    decisionThreshold =
+                        decisionThreshold,
                 )
             }
     }
@@ -429,7 +531,8 @@ class LocalNutritionMatcherModelTrainer(
         role: NutritionMatcherTrainingExampleRole,
         examples: List<ScaledTrainingExample>,
         coefficients: DoubleArray,
-        intercept: Double
+        intercept: Double,
+        decisionThreshold: Double,
     ): LocalNutritionMatcherRoleMetrics {
 
         var truePositive =
@@ -448,19 +551,23 @@ class LocalNutritionMatcherModelTrainer(
 
             val probability =
                 sigmoid(
-                    intercept +
-                            dot(
-                                coefficients,
-                                example.features
-                            )
+                    value =
+                        intercept +
+                                dot(
+                                    left =
+                                        coefficients,
+                                    right =
+                                        example.features,
+                                ),
                 )
 
             val predictedPositive =
                 probability >=
-                        DECISION_THRESHOLD
+                        decisionThreshold
 
             val actualPositive =
-                example.target == 1.0
+                example.target ==
+                        1.0
 
             when {
 
@@ -486,17 +593,20 @@ class LocalNutritionMatcherModelTrainer(
         }
 
         val positiveCount =
-            truePositive + falseNegative
+            truePositive +
+                    falseNegative
 
         val negativeCount =
-            trueNegative + falsePositive
+            trueNegative +
+                    falsePositive
 
         val precision =
             divide(
                 numerator =
                     truePositive,
                 denominator =
-                    truePositive + falsePositive
+                    truePositive +
+                            falsePositive,
             )
 
         val recall =
@@ -504,7 +614,8 @@ class LocalNutritionMatcherModelTrainer(
                 numerator =
                     truePositive,
                 denominator =
-                    truePositive + falseNegative
+                    truePositive +
+                            falseNegative,
             )
 
         val falsePositiveRate =
@@ -512,7 +623,8 @@ class LocalNutritionMatcherModelTrainer(
                 numerator =
                     falsePositive,
                 denominator =
-                    falsePositive + trueNegative
+                    falsePositive +
+                            trueNegative,
             )
 
         return LocalNutritionMatcherRoleMetrics(
@@ -525,7 +637,8 @@ class LocalNutritionMatcherModelTrainer(
             negativeCount =
                 negativeCount,
             predictedPositiveCount =
-                truePositive + falsePositive,
+                truePositive +
+                        falsePositive,
             truePositive =
                 truePositive,
             falsePositive =
@@ -539,41 +652,38 @@ class LocalNutritionMatcherModelTrainer(
             recall =
                 recall,
             falsePositiveRate =
-                falsePositiveRate
+                falsePositiveRate,
         )
     }
 
     private fun readDataset(
-        datasetFile: File
+        datasetFile: File,
     ): NutritionMatcherTrainingDataset {
 
         return runCatching {
-
             GsonBuilder()
                 .create()
                 .fromJson(
                     datasetFile.readText(),
-                    NutritionMatcherTrainingDataset::class.java
+                    NutritionMatcherTrainingDataset::class.java,
                 )
-
         }.getOrElse { throwable ->
-
             throw IllegalArgumentException(
                 "Could not read nutrition matcher training " +
                         "dataset: " +
                         datasetFile.absolutePath,
-                throwable
+                throwable,
             )
         }
     }
 
     private fun splitByCatalogKey(
-        examples: List<NutritionMatcherTrainingExample>
+        examples: List<NutritionMatcherTrainingExample>,
     ): DatasetSplit {
 
         val grouped =
-            examples.groupBy {
-                it.catalogKey
+            examples.groupBy { example ->
+                example.catalogKey
             }
 
         val trainingCatalogKeys =
@@ -588,31 +698,43 @@ class LocalNutritionMatcherModelTrainer(
 
                 val bucket =
                     stableBucket(
-                        value = catalogKey,
-                        modulo = SPLIT_MODULO
+                        value =
+                            catalogKey,
+                        modulo =
+                            SPLIT_MODULO,
                     )
 
-                if (bucket in TEST_BUCKETS) {
-                    testCatalogKeys += catalogKey
+                if (
+                    bucket in
+                    TEST_BUCKETS
+                ) {
+                    testCatalogKeys +=
+                        catalogKey
                 } else {
-                    trainingCatalogKeys += catalogKey
+                    trainingCatalogKeys +=
+                        catalogKey
                 }
             }
 
         val trainingExamples =
-            examples.filter {
-                it.catalogKey in trainingCatalogKeys
+            examples.filter { example ->
+                example.catalogKey in
+                        trainingCatalogKeys
             }
 
         val testExamples =
-            examples.filter {
-                it.catalogKey in testCatalogKeys
+            examples.filter { example ->
+                example.catalogKey in
+                        testCatalogKeys
             }
 
         require(
             trainingCatalogKeys
-                .intersect(testCatalogKeys)
-                .isEmpty()
+                .intersect(
+                    other =
+                        testCatalogKeys,
+                )
+                .isEmpty(),
         ) {
             "Catalog keys overlap between training and test split."
         }
@@ -625,63 +747,75 @@ class LocalNutritionMatcherModelTrainer(
             trainingCatalogKeys =
                 trainingCatalogKeys,
             testCatalogKeys =
-                testCatalogKeys
+                testCatalogKeys,
         )
     }
 
     private fun calculateScaling(
-        trainingExamples: List<RawTrainingExample>
+        trainingExamples: List<RawTrainingExample>,
     ): FeatureScaling {
 
         val featureCount =
-            featureExtractor.featureNames.size
+            featureExtractor
+                .featureNames
+                .size
 
         require(
-            trainingExamples.all {
-                it.features.size == featureCount
-            }
+            trainingExamples.all { example ->
+                example.features.size ==
+                        featureCount
+            },
         ) {
             "Unexpected local matcher feature count."
         }
 
         val means =
-            DoubleArray(featureCount)
+            DoubleArray(
+                size =
+                    featureCount,
+            )
 
         trainingExamples.forEach { example ->
-
             example.features.forEachIndexed {
                     index,
                     value ->
 
-                means[index] += value
+                means[index] +=
+                    value
             }
         }
 
         means.indices.forEach { index ->
-
             means[index] /=
                 trainingExamples.size.toDouble()
         }
 
         val variances =
-            DoubleArray(featureCount)
+            DoubleArray(
+                size =
+                    featureCount,
+            )
 
         trainingExamples.forEach { example ->
-
             example.features.forEachIndexed {
                     index,
                     value ->
 
                 val difference =
-                    value - means[index]
+                    value -
+                            means[index]
 
                 variances[index] +=
-                    difference * difference
+                    difference *
+                            difference
             }
         }
 
         val standardDeviations =
-            DoubleArray(featureCount)
+            DoubleArray(
+                size =
+                    featureCount,
+            )
 
         standardDeviations.indices.forEach { index ->
 
@@ -691,10 +825,13 @@ class LocalNutritionMatcherModelTrainer(
 
             val standardDeviation =
                 sqrt(
-                    max(
-                        variance,
-                        0.0
-                    )
+                    x =
+                        max(
+                            a =
+                                variance,
+                            b =
+                                0.0,
+                        ),
                 )
 
             standardDeviations[index] =
@@ -712,24 +849,33 @@ class LocalNutritionMatcherModelTrainer(
             means =
                 means,
             standardDeviations =
-                standardDeviations
+                standardDeviations,
         )
     }
 
     private fun calculateClassWeights(
-        examples: List<ScaledTrainingExample>
+        examples: List<ScaledTrainingExample>,
     ): ClassWeights {
 
         val positiveCount =
-            examples.count {
-                it.target == 1.0
+            examples.count { example ->
+                example.target ==
+                        1.0
             }
 
         val negativeCount =
-            examples.size - positiveCount
+            examples.size -
+                    positiveCount
 
-        require(positiveCount > 0)
-        require(negativeCount > 0)
+        require(
+            positiveCount >
+                    0,
+        )
+
+        require(
+            negativeCount >
+                    0,
+        )
 
         val total =
             examples.size.toDouble()
@@ -737,32 +883,49 @@ class LocalNutritionMatcherModelTrainer(
         return ClassWeights(
             positive =
                 total /
-                        (2.0 * positiveCount.toDouble()),
+                        (
+                                2.0 *
+                                        positiveCount.toDouble()
+                                ),
             negative =
                 total /
-                        (2.0 * negativeCount.toDouble())
+                        (
+                                2.0 *
+                                        negativeCount.toDouble()
+                                ),
         )
     }
 
     private fun fitLogisticRegression(
         examples: List<ScaledTrainingExample>,
         positiveClassWeight: Double,
-        negativeClassWeight: Double
+        negativeClassWeight: Double,
     ): TrainedParameters {
 
         val featureCount =
-            featureExtractor.featureNames.size
+            featureExtractor
+                .featureNames
+                .size
 
         val coefficients =
-            DoubleArray(featureCount)
+            DoubleArray(
+                size =
+                    featureCount,
+            )
 
         var intercept =
             0.0
 
-        repeat(ITERATION_COUNT) {
+        repeat(
+            times =
+                ITERATION_COUNT,
+        ) {
 
             val coefficientGradients =
-                DoubleArray(featureCount)
+                DoubleArray(
+                    size =
+                        featureCount,
+                )
 
             var interceptGradient =
                 0.0
@@ -774,15 +937,21 @@ class LocalNutritionMatcherModelTrainer(
 
                 val probability =
                     sigmoid(
-                        intercept +
-                                dot(
-                                    coefficients,
-                                    example.features
-                                )
+                        value =
+                            intercept +
+                                    dot(
+                                        left =
+                                            coefficients,
+                                        right =
+                                            example.features,
+                                    ),
                     )
 
                 val classWeight =
-                    if (example.target == 1.0) {
+                    if (
+                        example.target ==
+                        1.0
+                    ) {
                         positiveClassWeight
                     } else {
                         negativeClassWeight
@@ -806,13 +975,17 @@ class LocalNutritionMatcherModelTrainer(
                     }
 
                 interceptGradient +=
-                    effectiveWeight * error
+                    effectiveWeight *
+                            error
 
                 totalWeight +=
                     effectiveWeight
             }
 
-            require(totalWeight > 0.0)
+            require(
+                totalWeight >
+                        0.0,
+            )
 
             coefficients.indices.forEach { index ->
 
@@ -844,14 +1017,41 @@ class LocalNutritionMatcherModelTrainer(
             coefficients =
                 coefficients,
             intercept =
-                intercept
+                intercept,
+        )
+    }
+
+    private fun predictProbability(
+        example: ScaledTrainingExample,
+        coefficients: DoubleArray,
+        intercept: Double,
+    ): Double {
+
+        require(
+            example.features.size ==
+                    coefficients.size,
+        ) {
+            "Nutrition matcher prediction feature count differs " +
+                    "from coefficient count."
+        }
+
+        return sigmoid(
+            value =
+                intercept +
+                        dot(
+                            left =
+                                coefficients,
+                            right =
+                                example.features,
+                        ),
         )
     }
 
     private fun calculateMetrics(
         examples: List<ScaledTrainingExample>,
         coefficients: DoubleArray,
-        intercept: Double
+        intercept: Double,
+        decisionThreshold: Double,
     ): LocalNutritionMatcherClassificationMetrics {
 
         var truePositive =
@@ -873,23 +1073,29 @@ class LocalNutritionMatcherModelTrainer(
 
             val probability =
                 sigmoid(
-                    intercept +
-                            dot(
-                                coefficients,
-                                example.features
-                            )
+                    value =
+                        intercept +
+                                dot(
+                                    left =
+                                        coefficients,
+                                    right =
+                                        example.features,
+                                ),
                 )
                     .coerceIn(
-                        MIN_PROBABILITY,
-                        MAX_PROBABILITY
+                        minimumValue =
+                            MIN_PROBABILITY,
+                        maximumValue =
+                            MAX_PROBABILITY,
                     )
 
             val predictedPositive =
                 probability >=
-                        DECISION_THRESHOLD
+                        decisionThreshold
 
             val actualPositive =
-                example.target == 1.0
+                example.target ==
+                        1.0
 
             when {
 
@@ -916,24 +1122,37 @@ class LocalNutritionMatcherModelTrainer(
             totalLogLoss +=
                 -(
                         example.target *
-                                ln(probability) +
-                                (1.0 - example.target) *
-                                ln(1.0 - probability)
+                                ln(
+                                    x =
+                                        probability,
+                                ) +
+                                (
+                                        1.0 -
+                                                example.target
+                                        ) *
+                                ln(
+                                    x =
+                                        1.0 -
+                                                probability,
+                                )
                         )
         }
 
         val positiveCount =
-            truePositive + falseNegative
+            truePositive +
+                    falseNegative
 
         val negativeCount =
-            trueNegative + falsePositive
+            trueNegative +
+                    falsePositive
 
         val accuracy =
             divide(
                 numerator =
-                    truePositive + trueNegative,
+                    truePositive +
+                            trueNegative,
                 denominator =
-                    examples.size
+                    examples.size,
             )
 
         val precision =
@@ -941,7 +1160,8 @@ class LocalNutritionMatcherModelTrainer(
                 numerator =
                     truePositive,
                 denominator =
-                    truePositive + falsePositive
+                    truePositive +
+                            falsePositive,
             )
 
         val recall =
@@ -949,7 +1169,8 @@ class LocalNutritionMatcherModelTrainer(
                 numerator =
                     truePositive,
                 denominator =
-                    truePositive + falseNegative
+                    truePositive +
+                            falseNegative,
             )
 
         val specificity =
@@ -957,19 +1178,25 @@ class LocalNutritionMatcherModelTrainer(
                 numerator =
                     trueNegative,
                 denominator =
-                    trueNegative + falsePositive
+                    trueNegative +
+                            falsePositive,
             )
 
         val f1 =
             if (
-                precision + recall == 0.0
+                precision +
+                recall ==
+                0.0
             ) {
                 0.0
             } else {
                 2.0 *
                         precision *
                         recall /
-                        (precision + recall)
+                        (
+                                precision +
+                                        recall
+                                )
             }
 
         return LocalNutritionMatcherClassificationMetrics(
@@ -996,257 +1223,180 @@ class LocalNutritionMatcherModelTrainer(
             f1 =
                 f1,
             balancedAccuracy =
-                (recall + specificity) / 2.0,
+                (
+                        recall +
+                                specificity
+                        ) /
+                        2.0,
             averageLogLoss =
-                if (examples.isEmpty()) {
+                if (
+                    examples.isEmpty()
+                ) {
                     0.0
                 } else {
                     totalLogLoss /
                             examples.size.toDouble()
-                }
+                },
         )
     }
 
     private fun validateModel(
         model: LocalNutritionMatcherModel,
     ) {
-        val featureCount =
-            model.featureNames.size
-
-        require(model.version == MODEL_VERSION) {
-            "Unsupported local nutrition matcher model version: " +
-                    model.version
-        }
-
-        require(
-            model.diagnosticScoreImputationValue.isFinite(),
-        ) {
-            "Diagnostic score imputation value must be finite."
-        }
-
-        require(
-            model.featureNames.isNotEmpty(),
-        ) {
-            "Local nutrition matcher model must contain at least one feature."
-        }
-
-        require(
-            model.featureNames.size ==
-                    model.featureNames.distinct().size,
-        ) {
-            "Local nutrition matcher model must not contain duplicate features."
-        }
-
-        require(
-            "diagnostic_score_available" !in
-                    model.featureNames,
-        ) {
-            "diagnostic_score_available must not be a model feature."
-        }
-
-        require(
-            "domain_feature_version" !in
-                    model.featureNames,
-        ) {
-            "Domain-Mismatch schema version must not be a model feature."
-        }
-
-        require(
-            "domain_report_relationship_present" !in
-                    model.featureNames,
-        ) {
-            "Domain-Mismatch report availability must not be a model feature."
-        }
 
         require(
             model.featureNames ==
-                    featureExtractor.featureNames,
+                    supportedFeatureNames,
         ) {
-            "Persisted local nutrition matcher feature contract " +
-                    "differs from the active feature extractor."
-        }
-
-        val supportedFeatureNames =
-            featureExtractor.featureNames
-
-        val supportedFeatureNameSet =
-            supportedFeatureNames.toSet()
-
-        val unsupportedFeatureNames =
-            model.featureNames
-                .filterNot {
-                    it in supportedFeatureNameSet
-                }
-
-        require(
-            unsupportedFeatureNames.isEmpty(),
-        ) {
-            "Local nutrition matcher model contains unsupported features: " +
-                    unsupportedFeatureNames
-                        .sorted()
-                        .joinToString()
-        }
-
-        require(
-            model.featureNames ==
-                    featureExtractor.featureNames,
-        ) {
-            "Local nutrition matcher model feature contract differs from the feature extractor. " +
+            "Persisted model differs from trainer feature contract. " +
                     "Expected: " +
-                    featureExtractor.featureNames.joinToString() +
+                    supportedFeatureNames.joinToString() +
                     "; actual: " +
                     model.featureNames.joinToString()
         }
 
-        val expectedBaseFeatureNames =
-            LocalNutritionMatcherFeatureExtractor
-                .BASE_FEATURE_NAMES
-
-        require(
-            featureCount >=
-                    expectedBaseFeatureNames.size,
-        ) {
-            "Local nutrition matcher model contains fewer features " +
-                    "than the required base-feature contract."
-        }
-
-        val actualBaseFeatureNames =
-            model.featureNames.take(
-                LocalNutritionMatcherFeatureExtractor
-                    .BASE_FEATURE_COUNT,
+        LocalNutritionMatcherFeatureContract
+            .validateTrainingFeatureSubset(
+                featureNames =
+                    model.featureNames,
             )
 
         require(
-            actualBaseFeatureNames ==
-                    expectedBaseFeatureNames,
+            model.version ==
+                    LocalNutritionMatcherModelContract
+                        .CURRENT_VERSION,
         ) {
-            "The Nutrition base-feature prefix differs " +
-                    "from the expected contract."
-        }
-
-        val actualDomainFeatureNames =
-            model.featureNames.drop(
-                LocalNutritionMatcherFeatureExtractor
-                    .BASE_FEATURE_COUNT,
-            )
-
-        val supportedDomainFeatureNames =
-            LocalNutritionMatcherFeatureExtractor
-                .DOMAIN_MISMATCH_FEATURE_NAMES
-
-        val unsupportedDomainFeatureNames =
-            actualDomainFeatureNames
-                .filterNot {
-                    it in supportedDomainFeatureNames
-                }
-
-        require(
-            unsupportedDomainFeatureNames.isEmpty(),
-        ) {
-            "The Nutrition model contains unsupported " +
-                    "Domain-Mismatch features: " +
-                    unsupportedDomainFeatureNames
-                        .sorted()
-                        .joinToString()
+            "Unexpected local nutrition matcher model version: " +
+                    model.version
         }
 
         require(
-            actualDomainFeatureNames.size ==
-                    actualDomainFeatureNames.distinct().size,
+            model.decisionThreshold.isFinite() &&
+                    model.decisionThreshold in
+                    0.0..1.0,
         ) {
-            "The Nutrition model contains duplicate " +
-                    "Domain-Mismatch features."
+            "Local nutrition matcher decision threshold must be finite " +
+                    "and between zero and one."
         }
 
-        val expectedDomainFeatureOrder =
-            supportedDomainFeatureNames
-                .filter {
-                    it in actualDomainFeatureNames
-                }
+        val thresholdMetadata =
+            model.decisionThresholdOptimization
 
         require(
-            actualDomainFeatureNames ==
-                    expectedDomainFeatureOrder,
+            thresholdMetadata.calibrationExampleCount ==
+                    model.training.trainingExampleCount,
         ) {
-            "The Nutrition Domain-Mismatch features differ " +
-                    "from the expected deterministic order."
-        }
-
-        require(
-            model.featureMeans.size ==
-                    featureCount,
-        ) {
-            "Feature-mean count differs from feature count."
+            "Threshold calibration example count differs from the " +
+                    "training example count."
         }
 
         require(
-            model.featureStandardDeviations.size ==
-                    featureCount,
+            thresholdMetadata.minimumPrecision in
+                    0.0..1.0,
         ) {
-            "Feature-standard-deviation count differs from feature count."
+            "Threshold minimum precision must be between zero and one."
         }
 
         require(
-            model.coefficients.size ==
-                    featureCount,
+            thresholdMetadata.maximumFalsePositiveRate in
+                    0.0..1.0,
         ) {
-            "Coefficient count differs from feature count."
+            "Threshold maximum false-positive rate must be between " +
+                    "zero and one."
         }
 
         require(
-            model.featureMeans.all {
-                it.isFinite()
-            },
+            thresholdMetadata.minimumPredictedPositiveCount >
+                    0,
         ) {
-            "All feature means must be finite."
+            "Threshold minimum predicted-positive count must be positive."
         }
 
         require(
-            model.featureStandardDeviations.all {
-                it.isFinite() &&
-                        it > 0.0
-            },
+            thresholdMetadata.evaluatedThresholdCount >
+                    0,
         ) {
-            "All feature standard deviations must be finite and positive."
+            "Threshold optimizer must evaluate at least one threshold."
         }
 
         require(
-            model.coefficients.all {
-                it.isFinite()
-            },
+            thresholdMetadata.selectedPrecision in
+                    0.0..1.0,
         ) {
-            "All coefficients must be finite."
+            "Selected threshold precision must be between zero and one."
         }
 
         require(
-            model.intercept.isFinite(),
+            thresholdMetadata.selectedRecall in
+                    0.0..1.0,
         ) {
-            "Model intercept must be finite."
+            "Selected threshold recall must be between zero and one."
         }
 
         require(
-            model.decisionThreshold in 0.0..1.0,
+            thresholdMetadata.selectedFalsePositiveRate in
+                    0.0..1.0,
         ) {
-            "Decision threshold must be between 0.0 and 1.0."
+            "Selected threshold false-positive rate must be between " +
+                    "zero and one."
+        }
+
+        require(
+            thresholdMetadata.selectedF1 in
+                    0.0..1.0,
+        ) {
+            "Selected threshold F1 must be between zero and one."
+        }
+
+        require(
+            thresholdMetadata.selectedTruePositiveCount >=
+                    0 &&
+                    thresholdMetadata.selectedFalsePositiveCount >=
+                    0 &&
+                    thresholdMetadata.selectedTrueNegativeCount >=
+                    0 &&
+                    thresholdMetadata.selectedFalseNegativeCount >=
+                    0,
+        ) {
+            "Selected threshold confusion-matrix counts must not be " +
+                    "negative."
+        }
+
+        require(
+            thresholdMetadata.selectedTruePositiveCount +
+                    thresholdMetadata.selectedFalsePositiveCount +
+                    thresholdMetadata.selectedTrueNegativeCount +
+                    thresholdMetadata.selectedFalseNegativeCount ==
+                    thresholdMetadata.calibrationExampleCount,
+        ) {
+            "Selected threshold confusion matrix does not cover every " +
+                    "calibration example."
         }
     }
 
     private fun writeModel(
         model: LocalNutritionMatcherModel,
-        outputFile: File
+        outputFile: File,
     ) {
+
         outputFile.parentFile
             ?.let { directory ->
 
-                if (!directory.exists()) {
-                    check(directory.mkdirs()) {
+                if (
+                    !directory.exists()
+                ) {
+                    check(
+                        directory.mkdirs(),
+                    ) {
                         "Could not create local matcher model " +
                                 "directory: " +
                                 directory.absolutePath
                     }
                 }
 
-                require(directory.isDirectory) {
+                require(
+                    directory.isDirectory,
+                ) {
                     "Local matcher model parent path is not " +
                             "a directory: " +
                             directory.absolutePath
@@ -1260,15 +1410,20 @@ class LocalNutritionMatcherModelTrainer(
                 .create()
 
         outputFile.writeText(
-            gson.toJson(model) + "\n"
+            text =
+                gson.toJson(
+                    model,
+                ) +
+                        "\n",
         )
     }
 
     private fun printResult(
         model: LocalNutritionMatcherModel,
         outputFile: File,
-        output: PrintStream
+        output: PrintStream,
     ) {
+
         val training =
             model.metrics.training
 
@@ -1277,110 +1432,147 @@ class LocalNutritionMatcherModelTrainer(
 
         output.println()
         output.println(
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
         )
         output.println(
-            "LOCAL NUTRITION MATCHER MODEL"
+            "LOCAL NUTRITION MATCHER MODEL",
         )
         output.println(
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
         )
         output.println(
             "Model                    : " +
-                    model.modelType
+                    model.modelType,
         )
         output.println(
             "Features                 : " +
-                    model.featureNames.size
+                    model.featureNames.size,
         )
         output.println(
             "Training examples        : " +
-                    training.exampleCount
+                    training.exampleCount,
         )
         output.println(
             "Test examples            : " +
-                    test.exampleCount
+                    test.exampleCount,
+        )
+        output.println()
+        output.println(
+            "Decision threshold       : " +
+                    format(
+                        value =
+                            model.decisionThreshold,
+                    ),
+        )
+        output.println(
+            "Threshold policy met     : " +
+                    model
+                        .decisionThresholdOptimization
+                        .policySatisfied,
         )
         output.println()
         output.println(
             "TRAIN precision          : " +
-                    format(training.precision)
+                    format(
+                        value =
+                            training.precision,
+                    ),
         )
         output.println(
             "TRAIN recall             : " +
-                    format(training.recall)
+                    format(
+                        value =
+                            training.recall,
+                    ),
         )
         output.println(
             "TRAIN F1                 : " +
-                    format(training.f1)
+                    format(
+                        value =
+                            training.f1,
+                    ),
         )
         output.println(
             "TRAIN balanced accuracy  : " +
                     format(
-                        training.balancedAccuracy
-                    )
+                        value =
+                            training.balancedAccuracy,
+                    ),
         )
         output.println()
         output.println(
             "TEST precision           : " +
-                    format(test.precision)
+                    format(
+                        value =
+                            test.precision,
+                    ),
         )
         output.println(
             "TEST recall              : " +
-                    format(test.recall)
+                    format(
+                        value =
+                            test.recall,
+                    ),
         )
         output.println(
             "TEST F1                  : " +
-                    format(test.f1)
+                    format(
+                        value =
+                            test.f1,
+                    ),
         )
         output.println(
             "TEST balanced accuracy   : " +
                     format(
-                        test.balancedAccuracy
-                    )
+                        value =
+                            test.balancedAccuracy,
+                    ),
         )
         output.println()
         output.println(
             "Output                   : " +
-                    outputFile.absolutePath
+                    outputFile.absolutePath,
         )
         output.println()
         output.println(
-            "TEST METRICS BY ROLE"
+            "TEST METRICS BY ROLE",
         )
 
         model.metrics.testByRole
             .forEach { role ->
-
                 output.println(
                     "${role.role.padEnd(29)} " +
                             "count=${role.exampleCount} " +
                             "precision=${format(role.precision)} " +
                             "recall=${format(role.recall)} " +
-                            "fpr=${format(role.falsePositiveRate)}"
+                            "fpr=${format(role.falsePositiveRate)}",
                 )
             }
+
         output.println()
         output.println(
             "Diagnostic score mean    : " +
                     format(
-                        model.diagnosticScoreImputationValue
-                    )
+                        value =
+                            model.diagnosticScoreImputationValue,
+                    ),
         )
         output.println(
-            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
         )
     }
 
     private fun RawTrainingExample.toScaled(
-        scaling: FeatureScaling
+        scaling: FeatureScaling,
     ): ScaledTrainingExample {
 
         val scaledFeatures =
-            DoubleArray(features.size)
+            DoubleArray(
+                size =
+                    features.size,
+            )
 
         features.indices.forEach { index ->
-
             scaledFeatures[index] =
                 (
                         features[index] -
@@ -1395,12 +1587,12 @@ class LocalNutritionMatcherModelTrainer(
             features =
                 scaledFeatures,
             target =
-                target
+                target,
         )
     }
 
     private fun targetOf(
-        example: NutritionMatcherTrainingExample
+        example: NutritionMatcherTrainingExample,
     ): Double {
 
         return if (
@@ -1415,73 +1607,111 @@ class LocalNutritionMatcherModelTrainer(
 
     private fun stableBucket(
         value: String,
-        modulo: Int
+        modulo: Int,
     ): Int {
 
-        require(modulo > 0)
+        require(
+            modulo >
+                    0,
+        )
 
         val digest =
             MessageDigest
-                .getInstance("SHA-256")
+                .getInstance(
+                    "SHA-256",
+                )
                 .digest(
                     value.toByteArray(
-                        StandardCharsets.UTF_8
-                    )
+                        charset =
+                            StandardCharsets.UTF_8,
+                    ),
                 )
 
         val unsigned =
             (
-                    (digest[0].toInt() and 0xff) shl 24
+                    (
+                            digest[0].toInt() and
+                                    0xff
+                            ) shl
+                            24
                     ) or
                     (
-                            (digest[1].toInt() and 0xff) shl 16
+                            (
+                                    digest[1].toInt() and
+                                            0xff
+                                    ) shl
+                                    16
                             ) or
                     (
-                            (digest[2].toInt() and 0xff) shl 8
+                            (
+                                    digest[2].toInt() and
+                                            0xff
+                                    ) shl
+                                    8
                             ) or
-                    (digest[3].toInt() and 0xff)
+                    (
+                            digest[3].toInt() and
+                                    0xff
+                            )
 
-        return (unsigned and Int.MAX_VALUE) % modulo
+        return (
+                unsigned and
+                        Int.MAX_VALUE
+                ) %
+                modulo
     }
 
     private fun sigmoid(
-        value: Double
+        value: Double,
     ): Double {
 
         return when {
 
-            value >= 0.0 -> {
+            value >=
+                    0.0 -> {
                 1.0 /
                         (
                                 1.0 +
-                                        exp(-value)
+                                        exp(
+                                            x =
+                                                -value,
+                                        )
                                 )
             }
 
             else -> {
                 val exponential =
-                    exp(value)
+                    exp(
+                        x =
+                            value,
+                    )
 
                 exponential /
-                        (1.0 + exponential)
+                        (
+                                1.0 +
+                                        exponential
+                                )
             }
         }
     }
 
     private fun dot(
         left: DoubleArray,
-        right: DoubleArray
+        right: DoubleArray,
     ): Double {
 
-        require(left.size == right.size)
+        require(
+            left.size ==
+                    right.size,
+        )
 
         var result =
             0.0
 
         left.indices.forEach { index ->
-
             result +=
-                left[index] * right[index]
+                left[index] *
+                        right[index]
         }
 
         return result
@@ -1489,10 +1719,13 @@ class LocalNutritionMatcherModelTrainer(
 
     private fun divide(
         numerator: Int,
-        denominator: Int
+        denominator: Int,
     ): Double {
 
-        if (denominator == 0) {
+        if (
+            denominator ==
+            0
+        ) {
             return 0.0
         }
 
@@ -1501,12 +1734,13 @@ class LocalNutritionMatcherModelTrainer(
     }
 
     private fun format(
-        value: Double
+        value: Double,
     ): String {
 
         return "%.4f".format(
-            java.util.Locale.ROOT,
-            value
+            locale =
+                java.util.Locale.ROOT,
+            value,
         )
     }
 
@@ -1515,41 +1749,52 @@ class LocalNutritionMatcherModelTrainer(
         List<NutritionMatcherTrainingExample>,
         val testExamples:
         List<NutritionMatcherTrainingExample>,
-        val trainingCatalogKeys: Set<String>,
-        val testCatalogKeys: Set<String>
+        val trainingCatalogKeys:
+        Set<String>,
+        val testCatalogKeys:
+        Set<String>,
     )
 
     private data class RawTrainingExample(
-        val source: NutritionMatcherTrainingExample,
-        val features: DoubleArray,
-        val target: Double
+        val source:
+        NutritionMatcherTrainingExample,
+        val features:
+        DoubleArray,
+        val target:
+        Double,
     )
 
     private data class ScaledTrainingExample(
-        val source: NutritionMatcherTrainingExample,
-        val features: DoubleArray,
-        val target: Double
+        val source:
+        NutritionMatcherTrainingExample,
+        val features:
+        DoubleArray,
+        val target:
+        Double,
     )
 
     private data class FeatureScaling(
-        val means: DoubleArray,
-        val standardDeviations: DoubleArray
+        val means:
+        DoubleArray,
+        val standardDeviations:
+        DoubleArray,
     )
 
     private data class ClassWeights(
-        val positive: Double,
-        val negative: Double
+        val positive:
+        Double,
+        val negative:
+        Double,
     )
 
     private data class TrainedParameters(
-        val coefficients: DoubleArray,
-        val intercept: Double
+        val coefficients:
+        DoubleArray,
+        val intercept:
+        Double,
     )
 
-    private companion object {
-
-        private const val MODEL_VERSION =
-            2
+    companion object {
 
         const val DATASET_VERSION =
             1
@@ -1566,16 +1811,13 @@ class LocalNutritionMatcherModelTrainer(
         const val L2_REGULARIZATION =
             0.001
 
-        const val DECISION_THRESHOLD =
-            0.5
-
         const val SPLIT_MODULO =
             10
 
         val TEST_BUCKETS =
             setOf(
                 0,
-                1
+                1,
             )
 
         const val MIN_STANDARD_DEVIATION =
@@ -1585,6 +1827,16 @@ class LocalNutritionMatcherModelTrainer(
             1e-12
 
         const val MAX_PROBABILITY =
-            1.0 - 1e-12
+            1.0 -
+                    1e-12
+
+        const val MINIMUM_THRESHOLD_PRECISION =
+            0.95
+
+        const val MAXIMUM_THRESHOLD_FALSE_POSITIVE_RATE =
+            0.02
+
+        const val MINIMUM_THRESHOLD_PREDICTED_POSITIVE_COUNT =
+            5
     }
 }

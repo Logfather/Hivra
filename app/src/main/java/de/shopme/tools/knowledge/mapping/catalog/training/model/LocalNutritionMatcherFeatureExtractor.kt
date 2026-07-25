@@ -2,6 +2,7 @@ package de.shopme.tools.knowledge.mapping.catalog.training.model
 
 import de.shopme.tools.knowledge.mapping.catalog.training.NutritionDomainMismatchFeatures
 import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTrainingExample
+import java.util.Locale
 import kotlin.math.max
 import kotlin.math.min
 
@@ -25,16 +26,14 @@ class LocalNutritionMatcherFeatureExtractor :
      *     Beschreibt die Verfügbarkeit beziehungsweise Herkunft der
      *     Reportbeziehung und nicht die semantische Qualität des Matches.
      *
-     * domainMismatchFeatures.observationCount
-     * domainMismatchFeatures.knownSemanticObservationCount
-     * domainMismatchFeatures.unknownSemanticObservationCount
-     *     Beschreiben primär Umfang beziehungsweise Verfügbarkeit der
-     *     Domain-Analyse und nicht unmittelbar die semantische Qualität
-     *     des konkreten Catalog-Server-Matches.
+     * Die aggregierten Beobachtungszähler bleiben dagegen Bestandteil
+     * des vollständigen historischen Featurevektors. Der produktive
+     * Featurevertrag kann daraus über einen Subset-Extractor ausschließlich
+     * die aktuell aktiven Features auswählen.
      */
     override val featureNames: List<String> =
-        BASE_FEATURE_NAMES +
-                DOMAIN_MISMATCH_FEATURE_NAMES
+        LocalNutritionMatcherFeatureContract
+            .ALL_FEATURE_NAMES
 
     override fun extract(
         example: NutritionMatcherTrainingExample,
@@ -77,15 +76,21 @@ class LocalNutritionMatcherFeatureExtractor :
             "Diagnostic score imputation value must be finite."
         }
 
-        require(candidate.catalogKey.isNotBlank()) {
+        require(
+            candidate.catalogKey.isNotBlank(),
+        ) {
             "Local matcher catalogKey must not be blank."
         }
 
-        require(candidate.serverKey.isNotBlank()) {
+        require(
+            candidate.serverKey.isNotBlank(),
+        ) {
             "Local matcher serverKey must not be blank."
         }
 
-        require(candidate.candidateCount > 0) {
+        require(
+            candidate.candidateCount > 0,
+        ) {
             "Local matcher candidateCount must be greater than zero."
         }
 
@@ -104,7 +109,9 @@ class LocalNutritionMatcherFeatureExtractor :
                 diagnosticScoreImputationValue
             }
 
-        require(diagnosticScore.isFinite()) {
+        require(
+            diagnosticScore.isFinite(),
+        ) {
             "Effective diagnostic score must be finite."
         }
 
@@ -121,10 +128,12 @@ class LocalNutritionMatcherFeatureExtractor :
             )
 
         val calculatedSharedTokens =
-            catalogTokens intersect serverTokens
+            catalogTokens intersect
+                    serverTokens
 
         val unionTokens =
-            catalogTokens union serverTokens
+            catalogTokens union
+                    serverTokens
 
         val catalogTokenCount =
             catalogTokens.size
@@ -132,25 +141,25 @@ class LocalNutritionMatcherFeatureExtractor :
         val serverTokenCount =
             serverTokens.size
 
-        val maxTokenCount =
+        val maximumTokenCount =
             max(
                 catalogTokenCount,
                 serverTokenCount,
             )
 
-        val minTokenCount =
+        val minimumTokenCount =
             min(
                 catalogTokenCount,
                 serverTokenCount,
             )
 
-        val maxCharacterLength =
+        val maximumCharacterLength =
             max(
                 candidate.catalogKey.length,
                 candidate.serverKey.length,
             )
 
-        val minCharacterLength =
+        val minimumCharacterLength =
             min(
                 candidate.catalogKey.length,
                 candidate.serverKey.length,
@@ -171,7 +180,9 @@ class LocalNutritionMatcherFeatureExtractor :
                     denominator =
                         candidate.candidateCount.toDouble(),
                 ),
-                calculatedSharedTokens.size.toDouble(),
+                calculatedSharedTokens
+                    .size
+                    .toDouble(),
                 safeDivide(
                     numerator =
                         candidate.sharedTokens
@@ -179,41 +190,55 @@ class LocalNutritionMatcherFeatureExtractor :
                             .size
                             .toDouble(),
                     denominator =
-                        maxTokenCount.toDouble(),
+                        maximumTokenCount.toDouble(),
                 ),
                 safeDivide(
                     numerator =
-                        calculatedSharedTokens.size.toDouble(),
+                        calculatedSharedTokens
+                            .size
+                            .toDouble(),
                     denominator =
-                        unionTokens.size.toDouble(),
+                        unionTokens
+                            .size
+                            .toDouble(),
                 ),
                 safeDivide(
                     numerator =
-                        calculatedSharedTokens.size.toDouble(),
+                        calculatedSharedTokens
+                            .size
+                            .toDouble(),
                     denominator =
                         catalogTokenCount.toDouble(),
                 ),
                 safeDivide(
                     numerator =
-                        calculatedSharedTokens.size.toDouble(),
+                        calculatedSharedTokens
+                            .size
+                            .toDouble(),
                     denominator =
                         serverTokenCount.toDouble(),
                 ),
                 safeDivide(
                     numerator =
-                        minTokenCount.toDouble(),
+                        minimumTokenCount.toDouble(),
                     denominator =
-                        maxTokenCount.toDouble(),
+                        maximumTokenCount.toDouble(),
                 ),
                 safeDivide(
                     numerator =
-                        minCharacterLength.toDouble(),
+                        minimumCharacterLength.toDouble(),
                     denominator =
-                        maxCharacterLength.toDouble(),
+                        maximumCharacterLength.toDouble(),
                 ),
                 if (
-                    normalize(candidate.catalogKey) ==
-                    normalize(candidate.serverKey)
+                    normalize(
+                        value =
+                            candidate.catalogKey,
+                    ) ==
+                    normalize(
+                        value =
+                            candidate.serverKey,
+                    )
                 ) {
                     1.0
                 } else {
@@ -221,28 +246,56 @@ class LocalNutritionMatcherFeatureExtractor :
                 },
             )
 
-        val domainMismatchFeatures =
+        check(
+            baseFeatures.size ==
+                    BASE_FEATURE_COUNT,
+        ) {
+            "Local nutrition matcher base feature vector has " +
+                    "${baseFeatures.size} values, but the base feature " +
+                    "contract contains $BASE_FEATURE_COUNT names."
+        }
+
+        val domainFeatures =
             extractDomainMismatchFeatures(
                 features =
                     candidate.domainMismatchFeatures,
             )
 
+        check(
+            domainFeatures.size ==
+                    DOMAIN_MISMATCH_FEATURE_COUNT,
+        ) {
+            "Local nutrition matcher Domain-Mismatch feature vector has " +
+                    "${domainFeatures.size} values, but the complete domain " +
+                    "feature contract contains " +
+                    "$DOMAIN_MISMATCH_FEATURE_COUNT names."
+        }
+
         val result =
             baseFeatures +
-                    domainMismatchFeatures
+                    domainFeatures
+
+        check(
+            result.size ==
+                    ALL_FEATURE_COUNT,
+        ) {
+            "Local nutrition matcher feature vector has " +
+                    "${result.size} values, but the complete feature " +
+                    "contract contains $ALL_FEATURE_COUNT names."
+        }
 
         check(
             result.size ==
                     featureNames.size,
         ) {
             "Local nutrition matcher feature vector has " +
-                    "${result.size} values, but the feature contract " +
-                    "contains ${featureNames.size} names."
+                    "${result.size} values, but the extractor exposes " +
+                    "${featureNames.size} feature names."
         }
 
         require(
-            result.all {
-                it.isFinite()
+            result.all { value ->
+                value.isFinite()
             },
         ) {
             "Local nutrition matcher feature vector contains " +
@@ -258,7 +311,8 @@ class LocalNutritionMatcherFeatureExtractor :
 
         if (features == null) {
             return DoubleArray(
-                DOMAIN_MISMATCH_FEATURE_COUNT,
+                size =
+                    DOMAIN_MISMATCH_FEATURE_COUNT,
             )
         }
 
@@ -275,7 +329,13 @@ class LocalNutritionMatcherFeatureExtractor :
                 features,
         )
 
+        /*
+         * Die Reihenfolge muss exakt
+         * LocalNutritionMatcherFeatureContract.ALL_DOMAIN_FEATURE_NAMES
+         * entsprechen.
+         */
         return doubleArrayOf(
+            features.observationCount.toDouble(),
             features.dietOrSubstituteDifferenceCount.toDouble(),
             features.crossDomainMismatchCount.toDouble(),
             features.sameDomainDifferentEntityCount.toDouble(),
@@ -287,6 +347,8 @@ class LocalNutritionMatcherFeatureExtractor :
             features.unknownMismatchCount.toDouble(),
             features.identityConflictCount.toDouble(),
             features.modifierDifferenceCount.toDouble(),
+            features.knownSemanticObservationCount.toDouble(),
+            features.unknownSemanticObservationCount.toDouble(),
         )
     }
 
@@ -294,7 +356,7 @@ class LocalNutritionMatcherFeatureExtractor :
         features: NutritionDomainMismatchFeatures,
     ) {
 
-        val allPersistedCounts =
+        val persistedCounts =
             intArrayOf(
                 features.observationCount,
                 features.dietOrSubstituteDifferenceCount,
@@ -313,8 +375,8 @@ class LocalNutritionMatcherFeatureExtractor :
             )
 
         require(
-            allPersistedCounts.all {
-                it >= 0
+            persistedCounts.all { count ->
+                count >= 0
             },
         ) {
             "Nutrition Domain-Mismatch feature counts must not " +
@@ -335,18 +397,22 @@ class LocalNutritionMatcherFeatureExtractor :
         value: String,
     ): Set<String> {
 
-        return normalize(value)
+        return normalize(
+            value =
+                value,
+        )
             .split(" ")
             .asSequence()
-            .map {
-                it.trim()
+            .map { token ->
+                token.trim()
             }
-            .filter {
-                it.length >=
+            .filter { token ->
+                token.length >=
                         MIN_TOKEN_LENGTH
             }
-            .filterNot {
-                it in STOP_TOKENS
+            .filterNot { token ->
+                token in
+                        STOP_TOKENS
             }
             .toSortedSet()
     }
@@ -356,7 +422,9 @@ class LocalNutritionMatcherFeatureExtractor :
     ): String {
 
         return value
-            .lowercase()
+            .lowercase(
+                Locale.ROOT,
+            )
             .replace(
                 NON_ALPHANUMERIC_REGEX,
                 " ",
@@ -381,7 +449,8 @@ class LocalNutritionMatcherFeatureExtractor :
         }
 
         val result =
-            numerator / denominator
+            numerator /
+                    denominator
 
         return if (result.isFinite()) {
             result
@@ -392,57 +461,113 @@ class LocalNutritionMatcherFeatureExtractor :
 
     companion object {
 
-        const val BASE_FEATURE_COUNT =
-            11
+        /**
+         * Compatibility-Zugriff auf die zentral definierten Basisfeatures.
+         *
+         * Neue Implementierungen sollen direkt
+         * LocalNutritionMatcherFeatureContract verwenden.
+         */
+        val BASE_FEATURE_NAMES: List<String>
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .BASE_FEATURE_NAMES
 
-        const val DOMAIN_MISMATCH_FEATURE_COUNT =
-            11
+        /**
+         * Compatibility-Name für sämtliche historisch extrahierbaren
+         * Domain-Mismatch-Features.
+         */
+        val DOMAIN_MISMATCH_FEATURE_NAMES: List<String>
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ALL_DOMAIN_FEATURE_NAMES
 
-        const val FEATURE_COUNT =
-            BASE_FEATURE_COUNT +
-                    DOMAIN_MISMATCH_FEATURE_COUNT
+        val ALL_DOMAIN_FEATURE_NAMES: List<String>
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ALL_DOMAIN_FEATURE_NAMES
 
-        const val DOMAIN_MISMATCH_FEATURE_VERSION =
+        val ACTIVE_DOMAIN_MISMATCH_FEATURE_NAMES: List<String>
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_DOMAIN_FEATURE_NAMES
+
+        val ACTIVE_DOMAIN_FEATURE_NAMES: List<String>
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_DOMAIN_FEATURE_NAMES
+
+        val HARMFUL_DOMAIN_MISMATCH_FEATURE_NAMES: List<String>
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .HARMFUL_DOMAIN_FEATURE_NAMES
+
+        val HARMFUL_DOMAIN_FEATURE_NAMES: List<String>
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .HARMFUL_DOMAIN_FEATURE_NAMES
+
+        val ACTIVE_FEATURE_NAMES: List<String>
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_NAMES
+
+        val ALL_FEATURE_NAMES: List<String>
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ALL_FEATURE_NAMES
+
+        val BASE_FEATURE_COUNT: Int
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .BASE_FEATURE_COUNT
+
+        val DOMAIN_MISMATCH_FEATURE_COUNT: Int
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ALL_DOMAIN_FEATURE_COUNT
+
+        val ALL_DOMAIN_FEATURE_COUNT: Int
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ALL_DOMAIN_FEATURE_COUNT
+
+        val ACTIVE_DOMAIN_MISMATCH_FEATURE_COUNT: Int
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_DOMAIN_FEATURE_COUNT
+
+        val ACTIVE_DOMAIN_FEATURE_COUNT: Int
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_DOMAIN_FEATURE_COUNT
+
+        val ACTIVE_FEATURE_COUNT: Int
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_COUNT
+
+        val ALL_FEATURE_COUNT: Int
+            get() =
+                LocalNutritionMatcherFeatureContract
+                    .ALL_FEATURE_COUNT
+
+        private const val DOMAIN_MISMATCH_FEATURE_VERSION =
             1
-
-        val BASE_FEATURE_NAMES: List<String> =
-            listOf(
-                "diagnostic_score",
-                "reciprocal_candidate_rank",
-                "reciprocal_candidate_count",
-                "shared_token_count",
-                "shared_token_ratio",
-                "token_jaccard",
-                "catalog_token_coverage",
-                "server_token_coverage",
-                "token_count_similarity",
-                "character_length_similarity",
-                "exact_normalized_match",
-            )
-
-        val DOMAIN_MISMATCH_FEATURE_NAMES: List<String> =
-            listOf(
-                "domain_diet_or_substitute_difference_count",
-                "domain_cross_domain_mismatch_count",
-                "domain_same_domain_different_entity_count",
-                "domain_form_or_processing_difference_count",
-                "domain_region_or_style_difference_count",
-                "domain_compatible_relationship_count",
-                "domain_unknown_token_involved_count",
-                "domain_non_semantic_token_difference_count",
-                "domain_unknown_mismatch_count",
-                "domain_identity_conflict_count",
-                "domain_modifier_difference_count",
-            )
 
         private const val MIN_TOKEN_LENGTH =
             2
 
         private val NON_ALPHANUMERIC_REGEX =
-            Regex("[^a-z0-9]+")
+            Regex(
+                pattern =
+                    "[^a-z0-9]+",
+            )
 
         private val WHITESPACE_REGEX =
-            Regex("\\s+")
+            Regex(
+                pattern =
+                    "\\s+",
+            )
 
         private val STOP_TOKENS =
             setOf(

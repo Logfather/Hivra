@@ -6,22 +6,52 @@ import java.io.File
 import kotlin.math.exp
 
 class LocalNutritionMatcherPredictor(
-    private val model: LocalNutritionMatcherModel,
+    private val model:
+    LocalNutritionMatcherModel,
     private val featureExtractor:
-    LocalNutritionMatcherFeatureExtractor =
-        LocalNutritionMatcherFeatureExtractor()
+    LocalNutritionMatcherFeatureProvider =
+        LocalNutritionMatcherFeatureSubsetExtractor(
+            delegate =
+                LocalNutritionMatcherFeatureExtractor(),
+            selectedFeatureNames =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_NAMES,
+        ),
 ) {
 
     init {
+
         val featureCount =
             featureExtractor.featureNames.size
 
         require(
-            model.featureNames ==
-                    featureExtractor.featureNames
+            model.version ==
+                    LocalNutritionMatcherModelContract.CURRENT_VERSION,
         ) {
-            "Local nutrition matcher feature contract differs " +
-                    "from the trained model."
+            "Unsupported local nutrition matcher model version: " +
+                    "expected=" +
+                    LocalNutritionMatcherModelContract.CURRENT_VERSION +
+                    ", actual=" +
+                    model.version +
+                    "."
+        }
+
+        require(
+            featureExtractor.featureNames ==
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_FEATURE_NAMES,
+        ) {
+            "Local nutrition matcher predictor does not use the active " +
+                    "feature contract."
+        }
+
+        require(
+            model.featureNames ==
+                    featureExtractor.featureNames,
+        ) {
+            "Local nutrition matcher model and predictor feature contracts differ. " +
+                    "Model: ${model.featureNames.joinToString()}; " +
+                    "Predictor: ${featureExtractor.featureNames.joinToString()}"
         }
 
         require(
@@ -43,16 +73,31 @@ class LocalNutritionMatcherPredictor(
             "diagnostic_score_available" !in
                     model.featureNames
         ) {
-            "Local matcher model contains forbidden " +
-                    "source-leakage feature."
+            "Local matcher model contains forbidden source-leakage feature."
         }
 
         require(
             model.diagnosticScoreImputationValue
                 .isFinite()
         ) {
-            "Local matcher model contains invalid diagnostic " +
-                    "score imputation value."
+            "Local matcher model contains invalid diagnostic score imputation value."
+        }
+
+        require(
+            model.featureNames.none { featureName ->
+                featureName in
+                        LocalNutritionMatcherFeatureContract
+                            .HARMFUL_DOMAIN_FEATURE_NAMES
+            },
+        ) {
+            "Local nutrition matcher model contains disabled harmful features: " +
+                    model.featureNames
+                        .filter { featureName ->
+                            featureName in
+                                    LocalNutritionMatcherFeatureContract
+                                        .HARMFUL_DOMAIN_FEATURE_NAMES
+                        }
+                        .joinToString()
         }
     }
 

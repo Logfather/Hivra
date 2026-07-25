@@ -9,9 +9,12 @@ import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTraini
 import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTrainingProvenance
 import de.shopme.tools.knowledge.mapping.catalog.training.comparison.LocalNutritionMatcherGptFixtureComparator
 import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherClassificationMetrics
+import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherFeatureContract
 import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherModel
+import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherModelContract
 import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherModelMetrics
 import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherRoleMetrics
+import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherThresholdOptimizationMetadata
 import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherTrainingMetadata
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -358,19 +361,8 @@ class LocalNutritionMatcherGptFixtureComparatorTest {
     ): LocalNutritionMatcherModel {
 
         val featureNames =
-            listOf(
-                "diagnostic_score",
-                "reciprocal_candidate_rank",
-                "reciprocal_candidate_count",
-                "shared_token_count",
-                "shared_token_ratio",
-                "token_jaccard",
-                "catalog_token_coverage",
-                "server_token_coverage",
-                "token_count_similarity",
-                "character_length_similarity",
-                "exact_normalized_match"
-            )
+            LocalNutritionMatcherFeatureContract
+                .ACTIVE_FEATURE_NAMES
 
         val emptyMetrics =
             LocalNutritionMatcherClassificationMetrics(
@@ -390,6 +382,8 @@ class LocalNutritionMatcherGptFixtureComparatorTest {
             )
 
         return LocalNutritionMatcherModel(
+            version =
+                LocalNutritionMatcherModelContract.CURRENT_VERSION,
             featureNames =
                 featureNames,
             featureMeans =
@@ -417,8 +411,39 @@ class LocalNutritionMatcherGptFixtureComparatorTest {
                 -4.0,
             decisionThreshold =
                 0.5,
+            decisionThresholdOptimization =
+                LocalNutritionMatcherThresholdOptimizationMetadata(
+                    calibrationExampleCount =
+                        1,
+                    minimumPrecision =
+                        0.0,
+                    maximumFalsePositiveRate =
+                        1.0,
+                    minimumPredictedPositiveCount =
+                        1,
+                    policySatisfied =
+                        false,
+                    evaluatedThresholdCount =
+                        1,
+                    selectedPrecision =
+                        0.0,
+                    selectedRecall =
+                        0.0,
+                    selectedFalsePositiveRate =
+                        0.0,
+                    selectedF1 =
+                        0.0,
+                    selectedTruePositiveCount =
+                        0,
+                    selectedFalsePositiveCount =
+                        0,
+                    selectedTrueNegativeCount =
+                        1,
+                    selectedFalseNegativeCount =
+                        0,
+                ),
             diagnosticScoreImputationValue =
-                0.5,
+                0.0,
             training =
                 LocalNutritionMatcherTrainingMetadata(
                     datasetFile =
