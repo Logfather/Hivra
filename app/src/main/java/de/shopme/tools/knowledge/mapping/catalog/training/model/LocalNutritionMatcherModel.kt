@@ -1,7 +1,7 @@
 package de.shopme.tools.knowledge.mapping.catalog.training.model
 
 data class LocalNutritionMatcherModel(
-    val version: Int = 2,
+    val version: Int,
     val modelType: String =
         "WEIGHTED_LOGISTIC_REGRESSION",
     val datasetType: String =
@@ -12,6 +12,8 @@ data class LocalNutritionMatcherModel(
     val coefficients: List<Double>,
     val intercept: Double,
     val decisionThreshold: Double,
+    val decisionThresholdOptimization:
+    LocalNutritionMatcherThresholdOptimizationMetadata,
 
     /**
      * Wird ausschließlich aus verfügbaren diagnosticScore-Werten
@@ -26,7 +28,7 @@ data class LocalNutritionMatcherModel(
     val training:
     LocalNutritionMatcherTrainingMetadata,
     val metrics:
-    LocalNutritionMatcherModelMetrics
+    LocalNutritionMatcherModelMetrics,
 )
 
 data class LocalNutritionMatcherTrainingMetadata(
@@ -91,4 +93,21 @@ data class LocalNutritionMatcherRoleMetrics(
 data class TrainLocalNutritionMatcherModelResult(
     val model: LocalNutritionMatcherModel,
     val outputFile: String
+)
+
+data class LocalNutritionMatcherThresholdOptimizationMetadata(
+    val calibrationExampleCount: Int,
+    val minimumPrecision: Double,
+    val maximumFalsePositiveRate: Double,
+    val minimumPredictedPositiveCount: Int,
+    val policySatisfied: Boolean,
+    val evaluatedThresholdCount: Int,
+    val selectedPrecision: Double,
+    val selectedRecall: Double,
+    val selectedFalsePositiveRate: Double,
+    val selectedF1: Double,
+    val selectedTruePositiveCount: Int,
+    val selectedFalsePositiveCount: Int,
+    val selectedTrueNegativeCount: Int,
+    val selectedFalseNegativeCount: Int,
 )

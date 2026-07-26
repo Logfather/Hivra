@@ -5,6 +5,7 @@ import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMa
 import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherFeatureSubsetExtractor
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
 class LocalNutritionMatcherFeatureContractTest {
@@ -326,5 +327,120 @@ class LocalNutritionMatcherFeatureContractTest {
                 "The $contractName contains duplicate feature names: " +
                         duplicateFeatureNames.joinToString(),
         )
+    }
+
+    @Test
+    fun optimizationBaselineIsValidForOptimizationTraining() {
+
+        val featureNames =
+            LocalNutritionMatcherFeatureContract
+                .BASE_FEATURE_NAMES +
+                    LocalNutritionMatcherFeatureContract
+                        .OPTIMIZATION_BASELINE_DOMAIN_FEATURE_NAMES
+
+        LocalNutritionMatcherFeatureContract
+            .validateOptimizationFeatureSubset(
+                featureNames =
+                    featureNames,
+            )
+    }
+
+    @Test
+    fun optimizationAblationIsValidForOptimizationTraining() {
+
+        val removedFeatureName =
+            LocalNutritionMatcherFeatureContract
+                .OPTIMIZATION_BASELINE_DOMAIN_FEATURE_NAMES
+                .first()
+
+        val featureNames =
+            LocalNutritionMatcherFeatureContract
+                .BASE_FEATURE_NAMES +
+                    LocalNutritionMatcherFeatureContract
+                        .OPTIMIZATION_BASELINE_DOMAIN_FEATURE_NAMES
+                        .filterNot { featureName ->
+                            featureName ==
+                                    removedFeatureName
+                        }
+
+        LocalNutritionMatcherFeatureContract
+            .validateOptimizationFeatureSubset(
+                featureNames =
+                    featureNames,
+            )
+    }
+
+    @Test
+    fun productionValidationRejectsHarmfulOptimizationFeatures() {
+
+        val featureNames =
+            LocalNutritionMatcherFeatureContract
+                .BASE_FEATURE_NAMES +
+                    LocalNutritionMatcherFeatureContract
+                        .OPTIMIZATION_BASELINE_DOMAIN_FEATURE_NAMES
+
+        assertFailsWith<IllegalArgumentException> {
+            LocalNutritionMatcherFeatureContract
+                .validateTrainingFeatureSubset(
+                    featureNames =
+                        featureNames,
+                )
+        }
+    }
+
+    @Test
+    fun optimizationValidationRejectsCompleteHistoricalFeatureContract() {
+
+        assertFailsWith<IllegalArgumentException> {
+            LocalNutritionMatcherFeatureContract
+                .validateOptimizationFeatureSubset(
+                    featureNames =
+                        LocalNutritionMatcherFeatureContract
+                            .ALL_FEATURE_NAMES,
+                )
+        }
+    }
+
+    @Test
+    fun activeFeaturesUseOptimizedFeatureSet() {
+
+        assertEquals(
+            expected =
+                LocalNutritionMatcherFeatureContract
+                    .OPTIMIZED_FEATURE_NAMES,
+            actual =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_NAMES,
+        )
+
+        assertEquals(
+            expected =
+                15,
+            actual =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_NAMES
+                    .size,
+        )
+    }
+
+    @Test
+    fun activeFeaturesExcludeHarmfulDomainFeatures() {
+
+        val activeFeatureNames =
+            LocalNutritionMatcherFeatureContract
+                .ACTIVE_FEATURE_NAMES
+
+        LocalNutritionMatcherFeatureContract
+            .HARMFUL_DOMAIN_FEATURE_NAMES
+            .forEach { harmfulFeatureName ->
+                assertTrue(
+                    actual =
+                        harmfulFeatureName !in
+                                activeFeatureNames,
+                    message =
+                        "Harmful domain feature remains active: " +
+                                harmfulFeatureName,
+                )
+            }
     }
 }

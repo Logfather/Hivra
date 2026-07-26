@@ -1,5 +1,6 @@
 package de.shopme.tools.knowledge.rebuild.nutrition.adapter
 
+import com.google.gson.JsonElement
 import com.google.gson.JsonParser
 import de.shopme.tools.knowledge.rebuild.nutrition.NutritionKnowledgeMappingPersistenceStep
 import de.shopme.tools.knowledge.rebuild.nutrition.NutritionKnowledgeRebuildPersistenceResult
@@ -20,8 +21,8 @@ class DefaultNutritionKnowledgeMappingPersistenceStep(
     override fun run():
             NutritionKnowledgeRebuildPersistenceResult {
 
-        val beforeCount =
-            countMappings(
+        val beforeMappings =
+            readMappingIdentities(
                 file =
                     outputMappingFile
             )
@@ -30,18 +31,23 @@ class DefaultNutritionKnowledgeMappingPersistenceStep(
          * Schreibt die aktuell akzeptierten regulären Decisions.
          *
          * Dieser Schritt darf die vorhandene Datei vollständig
-         * ersetzen. Unmittelbar danach werden die persistierten
+         * ersetzen. Dadurch dürfen auch veraltete Mappings aus
+         * früheren Request- oder Decision-Batches entfallen.
+         *
+         * Unmittelbar danach werden die aktuell validierten
          * Representative-Mappings wieder deterministisch ergänzt.
          */
         persistMappings()
 
-        require(outputMappingFile.isFile) {
+        require(
+            outputMappingFile.isFile
+        ) {
             "Catalog-server mapping file was not created: " +
                     outputMappingFile.absolutePath
         }
 
-        val regularMappingCount =
-            countMappings(
+        val regularMappings =
+            readMappingIdentities(
                 file =
                     outputMappingFile
             )
@@ -64,61 +70,95 @@ class DefaultNutritionKnowledgeMappingPersistenceStep(
                     outputMappingFile
             )
 
-        val finalCount =
-            countMappings(
+        val finalMappings =
+            readMappingIdentities(
                 file =
                     outputMappingFile
             )
 
         require(
             representativeResult.existingMappingCount ==
-                    regularMappingCount
+                    regularMappings.size
         ) {
-            "Representative merger read a different regular mapping count."
+            "Representative merger read a different regular " +
+                    "mapping count: regular=${regularMappings.size}, " +
+                    "mergeExisting=" +
+                    "${representativeResult.existingMappingCount}."
         }
 
         require(
-            finalCount ==
+            finalMappings.size ==
                     representativeResult.finalMappingCount
         ) {
             "Persisted mapping count differs from representative " +
-                    "merge result: persisted=$finalCount, " +
+                    "merge result: persisted=${finalMappings.size}, " +
                     "merge=${representativeResult.finalMappingCount}."
         }
 
-        require(finalCount >= beforeCount) {
-            "Nutrition mapping persistence removed mappings: " +
-                    "before=$beforeCount, after=$finalCount."
+        /*
+         * Das Result-Modell unterscheidet:
+         *
+         * - bestehende Mappings, die nach dem Rebuild weiterhin
+         *   vorhanden sind,
+         * - neu hinzugekommene Mappings,
+         * - den finalen Mapping-Bestand.
+         *
+         * Veraltete und entfernte Mappings zählen ausdrücklich
+         * nicht als weiterhin bestehende Mappings.
+         */
+        val unchangedMappings =
+            beforeMappings
+                .intersect(
+                    finalMappings
+                )
+
+        val addedMappings =
+            finalMappings
+                .minus(
+                    beforeMappings
+                )
+
+        val removedMappings =
+            beforeMappings
+                .minus(
+                    finalMappings
+                )
+
+        require(
+            unchangedMappings.size +
+                    addedMappings.size ==
+                    finalMappings.size
+        ) {
+            "Final nutrition mappings are not completely covered " +
+                    "by unchanged and added mappings: " +
+                    "unchanged=${unchangedMappings.size}, " +
+                    "added=${addedMappings.size}, " +
+                    "removed=${removedMappings.size}, " +
+                    "final=${finalMappings.size}."
         }
-
-        val addedCount =
-            finalCount -
-                    beforeCount
-
-        val unchangedCount =
-            finalCount -
-                    addedCount
 
         return NutritionKnowledgeRebuildPersistenceResult(
             existingMappingCount =
-                beforeCount,
+                beforeMappings.size,
             addedMappingCount =
-                addedCount,
+                addedMappings.size,
+            removedMappingCount =
+                removedMappings.size,
             unchangedMappingCount =
-                unchangedCount,
+                unchangedMappings.size,
             conflictCount =
                 0,
             finalMappingCount =
-                finalCount
+                finalMappings.size
         )
     }
 
-    private fun countMappings(
+    private fun readMappingIdentities(
         file: File
-    ): Int {
+    ): Set<String> {
 
         if (!file.isFile) {
-            return 0
+            return emptySet()
         }
 
         val root =
@@ -126,7 +166,9 @@ class DefaultNutritionKnowledgeMappingPersistenceStep(
                 file.readText()
             )
 
-        require(root.isJsonObject) {
+        require(
+            root.isJsonObject
+        ) {
             "Catalog-server mapping file must contain a JSON " +
                     "object: " +
                     file.absolutePath
@@ -144,6 +186,54 @@ class DefaultNutritionKnowledgeMappingPersistenceStep(
                             file.absolutePath
                 )
 
-        return mappings.size()
+        val identities =
+            mappings
+                .map {
+                    createMappingIdentity(
+                        mapping =
+                            it,
+                        file =
+                            file
+                    )
+                }
+
+        require(
+            identities.size ==
+                    identities.toSet().size
+        ) {
+            "Catalog-server mapping file contains duplicate " +
+                    "mappings: " +
+                    file.absolutePath
+        }
+
+        return identities.toSet()
+    }
+
+    private fun createMappingIdentity(
+        mapping: JsonElement,
+        file: File
+    ): String {
+
+        require(
+            mapping.isJsonObject
+        ) {
+            "Catalog-server mapping entry must be a JSON object: " +
+                    file.absolutePath
+        }
+
+        /*
+         * Die vollständige kanonische JSON-Repräsentation wird als
+         * Identität verwendet.
+         *
+         * Eine Änderung des Ziel-Keys oder eines anderen
+         * persistierten Mapping-Feldes wird dadurch korrekt als
+         * Entfernung des alten und Hinzufügung des neuen Mappings
+         * klassifiziert.
+         *
+         * Voraussetzung ist, dass der Mapping-Writer die Properties
+         * deterministisch serialisiert. Das ist für die generierten
+         * Knowledge-Artefakte ohnehin erforderlich.
+         */
+        return mapping.toString()
     }
 }

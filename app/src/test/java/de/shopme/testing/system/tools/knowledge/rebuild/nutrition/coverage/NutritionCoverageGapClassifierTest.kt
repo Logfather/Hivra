@@ -9,6 +9,8 @@ import java.io.File
 import java.nio.file.Files
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertNull
 
 class NutritionCoverageGapClassifierTest {
 
@@ -40,6 +42,12 @@ class NutritionCoverageGapClassifierTest {
                     "catalog-server.mappings.json"
                 )
 
+            val exactMatchReportFile =
+                File(
+                    directory,
+                    "nutrition.matches.json"
+                )
+
             val requestFile =
                 File(
                     directory,
@@ -52,11 +60,7 @@ class NutritionCoverageGapClassifierTest {
                     "nutrition.match-decisions.json"
                 )
 
-            val sourceAvailabilityFile =
-                File(
-                    directory,
-                    "nutrition.off-availability-for-no-candidates.json"
-                )
+
 
             catalogFile.writeText(
                 """
@@ -73,6 +77,9 @@ class NutritionCoverageGapClassifierTest {
                     },
                     {
                       "normalizedEnglish": "frozen berry mix"
+                    },
+                    {
+                      "normalizedEnglish": "liver sausage"
                     },
                     {
                       "normalizedEnglish": "plain yogurt"
@@ -111,6 +118,20 @@ class NutritionCoverageGapClassifierTest {
                       "reason": "Validated representative mapping."
                     }
                   ]
+                }
+                """.trimIndent()
+            )
+
+            exactMatchReportFile.writeText(
+                """
+                {
+                  "version": 1,
+                  "serverArtifact": "nutrition.json",
+                  "exactMatches": [
+                    "apple",
+                    "liver sausage"
+                  ],
+                  "unmatched": []
                 }
                 """.trimIndent()
             )
@@ -180,52 +201,18 @@ class NutritionCoverageGapClassifierTest {
                 """.trimIndent()
             )
 
-            sourceAvailabilityFile.writeText(
-                """
-                {
-                  "version": 1,
-                  "sourceDirectory": "../data/generated/openfoodfacts",
-                  "sourceFileCount": 1,
-                  "scannedProductCount": 4591866,
-                  "targetCount": 1,
-                  "entries": [
-                    {
-                      "catalogKey": "chervil",
-                      "aliases": [
-                        "chervil",
-                        "kerbel"
-                      ],
-                      "matchingOffProductCount": 27,
-                      "directProductMatchCount": 27,
-                      "ingredientOnlyMatchCount": 0,
-                      "productsWithAnyNutritionCount": 0,
-                      "productsWithCompleteNutritionCount": 0,
-                      "productsWithoutNutritionCount": 27,
-                      "productsWithIncompleteCoreNutritionCount": 0,
-                      "estimatedExtractorEligibleCount": 0,
-                      "estimatedExtractorRejectedCount": 27,
-                      "countsByAvailabilityReason": {
-                        "NO_NUTRITION_VALUES": 27
-                      },
-                      "samples": []
-                    }
-                  ]
-                }
-                """.trimIndent()
-            )
-
             val snapshotReader =
                 object :
                     NutritionKnowledgeSnapshotReader {
 
-                    override fun read():
-                            NutritionKnowledgeRebuildSnapshot {
+                    override fun read(
+                    ): NutritionKnowledgeRebuildSnapshot {
 
                         return NutritionKnowledgeRebuildSnapshot(
                             mappingCount =
                                 1,
                             catalogItemCount =
-                                5,
+                                6,
                             exactMatchCount =
                                 1,
                             mappedMatchCount =
@@ -235,9 +222,9 @@ class NutritionCoverageGapClassifierTest {
                             coveredCatalogItemCount =
                                 2,
                             missingCatalogItemCount =
-                                3,
+                                4,
                             coverage =
-                                0.4
+                                2.0 / 6.0
                         )
                     }
                 }
@@ -250,12 +237,12 @@ class NutritionCoverageGapClassifierTest {
                         exactMappingFile,
                     catalogServerMappingFile =
                         catalogServerMappingFile,
+                    exactMatchReportFile =
+                        exactMatchReportFile,
                     requestFile =
                         requestFile,
                     decisionFile =
                         decisionFile,
-                    sourceAvailabilityFile =
-                        sourceAvailabilityFile,
                     snapshotReader =
                         snapshotReader
                 )
@@ -263,7 +250,7 @@ class NutritionCoverageGapClassifierTest {
 
             assertEquals(
                 expected =
-                    5,
+                    6,
                 actual =
                     report.catalogItemCount
             )
@@ -277,14 +264,14 @@ class NutritionCoverageGapClassifierTest {
 
             assertEquals(
                 expected =
-                    3,
+                    4,
                 actual =
                     report.missingCatalogItemCount
             )
 
             assertEquals(
                 expected =
-                    3,
+                    4,
                 actual =
                     report.classifiedGapCount
             )
@@ -301,25 +288,13 @@ class NutritionCoverageGapClassifierTest {
                     listOf(
                         "chervil",
                         "frozen berry mix",
+                        "liver sausage",
                         "plain yogurt"
                     ),
                 actual =
                     report.gaps.map {
                         it.catalogKey
                     }
-            )
-
-            assertEquals(
-                expected =
-                    NutritionCoverageGapType
-                        .SOURCE_DATA_NO_NUTRITION,
-                actual =
-                    report.gaps
-                        .first {
-                            it.catalogKey ==
-                                    "chervil"
-                        }
-                        .type
             )
 
             assertEquals(
@@ -334,6 +309,43 @@ class NutritionCoverageGapClassifierTest {
                         .type
             )
 
+            val liverSausageGap =
+                report.gaps
+                    .first {
+                        it.catalogKey ==
+                                "liver sausage"
+                    }
+
+            assertEquals(
+                expected =
+                    NutritionCoverageGapType
+                        .EXACT_MATCH_NOT_IN_RUNTIME,
+                actual =
+                    liverSausageGap.type
+            )
+
+            assertFalse(
+                actual =
+                    liverSausageGap.requestExists
+            )
+
+            assertEquals(
+                expected =
+                    0,
+                actual =
+                    liverSausageGap.candidateCount
+            )
+
+            assertNull(
+                actual =
+                    liverSausageGap.topCandidateKey
+            )
+
+            assertFalse(
+                actual =
+                    liverSausageGap.mappingExists
+            )
+
             assertEquals(
                 expected =
                     NutritionCoverageGapType.MATCH_NOT_PERSISTED,
@@ -344,6 +356,28 @@ class NutritionCoverageGapClassifierTest {
                                     "plain yogurt"
                         }
                         .type
+            )
+
+            assertEquals(
+                expected =
+                    1,
+                actual =
+                    report.countsByType[
+                        NutritionCoverageGapType
+                            .EXACT_MATCH_NOT_IN_RUNTIME
+                            .name
+                    ]
+            )
+
+            assertEquals(
+                expected =
+                    1,
+                actual =
+                    report.countsByType[
+                        NutritionCoverageGapType
+                            .NO_REQUEST
+                            .name
+                    ] ?: 0
             )
 
         } finally {
@@ -380,6 +414,12 @@ class NutritionCoverageGapClassifierTest {
                     "catalog-server.mappings.json"
                 )
 
+            val exactMatchReportFile =
+                File(
+                    directory,
+                    "nutrition.matches.json"
+                )
+
             val requestFile =
                 File(
                     directory,
@@ -394,91 +434,104 @@ class NutritionCoverageGapClassifierTest {
 
             catalogFile.writeText(
                 """
-            {
-              "foods": [
                 {
-                  "normalizedEnglish": "acerola juice"
+                  "foods": [
+                    {
+                      "normalizedEnglish": "acerola juice"
+                    }
+                  ]
                 }
-              ]
-            }
-            """.trimIndent()
+                """.trimIndent()
             )
 
             exactMappingFile.writeText(
                 """
-            {
-              "version": 1,
-              "mappings": []
-            }
-            """.trimIndent()
+                {
+                  "version": 1,
+                  "mappings": []
+                }
+                """.trimIndent()
             )
 
             catalogServerMappingFile.writeText(
                 """
-            {
-              "version": 1,
-              "mappings": []
-            }
-            """.trimIndent()
+                {
+                  "version": 1,
+                  "mappings": []
+                }
+                """.trimIndent()
+            )
+
+            exactMatchReportFile.writeText(
+                """
+                {
+                  "version": 1,
+                  "serverArtifact": "nutrition.json",
+                  "exactMatches": [],
+                  "unmatched": [
+                    "acerola juice"
+                  ]
+                }
+                """.trimIndent()
             )
 
             requestFile.writeText(
                 """
-            {
-              "version": 1,
-              "requests": [
                 {
-                  "catalogKey": "acerola juice",
-                  "serverArtifact": "nutrition.json",
-                  "candidates": [
+                  "version": 1,
+                  "requests": [
                     {
-                      "serverKey": "orange mango acerola juice drink",
-                      "diagnosticScore": 0.80,
-                      "sharedTokens": [
-                        "acerola",
-                        "juice"
-                      ]
-                    },
-                    {
-                      "serverKey": "mango acerola juice beverage",
-                      "diagnosticScore": 0.78,
-                      "sharedTokens": [
-                        "acerola",
-                        "juice"
+                      "catalogKey": "acerola juice",
+                      "serverArtifact": "nutrition.json",
+                      "candidates": [
+                        {
+                          "serverKey": "orange mango acerola juice drink",
+                          "diagnosticScore": 0.80,
+                          "sharedTokens": [
+                            "acerola",
+                            "juice"
+                          ]
+                        },
+                        {
+                          "serverKey": "mango acerola juice beverage",
+                          "diagnosticScore": 0.78,
+                          "sharedTokens": [
+                            "acerola",
+                            "juice"
+                          ]
+                        }
                       ]
                     }
                   ]
                 }
-              ]
-            }
-            """.trimIndent()
+                """.trimIndent()
             )
 
             decisionFile.writeText(
                 """
-            {
-              "version": 1,
-              "decisions": [
                 {
-                  "catalogKey": "acerola juice",
-                  "serverArtifact": "nutrition.json",
-                  "type": "NO_MATCH",
-                  "selectedServerKey": null,
-                  "confidence": 0.93,
-                  "reason": "Candidates are more specific mixed drinks.",
-                  "decisionSource": "CHAT_GPT"
+                  "version": 1,
+                  "decisions": [
+                    {
+                      "catalogKey": "acerola juice",
+                      "serverArtifact": "nutrition.json",
+                      "type": "NO_MATCH",
+                      "selectedServerKey": null,
+                      "confidence": 0.93,
+                      "reason": "Candidates are more specific mixed drinks.",
+                      "decisionSource": "CHAT_GPT"
+                    }
+                  ]
                 }
-              ]
-            }
-            """.trimIndent()
+                """.trimIndent()
             )
 
             val snapshotReader =
                 object :
                     NutritionKnowledgeSnapshotReader {
 
-                    override fun read():
-                            NutritionKnowledgeRebuildSnapshot {
+                    override fun read(
+                    ): NutritionKnowledgeRebuildSnapshot {
 
                         return NutritionKnowledgeRebuildSnapshot(
                             mappingCount =
@@ -509,6 +562,8 @@ class NutritionCoverageGapClassifierTest {
                         exactMappingFile,
                     catalogServerMappingFile =
                         catalogServerMappingFile,
+                    exactMatchReportFile =
+                        exactMatchReportFile,
                     requestFile =
                         requestFile,
                     decisionFile =
@@ -562,6 +617,12 @@ class NutritionCoverageGapClassifierTest {
                     "catalog-server.mappings.json"
                 )
 
+            val exactMatchReportFile =
+                File(
+                    directory,
+                    "nutrition.matches.json"
+                )
+
             val requestFile =
                 File(
                     directory,
@@ -576,89 +637,102 @@ class NutritionCoverageGapClassifierTest {
 
             catalogFile.writeText(
                 """
-            {
-              "foods": [
                 {
-                  "normalizedEnglish": "apple juice"
+                  "foods": [
+                    {
+                      "normalizedEnglish": "apple juice"
+                    }
+                  ]
                 }
-              ]
-            }
-            """.trimIndent()
+                """.trimIndent()
             )
 
             exactMappingFile.writeText(
                 """
-            {
-              "version": 1,
-              "mappings": []
-            }
-            """.trimIndent()
+                {
+                  "version": 1,
+                  "mappings": []
+                }
+                """.trimIndent()
             )
 
             catalogServerMappingFile.writeText(
                 """
-            {
-              "version": 1,
-              "mappings": []
-            }
-            """.trimIndent()
+                {
+                  "version": 1,
+                  "mappings": []
+                }
+                """.trimIndent()
+            )
+
+            exactMatchReportFile.writeText(
+                """
+                {
+                  "version": 1,
+                  "serverArtifact": "nutrition.json",
+                  "exactMatches": [],
+                  "unmatched": [
+                    "apple juice"
+                  ]
+                }
+                """.trimIndent()
             )
 
             requestFile.writeText(
                 """
-            {
-              "version": 1,
-              "requests": [
                 {
-                  "catalogKey": "apple juice",
-                  "serverArtifact": "nutrition.json",
-                  "candidates": [
+                  "version": 1,
+                  "requests": [
                     {
-                      "serverKey": "apple drink",
-                      "diagnosticScore": 0.74,
-                      "sharedTokens": [
-                        "apple"
-                      ]
-                    },
-                    {
-                      "serverKey": "apple beverage",
-                      "diagnosticScore": 0.68,
-                      "sharedTokens": [
-                        "apple"
+                      "catalogKey": "apple juice",
+                      "serverArtifact": "nutrition.json",
+                      "candidates": [
+                        {
+                          "serverKey": "apple drink",
+                          "diagnosticScore": 0.74,
+                          "sharedTokens": [
+                            "apple"
+                          ]
+                        },
+                        {
+                          "serverKey": "apple beverage",
+                          "diagnosticScore": 0.68,
+                          "sharedTokens": [
+                            "apple"
+                          ]
+                        }
                       ]
                     }
                   ]
                 }
-              ]
-            }
-            """.trimIndent()
+                """.trimIndent()
             )
 
             decisionFile.writeText(
                 """
-            {
-              "version": 1,
-              "decisions": [
                 {
-                  "catalogKey": "apple juice",
-                  "serverArtifact": "nutrition.json",
-                  "type": "NO_MATCH",
-                  "selectedServerKey": null,
-                  "confidence": 0.90,
-                  "reason": "The candidate is broader than apple juice.",
-                  "decisionSource": "CHAT_GPT"
+                  "version": 1,
+                  "decisions": [
+                    {
+                      "catalogKey": "apple juice",
+                      "serverArtifact": "nutrition.json",
+                      "type": "NO_MATCH",
+                      "selectedServerKey": null,
+                      "confidence": 0.90,
+                      "reason": "The candidate is broader than apple juice.",
+                      "decisionSource": "CHAT_GPT"
+                    }
+                  ]
                 }
-              ]
-            }
-            """.trimIndent()
+                """.trimIndent()
             )
 
             val snapshotReader =
                 object :
                     NutritionKnowledgeSnapshotReader {
 
-                    override fun read():
-                            NutritionKnowledgeRebuildSnapshot {
+                    override fun read(
+                    ): NutritionKnowledgeRebuildSnapshot {
 
                         return NutritionKnowledgeRebuildSnapshot(
                             mappingCount =
@@ -689,6 +763,8 @@ class NutritionCoverageGapClassifierTest {
                         exactMappingFile,
                     catalogServerMappingFile =
                         catalogServerMappingFile,
+                    exactMatchReportFile =
+                        exactMatchReportFile,
                     requestFile =
                         requestFile,
                     decisionFile =
@@ -710,7 +786,8 @@ class NutritionCoverageGapClassifierTest {
 
             assertEquals(
                 expected =
-                    NutritionNoMatchCause.MODERATE_TOP_CANDIDATE_REJECTED,
+                    NutritionNoMatchCause
+                        .MODERATE_TOP_CANDIDATE_REJECTED,
                 actual =
                     gap.noMatchCause
             )

@@ -8,6 +8,7 @@ import java.io.File
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
+import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherFeatureContract
 
 class RunNutritionDomainFeatureImpactAnalysisTest {
 
@@ -51,8 +52,8 @@ class RunNutritionDomainFeatureImpactAnalysisTest {
             )
 
         val expectedFeatureNames =
-            LocalNutritionMatcherFeatureExtractor
-                .DOMAIN_MISMATCH_FEATURE_NAMES
+            LocalNutritionMatcherFeatureContract
+                .ALL_DOMAIN_FEATURE_NAMES
 
         assertEquals(
             expected =

@@ -13,7 +13,10 @@ import java.util.zip.GZIPInputStream
 
 class OFFCandidateExtractor(
     private val identityResolver: OFFProductIdentityResolver =
-        OFFProductIdentityResolver()
+        OFFProductIdentityResolver(),
+    private val singleIngredientNutritionAliasExtractor:
+    OFFSingleIngredientNutritionAliasExtractor =
+        OFFSingleIngredientNutritionAliasExtractor(),
 ) {
 
     private companion object {
@@ -108,6 +111,12 @@ class OFFCandidateExtractor(
         val categories =
             json.string("categories")
 
+        val nutritionDimension =
+            parseNutritionDimension(
+                json =
+                    json,
+            )
+
         val aliases =
             listOfNotNull(
                 englishName,
@@ -115,8 +124,32 @@ class OFFCandidateExtractor(
             )
                 .toSortedSet()
 
+        val categoryAliases =
+            extractCategoryAliases(
+                categories =
+                    categories,
+            )
+
+        val singleIngredientNutritionAliases =
+            if (nutritionDimension != null) {
+                singleIngredientNutritionAliasExtractor
+                    .extract(
+                        product =
+                            json,
+                    )
+            } else {
+                emptySet()
+            }
+
         val matchAliases =
-            extractCategoryAliases(categories)
+            (
+                    categoryAliases +
+                            singleIngredientNutritionAliases
+                    )
+                .filterNot { alias ->
+                    alias in aliases
+                }
+                .toSortedSet()
 
         return CanonicalKnowledgeCandidate(
             canonicalId = canonical,
@@ -124,7 +157,7 @@ class OFFCandidateExtractor(
             matchAliases = matchAliases,
             dimensions =
                 listOfNotNull(
-                    parseNutritionDimension(json),
+                    nutritionDimension,
                     parseIngredientsDimension(json),
                     parseAllergensDimension(json),
                     parsePackagingDimension(json),
@@ -148,13 +181,30 @@ class OFFCandidateExtractor(
                     ?: canonical,
                 confidence = 1.0,
                 version = "1",
-                attributes = mapOf(
-                    "productName" to productName,
-                    "brand" to json.string("brands"),
-                    "categories" to categories
-                )
-                    .filterValues { it != null }
-                    .mapValues { it.value!! }
+                attributes =
+                    mapOf(
+                        "productName" to
+                                productName,
+                        "brand" to
+                                json.string(
+                                    "brands",
+                                ),
+                        "categories" to
+                                categories,
+                        "singleIngredientNutritionAliases" to
+                                singleIngredientNutritionAliases
+                                    .joinToString(
+                                        separator =
+                                            "|",
+                                    )
+                                    .takeIf(String::isNotBlank),
+                    )
+                        .filterValues {
+                            it != null
+                        }
+                        .mapValues {
+                            it.value!!
+                        }
             )
         )
     }

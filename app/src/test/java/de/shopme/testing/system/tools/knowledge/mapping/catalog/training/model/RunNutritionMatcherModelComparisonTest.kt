@@ -1,7 +1,7 @@
 package de.shopme.testing.system.tools.knowledge.mapping.catalog.training.model
 
 import com.google.gson.GsonBuilder
-import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherFeatureExtractor
+import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherFeatureContract
 import de.shopme.tools.knowledge.mapping.catalog.training.model.NutritionMatcherModelComparator
 import de.shopme.tools.knowledge.mapping.catalog.training.model.NutritionMatcherModelComparisonReport
 import de.shopme.tools.knowledge.mapping.catalog.training.model.NutritionMatcherRecommendedModel
@@ -87,23 +87,24 @@ class RunNutritionMatcherModelComparisonTest {
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
-                    .BASE_FEATURE_COUNT,
+                LocalNutritionMatcherFeatureContract
+                    .BASE_FEATURE_NAMES
+                    .size,
             actual =
                 report.baselineFeatureCount,
         )
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
-                    .FEATURE_COUNT,
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_COUNT,
             actual =
                 report.extendedFeatureCount,
         )
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
+                LocalNutritionMatcherFeatureContract
                     .BASE_FEATURE_NAMES,
             actual =
                 report.baseline.featureNames,
@@ -111,46 +112,46 @@ class RunNutritionMatcherModelComparisonTest {
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
-                    .BASE_FEATURE_NAMES +
-                        LocalNutritionMatcherFeatureExtractor
-                            .DOMAIN_MISMATCH_FEATURE_NAMES,
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_NAMES,
             actual =
                 report.extended.featureNames,
         )
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
-                    .BASE_FEATURE_COUNT,
+                LocalNutritionMatcherFeatureContract
+                    .BASE_FEATURE_NAMES
+                    .size,
             actual =
                 report.baseline.featureNames.size,
         )
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
-                    .FEATURE_COUNT,
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_COUNT,
             actual =
                 report.extended.featureNames.size,
         )
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
-                    .DOMAIN_MISMATCH_FEATURE_COUNT,
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_DOMAIN_FEATURE_NAMES
+                    .size,
             actual =
                 report.singleFeatureComparisons.size,
         )
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
-                    .DOMAIN_MISMATCH_FEATURE_NAMES,
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_DOMAIN_FEATURE_NAMES,
             actual =
                 report.singleFeatureComparisons
-                    .map {
-                        it.featureName
+                    .map { comparison ->
+                        comparison.featureName
                     },
         )
 
@@ -173,8 +174,9 @@ class RunNutritionMatcherModelComparisonTest {
 
                 assertEquals(
                     expected =
-                        LocalNutritionMatcherFeatureExtractor
-                            .BASE_FEATURE_COUNT + 1,
+                        LocalNutritionMatcherFeatureContract
+                            .BASE_FEATURE_NAMES
+                            .size + 1,
                     actual =
                         comparison.featureCount,
                     message =
@@ -185,8 +187,8 @@ class RunNutritionMatcherModelComparisonTest {
                 assertTrue(
                     actual =
                         comparison.featureName in
-                                LocalNutritionMatcherFeatureExtractor
-                                    .DOMAIN_MISMATCH_FEATURE_NAMES,
+                                LocalNutritionMatcherFeatureContract
+                                    .ACTIVE_DOMAIN_FEATURE_NAMES,
                     message =
                         "Unknown Domain-Mismatch feature: " +
                                 comparison.featureName,
@@ -218,7 +220,9 @@ class RunNutritionMatcherModelComparisonTest {
 
                 assertTrue(
                     actual =
-                        comparison.testBalancedAccuracy.isFinite(),
+                        comparison
+                            .testBalancedAccuracy
+                            .isFinite(),
                     message =
                         "Non-finite balanced accuracy for " +
                                 comparison.featureName,
@@ -226,7 +230,9 @@ class RunNutritionMatcherModelComparisonTest {
 
                 assertTrue(
                     actual =
-                        comparison.testAverageLogLoss.isFinite(),
+                        comparison
+                            .testAverageLogLoss
+                            .isFinite(),
                     message =
                         "Non-finite log loss for " +
                                 comparison.featureName,
@@ -234,7 +240,10 @@ class RunNutritionMatcherModelComparisonTest {
 
                 assertTrue(
                     actual =
-                        comparison.delta.precision.isFinite(),
+                        comparison
+                            .delta
+                            .precision
+                            .isFinite(),
                     message =
                         "Non-finite precision delta for " +
                                 comparison.featureName,
@@ -242,7 +251,10 @@ class RunNutritionMatcherModelComparisonTest {
 
                 assertTrue(
                     actual =
-                        comparison.delta.recall.isFinite(),
+                        comparison
+                            .delta
+                            .recall
+                            .isFinite(),
                     message =
                         "Non-finite recall delta for " +
                                 comparison.featureName,
@@ -250,7 +262,10 @@ class RunNutritionMatcherModelComparisonTest {
 
                 assertTrue(
                     actual =
-                        comparison.delta.f1.isFinite(),
+                        comparison
+                            .delta
+                            .f1
+                            .isFinite(),
                     message =
                         "Non-finite F1 delta for " +
                                 comparison.featureName,
@@ -258,7 +273,8 @@ class RunNutritionMatcherModelComparisonTest {
 
                 assertTrue(
                     actual =
-                        comparison.delta
+                        comparison
+                            .delta
                             .balancedAccuracy
                             .isFinite(),
                     message =
@@ -268,7 +284,8 @@ class RunNutritionMatcherModelComparisonTest {
 
                 assertTrue(
                     actual =
-                        comparison.delta
+                        comparison
+                            .delta
                             .averageLogLoss
                             .isFinite(),
                     message =
@@ -286,7 +303,7 @@ class RunNutritionMatcherModelComparisonTest {
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
+                LocalNutritionMatcherFeatureContract
                     .BASE_FEATURE_NAMES,
             actual =
                 report.recommendation
@@ -354,7 +371,7 @@ class RunNutritionMatcherModelComparisonTest {
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
+                LocalNutritionMatcherFeatureContract
                     .BASE_FEATURE_NAMES,
             actual =
                 persistedReport

@@ -8,17 +8,21 @@ import kotlin.test.assertTrue
 class MultiSourceKnowledgeCandidateMergeTest {
 
     @Test
-    fun mergeOpenFoodFactsAndAgribalyseCandidates() {
+    fun mergeOpenFoodFactsAgribalyseAndCiqualCandidates() {
         val result =
             MultiSourceRuntimeKnowledgeBuild()
                 .build(
                     offFile =
                         File(
-                            "../data/generated/openfoodfacts/off-products-preview-50k.jsonl.gz"
+                            "../data/preview/openfoodfacts/off-products-preview-50k.jsonl.gz"
                         ),
                     agribalyseFile =
                         File(
                             "../data/generated/agribalyse/agribalyse-foods.slim.tsv"
+                        ),
+                    ciqualDirectory =
+                        File(
+                            "../data/raw/ciqual/Ciqual"
                         ),
                     outputDir =
                         File(
@@ -38,6 +42,7 @@ class MultiSourceKnowledgeCandidateMergeTest {
         println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
         println("OFF candidates=${result.offCandidateCount}")
         println("Agribalyse candidates=${result.agribalyseCandidateCount}")
+        println("CIQUAL candidates=${result.ciqualCandidateCount}")
         println("Input candidates=${result.inputCandidateCount}")
         println("Normalized=${result.normalizedCandidateCount}")
         println("Merged=${result.mergedCandidateCount}")
@@ -53,9 +58,7 @@ class MultiSourceKnowledgeCandidateMergeTest {
         println("Nutrition artifact=${result.nutritionArtifactFile.path}")
         println("Environmental artifact=${result.environmentalImpactArtifactFile.path}")
 
-        println("Nutrition candidates=${result.nutritionCandidateCount}")
         println("Ingredients candidates=${result.ingredientsCandidateCount}")
-        println("Environmental candidates=${result.environmentalImpactCandidateCount}")
 
         println("Ingredients artifact entries=${result.ingredientsArtifactEntryCount}")
         println("Ingredients artifact=${result.ingredientsArtifactFile.path}")
@@ -149,10 +152,48 @@ class MultiSourceKnowledgeCandidateMergeTest {
 
         assertTrue(result.ingredientsCandidateCount > 0)
 
-        assertTrue(result.offCandidateCount > 0)
-        assertTrue(result.agribalyseCandidateCount > 0)
+        assertTrue(
+            result.offCandidateCount > 0,
+            "Open Food Facts must produce candidates."
+        )
 
-        assertTrue(result.mergedCandidateCount <= result.inputCandidateCount)
+        assertTrue(
+            result.agribalyseCandidateCount > 0,
+            "Agribalyse must produce candidates."
+        )
+
+        assertTrue(
+            result.ciqualCandidateCount > 0,
+            "CIQUAL must produce nutrition candidates."
+        )
+
+        assertTrue(
+            result.inputCandidateCount ==
+                    result.offCandidateCount +
+                    result.agribalyseCandidateCount +
+                    result.ciqualCandidateCount,
+            "Input candidate count must equal the sum of OFF, Agribalyse and CIQUAL candidates."
+        )
+
+        assertTrue(
+            result.normalizedCandidateCount > 0,
+            "The combined source candidates must produce normalized candidates."
+        )
+
+        assertTrue(
+            result.normalizedCandidateCount <= result.inputCandidateCount,
+            "Normalization must not increase the number of source candidates."
+        )
+
+        assertTrue(
+            result.mergedCandidateCount > 0,
+            "The combined source candidates must produce merged candidates."
+        )
+
+        assertTrue(
+            result.mergedCandidateCount <= result.normalizedCandidateCount,
+            "Merging must not increase the number of normalized candidates."
+        )
 
         assertTrue(result.nutritionCandidateCount > 0)
         assertTrue(result.environmentalImpactCandidateCount > 0)

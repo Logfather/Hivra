@@ -23,8 +23,8 @@ class LocalNutritionMatcherFeatureSubsetExtractorTest {
                     delegate,
                 selectedFeatureNames =
                     listOf(
-                        "third",
                         "first",
+                        "third",
                     ),
             )
 
@@ -39,8 +39,8 @@ class LocalNutritionMatcherFeatureSubsetExtractorTest {
         assertEquals(
             expected =
                 listOf(
-                    "third",
                     "first",
+                    "third",
                 ),
             actual =
                 extractor.featureNames,
@@ -49,8 +49,8 @@ class LocalNutritionMatcherFeatureSubsetExtractorTest {
         assertContentEquals(
             expected =
                 doubleArrayOf(
-                    3.0,
                     1.0,
+                    3.0,
                 ),
             actual =
                 features,

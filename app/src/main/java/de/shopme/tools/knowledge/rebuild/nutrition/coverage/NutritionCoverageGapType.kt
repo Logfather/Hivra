@@ -3,6 +3,15 @@ package de.shopme.tools.knowledge.rebuild.nutrition.coverage
 enum class NutritionCoverageGapType {
 
     /**
+     * Der Catalog Key besitzt laut Catalog→Server-Match-Report einen
+     * exakten Nutrition-Server-Match, ist aber nicht in der erzeugten
+     * Runtime-Abdeckung enthalten.
+     *
+     * Für einen exakten Match ist keine KI-Match-Anfrage erforderlich.
+     */
+    EXACT_MATCH_NOT_IN_RUNTIME,
+
+    /**
      * Für den fehlenden Catalog Key existiert keine persistierte
      * Match-Anfrage.
      */

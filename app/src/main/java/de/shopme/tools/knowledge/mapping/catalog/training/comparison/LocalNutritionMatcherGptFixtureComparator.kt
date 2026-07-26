@@ -6,8 +6,10 @@ import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTraini
 import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTrainingExample
 import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTrainingExampleRole
 import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTrainingLabel
+import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherFeatureContract
 import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherModel
 import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherPredictor
+import de.shopme.tools.knowledge.mapping.catalog.training.model.NutritionMatcherConservativeThresholdPolicyContract
 import java.io.File
 import java.io.PrintStream
 import java.nio.charset.StandardCharsets
@@ -56,9 +58,9 @@ class LocalNutritionMatcherGptFixtureComparator {
         val testExamples =
             dataset.examples
                 .asSequence()
-                .filter {
+                .filter { example ->
                     isTestCatalogKey(
-                        catalogKey = it.catalogKey,
+                        catalogKey = example.catalogKey,
                         model = model
                     )
                 }
@@ -87,8 +89,8 @@ class LocalNutritionMatcherGptFixtureComparator {
         }
 
         require(
-            testExamples.any {
-                it.example.label ==
+            testExamples.any { fixture ->
+                fixture.example.label ==
                         NutritionMatcherTrainingLabel.POSITIVE
             }
         ) {
@@ -96,16 +98,24 @@ class LocalNutritionMatcherGptFixtureComparator {
         }
 
         require(
-            testExamples.any {
-                it.example.label ==
+            testExamples.any { fixture ->
+                fixture.example.label ==
                         NutritionMatcherTrainingLabel.NEGATIVE
             }
         ) {
             "GPT-5.5 comparison fixtures contain no negatives."
         }
 
+        val evaluatedThresholds =
+            (
+                    FIXED_THRESHOLDS +
+                            model.decisionThreshold
+                    )
+                .distinct()
+                .sorted()
+
         val thresholdComparisons =
-            THRESHOLDS.map { threshold ->
+            evaluatedThresholds.map { threshold ->
 
                 calculateThresholdComparison(
                     fixtures = testExamples,
@@ -113,45 +123,87 @@ class LocalNutritionMatcherGptFixtureComparator {
                 )
             }
 
-        val recommendedThreshold =
+        val legacyGridRecommendation =
             selectRecommendedThreshold(
-                comparisons =
-                    thresholdComparisons
+                comparisons = thresholdComparisons
+            )
+
+        val productionThresholdComparison =
+            thresholdComparisons.single { comparison ->
+                comparison.threshold ==
+                        model.decisionThreshold
+            }
+
+        val topOneComparison =
+            calculateTopOneComparison(
+                fixtures = testExamples
             )
 
         val comparison =
             LocalNutritionMatcherGptFixtureComparison(
+                modelVersion =
+                    model.version,
+                modelType =
+                    model.modelType,
+                featureNames =
+                    model.featureNames,
+                featureCount =
+                    model.featureNames.size,
+                productionDecisionThreshold =
+                    model.decisionThreshold,
+                thresholdMinimumPrecision =
+                    model.decisionThresholdOptimization
+                        .minimumPrecision,
+                thresholdMaximumFalsePositiveRate =
+                    model.decisionThresholdOptimization
+                        .maximumFalsePositiveRate,
+                thresholdMinimumPredictedPositiveCount =
+                    model.decisionThresholdOptimization
+                        .minimumPredictedPositiveCount,
+                thresholdPolicySatisfied =
+                    model.decisionThresholdOptimization
+                        .policySatisfied,
+                productionThreshold =
+                    productionThresholdComparison,
                 datasetFile =
                     datasetFile.name,
                 modelFile =
                     modelFile.name,
                 testCatalogKeyCount =
                     testExamples
-                        .map {
-                            it.example.catalogKey
+                        .map { fixture ->
+                            fixture.example.catalogKey
                         }
                         .distinct()
                         .size,
                 testExampleCount =
                     testExamples.size,
                 positiveFixtureCount =
-                    testExamples.count {
-                        it.example.label ==
+                    testExamples.count { fixture ->
+                        fixture.example.label ==
                                 NutritionMatcherTrainingLabel.POSITIVE
                     },
                 negativeFixtureCount =
-                    testExamples.count {
-                        it.example.label ==
+                    testExamples.count { fixture ->
+                        fixture.example.label ==
                                 NutritionMatcherTrainingLabel.NEGATIVE
                     },
                 thresholds =
                     thresholdComparisons,
                 recommendedThreshold =
-                    recommendedThreshold,
+                    legacyGridRecommendation,
                 topOne =
-                    calculateTopOneComparison(
-                        fixtures = testExamples
-                    )
+                    topOneComparison,
+                historicalTopOneAccuracy =
+                    HISTORICAL_TOP_ONE_ACCURACY,
+                historicalMeanPositiveRank =
+                    HISTORICAL_MEAN_POSITIVE_RANK,
+                topOneAccuracyDelta =
+                    topOneComparison.accuracy -
+                            HISTORICAL_TOP_ONE_ACCURACY,
+                meanPositiveRankDelta =
+                    topOneComparison.meanPositiveRank -
+                            HISTORICAL_MEAN_POSITIVE_RANK
             )
 
         validateComparison(
@@ -180,7 +232,9 @@ class LocalNutritionMatcherGptFixtureComparator {
         threshold: Double
     ): LocalNutritionMatcherThresholdComparison {
 
-        require(threshold in 0.0..1.0)
+        require(threshold in 0.0..1.0) {
+            "Threshold must be between 0.0 and 1.0: $threshold"
+        }
 
         var truePositive =
             0
@@ -197,7 +251,8 @@ class LocalNutritionMatcherGptFixtureComparator {
         fixtures.forEach { fixture ->
 
             val predictedPositive =
-                fixture.probability >= threshold
+                fixture.probability >=
+                        threshold
 
             val actualPositive =
                 fixture.example.label ==
@@ -230,31 +285,41 @@ class LocalNutritionMatcherGptFixtureComparator {
             divide(
                 numerator = truePositive,
                 denominator =
-                    truePositive + falsePositive
+                    truePositive +
+                            falsePositive
             )
 
         val recall =
             divide(
                 numerator = truePositive,
                 denominator =
-                    truePositive + falseNegative
+                    truePositive +
+                            falseNegative
             )
 
         val specificity =
             divide(
                 numerator = trueNegative,
                 denominator =
-                    trueNegative + falsePositive
+                    trueNegative +
+                            falsePositive
             )
 
         val f1 =
-            if (precision + recall == 0.0) {
+            if (
+                precision +
+                recall ==
+                0.0
+            ) {
                 0.0
             } else {
                 2.0 *
                         precision *
                         recall /
-                        (precision + recall)
+                        (
+                                precision +
+                                        recall
+                                )
             }
 
         return LocalNutritionMatcherThresholdComparison(
@@ -263,9 +328,11 @@ class LocalNutritionMatcherGptFixtureComparator {
             exampleCount =
                 fixtures.size,
             positiveCount =
-                truePositive + falseNegative,
+                truePositive +
+                        falseNegative,
             negativeCount =
-                trueNegative + falsePositive,
+                trueNegative +
+                        falsePositive,
             truePositive =
                 truePositive,
             falsePositive =
@@ -283,19 +350,24 @@ class LocalNutritionMatcherGptFixtureComparator {
             specificity =
                 specificity,
             balancedAccuracy =
-                (recall + specificity) / 2.0,
+                (
+                        recall +
+                                specificity
+                        ) /
+                        2.0,
             predictedPositiveCount =
-                truePositive + falsePositive,
+                truePositive +
+                        falsePositive,
             predictedNegativeCount =
-                trueNegative + falseNegative,
+                trueNegative +
+                        falseNegative,
             acceptedOriginalMatchRecall =
                 calculateRoleRecall(
                     fixtures = fixtures,
                     role =
                         NutritionMatcherTrainingExampleRole
                             .ACCEPTED_ORIGINAL_MATCH,
-                    threshold =
-                        threshold
+                    threshold = threshold
                 ),
             acceptedRepresentativeRecall =
                 calculateRoleRecall(
@@ -303,8 +375,7 @@ class LocalNutritionMatcherGptFixtureComparator {
                     role =
                         NutritionMatcherTrainingExampleRole
                             .ACCEPTED_SELECTED,
-                    threshold =
-                        threshold
+                    threshold = threshold
                 ),
             rejectedSelectedFalsePositiveRate =
                 calculateRoleFalsePositiveRate(
@@ -312,8 +383,7 @@ class LocalNutritionMatcherGptFixtureComparator {
                     role =
                         NutritionMatcherTrainingExampleRole
                             .REJECTED_SELECTED,
-                    threshold =
-                        threshold
+                    threshold = threshold
                 ),
             noMatchFalsePositiveRate =
                 calculateRoleFalsePositiveRate(
@@ -321,8 +391,7 @@ class LocalNutritionMatcherGptFixtureComparator {
                     role =
                         NutritionMatcherTrainingExampleRole
                             .REJECTED_NO_MATCH_CANDIDATE,
-                    threshold =
-                        threshold
+                    threshold = threshold
                 ),
             alternativeFalsePositiveRate =
                 calculateRoleFalsePositiveRate(
@@ -330,8 +399,7 @@ class LocalNutritionMatcherGptFixtureComparator {
                     role =
                         NutritionMatcherTrainingExampleRole
                             .NON_SELECTED_ALTERNATIVE,
-                    threshold =
-                        threshold
+                    threshold = threshold
                 )
         )
     }
@@ -342,30 +410,27 @@ class LocalNutritionMatcherGptFixtureComparator {
         threshold: Double
     ): Double {
 
-        val roleFixtures =
-            fixtures.filter {
-                it.example.role == role
-            }
-
-        if (roleFixtures.isEmpty()) {
-            return 0.0
-        }
-
-        val positiveFixtures =
-            roleFixtures.filter {
-                it.example.label ==
+        val positiveRoleFixtures =
+            fixtures.filter { fixture ->
+                fixture.example.role ==
+                        role &&
+                        fixture.example.label ==
                         NutritionMatcherTrainingLabel.POSITIVE
             }
 
-        if (positiveFixtures.isEmpty()) {
+        if (
+            positiveRoleFixtures.isEmpty()
+        ) {
             return 0.0
         }
 
-        return positiveFixtures.count {
-            it.probability >= threshold
-        }
+        return positiveRoleFixtures
+            .count { fixture ->
+                fixture.probability >=
+                        threshold
+            }
             .toDouble() /
-                positiveFixtures.size.toDouble()
+                positiveRoleFixtures.size.toDouble()
     }
 
     private fun calculateRoleFalsePositiveRate(
@@ -374,22 +439,27 @@ class LocalNutritionMatcherGptFixtureComparator {
         threshold: Double
     ): Double {
 
-        val negativeFixtures =
-            fixtures.filter {
-                it.example.role == role &&
-                        it.example.label ==
+        val negativeRoleFixtures =
+            fixtures.filter { fixture ->
+                fixture.example.role ==
+                        role &&
+                        fixture.example.label ==
                         NutritionMatcherTrainingLabel.NEGATIVE
             }
 
-        if (negativeFixtures.isEmpty()) {
+        if (
+            negativeRoleFixtures.isEmpty()
+        ) {
             return 0.0
         }
 
-        return negativeFixtures.count {
-            it.probability >= threshold
-        }
+        return negativeRoleFixtures
+            .count { fixture ->
+                fixture.probability >=
+                        threshold
+            }
             .toDouble() /
-                negativeFixtures.size.toDouble()
+                negativeRoleFixtures.size.toDouble()
     }
 
     private fun selectRecommendedThreshold(
@@ -399,12 +469,13 @@ class LocalNutritionMatcherGptFixtureComparator {
 
         val eligible =
             comparisons
-                .filter {
-                    it.precision >=
+                .filter { comparison ->
+                    comparison.precision >=
                             MINIMUM_AUTO_ACCEPT_PRECISION
                 }
-                .filter {
-                    it.truePositive > 0
+                .filter { comparison ->
+                    comparison.truePositive >
+                            0
                 }
 
         val selected =
@@ -412,10 +483,18 @@ class LocalNutritionMatcherGptFixtureComparator {
                 compareBy<
                         LocalNutritionMatcherThresholdComparison
                         >(
-                    { it.recall },
-                    { it.f1 },
-                    { it.precision },
-                    { -it.threshold }
+                    { comparison ->
+                        comparison.recall
+                    },
+                    { comparison ->
+                        comparison.f1
+                    },
+                    { comparison ->
+                        comparison.precision
+                    },
+                    { comparison ->
+                        -comparison.threshold
+                    }
                 )
             )
                 ?: return null
@@ -446,25 +525,30 @@ class LocalNutritionMatcherGptFixtureComparator {
 
         val eligibleGroups =
             fixtures
-                .groupBy {
-                    it.example.catalogKey
+                .groupBy { fixture ->
+                    fixture.example.catalogKey
                 }
                 .filterValues { group ->
-
-                    group.any {
-                        it.example.label ==
+                    group.any { fixture ->
+                        fixture.example.label ==
                                 NutritionMatcherTrainingLabel.POSITIVE
                     }
                 }
 
-        if (eligibleGroups.isEmpty()) {
-
+        if (
+            eligibleGroups.isEmpty()
+        ) {
             return LocalNutritionMatcherTopOneComparison(
-                eligibleCatalogKeyCount = 0,
-                correctCatalogKeyCount = 0,
-                accuracy = 0.0,
-                meanPositiveRank = 0.0,
-                positiveAtRankOneCount = 0
+                eligibleCatalogKeyCount =
+                    0,
+                correctCatalogKeyCount =
+                    0,
+                accuracy =
+                    0.0,
+                meanPositiveRank =
+                    0.0,
+                positiveAtRankOneCount =
+                    0
             )
         }
 
@@ -483,17 +567,17 @@ class LocalNutritionMatcherGptFixtureComparator {
 
                 val ranked =
                     group.sortedWith(
-                        compareByDescending<ScoredFixture> {
-                            it.probability
+                        compareByDescending<ScoredFixture> { fixture ->
+                            fixture.probability
                         }
-                            .thenBy {
-                                it.example.candidateRank
+                            .thenBy { fixture ->
+                                fixture.example.candidateRank
                             }
-                            .thenBy {
-                                it.example.serverKey
+                            .thenBy { fixture ->
+                                fixture.example.serverKey
                             }
-                            .thenBy {
-                                it.example.id
+                            .thenBy { fixture ->
+                                fixture.example.id
                             }
                     )
 
@@ -505,20 +589,30 @@ class LocalNutritionMatcherGptFixtureComparator {
                 }
 
                 val firstPositiveIndex =
-                    ranked.indexOfFirst {
-                        it.example.label ==
+                    ranked.indexOfFirst { fixture ->
+                        fixture.example.label ==
                                 NutritionMatcherTrainingLabel.POSITIVE
                     }
 
-                require(firstPositiveIndex >= 0)
+                require(
+                    firstPositiveIndex >=
+                            0
+                ) {
+                    "Eligible GPT-5.5 fixture group contains no positive " +
+                            "candidate."
+                }
 
                 val positiveRank =
-                    firstPositiveIndex + 1
+                    firstPositiveIndex +
+                            1
 
                 positiveRankSum +=
                     positiveRank.toDouble()
 
-                if (positiveRank == 1) {
+                if (
+                    positiveRank ==
+                    1
+                ) {
                     positiveAtRankOneCount++
                 }
             }
@@ -546,8 +640,7 @@ class LocalNutritionMatcherGptFixtureComparator {
 
         val bucket =
             stableBucket(
-                value =
-                    catalogKey,
+                value = catalogKey,
                 modulo =
                     model.training.splitModulo
             )
@@ -561,11 +654,18 @@ class LocalNutritionMatcherGptFixtureComparator {
         modulo: Int
     ): Int {
 
-        require(modulo > 0)
+        require(
+            modulo >
+                    0
+        ) {
+            "Split modulo must be greater than zero."
+        }
 
         val digest =
             MessageDigest
-                .getInstance("SHA-256")
+                .getInstance(
+                    "SHA-256"
+                )
                 .digest(
                     value.toByteArray(
                         StandardCharsets.UTF_8
@@ -584,7 +684,10 @@ class LocalNutritionMatcherGptFixtureComparator {
                             ) or
                     (digest[3].toInt() and 0xff)
 
-        return (unsigned and Int.MAX_VALUE) %
+        return (
+                unsigned and
+                        Int.MAX_VALUE
+                ) %
                 modulo
     }
 
@@ -592,11 +695,18 @@ class LocalNutritionMatcherGptFixtureComparator {
         dataset: NutritionMatcherTrainingDataset,
         model: LocalNutritionMatcherModel
     ) {
-        require(dataset.version == model.training.datasetVersion) {
+
+        require(
+            dataset.version ==
+                    model.training.datasetVersion
+        ) {
             "Dataset version differs from trained model metadata."
         }
 
-        require(dataset.datasetType == model.datasetType) {
+        require(
+            dataset.datasetType ==
+                    model.datasetType
+        ) {
             "Dataset type differs from trained model."
         }
 
@@ -616,12 +726,70 @@ class LocalNutritionMatcherGptFixtureComparator {
         }
 
         require(
-            model.training.testBuckets.all {
-                it in 0 until
+            model.training.testBuckets.all { bucket ->
+                bucket in
+                        0 until
                         model.training.splitModulo
             }
         ) {
             "Local matcher model contains an invalid test bucket."
+        }
+
+        require(
+            model.featureNames ==
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_FEATURE_NAMES
+        ) {
+            "Local matcher model does not use the active feature contract: " +
+                    "model=${model.featureNames}, " +
+                    "active=" +
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_FEATURE_NAMES
+        }
+
+        require(
+            model.decisionThresholdOptimization.minimumPrecision ==
+                    NutritionMatcherConservativeThresholdPolicyContract
+                        .ACTIVE_POLICY
+                        .minimumPrecision
+        ) {
+            "Local matcher model does not use the active minimum " +
+                    "precision policy."
+        }
+
+        require(
+            model.decisionThresholdOptimization.maximumFalsePositiveRate ==
+                    NutritionMatcherConservativeThresholdPolicyContract
+                        .ACTIVE_POLICY
+                        .maximumFalsePositiveRate
+        ) {
+            "Local matcher model does not use the active maximum " +
+                    "false-positive-rate policy."
+        }
+
+        require(
+            model.decisionThresholdOptimization
+                .minimumPredictedPositiveCount ==
+                    NutritionMatcherConservativeThresholdPolicyContract
+                        .ACTIVE_POLICY
+                        .minimumPredictedPositiveCount
+        ) {
+            "Local matcher model does not use the active minimum " +
+                    "predicted-positive-count policy."
+        }
+
+        require(
+            model.decisionThresholdOptimization.policySatisfied
+        ) {
+            "Local matcher model threshold policy is not satisfied."
+        }
+
+        require(
+            model.decisionThreshold in
+                    0.0..1.0
+        ) {
+            "Local matcher model decision threshold is invalid: " +
+                    model.decisionThreshold
         }
     }
 
@@ -629,44 +797,137 @@ class LocalNutritionMatcherGptFixtureComparator {
         comparison:
         LocalNutritionMatcherGptFixtureComparison
     ) {
+
         require(
             comparison.testExampleCount ==
                     comparison.positiveFixtureCount +
                     comparison.negativeFixtureCount
-        )
+        ) {
+            "Fixture counts are inconsistent."
+        }
+
+        val thresholdValues =
+            comparison.thresholds
+                .map { threshold ->
+                    threshold.threshold
+                }
 
         require(
-            comparison.thresholds.map {
-                it.threshold
-            } == THRESHOLDS
-        )
+            thresholdValues ==
+                    thresholdValues
+                        .distinct()
+                        .sorted()
+        ) {
+            "Threshold comparisons must be unique and sorted."
+        }
 
         require(
-            comparison.thresholds.all {
-                it.exampleCount ==
+            comparison.thresholds.any { threshold ->
+                threshold.threshold ==
+                        comparison.productionDecisionThreshold
+            }
+        ) {
+            "Threshold comparisons do not contain the production threshold."
+        }
+
+        require(
+            comparison.productionThreshold.threshold ==
+                    comparison.productionDecisionThreshold
+        ) {
+            "Production threshold comparison uses a different threshold."
+        }
+
+        require(
+            comparison.thresholds.all { threshold ->
+                threshold.exampleCount ==
                         comparison.testExampleCount
             }
-        )
+        ) {
+            "Threshold comparison example counts are inconsistent."
+        }
 
         require(
-            comparison.thresholds.all {
-                it.truePositive +
-                        it.falsePositive +
-                        it.trueNegative +
-                        it.falseNegative ==
+            comparison.thresholds.all { threshold ->
+                threshold.truePositive +
+                        threshold.falsePositive +
+                        threshold.trueNegative +
+                        threshold.falseNegative ==
                         comparison.testExampleCount
             }
-        )
+        ) {
+            "Threshold comparison confusion matrices are inconsistent."
+        }
 
         require(
-            comparison.thresholds.all {
-                it.precision in 0.0..1.0 &&
-                        it.recall in 0.0..1.0 &&
-                        it.f1 in 0.0..1.0 &&
-                        it.specificity in 0.0..1.0 &&
-                        it.balancedAccuracy in 0.0..1.0
+            comparison.thresholds.all { threshold ->
+                threshold.precision in
+                        0.0..1.0 &&
+                        threshold.recall in
+                        0.0..1.0 &&
+                        threshold.f1 in
+                        0.0..1.0 &&
+                        threshold.specificity in
+                        0.0..1.0 &&
+                        threshold.balancedAccuracy in
+                        0.0..1.0
             }
-        )
+        ) {
+            "Threshold comparison metrics must be between 0.0 and 1.0."
+        }
+
+        require(
+            comparison.featureCount ==
+                    comparison.featureNames.size
+        ) {
+            "Comparison feature count is inconsistent."
+        }
+
+        require(
+            comparison.featureNames ==
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_FEATURE_NAMES
+        ) {
+            "Comparison does not use the active feature set."
+        }
+
+        require(
+            comparison.thresholdPolicySatisfied
+        ) {
+            "Production model threshold policy is not satisfied."
+        }
+
+        require(
+            comparison.modelVersion ==
+                    EXPECTED_PRODUCTION_MODEL_VERSION
+        ) {
+            "Expected productive nutrition matcher model version " +
+                    "$EXPECTED_PRODUCTION_MODEL_VERSION, but was " +
+                    comparison.modelVersion
+        }
+
+        require(
+            comparison.featureCount ==
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_FEATURE_NAMES
+                        .size
+        ) {
+            "Comparison feature count differs from the active feature " +
+                    "contract."
+        }
+
+        require(
+            comparison.topOne.accuracy in
+                    0.0..1.0
+        ) {
+            "TOP-1 accuracy must be between 0.0 and 1.0."
+        }
+
+        require(
+            comparison.topOne.meanPositiveRank >=
+                    1.0
+        ) {
+            "Mean positive rank must be at least 1.0."
+        }
 
         comparison.recommendedThreshold
             ?.let { recommended ->
@@ -674,12 +935,18 @@ class LocalNutritionMatcherGptFixtureComparator {
                 require(
                     recommended.precision >=
                             recommended.minimumPrecision
-                )
+                ) {
+                    "Legacy grid recommendation does not satisfy its " +
+                            "minimum precision."
+                }
 
                 require(
                     recommended.threshold in
-                            THRESHOLDS
-                )
+                            thresholdValues
+                ) {
+                    "Legacy grid recommendation does not reference an " +
+                            "evaluated threshold."
+                }
             }
     }
 
@@ -730,18 +997,25 @@ class LocalNutritionMatcherGptFixtureComparator {
         LocalNutritionMatcherGptFixtureComparison,
         outputFile: File
     ) {
+
         outputFile.parentFile
             ?.let { directory ->
 
-                if (!directory.exists()) {
-                    check(directory.mkdirs()) {
+                if (
+                    !directory.exists()
+                ) {
+                    check(
+                        directory.mkdirs()
+                    ) {
                         "Could not create local matcher comparison " +
                                 "directory: " +
                                 directory.absolutePath
                     }
                 }
 
-                require(directory.isDirectory) {
+                require(
+                    directory.isDirectory
+                ) {
                     "Local matcher comparison parent path is not " +
                             "a directory: " +
                             directory.absolutePath
@@ -755,7 +1029,10 @@ class LocalNutritionMatcherGptFixtureComparator {
                 .create()
 
         outputFile.writeText(
-            gson.toJson(comparison) + "\n"
+            gson.toJson(
+                comparison
+            ) +
+                    "\n"
         )
     }
 
@@ -765,6 +1042,7 @@ class LocalNutritionMatcherGptFixtureComparator {
         outputFile: File,
         output: PrintStream
     ) {
+
         output.println()
         output.println(
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -776,19 +1054,58 @@ class LocalNutritionMatcherGptFixtureComparator {
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         )
         output.println(
-            "Test catalog keys        : " +
+            "Model version             : " +
+                    comparison.modelVersion
+        )
+        output.println(
+            "Model type                : " +
+                    comparison.modelType
+        )
+        output.println(
+            "Feature count             : " +
+                    comparison.featureCount
+        )
+        output.println(
+            "Production threshold      : " +
+                    format(
+                        comparison.productionDecisionThreshold
+                    )
+        )
+        output.println(
+            "Minimum precision policy  : " +
+                    format(
+                        comparison.thresholdMinimumPrecision
+                    )
+        )
+        output.println(
+            "Maximum FPR policy        : " +
+                    format(
+                        comparison.thresholdMaximumFalsePositiveRate
+                    )
+        )
+        output.println(
+            "Minimum predicted positive: " +
+                    comparison.thresholdMinimumPredictedPositiveCount
+        )
+        output.println(
+            "Threshold policy satisfied: " +
+                    comparison.thresholdPolicySatisfied
+        )
+        output.println()
+        output.println(
+            "Test catalog keys         : " +
                     comparison.testCatalogKeyCount
         )
         output.println(
-            "Test examples            : " +
+            "Test examples             : " +
                     comparison.testExampleCount
         )
         output.println(
-            "Positive fixtures        : " +
+            "Positive fixtures         : " +
                     comparison.positiveFixtureCount
         )
         output.println(
-            "Negative fixtures        : " +
+            "Negative fixtures         : " +
                     comparison.negativeFixtureCount
         )
         output.println()
@@ -803,7 +1120,7 @@ class LocalNutritionMatcherGptFixtureComparator {
 
                     append(
                         format(
-                            threshold.threshold,
+                            value = threshold.threshold,
                             width = 9
                         )
                     )
@@ -814,7 +1131,7 @@ class LocalNutritionMatcherGptFixtureComparator {
 
                     append(
                         format(
-                            threshold.precision,
+                            value = threshold.precision,
                             width = 9
                         )
                     )
@@ -825,7 +1142,7 @@ class LocalNutritionMatcherGptFixtureComparator {
 
                     append(
                         format(
-                            threshold.recall,
+                            value = threshold.recall,
                             width = 7
                         )
                     )
@@ -836,7 +1153,7 @@ class LocalNutritionMatcherGptFixtureComparator {
 
                     append(
                         format(
-                            threshold.f1,
+                            value = threshold.f1,
                             width = 7
                         )
                     )
@@ -848,7 +1165,9 @@ class LocalNutritionMatcherGptFixtureComparator {
                     append(
                         threshold.falsePositive
                             .toString()
-                            .padStart(5)
+                            .padStart(
+                                length = 5
+                            )
                     )
 
                     append(
@@ -858,7 +1177,9 @@ class LocalNutritionMatcherGptFixtureComparator {
                     append(
                         threshold.falseNegative
                             .toString()
-                            .padStart(5)
+                            .padStart(
+                                length = 5
+                            )
                     )
 
                     append(
@@ -867,7 +1188,8 @@ class LocalNutritionMatcherGptFixtureComparator {
 
                     append(
                         format(
-                            threshold.noMatchFalsePositiveRate,
+                            value =
+                                threshold.noMatchFalsePositiveRate,
                             width = 12
                         )
                     )
@@ -878,7 +1200,8 @@ class LocalNutritionMatcherGptFixtureComparator {
 
                     append(
                         format(
-                            threshold.alternativeFalsePositiveRate,
+                            value =
+                                threshold.alternativeFalsePositiveRate,
                             width = 7
                         )
                     )
@@ -886,79 +1209,189 @@ class LocalNutritionMatcherGptFixtureComparator {
             )
         }
 
+        val production =
+            comparison.productionThreshold
+
         output.println()
         output.println(
-            "TOP-1 eligible keys      : " +
+            "PRODUCTION THRESHOLD"
+        )
+        output.println(
+            "Precision                 : " +
+                    format(
+                        production.precision
+                    )
+        )
+        output.println(
+            "Recall                    : " +
+                    format(
+                        production.recall
+                    )
+        )
+        output.println(
+            "F1                        : " +
+                    format(
+                        production.f1
+                    )
+        )
+        output.println(
+            "Balanced accuracy         : " +
+                    format(
+                        production.balancedAccuracy
+                    )
+        )
+        output.println(
+            "True positive             : " +
+                    production.truePositive
+        )
+        output.println(
+            "False positive            : " +
+                    production.falsePositive
+        )
+        output.println(
+            "True negative             : " +
+                    production.trueNegative
+        )
+        output.println(
+            "False negative            : " +
+                    production.falseNegative
+        )
+        output.println(
+            "Accepted original recall  : " +
+                    format(
+                        production.acceptedOriginalMatchRecall
+                    )
+        )
+        output.println(
+            "Accepted representative recall: " +
+                    format(
+                        production.acceptedRepresentativeRecall
+                    )
+        )
+        output.println(
+            "NO_MATCH false positive rate: " +
+                    format(
+                        production.noMatchFalsePositiveRate
+                    )
+        )
+        output.println(
+            "Alternative false positive rate: " +
+                    format(
+                        production.alternativeFalsePositiveRate
+                    )
+        )
+
+        output.println()
+        output.println(
+            "TOP-1 eligible keys       : " +
                     comparison.topOne.eligibleCatalogKeyCount
         )
         output.println(
-            "TOP-1 correct keys       : " +
+            "TOP-1 correct keys        : " +
                     comparison.topOne.correctCatalogKeyCount
         )
         output.println(
-            "TOP-1 accuracy           : " +
+            "TOP-1 accuracy            : " +
                     format(
                         comparison.topOne.accuracy
                     )
         )
         output.println(
-            "Mean positive rank       : " +
+            "Mean positive rank        : " +
                     format(
                         comparison.topOne.meanPositiveRank
+                    )
+        )
+        output.println(
+            "Positive at rank one      : " +
+                    comparison.topOne.positiveAtRankOneCount
+        )
+        output.println(
+            "Historical TOP-1 accuracy : " +
+                    format(
+                        comparison.historicalTopOneAccuracy
+                    )
+        )
+        output.println(
+            "TOP-1 accuracy delta      : " +
+                    formatSigned(
+                        comparison.topOneAccuracyDelta
+                    )
+        )
+        output.println(
+            "Historical mean rank      : " +
+                    format(
+                        comparison.historicalMeanPositiveRank
+                    )
+        )
+        output.println(
+            "Mean rank delta           : " +
+                    formatSigned(
+                        comparison.meanPositiveRankDelta
                     )
         )
 
         output.println()
 
-        val recommended =
+        val legacyGridRecommendation =
             comparison.recommendedThreshold
 
-        if (recommended == null) {
-
+        if (
+            legacyGridRecommendation ==
+            null
+        ) {
             output.println(
-                "Recommended threshold    : NONE"
+                "Legacy grid recommendation: NONE"
             )
             output.println(
-                "Reason                   : No threshold reached " +
-                        "minimum precision " +
+                "Reason                    : No evaluated threshold " +
+                        "reached minimum precision " +
                         format(
                             MINIMUM_AUTO_ACCEPT_PRECISION
                         )
             )
-
         } else {
-
             output.println(
-                "Recommended threshold    : " +
+                "Legacy grid recommendation: " +
                         format(
-                            recommended.threshold
+                            legacyGridRecommendation.threshold
                         )
             )
             output.println(
-                "Recommended precision    : " +
+                "Legacy grid precision     : " +
                         format(
-                            recommended.precision
+                            legacyGridRecommendation.precision
                         )
             )
             output.println(
-                "Recommended recall       : " +
+                "Legacy grid recall        : " +
                         format(
-                            recommended.recall
+                            legacyGridRecommendation.recall
                         )
             )
             output.println(
-                "Recommended true positive: " +
-                        recommended.truePositive
+                "Legacy grid F1            : " +
+                        format(
+                            legacyGridRecommendation.f1
+                        )
             )
             output.println(
-                "Recommended false positive: " +
-                        recommended.falsePositive
+                "Legacy grid true positive : " +
+                        legacyGridRecommendation.truePositive
+            )
+            output.println(
+                "Legacy grid false positive: " +
+                        legacyGridRecommendation.falsePositive
+            )
+            output.println(
+                "Legacy grid false negative: " +
+                        legacyGridRecommendation.falseNegative
             )
         }
 
         output.println()
         output.println(
-            "Output                    : " +
+            "Output                     : " +
                     outputFile.absolutePath
         )
         output.println(
@@ -971,7 +1404,10 @@ class LocalNutritionMatcherGptFixtureComparator {
         denominator: Int
     ): Double {
 
-        if (denominator == 0) {
+        if (
+            denominator ==
+            0
+        ) {
             return 0.0
         }
 
@@ -991,11 +1427,27 @@ class LocalNutritionMatcherGptFixtureComparator {
                 value
             )
 
-        return if (width > 0) {
-            formatted.padStart(width)
+        return if (
+            width >
+            0
+        ) {
+            formatted.padStart(
+                length = width
+            )
         } else {
             formatted
         }
+    }
+
+    private fun formatSigned(
+        value: Double
+    ): String {
+
+        return String.format(
+            Locale.ROOT,
+            "%+.4f",
+            value
+        )
     }
 
     private data class ScoredFixture(
@@ -1006,7 +1458,7 @@ class LocalNutritionMatcherGptFixtureComparator {
 
     private companion object {
 
-        val THRESHOLDS =
+        val FIXED_THRESHOLDS =
             listOf(
                 0.50,
                 0.60,
@@ -1020,5 +1472,14 @@ class LocalNutritionMatcherGptFixtureComparator {
 
         const val MINIMUM_AUTO_ACCEPT_PRECISION =
             0.95
+
+        const val HISTORICAL_TOP_ONE_ACCURACY =
+            0.9888
+
+        const val HISTORICAL_MEAN_POSITIVE_RANK =
+            1.01
+
+        const val EXPECTED_PRODUCTION_MODEL_VERSION =
+            5
     }
 }

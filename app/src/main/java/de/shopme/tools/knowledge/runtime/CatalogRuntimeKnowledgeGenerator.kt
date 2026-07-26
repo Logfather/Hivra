@@ -17,6 +17,12 @@ class CatalogRuntimeKnowledgeGenerator(
         ::println
 ) {
 
+    private companion object {
+
+        const val MAX_DIAGNOSTIC_KEYS =
+            25
+    }
+
     fun generate(
         catalogFile: File,
         serverArtifactDirectory: File,
@@ -174,6 +180,166 @@ class CatalogRuntimeKnowledgeGenerator(
             ] = mappedEntry.value.deepCopy()
 
             mappedMatchCount++
+        }
+
+        val expectedCoveredCatalogKeys =
+            catalogKeys
+                .asSequence()
+                .filter { catalogKey ->
+
+                    if (
+                        catalogKey in normalizedServerEntries
+                    ) {
+                        return@filter true
+                    }
+
+                    val mappedServerKey =
+                        mappings[
+                            catalogKey
+                        ]
+                            ?: return@filter false
+
+                    normalizeKey(
+                        value =
+                            mappedServerKey
+                    ) in normalizedServerEntries
+                }
+                .toSortedSet()
+
+        val runtimeCatalogKeys =
+            runtimeEntries
+                .keys
+                .toSortedSet()
+
+        val missingRuntimeCatalogKeys =
+            expectedCoveredCatalogKeys
+                .minus(
+                    runtimeCatalogKeys
+                )
+                .toSortedSet()
+
+        val unexpectedRuntimeCatalogKeys =
+            runtimeCatalogKeys
+                .minus(
+                    expectedCoveredCatalogKeys
+                )
+                .toSortedSet()
+
+        val unresolvedMappedCatalogKeys =
+            catalogKeys
+                .asSequence()
+                .filter { catalogKey ->
+
+                    /*
+                     * Ein Exact Match benötigt kein Mapping und ist für
+                     * dieses Artefakt bereits vollständig aufgelöst.
+                     */
+                    catalogKey !in normalizedServerEntries
+                }
+                .mapNotNull { catalogKey ->
+
+                    val mappedServerKey =
+                        mappings[
+                            catalogKey
+                        ]
+                            ?: return@mapNotNull null
+
+                    val normalizedMappedServerKey =
+                        normalizeKey(
+                            value =
+                                mappedServerKey
+                        )
+
+                    if (
+                        normalizedMappedServerKey in
+                        normalizedServerEntries
+                    ) {
+                        return@mapNotNull null
+                    }
+
+                    RuntimeNutritionUnresolvedMapping(
+                        catalogKey =
+                            catalogKey,
+                        mappedServerKey =
+                            mappedServerKey,
+                        normalizedMappedServerKey =
+                            normalizedMappedServerKey
+                    )
+                }
+                .sortedBy {
+                    it.catalogKey
+                }
+                .toList()
+
+        require(
+            missingRuntimeCatalogKeys.isEmpty() &&
+                    unexpectedRuntimeCatalogKeys.isEmpty()
+        ) {
+            buildString {
+
+                append(
+                    "Runtime knowledge coverage mismatch for artifact "
+                )
+                append(
+                    "'${serverFile.name}': "
+                )
+                append(
+                    "expected=${expectedCoveredCatalogKeys.size}, "
+                )
+                append(
+                    "runtime=${runtimeCatalogKeys.size}, "
+                )
+                append(
+                    "missing=${missingRuntimeCatalogKeys.size}, "
+                )
+                append(
+                    "unexpected=${unexpectedRuntimeCatalogKeys.size}."
+                )
+
+                if (
+                    missingRuntimeCatalogKeys.isNotEmpty()
+                ) {
+                    append(
+                        "\nMissing runtime catalog keys: "
+                    )
+                    append(
+                        missingRuntimeCatalogKeys.joinToString()
+                    )
+                }
+
+                if (
+                    unexpectedRuntimeCatalogKeys.isNotEmpty()
+                ) {
+                    append(
+                        "\nUnexpected runtime catalog keys: "
+                    )
+                    append(
+                        unexpectedRuntimeCatalogKeys.joinToString()
+                    )
+                }
+
+                if (
+                    unresolvedMappedCatalogKeys.isNotEmpty()
+                ) {
+                    append(
+                        "\nMappings whose server keys do not exist:"
+                    )
+
+                    unresolvedMappedCatalogKeys
+                        .take(
+                            MAX_DIAGNOSTIC_KEYS
+                        )
+                        .forEach { mapping ->
+
+                            append(
+                                "\n- catalogKey='${mapping.catalogKey}', " +
+                                        "serverKey='${mapping.mappedServerKey}', " +
+                                        "normalizedServerKey=" +
+                                        "'${mapping.normalizedMappedServerKey}'"
+                            )
+                        }
+                }
+            }
         }
 
         val runtimeFile =
@@ -477,6 +643,27 @@ class CatalogRuntimeKnowledgeGenerator(
         }
 
         return builder.toString()
+    }
+}
+
+private data class RuntimeNutritionUnresolvedMapping(
+    val catalogKey: String,
+    val mappedServerKey: String,
+    val normalizedMappedServerKey: String
+) {
+
+    init {
+        require(catalogKey.isNotBlank()) {
+            "catalogKey must not be blank."
+        }
+
+        require(mappedServerKey.isNotBlank()) {
+            "mappedServerKey must not be blank."
+        }
+
+        require(normalizedMappedServerKey.isNotBlank()) {
+            "normalizedMappedServerKey must not be blank."
+        }
     }
 }
 

@@ -15,7 +15,22 @@ data class LocalNutritionMatcherGptFixtureComparison(
     val recommendedThreshold:
     LocalNutritionMatcherRecommendedThreshold?,
     val topOne:
-    LocalNutritionMatcherTopOneComparison
+    LocalNutritionMatcherTopOneComparison,
+    val modelVersion: Int,
+    val modelType: String,
+    val featureNames: List<String>,
+    val featureCount: Int,
+    val productionDecisionThreshold: Double,
+    val thresholdMinimumPrecision: Double,
+    val thresholdMaximumFalsePositiveRate: Double,
+    val thresholdMinimumPredictedPositiveCount: Int,
+    val thresholdPolicySatisfied: Boolean,
+    val productionThreshold:
+    LocalNutritionMatcherThresholdComparison,
+    val historicalTopOneAccuracy: Double,
+    val historicalMeanPositiveRank: Double,
+    val topOneAccuracyDelta: Double,
+    val meanPositiveRankDelta: Double,
 )
 
 data class LocalNutritionMatcherThresholdComparison(

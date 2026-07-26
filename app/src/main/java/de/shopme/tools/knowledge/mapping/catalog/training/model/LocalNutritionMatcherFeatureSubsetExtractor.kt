@@ -3,152 +3,118 @@ package de.shopme.tools.knowledge.mapping.catalog.training.model
 import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTrainingExample
 
 class LocalNutritionMatcherFeatureSubsetExtractor(
-    private val delegate: LocalNutritionMatcherFeatureProvider =
-        LocalNutritionMatcherFeatureExtractor(),
+    private val delegate: LocalNutritionMatcherFeatureProvider,
     selectedFeatureNames: List<String>,
 ) : LocalNutritionMatcherFeatureProvider {
 
     override val featureNames: List<String> =
         selectedFeatureNames.toList()
 
-    private val selectedIndices: IntArray
+    private val selectedFeatureIndices: List<Int> =
+        featureNames.map { featureName ->
+            val featureIndex =
+                delegate.featureNames.indexOf(
+                    featureName,
+                )
 
-    init {
-        require(featureNames.isNotEmpty()) {
-            "Local nutrition matcher feature subset must not be empty."
-        }
-
-        require(
-            featureNames.size ==
-                    featureNames.distinct().size,
-        ) {
-            "Local nutrition matcher feature subset contains duplicate names."
-        }
-
-        require(
-            delegate.featureNames.isNotEmpty(),
-        ) {
-            "Delegate feature contract must not be empty."
-        }
-
-        require(
-            delegate.featureNames.size ==
-                    delegate.featureNames.distinct().size,
-        ) {
-            "Delegate feature contract contains duplicate names."
-        }
-
-        val delegateIndices =
-            delegate.featureNames
-                .withIndex()
-                .associate {
-                    it.value to it.index
-                }
-
-        val unknownFeatureNames =
-            featureNames.filterNot {
-                it in delegateIndices
+            require(featureIndex >= 0) {
+                "Selected nutrition matcher feature is not provided " +
+                        "by the delegate extractor: $featureName"
             }
 
-        require(unknownFeatureNames.isEmpty()) {
-            "Unknown local nutrition matcher features: " +
-                    unknownFeatureNames
-                        .sorted()
-                        .joinToString()
+            featureIndex
         }
 
-        selectedIndices =
-            featureNames
-                .map { featureName ->
-                    requireNotNull(
-                        delegateIndices[featureName],
-                    ) {
-                        "Missing delegate feature index for: $featureName"
-                    }
-                }
-                .toIntArray()
-    }
+    init {
+        require(
+            featureNames.isNotEmpty(),
+        ) {
+            "Selected nutrition matcher feature names must not be empty."
+        }
 
-    override fun extract(
-        example: NutritionMatcherTrainingExample,
-        diagnosticScoreImputationValue: Double,
-    ): DoubleArray {
+        require(
+            featureNames.distinct().size ==
+                    featureNames.size,
+        ) {
+            "Selected nutrition matcher feature names must be unique."
+        }
 
-        val completeFeatureVector =
-            delegate.extract(
-                example =
-                    example,
-                diagnosticScoreImputationValue =
-                    diagnosticScoreImputationValue,
-            )
+        require(
+            delegate.featureNames.distinct().size ==
+                    delegate.featureNames.size,
+        ) {
+            "Delegate nutrition matcher feature names must be unique."
+        }
 
-        return selectFeatures(
-            completeFeatureVector =
-                completeFeatureVector,
-        )
+        require(
+            selectedFeatureIndices.distinct().size ==
+                    selectedFeatureIndices.size,
+        ) {
+            "Selected nutrition matcher feature indices must be unique."
+        }
+
+        require(
+            selectedFeatureIndices ==
+                    selectedFeatureIndices.sorted(),
+        ) {
+            "Selected nutrition matcher features must preserve the " +
+                    "delegate feature order."
+        }
     }
 
     override fun extract(
         candidate: LocalNutritionMatcherCandidate,
         diagnosticScoreImputationValue: Double,
     ): DoubleArray {
-
-        val completeFeatureVector =
+        val completeFeatures =
             delegate.extract(
-                candidate =
-                    candidate,
+                candidate = candidate,
                 diagnosticScoreImputationValue =
                     diagnosticScoreImputationValue,
             )
 
         return selectFeatures(
-            completeFeatureVector =
-                completeFeatureVector,
+            completeFeatures = completeFeatures,
+        )
+    }
+
+    override fun extract(
+        example: NutritionMatcherTrainingExample,
+        diagnosticScoreImputationValue: Double,
+    ): DoubleArray {
+        val completeFeatures =
+            delegate.extract(
+                example = example,
+                diagnosticScoreImputationValue =
+                    diagnosticScoreImputationValue,
+            )
+
+        return selectFeatures(
+            completeFeatures = completeFeatures,
         )
     }
 
     private fun selectFeatures(
-        completeFeatureVector: DoubleArray,
+        completeFeatures: DoubleArray,
     ): DoubleArray {
-
         require(
-            completeFeatureVector.size ==
+            completeFeatures.size ==
                     delegate.featureNames.size,
         ) {
-            "Delegate feature vector contains " +
-                    "${completeFeatureVector.size} values, but its contract " +
-                    "contains ${delegate.featureNames.size} names."
+            "Delegate nutrition matcher feature vector size differs " +
+                    "from its feature-name contract. Expected " +
+                    delegate.featureNames.size +
+                    ", actual " +
+                    completeFeatures.size +
+                    "."
         }
 
-        val selectedFeatureVector =
-            DoubleArray(
-                size =
-                    selectedIndices.size,
-            ) { targetIndex ->
-
-                completeFeatureVector[
-                    selectedIndices[targetIndex]
-                ]
-            }
-
-        check(
-            selectedFeatureVector.size ==
-                    featureNames.size,
-        ) {
-            "Selected feature vector contains " +
-                    "${selectedFeatureVector.size} values, but its contract " +
-                    "contains ${featureNames.size} names."
+        return DoubleArray(
+            size = selectedFeatureIndices.size,
+        ) { selectedIndex ->
+            completeFeatures[
+                selectedFeatureIndices[selectedIndex]
+            ]
         }
-
-        require(
-            selectedFeatureVector.all {
-                it.isFinite()
-            },
-        ) {
-            "Selected local nutrition matcher feature vector contains " +
-                    "a non-finite value."
-        }
-
-        return selectedFeatureVector
     }
 }

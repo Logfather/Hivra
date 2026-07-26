@@ -25,18 +25,11 @@ class LocalNutritionMatcherModelTrainer(
                     .ACTIVE_FEATURE_NAMES,
         ),
     private val supportedFeatureNames: List<String> =
-        LocalNutritionMatcherFeatureContract
-            .ACTIVE_FEATURE_NAMES,
+        featureExtractor.featureNames,
     private val thresholdOptimizationPolicy:
     NutritionMatcherThresholdOptimizationPolicy =
-        NutritionMatcherThresholdOptimizationPolicy(
-            minimumPrecision =
-                MINIMUM_THRESHOLD_PRECISION,
-            maximumFalsePositiveRate =
-                MAXIMUM_THRESHOLD_FALSE_POSITIVE_RATE,
-            minimumPredictedPositiveCount =
-                MINIMUM_THRESHOLD_PREDICTED_POSITIVE_COUNT,
-        ),
+        NutritionMatcherConservativeThresholdPolicyContract
+            .ACTIVE_POLICY,
 ) {
 
     init {
@@ -51,11 +44,55 @@ class LocalNutritionMatcherModelTrainer(
                     featureExtractor.featureNames.joinToString()
         }
 
-        LocalNutritionMatcherFeatureContract
-            .validateTrainingFeatureSubset(
-                featureNames =
-                    supportedFeatureNames,
-            )
+        validateSupportedFeatureContract(
+            featureNames =
+                supportedFeatureNames,
+        )
+
+        require(
+            thresholdOptimizationPolicy.minimumPrecision in
+                    0.0..1.0,
+        ) {
+            "Threshold optimization minimum precision must be between " +
+                    "zero and one."
+        }
+
+        require(
+            thresholdOptimizationPolicy.maximumFalsePositiveRate in
+                    0.0..1.0,
+        ) {
+            "Threshold optimization maximum false-positive rate must be " +
+                    "between zero and one."
+        }
+
+        require(
+            thresholdOptimizationPolicy.minimumPredictedPositiveCount >
+                    0,
+        ) {
+            "Threshold optimization minimum predicted-positive count must " +
+                    "be positive."
+        }
+
+        require(
+            thresholdOptimizationPolicy.minimumPrecision in
+                    0.0..1.0,
+        ) {
+            "Threshold minimum precision must be between zero and one."
+        }
+
+        require(
+            thresholdOptimizationPolicy.maximumFalsePositiveRate in
+                    0.0..1.0,
+        ) {
+            "Threshold maximum false-positive rate must be between zero and one."
+        }
+
+        require(
+            thresholdOptimizationPolicy.minimumPredictedPositiveCount >
+                    0,
+        ) {
+            "Threshold minimum predicted-positive count must be positive."
+        }
     }
 
     fun train(
@@ -432,6 +469,8 @@ class LocalNutritionMatcherModelTrainer(
                             testByRole,
                     ),
             )
+
+
 
         validateModel(
             model =
@@ -1240,6 +1279,48 @@ class LocalNutritionMatcherModelTrainer(
         )
     }
 
+    private fun validateSupportedFeatureContract(
+        featureNames: List<String>,
+    ) {
+
+        require(
+            featureNames.isNotEmpty(),
+        ) {
+            "Local nutrition matcher trainer feature contract must not " +
+                    "be empty."
+        }
+
+        require(
+            featureNames.distinct().size ==
+                    featureNames.size,
+        ) {
+            "Local nutrition matcher trainer feature contract contains " +
+                    "duplicate feature names: " +
+                    featureNames.joinToString()
+        }
+
+        val isProductionFeatureContract =
+            featureNames ==
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_FEATURE_NAMES
+
+        if (isProductionFeatureContract) {
+            LocalNutritionMatcherFeatureContract
+                .validateTrainingFeatureSubset(
+                    featureNames =
+                        featureNames,
+                )
+
+            return
+        }
+
+        LocalNutritionMatcherFeatureContract
+            .validateOptimizationFeatureSubset(
+                featureNames =
+                    featureNames,
+            )
+    }
+
     private fun validateModel(
         model: LocalNutritionMatcherModel,
     ) {
@@ -1255,11 +1336,7 @@ class LocalNutritionMatcherModelTrainer(
                     model.featureNames.joinToString()
         }
 
-        LocalNutritionMatcherFeatureContract
-            .validateTrainingFeatureSubset(
-                featureNames =
-                    model.featureNames,
-            )
+        validateSupportedFeatureContract( featureNames = model.featureNames, )
 
         require(
             model.version ==

@@ -98,8 +98,23 @@ class RunLocalNutritionMatcherGptFixtureComparisonTest {
                         comparison.negativeFixtureCount
         )
 
+        val thresholdValues =
+            comparison.thresholds
+                .map {
+                    it.threshold
+                }
+
         assertEquals(
             expected =
+                thresholdValues
+                    .distinct()
+                    .sorted(),
+            actual =
+                thresholdValues
+        )
+
+        assertTrue(
+            thresholdValues.containsAll(
                 listOf(
                     0.50,
                     0.60,
@@ -109,11 +124,21 @@ class RunLocalNutritionMatcherGptFixtureComparisonTest {
                     0.95,
                     0.98,
                     0.99
-                ),
+                )
+            )
+        )
+
+        assertTrue(
+            thresholdValues.contains(
+                comparison.productionDecisionThreshold
+            )
+        )
+
+        assertEquals(
+            expected =
+                comparison.productionDecisionThreshold,
             actual =
-                comparison.thresholds.map {
-                    it.threshold
-                }
+                comparison.productionThreshold.threshold
         )
 
         assertTrue(

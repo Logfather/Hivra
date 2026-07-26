@@ -74,25 +74,31 @@ class RunProductiveNutritionKnowledgeRebuildWorkflowTest {
             )
 
             assertTrue(
-                files.rebuildResultFile.isFile,
-                "Nutrition rebuild report was not created: " +
-                        files.rebuildResultFile.absolutePath
+                actual =
+                    files.rebuildResultFile.isFile,
+                message =
+                    "Nutrition rebuild report was not created: " +
+                            files.rebuildResultFile.absolutePath
             )
 
             assertTrue(
-                files.runtimeNutritionFile.isFile,
-                "Runtime nutrition artifact was not created: " +
-                        files.runtimeNutritionFile.absolutePath
+                actual =
+                    files.runtimeNutritionFile.isFile,
+                message =
+                    "Runtime nutrition artifact was not created: " +
+                            files.runtimeNutritionFile.absolutePath
             )
 
             assertEquals(
-                expected = 0,
+                expected =
+                    0,
                 actual =
                     result.matching.gptFallbackRequiredCount
             )
 
             assertEquals(
-                expected = 0,
+                expected =
+                    0,
                 actual =
                     result.matching.errorCount
             )
@@ -122,19 +128,44 @@ class RunProductiveNutritionKnowledgeRebuildWorkflowTest {
                             result.matching.chatGptDecisionCount
             )
 
-            assertTrue(
-                result.after.mappingCount >=
-                        result.before.mappingCount
+            /*
+             * Der produktive Rebuild bildet den aktuellen validierten
+             * Request-, Decision- und Mapping-Bestand ab.
+             *
+             * Veraltete Mappings dürfen dabei entfernt werden.
+             * Deshalb wird keine monotone Zunahme des Mapping-Bestands
+             * oder der Coverage vorausgesetzt.
+             */
+            assertEquals(
+                expected =
+                    result.persistence.existingMappingCount +
+                            result.persistence.addedMappingCount -
+                            result.persistence.removedMappingCount,
+                actual =
+                    result.persistence.finalMappingCount
             )
 
-            assertTrue(
-                result.after.coveredCatalogItemCount >=
-                        result.before.coveredCatalogItemCount
+            assertEquals(
+                expected =
+                    result.persistence.addedMappingCount -
+                            result.persistence.removedMappingCount,
+                actual =
+                    result.delta.mappingCount
             )
 
-            assertTrue(
-                result.after.missingCatalogItemCount <=
-                        result.before.missingCatalogItemCount
+            assertEquals(
+                expected =
+                    result.before.mappingCount +
+                            result.delta.mappingCount,
+                actual =
+                    result.after.mappingCount
+            )
+
+            assertEquals(
+                expected =
+                    result.persistence.finalMappingCount,
+                actual =
+                    result.after.mappingCount
             )
 
             assertEquals(
@@ -158,6 +189,37 @@ class RunProductiveNutritionKnowledgeRebuildWorkflowTest {
                             result.after.coveredCatalogItemCount,
                 actual =
                     result.after.missingCatalogItemCount
+            )
+
+            assertEquals(
+                expected =
+                    result.before.catalogItemCount,
+                actual =
+                    result.after.catalogItemCount
+            )
+
+            assertEquals(
+                expected =
+                    result.before.coveredCatalogItemCount +
+                            result.delta.coveredCatalogItemCount,
+                actual =
+                    result.after.coveredCatalogItemCount
+            )
+
+            assertEquals(
+                expected =
+                    result.before.missingCatalogItemCount +
+                            result.delta.missingCatalogItemCount,
+                actual =
+                    result.after.missingCatalogItemCount
+            )
+
+            assertEquals(
+                expected =
+                    0,
+                actual =
+                    result.delta.coveredCatalogItemCount +
+                            result.delta.missingCatalogItemCount
             )
 
             val persisted =
@@ -218,12 +280,26 @@ class RunProductiveNutritionKnowledgeRebuildWorkflowTest {
                         result.before.mappingCount
             )
             println(
+                "Mappings unchanged        : " +
+                        result.persistence.unchangedMappingCount
+            )
+            println(
+                "Mappings added            : " +
+                        result.persistence.addedMappingCount
+            )
+            println(
+                "Mappings removed          : " +
+                        result.persistence.removedMappingCount
+            )
+            println(
                 "Mappings after            : " +
                         result.after.mappingCount
             )
             println(
-                "Mappings added            : " +
-                        result.delta.mappingCount
+                "Mapping delta             : " +
+                        formatSignedCount(
+                            result.delta.mappingCount
+                        )
             )
             println()
             println(
@@ -235,8 +311,10 @@ class RunProductiveNutritionKnowledgeRebuildWorkflowTest {
                         result.after.coveredCatalogItemCount
             )
             println(
-                "Covered added             : " +
-                        result.delta.coveredCatalogItemCount
+                "Covered delta             : " +
+                        formatSignedCount(
+                            result.delta.coveredCatalogItemCount
+                        )
             )
             println()
             println(
@@ -246,6 +324,12 @@ class RunProductiveNutritionKnowledgeRebuildWorkflowTest {
             println(
                 "Missing after             : " +
                         result.after.missingCatalogItemCount
+            )
+            println(
+                "Missing delta             : " +
+                        formatSignedCount(
+                            result.delta.missingCatalogItemCount
+                        )
             )
             println()
             println(
@@ -279,9 +363,8 @@ class RunProductiveNutritionKnowledgeRebuildWorkflowTest {
              * den Runner fortlaufend persistiert und erlaubt daher
              * grundsätzlich eine Wiederaufnahme.
              *
-             * Mapping- und Runtime-Dateien werden bei einem Fehler
-             * auf ihren vorherigen Stand zurückgesetzt, damit kein
-             * teilweise aufgebauter Runtime-Bestand bestehen bleibt.
+             * Die Mapping-Datei wird bei einem Fehler auf ihren
+             * vorherigen Stand zurückgesetzt.
              */
             restoreFile(
                 file =
@@ -301,7 +384,9 @@ class RunProductiveNutritionKnowledgeRebuildWorkflowTest {
         if (previousContent == null) {
 
             if (file.exists()) {
-                check(file.delete()) {
+                check(
+                    file.delete()
+                ) {
                     "Could not delete newly created file after " +
                             "failed productive rebuild: " +
                             file.absolutePath
@@ -315,7 +400,9 @@ class RunProductiveNutritionKnowledgeRebuildWorkflowTest {
             ?.let { directory ->
 
                 if (!directory.exists()) {
-                    check(directory.mkdirs()) {
+                    check(
+                        directory.mkdirs()
+                    ) {
                         "Could not create restore directory: " +
                                 directory.absolutePath
                     }
@@ -324,6 +411,17 @@ class RunProductiveNutritionKnowledgeRebuildWorkflowTest {
 
         file.writeText(
             previousContent
+        )
+    }
+
+    private fun formatSignedCount(
+        value: Int
+    ): String {
+
+        return String.format(
+            java.util.Locale.ROOT,
+            "%+d",
+            value
         )
     }
 }

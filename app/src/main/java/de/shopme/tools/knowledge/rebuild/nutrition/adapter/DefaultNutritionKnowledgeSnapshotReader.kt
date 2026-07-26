@@ -81,10 +81,10 @@ class DefaultNutritionKnowledgeSnapshotReader(
                     )
                 .toSortedSet()
 
-        val runtimeEntryCount =
+        val runtimeCatalogKeys =
             if (runtimeNutritionFile.isFile) {
 
-                countKnowledgeEntries(
+                readKnowledgeEntryKeys(
                     file =
                         runtimeNutritionFile,
                     sourceName =
@@ -93,8 +93,11 @@ class DefaultNutritionKnowledgeSnapshotReader(
 
             } else {
 
-                coveredCatalogKeys.size
+                coveredCatalogKeys
             }
+
+        val runtimeEntryCount =
+            runtimeCatalogKeys.size
 
         val catalogItemCount =
             catalogKeys.size
@@ -108,6 +111,38 @@ class DefaultNutritionKnowledgeSnapshotReader(
         val coveredCount =
             coveredCatalogKeys.size
 
+        val missingRuntimeCatalogKeys =
+            coveredCatalogKeys
+                .minus(
+                    runtimeCatalogKeys
+                )
+                .toSortedSet()
+
+        val unexpectedRuntimeCatalogKeys =
+            runtimeCatalogKeys
+                .minus(
+                    coveredCatalogKeys
+                )
+                .toSortedSet()
+
+        val missingRuntimeMappingDetails =
+            missingRuntimeCatalogKeys
+                .map { catalogKey ->
+
+                    RuntimeNutritionCoverageMismatchEntry(
+                        catalogKey =
+                            catalogKey,
+                        exactServerKey =
+                            exactMappings[
+                                catalogKey
+                            ],
+                        mappedServerKey =
+                            catalogServerMappings[
+                                catalogKey
+                            ]
+                    )
+                }
+
         val missingCount =
             catalogItemCount -
                     coveredCount
@@ -117,16 +152,86 @@ class DefaultNutritionKnowledgeSnapshotReader(
          * Seine Eintragszahl muss der disjunkten Summe aus Exact und
          * Catalog→Server-Mappings entsprechen.
          */
-        require(
-            runtimeEntryCount ==
-                    coveredCount
-        ) {
-            "Runtime nutrition entry count differs from calculated " +
-                    "coverage: runtime=$runtimeEntryCount, " +
-                    "exact=$exactMatchCount, " +
-                    "mapped=$mappedMatchCount, " +
-                    "covered=$coveredCount."
-        }
+
+            require(
+                missingRuntimeCatalogKeys.isEmpty() &&
+                        unexpectedRuntimeCatalogKeys.isEmpty()
+            ) {
+
+            }
+                buildString {
+
+                    if (
+                        missingRuntimeMappingDetails.size >
+                        MAX_DIAGNOSTIC_KEYS
+                    ) {
+                        append(
+                            "\n... ${missingRuntimeMappingDetails.size - MAX_DIAGNOSTIC_KEYS} " +
+                                    "additional missing runtime catalog keys omitted."
+                        )
+                    }
+
+                    append(
+                        "Runtime nutrition coverage mismatch: "
+                    )
+                    append(
+                        "runtime=$runtimeEntryCount, "
+                    )
+                    append(
+                        "exact=$exactMatchCount, "
+                    )
+                    append(
+                        "mapped=$mappedMatchCount, "
+                    )
+                    append(
+                        "covered=$coveredCount, "
+                    )
+                    append(
+                        "missing=${missingRuntimeCatalogKeys.size}, "
+                    )
+                    append(
+                        "unexpected=${unexpectedRuntimeCatalogKeys.size}."
+                    )
+
+                    if (
+                        missingRuntimeMappingDetails.isNotEmpty()
+                    ) {
+                        append(
+                            "\nMissing runtime catalog keys:"
+                        )
+
+                        missingRuntimeMappingDetails
+                            .take(
+                                MAX_DIAGNOSTIC_KEYS
+                            )
+                            .forEach { entry ->
+
+                                append(
+                                    "\n- catalogKey='${entry.catalogKey}', " +
+                                            "exactServerKey=" +
+                                            "'${entry.exactServerKey ?: "-"}', " +
+                                            "mappedServerKey=" +
+                                            "'${entry.mappedServerKey ?: "-"}'"
+                                )
+                            }
+                    }
+
+                    if (
+                        unexpectedRuntimeCatalogKeys.isNotEmpty()
+                    ) {
+                        append(
+                            "\nUnexpected runtime catalog keys: "
+                        )
+                        append(
+                            unexpectedRuntimeCatalogKeys
+                                .take(
+                                    MAX_DIAGNOSTIC_KEYS
+                                )
+                                .joinToString()
+                        )
+                    }
+                }
+
 
         return NutritionKnowledgeRebuildSnapshot(
             mappingCount =
@@ -401,6 +506,52 @@ class DefaultNutritionKnowledgeSnapshotReader(
         )
     }
 
+    private fun readKnowledgeEntryKeys(
+        file: File,
+        sourceName: String
+    ): Set<String> {
+
+        require(file.isFile) {
+            "$sourceName does not exist: ${file.absolutePath}"
+        }
+
+        val root =
+            JsonParser.parseString(
+                file.readText()
+            )
+
+        require(root.isJsonObject) {
+            "$sourceName must contain a JSON object."
+        }
+
+        val rootObject =
+            root.asJsonObject
+
+        val entries =
+            rootObject[
+                "entries"
+            ]
+                ?.takeIf {
+                    it.isJsonObject
+                }
+                ?.asJsonObject
+                ?: rootObject
+
+        return entries
+            .keySet()
+            .asSequence()
+            .map { key ->
+                normalizeKey(
+                    value =
+                        key
+                )
+            }
+            .filter(
+                String::isNotBlank
+            )
+            .toSortedSet()
+    }
+
     private fun countKnowledgeEntries(
         element: JsonElement,
         sourceName: String,
@@ -545,7 +696,7 @@ class DefaultNutritionKnowledgeSnapshotReader(
             "nutrition.json"
 
         const val MAX_DIAGNOSTIC_KEYS =
-            10
+            25
 
         val WHITESPACE_REGEX =
             Regex("\\s+")
@@ -576,5 +727,26 @@ class DefaultNutritionKnowledgeSnapshotReader(
                 "count",
                 "entryCount"
             )
+    }
+}
+
+private data class RuntimeNutritionCoverageMismatchEntry(
+    val catalogKey: String,
+    val exactServerKey: String?,
+    val mappedServerKey: String?
+) {
+
+    init {
+        require(catalogKey.isNotBlank()) {
+            "catalogKey must not be blank."
+        }
+
+        require(
+            exactServerKey != null ||
+                    mappedServerKey != null
+        ) {
+            "A missing runtime catalog key must have an exact or " +
+                    "catalog-server mapping."
+        }
     }
 }

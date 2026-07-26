@@ -13,6 +13,7 @@ import java.nio.file.Files
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
+import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherFeatureContract
 
 class NutritionMatcherModelComparisonReportWriterTest {
 
@@ -37,7 +38,7 @@ class NutritionMatcherModelComparisonReportWriterTest {
             val baselineSnapshot =
                 snapshot(
                     featureNames =
-                        LocalNutritionMatcherFeatureExtractor
+                        LocalNutritionMatcherFeatureContract
                             .BASE_FEATURE_NAMES,
                     f1 =
                         0.57,
@@ -48,10 +49,10 @@ class NutritionMatcherModelComparisonReportWriterTest {
             val extendedSnapshot =
                 snapshot(
                     featureNames =
-                        LocalNutritionMatcherFeatureExtractor
+                        LocalNutritionMatcherFeatureContract
                             .BASE_FEATURE_NAMES +
-                                LocalNutritionMatcherFeatureExtractor
-                                    .DOMAIN_MISMATCH_FEATURE_NAMES,
+                                LocalNutritionMatcherFeatureContract
+                                    .ALL_DOMAIN_FEATURE_NAMES,
                     f1 =
                         0.54,
                     balancedAccuracy =
@@ -96,7 +97,7 @@ class NutritionMatcherModelComparisonReportWriterTest {
                             recommendedModel =
                                 NutritionMatcherRecommendedModel.BASELINE,
                             recommendedFeatureNames =
-                                LocalNutritionMatcherFeatureExtractor
+                                LocalNutritionMatcherFeatureContract
                                     .BASE_FEATURE_NAMES,
                             reason =
                                 "Baseline retained.",

@@ -2,8 +2,8 @@ package de.shopme.tools.knowledge.rebuild.nutrition
 
 interface NutritionKnowledgeSnapshotReader {
 
-    fun read():
-            NutritionKnowledgeRebuildSnapshot
+    fun read(
+    ): NutritionKnowledgeRebuildSnapshot
 }
 
 interface NutritionKnowledgeRequestRebuilder {

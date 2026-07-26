@@ -6,11 +6,13 @@ import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTraini
 import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTrainingLabel
 import de.shopme.tools.knowledge.mapping.catalog.training.NutritionMatcherTrainingProvenance
 import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherCandidate
+import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherFeatureContract
 import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherFeatureExtractor
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 class LocalNutritionMatcherFeatureExtractorLeakageTest {
 
@@ -27,7 +29,7 @@ class LocalNutritionMatcherFeatureExtractorLeakageTest {
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor.FEATURE_COUNT,
+                LocalNutritionMatcherFeatureContract.ALL_FEATURE_COUNT,
             actual =
                 extractor.featureNames.size,
         )
@@ -113,29 +115,29 @@ class LocalNutritionMatcherFeatureExtractorLeakageTest {
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor.FEATURE_COUNT,
+                LocalNutritionMatcherFeatureContract.ALL_FEATURE_COUNT,
             actual =
                 extractor.featureNames.size,
         )
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
+                LocalNutritionMatcherFeatureContract
                     .BASE_FEATURE_NAMES,
             actual =
                 extractor.featureNames.take(
-                    LocalNutritionMatcherFeatureExtractor
+                    LocalNutritionMatcherFeatureContract
                         .BASE_FEATURE_COUNT,
                 ),
         )
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor
-                    .DOMAIN_MISMATCH_FEATURE_NAMES,
+                LocalNutritionMatcherFeatureContract
+                    .ALL_DOMAIN_FEATURE_NAMES,
             actual =
                 extractor.featureNames.drop(
-                    LocalNutritionMatcherFeatureExtractor
+                    LocalNutritionMatcherFeatureContract
                         .BASE_FEATURE_COUNT,
                 ),
         )
@@ -212,37 +214,43 @@ class LocalNutritionMatcherFeatureExtractorLeakageTest {
 
         assertEquals(
             expected =
-                LocalNutritionMatcherFeatureExtractor.FEATURE_COUNT,
-            actual =
+                LocalNutritionMatcherFeatureContract.ALL_FEATURE_COUNT,
                 features.size,
         )
 
         assertContentEquals(
             expected =
                 doubleArrayOf(
-                    14.0,
-                    1.0,
-                    2.0,
-                    3.0,
-                    4.0,
-                    5.0,
-                    6.0,
-                    7.0,
-                    8.0,
-                    9.0,
-                    10.0,
-                    11.0,
-                    12.0,
-                    2.0,
+                    1.0,   // dietOrSubstituteDifferenceCount
+                    2.0,   // crossDomainMismatchCount
+                    3.0,   // sameDomainDifferentEntityCount
+                    4.0,   // formOrProcessingDifferenceCount
+                    5.0,   // regionOrStyleDifferenceCount
+                    6.0,   // compatibleDomainRelationshipCount
+                    7.0,   // unknownTokenInvolvedCount
+                    8.0,   // nonSemanticTokenDifferenceCount
+                    9.0,   // unknownMismatchCount
+                    10.0,  // identityConflictCount
+                    11.0,  // modifierDifferenceCount
                 ),
             actual =
                 features.copyOfRange(
                     fromIndex =
-                        LocalNutritionMatcherFeatureExtractor
+                        LocalNutritionMatcherFeatureContract
                             .BASE_FEATURE_COUNT,
                     toIndex =
-                        LocalNutritionMatcherFeatureExtractor
-                            .FEATURE_COUNT,
+                        LocalNutritionMatcherFeatureContract.ALL_FEATURE_COUNT,
+                ),
+        )
+
+        assertEquals(
+            expected =
+                LocalNutritionMatcherFeatureContract
+                    .ALL_DOMAIN_FEATURE_NAMES,
+            actual =
+                extractor.featureNames.drop(
+                    LocalNutritionMatcherFeatureContract
+                        .BASE_FEATURE_COUNT,
                 ),
         )
     }
@@ -284,17 +292,16 @@ class LocalNutritionMatcherFeatureExtractorLeakageTest {
         assertContentEquals(
             expected =
                 DoubleArray(
-                    LocalNutritionMatcherFeatureExtractor
-                        .DOMAIN_MISMATCH_FEATURE_COUNT,
+                    LocalNutritionMatcherFeatureContract
+                        .ALL_DOMAIN_FEATURE_COUNT,
                 ),
             actual =
                 features.copyOfRange(
                     fromIndex =
-                        LocalNutritionMatcherFeatureExtractor
+                        LocalNutritionMatcherFeatureContract
                             .BASE_FEATURE_COUNT,
                     toIndex =
-                        LocalNutritionMatcherFeatureExtractor
-                            .FEATURE_COUNT,
+                        LocalNutritionMatcherFeatureContract.ALL_FEATURE_COUNT,
                 ),
         )
     }
@@ -442,6 +449,97 @@ class LocalNutritionMatcherFeatureExtractorLeakageTest {
                     validator =
                         "test validator",
                 ),
+        )
+    }
+
+    @Test
+    fun excludeHarmfulDomainMismatchFeaturesFromActiveModelContract() {
+        assertEquals(
+            expected =
+                4,
+            actual =
+                LocalNutritionMatcherFeatureContract.HARMFUL_DOMAIN_FEATURE_NAMES
+                    .size,
+        )
+
+        assertEquals(
+            expected =
+                setOf(
+                    "domain_cross_domain_mismatch_count",
+                    "domain_compatible_relationship_count",
+                    "domain_unknown_token_involved_count",
+                    "domain_identity_conflict_count",
+                ),
+            actual =
+                LocalNutritionMatcherFeatureContract.HARMFUL_DOMAIN_FEATURE_NAMES
+                    .toSet(),
+        )
+
+        assertEquals(
+            expected =
+                7,
+            actual =
+                LocalNutritionMatcherFeatureContract.ACTIVE_DOMAIN_FEATURE_NAMES
+                    .size,
+        )
+
+        assertEquals(
+            expected =
+                listOf(
+                    "domain_diet_or_substitute_difference_count",
+                    "domain_same_domain_different_entity_count",
+                    "domain_form_or_processing_difference_count",
+                    "domain_region_or_style_difference_count",
+                    "domain_non_semantic_token_difference_count",
+                    "domain_unknown_mismatch_count",
+                    "domain_modifier_difference_count",
+                ),
+            actual =
+                LocalNutritionMatcherFeatureContract.ACTIVE_DOMAIN_FEATURE_NAMES,
+        )
+
+        assertEquals(
+            expected =
+                18,
+            actual =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_NAMES
+                    .size,
+        )
+
+        assertEquals(
+            expected =
+                LocalNutritionMatcherFeatureContract
+                    .BASE_FEATURE_NAMES,
+            actual =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_NAMES
+                    .take(
+                        LocalNutritionMatcherFeatureContract
+                            .BASE_FEATURE_COUNT,
+                    ),
+        )
+
+        assertEquals(
+            expected =
+                LocalNutritionMatcherFeatureContract.ACTIVE_DOMAIN_FEATURE_NAMES,
+            actual =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_NAMES
+                    .drop(
+                        LocalNutritionMatcherFeatureContract
+                            .BASE_FEATURE_COUNT,
+                    ),
+        )
+
+        assertTrue(
+            actual =
+                LocalNutritionMatcherFeatureContract
+                    .ACTIVE_FEATURE_NAMES
+                    .none { featureName ->
+                        featureName in
+                                LocalNutritionMatcherFeatureContract.HARMFUL_DOMAIN_FEATURE_NAMES
+                    },
         )
     }
 }

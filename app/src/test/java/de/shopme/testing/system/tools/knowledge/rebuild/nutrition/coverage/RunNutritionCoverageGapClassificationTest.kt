@@ -39,19 +39,33 @@ class RunNutritionCoverageGapClassificationTest {
         val report =
             NutritionCoverageGapClassifier(
                 catalogFile =
-                    files.catalogFile,
+                    projectRoot.resolve(
+                        "app/src/main/assets/catalog/catalog.json"
+                    ),
                 exactMappingFile =
-                    files.exactMappingFile,
+                    projectRoot.resolve(
+                        "data/generated/knowledge/mappings/" +
+                                "nutrition.mappings.json"
+                    ),
                 catalogServerMappingFile =
-                    files.outputMappingFile,
+                    projectRoot.resolve(
+                        "data/generated/knowledge/mappings/" +
+                                "catalog-server.mappings.json"
+                    ),
+                exactMatchReportFile =
+                    projectRoot.resolve(
+                        "data/generated/reports/catalog-server-matches/" +
+                                "nutrition.matches.json"
+                    ),
                 requestFile =
-                    files.requestFile,
+                    projectRoot.resolve(
+                        "data/generated/knowledge/match-requests/" +
+                                "nutrition.match-requests.json"
+                    ),
                 decisionFile =
-                    files.decisionFile,
-                sourceAvailabilityFile =
-                    File(
-                        "../data/generated/knowledge/reports/" +
-                                "nutrition.off-availability-for-no-candidates.json"
+                    projectRoot.resolve(
+                        "data/generated/knowledge/reports/" +
+                                "nutrition.match-diagnostics.json"
                     ),
                 snapshotReader =
                     snapshotReader
@@ -209,5 +223,210 @@ class RunNutritionCoverageGapClassificationTest {
                 "Could not locate ShopMe project root from: " +
                         workingDirectory.absolutePath
             )
+    }
+
+    private fun verifyUpdatedNutritionCoverageGapClassification(
+        report:
+        de.shopme.tools.knowledge.rebuild.nutrition.coverage.NutritionCoverageGapReport
+    ) {
+        val gapsByCatalogKey =
+            report.gaps
+                .associateBy {
+                    it.catalogKey
+                }
+
+        verifyResolvedNoRequestGap(
+            catalogKey = "chervil",
+            gapsByCatalogKey = gapsByCatalogKey
+        )
+
+        verifyResolvedNoRequestGap(
+            catalogKey = "salsify",
+            gapsByCatalogKey = gapsByCatalogKey
+        )
+
+        val noRequestGaps =
+            report.gaps
+                .filter {
+                    it.type ==
+                            de.shopme.tools.knowledge.rebuild.nutrition.coverage
+                                .NutritionCoverageGapType.NO_REQUEST
+                }
+                .sortedBy {
+                    it.catalogKey
+                }
+
+        check(
+            noRequestGaps.none {
+                it.catalogKey == "chervil" ||
+                        it.catalogKey == "salsify"
+            }
+        ) {
+            "CIQUAL-backed catalog keys must no longer be classified as " +
+                    "NO_REQUEST."
+        }
+
+        check(
+            report.gaps.size ==
+                    report.missingCatalogItemCount
+        ) {
+            "Every missing nutrition catalog key must be classified " +
+                    "exactly once: gaps=${report.gaps.size}, " +
+                    "missing=${report.missingCatalogItemCount}."
+        }
+
+        check(
+            report.classifiedGapCount +
+                    report.unclassifiedGapCount ==
+                    report.missingCatalogItemCount
+        ) {
+            "Classified and unclassified nutrition gaps do not cover " +
+                    "all missing catalog keys."
+        }
+
+        println()
+        println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        println("NUTRITION COVERAGE GAPS RECLASSIFIED")
+        println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        println(
+            "Catalog items       : " +
+                    report.catalogItemCount
+        )
+        println(
+            "Covered             : " +
+                    report.coveredCatalogItemCount
+        )
+        println(
+            "Missing             : " +
+                    report.missingCatalogItemCount
+        )
+        println(
+            "Classified          : " +
+                    report.classifiedGapCount
+        )
+        println(
+            "Unclassified        : " +
+                    report.unclassifiedGapCount
+        )
+        println()
+        println("Counts by type:")
+
+        report.countsByType
+            .toSortedMap()
+            .forEach { (type, count) ->
+                println(
+                    "$type=$count"
+                )
+            }
+
+        println()
+        println(
+            "Remaining NO_REQUEST keys: " +
+                    if (noRequestGaps.isEmpty()) {
+                        "-"
+                    } else {
+                        noRequestGaps.joinToString {
+                            it.catalogKey
+                        }
+                    }
+        )
+
+        listOf(
+            "chervil",
+            "salsify",
+            "leberkaese",
+            "mace",
+            "teewurst",
+            "toffifee"
+        )
+            .forEach { catalogKey ->
+
+                val gap =
+                    gapsByCatalogKey[
+                        catalogKey
+                    ]
+
+                println(
+                    "$catalogKey: " +
+                            when {
+                                gap == null ->
+                                    "COVERED_OR_NOT_MISSING"
+
+                                else ->
+                                    buildString {
+                                        append(
+                                            gap.type.name
+                                        )
+                                        append(
+                                            ", requestExists="
+                                        )
+                                        append(
+                                            gap.requestExists
+                                        )
+                                        append(
+                                            ", decisionExists="
+                                        )
+                                        append(
+                                            gap.decisionExists
+                                        )
+                                        append(
+                                            ", candidates="
+                                        )
+                                        append(
+                                            gap.candidateCount
+                                        )
+                                        append(
+                                            ", topCandidate="
+                                        )
+                                        append(
+                                            gap.topCandidateKey
+                                                ?: "-"
+                                        )
+                                    }
+                            }
+                )
+            }
+
+        println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    }
+
+    private fun verifyResolvedNoRequestGap(
+        catalogKey: String,
+        gapsByCatalogKey:
+        Map<
+                String,
+                de.shopme.tools.knowledge.rebuild.nutrition.coverage.NutritionCoverageGap
+                >
+    ) {
+        val gap =
+            gapsByCatalogKey[
+                catalogKey
+            ]
+
+        /*
+         * Der Key kann bereits durch ein persistiertes Mapping abgedeckt
+         * sein. Dann erscheint er korrekterweise überhaupt nicht mehr in
+         * der Liste der Coverage-Gaps.
+         */
+        if (gap == null) {
+            return
+        }
+
+        check(
+            gap.type !=
+                    de.shopme.tools.knowledge.rebuild.nutrition.coverage
+                        .NutritionCoverageGapType.NO_REQUEST
+        ) {
+            "$catalogKey must no longer be classified as NO_REQUEST."
+        }
+
+        check(gap.requestExists) {
+            "$catalogKey must have a persisted nutrition match request."
+        }
+
+        check(gap.candidateCount > 0) {
+            "$catalogKey must have at least one persisted nutrition " +
+                    "candidate."
+        }
     }
 }

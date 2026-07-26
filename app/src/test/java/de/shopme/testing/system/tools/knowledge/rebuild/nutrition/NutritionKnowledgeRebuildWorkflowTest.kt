@@ -39,8 +39,8 @@ class NutritionKnowledgeRebuildWorkflowTest {
             val snapshotReader =
                 object : NutritionKnowledgeSnapshotReader {
 
-                    override fun read():
-                            NutritionKnowledgeRebuildSnapshot {
+                    override fun read(
+                    ): NutritionKnowledgeRebuildSnapshot {
 
                         snapshotReadCount++
 
@@ -153,7 +153,9 @@ class NutritionKnowledgeRebuildWorkflowTest {
                                     addedMappingCount = 20,
                                     unchangedMappingCount = 0,
                                     conflictCount = 0,
-                                    finalMappingCount = 120
+                                    finalMappingCount = 120,
+                                    removedMappingCount =
+                                        0,
                                 )
                         },
                     runtimeRebuildStep =

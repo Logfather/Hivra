@@ -8,6 +8,7 @@ import kotlin.io.path.createTempDirectory
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
+import de.shopme.tools.knowledge.mapping.catalog.training.model.LocalNutritionMatcherFeatureContract
 
 class NutritionDomainFeatureImpactAnalyzerTest {
 
@@ -57,8 +58,8 @@ class NutritionDomainFeatureImpactAnalyzerTest {
 
             assertEquals(
                 expected =
-                    LocalNutritionMatcherFeatureExtractor
-                        .DOMAIN_MISMATCH_FEATURE_NAMES
+                    LocalNutritionMatcherFeatureContract
+                        .ALL_DOMAIN_FEATURE_NAMES
                         .size,
                 actual =
                     report.domainFeatureCount,
@@ -75,8 +76,8 @@ class NutritionDomainFeatureImpactAnalyzerTest {
 
             assertEquals(
                 expected =
-                    LocalNutritionMatcherFeatureExtractor
-                        .DOMAIN_MISMATCH_FEATURE_NAMES,
+                    LocalNutritionMatcherFeatureContract
+                        .ALL_DOMAIN_FEATURE_NAMES,
                 actual =
                     report.impacts.map {
                         it.featureName
@@ -139,8 +140,8 @@ class NutritionDomainFeatureImpactAnalyzerTest {
                 )
 
             val featureNames =
-                LocalNutritionMatcherFeatureExtractor
-                    .DOMAIN_MISMATCH_FEATURE_NAMES
+                LocalNutritionMatcherFeatureContract
+                    .ALL_DOMAIN_FEATURE_NAMES
                     .dropLast(1)
 
             comparisonReportFile.writeText(
@@ -184,8 +185,8 @@ class NutritionDomainFeatureImpactAnalyzerTest {
 
     private fun comparisonReportJson(
         featureNames: List<String> =
-            LocalNutritionMatcherFeatureExtractor
-                .DOMAIN_MISMATCH_FEATURE_NAMES,
+            LocalNutritionMatcherFeatureContract
+                .ALL_DOMAIN_FEATURE_NAMES,
     ): String {
         val comparisons =
             featureNames

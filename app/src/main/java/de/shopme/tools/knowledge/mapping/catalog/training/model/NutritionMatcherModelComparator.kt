@@ -25,41 +25,87 @@ class NutritionMatcherModelComparator {
                 outputDirectory,
         )
 
+        /*
+         * Der vollständige Extractor bleibt die technische Quelle
+         * sämtlicher extrahierbarer Featurewerte.
+         *
+         * Welche Features für das Training zulässig und aktiv sind,
+         * bestimmt ausschließlich der Feature-Contract.
+         */
         val completeExtractor =
             LocalNutritionMatcherFeatureExtractor()
 
         val baselineFeatureNames =
-            LocalNutritionMatcherFeatureExtractor
+            LocalNutritionMatcherFeatureContract
                 .BASE_FEATURE_NAMES
 
-        val domainFeatureNames =
-            LocalNutritionMatcherFeatureExtractor
-                .DOMAIN_MISMATCH_FEATURE_NAMES
+        val activeDomainFeatureNames =
+            LocalNutritionMatcherFeatureContract
+                .ACTIVE_DOMAIN_FEATURE_NAMES
+
+        val activeFeatureNames =
+            LocalNutritionMatcherFeatureContract
+                .ACTIVE_FEATURE_NAMES
 
         require(
             baselineFeatureNames.size ==
-                    LocalNutritionMatcherFeatureExtractor
+                    LocalNutritionMatcherFeatureContract
                         .BASE_FEATURE_COUNT,
         ) {
             "Baseline feature count differs from its declared contract."
         }
 
         require(
-            domainFeatureNames.size ==
-                    LocalNutritionMatcherFeatureExtractor
-                        .DOMAIN_MISMATCH_FEATURE_COUNT,
+            activeDomainFeatureNames.size ==
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_DOMAIN_FEATURE_COUNT,
         ) {
-            "Domain-Mismatch feature count differs from its " +
+            "Active Domain-Mismatch feature count differs from its " +
                     "declared contract."
         }
 
         require(
             baselineFeatureNames +
-                    domainFeatureNames ==
-                    completeExtractor.featureNames,
+                    activeDomainFeatureNames ==
+                    activeFeatureNames,
         ) {
-            "Complete feature order does not equal base plus " +
-                    "domain features."
+            "Active feature order does not equal base plus active " +
+                    "Domain-Mismatch features."
+        }
+
+        require(
+            activeFeatureNames.size ==
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_FEATURE_COUNT,
+        ) {
+            "Active feature count differs from its declared contract."
+        }
+
+        require(
+            baselineFeatureNames.all { featureName ->
+                featureName in completeExtractor.featureNames
+            },
+        ) {
+            "The complete Nutrition matcher extractor does not expose " +
+                    "every baseline feature."
+        }
+
+        require(
+            activeDomainFeatureNames.all { featureName ->
+                featureName in completeExtractor.featureNames
+            },
+        ) {
+            "The complete Nutrition matcher extractor does not expose " +
+                    "every active Domain-Mismatch feature."
+        }
+
+        require(
+            activeFeatureNames.all { featureName ->
+                featureName in completeExtractor.featureNames
+            },
+        ) {
+            "The complete Nutrition matcher extractor does not expose " +
+                    "the complete active production feature contract."
         }
 
         val baselineModel =
@@ -87,7 +133,7 @@ class NutritionMatcherModelComparator {
                         EXTENDED_MODEL_FILE_NAME,
                     ),
                 featureNames =
-                    completeExtractor.featureNames,
+                    activeFeatureNames,
                 completeExtractor =
                     completeExtractor,
             )
@@ -114,43 +160,47 @@ class NutritionMatcherModelComparator {
             )
 
         val singleFeatureComparisons =
-            domainFeatureNames.map { domainFeatureName ->
+            activeDomainFeatureNames
+                .map { activeDomainFeatureName ->
 
-                val candidateModel =
-                    train(
-                        datasetFile =
-                            datasetFile,
-                        outputFile =
-                            File(
-                                outputDirectory,
-                                "nutrition.local-matcher-" +
-                                        sanitize(
-                                            value =
-                                                domainFeatureName,
-                                        ) +
-                                        ".json",
-                            ),
-                        featureNames =
-                            baselineFeatureNames +
-                                    domainFeatureName,
-                        completeExtractor =
-                            completeExtractor,
+                    val candidateFeatureNames =
+                        baselineFeatureNames +
+                                activeDomainFeatureName
+
+                    val candidateModel =
+                        train(
+                            datasetFile =
+                                datasetFile,
+                            outputFile =
+                                File(
+                                    outputDirectory,
+                                    "nutrition.local-matcher-" +
+                                            sanitize(
+                                                value =
+                                                    activeDomainFeatureName,
+                                            ) +
+                                            ".json",
+                                ),
+                            featureNames =
+                                candidateFeatureNames,
+                            completeExtractor =
+                                completeExtractor,
+                        )
+
+                    requireSameSplit(
+                        baseline =
+                            baselineModel,
+                        candidate =
+                            candidateModel,
                     )
 
-                requireSameSplit(
-                    baseline =
-                        baselineModel,
-                    candidate =
-                        candidateModel,
-                )
-
-                candidateModel.toFeatureComparison(
-                    featureName =
-                        domainFeatureName,
-                    baseline =
-                        baselineModel,
-                )
-            }
+                    candidateModel.toFeatureComparison(
+                        featureName =
+                            activeDomainFeatureName,
+                        baseline =
+                            baselineModel,
+                    )
+                }
 
         val recommendation =
             recommend(
@@ -214,6 +264,12 @@ class NutritionMatcherModelComparator {
         LocalNutritionMatcherFeatureProvider,
     ): LocalNutritionMatcherModel {
 
+        LocalNutritionMatcherFeatureContract
+            .validateTrainingFeatureSubset(
+                featureNames =
+                    featureNames,
+            )
+
         val extractor =
             LocalNutritionMatcherFeatureSubsetExtractor(
                 delegate =
@@ -229,19 +285,35 @@ class NutritionMatcherModelComparator {
 
         return suppressedOutput.use { silentOutput ->
 
-            LocalNutritionMatcherModelTrainer(
-                featureExtractor =
-                    extractor,
-            )
-                .train(
-                    datasetFile =
-                        datasetFile,
-                    outputFile =
-                        outputFile,
-                    output =
-                        silentOutput,
+            val model =
+                LocalNutritionMatcherModelTrainer(
+                    featureExtractor =
+                        extractor,
+                    supportedFeatureNames =
+                        featureNames,
                 )
-                .model
+                    .train(
+                        datasetFile =
+                            datasetFile,
+                        outputFile =
+                            outputFile,
+                        output =
+                            silentOutput,
+                    )
+                    .model
+
+            require(
+                model.featureNames ==
+                        featureNames,
+            ) {
+                "Trained Nutrition matcher feature contract differs " +
+                        "from the requested feature subset. Expected: " +
+                        featureNames.joinToString() +
+                        "; actual: " +
+                        model.featureNames.joinToString()
+            }
+
+            model
         }
     }
 
@@ -288,8 +360,9 @@ class NutritionMatcherModelComparator {
                 recommendedFeatureNames =
                     extended.featureNames,
                 reason =
-                    "The extended model improves both test F1 " +
-                            "and test balanced accuracy.",
+                    "The active production model improves both test F1 " +
+                            "and test balanced accuracy compared with the " +
+                            "base-feature model.",
                 baselineDominatesPrimaryMetrics =
                     false,
                 extendedDominatesPrimaryMetrics =
@@ -301,27 +374,28 @@ class NutritionMatcherModelComparator {
             val reason =
                 when {
                     baselineDominatesPrimaryMetrics -> {
-                        "The extended model does not improve test F1 " +
-                                "or test balanced accuracy. The smaller " +
-                                "baseline model is retained."
+                        "The active production model does not improve " +
+                                "test F1 or test balanced accuracy. The " +
+                                "smaller base-feature model is retained."
                     }
 
                     extendedF1StrictlyBetter -> {
-                        "The extended model improves test F1 but not " +
-                                "test balanced accuracy. The smaller " +
-                                "baseline model is retained."
+                        "The active production model improves test F1 " +
+                                "but not test balanced accuracy. The smaller " +
+                                "base-feature model is retained."
                     }
 
                     extendedBalancedAccuracyStrictlyBetter -> {
-                        "The extended model improves test balanced " +
-                                "accuracy but not test F1. The smaller " +
-                                "baseline model is retained."
+                        "The active production model improves test " +
+                                "balanced accuracy but not test F1. The " +
+                                "smaller base-feature model is retained."
                     }
 
                     else -> {
-                        "The extended model provides no unambiguous " +
-                                "improvement in both primary metrics. " +
-                                "The smaller baseline model is retained."
+                        "The active production model provides no " +
+                                "unambiguous improvement in both primary " +
+                                "metrics. The smaller base-feature model " +
+                                "is retained."
                     }
                 }
 
@@ -374,44 +448,69 @@ class NutritionMatcherModelComparator {
         }
 
         require(
+            report.baselineFeatureCount ==
+                    LocalNutritionMatcherFeatureContract
+                        .BASE_FEATURE_COUNT,
+        ) {
+            "Unexpected baseline Nutrition matcher feature count."
+        }
+
+        require(
+            report.extendedFeatureCount ==
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_FEATURE_COUNT,
+        ) {
+            "Unexpected extended Nutrition matcher feature count."
+        }
+
+        require(
             report.baseline.featureNames ==
-                    LocalNutritionMatcherFeatureExtractor
+                    LocalNutritionMatcherFeatureContract
                         .BASE_FEATURE_NAMES,
         ) {
-            "Baseline comparison model does not use the productive " +
-                    "Nutrition matcher feature contract."
+            "Baseline comparison model does not use the declared " +
+                    "base-feature contract."
         }
 
         require(
             report.extended.featureNames ==
-                    LocalNutritionMatcherFeatureExtractor
-                        .BASE_FEATURE_NAMES +
-                    LocalNutritionMatcherFeatureExtractor
-                        .DOMAIN_MISMATCH_FEATURE_NAMES,
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_FEATURE_NAMES,
         ) {
-            "Extended comparison model does not use the complete " +
-                    "Nutrition matcher feature contract."
+            "Extended comparison model does not use the active " +
+                    "production feature contract."
         }
 
         require(
             report.singleFeatureComparisons.size ==
-                    LocalNutritionMatcherFeatureExtractor
-                        .DOMAIN_MISMATCH_FEATURE_COUNT,
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_DOMAIN_FEATURE_COUNT,
         ) {
-            "Unexpected number of single Domain-Mismatch feature " +
-                    "comparisons."
+            "Unexpected number of active single Domain-Mismatch " +
+                    "feature comparisons."
         }
 
         require(
             report.singleFeatureComparisons
-                .map {
-                    it.featureName
+                .map { comparison ->
+                    comparison.featureName
                 } ==
-                    LocalNutritionMatcherFeatureExtractor
-                        .DOMAIN_MISMATCH_FEATURE_NAMES,
+                    LocalNutritionMatcherFeatureContract
+                        .ACTIVE_DOMAIN_FEATURE_NAMES,
         ) {
             "Single Domain-Mismatch feature comparisons do not " +
-                    "follow the declared deterministic feature order."
+                    "follow the active deterministic feature order."
+        }
+
+        require(
+            report.singleFeatureComparisons.none { comparison ->
+                comparison.featureName in
+                        LocalNutritionMatcherFeatureContract
+                            .HARMFUL_DOMAIN_FEATURE_NAMES
+            },
+        ) {
+            "Single-feature comparisons contain a harmful " +
+                    "Domain-Mismatch feature."
         }
 
         require(
@@ -479,16 +578,25 @@ class NutritionMatcherModelComparator {
 
                 require(
                     comparison.featureName in
-                            LocalNutritionMatcherFeatureExtractor
-                                .DOMAIN_MISMATCH_FEATURE_NAMES,
+                            LocalNutritionMatcherFeatureContract
+                                .ACTIVE_DOMAIN_FEATURE_NAMES,
                 ) {
-                    "Unknown Domain-Mismatch comparison feature: " +
-                            comparison.featureName
+                    "Unknown active Domain-Mismatch comparison " +
+                            "feature: ${comparison.featureName}"
+                }
+
+                require(
+                    comparison.featureName !in
+                            LocalNutritionMatcherFeatureContract
+                                .HARMFUL_DOMAIN_FEATURE_NAMES,
+                ) {
+                    "Harmful Domain-Mismatch feature must not be " +
+                            "trained: ${comparison.featureName}"
                 }
 
                 require(
                     comparison.featureCount ==
-                            LocalNutritionMatcherFeatureExtractor
+                            LocalNutritionMatcherFeatureContract
                                 .BASE_FEATURE_COUNT + 1,
                 ) {
                     "Unexpected feature count for " +
@@ -500,10 +608,8 @@ class NutritionMatcherModelComparator {
                     comparison.testPrecision.isFinite() &&
                             comparison.testRecall.isFinite() &&
                             comparison.testF1.isFinite() &&
-                            comparison.testBalancedAccuracy
-                                .isFinite() &&
-                            comparison.testAverageLogLoss
-                                .isFinite(),
+                            comparison.testBalancedAccuracy.isFinite() &&
+                            comparison.testAverageLogLoss.isFinite(),
                 ) {
                     "Non-finite test metric for " +
                             comparison.featureName
@@ -568,62 +674,86 @@ class NutritionMatcherModelComparator {
         require(
             baseline.training.exampleCount ==
                     candidate.training.exampleCount,
-        )
+        ) {
+            "Compared models use different total example counts."
+        }
 
         require(
             baseline.training.trainingExampleCount ==
                     candidate.training.trainingExampleCount,
-        )
+        ) {
+            "Compared models use different training example counts."
+        }
 
         require(
             baseline.training.testExampleCount ==
                     candidate.training.testExampleCount,
-        )
+        ) {
+            "Compared models use different test example counts."
+        }
 
         require(
             baseline.training.trainingCatalogKeyCount ==
                     candidate.training.trainingCatalogKeyCount,
-        )
+        ) {
+            "Compared models use different training catalog-key counts."
+        }
 
         require(
             baseline.training.testCatalogKeyCount ==
                     candidate.training.testCatalogKeyCount,
-        )
+        ) {
+            "Compared models use different test catalog-key counts."
+        }
 
         require(
             baseline.training.splitModulo ==
                     candidate.training.splitModulo,
-        )
+        ) {
+            "Compared models use different split moduli."
+        }
 
         require(
             baseline.training.testBuckets ==
                     candidate.training.testBuckets,
-        )
+        ) {
+            "Compared models use different test buckets."
+        }
 
         require(
             baseline.training.positiveClassWeight ==
                     candidate.training.positiveClassWeight,
-        )
+        ) {
+            "Compared models use different positive class weights."
+        }
 
         require(
             baseline.training.negativeClassWeight ==
                     candidate.training.negativeClassWeight,
-        )
+        ) {
+            "Compared models use different negative class weights."
+        }
 
         require(
             baseline.training.learningRate ==
                     candidate.training.learningRate,
-        )
+        ) {
+            "Compared models use different learning rates."
+        }
 
         require(
             baseline.training.iterationCount ==
                     candidate.training.iterationCount,
-        )
+        ) {
+            "Compared models use different iteration counts."
+        }
 
         require(
             baseline.training.l2Regularization ==
                     candidate.training.l2Regularization,
-        )
+        ) {
+            "Compared models use different L2 regularization."
+        }
     }
 
     private fun LocalNutritionMatcherModel.toSnapshot():
@@ -742,14 +872,14 @@ class NutritionMatcherModelComparator {
 
         val baselineByRole =
             baseline.metrics.testByRole
-                .associateBy {
-                    it.role
+                .associateBy { roleMetrics ->
+                    roleMetrics.role
                 }
 
         val candidateByRole =
             candidate.metrics.testByRole
-                .associateBy {
-                    it.role
+                .associateBy { roleMetrics ->
+                    roleMetrics.role
                 }
 
         require(
@@ -814,7 +944,9 @@ class NutritionMatcherModelComparator {
                 .create()
 
         reportFile.writeText(
-            gson.toJson(report) + "\n",
+            gson.toJson(
+                report,
+            ) + "\n",
         )
 
         check(reportFile.isFile) {
@@ -838,7 +970,7 @@ class NutritionMatcherModelComparator {
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
         )
         output.println(
-            "NUTRITION MATCHER FEATURE COMPARISON",
+            "NUTRITION MATCHER ACTIVE FEATURE COMPARISON",
         )
         output.println(
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
@@ -850,7 +982,7 @@ class NutritionMatcherModelComparator {
         )
 
         output.println(
-            "Extended features        : " +
+            "Active features          : " +
                     report.extendedFeatureCount,
         )
 
@@ -865,7 +997,7 @@ class NutritionMatcherModelComparator {
         )
 
         output.println(
-            "EXTENDED test precision  : " +
+            "ACTIVE test precision    : " +
                     format(
                         value =
                             report.extended.testPrecision,
@@ -891,7 +1023,7 @@ class NutritionMatcherModelComparator {
         )
 
         output.println(
-            "EXTENDED test recall     : " +
+            "ACTIVE test recall       : " +
                     format(
                         value =
                             report.extended.testRecall,
@@ -917,7 +1049,7 @@ class NutritionMatcherModelComparator {
         )
 
         output.println(
-            "EXTENDED test F1         : " +
+            "ACTIVE test F1           : " +
                     format(
                         value =
                             report.extended.testF1,
@@ -944,7 +1076,7 @@ class NutritionMatcherModelComparator {
         )
 
         output.println(
-            "EXTENDED balanced acc.   : " +
+            "ACTIVE balanced acc.     : " +
                     format(
                         value =
                             report.extended
@@ -984,7 +1116,7 @@ class NutritionMatcherModelComparator {
         output.println()
 
         output.println(
-            "SINGLE DOMAIN FEATURE ADDITIONS",
+            "SINGLE ACTIVE DOMAIN FEATURE ADDITIONS",
         )
 
         report.singleFeatureComparisons
@@ -1031,11 +1163,11 @@ class NutritionMatcherModelComparator {
 
         val improving =
             report.singleFeatureComparisons
-                .filter {
-                    it.improvesBothPrimaryMetrics
+                .filter { comparison ->
+                    comparison.improvesBothPrimaryMetrics
                 }
-                .sortedByDescending {
-                    it.delta.balancedAccuracy
+                .sortedByDescending { comparison ->
+                    comparison.delta.balancedAccuracy
                 }
 
         if (improving.isEmpty()) {
@@ -1115,7 +1247,7 @@ class NutritionMatcherModelComparator {
             "nutrition.local-matcher-baseline.json"
 
         const val EXTENDED_MODEL_FILE_NAME =
-            "nutrition.local-matcher-domain-mismatch.json"
+            "nutrition.local-matcher-active-features.json"
 
         const val EPSILON =
             1e-12

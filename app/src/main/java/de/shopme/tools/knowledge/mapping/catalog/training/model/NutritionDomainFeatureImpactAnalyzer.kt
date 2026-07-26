@@ -54,8 +54,8 @@ class NutritionDomainFeatureImpactAnalyzer {
                 }
 
         val expectedFeatureNames =
-            LocalNutritionMatcherFeatureExtractor
-                .DOMAIN_MISMATCH_FEATURE_NAMES
+            LocalNutritionMatcherFeatureContract
+                .ALL_DOMAIN_FEATURE_NAMES
 
         require(
             expectedFeatureNames.isNotEmpty(),

@@ -115,6 +115,17 @@ object LocalNutritionMatcherFeatureContract {
             "domain_unknown_mismatch_count",
         )
 
+    val OPTIMIZED_DOMAIN_FEATURE_NAMES: List<String> =
+        OPTIMIZATION_BASELINE_DOMAIN_FEATURE_NAMES
+            .filterNot { featureName ->
+                featureName in
+                        HARMFUL_DOMAIN_FEATURE_NAMES
+            }
+
+    val OPTIMIZED_FEATURE_NAMES: List<String> =
+        BASE_FEATURE_NAMES +
+                OPTIMIZED_DOMAIN_FEATURE_NAMES
+
     /**
      * Vollständiger historischer Featurevertrag:
      *
@@ -130,8 +141,7 @@ object LocalNutritionMatcherFeatureContract {
      * 11 Basis-Features + 4 aktive Domain-Features = 15 Features.
      */
     val ACTIVE_FEATURE_NAMES: List<String> =
-        BASE_FEATURE_NAMES +
-                ACTIVE_DOMAIN_FEATURE_NAMES
+        OPTIMIZED_FEATURE_NAMES
 
     /**
      * Domain-Features, die in zukünftigen Optimierungsläufen noch
@@ -253,6 +263,102 @@ object LocalNutritionMatcherFeatureContract {
         ) {
             "Local nutrition matcher Domain-Mismatch features must " +
                     "preserve canonical order. Expected: " +
+                    expectedDomainFeatureOrder.joinToString() +
+                    "; actual: " +
+                    actualDomainFeatures.joinToString()
+        }
+    }
+
+    /**
+     * Validiert ein Feature-Subset für deterministische
+     * Leave-one-feature-out-Optimierungen.
+     *
+     * Erlaubt sind:
+     *
+     * - der vollständige Basis-Featurepräfix,
+     * - gefolgt von null bis sieben Features aus der unabhängigen
+     *   Optimierungsbaseline,
+     * - in kanonischer Reihenfolge.
+     *
+     * Diese Methode ist bewusst breiter als
+     * validateTrainingFeatureSubset(...), weil für Ablationen auch bereits
+     * als schädlich klassifizierte Features erneut trainierbar sein müssen.
+     */
+    fun validateOptimizationFeatureSubset(
+        featureNames: List<String>,
+    ) {
+        require(featureNames.isNotEmpty()) {
+            "Local nutrition matcher optimization feature subset must " +
+                    "not be empty."
+        }
+
+        require(
+            featureNames.distinct().size ==
+                    featureNames.size,
+        ) {
+            "Local nutrition matcher optimization feature subset must " +
+                    "be unique: " +
+                    featureNames.joinToString()
+        }
+
+        require(
+            featureNames.size >=
+                    BASE_FEATURE_COUNT,
+        ) {
+            "Local nutrition matcher optimization feature subset must " +
+                    "contain the complete base-feature prefix. Expected " +
+                    "at least $BASE_FEATURE_COUNT features, but contains " +
+                    "${featureNames.size}."
+        }
+
+        val actualBaseFeatures =
+            featureNames.take(
+                BASE_FEATURE_COUNT,
+            )
+
+        require(
+            actualBaseFeatures ==
+                    BASE_FEATURE_NAMES,
+        ) {
+            "Local nutrition matcher optimization feature subset must " +
+                    "preserve the complete base-feature prefix. Expected: " +
+                    BASE_FEATURE_NAMES.joinToString() +
+                    "; actual: " +
+                    actualBaseFeatures.joinToString()
+        }
+
+        val actualDomainFeatures =
+            featureNames.drop(
+                BASE_FEATURE_COUNT,
+            )
+
+        val unsupportedDomainFeatures =
+            actualDomainFeatures
+                .filterNot { featureName ->
+                    featureName in
+                            OPTIMIZATION_BASELINE_DOMAIN_FEATURE_NAMES
+                }
+
+        require(
+            unsupportedDomainFeatures.isEmpty(),
+        ) {
+            "Unsupported optimization-baseline Domain-Mismatch features: " +
+                    unsupportedDomainFeatures.joinToString()
+        }
+
+        val expectedDomainFeatureOrder =
+            OPTIMIZATION_BASELINE_DOMAIN_FEATURE_NAMES
+                .filter { featureName ->
+                    featureName in
+                            actualDomainFeatures
+                }
+
+        require(
+            actualDomainFeatures ==
+                    expectedDomainFeatureOrder,
+        ) {
+            "Local nutrition matcher optimization Domain-Mismatch " +
+                    "features must preserve canonical order. Expected: " +
                     expectedDomainFeatureOrder.joinToString() +
                     "; actual: " +
                     actualDomainFeatures.joinToString()
@@ -566,6 +672,65 @@ object LocalNutritionMatcherFeatureContract {
             "Optimized nutrition production feature contract must " +
                     "contain 15 features, but contains " +
                     "$ACTIVE_FEATURE_COUNT."
+        }
+
+        require(
+            HARMFUL_DOMAIN_FEATURE_NAMES.distinct().size ==
+                    HARMFUL_DOMAIN_FEATURE_NAMES.size,
+        ) {
+            "Harmful nutrition domain-feature names must be unique."
+        }
+
+        require(
+            HARMFUL_DOMAIN_FEATURE_NAMES.all { featureName ->
+                featureName in
+                        OPTIMIZATION_BASELINE_DOMAIN_FEATURE_NAMES
+            },
+        ) {
+            "Every harmful nutrition domain feature must belong to the " +
+                    "optimization baseline."
+        }
+
+        require(
+            OPTIMIZED_DOMAIN_FEATURE_NAMES.size ==
+                    OPTIMIZATION_BASELINE_DOMAIN_FEATURE_NAMES.size -
+                    HARMFUL_DOMAIN_FEATURE_NAMES.size,
+        ) {
+            "Unexpected optimized nutrition domain-feature count."
+        }
+
+        require(
+            OPTIMIZED_FEATURE_NAMES.take(
+                BASE_FEATURE_COUNT,
+            ) ==
+                    BASE_FEATURE_NAMES,
+        ) {
+            "Optimized nutrition feature contract must preserve the complete " +
+                    "base-feature prefix."
+        }
+
+        require(
+            OPTIMIZED_FEATURE_NAMES.size ==
+                    15,
+        ) {
+            "Unexpected optimized nutrition feature count: " +
+                    OPTIMIZED_FEATURE_NAMES.size
+        }
+
+        require(
+            ACTIVE_FEATURE_NAMES ==
+                    OPTIMIZED_FEATURE_NAMES,
+        ) {
+            "Active nutrition matcher feature contract must use the " +
+                    "deterministically optimized feature set."
+        }
+
+        require(
+            ACTIVE_FEATURE_NAMES.size ==
+                    15,
+        ) {
+            "Unexpected active nutrition matcher feature count: " +
+                    ACTIVE_FEATURE_NAMES.size
         }
     }
 }

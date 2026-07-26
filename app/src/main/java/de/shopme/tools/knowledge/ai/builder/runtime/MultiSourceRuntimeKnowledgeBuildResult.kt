@@ -5,6 +5,7 @@ import java.io.File
 data class MultiSourceRuntimeKnowledgeBuildResult(
     val offCandidateCount: Int,
     val agribalyseCandidateCount: Int,
+    val ciqualCandidateCount: Int,
     val inputCandidateCount: Int,
     val normalizedCandidateCount: Int,
     val mergedCandidateCount: Int,

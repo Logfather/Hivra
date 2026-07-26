@@ -25,6 +25,8 @@ import de.shopme.tools.knowledge.ai.builder.seasonality.MergedCandidateSeasonali
 import de.shopme.tools.knowledge.ai.builder.taxonomy.MergedCandidateFoodTaxonomyKnowledgeBuilder
 import de.shopme.tools.knowledge.ai.builder.water.MergedCandidateWaterKnowledgeBuilder
 import de.shopme.tools.knowledge.ai.builder.waterstress.MergedCandidateWaterStressKnowledgeBuilder
+import de.shopme.tools.knowledge.ciqual.extractor.CiqualNutritionCandidateExtractor
+import de.shopme.tools.knowledge.ciqual.model.CiqualSourceFiles
 import de.shopme.tools.knowledge.ki_candidates.CanonicalKnowledgeCandidate
 import de.shopme.tools.knowledge.ki_candidates.KnowledgeCandidateMergeAccumulator
 import de.shopme.tools.knowledge.ki_candidates.KnowledgeDimensionCandidateType
@@ -38,7 +40,8 @@ class MultiSourceRuntimeKnowledgeBuild {
         offFile: File,
         agribalyseFile: File,
         outputDir: File,
-        maxOffCandidates: Int? = null
+        maxOffCandidates: Int? = null,
+        ciqualDirectory: File? = null
     ): MultiSourceRuntimeKnowledgeBuildResult {
 
         val offBatchSize =
@@ -114,6 +117,8 @@ class MultiSourceRuntimeKnowledgeBuild {
                     file = agribalyseFile
                 )
 
+
+
         val normalizedAgribalyseCandidates =
             normalizer.normalize(
                 candidates = agribalyseCandidates
@@ -126,11 +131,45 @@ class MultiSourceRuntimeKnowledgeBuild {
             normalizedAgribalyseCandidates
         )
 
+        val ciqualCandidates =
+            ciqualDirectory
+                ?.let { directory ->
+                    require(
+                        directory.isDirectory
+                    ) {
+                        "CIQUAL directory does not exist or is not a directory: " +
+                                directory.path
+                    }
+
+                    CiqualNutritionCandidateExtractor()
+                        .extract(
+                            files =
+                                CiqualSourceFiles.fromDirectory(
+                                    directory
+                                )
+                        )
+                }
+                .orEmpty()
+
+        val normalizedCiqualCandidates =
+            normalizer.normalize(
+                candidates = ciqualCandidates
+            )
+
+        normalizedCandidateCount +=
+            normalizedCiqualCandidates.size
+
+        accumulator.add(
+            normalizedCiqualCandidates
+        )
+
         val merged =
             accumulator.candidates()
 
         val inputCandidateCount =
-            offCandidateCount + agribalyseCandidates.size
+            offCandidateCount +
+                    agribalyseCandidates.size +
+                    ciqualCandidates.size
 
         //KNOWLEDGE ARTIFACTS//
         //________________________________________//
@@ -630,6 +669,7 @@ class MultiSourceRuntimeKnowledgeBuild {
         return MultiSourceRuntimeKnowledgeBuildResult(
             offCandidateCount = offCandidateCount,
             agribalyseCandidateCount = agribalyseCandidates.size,
+            ciqualCandidateCount = ciqualCandidates.size,
             inputCandidateCount = inputCandidateCount,
             normalizedCandidateCount = normalizedCandidateCount,
             mergedCandidateCount = accumulator.candidateCount(),
@@ -704,7 +744,7 @@ class MultiSourceRuntimeKnowledgeBuild {
             ingredientGraphArtifactFile = ingredientGraphFile,
             recipeGraphCandidateCount = recipeGraphCandidateCount,
             recipeGraphArtifactEntryCount = recipeGraphKnowledge.entries.size,
-            recipeGraphArtifactFile = recipeGraphFile
+            recipeGraphArtifactFile = recipeGraphFile,
         )
     }
 }

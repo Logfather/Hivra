@@ -15,7 +15,8 @@ import java.io.File
 class ProductiveNutritionKnowledgeMatchingStep(
     private val runner:
     RunOpenAINutritionKnowledgeMatcher,
-    private val decisionFile: File
+    private val decisionFile: File,
+    private val requestFile: File
 ) : NutritionKnowledgeMatchingStep {
 
     override fun run(
@@ -30,50 +31,176 @@ class ProductiveNutritionKnowledgeMatchingStep(
         }
 
         /*
-         * Der produktive Lauf setzt auf dem aktuellen Decision-
-         * Checkpoint auf.
+         * Der produktive Lauf setzt auf dem vorhandenen
+         * Decision-Checkpoint auf.
          *
-         * Die ungelösten alten Decisions wurden bereits durch den
-         * OFFLINE-Rebuild entfernt. Während eines produktiven Laufs
-         * persistiert der Runner neue Decisions fortlaufend.
-         *
-         * Diese Decisions dürfen bei einer Wiederaufnahme nicht
-         * erneut durch den Validation-Report-Preparer entfernt werden.
+         * Die Decision-Datei kann noch Einträge aus einem früheren
+         * Request-Batch enthalten. Deshalb wird der aktuelle Batch
+         * anhand der Request-Identitäten validiert und nicht anhand
+         * der Gesamtzahl aller persistierten Decisions.
+         */
+        val requestIdentities =
+            readRequestIdentities(
+                file =
+                    requestFile
+            )
+
+        val duplicateRequestIdentities =
+            findDuplicateIdentities(
+                identities =
+                    requestIdentities
+            )
+
+        require(
+            duplicateRequestIdentities.isEmpty()
+        ) {
+            "Productive nutrition requests contain duplicate " +
+                    "identities: " +
+                    formatIdentities(
+                        identities =
+                            duplicateRequestIdentities
+                    )
+        }
+
+        val requestIdentitySet =
+            requestIdentities
+                .toSet()
+
+        /*
+         * Auch die Vorher-Zählung wird auf den aktuellen Request-
+         * Batch begrenzt. Alte Decisions dürfen die während dieses
+         * Laufs erzeugten Source-Deltas nicht verfälschen.
          */
         val beforeSourceCounts =
             readDecisionSourceCounts(
                 file =
-                    decisionFile
+                    decisionFile,
+                includedIdentities =
+                    requestIdentitySet
             )
 
         val result =
             runner.run()
 
-        val afterSourceCounts =
-            readDecisionSourceCounts(
+        val persistedDecisionIdentities =
+            readDecisionIdentities(
                 file =
                     decisionFile
             )
 
+        val duplicateDecisionIdentities =
+            findDuplicateIdentities(
+                identities =
+                    persistedDecisionIdentities
+            )
+
         require(
-            afterSourceCounts.totalCount ==
-                    result.totalRequests
+            duplicateDecisionIdentities.isEmpty()
+        ) {
+            "Productive nutrition decisions contain duplicate " +
+                    "identities: " +
+                    formatIdentities(
+                        identities =
+                            duplicateDecisionIdentities
+                    )
+        }
+
+        val decisionIdentitySet =
+            persistedDecisionIdentities
+                .toSet()
+
+        val missingDecisionIdentities =
+            requestIdentitySet
+                .minus(
+                    decisionIdentitySet
+                )
+                .sortedWith(
+                    DECISION_IDENTITY_COMPARATOR
+                )
+
+        require(
+            missingDecisionIdentities.isEmpty()
         ) {
             "Productive nutrition decision batch is incomplete: " +
-                    "decisions=${afterSourceCounts.totalCount}, " +
-                    "requests=${result.totalRequests}."
+                    "missing=${missingDecisionIdentities.size}, " +
+                    "requests=${requestIdentities.size}. " +
+                    "Missing identities: " +
+                    formatIdentities(
+                        identities =
+                            missingDecisionIdentities
+                    )
+        }
+
+        /*
+         * Stale Decisions sind zulässig:
+         *
+         * Sie stammen aus älteren Request-Batches und bleiben für
+         * Resume- und Diagnosezwecke persistiert. Für den aktuellen
+         * Batch werden sie jedoch vollständig ignoriert.
+         */
+        val staleDecisionIdentities =
+            decisionIdentitySet
+                .minus(
+                    requestIdentitySet
+                )
+                .sortedWith(
+                    DECISION_IDENTITY_COMPARATOR
+                )
+
+        val currentDecisionIdentities =
+            requestIdentities
+                .map { requestIdentity ->
+
+                    check(
+                        requestIdentity in
+                                decisionIdentitySet
+                    ) {
+                        "No productive nutrition decision exists " +
+                                "for request identity " +
+                                "'${requestIdentity.catalogKey} -> " +
+                                "${requestIdentity.serverArtifact}'."
+                    }
+
+                    requestIdentity
+                }
+
+        require(
+            currentDecisionIdentities.size ==
+                    requestIdentities.size
+        ) {
+            "Current productive nutrition decision count differs " +
+                    "from request count: decisions=" +
+                    "${currentDecisionIdentities.size}, " +
+                    "requests=${requestIdentities.size}."
         }
 
         require(
-            result.previouslyCompleted +
-                    result.processedThisRun ==
-                    result.totalRequests
+            result.totalRequests ==
+                    requestIdentities.size
         ) {
-            "Previously completed and newly processed decisions " +
-                    "do not cover all nutrition requests: " +
-                    "previous=${result.previouslyCompleted}, " +
-                    "processed=${result.processedThisRun}, " +
-                    "requests=${result.totalRequests}."
+            "Productive runner request count differs from " +
+                    "persisted request batch: runner=" +
+                    "${result.totalRequests}, " +
+                    "persisted=${requestIdentities.size}."
+        }
+
+        val afterSourceCounts =
+            readDecisionSourceCounts(
+                file =
+                    decisionFile,
+                includedIdentities =
+                    requestIdentitySet
+            )
+
+        require(
+            afterSourceCounts.totalCount ==
+                    requestIdentities.size
+        ) {
+            "Current productive nutrition decision batch is " +
+                    "incomplete: decisions=" +
+                    "${afterSourceCounts.totalCount}, " +
+                    "requests=${requestIdentities.size}, " +
+                    "stale=${staleDecisionIdentities.size}."
         }
 
         val newLocalModelDecisionCount =
@@ -84,39 +211,23 @@ class ProductiveNutritionKnowledgeMatchingStep(
             afterSourceCounts.chatGptCount -
                     beforeSourceCounts.chatGptCount
 
-        require(newLocalModelDecisionCount >= 0) {
+        require(
+            newLocalModelDecisionCount >= 0
+        ) {
             "LOCAL_MODEL decision count decreased during " +
                     "productive matching."
         }
 
-        require(newChatGptDecisionCount >= 0) {
-            "CHAT_GPT decision count decreased during productive " +
-                    "matching."
+        require(
+            newChatGptDecisionCount >= 0
+        ) {
+            "CHAT_GPT decision count decreased during " +
+                    "productive matching."
         }
 
         val successfulThisRun =
             result.processedThisRun -
                     result.failedThisRun
-
-        require(successfulThisRun >= 0) {
-            "Successful decision count for this run is negative: " +
-                    "processed=${result.processedThisRun}, " +
-                    "failed=${result.failedThisRun}."
-        }
-
-        require(
-            newLocalModelDecisionCount +
-                    newChatGptDecisionCount ==
-                    successfulThisRun
-        ) {
-            "New decision source counts differ from successful " +
-                    "decisions of this run: " +
-                    "local=$newLocalModelDecisionCount, " +
-                    "chatGpt=$newChatGptDecisionCount, " +
-                    "successfulThisRun=$successfulThisRun, " +
-                    "processed=${result.processedThisRun}, " +
-                    "failed=${result.failedThisRun}."
-        }
 
         require(
             successfulThisRun >= 0
@@ -156,7 +267,7 @@ class ProductiveNutritionKnowledgeMatchingStep(
             requestCount =
                 result.totalRequests,
             previouslyCompletedCount =
-                result.previouslyCompleted,
+                beforeSourceCounts.totalCount,
             processedCount =
                 result.processedThisRun,
             localModelDecisionCount =
@@ -174,8 +285,101 @@ class ProductiveNutritionKnowledgeMatchingStep(
         )
     }
 
-    private fun readDecisionSourceCounts(
+    private fun readRequestIdentities(
         file: File
+    ): List<DecisionIdentity> {
+
+        require(file.isFile) {
+            "Nutrition request file does not exist: " +
+                    file.absolutePath
+        }
+
+        val root =
+            JsonParser.parseString(
+                file.readText()
+            )
+
+        require(root.isJsonObject) {
+            "Nutrition request file must contain a JSON object: " +
+                    file.absolutePath
+        }
+
+        val requests =
+            root.asJsonObject["requests"]
+                ?.takeIf {
+                    it.isJsonArray
+                }
+                ?.asJsonArray
+                ?: error(
+                    "Nutrition request file contains no " +
+                            "'requests' array: " +
+                            file.absolutePath
+                )
+
+        return requests.map { element ->
+
+            require(element.isJsonObject) {
+                "Nutrition request entry must be a JSON object."
+            }
+
+            readIdentity(
+                objectValue =
+                    element.asJsonObject,
+                entryDescription =
+                    "Nutrition request"
+            )
+        }
+    }
+
+    private fun readDecisionIdentities(
+        file: File
+    ): List<DecisionIdentity> {
+
+        if (!file.isFile) {
+            return emptyList()
+        }
+
+        val root =
+            JsonParser.parseString(
+                file.readText()
+            )
+
+        require(root.isJsonObject) {
+            "Nutrition decision file must contain a JSON object: " +
+                    file.absolutePath
+        }
+
+        val decisions =
+            root.asJsonObject["decisions"]
+                ?.takeIf {
+                    it.isJsonArray
+                }
+                ?.asJsonArray
+                ?: error(
+                    "Nutrition decision file contains no " +
+                            "'decisions' array: " +
+                            file.absolutePath
+                )
+
+        return decisions.map { element ->
+
+            require(element.isJsonObject) {
+                "Nutrition decision entry must be a JSON object."
+            }
+
+            readIdentity(
+                objectValue =
+                    element.asJsonObject,
+                entryDescription =
+                    "Nutrition decision"
+            )
+        }
+    }
+
+    private fun readDecisionSourceCounts(
+        file: File,
+        includedIdentities: Set<DecisionIdentity>? =
+            null
     ): DecisionSourceCounts {
 
         if (!file.isFile) {
@@ -226,49 +430,59 @@ class ProductiveNutritionKnowledgeMatchingStep(
             }
 
         val duplicateIdentities =
-            parsedDecisions
-                .groupingBy {
-                    DecisionIdentity(
-                        catalogKey =
-                            it.catalogKey,
-                        serverArtifact =
-                            it.serverArtifact
-                    )
-                }
-                .eachCount()
-                .filterValues {
-                    it > 1
-                }
-                .keys
+            findDuplicateIdentities(
+                identities =
+                    parsedDecisions.map { decision ->
 
-        require(duplicateIdentities.isEmpty()) {
+                        DecisionIdentity(
+                            catalogKey =
+                                decision.catalogKey,
+                            serverArtifact =
+                                decision.serverArtifact
+                        )
+                    }
+            )
+
+        require(
+            duplicateIdentities.isEmpty()
+        ) {
             "Nutrition decision file contains duplicate " +
                     "identities: " +
-                    duplicateIdentities
-                        .sortedWith(
-                            compareBy<DecisionIdentity>(
-                                { it.serverArtifact },
-                                { it.catalogKey }
-                            )
-                        )
-                        .take(MAX_DIAGNOSTIC_IDENTITIES)
-                        .joinToString {
-                            "${it.catalogKey} -> ${it.serverArtifact}"
-                        }
+                    formatIdentities(
+                        identities =
+                            duplicateIdentities
+                    )
         }
+
+        val includedDecisions =
+            if (includedIdentities == null) {
+                parsedDecisions
+            } else {
+                parsedDecisions.filter { decision ->
+
+                    DecisionIdentity(
+                        catalogKey =
+                            decision.catalogKey,
+                        serverArtifact =
+                            decision.serverArtifact
+                    ) in includedIdentities
+                }
+            }
 
         return DecisionSourceCounts(
             totalCount =
-                parsedDecisions.size,
+                includedDecisions.size,
             localModelCount =
-                parsedDecisions.count {
-                    it.decisionSource ==
+                includedDecisions.count { decision ->
+
+                    decision.decisionSource ==
                             CatalogKnowledgeMatchDecisionSource
                                 .LOCAL_MODEL
                 },
             chatGptCount =
-                parsedDecisions.count {
-                    it.decisionSource ==
+                includedDecisions.count { decision ->
+
+                    decision.decisionSource ==
                             CatalogKnowledgeMatchDecisionSource
                                 .CHAT_GPT
                 }
@@ -313,6 +527,102 @@ class ProductiveNutritionKnowledgeMatchingStep(
         )
     }
 
+    private fun readIdentity(
+        objectValue: JsonObject,
+        entryDescription: String
+    ): DecisionIdentity {
+
+        val catalogKey =
+            readRequiredString(
+                objectValue =
+                    objectValue,
+                fieldName =
+                    "catalogKey",
+                entryDescription =
+                    entryDescription
+            )
+
+        val serverArtifact =
+            readRequiredString(
+                objectValue =
+                    objectValue,
+                fieldName =
+                    "serverArtifact",
+                entryDescription =
+                    entryDescription
+            )
+
+        return DecisionIdentity(
+            catalogKey =
+                catalogKey,
+            serverArtifact =
+                serverArtifact
+        )
+    }
+
+    private fun readRequiredString(
+        objectValue: JsonObject,
+        fieldName: String,
+        entryDescription: String
+    ): String {
+
+        val value =
+            objectValue[fieldName]
+                ?.takeIf {
+                    !it.isJsonNull &&
+                            it.isJsonPrimitive &&
+                            it.asJsonPrimitive.isString
+                }
+                ?.asString
+                ?.trim()
+                ?.takeIf {
+                    it.isNotBlank()
+                }
+
+        requireNotNull(value) {
+            "$entryDescription contains no non-blank " +
+                    "'$fieldName'."
+        }
+
+        return value
+    }
+
+    private fun findDuplicateIdentities(
+        identities: List<DecisionIdentity>
+    ): List<DecisionIdentity> =
+        identities
+            .groupingBy {
+                it
+            }
+            .eachCount()
+            .asSequence()
+            .filter { (_, count) ->
+                count > 1
+            }
+            .map { (identity, _) ->
+                identity
+            }
+            .sortedWith(
+                DECISION_IDENTITY_COMPARATOR
+            )
+            .toList()
+
+    private fun formatIdentities(
+        identities: Collection<DecisionIdentity>
+    ): String =
+        identities
+            .sortedWith(
+                DECISION_IDENTITY_COMPARATOR
+            )
+            .take(
+                MAX_DIAGNOSTIC_IDENTITIES
+            )
+            .joinToString { identity ->
+
+                "${identity.catalogKey} -> " +
+                        identity.serverArtifact
+            }
+
     private data class DecisionSourceCounts(
         val totalCount: Int,
         val localModelCount: Int,
@@ -328,6 +638,13 @@ class ProductiveNutritionKnowledgeMatchingStep(
 
         const val MAX_DIAGNOSTIC_IDENTITIES =
             10
+
+        val DECISION_IDENTITY_COMPARATOR:
+                Comparator<DecisionIdentity> =
+            compareBy(
+                DecisionIdentity::serverArtifact,
+                DecisionIdentity::catalogKey
+            )
 
         val GSON: Gson =
             GsonBuilder()

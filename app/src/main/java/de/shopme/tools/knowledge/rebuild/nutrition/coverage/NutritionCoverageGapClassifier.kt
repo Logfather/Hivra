@@ -12,9 +12,9 @@ class NutritionCoverageGapClassifier(
     private val catalogFile: File,
     private val exactMappingFile: File,
     private val catalogServerMappingFile: File,
+    private val exactMatchReportFile: File,
     private val requestFile: File,
     private val decisionFile: File,
-    private val sourceAvailabilityFile: File? = null,
     private val snapshotReader: NutritionKnowledgeSnapshotReader
 ) {
 
@@ -73,6 +73,15 @@ class NutritionCoverageGapClassifier(
                 )
                 .toSortedSet()
 
+        val reportedExactMatchCatalogKeys =
+            readExactMatchReportCatalogKeys(
+                file =
+                    exactMatchReportFile
+            )
+                .intersect(
+                    catalogKeys
+                )
+
         require(
             catalogKeys.size ==
                     snapshot.catalogItemCount
@@ -118,15 +127,6 @@ class NutritionCoverageGapClassifier(
                     it.catalogKey
                 }
 
-        val sourceAvailabilityByCatalogKey =
-            readSourceAvailability(
-                file =
-                    sourceAvailabilityFile
-            )
-                .associateBy {
-                    it.catalogKey
-                }
-
         val gaps =
             missingCatalogKeys
                 .map { catalogKey ->
@@ -134,16 +134,15 @@ class NutritionCoverageGapClassifier(
                     classifyGap(
                         catalogKey =
                             catalogKey,
+                        exactMatchReported =
+                            catalogKey in
+                                    reportedExactMatchCatalogKeys,
                         request =
                             requestsByCatalogKey[
                                 catalogKey
                             ],
                         decision =
                             decisionsByCatalogKey[
-                                catalogKey
-                            ],
-                        sourceAvailability =
-                            sourceAvailabilityByCatalogKey[
                                 catalogKey
                             ]
                     )
@@ -197,9 +196,9 @@ class NutritionCoverageGapClassifier(
 
     private fun classifyGap(
         catalogKey: String,
+        exactMatchReported: Boolean,
         request: PersistedRequest?,
-        decision: PersistedDecision?,
-        sourceAvailability: SourceNutritionAvailability?
+        decision: PersistedDecision?
     ): NutritionCoverageGap {
 
         val candidates =
@@ -237,12 +236,12 @@ class NutritionCoverageGapClassifier(
             determineClassification(
                 catalogKey =
                     catalogKey,
+                exactMatchReported =
+                    exactMatchReported,
                 request =
                     request,
                 decision =
                     decision,
-                sourceAvailability =
-                    sourceAvailability,
                 topCandidate =
                     topCandidate,
                 topScoreDelta =
@@ -302,12 +301,24 @@ class NutritionCoverageGapClassifier(
 
     private fun determineClassification(
         catalogKey: String,
+        exactMatchReported: Boolean,
         request: PersistedRequest?,
         decision: PersistedDecision?,
-        sourceAvailability: SourceNutritionAvailability?,
         topCandidate: PersistedCandidate?,
         topScoreDelta: Double?
     ): Classification {
+
+        if (exactMatchReported) {
+            return Classification(
+                type =
+                    NutritionCoverageGapType
+                        .EXACT_MATCH_NOT_IN_RUNTIME,
+                details =
+                    "The catalog key is reported as an exact nutrition " +
+                            "server match, but it is not covered by the " +
+                            "persisted runtime mapping artifacts."
+            )
+        }
 
         if (
             decision?.type ==
@@ -320,26 +331,6 @@ class NutritionCoverageGapClassifier(
                     "A MATCH decision exists, but the catalog key is " +
                             "not covered by the persisted mapping " +
                             "artifact."
-            )
-        }
-
-        if (
-            sourceAvailability != null &&
-            sourceAvailability.directProductMatchCount > 0 &&
-            sourceAvailability.estimatedExtractorEligibleCount == 0
-        ) {
-            return Classification(
-                type =
-                    NutritionCoverageGapType.SOURCE_DATA_NO_NUTRITION,
-                details =
-                    "The productive OFF slim export contains " +
-                            "${sourceAvailability.directProductMatchCount} direct " +
-                            "product match(es) and " +
-                            "${sourceAvailability.ingredientOnlyMatchCount} " +
-                            "ingredient-only match(es), but no direct product match " +
-                            "contains nutrition data eligible for extraction. " +
-                            "Estimated rejected direct products: " +
-                            "${sourceAvailability.estimatedExtractorRejectedCount}."
             )
         }
 
@@ -720,33 +711,18 @@ class NutritionCoverageGapClassifier(
             )
         }
 
-        if (
-            topCandidate.diagnosticScore <
-            MODERATE_TOP_CANDIDATE_THRESHOLD
-        ) {
-            return Classification(
-                type =
-                    NutritionCoverageGapType.NO_MATCH,
-                noMatchCause =
-                    NutritionNoMatchCause.WEAK_CANDIDATE_SET,
-                details =
-                    "The best available candidate has only a weak " +
-                            "diagnostic score of " +
-                            formatScore(
-                                topCandidate.diagnosticScore
-                            ) +
-                            "."
-            )
-        }
-
         return Classification(
             type =
                 NutritionCoverageGapType.NO_MATCH,
             noMatchCause =
-                NutritionNoMatchCause.UNEXPLAINED,
+                NutritionNoMatchCause.WEAK_CANDIDATE_SET,
             details =
-                "The persisted decision is NO_MATCH, but no more " +
-                        "specific deterministic cause was identified."
+                "The best available candidate has only a weak " +
+                        "diagnostic score of " +
+                        formatScore(
+                            topCandidate.diagnosticScore
+                        ) +
+                        "."
         )
     }
 
@@ -781,8 +757,7 @@ class NutritionCoverageGapClassifier(
                     .values
                     .any { classTokens ->
 
-                        token in
-                                classTokens
+                        token in classTokens
                     }
             }
             .toSortedSet()
@@ -804,162 +779,6 @@ class NutritionCoverageGapClassifier(
         return tokens.intersect(
             PREPARED_MEAL_IDENTITY_TOKENS
         )
-    }
-
-    private fun readSourceAvailability(
-        file: File?
-    ): List<SourceNutritionAvailability> {
-
-        if (
-            file == null ||
-            !file.isFile
-        ) {
-            return emptyList()
-        }
-
-        val root =
-            JsonParser.parseString(
-                file.readText()
-            )
-
-        require(root.isJsonObject) {
-            "OFF nutrition availability report must contain a JSON " +
-                    "object: ${file.absolutePath}"
-        }
-
-        val entries =
-            root.asJsonObject
-                .arrayOrNull(
-                    key =
-                        "entries"
-                )
-                ?: error(
-                    "OFF nutrition availability report contains no " +
-                            "'entries' array: ${file.absolutePath}"
-                )
-
-        val parsedEntries =
-            entries.map { element ->
-
-                require(element.isJsonObject) {
-                    "OFF nutrition availability entry must be a JSON " +
-                            "object."
-                }
-
-                val entry =
-                    element.asJsonObject
-
-                SourceNutritionAvailability(
-                    catalogKey =
-                        normalizeKey(
-                            entry.requiredString(
-                                key =
-                                    "catalogKey"
-                            )
-                        ),
-                    matchingOffProductCount =
-                        entry.requiredInt(
-                            key =
-                                "matchingOffProductCount"
-                        ),
-                    directProductMatchCount =
-                        entry.requiredInt(
-                            key =
-                                "directProductMatchCount"
-                        ),
-                    ingredientOnlyMatchCount =
-                        entry.requiredInt(
-                            key =
-                                "ingredientOnlyMatchCount"
-                        ),
-                    estimatedExtractorEligibleCount =
-                        entry.requiredInt(
-                            key =
-                                "estimatedExtractorEligibleCount"
-                        ),
-                    estimatedExtractorRejectedCount =
-                        entry.requiredInt(
-                            key =
-                                "estimatedExtractorRejectedCount"
-                        )
-                )
-            }
-
-        requireNoDuplicateKeys(
-            values =
-                parsedEntries.map {
-                    it.catalogKey
-                },
-            sourceName =
-                "OFF nutrition availability entries"
-        )
-
-        parsedEntries.forEach { entry ->
-
-            require(
-                entry.matchingOffProductCount >= 0
-            ) {
-                "matchingOffProductCount must not be negative for " +
-                        "'${entry.catalogKey}'."
-            }
-
-            require(
-                entry.directProductMatchCount >= 0
-            ) {
-                "directProductMatchCount must not be negative for " +
-                        "'${entry.catalogKey}'."
-            }
-
-            require(
-                entry.ingredientOnlyMatchCount >= 0
-            ) {
-                "ingredientOnlyMatchCount must not be negative for " +
-                        "'${entry.catalogKey}'."
-            }
-
-            require(
-                entry.estimatedExtractorEligibleCount >= 0
-            ) {
-                "estimatedExtractorEligibleCount must not be negative " +
-                        "for '${entry.catalogKey}'."
-            }
-
-            require(
-                entry.estimatedExtractorRejectedCount >= 0
-            ) {
-                "estimatedExtractorRejectedCount must not be negative " +
-                        "for '${entry.catalogKey}'."
-            }
-
-            require(
-                entry.directProductMatchCount +
-                        entry.ingredientOnlyMatchCount ==
-                        entry.matchingOffProductCount
-            ) {
-                "OFF match-origin counts do not cover all matching products for " +
-                        "'${entry.catalogKey}': " +
-                        "matching=${entry.matchingOffProductCount}, " +
-                        "direct=${entry.directProductMatchCount}, " +
-                        "ingredientOnly=${entry.ingredientOnlyMatchCount}."
-            }
-
-            require(
-                entry.estimatedExtractorEligibleCount +
-                        entry.estimatedExtractorRejectedCount ==
-                        entry.directProductMatchCount
-            ) {
-                "OFF extractor eligibility counts do not cover all direct product " +
-                        "matches for '${entry.catalogKey}': " +
-                        "direct=${entry.directProductMatchCount}, " +
-                        "eligible=${entry.estimatedExtractorEligibleCount}, " +
-                        "rejected=${entry.estimatedExtractorRejectedCount}."
-            }
-        }
-
-        return parsedEntries
-            .sortedBy {
-                it.catalogKey
-            }
     }
 
     private fun readCatalogKeys(
@@ -1144,6 +963,70 @@ class NutritionCoverageGapClassifier(
             .toSortedSet()
     }
 
+    private fun readExactMatchReportCatalogKeys(
+        file: File
+    ): Set<String> {
+
+        require(file.isFile) {
+            "Nutrition exact-match report does not exist: " +
+                    file.absolutePath
+        }
+
+        val root =
+            JsonParser.parseString(
+                file.readText()
+            )
+
+        require(root.isJsonObject) {
+            "Nutrition exact-match report must contain a JSON object: " +
+                    file.absolutePath
+        }
+
+        val exactMatches =
+            root.asJsonObject
+                .arrayOrNull(
+                    key =
+                        "exactMatches"
+                )
+                ?: error(
+                    "Nutrition exact-match report contains no " +
+                            "'exactMatches' array: " +
+                            file.absolutePath
+                )
+
+        val catalogKeys =
+            exactMatches
+                .map { element ->
+
+                    require(
+                        element.isJsonPrimitive &&
+                                element
+                                    .asJsonPrimitive
+                                    .isString
+                    ) {
+                        "Nutrition exactMatches must contain strings."
+                    }
+
+                    normalizeKey(
+                        value =
+                            element.asString
+                    )
+                }
+                .filter {
+                    it.isNotBlank()
+                }
+
+        requireNoDuplicateKeys(
+            values =
+                catalogKeys,
+            sourceName =
+                "nutrition exact matches"
+        )
+
+        return catalogKeys
+            .toSortedSet()
+    }
+
     private fun readRequests(
         file: File
     ): List<PersistedRequest> {
@@ -1247,7 +1130,8 @@ class NutritionCoverageGapClassifier(
                                             }
 
                                             normalizeKey(
-                                                tokenElement.asString
+                                                value =
+                                                    tokenElement.asString
                                             )
                                         }
                                         .filter {
@@ -1261,10 +1145,11 @@ class NutritionCoverageGapClassifier(
                 PersistedRequest(
                     catalogKey =
                         normalizeKey(
-                            objectValue.requiredString(
-                                key =
-                                    "catalogKey"
-                            )
+                            value =
+                                objectValue.requiredString(
+                                    key =
+                                        "catalogKey"
+                                )
                         ),
                     candidates =
                         candidates
@@ -1290,8 +1175,9 @@ class NutritionCoverageGapClassifier(
         file: File
     ): List<PersistedDecision> {
 
-        if (!file.isFile) {
-            return emptyList()
+        require(file.isFile) {
+            "Nutrition decision file does not exist: " +
+                    file.absolutePath
         }
 
         val root =
@@ -1300,99 +1186,149 @@ class NutritionCoverageGapClassifier(
             )
 
         require(root.isJsonObject) {
-            "Nutrition decision file must contain a JSON object."
+            "Nutrition decision file must contain a JSON object: " +
+                    file.absolutePath
         }
 
-        val decisions =
+        val rootObject =
             root.asJsonObject
-                .arrayOrNull(
+
+        val entries =
+            when {
+
+                rootObject.hasJsonArray(
                     key =
                         "decisions"
-                )
-                ?: error(
-                    "Nutrition decision file contains no 'decisions' " +
-                            "array."
-                )
-
-        val parsedDecisions =
-            decisions.mapNotNull { element ->
-
-                require(element.isJsonObject) {
-                    "Nutrition decision must be a JSON object."
-                }
-
-                val objectValue =
-                    element.asJsonObject
-
-                val serverArtifact =
-                    objectValue.requiredString(
-                        key =
-                            "serverArtifact"
+                ) ->
+                    rootObject.getAsJsonArray(
+                        "decisions"
                     )
 
-                if (
-                    serverArtifact !=
-                    NUTRITION_ARTIFACT
-                ) {
-                    return@mapNotNull null
-                }
+                rootObject.hasJsonArray(
+                    key =
+                        "diagnostics"
+                ) ->
+                    rootObject.getAsJsonArray(
+                        "diagnostics"
+                    )
 
-                val type =
-                    CatalogKnowledgeMatchDecisionType.valueOf(
-                        objectValue.requiredString(
+                else ->
+                    error(
+                        "Nutrition decision file contains neither a " +
+                                "'decisions' nor a 'diagnostics' array: " +
+                                file.absolutePath
+                    )
+            }
+
+        val decisions =
+            entries
+                .mapNotNull { element ->
+
+                    require(element.isJsonObject) {
+                        "Nutrition decision entries must be JSON objects."
+                    }
+
+                    val entry =
+                        element.asJsonObject
+
+                    val serverArtifact =
+                        entry.requiredString(
+                            key =
+                                "serverArtifact"
+                        )
+
+                    if (
+                        serverArtifact !=
+                        NUTRITION_ARTIFACT
+                    ) {
+                        return@mapNotNull null
+                    }
+
+                    val catalogKey =
+                        normalizeKey(
+                            value =
+                                entry.requiredString(
+                                    key =
+                                        "catalogKey"
+                                )
+                        )
+
+                    val decisionTypeName =
+                        entry.optionalString(
                             key =
                                 "type"
                         )
-                    )
-
-                val decisionSource =
-                    objectValue.optionalString(
-                        key =
-                            "decisionSource"
-                    )
-                        ?.let(
-                            CatalogKnowledgeMatchDecisionSource::valueOf
-                        )
-                        ?: CatalogKnowledgeMatchDecisionSource.CHAT_GPT
-
-                PersistedDecision(
-                    catalogKey =
-                        normalizeKey(
-                            objectValue.requiredString(
+                            ?: entry.optionalString(
                                 key =
-                                    "catalogKey"
+                                    "decisionType"
                             )
-                        ),
-                    type =
-                        type,
-                    selectedServerKey =
-                        objectValue.optionalString(
+                            ?: error(
+                                "Nutrition decision entry for " +
+                                        "'$catalogKey' contains neither " +
+                                        "'type' nor 'decisionType'."
+                            )
+
+                    val decisionType =
+                        CatalogKnowledgeMatchDecisionType.valueOf(
+                            decisionTypeName
+                        )
+
+                    val selectedServerKey =
+                        entry.optionalString(
                             key =
                                 "selectedServerKey"
                         )
-                            ?.let(
-                                ::normalizeKey
-                            ),
-                    confidence =
-                        objectValue.requiredDouble(
+                            ?.let { value ->
+
+                                normalizeKey(
+                                    value =
+                                        value
+                                )
+                            }
+
+                    val confidence =
+                        entry.requiredDouble(
                             key =
                                 "confidence"
-                        ),
-                    decisionSource =
-                        decisionSource
-                )
-            }
+                        )
+
+                    val decisionSource =
+                        entry.optionalString(
+                            key =
+                                "decisionSource"
+                        )
+                            ?.let { value ->
+
+                                CatalogKnowledgeMatchDecisionSource
+                                    .valueOf(
+                                        value
+                                    )
+                            }
+
+                    PersistedDecision(
+                        catalogKey =
+                            catalogKey,
+                        type =
+                            decisionType,
+                        selectedServerKey =
+                            selectedServerKey,
+                        confidence =
+                            confidence,
+                        decisionSource =
+                            decisionSource
+                    )
+                }
 
         requireNoDuplicateKeys(
             values =
-                parsedDecisions.map {
+                decisions.map {
                     it.catalogKey
                 },
             sourceName =
-                "nutrition match decisions"
+                "nutrition decisions"
         )
 
-        return parsedDecisions
+        return decisions
             .sortedBy {
                 it.catalogKey
             }
@@ -1509,24 +1445,20 @@ class NutritionCoverageGapClassifier(
             "$sourceName contain duplicate catalog keys: " +
                     duplicates
                         .sorted()
-                        .take(MAX_DIAGNOSTIC_KEYS)
+                        .take(
+                            MAX_DIAGNOSTIC_KEYS
+                        )
                         .joinToString()
         }
     }
 
-    private fun JsonObject.requiredInt(
+    private fun JsonObject.hasJsonArray(
         key: String
-    ): Int {
+    ): Boolean {
 
         return get(key)
-            ?.takeIf {
-                it.isJsonPrimitive &&
-                        it.asJsonPrimitive.isNumber
-            }
-            ?.asInt
-            ?: error(
-                "Missing integer value '$key'."
-            )
+            ?.isJsonArray ==
+                true
     }
 
     private fun JsonObject.arrayOrNull(
@@ -1593,15 +1525,6 @@ class NutritionCoverageGapClassifier(
             .orEmpty()
     }
 
-    private data class SourceNutritionAvailability(
-        val catalogKey: String,
-        val matchingOffProductCount: Int,
-        val directProductMatchCount: Int,
-        val ingredientOnlyMatchCount: Int,
-        val estimatedExtractorEligibleCount: Int,
-        val estimatedExtractorRejectedCount: Int
-    )
-
     private data class PersistedRequest(
         val catalogKey: String,
         val candidates: List<PersistedCandidate>
@@ -1618,7 +1541,7 @@ class NutritionCoverageGapClassifier(
         val type: CatalogKnowledgeMatchDecisionType,
         val selectedServerKey: String?,
         val confidence: Double,
-        val decisionSource: CatalogKnowledgeMatchDecisionSource
+        val decisionSource: CatalogKnowledgeMatchDecisionSource?
     )
 
     private data class Classification(

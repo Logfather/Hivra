@@ -10,6 +10,8 @@ data class NutritionKnowledgeRebuildProjectFiles(
     val serverNutritionFile: File,
     val runtimeArtifactDirectory: File,
     val runtimeNutritionFile: File,
+    val matchReportFile: File,
+    val exactMatchReportFile: File,
     val requestFile: File,
     val decisionFile: File,
     val diagnosticsFile: File,
@@ -149,7 +151,18 @@ data class NutritionKnowledgeRebuildProjectFiles(
                         generatedKnowledgeDirectory,
                         "reports/" +
                                 "nutrition.low-confidence-validation.json"
-                    )
+                    ),
+                matchReportFile =
+                    File(
+                        projectRoot,
+                        "data/generated/reports/catalog-server-matches/" +
+                                "nutrition.matches.json"
+                    ),
+                exactMatchReportFile =
+                    projectRoot.resolve(
+                        "data/generated/reports/catalog-server-matches/" +
+                                "nutrition.matches.json"
+                    ),
             )
         }
     }

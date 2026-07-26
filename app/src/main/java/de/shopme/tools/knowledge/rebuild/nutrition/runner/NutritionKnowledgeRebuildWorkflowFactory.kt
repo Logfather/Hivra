@@ -4,6 +4,8 @@ import de.shopme.tools.knowledge.ai.AIProviderConfig
 import de.shopme.tools.knowledge.ai.openai.OpenAIProvider
 import de.shopme.tools.knowledge.ai.openai.OpenAIProviderConfig
 import de.shopme.tools.knowledge.ai.openai.RealOpenAIHttpClient
+import de.shopme.tools.knowledge.mapping.catalog.CatalogKnowledgeMatchRequestWriter
+import de.shopme.tools.knowledge.mapping.catalog.DefaultCatalogKnowledgeMatchRequestGenerator
 import de.shopme.tools.knowledge.mapping.catalog.OpenAICatalogKnowledgeMatcherFactory
 import de.shopme.tools.knowledge.mapping.catalog.local.ConservativeLocalNutritionMatcher
 import de.shopme.tools.knowledge.mapping.catalog.local.LocalFirstCatalogKnowledgeMatcher
@@ -15,6 +17,7 @@ import de.shopme.tools.knowledge.rebuild.nutrition.adapter.DefaultNutritionKnowl
 import de.shopme.tools.knowledge.rebuild.nutrition.adapter.DefaultNutritionKnowledgeRuntimeRebuildStep
 import de.shopme.tools.knowledge.rebuild.nutrition.adapter.DefaultNutritionKnowledgeSnapshotReader
 import de.shopme.tools.knowledge.rebuild.nutrition.adapter.ModeAwareNutritionKnowledgeMatchingStep
+import de.shopme.tools.knowledge.rebuild.nutrition.adapter.NutritionExactMappingSynchronizer
 import de.shopme.tools.knowledge.rebuild.nutrition.adapter.NutritionUnresolvedDecisionPreparer
 import de.shopme.tools.knowledge.rebuild.nutrition.adapter.OfflineFallbackCatalogKnowledgeMatcher
 import de.shopme.tools.knowledge.rebuild.nutrition.adapter.OfflineNutritionKnowledgeMatchingStep
@@ -130,6 +133,25 @@ class NutritionKnowledgeRebuildWorkflowFactory(
                     output::println
             )
 
+        val requestGenerator =
+            DefaultCatalogKnowledgeMatchRequestGenerator(
+                serverArtifactFile =
+                    files.serverNutritionFile
+            )
+
+        val requestWriter =
+            CatalogKnowledgeMatchRequestWriter()
+
+        val exactMappingSynchronizer =
+            NutritionExactMappingSynchronizer(
+                exactMatchReportFile =
+                    files.exactMatchReportFile,
+                exactMappingFile =
+                    files.exactMappingFile,
+                serverNutritionFile =
+                    files.serverNutritionFile
+            )
+
         return NutritionKnowledgeRebuildWorkflow(
             snapshotReader =
                 DefaultNutritionKnowledgeSnapshotReader(
@@ -148,16 +170,37 @@ class NutritionKnowledgeRebuildWorkflowFactory(
                         files.requestFile,
                     rebuildRequests = {
 
-                        /*
-                         * Der aktuelle produktive Workflow verwendet das
-                         * bereits deterministisch persistierte Request-
-                         * Artefakt.
-                         *
-                         * Sobald ein eigenständiger produktiver Request-
-                         * Builder als Main-Contract vorliegt, wird er hier
-                         * eingesetzt. Bis dahin wird nicht versucht,
-                         * Retrieval-Logik zu duplizieren.
-                         */
+                        val synchronizationResult =
+                            exactMappingSynchronizer
+                                .synchronize()
+
+                        output.println(
+                            "Exact nutrition mappings synchronized: " +
+                                    "existing=" +
+                                    synchronizationResult.existingMappingCount +
+                                    ", added=" +
+                                    synchronizationResult.addedMappingCount +
+                                    ", final=" +
+                                    synchronizationResult.finalMappingCount
+                        )
+
+                        val requests =
+                            requestGenerator.generate(
+                                matchReportFile =
+                                    files.matchReportFile
+                            )
+
+                        requestWriter.write(
+                            requests =
+                                requests,
+                            file =
+                                files.requestFile
+                        )
+
+                        output.println(
+                            "Nutrition match requests rebuilt: " +
+                                    requests.requests.size
+                        )
                     }
                 ),
             matchingStep =
@@ -287,6 +330,8 @@ class NutritionKnowledgeRebuildWorkflowFactory(
         return ProductiveNutritionKnowledgeMatchingStep(
             runner =
                 runner,
+            requestFile =
+                files.requestFile,
             decisionFile =
                 files.decisionFile
         )
@@ -299,6 +344,16 @@ class NutritionKnowledgeRebuildWorkflowFactory(
         require(files.catalogFile.isFile) {
             "Nutrition rebuild catalog file does not exist: " +
                     files.catalogFile.absolutePath
+        }
+
+        require(files.matchReportFile.isFile) {
+            "Nutrition catalog-server match report does not exist: " +
+                    files.matchReportFile.absolutePath
+        }
+
+        require(files.exactMatchReportFile.isFile) {
+            "Nutrition exact-match report does not exist: " +
+                    files.exactMatchReportFile.absolutePath
         }
 
         require(files.requestFile.isFile) {

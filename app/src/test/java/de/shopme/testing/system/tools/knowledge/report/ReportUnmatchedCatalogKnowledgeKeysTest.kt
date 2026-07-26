@@ -99,6 +99,16 @@ class ReportUnmatchedCatalogKnowledgeKeysTest {
                         catalogKeys = catalogKeys
                     )
 
+                if (
+                    artifactFile.name.equals(
+                        "nutrition.json",
+                        ignoreCase = true
+                    )
+                ) {
+
+                    verifyCiqualCoverage(report)
+                }
+
                 val outputFile =
                     File(
                         outputDirectory,
@@ -134,5 +144,62 @@ class ReportUnmatchedCatalogKnowledgeKeysTest {
                 println("Report                    : ${outputFile.path}")
                 println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
             }
+    }
+
+    private fun verifyCiqualCoverage(
+        report: CatalogServerKnowledgeMatchReport
+    ) {
+
+        fun find(
+            key: String
+        ) =
+            report.unmatched.firstOrNull {
+                it.catalogKey == key
+            }
+
+        val chervil =
+            find("chervil")
+
+        if (chervil != null) {
+
+            assertTrue(
+                chervil.nearestCandidates.isNotEmpty(),
+                "CIQUAL should provide nutrition candidates for chervil."
+            )
+        } else {
+
+            assertTrue(
+                report.exactMatches.contains("chervil"),
+                "Chervil must either match exactly or provide retrieval candidates."
+            )
+        }
+
+        val salsify =
+            find("salsify")
+
+        if (salsify != null) {
+
+            assertTrue(
+                salsify.nearestCandidates.isNotEmpty(),
+                "CIQUAL should provide nutrition candidates for salsify."
+            )
+        } else {
+
+            assertTrue(
+                report.exactMatches.contains("salsify"),
+                "Salsify must either match exactly or provide retrieval candidates."
+            )
+        }
+
+        val mace =
+            find("mace")
+
+        if (mace != null) {
+
+            assertTrue(
+                mace.nearestCandidates.isEmpty(),
+                "CIQUAL currently contains no nutrition mapping for mace."
+            )
+        }
     }
 }
