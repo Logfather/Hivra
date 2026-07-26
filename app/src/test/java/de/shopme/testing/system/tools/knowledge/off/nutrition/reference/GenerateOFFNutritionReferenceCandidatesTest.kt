@@ -2,6 +2,7 @@ package de.shopme.testing.system.tools.knowledge.off.nutrition.reference
 
 import de.shopme.tools.knowledge.off.extractor.OFFCandidateExtractor
 import de.shopme.tools.knowledge.off.nutrition.reference.OFFNutritionReferenceCandidateGenerator
+import de.shopme.tools.knowledge.off.nutrition.reference.OFFNutritionReferenceDatasetWriter
 import java.io.File
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -28,73 +29,132 @@ class GenerateOFFNutritionReferenceCandidatesTest {
                     file =
                         inputFile,
                     maxCandidates =
-                        50_000
+                        MAX_CANDIDATES
                 )
 
-        val result =
+        val generationResult =
             OFFNutritionReferenceCandidateGenerator()
                 .generate(
                     candidates =
                         extracted
                 )
 
+        val outputFile =
+            File(
+                "../data/generated/knowledge/off/nutrition/" +
+                        "nutrition-reference-candidates.json"
+            )
+
+        val writeResult =
+            OFFNutritionReferenceDatasetWriter()
+                .write(
+                    candidates =
+                        generationResult.candidates,
+                    outputFile =
+                        outputFile
+                )
+
         println()
-        println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-        println("OFF NUTRITION REFERENCE CANDIDATES")
-        println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-        println("input=${result.inputCandidateCount}")
-        println("generated=${result.generatedCandidateCount}")
+        println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        println("OFF NUTRITION REFERENCE DATASET")
+        println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        println(
+            "inputCandidates=" +
+                    generationResult.inputCandidateCount
+        )
+        println(
+            "generatedCandidates=" +
+                    generationResult.generatedCandidateCount
+        )
         println(
             "skippedWithoutNutrition=" +
-                    result.skippedWithoutNutritionCount
+                    generationResult.skippedWithoutNutritionCount
         )
         println(
             "skippedInvalidIdentity=" +
-                    result.skippedInvalidIdentityCount
+                    generationResult.skippedInvalidIdentityCount
         )
         println(
             "skippedInvalidNutritionPayload=" +
-                    result.skippedInvalidNutritionPayloadCount
+                    generationResult
+                        .skippedInvalidNutritionPayloadCount
         )
-        println("sample=${result.candidates.take(10)}")
-        println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        println(
+            "persistedCandidates=" +
+                    writeResult.candidateCount
+        )
+        println(
+            "fileSizeBytes=" +
+                    writeResult.fileSizeBytes
+        )
+        println(
+            "outputFile=" +
+                    writeResult.outputFile.absolutePath
+        )
+        println(
+            "sample=" +
+                    generationResult.candidates.take(10)
+        )
+        println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 
         assertEquals(
             extracted.size,
-            result.inputCandidateCount
+            generationResult.inputCandidateCount
         )
 
         assertTrue(
-            result.generatedCandidateCount > 0
+            generationResult.generatedCandidateCount > 0
+        )
+
+        assertEquals(
+            generationResult.generatedCandidateCount,
+            writeResult.candidateCount
         )
 
         assertTrue(
-            result.candidates.all { candidate ->
+            generationResult.candidates.all { candidate ->
                 candidate.sourceId.isNotBlank()
             }
         )
 
         assertTrue(
-            result.candidates.all { candidate ->
+            generationResult.candidates.all { candidate ->
                 candidate.canonicalId.isNotBlank()
             }
         )
 
         assertTrue(
-            result.candidates.all { candidate ->
+            generationResult.candidates.all { candidate ->
                 candidate.nutrition.isNotEmpty()
             }
         )
 
         assertEquals(
-            result.candidates
+            generationResult.candidates
                 .sortedWith(
-                    compareBy(
-                        { it.sourceId },
-                        { it.canonicalId }
-                    )
+                    OFFNutritionReferenceDatasetWriter
+                        .CANDIDATE_COMPARATOR
                 ),
-            result.candidates
+            generationResult.candidates
         )
+
+        assertTrue(
+            outputFile.isFile
+        )
+
+        assertTrue(
+            outputFile.length() > 0L
+        )
+
+        assertEquals(
+            outputFile.length(),
+            writeResult.fileSizeBytes
+        )
+    }
+
+    private companion object {
+
+        const val MAX_CANDIDATES =
+            50_000
     }
 }
