@@ -3,6 +3,8 @@ package de.shopme.testing.system.tools.knowledge.off.nutrition.reference
 import de.shopme.tools.knowledge.off.extractor.OFFCandidateExtractor
 import de.shopme.tools.knowledge.off.nutrition.reference.OFFNutritionReferenceCandidateGenerator
 import de.shopme.tools.knowledge.off.nutrition.reference.OFFNutritionReferenceDatasetWriter
+import de.shopme.tools.knowledge.off.nutrition.reference.candidate.diagnostic.CollectingOFFNutritionReferenceCandidateTraceSink
+import de.shopme.tools.knowledge.off.nutrition.reference.candidate.diagnostic.OFFNutritionReferenceCandidateTraceWriter
 import java.io.File
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -17,7 +19,7 @@ class GenerateOFFNutritionReferenceCandidatesTest {
             File(
                 "../data/generated/openfoodfacts/" +
                         "openfoodfacts-products.slim.jsonl.gz"
-            )
+            ).canonicalFile
 
         require(inputFile.isFile) {
             "OFF slim dump not found: ${inputFile.absolutePath}"
@@ -32,17 +34,32 @@ class GenerateOFFNutritionReferenceCandidatesTest {
                         MAX_CANDIDATES
                 )
 
+        val traceSink =
+            CollectingOFFNutritionReferenceCandidateTraceSink()
+
         val generationResult =
-            OFFNutritionReferenceCandidateGenerator()
+            OFFNutritionReferenceCandidateGenerator(
+                traceSink =
+                    traceSink
+            )
                 .generate(
                     candidates =
                         extracted
                 )
 
-        val outputFile =
+        val outputDirectory =
             File(
-                "../data/generated/knowledge/off/nutrition/" +
-                        "nutrition-reference-candidates.json"
+                "../data/generated/knowledge/off/nutrition"
+            ).canonicalFile
+
+        val outputFile =
+            outputDirectory.resolve(
+                "nutrition-reference-candidates.json"
+            )
+
+        val traceFile =
+            outputDirectory.resolve(
+                "nutrition-reference-candidate-traces.json"
             )
 
         val writeResult =
@@ -53,6 +70,17 @@ class GenerateOFFNutritionReferenceCandidatesTest {
                     outputFile =
                         outputFile
                 )
+
+        val traces =
+            traceSink.traces()
+
+        OFFNutritionReferenceCandidateTraceWriter()
+            .write(
+                traces =
+                    traces,
+                outputFile =
+                    traceFile
+            )
 
         println()
         println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
@@ -76,12 +104,15 @@ class GenerateOFFNutritionReferenceCandidatesTest {
         )
         println(
             "skippedInvalidNutritionPayload=" +
-                    generationResult
-                        .skippedInvalidNutritionPayloadCount
+                    generationResult.skippedInvalidNutritionPayloadCount
         )
         println(
             "persistedCandidates=" +
                     writeResult.candidateCount
+        )
+        println(
+            "traceCount=" +
+                    traces.size
         )
         println(
             "fileSizeBytes=" +
@@ -92,63 +123,126 @@ class GenerateOFFNutritionReferenceCandidatesTest {
                     writeResult.outputFile.absolutePath
         )
         println(
+            "traceFile=" +
+                    traceFile.absolutePath
+        )
+        println(
             "sample=" +
                     generationResult.candidates.take(10)
         )
         println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 
         assertEquals(
-            extracted.size,
-            generationResult.inputCandidateCount
+            expected =
+                extracted.size,
+            actual =
+                generationResult.inputCandidateCount
         )
 
         assertTrue(
-            generationResult.generatedCandidateCount > 0
+            actual =
+                generationResult.generatedCandidateCount > 0
         )
 
         assertEquals(
-            generationResult.generatedCandidateCount,
-            writeResult.candidateCount
+            expected =
+                generationResult.generatedCandidateCount,
+            actual =
+                writeResult.candidateCount
         )
 
-        assertTrue(
-            generationResult.candidates.all { candidate ->
-                candidate.sourceId.isNotBlank()
-            }
-        )
-
-        assertTrue(
-            generationResult.candidates.all { candidate ->
-                candidate.canonicalId.isNotBlank()
-            }
-        )
-
-        assertTrue(
-            generationResult.candidates.all { candidate ->
-                candidate.nutrition.isNotEmpty()
-            }
+        /*
+         * Der Generator muss für jeden verarbeiteten Eingangskandidaten
+         * genau einen finalen Trace erzeugen:
+         *
+         * - Kandidat erzeugt
+         * - ungültige Identität
+         * - keine Nutrition-Dimension
+         * - ungültiger Nutrition-Payload
+         */
+        assertEquals(
+            expected =
+                generationResult.inputCandidateCount,
+            actual =
+                traces.size,
+            message =
+                "Every input candidate must produce exactly one diagnostic trace."
         )
 
         assertEquals(
-            generationResult.candidates
-                .sortedWith(
-                    OFFNutritionReferenceDatasetWriter
-                        .CANDIDATE_COMPARATOR
-                ),
-            generationResult.candidates
+            expected =
+                generationResult.generatedCandidateCount,
+            actual =
+                traces.count { trace ->
+                    trace.candidateCreated
+                },
+            message =
+                "Created-candidate traces must match generatedCandidateCount."
         )
 
         assertTrue(
-            outputFile.isFile
+            actual =
+                generationResult.candidates.all { candidate ->
+                    candidate.sourceId.isNotBlank()
+                }
         )
 
         assertTrue(
-            outputFile.length() > 0L
+            actual =
+                generationResult.candidates.all { candidate ->
+                    candidate.canonicalId.isNotBlank()
+                }
+        )
+
+        assertTrue(
+            actual =
+                generationResult.candidates.all { candidate ->
+                    candidate.nutrition.isNotEmpty()
+                }
         )
 
         assertEquals(
-            outputFile.length(),
-            writeResult.fileSizeBytes
+            expected =
+                generationResult.candidates
+                    .sortedWith(
+                        OFFNutritionReferenceDatasetWriter
+                            .CANDIDATE_COMPARATOR
+                    ),
+            actual =
+                generationResult.candidates
+        )
+
+        assertTrue(
+            actual =
+                outputFile.isFile,
+            message =
+                "Reference candidate dataset was not written: " +
+                        outputFile.absolutePath
+        )
+
+        assertTrue(
+            actual =
+                outputFile.length() > 0L
+        )
+
+        assertEquals(
+            expected =
+                outputFile.length(),
+            actual =
+                writeResult.fileSizeBytes
+        )
+
+        assertTrue(
+            actual =
+                traceFile.isFile,
+            message =
+                "Reference candidate trace file was not written: " +
+                        traceFile.absolutePath
+        )
+
+        assertTrue(
+            actual =
+                traceFile.length() > 0L
         )
     }
 
