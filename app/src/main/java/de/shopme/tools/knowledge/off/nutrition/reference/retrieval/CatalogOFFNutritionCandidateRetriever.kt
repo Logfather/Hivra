@@ -7,11 +7,27 @@ import kotlin.math.min
 
 class CatalogOFFNutritionCandidateRetriever(
     private val maximumCandidatesPerRequest: Int = 10,
-    private val minimumScore: Double = 0.18
+    private val retrievalPoolSize: Int = 50,
+    private val minimumScore: Double = 0.18,
+    private val termExpander: OFFNutritionRetrievalTermExpander =
+        OFFNutritionRetrievalTermExpander(),
+    private val qualityReranker: OFFNutritionCandidateQualityReranker =
+        OFFNutritionCandidateQualityReranker()
 ) {
 
     init {
         require(maximumCandidatesPerRequest > 0)
+
+        require(retrievalPoolSize > 0)
+
+        require(
+            retrievalPoolSize >= maximumCandidatesPerRequest
+        ) {
+            "Retrieval pool size must be greater than or equal to " +
+                    "maximum candidates per request: " +
+                    "retrievalPoolSize=$retrievalPoolSize, " +
+                    "maximumCandidatesPerRequest=$maximumCandidatesPerRequest."
+        }
 
         require(
             minimumScore.isFinite() &&
@@ -53,13 +69,18 @@ class CatalogOFFNutritionCandidateRetriever(
 
         val indexedCandidates =
             sourceCandidates
-                .sortedBy {
-                    it.serverKey
+                .sortedBy { candidate ->
+                    candidate.serverKey
                 }
                 .map(::indexCandidate)
 
         require(
-            indexedCandidates.map { it.candidate.serverKey }.distinct().size ==
+            indexedCandidates
+                .map { indexedCandidate ->
+                    indexedCandidate.candidate.serverKey
+                }
+                .distinct()
+                .size ==
                     indexedCandidates.size
         ) {
             "OFF matcher candidates contain duplicate server keys."
@@ -67,7 +88,7 @@ class CatalogOFFNutritionCandidateRetriever(
 
         val invertedIndex =
             buildInvertedIndex(
-                indexedCandidates
+                indexedCandidates = indexedCandidates
             )
 
         val requests =
@@ -87,24 +108,26 @@ class CatalogOFFNutritionCandidateRetriever(
             requestCount =
                 requests.size,
             requestWithCandidatesCount =
-                requests.count {
-                    it.candidates.isNotEmpty()
+                requests.count { request ->
+                    request.candidates.isNotEmpty()
                 },
             requestWithoutCandidatesCount =
-                requests.count {
-                    it.candidates.isEmpty()
+                requests.count { request ->
+                    request.candidates.isEmpty()
                 },
             exactTopCandidateCount =
-                requests.count {
-                    it.candidates.firstOrNull()?.exactMatch == true
+                requests.count { request ->
+                    request.candidates
+                        .firstOrNull()
+                        ?.exactMatch == true
                 },
             totalRetrievedCandidateCount =
-                requests.sumOf {
-                    it.candidates.size
+                requests.sumOf { request ->
+                    request.candidates.size
                 },
             maximumCandidateCount =
-                requests.maxOfOrNull {
-                    it.candidates.size
+                requests.maxOfOrNull { request ->
+                    request.candidates.size
                 } ?: 0,
             requests =
                 requests
@@ -117,7 +140,7 @@ class CatalogOFFNutritionCandidateRetriever(
         invertedIndex: Map<String, List<Int>>
     ): CatalogOFFNutritionRetrievalRequest {
 
-        val normalizedCatalogTerms =
+        val baseCatalogTerms =
             buildSet {
                 add(
                     OFFNutritionRetrievalTextNormalizer.normalize(
@@ -143,8 +166,13 @@ class CatalogOFFNutritionCandidateRetriever(
                 .distinct()
                 .sorted()
 
+        val expandedCatalogTerms =
+            termExpander.expand(
+                terms = baseCatalogTerms
+            )
+
         val catalogTokens =
-            normalizedCatalogTerms
+            expandedCatalogTerms
                 .flatMap(
                     OFFNutritionRetrievalTextNormalizer::tokenize
                 )
@@ -163,91 +191,85 @@ class CatalogOFFNutritionCandidateRetriever(
                 .sorted()
                 .toList()
 
-        val scoredCandidates =
+        val rawScoredCandidates =
             candidateIndexes
                 .asSequence()
-                .map { index ->
+                .map { candidateIndex ->
                     scoreCandidate(
-                        catalogTerms =
-                            normalizedCatalogTerms,
+                        catalogTerms = expandedCatalogTerms,
                         indexedCandidate =
-                            indexedCandidates[index]
+                            indexedCandidates[candidateIndex]
                     )
                 }
-                .filter { candidate ->
-                    candidate.score >= minimumScore
+                .filter { scoredCandidate ->
+                    scoredCandidate.score >= minimumScore
                 }
                 .sortedWith(
-                    compareByDescending<ScoredCandidate> {
-                        it.score
-                    }
-                        .thenByDescending {
-                            it.exactMatch
-                        }
-                        .thenByDescending {
-                            it.tokenJaccard
-                        }
-                        .thenByDescending {
-                            it.containmentScore
-                        }
-                        .thenBy {
-                            it.candidate.serverKey
-                        }
+                    SCORED_CANDIDATE_COMPARATOR
                 )
-                .take(maximumCandidatesPerRequest)
+                .take(retrievalPoolSize)
                 .toList()
 
-        val retrievedCandidates =
-            scoredCandidates.mapIndexed { index, scored ->
-                CatalogOFFNutritionRetrievedCandidate(
-                    rank =
-                        index + 1,
-                    serverArtifact =
-                        scored.candidate.serverArtifact,
-                    serverKey =
-                        scored.candidate.serverKey,
-                    score =
-                        scored.score,
-                    exactMatch =
-                        scored.exactMatch,
-                    matchedCatalogTerm =
-                        scored.matchedCatalogTerm,
-                    matchedCandidateAlias =
-                        scored.matchedCandidateAlias,
-                    tokenIntersectionCount =
-                        scored.tokenIntersectionCount,
-                    tokenUnionCount =
-                        scored.tokenUnionCount,
-                    tokenJaccard =
-                        scored.tokenJaccard,
-                    containmentScore =
-                        scored.containmentScore,
-                    profileCount =
-                        scored.candidate.profileCount,
-                    validationStatus =
-                        scored.candidate.validationStatus,
-                    warningCount =
-                        scored.candidate.warningCount
+        val rawRetrievedCandidates =
+            rawScoredCandidates.mapIndexed { index, scoredCandidate ->
+                scoredCandidate.toRetrievedCandidate(
+                    rank = index + 1
                 )
             }
 
-        return CatalogOFFNutritionRetrievalRequest(
-            catalogIndex =
-                catalogItem.catalogIndex,
-            catalogKey =
-                catalogItem.catalogKey,
-            normalizedEnglish =
-                catalogItem.normalizedEnglish,
-            itemName =
-                catalogItem.itemName,
-            category =
-                catalogItem.category,
-            production =
-                catalogItem.production,
-            catalogTerms =
-                normalizedCatalogTerms,
+        val provisionalRequest =
+            CatalogOFFNutritionRetrievalRequest(
+                catalogIndex =
+                    catalogItem.catalogIndex,
+                catalogKey =
+                    catalogItem.catalogKey,
+                normalizedEnglish =
+                    catalogItem.normalizedEnglish,
+                itemName =
+                    catalogItem.itemName,
+                category =
+                    catalogItem.category,
+                production =
+                    catalogItem.production,
+                catalogTerms =
+                    expandedCatalogTerms,
+                candidates =
+                    rawRetrievedCandidates
+            )
+
+        val rerankedCandidates =
+            qualityReranker.rerank(
+                request = provisionalRequest,
+                candidates = rawRetrievedCandidates,
+                maximumCandidateCount =
+                    maximumCandidatesPerRequest
+            )
+
+        require(
+            rerankedCandidates.size <=
+                    maximumCandidatesPerRequest
+        ) {
+            "Reranker returned too many candidates: " +
+                    "catalogIndex=${catalogItem.catalogIndex}, " +
+                    "candidateCount=${rerankedCandidates.size}, " +
+                    "maximumCandidatesPerRequest=" +
+                    "$maximumCandidatesPerRequest."
+        }
+
+        require(
+            rerankedCandidates
+                .map { candidate ->
+                    candidate.rank
+                } ==
+                    (1..rerankedCandidates.size).toList()
+        ) {
+            "Reranked candidate ranks must be contiguous and start at one: " +
+                    "catalogIndex=${catalogItem.catalogIndex}."
+        }
+
+        return provisionalRequest.copy(
             candidates =
-                retrievedCandidates
+                rerankedCandidates
         )
     }
 
@@ -260,6 +282,7 @@ class CatalogOFFNutritionCandidateRetriever(
             null
 
         catalogTerms.forEach catalogTermLoop@ { catalogTerm ->
+
             val catalogTokens =
                 OFFNutritionRetrievalTextNormalizer
                     .tokenize(catalogTerm)
@@ -270,6 +293,7 @@ class CatalogOFFNutritionCandidateRetriever(
             }
 
             indexedCandidate.aliases.forEach candidateAliasLoop@ { candidateAlias ->
+
                 val candidateTokens =
                     OFFNutritionRetrievalTextNormalizer
                         .tokenize(candidateAlias)
@@ -318,7 +342,11 @@ class CatalogOFFNutritionCandidateRetriever(
                             ).toDouble()
 
                 val validationFactor =
-                    when (indexedCandidate.candidate.validationStatus) {
+                    when (
+                        indexedCandidate
+                            .candidate
+                            .validationStatus
+                    ) {
                         OFFNutritionReferenceAggregateValidationStatus.ACCEPTED ->
                             1.0
 
@@ -331,8 +359,9 @@ class CatalogOFFNutritionCandidateRetriever(
 
                 val rawScore =
                     when {
-                        exactMatch ->
+                        exactMatch -> {
                             1.0
+                        }
 
                         phraseContainment &&
                                 containment == 1.0 -> {
@@ -355,7 +384,7 @@ class CatalogOFFNutritionCandidateRetriever(
                             maximumValue = 1.0
                         )
 
-                val scored =
+                val scoredCandidate =
                     ScoredCandidate(
                         candidate =
                             indexedCandidate.candidate,
@@ -380,12 +409,12 @@ class CatalogOFFNutritionCandidateRetriever(
                 if (
                     best == null ||
                     SCORED_CANDIDATE_COMPARATOR.compare(
-                        scored,
+                        scoredCandidate,
                         best
                     ) < 0
                 ) {
                     best =
-                        scored
+                        scoredCandidate
                 }
             }
         }
@@ -440,8 +469,8 @@ class CatalogOFFNutritionCandidateRetriever(
         val mutableIndex =
             sortedMapOf<String, MutableList<Int>>()
 
-        indexedCandidates.forEachIndexed { index, candidate ->
-            candidate.tokens.forEach { token ->
+        indexedCandidates.forEachIndexed { index, indexedCandidate ->
+            indexedCandidate.tokens.forEach { token ->
                 mutableIndex
                     .getOrPut(token) {
                         mutableListOf()
@@ -455,6 +484,42 @@ class CatalogOFFNutritionCandidateRetriever(
                 .distinct()
                 .sorted()
         }
+    }
+
+    private fun ScoredCandidate.toRetrievedCandidate(
+        rank: Int
+    ): CatalogOFFNutritionRetrievedCandidate {
+
+        return CatalogOFFNutritionRetrievedCandidate(
+            rank =
+                rank,
+            serverArtifact =
+                candidate.serverArtifact,
+            serverKey =
+                candidate.serverKey,
+            score =
+                score,
+            exactMatch =
+                exactMatch,
+            matchedCatalogTerm =
+                matchedCatalogTerm,
+            matchedCandidateAlias =
+                matchedCandidateAlias,
+            tokenIntersectionCount =
+                tokenIntersectionCount,
+            tokenUnionCount =
+                tokenUnionCount,
+            tokenJaccard =
+                tokenJaccard,
+            containmentScore =
+                containmentScore,
+            profileCount =
+                candidate.profileCount,
+            validationStatus =
+                candidate.validationStatus,
+            warningCount =
+                candidate.warningCount
+        )
     }
 
     private data class IndexedCandidate(
@@ -478,20 +543,20 @@ class CatalogOFFNutritionCandidateRetriever(
     private companion object {
 
         val SCORED_CANDIDATE_COMPARATOR =
-            compareByDescending<ScoredCandidate> {
-                it.score
+            compareByDescending<ScoredCandidate> { candidate ->
+                candidate.score
             }
-                .thenByDescending {
-                    it.exactMatch
+                .thenByDescending { candidate ->
+                    candidate.exactMatch
                 }
-                .thenByDescending {
-                    it.tokenJaccard
+                .thenByDescending { candidate ->
+                    candidate.tokenJaccard
                 }
-                .thenByDescending {
-                    it.containmentScore
+                .thenByDescending { candidate ->
+                    candidate.containmentScore
                 }
-                .thenBy {
-                    it.candidate.serverKey
+                .thenBy { candidate ->
+                    candidate.candidate.serverKey
                 }
     }
 }

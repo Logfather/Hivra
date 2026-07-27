@@ -28,7 +28,9 @@ data class CatalogOFFNutritionRetrievalRequest(
 
         require(
             candidates ==
-                    candidates.sortedWith(CANDIDATE_COMPARATOR)
+                    candidates.sortedWith(
+                        CatalogOFFNutritionRetrievedCandidate.DETERMINISTIC_COMPARATOR
+                    )
         ) {
             "Retrieved candidates must be deterministically sorted."
         }

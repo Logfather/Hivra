@@ -37,4 +37,16 @@ data class CatalogOFFNutritionRetrievedCandidate(
         require(profileCount > 0)
         require(warningCount >= 0)
     }
+
+    companion object {
+
+        val DETERMINISTIC_COMPARATOR:
+                Comparator<CatalogOFFNutritionRetrievedCandidate> =
+            compareByDescending<CatalogOFFNutritionRetrievedCandidate> { candidate ->
+                candidate.score
+            }
+                .thenBy { candidate ->
+                    candidate.serverKey
+                }
+    }
 }
