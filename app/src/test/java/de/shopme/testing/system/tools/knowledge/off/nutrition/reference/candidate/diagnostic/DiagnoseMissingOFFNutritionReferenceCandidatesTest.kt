@@ -126,6 +126,21 @@ class DiagnoseMissingOFFNutritionReferenceCandidatesTest {
                 report.countsByFirstMissingStage.values.sum()
         )
 
+        assertEquals(
+            report.referenceCandidateGapCount,
+            report.findings.size
+        )
+
+        assertEquals(
+            traces.size,
+            report.traceCount
+        )
+
+        assertTrue(
+            report.findings ==
+                    report.findings.sortedBy { it.catalogIndex }
+        )
+
         assertTrue(
             actual =
                 traces.isNotEmpty(),
@@ -286,7 +301,11 @@ class DiagnoseMissingOFFNutritionReferenceCandidatesTest {
 
         val workingDirectory =
             File(
-                System.getProperty("user.dir")
+                requireNotNull(
+                    System.getProperty("user.dir")
+                ) {
+                    "System property user.dir is not available."
+                }
             ).absoluteFile
 
         return generateSequence(
