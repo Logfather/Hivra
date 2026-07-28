@@ -1,0 +1,22 @@
+package de.shopme.tools.knowledge.off.nutrition.reference.quality
+
+enum class OFFNutritionReferenceQualityRejectionReason {
+
+    EMPTY_NUTRITION_PAYLOAD,
+
+    UNSUPPORTED_NUTRITION_KEY,
+
+    ZERO_ONLY_NUTRITION_PAYLOAD,
+
+    NON_FINITE_NUTRITION_VALUE,
+
+    NEGATIVE_NUTRITION_VALUE,
+
+    NUTRITION_VALUE_ABOVE_MAXIMUM,
+
+    SATURATED_FAT_EXCEEDS_TOTAL_FAT,
+
+    SUGARS_EXCEED_CARBOHYDRATES,
+
+    MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS
+}
