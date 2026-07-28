@@ -151,11 +151,35 @@ class OFFNutritionMissingGeneratorTraceDiagnoser {
             sourceFinding
                 .stringList("matchedRawProductNames")
 
+        val matchedRawProductIds =
+            sourceFinding.stringList(
+                "matchedRawProductIds"
+            )
+
+        val matchedRawProductWithUsableNutritionIds =
+            sourceFinding.stringList(
+                "matchedRawProductWithUsableNutritionIds"
+            )
+
+
         val lookupIdentities =
             buildSet {
+
+                addAll(
+                    matchedRawProductWithUsableNutritionIds
+                )
+
+                addAll(
+                    matchedRawProductIds
+                )
+
                 add(catalogKey)
+
                 add(normalizedEnglish)
-                addAll(matchedRawProductNames)
+
+                addAll(
+                    matchedRawProductNames
+                )
             }
 
         val sourceCandidateMatch =
@@ -197,6 +221,10 @@ class OFFNutritionMissingGeneratorTraceDiagnoser {
                 sourceFinding.requiredInt(
                     "rawOFFProductWithUsableNutritionCount"
                 ),
+            matchedRawProductIds =
+                matchedRawProductIds,
+            matchedRawProductWithUsableNutritionIds =
+                matchedRawProductWithUsableNutritionIds,
             matchedRawProductNames =
                 matchedRawProductNames,
             sourceCandidateMatch =

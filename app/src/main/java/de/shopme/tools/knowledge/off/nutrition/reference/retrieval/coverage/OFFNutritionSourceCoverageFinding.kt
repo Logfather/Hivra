@@ -1,3 +1,4 @@
+
 package de.shopme.tools.knowledge.off.nutrition.reference.retrieval.coverage
 
 data class OFFNutritionSourceCoverageFinding(
@@ -16,6 +17,8 @@ data class OFFNutritionSourceCoverageFinding(
 
     val firstMissingStage: OFFNutritionSourceCoverageStage,
 
+    val matchedRawProductIds: List<String>,
+    val matchedRawProductWithUsableNutritionIds: List<String>,
     val matchedRawProductNames: List<String>,
     val matchedReferenceCandidateAliases: List<String>,
     val matchedReferenceAggregateAliases: List<String>,
@@ -25,58 +28,140 @@ data class OFFNutritionSourceCoverageFinding(
 ) {
 
     init {
-        require(catalogIndex >= 0)
-        require(catalogKey.isNotBlank())
-        require(normalizedEnglish.isNotBlank())
+        require(catalogIndex >= 0) {
+            "catalogIndex must not be negative."
+        }
 
-        require(rawOFFProductMatchCount >= 0)
-        require(rawOFFProductWithAnyNutritionCount >= 0)
-        require(rawOFFProductWithUsableNutritionCount >= 0)
-        require(referenceCandidateMatchCount >= 0)
-        require(referenceAggregateMatchCount >= 0)
-        require(matcherCandidateMatchCount >= 0)
+        require(catalogKey.isNotBlank()) {
+            "catalogKey must not be blank."
+        }
+
+        require(normalizedEnglish.isNotBlank()) {
+            "normalizedEnglish must not be blank."
+        }
+
+        require(rawOFFProductMatchCount >= 0) {
+            "rawOFFProductMatchCount must not be negative."
+        }
+
+        require(rawOFFProductWithAnyNutritionCount >= 0) {
+            "rawOFFProductWithAnyNutritionCount must not be negative."
+        }
+
+        require(rawOFFProductWithUsableNutritionCount >= 0) {
+            "rawOFFProductWithUsableNutritionCount must not be negative."
+        }
+
+        require(referenceCandidateMatchCount >= 0) {
+            "referenceCandidateMatchCount must not be negative."
+        }
+
+        require(referenceAggregateMatchCount >= 0) {
+            "referenceAggregateMatchCount must not be negative."
+        }
+
+        require(matcherCandidateMatchCount >= 0) {
+            "matcherCandidateMatchCount must not be negative."
+        }
 
         require(
             rawOFFProductWithAnyNutritionCount <=
                     rawOFFProductMatchCount
-        )
+        ) {
+            "Any-nutrition count must not exceed raw product match count."
+        }
 
         require(
             rawOFFProductWithUsableNutritionCount <=
                     rawOFFProductWithAnyNutritionCount
-        )
+        ) {
+            "Usable nutrition count must not exceed any-nutrition count."
+        }
 
-        require(reasons.isNotEmpty())
-
-        requireSortedDistinct(
-            values = retrievalTerms,
-            fieldName = "retrievalTerms"
-        )
-
-        requireSortedDistinct(
-            values = matchedRawProductNames,
-            fieldName = "matchedRawProductNames"
-        )
+        require(reasons.isNotEmpty()) {
+            "reasons must not be empty."
+        }
 
         requireSortedDistinct(
-            values = matchedReferenceCandidateAliases,
-            fieldName = "matchedReferenceCandidateAliases"
+            values =
+                retrievalTerms,
+            fieldName =
+                "retrievalTerms"
         )
 
         requireSortedDistinct(
-            values = matchedReferenceAggregateAliases,
-            fieldName = "matchedReferenceAggregateAliases"
+            values =
+                matchedRawProductIds,
+            fieldName =
+                "matchedRawProductIds"
         )
 
         requireSortedDistinct(
-            values = matchedMatcherCandidateAliases,
-            fieldName = "matchedMatcherCandidateAliases"
+            values =
+                matchedRawProductWithUsableNutritionIds,
+            fieldName =
+                "matchedRawProductWithUsableNutritionIds"
         )
 
         requireSortedDistinct(
-            values = reasons,
-            fieldName = "reasons"
+            values =
+                matchedRawProductNames,
+            fieldName =
+                "matchedRawProductNames"
         )
+
+        requireSortedDistinct(
+            values =
+                matchedReferenceCandidateAliases,
+            fieldName =
+                "matchedReferenceCandidateAliases"
+        )
+
+        requireSortedDistinct(
+            values =
+                matchedReferenceAggregateAliases,
+            fieldName =
+                "matchedReferenceAggregateAliases"
+        )
+
+        requireSortedDistinct(
+            values =
+                matchedMatcherCandidateAliases,
+            fieldName =
+                "matchedMatcherCandidateAliases"
+        )
+
+        requireSortedDistinct(
+            values =
+                reasons,
+            fieldName =
+                "reasons"
+        )
+
+        require(
+            matchedRawProductWithUsableNutritionIds.all(
+                matchedRawProductIds::contains
+            )
+        ) {
+            "Usable nutrition product IDs must be contained in " +
+                    "matchedRawProductIds."
+        }
+
+        require(
+            matchedRawProductIds.size <=
+                    rawOFFProductMatchCount
+        ) {
+            "Persisted raw product IDs must not exceed the raw product " +
+                    "match count."
+        }
+
+        require(
+            matchedRawProductWithUsableNutritionIds.size <=
+                    rawOFFProductWithUsableNutritionCount
+        ) {
+            "Persisted usable product IDs must not exceed the usable " +
+                    "product count."
+        }
     }
 
     private fun requireSortedDistinct(
@@ -86,10 +171,13 @@ data class OFFNutritionSourceCoverageFinding(
         require(
             values ==
                     values
+                        .map(String::trim)
+                        .filter(String::isNotBlank)
                         .distinct()
                         .sorted()
         ) {
-            "$fieldName must be deterministically sorted and distinct."
+            "$fieldName must contain non-blank values and be " +
+                    "deterministically sorted and distinct."
         }
     }
 }

@@ -59,9 +59,10 @@ class OFFNutritionReferenceCandidateGapAnalyzer {
 
         val countsByFirstMissingStage =
             findings
-                .groupingBy { finding ->
-                    finding.firstMissingStage
-                }
+                .groupingBy(
+                    OFFNutritionReferenceCandidateGapAnalysisFinding::
+                    firstMissingStage
+                )
                 .eachCount()
                 .toSortedMap()
 
@@ -160,8 +161,20 @@ class OFFNutritionReferenceCandidateGapAnalyzer {
                 "matcherCandidateMatchCount"
             )
 
+        val matchedRawProductIds =
+            finding.stringList(
+                "matchedRawProductIds"
+            )
+
+        val matchedRawProductWithUsableNutritionIds =
+            finding.stringList(
+                "matchedRawProductWithUsableNutritionIds"
+            )
+
         val matchedRawProductNames =
-            finding.stringList("matchedRawProductNames")
+            finding.stringList(
+                "matchedRawProductNames"
+            )
 
         val diagnosticReasons =
             finding.stringList("reasons")
@@ -246,22 +259,30 @@ class OFFNutritionReferenceCandidateGapAnalyzer {
                 normalizedEnglish,
             firstMissingStage =
                 firstMissingStage,
+
             rawOFFProductMatchCount =
                 rawOFFProductMatchCount,
             rawOFFProductWithAnyNutritionCount =
                 rawOFFProductWithAnyNutritionCount,
             rawOFFProductWithUsableNutritionCount =
                 rawOFFProductWithUsableNutritionCount,
+
             referenceCandidateMatchCount =
                 referenceCandidateMatchCount,
             referenceAggregateMatchCount =
                 referenceAggregateMatchCount,
             matcherCandidateMatchCount =
                 matcherCandidateMatchCount,
+
+            matchedRawProductIds =
+                matchedRawProductIds,
+            matchedRawProductWithUsableNutritionIds =
+                matchedRawProductWithUsableNutritionIds,
             matchedRawProductNames =
                 matchedRawProductNames,
             diagnosticReasons =
                 diagnosticReasons,
+
             cause =
                 cause,
             priority =
@@ -364,7 +385,6 @@ class OFFNutritionReferenceCandidateGapAnalyzer {
     ): OFFNutritionReferenceCandidateGapPriority {
 
         return when (cause) {
-
             OFFNutritionReferenceCandidateGapCause
                 .CANDIDATE_IDENTITY_MISMATCH,
 
@@ -409,7 +429,6 @@ class OFFNutritionReferenceCandidateGapAnalyzer {
     ): String {
 
         return when (cause) {
-
             OFFNutritionReferenceCandidateGapCause
                 .NO_RAW_OFF_PRODUCT ->
                 "Keep unresolved for OFF and cover through another " +

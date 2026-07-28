@@ -177,10 +177,17 @@ class OFFNutritionRawSourceCoverageScanner {
                 .firstOrNull()
                 ?: identityValues.first()
 
+        val sourceProductId =
+            product.string("code")
+                ?.trim()
+                ?.takeIf(String::isNotBlank)
+
         matchedTargets.forEach { accumulator ->
             accumulator.record(
                 representativeName =
                     representativeName,
+                sourceProductId =
+                    sourceProductId,
                 hasAnyNutrition =
                     nutrition.hasAnyNutrition,
                 hasUsableNutrition =
@@ -323,6 +330,12 @@ class OFFNutritionRawSourceCoverageScanner {
         private val matchedProductNames =
             sortedSetOf<String>()
 
+        private val matchedProductIds =
+            sortedSetOf<String>()
+
+        private val matchedProductWithUsableNutritionIds =
+            sortedSetOf<String>()
+
         fun matches(
             identityValues: List<String>
         ): Boolean {
@@ -339,10 +352,34 @@ class OFFNutritionRawSourceCoverageScanner {
 
         fun record(
             representativeName: String,
+            sourceProductId: String?,
             hasAnyNutrition: Boolean,
             hasUsableNutrition: Boolean
         ) {
             productMatchCount++
+
+            sourceProductId
+                ?.trim()
+                ?.takeIf(String::isNotBlank)
+                ?.let { productId ->
+
+                    if (
+                        matchedProductIds.size <
+                        MAXIMUM_SAMPLE_COUNT
+                    ) {
+                        matchedProductIds +=
+                            productId
+                    }
+
+                    if (
+                        hasUsableNutrition &&
+                        matchedProductWithUsableNutritionIds.size <
+                        MAXIMUM_SAMPLE_COUNT
+                    ) {
+                        matchedProductWithUsableNutritionIds +=
+                            productId
+                    }
+                }
 
             if (hasAnyNutrition) {
                 productWithAnyNutritionCount++
@@ -371,7 +408,11 @@ class OFFNutritionRawSourceCoverageScanner {
                 productWithUsableNutritionCount =
                     productWithUsableNutritionCount,
                 matchedProductNames =
-                    matchedProductNames.toList()
+                    matchedProductNames.toList(),
+                matchedProductIds =
+                    matchedProductIds.toList(),
+                matchedProductWithUsableNutritionIds =
+                    matchedProductWithUsableNutritionIds.toList()
             )
         }
     }

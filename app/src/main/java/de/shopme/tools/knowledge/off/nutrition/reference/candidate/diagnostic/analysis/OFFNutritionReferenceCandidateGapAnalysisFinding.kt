@@ -5,14 +5,20 @@ data class OFFNutritionReferenceCandidateGapAnalysisFinding(
     val catalogKey: String,
     val normalizedEnglish: String,
     val firstMissingStage: String,
+
     val rawOFFProductMatchCount: Int,
     val rawOFFProductWithAnyNutritionCount: Int,
     val rawOFFProductWithUsableNutritionCount: Int,
+
     val referenceCandidateMatchCount: Int,
     val referenceAggregateMatchCount: Int,
     val matcherCandidateMatchCount: Int,
+
+    val matchedRawProductIds: List<String>,
+    val matchedRawProductWithUsableNutritionIds: List<String>,
     val matchedRawProductNames: List<String>,
     val diagnosticReasons: List<String>,
+
     val cause: OFFNutritionReferenceCandidateGapCause,
     val priority: OFFNutritionReferenceCandidateGapPriority,
     val recommendedAction: String
@@ -73,8 +79,76 @@ data class OFFNutritionReferenceCandidateGapAnalysisFinding(
             "Any-nutrition count must not exceed raw product match count."
         }
 
+        requireSortedDistinct(
+            values =
+                matchedRawProductIds,
+            fieldName =
+                "matchedRawProductIds"
+        )
+
+        requireSortedDistinct(
+            values =
+                matchedRawProductWithUsableNutritionIds,
+            fieldName =
+                "matchedRawProductWithUsableNutritionIds"
+        )
+
+        requireSortedDistinct(
+            values =
+                matchedRawProductNames,
+            fieldName =
+                "matchedRawProductNames"
+        )
+
+        requireSortedDistinct(
+            values =
+                diagnosticReasons,
+            fieldName =
+                "diagnosticReasons"
+        )
+
+        require(
+            matchedRawProductWithUsableNutritionIds.all(
+                matchedRawProductIds::contains
+            )
+        ) {
+            "Usable nutrition product IDs must be contained in " +
+                    "matchedRawProductIds."
+        }
+
+        require(
+            matchedRawProductIds.size <=
+                    rawOFFProductMatchCount
+        ) {
+            "Persisted raw product IDs must not exceed raw product match count."
+        }
+
+        require(
+            matchedRawProductWithUsableNutritionIds.size <=
+                    rawOFFProductWithUsableNutritionCount
+        ) {
+            "Persisted usable product IDs must not exceed usable nutrition count."
+        }
+
         require(recommendedAction.isNotBlank()) {
             "recommendedAction must not be blank."
+        }
+    }
+
+    private fun requireSortedDistinct(
+        values: List<String>,
+        fieldName: String
+    ) {
+        require(
+            values ==
+                    values
+                        .map(String::trim)
+                        .filter(String::isNotBlank)
+                        .distinct()
+                        .sorted()
+        ) {
+            "$fieldName must contain non-blank values and be " +
+                    "deterministically sorted and distinct."
         }
     }
 }

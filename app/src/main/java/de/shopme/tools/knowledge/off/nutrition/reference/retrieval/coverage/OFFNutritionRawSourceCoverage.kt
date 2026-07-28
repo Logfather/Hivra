@@ -15,7 +15,9 @@ data class OFFNutritionRawSourceCoverageEntry(
     val productMatchCount: Int,
     val productWithAnyNutritionCount: Int,
     val productWithUsableNutritionCount: Int,
-    val matchedProductNames: List<String>
+    val matchedProductNames: List<String>,
+    val matchedProductIds: List<String>,
+    val matchedProductWithUsableNutritionIds: List<String>
 ) {
 
     init {

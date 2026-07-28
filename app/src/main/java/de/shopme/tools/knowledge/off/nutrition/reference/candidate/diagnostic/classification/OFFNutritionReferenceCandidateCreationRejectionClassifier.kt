@@ -58,11 +58,23 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
             traceRoot
                 .resolveTraceArray()
                 .map { element ->
-                    parseTrace(element.asJsonObject)
+                    parseTrace(
+                        json =
+                            element.asJsonObject
+                    )
                 }
 
+        val tracesBySourceProductId =
+            buildTraceSourceProductIdIndex(
+                traces =
+                    traces
+            )
+
         val tracesByIdentity =
-            buildTraceIdentityIndex(traces)
+            buildTraceIdentityIndex(
+                traces =
+                    traces
+            )
 
         val sourceFindings =
             gapRoot
@@ -79,6 +91,8 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
                     classifyFinding(
                         sourceFinding =
                             sourceFinding,
+                        tracesBySourceProductId =
+                            tracesBySourceProductId,
                         tracesByIdentity =
                             tracesByIdentity
                     )
@@ -156,17 +170,20 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
                                 .TRACE_NOT_FOUND
                 },
             matchedTraceCount =
-                findings.sumOf { finding ->
-                    finding.matchedTraceCount
-                },
+                findings.sumOf(
+                    OFFNutritionReferenceCandidateCreationRejectionFinding::
+                    matchedTraceCount
+                ),
             rejectedTraceCount =
-                findings.sumOf { finding ->
-                    finding.rejectedTraceCount
-                },
+                findings.sumOf(
+                    OFFNutritionReferenceCandidateCreationRejectionFinding::
+                    rejectedTraceCount
+                ),
             createdTraceCount =
-                findings.sumOf { finding ->
-                    finding.createdTraceCount
-                },
+                findings.sumOf(
+                    OFFNutritionReferenceCandidateCreationRejectionFinding::
+                    createdTraceCount
+                ),
             countsByFirstRejectionStage =
                 countsByFirstRejectionStage,
             countsByRejectionStage =
@@ -180,6 +197,7 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
 
     private fun classifyFinding(
         sourceFinding: JsonObject,
+        tracesBySourceProductId: Map<String, List<TraceRecord>>,
         tracesByIdentity: Map<String, List<TraceRecord>>
     ): OFFNutritionReferenceCandidateCreationRejectionFinding {
 
@@ -192,54 +210,114 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
         val normalizedEnglish =
             sourceFinding.requiredString("normalizedEnglish")
 
+        val matchedRawProductIds =
+            sourceFinding.stringList(
+                "matchedRawProductIds"
+            )
+
+        val matchedRawProductWithUsableNutritionIds =
+            sourceFinding.stringList(
+                "matchedRawProductWithUsableNutritionIds"
+            )
+
+        val preferredSourceProductIds =
+            matchedRawProductWithUsableNutritionIds
+                .ifEmpty {
+                    matchedRawProductIds
+                }
+                .toSortedSet()
+
+        val matchedTracesBySourceProductId =
+            preferredSourceProductIds
+                .flatMap { sourceProductId ->
+                    tracesBySourceProductId[
+                        sourceProductId
+                    ].orEmpty()
+                }
+                .distinctBy(
+                    TraceRecord::identity
+                )
+                .sortedWith(
+                    TRACE_COMPARATOR
+                )
+
         val lookupIdentities =
             buildSet {
-                add(normalizeIdentity(catalogKey))
-                add(normalizeIdentity(normalizedEnglish))
+                add(
+                    normalizeIdentity(
+                        catalogKey
+                    )
+                )
+
+                add(
+                    normalizeIdentity(
+                        normalizedEnglish
+                    )
+                )
 
                 sourceFinding
                     .stringList("matchedRawProductNames")
                     .forEach { productName ->
-                        add(normalizeIdentity(productName))
+                        add(
+                            normalizeIdentity(
+                                productName
+                            )
+                        )
                     }
             }
                 .filter(String::isNotBlank)
                 .toSortedSet()
 
-        val matchedTraces =
+        val matchedTracesByIdentity =
             lookupIdentities
                 .flatMap { identity ->
-                    tracesByIdentity[identity].orEmpty()
+                    tracesByIdentity[
+                        identity
+                    ].orEmpty()
                 }
-                .distinctBy { trace ->
-                    trace.identity
-                }
+                .distinctBy(
+                    TraceRecord::identity
+                )
                 .sortedWith(
-                    compareBy(
-                        TraceRecord::sourceProductId,
-                        TraceRecord::productName
-                    )
+                    TRACE_COMPARATOR
                 )
 
+        val matchedTraces =
+            matchedTracesBySourceProductId
+                .ifEmpty {
+                    matchedTracesByIdentity
+                }
+
         val rejectedTraces =
-            matchedTraces.filterNot(TraceRecord::candidateCreated)
+            matchedTraces
+                .filterNot(
+                    TraceRecord::candidateCreated
+                )
 
         val createdTraces =
-            matchedTraces.filter(TraceRecord::candidateCreated)
+            matchedTraces
+                .filter(
+                    TraceRecord::candidateCreated
+                )
 
         val countsByRejectionStage =
             rejectedTraces
-                .groupingBy(::classifyTraceStage)
+                .groupingBy(
+                    ::classifyTraceStage
+                )
                 .eachCount()
                 .toSortedMap(
                     compareBy(
-                        OFFNutritionReferenceCandidateCreationRejectionStage::name
+                        OFFNutritionReferenceCandidateCreationRejectionStage::
+                        name
                     )
                 )
 
         val countsByRejectionReason =
             rejectedTraces
-                .flatMap(::rejectionReasons)
+                .flatMap(
+                    ::rejectionReasons
+                )
                 .groupingBy { reason ->
                     reason
                 }
@@ -269,6 +347,10 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
                 sourceFinding.requiredInt(
                     "rawOFFProductWithUsableNutritionCount"
                 ),
+            matchedRawProductIds =
+                matchedRawProductIds,
+            matchedRawProductWithUsableNutritionIds =
+                matchedRawProductWithUsableNutritionIds,
             matchedTraceCount =
                 matchedTraces.size,
             rejectedTraceCount =
@@ -283,15 +365,40 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
                 countsByRejectionReason,
             matchedSourceProductIds =
                 matchedTraces
-                    .map(TraceRecord::sourceProductId)
+                    .map(
+                        TraceRecord::sourceProductId
+                    )
                     .distinct()
                     .sorted(),
             matchedProductNames =
                 matchedTraces
-                    .map(TraceRecord::productName)
+                    .map(
+                        TraceRecord::productName
+                    )
                     .distinct()
                     .sorted()
         )
+    }
+
+    private fun buildTraceSourceProductIdIndex(
+        traces: List<TraceRecord>
+    ): Map<String, List<TraceRecord>> {
+
+        return traces
+            .groupBy(
+                keySelector =
+                    TraceRecord::sourceProductId
+            )
+            .mapValues { (_, indexedTraces) ->
+                indexedTraces
+                    .distinctBy(
+                        TraceRecord::identity
+                    )
+                    .sortedWith(
+                        TRACE_COMPARATOR
+                    )
+            }
+            .toSortedMap()
     }
 
     private fun buildTraceIdentityIndex(
@@ -304,7 +411,7 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
         traces.forEach { trace ->
 
             val identities =
-                buildSet<String> {
+                buildSet {
                     add(
                         normalizeIdentity(
                             trace.productName
@@ -314,7 +421,9 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
                     trace.normalizedProductIdentities
                         .forEach { identity ->
                             add(
-                                normalizeIdentity(identity)
+                                normalizeIdentity(
+                                    identity
+                                )
                             )
                         }
                 }
@@ -322,7 +431,6 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
                     .toSortedSet()
 
             identities.forEach { identity ->
-
                 mutableIndex
                     .getOrPut(identity) {
                         mutableListOf()
@@ -334,14 +442,11 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
         return mutableIndex
             .mapValues { (_, indexedTraces) ->
                 indexedTraces
-                    .distinctBy { trace ->
-                        trace.identity
-                    }
+                    .distinctBy(
+                        TraceRecord::identity
+                    )
                     .sortedWith(
-                        compareBy(
-                            TraceRecord::sourceProductId,
-                            TraceRecord::productName
-                        )
+                        TRACE_COMPARATOR
                     )
             }
             .toSortedMap()
@@ -353,33 +458,45 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
 
         return TraceRecord(
             sourceProductId =
-                json.requiredString("sourceProductId"),
+                json.requiredString(
+                    "sourceProductId"
+                ),
             productName =
-                json.requiredString("productName"),
+                json.requiredString(
+                    "productName"
+                ),
             normalizedProductIdentities =
                 json.stringList(
                     "normalizedProductIdentities"
                 ),
             identityAccepted =
-                json.requiredBoolean("identityAccepted"),
+                json.requiredBoolean(
+                    "identityAccepted"
+                ),
             identityRejectionReasons =
                 json.stringList(
                     "identityRejectionReasons"
                 ),
             nutritionAccepted =
-                json.requiredBoolean("nutritionAccepted"),
+                json.requiredBoolean(
+                    "nutritionAccepted"
+                ),
             nutritionRejectionReasons =
                 json.stringList(
                     "nutritionRejectionReasons"
                 ),
             referenceEligible =
-                json.requiredBoolean("referenceEligible"),
+                json.requiredBoolean(
+                    "referenceEligible"
+                ),
             referenceEligibilityRejectionReasons =
                 json.stringList(
                     "referenceEligibilityRejectionReasons"
                 ),
             candidateCreated =
-                json.requiredBoolean("candidateCreated")
+                json.requiredBoolean(
+                    "candidateCreated"
+                )
         )
     }
 
@@ -389,10 +506,12 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
 
         return when {
             !trace.identityAccepted ->
-                OFFNutritionReferenceCandidateCreationRejectionStage.IDENTITY
+                OFFNutritionReferenceCandidateCreationRejectionStage
+                    .IDENTITY
 
             !trace.nutritionAccepted ->
-                OFFNutritionReferenceCandidateCreationRejectionStage.NUTRITION
+                OFFNutritionReferenceCandidateCreationRejectionStage
+                    .NUTRITION
 
             !trace.referenceEligible ->
                 OFFNutritionReferenceCandidateCreationRejectionStage
@@ -403,7 +522,8 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
                     .CANDIDATE_CREATION
 
             else ->
-                OFFNutritionReferenceCandidateCreationRejectionStage.UNKNOWN
+                OFFNutritionReferenceCandidateCreationRejectionStage
+                    .UNKNOWN
         }
     }
 
@@ -411,12 +531,20 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
         trace: TraceRecord
     ): List<String> {
 
+        val rejectionStage =
+            classifyTraceStage(
+                trace =
+                    trace
+            )
+
         val reasons =
-            when (classifyTraceStage(trace)) {
-                OFFNutritionReferenceCandidateCreationRejectionStage.IDENTITY ->
+            when (rejectionStage) {
+                OFFNutritionReferenceCandidateCreationRejectionStage
+                    .IDENTITY ->
                     trace.identityRejectionReasons
 
-                OFFNutritionReferenceCandidateCreationRejectionStage.NUTRITION ->
+                OFFNutritionReferenceCandidateCreationRejectionStage
+                    .NUTRITION ->
                     trace.nutritionRejectionReasons
 
                 OFFNutritionReferenceCandidateCreationRejectionStage
@@ -424,50 +552,66 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
                     trace.referenceEligibilityRejectionReasons
 
                 OFFNutritionReferenceCandidateCreationRejectionStage
-                    .CANDIDATE_CREATION ->
-                    emptyList()
+                    .CANDIDATE_CREATION,
 
                 OFFNutritionReferenceCandidateCreationRejectionStage
-                    .TRACE_NOT_FOUND ->
-                    emptyList()
+                    .TRACE_NOT_FOUND,
 
-                OFFNutritionReferenceCandidateCreationRejectionStage.UNKNOWN ->
+                OFFNutritionReferenceCandidateCreationRejectionStage
+                    .UNKNOWN ->
                     emptyList()
             }
 
         return reasons
             .ifEmpty {
                 listOf(
-                    when (classifyTraceStage(trace)) {
-                        OFFNutritionReferenceCandidateCreationRejectionStage
-                            .IDENTITY ->
-                            REASON_IDENTITY_REJECTED_WITHOUT_REASON
-
-                        OFFNutritionReferenceCandidateCreationRejectionStage
-                            .NUTRITION ->
-                            REASON_NUTRITION_REJECTED_WITHOUT_REASON
-
-                        OFFNutritionReferenceCandidateCreationRejectionStage
-                            .REFERENCE_ELIGIBILITY ->
-                            REASON_REFERENCE_REJECTED_WITHOUT_REASON
-
-                        OFFNutritionReferenceCandidateCreationRejectionStage
-                            .CANDIDATE_CREATION ->
-                            REASON_CANDIDATE_NOT_CREATED_WITHOUT_REASON
-
-                        else ->
-                            REASON_UNKNOWN
-                    }
+                    defaultRejectionReason(
+                        stage =
+                            rejectionStage
+                    )
                 )
             }
             .distinct()
             .sorted()
     }
 
+    private fun defaultRejectionReason(
+        stage: OFFNutritionReferenceCandidateCreationRejectionStage
+    ): String {
+
+        return when (stage) {
+            OFFNutritionReferenceCandidateCreationRejectionStage
+                .IDENTITY ->
+                REASON_IDENTITY_REJECTED_WITHOUT_REASON
+
+            OFFNutritionReferenceCandidateCreationRejectionStage
+                .NUTRITION ->
+                REASON_NUTRITION_REJECTED_WITHOUT_REASON
+
+            OFFNutritionReferenceCandidateCreationRejectionStage
+                .REFERENCE_ELIGIBILITY ->
+                REASON_REFERENCE_REJECTED_WITHOUT_REASON
+
+            OFFNutritionReferenceCandidateCreationRejectionStage
+                .CANDIDATE_CREATION ->
+                REASON_CANDIDATE_NOT_CREATED_WITHOUT_REASON
+
+            OFFNutritionReferenceCandidateCreationRejectionStage
+                .TRACE_NOT_FOUND,
+
+            OFFNutritionReferenceCandidateCreationRejectionStage
+                .UNKNOWN ->
+                REASON_UNKNOWN
+        }
+    }
+
     private fun selectFirstRejectionStage(
         matchedTraces: List<TraceRecord>,
         countsByRejectionStage:
-        Map<OFFNutritionReferenceCandidateCreationRejectionStage, Int>
+        Map<
+                OFFNutritionReferenceCandidateCreationRejectionStage,
+                Int
+                >
     ): OFFNutritionReferenceCandidateCreationRejectionStage {
 
         if (matchedTraces.isEmpty()) {
@@ -479,7 +623,8 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
             .firstOrNull { stage ->
                 (countsByRejectionStage[stage] ?: 0) > 0
             }
-            ?: OFFNutritionReferenceCandidateCreationRejectionStage.UNKNOWN
+            ?: OFFNutritionReferenceCandidateCreationRejectionStage
+                .UNKNOWN
     }
 
     private fun normalizeIdentity(
@@ -493,11 +638,23 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
             )
 
         return decomposed
-            .replace(COMBINING_MARK_REGEX, "")
+            .replace(
+                COMBINING_MARK_REGEX,
+                ""
+            )
             .lowercase()
-            .replace("&quot;", " ")
-            .replace(NON_ALPHANUMERIC_REGEX, " ")
-            .replace(WHITESPACE_REGEX, " ")
+            .replace(
+                "&quot;",
+                " "
+            )
+            .replace(
+                NON_ALPHANUMERIC_REGEX,
+                " "
+            )
+            .replace(
+                WHITESPACE_REGEX,
+                " "
+            )
             .trim()
     }
 
@@ -535,7 +692,9 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
 
         val value =
             get(name)
-                ?.takeUnless(JsonElement::isJsonNull)
+                ?.takeUnless(
+                    JsonElement::isJsonNull
+                )
                 ?.asString
                 ?.trim()
 
@@ -631,10 +790,14 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
             .asJsonArray
             .mapNotNull { element ->
                 element
-                    .takeUnless(JsonElement::isJsonNull)
+                    .takeUnless(
+                        JsonElement::isJsonNull
+                    )
                     ?.asString
                     ?.trim()
-                    ?.takeIf(String::isNotBlank)
+                    ?.takeIf(
+                        String::isNotBlank
+                    )
             }
             .distinct()
             .sorted()
@@ -655,11 +818,7 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
 
         val identity: String
             get() =
-                listOf(
-                    sourceProductId,
-                    productName
-                )
-                    .joinToString("|")
+                "$sourceProductId|$productName"
     }
 
     private companion object {
@@ -687,13 +846,23 @@ class OFFNutritionReferenceCandidateCreationRejectionClassifier {
 
         val FIRST_REJECTION_STAGE_ORDER =
             listOf(
-                OFFNutritionReferenceCandidateCreationRejectionStage.IDENTITY,
-                OFFNutritionReferenceCandidateCreationRejectionStage.NUTRITION,
+                OFFNutritionReferenceCandidateCreationRejectionStage
+                    .IDENTITY,
+                OFFNutritionReferenceCandidateCreationRejectionStage
+                    .NUTRITION,
                 OFFNutritionReferenceCandidateCreationRejectionStage
                     .REFERENCE_ELIGIBILITY,
                 OFFNutritionReferenceCandidateCreationRejectionStage
                     .CANDIDATE_CREATION,
-                OFFNutritionReferenceCandidateCreationRejectionStage.UNKNOWN
+                OFFNutritionReferenceCandidateCreationRejectionStage
+                    .UNKNOWN
+            )
+
+        val TRACE_COMPARATOR:
+                Comparator<TraceRecord> =
+            compareBy(
+                TraceRecord::sourceProductId,
+                TraceRecord::productName
             )
 
         val COMBINING_MARK_REGEX =

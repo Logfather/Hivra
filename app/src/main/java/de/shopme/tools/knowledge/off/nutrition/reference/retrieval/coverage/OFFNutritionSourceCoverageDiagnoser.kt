@@ -20,15 +20,16 @@ class OFFNutritionSourceCoverageDiagnoser {
                 }
                 .sortedWith(
                     compareBy<CatalogOFFNutritionRetrievalRequest>(
-                        { it.catalogIndex },
-                        { it.catalogKey }
+                        CatalogOFFNutritionRetrievalRequest::catalogIndex,
+                        CatalogOFFNutritionRetrievalRequest::catalogKey
                     )
                 )
 
         val findings =
             missingRequests.map { request ->
                 diagnoseRequest(
-                    request = request,
+                    request =
+                        request,
                     rawCoverage =
                         rawSourceCoverage
                             .entriesByCatalogIndex[
@@ -94,25 +95,32 @@ class OFFNutritionSourceCoverageDiagnoser {
 
         val matchingReferenceCandidates =
             findMatchingEntries(
-                retrievalTerms = retrievalTerms,
-                entries = referenceCandidates
+                retrievalTerms =
+                    retrievalTerms,
+                entries =
+                    referenceCandidates
             )
 
         val matchingReferenceAggregates =
             findMatchingEntries(
-                retrievalTerms = retrievalTerms,
-                entries = referenceAggregates
+                retrievalTerms =
+                    retrievalTerms,
+                entries =
+                    referenceAggregates
             )
 
         val matchingMatcherCandidates =
             findMatchingEntries(
-                retrievalTerms = retrievalTerms,
-                entries = matcherCandidates
+                retrievalTerms =
+                    retrievalTerms,
+                entries =
+                    matcherCandidates
             )
 
         val firstMissingStage =
             determineFirstMissingStage(
-                rawCoverage = rawCoverage,
+                rawCoverage =
+                    rawCoverage,
                 referenceCandidateCount =
                     matchingReferenceCandidates.size,
                 referenceAggregateCount =
@@ -120,6 +128,48 @@ class OFFNutritionSourceCoverageDiagnoser {
                 matcherCandidateCount =
                     matchingMatcherCandidates.size
             )
+
+        val allMatchedRawProductIds =
+            normalizeValues(
+                values =
+                    rawCoverage.matchedProductIds,
+                maximumCount =
+                    Int.MAX_VALUE
+            )
+
+        val matchedRawProductWithUsableNutritionIds =
+            normalizeValues(
+                values =
+                    rawCoverage.matchedProductWithUsableNutritionIds,
+                maximumCount =
+                    MAXIMUM_MATCHED_RAW_PRODUCT_IDENTITIES
+            )
+                .filter(
+                    allMatchedRawProductIds::contains
+                )
+
+        val remainingRawProductIdCapacity =
+            (
+                    MAXIMUM_MATCHED_RAW_PRODUCT_IDENTITIES -
+                            matchedRawProductWithUsableNutritionIds.size
+                    )
+                .coerceAtLeast(0)
+
+        val matchedRawProductIds =
+            (
+                    matchedRawProductWithUsableNutritionIds +
+                            allMatchedRawProductIds
+                                .asSequence()
+                                .filterNot(
+                                    matchedRawProductWithUsableNutritionIds::contains
+                                )
+                                .take(
+                                    remainingRawProductIdCapacity
+                                )
+                                .toList()
+                    )
+                .distinct()
+                .sorted()
 
         return OFFNutritionSourceCoverageFinding(
             catalogIndex =
@@ -148,43 +198,80 @@ class OFFNutritionSourceCoverageDiagnoser {
             firstMissingStage =
                 firstMissingStage,
 
+            matchedRawProductIds =
+                matchedRawProductIds,
+
+            matchedRawProductWithUsableNutritionIds =
+                matchedRawProductWithUsableNutritionIds,
+
             matchedRawProductNames =
-                rawCoverage.matchedProductNames,
+                normalizeValues(
+                    values =
+                        rawCoverage.matchedProductNames,
+                    maximumCount =
+                        MAXIMUM_MATCHED_RAW_PRODUCT_NAMES
+                ),
 
             matchedReferenceCandidateAliases =
-                matchingReferenceCandidates
-                    .flatMap { entry ->
-                        entry.aliases
-                    }
-                    .distinct()
-                    .sorted()
-                    .take(MAXIMUM_MATCHED_ALIASES),
+                normalizeValues(
+                    values =
+                        matchingReferenceCandidates
+                            .flatMap(
+                                OFFNutritionCoverageAliasEntry::aliases
+                            ),
+                    maximumCount =
+                        MAXIMUM_MATCHED_ALIASES
+                ),
 
             matchedReferenceAggregateAliases =
-                matchingReferenceAggregates
-                    .flatMap { entry ->
-                        entry.aliases
-                    }
-                    .distinct()
-                    .sorted()
-                    .take(MAXIMUM_MATCHED_ALIASES),
+                normalizeValues(
+                    values =
+                        matchingReferenceAggregates
+                            .flatMap(
+                                OFFNutritionCoverageAliasEntry::aliases
+                            ),
+                    maximumCount =
+                        MAXIMUM_MATCHED_ALIASES
+                ),
 
             matchedMatcherCandidateAliases =
-                matchingMatcherCandidates
-                    .flatMap { entry ->
-                        entry.aliases
-                    }
-                    .distinct()
-                    .sorted()
-                    .take(MAXIMUM_MATCHED_ALIASES),
+                normalizeValues(
+                    values =
+                        matchingMatcherCandidates
+                            .flatMap(
+                                OFFNutritionCoverageAliasEntry::aliases
+                            ),
+                    maximumCount =
+                        MAXIMUM_MATCHED_ALIASES
+                ),
 
             reasons =
                 listOf(
                     reasonFor(
-                        stage = firstMissingStage
+                        stage =
+                            firstMissingStage
                     )
                 )
         )
+    }
+
+    private fun normalizeValues(
+        values: List<String>,
+        maximumCount: Int
+    ): List<String> {
+
+        require(maximumCount > 0) {
+            "maximumCount must be greater than zero."
+        }
+
+        return values
+            .asSequence()
+            .map(String::trim)
+            .filter(String::isNotBlank)
+            .distinct()
+            .sorted()
+            .take(maximumCount)
+            .toList()
     }
 
     private fun findMatchingEntries(
@@ -197,15 +284,17 @@ class OFFNutritionSourceCoverageDiagnoser {
                 entry.aliases.any { alias ->
                     retrievalTerms.any { retrievalTerm ->
                         aliasesMatch(
-                            left = retrievalTerm,
-                            right = alias
+                            left =
+                                retrievalTerm,
+                            right =
+                                alias
                         )
                     }
                 }
             }
-            .sortedBy { entry ->
-                entry.identity
-            }
+            .sortedBy(
+                OFFNutritionCoverageAliasEntry::identity
+            )
     }
 
     private fun aliasesMatch(
@@ -229,29 +318,24 @@ class OFFNutritionSourceCoverageDiagnoser {
     ): OFFNutritionSourceCoverageStage {
 
         return when {
-            rawCoverage.productMatchCount == 0 -> {
+            rawCoverage.productMatchCount == 0 ->
                 OFFNutritionSourceCoverageStage.RAW_OFF_PRODUCT
-            }
 
-            rawCoverage.productWithUsableNutritionCount == 0 -> {
-                OFFNutritionSourceCoverageStage.RAW_OFF_USABLE_NUTRITION
-            }
+            rawCoverage.productWithUsableNutritionCount == 0 ->
+                OFFNutritionSourceCoverageStage
+                    .RAW_OFF_USABLE_NUTRITION
 
-            referenceCandidateCount == 0 -> {
+            referenceCandidateCount == 0 ->
                 OFFNutritionSourceCoverageStage.REFERENCE_CANDIDATE
-            }
 
-            referenceAggregateCount == 0 -> {
+            referenceAggregateCount == 0 ->
                 OFFNutritionSourceCoverageStage.REFERENCE_AGGREGATE
-            }
 
-            matcherCandidateCount == 0 -> {
+            matcherCandidateCount == 0 ->
                 OFFNutritionSourceCoverageStage.MATCHER_CANDIDATE
-            }
 
-            else -> {
+            else ->
                 OFFNutritionSourceCoverageStage.RETRIEVAL_INDEX
-            }
         }
     }
 
@@ -288,6 +372,12 @@ class OFFNutritionSourceCoverageDiagnoser {
         private const val MAXIMUM_MATCHED_ALIASES =
             20
 
+        private const val MAXIMUM_MATCHED_RAW_PRODUCT_NAMES =
+            20
+
+        private const val MAXIMUM_MATCHED_RAW_PRODUCT_IDENTITIES =
+            200
+
         private val EMPTY_RAW_COVERAGE =
             OFFNutritionRawSourceCoverageEntry(
                 productMatchCount =
@@ -296,6 +386,10 @@ class OFFNutritionSourceCoverageDiagnoser {
                     0,
                 productWithUsableNutritionCount =
                     0,
+                matchedProductIds =
+                    emptyList(),
+                matchedProductWithUsableNutritionIds =
+                    emptyList(),
                 matchedProductNames =
                     emptyList()
             )

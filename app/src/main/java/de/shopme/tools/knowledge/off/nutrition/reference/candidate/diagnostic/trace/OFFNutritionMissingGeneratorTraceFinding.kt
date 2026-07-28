@@ -4,13 +4,19 @@ data class OFFNutritionMissingGeneratorTraceFinding(
     val catalogIndex: Int,
     val catalogKey: String,
     val normalizedEnglish: String,
+
     val rawOFFProductMatchCount: Int,
     val rawOFFProductWithUsableNutritionCount: Int,
+
+    val matchedRawProductIds: List<String>,
+    val matchedRawProductWithUsableNutritionIds: List<String>,
     val matchedRawProductNames: List<String>,
+
     val sourceCandidateMatch: OFFNutritionArtifactIdentityMatch,
     val qualityFilteredCandidateMatch: OFFNutritionArtifactIdentityMatch,
     val deduplicatedCandidateMatch: OFFNutritionArtifactIdentityMatch,
     val generatorTraceMatch: OFFNutritionArtifactIdentityMatch,
+
     val firstMissingStage: OFFNutritionMissingGeneratorTraceStage,
     val cause: OFFNutritionMissingGeneratorTraceCause,
     val diagnosticReasons: List<String>,
@@ -39,11 +45,65 @@ data class OFFNutritionMissingGeneratorTraceFinding(
         }
 
         require(
-            matchedRawProductNames ==
-                    matchedRawProductNames.distinct().sorted()
+            rawOFFProductWithUsableNutritionCount <=
+                    rawOFFProductMatchCount
         ) {
-            "matchedRawProductNames must be distinct and sorted."
+            "Usable raw OFF product count must not exceed " +
+                    "raw OFF product match count."
         }
+
+        requireSortedDistinct(
+            values =
+                matchedRawProductIds,
+            fieldName =
+                "matchedRawProductIds"
+        )
+
+        requireSortedDistinct(
+            values =
+                matchedRawProductWithUsableNutritionIds,
+            fieldName =
+                "matchedRawProductWithUsableNutritionIds"
+        )
+
+        requireSortedDistinct(
+            values =
+                matchedRawProductNames,
+            fieldName =
+                "matchedRawProductNames"
+        )
+
+        require(
+            matchedRawProductWithUsableNutritionIds.all(
+                matchedRawProductIds::contains
+            )
+        ) {
+            "matchedRawProductWithUsableNutritionIds must be " +
+                    "contained in matchedRawProductIds."
+        }
+
+        require(
+            matchedRawProductIds.size <=
+                    rawOFFProductMatchCount
+        ) {
+            "Persisted raw OFF product IDs must not exceed " +
+                    "raw OFF product match count."
+        }
+
+        require(
+            matchedRawProductWithUsableNutritionIds.size <=
+                    rawOFFProductWithUsableNutritionCount
+        ) {
+            "Persisted usable raw OFF product IDs must not exceed " +
+                    "usable raw OFF product count."
+        }
+
+        requireSortedDistinct(
+            values =
+                diagnosticReasons,
+            fieldName =
+                "diagnosticReasons"
+        )
 
         require(diagnosticReasons.isNotEmpty()) {
             "diagnosticReasons must not be empty."
@@ -51,6 +111,23 @@ data class OFFNutritionMissingGeneratorTraceFinding(
 
         require(recommendedAction.isNotBlank()) {
             "recommendedAction must not be blank."
+        }
+    }
+
+    private fun requireSortedDistinct(
+        values: List<String>,
+        fieldName: String
+    ) {
+        require(
+            values ==
+                    values
+                        .map(String::trim)
+                        .filter(String::isNotBlank)
+                        .distinct()
+                        .sorted()
+        ) {
+            "$fieldName must contain non-blank values and be " +
+                    "deterministically sorted and distinct."
         }
     }
 }

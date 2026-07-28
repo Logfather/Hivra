@@ -51,6 +51,18 @@ class OFFNutritionSourceCoverageDiagnoserTest {
                                                 matchedProductNames =
                                                     listOf(
                                                         "Kiwi"
+                                                    ),
+                                                matchedProductIds =
+                                                    listOf(
+                                                        "0000000000001",
+                                                        "0000000000002",
+                                                        "0000000000003",
+                                                        "0000000000004"
+                                                    ),
+                                                matchedProductWithUsableNutritionIds =
+                                                    listOf(
+                                                        "0000000000001",
+                                                        "0000000000002"
                                                     )
                                             )
                                 )
@@ -134,6 +146,10 @@ class OFFNutritionSourceCoverageDiagnoserTest {
                                                 productWithUsableNutritionCount =
                                                     0,
                                                 matchedProductNames =
+                                                    emptyList(),
+                                                matchedProductIds =
+                                                    emptyList(),
+                                                matchedProductWithUsableNutritionIds =
                                                     emptyList()
                                             )
                                 )
