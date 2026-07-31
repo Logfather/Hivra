@@ -32,9 +32,7 @@ class OFFNutritionAggregateKnowledgeCandidateAdapter {
                 aggregate.matchAliases,
                 aggregate.singleIngredientNutritionAliases
             )
-                .flatMap { aliases ->
-                    aliases.asSequence()
-                }
+                .flatten()
                 .map(String::trim)
                 .filter(String::isNotBlank)
                 .filterNot { alias ->
