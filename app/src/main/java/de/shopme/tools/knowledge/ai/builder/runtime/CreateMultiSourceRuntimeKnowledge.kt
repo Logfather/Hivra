@@ -23,29 +23,60 @@ object CreateMultiSourceRuntimeKnowledge {
                     "data/generated/openfoodfacts/openfoodfacts-products.slim.jsonl.gz"
                 )
 
-        val agribalyseFile =
-            args.getOrNull(1)?.let(::File)
+        val offNutritionAggregateFile =
+            args.getOrNull(1)
+                ?.let(::File)
                 ?: projectRoot.resolve(
-                    "data/generated/agribalyse/agribalyse-foods.slim.tsv"
+                    "data/generated/knowledge/references/off/" +
+                            "off-nutrition-reference-aggregates.json"
+                )
+
+        val agribalyseFile =
+            args.getOrNull(2)
+                ?.let(::File)
+                ?: projectRoot.resolve(
+                    "data/generated/agribalyse/" +
+                            "agribalyse-foods.slim.tsv"
                 )
 
         val outputDir =
-            args.getOrNull(2)?.let(::File)
+            args.getOrNull(3)
+                ?.let(::File)
                 ?: projectRoot.resolve(
                     "data/generated/runtime"
                 )
 
         val maxOffCandidates =
-            args.getOrNull(3)?.toIntOrNull()
+            args.getOrNull(4)
+                ?.toIntOrNull()
                 ?: 50_000
+
+        val maxOffNutritionAggregates =
+            args.getOrNull(5)
+                ?.toIntOrNull()
+                ?: 50_000
+
+        val ciqualDirectory =
+            args.getOrNull(6)
+                ?.let(::File)
 
         val result =
             MultiSourceRuntimeKnowledgeBuild()
                 .build(
-                    offFile = offFile,
-                    agribalyseFile = agribalyseFile,
-                    outputDir = outputDir,
-                    maxOffCandidates = maxOffCandidates
+                    offFile =
+                        offFile,
+                    offNutritionAggregateFile =
+                        offNutritionAggregateFile,
+                    agribalyseFile =
+                        agribalyseFile,
+                    outputDir =
+                        outputDir,
+                    maxOffCandidates =
+                        maxOffCandidates,
+                    maxOffNutritionAggregates =
+                        maxOffNutritionAggregates,
+                    ciqualDirectory =
+                        ciqualDirectory
                 )
 
         println()
@@ -72,6 +103,15 @@ object CreateMultiSourceRuntimeKnowledge {
         println()
         println("Nutrition artifact=${result.nutritionArtifactFile.path}")
         println("Environmental artifact=${result.environmentalImpactArtifactFile.path}")
+        println()
+        println(
+            "OFF nutrition aggregate file=" +
+                    offNutritionAggregateFile.path
+        )
+        println(
+            "OFF nutrition aggregates=" +
+                    result.offNutritionAggregateCount
+        )
         println()
         println("BUILD SUCCESSFUL")
     }

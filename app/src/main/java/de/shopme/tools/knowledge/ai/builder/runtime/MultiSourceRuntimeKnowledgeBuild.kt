@@ -32,15 +32,19 @@ import de.shopme.tools.knowledge.ki_candidates.KnowledgeCandidateMergeAccumulato
 import de.shopme.tools.knowledge.ki_candidates.KnowledgeDimensionCandidateType
 import de.shopme.tools.knowledge.ki_candidates.normalizer.KnowledgeCandidateNormalizer
 import de.shopme.tools.knowledge.off.extractor.OFFCandidateExtractor
+import de.shopme.tools.knowledge.off.nutrition.reference.adapter.OFFNutritionAggregateKnowledgeCandidateAdapter
+import de.shopme.tools.knowledge.off.nutrition.reference.aggregation.OFFNutritionReferenceAggregateDatasetReader
 import java.io.File
 
 class MultiSourceRuntimeKnowledgeBuild {
 
     fun build(
         offFile: File,
+        offNutritionAggregateFile: File,
         agribalyseFile: File,
         outputDir: File,
         maxOffCandidates: Int? = null,
+        maxOffNutritionAggregates: Int? = null,
         ciqualDirectory: File? = null
     ): MultiSourceRuntimeKnowledgeBuildResult {
 
@@ -59,41 +63,144 @@ class MultiSourceRuntimeKnowledgeBuild {
         var normalizedCandidateCount =
             0
 
+        var offNutritionAggregateCount =
+            0
+
         val batch =
             mutableListOf<CanonicalKnowledgeCandidate>()
 
+        fun flushBatch() {
+            if (batch.isEmpty()) {
+                return
+            }
+
+            val normalizedBatch =
+                batch.map { batchCandidate ->
+                    normalizer.normalize(
+                        batchCandidate
+                    )
+                }
+
+            normalizedCandidateCount +=
+                normalizedBatch.size
+
+            accumulator.add(
+                normalizedBatch
+            )
+
+            batch.clear()
+        }
+
+        fun appendCandidate(
+            candidate: CanonicalKnowledgeCandidate
+        ) {
+            batch +=
+                candidate
+
+            if (batch.size >= offBatchSize) {
+                flushBatch()
+            }
+        }
+
+        /*
+         * Rohes OFF bleibt Quelle für alle Nicht-Nutrition-Dimensionen.
+         *
+         * Die rohe Nutrition-Dimension wird bewusst entfernt, weil die
+         * validierten Aggregate ab jetzt die alleinige OFF-Nutrition-Quelle
+         * des Knowledge Builds sind.
+         */
         OFFCandidateExtractor()
             .forEachCandidate(
-                file = offFile,
-                maxCandidates = maxOffCandidates
-            ) { candidate ->
+                file =
+                    offFile,
+                maxCandidates =
+                    maxOffCandidates
+            ) { rawCandidate ->
 
-                batch += candidate
                 offCandidateCount++
+
+                val nonNutritionDimensions =
+                    rawCandidate.dimensions
+                        .filterNot { dimension ->
+                            dimension.dimension ==
+                                    KnowledgeDimensionCandidateType.NUTRITION
+                        }
+
+                if (nonNutritionDimensions.isNotEmpty()) {
+                    appendCandidate(
+                        rawCandidate.copy(
+                            dimensions =
+                                nonNutritionDimensions
+                        )
+                    )
+                }
 
                 if (offCandidateCount % 100_000 == 0) {
                     println(
-                        "OFF processed=$offCandidateCount " +
+                        "OFF raw processed=$offCandidateCount " +
                                 "merged=${accumulator.candidateCount()}"
                     )
                 }
+            }
 
-                if (batch.size >= offBatchSize) {
-                    val normalizedBatch =
-                        batch.map { batchCandidate ->
-                            normalizer.normalize(batchCandidate)
-                        }
+        flushBatch()
 
-                    normalizedCandidateCount +=
-                        normalizedBatch.size
+        /*
+         * Validierte und deterministisch persistierte OFF-Nutrition-
+         * Aggregate werden streamingbasiert gelesen, adaptiert und in
+         * denselben Normalizer-/Merge-Pfad eingespeist.
+         */
+        val offNutritionAggregateAdapter =
+            OFFNutritionAggregateKnowledgeCandidateAdapter()
 
-                    accumulator.add(
-                        normalizedBatch
+        OFFNutritionReferenceAggregateDatasetReader()
+            .forEachAggregate(
+                inputFile =
+                    offNutritionAggregateFile,
+                maxAggregates =
+                    maxOffNutritionAggregates
+            ) { aggregate ->
+
+                appendCandidate(
+                    offNutritionAggregateAdapter.adapt(
+                        aggregate =
+                            aggregate
                     )
+                )
 
-                    batch.clear()
+                offNutritionAggregateCount++
+
+                if (
+                    offNutritionAggregateCount %
+                    100_000 ==
+                    0
+                ) {
+                    println(
+                        "OFF nutrition aggregates processed=" +
+                                offNutritionAggregateCount +
+                                " merged=" +
+                                accumulator.candidateCount()
+                    )
                 }
             }
+
+        flushBatch()
+
+        if (batch.isNotEmpty()) {
+            val normalizedBatch =
+                batch.map { candidate ->
+                    normalizer.normalize(candidate)
+                }
+
+            normalizedCandidateCount +=
+                normalizedBatch.size
+
+            accumulator.add(
+                normalizedBatch
+            )
+
+            batch.clear()
+        }
 
         if (batch.isNotEmpty()) {
             val normalizedBatch =
@@ -168,6 +275,7 @@ class MultiSourceRuntimeKnowledgeBuild {
 
         val inputCandidateCount =
             offCandidateCount +
+                    offNutritionAggregateCount +
                     agribalyseCandidates.size +
                     ciqualCandidates.size
 
@@ -667,6 +775,7 @@ class MultiSourceRuntimeKnowledgeBuild {
             }
 
         return MultiSourceRuntimeKnowledgeBuildResult(
+            offNutritionAggregateCount = offNutritionAggregateCount,
             offCandidateCount = offCandidateCount,
             agribalyseCandidateCount = agribalyseCandidates.size,
             ciqualCandidateCount = ciqualCandidates.size,

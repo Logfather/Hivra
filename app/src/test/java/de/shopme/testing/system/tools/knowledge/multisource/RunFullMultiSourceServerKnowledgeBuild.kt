@@ -61,15 +61,58 @@ object RunFullMultiSourceServerKnowledgeBuild {
         ensureOutputDirectoryExists(
             outputDirectory = outputDirectory
         )
+        val runtimeBuildResult =
+            MultiSourceRuntimeKnowledgeBuild()
+                .build(
+                    offFile =
+                        File(
+                            "../data/generated/openfoodfacts/" +
+                                    "openfoodfacts-products.slim.jsonl.gz"
+                        ),
+                    offNutritionAggregateFile =
+                        File(
+                            "../data/generated/knowledge/references/off/" +
+                                    "off-nutrition-reference-aggregates.json"
+                        ),
+                    agribalyseFile =
+                        File(
+                            "../data/generated/agribalyse/" +
+                                    "agribalyse-foods.slim.tsv"
+                        ),
+                    outputDir =
+                        outputDirectory,
+                    maxOffCandidates =
+                        null,
+                    maxOffNutritionAggregates =
+                        null,
+                    ciqualDirectory =
+                        ciqualDirectory
+                )
+
+        val offNutritionAggregateFile =
+            File(
+                "../data/generated/knowledge/references/off/" +
+                        "off-nutrition-reference-aggregates.json"
+            )
+
 
         val result =
             MultiSourceRuntimeKnowledgeBuild()
                 .build(
-                    offFile = offFile,
-                    agribalyseFile = agribalyseFile,
-                    ciqualDirectory = ciqualDirectory,
-                    outputDir = outputDirectory,
-                    maxOffCandidates = null
+                    offFile =
+                        offFile,
+                    offNutritionAggregateFile =
+                        offNutritionAggregateFile,
+                    agribalyseFile =
+                        agribalyseFile,
+                    ciqualDirectory =
+                        ciqualDirectory,
+                    outputDir =
+                        outputDirectory,
+                    maxOffCandidates =
+                        null,
+                    maxOffNutritionAggregates =
+                        null
                 )
 
         verifyResult(

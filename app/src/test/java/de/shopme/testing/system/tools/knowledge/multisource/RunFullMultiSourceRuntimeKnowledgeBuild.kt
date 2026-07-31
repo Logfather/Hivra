@@ -12,16 +12,28 @@ object RunFullMultiSourceRuntimeKnowledgeBuild {
             MultiSourceRuntimeKnowledgeBuild()
                 .build(
                     offFile =
-                        File("../data/generated/openfoodfacts/openfoodfacts-products.slim.jsonl.gz"),
-
+                        File(
+                            "../data/generated/openfoodfacts/" +
+                                    "openfoodfacts-products.slim.jsonl.gz"
+                        ),
+                    offNutritionAggregateFile =
+                        File(
+                            "../data/generated/knowledge/references/off/" +
+                                    "off-nutrition-reference-aggregates.json"
+                        ),
                     agribalyseFile =
-                        File("../data/generated/agribalyse/agribalyse-foods.slim.tsv"),
-
+                        File(
+                            "../data/generated/agribalyse/" +
+                                    "agribalyse-foods.slim.tsv"
+                        ),
                     outputDir =
-                        File("../data/generated/runtime"),
-
+                        File(
+                            "../data/generated/runtime"
+                        ),
                     maxOffCandidates =
-                        null // FULL DATASET
+                        null,
+                    maxOffNutritionAggregates =
+                        null
                 )
 
         println(
@@ -36,6 +48,8 @@ object RunFullMultiSourceRuntimeKnowledgeBuild {
             Normalized=${result.normalizedCandidateCount}
             Merged=${result.mergedCandidateCount}
             Conflicts=${result.conflictCount}
+            OFF raw candidates=${'$'}{result.offCandidateCount}
+            OFF nutrition aggregates=${'$'}{result.offNutritionAggregateCount}
             
             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
             

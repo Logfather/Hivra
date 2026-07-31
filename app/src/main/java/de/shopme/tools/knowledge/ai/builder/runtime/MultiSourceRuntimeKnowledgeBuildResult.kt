@@ -4,6 +4,7 @@ import java.io.File
 
 data class MultiSourceRuntimeKnowledgeBuildResult(
     val offCandidateCount: Int,
+    val offNutritionAggregateCount: Int,
     val agribalyseCandidateCount: Int,
     val ciqualCandidateCount: Int,
     val inputCandidateCount: Int,

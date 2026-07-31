@@ -3,6 +3,7 @@ package de.shopme.testing.system.tools.knowledge.multisource
 import de.shopme.tools.knowledge.ai.builder.runtime.MultiSourceRuntimeKnowledgeBuild
 import java.io.File
 import kotlin.test.Test
+import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class MultiSourceKnowledgeCandidateMergeTest {
@@ -12,6 +13,11 @@ class MultiSourceKnowledgeCandidateMergeTest {
         val result =
             MultiSourceRuntimeKnowledgeBuild()
                 .build(
+                    offNutritionAggregateFile =
+                        File(
+                            "../data/generated/knowledge/references/off/" +
+                                    "off-nutrition-reference-aggregates.json"
+                        ),
                     offFile =
                         File(
                             "../data/preview/openfoodfacts/off-products-preview-50k.jsonl.gz"
@@ -29,7 +35,9 @@ class MultiSourceKnowledgeCandidateMergeTest {
                             "../data/generated/runtime"
                         ),
                     maxOffCandidates =
-                        50_000
+                        50_000,
+                    maxOffNutritionAggregates =
+                        50_000,
                 )
 
         printBlockedFanoutKeys(
@@ -167,12 +175,22 @@ class MultiSourceKnowledgeCandidateMergeTest {
             "CIQUAL must produce nutrition candidates."
         )
 
-        assertTrue(
-            result.inputCandidateCount ==
-                    result.offCandidateCount +
+        val expectedInputCandidateCount =
+            result.offCandidateCount +
+                    result.offNutritionAggregateCount +
                     result.agribalyseCandidateCount +
-                    result.ciqualCandidateCount,
-            "Input candidate count must equal the sum of OFF, Agribalyse and CIQUAL candidates."
+                    result.ciqualCandidateCount
+
+        assertEquals(
+            expectedInputCandidateCount,
+            result.inputCandidateCount,
+            "Input candidate count must equal the sum of raw OFF, " +
+                    "OFF nutrition aggregate, Agribalyse and CIQUAL candidates."
+        )
+
+        assertTrue(
+            result.offNutritionAggregateCount > 0,
+            "Expected OFF nutrition aggregates to be included in the build."
         )
 
         assertTrue(
