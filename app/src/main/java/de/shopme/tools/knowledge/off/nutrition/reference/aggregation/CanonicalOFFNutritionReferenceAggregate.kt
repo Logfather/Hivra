@@ -64,14 +64,30 @@ data class CanonicalOFFNutritionReferenceAggregate(
         }
 
         require(
-            nutrition.all { (key, value) ->
-                value ==
-                        nutrientStatistics
-                            .getValue(key)
-                            .median
+            nutrition.values.all(
+                Double::isFinite
+            )
+        ) {
+            "Aggregate nutrition values must be finite."
+        }
+
+        require(
+            nutrition.all { (nutrientKey, value) ->
+
+                val statistics =
+                    nutrientStatistics[
+                        nutrientKey
+                    ]
+                        ?: return@all false
+
+                value >=
+                        statistics.minimum &&
+                        value <=
+                        statistics.maximum
             }
         ) {
-            "Aggregate nutrition values must equal persisted medians."
+            "Aggregate nutrition values must stay within persisted " +
+                    "observation ranges."
         }
 
         require(aliases == aliases.toSortedSet()) {

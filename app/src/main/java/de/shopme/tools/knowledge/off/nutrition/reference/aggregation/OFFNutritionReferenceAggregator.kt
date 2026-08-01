@@ -63,7 +63,8 @@ class OFFNutritionReferenceAggregator {
 
         require(
             candidates.all { candidate ->
-                candidate.canonicalId.trim() == canonicalId
+                candidate.canonicalId.trim() ==
+                        canonicalId
             }
         ) {
             "Aggregate group contains multiple canonical IDs."
@@ -87,10 +88,13 @@ class OFFNutritionReferenceAggregator {
         val nutrientStatistics =
             nutrientKeys
                 .associateWith { nutrientKey ->
+
                     val observations =
                         sortedCandidates
                             .mapNotNull { candidate ->
-                                candidate.nutrition[nutrientKey]
+                                candidate.nutrition[
+                                    nutrientKey
+                                ]
                             }
                             .sorted()
 
@@ -101,19 +105,37 @@ class OFFNutritionReferenceAggregator {
                 }
                 .toSortedMap()
 
-        val aggregatedNutrition =
+        val medianNutrition =
             nutrientStatistics
                 .mapValues { (_, statistics) ->
                     statistics.median
                 }
                 .toSortedMap()
 
+        val relationConsistentNutrition =
+            makeRelationConsistent(
+                medianNutrition =
+                    medianNutrition,
+                nutrientStatistics =
+                    nutrientStatistics,
+                candidates =
+                    sortedCandidates
+            )
+
+        require(
+            relationConsistentNutrition.keys ==
+                    nutrientStatistics.keys
+        ) {
+            "Relation-consistent nutrition and nutrient statistics " +
+                    "must have identical keys."
+        }
+
         val representative =
             selectRepresentative(
                 candidates =
                     sortedCandidates,
                 aggregateNutrition =
-                    aggregatedNutrition
+                    relationConsistentNutrition
             )
 
         val aliases =
@@ -178,9 +200,9 @@ class OFFNutritionReferenceAggregator {
             singleIngredientNutritionAliases =
                 singleIngredientAliases,
             nutrition =
-                aggregatedNutrition,
+                relationConsistentNutrition,
             nutrientStatistics =
-                nutrientStatistics,
+                nutrientStatistics.toSortedMap(),
             profileCount =
                 sortedCandidates.size,
             sourceIds =
@@ -199,6 +221,253 @@ class OFFNutritionReferenceAggregator {
         )
     }
 
+    /**
+     * Einzelne Nährstoffmediane können aus unterschiedlichen
+     * Produktprofilen stammen. Dadurch können fachlich unmögliche
+     * Kombinationen entstehen:
+     *
+     * saturatedFat > fat
+     * sugars > carbohydrates
+     *
+     * Bei einer inkonsistenten Beziehung wird deterministisch das
+     * nächstgelegene reale und konsistente Kandidatenpaar verwendet.
+     *
+     * Existiert kein Kandidat mit einem vollständigen konsistenten Paar,
+     * wird der nicht belastbare Child-Nährstoff mitsamt seiner Statistik
+     * entfernt. Der unabhängig nutzbare Parent-Wert bleibt erhalten.
+     */
+    private fun makeRelationConsistent(
+        medianNutrition: Map<String, Double>,
+        nutrientStatistics:
+        MutableMap<
+                String,
+                OFFNutritionReferenceNutrientStatistics
+                >,
+        candidates: List<CanonicalOFFNutritionReferenceCandidate>
+    ): Map<String, Double> {
+
+        val result =
+            medianNutrition.toSortedMap()
+
+        repairRelationship(
+            nutrition =
+                result,
+            nutrientStatistics =
+                nutrientStatistics,
+            candidates =
+                candidates,
+            parentKey =
+                FAT_KEY,
+            childKey =
+                SATURATED_FAT_KEY
+        )
+
+        repairRelationship(
+            nutrition =
+                result,
+            nutrientStatistics =
+                nutrientStatistics,
+            candidates =
+                candidates,
+            parentKey =
+                CARBOHYDRATES_KEY,
+            childKey =
+                SUGARS_KEY
+        )
+
+        return result.toSortedMap()
+    }
+
+    private fun repairRelationship(
+        nutrition: MutableMap<String, Double>,
+        nutrientStatistics:
+        MutableMap<
+                String,
+                OFFNutritionReferenceNutrientStatistics
+                >,
+        candidates: List<CanonicalOFFNutritionReferenceCandidate>,
+        parentKey: String,
+        childKey: String
+    ) {
+
+        val aggregateParentValue =
+            nutrition[parentKey]
+                ?: return
+
+        val aggregateChildValue =
+            nutrition[childKey]
+                ?: return
+
+        if (
+            isRelationshipValid(
+                parentValue =
+                    aggregateParentValue,
+                childValue =
+                    aggregateChildValue
+            )
+        ) {
+            return
+        }
+
+        val fallbackCandidate =
+            selectRelationshipRepresentative(
+                candidates =
+                    candidates,
+                aggregateParentValue =
+                    aggregateParentValue,
+                aggregateChildValue =
+                    aggregateChildValue,
+                parentKey =
+                    parentKey,
+                childKey =
+                    childKey
+            )
+
+        if (fallbackCandidate == null) {
+
+            /*
+             * Kein reales Profil enthält ein vollständiges und
+             * konsistentes Parent-/Child-Paar.
+             *
+             * Der Parent-Wert ist eigenständig interpretierbar und bleibt
+             * erhalten. Der Child-Wert ist ohne belastbare Relation nicht
+             * als finaler Aggregatewert geeignet.
+             *
+             * Nutrition und Statistik werden synchron geändert, damit
+             * ihre Schlüssel identisch bleiben.
+             */
+            nutrition.remove(
+                childKey
+            )
+
+            nutrientStatistics.remove(
+                childKey
+            )
+
+            return
+        }
+
+        nutrition[parentKey] =
+            fallbackCandidate.nutrition
+                .getValue(
+                    parentKey
+                )
+
+        nutrition[childKey] =
+            fallbackCandidate.nutrition
+                .getValue(
+                    childKey
+                )
+    }
+
+    private fun selectRelationshipRepresentative(
+        candidates: List<CanonicalOFFNutritionReferenceCandidate>,
+        aggregateParentValue: Double,
+        aggregateChildValue: Double,
+        parentKey: String,
+        childKey: String
+    ): CanonicalOFFNutritionReferenceCandidate? =
+        candidates
+            .asSequence()
+            .filter { candidate ->
+
+                val parentValue =
+                    candidate.nutrition[
+                        parentKey
+                    ]
+                        ?: return@filter false
+
+                val childValue =
+                    candidate.nutrition[
+                        childKey
+                    ]
+                        ?: return@filter false
+
+                parentValue.isFinite() &&
+                        childValue.isFinite() &&
+                        isRelationshipValid(
+                            parentValue =
+                                parentValue,
+                            childValue =
+                                childValue
+                        )
+            }
+            .minWithOrNull(
+                compareBy<
+                        CanonicalOFFNutritionReferenceCandidate
+                        > { candidate ->
+
+                    relationshipDistance(
+                        candidate =
+                            candidate,
+                        aggregateParentValue =
+                            aggregateParentValue,
+                        aggregateChildValue =
+                            aggregateChildValue,
+                        parentKey =
+                            parentKey,
+                        childKey =
+                            childKey
+                    )
+                }
+                    .thenByDescending { candidate ->
+                        candidate.nutrition.size
+                    }
+                    .thenByDescending { candidate ->
+                        candidate.sourceConfidence
+                    }
+                    .thenByDescending { candidate ->
+                        !candidate.productName.isNullOrBlank()
+                    }
+                    .thenByDescending { candidate ->
+                        !candidate.categories.isNullOrBlank()
+                    }
+                    .thenByDescending { candidate ->
+                        candidate.aliases.size
+                    }
+                    .thenBy { candidate ->
+                        candidate.sourceId
+                    }
+            )
+
+    private fun relationshipDistance(
+        candidate: CanonicalOFFNutritionReferenceCandidate,
+        aggregateParentValue: Double,
+        aggregateChildValue: Double,
+        parentKey: String,
+        childKey: String
+    ): Double {
+
+        val candidateParentValue =
+            candidate.nutrition
+                .getValue(
+                    parentKey
+                )
+
+        val candidateChildValue =
+            candidate.nutrition
+                .getValue(
+                    childKey
+                )
+
+        return abs(
+            candidateParentValue -
+                    aggregateParentValue
+        ) +
+                abs(
+                    candidateChildValue -
+                            aggregateChildValue
+                )
+    }
+
+    private fun isRelationshipValid(
+        parentValue: Double,
+        childValue: Double
+    ): Boolean =
+        childValue <=
+                parentValue +
+                RELATIONSHIP_TOLERANCE_GRAMS
+
     private fun createStatistics(
         observations: List<Double>
     ): OFFNutritionReferenceNutrientStatistics {
@@ -208,7 +477,9 @@ class OFFNutritionReferenceAggregator {
         }
 
         require(
-            observations.all(Double::isFinite)
+            observations.all(
+                Double::isFinite
+            )
         ) {
             "Nutrition aggregate observations must be finite."
         }
@@ -222,7 +493,10 @@ class OFFNutritionReferenceAggregator {
             minimum =
                 sorted.first(),
             median =
-                median(sorted),
+                median(
+                    sortedValues =
+                        sorted
+                ),
             maximum =
                 sorted.last()
         )
@@ -244,18 +518,36 @@ class OFFNutritionReferenceAggregator {
         }
 
         val middleIndex =
-            sortedValues.size / 2
+            sortedValues.size /
+                    2
 
-        return if (sortedValues.size % 2 == 1) {
-            sortedValues[middleIndex]
+        return if (
+            sortedValues.size %
+            2 ==
+            1
+        ) {
+            sortedValues[
+                middleIndex
+            ]
         } else {
             val lower =
-                sortedValues[middleIndex - 1]
+                sortedValues[
+                    middleIndex - 1
+                ]
 
             val upper =
-                sortedValues[middleIndex]
+                sortedValues[
+                    middleIndex
+                ]
 
-            lower + ((upper - lower) / 2.0)
+            lower +
+                    (
+                            (
+                                    upper -
+                                            lower
+                                    ) /
+                                    2.0
+                            )
         }
     }
 
@@ -267,31 +559,32 @@ class OFFNutritionReferenceAggregator {
             .minWithOrNull(
                 compareBy<
                         CanonicalOFFNutritionReferenceCandidate
-                        > {
+                        > { candidate ->
+
                     distanceFromAggregate(
                         candidate =
-                            it,
+                            candidate,
                         aggregateNutrition =
                             aggregateNutrition
                     )
                 }
-                    .thenByDescending {
-                        it.nutrition.size
+                    .thenByDescending { candidate ->
+                        candidate.nutrition.size
                     }
-                    .thenByDescending {
-                        it.sourceConfidence
+                    .thenByDescending { candidate ->
+                        candidate.sourceConfidence
                     }
-                    .thenByDescending {
-                        !it.productName.isNullOrBlank()
+                    .thenByDescending { candidate ->
+                        !candidate.productName.isNullOrBlank()
                     }
-                    .thenByDescending {
-                        !it.categories.isNullOrBlank()
+                    .thenByDescending { candidate ->
+                        !candidate.categories.isNullOrBlank()
                     }
-                    .thenByDescending {
-                        it.aliases.size
+                    .thenByDescending { candidate ->
+                        candidate.aliases.size
                     }
-                    .thenBy {
-                        it.sourceId
+                    .thenBy { candidate ->
+                        candidate.sourceId
                     }
             )
             ?: error(
@@ -316,8 +609,14 @@ class OFFNutritionReferenceAggregator {
         val absoluteDifferenceSum =
             commonKeys.sumOf { key ->
                 abs(
-                    candidate.nutrition.getValue(key) -
-                            aggregateNutrition.getValue(key)
+                    candidate.nutrition
+                        .getValue(
+                            key
+                        ) -
+                            aggregateNutrition
+                                .getValue(
+                                    key
+                                )
                 )
             }
 
@@ -352,5 +651,20 @@ class OFFNutritionReferenceAggregator {
 
         const val AGGREGATE_SOURCE_VERSION =
             "1"
+
+        const val FAT_KEY =
+            "fatPer100g"
+
+        const val SATURATED_FAT_KEY =
+            "saturatedFatPer100g"
+
+        const val CARBOHYDRATES_KEY =
+            "carbohydratesPer100g"
+
+        const val SUGARS_KEY =
+            "sugarsPer100g"
+
+        const val RELATIONSHIP_TOLERANCE_GRAMS =
+            0.5
     }
 }
