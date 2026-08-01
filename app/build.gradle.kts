@@ -64,6 +64,16 @@ android {
             excludes += "META-INF/LICENSE-notice.md"
         }
     }
+
+    testOptions {
+        unitTests.all {
+            it.maxHeapSize =
+                System.getenv("OFF_TEST_MAX_HEAP")
+                    ?.trim()
+                    ?.takeIf(String::isNotEmpty)
+                    ?: "2g"
+        }
+    }
 }
 
 kotlin {

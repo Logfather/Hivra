@@ -4,6 +4,8 @@ import de.shopme.tools.knowledge.off.extractor.OFFCandidateExtractor
 import de.shopme.tools.knowledge.off.nutrition.reference.OFFNutritionReferenceCandidateGenerator
 import de.shopme.tools.knowledge.off.nutrition.reference.OFFNutritionReferenceDatasetWriter
 import de.shopme.tools.knowledge.off.nutrition.reference.quality.OFFNutritionReferenceQualityFilter
+import de.shopme.tools.knowledge.off.nutrition.reference.quality.report.OFFNutritionReferenceQualityReport
+import de.shopme.tools.knowledge.off.nutrition.reference.quality.report.OFFNutritionReferenceQualityReportWriter
 import java.io.File
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -46,6 +48,29 @@ class FilterOFFNutritionReferenceCandidatesTest {
                 .filter(
                     candidates =
                         generationResult.candidates
+                )
+
+        val qualityReport =
+            OFFNutritionReferenceQualityReport
+                .from(
+                    filterResult =
+                        qualityFilterResult
+                )
+
+        val qualityReportOutputFile =
+            File(
+                "../data/generated/knowledge/reports/" +
+                        "off-nutrition-reference-quality.json"
+            )
+                .canonicalFile
+
+        val qualityReportWriteResult =
+            OFFNutritionReferenceQualityReportWriter()
+                .write(
+                    report =
+                        qualityReport,
+                    outputFile =
+                        qualityReportOutputFile
                 )
 
         val outputFile =
@@ -187,6 +212,39 @@ class FilterOFFNutritionReferenceCandidatesTest {
                         .CANDIDATE_COMPARATOR
                 ),
             qualityFilterResult.acceptedCandidates
+        )
+
+        assertEquals(
+            qualityReportOutputFile,
+            qualityReportWriteResult.outputFile
+        )
+
+        assertTrue(
+            qualityReportWriteResult.outputFile.isFile
+        )
+
+        assertTrue(
+            qualityReportWriteResult.writtenByteCount > 0L
+        )
+
+        assertEquals(
+            qualityFilterResult.inputCandidateCount,
+            qualityReport.inputCandidateCount
+        )
+
+        assertEquals(
+            qualityFilterResult.acceptedCandidateCount,
+            qualityReport.acceptedCandidateCount
+        )
+
+        assertEquals(
+            qualityFilterResult.rejectedCandidateCount,
+            qualityReport.rejectedCandidateCount
+        )
+
+        assertEquals(
+            qualityFilterResult.countsByReason.values.sum(),
+            qualityReport.rejectionReasonOccurrenceCount
         )
     }
 
