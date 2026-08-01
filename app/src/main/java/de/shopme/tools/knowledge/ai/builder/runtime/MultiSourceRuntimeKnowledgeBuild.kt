@@ -1,36 +1,16 @@
 package de.shopme.tools.knowledge.ai.builder.runtime
 
 import de.shopme.tools.knowledge.agribalyse.extractor.AgribalyseCandidateExtractor
-import de.shopme.tools.knowledge.ai.builder.allergen.MergedCandidateAllergenKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.animalwelfare.MergedCandidateAnimalWelfareKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.artifact.GeneratedKnowledgeArtifactWriter
-import de.shopme.tools.knowledge.ai.builder.biodiversity.MergedCandidateBiodiversityKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.diet.MergedCandidateDietKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.environment.MergedCandidateEnvironmentalImpactKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.fairtrade.MergedCandidateFairtradeKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.foodmiles.MergedCandidateFoodMilesKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.ingredientgraph.MergedCandidateIngredientGraphKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.ingredients.MergedCandidateIngredientsKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.locality.MergedCandidateLocalityKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.nutriscore.MergedCandidateNutriScoreKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.nutrition.MergedCandidateNutritionKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.packaging.MergedCandidatePackagingKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.pesticides.MergedCandidatePesticidesKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.pollinator.MergedCandidatePollinatorKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.processing.MergedCandidateProcessingKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.production.MergedCandidateProductionKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.recipe.MergedCandidateRecipeKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.recipegraph.MergedCandidateRecipeGraphKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.seasonality.MergedCandidateSeasonalityKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.taxonomy.MergedCandidateFoodTaxonomyKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.water.MergedCandidateWaterKnowledgeBuilder
-import de.shopme.tools.knowledge.ai.builder.waterstress.MergedCandidateWaterStressKnowledgeBuilder
+import de.shopme.tools.knowledge.ai.builder.runtime.partition.PartitionedRuntimeKnowledgeArtifactBuild
+import de.shopme.tools.knowledge.ai.builder.runtime.partition.PartitionedRuntimeKnowledgeArtifactShardMerger
 import de.shopme.tools.knowledge.ciqual.extractor.CiqualNutritionCandidateExtractor
 import de.shopme.tools.knowledge.ciqual.model.CiqualSourceFiles
 import de.shopme.tools.knowledge.ki_candidates.CanonicalKnowledgeCandidate
-import de.shopme.tools.knowledge.ki_candidates.KnowledgeCandidateMergeAccumulator
 import de.shopme.tools.knowledge.ki_candidates.KnowledgeDimensionCandidateType
 import de.shopme.tools.knowledge.ki_candidates.normalizer.KnowledgeCandidateNormalizer
+import de.shopme.tools.knowledge.ki_candidates.partition.KnowledgeCandidatePartitioner
+import de.shopme.tools.knowledge.ki_candidates.partition.PartitionedKnowledgeCandidateMerger
+import de.shopme.tools.knowledge.ki_candidates.partition.PartitionedKnowledgeCandidateStore
 import de.shopme.tools.knowledge.off.extractor.OFFCandidateExtractor
 import de.shopme.tools.knowledge.off.nutrition.reference.adapter.OFFNutritionAggregateKnowledgeCandidateAdapter
 import de.shopme.tools.knowledge.off.nutrition.reference.aggregation.OFFNutritionReferenceAggregateDatasetReader
@@ -45,25 +25,68 @@ class MultiSourceRuntimeKnowledgeBuild {
         outputDir: File,
         maxOffCandidates: Int? = null,
         maxOffNutritionAggregates: Int? = null,
-        ciqualDirectory: File? = null
+        ciqualDirectory: File? = null,
+        candidatePartitionCount: Int =
+            KnowledgeCandidatePartitioner.DEFAULT_PARTITION_COUNT
     ): MultiSourceRuntimeKnowledgeBuildResult {
 
-        val offBatchSize =
-            1_000
+        require(offFile.isFile) {
+            "OFF input file does not exist: ${offFile.path}"
+        }
+
+        require(offNutritionAggregateFile.isFile) {
+            "OFF nutrition aggregate file does not exist: " +
+                    offNutritionAggregateFile.path
+        }
+
+        require(agribalyseFile.isFile) {
+            "Agribalyse input file does not exist: ${agribalyseFile.path}"
+        }
+
+        require(candidatePartitionCount > 0) {
+            "candidatePartitionCount must be greater than zero."
+        }
+
+        require(
+            outputDir.mkdirs() ||
+                    outputDir.isDirectory
+        ) {
+            "Could not create output directory: ${outputDir.path}"
+        }
 
         val normalizer =
             KnowledgeCandidateNormalizer()
 
-        val accumulator =
-            KnowledgeCandidateMergeAccumulator()
+        val partitionDirectory =
+            outputDir.resolve(
+                CANDIDATE_PARTITION_DIRECTORY_NAME
+            )
+
+        resetDirectory(
+            directory =
+                partitionDirectory,
+            description =
+                "candidate partition directory"
+        )
+
+        val partitionStore =
+            PartitionedKnowledgeCandidateStore(
+                directory =
+                    partitionDirectory,
+                partitioner =
+                    KnowledgeCandidatePartitioner(
+                        partitionCount =
+                            candidatePartitionCount
+                    )
+            )
 
         var offCandidateCount =
             0
 
-        var normalizedCandidateCount =
+        var offNutritionAggregateCount =
             0
 
-        var offNutritionAggregateCount =
+        var normalizedCandidateCount =
             0
 
         val batch =
@@ -75,16 +98,16 @@ class MultiSourceRuntimeKnowledgeBuild {
             }
 
             val normalizedBatch =
-                batch.map { batchCandidate ->
+                batch.map { candidate ->
                     normalizer.normalize(
-                        batchCandidate
+                        candidate
                     )
                 }
 
             normalizedCandidateCount +=
                 normalizedBatch.size
 
-            accumulator.add(
+            partitionStore.appendAll(
                 normalizedBatch
             )
 
@@ -97,763 +120,776 @@ class MultiSourceRuntimeKnowledgeBuild {
             batch +=
                 candidate
 
-            if (batch.size >= offBatchSize) {
+            if (batch.size >= CANDIDATE_BATCH_SIZE) {
                 flushBatch()
             }
         }
 
-        /*
-         * Rohes OFF bleibt Quelle für alle Nicht-Nutrition-Dimensionen.
-         *
-         * Die rohe Nutrition-Dimension wird bewusst entfernt, weil die
-         * validierten Aggregate ab jetzt die alleinige OFF-Nutrition-Quelle
-         * des Knowledge Builds sind.
-         */
-        OFFCandidateExtractor()
-            .forEachCandidate(
-                file =
-                    offFile,
-                maxCandidates =
-                    maxOffCandidates
-            ) { rawCandidate ->
+        try {
+            /*
+             * Das rohe OFF-Dataset bleibt Quelle für alle Dimensionen
+             * außer Nutrition.
+             *
+             * Die ungefilterte OFF-Nutrition-Dimension wird entfernt.
+             * Für OFF-Nutrition werden ausschließlich die validierten
+             * Aggregate verwendet.
+             */
+            OFFCandidateExtractor()
+                .forEachCandidate(
+                    file =
+                        offFile,
+                    maxCandidates =
+                        maxOffCandidates
+                ) { rawCandidate ->
 
-                offCandidateCount++
+                    offCandidateCount++
 
-                val nonNutritionDimensions =
-                    rawCandidate.dimensions
-                        .filterNot { dimension ->
-                            dimension.dimension ==
-                                    KnowledgeDimensionCandidateType.NUTRITION
-                        }
+                    val nonNutritionDimensions =
+                        rawCandidate.dimensions
+                            .filterNot { dimension ->
+                                dimension.dimension ==
+                                        KnowledgeDimensionCandidateType.NUTRITION
+                            }
 
-                if (nonNutritionDimensions.isNotEmpty()) {
-                    appendCandidate(
-                        rawCandidate.copy(
-                            dimensions =
-                                nonNutritionDimensions
+                    if (nonNutritionDimensions.isNotEmpty()) {
+                        appendCandidate(
+                            rawCandidate.copy(
+                                dimensions =
+                                    nonNutritionDimensions
+                            )
                         )
-                    )
-                }
-
-                if (offCandidateCount % 100_000 == 0) {
-                    println(
-                        "OFF raw processed=$offCandidateCount " +
-                                "merged=${accumulator.candidateCount()}"
-                    )
-                }
-            }
-
-        flushBatch()
-
-        /*
-         * Validierte und deterministisch persistierte OFF-Nutrition-
-         * Aggregate werden streamingbasiert gelesen, adaptiert und in
-         * denselben Normalizer-/Merge-Pfad eingespeist.
-         */
-        val offNutritionAggregateAdapter =
-            OFFNutritionAggregateKnowledgeCandidateAdapter()
-
-        OFFNutritionReferenceAggregateDatasetReader()
-            .forEachAggregate(
-                inputFile =
-                    offNutritionAggregateFile,
-                maxAggregates =
-                    maxOffNutritionAggregates
-            ) { aggregate ->
-
-                appendCandidate(
-                    offNutritionAggregateAdapter.adapt(
-                        aggregate =
-                            aggregate
-                    )
-                )
-
-                offNutritionAggregateCount++
-
-                if (
-                    offNutritionAggregateCount %
-                    100_000 ==
-                    0
-                ) {
-                    println(
-                        "OFF nutrition aggregates processed=" +
-                                offNutritionAggregateCount +
-                                " merged=" +
-                                accumulator.candidateCount()
-                    )
-                }
-            }
-
-        flushBatch()
-
-        if (batch.isNotEmpty()) {
-            val normalizedBatch =
-                batch.map { candidate ->
-                    normalizer.normalize(candidate)
-                }
-
-            normalizedCandidateCount +=
-                normalizedBatch.size
-
-            accumulator.add(
-                normalizedBatch
-            )
-
-            batch.clear()
-        }
-
-        if (batch.isNotEmpty()) {
-            val normalizedBatch =
-                batch.map { candidate ->
-                    normalizer.normalize(candidate)
-                }
-
-            normalizedCandidateCount +=
-                normalizedBatch.size
-
-            accumulator.add(
-                normalizedBatch
-            )
-
-            batch.clear()
-        }
-
-        val agribalyseCandidates =
-            AgribalyseCandidateExtractor()
-                .extract(
-                    file = agribalyseFile
-                )
-
-
-
-        val normalizedAgribalyseCandidates =
-            normalizer.normalize(
-                candidates = agribalyseCandidates
-            )
-
-        normalizedCandidateCount +=
-            normalizedAgribalyseCandidates.size
-
-        accumulator.add(
-            normalizedAgribalyseCandidates
-        )
-
-        val ciqualCandidates =
-            ciqualDirectory
-                ?.let { directory ->
-                    require(
-                        directory.isDirectory
-                    ) {
-                        "CIQUAL directory does not exist or is not a directory: " +
-                                directory.path
                     }
 
-                    CiqualNutritionCandidateExtractor()
-                        .extract(
-                            files =
-                                CiqualSourceFiles.fromDirectory(
-                                    directory
-                                )
+                    if (
+                        offCandidateCount %
+                        PROGRESS_INTERVAL ==
+                        0
+                    ) {
+                        println(
+                            "OFF raw processed=" +
+                                    offCandidateCount +
+                                    " partitioned=" +
+                                    partitionStore.candidateCount()
                         )
+                    }
                 }
-                .orEmpty()
 
-        val normalizedCiqualCandidates =
-            normalizer.normalize(
-                candidates = ciqualCandidates
-            )
+            flushBatch()
 
-        normalizedCandidateCount +=
-            normalizedCiqualCandidates.size
+            val aggregateAdapter =
+                OFFNutritionAggregateKnowledgeCandidateAdapter()
 
-        accumulator.add(
-            normalizedCiqualCandidates
-        )
+            OFFNutritionReferenceAggregateDatasetReader()
+                .forEachAggregate(
+                    inputFile =
+                        offNutritionAggregateFile,
+                    maxAggregates =
+                        maxOffNutritionAggregates
+                ) { aggregate ->
 
-        val merged =
-            accumulator.candidates()
+                    appendCandidate(
+                        aggregateAdapter.adapt(
+                            aggregate =
+                                aggregate
+                        )
+                    )
 
-        val inputCandidateCount =
-            offCandidateCount +
-                    offNutritionAggregateCount +
-                    agribalyseCandidates.size +
-                    ciqualCandidates.size
+                    offNutritionAggregateCount++
 
-        //KNOWLEDGE ARTIFACTS//
-        //________________________________________//
+                    if (
+                        offNutritionAggregateCount %
+                        PROGRESS_INTERVAL ==
+                        0
+                    ) {
+                        println(
+                            "OFF nutrition aggregates processed=" +
+                                    offNutritionAggregateCount +
+                                    " partitioned=" +
+                                    partitionStore.candidateCount()
+                        )
+                    }
+                }
 
-        val waterKnowledge =
-            MergedCandidateWaterKnowledgeBuilder()
-                .build(merged)
+            flushBatch()
 
-        val waterStressKnowledge =
-            MergedCandidateWaterStressKnowledgeBuilder()
-                .build(merged)
+            val agribalyseCandidates =
+                AgribalyseCandidateExtractor()
+                    .extract(
+                        file =
+                            agribalyseFile
+                    )
 
-        val nutritionKnowledge =
-            MergedCandidateNutritionKnowledgeBuilder()
-                .build(merged)
-
-        val environmentalImpactKnowledge =
-            MergedCandidateEnvironmentalImpactKnowledgeBuilder()
-                .build(merged)
-
-        val ingredientsKnowledge =
-            MergedCandidateIngredientsKnowledgeBuilder()
-                .build(merged)
-
-        val allergenKnowledge =
-            MergedCandidateAllergenKnowledgeBuilder()
-                .build(merged)
-
-        val packagingKnowledge =
-            MergedCandidatePackagingKnowledgeBuilder()
-                .build(merged)
-
-        val foodTaxonomyKnowledge =
-            MergedCandidateFoodTaxonomyKnowledgeBuilder()
-                .build(merged)
-
-        val biodiversityKnowledge =
-            MergedCandidateBiodiversityKnowledgeBuilder()
-                .build(merged)
-
-        val processingKnowledge =
-            MergedCandidateProcessingKnowledgeBuilder()
-                .build(merged)
-
-        val pollinatorKnowledge =
-            MergedCandidatePollinatorKnowledgeBuilder()
-                .build(merged)
-
-        val pesticidesKnowledge =
-            MergedCandidatePesticidesKnowledgeBuilder()
-                .build(merged)
-
-        val productionKnowledge =
-            MergedCandidateProductionKnowledgeBuilder()
-                .build(merged)
-
-        val foodMilesKnowledge =
-            MergedCandidateFoodMilesKnowledgeBuilder()
-                .build(merged)
-
-        val localityKnowledge =
-            MergedCandidateLocalityKnowledgeBuilder()
-                .build(merged)
-
-        val nutriScoreKnowledge =
-            MergedCandidateNutriScoreKnowledgeBuilder()
-                .build(merged)
-
-        val seasonalityKnowledge =
-            MergedCandidateSeasonalityKnowledgeBuilder()
-                .build(merged)
-
-        val dietKnowledge =
-            MergedCandidateDietKnowledgeBuilder()
-                .build(merged)
-
-        val fairTradeKnowledge =
-            MergedCandidateFairtradeKnowledgeBuilder()
-                .build(
-                    candidates = merged
+            val normalizedAgribalyseCandidates =
+                normalizer.normalize(
+                    candidates =
+                        agribalyseCandidates
                 )
 
-        val animalWelfareKnowledge =
-            MergedCandidateAnimalWelfareKnowledgeBuilder()
-                .build(
-                    candidates = merged
+            normalizedCandidateCount +=
+                normalizedAgribalyseCandidates.size
+
+            partitionStore.appendAll(
+                normalizedAgribalyseCandidates
+            )
+
+            val ciqualCandidates =
+                ciqualDirectory
+                    ?.let { directory ->
+                        require(directory.isDirectory) {
+                            "CIQUAL directory does not exist or is not a directory: " +
+                                    directory.path
+                        }
+
+                        CiqualNutritionCandidateExtractor()
+                            .extract(
+                                files =
+                                    CiqualSourceFiles.fromDirectory(
+                                        directory
+                                    )
+                            )
+                    }
+                    .orEmpty()
+
+            val normalizedCiqualCandidates =
+                normalizer.normalize(
+                    candidates =
+                        ciqualCandidates
                 )
 
-        val recipeKnowledge =
-            MergedCandidateRecipeKnowledgeBuilder()
-                .build(
-                    candidates = merged
-                )
+            normalizedCandidateCount +=
+                normalizedCiqualCandidates.size
 
-        val ingredientGraphKnowledge =
-            MergedCandidateIngredientGraphKnowledgeBuilder()
-                .build(
-                    candidates = merged
-                )
-
-        val recipeGraphKnowledge =
-            MergedCandidateRecipeGraphKnowledgeBuilder()
-                .build(
-                    candidates = merged
-                )
-
-        //KNOWLEDGE WRITER//
-        //________________________________________//
-
-        val writer =
-            GeneratedKnowledgeArtifactWriter()
-
-        val nutritionFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "nutrition.json",
-                artifact = nutritionKnowledge
+            partitionStore.appendAll(
+                normalizedCiqualCandidates
             )
 
-        val environmentalImpactFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "environmental_impact.json",
-                artifact = environmentalImpactKnowledge
-            )
+            /*
+             * Alle Writer des Partition Stores müssen vor dem Lesen
+             * geschlossen sein.
+             */
+            partitionStore.close()
 
-        val ingredientsFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "ingredients.json",
-                artifact = ingredientsKnowledge
-            )
+            val inputCandidateCount =
+                offCandidateCount +
+                        offNutritionAggregateCount +
+                        agribalyseCandidates.size +
+                        ciqualCandidates.size
 
-        val allergenFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "allergens.json",
-                artifact = allergenKnowledge
-            )
-
-        val packagingFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "packaging.json",
-                artifact = packagingKnowledge
-            )
-
-        val foodTaxonomyFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "food_taxonomy.json",
-                artifact = foodTaxonomyKnowledge
-            )
-
-        val processingFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "processing.json",
-                artifact = processingKnowledge
-            )
-
-        val waterFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "water_footprint.json",
-                artifact = waterKnowledge
-            )
-
-        val waterStressFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "water_stress.json",
-                artifact = waterStressKnowledge
-            )
-
-        val biodiversityFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "biodiversity.json",
-                artifact = biodiversityKnowledge
-            )
-
-        val pollinatorFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "pollinator.json",
-                artifact = pollinatorKnowledge
-            )
-
-        val pesticidesFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "pesticides.json",
-                artifact = pesticidesKnowledge
-            )
-
-        val productionFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "production.json",
-                artifact = productionKnowledge
-            )
-
-        val foodMilesFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "food_miles.json",
-                artifact = foodMilesKnowledge
-            )
-
-        val localityFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "locality.json",
-                artifact = localityKnowledge
-            )
-
-        val nutriScoreFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "nutri_score.json",
-                artifact = nutriScoreKnowledge
-            )
-
-        val seasonalityFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "seasonality.json",
-                artifact = seasonalityKnowledge
-            )
-
-        val dietFile =
-            writer.write(
-                outputDir = outputDir,
-                fileName = "diet_classification.json",
-                artifact = dietKnowledge
-            )
-
-        val fairTradeFile =
-            if (fairTradeKnowledge.entries.isNotEmpty()) {
-                writer.write(
-                    outputDir = outputDir,
-                    fileName = "fairtrade.json",
-                    artifact = fairTradeKnowledge
-                )
-            } else {
+            val artifactShardDirectory =
                 outputDir.resolve(
-                    "fairtrade.json"
+                    RUNTIME_ARTIFACT_SHARD_DIRECTORY_NAME
                 )
-            }
 
-        val animalWelfareFile =
-            if (animalWelfareKnowledge.entries.isNotEmpty()) {
-                writer.write(
-                    outputDir = outputDir,
-                    fileName = "animal_welfare.json",
-                    artifact = animalWelfareKnowledge
+            resetDirectory(
+                directory =
+                    artifactShardDirectory,
+                description =
+                    "runtime artifact shard directory"
+            )
+
+            val partitionedArtifactBuild =
+                PartitionedRuntimeKnowledgeArtifactBuild(
+                    shardRootDirectory =
+                        artifactShardDirectory
                 )
-            } else {
-                outputDir.resolve(
-                    "animal_welfare.json"
+
+            /*
+             * Jede Partition wird isoliert gemergt, in Runtime-Artefakte
+             * überführt und unmittelbar als Shard persistiert.
+             *
+             * Es wird ausdrücklich keine globale merged-Liste erzeugt.
+             */
+            val partitionMergeResult =
+                PartitionedKnowledgeCandidateMerger(
+                    store =
+                        partitionStore
                 )
-            }
+                    .forEachMergedPartition {
+                            partitionIndex,
+                            mergedCandidates,
+                            partitionConflictCount,
+                            partitionBlockedHighFanoutKeys ->
 
+                        println(
+                            "Knowledge partition processed=" +
+                                    partitionIndex +
+                                    " mergedCandidates=" +
+                                    mergedCandidates.size +
+                                    " conflicts=" +
+                                    partitionConflictCount +
+                                    " blockedHighFanoutKeys=" +
+                                    partitionBlockedHighFanoutKeys.size
+                        )
 
-        val recipeFile =
-            if (recipeKnowledge.entries.isNotEmpty()) {
-                writer.write(
-                    outputDir = outputDir,
-                    fileName = "recipes.json",
-                    artifact = recipeKnowledge
+                        partitionedArtifactBuild.addPartition(
+                            partitionIndex =
+                                partitionIndex,
+                            mergedCandidates =
+                                mergedCandidates
+                        )
+                    }
+
+            val partitionedArtifactBuildResult =
+                partitionedArtifactBuild.finish()
+
+            val artifactCounts =
+                partitionedArtifactBuildResult.counts
+
+            val artifactShardMergeResult =
+                PartitionedRuntimeKnowledgeArtifactShardMerger(
+                    shardRootDirectory =
+                        artifactShardDirectory,
+                    outputDirectory =
+                        outputDir
                 )
-            } else {
-                outputDir.resolve(
-                    "recipes.json"
+                    .merge()
+
+            println(
+                "Runtime artifact shard merge completed " +
+                        "artifacts=" +
+                        artifactShardMergeResult.artifactCount +
+                        " shards=" +
+                        artifactShardMergeResult.totalShardCount +
+                        " entries=" +
+                        artifactShardMergeResult.totalEntryCount
+            )
+
+            /*
+             * In diesem Commit werden die partitionsweisen Runtime-
+             * Artefakte als Shards erzeugt.
+             *
+             * Die folgenden File-Objekte definieren bereits die finalen
+             * Zielpfade. Die Dateien selbst werden im nachfolgenden
+             * External-Shard-Merge erzeugt.
+             */
+            val nutritionFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        NUTRITION_FILE_NAME,
+                    outputDirectory =
+                        outputDir
                 )
-            }
 
-        val ingredientGraphFile =
-            if (ingredientGraphKnowledge.entries.isNotEmpty()) {
-                writer.write(
-                    outputDir = outputDir,
-                    fileName = "ingredient_graph.json",
-                    artifact = ingredientGraphKnowledge
+            val environmentalImpactFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        ENVIRONMENTAL_IMPACT_FILE_NAME,
+                    outputDirectory =
+                        outputDir
                 )
-            } else {
-                outputDir.resolve(
-                    "ingredient_graph.json"
+
+            val ingredientsFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        INGREDIENTS_FILE_NAME,
+                    outputDirectory =
+                        outputDir
                 )
-            }
 
-        val recipeGraphFile =
-            if (recipeGraphKnowledge.entries.isNotEmpty()) {
-                writer.write(
-                    outputDir = outputDir,
-                    fileName = "recipe_graph.json",
-                    artifact = recipeGraphKnowledge
+            val allergenFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        ALLERGENS_FILE_NAME,
+                    outputDirectory =
+                        outputDir
                 )
-            } else {
-                outputDir.resolve(
-                    "recipe_graph.json"
+
+            val packagingFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        PACKAGING_FILE_NAME,
+                    outputDirectory =
+                        outputDir
                 )
+
+            val foodTaxonomyFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        FOOD_TAXONOMY_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val processingFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        PROCESSING_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val waterFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        WATER_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val waterStressFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        WATER_STRESS_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val biodiversityFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        BIODIVERSITY_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val pollinatorFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        POLLINATOR_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val pesticidesFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        PESTICIDES_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val productionFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        PRODUCTION_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val foodMilesFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        FOOD_MILES_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val localityFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        LOCALITY_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val nutriScoreFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        NUTRI_SCORE_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val seasonalityFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        SEASONALITY_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val dietFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        DIET_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val fairTradeFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        FAIRTRADE_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val animalWelfareFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        ANIMAL_WELFARE_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val recipeFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        RECIPES_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val ingredientGraphFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        INGREDIENT_GRAPH_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            val recipeGraphFile =
+                artifactShardMergeResult.outputFileOrDefault(
+                    fileName =
+                        RECIPE_GRAPH_FILE_NAME,
+                    outputDirectory =
+                        outputDir
+                )
+
+            return MultiSourceRuntimeKnowledgeBuildResult(
+                offNutritionAggregateCount =
+                    offNutritionAggregateCount,
+                offCandidateCount =
+                    offCandidateCount,
+                agribalyseCandidateCount =
+                    agribalyseCandidates.size,
+                ciqualCandidateCount =
+                    ciqualCandidates.size,
+                inputCandidateCount =
+                    inputCandidateCount,
+                normalizedCandidateCount =
+                    normalizedCandidateCount,
+                mergedCandidateCount =
+                    partitionMergeResult
+                        .mergedCandidateCount
+                        .toInt(),
+                conflictCount =
+                    partitionMergeResult
+                        .conflictCount
+                        .toInt(),
+                blockedHighFanoutKeys =
+                    partitionMergeResult
+                        .blockedHighFanoutKeys,
+
+                nutritionCandidateCount =
+                    artifactCounts
+                        .nutritionCandidateCount,
+                nutritionArtifactEntryCount =
+                    artifactCounts
+                        .nutritionArtifactEntryCount,
+                nutritionArtifactFile =
+                    nutritionFile,
+
+                environmentalImpactCandidateCount =
+                    artifactCounts
+                        .environmentalCandidateCount,
+                environmentalImpactArtifactEntryCount =
+                    artifactCounts
+                        .environmentalImpactArtifactEntryCount,
+                environmentalImpactArtifactFile =
+                    environmentalImpactFile,
+
+                multiDimensionCandidateCount =
+                    artifactCounts
+                        .multiDimensionCandidateCount,
+
+                ingredientsCandidateCount =
+                    artifactCounts
+                        .ingredientsCandidateCount,
+                ingredientsArtifactEntryCount =
+                    artifactCounts
+                        .ingredientsArtifactEntryCount,
+                ingredientsArtifactFile =
+                    ingredientsFile,
+
+                allergensCandidateCount =
+                    artifactCounts
+                        .allergensCandidateCount,
+                allergenArtifactEntryCount =
+                    artifactCounts
+                        .allergenArtifactEntryCount,
+                allergenArtifactFile =
+                    allergenFile,
+
+                packagingCandidateCount =
+                    artifactCounts
+                        .packagingCandidateCount,
+                packagingArtifactEntryCount =
+                    artifactCounts
+                        .packagingArtifactEntryCount,
+                packagingArtifactFile =
+                    packagingFile,
+
+                taxonomyCandidateCount =
+                    artifactCounts
+                        .taxonomyCandidateCount,
+                taxonomyArtifactEntryCount =
+                    artifactCounts
+                        .taxonomyArtifactEntryCount,
+                taxonomyArtifactFile =
+                    foodTaxonomyFile,
+
+                processingCandidateCount =
+                    artifactCounts
+                        .processingCandidateCount,
+                processingArtifactEntryCount =
+                    artifactCounts
+                        .processingArtifactEntryCount,
+                processingArtifactFile =
+                    processingFile,
+
+                waterCandidateCount =
+                    artifactCounts
+                        .waterCandidateCount,
+                waterArtifactEntryCount =
+                    artifactCounts
+                        .waterArtifactEntryCount,
+                waterArtifactFile =
+                    waterFile,
+
+                waterStressCandidateCount =
+                    artifactCounts
+                        .waterStressCandidateCount,
+                waterStressArtifactEntryCount =
+                    artifactCounts
+                        .waterStressArtifactEntryCount,
+                waterStressArtifactFile =
+                    waterStressFile,
+
+                biodiversityCandidateCount =
+                    artifactCounts
+                        .biodiversityCandidateCount,
+                biodiversityArtifactEntryCount =
+                    artifactCounts
+                        .biodiversityArtifactEntryCount,
+                biodiversityArtifactFile =
+                    biodiversityFile,
+
+                pollinatorCandidateCount =
+                    artifactCounts
+                        .pollinatorCandidateCount,
+                pollinatorArtifactEntryCount =
+                    artifactCounts
+                        .pollinatorArtifactEntryCount,
+                pollinatorArtifactFile =
+                    pollinatorFile,
+
+                pesticidesCandidateCount =
+                    artifactCounts
+                        .pesticidesCandidateCount,
+                pesticidesArtifactEntryCount =
+                    artifactCounts
+                        .pesticidesArtifactEntryCount,
+                pesticidesArtifactFile =
+                    pesticidesFile,
+
+                productionCandidateCount =
+                    artifactCounts
+                        .productionCandidateCount,
+                productionArtifactEntryCount =
+                    artifactCounts
+                        .productionArtifactEntryCount,
+                productionArtifactFile =
+                    productionFile,
+
+                foodMilesCandidateCount =
+                    artifactCounts
+                        .foodMilesCandidateCount,
+                foodMilesArtifactEntryCount =
+                    artifactCounts
+                        .foodMilesArtifactEntryCount,
+                foodMilesArtifactFile =
+                    foodMilesFile,
+
+                localityCandidateCount =
+                    artifactCounts
+                        .localityCandidateCount,
+                localityArtifactEntryCount =
+                    artifactCounts
+                        .localityArtifactEntryCount,
+                localityArtifactFile =
+                    localityFile,
+
+                nutriScoreCandidateCount =
+                    artifactCounts
+                        .nutriScoreCandidateCount,
+                nutriScoreArtifactEntryCount =
+                    artifactCounts
+                        .nutriScoreArtifactEntryCount,
+                nutriScoreArtifactFile =
+                    nutriScoreFile,
+
+                seasonalityCandidateCount =
+                    artifactCounts
+                        .seasonalityCandidateCount,
+                seasonalityArtifactEntryCount =
+                    artifactCounts
+                        .seasonalityArtifactEntryCount,
+                seasonalityArtifactFile =
+                    seasonalityFile,
+
+                dietCandidateCount =
+                    artifactCounts
+                        .dietCandidateCount,
+                dietArtifactEntryCount =
+                    artifactCounts
+                        .dietArtifactEntryCount,
+                dietArtifactFile =
+                    dietFile,
+
+                fairTradeCandidateCount =
+                    artifactCounts
+                        .fairTradeCandidateCount,
+                fairTradeArtifactEntryCount =
+                    artifactCounts
+                        .fairTradeArtifactEntryCount,
+                fairTradeArtifactFile =
+                    fairTradeFile,
+
+                animalWelfareCandidateCount =
+                    artifactCounts
+                        .animalWelfareCandidateCount,
+                animalWelfareArtifactEntryCount =
+                    artifactCounts
+                        .animalWelfareArtifactEntryCount,
+                animalWelfareArtifactFile =
+                    animalWelfareFile,
+
+                recipeCandidateCount =
+                    artifactCounts
+                        .recipeCandidateCount,
+                recipeArtifactEntryCount =
+                    artifactCounts
+                        .recipeArtifactEntryCount,
+                recipeArtifactFile =
+                    recipeFile,
+
+                ingredientGraphCandidateCount =
+                    artifactCounts
+                        .ingredientGraphCandidateCount,
+                ingredientGraphArtifactEntryCount =
+                    artifactCounts
+                        .ingredientGraphArtifactEntryCount,
+                ingredientGraphArtifactFile =
+                    ingredientGraphFile,
+
+                recipeGraphCandidateCount =
+                    artifactCounts
+                        .recipeGraphCandidateCount,
+                recipeGraphArtifactEntryCount =
+                    artifactCounts
+                        .recipeGraphArtifactEntryCount,
+                recipeGraphArtifactFile =
+                    recipeGraphFile
+            )
+        } finally {
+            partitionStore.close()
+        }
+    }
+
+    private fun resetDirectory(
+        directory: File,
+        description: String
+    ) {
+        if (directory.exists()) {
+            require(
+                directory.deleteRecursively()
+            ) {
+                "Could not delete previous $description: " +
+                        directory.path
             }
+        }
 
-        //KNOWLEDGE CANDIDATES COUNTS//
-        //________________________________________//
+        require(
+            directory.mkdirs() ||
+                    directory.isDirectory
+        ) {
+            "Could not create $description: " +
+                    directory.path
+        }
+    }
 
-        val nutritionCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.NUTRITION
-                }
-            }
+    private companion object {
 
-        val ingredientsCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.INGREDIENTS
-                }
-            }
+        const val CANDIDATE_BATCH_SIZE =
+            1_000
 
-        val environmentalCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.ENVIRONMENTAL_IMPACT
-                }
-            }
+        const val PROGRESS_INTERVAL =
+            100_000
 
-        val multiDimensionCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.size > 1
-            }
+        const val CANDIDATE_PARTITION_DIRECTORY_NAME =
+            ".candidate-partitions"
 
-        val allergensCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.ALLERGENS
-                }
-            }
+        const val RUNTIME_ARTIFACT_SHARD_DIRECTORY_NAME =
+            ".runtime-artifact-shards"
 
-        val taxonomyCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.TAXONOMY
-                }
-            }
+        const val NUTRITION_FILE_NAME =
+            "nutrition.json"
 
-        val packagingCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.PACKAGING
-                }
-            }
+        const val ENVIRONMENTAL_IMPACT_FILE_NAME =
+            "environmental_impact.json"
 
-        val processingCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.PROCESSING
-                }
-            }
+        const val INGREDIENTS_FILE_NAME =
+            "ingredients.json"
 
-        val waterCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.WATER
-                }
-            }
+        const val ALLERGENS_FILE_NAME =
+            "allergens.json"
 
-        val waterStressCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.WATER_STRESS
-                }
-            }
+        const val PACKAGING_FILE_NAME =
+            "packaging.json"
 
-        val biodiversityCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.BIODIVERSITY
-                }
-            }
+        const val FOOD_TAXONOMY_FILE_NAME =
+            "food_taxonomy.json"
 
-        val pollinatorCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.POLLINATOR
-                }
-            }
+        const val PROCESSING_FILE_NAME =
+            "processing.json"
 
-        val pesticidesCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.PESTICIDES
-                }
-            }
+        const val WATER_FILE_NAME =
+            "water_footprint.json"
 
-        val productionCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.PRODUCTION
-                }
-            }
+        const val WATER_STRESS_FILE_NAME =
+            "water_stress.json"
 
-        val foodMilesCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.FOOD_MILES
-                }
-            }
+        const val BIODIVERSITY_FILE_NAME =
+            "biodiversity.json"
 
-        val localityCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.LOCALITY
-                }
-            }
+        const val POLLINATOR_FILE_NAME =
+            "pollinator.json"
 
-        val nutriScoreCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.NUTRI_SCORE
-                }
-            }
+        const val PESTICIDES_FILE_NAME =
+            "pesticides.json"
 
-        val seasonalityCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.SEASONALITY
-                }
-            }
+        const val PRODUCTION_FILE_NAME =
+            "production.json"
 
-        val dietCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.DIET
-                }
-            }
+        const val FOOD_MILES_FILE_NAME =
+            "food_miles.json"
 
-        val fairTradeCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.FAIRTRADE
-                }
-            }
+        const val LOCALITY_FILE_NAME =
+            "locality.json"
 
-        val animalWelfareCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.ANIMAL_WELFARE
-                }
-            }
+        const val NUTRI_SCORE_FILE_NAME =
+            "nutri_score.json"
 
-        val recipeCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.RECIPE
-                }
-            }
+        const val SEASONALITY_FILE_NAME =
+            "seasonality.json"
 
-        val ingredientGraphCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.INGREDIENT_GRAPH
-                }
-            }
+        const val DIET_FILE_NAME =
+            "diet_classification.json"
 
-        val recipeGraphCandidateCount =
-            merged.count { candidate ->
-                candidate.dimensions.any { dimension ->
-                    dimension.dimension ==
-                            KnowledgeDimensionCandidateType.RECIPE_GRAPH
-                }
-            }
+        const val FAIRTRADE_FILE_NAME =
+            "fairtrade.json"
 
-        return MultiSourceRuntimeKnowledgeBuildResult(
-            offNutritionAggregateCount = offNutritionAggregateCount,
-            offCandidateCount = offCandidateCount,
-            agribalyseCandidateCount = agribalyseCandidates.size,
-            ciqualCandidateCount = ciqualCandidates.size,
-            inputCandidateCount = inputCandidateCount,
-            normalizedCandidateCount = normalizedCandidateCount,
-            mergedCandidateCount = accumulator.candidateCount(),
-            conflictCount = accumulator.conflictCount(),
-            nutritionCandidateCount = nutritionCandidateCount,
-            environmentalImpactCandidateCount = environmentalCandidateCount,
-            multiDimensionCandidateCount = multiDimensionCandidateCount,
-            nutritionArtifactEntryCount = nutritionKnowledge.entries.size,
-            environmentalImpactArtifactEntryCount = environmentalImpactKnowledge.entries.size,
-            nutritionArtifactFile = nutritionFile,
-            environmentalImpactArtifactFile = environmentalImpactFile,
-            blockedHighFanoutKeys = accumulator.blockedHighFanoutKeys(),
-            ingredientsCandidateCount = ingredientsCandidateCount,
-            ingredientsArtifactEntryCount = ingredientsKnowledge.entries.size,
-            ingredientsArtifactFile = ingredientsFile,
-            allergensCandidateCount = allergensCandidateCount,
-            allergenArtifactEntryCount = allergenKnowledge.entries.size,
-            allergenArtifactFile = allergenFile,
-            packagingCandidateCount = packagingCandidateCount,
-            packagingArtifactEntryCount = packagingKnowledge.entries.size,
-            packagingArtifactFile = packagingFile,
-            taxonomyCandidateCount = taxonomyCandidateCount,
-            taxonomyArtifactEntryCount = foodTaxonomyKnowledge.entries.size,
-            taxonomyArtifactFile = foodTaxonomyFile,
-            processingCandidateCount = processingCandidateCount,
-            processingArtifactEntryCount = processingKnowledge.entries.size,
-            processingArtifactFile = processingFile,
-            waterCandidateCount = waterCandidateCount,
-            waterArtifactEntryCount = waterKnowledge.entries.size,
-            waterArtifactFile = waterFile,
-            waterStressCandidateCount = waterStressCandidateCount,
-            waterStressArtifactEntryCount = waterStressKnowledge.entries.size,
-            waterStressArtifactFile = waterStressFile,
-            biodiversityCandidateCount = biodiversityCandidateCount,
-            biodiversityArtifactEntryCount = biodiversityKnowledge.entries.size,
-            biodiversityArtifactFile = biodiversityFile,
-            pollinatorCandidateCount = pollinatorCandidateCount,
-            pollinatorArtifactEntryCount = pollinatorKnowledge.entries.size,
-            pollinatorArtifactFile = pollinatorFile,
-            pesticidesCandidateCount = pesticidesCandidateCount,
-            pesticidesArtifactEntryCount = pesticidesKnowledge.entries.size,
-            pesticidesArtifactFile = pesticidesFile,
-            productionCandidateCount = productionCandidateCount,
-            productionArtifactEntryCount = productionKnowledge.entries.size,
-            productionArtifactFile = productionFile,
-            foodMilesCandidateCount = foodMilesCandidateCount,
-            foodMilesArtifactEntryCount = foodMilesKnowledge.entries.size,
-            foodMilesArtifactFile = foodMilesFile,
-            localityCandidateCount = localityCandidateCount,
-            localityArtifactEntryCount = localityKnowledge.entries.size,
-            localityArtifactFile = localityFile,
-            nutriScoreCandidateCount = nutriScoreCandidateCount,
-            nutriScoreArtifactEntryCount = nutriScoreKnowledge.entries.size,
-            nutriScoreArtifactFile = nutriScoreFile,
-            seasonalityCandidateCount = seasonalityCandidateCount,
-            seasonalityArtifactEntryCount = seasonalityKnowledge.entries.size,
-            seasonalityArtifactFile = seasonalityFile,
-            dietCandidateCount = dietCandidateCount,
-            dietArtifactEntryCount = dietKnowledge.entries.size,
-            dietArtifactFile = dietFile,
-            fairTradeCandidateCount = fairTradeCandidateCount,
-            fairTradeArtifactEntryCount = fairTradeKnowledge.entries.size,
-            fairTradeArtifactFile = fairTradeFile,
-            animalWelfareCandidateCount = animalWelfareCandidateCount,
-            animalWelfareArtifactEntryCount = animalWelfareKnowledge.entries.size,
-            animalWelfareArtifactFile = animalWelfareFile,
-            recipeCandidateCount = recipeCandidateCount,
-            recipeArtifactEntryCount = recipeKnowledge.entries.size,
-            recipeArtifactFile = recipeFile,
-            ingredientGraphCandidateCount = ingredientGraphCandidateCount,
-            ingredientGraphArtifactEntryCount = ingredientGraphKnowledge.entries.size,
-            ingredientGraphArtifactFile = ingredientGraphFile,
-            recipeGraphCandidateCount = recipeGraphCandidateCount,
-            recipeGraphArtifactEntryCount = recipeGraphKnowledge.entries.size,
-            recipeGraphArtifactFile = recipeGraphFile,
-        )
+        const val ANIMAL_WELFARE_FILE_NAME =
+            "animal_welfare.json"
+
+        const val RECIPES_FILE_NAME =
+            "recipes.json"
+
+        const val INGREDIENT_GRAPH_FILE_NAME =
+            "ingredient_graph.json"
+
+        const val RECIPE_GRAPH_FILE_NAME =
+            "recipe_graph.json"
     }
 }

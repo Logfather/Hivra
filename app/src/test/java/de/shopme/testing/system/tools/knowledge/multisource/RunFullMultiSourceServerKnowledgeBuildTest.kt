@@ -1,7 +1,7 @@
 package de.shopme.testing.system.tools.knowledge.multisource
 
-import java.io.File
 import kotlin.test.Test
+import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class RunFullMultiSourceServerKnowledgeBuildTest {
@@ -13,10 +13,20 @@ class RunFullMultiSourceServerKnowledgeBuildTest {
             emptyArray()
         )
 
+        val outputDirectory =
+            RunFullMultiSourceServerKnowledgeBuild
+                .resolveDefaultOutputDirectory()
+
         val nutritionArtifactFile =
-            File(
-                "data/generated/knowledge/server/nutrition.json"
+            outputDirectory.resolve(
+                "nutrition.json"
             )
+
+        assertEquals(
+            "server",
+            outputDirectory.name,
+            "Resolved output directory must be the server knowledge directory."
+        )
 
         assertTrue(
             nutritionArtifactFile.isFile,
