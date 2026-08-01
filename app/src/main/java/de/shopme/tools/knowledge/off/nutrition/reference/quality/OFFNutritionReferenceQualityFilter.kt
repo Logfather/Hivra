@@ -203,7 +203,9 @@ class OFFNutritionReferenceQualityFilter {
             totalFat != null &&
             saturatedFat != null &&
             saturatedFat >
-            totalFat + RELATIONSHIP_TOLERANCE_GRAMS
+            totalFat +
+            OFFNutritionReferenceQualityThresholds
+                .RELATIONSHIP_TOLERANCE_GRAMS
         ) {
             reasons +=
                 OFFNutritionReferenceQualityRejectionReason
@@ -220,7 +222,9 @@ class OFFNutritionReferenceQualityFilter {
             carbohydrates != null &&
             sugars != null &&
             sugars >
-            carbohydrates + RELATIONSHIP_TOLERANCE_GRAMS
+            carbohydrates +
+            OFFNutritionReferenceQualityThresholds
+                .RELATIONSHIP_TOLERANCE_GRAMS
         ) {
             reasons +=
                 OFFNutritionReferenceQualityRejectionReason
@@ -242,7 +246,8 @@ class OFFNutritionReferenceQualityFilter {
 
         if (
             availableMacronutrients.size <
-            MINIMUM_MACRONUTRIENTS_FOR_SUM_CHECK
+            OFFNutritionReferenceQualityThresholds
+                .MINIMUM_MACRONUTRIENTS_FOR_SUM_CHECK
         ) {
             return
         }
@@ -252,7 +257,8 @@ class OFFNutritionReferenceQualityFilter {
 
         if (
             macronutrientSum >
-            MAXIMUM_MACRONUTRIENT_SUM_GRAMS
+            OFFNutritionReferenceQualityThresholds
+                .MAXIMUM_MACRONUTRIENT_SUM_GRAMS
         ) {
             reasons +=
                 OFFNutritionReferenceQualityRejectionReason
@@ -308,21 +314,6 @@ class OFFNutritionReferenceQualityFilter {
         private const val SALT_PER_100G =
             "saltPer100g"
 
-        private const val MAXIMUM_ENERGY_KCAL =
-            1_000.0
-
-        private const val MAXIMUM_COMPONENT_GRAMS =
-            100.0
-
-        private const val RELATIONSHIP_TOLERANCE_GRAMS =
-            0.5
-
-        private const val MAXIMUM_MACRONUTRIENT_SUM_GRAMS =
-            105.0
-
-        private const val MINIMUM_MACRONUTRIENTS_FOR_SUM_CHECK =
-            3
-
         private val MACRONUTRIENT_KEYS =
             listOf(
                 FAT_PER_100G,
@@ -333,21 +324,29 @@ class OFFNutritionReferenceQualityFilter {
         private val MAXIMUM_VALUE_BY_NUTRITION_KEY =
             mapOf(
                 ENERGY_KCAL_PER_100G to
-                        MAXIMUM_ENERGY_KCAL,
+                        OFFNutritionReferenceQualityThresholds
+                            .MAXIMUM_ENERGY_KCAL_PER_100G,
                 FAT_PER_100G to
-                        MAXIMUM_COMPONENT_GRAMS,
+                        OFFNutritionReferenceQualityThresholds
+                            .MAXIMUM_COMPONENT_GRAMS_PER_100G,
                 SATURATED_FAT_PER_100G to
-                        MAXIMUM_COMPONENT_GRAMS,
+                        OFFNutritionReferenceQualityThresholds
+                            .MAXIMUM_COMPONENT_GRAMS_PER_100G,
                 CARBOHYDRATES_PER_100G to
-                        MAXIMUM_COMPONENT_GRAMS,
+                        OFFNutritionReferenceQualityThresholds
+                            .MAXIMUM_COMPONENT_GRAMS_PER_100G,
                 SUGARS_PER_100G to
-                        MAXIMUM_COMPONENT_GRAMS,
+                        OFFNutritionReferenceQualityThresholds
+                            .MAXIMUM_COMPONENT_GRAMS_PER_100G,
                 FIBER_PER_100G to
-                        MAXIMUM_COMPONENT_GRAMS,
+                        OFFNutritionReferenceQualityThresholds
+                            .MAXIMUM_COMPONENT_GRAMS_PER_100G,
                 PROTEINS_PER_100G to
-                        MAXIMUM_COMPONENT_GRAMS,
+                        OFFNutritionReferenceQualityThresholds
+                            .MAXIMUM_COMPONENT_GRAMS_PER_100G,
                 SALT_PER_100G to
-                        MAXIMUM_COMPONENT_GRAMS
+                        OFFNutritionReferenceQualityThresholds
+                            .MAXIMUM_COMPONENT_GRAMS_PER_100G
             )
     }
 }

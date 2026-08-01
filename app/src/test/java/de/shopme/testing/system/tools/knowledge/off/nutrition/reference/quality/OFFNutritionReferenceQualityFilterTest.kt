@@ -609,6 +609,90 @@ class OFFNutritionReferenceQualityFilterTest {
         )
     }
 
+    @Test
+    fun filter_acceptsEnergyExactlyAtMaximumThreshold() {
+
+        val candidate =
+            createCandidate(
+                sourceId =
+                    "boundary-energy-at-maximum",
+                canonicalId =
+                    "boundary-energy-at-maximum",
+                nutrition =
+                    mapOf(
+                        "energyKcalPer100g" to 950.0
+                    )
+            )
+
+        val result =
+            OFFNutritionReferenceQualityFilter()
+                .filter(
+                    listOf(candidate)
+                )
+
+        assertEquals(
+            1,
+            result.acceptedCandidateCount
+        )
+
+        assertEquals(
+            0,
+            result.rejectedCandidateCount
+        )
+
+        assertTrue(
+            result.rejections.isEmpty()
+        )
+    }
+
+    @Test
+    fun filter_rejectsEnergyAboveMaximumThreshold() {
+
+        val candidate =
+            createCandidate(
+                sourceId =
+                    "boundary-energy-above-maximum",
+                canonicalId =
+                    "boundary-energy-above-maximum",
+                nutrition =
+                    mapOf(
+                        "energyKcalPer100g" to 950.0001
+                    )
+            )
+
+        val result =
+            OFFNutritionReferenceQualityFilter()
+                .filter(
+                    listOf(candidate)
+                )
+
+        assertEquals(
+            0,
+            result.acceptedCandidateCount
+        )
+
+        assertEquals(
+            1,
+            result.rejectedCandidateCount
+        )
+
+        assertEquals(
+            listOf(
+                OFFNutritionReferenceQualityRejectionReason
+                    .NUTRITION_VALUE_ABOVE_MAXIMUM
+            ),
+            result.rejections.single().reasons
+        )
+
+        assertEquals(
+            1,
+            result.countsByReason[
+                OFFNutritionReferenceQualityRejectionReason
+                    .NUTRITION_VALUE_ABOVE_MAXIMUM
+            ]
+        )
+    }
+
     private fun createCandidate(
         sourceId: String,
         canonicalId: String,
