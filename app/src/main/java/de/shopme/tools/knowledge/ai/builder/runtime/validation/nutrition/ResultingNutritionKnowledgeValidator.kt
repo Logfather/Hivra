@@ -2,6 +2,7 @@ package de.shopme.tools.knowledge.ai.builder.runtime.validation.nutrition
 
 import com.google.gson.JsonObject
 import com.google.gson.stream.JsonReader
+import de.shopme.tools.knowledge.ai.builder.runtime.validation.nutrition.policy.ResultingNutritionMacronutrientWarningPolicy
 import java.io.File
 import java.nio.charset.StandardCharsets
 import kotlin.math.max
@@ -10,7 +11,10 @@ class ResultingNutritionKnowledgeValidator(
     private val maximumReportedWarnings: Int =
         DEFAULT_MAXIMUM_REPORTED_WARNINGS,
     private val maximumReportedErrors: Int =
-        DEFAULT_MAXIMUM_REPORTED_ERRORS
+        DEFAULT_MAXIMUM_REPORTED_ERRORS,
+    private val macronutrientWarningPolicy:
+    ResultingNutritionMacronutrientWarningPolicy =
+        ResultingNutritionMacronutrientWarningPolicy()
 ) {
 
     init {
@@ -626,52 +630,55 @@ class ResultingNutritionKnowledgeValidator(
                 )
         }
 
-        val macroKeys =
-            listOf(
-                FAT_KEY,
-                CARBOHYDRATES_KEY,
-                FIBER_KEY,
-                PROTEINS_KEY
+        val macronutrientDecision =
+            macronutrientWarningPolicy.evaluate(
+                fat =
+                    values[FAT_KEY]
+                        ?.takeIf {
+                            isNutrientPresent(
+                                entry =
+                                    entry,
+                                nutrientKey =
+                                    FAT_KEY
+                            )
+                        },
+                carbohydrates =
+                    values[CARBOHYDRATES_KEY]
+                        ?.takeIf {
+                            isNutrientPresent(
+                                entry =
+                                    entry,
+                                nutrientKey =
+                                    CARBOHYDRATES_KEY
+                            )
+                        },
+                protein =
+                    values[PROTEINS_KEY]
+                        ?.takeIf {
+                            isNutrientPresent(
+                                entry =
+                                    entry,
+                                nutrientKey =
+                                    PROTEINS_KEY
+                            )
+                        }
             )
 
-        val macroValues =
-            macroKeys
-                .filter { nutrientKey ->
-                    isNutrientPresent(
-                        entry =
-                            entry,
-                        nutrientKey =
-                            nutrientKey
-                    )
-                }
-                .mapNotNull(
-                    values::get
+        if (macronutrientDecision.reportWarning) {
+            issues +=
+                warning(
+                    canonicalId =
+                        canonicalId,
+                    reason =
+                        ResultingNutritionKnowledgeValidationReason
+                            .MACRONUTRIENT_SUM_EXCEEDS_MAXIMUM,
+                    actualValue =
+                        macronutrientDecision
+                            .coreMacronutrientSumGrams,
+                    message =
+                        "Core macronutrient sum exceeds the approved " +
+                                "policy maximum."
                 )
-
-        if (
-            macroValues.size >=
-            MINIMUM_MACRONUTRIENTS_FOR_SUM_CHECK
-        ) {
-            val macroSum =
-                macroValues.sum()
-
-            if (
-                macroSum >
-                MAXIMUM_MACRONUTRIENT_SUM_GRAMS
-            ) {
-                issues +=
-                    warning(
-                        canonicalId =
-                            canonicalId,
-                        reason =
-                            ResultingNutritionKnowledgeValidationReason
-                                .MACRONUTRIENT_SUM_EXCEEDS_MAXIMUM,
-                        actualValue =
-                            macroSum,
-                        message =
-                            "Macronutrient sum exceeds configured maximum."
-                    )
-            }
         }
     }
 
@@ -762,12 +769,6 @@ class ResultingNutritionKnowledgeValidator(
 
         const val RELATIONSHIP_TOLERANCE_GRAMS =
             0.5
-
-        const val MAXIMUM_MACRONUTRIENT_SUM_GRAMS =
-            105.0
-
-        const val MINIMUM_MACRONUTRIENTS_FOR_SUM_CHECK =
-            3
 
         const val DEFAULT_MAXIMUM_REPORTED_WARNINGS =
             100

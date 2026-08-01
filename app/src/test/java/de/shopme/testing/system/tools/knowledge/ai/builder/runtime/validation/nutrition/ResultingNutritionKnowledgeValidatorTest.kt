@@ -61,6 +61,15 @@ class ResultingNutritionKnowledgeValidatorTest {
                             inputFile
                     )
 
+            println(
+                "isValid=${result.isValid}, " +
+                        "warnings=${result.warningCount}, " +
+                        "errors=${result.errorCount}, " +
+                        "rejected=${result.rejectedEntryCount}, " +
+                        "reasons=${result.countsByReason}, " +
+                        "errorIssues=${result.errorIssues}"
+            )
+
             assertTrue(
                 result.isValid
             )
@@ -435,6 +444,120 @@ class ResultingNutritionKnowledgeValidatorTest {
                 result.countsByReason.containsKey(
                     ResultingNutritionKnowledgeValidationReason
                         .SUGARS_EXCEED_CARBOHYDRATES
+                )
+            )
+        } finally {
+            directory.deleteRecursively()
+        }
+    }
+
+    @Test
+    fun validate_doesNotReportMacronutrientSumWarningsUnderApprovedPolicy() {
+
+        val directory =
+            Files.createTempDirectory(
+                "nutrition-approved-macronutrient-policy"
+            )
+                .toFile()
+
+        try {
+            val inputFile =
+                directory.resolve(
+                    "nutrition.json"
+                )
+
+            inputFile.writeText(
+                """
+            {
+              "entries": {
+                "core-excess-ignored": {
+                  "calories": 700.0,
+                  "protein": 20.0,
+                  "fat": 40.0,
+                  "saturatedFat": 10.0,
+                  "carbohydrates": 60.0,
+                  "sugar": 30.0,
+                  "fiber": 0.0,
+                  "salt": 0.0,
+                  "presentNutrients": [
+                    "calories",
+                    "carbohydrates",
+                    "fat",
+                    "fiber",
+                    "protein",
+                    "salt",
+                    "saturatedFat",
+                    "sugar"
+                  ]
+                },
+                "fiber-double-counting": {
+                  "calories": 500.0,
+                  "protein": 15.0,
+                  "fat": 10.0,
+                  "saturatedFat": 2.0,
+                  "carbohydrates": 70.0,
+                  "sugar": 20.0,
+                  "fiber": 15.0,
+                  "salt": 0.0,
+                  "presentNutrients": [
+                    "calories",
+                    "carbohydrates",
+                    "fat",
+                    "fiber",
+                    "protein",
+                    "salt",
+                    "saturatedFat",
+                    "sugar"
+                  ]
+                }
+              }
+            }
+            """.trimIndent()
+            )
+
+            val result =
+                ResultingNutritionKnowledgeValidator()
+                    .validate(
+                        inputFile =
+                            inputFile
+                    )
+
+            assertTrue(
+                result.isValid,
+                buildString {
+                    appendLine(
+                        "Expected approved macronutrient policy fixture to be valid."
+                    )
+                    appendLine(
+                        "Warnings=${result.warningCount}"
+                    )
+                    appendLine(
+                        "Errors=${result.errorCount}"
+                    )
+                    appendLine(
+                        "Rejected=${result.rejectedEntryCount}"
+                    )
+                    appendLine(
+                        "CountsByReason=${result.countsByReason}"
+                    )
+                    appendLine(
+                        "WarningIssues=${result.warningIssues}"
+                    )
+                    appendLine(
+                        "ErrorIssues=${result.errorIssues}"
+                    )
+                }
+            )
+
+            assertEquals(
+                0L,
+                result.warningCount
+            )
+
+            assertFalse(
+                result.countsByReason.containsKey(
+                    ResultingNutritionKnowledgeValidationReason
+                        .MACRONUTRIENT_SUM_EXCEEDS_MAXIMUM
                 )
             )
         } finally {
