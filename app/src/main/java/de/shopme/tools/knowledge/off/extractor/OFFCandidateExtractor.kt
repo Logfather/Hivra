@@ -363,10 +363,6 @@ class OFFCandidateExtractor(
             return null
         }
 
-        if (!isValidNutrition(values)) {
-            return null
-        }
-
         return KnowledgeDimensionCandidate(
             dimension = KnowledgeDimensionCandidateType.NUTRITION,
             payload = values
@@ -412,88 +408,6 @@ class OFFCandidateExtractor(
             dimension = KnowledgeDimensionCandidateType.INGREDIENTS,
             payload = payload
         )
-    }
-
-    private fun isValidNutrition(
-        values: Map<String, Double?>
-    ): Boolean {
-
-        fun value(
-            key: String
-        ): Double {
-            return values[key]
-                ?: 0.0
-        }
-
-        val calories =
-            value("energyKcalPer100g")
-
-        val fat =
-            value("fatPer100g")
-
-        val saturatedFat =
-            value("saturatedFatPer100g")
-
-        val carbohydrates =
-            value("carbohydratesPer100g")
-
-        val sugars =
-            value("sugarsPer100g")
-
-        val fiber =
-            value("fiberPer100g")
-
-        val proteins =
-            value("proteinsPer100g")
-
-        val salt =
-            value("saltPer100g")
-
-
-        if (calories < 0 || calories > 950) {
-            return false
-        }
-
-        listOf(
-            fat,
-            saturatedFat,
-            carbohydrates,
-            sugars,
-            fiber,
-            proteins
-        ).forEach {
-
-            if (it < 0 || it > 100) {
-                return false
-            }
-        }
-
-        if (salt < 0 || salt > 100) {
-            return false
-        }
-
-
-        if (saturatedFat > fat && fat > 0) {
-            return false
-        }
-
-        if (sugars > carbohydrates && carbohydrates > 0) {
-            return false
-        }
-
-
-        val macroSum =
-            fat +
-                    carbohydrates +
-                    fiber +
-                    proteins
-
-        if (macroSum > 120) {
-            return false
-        }
-
-
-        return true
     }
 
     private fun JsonObject.string(
