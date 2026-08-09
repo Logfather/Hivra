@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "inputFile": "/Users/logfather/AndroidStudioProjects/ShopMe/data/generated/knowledge/server/nutrition.json",
+  "inputFileSizeBytes": 215046763,
+  "entryCount": 512102,
+  "validEntryCount": 512102,
+  "warningEntryCount": 0,
+  "rejectedEntryCount": 0,
+  "warningCount": 0,
+  "errorCount": 0,
+  "issueCount": 0,
+  "valid": true,
+  "thresholds": {
+    "maximumEnergyKcalPer100g": 950.0,
+    "maximumComponentGramsPer100g": 100.0,
+    "relationshipToleranceGrams": 0.5,
+    "maximumMacronutrientSumGrams": 105.0,
+    "minimumMacronutrientsForSumCheck": 3
+  },
+  "countsByReason": {},
+  "warningIssues": [],
+  "errorIssues": [],
+  "durationMillis": 1221,
+  "reportedWarningCount": 0,
+  "reportedErrorCount": 0,
+  "omittedWarningCount": 0,
+  "omittedErrorCount": 0
+}

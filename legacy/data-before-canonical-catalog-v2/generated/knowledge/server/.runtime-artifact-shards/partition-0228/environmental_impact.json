@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "chou à la crème (chantilly ou pâtissière)": {
+      "environmentScoreMptPerKg": 0.325,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 115.0,
+      "waterDeprivationM3PerKg": 0.509
+    },
+    "fève à écosser, fraîche": {
+      "environmentScoreMptPerKg": 0.101,
+      "climateKgCo2EqPerKg": 0.858,
+      "landUsePtPerKg": -167.0,
+      "waterDeprivationM3PerKg": 0.15
+    },
+    "lait de chèvre, entier, cru": {
+      "environmentScoreMptPerKg": 0.201,
+      "climateKgCo2EqPerKg": 1.52,
+      "landUsePtPerKg": 95.9,
+      "waterDeprivationM3PerKg": 0.514
+    },
+    "lotte ou baudroie, grillée/poêlée": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    },
+    "mouton, tête, crue": {
+      "environmentScoreMptPerKg": 3.28,
+      "climateKgCo2EqPerKg": 27.1,
+      "landUsePtPerKg": 2870.0,
+      "waterDeprivationM3PerKg": 4.56
+    },
+    "noix, fraîche": {
+      "environmentScoreMptPerKg": 0.562,
+      "climateKgCo2EqPerKg": 4.11,
+      "landUsePtPerKg": 653.0,
+      "waterDeprivationM3PerKg": 9.09
+    },
+    "pain de campagne maison (avec farine pour machine à pain)": {
+      "environmentScoreMptPerKg": 0.107,
+      "climateKgCo2EqPerKg": 0.84,
+      "landUsePtPerKg": 61.8,
+      "waterDeprivationM3PerKg": 0.234
+    },
+    "pain de mie, complet": {
+      "environmentScoreMptPerKg": 0.177,
+      "climateKgCo2EqPerKg": 1.55,
+      "landUsePtPerKg": 93.8,
+      "waterDeprivationM3PerKg": 0.383
+    },
+    "sainte maure de touraine (fromage de chèvre)": {
+      "environmentScoreMptPerKg": 1.01,
+      "climateKgCo2EqPerKg": 7.21,
+      "landUsePtPerKg": 468.0,
+      "waterDeprivationM3PerKg": 2.52
+    },
+    "salade ou chicorée frisée, crue": {
+      "environmentScoreMptPerKg": 0.0672,
+      "climateKgCo2EqPerKg": 0.571,
+      "landUsePtPerKg": 6.82,
+      "waterDeprivationM3PerKg": 0.479
+    }
+  }
+}

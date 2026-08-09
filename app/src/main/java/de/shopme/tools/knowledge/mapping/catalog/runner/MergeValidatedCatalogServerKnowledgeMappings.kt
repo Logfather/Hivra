@@ -2,6 +2,7 @@ package de.shopme.tools.knowledge.mapping.catalog.runner
 
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.mapping.catalog.CatalogServerKnowledgeMapping
 import de.shopme.tools.knowledge.mapping.catalog.CatalogServerKnowledgeMappingConflictReport
 import de.shopme.tools.knowledge.mapping.catalog.CatalogServerKnowledgeMappingMergeReport
@@ -290,40 +291,27 @@ class MergeValidatedCatalogServerKnowledgeMappings(
             args: Array<String>
         ) {
 
-            val projectRoot =
-                File("..")
+            require(args.isEmpty()) {
+                "MergeValidatedCatalogServerKnowledgeMappings " +
+                        "does not accept arguments."
+            }
+
+            val paths =
+                KnowledgeBuildPaths.default()
+
+            paths.ensureBuildDirectories()
 
             MergeValidatedCatalogServerKnowledgeMappings(
                 existingMappingFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/mappings/" +
-                                "catalog-server.mappings.json"
-                    ),
+                    paths.catalogServerMappings,
                 validatedMappingDirectory =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/mappings/" +
-                                "validated"
-                    ),
+                    paths.validatedMappingsDirectory,
                 outputMappingFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/mappings/" +
-                                "catalog-server.mappings.json"
-                    ),
+                    paths.catalogServerMappings,
                 conflictReportFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/reports/" +
-                                "catalog-server-mapping-conflicts.json"
-                    ),
+                    paths.catalogServerMappingConflictReport,
                 mergeReportFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/reports/" +
-                                "catalog-server-mapping-merge-report.json"
-                    )
+                    paths.catalogServerMappingMergeReport
             ).run()
         }
     }

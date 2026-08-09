@@ -1,5 +1,6 @@
 package de.shopme.tools.knowledge.compiler
 
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.compiler.candidate.CatalogImportWorkflow
 import de.shopme.tools.knowledge.compiler.candidate.CatalogImportWriter
 import de.shopme.tools.knowledge.foods.DefaultFoodLookup
@@ -20,6 +21,25 @@ class FoodKnowledgeBuildCompiler {
         importFile: File? = null
     ) {
 
+        val paths =
+            KnowledgeBuildPaths.default()
+
+        paths.ensureBuildDirectories()
+
+        val foodsRuntimeFile =
+            paths.runtimeArtifact(
+                "foods.json"
+            )
+
+        val nutritionRuntimeFile =
+            paths.runtimeArtifact(
+                "nutrition.json"
+            )
+
+        val proposedCatalogFile =
+            paths.intermediateArtifact(
+                "catalog/foods.proposed.json"
+            )
 
         val reader =
             ResourceCatalogReader()
@@ -32,45 +52,69 @@ class FoodKnowledgeBuildCompiler {
             val importResult =
                 CatalogImportWorkflow()
                     .import(
-                        existingItems = catalog,
-                        importFile = importFile
+                        existingItems =
+                            catalog,
+                        importFile =
+                            importFile
                     )
 
             if (!importResult.isSuccess) {
                 error(
                     "Catalog import failed:\n" +
-                            importResult.errors.joinToString("\n")
+                            importResult.errors
+                                .joinToString("\n")
                 )
             }
 
             val mergeResult =
                 importResult.mergeResult
-                    ?: error("Catalog import did not produce merge result")
+                    ?: error(
+                        "Catalog import did not produce merge result"
+                    )
 
             catalog =
                 mergeResult.items
 
             CatalogImportWriter()
                 .write(
-                    items = catalog,
-                    file = File("data/generated/foods.proposed.json")
+                    items =
+                        catalog,
+                    file =
+                        proposedCatalogFile
                 )
 
             println()
             println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
             println("🧠 CATALOG IMPORT")
             println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-            println("Imported : ${mergeResult.summary.importedItems}")
-            println("Added    : ${mergeResult.summary.addedItems}")
-            println("Updated  : ${mergeResult.summary.updatedItems}")
-            println("Merged   : ${mergeResult.summary.mergedItems}")
+            println(
+                "Imported : " +
+                        mergeResult.summary.importedItems
+            )
+            println(
+                "Added    : " +
+                        mergeResult.summary.addedItems
+            )
+            println(
+                "Updated  : " +
+                        mergeResult.summary.updatedItems
+            )
+            println(
+                "Merged   : " +
+                        mergeResult.summary.mergedItems
+            )
             println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
             println()
         }
 
+        require(foodsRuntimeFile.isFile) {
+            "Bootstrap foods knowledge does not exist: " +
+                    foodsRuntimeFile.absolutePath
+        }
+
         val bootstrapFoodsKnowledge =
             FileFoodsKnowledgeLoader(
-                File("data/generated/foods.json")
+                foodsRuntimeFile
             ).load()
 
         val foodLookup =
@@ -80,14 +124,18 @@ class FoodKnowledgeBuildCompiler {
 
         val resolvers =
             BuildKnowledgeResolversFactory(
-                runtimeDirectory = File("src/main/assets/knowledge/runtime")
+                runtimeDirectory =
+                    paths.runtimeRoot
             ).create()
 
         val compiler =
-            FullFoodKnowledgeBuildCompilerFactory.create(
-                foodLookup = foodLookup,
-                resolvers = resolvers
-            )
+            FullFoodKnowledgeBuildCompilerFactory
+                .create(
+                    foodLookup =
+                        foodLookup,
+                    resolvers =
+                        resolvers
+                )
 
         val knowledge =
             catalog
@@ -101,13 +149,16 @@ class FoodKnowledgeBuildCompiler {
         val foodsKnowledge =
             FoodsKnowledgeGenerator()
                 .generate(
-                    entries = knowledge
+                    entries =
+                        knowledge
                 )
 
         FoodsKnowledgeWriter()
             .write(
-                knowledge = foodsKnowledge,
-                outputFile = File("data/generated/foods.json")
+                knowledge =
+                    foodsKnowledge,
+                outputFile =
+                    foodsRuntimeFile
             )
 
         val nutritionRuntimeArtifact =
@@ -118,17 +169,17 @@ class FoodKnowledgeBuildCompiler {
 
         NutritionKnowledgeJsonWriter()
             .write(
-                knowledge = nutritionRuntimeArtifact,
-                output = File(
-                    "data/generated/nutrition.json"
-                )
+                knowledge =
+                    nutritionRuntimeArtifact,
+                output =
+                    nutritionRuntimeFile
             )
 
         KnowledgeArtifactPublisher(
             generatedDirectory =
-                File("data/generated"),
+                paths.runtimeRoot,
             knowledgeDirectory =
-                File("src/main/assets/knowledge")
+                paths.publishedRuntimeRoot
         ).publish(
             "foods.json"
         )
@@ -148,7 +199,15 @@ class FoodKnowledgeBuildCompiler {
         println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
         println("🧠 FOOD KNOWLEDGE BUILD")
         println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-        println("📊 Entries : ${knowledge.size}")
+        println(
+            "📊 Entries : ${knowledge.size}"
+        )
+        println(
+            "Runtime    : ${paths.runtimeRoot.path}"
+        )
+        println(
+            "Published  : ${paths.publishedRuntimeRoot.path}"
+        )
         println("🏁 FINISHED")
         println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
         println()

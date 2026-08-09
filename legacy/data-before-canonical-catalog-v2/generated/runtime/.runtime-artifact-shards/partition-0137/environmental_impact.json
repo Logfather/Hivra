@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "boisson cacaotée ou au chocolat, instantanée, sucrée, enrichie en vitamines, prête à boire (reconstituée avec du lait demi écrémé standard)": {
+      "environmentScoreMptPerKg": 0.129,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 58.6,
+      "waterDeprivationM3PerKg": 0.192
+    },
+    "dinde, escalope viennoise ou milanaise ou escalope panée": {
+      "environmentScoreMptPerKg": 0.875,
+      "climateKgCo2EqPerKg": 5.22,
+      "landUsePtPerKg": 311.0,
+      "waterDeprivationM3PerKg": 2.26
+    },
+    "fromage blanc nature, 0% mg": {
+      "environmentScoreMptPerKg": 0.183,
+      "climateKgCo2EqPerKg": 1.81,
+      "landUsePtPerKg": 62.5,
+      "waterDeprivationM3PerKg": 0.282
+    },
+    "galette de céréales aux légumes (sans soja), préemballé": {
+      "environmentScoreMptPerKg": 0.203,
+      "climateKgCo2EqPerKg": 1.61,
+      "landUsePtPerKg": 103.0,
+      "waterDeprivationM3PerKg": 0.973
+    },
+    "goyave, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.14,
+      "climateKgCo2EqPerKg": 1.19,
+      "landUsePtPerKg": 25.6,
+      "waterDeprivationM3PerKg": 2.99
+    },
+    "huile de pépins de raisin": {
+      "environmentScoreMptPerKg": 0.193,
+      "climateKgCo2EqPerKg": 1.81,
+      "landUsePtPerKg": 53.9,
+      "waterDeprivationM3PerKg": 0.219
+    },
+    "pain, baguette ou boule, de campagne": {
+      "environmentScoreMptPerKg": 0.105,
+      "climateKgCo2EqPerKg": 0.779,
+      "landUsePtPerKg": 63.3,
+      "waterDeprivationM3PerKg": 0.189
+    },
+    "palmier, artisanal": {
+      "environmentScoreMptPerKg": 0.36,
+      "climateKgCo2EqPerKg": 3.59,
+      "landUsePtPerKg": 153.0,
+      "waterDeprivationM3PerKg": 1.09
+    },
+    "sandwich baguette, jambon, emmental, beurre": {
+      "environmentScoreMptPerKg": 0.651,
+      "climateKgCo2EqPerKg": 5.54,
+      "landUsePtPerKg": 256.0,
+      "waterDeprivationM3PerKg": 1.48
+    },
+    "sauce au beurre blanc, préemballée": {
+      "environmentScoreMptPerKg": 0.509,
+      "climateKgCo2EqPerKg": 4.63,
+      "landUsePtPerKg": 236.0,
+      "waterDeprivationM3PerKg": 0.735
+    },
+    "saucisson à l'ail": {
+      "environmentScoreMptPerKg": 1.07,
+      "climateKgCo2EqPerKg": 9.42,
+      "landUsePtPerKg": 563.0,
+      "waterDeprivationM3PerKg": 1.94
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "ananas, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.181,
+      "climateKgCo2EqPerKg": 1.36,
+      "landUsePtPerKg": 32.9,
+      "waterDeprivationM3PerKg": 0.605
+    },
+    "boeuf, braisé": {
+      "environmentScoreMptPerKg": 3.44,
+      "climateKgCo2EqPerKg": 36.6,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "boules de maïs soufflées au miel, enrichies en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "chorizo supérieur, doux ou fort, type saucisse sèche": {
+      "environmentScoreMptPerKg": 0.934,
+      "climateKgCo2EqPerKg": 7.33,
+      "landUsePtPerKg": 383.0,
+      "waterDeprivationM3PerKg": 2.34
+    },
+    "crottin de chèvre, sans précision": {
+      "environmentScoreMptPerKg": 1.24,
+      "climateKgCo2EqPerKg": 8.78,
+      "landUsePtPerKg": 589.0,
+      "waterDeprivationM3PerKg": 3.12
+    },
+    "gaufre croustillante (fine ou sèche), chocolatée, préemballée": {
+      "environmentScoreMptPerKg": 0.321,
+      "climateKgCo2EqPerKg": 2.86,
+      "landUsePtPerKg": 161.0,
+      "waterDeprivationM3PerKg": 0.922
+    },
+    "lardon nature, cuit": {
+      "environmentScoreMptPerKg": 1.18,
+      "climateKgCo2EqPerKg": 9.08,
+      "landUsePtPerKg": 448.0,
+      "waterDeprivationM3PerKg": 2.96
+    },
+    "menthe, fraîche": {
+      "environmentScoreMptPerKg": 0.112,
+      "climateKgCo2EqPerKg": 0.735,
+      "landUsePtPerKg": 30.9,
+      "waterDeprivationM3PerKg": 4.54
+    },
+    "porc, côte, crue": {
+      "environmentScoreMptPerKg": 0.834,
+      "climateKgCo2EqPerKg": 6.78,
+      "landUsePtPerKg": 350.0,
+      "waterDeprivationM3PerKg": 2.2
+    },
+    "salsifis, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.131,
+      "climateKgCo2EqPerKg": 1.3,
+      "landUsePtPerKg": 17.0,
+      "waterDeprivationM3PerKg": 0.579
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "calmar ou calamar ou encornet, à la romaine (beignet)": {
+      "environmentScoreMptPerKg": 0.983,
+      "climateKgCo2EqPerKg": 6.03,
+      "landUsePtPerKg": 8.86,
+      "waterDeprivationM3PerKg": 0.32
+    },
+    "escalope panée, soja, blé et fromage, type cordon bleu, préemballée": {
+      "environmentScoreMptPerKg": 0.342,
+      "climateKgCo2EqPerKg": 2.74,
+      "landUsePtPerKg": 185.0,
+      "waterDeprivationM3PerKg": 0.669
+    },
+    "glace ou crème glacée, petit pot enfant": {
+      "environmentScoreMptPerKg": 0.235,
+      "climateKgCo2EqPerKg": 1.98,
+      "landUsePtPerKg": 90.8,
+      "waterDeprivationM3PerKg": 0.622
+    },
+    "haricot vert, surgelé, cuit": {
+      "environmentScoreMptPerKg": 0.177,
+      "climateKgCo2EqPerKg": 1.04,
+      "landUsePtPerKg": 106.0,
+      "waterDeprivationM3PerKg": 1.47
+    },
+    "nori (porphyra sp.), séchée ou déshydratée": {
+      "environmentScoreMptPerKg": 1.55,
+      "climateKgCo2EqPerKg": 11.8,
+      "landUsePtPerKg": 26.7,
+      "waterDeprivationM3PerKg": 4.83
+    },
+    "rillettes traditionnelles de porc": {
+      "environmentScoreMptPerKg": 0.925,
+      "climateKgCo2EqPerKg": 7.42,
+      "landUsePtPerKg": 380.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "vanille, extrait aqueux": {
+      "environmentScoreMptPerKg": 0.594,
+      "climateKgCo2EqPerKg": 4.38,
+      "landUsePtPerKg": 997.0,
+      "waterDeprivationM3PerKg": 0.68
+    }
+  }
+}

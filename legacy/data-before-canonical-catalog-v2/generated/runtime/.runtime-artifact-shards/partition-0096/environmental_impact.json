@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "biscuit sec type langue de chat ou cigarette russe": {
+      "environmentScoreMptPerKg": 0.415,
+      "climateKgCo2EqPerKg": 4.01,
+      "landUsePtPerKg": 181.0,
+      "waterDeprivationM3PerKg": 1.31
+    },
+    "calmar ou calamar ou encornet, cru": {
+      "environmentScoreMptPerKg": 0.921,
+      "climateKgCo2EqPerKg": 6.11,
+      "landUsePtPerKg": 8.03,
+      "waterDeprivationM3PerKg": 0.303
+    },
+    "cheesecake ou gâteau au fromage frais, rayon frais": {
+      "environmentScoreMptPerKg": 0.354,
+      "climateKgCo2EqPerKg": 3.2,
+      "landUsePtPerKg": 149.0,
+      "waterDeprivationM3PerKg": 0.945
+    },
+    "clou de girofle": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 9.39,
+      "landUsePtPerKg": 688.0,
+      "waterDeprivationM3PerKg": 4.37
+    },
+    "coeur, dinde, cru": {
+      "environmentScoreMptPerKg": 0.23,
+      "climateKgCo2EqPerKg": 1.5,
+      "landUsePtPerKg": 72.5,
+      "waterDeprivationM3PerKg": 0.614
+    },
+    "gratin de légumes": {
+      "environmentScoreMptPerKg": 0.206,
+      "climateKgCo2EqPerKg": 1.94,
+      "landUsePtPerKg": 59.6,
+      "waterDeprivationM3PerKg": 0.691
+    },
+    "mousse au chocolat traditionnelle, rayon frais": {
+      "environmentScoreMptPerKg": 0.59,
+      "climateKgCo2EqPerKg": 9.76,
+      "landUsePtPerKg": 412.0,
+      "waterDeprivationM3PerKg": 0.957
+    },
+    "pain au chocolat feuilleté, artisanal": {
+      "environmentScoreMptPerKg": 0.471,
+      "climateKgCo2EqPerKg": 5.73,
+      "landUsePtPerKg": 242.0,
+      "waterDeprivationM3PerKg": 0.617
+    },
+    "pain perdu": {
+      "environmentScoreMptPerKg": 0.246,
+      "climateKgCo2EqPerKg": 2.18,
+      "landUsePtPerKg": 98.6,
+      "waterDeprivationM3PerKg": 0.744
+    },
+    "pain, baguette ou boule, bio (à la farine t55 jusqu'a t110)": {
+      "environmentScoreMptPerKg": 0.113,
+      "climateKgCo2EqPerKg": 0.898,
+      "landUsePtPerKg": 65.4,
+      "waterDeprivationM3PerKg": 0.225
+    },
+    "rouleau de printemps": {
+      "environmentScoreMptPerKg": 0.491,
+      "climateKgCo2EqPerKg": 2.87,
+      "landUsePtPerKg": -6.26,
+      "waterDeprivationM3PerKg": 16.0
+    },
+    "sauce tomate aux champignons, préemballée": {
+      "environmentScoreMptPerKg": 0.241,
+      "climateKgCo2EqPerKg": 1.77,
+      "landUsePtPerKg": 69.5,
+      "waterDeprivationM3PerKg": 5.66
+    }
+  }
+}

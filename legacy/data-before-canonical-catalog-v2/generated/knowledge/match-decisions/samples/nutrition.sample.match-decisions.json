@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "decisions": [
+    {
+      "catalogKey": "acerola juice",
+      "serverArtifact": "nutrition.json",
+      "type": "NO_MATCH",
+      "confidence": 0.93,
+      "reason": "Catalog food is acerola juice, while candidates are mixed-fruit juices/smoothies containing acerola or a generic juice entry; none clearly represents acerola juice specifically."
+    },
+    {
+      "catalogKey": "cloudy grape juice",
+      "serverArtifact": "nutrition.json",
+      "type": "NO_MATCH",
+      "confidence": 0.84,
+      "reason": "No candidate clearly represents cloudy grape juice; grape juice candidates omit the cloudy attribute, and the cloudy candidate is apple juice."
+    },
+    {
+      "catalogKey": "fresh oregano",
+      "serverArtifact": "nutrition.json",
+      "type": "NO_MATCH",
+      "confidence": 0.92,
+      "reason": "None of the candidates is plain fresh oregano; they are sausages, tomato sauce, an herb spray product, a generic 'fresh' entry, or Mexican oregano."
+    },
+    {
+      "catalogKey": "frozen vegetable lasagna",
+      "serverArtifact": "nutrition.json",
+      "type": "MATCH",
+      "selectedServerKey": "vegetable lasagna, vegetable",
+      "confidence": 0.86,
+      "reason": "The candidate is a vegetable lasagna and has no conflicting modifier; other candidates are too broad or different variants."
+    },
+    {
+      "catalogKey": "matjes herring in cream sauce",
+      "serverArtifact": "nutrition.json",
+      "type": "MATCH",
+      "selectedServerKey": "herring fillets in cream sauce",
+      "confidence": 0.87,
+      "reason": "The catalog item is herring in cream sauce; candidate 1 is herring fillets in cream sauce and does not add a conflicting preparation like smoked or wine sauce."
+    },
+    {
+      "catalogKey": "pickled pepperoni",
+      "serverArtifact": "nutrition.json",
+      "type": "NO_MATCH",
+      "confidence": 0.9,
+      "reason": "The catalog food is pickled pepperoni; candidates are either pepperoni without pickling or pickled vegetables, so none clearly represents the same food."
+    },
+    {
+      "catalogKey": "rice yogurt",
+      "serverArtifact": "nutrition.json",
+      "type": "NO_MATCH",
+      "confidence": 0.86,
+      "reason": "No candidate exactly represents generic rice yogurt; candidates add distinguishing terms such as light, rice cake, brand-like wording, blueberry, or crisps."
+    },
+    {
+      "catalogKey": "tongue sausage",
+      "serverArtifact": "nutrition.json",
+      "type": "NO_MATCH",
+      "confidence": 0.95,
+      "reason": "None of the candidates specify tongue sausage; they are generic or different sausage types."
+    },
+    {
+      "catalogKey": "vegan vegetable skillet ready meal",
+      "serverArtifact": "nutrition.json",
+      "type": "NO_MATCH",
+      "confidence": 0.88,
+      "reason": "None of the candidates clearly represents a vegan vegetable skillet ready meal; they are either too generic or describe different meals."
+    },
+    {
+      "catalogKey": "zucchini spaghetti",
+      "serverArtifact": "nutrition.json",
+      "type": "NO_MATCH",
+      "confidence": 0.88,
+      "reason": "None of the candidates clearly represents plain zucchini spaghetti; the closest options include additional defining ingredients or different dishes such as prawn, spaghetti squash, or zucchini noodles with sauce."
+    }
+  ]
+}

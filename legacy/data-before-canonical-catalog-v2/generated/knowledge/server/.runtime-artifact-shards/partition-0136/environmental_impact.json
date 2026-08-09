@@ -1,0 +1,100 @@
+{
+  "entries": {
+    "amande, grillée, salée": {
+      "environmentScoreMptPerKg": 0.746,
+      "climateKgCo2EqPerKg": 2.63,
+      "landUsePtPerKg": 378.0,
+      "waterDeprivationM3PerKg": 30.9
+    },
+    "biscuit apéritif, crackers, nature, allégé en matière grasse": {
+      "environmentScoreMptPerKg": 0.208,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 189.0,
+      "waterDeprivationM3PerKg": 0.704
+    },
+    "biscuit sec chocolaté, type galette": {
+      "environmentScoreMptPerKg": 0.462,
+      "climateKgCo2EqPerKg": 6.06,
+      "landUsePtPerKg": 274.0,
+      "waterDeprivationM3PerKg": 0.914
+    },
+    "biscuit sec croquant au chocolat, allégé en matière grasse": {
+      "environmentScoreMptPerKg": 0.502,
+      "climateKgCo2EqPerKg": 6.67,
+      "landUsePtPerKg": 274.0,
+      "waterDeprivationM3PerKg": 1.13
+    },
+    "boisson aux fruits pour bébé dès 4/6mois": {
+      "environmentScoreMptPerKg": 0.184,
+      "climateKgCo2EqPerKg": 0.819,
+      "landUsePtPerKg": 32.6,
+      "waterDeprivationM3PerKg": 9.86
+    },
+    "carotte, purée": {
+      "environmentScoreMptPerKg": 0.0998,
+      "climateKgCo2EqPerKg": 0.974,
+      "landUsePtPerKg": 15.4,
+      "waterDeprivationM3PerKg": 0.633
+    },
+    "chou de bruxelles, surgelé, cru": {
+      "environmentScoreMptPerKg": 0.101,
+      "climateKgCo2EqPerKg": 0.783,
+      "landUsePtPerKg": 28.0,
+      "waterDeprivationM3PerKg": 0.157
+    },
+    "chou vert, cru": {
+      "environmentScoreMptPerKg": 0.0798,
+      "climateKgCo2EqPerKg": 0.848,
+      "landUsePtPerKg": 33.0,
+      "waterDeprivationM3PerKg": 0.0745
+    },
+    "compote de pomme": {
+      "environmentScoreMptPerKg": 0.138,
+      "climateKgCo2EqPerKg": 1.17,
+      "landUsePtPerKg": 25.1,
+      "waterDeprivationM3PerKg": 0.914
+    },
+    "dessert au soja aromatisé, rayon frais": {
+      "environmentScoreMptPerKg": 0.148,
+      "climateKgCo2EqPerKg": 1.24,
+      "landUsePtPerKg": 40.1,
+      "waterDeprivationM3PerKg": 1.76
+    },
+    "eau de vie de vin, type armagnac, cognac": {
+      "environmentScoreMptPerKg": 0.12,
+      "climateKgCo2EqPerKg": 1.26,
+      "landUsePtPerKg": 18.4,
+      "waterDeprivationM3PerKg": 0.169
+    },
+    "grana padano": {
+      "environmentScoreMptPerKg": 0.596,
+      "climateKgCo2EqPerKg": 6.24,
+      "landUsePtPerKg": 285.0,
+      "waterDeprivationM3PerKg": 0.799
+    },
+    "oeuf, blanc (blanc d'oeuf), cuit": {
+      "environmentScoreMptPerKg": 0.368,
+      "climateKgCo2EqPerKg": 2.6,
+      "landUsePtPerKg": 184.0,
+      "waterDeprivationM3PerKg": 1.01
+    },
+    "porc, rouelle de jambon, crue": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "riz rouge, cuit, non salé": {
+      "environmentScoreMptPerKg": 0.216,
+      "climateKgCo2EqPerKg": 1.16,
+      "landUsePtPerKg": 29.6,
+      "waterDeprivationM3PerKg": 6.4
+    },
+    "tournesol, graine, grillé, salé": {
+      "environmentScoreMptPerKg": 0.368,
+      "climateKgCo2EqPerKg": 2.91,
+      "landUsePtPerKg": 540.0,
+      "waterDeprivationM3PerKg": 1.04
+    }
+  }
+}

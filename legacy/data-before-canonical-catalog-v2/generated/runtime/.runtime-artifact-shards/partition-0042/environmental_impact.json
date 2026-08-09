@@ -1,0 +1,94 @@
+{
+  "entries": {
+    "andouillette de troyes, crue": {
+      "environmentScoreMptPerKg": 1.33,
+      "climateKgCo2EqPerKg": 11.8,
+      "landUsePtPerKg": 699.0,
+      "waterDeprivationM3PerKg": 2.68
+    },
+    "boisson à l'eau minérale ou de source, aromatisée, non sucrée, sans édulcorant": {
+      "environmentScoreMptPerKg": 0.0498,
+      "climateKgCo2EqPerKg": 0.377,
+      "landUsePtPerKg": 1.7,
+      "waterDeprivationM3PerKg": 0.0848
+    },
+    "chou rave, bouilli/cuit à l'eau": {
+      "environmentScoreMptPerKg": 0.147,
+      "climateKgCo2EqPerKg": 1.59,
+      "landUsePtPerKg": 45.2,
+      "waterDeprivationM3PerKg": 0.343
+    },
+    "clémentine, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.68,
+      "climateKgCo2EqPerKg": 1.3,
+      "landUsePtPerKg": 54.3,
+      "waterDeprivationM3PerKg": 65.9
+    },
+    "foie, poulet, cru": {
+      "environmentScoreMptPerKg": 0.23,
+      "climateKgCo2EqPerKg": 1.5,
+      "landUsePtPerKg": 72.5,
+      "waterDeprivationM3PerKg": 0.614
+    },
+    "fourme de montbrison": {
+      "environmentScoreMptPerKg": 0.524,
+      "climateKgCo2EqPerKg": 5.45,
+      "landUsePtPerKg": 261.0,
+      "waterDeprivationM3PerKg": 0.595
+    },
+    "gaufre moelleuse (type bruxelloise ou liégeoise), chocolatée, préemballée": {
+      "environmentScoreMptPerKg": 0.412,
+      "climateKgCo2EqPerKg": 5.51,
+      "landUsePtPerKg": 245.0,
+      "waterDeprivationM3PerKg": 0.862
+    },
+    "lin, brun, graine": {
+      "environmentScoreMptPerKg": 0.537,
+      "climateKgCo2EqPerKg": 3.52,
+      "landUsePtPerKg": 628.0,
+      "waterDeprivationM3PerKg": 2.23
+    },
+    "merguez, bœuf, mouton et porc, crue": {
+      "environmentScoreMptPerKg": 3.34,
+      "climateKgCo2EqPerKg": 32.3,
+      "landUsePtPerKg": 2500.0,
+      "waterDeprivationM3PerKg": 3.97
+    },
+    "pomme de terre de conservation, sans peau, bouillie/cuite à l'eau": {
+      "environmentScoreMptPerKg": 0.103,
+      "climateKgCo2EqPerKg": 1.15,
+      "landUsePtPerKg": 33.2,
+      "waterDeprivationM3PerKg": 0.45
+    },
+    "pomme, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.0439,
+      "climateKgCo2EqPerKg": 0.408,
+      "landUsePtPerKg": 16.4,
+      "waterDeprivationM3PerKg": 0.543
+    },
+    "roussette ou petite roussette ou saumonette, cuite": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    },
+    "sauce crudités ou sauce salade, allégée en matière grasse, préemballée": {
+      "environmentScoreMptPerKg": 0.443,
+      "climateKgCo2EqPerKg": 2.63,
+      "landUsePtPerKg": 369.0,
+      "waterDeprivationM3PerKg": 4.24
+    },
+    "spécialité fromagère non affinée environ 20% mg, type fromage en barquette à tartiner ou coque fromagère": {
+      "environmentScoreMptPerKg": 0.455,
+      "climateKgCo2EqPerKg": 4.78,
+      "landUsePtPerKg": 205.0,
+      "waterDeprivationM3PerKg": 0.587
+    },
+    "échalote, crue": {
+      "environmentScoreMptPerKg": 0.0444,
+      "climateKgCo2EqPerKg": 0.394,
+      "landUsePtPerKg": 18.0,
+      "waterDeprivationM3PerKg": 0.529
+    }
+  }
+}

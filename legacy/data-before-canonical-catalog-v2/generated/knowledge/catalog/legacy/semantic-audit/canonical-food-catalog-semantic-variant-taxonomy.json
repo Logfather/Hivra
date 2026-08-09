@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "inputFile": "data/generated/knowledge/catalog/final/canonical-food-catalog-final-v1-f6bbdd7fbd37f3cb.json",
+  "catalogEntryCount": 10354,
+  "variantBearingEntryCount": 6935,
+  "variantOccurrenceCount": 7768,
+  "distinctVariantCount": 72,
+  "classifiedDistinctVariantCount": 72,
+  "unknownDistinctVariantCount": 0,
+  "classificationCoverage": 1.0,
+  "countsByType": {
+    "ALLERGEN_CLAIM": 943,
+    "COMPOSITION": 240,
+    "CUT": 110,
+    "FLAVOR": 617,
+    "FORM": 1147,
+    "GENERIC_PLACEHOLDER": 684,
+    "INGREDIENT": 1284,
+    "MATURATION": 52,
+    "NUTRITION_CLAIM": 735,
+    "PREPARATION": 733,
+    "PROCESSING": 712,
+    "STORAGE_STATE": 249,
+    "STYLE": 59,
+    "TEXTURE": 203
+  },
+  "unknownVariants": []
+}

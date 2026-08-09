@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "biscotte classique": {
+      "environmentScoreMptPerKg": 0.156,
+      "climateKgCo2EqPerKg": 1.44,
+      "landUsePtPerKg": 76.5,
+      "waterDeprivationM3PerKg": 0.557
+    },
+    "bûche glacée": {
+      "environmentScoreMptPerKg": 0.301,
+      "climateKgCo2EqPerKg": 2.22,
+      "landUsePtPerKg": 67.7,
+      "waterDeprivationM3PerKg": 0.666
+    },
+    "cocktail à base de rhum": {
+      "environmentScoreMptPerKg": 0.113,
+      "climateKgCo2EqPerKg": 1.1,
+      "landUsePtPerKg": 24.1,
+      "waterDeprivationM3PerKg": 0.695
+    },
+    "céréales instantanées, poudre à reconstituer, dès 6 mois": {
+      "environmentScoreMptPerKg": 0.367,
+      "climateKgCo2EqPerKg": 2.2,
+      "landUsePtPerKg": 244.0,
+      "waterDeprivationM3PerKg": 1.05
+    },
+    "fromage bleu d'auvergne": {
+      "environmentScoreMptPerKg": 0.584,
+      "climateKgCo2EqPerKg": 5.94,
+      "landUsePtPerKg": 257.0,
+      "waterDeprivationM3PerKg": 0.782
+    },
+    "haricot mungo, sec": {
+      "environmentScoreMptPerKg": 0.0973,
+      "climateKgCo2EqPerKg": 0.574,
+      "landUsePtPerKg": 78.0,
+      "waterDeprivationM3PerKg": 0.979
+    },
+    "lait en poudre, écrémé": {
+      "environmentScoreMptPerKg": 0.873,
+      "climateKgCo2EqPerKg": 9.38,
+      "landUsePtPerKg": 443.0,
+      "waterDeprivationM3PerKg": 0.994
+    },
+    "nectarine ou brugnon, pulpe et peau, crue": {
+      "environmentScoreMptPerKg": 0.108,
+      "climateKgCo2EqPerKg": 0.614,
+      "landUsePtPerKg": 206.0,
+      "waterDeprivationM3PerKg": 1.76
+    },
+    "pomme de terre, sans peau, cuite au four": {
+      "environmentScoreMptPerKg": 0.134,
+      "climateKgCo2EqPerKg": 1.24,
+      "landUsePtPerKg": 36.2,
+      "waterDeprivationM3PerKg": 0.504
+    },
+    "pâte à pizza fine, crue": {
+      "environmentScoreMptPerKg": 0.196,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 82.2,
+      "waterDeprivationM3PerKg": 1.39
+    },
+    "sauce à la crème aux herbes": {
+      "environmentScoreMptPerKg": 0.293,
+      "climateKgCo2EqPerKg": 2.39,
+      "landUsePtPerKg": 92.0,
+      "waterDeprivationM3PerKg": 0.542
+    },
+    "substitut de repas hypocalorique, poudre reconstituée avec lait écrémé": {
+      "environmentScoreMptPerKg": 0.24,
+      "climateKgCo2EqPerKg": 2.66,
+      "landUsePtPerKg": 55.7,
+      "waterDeprivationM3PerKg": 0.805
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux fruits, sucré": {
+      "environmentScoreMptPerKg": 0.212,
+      "climateKgCo2EqPerKg": 1.89,
+      "landUsePtPerKg": 72.1,
+      "waterDeprivationM3PerKg": 1.64
+    }
+  }
+}

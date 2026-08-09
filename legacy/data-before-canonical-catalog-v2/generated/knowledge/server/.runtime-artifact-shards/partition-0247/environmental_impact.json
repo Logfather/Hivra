@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "chocolat au lait fourré": {
+      "environmentScoreMptPerKg": 0.865,
+      "climateKgCo2EqPerKg": 12.8,
+      "landUsePtPerKg": 487.0,
+      "waterDeprivationM3PerKg": 1.33
+    },
+    "figue de barbarie, pulpe et graines, crue": {
+      "environmentScoreMptPerKg": 0.0493,
+      "climateKgCo2EqPerKg": 0.387,
+      "landUsePtPerKg": 16.9,
+      "waterDeprivationM3PerKg": 1.42
+    },
+    "jus de pomme, pur jus": {
+      "environmentScoreMptPerKg": 0.0766,
+      "climateKgCo2EqPerKg": 0.567,
+      "landUsePtPerKg": 18.8,
+      "waterDeprivationM3PerKg": 0.671
+    },
+    "kir (au vin blanc)": {
+      "environmentScoreMptPerKg": 0.188,
+      "climateKgCo2EqPerKg": 1.55,
+      "landUsePtPerKg": 105.0,
+      "waterDeprivationM3PerKg": 0.427
+    },
+    "lait de coco ou crème de coco": {
+      "environmentScoreMptPerKg": 0.0763,
+      "climateKgCo2EqPerKg": 0.682,
+      "landUsePtPerKg": 19.3,
+      "waterDeprivationM3PerKg": 0.873
+    },
+    "merlan, cuit à la vapeur": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    },
+    "petits pois et carottes, surgelés, crus": {
+      "environmentScoreMptPerKg": 0.131,
+      "climateKgCo2EqPerKg": 0.836,
+      "landUsePtPerKg": 48.5,
+      "waterDeprivationM3PerKg": 0.687
+    },
+    "pâte brisée, crue": {
+      "environmentScoreMptPerKg": 0.388,
+      "climateKgCo2EqPerKg": 3.59,
+      "landUsePtPerKg": 170.0,
+      "waterDeprivationM3PerKg": 0.7
+    },
+    "pétales de maïs natures, enrichis en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "sole, bouillie/cuite à l'eau": {
+      "environmentScoreMptPerKg": 1.58,
+      "climateKgCo2EqPerKg": 9.22,
+      "landUsePtPerKg": 20.4,
+      "waterDeprivationM3PerKg": 0.998
+    }
+  }
+}

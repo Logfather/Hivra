@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "boeuf, rosbif, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 3.44,
+      "climateKgCo2EqPerKg": 36.6,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "céréales instantanées, poudre reconstituée chez le consommateur, dès 4/6 mois": {
+      "environmentScoreMptPerKg": 0.107,
+      "climateKgCo2EqPerKg": 0.911,
+      "landUsePtPerKg": 51.1,
+      "waterDeprivationM3PerKg": 0.322
+    },
+    "lieu noir, surgelé, cru": {
+      "environmentScoreMptPerKg": 1.34,
+      "climateKgCo2EqPerKg": 8.55,
+      "landUsePtPerKg": 13.9,
+      "waterDeprivationM3PerKg": 0.415
+    },
+    "raie, cuite au court bouillon": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    }
+  }
+}

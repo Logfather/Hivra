@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "boisson gazeuse aux fruits (à moins de 10% de jus), non sucrée, avec édulcorants": {
+      "litersPerKilogram": 84.8
+    },
+    "boisson gazeuse aux fruits (à moins de 10% de jus), sucrée": {
+      "litersPerKilogram": 288.0
+    },
+    "lasagnes ou canelloni aux légumes et au fromage de chèvre, cuits": {
+      "litersPerKilogram": 6460.0
+    },
+    "petit pot légumes, avec féculent, dès 4/6 mois": {
+      "litersPerKilogram": 670.0
+    },
+    "pizza 4 fromages": {
+      "litersPerKilogram": 825.0
+    },
+    "pâté au poivre vert": {
+      "litersPerKilogram": 1700.0
+    },
+    "ratatouille cuisinée": {
+      "litersPerKilogram": 4220.0
+    },
+    "risotto, aux fruits de mer": {
+      "litersPerKilogram": 3630.0
+    },
+    "sardine, crue": {
+      "litersPerKilogram": 213.0
+    },
+    "terrine ou mousse de légumes": {
+      "litersPerKilogram": 840.0
+    },
+    "veau, épaule, crue": {
+      "litersPerKilogram": 2530.0
+    }
+  }
+}

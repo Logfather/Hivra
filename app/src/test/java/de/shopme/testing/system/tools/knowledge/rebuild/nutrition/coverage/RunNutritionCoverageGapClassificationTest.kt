@@ -1,5 +1,6 @@
 package de.shopme.testing.system.tools.knowledge.rebuild.nutrition.coverage
 
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.rebuild.nutrition.adapter.DefaultNutritionKnowledgeSnapshotReader
 import de.shopme.tools.knowledge.rebuild.nutrition.coverage.NutritionCoverageGapClassifier
 import de.shopme.tools.knowledge.rebuild.nutrition.coverage.NutritionCoverageGapReportWriter
@@ -39,9 +40,9 @@ class RunNutritionCoverageGapClassificationTest {
         val report =
             NutritionCoverageGapClassifier(
                 catalogFile =
-                    projectRoot.resolve(
-                        "app/src/main/assets/catalog/catalog.json"
-                    ),
+                    KnowledgeBuildPaths
+                        .default()
+                        .canonicalFoodCatalog,
                 exactMappingFile =
                     projectRoot.resolve(
                         "data/generated/knowledge/mappings/" +

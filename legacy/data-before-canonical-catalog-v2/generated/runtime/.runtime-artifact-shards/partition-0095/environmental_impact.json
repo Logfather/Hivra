@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "carpaccio de saumon avec marinade": {
+      "environmentScoreMptPerKg": 0.763,
+      "climateKgCo2EqPerKg": 6.11,
+      "landUsePtPerKg": 250.0,
+      "waterDeprivationM3PerKg": 1.42
+    },
+    "flétan du groënland ou flétan noir ou flétan commun, cuit à la vapeur": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    },
+    "jus multifruit, pur jus, standard": {
+      "environmentScoreMptPerKg": 0.196,
+      "climateKgCo2EqPerKg": 0.882,
+      "landUsePtPerKg": 28.2,
+      "waterDeprivationM3PerKg": 8.98
+    },
+    "panais, cru": {
+      "environmentScoreMptPerKg": 0.0533,
+      "climateKgCo2EqPerKg": 0.494,
+      "landUsePtPerKg": 10.9,
+      "waterDeprivationM3PerKg": 0.413
+    },
+    "pot au feu": {
+      "environmentScoreMptPerKg": 1.68,
+      "climateKgCo2EqPerKg": 17.7,
+      "landUsePtPerKg": 1120.0,
+      "waterDeprivationM3PerKg": 1.78
+    },
+    "salade césar au poulet (salade verte, fromage, croûtos, sauce)": {
+      "environmentScoreMptPerKg": 0.515,
+      "climateKgCo2EqPerKg": 3.94,
+      "landUsePtPerKg": 149.0,
+      "waterDeprivationM3PerKg": 1.41
+    },
+    "sang, boeuf, cru": {
+      "environmentScoreMptPerKg": 2.68,
+      "climateKgCo2EqPerKg": 28.7,
+      "landUsePtPerKg": 1870.0,
+      "waterDeprivationM3PerKg": 2.39
+    }
+  }
+}

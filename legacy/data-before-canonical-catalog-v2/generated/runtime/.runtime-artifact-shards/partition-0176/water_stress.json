@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "boisson plate aux fruits, (à moins de 10% de jus), non sucrée, avec édulcorants": {
+      "score": 0.0848
+    },
+    "brie, sans précision": {
+      "score": 0.579
+    },
+    "brioche, préemballée": {
+      "score": 0.717
+    },
+    "chevreau, cuit": {
+      "score": 8.77
+    },
+    "clafoutis aux fruits, rayon frais": {
+      "score": 5.62
+    },
+    "hareng fumé, au naturel (version \"logiciel\" avec erreur sur l'emballage)": {
+      "score": 0.293
+    },
+    "haricot rouge, cuit": {
+      "score": 0.116
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop léger, appertisé, non égoutté": {
+      "score": 3.05
+    },
+    "plat légumes, avec féculent et viande/poisson, dès 8 12 mois": {
+      "score": 1.28
+    },
+    "pomme de terre, flocons déshydratés, nature": {
+      "score": 1.16
+    },
+    "rillettes pur porc": {
+      "score": 2.48
+    },
+    "roulade de porc pistachée": {
+      "score": 2.42
+    },
+    "sauce bourguignonne, préemballée": {
+      "score": 5.12
+    },
+    "soupe de poissons et / ou crustacés, déshydratée reconstituée": {
+      "score": 1.85
+    }
+  }
+}

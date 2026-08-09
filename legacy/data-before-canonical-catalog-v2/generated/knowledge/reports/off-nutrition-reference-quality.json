@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "inputCandidateCount": 42014,
+  "acceptedCandidateCount": 29106,
+  "rejectedCandidateCount": 12908,
+  "rejectionReasonOccurrenceCount": 24251,
+  "acceptanceRate": 0.6927690769743419,
+  "countsByReason": {
+    "EMPTY_NUTRITION_PAYLOAD": 0,
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS": 12042,
+    "NEGATIVE_NUTRITION_VALUE": 2,
+    "NON_FINITE_NUTRITION_VALUE": 0,
+    "NUTRITION_VALUE_ABOVE_MAXIMUM": 11397,
+    "SATURATED_FAT_EXCEEDS_TOTAL_FAT": 38,
+    "SUGARS_EXCEED_CARBOHYDRATES": 85,
+    "UNSUPPORTED_NUTRITION_KEY": 0,
+    "ZERO_ONLY_NUTRITION_PAYLOAD": 687
+  }
+}

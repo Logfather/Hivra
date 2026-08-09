@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "boeuf, boule de macreuse, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 3.44,
+      "climateKgCo2EqPerKg": 36.6,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "cumin, graine": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 9.4,
+      "landUsePtPerKg": 688.0,
+      "waterDeprivationM3PerKg": 4.38
+    },
+    "fondue de poireau": {
+      "environmentScoreMptPerKg": 0.287,
+      "climateKgCo2EqPerKg": 2.67,
+      "landUsePtPerKg": 82.9,
+      "waterDeprivationM3PerKg": 0.768
+    },
+    "huile de soja": {
+      "environmentScoreMptPerKg": 0.389,
+      "climateKgCo2EqPerKg": 3.73,
+      "landUsePtPerKg": 321.0,
+      "waterDeprivationM3PerKg": 0.718
+    },
+    "pecten d'amérique ou peigne du canada, noix, crue": {
+      "environmentScoreMptPerKg": 1.33,
+      "climateKgCo2EqPerKg": 9.89,
+      "landUsePtPerKg": 24.8,
+      "waterDeprivationM3PerKg": 0.435
+    },
+    "riz blanc, cru": {
+      "environmentScoreMptPerKg": 0.428,
+      "climateKgCo2EqPerKg": 2.01,
+      "landUsePtPerKg": 63.0,
+      "waterDeprivationM3PerKg": 14.3
+    },
+    "saint pierre, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "tarte ou tartelette aux fruits": {
+      "environmentScoreMptPerKg": 0.426,
+      "climateKgCo2EqPerKg": 2.27,
+      "landUsePtPerKg": 906.0,
+      "waterDeprivationM3PerKg": 5.77
+    },
+    "tartine craquante, extrudée et grillée, fourrée au chocolat": {
+      "environmentScoreMptPerKg": 0.182,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 112.0,
+      "waterDeprivationM3PerKg": 0.447
+    }
+  }
+}

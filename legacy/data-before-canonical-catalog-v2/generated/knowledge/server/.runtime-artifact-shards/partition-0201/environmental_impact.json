@@ -1,0 +1,22 @@
+{
+  "entries": {
+    "betterave rouge, cuite": {
+      "environmentScoreMptPerKg": 0.0998,
+      "climateKgCo2EqPerKg": 1.16,
+      "landUsePtPerKg": 11.7,
+      "waterDeprivationM3PerKg": 0.689
+    },
+    "céréales pour petit déjeuner fourrées au chocolat ou chocolat noisettes, enrichies en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "risotto, aux légumes": {
+      "environmentScoreMptPerKg": 0.407,
+      "climateKgCo2EqPerKg": 3.27,
+      "landUsePtPerKg": 78.9,
+      "waterDeprivationM3PerKg": 3.63
+    }
+  }
+}

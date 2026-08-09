@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "bar ou loup de l'atlantique, cru": {
+      "environmentScoreMptPerKg": 1.92,
+      "climateKgCo2EqPerKg": 12.3,
+      "landUsePtPerKg": 183.0,
+      "waterDeprivationM3PerKg": 2.62
+    },
+    "grenadier bleu ou hoki de nouvelle zélande, cru": {
+      "environmentScoreMptPerKg": 1.22,
+      "climateKgCo2EqPerKg": 7.59,
+      "landUsePtPerKg": 11.7,
+      "waterDeprivationM3PerKg": 0.326
+    },
+    "grondin, cru": {
+      "environmentScoreMptPerKg": 1.31,
+      "climateKgCo2EqPerKg": 7.48,
+      "landUsePtPerKg": 13.1,
+      "waterDeprivationM3PerKg": 0.707
+    },
+    "haricot beurre, surgelé, cru": {
+      "environmentScoreMptPerKg": 0.116,
+      "climateKgCo2EqPerKg": 0.693,
+      "landUsePtPerKg": 90.3,
+      "waterDeprivationM3PerKg": 1.2
+    },
+    "jus de mangue, frais": {
+      "environmentScoreMptPerKg": 0.0789,
+      "climateKgCo2EqPerKg": 0.56,
+      "landUsePtPerKg": 23.6,
+      "waterDeprivationM3PerKg": 0.591
+    },
+    "museau de porc vinaigrette": {
+      "environmentScoreMptPerKg": 0.375,
+      "climateKgCo2EqPerKg": 2.91,
+      "landUsePtPerKg": 136.0,
+      "waterDeprivationM3PerKg": 0.939
+    },
+    "poulet, haut de cuisse, viande, cru": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "salers": {
+      "environmentScoreMptPerKg": 0.58,
+      "climateKgCo2EqPerKg": 6.07,
+      "landUsePtPerKg": 275.0,
+      "waterDeprivationM3PerKg": 0.783
+    },
+    "seitan, préemballé": {
+      "environmentScoreMptPerKg": 0.205,
+      "climateKgCo2EqPerKg": 1.82,
+      "landUsePtPerKg": 87.5,
+      "waterDeprivationM3PerKg": 0.455
+    }
+  }
+}

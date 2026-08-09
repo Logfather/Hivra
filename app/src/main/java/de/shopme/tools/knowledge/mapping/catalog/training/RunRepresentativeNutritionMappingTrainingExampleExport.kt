@@ -1,6 +1,6 @@
 package de.shopme.tools.knowledge.mapping.catalog.training
 
-import java.io.File
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 
 object RunRepresentativeNutritionMappingTrainingExampleExport {
 
@@ -13,26 +13,15 @@ object RunRepresentativeNutritionMappingTrainingExampleExport {
                     "does not accept arguments."
         }
 
-        val projectRoot =
-            File("..")
+        val paths =
+            KnowledgeBuildPaths.default()
 
         RepresentativeNutritionMappingTrainingExampleExporter()
             .run(
                 validationFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "nutrition.low-confidence-validation.json"
-                    ),
+                    paths.nutritionLowConfidenceValidationReport,
                 outputFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "training/" +
-                                "nutrition.representative-" +
-                                "mapping-training-examples.json"
-                    )
+                    paths.nutritionRepresentativeTrainingExamples
             )
     }
 }

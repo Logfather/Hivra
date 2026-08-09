@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "ananas au sirop et jus d'ananas, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.268,
+      "climateKgCo2EqPerKg": 1.62,
+      "landUsePtPerKg": 37.5,
+      "waterDeprivationM3PerKg": 0.79
+    },
+    "bière \"spéciale\" (5 6° alcool)": {
+      "environmentScoreMptPerKg": 0.127,
+      "climateKgCo2EqPerKg": 1.35,
+      "landUsePtPerKg": 17.0,
+      "waterDeprivationM3PerKg": 0.258
+    },
+    "boudin noir, rayon frais": {
+      "environmentScoreMptPerKg": 0.272,
+      "climateKgCo2EqPerKg": 2.11,
+      "landUsePtPerKg": 97.4,
+      "waterDeprivationM3PerKg": 0.634
+    },
+    "hareng fumé, à l'huile (version \"logiciel\" avec erreur sur l'emballage)": {
+      "environmentScoreMptPerKg": 0.323,
+      "climateKgCo2EqPerKg": 2.67,
+      "landUsePtPerKg": 10.4,
+      "waterDeprivationM3PerKg": 0.293
+    },
+    "haricot blanc, cuit": {
+      "environmentScoreMptPerKg": 0.0589,
+      "climateKgCo2EqPerKg": 0.409,
+      "landUsePtPerKg": 33.0,
+      "waterDeprivationM3PerKg": 0.469
+    },
+    "maroilles, sans précision": {
+      "environmentScoreMptPerKg": 0.524,
+      "climateKgCo2EqPerKg": 5.44,
+      "landUsePtPerKg": 260.0,
+      "waterDeprivationM3PerKg": 0.605
+    },
+    "matière grasse végétale (type margarine) à 80% mg, salé": {
+      "environmentScoreMptPerKg": 0.368,
+      "climateKgCo2EqPerKg": 3.99,
+      "landUsePtPerKg": 173.0,
+      "waterDeprivationM3PerKg": 2.33
+    },
+    "pain grillé, tranches, au froment": {
+      "environmentScoreMptPerKg": 0.14,
+      "climateKgCo2EqPerKg": 1.35,
+      "landUsePtPerKg": 62.1,
+      "waterDeprivationM3PerKg": 0.415
+    },
+    "sauce béchamel, maison": {
+      "environmentScoreMptPerKg": 0.269,
+      "climateKgCo2EqPerKg": 2.33,
+      "landUsePtPerKg": 88.2,
+      "waterDeprivationM3PerKg": 0.425
+    },
+    "tortilla souple (à garnir), à base de maïs": {
+      "environmentScoreMptPerKg": 0.143,
+      "climateKgCo2EqPerKg": 1.03,
+      "landUsePtPerKg": 103.0,
+      "waterDeprivationM3PerKg": 0.758
+    }
+  }
+}

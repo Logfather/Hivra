@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "brocoli, purée": {
+      "environmentScoreMptPerKg": 0.144,
+      "climateKgCo2EqPerKg": 1.55,
+      "landUsePtPerKg": 15.2,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "bœuf, steak haché 15% mg, cru": {
+      "environmentScoreMptPerKg": 3.35,
+      "climateKgCo2EqPerKg": 35.7,
+      "landUsePtPerKg": 2320.0,
+      "waterDeprivationM3PerKg": 2.98
+    },
+    "chou de bruxelles, cuit": {
+      "environmentScoreMptPerKg": 0.131,
+      "climateKgCo2EqPerKg": 1.37,
+      "landUsePtPerKg": 40.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "huile combinée, mélange d'huile d'olive et de graines": {
+      "environmentScoreMptPerKg": 0.39,
+      "climateKgCo2EqPerKg": 2.24,
+      "landUsePtPerKg": 416.0,
+      "waterDeprivationM3PerKg": 4.99
+    },
+    "melon cantaloup (par ex.: charentais, de cavaillon) pulpe, cru": {
+      "environmentScoreMptPerKg": 0.104,
+      "climateKgCo2EqPerKg": 0.979,
+      "landUsePtPerKg": 43.1,
+      "waterDeprivationM3PerKg": 1.43
+    },
+    "pomme de terre dauphine, surgelée, crue": {
+      "environmentScoreMptPerKg": 0.214,
+      "climateKgCo2EqPerKg": 1.8,
+      "landUsePtPerKg": 91.1,
+      "waterDeprivationM3PerKg": 0.462
+    },
+    "tomate, séchée, à l'huile": {
+      "environmentScoreMptPerKg": 1.9,
+      "climateKgCo2EqPerKg": 11.2,
+      "landUsePtPerKg": 94.7,
+      "waterDeprivationM3PerKg": 7.37
+    }
+  }
+}

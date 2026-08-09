@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "andouille de guéméné": {
+      "environmentScoreMptPerKg": 1.36,
+      "climateKgCo2EqPerKg": 11.9,
+      "landUsePtPerKg": 699.0,
+      "waterDeprivationM3PerKg": 2.72
+    },
+    "biscuit apéritif soufflé, à base de pomme de terre et de soja": {
+      "environmentScoreMptPerKg": 0.208,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 189.0,
+      "waterDeprivationM3PerKg": 0.704
+    },
+    "brioche fourrée crème pâtissière (type \"chinois\"), préemballée": {
+      "environmentScoreMptPerKg": 0.27,
+      "climateKgCo2EqPerKg": 2.46,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 0.672
+    },
+    "fraise, crue": {
+      "environmentScoreMptPerKg": 0.128,
+      "climateKgCo2EqPerKg": 0.533,
+      "landUsePtPerKg": 77.4,
+      "waterDeprivationM3PerKg": 6.66
+    },
+    "gratin ou cassolette de poisson et / ou fruits de mer, à cuire": {
+      "environmentScoreMptPerKg": 1.44,
+      "climateKgCo2EqPerKg": 9.56,
+      "landUsePtPerKg": 176.0,
+      "waterDeprivationM3PerKg": 0.581
+    },
+    "gâteau au citron, tout type": {
+      "environmentScoreMptPerKg": 0.278,
+      "climateKgCo2EqPerKg": 2.53,
+      "landUsePtPerKg": 129.0,
+      "waterDeprivationM3PerKg": 1.8
+    },
+    "oeuf, poché": {
+      "environmentScoreMptPerKg": 0.377,
+      "climateKgCo2EqPerKg": 2.74,
+      "landUsePtPerKg": 164.0,
+      "waterDeprivationM3PerKg": 0.986
+    },
+    "pizza, sauce garniture pour": {
+      "environmentScoreMptPerKg": 0.148,
+      "climateKgCo2EqPerKg": 0.94,
+      "landUsePtPerKg": 67.7,
+      "waterDeprivationM3PerKg": 2.47
+    },
+    "sarriette, séchée": {
+      "environmentScoreMptPerKg": 0.464,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 142.0,
+      "waterDeprivationM3PerKg": 20.2
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "biscuit aux céréales pour petit déjeuner, enrichis en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.368,
+      "climateKgCo2EqPerKg": 3.59,
+      "landUsePtPerKg": 161.0,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "canard, viande et peau, cru": {
+      "environmentScoreMptPerKg": 1.08,
+      "climateKgCo2EqPerKg": 7.59,
+      "landUsePtPerKg": 429.0,
+      "waterDeprivationM3PerKg": 3.24
+    },
+    "chorizo": {
+      "environmentScoreMptPerKg": 0.967,
+      "climateKgCo2EqPerKg": 7.42,
+      "landUsePtPerKg": 383.0,
+      "waterDeprivationM3PerKg": 2.38
+    },
+    "flétan de l'atlantique ou flétan blanc, cru": {
+      "environmentScoreMptPerKg": 0.845,
+      "climateKgCo2EqPerKg": 4.69,
+      "landUsePtPerKg": 11.9,
+      "waterDeprivationM3PerKg": 0.483
+    },
+    "glace ou crème glacée, pot individuel": {
+      "environmentScoreMptPerKg": 0.235,
+      "climateKgCo2EqPerKg": 1.98,
+      "landUsePtPerKg": 90.8,
+      "waterDeprivationM3PerKg": 0.622
+    },
+    "jambon de bayonne": {
+      "environmentScoreMptPerKg": 1.8,
+      "climateKgCo2EqPerKg": 13.6,
+      "landUsePtPerKg": 626.0,
+      "waterDeprivationM3PerKg": 4.24
+    },
+    "lait 2e âge, prêt à consommer (préparation pour nourrissons)": {
+      "environmentScoreMptPerKg": 0.0834,
+      "climateKgCo2EqPerKg": 0.795,
+      "landUsePtPerKg": 33.6,
+      "waterDeprivationM3PerKg": 0.255
+    },
+    "mouton, viande, crue": {
+      "environmentScoreMptPerKg": 4.01,
+      "climateKgCo2EqPerKg": 33.0,
+      "landUsePtPerKg": 3530.0,
+      "waterDeprivationM3PerKg": 5.54
+    },
+    "palet ou galette de légumes, préfrit, surgelé": {
+      "environmentScoreMptPerKg": 0.18,
+      "climateKgCo2EqPerKg": 1.15,
+      "landUsePtPerKg": 59.9,
+      "waterDeprivationM3PerKg": 1.5
+    },
+    "pâté de gibier": {
+      "environmentScoreMptPerKg": 0.566,
+      "climateKgCo2EqPerKg": 4.73,
+      "landUsePtPerKg": 206.0,
+      "waterDeprivationM3PerKg": 1.66
+    },
+    "rouget barbet de roche, cru": {
+      "environmentScoreMptPerKg": 1.31,
+      "climateKgCo2EqPerKg": 7.48,
+      "landUsePtPerKg": 13.1,
+      "waterDeprivationM3PerKg": 0.707
+    },
+    "sauce carbonara, préemballée": {
+      "environmentScoreMptPerKg": 0.629,
+      "climateKgCo2EqPerKg": 5.24,
+      "landUsePtPerKg": 248.0,
+      "waterDeprivationM3PerKg": 1.28
+    },
+    "yaourt au lait de chèvre, nature, 5% mg environ": {
+      "environmentScoreMptPerKg": 0.263,
+      "climateKgCo2EqPerKg": 2.04,
+      "landUsePtPerKg": 103.0,
+      "waterDeprivationM3PerKg": 0.692
+    }
+  }
+}

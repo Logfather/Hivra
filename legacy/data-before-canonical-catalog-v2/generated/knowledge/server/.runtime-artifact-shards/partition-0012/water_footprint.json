@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "blé dur entier, cru": {
+      "litersPerKilogram": 603.0
+    },
+    "boeuf, faux filet, grillé/poêlé": {
+      "litersPerKilogram": 3030.0
+    },
+    "bonbons, tout type": {
+      "litersPerKilogram": 2270.0
+    },
+    "cervelle, veau, crue": {
+      "litersPerKilogram": 3060.0
+    },
+    "crêpe ou galette fourrée béchamel jambon fromage champignon": {
+      "litersPerKilogram": 9940.0
+    },
+    "crêpe préemballée, fourrée chocolat": {
+      "litersPerKilogram": 633.0
+    },
+    "fenugrec, graine": {
+      "litersPerKilogram": 4380.0
+    },
+    "julienne ou lingue, crue": {
+      "litersPerKilogram": 470.0
+    },
+    "maquereau, cru": {
+      "litersPerKilogram": 211.0
+    },
+    "omelette aux champignons": {
+      "litersPerKilogram": 16700.0
+    },
+    "porc, filet mignon, cru": {
+      "litersPerKilogram": 2160.0
+    }
+  }
+}

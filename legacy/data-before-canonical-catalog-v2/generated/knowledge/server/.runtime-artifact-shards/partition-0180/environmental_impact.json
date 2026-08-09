@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "blé de khorasan, cru": {
+      "environmentScoreMptPerKg": 0.0846,
+      "climateKgCo2EqPerKg": 0.684,
+      "landUsePtPerKg": 72.5,
+      "waterDeprivationM3PerKg": 0.183
+    },
+    "boudin noir, sauté/poêlé": {
+      "environmentScoreMptPerKg": 0.272,
+      "climateKgCo2EqPerKg": 2.11,
+      "landUsePtPerKg": 97.4,
+      "waterDeprivationM3PerKg": 0.634
+    },
+    "capelan, cru": {
+      "environmentScoreMptPerKg": 1.57,
+      "climateKgCo2EqPerKg": 9.38,
+      "landUsePtPerKg": 11.9,
+      "waterDeprivationM3PerKg": 0.349
+    },
+    "courgette, pulpe et peau, cuite": {
+      "environmentScoreMptPerKg": 0.12,
+      "climateKgCo2EqPerKg": 1.26,
+      "landUsePtPerKg": 23.9,
+      "waterDeprivationM3PerKg": 0.886
+    },
+    "fromage à pâte ferme environ 27% mg type maasdam": {
+      "environmentScoreMptPerKg": 0.632,
+      "climateKgCo2EqPerKg": 6.23,
+      "landUsePtPerKg": 274.0,
+      "waterDeprivationM3PerKg": 0.848
+    },
+    "merlu, filet, surgelé, cru": {
+      "environmentScoreMptPerKg": 1.23,
+      "climateKgCo2EqPerKg": 7.85,
+      "landUsePtPerKg": 13.0,
+      "waterDeprivationM3PerKg": 0.397
+    },
+    "turbot sauvage, cru": {
+      "environmentScoreMptPerKg": 1.65,
+      "climateKgCo2EqPerKg": 10.1,
+      "landUsePtPerKg": 13.8,
+      "waterDeprivationM3PerKg": 0.414
+    }
+  }
+}

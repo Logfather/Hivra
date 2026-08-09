@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "boeuf, entrecôte, crue": {
+      "environmentScoreMptPerKg": 2.71,
+      "climateKgCo2EqPerKg": 29.1,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.42
+    },
+    "chou à la crème pâtissière": {
+      "environmentScoreMptPerKg": 0.283,
+      "climateKgCo2EqPerKg": 2.19,
+      "landUsePtPerKg": 90.5,
+      "waterDeprivationM3PerKg": 0.581
+    },
+    "crêpe ou galette complète (œuf, jambon, fromage)": {
+      "environmentScoreMptPerKg": 0.463,
+      "climateKgCo2EqPerKg": 3.83,
+      "landUsePtPerKg": 185.0,
+      "waterDeprivationM3PerKg": 1.03
+    },
+    "farine de blé tendre ou froment avec levure incorporée": {
+      "environmentScoreMptPerKg": 0.102,
+      "climateKgCo2EqPerKg": 0.791,
+      "landUsePtPerKg": 84.2,
+      "waterDeprivationM3PerKg": 0.205
+    },
+    "gnocchi à la pomme de terre, cru": {
+      "environmentScoreMptPerKg": 0.12,
+      "climateKgCo2EqPerKg": 0.938,
+      "landUsePtPerKg": 46.1,
+      "waterDeprivationM3PerKg": 0.299
+    },
+    "lapin, viande braisée": {
+      "environmentScoreMptPerKg": 1.3,
+      "climateKgCo2EqPerKg": 7.75,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "rocamadour (fromage de chèvre)": {
+      "environmentScoreMptPerKg": 0.93,
+      "climateKgCo2EqPerKg": 7.04,
+      "landUsePtPerKg": 436.0,
+      "waterDeprivationM3PerKg": 2.49
+    },
+    "rocher coco ou congolais (petit gâteau à la noix de coco)": {
+      "environmentScoreMptPerKg": 0.317,
+      "climateKgCo2EqPerKg": 1.79,
+      "landUsePtPerKg": 95.3,
+      "waterDeprivationM3PerKg": 3.93
+    },
+    "sole, frite": {
+      "environmentScoreMptPerKg": 1.56,
+      "climateKgCo2EqPerKg": 9.25,
+      "landUsePtPerKg": 23.4,
+      "waterDeprivationM3PerKg": 0.979
+    }
+  }
+}

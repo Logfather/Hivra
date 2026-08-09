@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "coeur, porc, cru": {
+      "environmentScoreMptPerKg": 0.338,
+      "climateKgCo2EqPerKg": 2.79,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 0.898
+    },
+    "céréales pour petit déjeuner très riches en fibres, enrichies en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "farine de blé tendre ou froment t80": {
+      "environmentScoreMptPerKg": 0.102,
+      "climateKgCo2EqPerKg": 0.791,
+      "landUsePtPerKg": 84.2,
+      "waterDeprivationM3PerKg": 0.205
+    },
+    "jus d'ananas, pur jus": {
+      "environmentScoreMptPerKg": 0.247,
+      "climateKgCo2EqPerKg": 1.25,
+      "landUsePtPerKg": 50.4,
+      "waterDeprivationM3PerKg": 0.233
+    },
+    "levure chimique ou poudre à lever": {
+      "environmentScoreMptPerKg": 0.329,
+      "climateKgCo2EqPerKg": 2.11,
+      "landUsePtPerKg": 41.1,
+      "waterDeprivationM3PerKg": 3.82
+    },
+    "panais, cuit": {
+      "environmentScoreMptPerKg": 0.125,
+      "climateKgCo2EqPerKg": 1.34,
+      "landUsePtPerKg": 19.5,
+      "waterDeprivationM3PerKg": 0.746
+    },
+    "porc, longe, crue": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "soupe aux légumes variés, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.0721,
+      "climateKgCo2EqPerKg": 0.504,
+      "landUsePtPerKg": 16.4,
+      "waterDeprivationM3PerKg": 0.305
+    }
+  }
+}

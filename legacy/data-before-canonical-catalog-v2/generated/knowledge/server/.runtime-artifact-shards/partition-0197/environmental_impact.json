@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "boisson plate aux fruits (10 à 50% de jus), à teneur réduite en sucres": {
+      "environmentScoreMptPerKg": 0.0848,
+      "climateKgCo2EqPerKg": 0.566,
+      "landUsePtPerKg": 11.4,
+      "waterDeprivationM3PerKg": 0.65
+    },
+    "brioche fourrée au chocolat": {
+      "environmentScoreMptPerKg": 0.4,
+      "climateKgCo2EqPerKg": 4.88,
+      "landUsePtPerKg": 240.0,
+      "waterDeprivationM3PerKg": 0.662
+    },
+    "canard, viande et peau, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 1.5,
+      "climateKgCo2EqPerKg": 10.8,
+      "landUsePtPerKg": 571.0,
+      "waterDeprivationM3PerKg": 4.53
+    },
+    "couscous au poisson": {
+      "environmentScoreMptPerKg": 0.72,
+      "climateKgCo2EqPerKg": 4.74,
+      "landUsePtPerKg": 31.9,
+      "waterDeprivationM3PerKg": 0.754
+    },
+    "croissant au beurre, artisanal": {
+      "environmentScoreMptPerKg": 0.342,
+      "climateKgCo2EqPerKg": 2.94,
+      "landUsePtPerKg": 133.0,
+      "waterDeprivationM3PerKg": 0.517
+    },
+    "gaufrette, fourrée vanille, préemballée": {
+      "environmentScoreMptPerKg": 0.359,
+      "climateKgCo2EqPerKg": 3.46,
+      "landUsePtPerKg": 162.0,
+      "waterDeprivationM3PerKg": 1.13
+    },
+    "haché végétal à base de soja, préemballé": {
+      "environmentScoreMptPerKg": 0.316,
+      "climateKgCo2EqPerKg": 2.05,
+      "landUsePtPerKg": 106.0,
+      "waterDeprivationM3PerKg": 0.722
+    },
+    "provolone": {
+      "environmentScoreMptPerKg": 0.573,
+      "climateKgCo2EqPerKg": 6.0,
+      "landUsePtPerKg": 271.0,
+      "waterDeprivationM3PerKg": 0.776
+    },
+    "raisin blanc, à gros grain (type italia ou dattier), cru": {
+      "environmentScoreMptPerKg": 0.0841,
+      "climateKgCo2EqPerKg": 0.51,
+      "landUsePtPerKg": 22.8,
+      "waterDeprivationM3PerKg": 4.92
+    },
+    "sauce armoricaine, préemballée": {
+      "environmentScoreMptPerKg": 0.442,
+      "climateKgCo2EqPerKg": 3.91,
+      "landUsePtPerKg": 145.0,
+      "waterDeprivationM3PerKg": 0.875
+    },
+    "sushi ou maki aux produits de la mer": {
+      "environmentScoreMptPerKg": 0.34,
+      "climateKgCo2EqPerKg": 2.67,
+      "landUsePtPerKg": 59.8,
+      "waterDeprivationM3PerKg": 8.01
+    },
+    "tarte au fromage": {
+      "environmentScoreMptPerKg": 0.402,
+      "climateKgCo2EqPerKg": 3.52,
+      "landUsePtPerKg": 161.0,
+      "waterDeprivationM3PerKg": 0.615
+    },
+    "épeautre, cru": {
+      "environmentScoreMptPerKg": 0.112,
+      "climateKgCo2EqPerKg": 0.949,
+      "landUsePtPerKg": 108.0,
+      "waterDeprivationM3PerKg": 0.496
+    }
+  }
+}

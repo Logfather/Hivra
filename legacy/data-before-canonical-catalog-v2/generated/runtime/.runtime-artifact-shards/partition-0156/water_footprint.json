@@ -1,0 +1,25 @@
+{
+  "entries": {
+    "biscuit sec pauvre en glucides": {
+      "litersPerKilogram": 1160.0
+    },
+    "boeuf, boule de macreuse, grillée/poêlée": {
+      "litersPerKilogram": 3030.0
+    },
+    "cervelle, agneau, crue": {
+      "litersPerKilogram": 3640.0
+    },
+    "coulommiers": {
+      "litersPerKilogram": 601.0
+    },
+    "légumes, mélange surgelé, crus": {
+      "litersPerKilogram": 8630.0
+    },
+    "pigeon, viande, rôtie/cuite au four": {
+      "litersPerKilogram": 3400.0
+    },
+    "saumon, élevage, rôti/cuit au four": {
+      "litersPerKilogram": 1500.0
+    }
+  }
+}

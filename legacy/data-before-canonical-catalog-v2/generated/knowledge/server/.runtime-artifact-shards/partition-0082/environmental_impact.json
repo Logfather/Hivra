@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "biscuit sec avec nappage chocolat": {
+      "environmentScoreMptPerKg": 0.553,
+      "climateKgCo2EqPerKg": 7.79,
+      "landUsePtPerKg": 313.0,
+      "waterDeprivationM3PerKg": 1.27
+    },
+    "confiture, tout type de fruits, allégée en sucres (extra ou classique)": {
+      "environmentScoreMptPerKg": 0.298,
+      "climateKgCo2EqPerKg": 1.75,
+      "landUsePtPerKg": 78.6,
+      "waterDeprivationM3PerKg": 7.57
+    },
+    "crème dessert au café, rayon frais": {
+      "environmentScoreMptPerKg": 0.203,
+      "climateKgCo2EqPerKg": 1.94,
+      "landUsePtPerKg": 66.5,
+      "waterDeprivationM3PerKg": 0.528
+    },
+    "fromage blanc nature, 3% mg environ": {
+      "environmentScoreMptPerKg": 0.216,
+      "climateKgCo2EqPerKg": 2.09,
+      "landUsePtPerKg": 82.3,
+      "waterDeprivationM3PerKg": 0.301
+    },
+    "mozzarella au lait de vache": {
+      "environmentScoreMptPerKg": 0.455,
+      "climateKgCo2EqPerKg": 4.77,
+      "landUsePtPerKg": 211.0,
+      "waterDeprivationM3PerKg": 0.593
+    },
+    "oseille, crue": {
+      "environmentScoreMptPerKg": 0.0672,
+      "climateKgCo2EqPerKg": 0.571,
+      "landUsePtPerKg": 6.82,
+      "waterDeprivationM3PerKg": 0.479
+    },
+    "ravioli chinois à la vapeur à la crevette, cuit": {
+      "environmentScoreMptPerKg": 1.88,
+      "climateKgCo2EqPerKg": 11.6,
+      "landUsePtPerKg": 164.0,
+      "waterDeprivationM3PerKg": 92.4
+    },
+    "sandwich baguette, crudités diverses, mayonnaise": {
+      "environmentScoreMptPerKg": 0.394,
+      "climateKgCo2EqPerKg": 2.78,
+      "landUsePtPerKg": 137.0,
+      "waterDeprivationM3PerKg": 1.25
+    }
+  }
+}

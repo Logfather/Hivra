@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "classifiedEntryCount": 349,
+  "potentiallyDeterministicCount": 49,
+  "manualOnlyCount": 300,
+  "deterministicShare": 0.14040114613180515,
+  "manualOnlyShare": 0.8595988538681948,
+  "highestPriorityClassification": "SINGULAR_PLURAL_VARIANT",
+  "nextRecommendedImplementation": "IMPLEMENT_SINGULAR_PLURAL_RESOLVER",
+  "resolverEffectAssessment": {
+    "implementedRecommendation": "IMPLEMENT_TYPO_VARIANT_RESOLVER",
+    "affectedClassification": "TYPO_VARIANT",
+    "baselineAvailable": false,
+    "previousEntryCount": null,
+    "remainingEntryCount": 12,
+    "resolvedEntryCount": null,
+    "resolutionRate": null,
+    "previousPotentiallyDeterministicCount": null,
+    "remainingPotentiallyDeterministicCount": 12,
+    "resolvedPotentiallyDeterministicCount": null,
+    "status": "EFFECT_BASELINE_MISSING",
+    "rationale": "Resolver effect cannot be measured because no previous analysis baseline was supplied."
+  },
+  "remainingDeterministicClassifications": {
+    "PUNCTUATION_VARIANT": 3,
+    "SINGULAR_PLURAL_VARIANT": 25,
+    "TYPO_VARIANT": 12,
+    "WORD_ORDER_VARIANT": 9
+  },
+  "remainingManualClassifications": {
+    "BIO_ATTRIBUTE_VARIANT": 1,
+    "CANNED_FORM_VARIANT": 2,
+    "FROZEN_FORM_VARIANT": 20,
+    "MULTIPLE_DUPLICATE_REASONS": 19,
+    "POSSIBLE_SEMANTIC_DUPLICATE": 23,
+    "SALES_FORM_VARIANT": 31,
+    "SEMANTIC_CATEGORY_CONFLICT": 201,
+    "SPLIT_REQUIRED": 3
+  },
+  "implementationReady": true,
+  "implementationBlockers": [],
+  "observations": [
+    "19 entries contain conflicting evidence.",
+    "278 entries require direct manual review.",
+    "3 entries require a catalog split.",
+    "49 of 349 entries remain potentially deterministic.",
+    "Resolver effect cannot be measured because no previous analysis baseline was supplied.",
+    "The next recommended implementation is IMPLEMENT_SINGULAR_PLURAL_RESOLVER."
+  ],
+  "valid": true
+}

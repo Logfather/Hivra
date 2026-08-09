@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "amidon de maïs ou fécule de maïs": {
+      "environmentScoreMptPerKg": 0.207,
+      "climateKgCo2EqPerKg": 1.55,
+      "landUsePtPerKg": 33.1,
+      "waterDeprivationM3PerKg": 3.99
+    },
+    "biscuit sec à teneur garantie en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.368,
+      "climateKgCo2EqPerKg": 3.59,
+      "landUsePtPerKg": 161.0,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "chou blanc, cru": {
+      "environmentScoreMptPerKg": 0.0709,
+      "climateKgCo2EqPerKg": 0.762,
+      "landUsePtPerKg": 9.3,
+      "waterDeprivationM3PerKg": 0.5
+    },
+    "dés, allumettes, râpé ou haché de jambon": {
+      "environmentScoreMptPerKg": 0.979,
+      "climateKgCo2EqPerKg": 7.66,
+      "landUsePtPerKg": 373.0,
+      "waterDeprivationM3PerKg": 2.47
+    },
+    "fougasse, garnie": {
+      "environmentScoreMptPerKg": 0.192,
+      "climateKgCo2EqPerKg": 1.16,
+      "landUsePtPerKg": 94.9,
+      "waterDeprivationM3PerKg": 1.89
+    },
+    "fromage frais type petit suisse, aux fruits, 2 3% mg": {
+      "environmentScoreMptPerKg": 0.199,
+      "climateKgCo2EqPerKg": 1.93,
+      "landUsePtPerKg": 72.4,
+      "waterDeprivationM3PerKg": 0.287
+    },
+    "huile ou graisse de coco (coprah), raffinée": {
+      "environmentScoreMptPerKg": 0.679,
+      "climateKgCo2EqPerKg": 4.28,
+      "landUsePtPerKg": 436.0,
+      "waterDeprivationM3PerKg": 8.63
+    },
+    "pain brioché ou viennois": {
+      "environmentScoreMptPerKg": 0.209,
+      "climateKgCo2EqPerKg": 1.9,
+      "landUsePtPerKg": 110.0,
+      "waterDeprivationM3PerKg": 0.448
+    },
+    "pissenlit, cru": {
+      "environmentScoreMptPerKg": 0.0939,
+      "climateKgCo2EqPerKg": 0.868,
+      "landUsePtPerKg": 9.16,
+      "waterDeprivationM3PerKg": 0.643
+    },
+    "poisson blanc à la parisienne (sauce aux champignons)": {
+      "environmentScoreMptPerKg": 1.69,
+      "climateKgCo2EqPerKg": 10.5,
+      "landUsePtPerKg": 85.3,
+      "waterDeprivationM3PerKg": 7.3
+    },
+    "porc, palette, découennée, dégraisssée, désossée, crue": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "potiron, cru": {
+      "environmentScoreMptPerKg": 0.0665,
+      "climateKgCo2EqPerKg": 0.639,
+      "landUsePtPerKg": 17.4,
+      "waterDeprivationM3PerKg": 0.63
+    },
+    "soupe à la tomate et aux vermicelles, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.117,
+      "climateKgCo2EqPerKg": 0.543,
+      "landUsePtPerKg": 14.8,
+      "waterDeprivationM3PerKg": 0.369
+    }
+  }
+}

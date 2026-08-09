@@ -1,0 +1,1778 @@
+{
+  "version": 1,
+  "aggregateFile": "/Users/logfather/AndroidStudioProjects/ShopMe/data/generated/knowledge/references/off/off-nutrition-reference-aggregates.json",
+  "runtimeFile": "/Users/logfather/AndroidStudioProjects/ShopMe/data/generated/knowledge/server/nutrition.json",
+  "aggregateEntryCount": 511016,
+  "runtimeEntryCount": 512102,
+  "exactMatchCount": 484885,
+  "normalizationEquivalentMatchCount": 23734,
+  "effectiveCoveredAggregateEntryCount": 508619,
+  "trueMissingRuntimeEntryCount": 2397,
+  "trueAdditionalRuntimeEntryCount": 3483,
+  "exactCoverageRate": 0.9488646148065814,
+  "exactCoveragePercentage": 94.88646148065814,
+  "effectiveCoverageRate": 0.9953093445215022,
+  "effectiveCoveragePercentage": 99.53093445215022,
+  "complete": false,
+  "normalizationCollisionGroupCount": 140,
+  "normalizationEquivalentExamples": [
+    {
+      "normalizedCanonicalId": "! go cup instant stir fried noodles mi goreng",
+      "aggregateCanonicalId": "! go cup instant stir-fried noodles mi goreng",
+      "runtimeCanonicalId": "! go cup instant stir fried noodles mi goreng"
+    },
+    {
+      "normalizedCanonicalId": "! rings tomato twist",
+      "aggregateCanonicalId": "! rings - tomato twist",
+      "runtimeCanonicalId": "! rings tomato twist"
+    },
+    {
+      "normalizedCanonicalId": "!, caffeine free soda, lemon lime",
+      "aggregateCanonicalId": "!, caffeine-free soda, lemon lime",
+      "runtimeCanonicalId": "!, caffeine free soda, lemon lime"
+    },
+    {
+      "normalizedCanonicalId": "\"\"bacn,hri,nw sm,14/18,gf,15#\"\"",
+      "aggregateCanonicalId": "\"\"bacn,hri,nw-sm,14/18,gf,15#\"\"",
+      "runtimeCanonicalId": "\"\"bacn,hri,nw sm,14/18,gf,15#\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"bacn,ss,nw sm,14/18,15#\"\"",
+      "aggregateCanonicalId": "\"\"bacn,ss,nw-sm,14/18,15#\"\"",
+      "runtimeCanonicalId": "\"\"bacn,ss,nw sm,14/18,15#\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"beef,grnd,chuck,pty,20/8oz,fbab gm,10#,z\"\"",
+      "aggregateCanonicalId": "\"\"beef,grnd,chuck,pty,20/8oz,fbab-gm,10#,z\"\"",
+      "runtimeCanonicalId": "\"\"beef,grnd,chuck,pty,20/8oz,fbab gm,10#,z\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"beef,grnd,chuck,pty,27/6oz,fbab gm,10#,z\"\"",
+      "aggregateCanonicalId": "\"\"beef,grnd,chuck,pty,27/6oz,fbab-gm,10#,z\"\"",
+      "runtimeCanonicalId": "\"\"beef,grnd,chuck,pty,27/6oz,fbab gm,10#,z\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"beef,grnd,chuck,pty,30/5.33oz,fbab gm,10\"\"",
+      "aggregateCanonicalId": "\"\"beef,grnd,chuck,pty,30/5.33oz,fbab-gm,10\"\"",
+      "runtimeCanonicalId": "\"\"beef,grnd,chuck,pty,30/5.33oz,fbab gm,10\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"beef,grnd,chuck,pty,40/4oz,fbab gm,10#,z\"\"",
+      "aggregateCanonicalId": "\"\"beef,grnd,chuck,pty,40/4oz,fbab-gm,10#,z\"\"",
+      "runtimeCanonicalId": "\"\"beef,grnd,chuck,pty,40/4oz,fbab gm,10#,z\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"beef,grnd,pty,27/6oz,fbab sm,10#,z\"\"",
+      "aggregateCanonicalId": "\"\"beef,grnd,pty,27/6oz,fbab-sm,10#,z\"\"",
+      "runtimeCanonicalId": "\"\"beef,grnd,pty,27/6oz,fbab sm,10#,z\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"beef,grnd,pty,30/5.33oz,fbab sm,10#,z\"\"",
+      "aggregateCanonicalId": "\"\"beef,grnd,pty,30/5.33oz,fbab-sm,10#,z\"\"",
+      "runtimeCanonicalId": "\"\"beef,grnd,pty,30/5.33oz,fbab sm,10#,z\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"beef,grnd,pty,40/4oz,fbab sm,10#,z\"\"",
+      "aggregateCanonicalId": "\"\"beef,grnd,pty,40/4oz,fbab-sm,10#,z\"\"",
+      "runtimeCanonicalId": "\"\"beef,grnd,pty,40/4oz,fbab sm,10#,z\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"pic,bnls,cush mt,vp,fl,4 4pc or 4 5pc\"\"",
+      "aggregateCanonicalId": "\"\"pic,bnls,cush mt,vp,fl,4-4pc or 4-5pc\"\"",
+      "runtimeCanonicalId": "\"\"pic,bnls,cush mt,vp,fl,4 4pc or 4 5pc\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"pic,mt,75,bnls,shldr,p/l,wax free,60#\"\"",
+      "aggregateCanonicalId": "\"\"pic,mt,75,bnls,shldr,p/l,wax-free,60#\"\"",
+      "runtimeCanonicalId": "\"\"pic,mt,75,bnls,shldr,p/l,wax free,60#\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"rack of pk,et12,unseas,2 1pc,z\"\"",
+      "aggregateCanonicalId": "\"\"rack-of-pk,et12,unseas,2-1pc,z\"\"",
+      "runtimeCanonicalId": "\"\"rack of pk,et12,unseas,2 1pc,z\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"\"srln,bnls,et12,fl,vp,6 4pc\"\"",
+      "aggregateCanonicalId": "\"\"srln,bnls,et12,fl,vp,6-4pc\"\"",
+      "runtimeCanonicalId": "\"\"srln,bnls,et12,fl,vp,6 4pc\"\""
+    },
+    {
+      "normalizedCanonicalId": "\"fried rice\" cauliflower crumbles chopped cauliflower, carrots, celery, onion & broccoli in a sweet teriyaki sauce with garlic ginger wonton strips veggie bowl, cauliflower crumbles",
+      "aggregateCanonicalId": "\"fried rice\" cauliflower crumbles chopped cauliflower, carrots, celery, onion & broccoli in a sweet teriyaki sauce with garlic-ginger wonton strips veggie bowl, cauliflower crumbles",
+      "runtimeCanonicalId": "\"fried rice\" cauliflower crumbles chopped cauliflower, carrots, celery, onion & broccoli in a sweet teriyaki sauce with garlic ginger wonton strips veggie bowl, cauliflower crumbles"
+    },
+    {
+      "normalizedCanonicalId": "\"no sir no nuts\" bites",
+      "aggregateCanonicalId": "\"no sir-no nuts\" bites",
+      "runtimeCanonicalId": "\"no sir no nuts\" bites"
+    },
+    {
+      "normalizedCanonicalId": "\"no sir no nuts\" granola",
+      "aggregateCanonicalId": "\"no sir-no nuts\" granola",
+      "runtimeCanonicalId": "\"no sir no nuts\" granola"
+    },
+    {
+      "normalizedCanonicalId": "\"the original\" red velvet 3 layer cake",
+      "aggregateCanonicalId": "\"the original\" red velvet 3-layer cake",
+      "runtimeCanonicalId": "\"the original\" red velvet 3 layer cake"
+    },
+    {
+      "normalizedCanonicalId": "#37 smoked tri tip steak, jasmine rice, & fajita mix",
+      "aggregateCanonicalId": "#37 smoked tri-tip steak, jasmine rice, & fajita mix",
+      "runtimeCanonicalId": "#37 smoked tri tip steak, jasmine rice, & fajita mix"
+    },
+    {
+      "normalizedCanonicalId": "', toast r cakes, corn muffins",
+      "aggregateCanonicalId": "', toast-r-cakes, corn muffins",
+      "runtimeCanonicalId": "', toast r cakes, corn muffins"
+    },
+    {
+      "normalizedCanonicalId": "'00' neapolitan style gluten free pizza flour",
+      "aggregateCanonicalId": "'00' neapolitan-style gluten-free pizza flour",
+      "runtimeCanonicalId": "'00' neapolitan style gluten free pizza flour"
+    },
+    {
+      "normalizedCanonicalId": "'mato less pasta sauce",
+      "aggregateCanonicalId": "'mato-less pasta sauce",
+      "runtimeCanonicalId": "'mato less pasta sauce"
+    },
+    {
+      "normalizedCanonicalId": "'s natural tomatoes ketchup 980 grammes",
+      "aggregateCanonicalId": "'s natural tomatoes ketchup - 980 grammes",
+      "runtimeCanonicalId": "'s natural tomatoes ketchup 980 grammes"
+    },
+    {
+      "normalizedCanonicalId": "'s nuggets milk chocolate",
+      "aggregateCanonicalId": "'s nuggets - milk chocolate",
+      "runtimeCanonicalId": "'s nuggets milk chocolate"
+    },
+    {
+      "normalizedCanonicalId": "'s nuggets milk chocolate with almonds",
+      "aggregateCanonicalId": "'s nuggets - milk chocolate with almonds",
+      "runtimeCanonicalId": "'s nuggets milk chocolate with almonds"
+    },
+    {
+      "normalizedCanonicalId": "(carbonated drink) made in egypt",
+      "aggregateCanonicalId": "(carbonated drink)-made in egypt",
+      "runtimeCanonicalId": "(carbonated drink) made in egypt"
+    },
+    {
+      "normalizedCanonicalId": "(non sweetened)apple cinnamon granola",
+      "aggregateCanonicalId": "(non-sweetened)apple cinnamon granola",
+      "runtimeCanonicalId": "(non sweetened)apple cinnamon granola"
+    },
+    {
+      "normalizedCanonicalId": "(redmond’s real salt) lemon lime",
+      "aggregateCanonicalId": "(redmond’s real salt) - lemon lime",
+      "runtimeCanonicalId": "(redmond’s real salt) lemon lime"
+    },
+    {
+      "normalizedCanonicalId": "(soy pink package)",
+      "aggregateCanonicalId": "(soy - pink package)",
+      "runtimeCanonicalId": "(soy pink package)"
+    },
+    {
+      "normalizedCanonicalId": "+ daily defense blackberry lemon & rosemary",
+      "aggregateCanonicalId": "+ daily defense - blackberry lemon & rosemary",
+      "runtimeCanonicalId": "+ daily defense blackberry lemon & rosemary"
+    },
+    {
+      "normalizedCanonicalId": "+ daily defense blood orange & coconut",
+      "aggregateCanonicalId": "+ daily defense - blood orange & coconut",
+      "runtimeCanonicalId": "+ daily defense blood orange & coconut"
+    },
+    {
+      "normalizedCanonicalId": "+ daily defense grapefuit & mint & basil",
+      "aggregateCanonicalId": "+ daily defense - grapefuit & mint & basil",
+      "runtimeCanonicalId": "+ daily defense grapefuit & mint & basil"
+    },
+    {
+      "normalizedCanonicalId": "+ juice bad apple",
+      "aggregateCanonicalId": "+ juice - bad apple",
+      "runtimeCanonicalId": "+ juice bad apple"
+    },
+    {
+      "normalizedCanonicalId": ". chocolate coconut",
+      "aggregateCanonicalId": ".- chocolate coconut",
+      "runtimeCanonicalId": ". chocolate coconut"
+    },
+    {
+      "normalizedCanonicalId": ".bg солени сини5",
+      "aggregateCanonicalId": ".bg -солени сини5",
+      "runtimeCanonicalId": ".bg солени сини5"
+    },
+    {
+      "normalizedCanonicalId": "0 calorie low carb apple jelly 280g",
+      "aggregateCanonicalId": "0 calorie low-carb apple jelly 280g",
+      "runtimeCanonicalId": "0 calorie low carb apple jelly 280g"
+    },
+    {
+      "normalizedCanonicalId": "0 calorie sweetener",
+      "aggregateCanonicalId": "0-calorie sweetener",
+      "runtimeCanonicalId": "0 calorie sweetener"
+    },
+    {
+      "normalizedCanonicalId": "0 net carb tortillas soft taco",
+      "aggregateCanonicalId": "0 net carb tortillas - soft taco",
+      "runtimeCanonicalId": "0 net carb tortillas soft taco"
+    },
+    {
+      "normalizedCanonicalId": "0% fat yoghurt drink mixed berries",
+      "aggregateCanonicalId": "0% fat yoghurt drink - mixed berries",
+      "runtimeCanonicalId": "0% fat yoghurt drink mixed berries"
+    },
+    {
+      "normalizedCanonicalId": "0% fat yoghurt drink strawberry",
+      "aggregateCanonicalId": "0% fat yoghurt drink - strawberry",
+      "runtimeCanonicalId": "0% fat yoghurt drink strawberry"
+    },
+    {
+      "normalizedCanonicalId": "0% milkfat fat free milk",
+      "aggregateCanonicalId": "0% milkfat fat-free milk",
+      "runtimeCanonicalId": "0% milkfat fat free milk"
+    },
+    {
+      "normalizedCanonicalId": "0,0% non alcoholic",
+      "aggregateCanonicalId": "0,0% non-alcoholic",
+      "runtimeCanonicalId": "0,0% non alcoholic"
+    },
+    {
+      "normalizedCanonicalId": "0230 choc au lait™ gourmet white baking chips",
+      "aggregateCanonicalId": "0230 choc-au-lait™ gourmet white baking chips",
+      "runtimeCanonicalId": "0230 choc au lait™ gourmet white baking chips"
+    },
+    {
+      "normalizedCanonicalId": "1 2 3 100% canola oil",
+      "aggregateCanonicalId": "1-2-3 100% canola oil",
+      "runtimeCanonicalId": "1 2 3 100% canola oil"
+    },
+    {
+      "normalizedCanonicalId": "1 2 3 cookies",
+      "aggregateCanonicalId": "1-2-3 cookies",
+      "runtimeCanonicalId": "1 2 3 cookies"
+    },
+    {
+      "normalizedCanonicalId": "1 2 ipw cleaned octopus",
+      "aggregateCanonicalId": "1-2 ipw cleaned octopus",
+      "runtimeCanonicalId": "1 2 ipw cleaned octopus"
+    },
+    {
+      "normalizedCanonicalId": "1 2 lb w.g.g.s. snapper",
+      "aggregateCanonicalId": "1-2 lb w.g.g.s. snapper",
+      "runtimeCanonicalId": "1 2 lb w.g.g.s. snapper"
+    },
+    {
+      "normalizedCanonicalId": "1 2 oz swai quarters",
+      "aggregateCanonicalId": "1-2 oz swai quarters",
+      "runtimeCanonicalId": "1 2 oz swai quarters"
+    },
+    {
+      "normalizedCanonicalId": "1 2 wggs lane snapper",
+      "aggregateCanonicalId": "1-2 wggs lane snapper",
+      "runtimeCanonicalId": "1 2 wggs lane snapper"
+    },
+    {
+      "normalizedCanonicalId": "1 3 lb co grouper loins",
+      "aggregateCanonicalId": "1-3 lb co grouper loins",
+      "runtimeCanonicalId": "1 3 lb co grouper loins"
+    },
+    {
+      "normalizedCanonicalId": "1 3 lb corvina fillets",
+      "aggregateCanonicalId": "1-3 lb corvina fillets",
+      "runtimeCanonicalId": "1 3 lb corvina fillets"
+    },
+    {
+      "normalizedCanonicalId": "1 3 lb grouper fillet",
+      "aggregateCanonicalId": "1-3 lb grouper fillet",
+      "runtimeCanonicalId": "1 3 lb grouper fillet"
+    },
+    {
+      "normalizedCanonicalId": "1 3 lb grouper loin",
+      "aggregateCanonicalId": "1-3 lb grouper loin",
+      "runtimeCanonicalId": "1 3 lb grouper loin"
+    },
+    {
+      "normalizedCanonicalId": "1 3 lb red grouper loin",
+      "aggregateCanonicalId": "1-3 lb red grouper loin",
+      "runtimeCanonicalId": "1 3 lb red grouper loin"
+    },
+    {
+      "normalizedCanonicalId": "1 3 oz mahi pieces",
+      "aggregateCanonicalId": "1-3 oz mahi pieces",
+      "runtimeCanonicalId": "1 3 oz mahi pieces"
+    },
+    {
+      "normalizedCanonicalId": "1 3lb co grouper fillet",
+      "aggregateCanonicalId": "1-3lb co grouper fillet",
+      "runtimeCanonicalId": "1 3lb co grouper fillet"
+    },
+    {
+      "normalizedCanonicalId": "1 3lb skn/on grouper loin",
+      "aggregateCanonicalId": "1-3lb skn/on grouper loin",
+      "runtimeCanonicalId": "1 3lb skn/on grouper loin"
+    },
+    {
+      "normalizedCanonicalId": "1 day detox",
+      "aggregateCanonicalId": "1-day detox",
+      "runtimeCanonicalId": "1 day detox"
+    },
+    {
+      "normalizedCanonicalId": "1 kop soep champignon",
+      "aggregateCanonicalId": "1-kop soep champignon",
+      "runtimeCanonicalId": "1 kop soep champignon"
+    },
+    {
+      "normalizedCanonicalId": "1 kop soep rundvlees",
+      "aggregateCanonicalId": "1-kop soep rundvlees",
+      "runtimeCanonicalId": "1 kop soep rundvlees"
+    },
+    {
+      "normalizedCanonicalId": "1 min protein oatmeal peanut butter caramel",
+      "aggregateCanonicalId": "1 min protein oatmeal-peanut butter caramel",
+      "runtimeCanonicalId": "1 min protein oatmeal peanut butter caramel"
+    },
+    {
+      "normalizedCanonicalId": "1 minute protein oatmeal caramel apple pie",
+      "aggregateCanonicalId": "1 minute protein oatmeal - caramel apple pie",
+      "runtimeCanonicalId": "1 minute protein oatmeal caramel apple pie"
+    },
+    {
+      "normalizedCanonicalId": "1 minute protein oatmeal cinnamon roll",
+      "aggregateCanonicalId": "1 minute protein oatmeal - cinnamon roll",
+      "runtimeCanonicalId": "1 minute protein oatmeal cinnamon roll"
+    },
+    {
+      "normalizedCanonicalId": "1 minute protein oatmeal pear almond & cinnamon",
+      "aggregateCanonicalId": "1 minute protein oatmeal - pear almond & cinnamon",
+      "runtimeCanonicalId": "1 minute protein oatmeal pear almond & cinnamon"
+    },
+    {
+      "normalizedCanonicalId": "1 sachet high fiber unflavoured plant based soy protein",
+      "aggregateCanonicalId": "1 sachet high fiber unflavoured plant-based soy protein",
+      "runtimeCanonicalId": "1 sachet high fiber unflavoured plant based soy protein"
+    },
+    {
+      "normalizedCanonicalId": "1 step coleslaw maker dressing",
+      "aggregateCanonicalId": "1-step coleslaw maker dressing",
+      "runtimeCanonicalId": "1 step coleslaw maker dressing"
+    },
+    {
+      "normalizedCanonicalId": "1 step smoothie",
+      "aggregateCanonicalId": "1-step smoothie",
+      "runtimeCanonicalId": "1 step smoothie"
+    },
+    {
+      "normalizedCanonicalId": "1 step smoothie daily defen c",
+      "aggregateCanonicalId": "1 step smoothie - daily defen-c",
+      "runtimeCanonicalId": "1 step smoothie daily defen c"
+    },
+    {
+      "normalizedCanonicalId": "1 step smoothie power berry",
+      "aggregateCanonicalId": "1-step smoothie power berry",
+      "runtimeCanonicalId": "1 step smoothie power berry"
+    },
+    {
+      "normalizedCanonicalId": "1 to 1 baking okara flour",
+      "aggregateCanonicalId": "1-to-1 baking okara flour",
+      "runtimeCanonicalId": "1 to 1 baking okara flour"
+    },
+    {
+      "normalizedCanonicalId": "1% chocolate low fat milk",
+      "aggregateCanonicalId": "1% chocolate low-fat milk",
+      "runtimeCanonicalId": "1% chocolate low fat milk"
+    },
+    {
+      "normalizedCanonicalId": "1% low fat milk ultra pasteurized",
+      "aggregateCanonicalId": "1% low fat milk ultra-pasteurized",
+      "runtimeCanonicalId": "1% low fat milk ultra pasteurized"
+    },
+    {
+      "normalizedCanonicalId": "1% pure instant whev rats whe l gluta",
+      "aggregateCanonicalId": "1% pure instant whev rats whe l-gluta",
+      "runtimeCanonicalId": "1% pure instant whev rats whe l gluta"
+    },
+    {
+      "normalizedCanonicalId": "1.37oz lay's sea salt n pepper",
+      "aggregateCanonicalId": "1.37oz lay's sea salt -n-pepper",
+      "runtimeCanonicalId": "1.37oz lay's sea salt n pepper"
+    },
+    {
+      "normalizedCanonicalId": "1.87oz lay's bar b que",
+      "aggregateCanonicalId": "1.87oz lay's bar-b-que",
+      "runtimeCanonicalId": "1.87oz lay's bar b que"
+    },
+    {
+      "normalizedCanonicalId": "1/2 pie no sugar added blueberry",
+      "aggregateCanonicalId": "1/2 pie - no sugar added blueberry",
+      "runtimeCanonicalId": "1/2 pie no sugar added blueberry"
+    },
+    {
+      "normalizedCanonicalId": "1/4 pound angus beef patties",
+      "aggregateCanonicalId": "1/4-pound angus beef patties",
+      "runtimeCanonicalId": "1/4 pound angus beef patties"
+    },
+    {
+      "normalizedCanonicalId": "1/4 sht choc/yellow cake wh buttercream frozen",
+      "aggregateCanonicalId": "1/4 sht choc/yellow cake wh buttercream-frozen",
+      "runtimeCanonicalId": "1/4 sht choc/yellow cake wh buttercream frozen"
+    },
+    {
+      "normalizedCanonicalId": "10 10” flour tortillas",
+      "aggregateCanonicalId": "10-10” flour tortillas",
+      "runtimeCanonicalId": "10 10” flour tortillas"
+    },
+    {
+      "normalizedCanonicalId": "10 20 ct/kg h/on shrimp",
+      "aggregateCanonicalId": "10-20 ct/kg h/on shrimp",
+      "runtimeCanonicalId": "10 20 ct/kg h/on shrimp"
+    },
+    {
+      "normalizedCanonicalId": "10 fl oz juice cocktail grape",
+      "aggregateCanonicalId": "10 fl oz juice cocktail - grape",
+      "runtimeCanonicalId": "10 fl oz juice cocktail grape"
+    },
+    {
+      "normalizedCanonicalId": "10 grain pancake mix",
+      "aggregateCanonicalId": "10-grain pancake mix",
+      "runtimeCanonicalId": "10 grain pancake mix"
+    },
+    {
+      "normalizedCanonicalId": "10 hand breaded chicken tenders",
+      "aggregateCanonicalId": "10 hand-breaded chicken tenders",
+      "runtimeCanonicalId": "10 hand breaded chicken tenders"
+    },
+    {
+      "normalizedCanonicalId": "10 meat free fish style fingers",
+      "aggregateCanonicalId": "10 meat free fish-style fingers",
+      "runtimeCanonicalId": "10 meat free fish style fingers"
+    },
+    {
+      "normalizedCanonicalId": "10 oz mahi mahi portions",
+      "aggregateCanonicalId": "10 oz mahi-mahi portions",
+      "runtimeCanonicalId": "10 oz mahi mahi portions"
+    },
+    {
+      "normalizedCanonicalId": "10 vegetables all purpose seasoning",
+      "aggregateCanonicalId": "10 vegetables all-purpose seasoning",
+      "runtimeCanonicalId": "10 vegetables all purpose seasoning"
+    },
+    {
+      "normalizedCanonicalId": "10 year aged cheddar",
+      "aggregateCanonicalId": "10-year aged cheddar",
+      "runtimeCanonicalId": "10 year aged cheddar"
+    },
+    {
+      "normalizedCanonicalId": "100 % whey protéine brownie crunchy",
+      "aggregateCanonicalId": "100 % whey protéine brownie-crunchy",
+      "runtimeCanonicalId": "100 % whey protéine brownie crunchy"
+    },
+    {
+      "normalizedCanonicalId": "100 grass fed new zealand angus tenderloin",
+      "aggregateCanonicalId": "100 grass-fed new zealand angus tenderloin",
+      "runtimeCanonicalId": "100 grass fed new zealand angus tenderloin"
+    },
+    {
+      "normalizedCanonicalId": "100% all natural omega 3 trail mix",
+      "aggregateCanonicalId": "100% all natural omega-3 trail mix",
+      "runtimeCanonicalId": "100% all natural omega 3 trail mix"
+    },
+    {
+      "normalizedCanonicalId": "100% angus grass fed banks top round steak",
+      "aggregateCanonicalId": "100% angus grass-fed banks top round steak",
+      "runtimeCanonicalId": "100% angus grass fed banks top round steak"
+    },
+    {
+      "normalizedCanonicalId": "100% apple berry juice",
+      "aggregateCanonicalId": "100% apple - berry juice",
+      "runtimeCanonicalId": "100% apple berry juice"
+    },
+    {
+      "normalizedCanonicalId": "100% apple juice 6 8 fl oz bottles",
+      "aggregateCanonicalId": "100% apple juice 6-8 fl oz bottles",
+      "runtimeCanonicalId": "100% apple juice 6 8 fl oz bottles"
+    },
+    {
+      "normalizedCanonicalId": "100% apple romaine cucumber spinach kale lemon cold pressed vegetable & fruit juice blend, apple romaine cucumber spinach kale lemon",
+      "aggregateCanonicalId": "100% apple romaine cucumber spinach kale lemon cold-pressed vegetable & fruit juice blend, apple romaine cucumber spinach kale lemon",
+      "runtimeCanonicalId": "100% apple romaine cucumber spinach kale lemon cold pressed vegetable & fruit juice blend, apple romaine cucumber spinach kale lemon"
+    },
+    {
+      "normalizedCanonicalId": "100% arabica gourmet coffee nicaragua",
+      "aggregateCanonicalId": "100% arabica gourmet coffee - nicaragua",
+      "runtimeCanonicalId": "100% arabica gourmet coffee nicaragua"
+    },
+    {
+      "normalizedCanonicalId": "100% beef bun burgers",
+      "aggregateCanonicalId": "100% beef bun-burgers",
+      "runtimeCanonicalId": "100% beef bun burgers"
+    },
+    {
+      "normalizedCanonicalId": "100% brown rice microwavable",
+      "aggregateCanonicalId": "100% brown rice - microwavable",
+      "runtimeCanonicalId": "100% brown rice microwavable"
+    },
+    {
+      "normalizedCanonicalId": "100% casein complex belgian chocolate flavored",
+      "aggregateCanonicalId": "100% casein complex - belgian chocolate flavored",
+      "runtimeCanonicalId": "100% casein complex belgian chocolate flavored"
+    },
+    {
+      "normalizedCanonicalId": "100% cocoa dutch process",
+      "aggregateCanonicalId": "100% cocoa dutch-process",
+      "runtimeCanonicalId": "100% cocoa dutch process"
+    },
+    {
+      "normalizedCanonicalId": "100% durum wheat semolina enriched macaroni product, spaghettini 17",
+      "aggregateCanonicalId": "100% durum wheat semolina enriched macaroni product, spaghettini - 17",
+      "runtimeCanonicalId": "100% durum wheat semolina enriched macaroni product, spaghettini 17"
+    },
+    {
+      "normalizedCanonicalId": "100% egg whites, all natural egg whites, 16 oz., 16 oz",
+      "aggregateCanonicalId": "100% egg whites, all-natural egg whites, 16 oz., 16 oz",
+      "runtimeCanonicalId": "100% egg whites, all natural egg whites, 16 oz., 16 oz"
+    },
+    {
+      "normalizedCanonicalId": "100% egg whites, all natural egg whites, 32 oz., 32 oz",
+      "aggregateCanonicalId": "100% egg whites, all-natural egg whites, 32 oz., 32 oz",
+      "runtimeCanonicalId": "100% egg whites, all natural egg whites, 32 oz., 32 oz"
+    },
+    {
+      "normalizedCanonicalId": "100% freeze dried banana",
+      "aggregateCanonicalId": "100% freeze-dried banana",
+      "runtimeCanonicalId": "100% freeze dried banana"
+    },
+    {
+      "normalizedCanonicalId": "100% fresh pressed tomato juice",
+      "aggregateCanonicalId": "100% fresh-pressed tomato juice",
+      "runtimeCanonicalId": "100% fresh pressed tomato juice"
+    },
+    {
+      "normalizedCanonicalId": "100% fruit and vegetable cold pressed juice",
+      "aggregateCanonicalId": "100% fruit and vegetable cold-pressed juice",
+      "runtimeCanonicalId": "100% fruit and vegetable cold pressed juice"
+    },
+    {
+      "normalizedCanonicalId": "100% gainer salted caramel",
+      "aggregateCanonicalId": "100% gainer - salted caramel",
+      "runtimeCanonicalId": "100% gainer salted caramel"
+    },
+    {
+      "normalizedCanonicalId": "100% gainer vanilla dream",
+      "aggregateCanonicalId": "100% gainer - vanilla dream",
+      "runtimeCanonicalId": "100% gainer vanilla dream"
+    },
+    {
+      "normalizedCanonicalId": "100% grape juice white grape",
+      "aggregateCanonicalId": "100% grape juice - white grape",
+      "runtimeCanonicalId": "100% grape juice white grape"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed a2/a2 milk",
+      "aggregateCanonicalId": "100% grass-fed a2/a2 milk",
+      "runtimeCanonicalId": "100% grass fed a2/a2 milk"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed ancestral beef meatballs classic",
+      "aggregateCanonicalId": "100% grass-fed ancestral beef meatballs classic",
+      "runtimeCanonicalId": "100% grass fed ancestral beef meatballs classic"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed and finished beef ribeye steak",
+      "aggregateCanonicalId": "100% grass-fed and finished beef ribeye steak",
+      "runtimeCanonicalId": "100% grass fed and finished beef ribeye steak"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed angus beef rib eye steak",
+      "aggregateCanonicalId": "100% grass-fed angus beef rib-eye steak",
+      "runtimeCanonicalId": "100% grass fed angus beef rib eye steak"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed beef flank steak, beef",
+      "aggregateCanonicalId": "100% grass-fed beef flank steak, beef",
+      "runtimeCanonicalId": "100% grass fed beef flank steak, beef"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed beef meatballs",
+      "aggregateCanonicalId": "100% grass-fed beef meatballs",
+      "runtimeCanonicalId": "100% grass fed beef meatballs"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed beef minis (zero sugar)",
+      "aggregateCanonicalId": "100% grass-fed beef minis (zero sugar)",
+      "runtimeCanonicalId": "100% grass fed beef minis (zero sugar)"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed beef salt and pepper bar",
+      "aggregateCanonicalId": "100% grass-fed beef salt and pepper bar",
+      "runtimeCanonicalId": "100% grass fed beef salt and pepper bar"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed bison ribeye regeneratively raised",
+      "aggregateCanonicalId": "100% grass-fed bison ribeye regeneratively raised",
+      "runtimeCanonicalId": "100% grass fed bison ribeye regeneratively raised"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed cultured cottage cheese",
+      "aggregateCanonicalId": "100% grass-fed cultured cottage cheese",
+      "runtimeCanonicalId": "100% grass fed cultured cottage cheese"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed grass finished",
+      "aggregateCanonicalId": "100% grass fed -grass finished",
+      "runtimeCanonicalId": "100% grass fed grass finished"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed ground angus beef",
+      "aggregateCanonicalId": "100% grass-fed ground angus beef",
+      "runtimeCanonicalId": "100% grass fed ground angus beef"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed hickory smoked summer sausage",
+      "aggregateCanonicalId": "100% grass-fed hickory smoked summer sausage",
+      "runtimeCanonicalId": "100% grass fed hickory smoked summer sausage"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed organic beef filet mignon steak 5oz",
+      "aggregateCanonicalId": "100% grass fed organic beef filet mignon steak -5oz",
+      "runtimeCanonicalId": "100% grass fed organic beef filet mignon steak 5oz"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed organic beef ribeye steak, beef ribeye",
+      "aggregateCanonicalId": "100% grass-fed organic beef ribeye steak, beef ribeye",
+      "runtimeCanonicalId": "100% grass fed organic beef ribeye steak, beef ribeye"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed organic beef ribeye steaks",
+      "aggregateCanonicalId": "100% grass-fed organic beef ribeye steaks",
+      "runtimeCanonicalId": "100% grass fed organic beef ribeye steaks"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed organic beef sirloin steak, beef sirloin",
+      "aggregateCanonicalId": "100% grass-fed organic beef sirloin steak, beef sirloin",
+      "runtimeCanonicalId": "100% grass fed organic beef sirloin steak, beef sirloin"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed organic beef strip steak, beef strip",
+      "aggregateCanonicalId": "100% grass-fed organic beef strip steak, beef strip",
+      "runtimeCanonicalId": "100% grass fed organic beef strip steak, beef strip"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed organic beef tenderloin steak, beef tenderloin",
+      "aggregateCanonicalId": "100% grass-fed organic beef tenderloin steak, beef tenderloin",
+      "runtimeCanonicalId": "100% grass fed organic beef tenderloin steak, beef tenderloin"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed wagyu beef tallow",
+      "aggregateCanonicalId": "100% grass-fed wagyu beef tallow",
+      "runtimeCanonicalId": "100% grass fed wagyu beef tallow"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed whey protein concentrate",
+      "aggregateCanonicalId": "100% grass-fed whey protein concentrate",
+      "runtimeCanonicalId": "100% grass fed whey protein concentrate"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed whey protein isolate chocolate peanut butter",
+      "aggregateCanonicalId": "100% grass fed whey protein isolate - chocolate peanut butter",
+      "runtimeCanonicalId": "100% grass fed whey protein isolate chocolate peanut butter"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed whey protein isolate french vanilla",
+      "aggregateCanonicalId": "100% grass-fed whey protein isolate french vanilla",
+      "runtimeCanonicalId": "100% grass fed whey protein isolate french vanilla"
+    },
+    {
+      "normalizedCanonicalId": "100% grass fed whey protein isolate salted chocolate caramel",
+      "aggregateCanonicalId": "100% grass-fed whey protein isolate salted chocolate caramel",
+      "runtimeCanonicalId": "100% grass fed whey protein isolate salted chocolate caramel"
+    },
+    {
+      "normalizedCanonicalId": "100% iberico acorn fed ham",
+      "aggregateCanonicalId": "100% iberico acorn-fed ham",
+      "runtimeCanonicalId": "100% iberico acorn fed ham"
+    },
+    {
+      "normalizedCanonicalId": "100% instant whey vanilla",
+      "aggregateCanonicalId": "100% instant whey - vanilla",
+      "runtimeCanonicalId": "100% instant whey vanilla"
+    },
+    {
+      "normalizedCanonicalId": "100% isolate protein powder chocolate milk",
+      "aggregateCanonicalId": "100% isolate protein powder - chocolate milk",
+      "runtimeCanonicalId": "100% isolate protein powder chocolate milk"
+    },
+    {
+      "normalizedCanonicalId": "100% juice berry bloss blend cold pressed",
+      "aggregateCanonicalId": "100% juice berry bloss blend cold-pressed",
+      "runtimeCanonicalId": "100% juice berry bloss blend cold pressed"
+    },
+    {
+      "normalizedCanonicalId": "100% juice orange pineapple apple",
+      "aggregateCanonicalId": "100% juice - orange pineapple apple",
+      "runtimeCanonicalId": "100% juice orange pineapple apple"
+    },
+    {
+      "normalizedCanonicalId": "100% juice orange pineapple apple, concord grape, apple juice from concentrate",
+      "aggregateCanonicalId": "100% juice - orange pineapple apple, concord grape, apple juice from concentrate",
+      "runtimeCanonicalId": "100% juice orange pineapple apple, concord grape, apple juice from concentrate"
+    },
+    {
+      "normalizedCanonicalId": "100% juice with pulp, orange country style",
+      "aggregateCanonicalId": "100% juice with pulp, orange-country style",
+      "runtimeCanonicalId": "100% juice with pulp, orange country style"
+    },
+    {
+      "normalizedCanonicalId": "100% natural australian honey organic",
+      "aggregateCanonicalId": "100% natural australian honey - organic",
+      "runtimeCanonicalId": "100% natural australian honey organic"
+    },
+    {
+      "normalizedCanonicalId": "100% natural semi sharp cheddar cheese, cheddar",
+      "aggregateCanonicalId": "100% natural semi-sharp cheddar cheese, cheddar",
+      "runtimeCanonicalId": "100% natural semi sharp cheddar cheese, cheddar"
+    },
+    {
+      "normalizedCanonicalId": "100% natural shredded low moisture part skim mozzarella and smoked provolone pizza cheese blend",
+      "aggregateCanonicalId": "100% natural shredded low-moisture part-skim mozzarella and smoked provolone pizza cheese blend",
+      "runtimeCanonicalId": "100% natural shredded low moisture part skim mozzarella and smoked provolone pizza cheese blend"
+    },
+    {
+      "normalizedCanonicalId": "100% natural trail mix, cran beary almond",
+      "aggregateCanonicalId": "100% natural trail mix, cran-beary almond",
+      "runtimeCanonicalId": "100% natural trail mix, cran beary almond"
+    },
+    {
+      "normalizedCanonicalId": "100% natural wisconsin pre sliced mild cheddar cheese, mild cheddar",
+      "aggregateCanonicalId": "100% natural wisconsin pre-sliced mild cheddar cheese, mild cheddar",
+      "runtimeCanonicalId": "100% natural wisconsin pre sliced mild cheddar cheese, mild cheddar"
+    },
+    {
+      "normalizedCanonicalId": "100% no pulp healthy heart with omega 3 orange juice, orange",
+      "aggregateCanonicalId": "100% no pulp healthy heart with omega-3 orange juice, orange",
+      "runtimeCanonicalId": "100% no pulp healthy heart with omega 3 orange juice, orange"
+    },
+    {
+      "normalizedCanonicalId": "100% orange juice dole",
+      "aggregateCanonicalId": "100% orange juice - dole",
+      "runtimeCanonicalId": "100% orange juice dole"
+    },
+    {
+      "normalizedCanonicalId": "100% orange juice pulp",
+      "aggregateCanonicalId": "100% orange juice - pulp",
+      "runtimeCanonicalId": "100% orange juice pulp"
+    },
+    {
+      "normalizedCanonicalId": "100% organic all purpose flour",
+      "aggregateCanonicalId": "100% organic all-purpose flour",
+      "runtimeCanonicalId": "100% organic all purpose flour"
+    },
+    {
+      "normalizedCanonicalId": "100% organic black eyed peas",
+      "aggregateCanonicalId": "100% organic black-eyed peas",
+      "runtimeCanonicalId": "100% organic black eyed peas"
+    },
+    {
+      "normalizedCanonicalId": "100% organic cold pressed juice",
+      "aggregateCanonicalId": "100% organic cold-pressed juice",
+      "runtimeCanonicalId": "100% organic cold pressed juice"
+    },
+    {
+      "normalizedCanonicalId": "100% organic einkorn all purpose flour",
+      "aggregateCanonicalId": "100% organic einkorn all-purpose flour",
+      "runtimeCanonicalId": "100% organic einkorn all purpose flour"
+    },
+    {
+      "normalizedCanonicalId": "100% organic free range egg pasta",
+      "aggregateCanonicalId": "100% organic free-range egg pasta",
+      "runtimeCanonicalId": "100% organic free range egg pasta"
+    },
+    {
+      "normalizedCanonicalId": "100% organic spelt (wheat) white flour wholesale",
+      "aggregateCanonicalId": "100% organic spelt (wheat) white flour - wholesale",
+      "runtimeCanonicalId": "100% organic spelt (wheat) white flour wholesale"
+    },
+    {
+      "normalizedCanonicalId": "100% organic unbleached all purpose flour",
+      "aggregateCanonicalId": "100% organic unbleached all-purpose flour",
+      "runtimeCanonicalId": "100% organic unbleached all purpose flour"
+    },
+    {
+      "normalizedCanonicalId": "100% pine orange banana juice from concentrate",
+      "aggregateCanonicalId": "100% pine-orange banana juice from concentrate",
+      "runtimeCanonicalId": "100% pine orange banana juice from concentrate"
+    },
+    {
+      "normalizedCanonicalId": "100% pineapple orange juice frozen concentrate",
+      "aggregateCanonicalId": "100% pineapple orange juice - frozen concentrate",
+      "runtimeCanonicalId": "100% pineapple orange juice frozen concentrate"
+    },
+    {
+      "normalizedCanonicalId": "100% plant based powder",
+      "aggregateCanonicalId": "100% plant-based powder",
+      "runtimeCanonicalId": "100% plant based powder"
+    },
+    {
+      "normalizedCanonicalId": "100% plant based protein",
+      "aggregateCanonicalId": "100% plant-based protein",
+      "runtimeCanonicalId": "100% plant based protein"
+    },
+    {
+      "normalizedCanonicalId": "100% plant based protein powder cookies & creamless",
+      "aggregateCanonicalId": "100% plant based protein powder - cookies & creamless",
+      "runtimeCanonicalId": "100% plant based protein powder cookies & creamless"
+    },
+    {
+      "normalizedCanonicalId": "100% plant based protein shake",
+      "aggregateCanonicalId": "100% plant-based protein shake",
+      "runtimeCanonicalId": "100% plant based protein shake"
+    },
+    {
+      "normalizedCanonicalId": "100% plant based protein shake powder",
+      "aggregateCanonicalId": "100% plant-based protein shake powder",
+      "runtimeCanonicalId": "100% plant based protein shake powder"
+    },
+    {
+      "normalizedCanonicalId": "100% premium grass fed collagen peptides",
+      "aggregateCanonicalId": "100% premium grass-fed collagen peptides",
+      "runtimeCanonicalId": "100% premium grass fed collagen peptides"
+    },
+    {
+      "normalizedCanonicalId": "100% pur jus d'orange paquito",
+      "aggregateCanonicalId": "100% pur jus d'orange - paquito",
+      "runtimeCanonicalId": "100% pur jus d'orange paquito"
+    },
+    {
+      "normalizedCanonicalId": "100% pur jus multi fruits",
+      "aggregateCanonicalId": "100% pur jus multi-fruits",
+      "runtimeCanonicalId": "100% pur jus multi fruits"
+    },
+    {
+      "normalizedCanonicalId": "100% pure beef groubd beef",
+      "aggregateCanonicalId": "100% pure beef- groubd beef",
+      "runtimeCanonicalId": "100% pure beef groubd beef"
+    },
+    {
+      "normalizedCanonicalId": "100% pure pumpkin libby's",
+      "aggregateCanonicalId": "100% pure pumpkin - libby's",
+      "runtimeCanonicalId": "100% pure pumpkin libby's"
+    },
+    {
+      "normalizedCanonicalId": "100% pure raw & unfiltered honey nature nate's honey co.",
+      "aggregateCanonicalId": "100% pure raw & unfiltered honey - nature nate's honey co.",
+      "runtimeCanonicalId": "100% pure raw & unfiltered honey nature nate's honey co."
+    },
+    {
+      "normalizedCanonicalId": "100% pure stone ground sesame paste",
+      "aggregateCanonicalId": "100% pure-stone ground sesame paste",
+      "runtimeCanonicalId": "100% pure stone ground sesame paste"
+    },
+    {
+      "normalizedCanonicalId": "100% pure whey choc cookie dough",
+      "aggregateCanonicalId": "100% pure whey - choc cookie dough",
+      "runtimeCanonicalId": "100% pure whey choc cookie dough"
+    },
+    {
+      "normalizedCanonicalId": "100% qld milk full cream",
+      "aggregateCanonicalId": "100% qld milk - full cream",
+      "runtimeCanonicalId": "100% qld milk full cream"
+    },
+    {
+      "normalizedCanonicalId": "100% tri protein",
+      "aggregateCanonicalId": "100% tri-protein",
+      "runtimeCanonicalId": "100% tri protein"
+    },
+    {
+      "normalizedCanonicalId": "100% tri protein by crazy nutrition, chocolate",
+      "aggregateCanonicalId": "100% tri-protein by crazy nutrition, chocolate",
+      "runtimeCanonicalId": "100% tri protein by crazy nutrition, chocolate"
+    },
+    {
+      "normalizedCanonicalId": "100% tri protein salted caramel",
+      "aggregateCanonicalId": "100% tri-protein salted caramel",
+      "runtimeCanonicalId": "100% tri protein salted caramel"
+    },
+    {
+      "normalizedCanonicalId": "100% true fruit tropical fruit salad",
+      "aggregateCanonicalId": "100% true fruit - tropical fruit salad",
+      "runtimeCanonicalId": "100% true fruit tropical fruit salad"
+    },
+    {
+      "normalizedCanonicalId": "100% vegan protein powder vanilla",
+      "aggregateCanonicalId": "100% vegan protein powder - vanilla",
+      "runtimeCanonicalId": "100% vegan protein powder vanilla"
+    },
+    {
+      "normalizedCanonicalId": "100% whey isolate ffn",
+      "aggregateCanonicalId": "100% whey isolate - ffn",
+      "runtimeCanonicalId": "100% whey isolate ffn"
+    },
+    {
+      "normalizedCanonicalId": "100% whey isolate protein powder chocolate flavoured",
+      "aggregateCanonicalId": "100% whey isolate protein powder - chocolate flavoured",
+      "runtimeCanonicalId": "100% whey isolate protein powder chocolate flavoured"
+    },
+    {
+      "normalizedCanonicalId": "100% whey protein banana choc",
+      "aggregateCanonicalId": "100% whey protein banana-choc",
+      "runtimeCanonicalId": "100% whey protein banana choc"
+    },
+    {
+      "normalizedCanonicalId": "100% whey protein milk chocolate",
+      "aggregateCanonicalId": "100% whey protein - milk chocolate",
+      "runtimeCanonicalId": "100% whey protein milk chocolate"
+    },
+    {
+      "normalizedCanonicalId": "100% whey protein powder unflavored",
+      "aggregateCanonicalId": "100% whey protein powder - unflavored",
+      "runtimeCanonicalId": "100% whey protein powder unflavored"
+    },
+    {
+      "normalizedCanonicalId": "100% whey protein strawberry swirl",
+      "aggregateCanonicalId": "100% whey protein - strawberry swirl",
+      "runtimeCanonicalId": "100% whey protein strawberry swirl"
+    },
+    {
+      "normalizedCanonicalId": "100% whey protein unflavoured",
+      "aggregateCanonicalId": "100% whey protein - unflavoured",
+      "runtimeCanonicalId": "100% whey protein unflavoured"
+    },
+    {
+      "normalizedCanonicalId": "100% whey vanilla milkshake",
+      "aggregateCanonicalId": "100% whey - vanilla milkshake",
+      "runtimeCanonicalId": "100% whey vanilla milkshake"
+    },
+    {
+      "normalizedCanonicalId": "100% white corn bite size round tortilla chips",
+      "aggregateCanonicalId": "100% white corn bite-size round tortilla chips",
+      "runtimeCanonicalId": "100% white corn bite size round tortilla chips"
+    },
+    {
+      "normalizedCanonicalId": "100% white corn bite size round tortilla chips, white corn",
+      "aggregateCanonicalId": "100% white corn bite-size round tortilla chips, white corn",
+      "runtimeCanonicalId": "100% white corn bite size round tortilla chips, white corn"
+    },
+    {
+      "normalizedCanonicalId": "100% whole grain bread natures own",
+      "aggregateCanonicalId": "100% whole grain bread - natures own",
+      "runtimeCanonicalId": "100% whole grain bread natures own"
+    },
+    {
+      "normalizedCanonicalId": "100% whole wheat multi grain",
+      "aggregateCanonicalId": "100% whole wheat multi-grain",
+      "runtimeCanonicalId": "100% whole wheat multi grain"
+    },
+    {
+      "normalizedCanonicalId": "100% whole wheat multi purpose flour",
+      "aggregateCanonicalId": "100% whole wheat multi-purpose flour",
+      "runtimeCanonicalId": "100% whole wheat multi purpose flour"
+    },
+    {
+      "normalizedCanonicalId": "100% whole wheat tortillas medium soft taco size",
+      "aggregateCanonicalId": "100% whole wheat tortillas medium-soft taco size",
+      "runtimeCanonicalId": "100% whole wheat tortillas medium soft taco size"
+    },
+    {
+      "normalizedCanonicalId": "100g protein bar fudge",
+      "aggregateCanonicalId": "100g protein bar - fudge",
+      "runtimeCanonicalId": "100g protein bar fudge"
+    },
+    {
+      "normalizedCanonicalId": "100plus 500ml",
+      "aggregateCanonicalId": "100plus - 500ml",
+      "runtimeCanonicalId": "100plus 500ml"
+    },
+    {
+      "normalizedCanonicalId": "10lb up w.g blk grouper",
+      "aggregateCanonicalId": "10lb-up w.g blk grouper",
+      "runtimeCanonicalId": "10lb up w.g blk grouper"
+    },
+    {
+      "normalizedCanonicalId": "11.5 fl oz 100% juice apple",
+      "aggregateCanonicalId": "11.5 fl oz 100% juice - apple",
+      "runtimeCanonicalId": "11.5 fl oz 100% juice apple"
+    },
+    {
+      "normalizedCanonicalId": "11.5 fl oz juice drink fruit punch",
+      "aggregateCanonicalId": "11.5 fl oz juice drink - fruit punch",
+      "runtimeCanonicalId": "11.5 fl oz juice drink fruit punch"
+    },
+    {
+      "normalizedCanonicalId": "12 14 oz h&g flounder",
+      "aggregateCanonicalId": "12-14 oz h&g flounder",
+      "runtimeCanonicalId": "12 14 oz h&g flounder"
+    },
+    {
+      "normalizedCanonicalId": "12 bubble gum filled candy canes",
+      "aggregateCanonicalId": "12 bubble gum-filled candy canes",
+      "runtimeCanonicalId": "12 bubble gum filled candy canes"
+    },
+    {
+      "normalizedCanonicalId": "12 cage free large fresh grade a eggs",
+      "aggregateCanonicalId": "12 cage-free large fresh grade a eggs",
+      "runtimeCanonicalId": "12 cage free large fresh grade a eggs"
+    },
+    {
+      "normalizedCanonicalId": "12 grade a medium brown cage free eggs",
+      "aggregateCanonicalId": "12 grade a medium brown cage-free eggs",
+      "runtimeCanonicalId": "12 grade a medium brown cage free eggs"
+    },
+    {
+      "normalizedCanonicalId": "12 grain bread buy low",
+      "aggregateCanonicalId": "12 grain bread - buy low",
+      "runtimeCanonicalId": "12 grain bread buy low"
+    },
+    {
+      "normalizedCanonicalId": "12 months matured cheddar cheese straws",
+      "aggregateCanonicalId": "12-months-matured cheddar cheese straws",
+      "runtimeCanonicalId": "12 months matured cheddar cheese straws"
+    },
+    {
+      "normalizedCanonicalId": "12 organic protein bars variety pack peanut butter, dark chocolate chip peanut butter with sea salt",
+      "aggregateCanonicalId": "12 organic protein bars variety pack - peanut butter, dark chocolate chip peanut butter with sea salt",
+      "runtimeCanonicalId": "12 organic protein bars variety pack peanut butter, dark chocolate chip peanut butter with sea salt"
+    },
+    {
+      "normalizedCanonicalId": "12 uurtje karamel",
+      "aggregateCanonicalId": "12-uurtje karamel",
+      "runtimeCanonicalId": "12 uurtje karamel"
+    },
+    {
+      "normalizedCanonicalId": "12ct iced cut out cookies",
+      "aggregateCanonicalId": "12ct iced cut-out cookies",
+      "runtimeCanonicalId": "12ct iced cut out cookies"
+    },
+    {
+      "normalizedCanonicalId": "12pc buffalo bone in wings",
+      "aggregateCanonicalId": "12pc buffalo bone-in wings",
+      "runtimeCanonicalId": "12pc buffalo bone in wings"
+    },
+    {
+      "normalizedCanonicalId": "13 15u shrimp",
+      "aggregateCanonicalId": "13-15u shrimp",
+      "runtimeCanonicalId": "13 15u shrimp"
+    },
+    {
+      "normalizedCanonicalId": "14 16 oz h&g flounder",
+      "aggregateCanonicalId": "14-16 oz h&g flounder",
+      "runtimeCanonicalId": "14 16 oz h&g flounder"
+    },
+    {
+      "normalizedCanonicalId": "14 day meal replacement system",
+      "aggregateCanonicalId": "14-day meal replacement system",
+      "runtimeCanonicalId": "14 day meal replacement system"
+    },
+    {
+      "normalizedCanonicalId": "14 month aged parmesan shaved natural cheese, aged parmesan",
+      "aggregateCanonicalId": "14-month aged parmesan shaved natural cheese, aged parmesan",
+      "runtimeCanonicalId": "14 month aged parmesan shaved natural cheese, aged parmesan"
+    },
+    {
+      "normalizedCanonicalId": "14 pre cut tree shaped cheese bites",
+      "aggregateCanonicalId": "14 pre-cut tree-shaped cheese bites",
+      "runtimeCanonicalId": "14 pre cut tree shaped cheese bites"
+    },
+    {
+      "normalizedCanonicalId": "15 hand breaded chicken tenders",
+      "aggregateCanonicalId": "15 hand-breaded chicken tenders",
+      "runtimeCanonicalId": "15 hand breaded chicken tenders"
+    },
+    {
+      "normalizedCanonicalId": "15 wari kouji miso",
+      "aggregateCanonicalId": "15-wari kouji-miso",
+      "runtimeCanonicalId": "15 wari kouji miso"
+    },
+    {
+      "normalizedCanonicalId": "16 1 link apple and cinnamon breakfast sausage",
+      "aggregateCanonicalId": "16-1 link-apple and cinnamon breakfast sausage",
+      "runtimeCanonicalId": "16 1 link apple and cinnamon breakfast sausage"
+    },
+    {
+      "normalizedCanonicalId": "16 1 link brown sugar breakfast sausage",
+      "aggregateCanonicalId": "16-1 link - brown sugar breakfast sausage",
+      "runtimeCanonicalId": "16 1 link brown sugar breakfast sausage"
+    },
+    {
+      "normalizedCanonicalId": "16 18 month aged new york orange cheddar cheese",
+      "aggregateCanonicalId": "16-18 month aged new york orange cheddar cheese",
+      "runtimeCanonicalId": "16 18 month aged new york orange cheddar cheese"
+    },
+    {
+      "normalizedCanonicalId": "16 bean soup starter, 16 bean",
+      "aggregateCanonicalId": "16-bean soup starter, 16-bean",
+      "runtimeCanonicalId": "16 bean soup starter, 16 bean"
+    },
+    {
+      "normalizedCanonicalId": "16 fl oz juice drink fruit punch",
+      "aggregateCanonicalId": "16 fl oz juice drink - fruit punch",
+      "runtimeCanonicalId": "16 fl oz juice drink fruit punch"
+    },
+    {
+      "normalizedCanonicalId": "16 oz ch t bone stk",
+      "aggregateCanonicalId": "16 oz ch t-bone stk",
+      "runtimeCanonicalId": "16 oz ch t bone stk"
+    },
+    {
+      "normalizedCanonicalId": "16.9ozpl bott ia",
+      "aggregateCanonicalId": "16.9ozpl bott-ia",
+      "runtimeCanonicalId": "16.9ozpl bott ia"
+    },
+    {
+      "normalizedCanonicalId": "18 month aged cheddar shredded natural cheese, aged cheddar",
+      "aggregateCanonicalId": "18 - month aged cheddar shredded natural cheese, aged cheddar",
+      "runtimeCanonicalId": "18 month aged cheddar shredded natural cheese, aged cheddar"
+    },
+    {
+      "normalizedCanonicalId": "18 oz cab t bone stk",
+      "aggregateCanonicalId": "18 oz cab t-bone stk",
+      "runtimeCanonicalId": "18 oz cab t bone stk"
+    },
+    {
+      "normalizedCanonicalId": "1st phorm level 1 bar chocolate mint cookie",
+      "aggregateCanonicalId": "1st phorm level-1 bar chocolate mint cookie",
+      "runtimeCanonicalId": "1st phorm level 1 bar chocolate mint cookie"
+    },
+    {
+      "normalizedCanonicalId": "1st phorm phormula 1",
+      "aggregateCanonicalId": "1st phorm phormula-1",
+      "runtimeCanonicalId": "1st phorm phormula 1"
+    },
+    {
+      "normalizedCanonicalId": "2 2.5 lb green lobsters",
+      "aggregateCanonicalId": "2-2.5 lb green lobsters",
+      "runtimeCanonicalId": "2 2.5 lb green lobsters"
+    },
+    {
+      "normalizedCanonicalId": "2 3 beer battered pollock",
+      "aggregateCanonicalId": "2-3 beer battered pollock",
+      "runtimeCanonicalId": "2 3 beer battered pollock"
+    },
+    {
+      "normalizedCanonicalId": "2 3 lb \"\"d\"\" trim salmon fl",
+      "aggregateCanonicalId": "2-3 lb \"\"d\"\" trim salmon fl",
+      "runtimeCanonicalId": "2 3 lb \"\"d\"\" trim salmon fl"
+    },
+    {
+      "normalizedCanonicalId": "2 3 lb salmon sides",
+      "aggregateCanonicalId": "2-3 lb salmon sides",
+      "runtimeCanonicalId": "2 3 lb salmon sides"
+    },
+    {
+      "normalizedCanonicalId": "2 3 lb trim d salmon side",
+      "aggregateCanonicalId": "2-3 lb trim d salmon side",
+      "runtimeCanonicalId": "2 3 lb trim d salmon side"
+    },
+    {
+      "normalizedCanonicalId": "2 3oz tenderloin medalion",
+      "aggregateCanonicalId": "2-3oz tenderloin medalion",
+      "runtimeCanonicalId": "2 3oz tenderloin medalion"
+    },
+    {
+      "normalizedCanonicalId": "2 4 ipw cleaned octopus",
+      "aggregateCanonicalId": "2-4 ipw cleaned octopus",
+      "runtimeCanonicalId": "2 4 ipw cleaned octopus"
+    },
+    {
+      "normalizedCanonicalId": "2 4 lb wggs lane snapper",
+      "aggregateCanonicalId": "2-4 lb wggs lane snapper",
+      "runtimeCanonicalId": "2 4 lb wggs lane snapper"
+    },
+    {
+      "normalizedCanonicalId": "2 4 lb wggs yt snapper",
+      "aggregateCanonicalId": "2-4 lb wggs yt snapper",
+      "runtimeCanonicalId": "2 4 lb wggs yt snapper"
+    },
+    {
+      "normalizedCanonicalId": "2 cassolette saint jacques à la royale",
+      "aggregateCanonicalId": "2 cassolette saint-jacques à la royale",
+      "runtimeCanonicalId": "2 cassolette saint jacques à la royale"
+    },
+    {
+      "normalizedCanonicalId": "2 faux filets",
+      "aggregateCanonicalId": "2 faux-filets",
+      "runtimeCanonicalId": "2 faux filets"
+    },
+    {
+      "normalizedCanonicalId": "2 hand breaded chicken tenders, kids",
+      "aggregateCanonicalId": "2 hand-breaded chicken tenders, kids",
+      "runtimeCanonicalId": "2 hand breaded chicken tenders, kids"
+    },
+    {
+      "normalizedCanonicalId": "2 hard boiled peeled eggs",
+      "aggregateCanonicalId": "2 hard-boiled peeled eggs",
+      "runtimeCanonicalId": "2 hard boiled peeled eggs"
+    },
+    {
+      "normalizedCanonicalId": "2 in 1 teh o brown raw sugar",
+      "aggregateCanonicalId": "2-in-1 teh-o brown raw sugar",
+      "runtimeCanonicalId": "2 in 1 teh o brown raw sugar"
+    },
+    {
+      "normalizedCanonicalId": "2 in 1 ube keso ice cream",
+      "aggregateCanonicalId": "2-in-1 ube keso ice cream",
+      "runtimeCanonicalId": "2 in 1 ube keso ice cream"
+    },
+    {
+      "normalizedCanonicalId": "2 in 1 white coffee",
+      "aggregateCanonicalId": "2-in-1 white coffee",
+      "runtimeCanonicalId": "2 in 1 white coffee"
+    },
+    {
+      "normalizedCanonicalId": "2 minute noodles authentic indian noodles",
+      "aggregateCanonicalId": "2-minute noodles authentic indian noodles",
+      "runtimeCanonicalId": "2 minute noodles authentic indian noodles"
+    },
+    {
+      "normalizedCanonicalId": "2 minute noodles masala",
+      "aggregateCanonicalId": "2-minute noodles masala",
+      "runtimeCanonicalId": "2 minute noodles masala"
+    },
+    {
+      "normalizedCanonicalId": "2 minute noodles veggie masala",
+      "aggregateCanonicalId": "2-minute noodles veggie masala",
+      "runtimeCanonicalId": "2 minute noodles veggie masala"
+    },
+    {
+      "normalizedCanonicalId": "2 minutes masala noodles",
+      "aggregateCanonicalId": "2-minutes masala noodles",
+      "runtimeCanonicalId": "2 minutes masala noodles"
+    },
+    {
+      "normalizedCanonicalId": "2 pack cookies",
+      "aggregateCanonicalId": "2-pack cookies",
+      "runtimeCanonicalId": "2 pack cookies"
+    },
+    {
+      "normalizedCanonicalId": "2 pc chicken tender & mac cheese",
+      "aggregateCanonicalId": "2-pc chicken tender & mac cheese",
+      "runtimeCanonicalId": "2 pc chicken tender & mac cheese"
+    },
+    {
+      "normalizedCanonicalId": "2 rinderrouladen mit kleinen holzspießen handgesteckt",
+      "aggregateCanonicalId": "2 rinderrouladen -mit kleinen holzspießen handgesteckt",
+      "runtimeCanonicalId": "2 rinderrouladen mit kleinen holzspießen handgesteckt"
+    },
+    {
+      "normalizedCanonicalId": "2 slice fudge brownie cheesecake",
+      "aggregateCanonicalId": "2-slice fudge brownie cheesecake",
+      "runtimeCanonicalId": "2 slice fudge brownie cheesecake"
+    },
+    {
+      "normalizedCanonicalId": "2 white corn tortillas el mercado",
+      "aggregateCanonicalId": "2 white corn tortillas - el mercado",
+      "runtimeCanonicalId": "2 white corn tortillas el mercado"
+    },
+    {
+      "normalizedCanonicalId": "2 year aged cheddar",
+      "aggregateCanonicalId": "2-year aged cheddar",
+      "runtimeCanonicalId": "2 year aged cheddar"
+    }
+  ],
+  "trueMissingRuntimeCanonicalIds": [
+    "1 % low-fat milk",
+    "1 low-fat milk",
+    "1% low-fat chocolate milk",
+    "1% low-fat lactose free milk",
+    "1% low-fat milk",
+    "100% all-natural boneless skinless chicken breast with rib meat",
+    "100% california extra-virgin olive oil",
+    "100% cold-pressed juice",
+    "100% grape juice - concord grape",
+    "100% grass-fed beef",
+    "100% grass-fed beef burgers",
+    "100% grass-fed beef patties",
+    "100% grass-fed beef top sirloin steak",
+    "100% grass-fed ground beef",
+    "100% grass-fed organic ground beef",
+    "100% grass-fed whey protein isolate",
+    "100% juice - apple",
+    "100% orange juice - no pulp",
+    "100% whey protein - chocolate hazelnut",
+    "100%pyre mrkev,hruska,banan,jablko relax",
+    "12 cage-free large brown fresh eggs",
+    "12 eggs - large",
+    "12 free range eggs - australian large",
+    "12 mini viennoiseries « 3 m »",
+    "2 - minute noodles",
+    "2% milkfat low-fat cottage cheese",
+    "2-in-1 classic",
+    "2-minute noodles",
+    "3 hand-breaded chicken tenders",
+    "3-bean salad",
+    "3-cheese blend",
+    "3-cheese pizza",
+    "3-cheese ravioli",
+    "3-in-1 coffee less sugar",
+    "3-layer cake",
+    "5 hand-breaded chicken tenders",
+    "5-cheese garlic bread",
+    "5-cheese pizza",
+    "5-cheese texas toast",
+    "5-hour energy",
+    "5-hour energy grape",
+    "5-korn-flocken",
+    "50-50",
+    "6-layer dip",
+    "6-pack",
+    "7-grain bread",
+    "7-up",
+    "8-inch flour tortilla",
+    "80-20 ground beef",
+    "85-15 ground beef",
+    "88% lean - 12% fat ground beef",
+    "88%-12% ground beef",
+    "9-grain bread",
+    "90-10 ground beef",
+    "93-7 ground beef",
+    "active pre-workout",
+    "active whey protein - vanilla",
+    "adobo all-purpose seasoning",
+    "aiguillettes de dinde recette indian curry - maitre coq",
+    "air-chilled chicken breast tenderloins",
+    "air-chilled chicken breasts",
+    "air-chilled chicken thigh",
+    "air-chilled chicken thighs",
+    "air-chilled smart chicken",
+    "air-dried steak",
+    "aji-no-moto",
+    "al pastor-style pork",
+    "alaska-seelachs",
+    "alcohol-free beer",
+    "all natural boneless-skinless chicken breasts with rib meat",
+    "all purpose flour pre_sifted",
+    "all- purpose flour",
+    "all-american sub",
+    "all-bran flakes",
+    "all-bran wheat flakes",
+    "all-butter shortbread",
+    "all-dressed chips",
+    "all-in-one",
+    "all-in-one meal",
+    "all-in-one nutrition shake",
+    "all-in-one pre-workout",
+    "all-in-one shake",
+    "all-n-one popcorn",
+    "all-natural crunchy almond butter",
+    "all-natural gouda cheese",
+    "all-natural ground beef patties",
+    "all-natural milk chocolate",
+    "all-natural rice cakes",
+    "all-natural soda",
+    "all-natural sweetener",
+    "all-natural turkey jerky hickory smoke",
+    "all-purpose",
+    "all-purpose baking mix",
+    "all-purpose bleached flour",
+    "all-purpose cajun seasoning",
+    "all-purpose crackers",
+    "all-purpose dressing",
+    "all-purpose flour",
+    "all-purpose rub",
+    "all-purpose sauce",
+    "all-purpose seasoning",
+    "all-purpose soy sauce, soy",
+    "all-purpose unbleached flour",
+    "all-purpose vegetable shortening",
+    "all-vegetable shortening",
+    "almond butter - creamy",
+    "almond butter - crunchy",
+    "almond butter-smooth",
+    "almond creamer - sweet & creamy",
+    "almond flour crackers - fine ground sea salt",
+    "almond milk - unsweetened",
+    "almond-milk",
+    "almond-milk, vanilla",
+    "almonds - cocoa",
+    "almonds - raw",
+    "almonds - sliced",
+    "almonds hickory-smoked",
+    "almonds- honey roasted",
+    "aluminum-free baking powder",
+    "ambrosia organic peanut butter",
+    "american - potato chips",
+    "american cheese - white",
+    "ananas en morceaux",
+    "andouillette  au canard",
+    "angel food mini-cakes",
+    "antioxidant infusion - costa rica clementine",
+    "apollo pre-workout",
+    "apple juice - 100% pure",
+    "apple-beer",
+    "apple-carrot juice",
+    "apple-cherry juice",
+    "apple-pear juice",
+    "applewood-smoked bacon",
+    "arroz de couve-flor",
+    "artisan turkey breast golden-roasted",
+    "asian stir-fry",
+    "asian stir-fry vegetables",
+    "asian style bang-bang sauce",
+    "asian-style salad with chicken",
+    "assorted fruit-flavored snacks",
+    "atlantic salmon fillet skin-on",
+    "atlantic salmon fillets - skin on",
+    "australian lamb -butterflied leg with rosemary & garlic",
+    "australian-style black soft licorice",
+    "auth_test_product",
+    "b-complex",
+    "baby-back ribs",
+    "baby-cut carrots",
+    "baby-food",
+    "bacon-wrapped chicken breast",
+    "bacon-wrapped jalapeno poppers",
+    "bacon-wrapped pork tenderloin",
+    "bacon-wrapped scallops",
+    "baie de gojis",
+    "baja-inspired chicken",
+    "baked beans - cheesy tomato",
+    "bamf pre-workout",
+    "banana low-fat milk",
+    "banana mini-muffins",
+    "banana-berry smoothie blend",
+    "bar b-q sauce",
+    "bar-b-q sauce",
+    "bar-b-q-sauce",
+    "bar-b-que sauce",
+    "barbecue - flavored",
+    "baromfi-virsli",
+    "barre-tendre",
+    "barrel-aged balsamic vinegar",
+    "base pre-workout",
+    "basil seed drink- with strawberry flavor",
+    "batter-dipped fish fillets",
+    "bavarian-style mustard",
+    "bbq sauce - original",
+    "bbq- sauce",
+    "bbq-flavored pork rinds",
+    "beef bar - original",
+    "beef biltong-original",
+    "beef demi-glace",
+    "beef jerky - chilli",
+    "beef jerky - garlic",
+    "beef jerky - hot",
+    "beef jerky - jalapeño",
+    "beef jerky - peppered",
+    "beef jerky - teriyaki",
+    "beef jerky-pepper",
+    "beef ribeye steak grass-fed",
+    "beef sirloin tri-tip",
+    "beef stir-fry",
+    "beef tender bites - teriyaki",
+    "beef tri-tip",
+    "beef tri-tip roast",
+    "beef-teriyaki",
+    "beef in black  bean with  rice",
+    "belgian-style street waffles",
+    "beng-beng",
+    "bernachon black coffee",
+    "berry - bites",
+    "biltong - chilli",
+    "bio-coffee",
+    "bio probiotic",
+    "bit-o-honey",
+    "bit-o-honey - candy",
+    "bit-o-honey candy",
+    "bite-size cookies chocolate chip",
+    "bite-size frosted shredded wheat cereal",
+    "bite-size potatoes",
+    "bite-size shredded wheat",
+    "bite-size tortilla chips",
+    "bite-sized pancakes",
+    "black angus beef - top round steak",
+    "black olives-sliced",
+    "black- eye peas",
+    "black-eye peas",
+    "black-eyed peas",
+    "blackened mahi - mahi",
+    "bleached & enriched all-purpose flour",
+    "bleached all-purpose flour",
+    "bleached enriched pre-sifted all-purpose flour",
+    "bleached-enriched self-rising flour",
+    "blended vanilla low-fat yogurt",
+    "blood orange juice",
+    "blue raspberry pre-workout",
+    "blue raspberry sno-cone syrup",
+    "blue-berries",
+    "blue-biotic shot",
+    "blueberry mini-muffins",
+    "bodykey meal replacement shake",
+    "boil - in - bag white rice",
+    "boil in bag - brown rice",
+    "boil-in-bag brown rice",
+    "boil-in-bag rice",
+    "boil-in-bag white rice",
+    "bolt organic energy chews - pink lemonade",
+    "bone broth - chicken",
+    "bone in - skin on chicken thighs",
+    "bone in skin-on chicken thighs",
+    "bone-in chicken thighs",
+    "bone-in cured ham",
+    "bone-in ham steak",
+    "bone-in lamb loin chop",
+    "bone-in loin center cut pork chops",
+    "bone-in pork loin chops",
+    "bone-in pork shoulder",
+    "bone-in skin on chicken thighs",
+    "bone-in skin-on chicken thighs",
+    "bone-in thin cut pork chops",
+    "boneless beef tri-tip roast",
+    "boneless butterflied chicken - greek style",
+    "boneless butterflied chicken - spiced mango",
+    "boneless center-cut pork loin chops"
+  ],
+  "trueAdditionalRuntimeCanonicalIds": [
+    "100%pyre mrkev,hruska,banan,jablko relax",
+    "12 mini viennoiseries « 3 m »",
+    "abalone or ormer or sea ear raw",
+    "abondance cheese from cow s milk",
+    "acerola flesh and skin pitted raw",
+    "acerola flesh and skin pitted raw sampled in the island of la martinique",
+    "acerola juice fresh",
+    "aiguillettes de dinde recette indian curry maitre coq",
+    "aioli sauce garlic and olive oil mayonnaise prepacked",
+    "alaska pollock raw",
+    "alaska pollock smoked",
+    "albacore in olive oil canned drained",
+    "albacore raw",
+    "albacore steamed under pressure",
+    "alfalfa seeds",
+    "alfalfa seeds sprouted",
+    "algerian style sauce prepacked",
+    "all purpose flour pre sifted",
+    "almond cake financier prepacked",
+    "almond drink plain no added sugars not fortified prepacked",
+    "almond drink prepacked average",
+    "almond drink with sugar s fortified with calcium prepacked",
+    "almond grilled salted",
+    "almond grilled salted smoked",
+    "almond peeled no added salt",
+    "almond with peel no added salt",
+    "aloe vera beverage with sugar s",
+    "amaranth raw",
+    "ambrosia organic peanut butter",
+    "american bass raw",
+    "american or canadian sea scallop without coral raw",
+    "american style sauce prepacked",
+    "ananas en morceaux",
+    "anchovy fillets marinated in oil semi preserved drained",
+    "anchovy fillets marinated in oriental style oil chili pepper semi preserved drained",
+    "anchovy fillets rolled with capers salted in oil semi preserved drained",
+    "anchovy fillets salted in oil semi preserved drained",
+    "anchovy fillets salted in olive oil semi preserved drained",
+    "anchovy fillets salted in sunflower oil semi preserved drained",
+    "anchovy marinated semi preserved drained average",
+    "anchovy raw",
+    "andalusian style sauce prepacked",
+    "andouillette au canard",
+    "anglerfish grilled pan fried without added fat",
+    "anglerfish lophius budegassa raw",
+    "anglerfish raw",
+    "anise spirit diluted 1 5",
+    "apple brandy calvados type",
+    "apple canada flesh without skin raw",
+    "apple compote prepacked",
+    "apple compote reduced sugar prepacked room temperature",
+    "apple compote sugar content and temperature unknown prepacked average",
+    "apple crumble prepacked",
+    "apple dried",
+    "apple flesh and skin raw",
+    "apple flesh without skin raw average",
+    "apple flesh without skin roasted baked",
+    "apple juice pure juice",
+    "apple pie with custard flour eggs cream sugar apple alcohol from bakery",
+    "apple var chanteclerc flesh without skin raw",
+    "apple var gala flesh without skin raw",
+    "apple var golden flesh and skin raw",
+    "apple var golden flesh without skin raw",
+    "apple var granny smith flesh and skin raw",
+    "apple var granny smith flesh without skin raw",
+    "apple var pink lady flesh without skin raw",
+    "apples raw without skin cooked boiled cooked in water",
+    "apricot canned in light syrup drained",
+    "apricot canned in light syrup solids and liquids",
+    "apricot canned in syrup sugar content unknown drained average",
+    "apricot compote prepacked",
+    "apricot in syrup canned drained",
+    "apricot in syrup canned solids and liquids",
+    "apricot kernel oil",
+    "apricot pitted dried",
+    "apricot pitted dried rehydrated to 35 45 water",
+    "apricot pitted raw",
+    "apricots tart",
+    "arctic char raw",
+    "armorican style sauce prepacked",
+    "aromatic stock cube for fish dehydrated",
+    "artichoke canned drained",
+    "artichoke globe base canned drained",
+    "artichoke globe base frozen raw",
+    "artichoke globe cooked",
+    "artichoke globe heart canned drained",
+    "artichoke globe raw",
+    "artichoke globe steamed",
+    "asiago cheese from cow s milk",
+    "asian noodles dry with wheat and egg plain raw",
+    "asian noodles seasoned beef chicken vegetables cooked",
+    "asparagus boiled cooked in water average",
+    "asparagus canned drained",
+    "asparagus green boiled cooked in water",
+    "asparagus green raw",
+    "asparagus white boiled cooked in water",
+    "asparagus white or purple peeled raw",
+    "aspartame in powder",
+    "aspartame sweetener in tablets",
+    "atlantic bass raw",
+    "atlantic bluefin tuna raw",
+    "atlantic chub mackerel raw",
+    "atlantic halibut raw",
+    "atlantic herring fried",
+    "atlantic herring grilled pan fried without added fat",
+    "atlantic herring lean raw",
+    "atlantic herring marinated or rollmops prepacked",
+    "atlantic herring oily raw",
+    "atlantic herring raw",
+    "atlantic herring smoked",
+    "atlantic herring smoked canned in brine",
+    "atlantic herring smoked in oil",
+    "atlantic wakame alaria esculenta dried or dehydrated",
+    "aubergine caviar prepacked",
+    "auth test product",
+    "auvergne blue cheese from cow s milk",
+    "avocado flesh without skin pitted raw",
+    "baby food jar fruits with banana",
+    "baby food jar fruits without banana",
+    "baby food jar with vegetables and starchy food from 4 6 months",
+    "baby food jar with vegetables from 4 6 months",
+    "baby fruit based beverage from 4 6 months",
+    "baby instant cereal powder to be reconstituted from 4 6 months",
+    "baby instant cereal powder to be reconstituted from 6 months",
+    "baby meal vegetable with milk cream and starchy food from 12 months",
+    "baby meal vegetable with milk cream and starchy food from 18 months",
+    "baby meal vegetable with milk cream and starchy food from 6 8 months",
+    "baby meal vegetable with milk cream and starchy food from 8 12 months",
+    "baby meal vegetables and starchy food from 6 8 months",
+    "baby meal vegetables with meat fish and starchy food from 12 months",
+    "baby meal vegetables with meat fish and starchy food from 18 months",
+    "baby meal vegetables with meat fish and starchy food from 6 8 months",
+    "baby meal vegetables with meat fish and starchy food from 8 12 months",
+    "baby milk follow on formula powder",
+    "baby milk follow on formula ready to drink",
+    "baby milk for premature baby ready to drink",
+    "baby milk growing up milk ready to drink",
+    "baby milk infant formula powder",
+    "baby milk infant formula ready to drink",
+    "baby plant based beverage",
+    "baby soup with vegetables and potatoes",
+    "baby soup with vegetables cereals and milk",
+    "bacon back",
+    "baie de gojis",
+    "baked alaska",
+    "baker s yeast dehydrated",
+    "baker s yeast fresh",
+    "baking powder or raising agent",
+    "baklava oriental pastry with almonds and syrup",
+    "bamboo shoots canned drained",
+    "bamboo shoots raw",
+    "banana flesh without skin dried",
+    "banana flesh without skin raw",
+    "barbecue sauce prepacked",
+    "barley wholegrain raw",
+    "base for pizza dough cream sauce raw",
+    "base for pizza dough tomato sauce raw",
+    "basil dried",
+    "basil fresh",
+    "basque cake shortbread with cherries",
+    "basque cake shortbread with custard cream",
+    "basque style sauce or tomato sauce with sweet peppers prepacked",
+    "beans mung mature seeds dried",
+    "bearnaise sauce prepacked",
+    "beaufort cheese from cow s milk",
+    "bechamel sauce prepacked",
+    "bechamel sauce w butter homemade",
+    "beef bolar blade grilled pan fried",
+    "beef bolar blade raw",
+    "beef bolar blade roasted baked",
+    "beef braised",
+    "beef carpaccio with marinade oil herbs cheese home made",
+    "beef cheek braised or boiled",
+    "beef cheek raw",
+    "beef chuck braised or boiled",
+    "beef chuck raw",
+    "beef chuck steak raw",
+    "beef eye of round raw",
+    "beef flank steak grilled pan fried",
+    "beef flank steak raw",
+    "beef ground cooked average",
+    "beef hanger steak grilled pan fried",
+    "beef hanger steak raw",
+    "beef in black bean with rice",
+    "beef knuckle boiled cooked in water",
+    "beef knuckle raw",
+    "beef minced steak 10 fat cooked",
+    "beef minced steak 10 fat raw",
+    "beef minced steak 15 fat cooked",
+    "beef minced steak 15 fat raw",
+    "beef minced steak 20 fat cooked",
+    "beef minced steak 20 fat raw",
+    "beef minced steak 5 fat cooked",
+    "beef minced steak 5 fat raw",
+    "beef neck braised",
+    "beef neck raw",
+    "beef on skewer cooked",
+    "beef on skewer raw",
+    "beef oxtail boiled cooked in water",
+    "beef oxtail raw",
+    "beef rib raw",
+    "beef rib steak lean grilled pan fried",
+    "beef rib steak raw",
+    "beef roast beef roasted baked",
+    "beef round cooked",
+    "beef round raw",
+    "beef rump steak grilled pan fried",
+    "beef rump steak raw",
+    "beef short ribs braised or boiled",
+    "beef short ribs raw",
+    "beef shoulder raw",
+    "beef sirloin steak grilled pan fried",
+    "beef sirloin steak raw",
+    "beef sirloin steak roasted baked",
+    "beef steak or beef steak grilled pan fried",
+    "beef steak or beef steak raw",
+    "beef stew with carrots prepacked",
+    "beef stewing meat cooked",
+    "beef stewing meat raw",
+    "beef tenderloin raw",
+    "beef thin flank grilled pan fried",
+    "beef thin flank raw",
+    "beef tongue with madeira wine sauce prepacked",
+    "beef topside grilled pan fried",
+    "beef topside raw",
+    "beef topside roasted baked",
+    "beer alcohol free 1 2 alcohol without added sugars flavoured or unflavoured",
+    "beer alcohol free sweetened flavoured or with fruit juice",
+    "beer dark",
+    "beer from an abbey or brewery variable alcohol content",
+    "beer low alcohol content 3 alcohol",
+    "beer regular 4 5 alcohol",
+    "beer sausage",
+    "beer special 5 6 alcohol",
+    "beer strong 8 alcohol",
+    "beer white",
+    "beetroot raw",
+    "beetroot salad with sauce prepacked",
+    "belle helene pear cooked pear topped with hot chocolate sauce on a bed of vanilla ice cream",
+    "bernachon black coffee",
+    "big scale sand smelt whole small fish to fry raw",
+    "bigeye scad raw",
+    "bio probiotic",
+    "birch sap beverage",
+    "biscuit cookie assortment",
+    "biscuit cookie cat tongue type",
+    "biscuit cookie cranberries and white chocolate prepacked",
+    "biscuit cookie filled with fruit paste or fruit puree",
+    "biscuit cookie filled with fruits reduced fat",
+    "biscuit cookie from whole grain cereals"
+  ],
+  "omittedNormalizationEquivalentExampleCount": 23484,
+  "omittedTrueMissingRuntimeCanonicalIdCount": 2147,
+  "omittedTrueAdditionalRuntimeCanonicalIdCount": 3233,
+  "durationMillis": 2725
+}

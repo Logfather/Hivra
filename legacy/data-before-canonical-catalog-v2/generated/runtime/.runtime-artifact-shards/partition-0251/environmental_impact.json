@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "biscuit apéritif, mini bretzel ou sticks": {
+      "environmentScoreMptPerKg": 0.208,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 189.0,
+      "waterDeprivationM3PerKg": 0.704
+    },
+    "blé dur précuit, entier, cru": {
+      "environmentScoreMptPerKg": 0.137,
+      "climateKgCo2EqPerKg": 1.23,
+      "landUsePtPerKg": 111.0,
+      "waterDeprivationM3PerKg": 0.603
+    },
+    "chou rouge, bouilli/cuit à l'eau": {
+      "environmentScoreMptPerKg": 0.148,
+      "climateKgCo2EqPerKg": 1.68,
+      "landUsePtPerKg": 18.3,
+      "waterDeprivationM3PerKg": 0.799
+    },
+    "coppa": {
+      "environmentScoreMptPerKg": 1.8,
+      "climateKgCo2EqPerKg": 13.6,
+      "landUsePtPerKg": 626.0,
+      "waterDeprivationM3PerKg": 4.24
+    },
+    "ficelle picarde": {
+      "environmentScoreMptPerKg": 0.708,
+      "climateKgCo2EqPerKg": 5.53,
+      "landUsePtPerKg": 270.0,
+      "waterDeprivationM3PerKg": 1.79
+    },
+    "flétan du groënland ou flétan noir ou flétan commun, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "huile de palme, sans précision": {
+      "environmentScoreMptPerKg": 0.446,
+      "climateKgCo2EqPerKg": 6.12,
+      "landUsePtPerKg": 140.0,
+      "waterDeprivationM3PerKg": 1.88
+    },
+    "lardon nature, cru": {
+      "environmentScoreMptPerKg": 0.907,
+      "climateKgCo2EqPerKg": 7.12,
+      "landUsePtPerKg": 354.0,
+      "waterDeprivationM3PerKg": 2.32
+    },
+    "lentille, cuite": {
+      "environmentScoreMptPerKg": 0.0887,
+      "climateKgCo2EqPerKg": 0.466,
+      "landUsePtPerKg": 133.0,
+      "waterDeprivationM3PerKg": 0.107
+    },
+    "rillettes de saumon": {
+      "environmentScoreMptPerKg": 1.26,
+      "climateKgCo2EqPerKg": 7.96,
+      "landUsePtPerKg": 78.7,
+      "waterDeprivationM3PerKg": 1.81
+    },
+    "sarrasin entier, cru": {
+      "environmentScoreMptPerKg": 0.112,
+      "climateKgCo2EqPerKg": 0.949,
+      "landUsePtPerKg": 108.0,
+      "waterDeprivationM3PerKg": 0.496
+    },
+    "vanille, extrait alcoolique": {
+      "environmentScoreMptPerKg": 0.594,
+      "climateKgCo2EqPerKg": 4.38,
+      "landUsePtPerKg": 997.0,
+      "waterDeprivationM3PerKg": 0.68
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux fruits, sucré, à la crème": {
+      "environmentScoreMptPerKg": 0.212,
+      "climateKgCo2EqPerKg": 1.89,
+      "landUsePtPerKg": 72.1,
+      "waterDeprivationM3PerKg": 1.64
+    }
+  }
+}

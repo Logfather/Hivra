@@ -1,0 +1,813 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "catalogKey": "canned pumpkin pieces",
+      "selectedServerKey": "canned pumpkin",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is canned pumpkin; 'pieces' does not change the core food identity. Other candidates are either duplicate phrasing, add grade detail, or different foods.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "canned vegetable soup",
+      "selectedServerKey": "soup vegetable",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The candidate denotes vegetable soup, matching the catalog food; other candidates add beef or other modifiers that make them different.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "cherry fruit yogurt",
+      "selectedServerKey": "fruit on the bottom lowfat yogurt black cherry",
+      "candidateRank": 5,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "This is the only candidate that is an actual cherry fruit yogurt; the others are snacks, smoothie, or freeze-dried bites rather than yogurt.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "chicken curry ready meal",
+      "selectedServerKey": "protein meal chicken curry",
+      "candidateRank": 1,
+      "originalConfidence": 0.76,
+      "originalDecisionReason": "Candidate is a chicken curry meal, matching the catalog food's core identity; other candidates are different dishes or less clearly the same.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.76 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "COMPATIBLE_PREPARATION"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "chicken curry skillet",
+      "selectedServerKey": "skillet thai curry chicken",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The candidate is the same dish phrased in a different order, sharing chicken, curry, and skillet; the extra 'thai' specifies style but does not change the core food identity.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "chocolate pudding ready meal",
+      "selectedServerKey": "pudding [chocolate]",
+      "candidateRank": 3,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is chocolate pudding; this candidate directly represents chocolate pudding, while the meal replacement shake is a different product type.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_PREPARATION",
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "clear multivitamin juice",
+      "selectedServerKey": "100% multivitamin juice",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The candidate is the same core food, a multivitamin juice; other candidates are apple juice, green juice drink, a squeeze product, or apricots in juice.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "curry ready meal",
+      "selectedServerKey": "ready to eat meal green curry",
+      "candidateRank": 1,
+      "originalConfidence": 0.72,
+      "originalDecisionReason": "The selected candidate is a ready-to-eat curry meal and is the closest clear representation of the catalog food; other candidates specify noodles, tuna, meal kit, or less direct variants.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.72 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "dried peppermint",
+      "selectedServerKey": "peppermint",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The candidate names the same food, peppermint; other candidates are unrelated dried foods or nonspecific/invalid.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "farmhouse mettwurst",
+      "selectedServerKey": "mettwurst",
+      "candidateRank": 2,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is a farmhouse-style mettwurst; the candidate 'mettwurst' represents the same sausage type, while the other candidates are either incomplete or different flavored variants.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "INCOMPATIBLE",
+      "reasons": [
+        "INSUFFICIENT_EVIDENCE"
+      ],
+      "accepted": false
+    },
+    {
+      "catalogKey": "fresh liver sausage",
+      "selectedServerKey": "braunschweiger liver sausage",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "Braunschweiger is a type of liver sausage and is the only candidate that represents liver sausage; the others are non-liver sausages or liver without sausage.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_PREPARATION",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "fresh trout",
+      "selectedServerKey": "steelhead trout fresh",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog food is fresh trout; this candidate is fresh trout with a specific trout type, while the rainbow trout option specifies filet form.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_VARIANT"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "fresh wheat baguette",
+      "selectedServerKey": "organic whole wheat baguette",
+      "candidateRank": 4,
+      "originalConfidence": 0.74,
+      "originalDecisionReason": "The catalog item is a wheat baguette; this candidate is the only wheat baguette option, while the others are generic baguette, pretzel baguette, gluten, or tortillas.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.74 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_PREPARATION",
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "frozen cheese pretzel",
+      "selectedServerKey": "cheddar cheese pretzel",
+      "candidateRank": 2,
+      "originalConfidence": 0.72,
+      "originalDecisionReason": "The catalog item is a cheese pretzel; among the candidates, only this is a singular cheese pretzel. Others are plain frozen pretzel, pretzel bites, or pizza.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.72 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_VARIANT"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "frozen fruit smoothie pack",
+      "selectedServerKey": "red smoothie frozen fruit",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "Candidate 1 describes a frozen fruit smoothie item, matching the catalog food's core identity; the other candidates are broader, incomplete, or different products.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "frozen vegetable burger",
+      "selectedServerKey": "garden vegetable burger, garden vegetable",
+      "candidateRank": 5,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is a vegetable burger; this candidate clearly names a garden vegetable burger, while other candidates are missing burger, are beef, dumplings, or a different bean-specific burger.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "frozen vegetable patties",
+      "selectedServerKey": "cauliflower & broccoli vegetable patties",
+      "candidateRank": 3,
+      "originalConfidence": 0.74,
+      "originalDecisionReason": "This candidate is the only one that represents vegetable patties; the others are either broader frozen vegetables, dumplings, or include chicken.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.74 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "fruit kefir",
+      "selectedServerKey": "kefir forest fruit 1%",
+      "candidateRank": 2,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is fruit kefir, and this candidate is a fruit-flavored kefir; the other kefir candidate is specifically water kefir, a different product type.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "head lettuce",
+      "selectedServerKey": "lettuce",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is head lettuce, and the generic candidate \"lettuce\" is the only supplied candidate that broadly represents the same food; the others are specific lettuce varieties.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "hemp drink",
+      "selectedServerKey": "hemp drink 2.5",
+      "candidateRank": 3,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "This candidate is the only one that directly represents hemp drink; the others specify energy drink, infusion, guarana, or candy apple variants.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "lasagna casserole ready meal",
+      "selectedServerKey": "oven ready lasagna",
+      "candidateRank": 1,
+      "originalConfidence": 0.76,
+      "originalDecisionReason": "The candidate is a lasagna ready to be oven-prepared, which best corresponds to a lasagna casserole ready meal; other candidates are tuna or skillet-style meals, or add an imported qualifier.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.76 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "mini salami snack",
+      "selectedServerKey": "delikatess mini snack salami pikant",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The candidate contains the full core identity 'mini snack salami'; other candidates are either mixed with cheese, too broad, or lack the mini salami snack identity.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "mirabelle plums",
+      "selectedServerKey": "plums fresh",
+      "candidateRank": 4,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "Mirabelle plums are a fresh plum variety; among the candidates, only \"plums fresh\" represents fresh plums without changing preparation or adding attributes like dried, pickled, pitted, or organic.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_PREPARATION",
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "mixed wild rice",
+      "selectedServerKey": "brown & wild rice",
+      "candidateRank": 4,
+      "originalConfidence": 0.76,
+      "originalDecisionReason": "The catalog item is a mixed wild rice, and the candidate explicitly represents a rice blend containing wild rice; other candidates are generic, include other ingredients, or refer to different wild rice forms.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.76 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_VARIANT"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "organic fruit yogurt",
+      "selectedServerKey": "organic fruit & yogurt apple, banana & peach",
+      "candidateRank": 3,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "This candidate is the only one that directly represents an organic fruit and yogurt food; the others are smoothies, frozen yogurt, or snacks.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "organic marshmallows",
+      "selectedServerKey": "angelitos marshmallows",
+      "candidateRank": 4,
+      "originalConfidence": 0.76,
+      "originalDecisionReason": "The only candidate that represents marshmallows is \"angelitos marshmallows\"; the others are generic organic or different foods.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.76 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_PREPARATION"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "organic pollock fillet",
+      "selectedServerKey": "pacific pollock fillet",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The candidate is the same base food, pollock fillet; other pollock candidates add packaging or portion-size details, and the organic chicken candidate is a different food.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_PREPARATION"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "organic spelt bread",
+      "selectedServerKey": "organic wholemeal spelt bread",
+      "candidateRank": 3,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "This candidate includes organic, spelt, and bread and is the only supplied option that clearly refers to an organic spelt bread rather than crumbs, chia bread, or a less specific bread.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "potato gratin ready meal",
+      "selectedServerKey": "creamy potato gratin",
+      "candidateRank": 2,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is a potato gratin ready meal; creamy potato gratin is the same basic dish, while the other candidates add distinct ingredients or less clear qualifiers.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_PREPARATION"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "ready made pea soup",
+      "selectedServerKey": "green pea soup",
+      "candidateRank": 2,
+      "originalConfidence": 0.72,
+      "originalDecisionReason": "Catalog item is generic ready-made pea soup; among candidates, only \"green pea soup\" is a plain pea soup without added ham, cream, brand, or style modifiers.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.72 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_PREPARATION",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "ready made pizza",
+      "selectedServerKey": "ready to bake pizza",
+      "candidateRank": 3,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog food is a prepared pizza, and the generic candidate 'ready to bake pizza' represents the same type more directly than the other candidates.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "ready made potato gratin",
+      "selectedServerKey": "creamy potato gratin",
+      "candidateRank": 2,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog food is potato gratin; 'creamy potato gratin' is the only candidate without a distinct added ingredient or different base such as chicken, bacon, or sweet potato.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_PREPARATION",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "ready made salad mix",
+      "selectedServerKey": "mix salad",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is a generic ready-made salad mix, and candidate \"mix salad\" is the only generic salad mix candidate; the others are specific variants or not clearly salad.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_PREPARATION",
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "rice bowl ready meal",
+      "selectedServerKey": "rice bowl",
+      "candidateRank": 3,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog food is a generic rice bowl ready meal; among the candidates, only \"rice bowl\" represents the same generic food, while the others are specific variants or different foods.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_PREPARATION",
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "rice with vegetables ready meal",
+      "selectedServerKey": "vegetables with rice",
+      "candidateRank": 2,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is a generic rice and vegetables meal; this candidate names the same core food without adding other ingredients, unlike chicken/beef or more specific rice/bowl variants.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_PREPARATION",
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "rye flour type 1150",
+      "selectedServerKey": "dark rye flour",
+      "candidateRank": 2,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "Rye flour type 1150 is a darker/medium rye flour; among the candidates, \"dark rye flour\" is the only non-organic, non-wholemeal candidate that clearly corresponds.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "sour white cabbage",
+      "selectedServerKey": "sour cabbage leaves",
+      "candidateRank": 4,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is sour cabbage; among the candidates, only this entry represents sour cabbage rather than unrelated foods containing sour/white/cabbage tokens.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "spelt crispbread",
+      "selectedServerKey": "rye & spelt wholegrain crispbread",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "This is the only candidate that is a crispbread containing spelt; the others are either just spelt or different crispbread types.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegan bread spread",
+      "selectedServerKey": "original vegan spread",
+      "candidateRank": 5,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is a vegan spread intended for bread; this candidate is the only supplied vegan spread, while the others are breads or non-vegan/unspecified bread spreads.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegan bread spreads",
+      "selectedServerKey": "vegan dressing & spreads",
+      "candidateRank": 5,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is a vegan spread for bread; the only candidate that represents vegan spreads is the supplied vegan dressing & spreads key, while the others are vegan breads.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegan gyros seasoning",
+      "selectedServerKey": "kebab gyros seasoning",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is a gyros seasoning; the only candidate representing gyros seasoning is the kebab gyros seasoning. Other candidates are vegan seasonings for different flavors.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegan herb bread spread",
+      "selectedServerKey": "herb vegan cheese spread",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The candidate describes a vegan herb spread, and vegan cheese spread is an acceptable form of vegan bread spread; other candidates are missing vegan or add different defining ingredients.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegan mince",
+      "selectedServerKey": "vegan magic mince",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "Candidate is a vegan mince item; other candidates add cheddar, are a mix, or are too broad.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegan oat milk alternative",
+      "selectedServerKey": "oat oat milk",
+      "candidateRank": 2,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is an oat milk alternative, and this candidate directly represents oat milk; the others are a latte, butter, a branded oat milk, or an almond-oat blend.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegan ready meal",
+      "selectedServerKey": "vegan spaghetti bolognese shirataki konjac spaghetti with authentic italian tomato sauce and jackfruit ready to eat meal, vegan spaghetti bolognese",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The selected candidate is explicitly vegan and described as a ready-to-eat meal, matching the catalog food; other candidates are non-vegan, drinks, or less clearly ready meals.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegan sausage slices",
+      "selectedServerKey": "meatless vegan sausage",
+      "candidateRank": 2,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is vegan sausage in sliced form; this candidate matches the core food as vegan/meatless sausage, while the other slice candidates are different or too generic.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegan vegetable patties",
+      "selectedServerKey": "cauliflower & broccoli vegetable patties",
+      "candidateRank": 5,
+      "originalConfidence": 0.74,
+      "originalDecisionReason": "It is the only candidate that represents vegetable patties; the others are different vegan vegetable dishes such as soup, laksa, tart, or korma.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.74 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegetarian burger patties",
+      "selectedServerKey": "vegetarian burger, vegetarian",
+      "candidateRank": 2,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The candidate describes a vegetarian burger, which corresponds to vegetarian burger patties; other candidates are generic or meat/flavored burger patties.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegetarian vegetable burger",
+      "selectedServerKey": "garden vegetable burger, garden vegetable",
+      "candidateRank": 4,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "The catalog item is a vegetarian vegetable burger, and this candidate is specifically a vegetable burger; other candidates are either generic, missing burger, or a different item.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "vegetarian wraps",
+      "selectedServerKey": "changs vegetarian lettuce wraps, lunch",
+      "candidateRank": 1,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "This is the only candidate that represents a vegetarian wrap dish; the others are incomplete or refer to broad categories or wrap bread.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "whole grain pita bread",
+      "selectedServerKey": "hearty grain pita bread",
+      "candidateRank": 5,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "This is the only candidate that is pita bread and a grain-style bread without added ingredients; the others are non-pita breads or include chicken.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT",
+        "COMPATIBLE_PREPARATION"
+      ],
+      "accepted": true
+    },
+    {
+      "catalogKey": "wild boar meat",
+      "selectedServerKey": "ground wild boar",
+      "candidateRank": 3,
+      "originalConfidence": 0.78,
+      "originalDecisionReason": "Ground wild boar is wild boar meat in ground form, while the other candidates are processed products such as stick, jerky, bacon, or bar.",
+      "originalValidationStatus": "REJECTED_LOW_CONFIDENCE",
+      "originalValidationReason": "Decision confidence 0.78 is below minimum 0.8",
+      "decisionType": "REPRESENTATIVE",
+      "reasons": [
+        "COMPATIBLE_PREPARATION",
+        "COMPATIBLE_SPECIALIZATION",
+        "SAME_PRODUCT_CLASS"
+      ],
+      "accepted": true
+    }
+  ]
+}

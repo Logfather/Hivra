@@ -1,0 +1,25 @@
+{
+  "entries": {
+    "agneau, gigot, cru": {
+      "litersPerKilogram": 6930.0
+    },
+    "chili con carne": {
+      "litersPerKilogram": 1910.0
+    },
+    "dinde, aile, crue": {
+      "litersPerKilogram": 2540.0
+    },
+    "dinde, viande, rôtie/cuite au four": {
+      "litersPerKilogram": 2720.0
+    },
+    "légumes farcis (sauf tomate)": {
+      "litersPerKilogram": 1280.0
+    },
+    "picodon (fromage de chèvre)": {
+      "litersPerKilogram": 2820.0
+    },
+    "poulet, escalope panée": {
+      "litersPerKilogram": 3220.0
+    }
+  }
+}

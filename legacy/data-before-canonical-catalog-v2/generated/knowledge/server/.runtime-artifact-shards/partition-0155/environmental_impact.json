@@ -1,0 +1,94 @@
+{
+  "entries": {
+    "artichaut, cuit": {
+      "environmentScoreMptPerKg": 0.194,
+      "climateKgCo2EqPerKg": 2.06,
+      "landUsePtPerKg": 60.3,
+      "waterDeprivationM3PerKg": 0.456
+    },
+    "barre chocolatée biscuitée": {
+      "environmentScoreMptPerKg": 0.543,
+      "climateKgCo2EqPerKg": 7.25,
+      "landUsePtPerKg": 298.0,
+      "waterDeprivationM3PerKg": 0.991
+    },
+    "biscuit sec fourré fruits à coque (non ou légèrement chocolaté)": {
+      "environmentScoreMptPerKg": 0.488,
+      "climateKgCo2EqPerKg": 3.64,
+      "landUsePtPerKg": 210.0,
+      "waterDeprivationM3PerKg": 8.2
+    },
+    "café, moulu": {
+      "environmentScoreMptPerKg": 1.4,
+      "climateKgCo2EqPerKg": 8.4,
+      "landUsePtPerKg": 417.0,
+      "waterDeprivationM3PerKg": 9.71
+    },
+    "chapon, viande et peau, cru": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "fenouil, graine": {
+      "environmentScoreMptPerKg": 0.2,
+      "climateKgCo2EqPerKg": 2.13,
+      "landUsePtPerKg": 19.2,
+      "waterDeprivationM3PerKg": 1.47
+    },
+    "museau de boeuf en vinaigrette": {
+      "environmentScoreMptPerKg": 2.16,
+      "climateKgCo2EqPerKg": 23.2,
+      "landUsePtPerKg": 1510.0,
+      "waterDeprivationM3PerKg": 1.93
+    },
+    "oie, viande et peau, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.3,
+      "climateKgCo2EqPerKg": 7.75,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "pain au chocolat, préemballé": {
+      "environmentScoreMptPerKg": 0.392,
+      "climateKgCo2EqPerKg": 5.32,
+      "landUsePtPerKg": 241.0,
+      "waterDeprivationM3PerKg": 0.553
+    },
+    "petits pois, cuits": {
+      "environmentScoreMptPerKg": 0.162,
+      "climateKgCo2EqPerKg": 1.44,
+      "landUsePtPerKg": 195.0,
+      "waterDeprivationM3PerKg": 0.431
+    },
+    "pomme de terre duchesse, surgelée, cuite": {
+      "environmentScoreMptPerKg": 0.293,
+      "climateKgCo2EqPerKg": 2.33,
+      "landUsePtPerKg": 101.0,
+      "waterDeprivationM3PerKg": 0.637
+    },
+    "pomme de terre primeur, sans peau, bouillie/cuite à l'eau": {
+      "environmentScoreMptPerKg": 0.103,
+      "climateKgCo2EqPerKg": 1.15,
+      "landUsePtPerKg": 33.2,
+      "waterDeprivationM3PerKg": 0.45
+    },
+    "sébaste du nord, ou dorade sébaste, ou daurade sébaste, crue": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "tisane infusée, non sucrée": {
+      "environmentScoreMptPerKg": 0.0148,
+      "climateKgCo2EqPerKg": 0.0436,
+      "landUsePtPerKg": 4.02,
+      "waterDeprivationM3PerKg": 0.776
+    },
+    "truite d'élevage, fumée (emballage corrigé)": {
+      "environmentScoreMptPerKg": 1.58,
+      "climateKgCo2EqPerKg": 7.07,
+      "landUsePtPerKg": 140.0,
+      "waterDeprivationM3PerKg": 40.6
+    }
+  }
+}

@@ -1,6 +1,6 @@
 package de.shopme.tools.knowledge.report
 
-import java.io.File
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 
 object RunRejectedLowConfidenceNutritionValidation {
 
@@ -13,32 +13,22 @@ object RunRejectedLowConfidenceNutritionValidation {
                     "does not accept arguments."
         }
 
-        val projectRoot =
-            File("..")
+        val paths =
+            KnowledgeBuildPaths.default()
 
         RejectedLowConfidenceNutritionMappingValidator()
             .run(
                 candidateQualityFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "nutrition.rejected-" +
-                                "candidate-quality.json"
+                    paths.reportArtifact(
+                        "nutrition.rejected-candidate-quality.json"
                     ),
                 diagnosticsFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "nutrition.match-diagnostics.json"
+                    paths.diagnosticArtifact(
+                        "nutrition.match-diagnostics.json"
                     ),
                 outputFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "nutrition.low-confidence-validation.json"
+                    paths.reportArtifact(
+                        "nutrition.low-confidence-validation.json"
                     )
             )
     }

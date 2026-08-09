@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "boisson au thé, aromatisée, sucrée, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.058,
+      "climateKgCo2EqPerKg": 0.419,
+      "landUsePtPerKg": 4.15,
+      "waterDeprivationM3PerKg": 0.295
+    },
+    "cola, sucré": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "cordon bleu de volaille": {
+      "environmentScoreMptPerKg": 0.878,
+      "climateKgCo2EqPerKg": 5.44,
+      "landUsePtPerKg": 310.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "foie, agneau, cuit": {
+      "environmentScoreMptPerKg": 3.62,
+      "climateKgCo2EqPerKg": 29.7,
+      "landUsePtPerKg": 3150.0,
+      "waterDeprivationM3PerKg": 5.03
+    },
+    "lingue bleue ou lingue, crue": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "poivron rouge, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.136,
+      "climateKgCo2EqPerKg": 1.3,
+      "landUsePtPerKg": 12.3,
+      "waterDeprivationM3PerKg": 0.424
+    },
+    "pâté breton": {
+      "environmentScoreMptPerKg": 0.566,
+      "climateKgCo2EqPerKg": 4.73,
+      "landUsePtPerKg": 206.0,
+      "waterDeprivationM3PerKg": 1.66
+    },
+    "spécialité chinoise ou bouchées à la vapeur, cuite": {
+      "environmentScoreMptPerKg": 1.91,
+      "climateKgCo2EqPerKg": 11.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 95.1
+    },
+    "veau, steak haché 15% mg, cru": {
+      "environmentScoreMptPerKg": 2.67,
+      "climateKgCo2EqPerKg": 28.6,
+      "landUsePtPerKg": 1300.0,
+      "waterDeprivationM3PerKg": 3.89
+    }
+  }
+}

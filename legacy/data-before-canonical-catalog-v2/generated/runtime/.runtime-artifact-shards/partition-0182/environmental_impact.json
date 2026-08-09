@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "boulgour de blé, cuit, non salé": {
+      "environmentScoreMptPerKg": 0.065,
+      "climateKgCo2EqPerKg": 0.557,
+      "landUsePtPerKg": 49.4,
+      "waterDeprivationM3PerKg": 0.271
+    },
+    "crème de lait, 30% mg, semi épaisse, uht": {
+      "environmentScoreMptPerKg": 0.367,
+      "climateKgCo2EqPerKg": 3.75,
+      "landUsePtPerKg": 176.0,
+      "waterDeprivationM3PerKg": 0.477
+    },
+    "matière grasse végétale (type margarine), à tartiner, à 30 40% mg, légère, doux": {
+      "environmentScoreMptPerKg": 0.199,
+      "climateKgCo2EqPerKg": 2.17,
+      "landUsePtPerKg": 94.7,
+      "waterDeprivationM3PerKg": 0.584
+    },
+    "raviolis aux légumes, sauce tomate, appertisés": {
+      "environmentScoreMptPerKg": 0.298,
+      "climateKgCo2EqPerKg": 2.48,
+      "landUsePtPerKg": 108.0,
+      "waterDeprivationM3PerKg": 1.05
+    },
+    "riz complet, cru": {
+      "environmentScoreMptPerKg": 0.428,
+      "climateKgCo2EqPerKg": 2.01,
+      "landUsePtPerKg": 63.0,
+      "waterDeprivationM3PerKg": 14.3
+    },
+    "sauce à la crème aux épices": {
+      "environmentScoreMptPerKg": 0.293,
+      "climateKgCo2EqPerKg": 2.39,
+      "landUsePtPerKg": 92.0,
+      "waterDeprivationM3PerKg": 0.542
+    },
+    "soupe aux légumes variés, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.108,
+      "climateKgCo2EqPerKg": 0.452,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.313
+    },
+    "soupe de poissons et / ou crustacés, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 1.44,
+      "climateKgCo2EqPerKg": 9.0,
+      "landUsePtPerKg": 56.4,
+      "waterDeprivationM3PerKg": 1.84
+    }
+  }
+}

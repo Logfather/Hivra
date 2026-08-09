@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "agneau, gigot, cru": {
+      "environmentScoreMptPerKg": 5.01,
+      "climateKgCo2EqPerKg": 41.3,
+      "landUsePtPerKg": 4420.0,
+      "waterDeprivationM3PerKg": 6.93
+    },
+    "chili con carne": {
+      "environmentScoreMptPerKg": 1.86,
+      "climateKgCo2EqPerKg": 19.6,
+      "landUsePtPerKg": 1230.0,
+      "waterDeprivationM3PerKg": 1.91
+    },
+    "dinde, aile, crue": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "dinde, viande, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.04,
+      "climateKgCo2EqPerKg": 6.13,
+      "landUsePtPerKg": 356.0,
+      "waterDeprivationM3PerKg": 2.72
+    },
+    "légumes farcis (sauf tomate)": {
+      "environmentScoreMptPerKg": 0.412,
+      "climateKgCo2EqPerKg": 3.39,
+      "landUsePtPerKg": 160.0,
+      "waterDeprivationM3PerKg": 1.28
+    },
+    "picodon (fromage de chèvre)": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 7.91,
+      "landUsePtPerKg": 502.0,
+      "waterDeprivationM3PerKg": 2.82
+    },
+    "poulet, escalope panée": {
+      "environmentScoreMptPerKg": 1.23,
+      "climateKgCo2EqPerKg": 7.41,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.22
+    }
+  }
+}

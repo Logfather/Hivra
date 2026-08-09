@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "boeuf, boulettes cuites": {
+      "environmentScoreMptPerKg": 3.09,
+      "climateKgCo2EqPerKg": 32.2,
+      "landUsePtPerKg": 2080.0,
+      "waterDeprivationM3PerKg": 3.17
+    },
+    "châtaigne, grillée": {
+      "environmentScoreMptPerKg": 0.275,
+      "climateKgCo2EqPerKg": 1.9,
+      "landUsePtPerKg": 327.0,
+      "waterDeprivationM3PerKg": 4.54
+    },
+    "crème brûlée, rayon frais": {
+      "environmentScoreMptPerKg": 0.253,
+      "climateKgCo2EqPerKg": 2.18,
+      "landUsePtPerKg": 87.0,
+      "waterDeprivationM3PerKg": 1.02
+    },
+    "frites de pommes de terre, surgelées, pour cuisson rôtie/ au four": {
+      "environmentScoreMptPerKg": 0.102,
+      "climateKgCo2EqPerKg": 0.774,
+      "landUsePtPerKg": 21.5,
+      "waterDeprivationM3PerKg": 0.286
+    },
+    "gâteau paris brest (pâte à choux crème mousseline praliné)": {
+      "environmentScoreMptPerKg": 0.374,
+      "climateKgCo2EqPerKg": 4.36,
+      "landUsePtPerKg": 167.0,
+      "waterDeprivationM3PerKg": 0.547
+    },
+    "mimolette, sans précision": {
+      "environmentScoreMptPerKg": 0.628,
+      "climateKgCo2EqPerKg": 6.18,
+      "landUsePtPerKg": 271.0,
+      "waterDeprivationM3PerKg": 0.843
+    },
+    "soupe à la volaille et aux légumes, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.0184,
+      "climateKgCo2EqPerKg": 0.14,
+      "landUsePtPerKg": 2.91,
+      "waterDeprivationM3PerKg": 0.18
+    }
+  }
+}

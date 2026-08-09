@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "inputEntryCount": 4596,
+  "outputEntryCount": 4596,
+  "uniqueNormalizedKeyCount": 4596,
+  "uniqueItemNameCount": 4596,
+  "blankPluralCount": 0,
+  "variantLeakedIntoColloquialCount": 0,
+  "duplicateColloquialValueCount": 0,
+  "emptyAutocompleteEntryCount": 0,
+  "deterministic": true,
+  "valid": true,
+  "stats": {
+    "repairedEntryCount": 4596,
+    "pluralChangedCount": 559,
+    "colloquialChangedCount": 55,
+    "phoneticTokensChangedCount": 4596,
+    "autocompleteTokensChangedCount": 3630,
+    "removedVariantColloquialCount": 0,
+    "preservedColloquialAliasCount": 269,
+    "familyPluralResolvedCount": 1270,
+    "familyPluralFallbackCount": 0
+  }
+}

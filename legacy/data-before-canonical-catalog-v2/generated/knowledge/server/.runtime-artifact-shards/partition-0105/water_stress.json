@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "asperge, pelée, crue": {
+      "score": 4.36
+    },
+    "boeuf, paleron, braisé ou bouilli": {
+      "score": 3.79
+    },
+    "bouchées ou émincé au soja et blé (ne convient pas aux véganes ou végétaliens), préemballé": {
+      "score": 0.538
+    },
+    "croûton à l'ail aux fines herbes ou aux oignons, préemballé": {
+      "score": 15.3
+    },
+    "dorade grise, ou daurade grise, ou griset, crue": {
+      "score": 0.707
+    },
+    "foie, porc, cuit": {
+      "score": 1.26
+    },
+    "rhum": {
+      "score": 0.169
+    },
+    "rillettes pur oie": {
+      "score": 1.23
+    },
+    "sandwich baguette, thon, crudités (tomate, salade), mayonnaise": {
+      "score": 1.16
+    },
+    "sandwich pain de mie complet, poulet, crudités, mayonnaise": {
+      "score": 1.62
+    },
+    "saucisse de montbéliard": {
+      "score": 1.77
+    },
+    "topinambour, cru": {
+      "score": 0.0558
+    }
+  }
+}

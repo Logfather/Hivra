@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "agneau, côte première, crue": {
+      "score": 6.93
+    },
+    "boeuf, entrecôte, partie maigre, grillée/poêlée": {
+      "score": 3.07
+    },
+    "boisson gazeuse aux fruits (de 10 à 50% de jus), sucrée": {
+      "score": 0.288
+    },
+    "boisson gazeuse aux fruits (à moins de 10% de jus), sucrée, avec édulcorants": {
+      "score": 0.288
+    },
+    "farine de riz": {
+      "score": 17.0
+    },
+    "fromage de chèvre sec": {
+      "score": 2.29
+    },
+    "meringue": {
+      "score": 1.8
+    },
+    "pain pour hamburger ou hot dog (bun), complet, préemballé": {
+      "score": 0.234
+    },
+    "porc, épaule, crue": {
+      "score": 2.2
+    },
+    "salade de fruits, crue": {
+      "score": 5.48
+    },
+    "soupe asiatique, avec pâtes, déshydratée reconstituée": {
+      "score": 77.4
+    },
+    "églefin, cru": {
+      "score": 0.47
+    }
+  }
+}

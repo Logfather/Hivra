@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "agneau, selle, partie maigre, grillée/poêlée": {
+      "environmentScoreMptPerKg": 6.35,
+      "climateKgCo2EqPerKg": 52.4,
+      "landUsePtPerKg": 5580.0,
+      "waterDeprivationM3PerKg": 8.77
+    },
+    "boeuf, queue, bouillie/cuite à l'eau": {
+      "environmentScoreMptPerKg": 3.45,
+      "climateKgCo2EqPerKg": 37.0,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.08
+    },
+    "hareng, grillé/poêlé": {
+      "environmentScoreMptPerKg": 0.413,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 16.3,
+      "waterDeprivationM3PerKg": 0.376
+    },
+    "pamplemousse chinois, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.552,
+      "climateKgCo2EqPerKg": 0.793,
+      "landUsePtPerKg": 43.3,
+      "waterDeprivationM3PerKg": 49.2
+    },
+    "pomme de terre nouvelle, crue": {
+      "environmentScoreMptPerKg": 0.0625,
+      "climateKgCo2EqPerKg": 0.707,
+      "landUsePtPerKg": 22.5,
+      "waterDeprivationM3PerKg": 0.297
+    },
+    "pâtes fraîches farcies (ex : raviolis), à la viande (ex : bolognaise), crues": {
+      "environmentScoreMptPerKg": 1.5,
+      "climateKgCo2EqPerKg": 15.1,
+      "landUsePtPerKg": 943.0,
+      "waterDeprivationM3PerKg": 1.7
+    },
+    "sauce au fromage pour risotto ou pâtes, préemballée": {
+      "environmentScoreMptPerKg": 0.444,
+      "climateKgCo2EqPerKg": 4.17,
+      "landUsePtPerKg": 175.0,
+      "waterDeprivationM3PerKg": 0.623
+    },
+    "tomme ou tome de montagne ou de savoie": {
+      "environmentScoreMptPerKg": 0.548,
+      "climateKgCo2EqPerKg": 5.76,
+      "landUsePtPerKg": 266.0,
+      "waterDeprivationM3PerKg": 0.699
+    }
+  }
+}

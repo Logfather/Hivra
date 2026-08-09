@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "avocat, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.331,
+      "climateKgCo2EqPerKg": 1.55,
+      "landUsePtPerKg": 84.6,
+      "waterDeprivationM3PerKg": 23.7
+    },
+    "base de pizza tomatée": {
+      "environmentScoreMptPerKg": 0.159,
+      "climateKgCo2EqPerKg": 0.98,
+      "landUsePtPerKg": 67.4,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "biscuit de savoie": {
+      "environmentScoreMptPerKg": 0.356,
+      "climateKgCo2EqPerKg": 2.3,
+      "landUsePtPerKg": 172.0,
+      "waterDeprivationM3PerKg": 1.22
+    },
+    "bouchée à la reine, au poisson et fruits de mer": {
+      "environmentScoreMptPerKg": 1.41,
+      "climateKgCo2EqPerKg": 8.81,
+      "landUsePtPerKg": 46.8,
+      "waterDeprivationM3PerKg": 0.723
+    },
+    "café décaféiné, instantané, non sucré, prêt à boire": {
+      "environmentScoreMptPerKg": 0.221,
+      "climateKgCo2EqPerKg": 1.63,
+      "landUsePtPerKg": 52.7,
+      "waterDeprivationM3PerKg": 1.49
+    },
+    "crêpe dentelle au chocolat, préemballée": {
+      "environmentScoreMptPerKg": 0.616,
+      "climateKgCo2EqPerKg": 10.3,
+      "landUsePtPerKg": 402.0,
+      "waterDeprivationM3PerKg": 1.24
+    },
+    "fromage à pâte molle et croûte lavée, allégé environ 13% mg": {
+      "environmentScoreMptPerKg": 0.569,
+      "climateKgCo2EqPerKg": 5.68,
+      "landUsePtPerKg": 247.0,
+      "waterDeprivationM3PerKg": 0.692
+    },
+    "haricot blanc, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.126,
+      "climateKgCo2EqPerKg": 0.999,
+      "landUsePtPerKg": 77.8,
+      "waterDeprivationM3PerKg": 1.08
+    },
+    "ossau iraty": {
+      "environmentScoreMptPerKg": 0.722,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 562.0,
+      "waterDeprivationM3PerKg": 0.527
+    },
+    "pizza au chorizo ou salami": {
+      "environmentScoreMptPerKg": 0.366,
+      "climateKgCo2EqPerKg": 2.88,
+      "landUsePtPerKg": 132.0,
+      "waterDeprivationM3PerKg": 0.864
+    },
+    "potiron, cuit": {
+      "environmentScoreMptPerKg": 0.14,
+      "climateKgCo2EqPerKg": 1.51,
+      "landUsePtPerKg": 27.1,
+      "waterDeprivationM3PerKg": 1.0
+    },
+    "sauce chasseur, préemballée": {
+      "environmentScoreMptPerKg": 0.338,
+      "climateKgCo2EqPerKg": 2.5,
+      "landUsePtPerKg": 83.3,
+      "waterDeprivationM3PerKg": 8.16
+    }
+  }
+}

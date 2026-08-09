@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "brochette d'agneau": {
+      "environmentScoreMptPerKg": 6.38,
+      "climateKgCo2EqPerKg": 52.5,
+      "landUsePtPerKg": 5580.0,
+      "waterDeprivationM3PerKg": 8.89
+    },
+    "carotte, surgelée, crue": {
+      "environmentScoreMptPerKg": 0.0854,
+      "climateKgCo2EqPerKg": 0.613,
+      "landUsePtPerKg": 10.5,
+      "waterDeprivationM3PerKg": 0.432
+    },
+    "cervelle, agneau, cuite": {
+      "environmentScoreMptPerKg": 3.62,
+      "climateKgCo2EqPerKg": 29.7,
+      "landUsePtPerKg": 3150.0,
+      "waterDeprivationM3PerKg": 5.03
+    },
+    "rognon, porc, cuit": {
+      "environmentScoreMptPerKg": 0.496,
+      "climateKgCo2EqPerKg": 3.91,
+      "landUsePtPerKg": 184.0,
+      "waterDeprivationM3PerKg": 1.26
+    },
+    "tarte au saumon": {
+      "environmentScoreMptPerKg": 0.431,
+      "climateKgCo2EqPerKg": 3.48,
+      "landUsePtPerKg": 144.0,
+      "waterDeprivationM3PerKg": 0.731
+    }
+  }
+}

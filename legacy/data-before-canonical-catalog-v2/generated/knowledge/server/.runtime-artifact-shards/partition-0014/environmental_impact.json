@@ -1,0 +1,124 @@
+{
+  "entries": {
+    "agneau, gigot, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 6.37,
+      "climateKgCo2EqPerKg": 52.3,
+      "landUsePtPerKg": 5580.0,
+      "waterDeprivationM3PerKg": 8.79
+    },
+    "biscuit sec au beurre, sablé, galette ou palet, au chocolat": {
+      "environmentScoreMptPerKg": 0.462,
+      "climateKgCo2EqPerKg": 6.06,
+      "landUsePtPerKg": 274.0,
+      "waterDeprivationM3PerKg": 0.914
+    },
+    "biscuit sec avec tablette de chocolat": {
+      "environmentScoreMptPerKg": 0.553,
+      "climateKgCo2EqPerKg": 7.79,
+      "landUsePtPerKg": 313.0,
+      "waterDeprivationM3PerKg": 1.27
+    },
+    "boisson infantile céréales lactées aux légumes pour dîner dès 4/6 mois": {
+      "environmentScoreMptPerKg": 0.0934,
+      "climateKgCo2EqPerKg": 0.863,
+      "landUsePtPerKg": 40.6,
+      "waterDeprivationM3PerKg": 0.174
+    },
+    "cabillaud, cuit à la vapeur": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    },
+    "cacahuète, grillée": {
+      "environmentScoreMptPerKg": 0.638,
+      "climateKgCo2EqPerKg": 4.18,
+      "landUsePtPerKg": 535.0,
+      "waterDeprivationM3PerKg": 14.6
+    },
+    "canard, viande, crue": {
+      "environmentScoreMptPerKg": 1.11,
+      "climateKgCo2EqPerKg": 8.06,
+      "landUsePtPerKg": 431.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "dorade royale ou daurade ou vraie daurade, crue, élevage": {
+      "environmentScoreMptPerKg": 1.92,
+      "climateKgCo2EqPerKg": 12.3,
+      "landUsePtPerKg": 183.0,
+      "waterDeprivationM3PerKg": 2.62
+    },
+    "espadon, cru": {
+      "environmentScoreMptPerKg": 0.845,
+      "climateKgCo2EqPerKg": 4.69,
+      "landUsePtPerKg": 11.9,
+      "waterDeprivationM3PerKg": 0.483
+    },
+    "gnocchi à la semoule, cru": {
+      "environmentScoreMptPerKg": 0.12,
+      "climateKgCo2EqPerKg": 0.938,
+      "landUsePtPerKg": 46.1,
+      "waterDeprivationM3PerKg": 0.299
+    },
+    "gratin ou cassolette de poisson et / ou fruits de mer, cuit": {
+      "environmentScoreMptPerKg": 1.46,
+      "climateKgCo2EqPerKg": 9.95,
+      "landUsePtPerKg": 137.0,
+      "waterDeprivationM3PerKg": 0.787
+    },
+    "matière grasse ou graisse végétale solide (type margarine) pour friture": {
+      "environmentScoreMptPerKg": 0.416,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 416.0,
+      "waterDeprivationM3PerKg": 5.05
+    },
+    "matière grasse végétale (type margarine) à 50 63% mg, allégée, demi sel": {
+      "environmentScoreMptPerKg": 0.293,
+      "climateKgCo2EqPerKg": 3.17,
+      "landUsePtPerKg": 125.0,
+      "waterDeprivationM3PerKg": 1.73
+    },
+    "muesli floconneux aux fruits ou fruits secs (non enrichi en vitamines et minéraux)": {
+      "environmentScoreMptPerKg": 0.284,
+      "climateKgCo2EqPerKg": 2.55,
+      "landUsePtPerKg": 143.0,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "plat légumes, avec féculent et viande/poisson, dès 18 mois": {
+      "environmentScoreMptPerKg": 0.33,
+      "climateKgCo2EqPerKg": 2.25,
+      "landUsePtPerKg": 50.5,
+      "waterDeprivationM3PerKg": 1.28
+    },
+    "porc, échine, crue": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "pâtes fraîches farcies (ex : raviolis), au fromage et aux légumes, cuites": {
+      "environmentScoreMptPerKg": 0.419,
+      "climateKgCo2EqPerKg": 3.62,
+      "landUsePtPerKg": 166.0,
+      "waterDeprivationM3PerKg": 0.857
+    },
+    "quatre épices": {
+      "environmentScoreMptPerKg": 0.711,
+      "climateKgCo2EqPerKg": 6.4,
+      "landUsePtPerKg": 414.0,
+      "waterDeprivationM3PerKg": 3.36
+    },
+    "soupe à l'oignon, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.265,
+      "climateKgCo2EqPerKg": 2.32,
+      "landUsePtPerKg": 68.9,
+      "waterDeprivationM3PerKg": 2.32
+    },
+    "soupe à la carotte, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.0668,
+      "climateKgCo2EqPerKg": 0.461,
+      "landUsePtPerKg": 14.0,
+      "waterDeprivationM3PerKg": 0.228
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "courge spaghetti, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.0665,
+      "climateKgCo2EqPerKg": 0.639,
+      "landUsePtPerKg": 17.4,
+      "waterDeprivationM3PerKg": 0.63
+    },
+    "faisan, viande, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.3,
+      "climateKgCo2EqPerKg": 7.75,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "galette ou pavé au blé et soja (ne convient pas aux véganes ou végétaliens), préemballé": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 2.83,
+      "landUsePtPerKg": 198.0,
+      "waterDeprivationM3PerKg": 1.22
+    },
+    "huile d'avocat": {
+      "environmentScoreMptPerKg": 1.4,
+      "climateKgCo2EqPerKg": 5.84,
+      "landUsePtPerKg": 383.0,
+      "waterDeprivationM3PerKg": 107.0
+    },
+    "merguez, boeuf et mouton, crue": {
+      "environmentScoreMptPerKg": 4.33,
+      "climateKgCo2EqPerKg": 40.5,
+      "landUsePtPerKg": 3470.0,
+      "waterDeprivationM3PerKg": 5.09
+    },
+    "merlu blanc du cap, surgelé, cru": {
+      "environmentScoreMptPerKg": 1.27,
+      "climateKgCo2EqPerKg": 8.05,
+      "landUsePtPerKg": 13.4,
+      "waterDeprivationM3PerKg": 0.416
+    },
+    "mérou, cru": {
+      "environmentScoreMptPerKg": 0.845,
+      "climateKgCo2EqPerKg": 4.69,
+      "landUsePtPerKg": 11.9,
+      "waterDeprivationM3PerKg": 0.483
+    },
+    "nectar de poire": {
+      "environmentScoreMptPerKg": 0.0786,
+      "climateKgCo2EqPerKg": 0.486,
+      "landUsePtPerKg": 15.3,
+      "waterDeprivationM3PerKg": 0.855
+    },
+    "pain de mie, multicéréale": {
+      "environmentScoreMptPerKg": 0.174,
+      "climateKgCo2EqPerKg": 1.38,
+      "landUsePtPerKg": 110.0,
+      "waterDeprivationM3PerKg": 0.481
+    },
+    "radis noir, cru": {
+      "environmentScoreMptPerKg": 0.0444,
+      "climateKgCo2EqPerKg": 0.384,
+      "landUsePtPerKg": 3.81,
+      "waterDeprivationM3PerKg": 0.113
+    },
+    "rouget barbet, filet avec peau, surgelé, cru (thaïlande, sénégal…)": {
+      "environmentScoreMptPerKg": 1.36,
+      "climateKgCo2EqPerKg": 8.07,
+      "landUsePtPerKg": 14.7,
+      "waterDeprivationM3PerKg": 0.789
+    }
+  }
+}

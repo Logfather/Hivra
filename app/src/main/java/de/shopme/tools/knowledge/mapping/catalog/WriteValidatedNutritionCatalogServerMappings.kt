@@ -3,6 +3,7 @@ package de.shopme.tools.knowledge.mapping.catalog.runner
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.mapping.catalog.CatalogKnowledgeMappingIdentity
 import de.shopme.tools.knowledge.mapping.catalog.CatalogKnowledgeMappingValidationReportWriter
 import de.shopme.tools.knowledge.mapping.catalog.CatalogKnowledgeMatchCandidate
@@ -650,62 +651,37 @@ class WriteValidatedNutritionCatalogServerMappings(
         private const val NUTRITION_ARTIFACT =
             "nutrition.json"
 
-
         @JvmStatic
         fun main(
             args: Array<String>
         ) {
+            require(args.isEmpty()) {
+                "WriteValidatedNutritionCatalogServerMappings " +
+                        "does not accept arguments."
+            }
 
-            val projectRoot =
-                File("..")
+            val paths =
+                KnowledgeBuildPaths.default()
+
+            paths.ensureBuildDirectories()
 
             WriteValidatedNutritionCatalogServerMappings(
                 requestFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "match-requests/" +
-                                "nutrition.match-requests.json"
-                    ),
+                    paths.nutritionMatchRequests,
                 decisionFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "match-decisions/" +
-                                "nutrition.match-decisions.json"
-                    ),
+                    paths.nutritionMatchDecisions,
                 serverArtifactFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "server/nutrition.json"
+                    paths.serverArtifact(
+                        "nutrition.json"
                     ),
                 exactMappingFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "mappings/nutrition.mappings.json"
-                    ),
+                    paths.nutritionExactMappings,
                 outputMappingFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "mappings/catalog-server.mappings.json"
-                    ),
+                    paths.catalogServerMappings,
                 validationReportFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "nutrition.mapping-validation-report.json"
-                    ),
+                    paths.nutritionValidationReport,
                 diagnosticsFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "nutrition.match-diagnostics.json"
-                    ),
+                    paths.nutritionMatchDiagnostics,
                 minimumConfidence =
                     0.80
             ).run()

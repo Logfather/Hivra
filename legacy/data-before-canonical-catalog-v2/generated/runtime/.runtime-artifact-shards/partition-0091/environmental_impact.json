@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "carangue, cru": {
+      "environmentScoreMptPerKg": 0.845,
+      "climateKgCo2EqPerKg": 4.69,
+      "landUsePtPerKg": 11.9,
+      "waterDeprivationM3PerKg": 0.483
+    },
+    "concombre, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.0498,
+      "climateKgCo2EqPerKg": 0.512,
+      "landUsePtPerKg": 4.53,
+      "waterDeprivationM3PerKg": 0.333
+    },
+    "crosne, surgelé, cru": {
+      "environmentScoreMptPerKg": 0.0742,
+      "climateKgCo2EqPerKg": 0.541,
+      "landUsePtPerKg": 10.4,
+      "waterDeprivationM3PerKg": 0.422
+    },
+    "fromage bleu des causses": {
+      "environmentScoreMptPerKg": 0.586,
+      "climateKgCo2EqPerKg": 5.95,
+      "landUsePtPerKg": 258.0,
+      "waterDeprivationM3PerKg": 0.784
+    },
+    "herbes de provence, séchées": {
+      "environmentScoreMptPerKg": 0.467,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 143.0,
+      "waterDeprivationM3PerKg": 20.4
+    },
+    "lotte ou baudroie, crue": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "petit pot légumes, dès 4 6 mois": {
+      "environmentScoreMptPerKg": 0.136,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": 26.0,
+      "waterDeprivationM3PerKg": 0.67
+    },
+    "saucisse de toulouse, crue": {
+      "environmentScoreMptPerKg": 1.34,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 700.0,
+      "waterDeprivationM3PerKg": 2.77
+    },
+    "thé infusé, non sucré": {
+      "environmentScoreMptPerKg": 0.0148,
+      "climateKgCo2EqPerKg": 0.0436,
+      "landUsePtPerKg": 4.02,
+      "waterDeprivationM3PerKg": 0.776
+    }
+  }
+}

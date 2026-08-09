@@ -1,6 +1,6 @@
 package de.shopme.tools.knowledge.mapping.catalog.representative
 
-import java.io.File
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 
 object RunPersistRepresentativeNutritionMappings {
 
@@ -13,25 +13,15 @@ object RunPersistRepresentativeNutritionMappings {
                     "does not accept arguments."
         }
 
-        val projectRoot =
-            File("..")
+        val paths =
+            KnowledgeBuildPaths.default()
 
         PersistRepresentativeNutritionMappings()
             .run(
                 validationFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "nutrition.low-confidence-validation.json"
-                    ),
+                    paths.nutritionLowConfidenceValidationReport,
                 mappingFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "mappings/" +
-                                "catalog-server.mappings.json"
-                    )
+                    paths.catalogServerMappings
             )
     }
 }

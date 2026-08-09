@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "coulirou, cru": {
+      "environmentScoreMptPerKg": 0.358,
+      "climateKgCo2EqPerKg": 2.62,
+      "landUsePtPerKg": 7.15,
+      "waterDeprivationM3PerKg": 0.211
+    },
+    "fromage à pâte molle et croûte fleurie (type camembert)": {
+      "environmentScoreMptPerKg": 0.52,
+      "climateKgCo2EqPerKg": 5.4,
+      "landUsePtPerKg": 258.0,
+      "waterDeprivationM3PerKg": 0.597
+    },
+    "galette ou pavé au soja, fromage et légumes, préemballé": {
+      "environmentScoreMptPerKg": 0.243,
+      "climateKgCo2EqPerKg": 2.17,
+      "landUsePtPerKg": 121.0,
+      "waterDeprivationM3PerKg": 0.971
+    },
+    "noix de muscade": {
+      "environmentScoreMptPerKg": 0.214,
+      "climateKgCo2EqPerKg": 2.23,
+      "landUsePtPerKg": 19.3,
+      "waterDeprivationM3PerKg": 1.47
+    },
+    "nuggets de soja": {
+      "environmentScoreMptPerKg": 0.253,
+      "climateKgCo2EqPerKg": 1.77,
+      "landUsePtPerKg": 146.0,
+      "waterDeprivationM3PerKg": 0.557
+    },
+    "omelette au fromage": {
+      "environmentScoreMptPerKg": 0.361,
+      "climateKgCo2EqPerKg": 2.9,
+      "landUsePtPerKg": 181.0,
+      "waterDeprivationM3PerKg": 0.793
+    },
+    "pont l'évêque": {
+      "environmentScoreMptPerKg": 0.516,
+      "climateKgCo2EqPerKg": 5.35,
+      "landUsePtPerKg": 255.0,
+      "waterDeprivationM3PerKg": 0.592
+    },
+    "poulet, cuisse, viande, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 1.3,
+      "climateKgCo2EqPerKg": 7.75,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "saucisse de morteau, bouillie/cuite à l'eau": {
+      "environmentScoreMptPerKg": 0.701,
+      "climateKgCo2EqPerKg": 5.37,
+      "landUsePtPerKg": 271.0,
+      "waterDeprivationM3PerKg": 1.77
+    },
+    "thon germon ou thon blanc, cuit à la vapeur sous pression": {
+      "environmentScoreMptPerKg": 1.97,
+      "climateKgCo2EqPerKg": 11.7,
+      "landUsePtPerKg": 15.3,
+      "waterDeprivationM3PerKg": 0.487
+    },
+    "tomate, concentré, appertisé": {
+      "environmentScoreMptPerKg": 0.307,
+      "climateKgCo2EqPerKg": 2.42,
+      "landUsePtPerKg": 24.5,
+      "waterDeprivationM3PerKg": 8.8
+    },
+    "tomate, coulis, appertisé (purée de tomates mi réduite à 11%)": {
+      "environmentScoreMptPerKg": 0.113,
+      "climateKgCo2EqPerKg": 0.825,
+      "landUsePtPerKg": 8.24,
+      "waterDeprivationM3PerKg": 0.381
+    },
+    "veau, jarret, braisé ou bouilli": {
+      "environmentScoreMptPerKg": 2.74,
+      "climateKgCo2EqPerKg": 29.7,
+      "landUsePtPerKg": 1340.0,
+      "waterDeprivationM3PerKg": 4.02
+    }
+  }
+}

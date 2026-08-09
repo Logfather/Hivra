@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "canard, viande, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.5,
+      "climateKgCo2EqPerKg": 10.8,
+      "landUsePtPerKg": 571.0,
+      "waterDeprivationM3PerKg": 4.53
+    },
+    "cresson alénois, cru": {
+      "environmentScoreMptPerKg": 0.0939,
+      "climateKgCo2EqPerKg": 0.868,
+      "landUsePtPerKg": 9.16,
+      "waterDeprivationM3PerKg": 0.643
+    },
+    "crème de lait, 15 à 20% mg, légère, épaisse, rayon frais": {
+      "environmentScoreMptPerKg": 0.269,
+      "climateKgCo2EqPerKg": 2.69,
+      "landUsePtPerKg": 116.0,
+      "waterDeprivationM3PerKg": 0.363
+    },
+    "huile de maïs": {
+      "environmentScoreMptPerKg": 0.453,
+      "climateKgCo2EqPerKg": 3.52,
+      "landUsePtPerKg": 240.0,
+      "waterDeprivationM3PerKg": 10.4
+    },
+    "muffin anglais, complet, petit pain spécial, préemballé": {
+      "environmentScoreMptPerKg": 0.122,
+      "climateKgCo2EqPerKg": 1.07,
+      "landUsePtPerKg": 62.1,
+      "waterDeprivationM3PerKg": 0.361
+    },
+    "pois cassé, sec": {
+      "environmentScoreMptPerKg": 0.109,
+      "climateKgCo2EqPerKg": 0.75,
+      "landUsePtPerKg": 155.0,
+      "waterDeprivationM3PerKg": 0.247
+    },
+    "pomme de terre vapeur, sous vide": {
+      "environmentScoreMptPerKg": 0.111,
+      "climateKgCo2EqPerKg": 1.25,
+      "landUsePtPerKg": 35.7,
+      "waterDeprivationM3PerKg": 0.484
+    },
+    "poulet, cuisse, viande et peau, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.3,
+      "climateKgCo2EqPerKg": 7.75,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "soupe aux poireaux et pommes de terre, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.0627,
+      "climateKgCo2EqPerKg": 0.441,
+      "landUsePtPerKg": 11.2,
+      "waterDeprivationM3PerKg": 0.154
+    },
+    "tapenade": {
+      "environmentScoreMptPerKg": 0.317,
+      "climateKgCo2EqPerKg": 1.62,
+      "landUsePtPerKg": 215.0,
+      "waterDeprivationM3PerKg": 7.62
+    }
+  }
+}

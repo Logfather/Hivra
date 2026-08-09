@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "ananas au sirop et jus d'ananas, appertisé, non égoutté": {
+      "environmentScoreMptPerKg": 0.162,
+      "climateKgCo2EqPerKg": 0.981,
+      "landUsePtPerKg": 22.8,
+      "waterDeprivationM3PerKg": 0.483
+    },
+    "barre céréalière aux amandes ou noisettes": {
+      "environmentScoreMptPerKg": 0.502,
+      "climateKgCo2EqPerKg": 3.85,
+      "landUsePtPerKg": 211.0,
+      "waterDeprivationM3PerKg": 8.31
+    },
+    "biscuit apéritif feuilleté": {
+      "environmentScoreMptPerKg": 0.208,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 189.0,
+      "waterDeprivationM3PerKg": 0.704
+    },
+    "burger au poulet": {
+      "environmentScoreMptPerKg": 0.66,
+      "climateKgCo2EqPerKg": 4.36,
+      "landUsePtPerKg": 232.0,
+      "waterDeprivationM3PerKg": 1.72
+    },
+    "court bouillon pour poissons, déshydraté": {
+      "environmentScoreMptPerKg": 1.87,
+      "climateKgCo2EqPerKg": 7.58,
+      "landUsePtPerKg": 106.0,
+      "waterDeprivationM3PerKg": 3.38
+    },
+    "frites de pommes de terre, surgelées, pour cuisson micro ondes": {
+      "environmentScoreMptPerKg": 0.102,
+      "climateKgCo2EqPerKg": 0.774,
+      "landUsePtPerKg": 21.5,
+      "waterDeprivationM3PerKg": 0.286
+    },
+    "grenadier (de roche), cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "jambon de dinde ou blanc de dinde en tranche": {
+      "environmentScoreMptPerKg": 1.01,
+      "climateKgCo2EqPerKg": 5.9,
+      "landUsePtPerKg": 339.0,
+      "waterDeprivationM3PerKg": 2.6
+    },
+    "macaron moelleux fourré à la confiture ou à la crème": {
+      "environmentScoreMptPerKg": 0.587,
+      "climateKgCo2EqPerKg": 6.26,
+      "landUsePtPerKg": 288.0,
+      "waterDeprivationM3PerKg": 6.34
+    },
+    "matière grasse végétale (type margarine) à 50 63% mg, allégée, doux, aux esters de stérol végétal": {
+      "environmentScoreMptPerKg": 0.304,
+      "climateKgCo2EqPerKg": 2.07,
+      "landUsePtPerKg": 263.0,
+      "waterDeprivationM3PerKg": 3.18
+    },
+    "paëlla": {
+      "environmentScoreMptPerKg": 0.498,
+      "climateKgCo2EqPerKg": 3.28,
+      "landUsePtPerKg": 79.1,
+      "waterDeprivationM3PerKg": 3.8
+    },
+    "printanière de légumes, surgelée, crue (haricots verts, carottes, pomme de terre, petits pois, oignons)": {
+      "environmentScoreMptPerKg": 0.218,
+      "climateKgCo2EqPerKg": 1.49,
+      "landUsePtPerKg": 59.6,
+      "waterDeprivationM3PerKg": 8.63
+    },
+    "sauce au beurre, préemballée": {
+      "environmentScoreMptPerKg": 0.509,
+      "climateKgCo2EqPerKg": 4.63,
+      "landUsePtPerKg": 236.0,
+      "waterDeprivationM3PerKg": 0.735
+    }
+  }
+}

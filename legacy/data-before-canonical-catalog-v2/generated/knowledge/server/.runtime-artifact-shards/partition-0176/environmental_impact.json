@@ -1,0 +1,88 @@
+{
+  "entries": {
+    "boisson plate aux fruits, (à moins de 10% de jus), non sucrée, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.0498,
+      "climateKgCo2EqPerKg": 0.377,
+      "landUsePtPerKg": 1.7,
+      "waterDeprivationM3PerKg": 0.0848
+    },
+    "brie, sans précision": {
+      "environmentScoreMptPerKg": 0.504,
+      "climateKgCo2EqPerKg": 5.23,
+      "landUsePtPerKg": 248.0,
+      "waterDeprivationM3PerKg": 0.579
+    },
+    "brioche, préemballée": {
+      "environmentScoreMptPerKg": 0.325,
+      "climateKgCo2EqPerKg": 2.95,
+      "landUsePtPerKg": 169.0,
+      "waterDeprivationM3PerKg": 0.717
+    },
+    "chevreau, cuit": {
+      "environmentScoreMptPerKg": 6.35,
+      "climateKgCo2EqPerKg": 52.4,
+      "landUsePtPerKg": 5580.0,
+      "waterDeprivationM3PerKg": 8.77
+    },
+    "clafoutis aux fruits, rayon frais": {
+      "environmentScoreMptPerKg": 0.361,
+      "climateKgCo2EqPerKg": 2.1,
+      "landUsePtPerKg": 834.0,
+      "waterDeprivationM3PerKg": 5.62
+    },
+    "hareng fumé, au naturel (version \"logiciel\" avec erreur sur l'emballage)": {
+      "environmentScoreMptPerKg": 0.323,
+      "climateKgCo2EqPerKg": 2.67,
+      "landUsePtPerKg": 10.4,
+      "waterDeprivationM3PerKg": 0.293
+    },
+    "haricot rouge, cuit": {
+      "environmentScoreMptPerKg": 0.0668,
+      "climateKgCo2EqPerKg": 0.585,
+      "landUsePtPerKg": -71.7,
+      "waterDeprivationM3PerKg": 0.116
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop léger, appertisé, non égoutté": {
+      "environmentScoreMptPerKg": 0.134,
+      "climateKgCo2EqPerKg": 0.725,
+      "landUsePtPerKg": 60.8,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "plat légumes, avec féculent et viande/poisson, dès 8 12 mois": {
+      "environmentScoreMptPerKg": 0.33,
+      "climateKgCo2EqPerKg": 2.25,
+      "landUsePtPerKg": 50.5,
+      "waterDeprivationM3PerKg": 1.28
+    },
+    "pomme de terre, flocons déshydratés, nature": {
+      "environmentScoreMptPerKg": 0.357,
+      "climateKgCo2EqPerKg": 2.59,
+      "landUsePtPerKg": 76.6,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "rillettes pur porc": {
+      "environmentScoreMptPerKg": 0.925,
+      "climateKgCo2EqPerKg": 7.42,
+      "landUsePtPerKg": 380.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "roulade de porc pistachée": {
+      "environmentScoreMptPerKg": 0.954,
+      "climateKgCo2EqPerKg": 7.36,
+      "landUsePtPerKg": 361.0,
+      "waterDeprivationM3PerKg": 2.42
+    },
+    "sauce bourguignonne, préemballée": {
+      "environmentScoreMptPerKg": 0.345,
+      "climateKgCo2EqPerKg": 2.59,
+      "landUsePtPerKg": 131.0,
+      "waterDeprivationM3PerKg": 5.12
+    },
+    "soupe de poissons et / ou crustacés, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 1.47,
+      "climateKgCo2EqPerKg": 8.94,
+      "landUsePtPerKg": 53.2,
+      "waterDeprivationM3PerKg": 1.85
+    }
+  }
+}

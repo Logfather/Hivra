@@ -1,0 +1,6061 @@
+{
+  "entries": {
+    "#2 bacon, egg & cheese sandwich on kaiser roll": {
+      "parent": "sandwiches"
+    },
+    "#6 roast beef & provolone, in a tub": {
+      "parent": "salads"
+    },
+    "#7 turkey breast & provolone on wheat mini": {
+      "parent": "sandwiches"
+    },
+    "&quot;graikiška amfora&quot; yogurt with figs": {
+      "parent": "yogurts"
+    },
+    "'test'": {
+      "parent": "sweet snacks"
+    },
+    "+ tea": {
+      "parent": "sodas"
+    },
+    ". new york steakhouse marinade": {
+      "parent": "groceries"
+    },
+    "0 carb crackers": {
+      "parent": "snacks"
+    },
+    "0% strawberry yogourt": {
+      "parent": "yogurts"
+    },
+    "1 bone out wing, ranch rub": {
+      "parent": "appetizers & sides"
+    },
+    "1% lowfat yogurt": {
+      "parent": "yogurts"
+    },
+    "1/4 yellow cake/ivory iced floral": {
+      "parent": "sweet snacks"
+    },
+    "10 20 ct/kg h/on shrimp": {
+      "parent": "seafood"
+    },
+    "100% apple juce": {
+      "parent": "beverages"
+    },
+    "100% certified whey protein isolate": {
+      "parent": "whey"
+    },
+    "100% natural chicken broth": {
+      "parent": "soups"
+    },
+    "100% natural mustard": {
+      "parent": "sauces"
+    },
+    "100% pur jus oranges pressees": {
+      "parent": "squeezed orange juices"
+    },
+    "100% whey isolate protein drink powder with added amino acids": {
+      "parent": "protein powders"
+    },
+    "100% whey protein chocolate flavour": {
+      "parent": "protein powders"
+    },
+    "12 s'mores flavored cakes, 12 s'mores": {
+      "parent": "sweet snacks"
+    },
+    "192 fluted shell round choco 1.75\"": {
+      "parent": "sweet snacks"
+    },
+    "195 k's kitchena medium gg noodles v saturates 628": {
+      "parent": "plant based foods and beverages"
+    },
+    "2 crumbles": {
+      "parent": "meals"
+    },
+    "2 garlic breast kievs": {
+      "parent": "poultries"
+    },
+    "2 scottish salmon, spinach & cheddar en croute": {
+      "parent": "seafood"
+    },
+    "2 sides & bread, low calorie": {
+      "parent": "entrees"
+    },
+    "20g protein oats+": {
+      "parent": "dietary supplements"
+    },
+    "2go geschenkset london dry gin": {
+      "parent": "beverages and beverages preparations"
+    },
+    "3 cream cheese rangoons": {
+      "parent": "appetizers & sides"
+    },
+    "3 lekkkie wafelkie": {
+      "parent": "sweet snacks"
+    },
+    "30g protein shake milk protein shake chocolate fudge flavored": {
+      "parent": "protein powders"
+    },
+    "365 everyday value, 1% low fat milk": {
+      "parent": "skimmed milks"
+    },
+    "365 everyday value, blue cheese crumbles": {
+      "parent": "fermented milk products"
+    },
+    "365 everyday value, tomato soup, basil, basil": {
+      "parent": "soups"
+    },
+    "4 aberdeen quarter pounders": {
+      "parent": "steaks"
+    },
+    "4 boudins blancs au porto": {
+      "parent": "prepared meats"
+    },
+    "4 oz lobster tails": {
+      "parent": "seafood"
+    },
+    "5 fruchtcocktail": {
+      "parent": "plant based foods and beverages"
+    },
+    "5k protein shake": {
+      "parent": "protein powders"
+    },
+    "6 vegan sausage rolls": {
+      "parent": "snacks"
+    },
+    "60% dark chocolate with raspberry chunks": {
+      "parent": "sweet snacks"
+    },
+    "8 ginger kisses": {
+      "parent": "plant based foods and beverages"
+    },
+    "8 treasure chicken breast, kids": {
+      "parent": "entrees"
+    },
+    "8056249229209": {
+      "parent": "puffed cereal cakes"
+    },
+    "85% groenteshot wortel avocado": {
+      "parent": "verse sappen en smoothies"
+    },
+    "aachener schokoladen printen": {
+      "parent": "sweet snacks"
+    },
+    "aardbei yoghurt lekker licht": {
+      "parent": "yogurts"
+    },
+    "ace apfel orange": {
+      "parent": "plant based foods and beverages"
+    },
+    "aceite de oliva 100% puro": {
+      "parent": "vegetable oils"
+    },
+    "actimel himbeere": {
+      "parent": "beverages and beverages preparations"
+    },
+    "activia dailies vanilla": {
+      "parent": "yogurts"
+    },
+    "adobadas flavored": {
+      "parent": "plant based foods and beverages"
+    },
+    "advent calendar choco time marvel ultimate spiderman": {
+      "parent": "festive foods"
+    },
+    "aero minis": {
+      "parent": "sweet snacks"
+    },
+    "africana stafide si arahide": {
+      "parent": "sweet snacks"
+    },
+    "agmark ghee": {
+      "parent": "spreads"
+    },
+    "aguas frescas hibscus": {
+      "parent": "beverages"
+    },
+    "ah gerookte knakworsten": {
+      "parent": "worst (varken)"
+    },
+    "ah premium brok sterilised": {
+      "parent": "kattenbrokken"
+    },
+    "ahi poke": {
+      "parent": "appetizers & sides"
+    },
+    "aktien landbier": {
+      "parent": "country specific beers"
+    },
+    "alaska seelachsfilets panier": {
+      "parent": "tiefkühl fisch"
+    },
+    "alaskan sockeye salmon fillet wild caught": {
+      "parent": "seafood"
+    },
+    "alfredo cream sauce": {
+      "parent": "sauces"
+    },
+    "all natural ground elk": {
+      "parent": "meats and their products"
+    },
+    "all natural hickory smoked turkey breast": {
+      "parent": "meats and their products"
+    },
+    "all natural pink himalayan salt mill": {
+      "parent": "groceries"
+    },
+    "all natural yogurt": {
+      "parent": "undefined"
+    },
+    "alla vodka pasta sauce": {
+      "parent": "vodka pasta sauces"
+    },
+    "allergy relief": {
+      "parent": "non food products"
+    },
+    "alles liebe zotter": {
+      "parent": "sweet snacks"
+    },
+    "almighurt weniger süß himbeere": {
+      "parent": "yogurts"
+    },
+    "almond flour chocolate chip cookies": {
+      "parent": "sweet snacks"
+    },
+    "almonds smoked": {
+      "parent": "smoked almonds"
+    },
+    "almonds wasabi & soy sauce": {
+      "parent": "snacks"
+    },
+    "aloo gobi bakes": {
+      "parent": "vegetable burger"
+    },
+    "alpenjoghurt vanille": {
+      "parent": "yogurts"
+    },
+    "alpu miel": {
+      "parent": "sweeteners"
+    },
+    "amaretto cherry cordial ice cream": {
+      "parent": "frozen foods"
+    },
+    "ambito marzipan flavour": {
+      "parent": "wafers"
+    },
+    "american deli cheese": {
+      "parent": "fermented milk products"
+    },
+    "american valu extra lean cooked with natural juices": {
+      "parent": "prepared meats"
+    },
+    "americana, cream soda, orange": {
+      "parent": "sodas"
+    },
+    "americano cocchi": {
+      "parent": "beverages and beverages preparations"
+    },
+    "amla goose berry juice": {
+      "parent": "plant based foods and beverages"
+    },
+    "amp game fuel": {
+      "parent": "sodas"
+    },
+    "amper energy drink": {
+      "parent": "energy drinks"
+    },
+    "andouillettes x 3": {
+      "parent": "prepared meats"
+    },
+    "angobitter": {
+      "parent": "bitter"
+    },
+    "anis gemahlen": {
+      "parent": "spices"
+    },
+    "apfel saft – aus apfelsaftkonzentrat": {
+      "parent": "unsweetened beverages"
+    },
+    "apfel uhudlersaft": {
+      "parent": "plant based foods and beverages"
+    },
+    "apfelschorle naturtrüb": {
+      "parent": "sparkling apple nectars"
+    },
+    "apfelwein von glücklichen äpfeln": {
+      "parent": "ciders"
+    },
+    "apple & cinnamon muesli": {
+      "parent": "plant based foods and beverages"
+    },
+    "apple & grape snack pack": {
+      "parent": "plant based foods and beverages"
+    },
+    "apple butternut squash raspberry": {
+      "parent": "baby foods"
+    },
+    "apple chips red apples": {
+      "parent": "plant based foods and beverages"
+    },
+    "apple cinnamon cheddar wisconsin cheese, apple cinnamon cheddar": {
+      "parent": "fermented milk products"
+    },
+    "apple cinnamon instant oatmeal": {
+      "parent": "plant based foods and beverages"
+    },
+    "apple juice beverage for kids": {
+      "parent": "undefined"
+    },
+    "apple kiwi cucumber 100% juice": {
+      "parent": "unsweetened beverages"
+    },
+    "apple peeled slices": {
+      "parent": "plant based foods and beverages"
+    },
+    "apples, sliced and dried": {
+      "parent": "plant based foods and beverages"
+    },
+    "apricot galangal rooibos": {
+      "parent": "beverages and beverages preparations"
+    },
+    "aprokisennektar": {
+      "parent": "plant based foods and beverages"
+    },
+    "aqua d’or": {
+      "parent": "beverages and beverages preparations"
+    },
+    "arabic pita": {
+      "parent": "special breads"
+    },
+    "arizona peppers jalapeno pepper sauce": {
+      "parent": "sauces"
+    },
+    "arkell best bitter": {
+      "parent": "beverages"
+    },
+    "arnold palmer 100% natural half&half lemonade": {
+      "parent": "tea based beverages"
+    },
+    "aros de avena": {
+      "parent": "rolled oats"
+    },
+    "arroz blanco vanguardia": {
+      "parent": "seeds"
+    },
+    "arroz branco": {
+      "parent": "plant based foods and beverages"
+    },
+    "arroz carolino": {
+      "parent": "seeds"
+    },
+    "artisan chili series gourmet virginia peanuts, sriracha + sea salt": {
+      "parent": "snacks"
+    },
+    "artisan pizza crust": {
+      "parent": "plant based foods and beverages"
+    },
+    "artisan romaine": {
+      "parent": "plant based foods and beverages"
+    },
+    "asiago cheese crisps, asiago cheese": {
+      "parent": "sweet snacks"
+    },
+    "assorted fat free soft chewy candy": {
+      "parent": "sweet snacks"
+    },
+    "assorted fruit flavored candy bracelets with pendants": {
+      "parent": "sweet snacks"
+    },
+    "assorted fruit flavored dinosaurs snacks": {
+      "parent": "sweet snacks"
+    },
+    "atole tradicional": {
+      "parent": "starches"
+    },
+    "australia's own kids milk strawberry": {
+      "parent": "milks"
+    },
+    "authentic belgian waffle": {
+      "parent": "waffles"
+    },
+    "authentic dried noodle": {
+      "parent": "plant based foods and beverages"
+    },
+    "authentic orange blossom honey raw & unfiltered": {
+      "parent": "sweeteners"
+    },
+    "authentic white corn tortillas": {
+      "parent": "mexican dinner mixes"
+    },
+    "baby kosher dills": {
+      "parent": "salted snacks"
+    },
+    "baby mozzarella": {
+      "parent": "fermented milk products"
+    },
+    "baby sugar snap peas": {
+      "parent": "vegetables based foods"
+    },
+    "back mozzarella sticks mit tomaten dip": {
+      "parent": "de:käsestäbchen"
+    },
+    "bacon cheeseburger fully cooked seasoned beef patty with bacon & process american sharp cheese on a sesame bun sandwich, bacon cheeseburger": {
+      "parent": "meats and their products"
+    },
+    "bacon jerky old fashioned maple": {
+      "parent": "snacks"
+    },
+    "bacon temptation omelette": {
+      "parent": "entrees"
+    },
+    "baguette spread": {
+      "parent": "sauces"
+    },
+    "baklavas gourmet": {
+      "parent": "sweet snacks"
+    },
+    "baktat mediterranean products okra": {
+      "parent": "vegetables based foods"
+    },
+    "banger": {
+      "parent": "meats and their products"
+    },
+    "barbecue high protein puffs": {
+      "parent": "snacks"
+    },
+    "barebells proteinbar crunchy fudge": {
+      "parent": "dietary supplements"
+    },
+    "barista hafer drink mit soja": {
+      "parent": "plant based milk alternatives"
+    },
+    "barra de avena y banana": {
+      "parent": "tropical fruits"
+    },
+    "basmati aged 1kg (india gate)": {
+      "parent": "seeds"
+    },
+    "basmati profumato": {
+      "parent": "plant based foods and beverages"
+    },
+    "bavarian creme filled mini cake": {
+      "parent": "sweet snacks"
+    },
+    "bbq grill gemüse trilogie": {
+      "parent": "vegetables based foods"
+    },
+    "bean & rice chips sea salt": {
+      "parent": "snacks"
+    },
+    "beech nut veggies blend": {
+      "parent": "snacks"
+    },
+    "beef & cheese pies": {
+      "parent": "pizzas pies and quiches"
+    },
+    "beef & queso bowl": {
+      "parent": "plant based foods and beverages"
+    },
+    "beef marrow bone broth powder": {
+      "parent": "dried products to be rehydrated"
+    },
+    "beer flavor jelly beans": {
+      "parent": "sweet snacks"
+    },
+    "beetroot & feta arancini": {
+      "parent": "snacks"
+    },
+    "beetroot veggie cakes": {
+      "parent": "puffed rice cakes"
+    },
+    "beetroot.": {
+      "parent": "vegetables based foods"
+    },
+    "bel cola": {
+      "parent": "sodas"
+    },
+    "bergische salami": {
+      "parent": "salami"
+    },
+    "berry mix flavored drink mix, berry mix": {
+      "parent": "plant based foods and beverages"
+    },
+    "betty bossi, good food : grilled chicken & kale mit ofengemüse": {
+      "parent": "salads with meat"
+    },
+    "bevanda analcolica gassata": {
+      "parent": "beverages"
+    },
+    "bicarbonato de sodio": {
+      "parent": "food additives"
+    },
+    "bigga grape 600ml": {
+      "parent": "plant based foods and beverages"
+    },
+    "bio alpenbutter": {
+      "parent": "spreads"
+    },
+    "bio baguette rustikal": {
+      "parent": "plant based foods and beverages"
+    },
+    "bio chopped tomatoes": {
+      "parent": "vegetables based foods"
+    },
+    "bio dunkle soße": {
+      "parent": "sauces"
+    },
+    "bio infuso finocchio biologico verso natura conad": {
+      "parent": "unsweetened beverages"
+    },
+    "bio ingwer zitrone zartbitter schokolade": {
+      "parent": "sweet snacks"
+    },
+    "bio kürbissuppe mit karotten und kartoffeln vegan, inklusive geretteter zutaten 4280001516625 bio kürbissuppe mit karotten und kartoffeln": {
+      "parent": "soups"
+    },
+    "bio lupinenprotein": {
+      "parent": "protein powders"
+    },
+    "bio milch 1,5%": {
+      "parent": "beverages and beverages preparations"
+    },
+    "bio organic weisser quinoa": {
+      "parent": "seeds"
+    },
+    "bio reiswaffeln joghurt": {
+      "parent": "puffed rice cakes with yogurt"
+    },
+    "bio rhabarber naturtrüb": {
+      "parent": "vegetable based foods and beverages"
+    },
+    "bio roggen dinkel krustis": {
+      "parent": "pre baked breads"
+    },
+    "bio speisequark 20% fett i. tr.": {
+      "parent": "quarks"
+    },
+    "bio spitzpaprika": {
+      "parent": "vegetables based foods"
+    },
+    "bio teigtaschen mit lachs": {
+      "parent": "stuffed pastas"
+    },
+    "bio tofu burger verdura": {
+      "parent": "vegetarian patties"
+    },
+    "bio tonic": {
+      "parent": "beverages and beverages preparations"
+    },
+    "bio vitalkeks kokos": {
+      "parent": "sweet snacks"
+    },
+    "bio weizenvollkorn toast": {
+      "parent": "wholemeal sliced breads"
+    },
+    "bio weißweinessig": {
+      "parent": "vinegars"
+    },
+    "biofennel seeds": {
+      "parent": "spices"
+    },
+    "bionella": {
+      "parent": "sweet spreads"
+    },
+    "birnen abate fetel": {
+      "parent": "plant based foods and beverages"
+    },
+    "birthday cake batter": {
+      "parent": "dietary supplements"
+    },
+    "biscuit tortenboden weiss": {
+      "parent": "sweet snacks"
+    },
+    "biscuits remix raspberry and vanilla flavour": {
+      "parent": "sweet snacks"
+    },
+    "biscuits sans sucre citron / yuzu": {
+      "parent": "sweet snacks"
+    },
+    "bitesize shredded wheat": {
+      "parent": "plant based foods and beverages"
+    },
+    "black beans & roasted green tea": {
+      "parent": "teas"
+    },
+    "black bear beverages, very berry soda, blue raspberry": {
+      "parent": "sodas"
+    },
+    "black cherry plum 100% juice flavored apple juice blend": {
+      "parent": "plant based foods and beverages"
+    },
+    "black garlic powder seasoning": {
+      "parent": "vegetables based foods"
+    },
+    "black ice tea peach": {
+      "parent": "tea based beverages"
+    },
+    "black jack smokey bbq": {
+      "parent": "sauces"
+    },
+    "black sesame mixed instant cereal": {
+      "parent": "soups"
+    },
+    "blackberry sangria, 9 oz": {
+      "parent": "beverages and beverages preparations"
+    },
+    "blanc de poulet braisé": {
+      "parent": "prepared poultry meats"
+    },
+    "blended oil": {
+      "parent": "undefined"
+    },
+    "blended scotch": {
+      "parent": "beverages and beverages preparations"
+    },
+    "bleu d’auvergne": {
+      "parent": "french cheeses"
+    },
+    "bleu ribbon": {
+      "parent": "sandwiches"
+    },
+    "block cheddar": {
+      "parent": "vegan products"
+    },
+    "bloemen fleurs honing miel": {
+      "parent": "sweeteners"
+    },
+    "blood orange & apple": {
+      "parent": "plant based foods and beverages"
+    },
+    "blood orange sparkling water": {
+      "parent": "beverages"
+    },
+    "blue cheese dipping cup": {
+      "parent": "toppings & ingredients"
+    },
+    "blue lemon": {
+      "parent": "plant based foods and beverages"
+    },
+    "blue raspberry sport drink": {
+      "parent": "sweetened beverages"
+    },
+    "blue ribbon 3 in 1 ice cream": {
+      "parent": "ice creams and sorbets"
+    },
+    "blueberry icelandic style nonfat yogurt, blueberry": {
+      "parent": "yogurts"
+    },
+    "blueberry pie snack mix": {
+      "parent": "sweet snacks"
+    },
+    "blueberry pomegranate smoothie puree, for shmart smoothie, large": {
+      "parent": "toppings & ingredients"
+    },
+    "blueberry protein bars": {
+      "parent": "protein bars"
+    },
+    "bluey porridge": {
+      "parent": "porridge"
+    },
+    "blütenhonig delikatess senf": {
+      "parent": "sweet mustards"
+    },
+    "bob ross make your own gummy kit (sour) candy powder": {
+      "parent": "sweet snacks"
+    },
+    "body wash": {
+      "parent": "open beauty facts"
+    },
+    "boisson riz choco noisette": {
+      "parent": "unsweetened beverages"
+    },
+    "bombay saphier": {
+      "parent": "beverages and beverages preparations"
+    },
+    "bon erbsen min.2,5kg": {
+      "parent": "vegetables prepared/processed (frozen)"
+    },
+    "bonbon erdbeer sahne zuckerfrei": {
+      "parent": "sweet snacks"
+    },
+    "boosting": {
+      "parent": "yogurts"
+    },
+    "boss barbeque sauce": {
+      "parent": "sauces"
+    },
+    "boston recipe baked beans": {
+      "parent": "undefined"
+    },
+    "bouchons gummy caps": {
+      "parent": "sweet snacks"
+    },
+    "bourguignon collier 40gr / basse côte 40gr vbf s/v ~2kg": {
+      "parent": "meats and their products"
+    },
+    "bramwells soba express noodles yakitori flavour": {
+      "parent": "plant based foods and beverages"
+    },
+    "brandy beans": {
+      "parent": "sweet snacks"
+    },
+    "braswell's select, sweet potato butter": {
+      "parent": "sweet spreads"
+    },
+    "bratensauce cremig fein": {
+      "parent": "sauces"
+    },
+    "bratpulver": {
+      "parent": "sweet snacks"
+    },
+    "bratöl olive mit sonnenblumenöl": {
+      "parent": "vegetable oils"
+    },
+    "brašno od ljepljive riže": {
+      "parent": "seeds"
+    },
+    "bread & celery dressing, family": {
+      "parent": "toppings & ingredients"
+    },
+    "bread bites cheese & herbs": {
+      "parent": "snacks"
+    },
+    "bread honey whole wheat": {
+      "parent": "plant based foods and beverages"
+    },
+    "breaded mild jalapeno pepper halves stuffed with": {
+      "parent": "frozen foods"
+    },
+    "break time": {
+      "parent": "sweet snacks"
+    },
+    "breakfast blend 10kapsler starbucks": {
+      "parent": "plant based foods and beverages"
+    },
+    "brechbohnen nur puur": {
+      "parent": "vegetables based foods"
+    },
+    "brent smart och chili": {
+      "parent": "snacks"
+    },
+    "bretzel à la saumure fourré au beurre": {
+      "parent": "special breads"
+    },
+    "british all rounder potatoes": {
+      "parent": "potatoes"
+    },
+    "british carrots": {
+      "parent": "vegetables based foods"
+    },
+    "brotaufstrich ingwer kokos curry": {
+      "parent": "spreads"
+    },
+    "brotherhood mix": {
+      "parent": "undefined"
+    },
+    "brown onion gravy": {
+      "parent": "sauces"
+    },
+    "brown rice & amaranth noodles with kale": {
+      "parent": "rice noodles"
+    },
+    "brownie chocolate chip": {
+      "parent": "sweet snacks"
+    },
+    "brut de noir 82%": {
+      "parent": "sweet snacks"
+    },
+    "buckshot": {
+      "parent": "energy drinks"
+    },
+    "bucăți de arahide": {
+      "parent": "sweet snacks"
+    },
+    "buffalo chicken slider": {
+      "parent": "sandwiches"
+    },
+    "buffalo milk mozzarella filled pasta, buffalo milk mozzarella": {
+      "parent": "plant based foods and beverages"
+    },
+    "buffalo style fiery chicken breast & cheese dip": {
+      "parent": "fermented milk products"
+    },
+    "build a skeleton cookies": {
+      "parent": "sweet snacks"
+    },
+    "bunch o' squares cereal": {
+      "parent": "plant based foods and beverages"
+    },
+    "burger buns mit sauerteig": {
+      "parent": "special breads"
+    },
+    "burrata al tartuffe nero": {
+      "parent": "dairies"
+    },
+    "buss n°509 belgian apple gin": {
+      "parent": "hard liquors"
+    },
+    "butter cheese": {
+      "parent": "ro:branzeturi"
+    },
+    "butter chicken seasoning mix": {
+      "parent": "groceries"
+    },
+    "butter crackers, butter": {
+      "parent": "sweet snacks"
+    },
+    "butter flavor cooking spray": {
+      "parent": "vegetable oils"
+    },
+    "butternut squash & coconut curry": {
+      "parent": "plant based meals"
+    },
+    "button mushrooms in water": {
+      "parent": "vegetables based foods"
+    },
+    "bûche de chèvre": {
+      "parent": "pasteurized cheeses"
+    },
+    "cafe mocha, small": {
+      "parent": "beverages and beverages preparations"
+    },
+    "caffeine free fruit punch artificially flavored soda, fruit punch": {
+      "parent": "sodas"
+    },
+    "caffeine free herbal peppermit tea": {
+      "parent": "teas"
+    },
+    "caffè crema pads": {
+      "parent": "plant based foods and beverages"
+    },
+    "cake au beurre fourré": {
+      "parent": "sweet snacks"
+    },
+    "cakes with mint flavored filling and dark chocolate flavored coating, seasonal mint": {
+      "parent": "sweet snacks"
+    },
+    "calcium added orange juice": {
+      "parent": "undefined"
+    },
+    "california grown chopped walnut": {
+      "parent": "snacks"
+    },
+    "california gummy bears": {
+      "parent": "sweet snacks"
+    },
+    "california raisins": {
+      "parent": "snacks"
+    },
+    "campanelle kale": {
+      "parent": "undefined"
+    },
+    "candyrific, disney best friends heart keychain with candy": {
+      "parent": "sweet snacks"
+    },
+    "canned meat": {
+      "parent": "meats and their products"
+    },
+    "cannellono ricotta et aux epinards": {
+      "parent": "stuffed pastas"
+    },
+    "canyon campfire black beans": {
+      "parent": "stews"
+    },
+    "caramel & milk chocolate cookie bars": {
+      "parent": "sweet snacks"
+    },
+    "caramel & vanilla caramel ice cream & vanilla ice cream are swirled together beneath a coat of real milk chocolate with caramelized sugar pieces mixed in fusion bars": {
+      "parent": "frozen foods"
+    },
+    "caramel chocolate chip frozen cappuccino, 24 oz": {
+      "parent": "beverages and beverages preparations"
+    },
+    "caramel duo premium chocolate squares": {
+      "parent": "sweet snacks"
+    },
+    "caramel fudge chip plant based frozen dessert": {
+      "parent": "plant based foods and beverages"
+    },
+    "caramel gelified dessert": {
+      "parent": "yogurts"
+    },
+    "caramel hearts": {
+      "parent": "sweet snacks"
+    },
+    "caramel popcorn clusters": {
+      "parent": "undefined"
+    },
+    "caramel popcorn drizzled with white and dark chocolate flavored coating, white and dark drizzled": {
+      "parent": "snacks"
+    },
+    "caramelized onion & bacon tomato ketchup, caramelized onion & bacon": {
+      "parent": "tomato sauces"
+    },
+    "carbonara samyang": {
+      "parent": "plant based foods and beverages"
+    },
+    "carbonated matcha tea": {
+      "parent": "tea based beverages"
+    },
+    "caribbean white rum": {
+      "parent": "beverages"
+    },
+    "carpos pistachio": {
+      "parent": "plant based milk alternatives"
+    },
+    "carrelet passera goldbutt": {
+      "parent": "seafood"
+    },
+    "carrot noodles with pesto": {
+      "parent": "vegetables based foods"
+    },
+    "cascadian farm organic toasted coconut chewy protein bar": {
+      "parent": "plant based foods and beverages"
+    },
+    "cashew banana nut clusters snack bites, cashew banana nut clusters": {
+      "parent": "snacks"
+    },
+    "cashew nuts, brazilian superfood": {
+      "parent": "snacks"
+    },
+    "cashews & cranberries": {
+      "parent": "snacks"
+    },
+    "cassis sorbet": {
+      "parent": "sorbets"
+    },
+    "center cut smoked pork chops": {
+      "parent": "meals"
+    },
+    "cereal toasted oats": {
+      "parent": "undefined"
+    },
+    "cereali mix": {
+      "parent": "snacks"
+    },
+    "cerveza royal guard (ccu)": {
+      "parent": "beverages and beverages preparations"
+    },
+    "chabrior barres céréales chocolat noir": {
+      "parent": "sweet snacks"
+    },
+    "challenge, spreadable butter, roasted garlic & herb": {
+      "parent": "fats"
+    },
+    "champagne raspberry preserves": {
+      "parent": "sweet spreads"
+    },
+    "chantenay carrots": {
+      "parent": "vegetables based foods"
+    },
+    "chanvre chocolat": {
+      "parent": "vegan products"
+    },
+    "chardonay & pinot grigio 2018": {
+      "parent": "beverages and beverages preparations"
+    },
+    "chatpata amla candy": {
+      "parent": "sweet snacks"
+    },
+    "chechil handmade string cheese": {
+      "parent": "string cheeses"
+    },
+    "cheddar cheese sauce riced broccoli": {
+      "parent": "vegetables based foods"
+    },
+    "cheddar cheese, for mto sliderz": {
+      "parent": "toppings & ingredients"
+    },
+    "cheddar cheese, tomato, bacon,basil,habanero": {
+      "parent": "fermented milk products"
+    },
+    "cheddar jack cheese": {
+      "parent": "undefined"
+    },
+    "cheddar natural shredded cheese": {
+      "parent": "grated cheese"
+    },
+    "cheery cherry organic twisted fruit + veggie snack, cheery cherry": {
+      "parent": "sweet snacks"
+    },
+    "cheese & onion flavour potato crisps": {
+      "parent": "snacks"
+    },
+    "cheese & tomato pasta": {
+      "parent": "prepared salads"
+    },
+    "cheese balls snacks 300g": {
+      "parent": "snacks"
+    },
+    "cheese topped red leicester & chive bloomer": {
+      "parent": "plant based foods and beverages"
+    },
+    "cheesesteak filet mignon": {
+      "parent": "meats and their products"
+    },
+    "chefs coco island milk protein ananas kokosnuss": {
+      "parent": "milks liquid and powder"
+    },
+    "cherry blossom flavour dessert yogurt": {
+      "parent": "yogurts"
+    },
+    "cherry pomegranate": {
+      "parent": "dried products to be rehydrated"
+    },
+    "cherry pomegranate juice": {
+      "parent": "plant based foods and beverages"
+    },
+    "chessmen sweet & simple cookies": {
+      "parent": "sweet snacks"
+    },
+    "chestnut cream": {
+      "parent": "spreads"
+    },
+    "chewy lemonhead, chewy tropical candies, assorted fruit": {
+      "parent": "sweet snacks"
+    },
+    "chicken bell pepper": {
+      "parent": "wraps"
+    },
+    "chicken döner kebab": {
+      "parent": "meats and their products"
+    },
+    "chicken florentine bianca": {
+      "parent": "pizzas pies and quiches"
+    },
+    "chicken karaage rice bowl": {
+      "parent": "chicken karaage"
+    },
+    "chicken leg quarters": {
+      "parent": "undefined"
+    },
+    "chicken veggie lite, chicken delight on original crust, small, 1 slice": {
+      "parent": "pizzas pies and quiches"
+    },
+    "chili 3 way": {
+      "parent": "soups"
+    },
+    "chili black bean sauce": {
+      "parent": "stews"
+    },
+    "chili con carne mit schweinefleisch & kidneybohnen": {
+      "parent": "meals with meat"
+    },
+    "chili crisp": {
+      "parent": "sauces"
+    },
+    "chili lime ginger avocado oil spray": {
+      "parent": "vegetable oils"
+    },
+    "chili powder": {
+      "parent": "null"
+    },
+    "chili roasted pistachios": {
+      "parent": "snacks"
+    },
+    "chipotle & lime activated chips": {
+      "parent": "sorghum snack"
+    },
+    "chipotle creamy sandwich spread, chipotle": {
+      "parent": "sauces"
+    },
+    "chipotle veggie burrito bowl": {
+      "parent": "vegetable based frozen ready made meals"
+    },
+    "chippey's": {
+      "parent": "dried products to be rehydrated"
+    },
+    "chips salées": {
+      "parent": "snacks"
+    },
+    "chips sea salt and balsamic vinegar": {
+      "parent": "snacks"
+    },
+    "chips à l ancienne": {
+      "parent": "halal"
+    },
+    "choc kits classic choc choc oat biscuits": {
+      "parent": "sweet snacks"
+    },
+    "choco karamel met slagroom": {
+      "parent": "desserts"
+    },
+    "chocolate chip cookie dough vanilla ice cream with cookie dough pieces and chocolate chips, chocolate chip cookie dough": {
+      "parent": "frozen foods"
+    },
+    "chocolate chip dipped chewy granola bars": {
+      "parent": "snacks"
+    },
+    "chocolate chip mini crunch cookies": {
+      "parent": "sweet snacks"
+    },
+    "chocolate chip multigrain cereal bars, chocolate chip": {
+      "parent": "snacks"
+    },
+    "chocolate confections": {
+      "parent": "undefined"
+    },
+    "chocolate double dipped peanuts": {
+      "parent": "undefined"
+    },
+    "chocolate fusion": {
+      "parent": "sweet snacks"
+    },
+    "chocolate hazelnut almond italian torte, chocolate hazelnut": {
+      "parent": "sweet snacks"
+    },
+    "chocolate hummus": {
+      "parent": "spreads"
+    },
+    "chocolate milkshake whey protein isolate": {
+      "parent": "protein supplement"
+    },
+    "chocolate milky caramel": {
+      "parent": "ice creams and sorbets"
+    },
+    "chocolate mini bundt cakes": {
+      "parent": "sweet snacks"
+    },
+    "chocolate mousse +protein": {
+      "parent": "desserts"
+    },
+    "chocolate peppermint": {
+      "parent": "yogurts"
+    },
+    "chocolate quinoa crisps": {
+      "parent": "snacks"
+    },
+    "chocolate symphony zartbitter": {
+      "parent": "sweet spreads"
+    },
+    "chocolate turkish delight": {
+      "parent": "turkish delight"
+    },
+    "chocolatey sweetened rice cereal, chocolatey": {
+      "parent": "plant based foods and beverages"
+    },
+    "chopotle pickle chips with agave syrup": {
+      "parent": "salted snacks"
+    },
+    "chopped salad": {
+      "parent": "salted snacks"
+    },
+    "christie's, golden greek dressing": {
+      "parent": "sauces"
+    },
+    "chunky chicken & dumplings ready to serve soup": {
+      "parent": "undefined"
+    },
+    "chunky garden combination sauce": {
+      "parent": "sauces"
+    },
+    "chunky sirloin burger ready to serve soup, chunky": {
+      "parent": "soups"
+    },
+    "ciabatta brot backmischung": {
+      "parent": "plant based foods and beverages"
+    },
+    "ciambella lidl": {
+      "parent": "sweet snacks"
+    },
+    "ciao bella": {
+      "parent": "meat analogues"
+    },
+    "cider vinegar, normandy": {
+      "parent": "vinegars"
+    },
+    "cigarettes": {
+      "parent": "sweet snacks"
+    },
+    "cinnamon streusel coffee cakes": {
+      "parent": "sweet snacks"
+    },
+    "cinnamon walnut bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "cinni mini crunch, sweetened wheat and rice cereal with cinnamon": {
+      "parent": "plant based foods and beverages"
+    },
+    "cioccolato fondente extra amaro": {
+      "parent": "sweet snacks"
+    },
+    "circle k, favorites, peach rings": {
+      "parent": "sweet snacks"
+    },
+    "claim jumper dutch apple pie, 42 oz": {
+      "parent": "sweet snacks"
+    },
+    "clam strips appetizer": {
+      "parent": "appetizers & sides"
+    },
+    "classic aiki yakisoba": {
+      "parent": "plant based foods and beverages"
+    },
+    "classic banana flavour oat": {
+      "parent": "porridge with banana"
+    },
+    "classic creamy almond butter": {
+      "parent": "vegetable fats"
+    },
+    "classic pulled chicken": {
+      "parent": "prepared meats"
+    },
+    "classic swiss whole grains, flax seeds, dates raisins, almonds, cranberries, classic swiss": {
+      "parent": "snacks"
+    },
+    "classic vanilla bean dessert bar": {
+      "parent": "frozen foods"
+    },
+    "click mix pocket size": {
+      "parent": "sweet snacks"
+    },
+    "cloverland farms dairy, reduced fat chocolate milk": {
+      "parent": "milks"
+    },
+    "clr protein water": {
+      "parent": "whey protein"
+    },
+    "co op strawberry fizzy lances": {
+      "parent": "sweet snacks"
+    },
+    "cobra": {
+      "parent": "beverages"
+    },
+    "coca cola bottle, 1.75 liters": {
+      "parent": "non alcoholic beverages"
+    },
+    "coca cola zéro": {
+      "parent": "sodas"
+    },
+    "cocktailsauce (migros)": {
+      "parent": "sauces"
+    },
+    "coco cubes": {
+      "parent": "fr:noix de coco en cubes"
+    },
+    "coco juice": {
+      "parent": "plant based foods and beverages"
+    },
+    "coconut & almond bars": {
+      "parent": "snacks"
+    },
+    "coconut lime protein bar, coconut lime": {
+      "parent": "snacks"
+    },
+    "coffee creamer, gingerbread": {
+      "parent": "plant based foods and beverages"
+    },
+    "cola flascherl": {
+      "parent": "sweet snacks"
+    },
+    "cola soda, cherry, cherry": {
+      "parent": "sodas"
+    },
+    "colby jack colby and monterey jack deli style sliced cheese, colby jack": {
+      "parent": "fermented milk products"
+    },
+    "cold & crafted coffee": {
+      "parent": "coffee drinks"
+    },
+    "colombo curry": {
+      "parent": "sauces"
+    },
+    "colon care plus": {
+      "parent": "dietary supplements"
+    },
+    "composta di fragola biologica": {
+      "parent": "sweet spreads"
+    },
+    "confiture de fraises de bordeaux": {
+      "parent": "sweet spreads"
+    },
+    "confiture triple fruits": {
+      "parent": "sweet spreads"
+    },
+    "confitures": {
+      "parent": "sweet spreads"
+    },
+    "cooked beetroot": {
+      "parent": "prepared vegetables"
+    },
+    "cooked lentils and chickpeas (jardin bio)": {
+      "parent": "vegetables based foods"
+    },
+    "cookie battle": {
+      "parent": "ice creams and sorbets"
+    },
+    "coquilettes jambon emmental": {
+      "parent": "pasta dishes"
+    },
+    "cordial cherries chocolate": {
+      "parent": "snacks"
+    },
+    "cordon blij": {
+      "parent": "vegetarian cordons bleus"
+    },
+    "coriander seed": {
+      "parent": "undefined"
+    },
+    "corn & black bean salad, side": {
+      "parent": "appetizers & sides"
+    },
+    "corn & oat snack": {
+      "parent": "plant based foods and beverages"
+    },
+    "corn ships": {
+      "parent": "snacks"
+    },
+    "cornbread cracker bites": {
+      "parent": "snacks"
+    },
+    "cornichons": {
+      "parent": "null"
+    },
+    "cornish pale ale": {
+      "parent": "beverages"
+    },
+    "cornusso": {
+      "parent": "sprinkles"
+    },
+    "cottage cheese 4%": {
+      "parent": "fermented milk products"
+    },
+    "country blend mixed vegetables": {
+      "parent": "undefined"
+    },
+    "country club": {
+      "parent": "sandwiches"
+    },
+    "country cracker": {
+      "parent": "snacks"
+    },
+    "cow butter": {
+      "parent": "spreads"
+    },
+    "cowboy ike's, spicy cabernet sauvisnon wine velly": {
+      "parent": "sauces"
+    },
+    "crab cake classic": {
+      "parent": "cooking helpers"
+    },
+    "cranberry cinnamon goat cheese": {
+      "parent": "goat cheeses"
+    },
+    "crazy christmas faces": {
+      "parent": "food decorations"
+    },
+    "cream cheese pepper bites": {
+      "parent": "frozen foods"
+    },
+    "cream cheese snack spread": {
+      "parent": "fermented milk products"
+    },
+    "cream style golden corn": {
+      "parent": "undefined"
+    },
+    "creamfields grated cheddar": {
+      "parent": "grated cheese"
+    },
+    "creamy buffalo dipping sauce cup": {
+      "parent": "toppings & ingredients"
+    },
+    "creamy caramel filled hard candies": {
+      "parent": "sweet snacks"
+    },
+    "creamy garlic organic almond dip, creamy garlic": {
+      "parent": "sauces"
+    },
+    "creamy garlic ranch dressing": {
+      "parent": "sauces"
+    },
+    "creamy hazelnut cocoa spread": {
+      "parent": "vegetable fats"
+    },
+    "creamy mushroom sauce": {
+      "parent": "sauces"
+    },
+    "creamy with garlic & herbs": {
+      "parent": "spreads"
+    },
+    "creatine five": {
+      "parent": "dietary supplements"
+    },
+    "creatine monohydrate unflavored": {
+      "parent": "nl:sportvoeding"
+    },
+    "crema con „aceto balsamico di modena g.g.a.“": {
+      "parent": "glazes with vinegar"
+    },
+    "crema premium": {
+      "parent": "es:crema acida"
+    },
+    "creme filled ginger cookies": {
+      "parent": "sweet snacks"
+    },
+    "creme mit salzkaramellgeschmack": {
+      "parent": "sweet spreads"
+    },
+    "cremiges curry": {
+      "parent": "sauces"
+    },
+    "cremiges naturjoghurt 3,6% fett": {
+      "parent": "yogurts"
+    },
+    "cremissimo bourbon vanille laktosefrei": {
+      "parent": "ice creams and sorbets"
+    },
+    "crepes with cocoa filling": {
+      "parent": "sweet filled crepes"
+    },
+    "creta verde extra virgin olive oil": {
+      "parent": "virgin olive oils"
+    },
+    "crevetten schwänze": {
+      "parent": "shrimps tails"
+    },
+    "crinkle cut: chedar cheese and onion": {
+      "parent": "snacks"
+    },
+    "crisp, soda, orange": {
+      "parent": "sodas"
+    },
+    "crispy dark chocolate almond snack bar": {
+      "parent": "sweet snacks"
+    },
+    "crispy dried watermelon": {
+      "parent": "plant based foods and beverages"
+    },
+    "crispy, sweetened whole wheat and rice cereal, cinnamon": {
+      "parent": "plant based foods and beverages"
+    },
+    "croissants au jambon": {
+      "parent": "puff pastry meals"
+    },
+    "croissants rellenos de crema de cacao y avellanas": {
+      "parent": "viennoiseries"
+    },
+    "crostini classici": {
+      "parent": "plant based foods and beverages"
+    },
+    "croustillant 3 chocolats": {
+      "parent": "plant based foods and beverages"
+    },
+    "crunch krispy juniors doughnuts": {
+      "parent": "sweet snacks"
+    },
+    "crunchips paprika": {
+      "parent": "snacks"
+    },
+    "crunchy 100% merlu": {
+      "parent": "seafood"
+    },
+    "crunchy almond butter with no added sugar or salt": {
+      "parent": "spreads"
+    },
+    "crunchy christmas": {
+      "parent": "sweet snacks"
+    },
+    "crunchy peanut butter pb&j bite size snacks": {
+      "parent": "undefined"
+    },
+    "cuisine vega zum kochen": {
+      "parent": "pflanzliche sahne zum kochen"
+    },
+    "culinary circle, shaved parmesan cheese": {
+      "parent": "fermented milk products"
+    },
+    "cullen skink": {
+      "parent": "soups"
+    },
+    "cup a soup moutarde": {
+      "parent": "soups"
+    },
+    "curafit multivitamin brausetabletten": {
+      "parent": "dietary supplements"
+    },
+    "cured turkey ham thigh meat": {
+      "parent": "prepared meats"
+    },
+    "curried butternut squash soup": {
+      "parent": "vegetable soups"
+    },
+    "curry bio tofu mariniert mit kokosnusscreme": {
+      "parent": "tofu"
+    },
+    "curry bratlinge": {
+      "parent": "vegetarian hamburgers"
+    },
+    "curry casimir": {
+      "parent": "sauces"
+    },
+    "curry de lentejas con arroz basmati": {
+      "parent": "platos preparados"
+    },
+    "curry salz": {
+      "parent": "salts"
+    },
+    "curry tumeric hummus": {
+      "parent": "sauces"
+    },
+    "daily chef, buffalo blue cheese dip": {
+      "parent": "fermented milk products"
+    },
+    "dairy free muffins": {
+      "parent": "undefined"
+    },
+    "dairy milt fruitier & nuttier": {
+      "parent": "sweet snacks"
+    },
+    "dairy soft salt reduced": {
+      "parent": "vegetable fats"
+    },
+    "danish delights": {
+      "parent": "sweet snacks"
+    },
+    "dare biscuits with whole grains": {
+      "parent": "sweet snacks"
+    },
+    "dark chocolate almond coconut crunch bar": {
+      "parent": "snacks"
+    },
+    "dark chocolate cherry protein + probiotic bar, dark chocolate cherry": {
+      "parent": "snacks"
+    },
+    "dark chocolate chips sprinkled in refreshing mint": {
+      "parent": "baking decorations"
+    },
+    "dark chocolate truffles, chocolate": {
+      "parent": "sweet snacks"
+    },
+    "dark chocolate with peanut filling": {
+      "parent": "sweet snacks"
+    },
+    "dark chocolates with reserva 1800 reposado tequila filling, dark chocolates": {
+      "parent": "sweet snacks"
+    },
+    "dark ice cream bar, dark": {
+      "parent": "frozen foods"
+    },
+    "dark salt caramel": {
+      "parent": "sweet snacks"
+    },
+    "dark wildflower 100 percent raw honey": {
+      "parent": "sweeteners"
+    },
+    "decaffeinated house blend coffee, 16 oz": {
+      "parent": "beverages and beverages preparations"
+    },
+    "decorating sugar blue": {
+      "parent": "baking decorations"
+    },
+    "defense 360 multi powder kids": {
+      "parent": "dietary supplements"
+    },
+    "delice sommer edition": {
+      "parent": "sweet snacks"
+    },
+    "delikatess aufschnittplatte": {
+      "parent": "sausages"
+    },
+    "delikatess rinderdalami": {
+      "parent": "salami"
+    },
+    "delinatess snackis": {
+      "parent": "sausages"
+    },
+    "deluxe ice cream, strawberry surf": {
+      "parent": "frozen foods"
+    },
+    "deluxe shells & cheddar cheese": {
+      "parent": "pasta dishes"
+    },
+    "demi poires en sirop": {
+      "parent": "farming products"
+    },
+    "denali, cherry flavored premium ice cream with cherry cups and famous moose tracks fudge, cherry moose tracks": {
+      "parent": "frozen foods"
+    },
+    "der scharfe maxx fondue": {
+      "parent": "fermented milk products"
+    },
+    "deroni orez sarmale": {
+      "parent": "seeds"
+    },
+    "designer whey": {
+      "parent": "protein powders"
+    },
+    "dessert creme vanille": {
+      "parent": "entremets mousses and creamy puddings"
+    },
+    "devon custard": {
+      "parent": "sauces"
+    },
+    "diced apples, for endless garden bar": {
+      "parent": "toppings & ingredients"
+    },
+    "diced heirloom tomatoes (dresden)": {
+      "parent": "vegetables based foods"
+    },
+    "die kleinen bio jogurt mild vanille": {
+      "parent": "yogurts"
+    },
+    "die limo limette zitrone": {
+      "parent": "sweetened beverages"
+    },
+    "diet sparkling lemonade": {
+      "parent": "sweetened beverages"
+    },
+    "digiorno, thin & crispy pizza, pepperoni and peppers, pepperoni and peppers": {
+      "parent": "pizzas pies and quiches"
+    },
+    "dil pickle hummus": {
+      "parent": "spreads"
+    },
+    "diluted apple juice, gasified": {
+      "parent": "plant based foods and beverages"
+    },
+    "dine in basmati rice": {
+      "parent": "seeds"
+    },
+    "dinkel fadennudeln, hell, demeter": {
+      "parent": "tagliatelle"
+    },
+    "dinkelmehl vollkorn von k bio": {
+      "parent": "wheat flours"
+    },
+    "dinkelvollkornmehl aus norddeutschland": {
+      "parent": "wheat flours"
+    },
+    "dip nacho": {
+      "parent": "sauces"
+    },
+    "dominosteine vollmilchschokolade": {
+      "parent": "sweet snacks"
+    },
+    "donini merlot italian red wine": {
+      "parent": "wines"
+    },
+    "dornfelder trocken rot": {
+      "parent": "beverages and beverages preparations"
+    },
+    "double crisp, edible candy ball": {
+      "parent": "sweet snacks"
+    },
+    "double jack and cola 6.9% alc/vol": {
+      "parent": "beverages"
+    },
+    "double protein raw oats": {
+      "parent": "plant based foods and beverages"
+    },
+    "dr lemon con limón": {
+      "parent": "sodas"
+    },
+    "dr pepper, 12 fl oz": {
+      "parent": "beverages and beverages preparations"
+    },
+    "dr pepper, soda": {
+      "parent": "sodas"
+    },
+    "dreamhouse, peanut brittle, milk chocolate": {
+      "parent": "sweet snacks"
+    },
+    "dresdner felsenkeller": {
+      "parent": "beverages and beverages preparations"
+    },
+    "dressings salad dressing marinade lemon garlic pack sugar free": {
+      "parent": "sauces"
+    },
+    "dried apples snacks": {
+      "parent": "snacks"
+    },
+    "dried cranberries, sunflower & sesame seeds, roasted cashews edamame & cashew salad topper, edamame & cashew": {
+      "parent": "sauces"
+    },
+    "dried pitted tart montmorency cherries": {
+      "parent": "undefined"
+    },
+    "drinking greek yoghurt pomegranate with mixed fruits": {
+      "parent": "yogurts"
+    },
+    "drizzled minis fudge": {
+      "parent": "snacks"
+    },
+    "dry roasted sunflower kernels, dry roasted": {
+      "parent": "snacks"
+    },
+    "dryfruit mix": {
+      "parent": "plant based foods and beverages"
+    },
+    "duvalin pudding assorted": {
+      "parent": "desserts"
+    },
+    "dänische regenbogenforellenfilets": {
+      "parent": "seafood"
+    },
+    "e millet cookies": {
+      "parent": "ragi biscuits"
+    },
+    "earth's sour cream": {
+      "parent": "yogurts"
+    },
+    "easy churned light vanilla ice cream with peanut butter cups swirled with famous moose tracks fudge, denali original moose tracks": {
+      "parent": "frozen foods"
+    },
+    "edeka p&w remoulade 425g 1.99€ 1kg 4.68€": {
+      "parent": "sauces with mustard"
+    },
+    "edle trüffel marc de champagne": {
+      "parent": "sweet snacks"
+    },
+    "egg fusilli pasta": {
+      "parent": "plant based foods and beverages"
+    },
+    "eggless scramble breakfast pockets": {
+      "parent": "meals"
+    },
+    "eggnog blended greek lowfat yogurt, eggnog": {
+      "parent": "yogurts"
+    },
+    "eier, extra gross": {
+      "parent": "farming products"
+    },
+    "eisbergsalat 1 stück": {
+      "parent": "salads"
+    },
+    "eiscaffee jacobs ice coffee": {
+      "parent": "instant powder for coffee with milk"
+    },
+    "eistee premium wildkirsche": {
+      "parent": "variety packs"
+    },
+    "eistee, strawberry kiwi": {
+      "parent": "beverages and beverages preparations"
+    },
+    "ekolgiska blandade bönor": {
+      "parent": "white beans"
+    },
+    "el conchel le p'ti chorizo épicé": {
+      "parent": "prepared meats"
+    },
+    "electrolyte beverage coconut": {
+      "parent": "sports drink"
+    },
+    "ementál": {
+      "parent": "fermented milk products"
+    },
+    "empanado de peito de frango": {
+      "parent": "pt:nuggets"
+    },
+    "enerbio bio cornflakes": {
+      "parent": "plant based foods and beverages"
+    },
+    "energy chews fruit smoothie": {
+      "parent": "sweet snacks"
+    },
+    "energy collagen protein": {
+      "parent": "dietary supplements"
+    },
+    "energy date bars": {
+      "parent": "sweet snacks"
+    },
+    "enriched macaroni product, elbows, spaghetti, penne": {
+      "parent": "spaghetti"
+    },
+    "ensalada completa césar pollo y queso": {
+      "parent": "salads"
+    },
+    "entspann mal wieder": {
+      "parent": "plant based foods and beverages"
+    },
+    "erbse masala": {
+      "parent": "spreads"
+    },
+    "erbsen möhre klein": {
+      "parent": "vegetables based foods"
+    },
+    "erdnusscreme crunchi": {
+      "parent": "spreads"
+    },
+    "eriks peppersaus 230ml": {
+      "parent": "sauces"
+    },
+    "eritritol": {
+      "parent": "sweeteners"
+    },
+    "esencia de vainilla kado": {
+      "parent": "vanilla extract"
+    },
+    "esprézzo centerfilled mocha coffe candy": {
+      "parent": "sweet snacks"
+    },
+    "espère fouet extra": {
+      "parent": "charcuterie"
+    },
+    "essential waitrose wholewheat biscuits": {
+      "parent": "sweet snacks"
+    },
+    "eve's secret, butter biscuits with apple": {
+      "parent": "sweet snacks"
+    },
+    "evening primrose oil": {
+      "parent": "dietary supplements"
+    },
+    "exceptional penne pasta meal, creamy alfredo": {
+      "parent": "plant based foods and beverages"
+    },
+    "exotik bonbons": {
+      "parent": "sweet snacks"
+    },
+    "extensy fructe de padure": {
+      "parent": "soft drinks"
+    },
+    "extra dry": {
+      "parent": "distilled beverages"
+    },
+    "extra fondente": {
+      "parent": "sweet snacks"
+    },
+    "extra special 2 beer battered cod fillets": {
+      "parent": "fish breaded"
+    },
+    "extra virgin": {
+      "parent": "virgin olive oils"
+    },
+    "extra virgin olive oil first cold pressed": {
+      "parent": "virgin olive oils"
+    },
+    "extra virgin olive oil garlic flavor": {
+      "parent": "vegetable oils"
+    },
+    "extrem nougat & caramel": {
+      "parent": "sweet snacks"
+    },
+    "fall caramels": {
+      "parent": "sweet snacks"
+    },
+    "farfalle tricolor": {
+      "parent": "plant based foods and beverages"
+    },
+    "farmersalade": {
+      "parent": "prepared salads"
+    },
+    "farmstyle greek nonfat yogurt, pacific northwest honey": {
+      "parent": "yogurts"
+    },
+    "fat free milk": {
+      "parent": "skimmed milks"
+    },
+    "feest stolletje": {
+      "parent": "kerst bakkerij"
+    },
+    "feine bio oblaten lebkuchen": {
+      "parent": "sweet snacks"
+    },
+    "feine herzwaffeln": {
+      "parent": "waffles"
+    },
+    "feine kappen austernpilze": {
+      "parent": "vegetables based foods"
+    },
+    "feiner bienenstich": {
+      "parent": "sweet snacks"
+    },
+    "feiner fleischsalat": {
+      "parent": "spreads"
+    },
+    "feldschlosschen sans alcool blanche": {
+      "parent": "non alcoholic beverages"
+    },
+    "fenchel teebeutel": {
+      "parent": "tees"
+    },
+    "feta & caramelised red onion pizza": {
+      "parent": "ready made pizza"
+    },
+    "fettine": {
+      "parent": "sliced cheeses"
+    },
+    "fettine light coop": {
+      "parent": "it:formaggio fuso a fette"
+    },
+    "fettuccine alfredo, regional": {
+      "parent": "entrees"
+    },
+    "feuille de chêne blonde x12": {
+      "parent": "vegetables based foods"
+    },
+    "fiber max chewy bars, oats and peanut butter": {
+      "parent": "snacks"
+    },
+    "fig & cocoa spread, fig & cocoa": {
+      "parent": "sweet spreads"
+    },
+    "filets de poulet surgelés": {
+      "parent": "poultries"
+    },
+    "fine classic date mamoul": {
+      "parent": "date biscuit"
+    },
+    "fine hazelnut chocolate spread": {
+      "parent": "sweet spreads"
+    },
+    "finger millet flour": {
+      "parent": "seeds"
+    },
+    "fire charred roasted red peppers": {
+      "parent": "salted snacks"
+    },
+    "fire roasted sweet red peppers": {
+      "parent": "salted snacks"
+    },
+    "fish fillets, potato crusted": {
+      "parent": "seafood"
+    },
+    "fishpeople, seafood chili blanco with tuna, sea clams & pink shrimp, chili": {
+      "parent": "soups"
+    },
+    "fit frozen desserts": {
+      "parent": "frozen foods"
+    },
+    "fit shake": {
+      "parent": "protein shakes"
+    },
+    "fit! kohuke": {
+      "parent": "sweet snacks"
+    },
+    "five alarm mix premium snacks": {
+      "parent": "snacks"
+    },
+    "five cheese garlic bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "fix tagliatelle mit lachs": {
+      "parent": "pasta dishes"
+    },
+    "flame baked roti": {
+      "parent": "white breads"
+    },
+    "flame seared carnitas": {
+      "parent": "meals"
+    },
+    "flan de huevo al baño maria": {
+      "parent": "flans"
+    },
+    "flapjack plain & delicious": {
+      "parent": "sweet snacks"
+    },
+    "flat potato chips mieng kam krob ros flavor": {
+      "parent": "sweet potatoes and their products"
+    },
+    "flatbreads original": {
+      "parent": "snacks salados"
+    },
+    "flavoured black tea, 50 tea bags": {
+      "parent": "teas"
+    },
+    "flavoured marschmallow": {
+      "parent": "sweet snacks"
+    },
+    "florentine": {
+      "parent": "seafood"
+    },
+    "florentine style blend broccoli, cauliflower, carrots, florentine style blend": {
+      "parent": "vegetables based foods"
+    },
+    "flour tortillas soft fajita": {
+      "parent": "mexican dinner mixes"
+    },
+    "focaccia ai pomodori e alle olive": {
+      "parent": "plant based foods and beverages"
+    },
+    "food lion, cream cheese iced red velvet cake": {
+      "parent": "sweet snacks"
+    },
+    "fortified with green tea blend": {
+      "parent": "sodas"
+    },
+    "forza amici": {
+      "parent": "beverages and beverages preparations"
+    },
+    "frankfurti sertésvirsli": {
+      "parent": "prepared meats"
+    },
+    "freches popcorn banane": {
+      "parent": "snacks"
+    },
+    "free schoko": {
+      "parent": "sweet snacks"
+    },
+    "freefrom seeded sliced bread": {
+      "parent": "specific products"
+    },
+    "freeze dried sliced strawberries": {
+      "parent": "snacks"
+    },
+    "freeze dried treats sour": {
+      "parent": "sweet snacks"
+    },
+    "freiland eier": {
+      "parent": "fresh eggs"
+    },
+    "fresh buttery taste 55% vegetable oil spread": {
+      "parent": "fats"
+    },
+    "fresh idaho potatoes": {
+      "parent": "plant based foods and beverages"
+    },
+    "fresh organic ramen noodles": {
+      "parent": "plant based foods and beverages"
+    },
+    "fresh pasteurised whole milk": {
+      "parent": "whole pasteurised milks"
+    },
+    "fresh pico": {
+      "parent": "plant based foods and beverages"
+    },
+    "fresh start økol urte te 20pos pukka": {
+      "parent": "teas"
+    },
+    "fresh tortillas": {
+      "parent": "tortillas"
+    },
+    "freshly sprouted wheat wheat & oats bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "freshmint": {
+      "parent": "es:chile sin azucar"
+    },
+    "frollini al cacao": {
+      "parent": "sweet snacks"
+    },
+    "frollini alla panna": {
+      "parent": "sweet snacks"
+    },
+    "frollini di grano cappelli con gocce di cioccolato": {
+      "parent": "sweet snacks"
+    },
+    "froot loops cereal reduced sugar": {
+      "parent": "plant based foods and beverages"
+    },
+    "frosted sparkle licious cherry toaster pastries, frosted sparkle licious cherry": {
+      "parent": "sweet snacks"
+    },
+    "frozen strawberries and blueberries": {
+      "parent": "plant based foods and beverages"
+    },
+    "frozen wafer sandwich": {
+      "parent": "frozen foods"
+    },
+    "fruit & vegetable smoothie blend": {
+      "parent": "plant based foods and beverages"
+    },
+    "fruit & veggie pops": {
+      "parent": "frozen foods"
+    },
+    "fruit flavored snacks assorted fruit": {
+      "parent": "sweet snacks"
+    },
+    "fruit fusion cranberry": {
+      "parent": "beverages and beverages preparations"
+    },
+    "fruit punch flavour zero sugar electrolyte beverage": {
+      "parent": "sweetened beverages"
+    },
+    "fruit punch lower sugar thirst quencher concentrate": {
+      "parent": "sweetened beverages"
+    },
+    "fruit punch sports fuel drink, fruit punch": {
+      "parent": "sweetened beverages"
+    },
+    "fruit salad": {
+      "parent": "plant based foods and beverages"
+    },
+    "fruits": {
+      "parent": "sweet snacks"
+    },
+    "fruits + nektar +vitamin d": {
+      "parent": "beverages and beverages preparations"
+    },
+    "fruitwater fizzy, 20 fl oz": {
+      "parent": "beverages and beverages preparations"
+    },
+    "fruity crunch": {
+      "parent": "plant based foods and beverages"
+    },
+    "fruteria, chewy granola bars, strawberry apple, strawberry apple": {
+      "parent": "snacks"
+    },
+    "früchtepunsch": {
+      "parent": "sweetened beverages"
+    },
+    "frühlingsmix dekor": {
+      "parent": "food decorations"
+    },
+    "frühstücksbrei basen balance": {
+      "parent": "plant based foods and beverages"
+    },
+    "frühstücksfleisch von spreewaldfarm": {
+      "parent": "de:frühstücksfleisch"
+    },
+    "full cream blueberry yogurt": {
+      "parent": "yogurts"
+    },
+    "full moon ghee": {
+      "parent": "fats"
+    },
+    "full power cacao": {
+      "parent": "beverages and beverages preparations"
+    },
+    "fusilli reis & erbsen": {
+      "parent": "specific products"
+    },
+    "futomakis mit norwegischem lachs": {
+      "parent": "sushis"
+    },
+    "fuze unsweetened tea, large": {
+      "parent": "beverages and beverages preparations"
+    },
+    "g&g bauern kartoffelsalat": {
+      "parent": "vegetables based foods"
+    },
+    "g2 thirst quencher low calorie lemon lime 20 fluid ounce plastic bottle": {
+      "parent": "non alcoholic beverages"
+    },
+    "gadsbys 6pk cob": {
+      "parent": "plant based foods and beverages"
+    },
+    "galler chocolatier, white chocolate, raspberry yogurt": {
+      "parent": "sweet snacks"
+    },
+    "garant finmald senap stark och söt": {
+      "parent": "sauces"
+    },
+    "garden veggie burrito": {
+      "parent": "sandwiches"
+    },
+    "garlic & herb chunky pasta sauce": {
+      "parent": "undefined"
+    },
+    "garlic & parsley": {
+      "parent": "plant based foods and beverages"
+    },
+    "garlic biltong": {
+      "parent": "snacks"
+    },
+    "garlic cream shredded pork": {
+      "parent": "meals"
+    },
+    "gazosa aroma mirtillo": {
+      "parent": "sodas"
+    },
+    "gebrannte mandel mandelmus": {
+      "parent": "plant based foods and beverages"
+    },
+    "gebratener reis": {
+      "parent": "seeds"
+    },
+    "geflügelsalat tropicana": {
+      "parent": "prepared salads"
+    },
+    "gefro curry indisch bio": {
+      "parent": "spices"
+    },
+    "gefüllter brie kräuter": {
+      "parent": "fermented milk products"
+    },
+    "gemüse brühe, würzig, lecker, gemüsig": {
+      "parent": "vegetable broths"
+    },
+    "gemüse silber zwiebeln glas": {
+      "parent": "vegetables based foods"
+    },
+    "genisoy, sweet crisps, chocolate": {
+      "parent": "snacks"
+    },
+    "gewürzsauce asia süß sauer": {
+      "parent": "tomato sauces"
+    },
+    "gezuckertes lakritz": {
+      "parent": "sweet snacks"
+    },
+    "ghirardelli chocolate": {
+      "parent": "sweet snacks"
+    },
+    "ghostly gummies": {
+      "parent": "undefined"
+    },
+    "giant gummi frogs": {
+      "parent": "sweet snacks"
+    },
+    "giant hershey special dark mildly sweet chocolate with almonds": {
+      "parent": "sweet snacks"
+    },
+    "giant, zesty dills pickle spears": {
+      "parent": "salted snacks"
+    },
+    "gigot d'agneau": {
+      "parent": "meats and their products"
+    },
+    "ginger bliss": {
+      "parent": "vegetable juices"
+    },
+    "ginger honey lemon kombucha probiotic fermented tea, ginger honey lemon": {
+      "parent": "beverages"
+    },
+    "gingerbread in dark chocolate": {
+      "parent": "sweet snacks"
+    },
+    "giulia grappa invecchiata": {
+      "parent": "beverages and beverages preparations"
+    },
+    "glace bâtonnet amandes": {
+      "parent": "ice creams and sorbets"
+    },
+    "glazed walnut": {
+      "parent": "sauces"
+    },
+    "gluck veggie sticks sea salt and vinegar family": {
+      "parent": "snacks"
+    },
+    "gluten free fiber crackers": {
+      "parent": "specific products"
+    },
+    "gluten free homestyle instant oatmeal imp": {
+      "parent": "plant based foods and beverages"
+    },
+    "gluten free red lentil pasta": {
+      "parent": "plant based foods and beverages"
+    },
+    "gluten free shortbread": {
+      "parent": "sweet snacks"
+    },
+    "gnocchi with pumpkin": {
+      "parent": "plant based foods and beverages"
+    },
+    "gold blend": {
+      "parent": "teas"
+    },
+    "golden potatoes": {
+      "parent": "undefined"
+    },
+    "good foods juice, 100% fruit & vegetable juice": {
+      "parent": "plant based foods and beverages"
+    },
+    "gorgonzola / mascarpone": {
+      "parent": "italian cheeses"
+    },
+    "gou! kokos": {
+      "parent": "plant based milk alternatives"
+    },
+    "gouda 48% f.i.d.m.": {
+      "parent": "uncooked pressed cheeses"
+    },
+    "gouda 48% fett i.tr.": {
+      "parent": "fermented milk products"
+    },
+    "gourmet black licorice candy": {
+      "parent": "sweet snacks"
+    },
+    "gourmet egg nog": {
+      "parent": "milks"
+    },
+    "gourmet medium salsa": {
+      "parent": "sauces"
+    },
+    "gourmet original bbq sauce": {
+      "parent": "sauces"
+    },
+    "grain waves": {
+      "parent": "snacks"
+    },
+    "grains of life": {
+      "parent": "sliced breads"
+    },
+    "grand ferrero rocher": {
+      "parent": "sweet snacks"
+    },
+    "grandma's elderberry jelly": {
+      "parent": "sweet spreads"
+    },
+    "granola, maple pecan": {
+      "parent": "plant based foods and beverages"
+    },
+    "grape smash": {
+      "parent": "energy drinks"
+    },
+    "grass fed uncured beef jumbo hot dogs": {
+      "parent": "sausages"
+    },
+    "grated italian hard cheese": {
+      "parent": "fermented milk products"
+    },
+    "gravy traditional salt reduced": {
+      "parent": "gravy powder"
+    },
+    "greek flavored yogurt": {
+      "parent": "yogurts"
+    },
+    "greek nonfat yogurt with chia seed": {
+      "parent": "yogurts"
+    },
+    "greek style cultured coconut milk, raspberry": {
+      "parent": "yogurts"
+    },
+    "green enchilada tomatillo, cilantro and lime skillet sauce": {
+      "parent": "sauces"
+    },
+    "green pepperoni salami, green pepperoni": {
+      "parent": "prepared meats"
+    },
+    "green pesto": {
+      "parent": "sauces"
+    },
+    "green tea, aca, pomegranate & blueberry": {
+      "parent": "teas"
+    },
+    "grill olive oil": {
+      "parent": "vegetable oils"
+    },
+    "grilled corn on the cob": {
+      "parent": "toppings & ingredients"
+    },
+    "groovy good 'n hot flavored potato chips": {
+      "parent": "snacks"
+    },
+    "ground californian almonds": {
+      "parent": "plant based foods and beverages"
+    },
+    "ground thyme": {
+      "parent": "thyme"
+    },
+    "grow & gain strawberry": {
+      "parent": "nutrition shake"
+    },
+    "guacamole würzmischung": {
+      "parent": "spices"
+    },
+    "gucamole": {
+      "parent": "spreads"
+    },
+    "gum assorted fruit sugar free1x20 pk": {
+      "parent": "sweet snacks"
+    },
+    "gum pops, sweet strawberry, crisp green apple, juicy orange": {
+      "parent": "sweet snacks"
+    },
+    "gumballs": {
+      "parent": "undefined"
+    },
+    "gummy candy body parts": {
+      "parent": "sweet snacks"
+    },
+    "gyoza with kimchi and pork filling": {
+      "parent": "stuffed pastas"
+    },
+    "hair gel": {
+      "parent": "nl:verzorging"
+    },
+    "haldiram aloo bhujia 220g": {
+      "parent": "snacks"
+    },
+    "haltbare weidenmilch": {
+      "parent": "uht milks"
+    },
+    "ham cheese ploughman’s": {
+      "parent": "sandwiches"
+    },
+    "ham veggie lite, ham delight on pan crust, 1 slice": {
+      "parent": "pizzas pies and quiches"
+    },
+    "hampa fron": {
+      "parent": "seeds"
+    },
+    "hand decorated cookies halloween": {
+      "parent": "sweet snacks"
+    },
+    "handful of nature's finest eats": {
+      "parent": "snacks"
+    },
+    "handmade crispy rice marshmallow treats": {
+      "parent": "sweet snacks"
+    },
+    "hard cooked egg olives & feta": {
+      "parent": "farming products"
+    },
+    "hargis house, premium chunk chicken in buffalo sauce": {
+      "parent": "sauces"
+    },
+    "haricots borlotti": {
+      "parent": "plant based foods and beverages"
+    },
+    "harris teeter, fresh foods market, kosher dill spears, hot & spicy": {
+      "parent": "salted snacks"
+    },
+    "harvest cheesecake sampler": {
+      "parent": "sweet snacks"
+    },
+    "haselnusskipferl": {
+      "parent": "sweet snacks"
+    },
+    "hat nem ngot tom thom thit": {
+      "parent": "food additives"
+    },
+    "haushaltmehl": {
+      "parent": "wheat flours"
+    },
+    "hawaiian buns": {
+      "parent": "plant based foods and beverages"
+    },
+    "hazelnut brownies": {
+      "parent": "sweet snacks"
+    },
+    "hazelnut vanilla": {
+      "parent": "plant based foods and beverages"
+    },
+    "health seeds trilogy": {
+      "parent": "seeds"
+    },
+    "health valley organic, multigrain cereal bars, apple cobbler": {
+      "parent": "snacks"
+    },
+    "healthmax wheat bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "healthy cream of chicken condensed soup, cream of chicken": {
+      "parent": "soups"
+    },
+    "hearts love mix": {
+      "parent": "sweet snacks"
+    },
+    "hechas con avena integral": {
+      "parent": "sweet snacks"
+    },
+    "heel bruin tarwebrood": {
+      "parent": "wholemeal breads"
+    },
+    "heidi, white chocolate figurine with praline filling": {
+      "parent": "sweet snacks"
+    },
+    "heimkommen": {
+      "parent": "sweet snacks"
+    },
+    "herb & olive oil pork tenderloin": {
+      "parent": "meats and their products"
+    },
+    "herb & vegetable seasoned couscous": {
+      "parent": "plant based foods and beverages"
+    },
+    "herbal honey tea": {
+      "parent": "teas"
+    },
+    "herring rollmops": {
+      "parent": "seafood"
+    },
+    "hessische grillsauce": {
+      "parent": "de:grillsauce"
+    },
+    "hexen tee": {
+      "parent": "teas"
+    },
+    "hibis hni": {
+      "parent": "1"
+    },
+    "high protein 50%": {
+      "parent": "protein bars"
+    },
+    "high protein chocolate flavour": {
+      "parent": "sweet snacks"
+    },
+    "high protein milk shake": {
+      "parent": "protein shakes"
+    },
+    "high protein ravioli with cod": {
+      "parent": "plant based foods and beverages"
+    },
+    "high protein tiramisù": {
+      "parent": "tiramisu"
+    },
+    "himalayan pink fine table salt": {
+      "parent": "salts"
+    },
+    "himalayan pink salt casa di oliva": {
+      "parent": "groceries"
+    },
+    "hipro chocolat": {
+      "parent": "nl:sportvoeding"
+    },
+    "hohos": {
+      "parent": "sweet snacks"
+    },
+    "holiday blend": {
+      "parent": "plant based foods and beverages"
+    },
+    "holiday morsels": {
+      "parent": "baking decorations"
+    },
+    "holiday spice drops": {
+      "parent": "undefined"
+    },
+    "holiday stuffing": {
+      "parent": "stuffing"
+    },
+    "holunderblüte sirup": {
+      "parent": "beverages and beverages preparations"
+    },
+    "homestyle breaded chicken breast tenders": {
+      "parent": "undefined"
+    },
+    "homestyle chicken burritos": {
+      "parent": "frozen foods"
+    },
+    "honey bbq chicken supermelt sandwich": {
+      "parent": "sandwiches"
+    },
+    "honey clover blend": {
+      "parent": "sweeteners"
+    },
+    "honey o's": {
+      "parent": "plant based foods and beverages"
+    },
+    "honey salt almonds": {
+      "parent": "plant based foods and beverages"
+    },
+    "honrydew melon flavoured bubble tea": {
+      "parent": "beverages"
+    },
+    "hoola's ui & kruiden": {
+      "parent": "snacks"
+    },
+    "hopped huckleberry": {
+      "parent": "tea based beverages"
+    },
+    "horchata rice drink with cinnamon": {
+      "parent": "beverages"
+    },
+    "horneaditas": {
+      "parent": "snacks"
+    },
+    "hot & spicy crab cakes with real & imitation crab and fish flakes, hot & spicy": {
+      "parent": "seafood"
+    },
+    "hot & spicy naturally pepperoni sticks": {
+      "parent": "meats and their products"
+    },
+    "hot and sizzly tenders": {
+      "parent": "poultries"
+    },
+    "hot dog brötchen": {
+      "parent": "special breads"
+    },
+    "hot pepper vinegar kettle chips": {
+      "parent": "snacks"
+    },
+    "hot tomato chutney": {
+      "parent": "vegetables based foods"
+    },
+    "house bbq sauce": {
+      "parent": "sauces"
+    },
+    "hungry man, popcorn chicken with gravy fries": {
+      "parent": "frozen foods"
+    },
+    "hunters chicken risotto": {
+      "parent": "slimming world hunter s chicken risotto"
+    },
+    "huxelrebe": {
+      "parent": "beverages and beverages preparations"
+    },
+    "hy vee, ice cream topping, cookies & cream": {
+      "parent": "baking decorations"
+    },
+    "hy vee, premium onion blossom, flavored ripple potato chips": {
+      "parent": "snacks"
+    },
+    "hyldeblomst drik": {
+      "parent": "beverages and beverages preparations"
+    },
+    "häagen danz ice cream": {
+      "parent": "frozen foods"
+    },
+    "hühner bouillon hühnerbrühe": {
+      "parent": "poultry broth"
+    },
+    "hühnernuggets": {
+      "parent": "poultry nuggets"
+    },
+    "ice cream sundae": {
+      "parent": "undefined"
+    },
+    "ice cream, peanut butter cup": {
+      "parent": "peanut butter ice cream"
+    },
+    "iced tea with lemon drink mix, lemon": {
+      "parent": "dried products to be rehydrated"
+    },
+    "ideal vanilla real plant powered protein shake": {
+      "parent": "beverages"
+    },
+    "il gelato madagascar vanilla": {
+      "parent": "ice creams and sorbets"
+    },
+    "immune ade drink mix": {
+      "parent": "dietary supplements"
+    },
+    "immunity herbal tea supplement": {
+      "parent": "teas"
+    },
+    "imperium nougat caramel peanut": {
+      "parent": "ice creams and sorbets"
+    },
+    "improved recipe crownfield scottish superfood oat": {
+      "parent": "sweet snacks"
+    },
+    "indian style curry soup": {
+      "parent": "soups"
+    },
+    "inizio": {
+      "parent": "beverages and beverages preparations"
+    },
+    "instant noodle": {
+      "parent": "plant based foods and beverages"
+    },
+    "instant noodles shrimp": {
+      "parent": "plant based foods and beverages"
+    },
+    "instant orange creme pudding": {
+      "parent": "undefined"
+    },
+    "instant ramen rind geschmack": {
+      "parent": "plant based foods and beverages"
+    },
+    "intense dark chocolate with roasted hazelnuts": {
+      "parent": "sweet snacks"
+    },
+    "inyange industries": {
+      "parent": "waters"
+    },
+    "inyange low fat milk": {
+      "parent": "skimmed milks"
+    },
+    "irish mini royal gala": {
+      "parent": "sweet apples"
+    },
+    "irish pulling pork shoulder joint": {
+      "parent": "pork shoulders"
+    },
+    "isoclear waldmeister": {
+      "parent": "dietary supplements"
+    },
+    "isotonic sportsdrink citroen smaak": {
+      "parent": "instant beverages"
+    },
+    "it's good it should be outlawed! sauce": {
+      "parent": "sauces"
+    },
+    "italiaanse lasagne": {
+      "parent": "prepared lasagne"
+    },
+    "italian chicken on potato roll": {
+      "parent": "sandwiches"
+    },
+    "italian peeled tomatoes": {
+      "parent": "undefined"
+    },
+    "italian sandwich with chicken paprika and mango sauce": {
+      "parent": "sandwiches"
+    },
+    "italian sausage chicago style deep dish pizza, italian sausage": {
+      "parent": "pizzas pies and quiches"
+    },
+    "italian style bread crumbs with romano cheese": {
+      "parent": "undefined"
+    },
+    "italian style chicken, beef & pork meatballs, italian style": {
+      "parent": "meats and their products"
+    },
+    "ja jiang instant noodles": {
+      "parent": "plant based foods and beverages"
+    },
+    "jack mackerel in tomato sauce": {
+      "parent": "seafood"
+    },
+    "jalapeno & cheddar mashed potatoes": {
+      "parent": "undefined"
+    },
+    "jalapeños mit frischkäsefüllung": {
+      "parent": "frozen foods"
+    },
+    "jam tarts": {
+      "parent": "sweet snacks"
+    },
+    "jamaica ginger cake": {
+      "parent": "sweet snacks"
+    },
+    "jamaican jerk seasoning": {
+      "parent": "null"
+    },
+    "jamón pierna artesanal": {
+      "parent": "jamón"
+    },
+    "japan kani salad": {
+      "parent": "prepared salads"
+    },
+    "jays, krunchers, kettle cooked flavored potato chips, sweet hawaiian style onion": {
+      "parent": "snacks"
+    },
+    "jellu": {
+      "parent": "jelly desserts"
+    },
+    "jennie o, turkey breast stick, smoke house": {
+      "parent": "snacks"
+    },
+    "jersey milk a2 b caseim protein": {
+      "parent": "milks"
+    },
+    "jersey tomato basil sauce": {
+      "parent": "vegetables based foods"
+    },
+    "jhonnie walker red label 375ml": {
+      "parent": "whisky"
+    },
+    "jo's candies, honey bunny grahams": {
+      "parent": "sweet snacks"
+    },
+    "joghurt drink multifrucht": {
+      "parent": "yogurts"
+    },
+    "joghurt drrssing": {
+      "parent": "yogurts"
+    },
+    "johannis schorle": {
+      "parent": "beverages and beverages preparations"
+    },
+    "jolly rancher sour surge": {
+      "parent": "sweet snacks"
+    },
+    "jolly santa milk chocolate": {
+      "parent": "undefined"
+    },
+    "josh cellars chardonnay, 6 oz": {
+      "parent": "beverages and beverages preparations"
+    },
+    "jube jel cherry hearts": {
+      "parent": "undefined"
+    },
+    "juiced monster monarch energy + juice": {
+      "parent": "energy drinks"
+    },
+    "jumbo fritten": {
+      "parent": "frozen fried potatoes"
+    },
+    "jumbo oats": {
+      "parent": "plant based foods and beverages"
+    },
+    "jus multifruits": {
+      "parent": "plant based foods and beverages"
+    },
+    "kaffee entcoffioniert": {
+      "parent": "beverages and beverages preparations"
+    },
+    "kaffeefilter gr 4": {
+      "parent": "beverages and beverages preparations"
+    },
+    "kakaokekse mit vanillecremefüllung": {
+      "parent": "sweet snacks"
+    },
+    "kalifornische pistazien geröstet": {
+      "parent": "roasted pistachios"
+    },
+    "kamut flatbread, sesame": {
+      "parent": "plant based foods and beverages"
+    },
+    "kap seehecht": {
+      "parent": "seafood"
+    },
+    "kartoffel chips orientalisch": {
+      "parent": "snacks"
+    },
+    "kastenweißbrot": {
+      "parent": "plant based foods and beverages"
+    },
+    "kaura herkku": {
+      "parent": "sliced breads"
+    },
+    "keamore strawberry": {
+      "parent": "sugar free chocolate"
+    },
+    "kecil": {
+      "parent": "sodas"
+    },
+    "kedainiu": {
+      "parent": "salted snacks"
+    },
+    "keebler fudge shoppe fudge stripes 11.5oz": {
+      "parent": "sweet snacks"
+    },
+    "keebler grahams crackers honey 5.33oz 30ct": {
+      "parent": "sweet snacks"
+    },
+    "keebler town house crackers roasted garlic 9.5oz": {
+      "parent": "sweet snacks"
+    },
+    "kefir mangosmaak": {
+      "parent": "zuivel"
+    },
+    "kefir yoghurt": {
+      "parent": "kefir yogurts"
+    },
+    "kellogg special k protein bars cranberry walnut 1.59oz": {
+      "parent": "sweet snacks"
+    },
+    "kellogg's licensed frozen meals chicken chilaquiles 8oz": {
+      "parent": "sweet snacks"
+    },
+    "kellogg's special k granola bars greek yogurt & fruit .95oz": {
+      "parent": "sweet snacks"
+    },
+    "kentucky bourbon": {
+      "parent": "beverages and beverages preparations"
+    },
+    "ketchup": {
+      "parent": "vegetables based foods"
+    },
+    "keto friendly honey wheat sandwich bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "keto lupini rice": {
+      "parent": "vegetables from spain"
+    },
+    "keto snacks garlic sticks": {
+      "parent": "snacks"
+    },
+    "kettle cooked potato chips, dill pickle, dill pickle": {
+      "parent": "snacks"
+    },
+    "kichererbsen (pois chiches)": {
+      "parent": "seeds"
+    },
+    "kid cuisine pizza painter cheese pizza frozen meal with corn and fudge brownie, 7.45 oz.": {
+      "parent": "plant based foods and beverages"
+    },
+    "kids strawberry yoghurt": {
+      "parent": "yogurts"
+    },
+    "kids' yogurtz blueberry berry": {
+      "parent": "yogurts"
+    },
+    "kinder bueno x5": {
+      "parent": "sweet snacks"
+    },
+    "kinder tomatensoße mit verstecktem gemüse": {
+      "parent": "vegetables based foods"
+    },
+    "king arthur supreme on skinny crust, medium": {
+      "parent": "pizzas pies and quiches"
+    },
+    "kings, chocolate caramel popcorn, chocolate, caramel & sea salt": {
+      "parent": "snacks"
+    },
+    "kipper snacks smoked boneless herring fillets": {
+      "parent": "smoked herrings"
+    },
+    "kit kat ruby cocoa beans": {
+      "parent": "sweet snacks"
+    },
+    "kiwi+limette": {
+      "parent": "unsweetened beverages"
+    },
+    "kiwischeiben": {
+      "parent": "plant based foods and beverages"
+    },
+    "klosterlikör": {
+      "parent": "beverages and beverages preparations"
+    },
+    "knax": {
+      "parent": "vegetables based foods"
+    },
+    "knoblauch granuliert kreta": {
+      "parent": "vegetables based foods"
+    },
+    "knoppers erdnussriegel 3er pack": {
+      "parent": "wafers"
+    },
+    "knusper müsli himbeer white choc": {
+      "parent": "plant based foods and beverages"
+    },
+    "knäckebrot käse kürbiskern": {
+      "parent": "plant based foods and beverages"
+    },
+    "knäckebrot mit sesam": {
+      "parent": "plant based foods and beverages"
+    },
+    "koepplinger's, steel cut oatmeal bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "kokos mochis": {
+      "parent": "mochi ice cream"
+    },
+    "kokosmehl": {
+      "parent": "plant based foods and beverages"
+    },
+    "kokosmelk": {
+      "parent": "plant based milk alternatives"
+    },
+    "kokosnussöl": {
+      "parent": "vegetable oils"
+    },
+    "kokosové mléko": {
+      "parent": "plant based milk alternatives"
+    },
+    "kombucha probiotic drink mix lemon & ginger flavour": {
+      "parent": "tea based beverages"
+    },
+    "kombucha sparkling probiotic tea": {
+      "parent": "beverages"
+    },
+    "kona blend cold brew coffee": {
+      "parent": "beverages"
+    },
+    "korean bbq recipe": {
+      "parent": "snacks"
+    },
+    "korean marinade": {
+      "parent": "sauces"
+    },
+    "korean style chicken noodle bowl": {
+      "parent": "plant based foods and beverages"
+    },
+    "korpovit": {
+      "parent": "sweet snacks"
+    },
+    "kosher baby dills, dill": {
+      "parent": "snacks"
+    },
+    "kosher dill whole pickles": {
+      "parent": "undefined"
+    },
+    "kowalski's markets, foiled eggs dark chocolate": {
+      "parent": "sweet snacks"
+    },
+    "krokante friet": {
+      "parent": "potatoes and their products"
+    },
+    "krug bräu bernstein radler": {
+      "parent": "shandy"
+    },
+    "kruidige tomaten soep": {
+      "parent": "vegetable soups"
+    },
+    "kräuter der provence gewürzmischubg": {
+      "parent": "spices"
+    },
+    "kräuterbonbons kräuter": {
+      "parent": "sweet snacks"
+    },
+    "kulajda": {
+      "parent": "vegetable soups"
+    },
+    "kunnon pekoni": {
+      "parent": "pork and its products"
+    },
+    "kyushu pork ramen": {
+      "parent": "ramen"
+    },
+    "käse mascarpone": {
+      "parent": "mascarpone"
+    },
+    "la fraise confiture bio": {
+      "parent": "sweet spreads"
+    },
+    "la saucisse sèche": {
+      "parent": "salami"
+    },
+    "lachsfilet, norwegisch. fisch": {
+      "parent": "seafood"
+    },
+    "lait chocolaté": {
+      "parent": "flavoured milks"
+    },
+    "lance, nip chee, crackers, cheddar, cheddar": {
+      "parent": "snacks"
+    },
+    "landjäger geräuchert": {
+      "parent": "prepared meats"
+    },
+    "landkorn a reis baldo": {
+      "parent": "seeds"
+    },
+    "lanolin nipple cream": {
+      "parent": "nipple cream"
+    },
+    "large white eggs hard boiled": {
+      "parent": "farming products"
+    },
+    "lasagne blätter": {
+      "parent": "plant based foods and beverages"
+    },
+    "late night": {
+      "parent": "snacks"
+    },
+    "latte macchiato praliné": {
+      "parent": "sweet snacks"
+    },
+    "lay s ντομάτα ελιές": {
+      "parent": "snacks"
+    },
+    "le fruit schweizer erdbeeren": {
+      "parent": "sweet spreads"
+    },
+    "leckere erdnüsse": {
+      "parent": "plant based foods and beverages"
+    },
+    "leckere fruchtsalat bonbons": {
+      "parent": "sweet snacks"
+    },
+    "leinöl mixtur silver": {
+      "parent": "öl"
+    },
+    "leite meio gordo sem lactose": {
+      "parent": "milks liquid and powder"
+    },
+    "lemon & ginger tee": {
+      "parent": "teas"
+    },
+    "lemon & lime marmalade": {
+      "parent": "sweet spreads"
+    },
+    "lemon chicken artichoke soup": {
+      "parent": "soups"
+    },
+    "lemon crunch cake, lemon": {
+      "parent": "sweet snacks"
+    },
+    "lemon ginger natural sparkling spring water": {
+      "parent": "waters"
+    },
+    "lemon green tea, lemon": {
+      "parent": "tea based beverages"
+    },
+    "lemon lokelani rose": {
+      "parent": "tea based beverages"
+    },
+    "lemon mint sugar free herb throat drops": {
+      "parent": "throat lozenges"
+    },
+    "lemonade tea peach": {
+      "parent": "sodas"
+    },
+    "lentil carrot quinoa crisps": {
+      "parent": "sweet snacks"
+    },
+    "lentilles corail le paquet de 450 g": {
+      "parent": "seeds"
+    },
+    "les delices de l air marin": {
+      "parent": "ice creams and sorbets"
+    },
+    "lieblingsbecher körniger frischkäse pfirsich": {
+      "parent": "fermented milk products"
+    },
+    "life savers, holiday mix hard candy, candy cane peppermint, cherry, apple, candy cane peppermint, cherry, apple": {
+      "parent": "sweet snacks"
+    },
+    "light ginger beer, light": {
+      "parent": "sodas"
+    },
+    "lightly salted pecans": {
+      "parent": "plant based foods and beverages"
+    },
+    "lightly sweetened tropical fruit juices": {
+      "parent": "undefined"
+    },
+    "lilly's, chocolate hummus": {
+      "parent": "sauces"
+    },
+    "limited edition 00 mexican style burrito tortilla": {
+      "parent": "snacks"
+    },
+    "lindahls pro + banoffee pie": {
+      "parent": "yogurts"
+    },
+    "lindor assortiert": {
+      "parent": "sweet snacks"
+    },
+    "lindt, lindor, white chocolate truffles": {
+      "parent": "sweet snacks"
+    },
+    "lite coconut cream": {
+      "parent": "plant based foods and beverages"
+    },
+    "lite northern italian with basil & romano dressing & marinade": {
+      "parent": "undefined"
+    },
+    "lo mein seasoning mix": {
+      "parent": "groceries"
+    },
+    "loaded bacon cheddar tots": {
+      "parent": "appetizers & sides"
+    },
+    "loaded scalloped potatoes": {
+      "parent": "vegetables based foods"
+    },
+    "lody truskawkowe": {
+      "parent": "frozen foods"
+    },
+    "loin pork bone in c/c": {
+      "parent": "meats and their products"
+    },
+    "lokmas": {
+      "parent": "sweeteners"
+    },
+    "long chips onion and cheese": {
+      "parent": "snacks"
+    },
+    "long grain brown & wild rice": {
+      "parent": "seeds"
+    },
+    "long’s pure nebraska honey": {
+      "parent": "sweeteners"
+    },
+    "low fat cottage cheese, cottage": {
+      "parent": "fermented milk products"
+    },
+    "low gi brown rice": {
+      "parent": "seeds"
+    },
+    "low in carb wraps": {
+      "parent": "mexican dinner mixes"
+    },
+    "lunchbox z mozzatella i suszonymi pomidorami": {
+      "parent": "prepared salads"
+    },
+    "lunds & byerlys, roasted & salted organic soy nuts": {
+      "parent": "snacks"
+    },
+    "luxury tea collection": {
+      "parent": "teas"
+    },
+    "läckerli au citron": {
+      "parent": "sweet snacks"
+    },
+    "l’atelier chocolat biscuit & caramel aux amandes": {
+      "parent": "sweet snacks"
+    },
+    "mac & mango trail mix": {
+      "parent": "snacks"
+    },
+    "macadamia with coconut nut butter, macadamia with coconut": {
+      "parent": "vegetable fats"
+    },
+    "macaroni & cheese topped with bacon": {
+      "parent": "frozen foods"
+    },
+    "magic gin": {
+      "parent": "beverages and beverages preparations"
+    },
+    "maine apple pie pebbles": {
+      "parent": "sweet snacks"
+    },
+    "make 'n mold, light green candy wafers, vanilla": {
+      "parent": "wafers"
+    },
+    "makrelen filets gegrillt": {
+      "parent": "seafood"
+    },
+    "mandarínky clemenules xxx / x čerstvé skladané": {
+      "parent": "sk:mandarinka"
+    },
+    "mandelknacker weiße schokolade": {
+      "parent": "white chocolates"
+    },
+    "mangaroca batida de coco": {
+      "parent": "beverages and beverages preparations"
+    },
+    "mango chili hühnchen": {
+      "parent": "poultry meals"
+    },
+    "mango coconut tiki bar": {
+      "parent": "snacks"
+    },
+    "mango flavour": {
+      "parent": "sweet snacks"
+    },
+    "mango jalapeno pork with fruit and quinoa bar, mango jalapeno": {
+      "parent": "snacks"
+    },
+    "manguava kombucha": {
+      "parent": "tea based beverages"
+    },
+    "manhattan clam chowder": {
+      "parent": "soups"
+    },
+    "mansikka & raparperi": {
+      "parent": "sweet snacks"
+    },
+    "mantequilla de maní cacao": {
+      "parent": "mantequillas de maní"
+    },
+    "maple bourbon relish": {
+      "parent": "salted snacks"
+    },
+    "maple brown butter flavored steel cut rolled oatmeal, maple brown butter": {
+      "parent": "plant based foods and beverages"
+    },
+    "maple caramel popped lotus seeds": {
+      "parent": "snacks"
+    },
+    "maple cheerios cereal": {
+      "parent": "plant based foods and beverages"
+    },
+    "maple french style yogurt": {
+      "parent": "yogurts"
+    },
+    "maple go nuts, maple": {
+      "parent": "snacks"
+    },
+    "maple grove farms of vermont, whole mix blend pancake & waffle mix": {
+      "parent": "sweet snacks"
+    },
+    "maravilla": {
+      "parent": "plant based foods and beverages"
+    },
+    "margherita deluxe pan pizza": {
+      "parent": "undefined"
+    },
+    "marinara spaghetti": {
+      "parent": "frozen foods"
+    },
+    "marinated mushrooms in vinegar": {
+      "parent": "salted snacks"
+    },
+    "market pantry, whipped cream cheese spread, chive, chive": {
+      "parent": "fermented milk products"
+    },
+    "marshmallow snowmen": {
+      "parent": "sweet snacks"
+    },
+    "mary anne's dairy mild cheddar cheese": {
+      "parent": "mild cheddar"
+    },
+    "maryland cookies chocolate&hazelnut 136g": {
+      "parent": "sweet snacks"
+    },
+    "maryland style crab, cup": {
+      "parent": "soups"
+    },
+    "marzipan (chocolate shell)": {
+      "parent": "sweet snacks"
+    },
+    "marzipan klassiker zartbitter riegel": {
+      "parent": "de:marzipan pralines"
+    },
+    "masala butter chakli": {
+      "parent": "snacks"
+    },
+    "masala chips": {
+      "parent": "snacks"
+    },
+    "masarepa": {
+      "parent": "undefined"
+    },
+    "matin léger facile à digérer": {
+      "parent": "milks liquid and powder"
+    },
+    "maultaschensuppe": {
+      "parent": "soups"
+    },
+    "max pickles flavour": {
+      "parent": "snacks"
+    },
+    "maxi burger al sesamo": {
+      "parent": "special breads"
+    },
+    "mayan mango smoothie": {
+      "parent": "beverages and beverages preparations"
+    },
+    "mayomix": {
+      "parent": "sauces"
+    },
+    "mayonnaise & tuna": {
+      "parent": "ja:惣菜パン"
+    },
+    "mayonnaise, roasted garlic ail roti": {
+      "parent": "sauces"
+    },
+    "mazamorra morada": {
+      "parent": "desserts"
+    },
+    "mccormick, culinary, bayou cajun seasoning": {
+      "parent": "groceries"
+    },
+    "meat trio® pizza": {
+      "parent": "pizzas pies and quiches"
+    },
+    "mediterranean style chicken bowl": {
+      "parent": "poultry meals"
+    },
+    "mediterranes gemüse mit auberginen": {
+      "parent": "from 6 months"
+    },
+    "medium salsa, medium": {
+      "parent": "sauces"
+    },
+    "medium soft wholemeal bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "medium spicy pickles, medium": {
+      "parent": "groceries"
+    },
+    "meerrettich senfgurken": {
+      "parent": "vegetables based foods"
+    },
+    "megatoys, plush with mug and hard candy": {
+      "parent": "sweet snacks"
+    },
+    "meijer, gummi peach rings candy": {
+      "parent": "sweet snacks"
+    },
+    "meltamors": {
+      "parent": "mini cake"
+    },
+    "mentina strawberry": {
+      "parent": "thickeners"
+    },
+    "mesquite bbq rub, mesquite bbq": {
+      "parent": "condiments"
+    },
+    "metzger bratwurst": {
+      "parent": "sausages"
+    },
+    "mexican cola soda 12.5 fl oz (370ml) glass bottle 12 pack": {
+      "parent": "sodas"
+    },
+    "mexican pollo asado seasoning": {
+      "parent": "sauces"
+    },
+    "mexican rice & beans": {
+      "parent": "undefined"
+    },
+    "mexican spiced fajita": {
+      "parent": "meat analogues"
+    },
+    "mexican style corn chowder": {
+      "parent": "soups"
+    },
+    "miel des antilles": {
+      "parent": "sweeteners"
+    },
+    "miel pura": {
+      "parent": "sweeteners"
+    },
+    "mielbio": {
+      "parent": "sweeteners"
+    },
+    "mighty tiny chocolate chip cookies": {
+      "parent": "sweet snacks"
+    },
+    "milanesa de merluza crocante": {
+      "parent": "frozen foods"
+    },
+    "milch drink erdbeergeschmack": {
+      "parent": "dairy drinks"
+    },
+    "mild giardiniera, mild": {
+      "parent": "salted snacks"
+    },
+    "mild kvarg blåbär": {
+      "parent": "quarks"
+    },
+    "mild taco seasoning": {
+      "parent": "spices"
+    },
+    "mild thai style rice noodles & chicken, mild": {
+      "parent": "frozen foods"
+    },
+    "mild whole green chiles, mild": {
+      "parent": "vegetables based foods"
+    },
+    "mili strong leaf tea": {
+      "parent": "teas"
+    },
+    "milk 1kg (823) 33,6% (pcs)": {
+      "parent": "sweet snacks"
+    },
+    "milk burger cu miere": {
+      "parent": "sweet snacks"
+    },
+    "milk chocolate bunnies": {
+      "parent": "sweet snacks"
+    },
+    "milk chocolate english toffee bars": {
+      "parent": "sweet snacks"
+    },
+    "milk chocolate kisses, milk chocolate, milk chocolate": {
+      "parent": "sweet snacks"
+    },
+    "milk chocolate with pear filling": {
+      "parent": "sweet snacks"
+    },
+    "milk cocolate with caramel, pretzen, almond, nougat and sea salt": {
+      "parent": "sweet snacks"
+    },
+    "minced lobster meat": {
+      "parent": "seafood"
+    },
+    "mineral spring water": {
+      "parent": "waters"
+    },
+    "mini adventskalender zartbitter": {
+      "parent": "sweet snacks"
+    },
+    "mini belts licorice candy": {
+      "parent": "sweet snacks"
+    },
+    "mini chocolate bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "mini filo spinach bites": {
+      "parent": "sweet snacks"
+    },
+    "mini pfannkuchen": {
+      "parent": "crepes and galettes"
+    },
+    "mini salatsossä": {
+      "parent": "sauces"
+    },
+    "mini shortbread fingers": {
+      "parent": "sweet snacks"
+    },
+    "mini starburst fruit chews sours": {
+      "parent": "chewy candies"
+    },
+    "mini viennese vanilla ice cream": {
+      "parent": "ice creams and sorbets"
+    },
+    "mini vitacakes": {
+      "parent": "frozen foods"
+    },
+    "mini vollkornbutterkeks": {
+      "parent": "sweet snacks"
+    },
+    "mini wraps": {
+      "parent": "bread wrap"
+    },
+    "minion adventskalender": {
+      "parent": "festive foods"
+    },
+    "mint chocolate chip ice cream quart": {
+      "parent": "desserts"
+    },
+    "mirchi lonche": {
+      "parent": "plant based foods and beverages"
+    },
+    "miree grüner pfeffer": {
+      "parent": "spreads"
+    },
+    "mirinda gout fraise": {
+      "parent": "sweetened beverages"
+    },
+    "miso soup with wakame seaweed": {
+      "parent": "soups"
+    },
+    "mist twst lemon lime, medium": {
+      "parent": "beverages and beverages preparations"
+    },
+    "misto mate": {
+      "parent": "seafood"
+    },
+    "mit ziegenkäse & rosmarin": {
+      "parent": "fresh cheeses"
+    },
+    "mix it kerne und samen": {
+      "parent": "plant based foods and beverages"
+    },
+    "mixed berries & cream": {
+      "parent": "plant based foods and beverages"
+    },
+    "mixed berry almond cereal": {
+      "parent": "plant based foods and beverages"
+    },
+    "mixed melon spears": {
+      "parent": "plant based foods and beverages"
+    },
+    "mixed olives with mature cheddar": {
+      "parent": "plant based pickles"
+    },
+    "mleona banana ice bar": {
+      "parent": "plant based foods and beverages"
+    },
+    "moja kravica jogurt": {
+      "parent": "dairy drinks"
+    },
+    "mojito cocktailmix": {
+      "parent": "beverages and beverages preparations"
+    },
+    "momentous collagen peptides": {
+      "parent": "dietary supplements"
+    },
+    "mon paris": {
+      "parent": "perfumes"
+    },
+    "monk fruit extract, nothing else!": {
+      "parent": "sweeteners"
+    },
+    "monster cookie gourmet granola": {
+      "parent": "plant based foods and beverages"
+    },
+    "monterey jack with jalapeno cheese": {
+      "parent": "fermented milk products"
+    },
+    "montreal chicken seasoning, montreal chicken": {
+      "parent": "groceries"
+    },
+    "mooi kaap droë steen": {
+      "parent": "wines"
+    },
+    "moonpie marshmallow graham flavored ice cream swirled with fudge and graham flavored crunch pieces": {
+      "parent": "frozen foods"
+    },
+    "moravian style triple ginger cookie thins": {
+      "parent": "sweet snacks"
+    },
+    "morcheln": {
+      "parent": "pilze und pilzprodukte"
+    },
+    "morello cherry conserve": {
+      "parent": "sweet spreads"
+    },
+    "morning rounds muesli": {
+      "parent": "special breads"
+    },
+    "moscow mule gourmet gummies": {
+      "parent": "sweet snacks"
+    },
+    "moshi peanut": {
+      "parent": "sweet snacks"
+    },
+    "motts clamato caesar": {
+      "parent": "beverages and beverages preparations"
+    },
+    "motts medleys frt flvrd sncks assorted frt": {
+      "parent": "snacks"
+    },
+    "mountain blast isotonic sports drink": {
+      "parent": "diet beverages"
+    },
+    "mountain dew 440ml sodastream": {
+      "parent": "sweetened beverages"
+    },
+    "movie theater butter flavored popcorn": {
+      "parent": "snacks"
+    },
+    "mozarella shredded": {
+      "parent": "stretched curd cheeses"
+    },
+    "mozarella super thin stone baked pizza": {
+      "parent": "vegetarian pizzas"
+    },
+    "mozzarella pizza with tomatoes": {
+      "parent": "vegetarian pizzas"
+    },
+    "mozzarella style block": {
+      "parent": "vegan products"
+    },
+    "mucho mango fruit juice cocktail liquid water enhancer, mucho mango": {
+      "parent": "dried products to be rehydrated"
+    },
+    "muesli goût noisettes raisins": {
+      "parent": "sweet snacks"
+    },
+    "muffin mix": {
+      "parent": "sweet snacks"
+    },
+    "mug cakes cinnamon coffee cake mix": {
+      "parent": "sweet snacks"
+    },
+    "multi grain atta 6kg": {
+      "parent": "wheat flours"
+    },
+    "multifrutti": {
+      "parent": "yogurts"
+    },
+    "multigrain flakes &quot;axa natural harmony&quot; with minerals": {
+      "parent": "plant based foods and beverages"
+    },
+    "multivitamin 12 fruchtsaft": {
+      "parent": "plant based foods and beverages"
+    },
+    "muscat de rivesaltes 2012": {
+      "parent": "wines"
+    },
+    "musselman's, apple sauce, sour lemon": {
+      "parent": "snacks"
+    },
+    "musselman's, pie filling, key lime": {
+      "parent": "pastry helpers"
+    },
+    "mysyrup butterscotch": {
+      "parent": "syrups"
+    },
+    "n.a!* fruit sticks (mango passion)": {
+      "parent": "plant based foods and beverages"
+    },
+    "nabisco honey maid crackers 1x1.000 oz": {
+      "parent": "sweet snacks"
+    },
+    "naboulsi cheese": {
+      "parent": "fermented milk products"
+    },
+    "natives sesamöl": {
+      "parent": "vegetable oils"
+    },
+    "natural coconut milk yogurt": {
+      "parent": "yogurts"
+    },
+    "natural italian soda": {
+      "parent": "sodas"
+    },
+    "natural kefir fermented yogurt": {
+      "parent": "kefir yogurts"
+    },
+    "natural oaxaca shredded cheese": {
+      "parent": "grated cheese"
+    },
+    "natural protein chips": {
+      "parent": "snacks"
+    },
+    "naturally essenced kiwi sandia 'kiwi watermelon' sparkling water": {
+      "parent": "waters"
+    },
+    "nature' flavored water": {
+      "parent": "waters"
+    },
+    "naturel unflavored protein powder": {
+      "parent": "protein powders"
+    },
+    "natures made b12. 1000mcg": {
+      "parent": "dietary supplements"
+    },
+    "natürliches mineralwasser mit wenig kohlensäure medium": {
+      "parent": "waters"
+    },
+    "natürliches mineralwasser ohne kohlensäure, urstro...": {
+      "parent": "waters"
+    },
+    "neapolitan ice cream sandwitches": {
+      "parent": "undefined"
+    },
+    "neapolitan light ice cream, vanilla, chocolate & strawberry": {
+      "parent": "frozen foods"
+    },
+    "negroamaro malvasia nera": {
+      "parent": "wines from italy"
+    },
+    "neon sour worms": {
+      "parent": "sweet snacks"
+    },
+    "nescafé gold original": {
+      "parent": "plant based foods and beverages"
+    },
+    "neufchâtel aop": {
+      "parent": "unpasteurised products"
+    },
+    "new deli york kosher dill pickle": {
+      "parent": "undefined"
+    },
+    "nik naks rib 'n' saucy flavour": {
+      "parent": "snacks"
+    },
+    "ninja bread cookie kit": {
+      "parent": "sweet snacks"
+    },
+    "no chicken burgers": {
+      "parent": "vegetarian hamburgers"
+    },
+    "no sugar added blueberry streusel muffins": {
+      "parent": "sweet snacks"
+    },
+    "nolemonade weiß": {
+      "parent": "beverages and beverages preparations"
+    },
+    "non alcoholic margarita": {
+      "parent": "beverages"
+    },
+    "normalgrädat": {
+      "parent": "plant based foods and beverages"
+    },
+    "notorious b.i.g cookout bbq sauce": {
+      "parent": "sauces"
+    },
+    "nougat sahne nuss": {
+      "parent": "sweet snacks"
+    },
+    "nova lox salad": {
+      "parent": "salads"
+    },
+    "novilla de la dehesa xl": {
+      "parent": "meats and their products"
+    },
+    "nuga sütlü fındık kreması %20 fındık": {
+      "parent": "tr:fındık kreması"
+    },
+    "nut & seed bar": {
+      "parent": "snacks"
+    },
+    "nut cracker": {
+      "parent": "snacks"
+    },
+    "nutella gelato": {
+      "parent": "ice creams and sorbets"
+    },
+    "nutty raisin granola": {
+      "parent": "plant based foods and beverages"
+    },
+    "nuttyness, pure almond marzipan, milk chocolate": {
+      "parent": "sweet snacks"
+    },
+    "ny supremo pizza": {
+      "parent": "pizzas pies and quiches"
+    },
+    "o mochi chocolate style": {
+      "parent": "mochi ice cream"
+    },
+    "o.g. hickory savory & smoky beef stick": {
+      "parent": "snacks"
+    },
+    "oak master": {
+      "parent": "whisky"
+    },
+    "oat drink": {
+      "parent": "unsweetened beverages"
+    },
+    "oat drink barista": {
+      "parent": "plant based milk alternatives"
+    },
+    "oat malk organic original": {
+      "parent": "plant based milk alternatives"
+    },
+    "oatmeal cereal": {
+      "parent": "plant based foods and beverages"
+    },
+    "obstler schwarzwälder altes pflümli": {
+      "parent": "beverages and beverages preparations"
+    },
+    "oggi spearmint": {
+      "parent": "sweet snacks"
+    },
+    "old fashioned deli shaved ham slices": {
+      "parent": "prepared meats"
+    },
+    "olej kokosowy, bezzapachowy": {
+      "parent": "vegetable oils"
+    },
+    "olive salad": {
+      "parent": "salted snacks"
+    },
+    "oliven gefüllt mit frischkäsecreme": {
+      "parent": "stuffed olives"
+    },
+    "oliven paste kalamon olive spread": {
+      "parent": "spreads"
+    },
+    "oliver": {
+      "parent": "whole olives"
+    },
+    "olo fruto": {
+      "parent": "smoothies"
+    },
+    "onion snack": {
+      "parent": "snacks"
+    },
+    "orange cream soda, tall": {
+      "parent": "beverages and beverages preparations"
+    },
+    "orange drink mix, orange": {
+      "parent": "dried products to be rehydrated"
+    },
+    "orange juice with added calcium frozen concentrate fruit drink": {
+      "parent": "plant based foods and beverages"
+    },
+    "orange sparkling gel": {
+      "parent": "baking decorations"
+    },
+    "organic 12 mixed sizes free range eggs": {
+      "parent": "farming products"
+    },
+    "organic 12 strawberry lowfat yogurt probiotic smoothie": {
+      "parent": "yogurts"
+    },
+    "organic agave syrup": {
+      "parent": "syrups"
+    },
+    "organic almond creamer pistachio": {
+      "parent": "non dairy creamer"
+    },
+    "organic almonds": {
+      "parent": "snacks"
+    },
+    "organic angel hair macaroni product": {
+      "parent": "plant based foods and beverages"
+    },
+    "organic apple juice, kids": {
+      "parent": "beverages and beverages preparations"
+    },
+    "organic baby muesli porridge": {
+      "parent": "plant based foods and beverages"
+    },
+    "organic banana walnut oats, banana walnut": {
+      "parent": "plant based foods and beverages"
+    },
+    "organic bunny fruit flavored snacks berry patch": {
+      "parent": "undefined"
+    },
+    "organic carob and honey cookie": {
+      "parent": "organic carob and honey cookie"
+    },
+    "organic cheese puffs": {
+      "parent": "snacks"
+    },
+    "organic chicory coffee": {
+      "parent": "beverages"
+    },
+    "organic chocolate ice cream": {
+      "parent": "undefined"
+    },
+    "organic crunchy peanut spread": {
+      "parent": "vegetable fats"
+    },
+    "organic dark chocolate caramel": {
+      "parent": "sweet snacks"
+    },
+    "organic deglet nour dates": {
+      "parent": "plant based foods and beverages"
+    },
+    "organic diced peaches & pears juice": {
+      "parent": "plant based foods and beverages"
+    },
+    "organic friends bunnies cereal": {
+      "parent": "plant based foods and beverages"
+    },
+    "organic fruit in its birthday suit juice": {
+      "parent": "plant based foods and beverages"
+    },
+    "organic kvass": {
+      "parent": "beverages"
+    },
+    "organic large grade aa eggs": {
+      "parent": "farming products"
+    },
+    "organic lemon flavored evoo": {
+      "parent": "virgin olive oils"
+    },
+    "organic macrobar sunflower butter + chocolate": {
+      "parent": "snacks"
+    },
+    "organic meatballs": {
+      "parent": "meats and their products"
+    },
+    "organic mushroom ravioli": {
+      "parent": "plant based foods and beverages"
+    },
+    "organic naturally flavored juice beverage from concentrate": {
+      "parent": "sodas"
+    },
+    "organic nicaragua": {
+      "parent": "coffee pods"
+    },
+    "organic onion powder": {
+      "parent": "vegetables based foods"
+    },
+    "organic petite peas": {
+      "parent": "vegetables based foods"
+    },
+    "organic plain greek nonfat yogurt": {
+      "parent": "undefined"
+    },
+    "organic porridge": {
+      "parent": "porridge organic"
+    },
+    "organic powdered confectioners sugar": {
+      "parent": "undefined"
+    },
+    "organic prairie, mighty bar": {
+      "parent": "snacks"
+    },
+    "organic red palm oil": {
+      "parent": "vegetable oils"
+    },
+    "organic rice cakes, apple": {
+      "parent": "puffed rice cakes"
+    },
+    "organic rice free puffs strawberry basil": {
+      "parent": "baby foods"
+    },
+    "organic rice original milk": {
+      "parent": "rice based drinks"
+    },
+    "organic salsa, roasted garlic": {
+      "parent": "salsa"
+    },
+    "organic saltine crackers": {
+      "parent": "sweet snacks"
+    },
+    "organic soft baked mini cookies double chocolate": {
+      "parent": "sweet snacks"
+    },
+    "organic superfoods": {
+      "parent": "plant based foods and beverages"
+    },
+    "organic tofu, regular": {
+      "parent": "toppings & ingredients"
+    },
+    "organic traditional seasoned stuffing": {
+      "parent": "stuffing"
+    },
+    "organic vegetarian chili, spicy": {
+      "parent": "stews"
+    },
+    "organic whole grain rye flour": {
+      "parent": "plant based foods and beverages"
+    },
+    "organica": {
+      "parent": "plant based foods and beverages"
+    },
+    "original barbecue sauce, hickory": {
+      "parent": "sauces"
+    },
+    "original citrus": {
+      "parent": "sodas"
+    },
+    "original cooked turkey breast": {
+      "parent": "turkeys"
+    },
+    "original dänische remoulade": {
+      "parent": "sauces with mustard"
+    },
+    "original kitzbüheler bergbauern heumilch": {
+      "parent": "whole milks"
+    },
+    "original lowfat yogurt, vanilla": {
+      "parent": "yogurts"
+    },
+    "original naturals salsa": {
+      "parent": "sauces"
+    },
+    "original peanuts snacks, original": {
+      "parent": "snacks"
+    },
+    "original ranch portion pack": {
+      "parent": "sauces"
+    },
+    "original spaghetti in tomato & cheese sauce": {
+      "parent": "soups"
+    },
+    "original unsweetened oat bran beverage, original unsweetened": {
+      "parent": "beverages"
+    },
+    "ostereier mischung": {
+      "parent": "sweet snacks"
+    },
+    "osterfreude": {
+      "parent": "beverages and beverages preparations"
+    },
+    "outdoor access extra large brown eggs": {
+      "parent": "organic eggs"
+    },
+    "outdoor access large brown eggs": {
+      "parent": "farming products"
+    },
+    "ouzo 40% 200ml": {
+      "parent": "liqueurs"
+    },
+    "oval cut dill slices.": {
+      "parent": "salted snacks"
+    },
+    "overstuffed beef ravioli in tomato & meat sauce": {
+      "parent": "undefined"
+    },
+    "oyster sauce, premium": {
+      "parent": "sauces"
+    },
+    "oysters ostiones": {
+      "parent": "seafood"
+    },
+    "pam’s malty hot cocoa": {
+      "parent": "powdered plant milks"
+    },
+    "pan di stelle cereali": {
+      "parent": "plant based foods and beverages"
+    },
+    "pan hot dog": {
+      "parent": "special breads"
+    },
+    "panda cookies": {
+      "parent": "sweet snacks"
+    },
+    "panettone aux cerises": {
+      "parent": "viennoiseries"
+    },
+    "pani puri masala": {
+      "parent": "taste"
+    },
+    "panko breaded chicken breast & vegetable patties": {
+      "parent": "meats and their products"
+    },
+    "papadums lentil and chickpea crisps": {
+      "parent": "special breads"
+    },
+    "papdi": {
+      "parent": "snacks"
+    },
+    "paprikaschmalz": {
+      "parent": "spreads"
+    },
+    "paradise jellies, spicy fruit jelly, florida orange": {
+      "parent": "sweet spreads"
+    },
+    "parchment crispbread": {
+      "parent": "plant based foods and beverages"
+    },
+    "parfait fun pack": {
+      "parent": "plant based foods and beverages"
+    },
+    "parmesano rallado": {
+      "parent": "dairies"
+    },
+    "party bites lollie cake": {
+      "parent": "sweet snacks"
+    },
+    "pasaka cream cheese bar": {
+      "parent": "fermented milk products"
+    },
+    "passion joghurt feige": {
+      "parent": "yogurts"
+    },
+    "pastitsio": {
+      "parent": "pasta gratin"
+    },
+    "paté picante": {
+      "parent": "prepared meats"
+    },
+    "pb & j sandwiches peanut butter & strawberry jam": {
+      "parent": "frozen foods"
+    },
+    "peach pineapple chipotle salsa": {
+      "parent": "sauces"
+    },
+    "peaches and cream corn": {
+      "parent": "vegetables based foods"
+    },
+    "peanut butter & jelly m&m's chocolate candies": {
+      "parent": "sweet snacks"
+    },
+    "peanut butter chips": {
+      "parent": "undefined"
+    },
+    "peanut butter chocolate chewy granola bar": {
+      "parent": "sweet snacks"
+    },
+    "peanut butter cruncy": {
+      "parent": "spreads"
+    },
+    "peanut butter granola bars": {
+      "parent": "sweet snacks"
+    },
+    "peanut butter high fibre fruit & nut bar": {
+      "parent": "sweet snacks"
+    },
+    "pear kombucha": {
+      "parent": "tea based beverages"
+    },
+    "penne rigate whole wheat": {
+      "parent": "plant based foods and beverages"
+    },
+    "pennoni rigati": {
+      "parent": "plant based foods and beverages"
+    },
+    "pepermint herbal tea": {
+      "parent": "teas"
+    },
+    "peppermint chocolate chip premium cold brew coffee, peppermint chocolate chip": {
+      "parent": "beverages"
+    },
+    "peppermint starlights candy, peppermint": {
+      "parent": "sweet snacks"
+    },
+    "perfection deli old world white pitas": {
+      "parent": "plant based foods and beverages"
+    },
+    "performance bar": {
+      "parent": "snacks"
+    },
+    "performance whey protein chocolate flavour": {
+      "parent": "protein powders"
+    },
+    "peri peri medium heat dry rub marinade": {
+      "parent": "mixtures of herbs and spices"
+    },
+    "petite diced tomatoes with garlic & olive oil": {
+      "parent": "vegetables based foods"
+    },
+    "pf changs general changs chicken spring rolls": {
+      "parent": "vegetables based foods"
+    },
+    "pfirsich in apfel (ab 5. monat)": {
+      "parent": "snacks und desserts für babies"
+    },
+    "pick up choco & caramel": {
+      "parent": "sweet snacks"
+    },
+    "picked sliced beets": {
+      "parent": "salted snacks"
+    },
+    "pickle pork chips": {
+      "parent": "beverages and beverages preparations"
+    },
+    "pickled whole baby corn": {
+      "parent": "salted snacks"
+    },
+    "pickling salt": {
+      "parent": "groceries"
+    },
+    "pimiento cheese spread southern style": {
+      "parent": "undefined"
+    },
+    "pina colada joghurt drink 1,1% fett": {
+      "parent": "yogurts"
+    },
+    "pineapple / mango salsa": {
+      "parent": "sauces"
+    },
+    "pineapple beer": {
+      "parent": "non alcoholic beverages"
+    },
+    "pineapple fruit spread": {
+      "parent": "sweet spreads"
+    },
+    "pink salmon package": {
+      "parent": "seafood"
+    },
+    "pinot gris white chocolate": {
+      "parent": "sweet snacks"
+    },
+    "pirates booty": {
+      "parent": "undefined"
+    },
+    "pistachio ice cream wrapped in sweet mochi": {
+      "parent": "frozen foods"
+    },
+    "pistachio milk chocolate truffles": {
+      "parent": "sweet snacks"
+    },
+    "pistachio nuts green, shelled": {
+      "parent": "shelled nuts"
+    },
+    "pistachios jalapeño lime": {
+      "parent": "plant based foods and beverages"
+    },
+    "pita integral": {
+      "parent": "pan pita"
+    },
+    "pizza krokant hawaï": {
+      "parent": "pork meals"
+    },
+    "pizza margherita mit dinkelteig": {
+      "parent": "vegetarian pizzas"
+    },
+    "pizzeria pizza funghi": {
+      "parent": "vegetarian pizzas"
+    },
+    "plant based luncheon meat": {
+      "parent": "plant based foods and beverages"
+    },
+    "plant chef meat free chicken style pieces": {
+      "parent": "meat analogues"
+    },
+    "plantaardige chipolata worstjes": {
+      "parent": "vegetarian sausages"
+    },
+    "plantebasert pizza mexican 560 g": {
+      "parent": "vegan products"
+    },
+    "plum kombucha": {
+      "parent": "beverages"
+    },
+    "plus vitamine & magnesium": {
+      "parent": "sweet snacks"
+    },
+    "poivron rouge émincé 1kg": {
+      "parent": "vegetables based foods"
+    },
+    "polar leppäsavu": {
+      "parent": "fermented milk products"
+    },
+    "pollo troceado": {
+      "parent": "poultries"
+    },
+    "polski miód lipowy": {
+      "parent": "sweeteners"
+    },
+    "pomidory suszone": {
+      "parent": "vegetables based foods"
+    },
+    "pomodoro pasta sauce": {
+      "parent": "sauces"
+    },
+    "pop's barbecue": {
+      "parent": "snacks"
+    },
+    "por kwan, instant beef flavor paste": {
+      "parent": "soupes condensées"
+    },
+    "pork shoulder with sweet & smoky kansas city style bbq sauce, kansas city style bbq": {
+      "parent": "meals"
+    },
+    "potato and turkey roast": {
+      "parent": "main meals for babies"
+    },
+    "potato chips apple cider vinegar": {
+      "parent": "snacks"
+    },
+    "potato chips argentinian creamy pepper steak flavoured": {
+      "parent": "snacks"
+    },
+    "potato chips, hot, lim'on chipotle, hot, lim'on chipotle": {
+      "parent": "snacks"
+    },
+    "potato mash": {
+      "parent": "purees"
+    },
+    "poudre d’amande (almond flour)": {
+      "parent": "fats"
+    },
+    "poultry seasoning grinder": {
+      "parent": "undefined"
+    },
+    "power station müsli": {
+      "parent": "plant based foods and beverages"
+    },
+    "pre steamed vegetable & pork dumpling": {
+      "parent": "frozen foods"
+    },
+    "predator": {
+      "parent": "sodas"
+    },
+    "prego sauces alfredo": {
+      "parent": "sauces"
+    },
+    "pregomin as spezialnahrung 400g": {
+      "parent": "ready to feed baby milks"
+    },
+    "premium alla norma sauce": {
+      "parent": "sauces"
+    },
+    "premium almonds": {
+      "parent": "snacks"
+    },
+    "premium cayenne pepper sauce": {
+      "parent": "undefined"
+    },
+    "premium country style florida orange juice": {
+      "parent": "undefined"
+    },
+    "premium cut beef jerky": {
+      "parent": "snacks"
+    },
+    "premium fruit & nut muesli": {
+      "parent": "plant based foods and beverages"
+    },
+    "premium pie crust": {
+      "parent": "plant based foods and beverages"
+    },
+    "premium preserves strawberry": {
+      "parent": "sweet spreads"
+    },
+    "premium quailty eggs": {
+      "parent": "farming products"
+    },
+    "premium raspberry blended greek nonfat yogurt, raspberry": {
+      "parent": "yogurts"
+    },
+    "premium teebutter streichzart": {
+      "parent": "spreads"
+    },
+    "premium turkey breast, for mto subz, whole": {
+      "parent": "toppings & ingredients"
+    },
+    "premium white sandwich bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "pressed": {
+      "parent": "plant based foods and beverages"
+    },
+    "pretzels filled with peanut butter": {
+      "parent": "snacks"
+    },
+    "primizie": {
+      "parent": "sweet snacks"
+    },
+    "pro testosterone booster": {
+      "parent": "open products facts"
+    },
+    "probióticos activia café da manhã linhaça": {
+      "parent": "yogurts"
+    },
+    "profeel proteiini pirtelö makuina appelsiinikaako": {
+      "parent": "protein shakes"
+    },
+    "profeel vadelma": {
+      "parent": "quarks"
+    },
+    "profiteroles in schokoladencreme": {
+      "parent": "sweet snacks"
+    },
+    "prosciutto americano": {
+      "parent": "prepared meats"
+    },
+    "prosciutto cotto nach italienischer art": {
+      "parent": "white hams"
+    },
+    "protein bar hazelnut cream": {
+      "parent": "protein bars"
+    },
+    "protein bar with strawberries": {
+      "parent": "sweet snacks"
+    },
+    "protein bars chocolat au lait": {
+      "parent": "sweet snacks"
+    },
+    "protein sourdough toasting loaf": {
+      "parent": "sourdough sliced breads"
+    },
+    "protein speculos pudding premix": {
+      "parent": "puddings"
+    },
+    "prtein smootihe": {
+      "parent": "smoothies"
+    },
+    "pull'n'peel candy, cinnamon fire": {
+      "parent": "sweet snacks"
+    },
+    "pulpa de porc gatita lent": {
+      "parent": "pork and its products"
+    },
+    "pumpernickel fit & aktiv": {
+      "parent": "rye breads"
+    },
+    "pumpkin cream cheese loaf cake": {
+      "parent": "sweet snacks"
+    },
+    "pumpkin spice": {
+      "parent": "sweet snacks"
+    },
+    "pumpkin spice coffee syrup, pumpkin spice": {
+      "parent": "syrups"
+    },
+    "pumpkin spice coffeehouse style quick bread mix, pumpkin spice": {
+      "parent": "cooking helpers"
+    },
+    "pumpkin spread": {
+      "parent": "sweet spreads"
+    },
+    "pur zuckerfrei": {
+      "parent": "sodas"
+    },
+    "pure a good food good a bars 3x nestle cocoa yorki": {
+      "parent": "sweet snacks"
+    },
+    "pure beef hot chili & jalapeno fleischsugo": {
+      "parent": "tomato sauces"
+    },
+    "pure pea protein": {
+      "parent": "pea protein"
+    },
+    "pure raw australian honey": {
+      "parent": "sweeteners"
+    },
+    "purple hull peas": {
+      "parent": "undefined"
+    },
+    "pâte feuilletée en feuilles": {
+      "parent": "puff pastry sheets"
+    },
+    "pâtes fraîches ricotta épinards": {
+      "parent": "tortellini"
+    },
+    "qualita rossa": {
+      "parent": "plant based foods and beverages"
+    },
+    "qualité & prix confiture vierfrucht": {
+      "parent": "sweet spreads"
+    },
+    "qualité & prix magdalenas": {
+      "parent": "sweet snacks"
+    },
+    "qualité & prix magerjogurt gartenbeeren": {
+      "parent": "yogurts"
+    },
+    "qualité &prix multivitaminsaft": {
+      "parent": "plant based foods and beverages"
+    },
+    "quarkiger genuss kirsche": {
+      "parent": "fermented milk products"
+    },
+    "queensland pasta": {
+      "parent": "entrees"
+    },
+    "quencher, honey lemonade": {
+      "parent": "sodas"
+    },
+    "queso de mezcla tierno reducido": {
+      "parent": "fermented milk products"
+    },
+    "queso en lonchas suave": {
+      "parent": "sliced cheeses"
+    },
+    "queso oveja viejo cuña flor esgueva": {
+      "parent": "sheep s milk cheeses"
+    },
+    "quick cook steel cut instant oatmeal imp": {
+      "parent": "plant based foods and beverages"
+    },
+    "quinoa tri color": {
+      "parent": "seeds"
+    },
+    "rachel's organic natural yogurt": {
+      "parent": "yogurts"
+    },
+    "raclette chili": {
+      "parent": "raclette"
+    },
+    "rainbow sherbet quart": {
+      "parent": "desserts"
+    },
+    "raisins made with golden seedless grapes": {
+      "parent": "snacks"
+    },
+    "rajčiny strapcové sk čerstvé": {
+      "parent": "vegetables based foods"
+    },
+    "ranch jumbo sunflower seeds": {
+      "parent": "sunflower seeds and their products"
+    },
+    "ranchero": {
+      "parent": "plant based foods and beverages"
+    },
+    "ranchero steak & cheese tornado": {
+      "parent": "snacks"
+    },
+    "rappor": {
+      "parent": "plant based foods and beverages"
+    },
+    "raps honig cremig": {
+      "parent": "sweeteners"
+    },
+    "ras kik mango": {
+      "parent": "sweetened beverages"
+    },
+    "raspberries 200g": {
+      "parent": "plant based foods and beverages"
+    },
+    "raspberry coulis swirl": {
+      "parent": "room handijs"
+    },
+    "raspberry peach low calorie drink mix with fibre": {
+      "parent": "dried products to be rehydrated"
+    },
+    "raspberry toaster strudel pastries 6 count": {
+      "parent": "sweet snacks"
+    },
+    "rasvaton raejuusto fettfri grynost": {
+      "parent": "fermented milk products"
+    },
+    "ravioli mediterraneo": {
+      "parent": "stuffed pastas"
+    },
+    "raw jun kombucha": {
+      "parent": "beverages"
+    },
+    "raw multifloral mānuka honey": {
+      "parent": "sweeteners"
+    },
+    "raw peeled jumbo king prawns": {
+      "parent": "shrimps"
+    },
+    "raw wildflower pure honey": {
+      "parent": "sweeteners"
+    },
+    "ready sourdough": {
+      "parent": "undefined"
+    },
+    "real thai coffee latte": {
+      "parent": "undefined"
+    },
+    "real whipped cream light": {
+      "parent": "fr:cremes legeres"
+    },
+    "reb bull": {
+      "parent": "energy drinks"
+    },
+    "red beet veggie spaghtti": {
+      "parent": "plant based foods and beverages"
+    },
+    "red horse 500ml": {
+      "parent": "beverages and beverages preparations"
+    },
+    "red leaf": {
+      "parent": "plant based foods and beverages"
+    },
+    "red razz berry fruit spread": {
+      "parent": "sweet spreads"
+    },
+    "red soup": {
+      "parent": "undefined"
+    },
+    "red velvet coffee creamer, red velvet": {
+      "parent": "plant based foods and beverages"
+    },
+    "red velvet flavored bar": {
+      "parent": "sweet snacks"
+    },
+    "reese's pieces with peanuts king size": {
+      "parent": "plant based foods and beverages"
+    },
+    "reibkäse pizza | gratin": {
+      "parent": "grated cheese"
+    },
+    "reign storm kiwi blend": {
+      "parent": "energy drinks"
+    },
+    "reindeer poop": {
+      "parent": "sweet snacks"
+    },
+    "reisteigplatte": {
+      "parent": "meals"
+    },
+    "rellenos de leche": {
+      "parent": "plant based foods and beverages"
+    },
+    "rendi": {
+      "parent": "sweet snacks"
+    },
+    "responsibly sourced wild pink salmon skinless & boneless": {
+      "parent": "seafood"
+    },
+    "ret bag snow crab cluster": {
+      "parent": "seafood"
+    },
+    "rhum vieux darboussier": {
+      "parent": "rums"
+    },
+    "rib eye, local": {
+      "parent": "entrees"
+    },
+    "rice & corn flakes": {
+      "parent": "snacks"
+    },
+    "rice crunch": {
+      "parent": "snacks"
+    },
+    "rice dish": {
+      "parent": "rice dishes"
+    },
+    "rice porridge with vegetable": {
+      "parent": "soups"
+    },
+    "rice strawberry": {
+      "parent": "puddings"
+    },
+    "rich & creamy probiotic formula blended lowfat yogurt, strawberry": {
+      "parent": "yogurts"
+    },
+    "rich gravy mix": {
+      "parent": "sauces"
+    },
+    "rich tea": {
+      "parent": "sweet snacks"
+    },
+    "ricotta spinach ravioli": {
+      "parent": "stuffed pastas"
+    },
+    "ridge cut lightly salted crisps": {
+      "parent": "snacks"
+    },
+    "ridged lightly salted chips": {
+      "parent": "snacks"
+    },
+    "riesen hefeklöße": {
+      "parent": "de:hefeklöße"
+    },
+    "riesling 2022": {
+      "parent": "wines from germany"
+    },
+    "riet suiker": {
+      "parent": "sweeteners"
+    },
+    "rind burger": {
+      "parent": "sandwiches"
+    },
+    "rips green apple and strawberry": {
+      "parent": "sweet snacks"
+    },
+    "rising crust pepperoni frozen pizza": {
+      "parent": "pizzas pies and quiches"
+    },
+    "risotto microondas": {
+      "parent": "es:rissoto"
+    },
+    "ristorante pizza tonno": {
+      "parent": "tuna pizzas"
+    },
+    "riz imperiale extra parfume": {
+      "parent": "seeds"
+    },
+    "roast beef & onion": {
+      "parent": "snacks"
+    },
+    "roast garlic wedges": {
+      "parent": "potatoes"
+    },
+    "roasted chickpeas sweet chilli": {
+      "parent": "snacks"
+    },
+    "roasted cooked ham": {
+      "parent": "prepared meats"
+    },
+    "roasted garlic & peppers": {
+      "parent": "spices"
+    },
+    "roasted sesame stick, salted": {
+      "parent": "snacks"
+    },
+    "rocky mtn provisions, jumbo sunflower kernels": {
+      "parent": "snacks"
+    },
+    "roja enchilada sauce": {
+      "parent": "sauces"
+    },
+    "rolfondant wit": {
+      "parent": "versiering"
+    },
+    "romanzo choco filled cookies": {
+      "parent": "sweet snacks"
+    },
+    "roombrie": {
+      "parent": "fermented milk products"
+    },
+    "roompaté": {
+      "parent": "prepared meats"
+    },
+    "rope bites": {
+      "parent": "sweet snacks"
+    },
+    "rose bel": {
+      "parent": "wijn"
+    },
+    "roséwien": {
+      "parent": "beverages and beverages preparations"
+    },
+    "rote linsen risoni": {
+      "parent": "de:gemüsepasta"
+    },
+    "rote rüben in scheiben": {
+      "parent": "prepared salads"
+    },
+    "rote traube naturtrüber direktsaft": {
+      "parent": "beverages and beverages preparations"
+    },
+    "rotwein spätburgunder halb trocken": {
+      "parent": "beverages and beverages preparations"
+    },
+    "roulade de dinde": {
+      "parent": "turkeys"
+    },
+    "royal dansk, luxury wafers with cookies & creme filling": {
+      "parent": "sweet snacks"
+    },
+    "rubinette aromatische äpfel aus fellbach, kl ii": {
+      "parent": "plant based foods and beverages"
+    },
+    "ruby red greyhound": {
+      "parent": "beverages and beverages preparations"
+    },
+    "rum spiced black": {
+      "parent": "hard liquors"
+    },
+    "rustic 8 grain loaf": {
+      "parent": "plant based foods and beverages"
+    },
+    "rustic homemade bread 800g": {
+      "parent": "plant based foods and beverages"
+    },
+    "rye & wheat dark sourdough bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "rye bread farmers style": {
+      "parent": "rye breads"
+    },
+    "rye bread pumpernickel": {
+      "parent": "plant based foods and beverages"
+    },
+    "ryžių košė su abrikosais rytas": {
+      "parent": "creamy rice pudding"
+    },
+    "rübensaft scharf": {
+      "parent": "vegetable juices"
+    },
+    "s citron citron vert": {
+      "parent": "waters"
+    },
+    "s'mores morsels mix": {
+      "parent": "sweet snacks"
+    },
+    "sabra hummus (snack sized)": {
+      "parent": "snacks"
+    },
+    "sade cips": {
+      "parent": "snacks"
+    },
+    "saffron risotto": {
+      "parent": "seeds"
+    },
+    "sainte maure fromage de chèvre": {
+      "parent": "soft cheeses"
+    },
+    "salad, three grain ginger": {
+      "parent": "salads"
+    },
+    "salami katenrauchwurst": {
+      "parent": "salami"
+    },
+    "salchicha pechuga de pavo": {
+      "parent": "sausages"
+    },
+    "salsiccia picante with hot honey wood fired pizza": {
+      "parent": "pizzas pies and quiches"
+    },
+    "salt & black pepper popped red lentil tortillas": {
+      "parent": "snacks"
+    },
+    "salt and pepper wedges": {
+      "parent": "potato wedges"
+    },
+    "salted caramel all natural ice cream": {
+      "parent": "ice creams and sorbets"
+    },
+    "salted caramel probiotic protein kefir nonfat cultured milk smoothie, salted caramel": {
+      "parent": "yogurts"
+    },
+    "salted pumpkin seeds": {
+      "parent": "undefined"
+    },
+    "salted sosa crackers": {
+      "parent": "sweet snacks"
+    },
+    "sanddorn gin": {
+      "parent": "hard liquors"
+    },
+    "sandwich cookies, golden": {
+      "parent": "sweet snacks"
+    },
+    "sandwich mit gouda": {
+      "parent": "fermented milk products"
+    },
+    "sandy tradition with pistachies": {
+      "parent": "sweet snacks"
+    },
+    "santanas and cranberries": {
+      "parent": "sweet snacks"
+    },
+    "sardines in sunflower oil and lemon": {
+      "parent": "seafood"
+    },
+    "sardines à l'huile d'olive biologique": {
+      "parent": "seafood"
+    },
+    "sardinillas en aceite de girasol": {
+      "parent": "seafood"
+    },
+    "sauce ail/garlic": {
+      "parent": "sauces"
+    },
+    "saucisses de poulet": {
+      "parent": "sausages"
+    },
+    "saucisson à cuire de lyon": {
+      "parent": "prepared meats"
+    },
+    "sauerkirsche konfitüre extra": {
+      "parent": "sweet spreads"
+    },
+    "sauermilch": {
+      "parent": "fermented milk products"
+    },
+    "saus,lk,skin on,fc,tky,ef,16:1,10#,z": {
+      "parent": "sausages"
+    },
+    "saveurs express ravioles sauce forestière aux morilles box t": {
+      "parent": "stuffed pastas"
+    },
+    "schlemmer filet grünes gemüse": {
+      "parent": "seafood"
+    },
+    "schmunzelhase knusper": {
+      "parent": "sweet snacks"
+    },
+    "schoko butterkeks": {
+      "parent": "sweet snacks"
+    },
+    "schokocreme nuss nougat": {
+      "parent": "sweet spreads"
+    },
+    "schokomac": {
+      "parent": "sweet spreads"
+    },
+    "schwarztee mit zitrone": {
+      "parent": "dried products to be rehydrated"
+    },
+    "schwarzwälder kirsch eis": {
+      "parent": "ice creams and sorbets"
+    },
+    "scoop a snack light chocolate y malt homemaine ice cream with a pretzel ripple & delicious candy coated mini chocolate chips, scoop a snack": {
+      "parent": "frozen foods"
+    },
+    "scoops! corn chips": {
+      "parent": "snacks"
+    },
+    "sculp + debloat protein powder with probiotics": {
+      "parent": "protein powders"
+    },
+    "sea salt 'n vinegar bites, sea salt 'n vinegar": {
+      "parent": "salted snacks"
+    },
+    "sea salt and crushed black peppercorn potato chips": {
+      "parent": "snacks"
+    },
+    "seafood dipping sauce": {
+      "parent": "sauces"
+    },
+    "seascape strawberry jam": {
+      "parent": "sweet spreads"
+    },
+    "seasoned blackeye peas": {
+      "parent": "undefined"
+    },
+    "seasoning & coating mix, pork": {
+      "parent": "groceries"
+    },
+    "seasoning mix chicken tikka bx": {
+      "parent": "spices"
+    },
+    "select plant protein": {
+      "parent": "dietary supplements"
+    },
+    "sesam gerüstet": {
+      "parent": "food additives"
+    },
+    "sesam weiß": {
+      "parent": "sesame"
+    },
+    "sesame ginger salad": {
+      "parent": "prepared salads"
+    },
+    "sesame seeds bran and sesame cracker": {
+      "parent": "wheat crackers"
+    },
+    "shakissimo cookies": {
+      "parent": "coffee drinks"
+    },
+    "share size bar": {
+      "parent": "sweet snacks"
+    },
+    "shareables triscuit": {
+      "parent": "cheese and crackers"
+    },
+    "sharp white cheddar cheese bar": {
+      "parent": "fermented milk products"
+    },
+    "sharp white cheddar cheese cuts": {
+      "parent": "undefined"
+    },
+    "shincha green tea, unsweetened": {
+      "parent": "teas"
+    },
+    "shrimp dd breaded": {
+      "parent": "seafood"
+    },
+    "shrimp with pepper jack cheese": {
+      "parent": "frozen foods"
+    },
+    "shrub artisan drink mixer, ginger": {
+      "parent": "dried products to be rehydrated"
+    },
+    "sicilian style marinara mom's \"friday\" sauce": {
+      "parent": "sauces"
+    },
+    "signature burger sauce": {
+      "parent": "sauces"
+    },
+    "signature chocolate cream swirls": {
+      "parent": "sweet snacks"
+    },
+    "signature organic tomato paste, 6oz cans, 12 count": {
+      "parent": "vegetables based foods"
+    },
+    "signature queso, bowl": {
+      "parent": "appetizers & sides"
+    },
+    "silly stars sweetened oat cereal with real marshmallows": {
+      "parent": "undefined"
+    },
+    "simple dark chocolate": {
+      "parent": "sweet snacks"
+    },
+    "simple granola original": {
+      "parent": "plant based foods and beverages"
+    },
+    "simple scrambles meat lovers": {
+      "parent": "pizzas pies and quiches"
+    },
+    "simply organic, chipotle ranch dip mix": {
+      "parent": "groceries"
+    },
+    "simply peppered roasted fava beans": {
+      "parent": "undefined"
+    },
+    "singles, white american pasteurized prepared cheese product": {
+      "parent": "fermented milk products"
+    },
+    "singleserve coffee creamers": {
+      "parent": "plant based foods and beverages"
+    },
+    "siracha chilli mayo sauce": {
+      "parent": "thailand"
+    },
+    "sirup holunderblüte": {
+      "parent": "syrups"
+    },
+    "sizzling chicken & shrimp": {
+      "parent": "entrees"
+    },
+    "skimmed milk yoghurt fitline 125g x 2 kiwi pear lemon": {
+      "parent": "yogurts"
+    },
+    "skin on wedges": {
+      "parent": "potatoes"
+    },
+    "skipper 100% ananas juice": {
+      "parent": "plant based foods and beverages"
+    },
+    "skyr icelandic style stracciatella": {
+      "parent": "dairies"
+    },
+    "skyr jogurt typu islandzkiego waniliowy": {
+      "parent": "yogurts"
+    },
+    "skyr mango & passion fruit": {
+      "parent": "skyrs"
+    },
+    "slated & roasted almonds": {
+      "parent": "undefined"
+    },
+    "sliced roast turkey breast": {
+      "parent": "turkeys"
+    },
+    "slim+ herbal tea": {
+      "parent": "herbal teas in tea bags"
+    },
+    "small moutains trouts tomato & smoked paprika": {
+      "parent": "seafood"
+    },
+    "smart bran cereal": {
+      "parent": "plant based foods and beverages"
+    },
+    "smart crackers, garden ranch": {
+      "parent": "sweet snacks"
+    },
+    "smetana ke šlehání 31%": {
+      "parent": "dairies"
+    },
+    "smoked & uncured jalapeno beef sticks": {
+      "parent": "snacks"
+    },
+    "smoked gouda flavored lentil chips, smoked gouda": {
+      "parent": "snacks"
+    },
+    "smoked sausage, smoked": {
+      "parent": "sausages"
+    },
+    "smokin' hot cheddar fully cooked sausage links, smokin' hot cheddar": {
+      "parent": "sausages"
+    },
+    "smoky chili & lime chickpeas snack": {
+      "parent": "snacks"
+    },
+    "smooth & creamy fat free sour cream": {
+      "parent": "dairies"
+    },
+    "smooth peanut butter": {
+      "parent": "spreads"
+    },
+    "smooth ranch dip": {
+      "parent": "sauces"
+    },
+    "snack bars mild cheddar": {
+      "parent": "fermented milk products"
+    },
+    "snack cup carbonara": {
+      "parent": "pasta dishes"
+    },
+    "snack salad": {
+      "parent": "prepared salads"
+    },
+    "snackgurken": {
+      "parent": "vegetables based foods"
+    },
+    "snacking chestnuts": {
+      "parent": "plant based foods and beverages"
+    },
+    "snacking prosciutto small plates": {
+      "parent": "snacks"
+    },
+    "snacks li hing gummy bears": {
+      "parent": "sweet snacks"
+    },
+    "snickerdoodle cannoli dip": {
+      "parent": "sauces"
+    },
+    "snickerdoodle protein cookie": {
+      "parent": "sweet snacks"
+    },
+    "snore & peace – organic herbal tea": {
+      "parent": "teas"
+    },
+    "snyders pretzels honeymustard & onion 125g": {
+      "parent": "snacks"
+    },
+    "soave classico bel": {
+      "parent": "witte wijn fris en droog"
+    },
+    "soba nudeln": {
+      "parent": "tartufo"
+    },
+    "soda e bukës": {
+      "parent": "spices"
+    },
+    "soda, root beer, root beer": {
+      "parent": "sodas"
+    },
+    "sodergarten": {
+      "parent": "vegetable fats"
+    },
+    "sofrito tomato cooking base": {
+      "parent": "undefined"
+    },
+    "soft cheese mild&creamy": {
+      "parent": "soft cheeses with bloomy rind"
+    },
+    "soft italian rolls": {
+      "parent": "plant based foods and beverages"
+    },
+    "soft white extra": {
+      "parent": "vegan products"
+    },
+    "sojabohnen": {
+      "parent": "soy beans"
+    },
+    "sommer rebell": {
+      "parent": "fermented milk products"
+    },
+    "soup & oyster crackers, soup & oyster crackers": {
+      "parent": "sweet snacks"
+    },
+    "soupe du pecheur maggi": {
+      "parent": "soups"
+    },
+    "sour apple candy": {
+      "parent": "sweet snacks"
+    },
+    "sour brite gummi bunnies": {
+      "parent": "sweet snacks"
+    },
+    "sour cherry cola bottles": {
+      "parent": "sweet snacks"
+    },
+    "sour cream & onion rice crackers": {
+      "parent": "snacks"
+    },
+    "sour cream and onion kettle cooked potato chips": {
+      "parent": "snacks"
+    },
+    "sour glowworms mini": {
+      "parent": "sweet snacks"
+    },
+    "sour neon warms": {
+      "parent": "sweet snacks"
+    },
+    "sourdough millet bagels": {
+      "parent": "special breads"
+    },
+    "southern friend chicken thighs & drumsticks": {
+      "parent": "meats and their products"
+    },
+    "southern teaz, cinnamon apple cider tea": {
+      "parent": "beverages"
+    },
+    "southwest inspired seasoned blend": {
+      "parent": "vegetables based foods"
+    },
+    "soy malk": {
+      "parent": "plant based milk"
+    },
+    "spaghetti whole wheat": {
+      "parent": "spaghetti"
+    },
+    "spaghettini aus vollkorngriess": {
+      "parent": "whole wheat spaghetti"
+    },
+    "spanish style tortilla": {
+      "parent": "spanish omelettes"
+    },
+    "spar trajno mleko 3.5%": {
+      "parent": "uht milks"
+    },
+    "sparkling diet cola champagne soda": {
+      "parent": "undefined"
+    },
+    "sparkling yerba mate beverage blackberry": {
+      "parent": "beverages"
+    },
+    "special flakes red fruit": {
+      "parent": "plant based foods and beverages"
+    },
+    "speko creme": {
+      "parent": "sweet spreads"
+    },
+    "spiced apple chopped kit": {
+      "parent": "salad kit"
+    },
+    "spiced peach aussie creme yogurt": {
+      "parent": "yogurts"
+    },
+    "spicy and sour candy": {
+      "parent": "sweet snacks"
+    },
+    "spicy black beans": {
+      "parent": "undefined"
+    },
+    "spicy cheese jumbo colmillos fangs, spicy cheese": {
+      "parent": "snacks"
+    },
+    "spicy chicken and couscous salad": {
+      "parent": "prepared salads"
+    },
+    "spicy chicken ramen": {
+      "parent": "plant based foods and beverages"
+    },
+    "spicy chickpeas": {
+      "parent": "snacks"
+    },
+    "spicy cocktail mix for beer": {
+      "parent": "beverages"
+    },
+    "spicy italian calzone, 1 piece": {
+      "parent": "entrees"
+    },
+    "spicy mexican chocolate sauce": {
+      "parent": "sauces"
+    },
+    "spinach & goat cheese salad bowl": {
+      "parent": "salted snacks"
+    },
+    "spinach alfredo six cheese on original crust, extra large, 1 slice": {
+      "parent": "pizzas pies and quiches"
+    },
+    "spinach, cut leaf": {
+      "parent": "vegetables based foods"
+    },
+    "spinach, wild garlic & spring onion creamy ravioli": {
+      "parent": "stuffed pastas"
+    },
+    "spiro": {
+      "parent": "instant cereal"
+    },
+    "spread light butter with canola oil": {
+      "parent": "fats"
+    },
+    "spring candy sticks": {
+      "parent": "sweet snacks"
+    },
+    "sprite zero, wacky pack": {
+      "parent": "beverages and beverages preparations"
+    },
+    "squares white chocolate raspberry brownie": {
+      "parent": "sweet snacks"
+    },
+    "star rice crunchy happen zartbitter": {
+      "parent": "sweet snacks"
+    },
+    "steak and egg scramble": {
+      "parent": "meals"
+    },
+    "steak gewürz": {
+      "parent": "spices"
+    },
+    "steamed scottish salmon fillets": {
+      "parent": "seafood"
+    },
+    "steinofen pizza": {
+      "parent": "pizzas pies and quiches"
+    },
+    "steinofenpizza hawaii": {
+      "parent": "pizzas pies and quiches"
+    },
+    "steinofenpizza peperonisalami mozzarella": {
+      "parent": "pizzas pies and quiches"
+    },
+    "steinpilz maultaschen": {
+      "parent": "vegetables based foods"
+    },
+    "stimorol oral b chewing gum spearmint": {
+      "parent": "sweet snacks"
+    },
+    "strawberries & cream protein shake": {
+      "parent": "protein shakes"
+    },
+    "strawberry & vanilla": {
+      "parent": "teas"
+    },
+    "strawberry + pineapple": {
+      "parent": "plant based foods and beverages"
+    },
+    "strawberry flavor ice cream": {
+      "parent": "strawberry ice cream"
+    },
+    "strawberry ice cream sandwiches": {
+      "parent": "frozen foods"
+    },
+    "strawberry laces artificially flavored candy, strawberry laces": {
+      "parent": "sweet snacks"
+    },
+    "strawberry mint kombucha": {
+      "parent": "tea based beverages"
+    },
+    "strawberry organic twisted fruit snack, strawberry": {
+      "parent": "sweet snacks"
+    },
+    "strawberry peanut butter": {
+      "parent": "variety packs"
+    },
+    "streich minis sahne leberwurst": {
+      "parent": "sausages"
+    },
+    "studentski mix": {
+      "parent": "plant based foods and beverages"
+    },
+    "stuffed corn tortillas pupusas": {
+      "parent": "mexican dinner mixes"
+    },
+    "stuffed vine leaves": {
+      "parent": "undefined"
+    },
+    "succo di bergamotto bio": {
+      "parent": "plant based foods and beverages"
+    },
+    "sucorine aspartam süssstoff": {
+      "parent": "sweeteners"
+    },
+    "sugar & spice cookie": {
+      "parent": "sweet snacks"
+    },
+    "sugar free caramel sauce, extra shot, hot & iced drinks": {
+      "parent": "toppings & ingredients"
+    },
+    "sugar free grape drink mix": {
+      "parent": "dried products to be rehydrated"
+    },
+    "sugar free latte": {
+      "parent": "plant based foods and beverages"
+    },
+    "sultinys": {
+      "parent": "poultry broth"
+    },
+    "summer salami": {
+      "parent": "salami snack"
+    },
+    "summer sugar cookies": {
+      "parent": "undefined"
+    },
+    "sun dried tomato sauce": {
+      "parent": "vegetables based foods"
+    },
+    "sunbutter & grape jelly crustless sandwich": {
+      "parent": "sandwiches"
+    },
+    "sunflower seed bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "sunny schwarztee zitrone": {
+      "parent": "beverages and beverages preparations"
+    },
+    "super fruit bar cranberry": {
+      "parent": "sweet snacks"
+    },
+    "super ovoce": {
+      "parent": "sweet snacks"
+    },
+    "super seed": {
+      "parent": "plant based foods and beverages"
+    },
+    "super v apple fruit & vegetable juice drink from concentrate": {
+      "parent": "plant based foods and beverages"
+    },
+    "superflyers": {
+      "parent": "sweet snacks"
+    },
+    "superfood organic hot chocolate": {
+      "parent": "instant beverages"
+    },
+    "supreme crispy thin crust pizza": {
+      "parent": "pizzas pies and quiches"
+    },
+    "supreme jacfa cakes cherry": {
+      "parent": "sweet snacks"
+    },
+    "supreme ketchup": {
+      "parent": "vegetables based foods"
+    },
+    "sustainable indulgence, premium cookies, chocolate chipster": {
+      "parent": "sweet snacks"
+    },
+    "suzme peynir form": {
+      "parent": "fermented milk products"
+    },
+    "suzy gaufres vanille 8x224g 8pcs": {
+      "parent": "waffles"
+    },
+    "swedish round crispbread": {
+      "parent": "sweet snacks"
+    },
+    "sweet bay scallop": {
+      "parent": "seafood"
+    },
+    "sweet greens": {
+      "parent": "plant based foods and beverages"
+    },
+    "sweet heat mixed pickles, sweet heat": {
+      "parent": "salted snacks"
+    },
+    "sweet kale chopped kit": {
+      "parent": "salted snacks"
+    },
+    "sweet mint sugarfree gum, sweet mint": {
+      "parent": "sweet snacks"
+    },
+    "sweet potato & parsnip": {
+      "parent": "baby foods"
+    },
+    "sweet potato snack": {
+      "parent": "snacks"
+    },
+    "swiss bittersweet fine dark chocolate": {
+      "parent": "undefined"
+    },
+    "symken soya natural": {
+      "parent": "soy based drinks"
+    },
+    "szechuan fire mac platter": {
+      "parent": "entrees"
+    },
+    "taboulé met 5 groenten": {
+      "parent": "vanilla ice cream cones"
+    },
+    "talsu piens 2.5%": {
+      "parent": "uht milks"
+    },
+    "tamarind plum syrup": {
+      "parent": "syrups"
+    },
+    "tandoori power": {
+      "parent": "groceries"
+    },
+    "tangy citrus salad kit, tangy citrus": {
+      "parent": "plant based foods and beverages"
+    },
+    "tangy orange vodka seltzer": {
+      "parent": "vodka based alcoholic beverages"
+    },
+    "tapas gelderse gekookte worst": {
+      "parent": "sausages"
+    },
+    "tapioca": {
+      "parent": "baking decorations"
+    },
+    "taragui, yerba mate juice": {
+      "parent": "beverages"
+    },
+    "target corporation, edible easter grass, strawberry, blueberry & green apple": {
+      "parent": "sweet snacks"
+    },
+    "tart cherry fillling": {
+      "parent": "baking decorations"
+    },
+    "tartufo truffle chips": {
+      "parent": "truffle crisps"
+    },
+    "taste the difference mammoth gordal chilli olives": {
+      "parent": "plant based pickles"
+    },
+    "tasty cashews": {
+      "parent": "snacks"
+    },
+    "tastykake, baked pies, caramel apple": {
+      "parent": "sweet snacks"
+    },
+    "tea drink mix": {
+      "parent": "dried products to be rehydrated"
+    },
+    "tea of a kind pineapple coconut yerba mate real brewed tea": {
+      "parent": "teas"
+    },
+    "tea5, assam melon milk tea": {
+      "parent": "tea based beverages"
+    },
+    "tender mince": {
+      "parent": "plant based foods and beverages"
+    },
+    "tenderstem broccoli and extra fine beans": {
+      "parent": "vegetables based foods"
+    },
+    "tentation thé vert matcha": {
+      "parent": "sweet snacks"
+    },
+    "terrific teriyaki cubes": {
+      "parent": "groceries"
+    },
+    "tessinerbrot": {
+      "parent": "plant based foods and beverages"
+    },
+    "texas dry rub": {
+      "parent": "plant based foods and beverages"
+    },
+    "thai coconut cream 2yrs prod": {
+      "parent": "plant based milk alternatives"
+    },
+    "thai inspired red prawn curry": {
+      "parent": "microwave meals"
+    },
+    "thai kitchen, simmer sauce, green curry": {
+      "parent": "sauces"
+    },
+    "thandai drink mix": {
+      "parent": "thandai"
+    },
+    "the best goat's cheese and herb buscuits": {
+      "parent": "snacks"
+    },
+    "the best goats cheese mozzarella and red onion pizza": {
+      "parent": "pizzas pies and quiches"
+    },
+    "the late district dairy co. deciciously moreish mature chedder": {
+      "parent": "mature cheddar"
+    },
+    "the legend feuerwasser bud spencer": {
+      "parent": "beverages and beverages preparations"
+    },
+    "the plain jane, lighter portion": {
+      "parent": "entrees"
+    },
+    "the protein crunchy dark coating": {
+      "parent": "sweet snacks"
+    },
+    "the real advent calendar per more about christmas": {
+      "parent": "festive foods"
+    },
+    "the turkey del taco, crunchy": {
+      "parent": "sandwiches"
+    },
+    "thick sliced pepperoni snacks": {
+      "parent": "prepared meats"
+    },
+    "thickburger, veg it": {
+      "parent": "sandwiches"
+    },
+    "thin crust pizza, margherita": {
+      "parent": "pizzas pies and quiches"
+    },
+    "thin spaghetti": {
+      "parent": "spaghetti"
+    },
+    "thin wheats baked snack crackers": {
+      "parent": "sweet snacks"
+    },
+    "thins flatbread": {
+      "parent": "undefined"
+    },
+    "thirst quenching soda, lemon lime": {
+      "parent": "sodas"
+    },
+    "thunfisch filets naturale, ohne öl": {
+      "parent": "tunas"
+    },
+    "tim tams": {
+      "parent": "sweet snacks"
+    },
+    "tiny twists pretzels, cheddar": {
+      "parent": "snacks"
+    },
+    "tisana bio": {
+      "parent": "plant based foods and beverages"
+    },
+    "toasted chia seed": {
+      "parent": "seeds"
+    },
+    "toba de curcan": {
+      "parent": "turkeys"
+    },
+    "toffee sauce": {
+      "parent": "sauces"
+    },
+    "tomatensauce ouzo": {
+      "parent": "tomato sauces"
+    },
+    "tomato & basil sauce": {
+      "parent": "undefined"
+    },
+    "tomato balsamic ketchup": {
+      "parent": "sauces"
+    },
+    "tomato basil salmon with vegetables": {
+      "parent": "frozen foods"
+    },
+    "tomato couscous": {
+      "parent": "salads"
+    },
+    "too good gourmet, white chocolate covered cookie, peppermint": {
+      "parent": "sweet snacks"
+    },
+    "toronj adlay grapefruitade": {
+      "parent": "waters"
+    },
+    "tortelli di zucca": {
+      "parent": "stuffed pastas"
+    },
+    "tortelloni mit ricotta und spinat aus eu": {
+      "parent": "tortelloni"
+    },
+    "tortelloni with italian sausage": {
+      "parent": "plant based foods and beverages"
+    },
+    "tortilla with spinach": {
+      "parent": "spanish omelettes"
+    },
+    "tostadas light": {
+      "parent": "rusks"
+    },
+    "tostados integrales": {
+      "parent": "plant based foods and beverages"
+    },
+    "trader joes kipper fillets smoked herring": {
+      "parent": "smoked fishes"
+    },
+    "traditional caramels flan": {
+      "parent": "desserts"
+    },
+    "traditional crust pepperoni pizza": {
+      "parent": "pizzas pies and quiches"
+    },
+    "traditional smoked salmon handsalted": {
+      "parent": "smoked salmons"
+    },
+    "trancetti di tonno": {
+      "parent": "tunas"
+    },
+    "trauben kernlos hell": {
+      "parent": "de:obst"
+    },
+    "tree fruits": {
+      "parent": "sweet snacks"
+    },
+    "tricolor fusilli": {
+      "parent": "pasta dishes"
+    },
+    "trio grape tomatoes": {
+      "parent": "vegetables based foods"
+    },
+    "triple berry baked granola": {
+      "parent": "plant based foods and beverages"
+    },
+    "triple berry pie, triple berry": {
+      "parent": "sweet snacks"
+    },
+    "triple chocolate biscotti": {
+      "parent": "hi"
+    },
+    "tropical blend italian soda": {
+      "parent": "sodas"
+    },
+    "tropical exotic": {
+      "parent": "energy drinks"
+    },
+    "tropical twist sherbet": {
+      "parent": "frozen foods"
+    },
+    "true goodness, elbows & cheddar pasta with cheese sauce": {
+      "parent": "pasta dishes"
+    },
+    "true goodness, organic ground cayenne": {
+      "parent": "plant based foods and beverages"
+    },
+    "trutenbrust geräuchert": {
+      "parent": "turkeys"
+    },
+    "trymoin brownie": {
+      "parent": "beverages and beverages preparations"
+    },
+    "trüffelpralinen ohne alkohol": {
+      "parent": "sweet snacks"
+    },
+    "tuna chucks in brine": {
+      "parent": "tunas"
+    },
+    "tuna lite oil italian style": {
+      "parent": "tunas"
+    },
+    "tuna roll": {
+      "parent": "sandwiches"
+    },
+    "tuna slices in sunflower oil with black pepper & lemon": {
+      "parent": "tunas"
+    },
+    "turbinado/demerara sugar cubes": {
+      "parent": "sweeteners"
+    },
+    "turkey breakfast link sausage": {
+      "parent": "sausages"
+    },
+    "turkey breast tenderloins": {
+      "parent": "poultries"
+    },
+    "turkey franks, turkey": {
+      "parent": "sausages"
+    },
+    "turkey sausage, white egg & cheese on english muffin": {
+      "parent": "sandwiches"
+    },
+    "tuscan garlic chicken on gluten free crust, 1 slice": {
+      "parent": "pizzas pies and quiches"
+    },
+    "tuscan garlic chicken on thin crust, 1 slice": {
+      "parent": "pizzas pies and quiches"
+    },
+    "twin grain crisp crispy corn & rice cereal": {
+      "parent": "plant based foods and beverages"
+    },
+    "twin pop": {
+      "parent": "frozen foods"
+    },
+    "udi's, soft baked cookies, salted caramel cashew": {
+      "parent": "sweet snacks"
+    },
+    "uitgebakken ontbijtspek": {
+      "parent": "plakken spek en bacon (voorverpakt)"
+    },
+    "un grande amore milk chocolates 30% cocoa": {
+      "parent": "sweet snacks"
+    },
+    "uncle chris' gourmet steak seasoning": {
+      "parent": "spices"
+    },
+    "ungarisch gulasch": {
+      "parent": "meals"
+    },
+    "universal, chocolate sticks": {
+      "parent": "sweet snacks"
+    },
+    "unsweetened tea, unsweetened": {
+      "parent": "tea based beverages"
+    },
+    "unsweetened water, passion fruit": {
+      "parent": "waters"
+    },
+    "v protein 4k blend cookies and cream": {
+      "parent": "dietary supplements"
+    },
+    "valpre spring water": {
+      "parent": "waters"
+    },
+    "vanilla cake and baking mix": {
+      "parent": "sweet snacks"
+    },
+    "vanilla flavored ice cream between chocolate flavored wafers sandwiches": {
+      "parent": "frozen foods"
+    },
+    "vanilla flavored ice cream in a sugar cone, dipped in chocolate flavored coating, topped with peanuts and bisque mini ice cream sundae cones, vanilla, chocolate": {
+      "parent": "frozen foods"
+    },
+    "vanilla sugar free fat free reduced calorie instant pudding": {
+      "parent": "desserts"
+    },
+    "vaud pork snail": {
+      "parent": "sausages"
+    },
+    "vegan beef pieces": {
+      "parent": "meat analogues"
+    },
+    "vegan chocolate ice cream": {
+      "parent": "ice creams and sorbets"
+    },
+    "vegan protein bar cookies & cream geschmack": {
+      "parent": "sweet snacks"
+    },
+    "vegane mergez": {
+      "parent": "vegetarian sausages"
+    },
+    "vegane streichwurst teewurstgeschmack": {
+      "parent": "spreads"
+    },
+    "veganer omelett ersatz": {
+      "parent": "meals"
+    },
+    "vegetable skillet sauce": {
+      "parent": "sauces"
+    },
+    "vegetarian chorizo and red pepper sausages": {
+      "parent": "vegetarian sausages"
+    },
+    "vegetarische grillbratwurst": {
+      "parent": "vegetarian sausages"
+    },
+    "veggie burger": {
+      "parent": "undefined"
+    },
+    "veggie pasta with durum wheat twisted elbow": {
+      "parent": "plant based foods and beverages"
+    },
+    "veggie stäbchen": {
+      "parent": "plant based foods and beverages"
+    },
+    "veggies & white cheddar": {
+      "parent": "plant based foods and beverages"
+    },
+    "venezero": {
+      "parent": "beverages and beverages preparations"
+    },
+    "venezuelan chocolate": {
+      "parent": "sweet snacks"
+    },
+    "viande hachée 700g 15%mg cheveu d'ange vbf x8": {
+      "parent": "steaks"
+    },
+    "vidalia onion dressing & marinade, light": {
+      "parent": "sauces"
+    },
+    "vidaylin minibear gummies": {
+      "parent": "multy vitamin"
+    },
+    "viennetta": {
+      "parent": "luxury ice cream in a box"
+    },
+    "vigneri, give collection rich dark chocolate egg": {
+      "parent": "sweet snacks"
+    },
+    "vinaigrette & marinade, sundried tomato & garlic": {
+      "parent": "sauces"
+    },
+    "vinegar balsamic style": {
+      "parent": "groceries"
+    },
+    "vinegar, apple cider": {
+      "parent": "sauces"
+    },
+    "vinoiserie": {
+      "parent": "viennoiseries"
+    },
+    "vintage smokehouse bbq sauce": {
+      "parent": "sauces"
+    },
+    "vitabella erdbeerkissen": {
+      "parent": "plant based foods and beverages"
+    },
+    "vitarich sandwich bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "viva chrunch tortilla crisps": {
+      "parent": "snacks"
+    },
+    "vlcd shake banana & raspberry": {
+      "parent": "weight loss milkshakes"
+    },
+    "vodka classic italian style pasta sauce": {
+      "parent": "sauces"
+    },
+    "vollkorn butterkekse": {
+      "parent": "sweet snacks"
+    },
+    "vrisi 36, balsamic vinegar": {
+      "parent": "groceries"
+    },
+    "wafer barambo chocolate": {
+      "parent": "wafers"
+    },
+    "waffeletten minis": {
+      "parent": "wafers"
+    },
+    "waiwai instant noodle": {
+      "parent": "pasta dishes"
+    },
+    "wassermelone feigengeschmack": {
+      "parent": "syrups with fruits"
+    },
+    "water melon sticks": {
+      "parent": "sweet snacks"
+    },
+    "weichweizen grieß": {
+      "parent": "wheat semolinas"
+    },
+    "weis, sparkling 100% juice, cranberry apple": {
+      "parent": "squeezed juices"
+    },
+    "weiße bohnen eintopf klein": {
+      "parent": "meals"
+    },
+    "welchs grape soda, 20 oz": {
+      "parent": "beverages and beverages preparations"
+    },
+    "wellen friyes": {
+      "parent": "potato fries"
+    },
+    "wells banana bread beer wells & young's ltd 500 ml": {
+      "parent": "beverages"
+    },
+    "welschriesling trocken": {
+      "parent": "beverages and beverages preparations"
+    },
+    "whey protein natural flavour": {
+      "parent": "protein powders"
+    },
+    "while pasta": {
+      "parent": "spaghetti"
+    },
+    "whipped chive cream cheese spread": {
+      "parent": "fermented milk products"
+    },
+    "whipped gooseberry fool": {
+      "parent": "fruit fools"
+    },
+    "whippet cones cookies & cream": {
+      "parent": "ice creams and sorbets"
+    },
+    "white cheddar variety semisoft cheese": {
+      "parent": "undefined"
+    },
+    "white chocolate & matcha instant oatmeal": {
+      "parent": "plant based foods and beverages"
+    },
+    "white chocolate sauce, for smores iced mocha, medium": {
+      "parent": "toppings & ingredients"
+    },
+    "white meat chicken simmered in a creamy mushroom & marsala wine sauce, creamy chicken mushroom": {
+      "parent": "meals"
+    },
+    "white mystery with micro candies sugar free gum": {
+      "parent": "sweet snacks"
+    },
+    "white sourdough sandwich loaf": {
+      "parent": "plant based foods and beverages"
+    },
+    "whole foods market, sour cherries": {
+      "parent": "snacks"
+    },
+    "whole foods market, spicy harissa salmon salad": {
+      "parent": "salads"
+    },
+    "whole grain white bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "whole kernel corn canned": {
+      "parent": "vegetables based foods"
+    },
+    "whole kernel sweet corn, great alone or in corn chowder": {
+      "parent": "vegetables based foods"
+    },
+    "whole milk string low moisture mozzarella cheese": {
+      "parent": "string cheeses"
+    },
+    "whole oil cured black olives": {
+      "parent": "plant based pickles"
+    },
+    "whole peeled tomatoes &quot;la fiammante&quot;, canned": {
+      "parent": "vegetables based foods"
+    },
+    "whole pomegranates": {
+      "parent": "pomegranates"
+    },
+    "whole wheat macaroni product, wheat pasta penne rigate": {
+      "parent": "plant based foods and beverages"
+    },
+    "wholegrain four cereal flakes": {
+      "parent": "plant based foods and beverages"
+    },
+    "wholegrain steamed basmati rice": {
+      "parent": "meals"
+    },
+    "wicklein mit mandelkrokant": {
+      "parent": "sweet snacks"
+    },
+    "wide ribbons, enriched macaroni product": {
+      "parent": "plant based foods and beverages"
+    },
+    "wie fleischwurst": {
+      "parent": "vegetarian sausages"
+    },
+    "wiener krachmandeln": {
+      "parent": "sweet snacks"
+    },
+    "wilbur's of maine, chocolate confections, dark chocolate, ginger": {
+      "parent": "sweet snacks"
+    },
+    "wild berry flabour": {
+      "parent": "sweet snacks"
+    },
+    "wild maine blueberry jam": {
+      "parent": "sweet spreads"
+    },
+    "wild mushroom,spinach and ricotta filo parcels": {
+      "parent": "wild mushroom spinach and ricotta filo parcels"
+    },
+    "wild salmon pinwheel with lobster stuffing": {
+      "parent": "seafood"
+    },
+    "winterberry spice pressed juice": {
+      "parent": "plant based foods and beverages"
+    },
+    "wintermint ascent sugarfree gum, wintermint ascent": {
+      "parent": "sweet snacks"
+    },
+    "witch hazel": {
+      "parent": "non food products"
+    },
+    "wittî’s": {
+      "parent": "snacks"
+    },
+    "wok this way organic soy sauce": {
+      "parent": "sauces"
+    },
+    "wonka grape and strawberry": {
+      "parent": "sweet snacks"
+    },
+    "wraps wheat flour tortilla": {
+      "parent": "white breads"
+    },
+    "wurst kordelsalami luftgetrocknet": {
+      "parent": "salami"
+    },
+    "wurst käse salami": {
+      "parent": "sausages"
+    },
+    "würzige ziege": {
+      "parent": "goat cheeses"
+    },
+    "x freeze": {
+      "parent": "sweet snacks"
+    },
+    "x10": {
+      "parent": "sweet snacks"
+    },
+    "xl twister himalayan salt": {
+      "parent": "chips"
+    },
+    "yakitori spiesjes": {
+      "parent": "snacks"
+    },
+    "yeast free organic vegetable boullon powder": {
+      "parent": "dried products to be rehydrated"
+    },
+    "yellow popping": {
+      "parent": "snacks"
+    },
+    "yellow rice with real saffron & other seasonings": {
+      "parent": "seeds"
+    },
+    "yellowfin tuna, italian style in oil with chilli": {
+      "parent": "tunas"
+    },
+    "yogurt greek style": {
+      "parent": "yogurts"
+    },
+    "yogurt kremowy raspberry and granola": {
+      "parent": "yogurts"
+    },
+    "yogurt smoothie with real fruit": {
+      "parent": "yogurts"
+    },
+    "yogurte natural": {
+      "parent": "pt:iogurtes grego"
+    },
+    "yoplait light blackberry pomegranate/blueberry fat free yogurt variety pack 8 count": {
+      "parent": "yogurts"
+    },
+    "yucatan black bean soup, lightly salted": {
+      "parent": "soups"
+    },
+    "yummy timeout slim shake": {
+      "parent": "dietary supplements"
+    },
+    "zero calorie sweetener allulose & monk fruit": {
+      "parent": "sweeteners"
+    },
+    "zero fat greek style yoghurt": {
+      "parent": "yogurts"
+    },
+    "zero maida bread": {
+      "parent": "plant based foods and beverages"
+    },
+    "zero sugar d3 gummies": {
+      "parent": "vitamin supplement"
+    },
+    "ziegenkäse natur": {
+      "parent": "goat cheeses"
+    },
+    "ziemniaki z pieca w ziołach": {
+      "parent": "plant based foods and beverages"
+    },
+    "zitronen sahne schnitten": {
+      "parent": "sweet snacks"
+    },
+    "échalote rustica": {
+      "parent": "vegetables based foods"
+    },
+    "økologisk sødmælk": {
+      "parent": "milks liquid and powder"
+    },
+    "økologiske finvalsede glutenfri havregryn": {
+      "parent": "seeds"
+    },
+    "πράσινες ελιές με πιπεριά": {
+      "parent": "plant based pickles"
+    },
+    "българско кисело мляко 3,6%": {
+      "parent": "yogurts"
+    },
+    "гранула бадем и шоколад парченца 0584": {
+      "parent": "plant based foods and beverages"
+    },
+    "локум с орехи и карамел": {
+      "parent": "turkish delight"
+    },
+    "маффин черничный": {
+      "parent": "ru:маффин"
+    },
+    "соус часник sos": {
+      "parent": "sauces"
+    },
+    "сыр творожный с зеленью hochland 140г": {
+      "parent": "fermented milk products"
+    },
+    "칼집그릴후랑크": {
+      "parent": "sausages"
+    }
+  }
+}

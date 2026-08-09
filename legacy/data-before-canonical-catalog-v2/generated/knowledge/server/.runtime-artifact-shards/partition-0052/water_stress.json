@@ -1,0 +1,25 @@
+{
+  "entries": {
+    "lieu noir, cuit": {
+      "score": 0.555
+    },
+    "pain, baguette, sans sel": {
+      "score": 0.188
+    },
+    "pomme de terre, sans peau, crue": {
+      "score": 0.327
+    },
+    "pâte feuilletée, matière grasse végétale, crue": {
+      "score": 0.719
+    },
+    "sauce au chocolat": {
+      "score": 0.469
+    },
+    "tarte aux fruits rouges": {
+      "score": 1.95
+    },
+    "veau, collier, cru": {
+      "score": 3.17
+    }
+  }
+}

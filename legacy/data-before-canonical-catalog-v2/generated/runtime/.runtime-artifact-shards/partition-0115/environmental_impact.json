@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "banane plantain, crue": {
+      "environmentScoreMptPerKg": 0.123,
+      "climateKgCo2EqPerKg": 0.76,
+      "landUsePtPerKg": 21.4,
+      "waterDeprivationM3PerKg": 5.63
+    },
+    "café expresso, non instantané, non sucré, prêt à boire": {
+      "environmentScoreMptPerKg": 0.0966,
+      "climateKgCo2EqPerKg": 0.635,
+      "landUsePtPerKg": 25.1,
+      "waterDeprivationM3PerKg": 0.6
+    },
+    "denté, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "gombo, fruit, cuit": {
+      "environmentScoreMptPerKg": 0.208,
+      "climateKgCo2EqPerKg": 2.03,
+      "landUsePtPerKg": 23.4,
+      "waterDeprivationM3PerKg": 2.0
+    },
+    "goûter sec fourré (\"sandwiché\") parfum chocolat": {
+      "environmentScoreMptPerKg": 0.475,
+      "climateKgCo2EqPerKg": 6.6,
+      "landUsePtPerKg": 332.0,
+      "waterDeprivationM3PerKg": 1.35
+    },
+    "pain au lait, artisanal": {
+      "environmentScoreMptPerKg": 0.335,
+      "climateKgCo2EqPerKg": 2.73,
+      "landUsePtPerKg": 137.0,
+      "waterDeprivationM3PerKg": 0.589
+    },
+    "poire belle hélène": {
+      "environmentScoreMptPerKg": 0.301,
+      "climateKgCo2EqPerKg": 2.22,
+      "landUsePtPerKg": 67.7,
+      "waterDeprivationM3PerKg": 0.666
+    },
+    "soupe aux asperges, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.206,
+      "climateKgCo2EqPerKg": 1.57,
+      "landUsePtPerKg": 68.3,
+      "waterDeprivationM3PerKg": 2.1
+    },
+    "soupe à la volaille et aux vermicelles, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.176,
+      "climateKgCo2EqPerKg": 0.859,
+      "landUsePtPerKg": 37.2,
+      "waterDeprivationM3PerKg": 0.637
+    },
+    "tomate, crue": {
+      "environmentScoreMptPerKg": 0.0854,
+      "climateKgCo2EqPerKg": 0.75,
+      "landUsePtPerKg": 6.51,
+      "waterDeprivationM3PerKg": 1.27
+    },
+    "veau, noix, rôtie": {
+      "environmentScoreMptPerKg": 2.74,
+      "climateKgCo2EqPerKg": 29.4,
+      "landUsePtPerKg": 1340.0,
+      "waterDeprivationM3PerKg": 3.99
+    }
+  }
+}

@@ -1,6 +1,6 @@
 package de.shopme.tools.knowledge.report
 
-import java.io.File
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 
 object RunRejectedNutritionRetrievalFailureReport {
 
@@ -13,24 +13,18 @@ object RunRejectedNutritionRetrievalFailureReport {
                     "does not accept arguments."
         }
 
-        val projectRoot =
-            File("..")
+        val paths =
+            KnowledgeBuildPaths.default()
 
         RejectedNutritionRetrievalFailureClassifier()
             .run(
                 candidateQualityFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "nutrition.rejected-candidate-quality.json"
+                    paths.reportArtifact(
+                        "nutrition.rejected-candidate-quality.json"
                     ),
                 outputFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "nutrition.retrieval-failures.json"
+                    paths.reportArtifact(
+                        "nutrition.retrieval-failures.json"
                     )
             )
     }

@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "chou chinois ou pak choi ou pé tsai, cru": {
+      "environmentScoreMptPerKg": 0.0798,
+      "climateKgCo2EqPerKg": 0.848,
+      "landUsePtPerKg": 33.0,
+      "waterDeprivationM3PerKg": 0.0745
+    },
+    "congre, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "jambon cru, fumé, allégé en matière grasse": {
+      "environmentScoreMptPerKg": 1.8,
+      "climateKgCo2EqPerKg": 13.6,
+      "landUsePtPerKg": 626.0,
+      "waterDeprivationM3PerKg": 4.24
+    },
+    "oeuf, jaune (jaune d'oeuf), en poudre": {
+      "environmentScoreMptPerKg": 0.568,
+      "climateKgCo2EqPerKg": 3.68,
+      "landUsePtPerKg": 300.0,
+      "waterDeprivationM3PerKg": 1.6
+    },
+    "omelette aux lardons": {
+      "environmentScoreMptPerKg": 0.499,
+      "climateKgCo2EqPerKg": 3.71,
+      "landUsePtPerKg": 231.0,
+      "waterDeprivationM3PerKg": 1.32
+    },
+    "orge perlée, bouilli/cuite à l'eau, non salée": {
+      "environmentScoreMptPerKg": 0.0633,
+      "climateKgCo2EqPerKg": 0.4,
+      "landUsePtPerKg": 36.5,
+      "waterDeprivationM3PerKg": 0.477
+    },
+    "piment, cru": {
+      "environmentScoreMptPerKg": 0.0803,
+      "climateKgCo2EqPerKg": 0.715,
+      "landUsePtPerKg": 6.38,
+      "waterDeprivationM3PerKg": 0.294
+    },
+    "pomme, pulpe, bouillie/cuite à l'eau": {
+      "environmentScoreMptPerKg": 0.132,
+      "climateKgCo2EqPerKg": 1.44,
+      "landUsePtPerKg": 27.8,
+      "waterDeprivationM3PerKg": 0.966
+    },
+    "thon, cru": {
+      "environmentScoreMptPerKg": 0.793,
+      "climateKgCo2EqPerKg": 4.98,
+      "landUsePtPerKg": 8.57,
+      "waterDeprivationM3PerKg": 0.313
+    },
+    "thé oolong, infusé, non sucré": {
+      "environmentScoreMptPerKg": 0.0148,
+      "climateKgCo2EqPerKg": 0.0436,
+      "landUsePtPerKg": 4.02,
+      "waterDeprivationM3PerKg": 0.776
+    }
+  }
+}

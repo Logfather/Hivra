@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "amande (avec peau)": {
+      "environmentScoreMptPerKg": 0.746,
+      "climateKgCo2EqPerKg": 2.63,
+      "landUsePtPerKg": 378.0,
+      "waterDeprivationM3PerKg": 30.9
+    },
+    "boisson lactée aromatisée au chocolat, sucrée, au lait partiellement écrémé, enrichie et/ou restaurée en vitamines et/ou minéraux": {
+      "environmentScoreMptPerKg": 0.142,
+      "climateKgCo2EqPerKg": 1.51,
+      "landUsePtPerKg": 56.2,
+      "waterDeprivationM3PerKg": 0.233
+    },
+    "céleri branche, cuit": {
+      "environmentScoreMptPerKg": 0.134,
+      "climateKgCo2EqPerKg": 1.47,
+      "landUsePtPerKg": 17.0,
+      "waterDeprivationM3PerKg": 0.753
+    },
+    "céleri rémoulade, préemballé": {
+      "environmentScoreMptPerKg": 0.148,
+      "climateKgCo2EqPerKg": 1.18,
+      "landUsePtPerKg": 85.7,
+      "waterDeprivationM3PerKg": 1.3
+    },
+    "dorade rose, ou daurade rose, crue": {
+      "environmentScoreMptPerKg": 1.31,
+      "climateKgCo2EqPerKg": 7.48,
+      "landUsePtPerKg": 13.1,
+      "waterDeprivationM3PerKg": 0.707
+    },
+    "fève, sèche": {
+      "environmentScoreMptPerKg": 0.101,
+      "climateKgCo2EqPerKg": 0.858,
+      "landUsePtPerKg": -167.0,
+      "waterDeprivationM3PerKg": 0.15
+    },
+    "jambon cuit, supérieur, à teneur réduite en sel": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "muffin anglais, petit pain spécial, préemballé": {
+      "environmentScoreMptPerKg": 0.226,
+      "climateKgCo2EqPerKg": 2.04,
+      "landUsePtPerKg": 129.0,
+      "waterDeprivationM3PerKg": 0.519
+    },
+    "pomme de terre dauphine, surgelée, cuite": {
+      "environmentScoreMptPerKg": 0.338,
+      "climateKgCo2EqPerKg": 2.65,
+      "landUsePtPerKg": 130.0,
+      "waterDeprivationM3PerKg": 0.691
+    },
+    "saint marcellin": {
+      "environmentScoreMptPerKg": 0.519,
+      "climateKgCo2EqPerKg": 5.12,
+      "landUsePtPerKg": 220.0,
+      "waterDeprivationM3PerKg": 0.636
+    }
+  }
+}

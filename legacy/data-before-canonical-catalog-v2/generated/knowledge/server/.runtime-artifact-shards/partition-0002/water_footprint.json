@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "biscuit sec, sablé, galette ou palet, aux fruits": {
+      "litersPerKilogram": 2950.0
+    },
+    "boeuf, à bourguignon ou pot au feu, cuit": {
+      "litersPerKilogram": 3050.0
+    },
+    "crème dessert, allégée en mg, rayon frais": {
+      "litersPerKilogram": 528.0
+    },
+    "goûter sec fourré (\"sandwiché\") parfum lait ou vanille": {
+      "litersPerKilogram": 1130.0
+    },
+    "madeleine ordinaire, préemballée": {
+      "litersPerKilogram": 1660.0
+    },
+    "paupiette de veau, cuite au four": {
+      "litersPerKilogram": 5980.0
+    },
+    "pomme de terre, purée à base de flocons, reconstituée avec lait demi écrémé et eau, non salée": {
+      "litersPerKilogram": 216.0
+    },
+    "riz cantonais": {
+      "litersPerKilogram": 4670.0
+    },
+    "sandwich baguette, poulet, crudités (tomate, salade), mayonnaise": {
+      "litersPerKilogram": 1960.0
+    },
+    "sauce au poivre, condimentaire, froide, préemballée": {
+      "litersPerKilogram": 392.0
+    },
+    "soupe au cresson, déshydratée reconstituée": {
+      "litersPerKilogram": 217.0
+    },
+    "tacaud, cru": {
+      "litersPerKilogram": 470.0
+    }
+  }
+}

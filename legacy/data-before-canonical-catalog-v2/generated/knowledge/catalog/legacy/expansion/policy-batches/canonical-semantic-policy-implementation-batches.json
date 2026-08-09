@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "sourceBaselineId": "canonical-food-catalog-v1-e0b29b3d39d868cb",
+  "sourceBaselineCatalogSha256": "e0b29b3d39d868cb3cbc2edd5cae89e6e878d6eede231080632432566711fc7c",
+  "sourcePolicySetId": "canonical-family-axis-semantic-policy-v1-399574869620f318",
+  "generatedCandidateCount": 9304,
+  "reviewRequiredCandidateCount": 28,
+  "missingPolicyGapCount": 0,
+  "batchCount": 0,
+  "highPriorityBatchCount": 0,
+  "mediumPriorityBatchCount": 0,
+  "lowPriorityBatchCount": 0,
+  "coveredCategoryCount": 0,
+  "coveredFamilyCount": 0,
+  "coveredAxisCount": 0,
+  "affectedCandidateReferenceCount": 0,
+  "batches": [],
+  "gaps": [],
+  "completeGapCoverage": true,
+  "deterministicOrderValid": true,
+  "blockers": [],
+  "valid": true
+}

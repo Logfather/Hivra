@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "crêpe préemballée, fourrée fraise": {
+      "environmentScoreMptPerKg": 0.285,
+      "climateKgCo2EqPerKg": 1.82,
+      "landUsePtPerKg": 90.2,
+      "waterDeprivationM3PerKg": 3.24
+    },
+    "kombu breton (laminaria digitata), séchée ou déshydratée": {
+      "environmentScoreMptPerKg": 1.52,
+      "climateKgCo2EqPerKg": 11.6,
+      "landUsePtPerKg": 26.4,
+      "waterDeprivationM3PerKg": 4.83
+    },
+    "moules farcies (matière grasse, persillade…), crues": {
+      "environmentScoreMptPerKg": 0.386,
+      "climateKgCo2EqPerKg": 3.48,
+      "landUsePtPerKg": 292.0,
+      "waterDeprivationM3PerKg": 0.642
+    },
+    "nectar de banane": {
+      "environmentScoreMptPerKg": 0.0852,
+      "climateKgCo2EqPerKg": 0.608,
+      "landUsePtPerKg": 13.0,
+      "waterDeprivationM3PerKg": 0.789
+    },
+    "pain courant français, 400g ou boule": {
+      "environmentScoreMptPerKg": 0.104,
+      "climateKgCo2EqPerKg": 0.776,
+      "landUsePtPerKg": 63.0,
+      "waterDeprivationM3PerKg": 0.188
+    },
+    "pomme de terre, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 0.107,
+      "climateKgCo2EqPerKg": 0.852,
+      "landUsePtPerKg": 32.4,
+      "waterDeprivationM3PerKg": 0.403
+    },
+    "porc, filet mignon, cuit": {
+      "environmentScoreMptPerKg": 1.07,
+      "climateKgCo2EqPerKg": 8.4,
+      "landUsePtPerKg": 441.0,
+      "waterDeprivationM3PerKg": 2.77
+    },
+    "pâtes fraîches farcies (ex : raviolis), aux légumes, cuites": {
+      "environmentScoreMptPerKg": 0.315,
+      "climateKgCo2EqPerKg": 2.65,
+      "landUsePtPerKg": 110.0,
+      "waterDeprivationM3PerKg": 1.07
+    },
+    "tomate, pulpe et peau, bouillie/cuite à l'eau": {
+      "environmentScoreMptPerKg": 0.167,
+      "climateKgCo2EqPerKg": 1.51,
+      "landUsePtPerKg": 14.8,
+      "waterDeprivationM3PerKg": 1.69
+    }
+  }
+}

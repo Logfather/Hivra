@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "avocat, pulpe, cru": {
+      "litersPerKilogram": 23700.0
+    },
+    "base de pizza tomatée": {
+      "litersPerKilogram": 2480.0
+    },
+    "biscuit de savoie": {
+      "litersPerKilogram": 1220.0
+    },
+    "bouchée à la reine, au poisson et fruits de mer": {
+      "litersPerKilogram": 723.0
+    },
+    "café décaféiné, instantané, non sucré, prêt à boire": {
+      "litersPerKilogram": 1490.0
+    },
+    "crêpe dentelle au chocolat, préemballée": {
+      "litersPerKilogram": 1240.0
+    },
+    "fromage à pâte molle et croûte lavée, allégé environ 13% mg": {
+      "litersPerKilogram": 692.0
+    },
+    "haricot blanc, appertisé, égoutté": {
+      "litersPerKilogram": 1080.0
+    },
+    "ossau iraty": {
+      "litersPerKilogram": 527.0
+    },
+    "pizza au chorizo ou salami": {
+      "litersPerKilogram": 864.0
+    },
+    "potiron, cuit": {
+      "litersPerKilogram": 1000.0
+    },
+    "sauce chasseur, préemballée": {
+      "litersPerKilogram": 8160.0
+    }
+  }
+}

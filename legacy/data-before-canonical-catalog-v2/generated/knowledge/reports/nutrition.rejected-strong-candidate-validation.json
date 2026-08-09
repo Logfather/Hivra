@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "candidateCount": 3,
+  "acceptedCount": 3,
+  "rejectedCount": 0,
+  "entries": [
+    {
+      "catalogKey": "fresh whole grain pasta",
+      "selectedServerKey": "whole grain pasta",
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "originalNoMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "originalConfidence": 0.82,
+      "candidateRank": 1,
+      "diagnosticScore": 0.7999999999999999,
+      "sharedTokens": [
+        "grain",
+        "pasta",
+        "whole"
+      ],
+      "decisionType": "REPRESENTATIVE",
+      "accepted": true,
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_PREPARATION"
+      ],
+      "details": "Rejected strong nutrition candidate was accepted by the deterministic representative validator: catalogKey='fresh whole grain pasta', selectedServerKey='whole grain pasta', diagnosticType='COMPATIBLE_GENERALIZATION', decisionType='REPRESENTATIVE', reasons=[COMPATIBLE_PREPARATION, COMPATIBLE_SPECIALIZATION, SAME_PRODUCT_CLASS]."
+    },
+    {
+      "catalogKey": "organic canned white beans",
+      "selectedServerKey": "organic white beans",
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "originalNoMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "originalConfidence": 0.86,
+      "candidateRank": 1,
+      "diagnosticScore": 0.7999999999999999,
+      "sharedTokens": [
+        "beans",
+        "organic",
+        "white"
+      ],
+      "decisionType": "REPRESENTATIVE",
+      "accepted": true,
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION"
+      ],
+      "details": "Rejected strong nutrition candidate was accepted by the deterministic representative validator: catalogKey='organic canned white beans', selectedServerKey='organic white beans', diagnosticType='COMPATIBLE_GENERALIZATION', decisionType='REPRESENTATIVE', reasons=[COMPATIBLE_SPECIALIZATION, SAME_PRODUCT_CLASS]."
+    },
+    {
+      "catalogKey": "organic egg noodles",
+      "selectedServerKey": "organic wide egg noodles",
+      "diagnosticType": "ADDITIONAL_NON_CRITICAL_MODIFIER",
+      "originalNoMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "originalConfidence": 0.78,
+      "candidateRank": 1,
+      "diagnosticScore": 0.9,
+      "sharedTokens": [
+        "egg",
+        "noodles",
+        "organic"
+      ],
+      "decisionType": "REPRESENTATIVE",
+      "accepted": true,
+      "reasons": [
+        "SAME_PRODUCT_CLASS",
+        "COMPATIBLE_SPECIALIZATION",
+        "COMPATIBLE_VARIANT"
+      ],
+      "details": "Rejected strong nutrition candidate was accepted by the deterministic representative validator: catalogKey='organic egg noodles', selectedServerKey='organic wide egg noodles', diagnosticType='ADDITIONAL_NON_CRITICAL_MODIFIER', decisionType='REPRESENTATIVE', reasons=[COMPATIBLE_SPECIALIZATION, COMPATIBLE_VARIANT, SAME_PRODUCT_CLASS]."
+    }
+  ]
+}

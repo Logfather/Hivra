@@ -1,0 +1,88 @@
+{
+  "entries": {
+    "agneau, côtelette, grillée": {
+      "environmentScoreMptPerKg": 6.35,
+      "climateKgCo2EqPerKg": 52.4,
+      "landUsePtPerKg": 5580.0,
+      "waterDeprivationM3PerKg": 8.77
+    },
+    "boeuf, côte, crue": {
+      "environmentScoreMptPerKg": 2.71,
+      "climateKgCo2EqPerKg": 29.1,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.42
+    },
+    "boeuf, onglet, cru": {
+      "environmentScoreMptPerKg": 2.7,
+      "climateKgCo2EqPerKg": 28.9,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.39
+    },
+    "chevreau, cru": {
+      "environmentScoreMptPerKg": 5.01,
+      "climateKgCo2EqPerKg": 41.3,
+      "landUsePtPerKg": 4420.0,
+      "waterDeprivationM3PerKg": 6.93
+    },
+    "mesclun ou salade, mélange de jeunes pousses": {
+      "environmentScoreMptPerKg": 0.134,
+      "climateKgCo2EqPerKg": 1.03,
+      "landUsePtPerKg": 9.85,
+      "waterDeprivationM3PerKg": 0.675
+    },
+    "moutarde": {
+      "environmentScoreMptPerKg": 0.225,
+      "climateKgCo2EqPerKg": 1.59,
+      "landUsePtPerKg": 105.0,
+      "waterDeprivationM3PerKg": 0.436
+    },
+    "poule, viande ,crue": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "poulet basquaise": {
+      "environmentScoreMptPerKg": 0.74,
+      "climateKgCo2EqPerKg": 4.48,
+      "landUsePtPerKg": 261.0,
+      "waterDeprivationM3PerKg": 2.22
+    },
+    "pélardon (fromage de chèvre)": {
+      "environmentScoreMptPerKg": 1.15,
+      "climateKgCo2EqPerKg": 8.54,
+      "landUsePtPerKg": 550.0,
+      "waterDeprivationM3PerKg": 3.07
+    },
+    "raisin, sec": {
+      "environmentScoreMptPerKg": 0.272,
+      "climateKgCo2EqPerKg": 1.23,
+      "landUsePtPerKg": 89.6,
+      "waterDeprivationM3PerKg": 19.4
+    },
+    "salade composée avec viande ou poisson, appertisée, égouttée": {
+      "environmentScoreMptPerKg": 1.87,
+      "climateKgCo2EqPerKg": 11.6,
+      "landUsePtPerKg": 58.2,
+      "waterDeprivationM3PerKg": 1.17
+    },
+    "sole tropicale ou sole langue, crue": {
+      "environmentScoreMptPerKg": 1.31,
+      "climateKgCo2EqPerKg": 7.48,
+      "landUsePtPerKg": 13.1,
+      "waterDeprivationM3PerKg": 0.707
+    },
+    "tonic ou bitter, sucré, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "truite d'élevage, crue": {
+      "environmentScoreMptPerKg": 1.28,
+      "climateKgCo2EqPerKg": 5.68,
+      "landUsePtPerKg": 98.4,
+      "waterDeprivationM3PerKg": 33.3
+    }
+  }
+}

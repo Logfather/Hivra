@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "anchois commun, mariné": {
+      "environmentScoreMptPerKg": 0.276,
+      "climateKgCo2EqPerKg": 2.24,
+      "landUsePtPerKg": 70.1,
+      "waterDeprivationM3PerKg": 0.413
+    },
+    "chocolat au lait fourré au praliné, tablette": {
+      "environmentScoreMptPerKg": 0.787,
+      "climateKgCo2EqPerKg": 12.6,
+      "landUsePtPerKg": 487.0,
+      "waterDeprivationM3PerKg": 1.19
+    },
+    "coulis de framboise": {
+      "environmentScoreMptPerKg": 0.494,
+      "climateKgCo2EqPerKg": 3.06,
+      "landUsePtPerKg": 144.0,
+      "waterDeprivationM3PerKg": 4.17
+    },
+    "datte, pulpe et peau, sèche": {
+      "environmentScoreMptPerKg": 0.359,
+      "climateKgCo2EqPerKg": 2.89,
+      "landUsePtPerKg": 88.6,
+      "waterDeprivationM3PerKg": -17.2
+    },
+    "fromage bleu de bresse": {
+      "environmentScoreMptPerKg": 0.51,
+      "climateKgCo2EqPerKg": 5.29,
+      "landUsePtPerKg": 251.0,
+      "waterDeprivationM3PerKg": 0.581
+    },
+    "fromage de brebis des pyrénées": {
+      "environmentScoreMptPerKg": 0.722,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 562.0,
+      "waterDeprivationM3PerKg": 0.527
+    },
+    "mandarine, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.148,
+      "climateKgCo2EqPerKg": 0.468,
+      "landUsePtPerKg": 26.7,
+      "waterDeprivationM3PerKg": 10.9
+    },
+    "merlu, cuit à l'étouffée": {
+      "environmentScoreMptPerKg": 1.47,
+      "climateKgCo2EqPerKg": 9.36,
+      "landUsePtPerKg": 18.8,
+      "waterDeprivationM3PerKg": 0.532
+    },
+    "pâte de fruits": {
+      "environmentScoreMptPerKg": 0.26,
+      "climateKgCo2EqPerKg": 1.39,
+      "landUsePtPerKg": 71.4,
+      "waterDeprivationM3PerKg": 5.42
+    },
+    "son de maïs": {
+      "environmentScoreMptPerKg": 0.0544,
+      "climateKgCo2EqPerKg": 0.397,
+      "landUsePtPerKg": 27.2,
+      "waterDeprivationM3PerKg": 0.306
+    },
+    "tarte aux légumes": {
+      "environmentScoreMptPerKg": 0.295,
+      "climateKgCo2EqPerKg": 2.54,
+      "landUsePtPerKg": 93.2,
+      "waterDeprivationM3PerKg": 0.625
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "boisson plate aux fruits (à moins de 10% de jus), sucrée": {
+      "environmentScoreMptPerKg": 0.0848,
+      "climateKgCo2EqPerKg": 0.566,
+      "landUsePtPerKg": 11.4,
+      "waterDeprivationM3PerKg": 0.65
+    },
+    "chaource": {
+      "environmentScoreMptPerKg": 0.478,
+      "climateKgCo2EqPerKg": 4.95,
+      "landUsePtPerKg": 231.0,
+      "waterDeprivationM3PerKg": 0.55
+    },
+    "crème dessert au chocolat, rayon frais": {
+      "environmentScoreMptPerKg": 0.277,
+      "climateKgCo2EqPerKg": 3.74,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 0.563
+    },
+    "gâteau de riz au caramel, rayon frais": {
+      "environmentScoreMptPerKg": 0.218,
+      "climateKgCo2EqPerKg": 1.82,
+      "landUsePtPerKg": 61.7,
+      "waterDeprivationM3PerKg": 1.93
+    },
+    "génoise sèche fourrée aux fruits et nappée de chocolat": {
+      "environmentScoreMptPerKg": 0.326,
+      "climateKgCo2EqPerKg": 2.47,
+      "landUsePtPerKg": 107.0,
+      "waterDeprivationM3PerKg": 1.8
+    },
+    "profiteroles (crème pâtissière et sauce chocolat), rayon frais": {
+      "environmentScoreMptPerKg": 0.321,
+      "climateKgCo2EqPerKg": 4.25,
+      "landUsePtPerKg": 165.0,
+      "waterDeprivationM3PerKg": 0.598
+    },
+    "pâtes fraîches farcies (ex : raviolis, ravioles du dauphiné), au fromage, cuites": {
+      "environmentScoreMptPerKg": 0.419,
+      "climateKgCo2EqPerKg": 3.62,
+      "landUsePtPerKg": 166.0,
+      "waterDeprivationM3PerKg": 0.857
+    },
+    "ris, veau, cru": {
+      "environmentScoreMptPerKg": 2.61,
+      "climateKgCo2EqPerKg": 28.3,
+      "landUsePtPerKg": 1290.0,
+      "waterDeprivationM3PerKg": 3.83
+    },
+    "spécialité végétale type fromage en tranche, sans soja, préemballée": {
+      "environmentScoreMptPerKg": 0.32,
+      "climateKgCo2EqPerKg": 2.48,
+      "landUsePtPerKg": 117.0,
+      "waterDeprivationM3PerKg": 4.52
+    },
+    "éclair": {
+      "environmentScoreMptPerKg": 0.361,
+      "climateKgCo2EqPerKg": 3.97,
+      "landUsePtPerKg": 158.0,
+      "waterDeprivationM3PerKg": 0.623
+    }
+  }
+}

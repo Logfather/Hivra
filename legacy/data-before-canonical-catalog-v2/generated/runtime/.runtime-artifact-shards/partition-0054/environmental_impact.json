@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "ascophylle noueux ou goémon noir (ascophyllum nodosum), séché ou déshydraté": {
+      "environmentScoreMptPerKg": 1.52,
+      "climateKgCo2EqPerKg": 11.6,
+      "landUsePtPerKg": 26.4,
+      "waterDeprivationM3PerKg": 4.83
+    },
+    "bicarbonate de soude": {
+      "environmentScoreMptPerKg": 0.251,
+      "climateKgCo2EqPerKg": 1.61,
+      "landUsePtPerKg": 19.4,
+      "waterDeprivationM3PerKg": 2.04
+    },
+    "florentin (biscuit sec sucré chocolaté aux amandes)": {
+      "environmentScoreMptPerKg": 0.368,
+      "climateKgCo2EqPerKg": 3.59,
+      "landUsePtPerKg": 161.0,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "galette ou pavé au soja et fromage, préemballé": {
+      "environmentScoreMptPerKg": 0.282,
+      "climateKgCo2EqPerKg": 2.56,
+      "landUsePtPerKg": 139.0,
+      "waterDeprivationM3PerKg": 1.06
+    },
+    "langres": {
+      "environmentScoreMptPerKg": 0.479,
+      "climateKgCo2EqPerKg": 4.96,
+      "landUsePtPerKg": 260.0,
+      "waterDeprivationM3PerKg": 0.522
+    },
+    "luzerne, graine germée": {
+      "environmentScoreMptPerKg": 0.834,
+      "climateKgCo2EqPerKg": 3.49,
+      "landUsePtPerKg": 572.0,
+      "waterDeprivationM3PerKg": 8.25
+    },
+    "pâtes à la bolognaise (spaghetti, tagliatelles…)": {
+      "environmentScoreMptPerKg": 0.703,
+      "climateKgCo2EqPerKg": 6.51,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 1.85
+    },
+    "pétillant de fruits": {
+      "environmentScoreMptPerKg": 0.233,
+      "climateKgCo2EqPerKg": 2.14,
+      "landUsePtPerKg": 105.0,
+      "waterDeprivationM3PerKg": 0.562
+    },
+    "rillettes de poulet": {
+      "environmentScoreMptPerKg": 0.947,
+      "climateKgCo2EqPerKg": 5.68,
+      "landUsePtPerKg": 327.0,
+      "waterDeprivationM3PerKg": 2.56
+    },
+    "tomate cerise, crue": {
+      "environmentScoreMptPerKg": 0.0584,
+      "climateKgCo2EqPerKg": 0.626,
+      "landUsePtPerKg": 5.18,
+      "waterDeprivationM3PerKg": 0.379
+    },
+    "épinard, surgelé, cuit": {
+      "environmentScoreMptPerKg": 0.108,
+      "climateKgCo2EqPerKg": 0.881,
+      "landUsePtPerKg": -15.4,
+      "waterDeprivationM3PerKg": 0.421
+    }
+  }
+}

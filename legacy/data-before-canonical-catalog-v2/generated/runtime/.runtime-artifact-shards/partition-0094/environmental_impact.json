@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "barre céréalière \"équilibre\" chocolatée, enrichie en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.516,
+      "climateKgCo2EqPerKg": 6.89,
+      "landUsePtPerKg": 275.0,
+      "waterDeprivationM3PerKg": 1.24
+    },
+    "café, non instantané, non sucré, prêt à boire": {
+      "environmentScoreMptPerKg": 0.0966,
+      "climateKgCo2EqPerKg": 0.635,
+      "landUsePtPerKg": 25.1,
+      "waterDeprivationM3PerKg": 0.6
+    },
+    "galette de soja (steak végétal) à la provençale": {
+      "environmentScoreMptPerKg": 0.303,
+      "climateKgCo2EqPerKg": 2.04,
+      "landUsePtPerKg": 86.1,
+      "waterDeprivationM3PerKg": 0.688
+    },
+    "haricot rouge, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.149,
+      "climateKgCo2EqPerKg": 1.45,
+      "landUsePtPerKg": -162.0,
+      "waterDeprivationM3PerKg": 0.285
+    },
+    "jus d'ananas, à base de concentré": {
+      "environmentScoreMptPerKg": 0.179,
+      "climateKgCo2EqPerKg": 0.933,
+      "landUsePtPerKg": 36.8,
+      "waterDeprivationM3PerKg": 0.19
+    },
+    "matière grasse végétale (type margarine), à tartiner, à 30 40% mg, légère, doux, riche en oméga 3": {
+      "environmentScoreMptPerKg": 0.231,
+      "climateKgCo2EqPerKg": 1.64,
+      "landUsePtPerKg": 180.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "petit pot fruit avec banane pour bébé": {
+      "environmentScoreMptPerKg": 0.15,
+      "climateKgCo2EqPerKg": 1.57,
+      "landUsePtPerKg": 21.0,
+      "waterDeprivationM3PerKg": 1.31
+    },
+    "sorbet, bâtonnet": {
+      "environmentScoreMptPerKg": 0.223,
+      "climateKgCo2EqPerKg": 1.0,
+      "landUsePtPerKg": 61.9,
+      "waterDeprivationM3PerKg": 6.69
+    },
+    "thon, à la catalane ou à l'escabèche (sauce tomate), appertisé": {
+      "environmentScoreMptPerKg": 0.947,
+      "climateKgCo2EqPerKg": 6.47,
+      "landUsePtPerKg": 148.0,
+      "waterDeprivationM3PerKg": 0.738
+    },
+    "toasts ou canapés salés, garnitures diverses": {
+      "environmentScoreMptPerKg": 0.195,
+      "climateKgCo2EqPerKg": 1.76,
+      "landUsePtPerKg": 89.4,
+      "waterDeprivationM3PerKg": 0.467
+    },
+    "veau, tête, bouillie/cuite à l'eau": {
+      "environmentScoreMptPerKg": 2.74,
+      "climateKgCo2EqPerKg": 29.7,
+      "landUsePtPerKg": 1340.0,
+      "waterDeprivationM3PerKg": 4.02
+    }
+  }
+}

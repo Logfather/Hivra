@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "mappings": [
+    {
+      "catalogKey": "bagel",
+      "serverKey": "bagel",
+      "serverArtifact": "pesticides.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili con carne",
+      "serverKey": "chili con carne",
+      "serverArtifact": "pesticides.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chorizo",
+      "serverKey": "chorizo",
+      "serverArtifact": "pesticides.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ketchup",
+      "serverKey": "ketchup",
+      "serverArtifact": "pesticides.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salami",
+      "serverKey": "salami",
+      "serverArtifact": "pesticides.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tempeh",
+      "serverKey": "tempeh",
+      "serverArtifact": "pesticides.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    }
+  ]
+}

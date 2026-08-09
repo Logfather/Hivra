@@ -1,5 +1,6 @@
 package de.shopme.testing.system.tools.knowledge.runtime
 
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.runtime.CatalogRuntimeKnowledgeGenerator
 import java.io.File
 import kotlin.test.Test
@@ -11,27 +12,22 @@ class GenerateCatalogRuntimeKnowledgeFromServerArtifactsTest {
     @Test
     fun generateCatalogRuntimeKnowledgeFromServerArtifacts() {
 
+        val paths =
+            KnowledgeBuildPaths.default()
+
+        paths.ensureBuildDirectories()
+
         val catalogFile =
-            File(
-                "../data/raw/catalog/" +
-                        "supermarket_dataset.translated.json"
-            )
+            paths.canonicalFoodCatalog
 
         val serverDirectory =
-            File(
-                "../data/generated/knowledge/server"
-            )
+            paths.serverRoot
 
         val runtimeDirectory =
-            File(
-                "../data/generated/knowledge/runtime"
-            )
+            paths.runtimeRoot
 
         val mappingFile =
-            File(
-                "../data/generated/knowledge/mappings/" +
-                        "catalog-server.mappings.json"
-            )
+            paths.catalogServerMappings
 
         assertTrue(
             catalogFile.isFile,
@@ -64,7 +60,7 @@ class GenerateCatalogRuntimeKnowledgeFromServerArtifactsTest {
                 )
 
         assertEquals(
-            2709,
+            KnowledgeBuildPaths.CANONICAL_CATALOG_ENTRY_COUNT,
             report.catalogKeyCount,
             "Unexpected number of unique catalog knowledge keys"
         )

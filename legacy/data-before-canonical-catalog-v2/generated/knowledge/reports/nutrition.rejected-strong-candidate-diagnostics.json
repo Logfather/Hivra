@@ -1,0 +1,2579 @@
+{
+  "version": 1,
+  "selectedGapCount": 50,
+  "strongTopCandidateCount": 27,
+  "moderateTopCandidateCount": 23,
+  "representativeReviewRecommendedCount": 3,
+  "conflictCount": 32,
+  "countsByDiagnosticType": {
+    "ADDITIONAL_NON_CRITICAL_MODIFIER": 1,
+    "BRAND_OR_VARIANT_MISMATCH": 22,
+    "COMPATIBLE_GENERALIZATION": 17,
+    "CRITICAL_MODIFIER_CONFLICT": 1,
+    "INSUFFICIENT_SEMANTIC_EVIDENCE": 8,
+    "PRODUCT_FORM_CONFLICT": 1
+  },
+  "diagnostics": [
+    {
+      "catalogKey": "canned bell peppers",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "bell peppers",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "bell",
+        "peppers"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.88,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "Catalog item is specifically canned bell peppers; all candidates are fresh or generic bell pepper entries without the canned form.",
+      "catalogTokens": [
+        "bell",
+        "canned",
+        "peppers"
+      ],
+      "candidateTokens": [
+        "bell",
+        "peppers"
+      ],
+      "sharedCoreTokens": [
+        "bell",
+        "peppers"
+      ],
+      "missingCatalogCoreTokens": [
+        "canned"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=canned."
+    },
+    {
+      "catalogKey": "canned kidney beans",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "canned white kidney beans",
+      "topCandidateScore": 0.9,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "beans",
+        "canned",
+        "kidney"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.2666666666666667,
+      "decisionConfidence": 0.78,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate clearly matches generic canned kidney beans; the closest is canned white kidney beans, which specifies a different subtype.",
+      "catalogTokens": [
+        "beans",
+        "canned",
+        "kidney"
+      ],
+      "candidateTokens": [
+        "beans",
+        "canned",
+        "kidney",
+        "white"
+      ],
+      "sharedCoreTokens": [
+        "beans",
+        "canned",
+        "kidney"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "white"
+      ],
+      "specializationRiskTypes": [
+        "SPECIES_OR_SUBTYPE"
+      ],
+      "highRiskAdditionalTokens": [
+        "white"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=white, riskTypes=SPECIES_OR_SUBTYPE."
+    },
+    {
+      "catalogKey": "curry sausage sauce",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "sauce curry",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "curry",
+        "sauce"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog food is a curry sausage sauce, while all candidates are generic or variant curry sauces and do not clearly represent a sausage-specific sauce.",
+      "catalogTokens": [
+        "curry",
+        "sauce",
+        "sausage"
+      ],
+      "candidateTokens": [
+        "curry",
+        "sauce"
+      ],
+      "sharedCoreTokens": [
+        "curry",
+        "sauce"
+      ],
+      "missingCatalogCoreTokens": [
+        "sausage"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "meat",
+        "sauce"
+      ],
+      "candidateProductClasses": [
+        "sauce"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=sausage."
+    },
+    {
+      "catalogKey": "farmhouse sausage",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "farmhouse summer sausage",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "farmhouse",
+        "sausage"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.82,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate exactly represents generic farmhouse sausage; candidates specify different foods such as summer sausage, breakfast sausage, or a sausage scramble.",
+      "catalogTokens": [
+        "farmhouse",
+        "sausage"
+      ],
+      "candidateTokens": [
+        "farmhouse",
+        "sausage",
+        "summer"
+      ],
+      "sharedCoreTokens": [
+        "farmhouse",
+        "sausage"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "summer"
+      ],
+      "specializationRiskTypes": [
+        "UNKNOWN_ADDITIONAL_TOKEN"
+      ],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [
+        "summer"
+      ],
+      "catalogProductClasses": [
+        "meat"
+      ],
+      "candidateProductClasses": [
+        "meat"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "INSUFFICIENT_SEMANTIC_EVIDENCE",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds unclassified specialization tokens: summer."
+    },
+    {
+      "catalogKey": "fine butter",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "fine butter biscuits",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "butter",
+        "fine"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.93,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog food is plain fine butter, while all candidates are biscuits, chocolate/nut spreads, or peanut butter cups rather than butter itself.",
+      "catalogTokens": [
+        "butter",
+        "fine"
+      ],
+      "candidateTokens": [
+        "biscuits",
+        "butter",
+        "fine"
+      ],
+      "sharedCoreTokens": [
+        "butter",
+        "fine"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "biscuits"
+      ],
+      "specializationRiskTypes": [
+        "PRODUCT_FORM"
+      ],
+      "highRiskAdditionalTokens": [
+        "biscuits"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "butter"
+      ],
+      "candidateProductClasses": [
+        "butter",
+        "sweet"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=biscuits, riskTypes=PRODUCT_FORM."
+    },
+    {
+      "catalogKey": "fresh beans",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "fresh french beans",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "beans",
+        "fresh"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.9,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is generic fresh beans, while the candidates are specific bean types or forms; no single candidate clearly represents the same food.",
+      "catalogTokens": [
+        "beans",
+        "fresh"
+      ],
+      "candidateTokens": [
+        "beans",
+        "french",
+        "fresh"
+      ],
+      "sharedCoreTokens": [
+        "beans",
+        "fresh"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "french"
+      ],
+      "specializationRiskTypes": [
+        "SPECIES_OR_SUBTYPE"
+      ],
+      "highRiskAdditionalTokens": [
+        "french"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=french, riskTypes=SPECIES_OR_SUBTYPE."
+    },
+    {
+      "catalogKey": "fresh whey",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "whey fresh strawberry",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "fresh",
+        "whey"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.9,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "Catalog food is plain fresh whey; candidates are flavored whey products, whey protein isolate, or generic 'fresh', none clearly the same food.",
+      "catalogTokens": [
+        "fresh",
+        "whey"
+      ],
+      "candidateTokens": [
+        "fresh",
+        "strawberry",
+        "whey"
+      ],
+      "sharedCoreTokens": [
+        "fresh",
+        "whey"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "strawberry"
+      ],
+      "specializationRiskTypes": [
+        "FLAVOR"
+      ],
+      "highRiskAdditionalTokens": [
+        "strawberry"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "yogurt"
+      ],
+      "candidateProductClasses": [
+        "yogurt"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=strawberry, riskTypes=FLAVOR."
+    },
+    {
+      "catalogKey": "fresh whole grain pasta",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "whole grain pasta",
+      "topCandidateScore": 0.7999999999999999,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "grain",
+        "pasta",
+        "whole"
+      ],
+      "secondCandidateScore": 0.72,
+      "topScoreDelta": 0.07999999999999996,
+      "decisionConfidence": 0.82,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog food specifies fresh whole grain pasta, while candidates are generic whole grain pasta or specific shapes/brands and do not specify fresh pasta.",
+      "catalogTokens": [
+        "fresh",
+        "grain",
+        "pasta",
+        "whole"
+      ],
+      "candidateTokens": [
+        "grain",
+        "pasta",
+        "whole"
+      ],
+      "sharedCoreTokens": [
+        "grain",
+        "pasta",
+        "whole"
+      ],
+      "missingCatalogCoreTokens": [
+        "fresh"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "pasta"
+      ],
+      "candidateProductClasses": [
+        "pasta"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": true,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=fresh."
+    },
+    {
+      "catalogKey": "frozen meat substitute pizza",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "roma three meat frozen pizza",
+      "topCandidateScore": 0.6699999999999999,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "frozen",
+        "meat",
+        "pizza"
+      ],
+      "secondCandidateScore": 0.6357142857142857,
+      "topScoreDelta": 0.03428571428571425,
+      "decisionConfidence": 0.93,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog food is a frozen pizza with meat substitute, while all candidates are meat pizzas with three or four meats, not meat substitutes.",
+      "catalogTokens": [
+        "frozen",
+        "meat",
+        "pizza",
+        "substitute"
+      ],
+      "candidateTokens": [
+        "frozen",
+        "meat",
+        "pizza",
+        "roma",
+        "three"
+      ],
+      "sharedCoreTokens": [
+        "frozen",
+        "meat",
+        "pizza"
+      ],
+      "missingCatalogCoreTokens": [
+        "substitute"
+      ],
+      "additionalCandidateCoreTokens": [
+        "roma",
+        "three"
+      ],
+      "specializationRiskTypes": [
+        "UNKNOWN_ADDITIONAL_TOKEN"
+      ],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [
+        "roma",
+        "three"
+      ],
+      "catalogProductClasses": [
+        "meat"
+      ],
+      "candidateProductClasses": [
+        "meat"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "INSUFFICIENT_SEMANTIC_EVIDENCE",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds unclassified specialization tokens: roma, three."
+    },
+    {
+      "catalogKey": "frozen peach slices",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "peach slices",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "peach",
+        "slices"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.9,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate specifically represents frozen peach slices; the peach slice options are generic, canned, or variety/grade descriptors, and the only frozen option is banana.",
+      "catalogTokens": [
+        "frozen",
+        "peach",
+        "slices"
+      ],
+      "candidateTokens": [
+        "peach",
+        "slices"
+      ],
+      "sharedCoreTokens": [
+        "peach",
+        "slices"
+      ],
+      "missingCatalogCoreTokens": [
+        "frozen"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [],
+      "candidateProductClasses": [],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=frozen."
+    },
+    {
+      "catalogKey": "frozen spinach leaves",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "spinach leaves",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "leaves",
+        "spinach"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.9,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog food is frozen spinach leaves; candidates either omit frozen state or specify chopped frozen spinach, which is a different form than leaves.",
+      "catalogTokens": [
+        "frozen",
+        "leaves",
+        "spinach"
+      ],
+      "candidateTokens": [
+        "leaves",
+        "spinach"
+      ],
+      "sharedCoreTokens": [
+        "leaves",
+        "spinach"
+      ],
+      "missingCatalogCoreTokens": [
+        "frozen"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=frozen."
+    },
+    {
+      "catalogKey": "frozen vegetable bread",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "frozen vegetable",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "frozen",
+        "vegetable"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate clearly represents frozen vegetable bread; candidates are generic frozen vegetables, other frozen breads, garlic bread, steamed bread, or vegetable dumplings.",
+      "catalogTokens": [
+        "bread",
+        "frozen",
+        "vegetable"
+      ],
+      "candidateTokens": [
+        "frozen",
+        "vegetable"
+      ],
+      "sharedCoreTokens": [
+        "frozen",
+        "vegetable"
+      ],
+      "missingCatalogCoreTokens": [
+        "bread"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "bread",
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=bread."
+    },
+    {
+      "catalogKey": "herb bread roll",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "roll bread",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "bread",
+        "roll"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is specifically an herb bread roll; candidates are generic or different types of bread rolls and none specifies herb.",
+      "catalogTokens": [
+        "bread",
+        "herb",
+        "roll"
+      ],
+      "candidateTokens": [
+        "bread",
+        "roll"
+      ],
+      "sharedCoreTokens": [
+        "bread",
+        "roll"
+      ],
+      "missingCatalogCoreTokens": [
+        "herb"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "bread"
+      ],
+      "candidateProductClasses": [
+        "bread"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=herb."
+    },
+    {
+      "catalogKey": "herb oil",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "mediterranean herb oil",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "herb",
+        "oil"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is generic herb oil, while all candidates are more specific variants or uses (Mediterranean, Italian dipping oil, garlic & herb olive oil, Tuscan/brand). No single candidate clearly represents the exact same food.",
+      "catalogTokens": [
+        "herb",
+        "oil"
+      ],
+      "candidateTokens": [
+        "herb",
+        "mediterranean",
+        "oil"
+      ],
+      "sharedCoreTokens": [
+        "herb",
+        "oil"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "mediterranean"
+      ],
+      "specializationRiskTypes": [
+        "REGIONAL_OR_PRODUCT_IDENTITY"
+      ],
+      "highRiskAdditionalTokens": [
+        "mediterranean"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [],
+      "candidateProductClasses": [],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=mediterranean, riskTypes=REGIONAL_OR_PRODUCT_IDENTITY."
+    },
+    {
+      "catalogKey": "kohlrabi",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "kohlrabi slaw",
+      "topCandidateScore": 0.7999999999999999,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "kohlrabi"
+      ],
+      "secondCandidateScore": 0.7333333333333333,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.94,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "Catalog food is plain kohlrabi; all candidates are slaw, pasta/noodles, sauce dish, or vegetable blend products rather than the same food.",
+      "catalogTokens": [
+        "kohlrabi"
+      ],
+      "candidateTokens": [
+        "kohlrabi",
+        "slaw"
+      ],
+      "sharedCoreTokens": [
+        "kohlrabi"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "slaw"
+      ],
+      "specializationRiskTypes": [
+        "UNKNOWN_ADDITIONAL_TOKEN"
+      ],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [
+        "slaw"
+      ],
+      "catalogProductClasses": [
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "INSUFFICIENT_SEMANTIC_EVIDENCE",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds unclassified specialization tokens: slaw."
+    },
+    {
+      "catalogKey": "kumquats",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "kumquats γλασε",
+      "topCandidateScore": 0.7999999999999999,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "kumquats"
+      ],
+      "secondCandidateScore": 0.7333333333333333,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.95,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog food is plain kumquats, while both candidates are candied/glazed preparations rather than the same food.",
+      "catalogTokens": [
+        "kumquats"
+      ],
+      "candidateTokens": [
+        "kumquats",
+        "γλασε"
+      ],
+      "sharedCoreTokens": [
+        "kumquats"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "γλασε"
+      ],
+      "specializationRiskTypes": [
+        "UNKNOWN_ADDITIONAL_TOKEN"
+      ],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [
+        "γλασε"
+      ],
+      "catalogProductClasses": [],
+      "candidateProductClasses": [],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "INSUFFICIENT_SEMANTIC_EVIDENCE",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds unclassified specialization tokens: γλασε."
+    },
+    {
+      "catalogKey": "leberkaese",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "meat loaf",
+      "topCandidateScore": 1.0,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "loaf",
+        "meat"
+      ],
+      "secondCandidateScore": 0.8666666666666666,
+      "topScoreDelta": 0.13333333333333341,
+      "decisionConfidence": 0.84,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "Leberkaese is a specific German/Austrian processed meat loaf style, while the candidates are generic meat loaf items or related products, not clearly the same food.",
+      "catalogTokens": [
+        "leberkaese"
+      ],
+      "candidateTokens": [
+        "loaf",
+        "meat"
+      ],
+      "sharedCoreTokens": [],
+      "missingCatalogCoreTokens": [
+        "leberkaese"
+      ],
+      "additionalCandidateCoreTokens": [
+        "loaf",
+        "meat"
+      ],
+      "specializationRiskTypes": [
+        "UNKNOWN_ADDITIONAL_TOKEN"
+      ],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [
+        "loaf",
+        "meat"
+      ],
+      "catalogProductClasses": [],
+      "candidateProductClasses": [
+        "meat"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "INSUFFICIENT_SEMANTIC_EVIDENCE",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds unclassified specialization tokens: loaf, meat."
+    },
+    {
+      "catalogKey": "licorice sticks",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "raspberry licorice sticks",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "licorice",
+        "sticks"
+      ],
+      "secondCandidateScore": 0.68,
+      "topScoreDelta": 0.18666666666666654,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is generic licorice sticks, while the plausible candidates specify particular variants such as raspberry or red licorice; no single candidate clearly represents the exact same food.",
+      "catalogTokens": [
+        "licorice",
+        "sticks"
+      ],
+      "candidateTokens": [
+        "licorice",
+        "raspberry",
+        "sticks"
+      ],
+      "sharedCoreTokens": [
+        "licorice",
+        "sticks"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "raspberry"
+      ],
+      "specializationRiskTypes": [
+        "FLAVOR"
+      ],
+      "highRiskAdditionalTokens": [
+        "raspberry"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "sweet"
+      ],
+      "candidateProductClasses": [
+        "sweet"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=raspberry, riskTypes=FLAVOR."
+    },
+    {
+      "catalogKey": "mango drinking yogurt",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "protein drinking yogurt mango",
+      "topCandidateScore": 0.9,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "drinking",
+        "mango",
+        "yogurt"
+      ],
+      "secondCandidateScore": 0.7333333333333333,
+      "topScoreDelta": 0.16666666666666674,
+      "decisionConfidence": 0.82,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate exactly represents mango drinking yogurt; the closest adds a protein qualifier, while others omit either mango flavor or drinking yogurt form.",
+      "catalogTokens": [
+        "drinking",
+        "mango",
+        "yogurt"
+      ],
+      "candidateTokens": [
+        "drinking",
+        "mango",
+        "protein",
+        "yogurt"
+      ],
+      "sharedCoreTokens": [
+        "drinking",
+        "mango",
+        "yogurt"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "protein"
+      ],
+      "specializationRiskTypes": [
+        "NUTRITION_FORMULATION"
+      ],
+      "highRiskAdditionalTokens": [
+        "protein"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "yogurt"
+      ],
+      "candidateProductClasses": [
+        "yogurt"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=protein, riskTypes=NUTRITION_FORMULATION."
+    },
+    {
+      "catalogKey": "organic canned white beans",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "organic white beans",
+      "topCandidateScore": 0.7999999999999999,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "beans",
+        "organic",
+        "white"
+      ],
+      "secondCandidateScore": 0.72,
+      "topScoreDelta": 0.07999999999999996,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate includes all key identity attributes: organic, canned, and white beans; available candidates either omit organic/canned or specify a different bean type/color.",
+      "catalogTokens": [
+        "beans",
+        "canned",
+        "organic",
+        "white"
+      ],
+      "candidateTokens": [
+        "beans",
+        "organic",
+        "white"
+      ],
+      "sharedCoreTokens": [
+        "beans",
+        "organic",
+        "white"
+      ],
+      "missingCatalogCoreTokens": [
+        "canned"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": true,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=canned."
+    },
+    {
+      "catalogKey": "organic egg noodles",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "organic wide egg noodles",
+      "topCandidateScore": 0.9,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "egg",
+        "noodles",
+        "organic"
+      ],
+      "secondCandidateScore": 0.84,
+      "topScoreDelta": 0.06000000000000005,
+      "decisionConfidence": 0.78,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The closest candidates are width-specific egg noodle variants, while the catalog food is generic organic egg noodles; no single supplied candidate is clearly the same food.",
+      "catalogTokens": [
+        "egg",
+        "noodles",
+        "organic"
+      ],
+      "candidateTokens": [
+        "egg",
+        "noodles",
+        "organic",
+        "wide"
+      ],
+      "sharedCoreTokens": [
+        "egg",
+        "noodles",
+        "organic"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "wide"
+      ],
+      "specializationRiskTypes": [
+        "NON_CRITICAL_STYLE"
+      ],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "pasta"
+      ],
+      "candidateProductClasses": [
+        "pasta"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "ADDITIONAL_NON_CRITICAL_MODIFIER",
+      "representativeReviewRecommended": true,
+      "details": "Candidate adds only non-critical modifiers: wide."
+    },
+    {
+      "catalogKey": "organic ham sausage",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "organic sausage",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "organic",
+        "sausage"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate clearly represents organic ham sausage; candidates either omit ham, are different sausage types/meats, add bacon, or are ham rather than sausage.",
+      "catalogTokens": [
+        "ham",
+        "organic",
+        "sausage"
+      ],
+      "candidateTokens": [
+        "organic",
+        "sausage"
+      ],
+      "sharedCoreTokens": [
+        "organic",
+        "sausage"
+      ],
+      "missingCatalogCoreTokens": [
+        "ham"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "meat"
+      ],
+      "candidateProductClasses": [
+        "meat"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=ham."
+    },
+    {
+      "catalogKey": "organic multivitamin juice",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "organic juice",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "juice",
+        "organic"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.9,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate includes both key attributes of the catalog food: organic and multivitamin juice.",
+      "catalogTokens": [
+        "juice",
+        "multivitamin",
+        "organic"
+      ],
+      "candidateTokens": [
+        "juice",
+        "organic"
+      ],
+      "sharedCoreTokens": [
+        "juice",
+        "organic"
+      ],
+      "missingCatalogCoreTokens": [
+        "multivitamin"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "drink"
+      ],
+      "candidateProductClasses": [
+        "drink"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=multivitamin."
+    },
+    {
+      "catalogKey": "organic ribbon pasta",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "organic edamame ribbon pasta",
+      "topCandidateScore": 0.9,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "organic",
+        "pasta",
+        "ribbon"
+      ],
+      "secondCandidateScore": 0.84,
+      "topScoreDelta": 0.06000000000000005,
+      "decisionConfidence": 0.82,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate clearly represents the generic food 'organic ribbon pasta'; ribbon candidates specify distinct ingredients, while 'organic pasta' lacks the ribbon form.",
+      "catalogTokens": [
+        "organic",
+        "pasta",
+        "ribbon"
+      ],
+      "candidateTokens": [
+        "edamame",
+        "organic",
+        "pasta",
+        "ribbon"
+      ],
+      "sharedCoreTokens": [
+        "organic",
+        "pasta",
+        "ribbon"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "edamame"
+      ],
+      "specializationRiskTypes": [
+        "INGREDIENT_OR_SUBSTRATE"
+      ],
+      "highRiskAdditionalTokens": [
+        "edamame"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "pasta"
+      ],
+      "candidateProductClasses": [
+        "pasta"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=edamame, riskTypes=INGREDIENT_OR_SUBSTRATE."
+    },
+    {
+      "catalogKey": "organic salami",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "organic milano salami",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "organic",
+        "salami"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is generic organic salami, while all candidates specify particular styles or variants, so no single candidate clearly represents the same food.",
+      "catalogTokens": [
+        "organic",
+        "salami"
+      ],
+      "candidateTokens": [
+        "milano",
+        "organic",
+        "salami"
+      ],
+      "sharedCoreTokens": [
+        "organic",
+        "salami"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "milano"
+      ],
+      "specializationRiskTypes": [
+        "REGIONAL_OR_PRODUCT_IDENTITY"
+      ],
+      "highRiskAdditionalTokens": [
+        "milano"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "meat"
+      ],
+      "candidateProductClasses": [
+        "meat"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=milano, riskTypes=REGIONAL_OR_PRODUCT_IDENTITY."
+    },
+    {
+      "catalogKey": "organic vegetarian spread",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "organic spread",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "organic",
+        "spread"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate includes or clearly represents a vegetarian spread; the closest is generic organic spread, while others are fruit or butter-type spreads.",
+      "catalogTokens": [
+        "organic",
+        "spread",
+        "vegetarian"
+      ],
+      "candidateTokens": [
+        "organic",
+        "spread"
+      ],
+      "sharedCoreTokens": [
+        "organic",
+        "spread"
+      ],
+      "missingCatalogCoreTokens": [
+        "vegetarian"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "spread"
+      ],
+      "candidateProductClasses": [
+        "spread"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=vegetarian."
+    },
+    {
+      "catalogKey": "pasture butter",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "cultured pasture butter",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "butter",
+        "pasture"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.78,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is generic pasture butter, while candidates specify distinct variants or brands such as cultured, unsalted, Irish, or ghee; no single candidate is clearly the same food.",
+      "catalogTokens": [
+        "butter",
+        "pasture"
+      ],
+      "candidateTokens": [
+        "butter",
+        "cultured",
+        "pasture"
+      ],
+      "sharedCoreTokens": [
+        "butter",
+        "pasture"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "cultured"
+      ],
+      "specializationRiskTypes": [
+        "PROCESSING_METHOD"
+      ],
+      "highRiskAdditionalTokens": [
+        "cultured"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "butter"
+      ],
+      "candidateProductClasses": [
+        "butter"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=cultured, riskTypes=PROCESSING_METHOD."
+    },
+    {
+      "catalogKey": "plain soy yogurt",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "yogurt plain",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "plain",
+        "yogurt"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.93,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "Catalog item is plain soy yogurt, while all candidates are plain yogurt entries without soy indicated, so none clearly represents the same food.",
+      "catalogTokens": [
+        "plain",
+        "soy",
+        "yogurt"
+      ],
+      "candidateTokens": [
+        "plain",
+        "yogurt"
+      ],
+      "sharedCoreTokens": [
+        "plain",
+        "yogurt"
+      ],
+      "missingCatalogCoreTokens": [
+        "soy"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "yogurt"
+      ],
+      "candidateProductClasses": [
+        "yogurt"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=soy."
+    },
+    {
+      "catalogKey": "poultry sausage",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "italian poultry sausage",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "poultry",
+        "sausage"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.88,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "Catalog food is generic poultry sausage, while all candidates specify Italian style and some specify hot or mild variants; no candidate clearly represents the same generic food.",
+      "catalogTokens": [
+        "poultry",
+        "sausage"
+      ],
+      "candidateTokens": [
+        "italian",
+        "poultry",
+        "sausage"
+      ],
+      "sharedCoreTokens": [
+        "poultry",
+        "sausage"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "italian"
+      ],
+      "specializationRiskTypes": [
+        "SPECIES_OR_SUBTYPE"
+      ],
+      "highRiskAdditionalTokens": [
+        "italian"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "meat"
+      ],
+      "candidateProductClasses": [
+        "meat"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=italian, riskTypes=SPECIES_OR_SUBTYPE."
+    },
+    {
+      "catalogKey": "preserved beans",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "yangjiang preserved beans",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "beans",
+        "preserved"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.78,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is generic preserved beans, while the closest candidates are specific Yangjiang preserved beans variants and more than one could plausibly refer to the item; no exactly one clear same-food match.",
+      "catalogTokens": [
+        "beans",
+        "preserved"
+      ],
+      "candidateTokens": [
+        "beans",
+        "preserved",
+        "yangjiang"
+      ],
+      "sharedCoreTokens": [
+        "beans",
+        "preserved"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "yangjiang"
+      ],
+      "specializationRiskTypes": [
+        "REGIONAL_OR_PRODUCT_IDENTITY"
+      ],
+      "highRiskAdditionalTokens": [
+        "yangjiang"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=yangjiang, riskTypes=REGIONAL_OR_PRODUCT_IDENTITY."
+    },
+    {
+      "catalogKey": "pudding powder",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "moccha pudding powder",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "powder",
+        "pudding"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "Catalog item is generic pudding powder; candidates include different flavor-specific pudding powders and protein powders, so no single candidate clearly represents the same food.",
+      "catalogTokens": [
+        "powder",
+        "pudding"
+      ],
+      "candidateTokens": [
+        "moccha",
+        "powder",
+        "pudding"
+      ],
+      "sharedCoreTokens": [
+        "powder",
+        "pudding"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "moccha"
+      ],
+      "specializationRiskTypes": [
+        "FLAVOR"
+      ],
+      "highRiskAdditionalTokens": [
+        "moccha"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "sweet"
+      ],
+      "candidateProductClasses": [
+        "sweet"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=moccha, riskTypes=FLAVOR."
+    },
+    {
+      "catalogKey": "pumpkin seed pasta",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "pumpkin seed",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "pumpkin",
+        "seed"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.92,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog food is a pasta item, while the candidates are seeds, seed mixes, or pumpkin pasta sauce; none clearly represents pumpkin seed pasta.",
+      "catalogTokens": [
+        "pasta",
+        "pumpkin",
+        "seed"
+      ],
+      "candidateTokens": [
+        "pumpkin",
+        "seed"
+      ],
+      "sharedCoreTokens": [
+        "pumpkin",
+        "seed"
+      ],
+      "missingCatalogCoreTokens": [
+        "pasta"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "pasta"
+      ],
+      "candidateProductClasses": [],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [
+        "pasta+seed vs seed"
+      ],
+      "diagnosticType": "PRODUCT_FORM_CONFLICT",
+      "representativeReviewRecommended": false,
+      "details": "Catalog key and candidate contain conflicting product forms: pasta+seed vs seed."
+    },
+    {
+      "catalogKey": "rabbit",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "feisty rabbit",
+      "topCandidateScore": 0.7999999999999999,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "rabbit"
+      ],
+      "secondCandidateScore": 0.7333333333333333,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.93,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog food is plain rabbit, while the candidates are named or rabbit-shaped chocolate, jelly, cookie, or bun items rather than the same food.",
+      "catalogTokens": [
+        "rabbit"
+      ],
+      "candidateTokens": [
+        "feisty",
+        "rabbit"
+      ],
+      "sharedCoreTokens": [
+        "rabbit"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "feisty"
+      ],
+      "specializationRiskTypes": [
+        "UNKNOWN_ADDITIONAL_TOKEN"
+      ],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [
+        "feisty"
+      ],
+      "catalogProductClasses": [
+        "meat"
+      ],
+      "candidateProductClasses": [
+        "meat"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "INSUFFICIENT_SEMANTIC_EVIDENCE",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds unclassified specialization tokens: feisty."
+    },
+    {
+      "catalogKey": "raw zucchini",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "raw zucchini fries",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "raw",
+        "zucchini"
+      ],
+      "secondCandidateScore": 0.6380952380952382,
+      "topScoreDelta": 0.22857142857142843,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "None of the candidates clearly represents plain raw zucchini; the closest candidate is raw zucchini fries, which is a distinct preparation/form rather than the generic food.",
+      "catalogTokens": [
+        "raw",
+        "zucchini"
+      ],
+      "candidateTokens": [
+        "fries",
+        "raw",
+        "zucchini"
+      ],
+      "sharedCoreTokens": [
+        "raw",
+        "zucchini"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "fries"
+      ],
+      "specializationRiskTypes": [
+        "PRODUCT_FORM"
+      ],
+      "highRiskAdditionalTokens": [
+        "fries"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=fries, riskTypes=PRODUCT_FORM."
+    },
+    {
+      "catalogKey": "rye bread roll",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "roll bread",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "bread",
+        "roll"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.88,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate clearly represents a rye bread roll; candidates either describe a generic bread roll or rye bread without indicating a roll.",
+      "catalogTokens": [
+        "bread",
+        "roll",
+        "rye"
+      ],
+      "candidateTokens": [
+        "bread",
+        "roll"
+      ],
+      "sharedCoreTokens": [
+        "bread",
+        "roll"
+      ],
+      "missingCatalogCoreTokens": [
+        "rye"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "bread"
+      ],
+      "candidateProductClasses": [
+        "bread"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=rye."
+    },
+    {
+      "catalogKey": "sesame bread roll",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "roll bread",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "bread",
+        "roll"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog food is specifically a sesame bread roll, but none of the candidates specify sesame; the candidates are generic or different types of bread rolls.",
+      "catalogTokens": [
+        "bread",
+        "roll",
+        "sesame"
+      ],
+      "candidateTokens": [
+        "bread",
+        "roll"
+      ],
+      "sharedCoreTokens": [
+        "bread",
+        "roll"
+      ],
+      "missingCatalogCoreTokens": [
+        "sesame"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "bread"
+      ],
+      "candidateProductClasses": [
+        "bread"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=sesame."
+    },
+    {
+      "catalogKey": "smoked salmon fillet",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "hot smoked salmon fillet",
+      "topCandidateScore": 0.9,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "fillet",
+        "salmon",
+        "smoked"
+      ],
+      "secondCandidateScore": 0.84,
+      "topScoreDelta": 0.06000000000000005,
+      "decisionConfidence": 0.78,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is generic smoked salmon fillet, while candidates specify distinct variants such as hot smoked, cold smoked, sockeye, lightly smoked, or maple strip; no single candidate is clearly identical.",
+      "catalogTokens": [
+        "fillet",
+        "salmon",
+        "smoked"
+      ],
+      "candidateTokens": [
+        "fillet",
+        "hot",
+        "salmon",
+        "smoked"
+      ],
+      "sharedCoreTokens": [
+        "fillet",
+        "salmon",
+        "smoked"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "hot"
+      ],
+      "specializationRiskTypes": [
+        "PROCESSING_METHOD"
+      ],
+      "highRiskAdditionalTokens": [
+        "hot"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "fish"
+      ],
+      "candidateProductClasses": [
+        "fish"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=hot, riskTypes=PROCESSING_METHOD."
+    },
+    {
+      "catalogKey": "smooth mustard",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "mustard smooth honey",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "mustard",
+        "smooth"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.82,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate is exactly smooth mustard; options are honey mustard, imitation mustard, dressing, or specific yellow/organic variants rather than the generic catalog food.",
+      "catalogTokens": [
+        "mustard",
+        "smooth"
+      ],
+      "candidateTokens": [
+        "honey",
+        "mustard",
+        "smooth"
+      ],
+      "sharedCoreTokens": [
+        "mustard",
+        "smooth"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "honey"
+      ],
+      "specializationRiskTypes": [
+        "FLAVOR"
+      ],
+      "highRiskAdditionalTokens": [
+        "honey"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "sauce"
+      ],
+      "candidateProductClasses": [
+        "sauce"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=honey, riskTypes=FLAVOR."
+    },
+    {
+      "catalogKey": "spelt pasta",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "spelt pasta fusili",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "pasta",
+        "spelt"
+      ],
+      "secondCandidateScore": 0.7999999999999999,
+      "topScoreDelta": 0.06666666666666665,
+      "decisionConfidence": 0.82,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is generic spelt pasta, while multiple candidates are specific spelt pasta variants or shapes; no single candidate is uniquely the same food.",
+      "catalogTokens": [
+        "pasta",
+        "spelt"
+      ],
+      "candidateTokens": [
+        "fusili",
+        "pasta",
+        "spelt"
+      ],
+      "sharedCoreTokens": [
+        "pasta",
+        "spelt"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "fusili"
+      ],
+      "specializationRiskTypes": [
+        "PRODUCT_FORM"
+      ],
+      "highRiskAdditionalTokens": [
+        "fusili"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "pasta"
+      ],
+      "candidateProductClasses": [
+        "pasta"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=fusili, riskTypes=PRODUCT_FORM."
+    },
+    {
+      "catalogKey": "sugar free licorice",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "sugar free licorice bears",
+      "topCandidateScore": 0.9,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "free",
+        "licorice",
+        "sugar"
+      ],
+      "secondCandidateScore": 0.84,
+      "topScoreDelta": 0.06000000000000005,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is generic sugar free licorice, while candidates specify different product forms or omit licorice; no single candidate clearly represents the same food.",
+      "catalogTokens": [
+        "free",
+        "licorice",
+        "sugar"
+      ],
+      "candidateTokens": [
+        "bears",
+        "free",
+        "licorice",
+        "sugar"
+      ],
+      "sharedCoreTokens": [
+        "free",
+        "licorice",
+        "sugar"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "bears"
+      ],
+      "specializationRiskTypes": [
+        "PRODUCT_FORM"
+      ],
+      "highRiskAdditionalTokens": [
+        "bears"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "sweet"
+      ],
+      "candidateProductClasses": [
+        "sweet"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=bears, riskTypes=PRODUCT_FORM."
+    },
+    {
+      "catalogKey": "tamang curry sauce",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "sauce curry",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "curry",
+        "sauce"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog food includes the specific descriptor 'tamang', while all candidates are generic or different curry sauce variants; none clearly represents the same food.",
+      "catalogTokens": [
+        "curry",
+        "sauce",
+        "tamang"
+      ],
+      "candidateTokens": [
+        "curry",
+        "sauce"
+      ],
+      "sharedCoreTokens": [
+        "curry",
+        "sauce"
+      ],
+      "missingCatalogCoreTokens": [
+        "tamang"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "sauce"
+      ],
+      "candidateProductClasses": [
+        "sauce"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=tamang."
+    },
+    {
+      "catalogKey": "vanilla pods",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "vanilla latte pods",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "pods",
+        "vanilla"
+      ],
+      "secondCandidateScore": 0.76,
+      "topScoreDelta": 0.10666666666666658,
+      "decisionConfidence": 0.97,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "Catalog item refers to vanilla pods/beans, while all candidates are flavored beverage or coffee pod products.",
+      "catalogTokens": [
+        "pods",
+        "vanilla"
+      ],
+      "candidateTokens": [
+        "latte",
+        "pods",
+        "vanilla"
+      ],
+      "sharedCoreTokens": [
+        "pods",
+        "vanilla"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "latte"
+      ],
+      "specializationRiskTypes": [
+        "PRODUCT_FORM"
+      ],
+      "highRiskAdditionalTokens": [
+        "latte"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [],
+      "candidateProductClasses": [
+        "drink"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=latte, riskTypes=PRODUCT_FORM."
+    },
+    {
+      "catalogKey": "vegan cheese alternative",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "vegan feta cheese alternative",
+      "topCandidateScore": 0.9,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "alternative",
+        "cheese",
+        "vegan"
+      ],
+      "secondCandidateScore": 0.84,
+      "topScoreDelta": 0.06000000000000005,
+      "decisionConfidence": 0.93,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is a generic vegan cheese alternative, while all candidates are specific varieties or different forms such as feta, cream cheese, cheddar, mozzarella, or cheese dip; no single candidate clearly represents the same generic food.",
+      "catalogTokens": [
+        "alternative",
+        "cheese",
+        "vegan"
+      ],
+      "candidateTokens": [
+        "alternative",
+        "cheese",
+        "feta",
+        "vegan"
+      ],
+      "sharedCoreTokens": [
+        "alternative",
+        "cheese",
+        "vegan"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "feta"
+      ],
+      "specializationRiskTypes": [
+        "SPECIES_OR_SUBTYPE"
+      ],
+      "highRiskAdditionalTokens": [
+        "feta"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "cheese"
+      ],
+      "candidateProductClasses": [
+        "cheese"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=feta, riskTypes=SPECIES_OR_SUBTYPE."
+    },
+    {
+      "catalogKey": "vegan chocolate bar",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "chocolate vegan cereal bar",
+      "topCandidateScore": 0.9,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "bar",
+        "chocolate",
+        "vegan"
+      ],
+      "secondCandidateScore": 0.84,
+      "topScoreDelta": 0.06000000000000005,
+      "decisionConfidence": 0.88,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is a generic vegan chocolate bar, while candidates are distinct specific products or types such as cereal, protein, white chocolate, mandarin, or mint bars; no single candidate clearly represents the same food.",
+      "catalogTokens": [
+        "bar",
+        "chocolate",
+        "vegan"
+      ],
+      "candidateTokens": [
+        "bar",
+        "cereal",
+        "chocolate",
+        "vegan"
+      ],
+      "sharedCoreTokens": [
+        "bar",
+        "chocolate",
+        "vegan"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "cereal"
+      ],
+      "specializationRiskTypes": [
+        "INGREDIENT_OR_SUBSTRATE"
+      ],
+      "highRiskAdditionalTokens": [
+        "cereal"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "sweet"
+      ],
+      "candidateProductClasses": [
+        "sweet"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=cereal, riskTypes=INGREDIENT_OR_SUBSTRATE."
+    },
+    {
+      "catalogKey": "vegan peanut butter",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "chocolate peanut butter vegan",
+      "topCandidateScore": 0.9,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "butter",
+        "peanut",
+        "vegan"
+      ],
+      "secondCandidateScore": 0.84,
+      "topScoreDelta": 0.06000000000000005,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "All candidates include additional concepts such as chocolate, protein, brownie, honeycomb, or protein bar; none clearly represents plain vegan peanut butter.",
+      "catalogTokens": [
+        "butter",
+        "peanut",
+        "vegan"
+      ],
+      "candidateTokens": [
+        "butter",
+        "chocolate",
+        "peanut",
+        "vegan"
+      ],
+      "sharedCoreTokens": [
+        "butter",
+        "peanut",
+        "vegan"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "chocolate"
+      ],
+      "specializationRiskTypes": [
+        "INGREDIENT_OR_SUBSTRATE"
+      ],
+      "highRiskAdditionalTokens": [
+        "chocolate"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "butter"
+      ],
+      "candidateProductClasses": [
+        "butter",
+        "sweet"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "BRAND_OR_VARIANT_MISMATCH",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds nutrition-relevant specialization tokens: tokens=chocolate, riskTypes=INGREDIENT_OR_SUBSTRATE."
+    },
+    {
+      "catalogKey": "vegetable curry ready meal",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "indian curry vegetable meal",
+      "topCandidateScore": 0.72,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "curry",
+        "meal",
+        "vegetable"
+      ],
+      "secondCandidateScore": 0.6699999999999999,
+      "topScoreDelta": 0.050000000000000044,
+      "decisionConfidence": 0.86,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "The catalog item is a generic vegetable curry ready meal, while candidates specify distinct variants such as Indian, Thai green, yellow curry kit, or cauliflower curry; no single candidate is clearly the same food.",
+      "catalogTokens": [
+        "curry",
+        "meal",
+        "ready",
+        "vegetable"
+      ],
+      "candidateTokens": [
+        "curry",
+        "indian",
+        "meal",
+        "vegetable"
+      ],
+      "sharedCoreTokens": [
+        "curry",
+        "meal",
+        "vegetable"
+      ],
+      "missingCatalogCoreTokens": [
+        "ready"
+      ],
+      "additionalCandidateCoreTokens": [
+        "indian"
+      ],
+      "specializationRiskTypes": [
+        "UNKNOWN_ADDITIONAL_TOKEN"
+      ],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [
+        "indian"
+      ],
+      "catalogProductClasses": [
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "INSUFFICIENT_SEMANTIC_EVIDENCE",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds unclassified specialization tokens: indian."
+    },
+    {
+      "catalogKey": "vegetarian tofu",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "vegetarian seafood tofu",
+      "topCandidateScore": 0.8666666666666666,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "tofu",
+        "vegetarian"
+      ],
+      "secondCandidateScore": 0.6,
+      "topScoreDelta": 0.2666666666666666,
+      "decisionConfidence": 0.84,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate clearly represents generic vegetarian tofu; candidates are either broader or different/specific foods such as vegetarian seafood tofu, baiye tofu, or backed tofu.",
+      "catalogTokens": [
+        "tofu",
+        "vegetarian"
+      ],
+      "candidateTokens": [
+        "seafood",
+        "tofu",
+        "vegetarian"
+      ],
+      "sharedCoreTokens": [
+        "tofu",
+        "vegetarian"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "seafood"
+      ],
+      "specializationRiskTypes": [
+        "INGREDIENT_OR_SUBSTRATE"
+      ],
+      "highRiskAdditionalTokens": [
+        "seafood"
+      ],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [],
+      "candidateProductClasses": [],
+      "modifierConflicts": [
+        "vegetarian vs seafood+vegetarian"
+      ],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "CRITICAL_MODIFIER_CONFLICT",
+      "representativeReviewRecommended": false,
+      "details": "Catalog key and candidate contain conflicting critical modifiers: vegetarian vs seafood+vegetarian."
+    },
+    {
+      "catalogKey": "vegetarian vegetable curry",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "vegetarian vegetable",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "vegetable",
+        "vegetarian"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.78,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "No candidate clearly represents the same generic vegetarian vegetable curry; options are missing curry, specify a different style, or are soup.",
+      "catalogTokens": [
+        "curry",
+        "vegetable",
+        "vegetarian"
+      ],
+      "candidateTokens": [
+        "vegetable",
+        "vegetarian"
+      ],
+      "sharedCoreTokens": [
+        "vegetable",
+        "vegetarian"
+      ],
+      "missingCatalogCoreTokens": [
+        "curry"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=curry."
+    },
+    {
+      "catalogKey": "vegetarian vegetable sausage",
+      "noMatchCause": "MODERATE_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "vegetarian vegetable",
+      "topCandidateScore": 0.7333333333333333,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "vegetable",
+        "vegetarian"
+      ],
+      "secondCandidateScore": 0.6333333333333333,
+      "topScoreDelta": 0.09999999999999998,
+      "decisionConfidence": 0.93,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "None of the candidates represents vegetarian vegetable sausage; they are either broader vegetable items or different foods such as sausage rolls, bouillon, buns, or bowls.",
+      "catalogTokens": [
+        "sausage",
+        "vegetable",
+        "vegetarian"
+      ],
+      "candidateTokens": [
+        "vegetable",
+        "vegetarian"
+      ],
+      "sharedCoreTokens": [
+        "vegetable",
+        "vegetarian"
+      ],
+      "missingCatalogCoreTokens": [
+        "sausage"
+      ],
+      "additionalCandidateCoreTokens": [],
+      "specializationRiskTypes": [],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [],
+      "catalogProductClasses": [
+        "meat",
+        "vegetable"
+      ],
+      "candidateProductClasses": [
+        "vegetable"
+      ],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "COMPATIBLE_GENERALIZATION",
+      "representativeReviewRecommended": false,
+      "details": "Candidate is a broader variant of the catalog product: missingCatalogCoreTokens=sausage."
+    },
+    {
+      "catalogKey": "white cane sugar",
+      "noMatchCause": "STRONG_TOP_CANDIDATE_REJECTED",
+      "topCandidateKey": "organic white cane sugar",
+      "topCandidateScore": 0.9,
+      "topCandidateRank": 1,
+      "topCandidateSharedTokens": [
+        "cane",
+        "sugar",
+        "white"
+      ],
+      "secondCandidateScore": 0.84,
+      "topScoreDelta": 0.06000000000000005,
+      "decisionConfidence": 0.72,
+      "decisionSource": "CHAT_GPT",
+      "decisionReason": "Multiple candidates describe white cane sugar (notably the granulated pure cane sugar entries), so no single supplied candidate is uniquely identifiable as the match.",
+      "catalogTokens": [
+        "cane",
+        "sugar",
+        "white"
+      ],
+      "candidateTokens": [
+        "cane",
+        "organic",
+        "sugar",
+        "white"
+      ],
+      "sharedCoreTokens": [
+        "cane",
+        "sugar",
+        "white"
+      ],
+      "missingCatalogCoreTokens": [],
+      "additionalCandidateCoreTokens": [
+        "organic"
+      ],
+      "specializationRiskTypes": [
+        "UNKNOWN_ADDITIONAL_TOKEN"
+      ],
+      "highRiskAdditionalTokens": [],
+      "unknownAdditionalTokens": [
+        "organic"
+      ],
+      "catalogProductClasses": [],
+      "candidateProductClasses": [],
+      "modifierConflicts": [],
+      "processingStateConflicts": [],
+      "productFormConflicts": [],
+      "diagnosticType": "INSUFFICIENT_SEMANTIC_EVIDENCE",
+      "representativeReviewRecommended": false,
+      "details": "Candidate adds unclassified specialization tokens: organic."
+    }
+  ]
+}

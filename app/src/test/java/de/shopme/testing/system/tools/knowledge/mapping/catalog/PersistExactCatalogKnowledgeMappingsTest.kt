@@ -5,6 +5,7 @@ import com.google.gson.JsonParser
 import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonToken
 import de.shopme.testing.system.tools.knowledge.report.CatalogJsonFileReader
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.mapping.catalog.CatalogKnowledgeMapping
 import de.shopme.tools.knowledge.mapping.catalog.CatalogKnowledgeMappingContract
 import de.shopme.tools.knowledge.mapping.catalog.CatalogKnowledgeMappingReport
@@ -24,29 +25,19 @@ class PersistExactCatalogKnowledgeMappingsTest {
     @Test
     fun persistExactCatalogKnowledgeMappings() {
 
-        val projectRoot =
-            File("..")
+        val paths =
+            KnowledgeBuildPaths.default()
+
+        paths.ensureBuildDirectories()
 
         val catalogFile =
-            File(
-                projectRoot,
-                "data/raw/catalog/supermarket_dataset.translated.json"
-            )
+            paths.canonicalFoodCatalog
 
         val serverDirectory =
-            File(
-                projectRoot,
-                "data/generated/knowledge/server"
-            )
-
-        val outputDirectory =
-            File(
-                projectRoot,
-                "data/generated/knowledge/mappings"
-            )
+            paths.serverRoot
 
         require(catalogFile.isFile) {
-            "Translated catalog does not exist: " +
+            "Canonical catalog does not exist: " +
                     catalogFile.absolutePath
         }
 
@@ -105,47 +96,61 @@ class PersistExactCatalogKnowledgeMappingsTest {
 
             val mappings =
                 builder.build(
-                    catalogKeys = catalogKeys,
-                    artifactName = artifactFile.name,
-                    serverKeys = serverKeys.asSequence()
+                    catalogKeys =
+                        catalogKeys,
+                    artifactName =
+                        artifactFile.name,
+                    serverKeys =
+                        serverKeys.asSequence()
                 )
 
             val artifact =
                 CatalogKnowledgeMappings(
                     version =
-                        CatalogKnowledgeMappingContract.CURRENT_VERSION,
-                    mappings = mappings
+                        CatalogKnowledgeMappingContract
+                            .CURRENT_VERSION,
+                    mappings =
+                        mappings
                 )
 
             val outputFile =
-                File(
-                    outputDirectory,
+                paths.mappingArtifact(
                     "${artifactFile.nameWithoutExtension}.mappings.json"
                 )
 
             writer.write(
-                mappings = artifact,
-                file = outputFile
+                mappings =
+                    artifact,
+                file =
+                    outputFile
             )
 
             verifyWrittenMappings(
-                outputFile = outputFile,
-                expectedArtifactName = artifactFile.name,
-                expectedMappings = mappings
+                outputFile =
+                    outputFile,
+                expectedArtifactName =
+                    artifactFile.name,
+                expectedMappings =
+                    mappings
             )
 
             CatalogKnowledgeMappingReport(
-                artifactName = artifactFile.name,
-                catalogKeyCount = catalogKeys.size,
-                serverKeyCount = serverKeys.size.toLong(),
-                exactMappingCount = mappings.size,
+                artifactName =
+                    artifactFile.name,
+                catalogKeyCount =
+                    catalogKeys.size,
+                serverKeyCount =
+                    serverKeys.size.toLong(),
+                exactMappingCount =
+                    mappings.size,
                 unmatchedCatalogKeyCount =
-                    catalogKeys.size - mappings.size,
-                outputFile = outputFile.path
+                    catalogKeys.size -
+                            mappings.size,
+                outputFile =
+                    outputFile.path
             ).printTo()
         }
     }
-
 
     private fun readServerKeys(
         artifactFile: File
@@ -155,7 +160,9 @@ class PersistExactCatalogKnowledgeMappingsTest {
             linkedSetOf<String>()
 
         JsonReader(
-            FileReader(artifactFile)
+            FileReader(
+                artifactFile
+            )
         ).use { reader ->
 
             reader.beginObject()
@@ -181,13 +188,15 @@ class PersistExactCatalogKnowledgeMappingsTest {
         return keys
     }
 
-
     private fun readEntryKeys(
         reader: JsonReader,
         destination: MutableSet<String>
     ) {
 
-        require(reader.peek() == JsonToken.BEGIN_OBJECT) {
+        require(
+            reader.peek() ==
+                    JsonToken.BEGIN_OBJECT
+        ) {
             "Expected 'entries' to be a JSON object"
         }
 
@@ -210,16 +219,17 @@ class PersistExactCatalogKnowledgeMappingsTest {
         reader.endObject()
     }
 
-
     private fun verifyWrittenMappings(
         outputFile: File,
         expectedArtifactName: String,
-        expectedMappings: List<CatalogKnowledgeMapping>
+        expectedMappings:
+        List<CatalogKnowledgeMapping>
     ) {
 
         assertTrue(
             outputFile.isFile,
-            "Mapping file was not written: ${outputFile.absolutePath}"
+            "Mapping file was not written: " +
+                    outputFile.absolutePath
         )
 
         val root =
@@ -230,7 +240,8 @@ class PersistExactCatalogKnowledgeMappingsTest {
                 .asJsonObject
 
         assertEquals(
-            CatalogKnowledgeMappingContract.CURRENT_VERSION,
+            CatalogKnowledgeMappingContract
+                .CURRENT_VERSION,
             root["version"].asInt
         )
 
@@ -278,12 +289,13 @@ class PersistExactCatalogKnowledgeMappingsTest {
         }
 
         assertEquals(
-            writtenMappings.sortedWith(MAPPING_ORDER),
+            writtenMappings.sortedWith(
+                MAPPING_ORDER
+            ),
             writtenMappings,
             "Mappings must be written deterministically"
         )
     }
-
 
     companion object {
 

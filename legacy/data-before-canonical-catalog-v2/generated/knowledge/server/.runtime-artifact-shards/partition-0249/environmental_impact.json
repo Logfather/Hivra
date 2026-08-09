@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "chips de maïs ou tortilla chips": {
+      "environmentScoreMptPerKg": 0.257,
+      "climateKgCo2EqPerKg": 2.33,
+      "landUsePtPerKg": 227.0,
+      "waterDeprivationM3PerKg": 0.861
+    },
+    "dinde, escalope, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.28,
+      "climateKgCo2EqPerKg": 7.48,
+      "landUsePtPerKg": 444.0,
+      "waterDeprivationM3PerKg": 3.34
+    },
+    "frik (blé dur immature concassé), cuit, non salé": {
+      "environmentScoreMptPerKg": 0.109,
+      "climateKgCo2EqPerKg": 0.788,
+      "landUsePtPerKg": 89.3,
+      "waterDeprivationM3PerKg": 0.428
+    },
+    "haricot flageolet, cuit": {
+      "environmentScoreMptPerKg": 0.0668,
+      "climateKgCo2EqPerKg": 0.585,
+      "landUsePtPerKg": -71.7,
+      "waterDeprivationM3PerKg": 0.116
+    },
+    "kombu ou kombu japonais (laminaria japonica), séchée ou déshydratée": {
+      "environmentScoreMptPerKg": 1.55,
+      "climateKgCo2EqPerKg": 11.8,
+      "landUsePtPerKg": 26.7,
+      "waterDeprivationM3PerKg": 4.83
+    },
+    "poire, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.0493,
+      "climateKgCo2EqPerKg": 0.387,
+      "landUsePtPerKg": 16.9,
+      "waterDeprivationM3PerKg": 1.42
+    },
+    "poireau, cuit": {
+      "environmentScoreMptPerKg": 0.141,
+      "climateKgCo2EqPerKg": 1.48,
+      "landUsePtPerKg": 18.6,
+      "waterDeprivationM3PerKg": 0.671
+    },
+    "poule, cuisse, crue": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "ris, agneau, cuit": {
+      "environmentScoreMptPerKg": 4.52,
+      "climateKgCo2EqPerKg": 37.2,
+      "landUsePtPerKg": 3930.0,
+      "waterDeprivationM3PerKg": 6.28
+    },
+    "sandwich baguette, dinde, crudités (tomate, salade), mayonnaise": {
+      "environmentScoreMptPerKg": 0.394,
+      "climateKgCo2EqPerKg": 2.78,
+      "landUsePtPerKg": 137.0,
+      "waterDeprivationM3PerKg": 1.25
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "beurre à 39 41% mg, léger, doux": {
+      "environmentScoreMptPerKg": 0.618,
+      "climateKgCo2EqPerKg": 6.29,
+      "landUsePtPerKg": 307.0,
+      "waterDeprivationM3PerKg": 0.701
+    },
+    "biscuit sec, petits fours en assortiment": {
+      "environmentScoreMptPerKg": 0.415,
+      "climateKgCo2EqPerKg": 4.01,
+      "landUsePtPerKg": 181.0,
+      "waterDeprivationM3PerKg": 1.31
+    },
+    "chips de crevette": {
+      "environmentScoreMptPerKg": 0.881,
+      "climateKgCo2EqPerKg": 5.45,
+      "landUsePtPerKg": 267.0,
+      "waterDeprivationM3PerKg": 37.2
+    },
+    "coeur, boeuf, cuit": {
+      "environmentScoreMptPerKg": 2.97,
+      "climateKgCo2EqPerKg": 31.5,
+      "landUsePtPerKg": 2050.0,
+      "waterDeprivationM3PerKg": 2.65
+    },
+    "cola, non sucré, avec édulcorants, sans caféine": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "endive au jambon": {
+      "environmentScoreMptPerKg": 0.456,
+      "climateKgCo2EqPerKg": 3.89,
+      "landUsePtPerKg": 179.0,
+      "waterDeprivationM3PerKg": 1.0
+    },
+    "haché à base de bœuf ou préparation de viande hachée de boeuf, 15% mg, cru": {
+      "environmentScoreMptPerKg": 1.67,
+      "climateKgCo2EqPerKg": 17.5,
+      "landUsePtPerKg": 1120.0,
+      "waterDeprivationM3PerKg": 1.69
+    },
+    "jus de citron, pur jus": {
+      "environmentScoreMptPerKg": 0.139,
+      "climateKgCo2EqPerKg": 0.837,
+      "landUsePtPerKg": 72.4,
+      "waterDeprivationM3PerKg": 0.689
+    }
+  }
+}

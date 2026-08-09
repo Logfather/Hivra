@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "beignet de viande, volaille ou poisson, fait maison": {
+      "environmentScoreMptPerKg": 0.602,
+      "climateKgCo2EqPerKg": 3.88,
+      "landUsePtPerKg": 208.0,
+      "waterDeprivationM3PerKg": 1.5
+    },
+    "biscuit sec aux fruits, hyposodé": {
+      "environmentScoreMptPerKg": 0.344,
+      "climateKgCo2EqPerKg": 3.05,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 3.17
+    },
+    "bière brune": {
+      "environmentScoreMptPerKg": 0.127,
+      "climateKgCo2EqPerKg": 1.35,
+      "landUsePtPerKg": 17.0,
+      "waterDeprivationM3PerKg": 0.258
+    },
+    "chicorée rouge, crue": {
+      "environmentScoreMptPerKg": 0.0672,
+      "climateKgCo2EqPerKg": 0.571,
+      "landUsePtPerKg": 6.82,
+      "waterDeprivationM3PerKg": 0.479
+    },
+    "cresson de fontaine, cru": {
+      "environmentScoreMptPerKg": 0.0832,
+      "climateKgCo2EqPerKg": 0.882,
+      "landUsePtPerKg": -27.7,
+      "waterDeprivationM3PerKg": 0.425
+    },
+    "haricot flageolet, surgelé": {
+      "environmentScoreMptPerKg": 0.0573,
+      "climateKgCo2EqPerKg": 0.443,
+      "landUsePtPerKg": -72.9,
+      "waterDeprivationM3PerKg": 0.0709
+    },
+    "maquereau, filet au vin blanc, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.518,
+      "climateKgCo2EqPerKg": 4.54,
+      "landUsePtPerKg": 34.3,
+      "waterDeprivationM3PerKg": 0.572
+    },
+    "pain, sans gluten": {
+      "environmentScoreMptPerKg": 0.198,
+      "climateKgCo2EqPerKg": 1.7,
+      "landUsePtPerKg": 54.4,
+      "waterDeprivationM3PerKg": 5.66
+    },
+    "petit salé ou saucisse aux lentilles": {
+      "environmentScoreMptPerKg": 0.196,
+      "climateKgCo2EqPerKg": 1.66,
+      "landUsePtPerKg": 83.5,
+      "waterDeprivationM3PerKg": 0.813
+    },
+    "veau, escalope, cuite": {
+      "environmentScoreMptPerKg": 2.74,
+      "climateKgCo2EqPerKg": 29.4,
+      "landUsePtPerKg": 1340.0,
+      "waterDeprivationM3PerKg": 3.99
+    }
+  }
+}

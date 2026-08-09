@@ -1,0 +1,20 @@
+package de.shopme.testing.system.tools.knowledge.catalog.expansion.refinement
+
+enum class CanonicalCatalogIdentityAxis {
+    FOOD_TYPE,
+    PRIMARY_INGREDIENT,
+    RECIPE_TYPE,
+    PROCESSING_METHOD,
+    PRESERVATION_METHOD,
+    PHYSICAL_FORM,
+    PREPARATION_STATE,
+    FLAVOR_PROFILE,
+    SWEETENING_TYPE,
+    FAT_LEVEL,
+    PROTEIN_SOURCE,
+    GRAIN_TYPE,
+    RIPENING_OR_AGING,
+    DIETARY_FORM,
+    ALLERGEN_RELEVANT_VARIANT,
+    NUTRITIONALLY_RELEVANT_VARIANT
+}

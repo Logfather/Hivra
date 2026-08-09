@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "andouillette, crue": {
+      "environmentScoreMptPerKg": 1.33,
+      "climateKgCo2EqPerKg": 11.8,
+      "landUsePtPerKg": 699.0,
+      "waterDeprivationM3PerKg": 2.68
+    },
+    "cacahuète, grillée, salée": {
+      "environmentScoreMptPerKg": 0.638,
+      "climateKgCo2EqPerKg": 4.18,
+      "landUsePtPerKg": 535.0,
+      "waterDeprivationM3PerKg": 14.6
+    },
+    "diot, cru": {
+      "environmentScoreMptPerKg": 0.658,
+      "climateKgCo2EqPerKg": 5.27,
+      "landUsePtPerKg": 274.0,
+      "waterDeprivationM3PerKg": 1.75
+    },
+    "limonade, sucrée": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "matière grasse végétale ou margarine, 80% mg, doux": {
+      "environmentScoreMptPerKg": 0.358,
+      "climateKgCo2EqPerKg": 2.36,
+      "landUsePtPerKg": 330.0,
+      "waterDeprivationM3PerKg": 4.0
+    },
+    "mulet, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "pissaladière": {
+      "environmentScoreMptPerKg": 0.263,
+      "climateKgCo2EqPerKg": 2.06,
+      "landUsePtPerKg": 90.8,
+      "waterDeprivationM3PerKg": 0.964
+    },
+    "sauce aïoli, préemballée": {
+      "environmentScoreMptPerKg": 0.575,
+      "climateKgCo2EqPerKg": 1.64,
+      "landUsePtPerKg": 520.0,
+      "waterDeprivationM3PerKg": 18.0
+    },
+    "vermicelle de riz, sèche": {
+      "environmentScoreMptPerKg": 0.245,
+      "climateKgCo2EqPerKg": 1.56,
+      "landUsePtPerKg": 39.0,
+      "waterDeprivationM3PerKg": 6.1
+    }
+  }
+}

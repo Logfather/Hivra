@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "asperge, appertisée, égouttée": {
+      "environmentScoreMptPerKg": 0.333,
+      "climateKgCo2EqPerKg": 2.13,
+      "landUsePtPerKg": 220.0,
+      "waterDeprivationM3PerKg": 4.14
+    },
+    "boeuf, bavette d'aloyau, crue": {
+      "environmentScoreMptPerKg": 2.7,
+      "climateKgCo2EqPerKg": 28.9,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.39
+    },
+    "boeuf, faux filet, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 3.44,
+      "climateKgCo2EqPerKg": 36.6,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "chipolata, crue": {
+      "environmentScoreMptPerKg": 0.666,
+      "climateKgCo2EqPerKg": 5.39,
+      "landUsePtPerKg": 275.0,
+      "waterDeprivationM3PerKg": 1.78
+    },
+    "citron vert ou lime, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.144,
+      "climateKgCo2EqPerKg": 0.57,
+      "landUsePtPerKg": 21.7,
+      "waterDeprivationM3PerKg": 11.0
+    },
+    "céréales pour petit déjeuner \"équilibre\" nature ou au miel, enrichies en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "gâteau mousse de fruits sur génoise, type miroir, bavarois": {
+      "environmentScoreMptPerKg": 0.369,
+      "climateKgCo2EqPerKg": 2.28,
+      "landUsePtPerKg": 107.0,
+      "waterDeprivationM3PerKg": 1.65
+    },
+    "lentille, cuisinée, appertisée, égouttée": {
+      "environmentScoreMptPerKg": 0.195,
+      "climateKgCo2EqPerKg": 1.13,
+      "landUsePtPerKg": 306.0,
+      "waterDeprivationM3PerKg": 0.252
+    },
+    "porc, bardière découennée, crue": {
+      "environmentScoreMptPerKg": 0.202,
+      "climateKgCo2EqPerKg": 1.73,
+      "landUsePtPerKg": 73.5,
+      "waterDeprivationM3PerKg": 0.542
+    }
+  }
+}

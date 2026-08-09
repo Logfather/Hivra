@@ -1,0 +1,88 @@
+{
+  "entries": {
+    "alcool pur": {
+      "environmentScoreMptPerKg": 0.12,
+      "climateKgCo2EqPerKg": 1.26,
+      "landUsePtPerKg": 18.4,
+      "waterDeprivationM3PerKg": 0.169
+    },
+    "banane plantain, cuite": {
+      "environmentScoreMptPerKg": 0.202,
+      "climateKgCo2EqPerKg": 1.36,
+      "landUsePtPerKg": 34.1,
+      "waterDeprivationM3PerKg": 8.21
+    },
+    "beignet à la confiture": {
+      "environmentScoreMptPerKg": 0.272,
+      "climateKgCo2EqPerKg": 1.78,
+      "landUsePtPerKg": 86.2,
+      "waterDeprivationM3PerKg": 1.04
+    },
+    "biscuit sec fourré aux fruits, allégé en matière grasse": {
+      "environmentScoreMptPerKg": 0.344,
+      "climateKgCo2EqPerKg": 3.05,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 3.17
+    },
+    "crème dessert à la vanille, appertisée": {
+      "environmentScoreMptPerKg": 0.191,
+      "climateKgCo2EqPerKg": 1.83,
+      "landUsePtPerKg": 66.3,
+      "waterDeprivationM3PerKg": 0.524
+    },
+    "dessert au soja, nature, rayon frais": {
+      "environmentScoreMptPerKg": 0.126,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": 31.6,
+      "waterDeprivationM3PerKg": 0.491
+    },
+    "navet, cuit": {
+      "environmentScoreMptPerKg": 0.11,
+      "climateKgCo2EqPerKg": 1.15,
+      "landUsePtPerKg": 17.3,
+      "waterDeprivationM3PerKg": 0.663
+    },
+    "patate douce, purée, cuisinée à la crème": {
+      "environmentScoreMptPerKg": 0.141,
+      "climateKgCo2EqPerKg": 1.31,
+      "landUsePtPerKg": 45.9,
+      "waterDeprivationM3PerKg": 0.38
+    },
+    "plat légumes, avec féculent et lait/crème, dès 8 12 mois": {
+      "environmentScoreMptPerKg": 0.149,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": 56.0,
+      "waterDeprivationM3PerKg": 1.26
+    },
+    "raclette (fromage)": {
+      "environmentScoreMptPerKg": 0.642,
+      "climateKgCo2EqPerKg": 6.33,
+      "landUsePtPerKg": 280.0,
+      "waterDeprivationM3PerKg": 0.858
+    },
+    "thé noir, infusé, non sucré": {
+      "environmentScoreMptPerKg": 0.0148,
+      "climateKgCo2EqPerKg": 0.0436,
+      "landUsePtPerKg": 4.02,
+      "waterDeprivationM3PerKg": 0.776
+    },
+    "tomate farcie": {
+      "environmentScoreMptPerKg": 0.417,
+      "climateKgCo2EqPerKg": 3.47,
+      "landUsePtPerKg": 160.0,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "tortilla espagnole aux oignons (omelette aux pommes de terre et oignons)": {
+      "environmentScoreMptPerKg": 0.205,
+      "climateKgCo2EqPerKg": 1.17,
+      "landUsePtPerKg": 124.0,
+      "waterDeprivationM3PerKg": 2.68
+    },
+    "veau, escalope panée, cuite": {
+      "environmentScoreMptPerKg": 2.18,
+      "climateKgCo2EqPerKg": 23.1,
+      "landUsePtPerKg": 1060.0,
+      "waterDeprivationM3PerKg": 3.28
+    }
+  }
+}

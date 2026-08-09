@@ -1,0 +1,31 @@
+{
+  "entries": {
+    "barre céréalière chocolatée": {
+      "litersPerKilogram": 1240.0
+    },
+    "fromage de chèvre lactique affiné (type bûchette, crottin, sainte maure)": {
+      "litersPerKilogram": 2430.0
+    },
+    "hareng maigre, cru": {
+      "litersPerKilogram": 213.0
+    },
+    "lentille corail, cuite": {
+      "litersPerKilogram": 107.0
+    },
+    "mouton, pied, cru": {
+      "litersPerKilogram": 4560.0
+    },
+    "porc, côte, grillée": {
+      "litersPerKilogram": 2810.0
+    },
+    "poulet, viande et peau, rôti/cuit au four": {
+      "litersPerKilogram": 2720.0
+    },
+    "pouligny saint pierre (fromage de chèvre)": {
+      "litersPerKilogram": 2550.0
+    },
+    "raifort, cru": {
+      "litersPerKilogram": 527.0
+    }
+  }
+}

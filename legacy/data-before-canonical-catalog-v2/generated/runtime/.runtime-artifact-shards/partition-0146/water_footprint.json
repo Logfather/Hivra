@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "agneau, côte première, crue": {
+      "litersPerKilogram": 6930.0
+    },
+    "boeuf, entrecôte, partie maigre, grillée/poêlée": {
+      "litersPerKilogram": 3070.0
+    },
+    "boisson gazeuse aux fruits (de 10 à 50% de jus), sucrée": {
+      "litersPerKilogram": 288.0
+    },
+    "boisson gazeuse aux fruits (à moins de 10% de jus), sucrée, avec édulcorants": {
+      "litersPerKilogram": 288.0
+    },
+    "farine de riz": {
+      "litersPerKilogram": 17000.0
+    },
+    "fromage de chèvre sec": {
+      "litersPerKilogram": 2290.0
+    },
+    "meringue": {
+      "litersPerKilogram": 1800.0
+    },
+    "pain pour hamburger ou hot dog (bun), complet, préemballé": {
+      "litersPerKilogram": 234.0
+    },
+    "porc, épaule, crue": {
+      "litersPerKilogram": 2200.0
+    },
+    "salade de fruits, crue": {
+      "litersPerKilogram": 5480.0
+    },
+    "soupe asiatique, avec pâtes, déshydratée reconstituée": {
+      "litersPerKilogram": 77400.0
+    },
+    "églefin, cru": {
+      "litersPerKilogram": 470.0
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "confiserie au chocolat dragéifiée": {
+      "environmentScoreMptPerKg": 0.854,
+      "climateKgCo2EqPerKg": 10.5,
+      "landUsePtPerKg": 463.0,
+      "waterDeprivationM3PerKg": 6.07
+    },
+    "haricot flageolet, vert, cuit": {
+      "environmentScoreMptPerKg": 0.0668,
+      "climateKgCo2EqPerKg": 0.585,
+      "landUsePtPerKg": -71.7,
+      "waterDeprivationM3PerKg": 0.116
+    },
+    "sauce indienne type tandoori ou tikka masala, préemballée": {
+      "environmentScoreMptPerKg": 0.222,
+      "climateKgCo2EqPerKg": 1.58,
+      "landUsePtPerKg": 67.1,
+      "waterDeprivationM3PerKg": 1.06
+    },
+    "tomate à la provençale": {
+      "environmentScoreMptPerKg": 0.163,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 27.2,
+      "waterDeprivationM3PerKg": 1.45
+    },
+    "truite arc en ciel, crue, élevage": {
+      "environmentScoreMptPerKg": 1.4,
+      "climateKgCo2EqPerKg": 6.17,
+      "landUsePtPerKg": 108.0,
+      "waterDeprivationM3PerKg": 36.5
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "catalogItemCount": 2709,
+  "coveredCatalogItemCount": 2016,
+  "missingCatalogItemCount": 693,
+  "classifiedGapCount": 693,
+  "unclassifiedGapCount": 0,
+  "countsByType": {
+    "EXACT_MATCH_NOT_IN_RUNTIME": 1,
+    "MODIFIER_MISMATCH": 4,
+    "NO_DECISION": 2,
+    "NO_MATCH": 230,
+    "NO_REQUEST": 1,
+    "SCORE_CLUSTER": 308,
+    "TOO_GENERIC": 18,
+    "TOO_SPECIFIC": 128,
+    "VERY_LOW_SCORE": 1
+  },
+  "exactMatchNotInRuntimeCount": 1,
+  "exactMatchNotInRuntimeCatalogKeys": [
+    "liver sausage"
+  ],
+  "noRequestCount": 1,
+  "noRequestCatalogKeys": [
+    "mace"
+  ],
+  "matchNotPersistedCount": 0,
+  "matchNotPersistedCatalogKeys": [],
+  "noDecisionCount": 2,
+  "noDecisionCatalogKeys": [
+    "chervil",
+    "salsify"
+  ],
+  "noCandidatesCount": 0,
+  "noCandidatesCatalogKeys": [],
+  "noMatchCount": 230,
+  "countsByNoMatchCause": {
+    "MIXED_PRODUCT_CLASS_CANDIDATES": 23,
+    "MODERATE_TOP_CANDIDATE_REJECTED": 20,
+    "PARTIAL_CORE_TOKEN_MATCH": 101,
+    "PREPARED_MEAL_VARIANT": 5,
+    "STRONG_TOP_CANDIDATE_REJECTED": 43,
+    "WEAK_CANDIDATE_SET": 38
+  },
+  "investigatedCatalogKeys": [
+    {
+      "catalogKey": "chervil",
+      "presentInReport": true,
+      "type": "NO_DECISION",
+      "requestExists": true,
+      "decisionExists": false,
+      "candidateCount": 2,
+      "topCandidateKey": "chervil dried",
+      "topCandidateScore": 0.7999999999999999,
+      "details": "A nutrition match request exists, but no persisted decision exists."
+    },
+    {
+      "catalogKey": "liver sausage",
+      "presentInReport": true,
+      "type": "EXACT_MATCH_NOT_IN_RUNTIME",
+      "requestExists": false,
+      "decisionExists": true,
+      "decisionType": "NO_MATCH",
+      "decisionConfidence": 0.78,
+      "candidateCount": 0,
+      "details": "The catalog key is reported as an exact nutrition server match, but it is not covered by the persisted runtime mapping artifacts."
+    },
+    {
+      "catalogKey": "mace",
+      "presentInReport": true,
+      "type": "NO_REQUEST",
+      "requestExists": false,
+      "decisionExists": false,
+      "candidateCount": 0,
+      "details": "No persisted nutrition match request exists for the missing catalog key."
+    },
+    {
+      "catalogKey": "salsify",
+      "presentInReport": true,
+      "type": "NO_DECISION",
+      "requestExists": true,
+      "decisionExists": false,
+      "candidateCount": 5,
+      "topCandidateKey": "salsify black raw",
+      "topCandidateScore": 0.8666666666666666,
+      "details": "A nutrition match request exists, but no persisted decision exists."
+    },
+    {
+      "catalogKey": "teewurst",
+      "presentInReport": true,
+      "type": "SCORE_CLUSTER",
+      "requestExists": true,
+      "decisionExists": true,
+      "decisionType": "NO_MATCH",
+      "decisionConfidence": 0.95,
+      "candidateCount": 5,
+      "topCandidateKey": "sausage smoked",
+      "topCandidateScore": 0.7333333333333333,
+      "details": "The score difference between the first two candidates is only 0.0000."
+    },
+    {
+      "catalogKey": "toffifee",
+      "presentInReport": true,
+      "type": "TOO_SPECIFIC",
+      "requestExists": true,
+      "decisionExists": true,
+      "decisionType": "NO_MATCH",
+      "decisionConfidence": 0.86,
+      "candidateCount": 5,
+      "topCandidateKey": "caramel chocolate candy",
+      "topCandidateScore": 0.7999999999999999,
+      "details": "The top candidate is substantially more specific than the catalog key: catalogTokens=1, candidateTokens=3."
+    }
+  ]
+}

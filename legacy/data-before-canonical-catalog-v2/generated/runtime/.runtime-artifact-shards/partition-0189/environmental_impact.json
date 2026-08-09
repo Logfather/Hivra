@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "brioche, sans précision": {
+      "environmentScoreMptPerKg": 0.325,
+      "climateKgCo2EqPerKg": 2.95,
+      "landUsePtPerKg": 169.0,
+      "waterDeprivationM3PerKg": 0.717
+    },
+    "bâtonnet pané soja et blé (convient aux véganes ou végétaliens), préemballée": {
+      "environmentScoreMptPerKg": 0.248,
+      "climateKgCo2EqPerKg": 1.79,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 0.514
+    },
+    "carvi, graine": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 9.4,
+      "landUsePtPerKg": 688.0,
+      "waterDeprivationM3PerKg": 4.38
+    },
+    "crêpe dentelle (pour apéritif) au fromage, préemballée": {
+      "environmentScoreMptPerKg": 0.208,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 189.0,
+      "waterDeprivationM3PerKg": 0.704
+    },
+    "lait emprésuré aromatisé, rayon frais": {
+      "environmentScoreMptPerKg": 0.173,
+      "climateKgCo2EqPerKg": 1.83,
+      "landUsePtPerKg": 71.3,
+      "waterDeprivationM3PerKg": 0.312
+    },
+    "mousse au chocolat (base laitière), rayon frais": {
+      "environmentScoreMptPerKg": 0.586,
+      "climateKgCo2EqPerKg": 9.68,
+      "landUsePtPerKg": 413.0,
+      "waterDeprivationM3PerKg": 0.931
+    },
+    "pâte d'amande, préemballée": {
+      "environmentScoreMptPerKg": 0.515,
+      "climateKgCo2EqPerKg": 2.18,
+      "landUsePtPerKg": 236.0,
+      "waterDeprivationM3PerKg": 17.1
+    },
+    "pâtes sèches, sans gluten, cuites, non salées": {
+      "environmentScoreMptPerKg": 0.125,
+      "climateKgCo2EqPerKg": 0.894,
+      "landUsePtPerKg": 44.5,
+      "waterDeprivationM3PerKg": 1.57
+    },
+    "yaourt à la grecque, sur lit de fruits": {
+      "environmentScoreMptPerKg": 0.212,
+      "climateKgCo2EqPerKg": 1.89,
+      "landUsePtPerKg": 72.1,
+      "waterDeprivationM3PerKg": 1.64
+    }
+  }
+}

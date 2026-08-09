@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "agneau, épaule, maigre, crue": {
+      "environmentScoreMptPerKg": 4.01,
+      "climateKgCo2EqPerKg": 33.0,
+      "landUsePtPerKg": 3530.0,
+      "waterDeprivationM3PerKg": 5.54
+    },
+    "cervelas": {
+      "environmentScoreMptPerKg": 0.924,
+      "climateKgCo2EqPerKg": 7.16,
+      "landUsePtPerKg": 376.0,
+      "waterDeprivationM3PerKg": 2.34
+    },
+    "céréales pour petit déjeuner \"équilibre\" au chocolat, enrichies en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "dinde, viande et peau, crue": {
+      "environmentScoreMptPerKg": 0.761,
+      "climateKgCo2EqPerKg": 4.56,
+      "landUsePtPerKg": 269.0,
+      "waterDeprivationM3PerKg": 2.03
+    },
+    "poivre blanc, poudre": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 9.4,
+      "landUsePtPerKg": 688.0,
+      "waterDeprivationM3PerKg": 4.38
+    },
+    "porc, maigre 80/20, cru": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "riz blanc, cuit, non salé": {
+      "environmentScoreMptPerKg": 0.216,
+      "climateKgCo2EqPerKg": 1.16,
+      "landUsePtPerKg": 29.6,
+      "waterDeprivationM3PerKg": 6.4
+    },
+    "saumon à l'oseille": {
+      "environmentScoreMptPerKg": 0.702,
+      "climateKgCo2EqPerKg": 5.38,
+      "landUsePtPerKg": 261.0,
+      "waterDeprivationM3PerKg": 1.09
+    }
+  }
+}

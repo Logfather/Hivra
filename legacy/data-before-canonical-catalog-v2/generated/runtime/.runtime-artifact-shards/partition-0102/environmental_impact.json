@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "biscuit sec, avec matière grasse végétale": {
+      "environmentScoreMptPerKg": 0.219,
+      "climateKgCo2EqPerKg": 1.93,
+      "landUsePtPerKg": 94.0,
+      "waterDeprivationM3PerKg": 1.55
+    },
+    "bœuf, steak haché 5% mg, cuit": {
+      "environmentScoreMptPerKg": 4.25,
+      "climateKgCo2EqPerKg": 45.2,
+      "landUsePtPerKg": 2940.0,
+      "waterDeprivationM3PerKg": 3.77
+    },
+    "croque monsieur": {
+      "environmentScoreMptPerKg": 0.493,
+      "climateKgCo2EqPerKg": 4.4,
+      "landUsePtPerKg": 216.0,
+      "waterDeprivationM3PerKg": 1.01
+    },
+    "osso buco": {
+      "environmentScoreMptPerKg": 1.72,
+      "climateKgCo2EqPerKg": 18.2,
+      "landUsePtPerKg": 837.0,
+      "waterDeprivationM3PerKg": 2.93
+    },
+    "parmentier de canard, cuit": {
+      "environmentScoreMptPerKg": 0.456,
+      "climateKgCo2EqPerKg": 3.6,
+      "landUsePtPerKg": 161.0,
+      "waterDeprivationM3PerKg": 0.992
+    },
+    "poêlée de légumes assaisonnés grillée, méridionale ou méditerranéenne, surgelée, crue": {
+      "environmentScoreMptPerKg": 0.136,
+      "climateKgCo2EqPerKg": 0.933,
+      "landUsePtPerKg": 17.1,
+      "waterDeprivationM3PerKg": 0.643
+    },
+    "pâte à pizza cuite": {
+      "environmentScoreMptPerKg": 0.196,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 82.2,
+      "waterDeprivationM3PerKg": 1.39
+    },
+    "saucisse de volaille, façon charcutière": {
+      "environmentScoreMptPerKg": 1.63,
+      "climateKgCo2EqPerKg": 12.5,
+      "landUsePtPerKg": 784.0,
+      "waterDeprivationM3PerKg": 3.12
+    },
+    "sole, poêlée": {
+      "environmentScoreMptPerKg": 1.58,
+      "climateKgCo2EqPerKg": 9.22,
+      "landUsePtPerKg": 20.4,
+      "waterDeprivationM3PerKg": 0.998
+    }
+  }
+}

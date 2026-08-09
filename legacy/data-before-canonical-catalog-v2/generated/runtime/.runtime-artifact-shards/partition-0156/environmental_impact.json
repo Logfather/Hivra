@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "biscuit sec pauvre en glucides": {
+      "environmentScoreMptPerKg": 0.368,
+      "climateKgCo2EqPerKg": 3.59,
+      "landUsePtPerKg": 161.0,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "boeuf, boule de macreuse, grillée/poêlée": {
+      "environmentScoreMptPerKg": 3.43,
+      "climateKgCo2EqPerKg": 36.7,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.03
+    },
+    "cervelle, agneau, crue": {
+      "environmentScoreMptPerKg": 2.62,
+      "climateKgCo2EqPerKg": 21.6,
+      "landUsePtPerKg": 2300.0,
+      "waterDeprivationM3PerKg": 3.64
+    },
+    "coulommiers": {
+      "environmentScoreMptPerKg": 0.523,
+      "climateKgCo2EqPerKg": 5.43,
+      "landUsePtPerKg": 260.0,
+      "waterDeprivationM3PerKg": 0.601
+    },
+    "légumes, mélange surgelé, crus": {
+      "environmentScoreMptPerKg": 0.218,
+      "climateKgCo2EqPerKg": 1.49,
+      "landUsePtPerKg": 59.6,
+      "waterDeprivationM3PerKg": 8.63
+    },
+    "pigeon, viande, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.3,
+      "climateKgCo2EqPerKg": 7.75,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "saumon, élevage, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 0.893,
+      "climateKgCo2EqPerKg": 6.87,
+      "landUsePtPerKg": 279.0,
+      "waterDeprivationM3PerKg": 1.5
+    }
+  }
+}

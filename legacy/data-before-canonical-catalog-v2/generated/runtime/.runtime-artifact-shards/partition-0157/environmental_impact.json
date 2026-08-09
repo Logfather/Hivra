@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "ail, cru": {
+      "environmentScoreMptPerKg": 0.0457,
+      "climateKgCo2EqPerKg": 0.383,
+      "landUsePtPerKg": 18.7,
+      "waterDeprivationM3PerKg": 0.553
+    },
+    "cola, sucré, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "cucurbitacées, graine": {
+      "environmentScoreMptPerKg": 0.834,
+      "climateKgCo2EqPerKg": 3.49,
+      "landUsePtPerKg": 572.0,
+      "waterDeprivationM3PerKg": 8.25
+    },
+    "escargot en sauce au beurre persillé, cuit": {
+      "environmentScoreMptPerKg": 0.534,
+      "climateKgCo2EqPerKg": 5.03,
+      "landUsePtPerKg": 208.0,
+      "waterDeprivationM3PerKg": 0.773
+    },
+    "jus de raisin, pur jus": {
+      "environmentScoreMptPerKg": 0.0993,
+      "climateKgCo2EqPerKg": 0.58,
+      "landUsePtPerKg": 71.3,
+      "waterDeprivationM3PerKg": 0.298
+    },
+    "loup tacheté, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "mortadelle": {
+      "environmentScoreMptPerKg": 0.909,
+      "climateKgCo2EqPerKg": 6.91,
+      "landUsePtPerKg": 330.0,
+      "waterDeprivationM3PerKg": 2.26
+    },
+    "quenelle de veau, en sauce": {
+      "environmentScoreMptPerKg": 0.708,
+      "climateKgCo2EqPerKg": 6.76,
+      "landUsePtPerKg": 317.0,
+      "waterDeprivationM3PerKg": 1.04
+    },
+    "sel au céleri": {
+      "environmentScoreMptPerKg": 0.0708,
+      "climateKgCo2EqPerKg": 0.632,
+      "landUsePtPerKg": 14.3,
+      "waterDeprivationM3PerKg": 0.0776
+    },
+    "tarte épinard chèvre": {
+      "environmentScoreMptPerKg": 0.494,
+      "climateKgCo2EqPerKg": 4.2,
+      "landUsePtPerKg": 242.0,
+      "waterDeprivationM3PerKg": 0.672
+    }
+  }
+}

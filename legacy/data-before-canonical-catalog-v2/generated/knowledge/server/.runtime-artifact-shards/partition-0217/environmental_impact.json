@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "chocolat noir fourré praliné, tablette": {
+      "environmentScoreMptPerKg": 0.98,
+      "climateKgCo2EqPerKg": 19.1,
+      "landUsePtPerKg": 725.0,
+      "waterDeprivationM3PerKg": 0.876
+    },
+    "dinde, escalope, sautée/poêlée": {
+      "environmentScoreMptPerKg": 1.26,
+      "climateKgCo2EqPerKg": 7.53,
+      "landUsePtPerKg": 447.0,
+      "waterDeprivationM3PerKg": 3.32
+    },
+    "huile de saumon": {
+      "environmentScoreMptPerKg": 0.298,
+      "climateKgCo2EqPerKg": 3.05,
+      "landUsePtPerKg": 16.8,
+      "waterDeprivationM3PerKg": 1.03
+    },
+    "sauce vinaigrette (50 à 75% d'huile), préemballée": {
+      "environmentScoreMptPerKg": 0.403,
+      "climateKgCo2EqPerKg": 2.36,
+      "landUsePtPerKg": 334.0,
+      "waterDeprivationM3PerKg": 3.73
+    },
+    "thon albacore ou thon jaune, au naturel, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.857,
+      "climateKgCo2EqPerKg": 6.26,
+      "landUsePtPerKg": 13.3,
+      "waterDeprivationM3PerKg": 0.375
+    },
+    "épinard, cuit": {
+      "environmentScoreMptPerKg": 0.11,
+      "climateKgCo2EqPerKg": 1.14,
+      "landUsePtPerKg": -14.4,
+      "waterDeprivationM3PerKg": 0.525
+    }
+  }
+}

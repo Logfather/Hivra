@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "huile de sardine": {
+      "environmentScoreMptPerKg": 0.298,
+      "climateKgCo2EqPerKg": 3.05,
+      "landUsePtPerKg": 16.8,
+      "waterDeprivationM3PerKg": 1.03
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop léger, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.221,
+      "climateKgCo2EqPerKg": 1.2,
+      "landUsePtPerKg": 100.0,
+      "waterDeprivationM3PerKg": 5.02
+    },
+    "manioc, racine cuite": {
+      "environmentScoreMptPerKg": 0.138,
+      "climateKgCo2EqPerKg": 0.942,
+      "landUsePtPerKg": 29.4,
+      "waterDeprivationM3PerKg": 2.91
+    },
+    "matière grasse mélangée (végétale et laitière) à 50 63% mg": {
+      "environmentScoreMptPerKg": 0.354,
+      "climateKgCo2EqPerKg": 3.93,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 0.703
+    },
+    "mûre (de ronce), surgelée, crue": {
+      "environmentScoreMptPerKg": 0.328,
+      "climateKgCo2EqPerKg": 1.24,
+      "landUsePtPerKg": 113.0,
+      "waterDeprivationM3PerKg": 5.14
+    },
+    "oie, viande crue": {
+      "environmentScoreMptPerKg": 0.922,
+      "climateKgCo2EqPerKg": 5.31,
+      "landUsePtPerKg": 333.0,
+      "waterDeprivationM3PerKg": 2.38
+    },
+    "pastèque, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.0751,
+      "climateKgCo2EqPerKg": 0.68,
+      "landUsePtPerKg": 32.5,
+      "waterDeprivationM3PerKg": 1.07
+    },
+    "sandwich pain de mie, garnitures diverses": {
+      "environmentScoreMptPerKg": 0.354,
+      "climateKgCo2EqPerKg": 2.57,
+      "landUsePtPerKg": 139.0,
+      "waterDeprivationM3PerKg": 0.967
+    },
+    "tamarin, fruit immature, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.0801,
+      "climateKgCo2EqPerKg": 0.528,
+      "landUsePtPerKg": 97.8,
+      "waterDeprivationM3PerKg": 1.21
+    },
+    "tarte aux fruits et crème pâtissière": {
+      "environmentScoreMptPerKg": 0.454,
+      "climateKgCo2EqPerKg": 2.94,
+      "landUsePtPerKg": 157.0,
+      "waterDeprivationM3PerKg": 1.95
+    },
+    "veau, carré, sauté/poêlé": {
+      "environmentScoreMptPerKg": 2.19,
+      "climateKgCo2EqPerKg": 23.6,
+      "landUsePtPerKg": 1070.0,
+      "waterDeprivationM3PerKg": 3.21
+    }
+  }
+}

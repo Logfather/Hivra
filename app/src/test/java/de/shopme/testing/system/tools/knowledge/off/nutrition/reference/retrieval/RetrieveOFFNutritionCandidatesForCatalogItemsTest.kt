@@ -1,5 +1,6 @@
 package de.shopme.testing.system.tools.knowledge.off.nutrition.reference.retrieval
 
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.off.nutrition.reference.retrieval.CatalogOFFNutritionCandidateRetriever
 import de.shopme.tools.knowledge.off.nutrition.reference.retrieval.CatalogOFFNutritionRetrievalDatasetWriter
 import de.shopme.tools.knowledge.off.nutrition.reference.retrieval.CatalogOFFNutritionRetrievalItemReader
@@ -20,9 +21,7 @@ class RetrieveOFFNutritionCandidatesForCatalogItemsTest {
                 .canonicalFile
 
         val catalogFile =
-            resolveCatalogFile(
-                projectRoot
-            )
+            resolveCatalogFile()
 
         val sourceCandidateFile =
             projectRoot.resolve(
@@ -140,14 +139,12 @@ class RetrieveOFFNutritionCandidatesForCatalogItemsTest {
         assertTrue(reportFile.isFile)
     }
 
-    private fun resolveCatalogFile(
-        projectRoot: File
-    ): File {
+    private fun resolveCatalogFile(): File {
 
         val catalogFile =
-            projectRoot.resolve(
-                "app/src/main/assets/catalog/catalog.json"
-            )
+            KnowledgeBuildPaths
+                .default()
+                .canonicalFoodCatalog
 
         require(catalogFile.isFile) {
             "Catalog file not found: ${catalogFile.absolutePath}"

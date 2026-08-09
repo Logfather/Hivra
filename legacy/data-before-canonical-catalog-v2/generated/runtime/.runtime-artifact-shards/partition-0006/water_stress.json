@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "boisson au soja, nature, enrichie en calcium": {
+      "score": 0.0815
+    },
+    "farine de seigle t170": {
+      "score": 0.174
+    },
+    "fruit de la passion ou maracudja, pulpe et pépins, cru": {
+      "score": 2.98
+    },
+    "fève, pelée, surgelée, cuite à l'eau": {
+      "score": 0.0891
+    },
+    "glace à l'eau": {
+      "score": 1.1
+    },
+    "lait demi écrémé, uht": {
+      "score": 0.156
+    },
+    "moule, appertisée, égouttée": {
+      "score": 1.33
+    },
+    "pain pour hamburger ou hot dog (bun), préemballé": {
+      "score": 0.392
+    },
+    "pâtes fraîches farcies (ex : ravioli), aux légumes, crues": {
+      "score": 1.07
+    },
+    "salami": {
+      "score": 2.65
+    },
+    "sauce végétale type bolognaise, préemballée": {
+      "score": 1.54
+    },
+    "sirop pour fruits appertisés au sirop": {
+      "score": 0.423
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "coriandre, graine": {
+      "environmentScoreMptPerKg": 0.2,
+      "climateKgCo2EqPerKg": 2.13,
+      "landUsePtPerKg": 19.2,
+      "waterDeprivationM3PerKg": 1.47
+    },
+    "crème anglaise, préemballée": {
+      "environmentScoreMptPerKg": 0.201,
+      "climateKgCo2EqPerKg": 1.81,
+      "landUsePtPerKg": 71.1,
+      "waterDeprivationM3PerKg": 0.546
+    },
+    "fromage blanc ou spécialité laitière, aux fruits, sucré, gourmand, 7% mg environ": {
+      "environmentScoreMptPerKg": 0.193,
+      "climateKgCo2EqPerKg": 1.57,
+      "landUsePtPerKg": 87.5,
+      "waterDeprivationM3PerKg": 0.826
+    },
+    "lentille, sèche": {
+      "environmentScoreMptPerKg": 0.152,
+      "climateKgCo2EqPerKg": 0.581,
+      "landUsePtPerKg": 309.0,
+      "waterDeprivationM3PerKg": 0.13
+    },
+    "nuggets soja et blé (ne convient pas aux véganes ou végétaliens), préemballé": {
+      "environmentScoreMptPerKg": 0.267,
+      "climateKgCo2EqPerKg": 1.92,
+      "landUsePtPerKg": 146.0,
+      "waterDeprivationM3PerKg": 0.623
+    },
+    "oeuf, blanc (blanc d'oeuf), en poudre": {
+      "environmentScoreMptPerKg": 2.02,
+      "climateKgCo2EqPerKg": 12.1,
+      "landUsePtPerKg": 1050.0,
+      "waterDeprivationM3PerKg": 5.43
+    },
+    "sandwich pain de mie complet, thon, crudités, mayonnaise": {
+      "environmentScoreMptPerKg": 0.419,
+      "climateKgCo2EqPerKg": 2.7,
+      "landUsePtPerKg": 81.2,
+      "waterDeprivationM3PerKg": 0.823
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux fruits, sucré, enrichi en vitamine d": {
+      "environmentScoreMptPerKg": 0.212,
+      "climateKgCo2EqPerKg": 1.89,
+      "landUsePtPerKg": 72.1,
+      "waterDeprivationM3PerKg": 1.64
+    }
+  }
+}

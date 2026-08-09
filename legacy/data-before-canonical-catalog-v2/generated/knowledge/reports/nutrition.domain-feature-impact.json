@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "sourceComparisonReportVersion": 1,
+  "domainFeatureCount": 11,
+  "harmfulCount": 4,
+  "neutralCount": 7,
+  "beneficialCount": 0,
+  "harmfulFeatureNames": [
+    "domain_cross_domain_mismatch_count",
+    "domain_compatible_relationship_count",
+    "domain_unknown_token_involved_count",
+    "domain_identity_conflict_count"
+  ],
+  "neutralFeatureNames": [
+    "domain_diet_or_substitute_difference_count",
+    "domain_same_domain_different_entity_count",
+    "domain_form_or_processing_difference_count",
+    "domain_region_or_style_difference_count",
+    "domain_non_semantic_token_difference_count",
+    "domain_unknown_mismatch_count",
+    "domain_modifier_difference_count"
+  ],
+  "beneficialFeatureNames": [],
+  "impacts": [
+    {
+      "featureName": "domain_diet_or_substitute_difference_count",
+      "deltaPrecision": 0.0,
+      "deltaRecall": 0.0,
+      "deltaF1": 0.0,
+      "deltaBalancedAccuracy": 0.0,
+      "deltaFalsePositiveCount": 0,
+      "deltaFalseNegativeCount": 0,
+      "classification": "NEUTRAL"
+    },
+    {
+      "featureName": "domain_cross_domain_mismatch_count",
+      "deltaPrecision": -0.006800744013020221,
+      "deltaRecall": 0.0,
+      "deltaF1": -0.006211180124223614,
+      "deltaBalancedAccuracy": -0.0020661157024792765,
+      "deltaFalsePositiveCount": 3,
+      "deltaFalseNegativeCount": 0,
+      "classification": "HARMFUL"
+    },
+    {
+      "featureName": "domain_same_domain_different_entity_count",
+      "deltaPrecision": 0.0,
+      "deltaRecall": 0.0,
+      "deltaF1": 0.0,
+      "deltaBalancedAccuracy": 0.0,
+      "deltaFalsePositiveCount": 0,
+      "deltaFalseNegativeCount": 0,
+      "classification": "NEUTRAL"
+    },
+    {
+      "featureName": "domain_form_or_processing_difference_count",
+      "deltaPrecision": 0.0,
+      "deltaRecall": 0.0,
+      "deltaF1": 0.0,
+      "deltaBalancedAccuracy": 0.0,
+      "deltaFalsePositiveCount": 0,
+      "deltaFalseNegativeCount": 0,
+      "classification": "NEUTRAL"
+    },
+    {
+      "featureName": "domain_region_or_style_difference_count",
+      "deltaPrecision": 0.0,
+      "deltaRecall": 0.0,
+      "deltaF1": 0.0,
+      "deltaBalancedAccuracy": 0.0,
+      "deltaFalsePositiveCount": 0,
+      "deltaFalseNegativeCount": 0,
+      "classification": "NEUTRAL"
+    },
+    {
+      "featureName": "domain_compatible_relationship_count",
+      "deltaPrecision": -0.0022914218566392197,
+      "deltaRecall": 0.0,
+      "deltaF1": -0.002085505735140769,
+      "deltaBalancedAccuracy": -6.887052341597588E-4,
+      "deltaFalsePositiveCount": 1,
+      "deltaFalseNegativeCount": 0,
+      "classification": "HARMFUL"
+    },
+    {
+      "featureName": "domain_unknown_token_involved_count",
+      "deltaPrecision": -0.006800744013020221,
+      "deltaRecall": 0.0,
+      "deltaF1": -0.006211180124223614,
+      "deltaBalancedAccuracy": -0.0020661157024792765,
+      "deltaFalsePositiveCount": 3,
+      "deltaFalseNegativeCount": 0,
+      "classification": "HARMFUL"
+    },
+    {
+      "featureName": "domain_non_semantic_token_difference_count",
+      "deltaPrecision": 0.0,
+      "deltaRecall": 0.0,
+      "deltaF1": 0.0,
+      "deltaBalancedAccuracy": 0.0,
+      "deltaFalsePositiveCount": 0,
+      "deltaFalseNegativeCount": 0,
+      "classification": "NEUTRAL"
+    },
+    {
+      "featureName": "domain_unknown_mismatch_count",
+      "deltaPrecision": 0.0,
+      "deltaRecall": 0.0,
+      "deltaF1": 0.0,
+      "deltaBalancedAccuracy": 0.0,
+      "deltaFalsePositiveCount": 0,
+      "deltaFalseNegativeCount": 0,
+      "classification": "NEUTRAL"
+    },
+    {
+      "featureName": "domain_identity_conflict_count",
+      "deltaPrecision": -0.013386727688787181,
+      "deltaRecall": 0.0,
+      "deltaF1": -0.012288786482335001,
+      "deltaBalancedAccuracy": -0.004132231404958553,
+      "deltaFalsePositiveCount": 6,
+      "deltaFalseNegativeCount": 0,
+      "classification": "HARMFUL"
+    },
+    {
+      "featureName": "domain_modifier_difference_count",
+      "deltaPrecision": 0.0,
+      "deltaRecall": 0.0,
+      "deltaF1": 0.0,
+      "deltaBalancedAccuracy": 0.0,
+      "deltaFalsePositiveCount": 0,
+      "deltaFalseNegativeCount": 0,
+      "classification": "NEUTRAL"
+    }
+  ]
+}

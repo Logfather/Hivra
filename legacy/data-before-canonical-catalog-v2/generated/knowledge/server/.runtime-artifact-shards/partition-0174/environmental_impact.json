@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "frik (blé dur immature concassé), cru": {
+      "environmentScoreMptPerKg": 0.211,
+      "climateKgCo2EqPerKg": 1.47,
+      "landUsePtPerKg": 198.0,
+      "waterDeprivationM3PerKg": 0.849
+    },
+    "ketchup": {
+      "environmentScoreMptPerKg": 0.173,
+      "climateKgCo2EqPerKg": 1.19,
+      "landUsePtPerKg": 26.3,
+      "waterDeprivationM3PerKg": 0.908
+    },
+    "noix de pécan, salées": {
+      "environmentScoreMptPerKg": 0.534,
+      "climateKgCo2EqPerKg": 3.66,
+      "landUsePtPerKg": 652.0,
+      "waterDeprivationM3PerKg": 8.95
+    },
+    "saindoux": {
+      "environmentScoreMptPerKg": 0.271,
+      "climateKgCo2EqPerKg": 2.55,
+      "landUsePtPerKg": 78.7,
+      "waterDeprivationM3PerKg": 0.673
+    },
+    "salicorne (salicornia sp.), fraîche": {
+      "environmentScoreMptPerKg": 0.162,
+      "climateKgCo2EqPerKg": 1.23,
+      "landUsePtPerKg": 4.52,
+      "waterDeprivationM3PerKg": 0.424
+    }
+  }
+}

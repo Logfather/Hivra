@@ -1,0 +1,100 @@
+{
+  "entries": {
+    "andouille, réchauffée à la poêle": {
+      "environmentScoreMptPerKg": 1.36,
+      "climateKgCo2EqPerKg": 11.9,
+      "landUsePtPerKg": 699.0,
+      "waterDeprivationM3PerKg": 2.72
+    },
+    "biscuit pour bébé": {
+      "environmentScoreMptPerKg": 0.314,
+      "climateKgCo2EqPerKg": 3.03,
+      "landUsePtPerKg": 96.8,
+      "waterDeprivationM3PerKg": 1.82
+    },
+    "bière \"coeur de marché\" (4 5° alcool)": {
+      "environmentScoreMptPerKg": 0.127,
+      "climateKgCo2EqPerKg": 1.35,
+      "landUsePtPerKg": 17.0,
+      "waterDeprivationM3PerKg": 0.258
+    },
+    "café décaféiné, non instantané, non sucré, prêt à boire": {
+      "environmentScoreMptPerKg": 0.0999,
+      "climateKgCo2EqPerKg": 0.683,
+      "landUsePtPerKg": 25.2,
+      "waterDeprivationM3PerKg": 0.614
+    },
+    "dessert glacé, type sundae": {
+      "environmentScoreMptPerKg": 0.235,
+      "climateKgCo2EqPerKg": 1.98,
+      "landUsePtPerKg": 90.8,
+      "waterDeprivationM3PerKg": 0.622
+    },
+    "harissa (sauce condimentaire)": {
+      "environmentScoreMptPerKg": 0.308,
+      "climateKgCo2EqPerKg": 1.36,
+      "landUsePtPerKg": 180.0,
+      "waterDeprivationM3PerKg": 6.47
+    },
+    "pain au lait, préemballé": {
+      "environmentScoreMptPerKg": 0.256,
+      "climateKgCo2EqPerKg": 2.32,
+      "landUsePtPerKg": 136.0,
+      "waterDeprivationM3PerKg": 0.526
+    },
+    "papaye, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.102,
+      "climateKgCo2EqPerKg": 0.926,
+      "landUsePtPerKg": 14.5,
+      "waterDeprivationM3PerKg": 1.87
+    },
+    "pomelo (dit pamplemousse) rose, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.28,
+      "climateKgCo2EqPerKg": 0.926,
+      "landUsePtPerKg": 33.5,
+      "waterDeprivationM3PerKg": 21.3
+    },
+    "pomelo (dit pamplemousse), pulpe, cru": {
+      "environmentScoreMptPerKg": 0.28,
+      "climateKgCo2EqPerKg": 0.926,
+      "landUsePtPerKg": 33.5,
+      "waterDeprivationM3PerKg": 21.3
+    },
+    "quenelle nature, crue": {
+      "environmentScoreMptPerKg": 0.287,
+      "climateKgCo2EqPerKg": 2.42,
+      "landUsePtPerKg": 127.0,
+      "waterDeprivationM3PerKg": 0.497
+    },
+    "rognon, veau, braisé ou sauté/poêlé": {
+      "environmentScoreMptPerKg": 2.88,
+      "climateKgCo2EqPerKg": 31.1,
+      "landUsePtPerKg": 1420.0,
+      "waterDeprivationM3PerKg": 4.21
+    },
+    "sauce barbecue, préemballée": {
+      "environmentScoreMptPerKg": 0.238,
+      "climateKgCo2EqPerKg": 1.41,
+      "landUsePtPerKg": 71.9,
+      "waterDeprivationM3PerKg": 2.04
+    },
+    "sirop léger pour fruits appertisés au sirop": {
+      "environmentScoreMptPerKg": 0.141,
+      "climateKgCo2EqPerKg": 0.934,
+      "landUsePtPerKg": 6.58,
+      "waterDeprivationM3PerKg": 0.423
+    },
+    "vinaigre de cidre": {
+      "environmentScoreMptPerKg": 0.0833,
+      "climateKgCo2EqPerKg": 0.841,
+      "landUsePtPerKg": 20.6,
+      "waterDeprivationM3PerKg": 0.69
+    },
+    "édulcorant à la saccharine": {
+      "environmentScoreMptPerKg": 0.126,
+      "climateKgCo2EqPerKg": 0.746,
+      "landUsePtPerKg": 31.9,
+      "waterDeprivationM3PerKg": 1.8
+    }
+  }
+}

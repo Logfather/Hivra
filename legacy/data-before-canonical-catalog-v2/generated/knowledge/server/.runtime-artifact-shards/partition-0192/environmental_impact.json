@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "croque monsieur, rayon frais": {
+      "environmentScoreMptPerKg": 0.53,
+      "climateKgCo2EqPerKg": 4.47,
+      "landUsePtPerKg": 217.0,
+      "waterDeprivationM3PerKg": 0.951
+    },
+    "flan pâtissier aux oeufs ou à la parisienne": {
+      "environmentScoreMptPerKg": 0.28,
+      "climateKgCo2EqPerKg": 2.17,
+      "landUsePtPerKg": 87.5,
+      "waterDeprivationM3PerKg": 0.607
+    },
+    "pain panini": {
+      "environmentScoreMptPerKg": 0.16,
+      "climateKgCo2EqPerKg": 1.23,
+      "landUsePtPerKg": 97.1,
+      "waterDeprivationM3PerKg": 1.56
+    },
+    "tarte tatin aux pommes": {
+      "environmentScoreMptPerKg": 0.299,
+      "climateKgCo2EqPerKg": 2.38,
+      "landUsePtPerKg": 93.5,
+      "waterDeprivationM3PerKg": 0.941
+    },
+    "veau, poitrine, crue": {
+      "environmentScoreMptPerKg": 1.72,
+      "climateKgCo2EqPerKg": 18.6,
+      "landUsePtPerKg": 846.0,
+      "waterDeprivationM3PerKg": 2.53
+    }
+  }
+}

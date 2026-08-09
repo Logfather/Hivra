@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "asperge, pelée, crue": {
+      "environmentScoreMptPerKg": 0.289,
+      "climateKgCo2EqPerKg": 1.51,
+      "landUsePtPerKg": 235.0,
+      "waterDeprivationM3PerKg": 4.36
+    },
+    "boeuf, paleron, braisé ou bouilli": {
+      "environmentScoreMptPerKg": 4.29,
+      "climateKgCo2EqPerKg": 46.0,
+      "landUsePtPerKg": 2980.0,
+      "waterDeprivationM3PerKg": 3.79
+    },
+    "bouchées ou émincé au soja et blé (ne convient pas aux véganes ou végétaliens), préemballé": {
+      "environmentScoreMptPerKg": 0.323,
+      "climateKgCo2EqPerKg": 1.91,
+      "landUsePtPerKg": 101.0,
+      "waterDeprivationM3PerKg": 0.538
+    },
+    "croûton à l'ail aux fines herbes ou aux oignons, préemballé": {
+      "environmentScoreMptPerKg": 0.432,
+      "climateKgCo2EqPerKg": 1.06,
+      "landUsePtPerKg": 446.0,
+      "waterDeprivationM3PerKg": 15.3
+    },
+    "dorade grise, ou daurade grise, ou griset, crue": {
+      "environmentScoreMptPerKg": 1.31,
+      "climateKgCo2EqPerKg": 7.48,
+      "landUsePtPerKg": 13.1,
+      "waterDeprivationM3PerKg": 0.707
+    },
+    "foie, porc, cuit": {
+      "environmentScoreMptPerKg": 0.496,
+      "climateKgCo2EqPerKg": 3.91,
+      "landUsePtPerKg": 184.0,
+      "waterDeprivationM3PerKg": 1.26
+    },
+    "rhum": {
+      "environmentScoreMptPerKg": 0.12,
+      "climateKgCo2EqPerKg": 1.26,
+      "landUsePtPerKg": 18.4,
+      "waterDeprivationM3PerKg": 0.169
+    },
+    "rillettes pur oie": {
+      "environmentScoreMptPerKg": 0.478,
+      "climateKgCo2EqPerKg": 3.49,
+      "landUsePtPerKg": 153.0,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "sandwich baguette, thon, crudités (tomate, salade), mayonnaise": {
+      "environmentScoreMptPerKg": 0.487,
+      "climateKgCo2EqPerKg": 3.44,
+      "landUsePtPerKg": 101.0,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "sandwich pain de mie complet, poulet, crudités, mayonnaise": {
+      "environmentScoreMptPerKg": 0.511,
+      "climateKgCo2EqPerKg": 3.08,
+      "landUsePtPerKg": 200.0,
+      "waterDeprivationM3PerKg": 1.62
+    },
+    "saucisse de montbéliard": {
+      "environmentScoreMptPerKg": 0.701,
+      "climateKgCo2EqPerKg": 5.37,
+      "landUsePtPerKg": 271.0,
+      "waterDeprivationM3PerKg": 1.77
+    },
+    "topinambour, cru": {
+      "environmentScoreMptPerKg": 0.0557,
+      "climateKgCo2EqPerKg": 0.491,
+      "landUsePtPerKg": 28.8,
+      "waterDeprivationM3PerKg": 0.0558
+    }
+  }
+}

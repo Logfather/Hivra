@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "arachide, bouillie/cuite à l'eau, salée": {
+      "litersPerKilogram": 14600.0
+    },
+    "biscotte multicéréale": {
+      "litersPerKilogram": 557.0
+    },
+    "boisson lactée, lait fermenté ou yaourt à boire, aux fruits, sucré": {
+      "litersPerKilogram": 1710.0
+    },
+    "champignon, morille, crue": {
+      "litersPerKilogram": 56200.0
+    },
+    "crottin de chèvre, au lait cru": {
+      "litersPerKilogram": 3120.0
+    },
+    "fromage de chèvre lactique affiné, au lait pasteurisé (type bûchette ou crottin)": {
+      "litersPerKilogram": 2430.0
+    },
+    "gaufrette fourrée fruits à coque (noisette, amande, praline, etc.), chocolatée ou non, préemballée": {
+      "litersPerKilogram": 8170.0
+    },
+    "poivron rouge, cru": {
+      "litersPerKilogram": 294.0
+    },
+    "pomme de terre, purée, avec lait et beurre, non salée": {
+      "litersPerKilogram": 434.0
+    },
+    "truite d'élevage, fumée (version \"logiciel\" avec erreur sur l'emballage)": {
+      "litersPerKilogram": 40400.0
+    },
+    "yakitori (brochettes japonaises grillées en sauce)": {
+      "litersPerKilogram": 3200.0
+    }
+  }
+}

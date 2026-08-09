@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "aubergine, crue": {
+      "environmentScoreMptPerKg": 0.0536,
+      "climateKgCo2EqPerKg": 0.472,
+      "landUsePtPerKg": 15.1,
+      "waterDeprivationM3PerKg": 0.551
+    },
+    "chipolata, cuite": {
+      "environmentScoreMptPerKg": 0.914,
+      "climateKgCo2EqPerKg": 7.23,
+      "landUsePtPerKg": 365.0,
+      "waterDeprivationM3PerKg": 2.39
+    },
+    "crêpe dentelle": {
+      "environmentScoreMptPerKg": 0.301,
+      "climateKgCo2EqPerKg": 2.87,
+      "landUsePtPerKg": 120.0,
+      "waterDeprivationM3PerKg": 1.34
+    },
+    "céleri branche, cru": {
+      "environmentScoreMptPerKg": 0.0702,
+      "climateKgCo2EqPerKg": 0.715,
+      "landUsePtPerKg": 9.77,
+      "waterDeprivationM3PerKg": 0.457
+    },
+    "fromage type feta, au lait de vache": {
+      "environmentScoreMptPerKg": 0.536,
+      "climateKgCo2EqPerKg": 5.56,
+      "landUsePtPerKg": 238.0,
+      "waterDeprivationM3PerKg": 0.735
+    },
+    "griotte, crue": {
+      "environmentScoreMptPerKg": 0.272,
+      "climateKgCo2EqPerKg": 1.04,
+      "landUsePtPerKg": 1010.0,
+      "waterDeprivationM3PerKg": 6.51
+    },
+    "jus de tomate, pur jus (aliment moyen)": {
+      "environmentScoreMptPerKg": 0.109,
+      "climateKgCo2EqPerKg": 0.634,
+      "landUsePtPerKg": 13.5,
+      "waterDeprivationM3PerKg": 4.03
+    },
+    "morbier": {
+      "environmentScoreMptPerKg": 0.644,
+      "climateKgCo2EqPerKg": 6.35,
+      "landUsePtPerKg": 281.0,
+      "waterDeprivationM3PerKg": 0.86
+    },
+    "porc, jambon sans jarret, sans bateau, découenné, dégraisssé, désossé, cru": {
+      "environmentScoreMptPerKg": 1.03,
+      "climateKgCo2EqPerKg": 8.3,
+      "landUsePtPerKg": 436.0,
+      "waterDeprivationM3PerKg": 2.71
+    },
+    "saucisse végétale au blé ou seitan, préemballé": {
+      "environmentScoreMptPerKg": 0.311,
+      "climateKgCo2EqPerKg": 2.51,
+      "landUsePtPerKg": 188.0,
+      "waterDeprivationM3PerKg": 0.644
+    },
+    "sel marin gris, non iodé, non fluoré": {
+      "environmentScoreMptPerKg": 0.0708,
+      "climateKgCo2EqPerKg": 0.632,
+      "landUsePtPerKg": 14.3,
+      "waterDeprivationM3PerKg": 0.0776
+    },
+    "sirop à diluer, sucré": {
+      "environmentScoreMptPerKg": 0.12,
+      "climateKgCo2EqPerKg": 0.833,
+      "landUsePtPerKg": 27.9,
+      "waterDeprivationM3PerKg": 1.44
+    }
+  }
+}

@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import java.io.File
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -28,9 +29,9 @@ class RunRemainingLiverSausageNoRequestDiagnosticTest {
         val files =
             DiagnosticFiles(
                 catalogFile =
-                    projectRoot.resolve(
-                        "app/src/main/assets/catalog/catalog.json"
-                    ),
+                    KnowledgeBuildPaths
+                        .default()
+                        .canonicalFoodCatalog,
                 serverNutritionFile =
                     projectRoot.resolve(
                         "data/generated/knowledge/server/nutrition.json"

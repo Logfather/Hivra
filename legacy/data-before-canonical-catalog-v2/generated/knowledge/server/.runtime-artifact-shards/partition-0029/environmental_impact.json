@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "biscotte briochée": {
+      "environmentScoreMptPerKg": 0.156,
+      "climateKgCo2EqPerKg": 1.44,
+      "landUsePtPerKg": 76.5,
+      "waterDeprivationM3PerKg": 0.557
+    },
+    "cacao, non sucré, poudre soluble": {
+      "environmentScoreMptPerKg": 1.45,
+      "climateKgCo2EqPerKg": 29.1,
+      "landUsePtPerKg": 1050.0,
+      "waterDeprivationM3PerKg": 0.742
+    },
+    "gracilaire ou ogonori (gracilaria verrucosa), séchée ou déshydratée": {
+      "environmentScoreMptPerKg": 1.55,
+      "climateKgCo2EqPerKg": 11.8,
+      "landUsePtPerKg": 26.7,
+      "waterDeprivationM3PerKg": 4.83
+    },
+    "merguez, pur bœuf, crue": {
+      "environmentScoreMptPerKg": 2.96,
+      "climateKgCo2EqPerKg": 31.6,
+      "landUsePtPerKg": 2070.0,
+      "waterDeprivationM3PerKg": 2.71
+    },
+    "pomme de terre, flocons déshydratés, au lait ou à la crème": {
+      "environmentScoreMptPerKg": 0.36,
+      "climateKgCo2EqPerKg": 2.6,
+      "landUsePtPerKg": 76.7,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "veau, côte, grillée/poêlée": {
+      "environmentScoreMptPerKg": 2.73,
+      "climateKgCo2EqPerKg": 29.6,
+      "landUsePtPerKg": 1340.0,
+      "waterDeprivationM3PerKg": 4.01
+    }
+  }
+}

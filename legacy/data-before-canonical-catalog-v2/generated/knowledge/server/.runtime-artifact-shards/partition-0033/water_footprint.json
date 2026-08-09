@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "abricot, dénoyauté, sec": {
+      "litersPerKilogram": 10800.0
+    },
+    "bœuf, steak haché 10% mg, cuit": {
+      "litersPerKilogram": 3770.0
+    },
+    "cardine franche, crue": {
+      "litersPerKilogram": 470.0
+    },
+    "gorgonzola": {
+      "litersPerKilogram": 758.0
+    },
+    "lentille corail, sèche": {
+      "litersPerKilogram": 130.0
+    },
+    "poisson pané, frit": {
+      "litersPerKilogram": 557.0
+    },
+    "saucisse de foie": {
+      "litersPerKilogram": 1570.0
+    },
+    "semoule au lait, rayon frais": {
+      "litersPerKilogram": 514.0
+    }
+  }
+}

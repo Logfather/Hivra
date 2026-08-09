@@ -1,0 +1,94 @@
+{
+  "entries": {
+    "ail séché, poudre": {
+      "environmentScoreMptPerKg": 0.158,
+      "climateKgCo2EqPerKg": 1.77,
+      "landUsePtPerKg": 24.0,
+      "waterDeprivationM3PerKg": 0.83
+    },
+    "boeuf, paleron, cru": {
+      "environmentScoreMptPerKg": 3.38,
+      "climateKgCo2EqPerKg": 36.2,
+      "landUsePtPerKg": 2360.0,
+      "waterDeprivationM3PerKg": 2.99
+    },
+    "boisson à l'eau minérale ou de source, aromatisée, sucrée": {
+      "environmentScoreMptPerKg": 0.0498,
+      "climateKgCo2EqPerKg": 0.377,
+      "landUsePtPerKg": 1.7,
+      "waterDeprivationM3PerKg": 0.0848
+    },
+    "cheddar": {
+      "environmentScoreMptPerKg": 0.672,
+      "climateKgCo2EqPerKg": 6.65,
+      "landUsePtPerKg": 299.0,
+      "waterDeprivationM3PerKg": 0.888
+    },
+    "courge, crue": {
+      "environmentScoreMptPerKg": 0.0665,
+      "climateKgCo2EqPerKg": 0.639,
+      "landUsePtPerKg": 17.4,
+      "waterDeprivationM3PerKg": 0.63
+    },
+    "glace ou crème glacée, gourmande, en pot": {
+      "environmentScoreMptPerKg": 0.235,
+      "climateKgCo2EqPerKg": 1.98,
+      "landUsePtPerKg": 90.8,
+      "waterDeprivationM3PerKg": 0.622
+    },
+    "haricot beurre, cru": {
+      "environmentScoreMptPerKg": 0.0848,
+      "climateKgCo2EqPerKg": 0.544,
+      "landUsePtPerKg": 97.9,
+      "waterDeprivationM3PerKg": 1.22
+    },
+    "igname, épluchée, crue": {
+      "environmentScoreMptPerKg": 0.0764,
+      "climateKgCo2EqPerKg": 0.497,
+      "landUsePtPerKg": 19.0,
+      "waterDeprivationM3PerKg": 1.89
+    },
+    "jambon cuit, de paris, découenné dégraissé": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "jambon cuit, supérieur, découenné dégraissé": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "nem ou pâté impérial, au porc, cuit": {
+      "environmentScoreMptPerKg": 0.452,
+      "climateKgCo2EqPerKg": 2.92,
+      "landUsePtPerKg": 112.0,
+      "waterDeprivationM3PerKg": 6.92
+    },
+    "omelette norvégienne": {
+      "environmentScoreMptPerKg": 0.301,
+      "climateKgCo2EqPerKg": 2.22,
+      "landUsePtPerKg": 67.7,
+      "waterDeprivationM3PerKg": 0.666
+    },
+    "pain grillé suédois aux fruits": {
+      "environmentScoreMptPerKg": 0.179,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 114.0,
+      "waterDeprivationM3PerKg": 0.465
+    },
+    "pan bagnat": {
+      "environmentScoreMptPerKg": 0.323,
+      "climateKgCo2EqPerKg": 1.9,
+      "landUsePtPerKg": 92.3,
+      "waterDeprivationM3PerKg": 2.12
+    },
+    "tielle sétoise": {
+      "environmentScoreMptPerKg": 0.504,
+      "climateKgCo2EqPerKg": 3.07,
+      "landUsePtPerKg": 108.0,
+      "waterDeprivationM3PerKg": 2.17
+    }
+  }
+}

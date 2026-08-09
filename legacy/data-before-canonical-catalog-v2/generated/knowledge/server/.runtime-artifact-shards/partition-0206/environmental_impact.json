@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "boulette végétale au soja et/ou blé, préemballée": {
+      "environmentScoreMptPerKg": 0.319,
+      "climateKgCo2EqPerKg": 2.25,
+      "landUsePtPerKg": 136.0,
+      "waterDeprivationM3PerKg": 0.717
+    },
+    "brioche, de boulangerie traditionnelle": {
+      "environmentScoreMptPerKg": 0.403,
+      "climateKgCo2EqPerKg": 3.36,
+      "landUsePtPerKg": 170.0,
+      "waterDeprivationM3PerKg": 0.781
+    },
+    "cannelle, poudre": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 9.4,
+      "landUsePtPerKg": 688.0,
+      "waterDeprivationM3PerKg": 4.38
+    },
+    "chou fleur, cuit": {
+      "environmentScoreMptPerKg": 0.135,
+      "climateKgCo2EqPerKg": 1.43,
+      "landUsePtPerKg": 40.3,
+      "waterDeprivationM3PerKg": 0.312
+    },
+    "farine de soja": {
+      "environmentScoreMptPerKg": 0.145,
+      "climateKgCo2EqPerKg": 1.38,
+      "landUsePtPerKg": 180.0,
+      "waterDeprivationM3PerKg": 0.215
+    },
+    "matière grasse végétale (type margarine) à 60% de mg, allégée, au tournesol, doux": {
+      "environmentScoreMptPerKg": 0.269,
+      "climateKgCo2EqPerKg": 2.26,
+      "landUsePtPerKg": 253.0,
+      "waterDeprivationM3PerKg": 0.952
+    },
+    "mimolette extra vieille": {
+      "environmentScoreMptPerKg": 0.673,
+      "climateKgCo2EqPerKg": 6.66,
+      "landUsePtPerKg": 299.0,
+      "waterDeprivationM3PerKg": 0.889
+    },
+    "orphie commune, crue": {
+      "environmentScoreMptPerKg": 0.308,
+      "climateKgCo2EqPerKg": 2.28,
+      "landUsePtPerKg": 6.79,
+      "waterDeprivationM3PerKg": 0.213
+    },
+    "pain grillé suédois aux graines de lin": {
+      "environmentScoreMptPerKg": 0.179,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 114.0,
+      "waterDeprivationM3PerKg": 0.465
+    },
+    "safran": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 9.4,
+      "landUsePtPerKg": 688.0,
+      "waterDeprivationM3PerKg": 4.38
+    }
+  }
+}

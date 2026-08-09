@@ -1,0 +1,100 @@
+{
+  "entries": {
+    "boeuf aux carottes": {
+      "environmentScoreMptPerKg": 2.2,
+      "climateKgCo2EqPerKg": 23.0,
+      "landUsePtPerKg": 1440.0,
+      "waterDeprivationM3PerKg": 7.52
+    },
+    "bouillon de volaille, déshydraté reconstitué": {
+      "environmentScoreMptPerKg": 0.012,
+      "climateKgCo2EqPerKg": 0.103,
+      "landUsePtPerKg": 1.15,
+      "waterDeprivationM3PerKg": 0.0783
+    },
+    "chou fleur, surgelé, cuit": {
+      "environmentScoreMptPerKg": 0.14,
+      "climateKgCo2EqPerKg": 1.14,
+      "landUsePtPerKg": 37.5,
+      "waterDeprivationM3PerKg": 0.228
+    },
+    "croissant ordinaire, artisanal": {
+      "environmentScoreMptPerKg": 0.277,
+      "climateKgCo2EqPerKg": 2.42,
+      "landUsePtPerKg": 93.0,
+      "waterDeprivationM3PerKg": 0.684
+    },
+    "dinde, cuisse, viande sans peau, crue": {
+      "environmentScoreMptPerKg": 0.954,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "foie, veau, cru": {
+      "environmentScoreMptPerKg": 2.09,
+      "climateKgCo2EqPerKg": 22.6,
+      "landUsePtPerKg": 1030.0,
+      "waterDeprivationM3PerKg": 3.06
+    },
+    "fromage rond à pâte molle et croûte fleurie 5 à 11% mg type camembert allégé en matière grasse": {
+      "environmentScoreMptPerKg": 0.477,
+      "climateKgCo2EqPerKg": 4.95,
+      "landUsePtPerKg": 232.0,
+      "waterDeprivationM3PerKg": 0.547
+    },
+    "liqueur": {
+      "environmentScoreMptPerKg": 0.215,
+      "climateKgCo2EqPerKg": 1.59,
+      "landUsePtPerKg": 55.8,
+      "waterDeprivationM3PerKg": 1.24
+    },
+    "mélange apéritif de graines (non salées) et fruits séchés": {
+      "environmentScoreMptPerKg": 0.569,
+      "climateKgCo2EqPerKg": 2.62,
+      "landUsePtPerKg": 380.0,
+      "waterDeprivationM3PerKg": 20.7
+    },
+    "noix de coco, amande mûre, fraîche": {
+      "environmentScoreMptPerKg": 0.424,
+      "climateKgCo2EqPerKg": 2.42,
+      "landUsePtPerKg": 182.0,
+      "waterDeprivationM3PerKg": 12.4
+    },
+    "ris, agneau, cru": {
+      "environmentScoreMptPerKg": 3.28,
+      "climateKgCo2EqPerKg": 27.1,
+      "landUsePtPerKg": 2870.0,
+      "waterDeprivationM3PerKg": 4.56
+    },
+    "sauce burger, préemballée": {
+      "environmentScoreMptPerKg": 0.453,
+      "climateKgCo2EqPerKg": 2.68,
+      "landUsePtPerKg": 369.0,
+      "waterDeprivationM3PerKg": 4.25
+    },
+    "sauce hollandaise, préemballée": {
+      "environmentScoreMptPerKg": 0.669,
+      "climateKgCo2EqPerKg": 6.29,
+      "landUsePtPerKg": 308.0,
+      "waterDeprivationM3PerKg": 1.0
+    },
+    "saucisson cuit pur porc": {
+      "environmentScoreMptPerKg": 1.23,
+      "climateKgCo2EqPerKg": 9.64,
+      "landUsePtPerKg": 485.0,
+      "waterDeprivationM3PerKg": 3.12
+    },
+    "sirop d'érable": {
+      "environmentScoreMptPerKg": 0.305,
+      "climateKgCo2EqPerKg": 2.3,
+      "landUsePtPerKg": 72.3,
+      "waterDeprivationM3PerKg": 2.5
+    },
+    "tofu fumé, préemballé": {
+      "environmentScoreMptPerKg": 0.206,
+      "climateKgCo2EqPerKg": 2.13,
+      "landUsePtPerKg": 114.0,
+      "waterDeprivationM3PerKg": 1.11
+    }
+  }
+}

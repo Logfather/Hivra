@@ -1,0 +1,88 @@
+{
+  "entries": {
+    "barre goûter frais au lait et chocolat avec génoise": {
+      "environmentScoreMptPerKg": 0.543,
+      "climateKgCo2EqPerKg": 7.25,
+      "landUsePtPerKg": 298.0,
+      "waterDeprivationM3PerKg": 0.991
+    },
+    "calmar ou calamar ou encornet, bouilli/cuit à l'eau": {
+      "environmentScoreMptPerKg": 1.1,
+      "climateKgCo2EqPerKg": 6.86,
+      "landUsePtPerKg": 9.73,
+      "waterDeprivationM3PerKg": 0.272
+    },
+    "farine de sarrasin": {
+      "environmentScoreMptPerKg": 0.145,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": 129.0,
+      "waterDeprivationM3PerKg": 0.587
+    },
+    "flocons d'avoine, bouillis/cuits à l'eau": {
+      "environmentScoreMptPerKg": 0.213,
+      "climateKgCo2EqPerKg": 1.01,
+      "landUsePtPerKg": 179.0,
+      "waterDeprivationM3PerKg": 0.573
+    },
+    "fève, pelée, surgelée, crue": {
+      "environmentScoreMptPerKg": 0.124,
+      "climateKgCo2EqPerKg": 1.01,
+      "landUsePtPerKg": -170.0,
+      "waterDeprivationM3PerKg": 0.156
+    },
+    "gâteau moelleux nature type génoise": {
+      "environmentScoreMptPerKg": 0.371,
+      "climateKgCo2EqPerKg": 2.94,
+      "landUsePtPerKg": 137.0,
+      "waterDeprivationM3PerKg": 0.996
+    },
+    "lait concentré non sucré, entier": {
+      "environmentScoreMptPerKg": 0.242,
+      "climateKgCo2EqPerKg": 2.53,
+      "landUsePtPerKg": 118.0,
+      "waterDeprivationM3PerKg": 0.323
+    },
+    "lieu noir, cru": {
+      "environmentScoreMptPerKg": 1.33,
+      "climateKgCo2EqPerKg": 8.29,
+      "landUsePtPerKg": 12.7,
+      "waterDeprivationM3PerKg": 0.344
+    },
+    "liégeois aux fruits": {
+      "environmentScoreMptPerKg": 0.225,
+      "climateKgCo2EqPerKg": 2.05,
+      "landUsePtPerKg": 75.2,
+      "waterDeprivationM3PerKg": 1.74
+    },
+    "nem ou pâté impérial": {
+      "environmentScoreMptPerKg": 0.452,
+      "climateKgCo2EqPerKg": 2.92,
+      "landUsePtPerKg": 112.0,
+      "waterDeprivationM3PerKg": 6.92
+    },
+    "nouilles sautées/poêlées aux crevettes": {
+      "environmentScoreMptPerKg": 0.746,
+      "climateKgCo2EqPerKg": 4.89,
+      "landUsePtPerKg": 136.0,
+      "waterDeprivationM3PerKg": 26.9
+    },
+    "pomme de terre, sautée/poêlée": {
+      "environmentScoreMptPerKg": 0.0859,
+      "climateKgCo2EqPerKg": 0.894,
+      "landUsePtPerKg": 35.8,
+      "waterDeprivationM3PerKg": 0.382
+    },
+    "sablé pâtissier": {
+      "environmentScoreMptPerKg": 0.345,
+      "climateKgCo2EqPerKg": 3.19,
+      "landUsePtPerKg": 168.0,
+      "waterDeprivationM3PerKg": 0.973
+    },
+    "sauce tomate aux oignons, préemballée": {
+      "environmentScoreMptPerKg": 0.198,
+      "climateKgCo2EqPerKg": 1.47,
+      "landUsePtPerKg": 69.1,
+      "waterDeprivationM3PerKg": 2.63
+    }
+  }
+}

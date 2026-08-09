@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "agneau, selle, partie maigre, grillée/poêlée": {
+      "litersPerKilogram": 8770.0
+    },
+    "boeuf, queue, bouillie/cuite à l'eau": {
+      "litersPerKilogram": 3080.0
+    },
+    "hareng, grillé/poêlé": {
+      "litersPerKilogram": 376.0
+    },
+    "pamplemousse chinois, pulpe, cru": {
+      "litersPerKilogram": 49200.0
+    },
+    "pomme de terre nouvelle, crue": {
+      "litersPerKilogram": 297.0
+    },
+    "pâtes fraîches farcies (ex : raviolis), à la viande (ex : bolognaise), crues": {
+      "litersPerKilogram": 1700.0
+    },
+    "sauce au fromage pour risotto ou pâtes, préemballée": {
+      "litersPerKilogram": 623.0
+    },
+    "tomme ou tome de montagne ou de savoie": {
+      "litersPerKilogram": 699.0
+    }
+  }
+}

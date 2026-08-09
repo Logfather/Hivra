@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "confit de canard": {
+      "environmentScoreMptPerKg": 0.794,
+      "climateKgCo2EqPerKg": 6.33,
+      "landUsePtPerKg": 203.0,
+      "waterDeprivationM3PerKg": 1.56
+    },
+    "confit de foie de porc": {
+      "environmentScoreMptPerKg": 0.418,
+      "climateKgCo2EqPerKg": 3.73,
+      "landUsePtPerKg": 143.0,
+      "waterDeprivationM3PerKg": 1.06
+    },
+    "courge doubeurre (butternut), pulpe, crue": {
+      "environmentScoreMptPerKg": 0.0665,
+      "climateKgCo2EqPerKg": 0.639,
+      "landUsePtPerKg": 17.4,
+      "waterDeprivationM3PerKg": 0.63
+    },
+    "céréales pour petit déjeuner \"équilibre\" aux fruits secs (à coque), enrichis en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "far aux pruneaux": {
+      "environmentScoreMptPerKg": 0.424,
+      "climateKgCo2EqPerKg": 2.21,
+      "landUsePtPerKg": 846.0,
+      "waterDeprivationM3PerKg": 5.56
+    },
+    "gâteau de semoule aux raisins et caramel, rayon frais": {
+      "environmentScoreMptPerKg": 0.188,
+      "climateKgCo2EqPerKg": 1.8,
+      "landUsePtPerKg": 63.3,
+      "waterDeprivationM3PerKg": 0.514
+    },
+    "mont d'or ou vacherin du haut doubs (produit en france) ou vacherin mont d'or (produit en suisse)": {
+      "environmentScoreMptPerKg": 0.493,
+      "climateKgCo2EqPerKg": 5.12,
+      "landUsePtPerKg": 269.0,
+      "waterDeprivationM3PerKg": 0.539
+    },
+    "veau, escalope, crue": {
+      "environmentScoreMptPerKg": 2.14,
+      "climateKgCo2EqPerKg": 23.2,
+      "landUsePtPerKg": 1060.0,
+      "waterDeprivationM3PerKg": 3.13
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "featureNames": [
+    "diagnostic_score",
+    "reciprocal_candidate_rank",
+    "reciprocal_candidate_count",
+    "shared_token_count",
+    "shared_token_ratio",
+    "token_jaccard",
+    "catalog_token_coverage",
+    "server_token_coverage",
+    "token_count_similarity",
+    "character_length_similarity",
+    "exact_normalized_match",
+    "domain_diet_or_substitute_difference_count",
+    "domain_same_domain_different_entity_count",
+    "domain_region_or_style_difference_count",
+    "domain_non_semantic_token_difference_count"
+  ],
+  "featureCount": 15,
+  "candidateCount": 4,
+  "recommendedCandidateName": "CONSERVATIVE_97",
+  "recommendedDecisionThreshold": 0.9386645200951742,
+  "recommendedPolicy": {
+    "minimumPrecision": 0.97,
+    "maximumFalsePositiveRate": 0.01,
+    "minimumPredictedPositiveCount": 5
+  },
+  "entries": [
+    {
+      "name": "CURRENT_95",
+      "conservatismRank": 0,
+      "policy": {
+        "minimumPrecision": 0.95,
+        "maximumFalsePositiveRate": 0.02,
+        "minimumPredictedPositiveCount": 5
+      },
+      "decisionThreshold": 0.9379148298960915,
+      "calibrationPolicySatisfied": true,
+      "calibrationPrecision": 0.9640287769784173,
+      "calibrationRecall": 0.34536082474226804,
+      "calibrationFalsePositiveRate": 0.0016377333770062235,
+      "calibrationPredictedPositiveCount": 139,
+      "testExampleCount": 815,
+      "testPrecision": 0.9473684210526315,
+      "testRecall": 0.4044943820224719,
+      "testF1": 0.5669291338582677,
+      "testBalancedAccuracy": 0.7008697805429164,
+      "testTruePositiveCount": 36,
+      "testFalsePositiveCount": 2,
+      "testTrueNegativeCount": 724,
+      "testFalseNegativeCount": 53
+    },
+    {
+      "name": "CONSERVATIVE_97",
+      "conservatismRank": 1,
+      "policy": {
+        "minimumPrecision": 0.97,
+        "maximumFalsePositiveRate": 0.01,
+        "minimumPredictedPositiveCount": 5
+      },
+      "decisionThreshold": 0.9386645200951742,
+      "calibrationPolicySatisfied": true,
+      "calibrationPrecision": 0.9705882352941176,
+      "calibrationRecall": 0.3402061855670103,
+      "calibrationFalsePositiveRate": 0.0013101867016049786,
+      "calibrationPredictedPositiveCount": 136,
+      "testExampleCount": 815,
+      "testPrecision": 0.9722222222222222,
+      "testRecall": 0.39325842696629215,
+      "testF1": 0.56,
+      "testBalancedAccuracy": 0.6959405082489863,
+      "testTruePositiveCount": 35,
+      "testFalsePositiveCount": 1,
+      "testTrueNegativeCount": 725,
+      "testFalseNegativeCount": 54
+    },
+    {
+      "name": "STRICT_98",
+      "conservatismRank": 2,
+      "policy": {
+        "minimumPrecision": 0.98,
+        "maximumFalsePositiveRate": 0.005,
+        "minimumPredictedPositiveCount": 5
+      },
+      "decisionThreshold": 0.9445388489146866,
+      "calibrationPolicySatisfied": true,
+      "calibrationPrecision": 0.9919354838709677,
+      "calibrationRecall": 0.3170103092783505,
+      "calibrationFalsePositiveRate": 3.2754667540124465E-4,
+      "calibrationPredictedPositiveCount": 124,
+      "testExampleCount": 815,
+      "testPrecision": 0.9696969696969697,
+      "testRecall": 0.3595505617977528,
+      "testF1": 0.5245901639344261,
+      "testBalancedAccuracy": 0.6790865756647166,
+      "testTruePositiveCount": 32,
+      "testFalsePositiveCount": 1,
+      "testTrueNegativeCount": 725,
+      "testFalseNegativeCount": 57
+    },
+    {
+      "name": "VERY_STRICT_99",
+      "conservatismRank": 3,
+      "policy": {
+        "minimumPrecision": 0.99,
+        "maximumFalsePositiveRate": 0.0025,
+        "minimumPredictedPositiveCount": 5
+      },
+      "decisionThreshold": 0.9445388489146866,
+      "calibrationPolicySatisfied": true,
+      "calibrationPrecision": 0.9919354838709677,
+      "calibrationRecall": 0.3170103092783505,
+      "calibrationFalsePositiveRate": 3.2754667540124465E-4,
+      "calibrationPredictedPositiveCount": 124,
+      "testExampleCount": 815,
+      "testPrecision": 0.9696969696969697,
+      "testRecall": 0.3595505617977528,
+      "testF1": 0.5245901639344261,
+      "testBalancedAccuracy": 0.6790865756647166,
+      "testTruePositiveCount": 32,
+      "testFalsePositiveCount": 1,
+      "testTrueNegativeCount": 725,
+      "testFalseNegativeCount": 57
+    }
+  ]
+}

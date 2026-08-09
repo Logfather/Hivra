@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "haricot vert, surgelé, cru": {
+      "environmentScoreMptPerKg": 0.141,
+      "climateKgCo2EqPerKg": 0.768,
+      "landUsePtPerKg": 90.5,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "jambon de poulet ou blanc de poulet en tranche": {
+      "environmentScoreMptPerKg": 1.01,
+      "climateKgCo2EqPerKg": 5.9,
+      "landUsePtPerKg": 339.0,
+      "waterDeprivationM3PerKg": 2.6
+    },
+    "pomme de terre, purée à base de flocons, reconstituée avec lait entier, matière grasse": {
+      "environmentScoreMptPerKg": 0.191,
+      "climateKgCo2EqPerKg": 1.82,
+      "landUsePtPerKg": 75.7,
+      "waterDeprivationM3PerKg": 0.338
+    },
+    "pêche melba": {
+      "environmentScoreMptPerKg": 0.311,
+      "climateKgCo2EqPerKg": 2.39,
+      "landUsePtPerKg": 62.9,
+      "waterDeprivationM3PerKg": 1.04
+    },
+    "ris, veau, braisé ou sauté/poêlé": {
+      "environmentScoreMptPerKg": 3.6,
+      "climateKgCo2EqPerKg": 38.9,
+      "landUsePtPerKg": 1770.0,
+      "waterDeprivationM3PerKg": 5.26
+    }
+  }
+}

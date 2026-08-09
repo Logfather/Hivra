@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "boeuf, jarret, cru": {
+      "litersPerKilogram": 2420.0
+    },
+    "fromage de chèvre demi sec": {
+      "litersPerKilogram": 2380.0
+    },
+    "gratin de légumes en sauce blanche type béchamel, cuit": {
+      "litersPerKilogram": 352.0
+    },
+    "gratin de pâtes": {
+      "litersPerKilogram": 1030.0
+    },
+    "liégeois ou viennois (chocolat, café, caramel ou vanille), rayon frais": {
+      "litersPerKilogram": 622.0
+    },
+    "maquereau, au naturel, appertisé, égoutté": {
+      "litersPerKilogram": 459.0
+    },
+    "turbot, cru": {
+      "litersPerKilogram": 2620.0
+    },
+    "veau, rôti, cuit": {
+      "litersPerKilogram": 4980.0
+    }
+  }
+}

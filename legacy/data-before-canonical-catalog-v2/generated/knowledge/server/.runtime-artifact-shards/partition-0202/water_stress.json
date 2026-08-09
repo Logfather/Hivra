@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "base de pizza à la crème": {
+      "score": 0.372
+    },
+    "bresaola": {
+      "score": 4.24
+    },
+    "cassis, cru": {
+      "score": 1.24
+    },
+    "guacamole, préemballé": {
+      "score": 16.8
+    },
+    "gâteau moelleux fourré au chocolat ou aux pépites de chocolat ou au lait": {
+      "score": 0.995
+    },
+    "igname, épluchée, bouillie/cuite à l'eau": {
+      "score": 2.7
+    },
+    "langue, boeuf, crue": {
+      "score": 1.91
+    },
+    "quenelle au tofu (ne convient pas aux véganes ou végétaliens), préemballée": {
+      "score": 1.88
+    },
+    "salade de riz": {
+      "score": 4.34
+    },
+    "tempeh": {
+      "score": 1.18
+    },
+    "veau, pied, cru": {
+      "score": 3.17
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "andouille de vire": {
+      "environmentScoreMptPerKg": 1.36,
+      "climateKgCo2EqPerKg": 11.9,
+      "landUsePtPerKg": 699.0,
+      "waterDeprivationM3PerKg": 2.72
+    },
+    "barre chocolatée aux fruits secs": {
+      "environmentScoreMptPerKg": 0.376,
+      "climateKgCo2EqPerKg": 5.32,
+      "landUsePtPerKg": 181.0,
+      "waterDeprivationM3PerKg": 2.86
+    },
+    "fraisier ou framboisier": {
+      "environmentScoreMptPerKg": 0.374,
+      "climateKgCo2EqPerKg": 2.4,
+      "landUsePtPerKg": 120.0,
+      "waterDeprivationM3PerKg": 5.53
+    },
+    "jambon à l'os braisé": {
+      "environmentScoreMptPerKg": 1.23,
+      "climateKgCo2EqPerKg": 9.66,
+      "landUsePtPerKg": 472.0,
+      "waterDeprivationM3PerKg": 3.13
+    },
+    "lait de chèvre, demi écrémé, uht": {
+      "environmentScoreMptPerKg": 0.201,
+      "climateKgCo2EqPerKg": 1.52,
+      "landUsePtPerKg": 95.9,
+      "waterDeprivationM3PerKg": 0.514
+    },
+    "poireau, surgelé, cru": {
+      "environmentScoreMptPerKg": 0.103,
+      "climateKgCo2EqPerKg": 0.763,
+      "landUsePtPerKg": 10.9,
+      "waterDeprivationM3PerKg": 0.416
+    },
+    "poisson blanc à la florentine (sauce aux épinards)": {
+      "environmentScoreMptPerKg": 1.49,
+      "climateKgCo2EqPerKg": 9.35,
+      "landUsePtPerKg": 86.6,
+      "waterDeprivationM3PerKg": 0.631
+    },
+    "pomme de terre noisette, surgelée, cuite": {
+      "environmentScoreMptPerKg": 0.556,
+      "climateKgCo2EqPerKg": 4.94,
+      "landUsePtPerKg": 211.0,
+      "waterDeprivationM3PerKg": 0.791
+    },
+    "sauce moutarde, préemballée": {
+      "environmentScoreMptPerKg": 0.284,
+      "climateKgCo2EqPerKg": 2.31,
+      "landUsePtPerKg": 88.6,
+      "waterDeprivationM3PerKg": 0.508
+    },
+    "soupe chorba frik, à base de viande et de frik": {
+      "environmentScoreMptPerKg": 0.536,
+      "climateKgCo2EqPerKg": 4.37,
+      "landUsePtPerKg": 407.0,
+      "waterDeprivationM3PerKg": 0.899
+    }
+  }
+}

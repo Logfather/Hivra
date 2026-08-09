@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "chou fleur, cru": {
+      "environmentScoreMptPerKg": 0.0764,
+      "climateKgCo2EqPerKg": 0.721,
+      "landUsePtPerKg": 32.9,
+      "waterDeprivationM3PerKg": 0.0741
+    },
+    "ciboule ou ciboulette, fraîche": {
+      "environmentScoreMptPerKg": 0.0683,
+      "climateKgCo2EqPerKg": 0.739,
+      "landUsePtPerKg": 18.9,
+      "waterDeprivationM3PerKg": 0.699
+    },
+    "farine de châtaigne": {
+      "environmentScoreMptPerKg": 0.359,
+      "climateKgCo2EqPerKg": 2.39,
+      "landUsePtPerKg": 433.0,
+      "waterDeprivationM3PerKg": 5.87
+    },
+    "flan de légumes": {
+      "environmentScoreMptPerKg": 0.262,
+      "climateKgCo2EqPerKg": 2.12,
+      "landUsePtPerKg": 117.0,
+      "waterDeprivationM3PerKg": 2.01
+    },
+    "galette de sarrasin, nature, préemballée": {
+      "environmentScoreMptPerKg": 0.099,
+      "climateKgCo2EqPerKg": 0.824,
+      "landUsePtPerKg": 46.8,
+      "waterDeprivationM3PerKg": 0.339
+    },
+    "laitue romaine, crue": {
+      "environmentScoreMptPerKg": 0.0939,
+      "climateKgCo2EqPerKg": 0.868,
+      "landUsePtPerKg": 9.16,
+      "waterDeprivationM3PerKg": 0.643
+    },
+    "pâtes en sauce aux fromages (spaghetti, tagliatelles…)": {
+      "environmentScoreMptPerKg": 0.419,
+      "climateKgCo2EqPerKg": 3.62,
+      "landUsePtPerKg": 166.0,
+      "waterDeprivationM3PerKg": 0.857
+    },
+    "raie, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    },
+    "rillettes de canard": {
+      "environmentScoreMptPerKg": 0.628,
+      "climateKgCo2EqPerKg": 6.51,
+      "landUsePtPerKg": 133.0,
+      "waterDeprivationM3PerKg": 1.2
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "chair à saucisse, porc et bœuf, crue": {
+      "environmentScoreMptPerKg": 0.666,
+      "climateKgCo2EqPerKg": 5.39,
+      "landUsePtPerKg": 275.0,
+      "waterDeprivationM3PerKg": 1.78
+    },
+    "dés, allumettes, râpé ou haché de jambon de volaille": {
+      "environmentScoreMptPerKg": 1.01,
+      "climateKgCo2EqPerKg": 5.91,
+      "landUsePtPerKg": 338.0,
+      "waterDeprivationM3PerKg": 2.59
+    },
+    "graisse de canard": {
+      "environmentScoreMptPerKg": 0.322,
+      "climateKgCo2EqPerKg": 2.61,
+      "landUsePtPerKg": 78.7,
+      "waterDeprivationM3PerKg": 0.747
+    },
+    "sardine, à l'huile, appertisée, égouttée (emballage corrigé)": {
+      "environmentScoreMptPerKg": 0.506,
+      "climateKgCo2EqPerKg": 2.68,
+      "landUsePtPerKg": 261.0,
+      "waterDeprivationM3PerKg": 9.36
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "entries": {
+    "beignet fourré goût chocolat, préemballé": {
+      "environmentScoreMptPerKg": 0.458,
+      "climateKgCo2EqPerKg": 6.24,
+      "landUsePtPerKg": 253.0,
+      "waterDeprivationM3PerKg": 0.851
+    },
+    "biscuit sec pour petit déjeuner, allégé en sucres": {
+      "environmentScoreMptPerKg": 0.368,
+      "climateKgCo2EqPerKg": 3.59,
+      "landUsePtPerKg": 161.0,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "caille, viande et peau, cuite": {
+      "environmentScoreMptPerKg": 1.3,
+      "climateKgCo2EqPerKg": 7.75,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "coeur, poulet, cru": {
+      "environmentScoreMptPerKg": 0.23,
+      "climateKgCo2EqPerKg": 1.5,
+      "landUsePtPerKg": 72.5,
+      "waterDeprivationM3PerKg": 0.614
+    },
+    "confiture de framboise (extra ou classique)": {
+      "environmentScoreMptPerKg": 0.351,
+      "climateKgCo2EqPerKg": 2.22,
+      "landUsePtPerKg": 95.5,
+      "waterDeprivationM3PerKg": 2.56
+    },
+    "couronne de noël (brioche) aux fruits confits, préemballée": {
+      "environmentScoreMptPerKg": 0.325,
+      "climateKgCo2EqPerKg": 2.95,
+      "landUsePtPerKg": 169.0,
+      "waterDeprivationM3PerKg": 0.717
+    },
+    "dessert lacté infantile nature sucré ou aux fruits": {
+      "environmentScoreMptPerKg": 0.23,
+      "climateKgCo2EqPerKg": 2.49,
+      "landUsePtPerKg": 63.1,
+      "waterDeprivationM3PerKg": 0.942
+    },
+    "légumes pour potages, surgelés, crus": {
+      "environmentScoreMptPerKg": 0.218,
+      "climateKgCo2EqPerKg": 1.49,
+      "landUsePtPerKg": 59.6,
+      "waterDeprivationM3PerKg": 8.63
+    },
+    "mousse de foie de porc": {
+      "environmentScoreMptPerKg": 0.335,
+      "climateKgCo2EqPerKg": 2.99,
+      "landUsePtPerKg": 97.9,
+      "waterDeprivationM3PerKg": 0.873
+    },
+    "mélange de céréales et légumineuses, cru": {
+      "environmentScoreMptPerKg": 0.0958,
+      "climateKgCo2EqPerKg": 0.626,
+      "landUsePtPerKg": 114.0,
+      "waterDeprivationM3PerKg": 0.292
+    },
+    "noix de macadamia, grillée, salée": {
+      "environmentScoreMptPerKg": 0.534,
+      "climateKgCo2EqPerKg": 3.66,
+      "landUsePtPerKg": 652.0,
+      "waterDeprivationM3PerKg": 8.95
+    },
+    "porc, carré, cru": {
+      "environmentScoreMptPerKg": 0.834,
+      "climateKgCo2EqPerKg": 6.78,
+      "landUsePtPerKg": 350.0,
+      "waterDeprivationM3PerKg": 2.2
+    },
+    "sauce kebab, préemballée": {
+      "environmentScoreMptPerKg": 0.292,
+      "climateKgCo2EqPerKg": 2.24,
+      "landUsePtPerKg": 117.0,
+      "waterDeprivationM3PerKg": 1.1
+    },
+    "veau, épaule, grillée/poêlée": {
+      "environmentScoreMptPerKg": 2.19,
+      "climateKgCo2EqPerKg": 23.6,
+      "landUsePtPerKg": 1070.0,
+      "waterDeprivationM3PerKg": 3.21
+    }
+  }
+}

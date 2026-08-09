@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "cervelle, veau, cuite": {
+      "environmentScoreMptPerKg": 2.89,
+      "climateKgCo2EqPerKg": 31.0,
+      "landUsePtPerKg": 1410.0,
+      "waterDeprivationM3PerKg": 4.23
+    },
+    "jus multifruit, à base de concentré, standard": {
+      "environmentScoreMptPerKg": 0.196,
+      "climateKgCo2EqPerKg": 0.882,
+      "landUsePtPerKg": 28.2,
+      "waterDeprivationM3PerKg": 8.98
+    },
+    "pâté de lapin": {
+      "environmentScoreMptPerKg": 0.794,
+      "climateKgCo2EqPerKg": 5.63,
+      "landUsePtPerKg": 280.0,
+      "waterDeprivationM3PerKg": 2.06
+    },
+    "rognon, agneau, cru": {
+      "environmentScoreMptPerKg": 2.62,
+      "climateKgCo2EqPerKg": 21.6,
+      "landUsePtPerKg": 2300.0,
+      "waterDeprivationM3PerKg": 3.64
+    },
+    "saint nectaire, sans précision": {
+      "environmentScoreMptPerKg": 0.53,
+      "climateKgCo2EqPerKg": 5.54,
+      "landUsePtPerKg": 244.0,
+      "waterDeprivationM3PerKg": 0.732
+    },
+    "sauce tomate à la viande ou sauce bolognaise, préemballée": {
+      "environmentScoreMptPerKg": 1.28,
+      "climateKgCo2EqPerKg": 13.2,
+      "landUsePtPerKg": 826.0,
+      "waterDeprivationM3PerKg": 2.43
+    },
+    "soupe aux légumes avec fromage, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.142,
+      "climateKgCo2EqPerKg": 1.24,
+      "landUsePtPerKg": 52.7,
+      "waterDeprivationM3PerKg": 0.359
+    }
+  }
+}

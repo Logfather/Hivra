@@ -1,0 +1,43 @@
+{
+  "entries": {
+    "bagel": {
+      "litersPerKilogram": 1130.0
+    },
+    "biscotte complète ou riche en fibres": {
+      "litersPerKilogram": 557.0
+    },
+    "crème de lait, 15 à 20% mg, légère, semi épaisse, uht": {
+      "litersPerKilogram": 359.0
+    },
+    "céréales complètes soufflées, enrichies en vitamines et minéraux": {
+      "litersPerKilogram": 6450.0
+    },
+    "filet de bacon": {
+      "litersPerKilogram": 2740.0
+    },
+    "fondue savoyarde (fromages, vin, pain)": {
+      "litersPerKilogram": 893.0
+    },
+    "hareng mariné ou rollmops": {
+      "litersPerKilogram": 237.0
+    },
+    "huile de sésame": {
+      "litersPerKilogram": 923.0
+    },
+    "kaki, pulpe, cru": {
+      "litersPerKilogram": 1470.0
+    },
+    "oie, viande, rôtie/cuite au four": {
+      "litersPerKilogram": 3400.0
+    },
+    "pois mange tout ou pois gourmand, cru": {
+      "litersPerKilogram": 236.0
+    },
+    "thé vert, infusé, non sucré": {
+      "litersPerKilogram": 776.0
+    },
+    "wakamé (undaria pinnatifida), séchée ou déshydratée": {
+      "litersPerKilogram": 4830.0
+    }
+  }
+}

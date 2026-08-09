@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "boeuf, bavette d'aloyau, grillée/poêlée": {
+      "environmentScoreMptPerKg": 3.42,
+      "climateKgCo2EqPerKg": 36.7,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.03
+    },
+    "carpe, crue, élevage": {
+      "environmentScoreMptPerKg": 1.4,
+      "climateKgCo2EqPerKg": 6.17,
+      "landUsePtPerKg": 108.0,
+      "waterDeprivationM3PerKg": 36.5
+    },
+    "endive, crue": {
+      "environmentScoreMptPerKg": 0.106,
+      "climateKgCo2EqPerKg": 0.861,
+      "landUsePtPerKg": 48.1,
+      "waterDeprivationM3PerKg": 0.17
+    },
+    "maquereau, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 0.422,
+      "climateKgCo2EqPerKg": 3.29,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.392
+    },
+    "mousse de foie de porc supérieure ou crème de foie": {
+      "environmentScoreMptPerKg": 0.335,
+      "climateKgCo2EqPerKg": 2.99,
+      "landUsePtPerKg": 97.9,
+      "waterDeprivationM3PerKg": 0.873
+    },
+    "noix de pécan": {
+      "environmentScoreMptPerKg": 0.534,
+      "climateKgCo2EqPerKg": 3.66,
+      "landUsePtPerKg": 652.0,
+      "waterDeprivationM3PerKg": 8.95
+    },
+    "pâtes sèches, sans gluten, crues": {
+      "environmentScoreMptPerKg": 0.196,
+      "climateKgCo2EqPerKg": 1.39,
+      "landUsePtPerKg": 99.2,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "pétales de maïs glacés au sucre, enrichis en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "wrap végétarien": {
+      "environmentScoreMptPerKg": 0.277,
+      "climateKgCo2EqPerKg": 1.64,
+      "landUsePtPerKg": 127.0,
+      "waterDeprivationM3PerKg": 1.33
+    }
+  }
+}

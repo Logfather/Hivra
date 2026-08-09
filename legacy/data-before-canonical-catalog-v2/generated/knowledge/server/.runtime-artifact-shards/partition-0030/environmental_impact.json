@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "biscuit sec pour petit déjeuner": {
+      "environmentScoreMptPerKg": 0.368,
+      "climateKgCo2EqPerKg": 3.59,
+      "landUsePtPerKg": 161.0,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "groseille à maquereau, crue": {
+      "environmentScoreMptPerKg": 0.262,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 21.9,
+      "waterDeprivationM3PerKg": 3.58
+    },
+    "gâteau aux amandes type financier": {
+      "environmentScoreMptPerKg": 0.532,
+      "climateKgCo2EqPerKg": 4.47,
+      "landUsePtPerKg": 225.0,
+      "waterDeprivationM3PerKg": 6.71
+    },
+    "pâte sablée pur beurre, cuite": {
+      "environmentScoreMptPerKg": 0.388,
+      "climateKgCo2EqPerKg": 3.46,
+      "landUsePtPerKg": 165.0,
+      "waterDeprivationM3PerKg": 1.03
+    },
+    "sardine, filets sans arêtes à l'huile d'olive, appertisés, égouttés": {
+      "environmentScoreMptPerKg": 0.515,
+      "climateKgCo2EqPerKg": 2.78,
+      "landUsePtPerKg": 266.0,
+      "waterDeprivationM3PerKg": 9.42
+    },
+    "substitut de repas hypocalorique, poudre reconstituée avec lait écrémé, type milk shake": {
+      "environmentScoreMptPerKg": 0.24,
+      "climateKgCo2EqPerKg": 2.66,
+      "landUsePtPerKg": 55.7,
+      "waterDeprivationM3PerKg": 0.805
+    },
+    "sucre vanillé": {
+      "environmentScoreMptPerKg": 0.153,
+      "climateKgCo2EqPerKg": 1.03,
+      "landUsePtPerKg": 40.5,
+      "waterDeprivationM3PerKg": 1.9
+    }
+  }
+}

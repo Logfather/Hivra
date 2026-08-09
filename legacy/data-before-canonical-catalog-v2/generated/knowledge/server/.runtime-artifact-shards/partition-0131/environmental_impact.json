@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "blé dur précuit, grains entiers, cuit, non salé": {
+      "environmentScoreMptPerKg": 0.0863,
+      "climateKgCo2EqPerKg": 0.696,
+      "landUsePtPerKg": 48.4,
+      "waterDeprivationM3PerKg": 0.283
+    },
+    "gâteau au yaourt": {
+      "environmentScoreMptPerKg": 0.291,
+      "climateKgCo2EqPerKg": 2.61,
+      "landUsePtPerKg": 136.0,
+      "waterDeprivationM3PerKg": 1.88
+    },
+    "gâteau moelleux aux fruits à coque": {
+      "environmentScoreMptPerKg": 0.466,
+      "climateKgCo2EqPerKg": 3.56,
+      "landUsePtPerKg": 261.0,
+      "waterDeprivationM3PerKg": 2.71
+    },
+    "lasagnes ou cannelloni à la viande (bolognaise)": {
+      "environmentScoreMptPerKg": 0.661,
+      "climateKgCo2EqPerKg": 6.1,
+      "landUsePtPerKg": 360.0,
+      "waterDeprivationM3PerKg": 1.52
+    },
+    "nectar multifruit, multivitaminé": {
+      "environmentScoreMptPerKg": 0.197,
+      "climateKgCo2EqPerKg": 0.888,
+      "landUsePtPerKg": 28.3,
+      "waterDeprivationM3PerKg": 8.99
+    },
+    "pain grillé, tranches, multicéréale": {
+      "environmentScoreMptPerKg": 0.132,
+      "climateKgCo2EqPerKg": 1.29,
+      "landUsePtPerKg": 53.9,
+      "waterDeprivationM3PerKg": 0.398
+    },
+    "semoule de blé dur, crue": {
+      "environmentScoreMptPerKg": 0.236,
+      "climateKgCo2EqPerKg": 1.75,
+      "landUsePtPerKg": 202.0,
+      "waterDeprivationM3PerKg": 0.957
+    },
+    "soupe à la volaille et aux vermicelles, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.14,
+      "climateKgCo2EqPerKg": 0.911,
+      "landUsePtPerKg": 40.5,
+      "waterDeprivationM3PerKg": 0.629
+    },
+    "églefin, grillé/poêlé": {
+      "environmentScoreMptPerKg": 2.39,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 27.1,
+      "waterDeprivationM3PerKg": 0.69
+    }
+  }
+}

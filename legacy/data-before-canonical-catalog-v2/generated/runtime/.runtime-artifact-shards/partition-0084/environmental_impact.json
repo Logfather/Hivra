@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "emmental ou emmenthal": {
+      "environmentScoreMptPerKg": 0.6,
+      "climateKgCo2EqPerKg": 6.28,
+      "landUsePtPerKg": 288.0,
+      "waterDeprivationM3PerKg": 0.804
+    },
+    "mayonnaise (70% mg min.)": {
+      "environmentScoreMptPerKg": 0.454,
+      "climateKgCo2EqPerKg": 2.69,
+      "landUsePtPerKg": 369.0,
+      "waterDeprivationM3PerKg": 4.25
+    },
+    "mûre noire (du mûrier), crue": {
+      "environmentScoreMptPerKg": 0.336,
+      "climateKgCo2EqPerKg": 1.25,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 6.11
+    },
+    "panaché préemballé (<1° alc.)": {
+      "environmentScoreMptPerKg": 0.117,
+      "climateKgCo2EqPerKg": 1.23,
+      "landUsePtPerKg": 16.8,
+      "waterDeprivationM3PerKg": 0.329
+    },
+    "petits pois, surgelés, crus": {
+      "environmentScoreMptPerKg": 0.119,
+      "climateKgCo2EqPerKg": 0.81,
+      "landUsePtPerKg": 74.5,
+      "waterDeprivationM3PerKg": 0.66
+    },
+    "riz sauvage, cuit, non salé": {
+      "environmentScoreMptPerKg": 0.216,
+      "climateKgCo2EqPerKg": 1.16,
+      "landUsePtPerKg": 29.6,
+      "waterDeprivationM3PerKg": 6.4
+    },
+    "soupe minestrone, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.202,
+      "climateKgCo2EqPerKg": 1.67,
+      "landUsePtPerKg": 47.3,
+      "waterDeprivationM3PerKg": 1.85
+    }
+  }
+}

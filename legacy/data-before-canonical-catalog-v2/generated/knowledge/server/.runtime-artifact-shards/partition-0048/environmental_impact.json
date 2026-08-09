@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "mil entier, cru": {
+      "environmentScoreMptPerKg": 0.118,
+      "climateKgCo2EqPerKg": 0.674,
+      "landUsePtPerKg": 83.6,
+      "waterDeprivationM3PerKg": 1.03
+    },
+    "poulet éviscéré sans abats, cru": {
+      "environmentScoreMptPerKg": 0.922,
+      "climateKgCo2EqPerKg": 5.31,
+      "landUsePtPerKg": 333.0,
+      "waterDeprivationM3PerKg": 2.38
+    },
+    "salsifis, cuit": {
+      "environmentScoreMptPerKg": 0.125,
+      "climateKgCo2EqPerKg": 1.34,
+      "landUsePtPerKg": 19.5,
+      "waterDeprivationM3PerKg": 0.746
+    },
+    "sandwich baguette, salami, beurre": {
+      "environmentScoreMptPerKg": 0.694,
+      "climateKgCo2EqPerKg": 5.61,
+      "landUsePtPerKg": 267.0,
+      "waterDeprivationM3PerKg": 1.74
+    },
+    "soja, graine entière": {
+      "environmentScoreMptPerKg": 0.124,
+      "climateKgCo2EqPerKg": 1.25,
+      "landUsePtPerKg": 150.0,
+      "waterDeprivationM3PerKg": 0.276
+    }
+  }
+}

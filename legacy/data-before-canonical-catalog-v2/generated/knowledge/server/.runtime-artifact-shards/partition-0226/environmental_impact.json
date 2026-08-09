@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "agneau, côte première, grillée/poêlée": {
+      "environmentScoreMptPerKg": 6.35,
+      "climateKgCo2EqPerKg": 52.4,
+      "landUsePtPerKg": 5580.0,
+      "waterDeprivationM3PerKg": 8.77
+    },
+    "gingembre, poudre": {
+      "environmentScoreMptPerKg": 0.205,
+      "climateKgCo2EqPerKg": 2.02,
+      "landUsePtPerKg": 21.4,
+      "waterDeprivationM3PerKg": 2.18
+    },
+    "jus de betterave": {
+      "environmentScoreMptPerKg": 0.0961,
+      "climateKgCo2EqPerKg": 0.767,
+      "landUsePtPerKg": 9.29,
+      "waterDeprivationM3PerKg": 0.844
+    },
+    "matière grasse végétale (type margarine) à 70% mg, doux": {
+      "environmentScoreMptPerKg": 0.336,
+      "climateKgCo2EqPerKg": 4.28,
+      "landUsePtPerKg": 122.0,
+      "waterDeprivationM3PerKg": 1.24
+    },
+    "pangasius ou poisson chat, cru": {
+      "environmentScoreMptPerKg": 1.92,
+      "climateKgCo2EqPerKg": 12.3,
+      "landUsePtPerKg": 183.0,
+      "waterDeprivationM3PerKg": 2.62
+    },
+    "poulet, viande, crue": {
+      "environmentScoreMptPerKg": 0.761,
+      "climateKgCo2EqPerKg": 4.56,
+      "landUsePtPerKg": 269.0,
+      "waterDeprivationM3PerKg": 2.03
+    },
+    "sablé aux fruits (pomme, fruits rouges, etc.)": {
+      "environmentScoreMptPerKg": 0.29,
+      "climateKgCo2EqPerKg": 2.55,
+      "landUsePtPerKg": 131.0,
+      "waterDeprivationM3PerKg": 1.02
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "entries": {
+    "basilic, séché": {
+      "litersPerKilogram": 20200.0
+    },
+    "biscuit sec fourré à la pâte ou purée de fruits": {
+      "litersPerKilogram": 3170.0
+    },
+    "crêpe maison, fourrée au chocolat ou à la pâte à tartiner chocolat et noisettes": {
+      "litersPerKilogram": 753.0
+    },
+    "foie, oie, cru": {
+      "litersPerKilogram": 614.0
+    },
+    "grains de blé soufflés au miel ou caramel, enrichis en vitamines et minéraux": {
+      "litersPerKilogram": 6450.0
+    },
+    "pomme de terre sautée/poêlée à la graisse de canard": {
+      "litersPerKilogram": 352.0
+    },
+    "porc, rôti, cuit": {
+      "litersPerKilogram": 2770.0
+    },
+    "pâte feuilletée, surgelée, crue": {
+      "litersPerKilogram": 703.0
+    },
+    "rognon, veau, cru": {
+      "litersPerKilogram": 3060.0
+    }
+  }
+}

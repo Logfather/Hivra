@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "beurre à 80% mg, salé": {
+      "environmentScoreMptPerKg": 0.762,
+      "climateKgCo2EqPerKg": 7.88,
+      "landUsePtPerKg": 392.0,
+      "waterDeprivationM3PerKg": 0.859
+    },
+    "biscuit apéritif soufflé, à base de maïs, sans cacahuète": {
+      "environmentScoreMptPerKg": 0.208,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 189.0,
+      "waterDeprivationM3PerKg": 0.704
+    },
+    "courgette, pulpe et peau, crue": {
+      "environmentScoreMptPerKg": 0.0545,
+      "climateKgCo2EqPerKg": 0.498,
+      "landUsePtPerKg": 15.1,
+      "waterDeprivationM3PerKg": 0.551
+    },
+    "fromage bleu de bresse allegé environ 15% mg": {
+      "environmentScoreMptPerKg": 0.485,
+      "climateKgCo2EqPerKg": 5.03,
+      "landUsePtPerKg": 236.0,
+      "waterDeprivationM3PerKg": 0.552
+    },
+    "ile flottante, rayon frais": {
+      "environmentScoreMptPerKg": 0.215,
+      "climateKgCo2EqPerKg": 1.92,
+      "landUsePtPerKg": 78.5,
+      "waterDeprivationM3PerKg": 0.672
+    },
+    "maïs doux, surgelé, cru": {
+      "environmentScoreMptPerKg": 0.128,
+      "climateKgCo2EqPerKg": 0.852,
+      "landUsePtPerKg": 52.9,
+      "waterDeprivationM3PerKg": 0.673
+    },
+    "navarin d'agneau aux légumes": {
+      "environmentScoreMptPerKg": 3.2,
+      "climateKgCo2EqPerKg": 26.3,
+      "landUsePtPerKg": 2780.0,
+      "waterDeprivationM3PerKg": 4.74
+    },
+    "poisson blanc à la provençale ou niçoise (sauce tomate)": {
+      "environmentScoreMptPerKg": 1.66,
+      "climateKgCo2EqPerKg": 10.0,
+      "landUsePtPerKg": 82.6,
+      "waterDeprivationM3PerKg": 1.66
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "entries": {
+    "chia, graine, séchée": {
+      "litersPerKilogram": 8250.0
+    },
+    "croissant au jambon": {
+      "litersPerKilogram": 1180.0
+    },
+    "céréales pour petit déjeuner chocolatées, non fourrées, enrichies en vitamines et minéraux": {
+      "litersPerKilogram": 6450.0
+    },
+    "gaufre moelleuse (type bruxelloise ou liégeoise), nature ou sucrée, préemballée": {
+      "litersPerKilogram": 865.0
+    },
+    "huître plate, crue": {
+      "litersPerKilogram": 965.0
+    },
+    "lait en poudre, demi écrémé": {
+      "litersPerKilogram": 1120.0
+    },
+    "légumes pour couscous, cuits": {
+      "litersPerKilogram": 584.0
+    },
+    "nuggets soja et blé (convient aux véganes ou végétaliens), préemballé": {
+      "litersPerKilogram": 520.0
+    },
+    "plat légumes, avec féculent et viande/poisson, dès 12 mois": {
+      "litersPerKilogram": 1280.0
+    },
+    "purée de fruits, tout type de fruits, type \"compote sans sucres ajoutés\"": {
+      "litersPerKilogram": 1180.0
+    },
+    "pâté de foie de porc": {
+      "litersPerKilogram": 858.0
+    },
+    "rocher chocolat fourré praliné": {
+      "litersPerKilogram": 6070.0
+    },
+    "salade de chou ou coleslaw, avec sauce, préemballée": {
+      "litersPerKilogram": 1080.0
+    },
+    "veau, épaule, braisée ou bouillie": {
+      "litersPerKilogram": 3220.0
+    },
+    "vin rouge": {
+      "litersPerKilogram": 231.0
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "barre à la noix de coco, enrobée de chocolat": {
+      "environmentScoreMptPerKg": 0.376,
+      "climateKgCo2EqPerKg": 5.32,
+      "landUsePtPerKg": 181.0,
+      "waterDeprivationM3PerKg": 2.86
+    },
+    "boisson plate aux fruits (10 à 50% de jus), sucrée": {
+      "environmentScoreMptPerKg": 0.0848,
+      "climateKgCo2EqPerKg": 0.566,
+      "landUsePtPerKg": 11.4,
+      "waterDeprivationM3PerKg": 0.65
+    },
+    "galette des rois feuilletée, fourrée frangipane, et pithiviers": {
+      "environmentScoreMptPerKg": 0.543,
+      "climateKgCo2EqPerKg": 4.0,
+      "landUsePtPerKg": 229.0,
+      "waterDeprivationM3PerKg": 6.12
+    },
+    "haricot vert, cuit": {
+      "environmentScoreMptPerKg": 0.143,
+      "climateKgCo2EqPerKg": 1.2,
+      "landUsePtPerKg": 108.0,
+      "waterDeprivationM3PerKg": 1.5
+    },
+    "luzerne, graine": {
+      "environmentScoreMptPerKg": 0.834,
+      "climateKgCo2EqPerKg": 3.49,
+      "landUsePtPerKg": 572.0,
+      "waterDeprivationM3PerKg": 8.25
+    },
+    "merguez, porc et bœuf, crue": {
+      "environmentScoreMptPerKg": 2.33,
+      "climateKgCo2EqPerKg": 23.9,
+      "landUsePtPerKg": 1530.0,
+      "waterDeprivationM3PerKg": 2.83
+    },
+    "poulet, filet, sans peau, cru": {
+      "environmentScoreMptPerKg": 0.941,
+      "climateKgCo2EqPerKg": 5.58,
+      "landUsePtPerKg": 335.0,
+      "waterDeprivationM3PerKg": 2.49
+    },
+    "protéine de soja texturée, réhydratée": {
+      "environmentScoreMptPerKg": 0.0615,
+      "climateKgCo2EqPerKg": 0.54,
+      "landUsePtPerKg": 46.8,
+      "waterDeprivationM3PerKg": 0.132
+    },
+    "saucisse de francfort": {
+      "environmentScoreMptPerKg": 0.696,
+      "climateKgCo2EqPerKg": 5.38,
+      "landUsePtPerKg": 278.0,
+      "waterDeprivationM3PerKg": 1.78
+    },
+    "saucisson brioché, cuit": {
+      "environmentScoreMptPerKg": 0.629,
+      "climateKgCo2EqPerKg": 4.88,
+      "landUsePtPerKg": 261.0,
+      "waterDeprivationM3PerKg": 1.4
+    },
+    "thon à l'huile, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.947,
+      "climateKgCo2EqPerKg": 6.47,
+      "landUsePtPerKg": 148.0,
+      "waterDeprivationM3PerKg": 0.738
+    }
+  }
+}

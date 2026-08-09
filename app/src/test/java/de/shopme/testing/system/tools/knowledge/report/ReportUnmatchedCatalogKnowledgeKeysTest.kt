@@ -1,5 +1,6 @@
 package de.shopme.testing.system.tools.knowledge.report
 
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.report.CatalogKnowledgeKeyExtractor
 import java.io.File
 import kotlin.test.Test
@@ -10,11 +11,13 @@ class ReportUnmatchedCatalogKnowledgeKeysTest {
     @Test
     fun reportUnmatchedCatalogKnowledgeKeys() {
 
+        val paths =
+            KnowledgeBuildPaths.default()
+
+        paths.ensureBuildDirectories()
+
         val catalogFile =
-            File(
-                "..",
-                "data/raw/catalog/supermarket_dataset.translated.json"
-            )
+            paths.canonicalFoodCatalog
 
         val catalogKeys =
             CatalogKnowledgeKeyExtractor()
@@ -32,14 +35,8 @@ class ReportUnmatchedCatalogKnowledgeKeysTest {
             "Catalog knowledge keys = ${catalogKeys.size}"
         )
 
-        val projectRoot =
-            File("..")
-
         val serverDirectory =
-            File(
-                projectRoot,
-                "data/generated/knowledge/server"
-            )
+            paths.serverRoot
 
         require(serverDirectory.isDirectory) {
             "Server knowledge directory does not exist: " +
@@ -47,10 +44,23 @@ class ReportUnmatchedCatalogKnowledgeKeysTest {
         }
 
         val outputDirectory =
-            File(
-                projectRoot,
-                "data/generated/reports/catalog-server-matches"
+            paths.reportsRoot.resolve(
+                "catalog-server-matches"
             )
+
+        if (!outputDirectory.exists()) {
+            check(
+                outputDirectory.mkdirs()
+            ) {
+                "Could not create report directory: " +
+                        outputDirectory.absolutePath
+            }
+        }
+
+        require(outputDirectory.isDirectory) {
+            "Report output path is not a directory: " +
+                    outputDirectory.absolutePath
+        }
 
         val nutritionQueryExpander =
             NutritionRetrievalQueryExpander()
@@ -95,8 +105,10 @@ class ReportUnmatchedCatalogKnowledgeKeysTest {
 
                 val report =
                     reporter.report(
-                        artifactFile = artifactFile,
-                        catalogKeys = catalogKeys
+                        artifactFile =
+                            artifactFile,
+                        catalogKeys =
+                            catalogKeys
                     )
 
                 if (
@@ -105,8 +117,9 @@ class ReportUnmatchedCatalogKnowledgeKeysTest {
                         ignoreCase = true
                     )
                 ) {
-
-                    verifyCiqualCoverage(report)
+                    verifyCiqualCoverage(
+                        report
+                    )
                 }
 
                 val outputFile =
@@ -116,8 +129,10 @@ class ReportUnmatchedCatalogKnowledgeKeysTest {
                     )
 
                 writer.write(
-                    report = report,
-                    outputFile = outputFile
+                    report =
+                        report,
+                    outputFile =
+                        outputFile
                 )
 
                 val unmatchedWithCandidates =
@@ -161,13 +176,11 @@ class ReportUnmatchedCatalogKnowledgeKeysTest {
             find("chervil")
 
         if (chervil != null) {
-
             assertTrue(
                 chervil.nearestCandidates.isNotEmpty(),
                 "CIQUAL should provide nutrition candidates for chervil."
             )
         } else {
-
             assertTrue(
                 report.exactMatches.contains("chervil"),
                 "Chervil must either match exactly or provide retrieval candidates."
@@ -178,13 +191,11 @@ class ReportUnmatchedCatalogKnowledgeKeysTest {
             find("salsify")
 
         if (salsify != null) {
-
             assertTrue(
                 salsify.nearestCandidates.isNotEmpty(),
                 "CIQUAL should provide nutrition candidates for salsify."
             )
         } else {
-
             assertTrue(
                 report.exactMatches.contains("salsify"),
                 "Salsify must either match exactly or provide retrieval candidates."
@@ -195,7 +206,6 @@ class ReportUnmatchedCatalogKnowledgeKeysTest {
             find("mace")
 
         if (mace != null) {
-
             assertTrue(
                 mace.nearestCandidates.isEmpty(),
                 "CIQUAL currently contains no nutrition mapping for mace."

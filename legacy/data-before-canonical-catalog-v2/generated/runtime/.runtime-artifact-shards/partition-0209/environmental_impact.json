@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "arachide, bouillie/cuite à l'eau, salée": {
+      "environmentScoreMptPerKg": 0.642,
+      "climateKgCo2EqPerKg": 4.2,
+      "landUsePtPerKg": 535.0,
+      "waterDeprivationM3PerKg": 14.6
+    },
+    "biscotte multicéréale": {
+      "environmentScoreMptPerKg": 0.156,
+      "climateKgCo2EqPerKg": 1.44,
+      "landUsePtPerKg": 76.5,
+      "waterDeprivationM3PerKg": 0.557
+    },
+    "boisson lactée, lait fermenté ou yaourt à boire, aux fruits, sucré": {
+      "environmentScoreMptPerKg": 0.22,
+      "climateKgCo2EqPerKg": 1.98,
+      "landUsePtPerKg": 76.7,
+      "waterDeprivationM3PerKg": 1.71
+    },
+    "champignon, morille, crue": {
+      "environmentScoreMptPerKg": 0.853,
+      "climateKgCo2EqPerKg": 6.17,
+      "landUsePtPerKg": 27.7,
+      "waterDeprivationM3PerKg": 56.2
+    },
+    "crottin de chèvre, au lait cru": {
+      "environmentScoreMptPerKg": 1.24,
+      "climateKgCo2EqPerKg": 8.78,
+      "landUsePtPerKg": 589.0,
+      "waterDeprivationM3PerKg": 3.12
+    },
+    "fromage de chèvre lactique affiné, au lait pasteurisé (type bûchette ou crottin)": {
+      "environmentScoreMptPerKg": 0.976,
+      "climateKgCo2EqPerKg": 6.97,
+      "landUsePtPerKg": 450.0,
+      "waterDeprivationM3PerKg": 2.43
+    },
+    "gaufrette fourrée fruits à coque (noisette, amande, praline, etc.), chocolatée ou non, préemballée": {
+      "environmentScoreMptPerKg": 0.479,
+      "climateKgCo2EqPerKg": 3.51,
+      "landUsePtPerKg": 211.0,
+      "waterDeprivationM3PerKg": 8.17
+    },
+    "poivron rouge, cru": {
+      "environmentScoreMptPerKg": 0.0803,
+      "climateKgCo2EqPerKg": 0.715,
+      "landUsePtPerKg": 6.38,
+      "waterDeprivationM3PerKg": 0.294
+    },
+    "pomme de terre, purée, avec lait et beurre, non salée": {
+      "environmentScoreMptPerKg": 0.177,
+      "climateKgCo2EqPerKg": 1.69,
+      "landUsePtPerKg": 64.9,
+      "waterDeprivationM3PerKg": 0.434
+    },
+    "truite d'élevage, fumée (version \"logiciel\" avec erreur sur l'emballage)": {
+      "environmentScoreMptPerKg": 1.53,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 121.0,
+      "waterDeprivationM3PerKg": 40.4
+    },
+    "yakitori (brochettes japonaises grillées en sauce)": {
+      "environmentScoreMptPerKg": 0.594,
+      "climateKgCo2EqPerKg": 4.54,
+      "landUsePtPerKg": 268.0,
+      "waterDeprivationM3PerKg": 3.2
+    }
+  }
+}

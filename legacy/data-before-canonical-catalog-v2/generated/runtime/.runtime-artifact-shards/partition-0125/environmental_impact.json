@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "ananas au sirop léger, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.27,
+      "climateKgCo2EqPerKg": 1.63,
+      "landUsePtPerKg": 37.9,
+      "waterDeprivationM3PerKg": 0.797
+    },
+    "beignet rond moelleux, sans fourrage, saupoudré de sucre": {
+      "environmentScoreMptPerKg": 0.256,
+      "climateKgCo2EqPerKg": 1.75,
+      "landUsePtPerKg": 85.5,
+      "waterDeprivationM3PerKg": 0.804
+    },
+    "coriandre, fraiche": {
+      "environmentScoreMptPerKg": 0.106,
+      "climateKgCo2EqPerKg": 1.03,
+      "landUsePtPerKg": 11.5,
+      "waterDeprivationM3PerKg": 1.31
+    },
+    "fraise, hors saison, crue": {
+      "environmentScoreMptPerKg": 0.176,
+      "climateKgCo2EqPerKg": 0.592,
+      "landUsePtPerKg": 114.0,
+      "waterDeprivationM3PerKg": 12.0
+    },
+    "pignon de pin": {
+      "environmentScoreMptPerKg": 0.638,
+      "climateKgCo2EqPerKg": 4.18,
+      "landUsePtPerKg": 535.0,
+      "waterDeprivationM3PerKg": 14.6
+    },
+    "pizza au saumon": {
+      "environmentScoreMptPerKg": 0.36,
+      "climateKgCo2EqPerKg": 2.71,
+      "landUsePtPerKg": 102.0,
+      "waterDeprivationM3PerKg": 1.15
+    },
+    "pois mange tout ou pois gourmand, bouilli/cuit à l'eau": {
+      "environmentScoreMptPerKg": 0.204,
+      "climateKgCo2EqPerKg": 1.88,
+      "landUsePtPerKg": 244.0,
+      "waterDeprivationM3PerKg": 0.539
+    },
+    "poitrine de porc, fumée, crue": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "sauge, séchée": {
+      "environmentScoreMptPerKg": 0.464,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 142.0,
+      "waterDeprivationM3PerKg": 20.2
+    },
+    "tourte au riesling": {
+      "environmentScoreMptPerKg": 1.49,
+      "climateKgCo2EqPerKg": 12.1,
+      "landUsePtPerKg": 1110.0,
+      "waterDeprivationM3PerKg": 3.92
+    }
+  }
+}

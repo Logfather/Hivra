@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "banane, pulpe, sèche": {
+      "environmentScoreMptPerKg": 0.596,
+      "climateKgCo2EqPerKg": 2.2,
+      "landUsePtPerKg": 95.8,
+      "waterDeprivationM3PerKg": 24.2
+    },
+    "brochette de poisson": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.6,
+      "landUsePtPerKg": 61.7,
+      "waterDeprivationM3PerKg": 0.566
+    },
+    "chocolat noir à 40% de cacao minimum, à pâtisser, tablette": {
+      "environmentScoreMptPerKg": 0.818,
+      "climateKgCo2EqPerKg": 15.4,
+      "landUsePtPerKg": 574.0,
+      "waterDeprivationM3PerKg": 1.13
+    },
+    "cidre traditionnel": {
+      "environmentScoreMptPerKg": 0.126,
+      "climateKgCo2EqPerKg": 1.33,
+      "landUsePtPerKg": 22.7,
+      "waterDeprivationM3PerKg": 0.76
+    },
+    "cocktail sans alcool (à base de jus de fruits et de sirop)": {
+      "environmentScoreMptPerKg": 0.118,
+      "climateKgCo2EqPerKg": 1.13,
+      "landUsePtPerKg": 21.2,
+      "waterDeprivationM3PerKg": 0.583
+    },
+    "dessert lacté infantile au riz ou à la semoule": {
+      "environmentScoreMptPerKg": 0.23,
+      "climateKgCo2EqPerKg": 2.49,
+      "landUsePtPerKg": 63.1,
+      "waterDeprivationM3PerKg": 0.942
+    },
+    "grondin perlon, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "oeuf, à la coque": {
+      "environmentScoreMptPerKg": 0.377,
+      "climateKgCo2EqPerKg": 2.74,
+      "landUsePtPerKg": 164.0,
+      "waterDeprivationM3PerKg": 0.986
+    },
+    "petits pois, appertisés, égouttés": {
+      "environmentScoreMptPerKg": 0.163,
+      "climateKgCo2EqPerKg": 1.38,
+      "landUsePtPerKg": 94.4,
+      "waterDeprivationM3PerKg": 0.916
+    },
+    "poulet, poitrine, viande et peau, cru": {
+      "environmentScoreMptPerKg": 0.941,
+      "climateKgCo2EqPerKg": 5.58,
+      "landUsePtPerKg": 335.0,
+      "waterDeprivationM3PerKg": 2.49
+    },
+    "quinoa fr, cuit": {
+      "environmentScoreMptPerKg": 0.299,
+      "climateKgCo2EqPerKg": 3.27,
+      "landUsePtPerKg": 129.0,
+      "waterDeprivationM3PerKg": 6.02
+    },
+    "sel blanc alimentaire, non iodé, non fluoré (marin, ignigène ou gemme)": {
+      "environmentScoreMptPerKg": 0.0708,
+      "climateKgCo2EqPerKg": 0.632,
+      "landUsePtPerKg": 14.3,
+      "waterDeprivationM3PerKg": 0.0776
+    },
+    "épinard, purée": {
+      "environmentScoreMptPerKg": 0.105,
+      "climateKgCo2EqPerKg": 1.08,
+      "landUsePtPerKg": -15.6,
+      "waterDeprivationM3PerKg": 0.521
+    }
+  }
+}

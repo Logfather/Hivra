@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "bleu de gex ou fromage bleu du haut jura ou bleu de septmoncel (aoc)": {
+      "litersPerKilogram": 591.0
+    },
+    "boeuf, joue, crue": {
+      "litersPerKilogram": 2390.0
+    },
+    "boisson au soja, aromatisée, sucrée, enrichie en calcium": {
+      "litersPerKilogram": 81.5
+    },
+    "courgette, pulpe et peau, surgelée, crue": {
+      "litersPerKilogram": 602.0
+    },
+    "patate douce, cuite": {
+      "litersPerKilogram": 380.0
+    },
+    "porc, échine, rôtie/cuite au four": {
+      "litersPerKilogram": 2770.0
+    },
+    "quenelle de volaille, en sauce": {
+      "litersPerKilogram": 1560.0
+    },
+    "saumon, cuit à la vapeur": {
+      "litersPerKilogram": 1500.0
+    }
+  }
+}

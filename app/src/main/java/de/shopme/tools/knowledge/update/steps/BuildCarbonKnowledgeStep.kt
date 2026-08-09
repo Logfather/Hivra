@@ -3,6 +3,7 @@ package de.shopme.tools.knowledge.update.steps
 import de.shopme.tools.knowledge.agribalyse.mapper.AgribalyseReferenceMapper
 import de.shopme.tools.knowledge.agribalyse.report.AgribalyseMappingReport
 import de.shopme.tools.knowledge.agribalyse.report.AgribalyseMappingReportPrinter
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.carbon.builder.CarbonKnowledgeBuilder
 import de.shopme.tools.knowledge.carbon.importer.AgribalyseCarbonImporter
 import de.shopme.tools.knowledge.carbon.importer.CarbonBaselineImporter
@@ -82,9 +83,9 @@ class BuildCarbonKnowledgeStep :
 
             CatalogReferenceLoader()
                 .load(
-                    File(
-                        "src/main/assets/catalog/supermarket_dataset.json"
-                    )
+                    KnowledgeBuildPaths
+                        .default()
+                        .canonicalFoodCatalog
                 )
 
         val generatedCarbonFile =

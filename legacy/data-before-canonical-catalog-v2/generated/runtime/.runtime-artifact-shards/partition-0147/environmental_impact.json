@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "chicorée et café, instantané, non sucré, prêt à boire (reconstituée avec de l'eau)": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 4.48,
+      "landUsePtPerKg": 93.5,
+      "waterDeprivationM3PerKg": 1.46
+    },
+    "foie, volaille, cru": {
+      "environmentScoreMptPerKg": 0.23,
+      "climateKgCo2EqPerKg": 1.5,
+      "landUsePtPerKg": 72.5,
+      "waterDeprivationM3PerKg": 0.614
+    },
+    "fromage frais type petit suisse, aux fruits, 2 3% mg, enrichi en calcium et vitamine d": {
+      "environmentScoreMptPerKg": 0.199,
+      "climateKgCo2EqPerKg": 1.93,
+      "landUsePtPerKg": 72.4,
+      "waterDeprivationM3PerKg": 0.287
+    },
+    "huile de noisette": {
+      "environmentScoreMptPerKg": 1.7,
+      "climateKgCo2EqPerKg": 9.82,
+      "landUsePtPerKg": 1480.0,
+      "waterDeprivationM3PerKg": 25.4
+    },
+    "moules à la sauce catalane ou escabèche (tomate), appertisée, égouttée": {
+      "environmentScoreMptPerKg": 0.545,
+      "climateKgCo2EqPerKg": 4.95,
+      "landUsePtPerKg": 296.0,
+      "waterDeprivationM3PerKg": 0.943
+    },
+    "pizza au poulet": {
+      "environmentScoreMptPerKg": 0.432,
+      "climateKgCo2EqPerKg": 2.87,
+      "landUsePtPerKg": 171.0,
+      "waterDeprivationM3PerKg": 1.93
+    },
+    "saumon fumé (emballage corrigé)": {
+      "environmentScoreMptPerKg": 1.02,
+      "climateKgCo2EqPerKg": 7.85,
+      "landUsePtPerKg": 319.0,
+      "waterDeprivationM3PerKg": 1.77
+    },
+    "saumon, grillé/poêlé": {
+      "environmentScoreMptPerKg": 0.874,
+      "climateKgCo2EqPerKg": 6.91,
+      "landUsePtPerKg": 282.0,
+      "waterDeprivationM3PerKg": 1.48
+    },
+    "tomme ou tome, allégée en matière grasse, environ 13% mg": {
+      "environmentScoreMptPerKg": 0.548,
+      "climateKgCo2EqPerKg": 5.76,
+      "landUsePtPerKg": 266.0,
+      "waterDeprivationM3PerKg": 0.699
+    }
+  }
+}

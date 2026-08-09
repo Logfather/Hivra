@@ -1,0 +1,819 @@
+{
+  "version": 1,
+  "inputCandidateCount": 762171,
+  "aggregateCount": 511016,
+  "singleProfileAggregateCount": 449097,
+  "multiProfileAggregateCount": 61919,
+  "maximumProfileCount": 1086,
+  "profileCountDistribution": {
+    "1": 449097,
+    "2": 33430,
+    "3": 10430,
+    "4": 5068,
+    "5": 2889,
+    "6": 1916,
+    "7": 1376,
+    "8": 1025,
+    "9": 736,
+    "10": 592,
+    "11": 455,
+    "12": 412,
+    "13": 362,
+    "14": 278,
+    "15": 237,
+    "16": 201,
+    "17": 159,
+    "18": 148,
+    "19": 156,
+    "20": 124,
+    "21": 97,
+    "22": 97,
+    "23": 91,
+    "24": 81,
+    "25": 83,
+    "26": 73,
+    "27": 57,
+    "28": 71,
+    "29": 52,
+    "30": 51,
+    "31": 41,
+    "32": 52,
+    "33": 46,
+    "34": 44,
+    "35": 32,
+    "36": 38,
+    "37": 36,
+    "38": 31,
+    "39": 27,
+    "40": 27,
+    "41": 23,
+    "42": 26,
+    "43": 26,
+    "44": 23,
+    "45": 19,
+    "46": 23,
+    "47": 17,
+    "48": 20,
+    "49": 14,
+    "50": 16,
+    "51": 17,
+    "52": 17,
+    "53": 23,
+    "54": 12,
+    "55": 14,
+    "56": 18,
+    "57": 15,
+    "58": 9,
+    "59": 10,
+    "60": 15,
+    "61": 12,
+    "62": 8,
+    "63": 10,
+    "64": 20,
+    "65": 12,
+    "66": 9,
+    "67": 18,
+    "68": 8,
+    "69": 6,
+    "70": 3,
+    "71": 7,
+    "72": 7,
+    "73": 5,
+    "74": 4,
+    "75": 7,
+    "76": 8,
+    "77": 4,
+    "78": 3,
+    "79": 5,
+    "80": 5,
+    "81": 6,
+    "82": 8,
+    "83": 8,
+    "84": 7,
+    "85": 3,
+    "86": 6,
+    "87": 5,
+    "88": 5,
+    "89": 2,
+    "90": 5,
+    "91": 3,
+    "92": 3,
+    "93": 7,
+    "94": 5,
+    "95": 2,
+    "96": 6,
+    "98": 5,
+    "99": 3,
+    "100": 4,
+    "101": 7,
+    "102": 2,
+    "103": 3,
+    "104": 4,
+    "105": 3,
+    "106": 2,
+    "107": 1,
+    "108": 6,
+    "109": 2,
+    "110": 3,
+    "111": 3,
+    "112": 4,
+    "113": 1,
+    "115": 2,
+    "116": 3,
+    "117": 3,
+    "118": 2,
+    "120": 2,
+    "121": 2,
+    "122": 2,
+    "123": 1,
+    "124": 3,
+    "125": 2,
+    "126": 1,
+    "127": 3,
+    "128": 3,
+    "130": 2,
+    "131": 1,
+    "132": 1,
+    "133": 2,
+    "136": 1,
+    "138": 3,
+    "139": 1,
+    "140": 3,
+    "143": 3,
+    "145": 1,
+    "146": 1,
+    "148": 3,
+    "150": 2,
+    "151": 3,
+    "152": 2,
+    "154": 1,
+    "155": 3,
+    "156": 3,
+    "158": 2,
+    "159": 3,
+    "160": 2,
+    "161": 3,
+    "162": 1,
+    "163": 1,
+    "165": 2,
+    "166": 1,
+    "167": 2,
+    "169": 2,
+    "171": 2,
+    "173": 1,
+    "174": 1,
+    "176": 1,
+    "179": 1,
+    "181": 2,
+    "183": 1,
+    "185": 1,
+    "188": 1,
+    "197": 1,
+    "198": 1,
+    "200": 1,
+    "202": 1,
+    "203": 1,
+    "204": 2,
+    "205": 1,
+    "215": 1,
+    "216": 1,
+    "217": 1,
+    "218": 1,
+    "220": 1,
+    "225": 1,
+    "226": 1,
+    "227": 1,
+    "235": 1,
+    "243": 1,
+    "246": 2,
+    "247": 2,
+    "252": 1,
+    "254": 1,
+    "255": 2,
+    "268": 1,
+    "269": 2,
+    "276": 1,
+    "278": 1,
+    "279": 1,
+    "284": 2,
+    "288": 1,
+    "304": 1,
+    "322": 1,
+    "326": 1,
+    "343": 1,
+    "353": 1,
+    "374": 1,
+    "377": 1,
+    "387": 1,
+    "415": 1,
+    "419": 1,
+    "422": 1,
+    "433": 1,
+    "439": 1,
+    "457": 1,
+    "532": 1,
+    "1086": 1
+  },
+  "largestAggregates": [
+    {
+      "canonicalId": "ice cream",
+      "profileCount": 1086,
+      "representativeSourceId": "4607098567253",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "potato chips",
+      "profileCount": 532,
+      "representativeSourceId": "0084114125699",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "orange juice",
+      "profileCount": 457,
+      "representativeSourceId": "0070253160011",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "premium ice cream",
+      "profileCount": 439,
+      "representativeSourceId": "0077865010062",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "peanut butter",
+      "profileCount": 433,
+      "representativeSourceId": "0034000400546",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "popcorn",
+      "profileCount": 422,
+      "representativeSourceId": "0072036340283",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "chicken breast",
+      "profileCount": 419,
+      "representativeSourceId": "0240961511034",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "protein bar",
+      "profileCount": 415,
+      "representativeSourceId": "0850009752321",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "milk",
+      "profileCount": 387,
+      "representativeSourceId": "0071156400676",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "beef jerky",
+      "profileCount": 377,
+      "representativeSourceId": "0047500020428",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "whey protein",
+      "profileCount": 374,
+      "representativeSourceId": "5999100021433",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "soda",
+      "profileCount": 353,
+      "representativeSourceId": "0892458001384",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "milk chocolate",
+      "profileCount": 343,
+      "representativeSourceId": "0092163082528",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "lemonade",
+      "profileCount": 326,
+      "representativeSourceId": "0035733002861",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "dark chocolate",
+      "profileCount": 322,
+      "representativeSourceId": "8901262070454",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "coconut water",
+      "profileCount": 304,
+      "representativeSourceId": "6977413320107",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "extra virgin olive oil",
+      "profileCount": 288,
+      "representativeSourceId": "8888030301357",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "chocolate milk",
+      "profileCount": 284,
+      "representativeSourceId": "0852420001026",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "salsa",
+      "profileCount": 284,
+      "representativeSourceId": "0854135008376",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "apple juice",
+      "profileCount": 279,
+      "representativeSourceId": "0856128004013",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "flour tortillas",
+      "profileCount": 278,
+      "representativeSourceId": "0075450556117",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "cookies",
+      "profileCount": 276,
+      "representativeSourceId": "4099100063363",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "cottage cheese",
+      "profileCount": 269,
+      "representativeSourceId": "0011225030185",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "tortilla chips",
+      "profileCount": 269,
+      "representativeSourceId": "0077948420054",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "black beans",
+      "profileCount": 268,
+      "representativeSourceId": "0038259104576",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "bbq sauce",
+      "profileCount": 255,
+      "representativeSourceId": "0727839405133",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "chocolate",
+      "profileCount": 255,
+      "representativeSourceId": "0846107014997",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "ground beef",
+      "profileCount": 254,
+      "representativeSourceId": "0078742253671",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "oven roasted turkey breast",
+      "profileCount": 252,
+      "representativeSourceId": "0248600013703",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "kombucha",
+      "profileCount": 247,
+      "representativeSourceId": "0854179005126",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "pasta sauce",
+      "profileCount": 247,
+      "representativeSourceId": "0036200431009",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "spaghetti",
+      "profileCount": 246,
+      "representativeSourceId": "0029200003529",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "trail mix",
+      "profileCount": 246,
+      "representativeSourceId": "0753519473598",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "protein powder",
+      "profileCount": 243,
+      "representativeSourceId": "5060802528039",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "whole milk",
+      "profileCount": 235,
+      "representativeSourceId": "0737094005108",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "sour cream",
+      "profileCount": 227,
+      "representativeSourceId": "0015700245071",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "honey",
+      "profileCount": 226,
+      "representativeSourceId": "7290008603645",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "coconut milk",
+      "profileCount": 225,
+      "representativeSourceId": "0737628011094",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "pinto beans",
+      "profileCount": 220,
+      "representativeSourceId": "0884395465701",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "energy drink",
+      "profileCount": 218,
+      "representativeSourceId": "4750142005239",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "creamy peanut butter",
+      "profileCount": 217,
+      "representativeSourceId": "0087381000805",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "almonds",
+      "profileCount": 216,
+      "representativeSourceId": "0011110724748",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "hummus",
+      "profileCount": 215,
+      "representativeSourceId": "0725439980883",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "chocolate chip cookies",
+      "profileCount": 205,
+      "representativeSourceId": "0079746200005",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "apple sauce",
+      "profileCount": 204,
+      "representativeSourceId": "0015400056380",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "granola",
+      "profileCount": 204,
+      "representativeSourceId": "0857376002141",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "tomato sauce",
+      "profileCount": 203,
+      "representativeSourceId": "0725342128389",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "mixed vegetables",
+      "profileCount": 202,
+      "representativeSourceId": "0070038648116",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "cola",
+      "profileCount": 200,
+      "representativeSourceId": "6412703014613",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "boneless skinless chicken breast",
+      "profileCount": 198,
+      "representativeSourceId": "0204715016565",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "100% juice",
+      "profileCount": 197,
+      "representativeSourceId": "0041755400233",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "bread",
+      "profileCount": 188,
+      "representativeSourceId": "20885410",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "pizza",
+      "profileCount": 185,
+      "representativeSourceId": "4056489772385",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "chicken nuggets",
+      "profileCount": 183,
+      "representativeSourceId": "0045421857642",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "boneless skinless chicken thighs",
+      "profileCount": 181,
+      "representativeSourceId": "0251716708524",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "root beer",
+      "profileCount": 181,
+      "representativeSourceId": "0068826718062",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "chicken thighs",
+      "profileCount": 179,
+      "representativeSourceId": "0207867519922",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "original",
+      "profileCount": 176,
+      "representativeSourceId": "0405048881008",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "chicken broth",
+      "profileCount": 174,
+      "representativeSourceId": "0070784253046",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "crunchy peanut butter",
+      "profileCount": 173,
+      "representativeSourceId": "0041268217175",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "cashews",
+      "profileCount": 171,
+      "representativeSourceId": "0688267168147",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "corn tortillas",
+      "profileCount": 171,
+      "representativeSourceId": "0074426020027",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "cheese",
+      "profileCount": 169,
+      "representativeSourceId": "5998067319812",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "yogurt",
+      "profileCount": 169,
+      "representativeSourceId": "0859166002171",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "bacon",
+      "profileCount": 167,
+      "representativeSourceId": "0688267148989",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "ginger ale",
+      "profileCount": 167,
+      "representativeSourceId": "0041735152206",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "cut green beans",
+      "profileCount": 166,
+      "representativeSourceId": "0077890366646",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "hot sauce",
+      "profileCount": 165,
+      "representativeSourceId": "0070132011656",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "salmon",
+      "profileCount": 165,
+      "representativeSourceId": "0023968059835",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "turkey breast",
+      "profileCount": 163,
+      "representativeSourceId": "0248600011327",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "tomato ketchup",
+      "profileCount": 162,
+      "representativeSourceId": "01307508",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "mixed nuts",
+      "profileCount": 161,
+      "representativeSourceId": "0085239085875",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "shrimp",
+      "profileCount": 161,
+      "representativeSourceId": "0665072010427",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "vanilla ice cream",
+      "profileCount": 161,
+      "representativeSourceId": "0086854072714",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "banana chips",
+      "profileCount": 160,
+      "representativeSourceId": "9310645214450",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "tuna",
+      "profileCount": 160,
+      "representativeSourceId": "1238009034910",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "cream cheese",
+      "profileCount": 159,
+      "representativeSourceId": "3272770014724",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "fruit punch",
+      "profileCount": 159,
+      "representativeSourceId": "0052548590451",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "protein shake",
+      "profileCount": 159,
+      "representativeSourceId": "0710779770478",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "applesauce",
+      "profileCount": 158,
+      "representativeSourceId": "750650394778318560744",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "mayonnaise",
+      "profileCount": 158,
+      "representativeSourceId": "0074680008557",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "eggs",
+      "profileCount": 156,
+      "representativeSourceId": "1800092010906",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "olive oil",
+      "profileCount": 156,
+      "representativeSourceId": "0896446002308",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "smoked sausage",
+      "profileCount": 156,
+      "representativeSourceId": "0070773278005",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "2% reduced fat milk",
+      "profileCount": 155,
+      "representativeSourceId": "0035826089731",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "almond butter",
+      "profileCount": 155,
+      "representativeSourceId": "0086854063514",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "candy",
+      "profileCount": 155,
+      "representativeSourceId": "0012511533212",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "jasmine rice",
+      "profileCount": 154,
+      "representativeSourceId": "8847102340304",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "fat free milk",
+      "profileCount": 152,
+      "representativeSourceId": "0811102020069",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "protein",
+      "profileCount": 152,
+      "representativeSourceId": "0850001143042",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "chicken",
+      "profileCount": 151,
+      "representativeSourceId": "0276895418095",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "chips",
+      "profileCount": 151,
+      "representativeSourceId": "0075450287561",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "peanuts",
+      "profileCount": 151,
+      "representativeSourceId": "0852258003247",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "basmati rice",
+      "profileCount": 150,
+      "representativeSourceId": "0810347002113",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "coffee creamer",
+      "profileCount": 150,
+      "representativeSourceId": "0041271027693",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "chia seeds",
+      "profileCount": 148,
+      "representativeSourceId": "6009614733735",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "greek yogurt",
+      "profileCount": 148,
+      "representativeSourceId": "0628915380682",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "ketchup",
+      "profileCount": 148,
+      "representativeSourceId": "6191575100517",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "diced tomatoes",
+      "profileCount": 146,
+      "representativeSourceId": "0070552602113",
+      "nutrientCount": 8
+    },
+    {
+      "canonicalId": "juice",
+      "profileCount": 145,
+      "representativeSourceId": "8590421048399",
+      "nutrientCount": 8
+    }
+  ]
+}

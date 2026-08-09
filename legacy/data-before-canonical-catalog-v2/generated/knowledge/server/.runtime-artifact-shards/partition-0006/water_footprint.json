@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "boisson au soja, nature, enrichie en calcium": {
+      "litersPerKilogram": 81.5
+    },
+    "farine de seigle t170": {
+      "litersPerKilogram": 174.0
+    },
+    "fruit de la passion ou maracudja, pulpe et pépins, cru": {
+      "litersPerKilogram": 2980.0
+    },
+    "fève, pelée, surgelée, cuite à l'eau": {
+      "litersPerKilogram": 89.1
+    },
+    "glace à l'eau": {
+      "litersPerKilogram": 1100.0
+    },
+    "lait demi écrémé, uht": {
+      "litersPerKilogram": 156.0
+    },
+    "moule, appertisée, égouttée": {
+      "litersPerKilogram": 1330.0
+    },
+    "pain pour hamburger ou hot dog (bun), préemballé": {
+      "litersPerKilogram": 392.0
+    },
+    "pâtes fraîches farcies (ex : ravioli), aux légumes, crues": {
+      "litersPerKilogram": 1070.0
+    },
+    "salami": {
+      "litersPerKilogram": 2650.0
+    },
+    "sauce végétale type bolognaise, préemballée": {
+      "litersPerKilogram": 1540.0
+    },
+    "sirop pour fruits appertisés au sirop": {
+      "litersPerKilogram": 423.0
+    }
+  }
+}

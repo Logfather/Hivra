@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "beurre à 80% mg, demi sel": {
+      "environmentScoreMptPerKg": 0.762,
+      "climateKgCo2EqPerKg": 7.88,
+      "landUsePtPerKg": 392.0,
+      "waterDeprivationM3PerKg": 0.859
+    },
+    "gâteau au chocolat, cœur fondant, rayon frais": {
+      "environmentScoreMptPerKg": 0.615,
+      "climateKgCo2EqPerKg": 8.38,
+      "landUsePtPerKg": 365.0,
+      "waterDeprivationM3PerKg": 1.21
+    },
+    "laitue de mer (ulva sp.), séchée ou déshydratée": {
+      "environmentScoreMptPerKg": 1.52,
+      "climateKgCo2EqPerKg": 11.6,
+      "landUsePtPerKg": 26.4,
+      "waterDeprivationM3PerKg": 4.83
+    },
+    "marmelade d'orange": {
+      "environmentScoreMptPerKg": 0.187,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 25.3,
+      "waterDeprivationM3PerKg": 4.5
+    },
+    "pomme, pulpe et peau, crue": {
+      "environmentScoreMptPerKg": 0.0439,
+      "climateKgCo2EqPerKg": 0.408,
+      "landUsePtPerKg": 16.4,
+      "waterDeprivationM3PerKg": 0.543
+    },
+    "pâte feuilletée, cuite": {
+      "environmentScoreMptPerKg": 0.413,
+      "climateKgCo2EqPerKg": 3.85,
+      "landUsePtPerKg": 179.0,
+      "waterDeprivationM3PerKg": 0.736
+    },
+    "pâtes fraîches farcies (ex : raviolis), au fromage et aux légumes, crues": {
+      "environmentScoreMptPerKg": 0.419,
+      "climateKgCo2EqPerKg": 3.62,
+      "landUsePtPerKg": 166.0,
+      "waterDeprivationM3PerKg": 0.857
+    },
+    "saucisse viennoise, crue": {
+      "environmentScoreMptPerKg": 1.33,
+      "climateKgCo2EqPerKg": 11.9,
+      "landUsePtPerKg": 699.0,
+      "waterDeprivationM3PerKg": 2.72
+    },
+    "soupe au pistou, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.128,
+      "climateKgCo2EqPerKg": 0.474,
+      "landUsePtPerKg": 34.1,
+      "waterDeprivationM3PerKg": 1.18
+    },
+    "spécialité végétale type fromage râpé, sans soja, préemballée": {
+      "environmentScoreMptPerKg": 0.32,
+      "climateKgCo2EqPerKg": 2.48,
+      "landUsePtPerKg": 117.0,
+      "waterDeprivationM3PerKg": 4.52
+    },
+    "vodka": {
+      "environmentScoreMptPerKg": 0.12,
+      "climateKgCo2EqPerKg": 1.26,
+      "landUsePtPerKg": 18.4,
+      "waterDeprivationM3PerKg": 0.169
+    }
+  }
+}

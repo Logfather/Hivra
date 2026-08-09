@@ -1,0 +1,22 @@
+{
+  "entries": {
+    "brie de melun": {
+      "litersPerKilogram": 543.0
+    },
+    "farine de millet": {
+      "litersPerKilogram": 1230.0
+    },
+    "fromage fondu en tranchettes": {
+      "litersPerKilogram": 596.0
+    },
+    "noix de cajou, grillée, salée": {
+      "litersPerKilogram": 14900.0
+    },
+    "pain complet ou intégral (à la farine t150)": {
+      "litersPerKilogram": 189.0
+    },
+    "truite arc en ciel, élevage, cuite à la vapeur": {
+      "litersPerKilogram": 44700.0
+    }
+  }
+}

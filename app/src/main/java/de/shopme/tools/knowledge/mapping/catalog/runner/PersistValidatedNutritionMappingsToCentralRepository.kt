@@ -1,5 +1,6 @@
 package de.shopme.tools.knowledge.mapping.catalog.runner
 
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import java.io.File
 
 class PersistValidatedNutritionMappingsToCentralRepository(
@@ -196,51 +197,36 @@ class PersistValidatedNutritionMappingsToCentralRepository(
             args: Array<String>
         ) {
 
-            val projectRoot =
-                File("..")
+            require(args.isEmpty()) {
+                "PersistValidatedNutritionMappingsToCentralRepository " +
+                        "does not accept arguments."
+            }
 
-            val mappingDirectory =
-                File(
-                    projectRoot,
-                    "data/generated/knowledge/mappings"
-                )
+            val paths =
+                KnowledgeBuildPaths.default()
 
-            val validatedDirectory =
-                File(
-                    mappingDirectory,
-                    "validated"
-                )
+            paths.ensureBuildDirectories()
 
             PersistValidatedNutritionMappingsToCentralRepository(
                 validatedNutritionMappingFile =
-                    File(
-                        mappingDirectory,
-                        "catalog-server.mappings.json"
-                    ),
+                    paths.catalogServerMappings,
+
                 centralValidatedMappingFile =
-                    File(
-                        validatedDirectory,
+                    paths.validatedMappingsDirectory.resolve(
                         "nutrition.validated-mappings.json"
                     ),
+
                 existingCentralMappingFile =
-                    File(
-                        mappingDirectory,
-                        "catalog-server.mappings.json"
-                    ),
+                    paths.catalogServerMappings,
+
                 validatedMappingDirectory =
-                    validatedDirectory,
+                    paths.validatedMappingsDirectory,
+
                 conflictReportFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/reports/" +
-                                "catalog-server-mapping-conflicts.json"
-                    ),
+                    paths.catalogServerMappingConflictReport,
+
                 mergeReportFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/reports/" +
-                                "catalog-server-mapping-merge-report.json"
-                    )
+                    paths.catalogServerMappingMergeReport
             ).run()
         }
     }

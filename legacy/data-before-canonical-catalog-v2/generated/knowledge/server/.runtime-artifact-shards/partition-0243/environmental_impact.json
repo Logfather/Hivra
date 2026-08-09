@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "accra de poisson": {
+      "environmentScoreMptPerKg": 0.973,
+      "climateKgCo2EqPerKg": 5.92,
+      "landUsePtPerKg": 56.3,
+      "waterDeprivationM3PerKg": 0.67
+    },
+    "asiago": {
+      "environmentScoreMptPerKg": 0.578,
+      "climateKgCo2EqPerKg": 6.05,
+      "landUsePtPerKg": 274.0,
+      "waterDeprivationM3PerKg": 0.781
+    },
+    "dinde, cuisse, viande et peau, crue": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "fromage de chèvre frais, au lait pasteurisé (type bûchette fraîche)": {
+      "environmentScoreMptPerKg": 0.956,
+      "climateKgCo2EqPerKg": 7.01,
+      "landUsePtPerKg": 446.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "jambon sec de parme": {
+      "environmentScoreMptPerKg": 1.8,
+      "climateKgCo2EqPerKg": 13.6,
+      "landUsePtPerKg": 626.0,
+      "waterDeprivationM3PerKg": 4.24
+    },
+    "mortadelle, pur porc": {
+      "environmentScoreMptPerKg": 0.909,
+      "climateKgCo2EqPerKg": 6.91,
+      "landUsePtPerKg": 330.0,
+      "waterDeprivationM3PerKg": 2.26
+    },
+    "mulet, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    },
+    "spécialité fromagère non affinée à tartiner environ 30 40 % mg aromatisée (ex: ail et fines herbes)": {
+      "environmentScoreMptPerKg": 0.491,
+      "climateKgCo2EqPerKg": 5.16,
+      "landUsePtPerKg": 226.0,
+      "waterDeprivationM3PerKg": 0.629
+    }
+  }
+}

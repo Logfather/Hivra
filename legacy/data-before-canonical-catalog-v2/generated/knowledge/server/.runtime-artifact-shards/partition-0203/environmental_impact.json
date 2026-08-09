@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "agar (algue), cru": {
+      "environmentScoreMptPerKg": 1.55,
+      "climateKgCo2EqPerKg": 11.8,
+      "landUsePtPerKg": 26.7,
+      "waterDeprivationM3PerKg": 4.83
+    },
+    "crème aux œufs (petit pot de crème chocolat, vanille, etc.), rayon frais": {
+      "environmentScoreMptPerKg": 0.304,
+      "climateKgCo2EqPerKg": 3.88,
+      "landUsePtPerKg": 155.0,
+      "waterDeprivationM3PerKg": 0.675
+    },
+    "fromage rond à pâte molle et croûte fleurie environ 5% mg type camembert allégé en matière grasse": {
+      "environmentScoreMptPerKg": 0.484,
+      "climateKgCo2EqPerKg": 5.02,
+      "landUsePtPerKg": 236.0,
+      "waterDeprivationM3PerKg": 0.555
+    },
+    "gâteau au chocolat type forêt noire (génoise au chocolat et crème multi couches, avec ou sans cerises)": {
+      "environmentScoreMptPerKg": 0.356,
+      "climateKgCo2EqPerKg": 2.3,
+      "landUsePtPerKg": 172.0,
+      "waterDeprivationM3PerKg": 1.22
+    },
+    "lardon fumé, cuit": {
+      "environmentScoreMptPerKg": 1.18,
+      "climateKgCo2EqPerKg": 9.08,
+      "landUsePtPerKg": 448.0,
+      "waterDeprivationM3PerKg": 2.96
+    },
+    "merlan, frit": {
+      "environmentScoreMptPerKg": 2.39,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 27.1,
+      "waterDeprivationM3PerKg": 0.69
+    },
+    "raisin, cru": {
+      "environmentScoreMptPerKg": 0.0841,
+      "climateKgCo2EqPerKg": 0.51,
+      "landUsePtPerKg": 22.8,
+      "waterDeprivationM3PerKg": 4.92
+    },
+    "salade de pâtes aux légumes, avec poisson ou viande": {
+      "environmentScoreMptPerKg": 0.556,
+      "climateKgCo2EqPerKg": 4.27,
+      "landUsePtPerKg": 152.0,
+      "waterDeprivationM3PerKg": 1.41
+    }
+  }
+}

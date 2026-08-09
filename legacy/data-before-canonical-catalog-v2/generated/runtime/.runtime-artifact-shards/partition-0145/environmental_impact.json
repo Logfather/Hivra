@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "baba au rhum, préemballé": {
+      "environmentScoreMptPerKg": 0.182,
+      "climateKgCo2EqPerKg": 1.16,
+      "landUsePtPerKg": 24.0,
+      "waterDeprivationM3PerKg": 0.623
+    },
+    "barre céréalière \"équilibre\" aux fruits, enrichie en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.357,
+      "climateKgCo2EqPerKg": 3.26,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 3.28
+    },
+    "chorizo supérieur, doux ou fort, type charcuterie en tranches": {
+      "environmentScoreMptPerKg": 0.967,
+      "climateKgCo2EqPerKg": 7.42,
+      "landUsePtPerKg": 383.0,
+      "waterDeprivationM3PerKg": 2.38
+    },
+    "crêpe ou galette fourrée béchamel champignon": {
+      "environmentScoreMptPerKg": 0.479,
+      "climateKgCo2EqPerKg": 3.68,
+      "landUsePtPerKg": 63.3,
+      "waterDeprivationM3PerKg": 19.9
+    },
+    "crêpe ou galette fourrée béchamel jambon": {
+      "environmentScoreMptPerKg": 0.515,
+      "climateKgCo2EqPerKg": 4.32,
+      "landUsePtPerKg": 199.0,
+      "waterDeprivationM3PerKg": 1.12
+    },
+    "haricots blancs à la sauce tomate, appertisés": {
+      "environmentScoreMptPerKg": 0.0956,
+      "climateKgCo2EqPerKg": 0.744,
+      "landUsePtPerKg": 51.8,
+      "waterDeprivationM3PerKg": 1.0
+    },
+    "nectar multifruit, standard": {
+      "environmentScoreMptPerKg": 0.197,
+      "climateKgCo2EqPerKg": 0.888,
+      "landUsePtPerKg": 28.3,
+      "waterDeprivationM3PerKg": 8.99
+    },
+    "poivron vert, cru": {
+      "environmentScoreMptPerKg": 0.0803,
+      "climateKgCo2EqPerKg": 0.715,
+      "landUsePtPerKg": 6.38,
+      "waterDeprivationM3PerKg": 0.294
+    },
+    "poulet, aile, viande et peau, cru": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "pâtes fraîches farcies (ex : raviolis), à la viande (ex : bolognaise), cuites": {
+      "environmentScoreMptPerKg": 1.5,
+      "climateKgCo2EqPerKg": 15.1,
+      "landUsePtPerKg": 943.0,
+      "waterDeprivationM3PerKg": 1.7
+    },
+    "riz sauvage, cru": {
+      "environmentScoreMptPerKg": 0.428,
+      "climateKgCo2EqPerKg": 2.01,
+      "landUsePtPerKg": 63.0,
+      "waterDeprivationM3PerKg": 14.3
+    },
+    "saumon, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 1.18,
+      "climateKgCo2EqPerKg": 9.1,
+      "landUsePtPerKg": 291.0,
+      "waterDeprivationM3PerKg": 2.04
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "cervelle, porc, crue": {
+      "environmentScoreMptPerKg": 0.338,
+      "climateKgCo2EqPerKg": 2.79,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 0.898
+    },
+    "cidre bouché demi sec": {
+      "environmentScoreMptPerKg": 0.126,
+      "climateKgCo2EqPerKg": 1.33,
+      "landUsePtPerKg": 22.7,
+      "waterDeprivationM3PerKg": 0.76
+    },
+    "farine de blé tendre ou froment t45 (pour pâtisserie)": {
+      "environmentScoreMptPerKg": 0.102,
+      "climateKgCo2EqPerKg": 0.791,
+      "landUsePtPerKg": 84.2,
+      "waterDeprivationM3PerKg": 0.205
+    },
+    "hareng fumé, à l'huile (emballage corrigé)": {
+      "environmentScoreMptPerKg": 0.374,
+      "climateKgCo2EqPerKg": 3.17,
+      "landUsePtPerKg": 29.4,
+      "waterDeprivationM3PerKg": 0.5
+    },
+    "livarot": {
+      "environmentScoreMptPerKg": 0.512,
+      "climateKgCo2EqPerKg": 5.31,
+      "landUsePtPerKg": 252.0,
+      "waterDeprivationM3PerKg": 0.587
+    },
+    "légumes pour ratatouille, surgelés": {
+      "environmentScoreMptPerKg": 0.1,
+      "climateKgCo2EqPerKg": 0.71,
+      "landUsePtPerKg": 20.6,
+      "waterDeprivationM3PerKg": 0.469
+    },
+    "poisson blanc sauce oseille": {
+      "environmentScoreMptPerKg": 1.49,
+      "climateKgCo2EqPerKg": 9.35,
+      "landUsePtPerKg": 86.6,
+      "waterDeprivationM3PerKg": 0.631
+    },
+    "pomelo (dit pamplemousse) jaune, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.28,
+      "climateKgCo2EqPerKg": 0.926,
+      "landUsePtPerKg": 33.5,
+      "waterDeprivationM3PerKg": 21.3
+    },
+    "protéine de soja texturée": {
+      "environmentScoreMptPerKg": 0.142,
+      "climateKgCo2EqPerKg": 1.31,
+      "landUsePtPerKg": 116.0,
+      "waterDeprivationM3PerKg": 0.306
+    },
+    "riz complet, cuit, non salé": {
+      "environmentScoreMptPerKg": 0.216,
+      "climateKgCo2EqPerKg": 1.16,
+      "landUsePtPerKg": 29.6,
+      "waterDeprivationM3PerKg": 6.4
+    },
+    "saucisse de toulouse, cuite": {
+      "environmentScoreMptPerKg": 1.41,
+      "climateKgCo2EqPerKg": 12.3,
+      "landUsePtPerKg": 703.0,
+      "waterDeprivationM3PerKg": 2.84
+    },
+    "sésame, graine décortiquée": {
+      "environmentScoreMptPerKg": 0.985,
+      "climateKgCo2EqPerKg": 5.2,
+      "landUsePtPerKg": 1110.0,
+      "waterDeprivationM3PerKg": 3.13
+    },
+    "veau, collier, braisé ou bouilli": {
+      "environmentScoreMptPerKg": 2.74,
+      "climateKgCo2EqPerKg": 29.7,
+      "landUsePtPerKg": 1340.0,
+      "waterDeprivationM3PerKg": 4.02
+    }
+  }
+}

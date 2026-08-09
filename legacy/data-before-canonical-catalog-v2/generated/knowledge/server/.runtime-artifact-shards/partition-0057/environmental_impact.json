@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "agneau, côte filet, grillée/poêlée": {
+      "environmentScoreMptPerKg": 6.35,
+      "climateKgCo2EqPerKg": 52.4,
+      "landUsePtPerKg": 5580.0,
+      "waterDeprivationM3PerKg": 8.77
+    },
+    "bouchée chocolat fourrage fruits à coques et/ou praliné": {
+      "environmentScoreMptPerKg": 0.854,
+      "climateKgCo2EqPerKg": 10.5,
+      "landUsePtPerKg": 463.0,
+      "waterDeprivationM3PerKg": 6.07
+    },
+    "croissant, sans précision": {
+      "environmentScoreMptPerKg": 0.198,
+      "climateKgCo2EqPerKg": 2.02,
+      "landUsePtPerKg": 92.1,
+      "waterDeprivationM3PerKg": 0.62
+    },
+    "galette ou pavé aux lentilles, soja et légumes, préemballé": {
+      "environmentScoreMptPerKg": 0.213,
+      "climateKgCo2EqPerKg": 1.68,
+      "landUsePtPerKg": 145.0,
+      "waterDeprivationM3PerKg": 0.79
+    },
+    "myrtille, crue": {
+      "environmentScoreMptPerKg": 0.276,
+      "climateKgCo2EqPerKg": 0.922,
+      "landUsePtPerKg": 210.0,
+      "waterDeprivationM3PerKg": 0.355
+    },
+    "soupe aux poireaux et pommes de terre, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.0982,
+      "climateKgCo2EqPerKg": 0.39,
+      "landUsePtPerKg": 8.01,
+      "waterDeprivationM3PerKg": 0.162
+    },
+    "thon albacore ou thon jaune, cru": {
+      "environmentScoreMptPerKg": 0.793,
+      "climateKgCo2EqPerKg": 4.98,
+      "landUsePtPerKg": 8.57,
+      "waterDeprivationM3PerKg": 0.313
+    }
+  }
+}

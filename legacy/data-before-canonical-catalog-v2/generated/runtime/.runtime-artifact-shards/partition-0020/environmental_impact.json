@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "artichaut, cru": {
+      "environmentScoreMptPerKg": 0.195,
+      "climateKgCo2EqPerKg": 2.56,
+      "landUsePtPerKg": 66.4,
+      "waterDeprivationM3PerKg": 0.176
+    },
+    "chabichou (fromage de chèvre)": {
+      "environmentScoreMptPerKg": 1.08,
+      "climateKgCo2EqPerKg": 7.68,
+      "landUsePtPerKg": 504.0,
+      "waterDeprivationM3PerKg": 2.7
+    },
+    "dorade grise, ou daurade grise, ou griset, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.58,
+      "climateKgCo2EqPerKg": 9.22,
+      "landUsePtPerKg": 20.4,
+      "waterDeprivationM3PerKg": 0.998
+    },
+    "eau embouteillée de source": {
+      "environmentScoreMptPerKg": 0.0454,
+      "climateKgCo2EqPerKg": 0.321,
+      "landUsePtPerKg": 1.61,
+      "waterDeprivationM3PerKg": 0.0986
+    },
+    "hareng fumé, filet, doux (emballage corrigé)": {
+      "environmentScoreMptPerKg": 0.374,
+      "climateKgCo2EqPerKg": 3.17,
+      "landUsePtPerKg": 29.4,
+      "waterDeprivationM3PerKg": 0.5
+    },
+    "huile de colza": {
+      "environmentScoreMptPerKg": 0.323,
+      "climateKgCo2EqPerKg": 2.5,
+      "landUsePtPerKg": 287.0,
+      "waterDeprivationM3PerKg": 0.602
+    },
+    "lieu ou colin d'alaska, fumé": {
+      "environmentScoreMptPerKg": 1.94,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 19.3,
+      "waterDeprivationM3PerKg": 0.55
+    },
+    "pois mange tout ou pois gourmands, cuits": {
+      "environmentScoreMptPerKg": 0.204,
+      "climateKgCo2EqPerKg": 1.88,
+      "landUsePtPerKg": 244.0,
+      "waterDeprivationM3PerKg": 0.539
+    },
+    "sauce tomate aux olives, préemballée": {
+      "environmentScoreMptPerKg": 0.201,
+      "climateKgCo2EqPerKg": 1.46,
+      "landUsePtPerKg": 74.2,
+      "waterDeprivationM3PerKg": 2.84
+    },
+    "tahin ou purée de sésame": {
+      "environmentScoreMptPerKg": 0.52,
+      "climateKgCo2EqPerKg": 2.85,
+      "landUsePtPerKg": 544.0,
+      "waterDeprivationM3PerKg": 1.51
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "entries": {
+    "lieu noir, cuit": {
+      "litersPerKilogram": 555.0
+    },
+    "pain, baguette, sans sel": {
+      "litersPerKilogram": 188.0
+    },
+    "pomme de terre, sans peau, crue": {
+      "litersPerKilogram": 327.0
+    },
+    "pâte feuilletée, matière grasse végétale, crue": {
+      "litersPerKilogram": 719.0
+    },
+    "sauce au chocolat": {
+      "litersPerKilogram": 469.0
+    },
+    "tarte aux fruits rouges": {
+      "litersPerKilogram": 1950.0
+    },
+    "veau, collier, cru": {
+      "litersPerKilogram": 3170.0
+    }
+  }
+}

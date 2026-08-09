@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "bambou, pousse, crue": {
+      "environmentScoreMptPerKg": 0.216,
+      "climateKgCo2EqPerKg": 1.13,
+      "landUsePtPerKg": 176.0,
+      "waterDeprivationM3PerKg": 3.26
+    },
+    "burger végétarien": {
+      "environmentScoreMptPerKg": 0.339,
+      "climateKgCo2EqPerKg": 2.71,
+      "landUsePtPerKg": 115.0,
+      "waterDeprivationM3PerKg": 0.847
+    },
+    "huile de beurre ou beurre concentré": {
+      "environmentScoreMptPerKg": 0.768,
+      "climateKgCo2EqPerKg": 7.94,
+      "landUsePtPerKg": 396.0,
+      "waterDeprivationM3PerKg": 0.866
+    },
+    "kouign amann": {
+      "environmentScoreMptPerKg": 0.243,
+      "climateKgCo2EqPerKg": 1.71,
+      "landUsePtPerKg": 62.9,
+      "waterDeprivationM3PerKg": 0.785
+    },
+    "lait 2e âge, poudre soluble (préparation de suite), réhydratée chez le consommateur": {
+      "environmentScoreMptPerKg": 0.105,
+      "climateKgCo2EqPerKg": 1.09,
+      "landUsePtPerKg": 54.8,
+      "waterDeprivationM3PerKg": 0.274
+    },
+    "lentille, germée": {
+      "environmentScoreMptPerKg": 0.152,
+      "climateKgCo2EqPerKg": 0.581,
+      "landUsePtPerKg": 309.0,
+      "waterDeprivationM3PerKg": 0.13
+    },
+    "limande, crue": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "maïs doux, en épis, surgelé, cru": {
+      "environmentScoreMptPerKg": 0.148,
+      "climateKgCo2EqPerKg": 0.992,
+      "landUsePtPerKg": 65.4,
+      "waterDeprivationM3PerKg": 0.811
+    },
+    "sandwich baguette, merguez, ketchup moutarde": {
+      "environmentScoreMptPerKg": 0.573,
+      "climateKgCo2EqPerKg": 4.72,
+      "landUsePtPerKg": 216.0,
+      "waterDeprivationM3PerKg": 1.37
+    }
+  }
+}

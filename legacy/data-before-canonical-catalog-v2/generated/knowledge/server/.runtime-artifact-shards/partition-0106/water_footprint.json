@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "boeuf, joue, braisée ou bouillie": {
+      "litersPerKilogram": 2460.0
+    },
+    "chou vert, cuit": {
+      "litersPerKilogram": 347.0
+    },
+    "crottin de chavignol (fromage de chèvre)": {
+      "litersPerKilogram": 2700.0
+    },
+    "espadon, rôti/cuit au four": {
+      "litersPerKilogram": 724.0
+    },
+    "légumes (3 4 sortes en mélange), purée": {
+      "litersPerKilogram": 658.0
+    },
+    "pancetta ou poitrine roulée sèche": {
+      "litersPerKilogram": 4240.0
+    },
+    "soufflé au fromage": {
+      "litersPerKilogram": 795.0
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aromatisé, sucré": {
+      "litersPerKilogram": 458.0
+    }
+  }
+}

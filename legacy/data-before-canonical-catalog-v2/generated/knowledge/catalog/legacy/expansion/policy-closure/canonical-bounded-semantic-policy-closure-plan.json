@@ -1,0 +1,702 @@
+{
+  "version": 1,
+  "planId": "canonical-bounded-semantic-policy-closure-v1-cecb32dc47e22a63",
+  "firstWaveNumber": 4,
+  "finalWaveNumber": 6,
+  "sourceReviewRequiredCandidateCount": 164,
+  "sourceMissingPolicyGapCount": 40,
+  "sourceImplementationBatchCount": 5,
+  "waveCount": 3,
+  "waves": [
+    {
+      "waveNumber": 4,
+      "waveKey": "generalized-semantic-policy-wave-004",
+      "assignedBatchCount": 1,
+      "assignedGapCount": 12,
+      "affectedCandidateReferenceCount": 36,
+      "assignments": [
+        {
+          "assignmentIndex": 1,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "asian-sauces",
+          "axis": "DIETARY_FORM",
+          "gapKey": "asian-sauces::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-asian-sauces-dietary-form-policy"
+        },
+        {
+          "assignmentIndex": 2,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "barbecue-sauces",
+          "axis": "DIETARY_FORM",
+          "gapKey": "barbecue-sauces::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-barbecue-sauces-dietary-form-policy"
+        },
+        {
+          "assignmentIndex": 3,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "cheese-sauces",
+          "axis": "DIETARY_FORM",
+          "gapKey": "cheese-sauces::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-cheese-sauces-dietary-form-policy"
+        },
+        {
+          "assignmentIndex": 4,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "chili-sauces",
+          "axis": "DIETARY_FORM",
+          "gapKey": "chili-sauces::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-chili-sauces-dietary-form-policy"
+        },
+        {
+          "assignmentIndex": 5,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "cooking-sauces",
+          "axis": "DIETARY_FORM",
+          "gapKey": "cooking-sauces::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-cooking-sauces-dietary-form-policy"
+        },
+        {
+          "assignmentIndex": 6,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "cream-sauces",
+          "axis": "DIETARY_FORM",
+          "gapKey": "cream-sauces::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-cream-sauces-dietary-form-policy"
+        },
+        {
+          "assignmentIndex": 7,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "dessert-sauces",
+          "axis": "DIETARY_FORM",
+          "gapKey": "dessert-sauces::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-dessert-sauces-dietary-form-policy"
+        },
+        {
+          "assignmentIndex": 8,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "mayonnaise-sauces",
+          "axis": "DIETARY_FORM",
+          "gapKey": "mayonnaise-sauces::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-mayonnaise-sauces-dietary-form-policy"
+        },
+        {
+          "assignmentIndex": 9,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "mustard-sauces",
+          "axis": "DIETARY_FORM",
+          "gapKey": "mustard-sauces::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-mustard-sauces-dietary-form-policy"
+        },
+        {
+          "assignmentIndex": 10,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "salad-dressings",
+          "axis": "DIETARY_FORM",
+          "gapKey": "salad-dressings::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-salad-dressings-dietary-form-policy"
+        },
+        {
+          "assignmentIndex": 11,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "soy-sauces",
+          "axis": "DIETARY_FORM",
+          "gapKey": "soy-sauces::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-soy-sauces-dietary-form-policy"
+        },
+        {
+          "assignmentIndex": 12,
+          "waveNumber": 4,
+          "sourceBatchKey": "semantic-policy-batch-sauces-dietary-form-001",
+          "category": "sauces",
+          "familyKey": "tomato-sauces",
+          "axis": "DIETARY_FORM",
+          "gapKey": "tomato-sauces::DIETARY_FORM",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "high-protein",
+            "lactose-free",
+            "low-carb"
+          ],
+          "implementationKey": "implement-tomato-sauces-dietary-form-policy"
+        }
+      ],
+      "complete": true,
+      "valid": true
+    },
+    {
+      "waveNumber": 5,
+      "waveKey": "generalized-semantic-policy-wave-005",
+      "assignedBatchCount": 2,
+      "assignedGapCount": 14,
+      "affectedCandidateReferenceCount": 57,
+      "assignments": [
+        {
+          "assignmentIndex": 1,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-allergen-relevant-variant-002",
+          "category": "spreads",
+          "familyKey": "cheese-spreads",
+          "axis": "ALLERGEN_RELEVANT_VARIANT",
+          "gapKey": "cheese-spreads::ALLERGEN_RELEVANT_VARIANT",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "celery-free",
+            "egg-free",
+            "gluten-free"
+          ],
+          "implementationKey": "implement-cheese-spreads-allergen-relevant-variant-policy"
+        },
+        {
+          "assignmentIndex": 2,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-allergen-relevant-variant-002",
+          "category": "spreads",
+          "familyKey": "chocolate-spreads",
+          "axis": "ALLERGEN_RELEVANT_VARIANT",
+          "gapKey": "chocolate-spreads::ALLERGEN_RELEVANT_VARIANT",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "celery-free",
+            "egg-free",
+            "gluten-free"
+          ],
+          "implementationKey": "implement-chocolate-spreads-allergen-relevant-variant-policy"
+        },
+        {
+          "assignmentIndex": 3,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-allergen-relevant-variant-002",
+          "category": "spreads",
+          "familyKey": "fruit-spreads",
+          "axis": "ALLERGEN_RELEVANT_VARIANT",
+          "gapKey": "fruit-spreads::ALLERGEN_RELEVANT_VARIANT",
+          "affectedCandidateCount": 8,
+          "observedValues": [
+            "celery-free",
+            "egg-free",
+            "gluten-free"
+          ],
+          "implementationKey": "implement-fruit-spreads-allergen-relevant-variant-policy"
+        },
+        {
+          "assignmentIndex": 4,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-allergen-relevant-variant-002",
+          "category": "spreads",
+          "familyKey": "honey",
+          "axis": "ALLERGEN_RELEVANT_VARIANT",
+          "gapKey": "honey::ALLERGEN_RELEVANT_VARIANT",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "celery-free",
+            "egg-free",
+            "gluten-free"
+          ],
+          "implementationKey": "implement-honey-allergen-relevant-variant-policy"
+        },
+        {
+          "assignmentIndex": 5,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-allergen-relevant-variant-002",
+          "category": "spreads",
+          "familyKey": "legume-spreads",
+          "axis": "ALLERGEN_RELEVANT_VARIANT",
+          "gapKey": "legume-spreads::ALLERGEN_RELEVANT_VARIANT",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "celery-free",
+            "egg-free",
+            "gluten-free"
+          ],
+          "implementationKey": "implement-legume-spreads-allergen-relevant-variant-policy"
+        },
+        {
+          "assignmentIndex": 6,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-allergen-relevant-variant-002",
+          "category": "spreads",
+          "familyKey": "meat-spreads",
+          "axis": "ALLERGEN_RELEVANT_VARIANT",
+          "gapKey": "meat-spreads::ALLERGEN_RELEVANT_VARIANT",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "celery-free",
+            "egg-free",
+            "gluten-free"
+          ],
+          "implementationKey": "implement-meat-spreads-allergen-relevant-variant-policy"
+        },
+        {
+          "assignmentIndex": 7,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-allergen-relevant-variant-002",
+          "category": "spreads",
+          "familyKey": "mixed-spreads",
+          "axis": "ALLERGEN_RELEVANT_VARIANT",
+          "gapKey": "mixed-spreads::ALLERGEN_RELEVANT_VARIANT",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "celery-free",
+            "egg-free",
+            "gluten-free"
+          ],
+          "implementationKey": "implement-mixed-spreads-allergen-relevant-variant-policy"
+        },
+        {
+          "assignmentIndex": 8,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-allergen-relevant-variant-002",
+          "category": "spreads",
+          "familyKey": "nut-spreads",
+          "axis": "ALLERGEN_RELEVANT_VARIANT",
+          "gapKey": "nut-spreads::ALLERGEN_RELEVANT_VARIANT",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "celery-free",
+            "egg-free",
+            "gluten-free"
+          ],
+          "implementationKey": "implement-nut-spreads-allergen-relevant-variant-policy"
+        },
+        {
+          "assignmentIndex": 9,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-allergen-relevant-variant-002",
+          "category": "spreads",
+          "familyKey": "vegetable-spreads",
+          "axis": "ALLERGEN_RELEVANT_VARIANT",
+          "gapKey": "vegetable-spreads::ALLERGEN_RELEVANT_VARIANT",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "celery-free",
+            "egg-free",
+            "gluten-free"
+          ],
+          "implementationKey": "implement-vegetable-spreads-allergen-relevant-variant-policy"
+        },
+        {
+          "assignmentIndex": 10,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-allergen-relevant-variant-002",
+          "category": "spreads",
+          "familyKey": "yeast-spreads",
+          "axis": "ALLERGEN_RELEVANT_VARIANT",
+          "gapKey": "yeast-spreads::ALLERGEN_RELEVANT_VARIANT",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "celery-free",
+            "egg-free",
+            "gluten-free"
+          ],
+          "implementationKey": "implement-yeast-spreads-allergen-relevant-variant-policy"
+        },
+        {
+          "assignmentIndex": 11,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-primary-ingredient-004",
+          "category": "spreads",
+          "familyKey": "chocolate-spreads",
+          "axis": "PRIMARY_INGREDIENT",
+          "gapKey": "chocolate-spreads::PRIMARY_INGREDIENT",
+          "affectedCandidateCount": 5,
+          "observedValues": [
+            "almond",
+            "apple",
+            "barley",
+            "bean",
+            "beef"
+          ],
+          "implementationKey": "implement-chocolate-spreads-primary-ingredient-policy"
+        },
+        {
+          "assignmentIndex": 12,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-primary-ingredient-004",
+          "category": "spreads",
+          "familyKey": "fruit-spreads",
+          "axis": "PRIMARY_INGREDIENT",
+          "gapKey": "fruit-spreads::PRIMARY_INGREDIENT",
+          "affectedCandidateCount": 6,
+          "observedValues": [
+            "almond",
+            "apple",
+            "barley",
+            "bean",
+            "beef",
+            "carrot"
+          ],
+          "implementationKey": "implement-fruit-spreads-primary-ingredient-policy"
+        },
+        {
+          "assignmentIndex": 13,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-primary-ingredient-004",
+          "category": "spreads",
+          "familyKey": "nut-spreads",
+          "axis": "PRIMARY_INGREDIENT",
+          "gapKey": "nut-spreads::PRIMARY_INGREDIENT",
+          "affectedCandidateCount": 6,
+          "observedValues": [
+            "almond",
+            "apple",
+            "barley",
+            "bean",
+            "beef",
+            "carrot"
+          ],
+          "implementationKey": "implement-nut-spreads-primary-ingredient-policy"
+        },
+        {
+          "assignmentIndex": 14,
+          "waveNumber": 5,
+          "sourceBatchKey": "semantic-policy-batch-spreads-primary-ingredient-004",
+          "category": "spreads",
+          "familyKey": "vegetable-spreads",
+          "axis": "PRIMARY_INGREDIENT",
+          "gapKey": "vegetable-spreads::PRIMARY_INGREDIENT",
+          "affectedCandidateCount": 5,
+          "observedValues": [
+            "almond",
+            "apple",
+            "barley",
+            "bean",
+            "beef"
+          ],
+          "implementationKey": "implement-vegetable-spreads-primary-ingredient-policy"
+        }
+      ],
+      "complete": true,
+      "valid": true
+    },
+    {
+      "waveNumber": 6,
+      "waveKey": "generalized-semantic-policy-wave-006",
+      "assignedBatchCount": 2,
+      "assignedGapCount": 14,
+      "affectedCandidateReferenceCount": 43,
+      "assignments": [
+        {
+          "assignmentIndex": 1,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-snacks-processing-method-003",
+          "category": "snacks",
+          "familyKey": "corn-snacks",
+          "axis": "PROCESSING_METHOD",
+          "gapKey": "corn-snacks::PROCESSING_METHOD",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "boiled",
+            "cut",
+            "deep-fried"
+          ],
+          "implementationKey": "implement-corn-snacks-processing-method-policy"
+        },
+        {
+          "assignmentIndex": 2,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-snacks-processing-method-003",
+          "category": "snacks",
+          "familyKey": "crackers",
+          "axis": "PROCESSING_METHOD",
+          "gapKey": "crackers::PROCESSING_METHOD",
+          "affectedCandidateCount": 4,
+          "observedValues": [
+            "boiled",
+            "cut",
+            "deep-fried",
+            "fermented"
+          ],
+          "implementationKey": "implement-crackers-processing-method-policy"
+        },
+        {
+          "assignmentIndex": 3,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-snacks-processing-method-003",
+          "category": "snacks",
+          "familyKey": "nuts",
+          "axis": "PROCESSING_METHOD",
+          "gapKey": "nuts::PROCESSING_METHOD",
+          "affectedCandidateCount": 4,
+          "observedValues": [
+            "boiled",
+            "cut",
+            "deep-fried",
+            "fermented"
+          ],
+          "implementationKey": "implement-nuts-processing-method-policy"
+        },
+        {
+          "assignmentIndex": 4,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-snacks-processing-method-003",
+          "category": "snacks",
+          "familyKey": "potato-chips",
+          "axis": "PROCESSING_METHOD",
+          "gapKey": "potato-chips::PROCESSING_METHOD",
+          "affectedCandidateCount": 4,
+          "observedValues": [
+            "boiled",
+            "cut",
+            "deep-fried",
+            "fermented"
+          ],
+          "implementationKey": "implement-potato-chips-processing-method-policy"
+        },
+        {
+          "assignmentIndex": 5,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-snacks-processing-method-003",
+          "category": "snacks",
+          "familyKey": "pretzel-snacks",
+          "axis": "PROCESSING_METHOD",
+          "gapKey": "pretzel-snacks::PROCESSING_METHOD",
+          "affectedCandidateCount": 4,
+          "observedValues": [
+            "boiled",
+            "cut",
+            "deep-fried",
+            "fermented"
+          ],
+          "implementationKey": "implement-pretzel-snacks-processing-method-policy"
+        },
+        {
+          "assignmentIndex": 6,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-snacks-processing-method-003",
+          "category": "snacks",
+          "familyKey": "seed-snacks",
+          "axis": "PROCESSING_METHOD",
+          "gapKey": "seed-snacks::PROCESSING_METHOD",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "boiled",
+            "cut",
+            "deep-fried"
+          ],
+          "implementationKey": "implement-seed-snacks-processing-method-policy"
+        },
+        {
+          "assignmentIndex": 7,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-snacks-processing-method-003",
+          "category": "snacks",
+          "familyKey": "snack-mixes",
+          "axis": "PROCESSING_METHOD",
+          "gapKey": "snack-mixes::PROCESSING_METHOD",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "boiled",
+            "cut",
+            "deep-fried"
+          ],
+          "implementationKey": "implement-snack-mixes-processing-method-policy"
+        },
+        {
+          "assignmentIndex": 8,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-snacks-processing-method-003",
+          "category": "snacks",
+          "familyKey": "tortilla-chips",
+          "axis": "PROCESSING_METHOD",
+          "gapKey": "tortilla-chips::PROCESSING_METHOD",
+          "affectedCandidateCount": 3,
+          "observedValues": [
+            "boiled",
+            "cut",
+            "deep-fried"
+          ],
+          "implementationKey": "implement-tortilla-chips-processing-method-policy"
+        },
+        {
+          "assignmentIndex": 9,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-spices-preparation-state-005",
+          "category": "spices",
+          "familyKey": "chili-products",
+          "axis": "PREPARATION_STATE",
+          "gapKey": "chili-products::PREPARATION_STATE",
+          "affectedCandidateCount": 1,
+          "observedValues": [
+            "baked"
+          ],
+          "implementationKey": "implement-chili-products-preparation-state-policy"
+        },
+        {
+          "assignmentIndex": 10,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-spices-preparation-state-005",
+          "category": "spices",
+          "familyKey": "herbs",
+          "axis": "PREPARATION_STATE",
+          "gapKey": "herbs::PREPARATION_STATE",
+          "affectedCandidateCount": 4,
+          "observedValues": [
+            "baked",
+            "cooked",
+            "fried",
+            "instant"
+          ],
+          "implementationKey": "implement-herbs-preparation-state-policy"
+        },
+        {
+          "assignmentIndex": 11,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-spices-preparation-state-005",
+          "category": "spices",
+          "familyKey": "pepper-products",
+          "axis": "PREPARATION_STATE",
+          "gapKey": "pepper-products::PREPARATION_STATE",
+          "affectedCandidateCount": 1,
+          "observedValues": [
+            "baked"
+          ],
+          "implementationKey": "implement-pepper-products-preparation-state-policy"
+        },
+        {
+          "assignmentIndex": 12,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-spices-preparation-state-005",
+          "category": "spices",
+          "familyKey": "seasoning-salts",
+          "axis": "PREPARATION_STATE",
+          "gapKey": "seasoning-salts::PREPARATION_STATE",
+          "affectedCandidateCount": 1,
+          "observedValues": [
+            "baked"
+          ],
+          "implementationKey": "implement-seasoning-salts-preparation-state-policy"
+        },
+        {
+          "assignmentIndex": 13,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-spices-preparation-state-005",
+          "category": "spices",
+          "familyKey": "single-spices",
+          "axis": "PREPARATION_STATE",
+          "gapKey": "single-spices::PREPARATION_STATE",
+          "affectedCandidateCount": 4,
+          "observedValues": [
+            "baked",
+            "cooked",
+            "fried",
+            "instant"
+          ],
+          "implementationKey": "implement-single-spices-preparation-state-policy"
+        },
+        {
+          "assignmentIndex": 14,
+          "waveNumber": 6,
+          "sourceBatchKey": "semantic-policy-batch-spices-preparation-state-005",
+          "category": "spices",
+          "familyKey": "spice-blends",
+          "axis": "PREPARATION_STATE",
+          "gapKey": "spice-blends::PREPARATION_STATE",
+          "affectedCandidateCount": 4,
+          "observedValues": [
+            "baked",
+            "cooked",
+            "fried",
+            "instant"
+          ],
+          "implementationKey": "implement-spice-blends-preparation-state-policy"
+        }
+      ],
+      "complete": true,
+      "valid": true
+    }
+  ],
+  "assignedGapCount": 40,
+  "uniqueGapIdentityCount": 40,
+  "completeGapCoverage": true,
+  "deterministicOrderValid": true,
+  "boundedByFinalWave": true,
+  "valid": true
+}

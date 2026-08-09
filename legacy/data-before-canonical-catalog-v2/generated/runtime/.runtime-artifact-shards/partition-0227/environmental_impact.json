@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "amarante, crue": {
+      "environmentScoreMptPerKg": 0.112,
+      "climateKgCo2EqPerKg": 0.949,
+      "landUsePtPerKg": 108.0,
+      "waterDeprivationM3PerKg": 0.496
+    },
+    "beignet de crevette": {
+      "environmentScoreMptPerKg": 1.59,
+      "climateKgCo2EqPerKg": 9.61,
+      "landUsePtPerKg": 152.0,
+      "waterDeprivationM3PerKg": 74.6
+    },
+    "biscotte sans adjonction de sel": {
+      "environmentScoreMptPerKg": 0.156,
+      "climateKgCo2EqPerKg": 1.44,
+      "landUsePtPerKg": 76.5,
+      "waterDeprivationM3PerKg": 0.557
+    },
+    "boisson lactée, lait fermenté ou yaourt à boire, aromatisé, sucré": {
+      "environmentScoreMptPerKg": 0.22,
+      "climateKgCo2EqPerKg": 1.98,
+      "landUsePtPerKg": 76.7,
+      "waterDeprivationM3PerKg": 1.71
+    },
+    "chocolat au lait, tablette": {
+      "environmentScoreMptPerKg": 0.787,
+      "climateKgCo2EqPerKg": 12.6,
+      "landUsePtPerKg": 487.0,
+      "waterDeprivationM3PerKg": 1.19
+    },
+    "orange, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.149,
+      "climateKgCo2EqPerKg": 0.678,
+      "landUsePtPerKg": 26.0,
+      "waterDeprivationM3PerKg": 10.5
+    },
+    "pintade, crue": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "poisson blanc à l'estragon": {
+      "environmentScoreMptPerKg": 1.49,
+      "climateKgCo2EqPerKg": 9.35,
+      "landUsePtPerKg": 86.6,
+      "waterDeprivationM3PerKg": 0.631
+    },
+    "poulet fermier, viande et peau, cru": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "pêche au sirop léger, appertisée, égouttée": {
+      "environmentScoreMptPerKg": 0.272,
+      "climateKgCo2EqPerKg": 1.38,
+      "landUsePtPerKg": 167.0,
+      "waterDeprivationM3PerKg": 8.04
+    },
+    "tome des bauges": {
+      "environmentScoreMptPerKg": 0.555,
+      "climateKgCo2EqPerKg": 5.84,
+      "landUsePtPerKg": 270.0,
+      "waterDeprivationM3PerKg": 0.707
+    }
+  }
+}

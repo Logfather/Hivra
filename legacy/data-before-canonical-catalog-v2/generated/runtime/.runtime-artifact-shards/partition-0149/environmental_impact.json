@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "canard, magret fumé": {
+      "environmentScoreMptPerKg": 2.29,
+      "climateKgCo2EqPerKg": 16.1,
+      "landUsePtPerKg": 708.0,
+      "waterDeprivationM3PerKg": 5.34
+    },
+    "carotte, surgelée, cuite": {
+      "environmentScoreMptPerKg": 0.114,
+      "climateKgCo2EqPerKg": 0.86,
+      "landUsePtPerKg": 13.0,
+      "waterDeprivationM3PerKg": 0.544
+    },
+    "miel": {
+      "environmentScoreMptPerKg": 0.196,
+      "climateKgCo2EqPerKg": 1.57,
+      "landUsePtPerKg": 37.9,
+      "waterDeprivationM3PerKg": 1.62
+    },
+    "pistache, grillée": {
+      "environmentScoreMptPerKg": 0.679,
+      "climateKgCo2EqPerKg": 7.22,
+      "landUsePtPerKg": 609.0,
+      "waterDeprivationM3PerKg": 15.1
+    },
+    "prune reine claude, crue": {
+      "environmentScoreMptPerKg": 0.272,
+      "climateKgCo2EqPerKg": 1.04,
+      "landUsePtPerKg": 1010.0,
+      "waterDeprivationM3PerKg": 6.51
+    },
+    "pâté de foie d'oie": {
+      "environmentScoreMptPerKg": 0.302,
+      "climateKgCo2EqPerKg": 2.49,
+      "landUsePtPerKg": 80.0,
+      "waterDeprivationM3PerKg": 0.807
+    },
+    "substitut de repas hypocalorique, crème dessert": {
+      "environmentScoreMptPerKg": 0.24,
+      "climateKgCo2EqPerKg": 2.66,
+      "landUsePtPerKg": 55.7,
+      "waterDeprivationM3PerKg": 0.805
+    }
+  }
+}

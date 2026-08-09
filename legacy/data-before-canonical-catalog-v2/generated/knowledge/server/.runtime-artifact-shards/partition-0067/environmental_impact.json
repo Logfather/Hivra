@@ -1,0 +1,100 @@
+{
+  "entries": {
+    "beurre à 60 62% mg, à teneur réduite en matière grasse, doux": {
+      "environmentScoreMptPerKg": 0.708,
+      "climateKgCo2EqPerKg": 7.28,
+      "landUsePtPerKg": 360.0,
+      "waterDeprivationM3PerKg": 0.8
+    },
+    "boeuf, boule de macreuse, crue": {
+      "environmentScoreMptPerKg": 2.7,
+      "climateKgCo2EqPerKg": 28.9,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.39
+    },
+    "cake aux fruits": {
+      "environmentScoreMptPerKg": 0.326,
+      "climateKgCo2EqPerKg": 3.28,
+      "landUsePtPerKg": 122.0,
+      "waterDeprivationM3PerKg": 1.3
+    },
+    "chocolat au lait aux céréales croustillantes, tablette": {
+      "environmentScoreMptPerKg": 0.787,
+      "climateKgCo2EqPerKg": 12.6,
+      "landUsePtPerKg": 487.0,
+      "waterDeprivationM3PerKg": 1.19
+    },
+    "confit de foie de volaille": {
+      "environmentScoreMptPerKg": 0.309,
+      "climateKgCo2EqPerKg": 2.42,
+      "landUsePtPerKg": 80.9,
+      "waterDeprivationM3PerKg": 0.773
+    },
+    "fromage de tête": {
+      "environmentScoreMptPerKg": 0.645,
+      "climateKgCo2EqPerKg": 5.51,
+      "landUsePtPerKg": 245.0,
+      "waterDeprivationM3PerKg": 1.66
+    },
+    "miettes de thon à l'huile, appertisées": {
+      "environmentScoreMptPerKg": 1.24,
+      "climateKgCo2EqPerKg": 6.75,
+      "landUsePtPerKg": 53.3,
+      "waterDeprivationM3PerKg": 12.6
+    },
+    "mousse aux fruits, rayon frais": {
+      "environmentScoreMptPerKg": 0.338,
+      "climateKgCo2EqPerKg": 2.28,
+      "landUsePtPerKg": 120.0,
+      "waterDeprivationM3PerKg": 1.78
+    },
+    "mouton, gigot, cru": {
+      "environmentScoreMptPerKg": 5.01,
+      "climateKgCo2EqPerKg": 41.3,
+      "landUsePtPerKg": 4420.0,
+      "waterDeprivationM3PerKg": 6.93
+    },
+    "mélange apéritif de graines salées et raisins secs": {
+      "environmentScoreMptPerKg": 0.569,
+      "climateKgCo2EqPerKg": 2.62,
+      "landUsePtPerKg": 380.0,
+      "waterDeprivationM3PerKg": 20.7
+    },
+    "pomme, sèche": {
+      "environmentScoreMptPerKg": 0.369,
+      "climateKgCo2EqPerKg": 1.64,
+      "landUsePtPerKg": 73.1,
+      "waterDeprivationM3PerKg": 2.66
+    },
+    "porc, escalope de jambon, crue": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "pâtes fraîches farcies (ex : raviolis, ravioles du dauphiné), au fromage, crues": {
+      "environmentScoreMptPerKg": 0.419,
+      "climateKgCo2EqPerKg": 3.62,
+      "landUsePtPerKg": 166.0,
+      "waterDeprivationM3PerKg": 0.857
+    },
+    "saucisson sec aux noix et/ou noisettes": {
+      "environmentScoreMptPerKg": 0.944,
+      "climateKgCo2EqPerKg": 7.41,
+      "landUsePtPerKg": 387.0,
+      "waterDeprivationM3PerKg": 2.37
+    },
+    "sureau, baie, crue": {
+      "environmentScoreMptPerKg": 0.174,
+      "climateKgCo2EqPerKg": 0.92,
+      "landUsePtPerKg": 99.3,
+      "waterDeprivationM3PerKg": 0.165
+    },
+    "tomate, pulpe et peau, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 0.188,
+      "climateKgCo2EqPerKg": 1.49,
+      "landUsePtPerKg": 15.2,
+      "waterDeprivationM3PerKg": 1.71
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "boeuf bourguignon": {
+      "environmentScoreMptPerKg": 2.39,
+      "climateKgCo2EqPerKg": 25.0,
+      "landUsePtPerKg": 1580.0,
+      "waterDeprivationM3PerKg": 7.92
+    },
+    "boeuf, tende de tranche, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 3.44,
+      "climateKgCo2EqPerKg": 36.6,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "céréales pour petit déjeuner \"équilibre\" aux fruits (non enrichies en vitamines et minéraux)": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "pain d'épices": {
+      "environmentScoreMptPerKg": 0.26,
+      "climateKgCo2EqPerKg": 2.5,
+      "landUsePtPerKg": 79.5,
+      "waterDeprivationM3PerKg": 1.39
+    },
+    "rillettes de tours": {
+      "environmentScoreMptPerKg": 0.982,
+      "climateKgCo2EqPerKg": 7.87,
+      "landUsePtPerKg": 407.0,
+      "waterDeprivationM3PerKg": 2.63
+    },
+    "salami porc et boeuf": {
+      "environmentScoreMptPerKg": 1.07,
+      "climateKgCo2EqPerKg": 8.34,
+      "landUsePtPerKg": 395.0,
+      "waterDeprivationM3PerKg": 2.68
+    },
+    "tonic ou bitter, non sucré, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    }
+  }
+}

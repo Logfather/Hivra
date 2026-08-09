@@ -1,0 +1,19 @@
+{
+  "entries": {
+    "mil entier, cru": {
+      "litersPerKilogram": 1030.0
+    },
+    "poulet éviscéré sans abats, cru": {
+      "litersPerKilogram": 2380.0
+    },
+    "salsifis, cuit": {
+      "litersPerKilogram": 746.0
+    },
+    "sandwich baguette, salami, beurre": {
+      "litersPerKilogram": 1740.0
+    },
+    "soja, graine entière": {
+      "litersPerKilogram": 276.0
+    }
+  }
+}

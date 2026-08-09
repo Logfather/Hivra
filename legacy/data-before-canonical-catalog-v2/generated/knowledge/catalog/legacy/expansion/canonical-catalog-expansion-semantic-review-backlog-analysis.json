@@ -1,0 +1,285 @@
+{
+  "version": 1,
+  "sourceBaselineId": "canonical-food-catalog-v1-e0b29b3d39d868cb",
+  "sourceBaselineCatalogSha256": "e0b29b3d39d868cb3cbc2edd5cae89e6e878d6eede231080632432566711fc7c",
+  "generatedCandidateCount": 9304,
+  "evaluatedCandidateCount": 9304,
+  "acceptedCandidateCount": 6935,
+  "rejectedCandidateCount": 2341,
+  "reviewRequiredCandidateCount": 28,
+  "reviewRequiredShare": 0.0030094582975064487,
+  "reviewedCategoryCount": 1,
+  "reviewedFamilyCount": 2,
+  "reviewedAxisCount": 4,
+  "reviewedDistinctValueCount": 14,
+  "candidatesWithMissingFamilyAxisPolicyCount": 0,
+  "candidatesWithMissingFamilyAxisPolicyShare": 0.0,
+  "missingFamilyAxisPolicyGapCount": 0,
+  "reviewFindingCountsByRuleType": {
+    "REDUNDANT_FAMILY_VALUE": 28
+  },
+  "categories": [
+    {
+      "rank": 1,
+      "category": "meat",
+      "generatedCandidateCount": 411,
+      "reviewRequiredCandidateCount": 28,
+      "reviewShareWithinCategory": 0.0681265206812652,
+      "shareOfCompleteReviewBacklog": 1.0,
+      "affectedFamilyCount": 2,
+      "affectedAxisCount": 4,
+      "missingFamilyAxisPolicyCount": 0
+    }
+  ],
+  "families": [
+    {
+      "rank": 1,
+      "category": "meat",
+      "familyKey": "beef",
+      "familyDisplayName": "Rindfleisch",
+      "generatedCandidateCount": 88,
+      "reviewRequiredCandidateCount": 20,
+      "reviewShareWithinFamily": 0.22727272727272727,
+      "shareOfCompleteReviewBacklog": 0.7142857142857143,
+      "affectedAxisCount": 4,
+      "distinctAffectedValueCount": 13,
+      "missingAxisPolicyCount": 0,
+      "priority": "CRITICAL",
+      "recommendation": "IMPLEMENT_FAMILY_SPECIFIC_SEMANTIC_RULE"
+    },
+    {
+      "rank": 2,
+      "category": "meat",
+      "familyKey": "chicken",
+      "familyDisplayName": "Hähnchenfleisch",
+      "generatedCandidateCount": 57,
+      "reviewRequiredCandidateCount": 8,
+      "reviewShareWithinFamily": 0.14035087719298245,
+      "shareOfCompleteReviewBacklog": 0.2857142857142857,
+      "affectedAxisCount": 4,
+      "distinctAffectedValueCount": 9,
+      "missingAxisPolicyCount": 0,
+      "priority": "CRITICAL",
+      "recommendation": "IMPLEMENT_FAMILY_SPECIFIC_SEMANTIC_RULE"
+    }
+  ],
+  "axes": [
+    {
+      "rank": 1,
+      "axis": "ANIMAL_SPECIES",
+      "affectedCandidateCount": 28,
+      "shareOfCompleteReviewBacklog": 1.0,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "distinctValueCount": 2,
+      "missingFamilyPolicyCandidateCount": 0,
+      "missingFamilyPolicyShare": 0.0
+    },
+    {
+      "rank": 2,
+      "axis": "PREPARATION_STATE",
+      "affectedCandidateCount": 16,
+      "shareOfCompleteReviewBacklog": 0.5714285714285714,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "distinctValueCount": 4,
+      "missingFamilyPolicyCandidateCount": 0,
+      "missingFamilyPolicyShare": 0.0
+    },
+    {
+      "rank": 3,
+      "axis": "CUT_FORM",
+      "affectedCandidateCount": 15,
+      "shareOfCompleteReviewBacklog": 0.5357142857142857,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "distinctValueCount": 4,
+      "missingFamilyPolicyCandidateCount": 0,
+      "missingFamilyPolicyShare": 0.0
+    },
+    {
+      "rank": 4,
+      "axis": "PROCESSING_METHOD",
+      "affectedCandidateCount": 5,
+      "shareOfCompleteReviewBacklog": 0.17857142857142858,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "distinctValueCount": 4,
+      "missingFamilyPolicyCandidateCount": 0,
+      "missingFamilyPolicyShare": 0.0
+    }
+  ],
+  "values": [
+    {
+      "rank": 1,
+      "axis": "ANIMAL_SPECIES",
+      "valueKey": "cattle",
+      "displayName": "Rind",
+      "affectedCandidateCount": 20,
+      "shareOfCompleteReviewBacklog": 0.7142857142857143,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 1,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 2,
+      "axis": "ANIMAL_SPECIES",
+      "valueKey": "chicken",
+      "displayName": "Hähnchen",
+      "affectedCandidateCount": 8,
+      "shareOfCompleteReviewBacklog": 0.2857142857142857,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 1,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 3,
+      "axis": "CUT_FORM",
+      "valueKey": "cubes",
+      "displayName": "Würfel",
+      "affectedCandidateCount": 6,
+      "shareOfCompleteReviewBacklog": 0.21428571428571427,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 4,
+      "axis": "CUT_FORM",
+      "valueKey": "chop",
+      "displayName": "Kotelett",
+      "affectedCandidateCount": 5,
+      "shareOfCompleteReviewBacklog": 0.17857142857142858,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 1,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 5,
+      "axis": "PREPARATION_STATE",
+      "valueKey": "baked",
+      "displayName": "Gebacken",
+      "affectedCandidateCount": 4,
+      "shareOfCompleteReviewBacklog": 0.14285714285714285,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 6,
+      "axis": "PREPARATION_STATE",
+      "valueKey": "cooked",
+      "displayName": "Gegart",
+      "affectedCandidateCount": 4,
+      "shareOfCompleteReviewBacklog": 0.14285714285714285,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 7,
+      "axis": "PREPARATION_STATE",
+      "valueKey": "fried",
+      "displayName": "Gebraten",
+      "affectedCandidateCount": 4,
+      "shareOfCompleteReviewBacklog": 0.14285714285714285,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 8,
+      "axis": "PREPARATION_STATE",
+      "valueKey": "instant",
+      "displayName": "Instant",
+      "affectedCandidateCount": 4,
+      "shareOfCompleteReviewBacklog": 0.14285714285714285,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 9,
+      "axis": "CUT_FORM",
+      "valueKey": "cutlet",
+      "displayName": "Schnitzel",
+      "affectedCandidateCount": 2,
+      "shareOfCompleteReviewBacklog": 0.07142857142857142,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 10,
+      "axis": "CUT_FORM",
+      "valueKey": "fillet",
+      "displayName": "Filet",
+      "affectedCandidateCount": 2,
+      "shareOfCompleteReviewBacklog": 0.07142857142857142,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 11,
+      "axis": "PROCESSING_METHOD",
+      "valueKey": "boiled",
+      "displayName": "Gekocht",
+      "affectedCandidateCount": 2,
+      "shareOfCompleteReviewBacklog": 0.07142857142857142,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 2,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 12,
+      "axis": "PROCESSING_METHOD",
+      "valueKey": "cut",
+      "displayName": "Geschnitten",
+      "affectedCandidateCount": 1,
+      "shareOfCompleteReviewBacklog": 0.03571428571428571,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 1,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 13,
+      "axis": "PROCESSING_METHOD",
+      "valueKey": "deep-fried",
+      "displayName": "Frittiert",
+      "affectedCandidateCount": 1,
+      "shareOfCompleteReviewBacklog": 0.03571428571428571,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 1,
+      "missingFamilyPolicyCandidateCount": 0
+    },
+    {
+      "rank": 14,
+      "axis": "PROCESSING_METHOD",
+      "valueKey": "fermented",
+      "displayName": "Fermentiert",
+      "affectedCandidateCount": 1,
+      "shareOfCompleteReviewBacklog": 0.03571428571428571,
+      "affectedCategoryCount": 1,
+      "affectedFamilyCount": 1,
+      "missingFamilyPolicyCandidateCount": 0
+    }
+  ],
+  "missingFamilyAxisPolicyGaps": [],
+  "highestPriorityImplementationKey": null,
+  "highestPriorityRecommendation": null,
+  "highestPriorityAffectedCandidateCount": 0,
+  "highestPriorityAffectedReviewShare": 0.0,
+  "implementationReady": false,
+  "implementationBlockers": [],
+  "observations": [
+    "28 of 9304 candidates require semantic review.",
+    "0 review candidates contain at least one missing family-axis policy.",
+    "Category 'meat' has the largest review backlog with 28 candidates.",
+    "Family 'beef' has the largest family review backlog with 20 candidates.",
+    "Axis 'ANIMAL_SPECIES' affects the largest number of review candidates: 28.",
+    "0 distinct family-axis policy gaps were identified."
+  ],
+  "completeReviewCoverage": true,
+  "valid": true
+}

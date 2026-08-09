@@ -1,5 +1,6 @@
 package de.shopme.tools.knowledge.rebuild.nutrition.runner
 
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.rebuild.nutrition.NutritionKnowledgeRebuildFiles
 import java.io.File
 
@@ -51,117 +52,90 @@ data class NutritionKnowledgeRebuildProjectFiles(
             projectRoot: File
         ): NutritionKnowledgeRebuildProjectFiles {
 
-            val generatedKnowledgeDirectory =
-                File(
-                    projectRoot,
-                    "data/generated/knowledge"
-                )
-
-            val serverArtifactDirectory =
-                File(
-                    generatedKnowledgeDirectory,
-                    "server"
-                )
-
-            val runtimeArtifactDirectory =
-                File(
-                    generatedKnowledgeDirectory,
-                    "runtime"
+            val paths =
+                KnowledgeBuildPaths.fromProjectRoot(
+                    projectRoot
                 )
 
             return NutritionKnowledgeRebuildProjectFiles(
                 projectRoot =
                     projectRoot,
+
                 catalogFile =
-                    File(
-                        projectRoot,
-                        "data/raw/catalog/" +
-                                "supermarket_dataset.translated.json"
-                    ),
+                    paths.canonicalFoodCatalog,
+
                 serverArtifactDirectory =
-                    serverArtifactDirectory,
+                    paths.serverRoot,
+
                 serverNutritionFile =
-                    File(
-                        serverArtifactDirectory,
+                    paths.serverArtifact(
                         "nutrition.json"
                     ),
+
                 runtimeArtifactDirectory =
-                    runtimeArtifactDirectory,
+                    paths.runtimeRoot,
+
                 runtimeNutritionFile =
-                    File(
-                        runtimeArtifactDirectory,
+                    paths.runtimeArtifact(
                         "nutrition.json"
                     ),
+
                 requestFile =
-                    File(
-                        generatedKnowledgeDirectory,
-                        "match-requests/" +
-                                "nutrition.match-requests.json"
+                    paths.intermediateArtifact(
+                        "match-requests/nutrition.match-requests.json"
                     ),
+
                 decisionFile =
-                    File(
-                        generatedKnowledgeDirectory,
-                        "match-decisions/" +
-                                "nutrition.match-decisions.json"
+                    paths.intermediateArtifact(
+                        "match-decisions/nutrition.match-decisions.json"
                     ),
+
                 diagnosticsFile =
-                    File(
-                        generatedKnowledgeDirectory,
-                        "reports/" +
-                                "nutrition.match-diagnostics.json"
+                    paths.reportArtifact(
+                        "nutrition.match-diagnostics.json"
                     ),
+
                 errorFile =
-                    File(
-                        generatedKnowledgeDirectory,
-                        "match-decisions/" +
-                                "nutrition.match-errors.json"
+                    paths.intermediateArtifact(
+                        "match-decisions/nutrition.match-errors.json"
                     ),
+
                 exactMappingFile =
-                    File(
-                        generatedKnowledgeDirectory,
-                        "mappings/" +
-                                "nutrition.mappings.json"
+                    paths.mappingArtifact(
+                        "nutrition.mappings.json"
                     ),
+
                 outputMappingFile =
-                    File(
-                        generatedKnowledgeDirectory,
-                        "mappings/" +
-                                "catalog-server.mappings.json"
+                    paths.mappingArtifact(
+                        "catalog-server.mappings.json"
                     ),
+
                 validationReportFile =
-                    File(
-                        generatedKnowledgeDirectory,
-                        "reports/" +
-                                "nutrition.mapping-validation-report.json"
+                    paths.reportArtifact(
+                        "nutrition.mapping-validation-report.json"
                     ),
+
                 localModelFile =
-                    File(
-                        generatedKnowledgeDirectory,
-                        "models/" +
-                                "nutrition.local-matcher-model.json"
-                    ),
+                    paths.nutritionLocalMatcherModel,
+
                 rebuildResultFile =
-                    File(
-                        generatedKnowledgeDirectory,
-                        "reports/" +
-                                "nutrition.rebuild-result.json"
+                    paths.reportArtifact(
+                        "nutrition.rebuild-result.json"
                     ),
+
                 representativeValidationFile =
-                    File(
-                        generatedKnowledgeDirectory,
-                        "reports/" +
-                                "nutrition.low-confidence-validation.json"
+                    paths.reportArtifact(
+                        "nutrition.low-confidence-validation.json"
                     ),
+
                 matchReportFile =
-                    File(
-                        projectRoot,
-                        "data/generated/reports/catalog-server-matches/" +
-                                "nutrition.matches.json"
+                    paths.reportArtifact(
+                        "catalog-server-matches/nutrition.matches.json"
                     ),
+
                 exactMatchReportFile =
-                    projectRoot.resolve(
-                        "data/generated/reports/catalog-server-matches/" +
-                                "nutrition.matches.json"
+                    paths.reportArtifact(
+                        "catalog-server-matches/nutrition.matches.json"
                     ),
             )
         }

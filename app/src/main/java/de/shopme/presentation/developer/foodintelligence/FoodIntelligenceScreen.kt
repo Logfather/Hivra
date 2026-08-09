@@ -35,6 +35,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import de.shopme.data.sync.logging.RuntimeLog
+import de.shopme.presentation.developer.foodintelligence.nutrition.NutritionKnowledgeQualityCard
+import de.shopme.presentation.developer.foodintelligence.nutrition.NutritionKnowledgeQualityUiMapper
+import de.shopme.presentation.developer.foodintelligence.nutrition.PackagedNutritionKnowledgeQualityReportLoader
 import de.shopme.tools.knowledge.dimension.DefaultKnowledgeDimensionRegistry
 import de.shopme.tools.knowledge.dimension.KnowledgeDimensionCapability
 import de.shopme.tools.knowledge.dimension.KnowledgeDimensionInfo
@@ -70,6 +73,21 @@ fun FoodIntelligenceScreen(
     }
 
     val context = LocalContext.current
+
+    val nutritionQuality =
+        remember(
+            context
+        ) {
+            val report =
+                PackagedNutritionKnowledgeQualityReportLoader(
+                    context
+                ).load()
+
+            NutritionKnowledgeQualityUiMapper()
+                .map(
+                    report
+                )
+        }
 
     var sort by remember {
         mutableStateOf(
@@ -281,6 +299,15 @@ fun FoodIntelligenceScreen(
                     HorizontalDivider()
                 }
             }
+
+            NutritionKnowledgeQualityCard(
+                model =
+                    nutritionQuality,
+                modifier =
+                    Modifier.padding(
+                        vertical = 16.dp
+                    )
+            )
 
             Row(
                 modifier =

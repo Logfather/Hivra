@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "brochette de volaille": {
+      "litersPerKilogram": 3410.0
+    },
+    "carotte, crue": {
+      "litersPerKilogram": 362.0
+    },
+    "chips de pommes de terre, standard": {
+      "litersPerKilogram": 493.0
+    },
+    "chou de bruxelles, appertisé, égoutté": {
+      "litersPerKilogram": 255.0
+    },
+    "fajitas": {
+      "litersPerKilogram": 1350.0
+    },
+    "gâteau au fromage blanc": {
+      "litersPerKilogram": 1560.0
+    },
+    "kumquat, sans pépin, cru": {
+      "litersPerKilogram": 10900.0
+    },
+    "lait en poudre, entier": {
+      "litersPerKilogram": 1310.0
+    },
+    "mille feuille": {
+      "litersPerKilogram": 777.0
+    },
+    "oie, viande et peau, crue": {
+      "litersPerKilogram": 2380.0
+    },
+    "pizza au speck ou jambon cru": {
+      "litersPerKilogram": 1910.0
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "bière forte (>8° alcool)": {
+      "environmentScoreMptPerKg": 0.127,
+      "climateKgCo2EqPerKg": 1.35,
+      "landUsePtPerKg": 17.0,
+      "waterDeprivationM3PerKg": 0.258
+    },
+    "bouillon de légumes, déshydraté reconstitué": {
+      "environmentScoreMptPerKg": 0.0125,
+      "climateKgCo2EqPerKg": 0.1,
+      "landUsePtPerKg": 1.27,
+      "waterDeprivationM3PerKg": 0.0764
+    },
+    "jus de fruits rouges": {
+      "environmentScoreMptPerKg": 0.136,
+      "climateKgCo2EqPerKg": 0.715,
+      "landUsePtPerKg": 155.0,
+      "waterDeprivationM3PerKg": 0.962
+    },
+    "muesli floconneux ou de type traditionnel": {
+      "environmentScoreMptPerKg": 0.284,
+      "climateKgCo2EqPerKg": 2.55,
+      "landUsePtPerKg": 143.0,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "riz, mélange de variétés (blanc, complet, rouge, sauvage, etc.), cru": {
+      "environmentScoreMptPerKg": 0.428,
+      "climateKgCo2EqPerKg": 2.01,
+      "landUsePtPerKg": 63.0,
+      "waterDeprivationM3PerKg": 14.3
+    }
+  }
+}

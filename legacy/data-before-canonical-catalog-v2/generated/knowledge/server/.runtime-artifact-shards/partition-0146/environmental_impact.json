@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "agneau, côte première, crue": {
+      "environmentScoreMptPerKg": 5.01,
+      "climateKgCo2EqPerKg": 41.3,
+      "landUsePtPerKg": 4420.0,
+      "waterDeprivationM3PerKg": 6.93
+    },
+    "boeuf, entrecôte, partie maigre, grillée/poêlée": {
+      "environmentScoreMptPerKg": 3.44,
+      "climateKgCo2EqPerKg": 36.9,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.07
+    },
+    "boisson gazeuse aux fruits (de 10 à 50% de jus), sucrée": {
+      "environmentScoreMptPerKg": 0.056,
+      "climateKgCo2EqPerKg": 0.409,
+      "landUsePtPerKg": 5.6,
+      "waterDeprivationM3PerKg": 0.288
+    },
+    "boisson gazeuse aux fruits (à moins de 10% de jus), sucrée, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.056,
+      "climateKgCo2EqPerKg": 0.409,
+      "landUsePtPerKg": 5.6,
+      "waterDeprivationM3PerKg": 0.288
+    },
+    "farine de riz": {
+      "environmentScoreMptPerKg": 0.519,
+      "climateKgCo2EqPerKg": 2.48,
+      "landUsePtPerKg": 75.8,
+      "waterDeprivationM3PerKg": 17.0
+    },
+    "fromage de chèvre sec": {
+      "environmentScoreMptPerKg": 0.905,
+      "climateKgCo2EqPerKg": 6.48,
+      "landUsePtPerKg": 414.0,
+      "waterDeprivationM3PerKg": 2.29
+    },
+    "meringue": {
+      "environmentScoreMptPerKg": 0.257,
+      "climateKgCo2EqPerKg": 2.05,
+      "landUsePtPerKg": 83.0,
+      "waterDeprivationM3PerKg": 1.8
+    },
+    "pain pour hamburger ou hot dog (bun), complet, préemballé": {
+      "environmentScoreMptPerKg": 0.107,
+      "climateKgCo2EqPerKg": 0.84,
+      "landUsePtPerKg": 61.8,
+      "waterDeprivationM3PerKg": 0.234
+    },
+    "porc, épaule, crue": {
+      "environmentScoreMptPerKg": 0.833,
+      "climateKgCo2EqPerKg": 6.78,
+      "landUsePtPerKg": 350.0,
+      "waterDeprivationM3PerKg": 2.2
+    },
+    "salade de fruits, crue": {
+      "environmentScoreMptPerKg": 0.199,
+      "climateKgCo2EqPerKg": 1.63,
+      "landUsePtPerKg": 100.0,
+      "waterDeprivationM3PerKg": 5.48
+    },
+    "soupe asiatique, avec pâtes, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 1.57,
+      "climateKgCo2EqPerKg": 9.5,
+      "landUsePtPerKg": 128.0,
+      "waterDeprivationM3PerKg": 77.4
+    },
+    "églefin, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    }
+  }
+}

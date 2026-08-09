@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "boisson au thé, aromatisée, sucrée": {
+      "score": 0.295
+    },
+    "boisson à l'amande": {
+      "score": 1.07
+    },
+    "confiture de cerise (extra ou classique)": {
+      "score": 7.26
+    },
+    "crevette, crue": {
+      "score": 178.0
+    },
+    "dessert glacé type mystère ou vacherin": {
+      "score": 0.666
+    },
+    "farine de blé tendre ou froment t65": {
+      "score": 0.205
+    },
+    "fromage à pâte molle et croûte mixte (lavée et fleurie) colorée": {
+      "score": 0.692
+    },
+    "fève, cuite": {
+      "score": 0.116
+    },
+    "gâteau de semoule, appertisé": {
+      "score": 0.548
+    },
+    "lait gélifié aromatisé, allégé en matière grasse et en sucre, rayon frais": {
+      "score": 0.45
+    },
+    "oeuf, jaune (jaune d'oeuf), cru": {
+      "score": 0.864
+    },
+    "topinambour, cuit": {
+      "score": 0.296
+    }
+  }
+}

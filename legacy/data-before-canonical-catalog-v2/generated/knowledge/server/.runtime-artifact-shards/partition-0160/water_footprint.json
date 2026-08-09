@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "agneau, côtelette, grillée": {
+      "litersPerKilogram": 8770.0
+    },
+    "boeuf, côte, crue": {
+      "litersPerKilogram": 2420.0
+    },
+    "boeuf, onglet, cru": {
+      "litersPerKilogram": 2390.0
+    },
+    "chevreau, cru": {
+      "litersPerKilogram": 6930.0
+    },
+    "mesclun ou salade, mélange de jeunes pousses": {
+      "litersPerKilogram": 675.0
+    },
+    "moutarde": {
+      "litersPerKilogram": 436.0
+    },
+    "poule, viande ,crue": {
+      "litersPerKilogram": 2540.0
+    },
+    "poulet basquaise": {
+      "litersPerKilogram": 2220.0
+    },
+    "pélardon (fromage de chèvre)": {
+      "litersPerKilogram": 3070.0
+    },
+    "raisin, sec": {
+      "litersPerKilogram": 19400.0
+    },
+    "salade composée avec viande ou poisson, appertisée, égouttée": {
+      "litersPerKilogram": 1170.0
+    },
+    "sole tropicale ou sole langue, crue": {
+      "litersPerKilogram": 707.0
+    },
+    "tonic ou bitter, sucré, avec édulcorants": {
+      "litersPerKilogram": 307.0
+    },
+    "truite d'élevage, crue": {
+      "litersPerKilogram": 33300.0
+    }
+  }
+}

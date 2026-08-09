@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "barre céréalière chocolatée": {
+      "environmentScoreMptPerKg": 0.516,
+      "climateKgCo2EqPerKg": 6.89,
+      "landUsePtPerKg": 275.0,
+      "waterDeprivationM3PerKg": 1.24
+    },
+    "fromage de chèvre lactique affiné (type bûchette, crottin, sainte maure)": {
+      "environmentScoreMptPerKg": 0.976,
+      "climateKgCo2EqPerKg": 6.97,
+      "landUsePtPerKg": 450.0,
+      "waterDeprivationM3PerKg": 2.43
+    },
+    "hareng maigre, cru": {
+      "environmentScoreMptPerKg": 0.367,
+      "climateKgCo2EqPerKg": 2.68,
+      "landUsePtPerKg": 7.32,
+      "waterDeprivationM3PerKg": 0.213
+    },
+    "lentille corail, cuite": {
+      "environmentScoreMptPerKg": 0.0887,
+      "climateKgCo2EqPerKg": 0.466,
+      "landUsePtPerKg": 133.0,
+      "waterDeprivationM3PerKg": 0.107
+    },
+    "mouton, pied, cru": {
+      "environmentScoreMptPerKg": 3.28,
+      "climateKgCo2EqPerKg": 27.1,
+      "landUsePtPerKg": 2870.0,
+      "waterDeprivationM3PerKg": 4.56
+    },
+    "porc, côte, grillée": {
+      "environmentScoreMptPerKg": 1.09,
+      "climateKgCo2EqPerKg": 8.65,
+      "landUsePtPerKg": 442.0,
+      "waterDeprivationM3PerKg": 2.81
+    },
+    "poulet, viande et peau, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 1.04,
+      "climateKgCo2EqPerKg": 6.13,
+      "landUsePtPerKg": 356.0,
+      "waterDeprivationM3PerKg": 2.72
+    },
+    "pouligny saint pierre (fromage de chèvre)": {
+      "environmentScoreMptPerKg": 1.02,
+      "climateKgCo2EqPerKg": 7.29,
+      "landUsePtPerKg": 474.0,
+      "waterDeprivationM3PerKg": 2.55
+    },
+    "raifort, cru": {
+      "environmentScoreMptPerKg": 0.0693,
+      "climateKgCo2EqPerKg": 0.741,
+      "landUsePtPerKg": 10.2,
+      "waterDeprivationM3PerKg": 0.527
+    }
+  }
+}

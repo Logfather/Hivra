@@ -1,0 +1,6744 @@
+{
+  "entries": {
+    "&quot;fish&quot; salty crackers": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "&quot;halloumi&quot; sticks": [
+      "bechamel_sauce",
+      "bruschetta",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes",
+      "sandwich"
+    ],
+    "0.8% pressed cottage cheese lightly salted": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "1% m.f. reduced sugar chocolate milk beverage": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "10 cal strawberry flavour jelly": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "10 cheese stars": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "10 mixed sized": [
+      "chicken_curry",
+      "omelette",
+      "pancakes",
+      "roast_chicken"
+    ],
+    "10% fat irish beef steak mince": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "100% avena en hojuelas": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "100% instant nonfat dry milk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "100% natural wisconsin pre sliced mild cheddar cheese, mild cheddar": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "100% organic banana, coconut & berry muesli": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "100% whey protein drink mix creamy strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "12 crunchy chicken tenders": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "12 large free range welsh eggs": [
+      "omelette",
+      "pancakes"
+    ],
+    "12 months matured cheddar cheese straws": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "16 cheese slices": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "2 bbq beef steak pepper": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "2 british chicken kyivs": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "2 cheese & onion slices": [
+      "cheese_sandwich",
+      "chicken_curry",
+      "gratin",
+      "omelette",
+      "pancakes",
+      "roast_chicken"
+    ],
+    "2 cod fillet fishcakes": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "2 pavé en tournedos": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "2 pitta breads": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "2 steaks hachés pur bœuf façon bouchère (15% mg)": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "20 chicken tikka bites": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "30 day matured beef sirloin": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "30+ goudse jong": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "4 cornets espresso croquant creamy ice cream with coffee sauce and roasted hazelnut pieces, caramelized and covered with chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "4 korn yoghurt mild erdbeer rhabarber": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "5 fruits": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "5% fat beef mince": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "6 chocolate brownie fibre bars": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "6 dark chocolate tea cakes": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "6 oz ahi tuna steak": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "6 stora ägg": [
+      "chicken_curry",
+      "omelette",
+      "pancakes",
+      "roast_chicken"
+    ],
+    "6 strawberry tarts": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "7 sprouted whole grains rye bread (frozen)": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "72% cocoa dark chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "73% lean/ 27% fat ground beef": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "7e dried strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "85% pure dark chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "93% lean, 7% fat fresh ground beef": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "a/g chunky garden pasta sauce": [
+      "pasta_with_tomato_sauce"
+    ],
+    "activia 0% fat peach yogurt": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "aged cheddar cheese 36 months": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "air dried beef bultong": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "alb natur bio eierknöpfle": [
+      "omelette",
+      "pancakes",
+      "pasta_with_tomato_sauce"
+    ],
+    "alden's organic vanilla & chocolate swirl ice cream": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "all beef wiener": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "all natural chocolate trail": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "all natural timeless grains cereal": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "almighurt, bircher müsli": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "almzeit cremig wuerzig 3.30g 3.99€ 1kg 12.10€": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "alpstein bergkäse": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "amaranth bread": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "amaranth früchte müsli": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "amaranth gepufft": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "american style potato salad, american style": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "ananas kolutovi": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "anari cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "angus beef ribeye": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "angus premium choice beef stew meat family pack": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "antipasto salad": [
+      "pasta_with_tomato_sauce"
+    ],
+    "apfelmus mit mango": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apfelsaft, klar": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "appeltaart mix": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "appenzeller biberfladen": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "apple & cherry 100% fruit juice blend": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple & spinach puree": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple adventure": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple almond": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple and blueberry porridge pot": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple caramel crunchy clusters": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple cherry, classic apple sauce, apple cherry, classic": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple chicken cobb bowl": [
+      "apple_crumble",
+      "apple_pie",
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "apple cidee sparkling": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple cinnamon and granola": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple cinnamon chex": [
+      "apple_crumble",
+      "apple_pie",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "apple cinnamon whiskey": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple crisp bliss granola": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple fruit whips": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple loons, sweetened multi grain cereal, apple, apple": [
+      "apple_crumble",
+      "apple_pie",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "apple pie stuff’d oat bites": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple sauce strawberry": [
+      "apple_crumble",
+      "apple_pie",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "apple slices with p3qnut butter": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apple smoked chicken sausage": [
+      "apple_crumble",
+      "apple_pie",
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "apple, berries & fig with yoghurt": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "applesauce pouches": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "apricot banana spinach yogurt": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "arabic bread white large": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "arbor mist, daiquiri cocktails, strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "arepas": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "aroma lait": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "artesian baked shortbread cookies": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "artificial roasted beef flavour": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "artisan style dinner rolls": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "aruba protein double chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "asian curry & honey veggie roaster seasoning blend": [
+      "omelette",
+      "pancakes"
+    ],
+    "asian style crunchy noodle salad": [
+      "pasta_with_tomato_sauce"
+    ],
+    "asian style sticky rib rice": [
+      "fried_rice",
+      "potato_gratin",
+      "rice_bowl",
+      "roasted_potatoes"
+    ],
+    "assorted dessert truffles": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "assorted mini chocolates": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "atlantic salmon portion on cedar plank": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "atlantic salmon with garlic butter": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "authentic greek cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "aviko potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "ayam crab creamy tomato pasta sauce 120g": [
+      "bruschetta",
+      "pasta_with_tomato_sauce",
+      "tomato_sauce"
+    ],
+    "babida kimbap tuna": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "bacon & cheddar cheese sauce": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "bacon and cheddar egg bites": [
+      "omelette",
+      "pancakes"
+    ],
+    "bacon egg & cheese taco": [
+      "cheese_sandwich",
+      "gratin",
+      "omelette",
+      "pancakes"
+    ],
+    "bacon ranch pasta salad": [
+      "pasta_with_tomato_sauce"
+    ],
+    "bacon/egg/cheese biscuit": [
+      "cheese_sandwich",
+      "gratin",
+      "omelette",
+      "pancakes"
+    ],
+    "bai style chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "baja style chicken quesadilla": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "baked apple porridge extra large": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "balsamic & tomato": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "banana baby food": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "banana soy flour": [
+      "banana_bread",
+      "banana_smoothie",
+      "bread",
+      "pancakes"
+    ],
+    "banana walnut mini bundts, banana walnut": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "banana, peach, & apricot baby food purée": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "bananada tipo caseira": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "bananasplit pudding": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "barilla spaghetti n.5 500g": [
+      "pasta_with_tomato_sauce"
+    ],
+    "barquillos rellenos de crema chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "barra de chocolate quick avena total quick avena total quick avena total quick avena total": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "basil and mascarpone chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "bauernbrot mehl": [
+      "bread",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "bbq breaded chicken hoagie, shorti": [
+      "bruschetta",
+      "chicken_curry",
+      "roast_chicken",
+      "sandwich"
+    ],
+    "bbq flavored chicken breast": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "bbq flavour rice crackers": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "bbq for chicken sause": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "bbq tofu, brown rice, green beans, carolina style bbq sauce": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "beanz bbq sauce": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "beanz chilli": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "beef & gravy puff pastry parcels": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef dry wors sticks": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef jerky citrus teriyaki": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef jerky jalapeno": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef liver & onions": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef meatballs brown rice": [
+      "beef_stew",
+      "bolognese",
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "beef pappardelle": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef pastrami": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef sausage, smoked": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef shaved steak, beef": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef tallow kettle chips salt & pepper": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef taquitos double stuffed in corn tortillas": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef veg soup": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef weiners": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beef with vegetable soup": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beefsteak loaf plain rye": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "beeren müsli": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "belgian white chocolate & caramelised biscuit pinecones": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "belgian white chocolate and honeycomb cookies": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "belgian, chocolate biscuits": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "bella maria, traditional spanish torta, extra virgin olive oil": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "ben & jerry's, greek, frozen yogurt, raspberry fudge chunk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "ben’s cream cheese scallion us": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "berry cotton candy flavored low fat yogurt with rainbow rice crisps, waffle cone pieces & popped grains, poppin' cotton candy": [
+      "bechamel_sauce",
+      "fried_rice",
+      "pancakes",
+      "rice_bowl"
+    ],
+    "betty crocker lemon poppy seed muffin and quick bread mix": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "big choc choco": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "bio cashewmus banana bread": [
+      "banana_bread",
+      "banana_smoothie",
+      "bruschetta",
+      "sandwich"
+    ],
+    "bio dinkel pasta mezze penne": [
+      "pasta_with_tomato_sauce"
+    ],
+    "bio farina": [
+      "bread",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "bio fiocchi di avena integrali": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "bio gauda aus heumilch": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "bio joghurt pfirsich und aprikose": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "bio naturland vollkorn": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "bio sauerrahmbutter": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "bio weide beef burger": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "biokids fruchtmus apfel banane": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "biologischer mandeldrink 1l": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "birne auf joghurt mild": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "birthday cake rich milk chocolate bar": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "biscuits": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "bistro grilled chicken parmesan": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "bitter apple spray": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "black bear of the black forest, cheddar cheese ball": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "black forest ham and american cheese on pretzel roll": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "black pepper chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "bleached enriched self rising flour": [
+      "bread",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "blended sesame oil": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "blended stawberry banana yogurt": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "blue mackarel chunks in tomato sauce": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "blueberry & chocolate oatmeal snack": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "blueberry and almond": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "blueberry shake flavour marshmallow": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "boars chicken breast": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "boer\\&#039;n yoghurt bosvruchten": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "bone in skin on chicken leg quarters": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "boneless chicken breast 99% fat free": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "boquerones al vinagre": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "boulettes veggie": [
+      "omelette",
+      "pancakes"
+    ],
+    "bovril beefy spread 125 gr": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "bowl noodle soup, savory chicken": [
+      "chicken_curry",
+      "pasta_with_tomato_sauce",
+      "roast_chicken"
+    ],
+    "box o’ chocolates": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "brasil beef mince": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "bread & butter pickles": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "bread less": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "breaded cheese snacks, nacho cheese": [
+      "bruschetta",
+      "cheese_sandwich",
+      "gratin",
+      "sandwich"
+    ],
+    "breaded halloumi fries": [
+      "bechamel_sauce",
+      "bruschetta",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes",
+      "sandwich"
+    ],
+    "break choc milk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "bridge mix chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "brie with herbs & garlic": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "british chicken breast mini fillets | large pack": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "brittany apple pear sauce": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "broccoli and cheese chicken breast": [
+      "cheese_sandwich",
+      "chicken_curry",
+      "gratin",
+      "roast_chicken"
+    ],
+    "broken nuts milk chocolate confection": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "brown boba milk tea mochi": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "brown rice 1kg (5)": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "brown sliced brown bread": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "brunch": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "bruschette chips tomato olives and oregano": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich",
+      "tomato_sauce"
+    ],
+    "bryan, roast beef": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "bubs organic for baby blueberry banana quinoa imp": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "buffalo chicken empanada": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "buffalo chicken tenders": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "buffalo style chicken breast dip": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "buffalo style chicken patties": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "buffalo style chicken poppers": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "buldak dumpling, chicken flavor": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "bulgarian yoghurt 2.0%": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "bulgarischer büffelkäse 60 %": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "bulgur & quinoa blend": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "bulk soy milk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "burrito potato, egg & hreen chili": [
+      "omelette",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "butter chicken curry and pilau rice": [
+      "chicken_curry",
+      "fried_rice",
+      "rice_bowl",
+      "roast_chicken"
+    ],
+    "butter chicken jerky": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "butter käse bio": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "buttermilk simply ranch dressing, buttermilk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "butternut pumpkin and three cheese girasoli": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "butternut squash & sage ravioli": [
+      "pasta_with_tomato_sauce"
+    ],
+    "buzz strawberry long £59": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "cabernet marinara pasta sauce": [
+      "pasta_with_tomato_sauce"
+    ],
+    "caffeine + water natural strawberry guava": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "candies light and dark chocolates net wt": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "candy bar, milk chocolatey": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "candy filled eggs": [
+      "omelette",
+      "pancakes"
+    ],
+    "cannelloni with salmon & broccoli": [
+      "fish_tacos",
+      "fish_with_rice",
+      "pasta_with_tomato_sauce"
+    ],
+    "caramel cookie milk chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "carb fit flour tortillas": [
+      "bread",
+      "pancakes"
+    ],
+    "carbe diem penne": [
+      "pasta_with_tomato_sauce"
+    ],
+    "carlita, peach and pineapple chipotle salsa, medium": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "carrot cake eggs": [
+      "omelette",
+      "pancakes"
+    ],
+    "carrot cake muffin & bread kit": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "carré des ecluses 1kg": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "cashew nuts with chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "caviar siberian sturgeon": [
+      "fish_tacos",
+      "fish_with_rice",
+      "omelette",
+      "pancakes"
+    ],
+    "cereal snackies simply honey": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "cereals hafer bits vegane creme vanillegeschmack": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "cervelas famille pack": [
+      "fish_tacos",
+      "fish_with_rice",
+      "omelette",
+      "pancakes"
+    ],
+    "chana papad": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "charalambides christis fresh milk 1.5% fat 1l": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "chatham ranch krutonger 142g": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "cheddar & bacon stuffed baked potatoes": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "cheddar cheese condensed soup": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheddar cheese flavored extra crunchy corn snacks": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheddar mozzarella cheese and fish sausage corn dog": [
+      "cheese_sandwich",
+      "fish_tacos",
+      "fish_with_rice",
+      "gratin"
+    ],
+    "cheddar style block": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "omelette",
+      "pancakes"
+    ],
+    "cheescake": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheese and pepperoni pizza, cheese and pepperoni": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheese burger empanadas": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheese curds, roasted peppers & garlic": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheese heads monterey jack cheese with jalapeno peppers": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "cheese quesadilla, for build your own sampler": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheese ravoli": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheese shin": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheese slice edam": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheeseburger dumplings": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheeseburger sauce vegan": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheeseburger, original": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cheesetrings twisted 8pk": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "cherry tomaten rispen": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "chewy dark chocolate chunk": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chewy licorice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "chicken & leek in camembert sauce pies": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken &bacon wrap": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken and bacon caeser wrap": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken and lentil spinach dhal": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken and mayonnaise sandwich": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken and stars": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken bag & bake seasoning mix": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken base, chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken breast mince": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken buffalo chunks": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken caesar romaine lettuce, white meat chicken, parmesan cheese with caesar dressing salad bowl, chicken caesar": [
+      "cheese_sandwich",
+      "chicken_curry",
+      "gratin",
+      "roast_chicken"
+    ],
+    "chicken club wrap": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken curry with rice": [
+      "chicken_curry",
+      "fried_rice",
+      "rice_bowl",
+      "roast_chicken"
+    ],
+    "chicken drumstick mince": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken farmyard shapes": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken feta & spinach sausage rolls": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken floss": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken fried white rice, sugar snap peas, carrots & onions in a sweet gourmet teriyaki sauce with white meat chicken & egg skillet meal": [
+      "chicken_curry",
+      "fried_rice",
+      "omelette",
+      "pancakes",
+      "rice_bowl",
+      "roast_chicken"
+    ],
+    "chicken lyoner": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken mac n cheese": [
+      "apple_crumble",
+      "apple_pie",
+      "cheese_sandwich",
+      "chicken_curry",
+      "gratin",
+      "roast_chicken"
+    ],
+    "chicken masala mdh": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken massaman with basmati rice": [
+      "chicken_curry",
+      "fried_rice",
+      "rice_bowl",
+      "roast_chicken"
+    ],
+    "chicken mushroom fettuccine": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken nuggets by seara": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken of noodles": [
+      "chicken_curry",
+      "pasta_with_tomato_sauce",
+      "roast_chicken"
+    ],
+    "chicken pot pie, bowl": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken salad muntigrain sandwich": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken sausage with parmesan and black pepper": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken skin wasabi flavor": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken thigh": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken thigh oieces": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken thighs (bone in and skin on)": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken tikka deli filler": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken wings, mariniert, bio": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chicken, side": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chickpeas with olives & spicy tomato": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "chili agave flavored native andean potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "chili lime veggie crisps": [
+      "omelette",
+      "pancakes"
+    ],
+    "chilli chicken penne": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chilli satay noodles": [
+      "pasta_with_tomato_sauce"
+    ],
+    "chilly chicken choi sum": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chimichurri beef": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "chimichurri chicken thighs": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chinese style chicken wings": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "chipotle pineapple & lime sauce": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "chipotle veggie chilli": [
+      "omelette",
+      "pancakes"
+    ],
+    "chleb 7zboz": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "choco delight": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "choco mucho pop bites milk chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "chocolat aux poires et amandes grillées": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate & hazelnuts": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate almond chewy nut bars": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate and orange": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate bar cashew vanilla": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate bars, milk chocolate, peanuts, caramel, nougat": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "chocolate candy gems": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate chip keto cookie": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate chip muffin, fl": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate chip pizza cookie": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate chips eis": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate chunk cookies": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate covered whole macadamia nuts": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate dairy free ice cream": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate flavour pudding": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate fude": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate lovers cupcake": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate milk lactose free": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "chocolate milked oats": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "chocolate milkshake flavored protein powder drink mix": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "chocolate mint breeze protein bar": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate mint protein powder": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate nut sunflower kernels, raisins, peanuts, chocolate gems, dried cranberries & almonds trail mix, chocolate nut": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate orgánico con sabor a limón mandarina": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate plant protein powder": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate pralines": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate shake, 20 oz": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate wafer mint marianne": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate wheat bun": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate whoopie pies": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate with polar bear paws": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolate wonders, salted caramel": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "chocolatey sliced loaf cake": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "choctops milk chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "chorizo egg and cheese breakfast burrito": [
+      "cheese_sandwich",
+      "gratin",
+      "omelette",
+      "pancakes"
+    ],
+    "chufalino banana": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "chunky beef with vegetables ready to serve soup": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "chunky chopped tomatoes": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "chunky flavour apple pie": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "chunky flavour strawberry perfection": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "chupa chups sour apple flavored": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "cincho cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cinnamon raisin apple juice": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "cinnamon raisin english muffins, cinnamon raisin": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "cioccolato di modica igp peperoncino": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "clams in tomato sauce": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "classic chicken noodle soup": [
+      "chicken_curry",
+      "pasta_with_tomato_sauce",
+      "roast_chicken"
+    ],
+    "classic cinnamon oatmeal": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "classic shortbread rounds": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "classic special pizza": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "clear 'n' natural, sparkling beverage, kiwi strawberry, kiwi strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "cloverland farms dairy, 1% lowfat milk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "co op gro vegan choc chunk cookies": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "cocktail smokies smoked sausage made with pork & chicken, cocktail smokies": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "coco papaya pina": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "cocoa cardona cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "coconut cashew chocolate cups": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "coconut milk (17%)": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "coconut milk non dairy frozen dessert gluten free cookie dough": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "coconut milk vanilla": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "cocopops": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "coffee jelly with white chocolate sauce": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "coffee mate zero sugar chocolate creme powder": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "coffeemate original lite powdered creamer": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "colby jack cheese blend": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "cold noodle arrowroot": [
+      "pasta_with_tomato_sauce"
+    ],
+    "cold pressed apple beverage": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "cold smoked alaska sockeye salmon": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "cold smoked atlantic salmon slices": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "collezione gnocchetti": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "complete buttermilk pancake and waffle mix": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "comté cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "connaisseurs": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "cooked 5 grains rice riceberry": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "cooked beef slices": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "cookie butter cheesecake sandwich": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cookies 'n cream low fat ice cream in a chocolate sugar cone dipped in chocolate flavored coating topped with chocolate cookie pieces": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "cookies with jelly cube blackcurrant & milk cream": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "cookies, pecan shortbread": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "coop vegetardag kikertpålegg urter & hvitløk 150g": [
+      "omelette",
+      "pancakes"
+    ],
+    "coquillette pâtes d'alsace igp": [
+      "pasta_with_tomato_sauce"
+    ],
+    "corn flakes eco": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "corn oil maiskeimöl": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "corn, rice, quinoa gluten free linguine": [
+      "fried_rice",
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "rice_bowl",
+      "roasted_potatoes"
+    ],
+    "cornies": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "cottage cheese 2% lowfat": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cottage cheese bieslook": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cottage cheese flatbread": [
+      "bruschetta",
+      "cheese_sandwich",
+      "gratin",
+      "sandwich"
+    ],
+    "cottontail hollow milk chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "couch potato kartoffel gewürzzubereitung": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "country crisp chocolat noir 70% cacao": [
+      "brownies",
+      "chocolate_cake",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "covered pretzels dark chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "cranberry apple chutney": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "cranberry apple juice drink from concentrate": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "cranberry white chocolate muffins": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "crawfish & crab boil seasoning, crawfish & crab": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "crayfish with mango and passionfruit dip": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "cream cheese and chives crackers": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "cream of chicken no i'm using it": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "cream of rice chocolate banana": [
+      "banana_bread",
+      "banana_smoothie",
+      "brownies",
+      "chocolate_cake",
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "creame cheese product": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "creamed corn chicken w roasted white cheddar potatoes": [
+      "chicken_curry",
+      "potato_gratin",
+      "roast_chicken",
+      "roasted_potatoes"
+    ],
+    "creamette, enriched medium egg noodles": [
+      "omelette",
+      "pancakes",
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "creamy chocolate and rice crisps": [
+      "brownies",
+      "chocolate_cake",
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "creamy dreamy cultured cream": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "creamy milk almond gold": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "creamy wild rice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "creations pineapple chunks": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "creme brulee muscle egg": [
+      "omelette",
+      "pancakes"
+    ],
+    "creole yellow rice dinner mix": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "cricalait": [
+      "brownies",
+      "chocolate_cake",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "crispy bbq chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "crispy pizza bases": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "crispy rice cake sport fuel, chocolate & mallow": [
+      "brownies",
+      "chocolate_cake",
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "crispy rice crackers salt & vinegar flavoured": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "croquettes au fromage": [
+      "bechamel_sauce",
+      "bruschetta",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes",
+      "sandwich"
+    ],
+    "croûtons irrésistibles": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "crumbed chicken steaklets": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "crunchy chicken bites": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "crunchy granola raising bran": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "crunchy kakao malzcrene": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "crunchy raspberry & blueberry müsli": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "crunchy strawberry & yogurt muesli": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "crushed san marzano tomatoes": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "cruskits rice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "cultured lowfat butter milk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "cuna de queso viejo": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "cup": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "curved rice crackers mellow soy sauce flavor": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "cuñape": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "céréales fourrées goût chocolat noisettes": [
+      "brownies",
+      "chocolate_cake",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "d'arbo bio erdbeere": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "d'layer cake strawberry flavour": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "dagoba, dark chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dairy free original goat cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "dairy milk bubbly chocolate bar aerated milk": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "dairy milk duo": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "dairy milk fruit and nut chocolate bar": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "dairymilk someone special": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "dano full cream milk powder": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "danon de chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "danone activia® (vorteils pack) 2x müsli / 2x dinkel & walnuss / 2x quinoa & sonnenblumenkerne / 2x cerealien 3,5% 8 x 115g = 920g": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "danone activia® feige & hafer 3,5% 4 x 115g = 460g": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "danone fruchtzwerge quetschi bio apfel himbeere + joghurt + dinkel hafer 90g": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "dark choc banana": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "dark chocolate almond crunch": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dark chocolate bourbon truffle fudge bar": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dark chocolate citrus passion bar": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dark chocolate cocoa breakfast protein": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dark chocolate creamy caramel southern comfort": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dark chocolate crushed brazilian": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dark chocolate digestives": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dark chocolate pepermint": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dark chocolate peppermint brownie bar, dark chocolate peppermint": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dark chocolate with mint crispy thins": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dark milk chocolate hollow egg": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "omelette",
+      "pancakes"
+    ],
+    "dark sea salt chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "das rheinische saaten": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "das rustikale saaten": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "dave's gourmet, red heirloom pasta sauce": [
+      "pasta_with_tomato_sauce"
+    ],
+    "daves sweet tooth toffee dark chocolate flavor": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "deli cheesy bakes scalloped potato with paprika": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "deli muenster cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "deli pocket poulet bbq": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "deli selections sharp cheddar cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "deli style": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "delidor": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "delight chocolate honeycomb": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "deluxe goat cheese macaroni and cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "deluxe white cheddar shells & cheese dinner": [
+      "cheese_sandwich",
+      "gratin",
+      "pasta_with_tomato_sauce"
+    ],
+    "dessert cacao": [
+      "omelette",
+      "pancakes"
+    ],
+    "diced italian tomatoes with herbs": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "dierbergs markets, chocolate pretzels": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "digestive bar milk chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "dill crusted chicken and cheddar broccoli grits": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "dimljena gauda": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "divine vanilla creme yoghurt": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "domee sardine in tomato sauce with chilli": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "double berry cheesecake flavored premium ice cream with graham pieces, boysenberry & strawberry swirls, double berry cheesecake": [
+      "cheese_sandwich",
+      "gratin",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "double chicken fit plate": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "double chocolate flavored mini donuts, double chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "double chocolate protein oats": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "double egg& cheese": [
+      "cheese_sandwich",
+      "gratin",
+      "omelette",
+      "pancakes"
+    ],
+    "double gigant pop star": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "drelli high protein nudeln": [
+      "pasta_with_tomato_sauce"
+    ],
+    "drinkyoghurt limoen": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "drizzled dark chocolate peanut butter bar": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dry snail noodles extra spicy": [
+      "pasta_with_tomato_sauce"
+    ],
+    "dubai chocolate whey protien": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dubai done better pistachio caramel": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "duchesse": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "due bontà yogurt cremoso bianco + cereali al cioccolato": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "dusted cocoa truffles": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "dutch chocolate premium ice cream, dutch chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "easy cake kit strawberries creme cake mix": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "easymelt milk chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "eat regal long grain white rice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "ebly": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "edamame pasta": [
+      "pasta_with_tomato_sauce"
+    ],
+    "edelmarzipan walnuss pralinen": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "edy's, outshine, fruit ice bar, strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "egg white & vegetable frittata": [
+      "omelette",
+      "pancakes"
+    ],
+    "eggplant parmsean": [
+      "omelette",
+      "pancakes"
+    ],
+    "eggs 30 pieces": [
+      "omelette",
+      "pancakes"
+    ],
+    "eiweißbrot mit soja": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "eiwit granola original": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "electrolyte drink mix kiwi strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "elevate banana carrot mango orange wheatgrass turmeric chia": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "emmi premium strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "energy drink ultra strawberry dreams": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "energy milk vanilla mopre power dextrose vitamine": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "english muffin breakfast sandwich egg & cheese": [
+      "cheese_sandwich",
+      "gratin",
+      "omelette",
+      "pancakes"
+    ],
+    "enriched bleached all purpose flour": [
+      "bread",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "enriched macaroni product, extra wide egg noodles": [
+      "omelette",
+      "pancakes",
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "enriched macaroni product, extra wide ribbon": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "enriched parboiled rice white rice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "enriched sandwich bread": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "ensaladas hélices": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "epic choco almond with beligian chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "epinards à la grecque feta et pommes de terre": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "erbeere fruchteis": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "ernie's, hawaiian pineapple heat salsa": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "espresso truffles, espresso": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "essential porridge oats with wheatbran with 300ml water": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "essentials 10 beef burgers": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "extra aus original irischer butter & rapsöl gesalzen": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "extra creamy skyr whole milk yogurt vanilla bean": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "extra haselnuss": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "extra light cheese slices": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "fair trade bananas": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "fancy tomato ketchup": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "farina di mais istantania": [
+      "bread",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "fast break": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "fast food strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "faygo, soda, pineapple watermelon": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "feine nürnberger bio elisen lebkucheb": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "feine ostereier": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "feinherbe nuss": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "feta cheese 17%": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "feta cream chicken meal": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "fettuccine almond flour pasta": [
+      "bread",
+      "pancakes",
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "fibra original": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "filets de panga": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "filetti di sgombro all’olio di oliva": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "filetti no salmon": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "fine hazelnut chocolate spread vego crunchy": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "finest beef sausages": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "fischerfrühstück": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "fish pie counted": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "flame grilled chicken slices": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "flavored sour cream onion chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "flavored sparkling water, kiwi strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "flavpowders cereal milk flavour": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "flip peanut butter cup": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "flour tortillas 8 inch taco": [
+      "bread",
+      "pancakes"
+    ],
+    "fly egg creamer, coffee mate french vanilla concentrated creamer": [
+      "omelette",
+      "pancakes"
+    ],
+    "four bean chilli & rice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "four frites": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "fraise rhubarbe": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "freah milk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "free eggs": [
+      "chicken_curry",
+      "omelette",
+      "pancakes",
+      "roast_chicken"
+    ],
+    "free range chicken strips": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "free range organic eggs medium brown": [
+      "omelette",
+      "pancakes"
+    ],
+    "freggie bites": [
+      "omelette",
+      "pancakes"
+    ],
+    "french fries, regular": [
+      "chicken_curry",
+      "potato_gratin",
+      "roast_chicken",
+      "roasted_potatoes"
+    ],
+    "french ripe brie": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "fresh 'n' go": [
+      "pasta_with_tomato_sauce"
+    ],
+    "fresh chicken breasts with rib meat boneless skinless": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "fresh chicken soup": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "fresh frozen strawberries, blackberries, blueberries & raspberries berry medley, berry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "fresh milk buy 2": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "fresh veggie & hummus snack cup": [
+      "omelette",
+      "pancakes"
+    ],
+    "freshdelight strawberry chia seed oat yogurt": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "fried cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "fried fish ball 1kg": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "frijj strawberry flavour": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "frische vollmilch, 3,5 % fett": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "frischkäse &quot;gärtnerin&quot;": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "frischkäse der sahnige": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "frosted shredded wheat cereal": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "fruit motions, lemonade strawberry diet flavored water beverage, lemonade strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "fruit spread, strawberry & guava": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "fruitopia pancake with fruit jelly in chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "früchte müsli , mit 41% frucht": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "früchte porridge": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "fugi apple": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "fusilli artisan pasta": [
+      "pasta_with_tomato_sauce"
+    ],
+    "fusilli grande": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "gabel rollmöpse, mild würzig eingelegt": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "galletas con chocolate negro": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "galletas de arroz y quinoa": [
+      "fried_rice",
+      "potato_gratin",
+      "rice_bowl",
+      "roasted_potatoes"
+    ],
+    "garden combination chunky pasta sauce": [
+      "pasta_with_tomato_sauce"
+    ],
+    "garden veggie puffs mac n' cheese": [
+      "cheese_sandwich",
+      "gratin",
+      "omelette",
+      "pancakes"
+    ],
+    "garlic & chilli flatbreads": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "garlic chicken chop": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "garlic cream cheese bun": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "garlic mashed potatoes, family bundle, serves 4": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "gelatina abacaxi pineapple jelly 114g royal": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "gemüsemais": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "german chocolate cake": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "gertrude hawk chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "gge chicken ramen": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "ghosts milk chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "gingerbread blondie": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "gingerbread carmel spread": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "gingerbread cookie kit": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "gingerbread kit, ginger": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "gingerbread popcorn": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "gingerbread vanilla flavor lent": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "glacier point blue cheese crumbles": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "gleefully gluten free balboa": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "gluten free 4 triple seeded rolls": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "gluten free all beef franks": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "gluten free fish taco bites": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "gluten free meatballs made with romano cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "gluten free white breadcrumbs": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "glutenfri pasta": [
+      "pasta_with_tomato_sauce"
+    ],
+    "goat milk formula": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "goat’s cheese & roasted red pepper quiche": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "gold emblem, truffles, peppermint": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "golden spice chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "golden threadfin bream fish cubes": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "golden wheat bread": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "goldmais (doppelpack)": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "good milk joghurt drink 0% pfirsich maracuja": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "good oat barista oat milk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "gouda holland g. g. a, j am stück": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "gouda vincent cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "gourmet almond toffee covered in milk chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "gourmet coffee creamer caramel macchiato": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "gourmetbrötchen zum fertigbacken": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "graham cracker crumbs": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "grain widepan bread": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "granola naturell": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "grass fed beef hot dogs": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "grass fed beef porterhouse steaks 2 pack 400g": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "greek black cherry 24oz": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "green onion cream cheese spread": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "grilled chicken breast nuggets": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "grills cheese and onion": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "grinch chocolate chip shortbread": [
+      "brownies",
+      "bruschetta",
+      "chocolate_cake",
+      "sandwich"
+    ],
+    "grippo's, sweet maui onion, wavy potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "grisbi double chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "ground beef medium lean": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "ground butterkase cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "ground meat alternative beef style": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "grønne oliven med peberfrugtpasta": [
+      "pasta_with_tomato_sauce"
+    ],
+    "hafer cookies": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "hafer ohne öl": [
+      "bechamel_sauce",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "hafer schoko riegel": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "half baked snackable chocolate & chip cookie dough fudge brownies": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "ham and pea orzo": [
+      "pasta_with_tomato_sauce"
+    ],
+    "ham, egg & cheese breakfast stick": [
+      "cheese_sandwich",
+      "gratin",
+      "omelette",
+      "pancakes"
+    ],
+    "hamburger rå 80% kjøtt 1kg first price": [
+      "beef_stew",
+      "bolognese",
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "hand breaded fried chicken": [
+      "bruschetta",
+      "chicken_curry",
+      "roast_chicken",
+      "sandwich"
+    ],
+    "happy holidays chocolate cream drops": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "hard boiled organic eggs": [
+      "omelette",
+      "pancakes"
+    ],
+    "hard wheat bagels milk": [
+      "bechamel_sauce",
+      "bruschetta",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "haselnuss nougat creme": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "hausmacher handkäse mit zwiebel": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "havrebrød glutenfri, 500 g": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "hawaiian oat granola": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "hawaiian pineapple juice": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "hazelnut matcha": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "healthy chicken pot pie ready to serve soup": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "hearts pasta": [
+      "pasta_with_tomato_sauce"
+    ],
+    "hearty fish pie mix": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "hearty multigrain bread": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "heb cottage cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "hereford beef irish sirloin steak": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "heringsfilet in joghurtsauce": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "herta knacki kip bel": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "hibachi beef": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "hibiscus white chocolate 40% cacao": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "hickory barbecue flavored potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "high fibre honey raisin & almond granola": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "high mountain little potato (bbq flavor)": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "high protein beef pie": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "high protein fortified porridge oats vanilla": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "high protein granola": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "high protein rice meal": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "high protein yoghurt": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "high protein, low carb protein rotini pasta": [
+      "pasta_with_tomato_sauce"
+    ],
+    "high proteine chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "homestyle mushroom pasta sauce": [
+      "pasta_with_tomato_sauce"
+    ],
+    "homestyle pasta sauce, mushroom": [
+      "pasta_with_tomato_sauce"
+    ],
+    "honey bunches of oats cereal": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "honey cornbread with strawberry jam limited edition": [
+      "bruschetta",
+      "sandwich",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "honey dark chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "honey glazed chicken wing flavored potato chips": [
+      "chicken_curry",
+      "potato_gratin",
+      "roast_chicken",
+      "roasted_potatoes"
+    ],
+    "honey glazed old fashion beef jerky, honey glazed": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "honeycomb blond chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "horseradish old fashioned spreadable cheese, horseradish": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "hot chocolate bomb": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "hot honey salmon with whole grain cabbage rice": [
+      "fish_tacos",
+      "fish_with_rice",
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "house red pasta sauce": [
+      "pasta_with_tomato_sauce"
+    ],
+    "huge whey strawberry cheesecake": [
+      "cheese_sandwich",
+      "gratin",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "hustenbonbon": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "hydration strawberry & banana": [
+      "banana_bread",
+      "banana_smoothie",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "hähnchen filetspieße kräuter": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "hähnchengrillplatte": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "ice cream bar strawberry cheesecake": [
+      "cheese_sandwich",
+      "gratin",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "iceland chicken bacon pasta": [
+      "chicken_curry",
+      "pasta_with_tomato_sauce",
+      "roast_chicken"
+    ],
+    "il pangrattato bianco": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "immuno soy milk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "indian savoury rice stick chakri": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "instant broth chicken flavor packets, chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "instant noodles curry masala": [
+      "pasta_with_tomato_sauce"
+    ],
+    "instant nourish bowl beluga lentils & bulgur with grilled capsicum, eggplant & cherry tomatoes": [
+      "bruschetta",
+      "omelette",
+      "pancakes",
+      "tomato_sauce"
+    ],
+    "instant spicy cheese cup yakisoba": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "integralni hrskavi kruh od raži": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "international delight gourmet coffee creamer french vanilla": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "iqf butterfly breaded shrimp": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "irish 30 day matured quick fry firecracker beef steaks": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "irish beef rib bbq slow cooked": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "irish chicken maryland": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "island jerk chicken with garlic mashed potatoes and roasted green beans": [
+      "chicken_curry",
+      "potato_gratin",
+      "roast_chicken",
+      "roasted_potatoes"
+    ],
+    "iso zero banana premium whey protein isolate": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "italian bolognese pasta melt": [
+      "pasta_with_tomato_sauce"
+    ],
+    "italian mountain cow's milk cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "italian seasoned croutons": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "italian style raw chicken fritters tenders, italian style": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "ja! rewe, apfel schorle": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "jablká pinova 75+ i. čerstvé": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "jack link s premium cuts beef steak bbq recipe": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "jacks tomato soup": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "jagarico (cheese flavor)": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "japanese stir fry noodles garlic salt shrimp flavor": [
+      "pasta_with_tomato_sauce"
+    ],
+    "japanese udon noodle": [
+      "pasta_with_tomato_sauce"
+    ],
+    "jelly bean & sticker filled eggs": [
+      "omelette",
+      "pancakes"
+    ],
+    "jianshu potato noodle": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "joghurt crisp bananen joghurt & schoko chips": [
+      "banana_bread",
+      "banana_smoothie",
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "joghurt griechischer art heidelbeere": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "johnny moo, milk flavoring drops, chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "jordbær syltetøy": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "joseph farms, mozzarella sliced cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "jumbo punjabi samosas pea and potatoes with tamarind chutney": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "jumpin jelly strawberry flavour jelly crystals": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "kafkala": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "karbonader": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "kashmiri chilli chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "kasländer leicht": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "kat 2 finger milk chocolate biscuit bar pack": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "kat 4 finger milk chocolate bar 4 pack": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "katsu & chicken wrap": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "kehlenschneider tomaten chili ketchup für ungeübte": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "kelloggs": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "kendamil toddler milk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "kent syrup chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "kessel chips salt & vinegar geschmack": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "keto whey isolate mct powder natural chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "kettle chips balsamic thyme": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "kettle cooked jalapeno potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "kettle cooked potato chip variety": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "kettle cooked potato chops": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "kettle kurls cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "kettle sour cream onion krinkle cut potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "kicked up tomato pasta sauce, kicked up tomato": [
+      "bruschetta",
+      "pasta_with_tomato_sauce",
+      "tomato_sauce"
+    ],
+    "kiddies big box": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "kids curry": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "kiri cream cheese waffle": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "kirsche milder frucht joghurt": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "kitkat chunky double chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "kitzbüheler bergkäse": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "klondike goldust potatoes": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "knedľa kysnutá": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "knorr chicken cubes": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "knusper riegel vollmilch": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "koko q chocolate & biscuits": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "korean barbecue flavor premium smoked chicken breast": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "korean bbq beef stir fry": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "korn cereal": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "korn fit brot": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "krachtige puur chocolade": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "kroger, fresh bakery goodness, naan tandoor baked original": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "kroger, ground beef for chili": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "ktc tomato plum peeled 400g": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "kung pai chicken potstickers": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "labooko panama milk chocolate 35%": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "lachsfilet streamen": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "lady bugs women's vegan probiotic & prebiotic supplement apple & raspberry": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "lanchester fresh. milk pasteurised homogenised sem": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "lapte integral 3,5%": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "lasagne bowl beef": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "lasagne rice & quinoa": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "lays classic": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "lean bread chocolate chips": [
+      "brownies",
+      "bruschetta",
+      "chocolate_cake",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "leche semi": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "lemon crumbed fish": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "lemon garlic mediterranean style pasta with chicken": [
+      "chicken_curry",
+      "pasta_with_tomato_sauce",
+      "roast_chicken"
+    ],
+    "lemon poppy shortbread": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "lettmelk vaniljesmak": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "liberty orchards, chocolate dipped fruit delights, deliciously soft fruit & nut candies in rich chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "life savers musk and raspberry jellies milk chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "lifestyle whey strawberry slush": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "light fat free yogurt, chai latte": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "light feta cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "light mint chocolate chip": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "light plain nonfat yogurt": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "lighter slightly salted": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "lindahls skyr": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "lindt lindor &quot;extra dunkel&quot;": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "liquorice comfits": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "liquorice sticks": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "lizzies chocolate muffin": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "loaded (y) chocolate 32g": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "loaded bite size potatoes": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "local farm eggs": [
+      "chicken_curry",
+      "omelette",
+      "pancakes",
+      "roast_chicken"
+    ],
+    "long grain rice boil in bag": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "louisiana style potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "love nuggets": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "low fat chocolate flavour milk": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "low fat small curd cottage cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "low fat wheat hot dog buns": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "lowfat ricotta cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "lucky charms with magic gems": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "lucky me chicken sotanghon cup 28g": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "lumaca rigata": [
+      "pasta_with_tomato_sauce"
+    ],
+    "lunch kit": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "lurpak, unsalted imported butter, unsalted": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "ländle montforter": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "m&m crispy": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "m&m's jalapeño": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "maasdam holland": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "mac & cheese kettle cooked cavatappi pasta with creamy cheddar cheese sauce": [
+      "cheese_sandwich",
+      "gratin",
+      "pasta_with_tomato_sauce"
+    ],
+    "mac cheese with smokey bacon": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "macaroni & cheese dinner, hearty four cheese": [
+      "cheese_sandwich",
+      "gratin",
+      "pasta_with_tomato_sauce"
+    ],
+    "maeve san juan salted chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "mailänderbrot": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "maiswaffel": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "mandeldrink natur": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "mango apple yogurt": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "mango with white sticky rice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "mangoes & cream greek style yoghurt": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "manna butter coconut cashew chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "maple and bacon goat cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "maple short bread cookie": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "marble swirl bread": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "marinara pasta sauce lidl lidl lidl lidl lidl": [
+      "pasta_with_tomato_sauce"
+    ],
+    "marionberry real greek yogurt": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "market pantry, sugar free drink mix, strawberry, orange & banana": [
+      "banana_bread",
+      "banana_smoothie",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "marry me chicken & linguine": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "marshmallow cocoa topper dark chocolaty coated with salted caramel drizzle": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "mary’s organic breaded chicken strips": [
+      "bruschetta",
+      "chicken_curry",
+      "roast_chicken",
+      "sandwich"
+    ],
+    "mashed potatas": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "mashed potatoes creamy butter flavour": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "mccann's, quick & easy steel cut irish oatmeal": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "meals made easy homestyle breaded chicken": [
+      "bruschetta",
+      "chicken_curry",
+      "roast_chicken",
+      "sandwich"
+    ],
+    "meat free beef": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "mediterrane antipasti gelbe kirschpaprika mit frischkäse": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "mediterranean veggies and chunky tomatoes": [
+      "bruschetta",
+      "omelette",
+      "pancakes",
+      "tomato_sauce"
+    ],
+    "medium pizza bases thin & crispy": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "meijer fajita chicken bowl": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "melon, kiwi fruit, & strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "member's mark, apple juice from concentrate, apple": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "menudo with honeycomb tripe": [
+      "fish_tacos",
+      "fish_with_rice",
+      "omelette",
+      "pancakes"
+    ],
+    "mesquite bar": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "mexican hot chocolate almonds": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "mezzi rigatoni": [
+      "pasta_with_tomato_sauce"
+    ],
+    "microwave shell pasta with cheese sauce": [
+      "cheese_sandwich",
+      "gratin",
+      "pasta_with_tomato_sauce"
+    ],
+    "mie noodles bio | organic": [
+      "pasta_with_tomato_sauce"
+    ],
+    "milk & dark chocolate almonds": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milk chocolate & salt caramel müsli bar": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milk chocolate butter cups": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milk chocolate caramels with sea salt": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milk chocolate covered nuts, raisins and creams bridge mix, chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milk chocolate high protein shake": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milk chocolate popcorn stars": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milk chocolate pralines": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milk chocolate pretzel rod": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milk chocolate with candy, stickers & toy surprises!": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milk cocoa bar with broken hazelnuts sweetened with steviol glycosides, milk hazelnuts": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milk powder full cream tin 2.5 kg al alali": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "milk raspberry heart truffles": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "milk sea salt caramel truffles": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milka snowballs milchcreme": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milki chocolate flavoured low fat milk": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "milkless rice choc classic, 80 gr stück vegan": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "fried_rice",
+      "pancakes",
+      "rice_bowl"
+    ],
+    "milkshake coffee mocha flavor": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "mince beef 3%": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "mini cake bravo strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "mini cheese&bacon + cheese&onion tarts": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "mini chicken pizzas": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "mini chocolate mint protein bar": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "mini corn dogs batter wrapped chicken franks": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "mini lavash roasted red pepper": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "mini ricemilk crunch bar": [
+      "bechamel_sauce",
+      "fried_rice",
+      "pancakes",
+      "rice_bowl"
+    ],
+    "mini subs white": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "mint chocolate chance ice cream": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "mint chocolate cookie": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "mint iced brownies with chocolate drizzle, mint iced": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "mix voor kaassaus": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "mixed rice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "mixed veggies with roasted garlic herb butter": [
+      "omelette",
+      "pancakes"
+    ],
+    "mochi caramelo y chocolate blanco": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "mochi dubai style chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "modern noodle gochujang butter": [
+      "pasta_with_tomato_sauce"
+    ],
+    "modilac riz rice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "moment, chocolate premium": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "monster espresso milk 0,25l": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "monster munch oatmeal cookie dough": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "monterey jack cheese, dried cinnamon apples, granola clusters trios snack, monterey jack cheese, dried cinnamon apples, granola clusters": [
+      "apple_crumble",
+      "apple_pie",
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "monterey ranch chicken fajita": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "montreal steak beef franks": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "moroccan sardines in tomato sauce": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "mountain dew, 30 oz": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "mousse amaretto caramel": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "mozzarella cheese in pesto": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "mozzarella grated mozzarella cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "mozzarella soft textured melting cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "mr & mrs t strawberry daiquiri margarita mix": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "mr.mee": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "mucho nacho flavored chicken snackers shaped chicken breast patties with rib meat fritters mighty bites, mucho nacho": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "muesli cranberry & blueberry": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "muesli protein": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "muesli toasted pomegranate & bl / berry": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "muffins chocolate chips & chunks / muffins pépites et morceaux de chocolat": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "multi grain gluten free bread": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "munch bunch wholemilk yogurts": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "musli klasik": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "muslie": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "müsli, vollkorn früchte": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "nacho cheese imp": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "nadec spreadable analogue processed cream cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "nan pro 3 (12+ months)": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "natural almond ganola": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "natural angus ground beef patties": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "natural protein eggwhite": [
+      "omelette",
+      "pancakes"
+    ],
+    "natural seared chicken breast": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "natural soft drink from apple, blackcurrant, lavender & sparkling water": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "natural whole grain goodness, round top bread": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "naturally imperfect potatoes": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "naturals, chocolate chip animal cookies, chocolate chip": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "naturtrüber apfel saft": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "nc spicy seafood 40g": [
+      "pasta_with_tomato_sauce"
+    ],
+    "neomonde white pita pocket": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "nestle kit kat (ind)": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "nestum baby cereal banana": [
+      "banana_bread",
+      "banana_smoothie"
+    ],
+    "new york style cheesecake": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "new york style potato salad": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "no chick kievs": [
+      "bruschetta",
+      "chicken_curry",
+      "roast_chicken",
+      "sandwich"
+    ],
+    "no chicken noodle soup": [
+      "chicken_curry",
+      "pasta_with_tomato_sauce",
+      "roast_chicken"
+    ],
+    "no chicken peri peri": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "no drain succulent tuna chunks with olive oil": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "no gluten pain blanc": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "non dairy blueberry cheesecake": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "nonfat yogurt greek vanilla": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "nonfat yogurt light and fit": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "noodle style tofu spaghetti style": [
+      "pasta_with_tomato_sauce"
+    ],
+    "northwest crab cake sandwich, regional": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "not chicken burger": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "nouilles instantanées saveur crevette": [
+      "pasta_with_tomato_sauce"
+    ],
+    "nude strawberry 80% frukt 500ml hennig olsen": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "nudelsauce napoletana": [
+      "pasta_with_tomato_sauce"
+    ],
+    "nut and berry bar with dark chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "nutstar": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "nüsse: mandeln gemahlen geschält": [
+      "bread",
+      "pancakes"
+    ],
+    "oat and almond": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "oat crunch": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "oatflakes with strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "oatmeal apple cinnamon almond": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "obazda klassisch": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "oceankist, tobiko seasoned flying fish roe": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "oeuf surprise en chocolat au lait": [
+      "brownies",
+      "chocolate_cake",
+      "omelette",
+      "pancakes"
+    ],
+    "ohana kiwi strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "oikos apple honey": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "old fashioned smoked salmon": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "olivier salad with eggs": [
+      "omelette",
+      "pancakes"
+    ],
+    "orange double chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "oreccchette casale del salento": [
+      "pasta_with_tomato_sauce"
+    ],
+    "oreo dairy milk": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "organic air chilled chicken tenderloins": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "organic apple cider vinegar refresher apple cinnamon": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "organic arrabiata pasta sauce": [
+      "bruschetta",
+      "pasta_with_tomato_sauce",
+      "tomato_sauce"
+    ],
+    "organic beef stock": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "organic berry vanilla puffs": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "organic breaded nugget shaped chicken breast patties with rib meat": [
+      "bruschetta",
+      "chicken_curry",
+      "roast_chicken",
+      "sandwich"
+    ],
+    "organic broccoli cheddar stuffed chicken breasts": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "organic california brown basmati rice": [
+      "fried_rice",
+      "potato_gratin",
+      "rice_bowl",
+      "roasted_potatoes"
+    ],
+    "organic chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "organic coconut brown rice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "organic coconut non dairy beverage vanilla": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "organic colourful sweet potatoes/patatas douces colorees biologique": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "organic dark chocolate 80% cacao panama extra dark": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "organic focaccia": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "organic fruit gummies snack pack mango and strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "organic mamia vegetable and beef casserole": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "organic nonfat yogurt, mango lime": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "organic nut free apple raisin granola bites, apple raisin": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "organic peeled tomatoes in water": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "organic quinoa & sweet potato veggie patties": [
+      "omelette",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "organic sea salt & vinegar": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "organic seeded multi grain bloomer": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "organic shredded sharp cheddar": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "organic spaghetti bolognese": [
+      "pasta_with_tomato_sauce"
+    ],
+    "organic steamed rice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "organic strawberry mixed yoghurt": [
+      "bechamel_sauce",
+      "pancakes",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "organic tomato & herb stock cubes imp": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "organic zero added sugar banilla whole milk yogurt": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "organic, country breakfast uncured chicken sausage": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "original barley blueberry granola, original barley blueberry": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "original beef stick ends & pieces": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "original eggnog, original": [
+      "bechamel_sauce",
+      "omelette",
+      "pancakes"
+    ],
+    "original jalapeño angus beef bites": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "original jerky + cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "original low fat yogurt, passion fruit": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "original premium beef jerky": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "original recipes potato salad with egg": [
+      "omelette",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "original toast": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "our creamy colby": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "oval flatbreads white": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "overnight chia oats strawberry shortcake": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "p&s fish rolls": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "pad thai asian noodles": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "paleta chocomilk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "pan de harina de trigo adicionada con fibra": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "panko breaded cod tenders": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "papa charlie's, seasoned gravy & premium thin sliced roast beef": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "parmigiano reggiano flakes": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "omelette",
+      "pancakes"
+    ],
+    "pasta alla nocciola": [
+      "pasta_with_tomato_sauce"
+    ],
+    "pasta bowl chicken streaky smoky & bacon": [
+      "chicken_curry",
+      "pasta_with_tomato_sauce",
+      "roast_chicken"
+    ],
+    "pasta chips tomate basilikum": [
+      "pasta_with_tomato_sauce"
+    ],
+    "pasta de amendoim integral growth natural": [
+      "pasta_with_tomato_sauce"
+    ],
+    "pasta sauce napoli": [
+      "pasta_with_tomato_sauce"
+    ],
+    "pb chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "peach apple": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "peanut butter & jelly instant oatmeal": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "peanut butter and chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "peanut butter and grape jelly on crustless white bread": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "peanut butter dark chocolate cracker bar": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "peanut butter soft baked oatmeal bar": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "peanut butter, dark chocolate & almond bars, peanut butter, dark chocolate & almond": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "peanut tower milk choc": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "pear pineapple lemon lime juice": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "pearl couscous tri color": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "peddler's pantry, dark chocolate nonpareils": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "pehmeä rahka": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "penne alfredo with grilled chicken strips": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "penne lisce n°71": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "penne rigate macaroni product": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "pepper jack cheese cubrs": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "pepperoni cheese buttery, crispy crust zesty sauce half & half pizza, pepperoni": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "pesto basilic extra frais": [
+      "pasta_with_tomato_sauce"
+    ],
+    "pesto pasta salad": [
+      "pasta_with_tomato_sauce"
+    ],
+    "petales de cereales": [
+      "brownies",
+      "chocolate_cake",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "philly cheesesteak egg roll": [
+      "cheese_sandwich",
+      "gratin",
+      "omelette",
+      "pancakes"
+    ],
+    "piasten, chocolate assortment": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "piccolato tomatoes": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "pineapple flavour cake": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "pineapple galore": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "pineapple upside down cakes": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "pineapple water 500ml": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "pita bites": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "pizza brötchen frischkäse knoblauch": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "pizza teig": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "pizza, cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "piñalinaza pineapple flaxseed supplement": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "plain poppadoms": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "plant based chicken drumsticks": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "plant based coconut yoghurt": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "plant based meat free spaghetti bolognese": [
+      "pasta_with_tomato_sauce"
+    ],
+    "plant based veggie gnocchi": [
+      "omelette",
+      "pancakes"
+    ],
+    "planters, nuts & chocolate trail mix": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "plumas al huevo": [
+      "pasta_with_tomato_sauce"
+    ],
+    "plumas ralladas integrales": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "pole and line caught skipjack tuna in water": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "pollo arrosto": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "pomodori secchi in olio di semi di girasole": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "popped veggie and potato chips bbq": [
+      "omelette",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "pork flavor ramen noodle soup": [
+      "pasta_with_tomato_sauce"
+    ],
+    "porridge beere, glutenfrei": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "porridge kerniger klassiker": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "porridge zaden": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "potato cheese shotz": [
+      "bruschetta",
+      "cheese_sandwich",
+      "gratin",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "potato chips bbq flavored": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "potato chips hot & spicy": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "potato chips spring onion & cheese flavour": [
+      "cheese_sandwich",
+      "gratin",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "potato egg bacon salad": [
+      "omelette",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "potato potage": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "potato salad (with yogurt)": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "potato, broccoli, & cheddar pierogies": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "potato, sour cream, & chives perogies": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "powerball basil pesto chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "pralinés milchcreme": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "premium italian hearty kaiser rolls": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "premium quality coconut water, strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "private selection, sugar house breakfast bread, maple streusel": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "probiotic kefir peach": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "profiteroles": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "prot goldenspice porridge": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "protein bar coconut cashew dark chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "protein chewy bars, peanut butter dark chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "protein cookie chocolate, hazelnuts": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "protein crackers classic cheddar": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "protein cream salted caramel": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "protein crunch white chocolate caramel": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "protein iced coffee dark chocolate lover": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "protein kick mac and cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "protein oatmeal": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "protein satisbites white chocolate strawberry cream flavour": [
+      "brownies",
+      "chocolate_cake",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "protein snack selects natural sharp cheddar cheese & honey brown sugar turkey sausage bites": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "puffed wheat cereal": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "pumpkin pesto agnolotti": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "pure hagelslag 30% minder suiker": [
+      "brownies",
+      "bruschetta",
+      "chocolate_cake",
+      "sandwich"
+    ],
+    "pure liquorice pellets": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "pure spelled flour complete": [
+      "bread",
+      "pancakes"
+    ],
+    "purée de tomates tomatenpuree": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "queso de mezcla tierno bajo contenido en sal": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "queso para untar patagonia": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "quick hot cereal": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "quick treats milk chocolate raisins": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "quinoa cracker tomato basil": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "quinoa with tomato & basil": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "raclette suisse nature": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "ragu ravioli": [
+      "pasta_with_tomato_sauce"
+    ],
+    "rainbow parfait dessert": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "raisin & almond granola": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "raspberry beret roasted & salted peanuts mixed with roasted almonds, dark chocolate chips & sweet raspberries trail mix, raspberry beret": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "raspberry chocolate coated fruit bites": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "raspberry white chocolate whipped dairy topping": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "ravioli pikant": [
+      "pasta_with_tomato_sauce"
+    ],
+    "ravioli tomate käse": [
+      "cheese_sandwich",
+      "gratin",
+      "pasta_with_tomato_sauce"
+    ],
+    "ravioli zalm saumon": [
+      "pasta_with_tomato_sauce"
+    ],
+    "raw organic perfect food green super food apple": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "real mayonnaise made with cage free eggs": [
+      "omelette",
+      "pancakes"
+    ],
+    "red baron, thin & crispy pizza": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "red beans & rice with sausage": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "red berry special flakes": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "red thai salmon": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "redstone's, belgian milk chocolate macaroon": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "reduced fat nacho cheese tortilla chips 28g pack": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "refreshing yogurt smoothie": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "regal vine tomatoes": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "regenbogen forellenfilets (xxl)": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "regular ripple potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "rice cake (sliced type)": [
+      "fried_rice",
+      "potato_gratin",
+      "rice_bowl",
+      "roasted_potatoes"
+    ],
+    "rice paper bio": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "rice porridge (sweet pumpkin)": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "riced medley of broccoli, carrot & cauliflower": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "rillettes de thon au poivre vert": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "rings & cheese": [
+      "cheese_sandwich",
+      "gratin",
+      "pasta_with_tomato_sauce"
+    ],
+    "ripples cheddar & sour cream flavored potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "risoletto classiv milchschokolade mit reis crispies und caramel": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "risotto rice with cheese": [
+      "cheese_sandwich",
+      "fried_rice",
+      "gratin",
+      "rice_bowl"
+    ],
+    "roasted & salted almonds, hazelnuts & cashews in chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "roasted chicken infused with warm shawarma spices alongside cherry tomatoes, kale, and creamy homemade tzatziki (yogurt) sauce all served on fluffy jasmine rice meal kit, roasted chicken shawarma bowl with yogurt sauce": [
+      "bruschetta",
+      "chicken_curry",
+      "fried_rice",
+      "rice_bowl",
+      "roast_chicken",
+      "tomato_sauce"
+    ],
+    "roasted eggplant spread": [
+      "omelette",
+      "pancakes"
+    ],
+    "roasted garlic 100% russet mashed potatoes seasoned with roasted garlic": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "roasted grilled portobello mushroom": [
+      "pasta_with_tomato_sauce"
+    ],
+    "roasted tomato chipotle corn salsa": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "rochers praliné chocolat au lait": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "rocka milk shake": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "roi de trefle mit kräutern der provence und chili umhüllt": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "romandie butter": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "romige kokosmelk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "rose, watermeloen, strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "rosmarry olive bread loaf": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "rote bohnen & zwiebel": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "rotelle enriched macaroni pasta": [
+      "pasta_with_tomato_sauce"
+    ],
+    "roundy's select, milk chocolate caramel cups": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "royal pearl black": [
+      "fried_rice",
+      "potato_gratin",
+      "rice_bowl",
+      "roasted_potatoes"
+    ],
+    "rug fras": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "rum and pineapple cheddar": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "rundergehakt mager": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "ruohosipuli tuorejuusto": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "russell stover, bits of strawberries in creamy white postelle, strawberries & cream": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "rustic olive bread": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "rye bread pain de seigle": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "s crunchies dipped": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "sabor chocolate vainilla": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "sabrosas duritos wheat flour snacks": [
+      "bread",
+      "pancakes"
+    ],
+    "sahne nuss 30gr": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "salad mayonnaise without egg": [
+      "omelette",
+      "pancakes"
+    ],
+    "salmon and spinach fish cake": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "salmon fillet red thai style": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "salsa ajo y chile": [
+      "pasta_with_tomato_sauce"
+    ],
+    "salt & pepper chicken with rice": [
+      "chicken_curry",
+      "fried_rice",
+      "rice_bowl",
+      "roast_chicken"
+    ],
+    "salt & vinegar rice crackers": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "salted caramel chocolates": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "salted caramel greek yogurt minis wrapped in chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "salted honeycomb oat milk easter egg": [
+      "bechamel_sauce",
+      "omelette",
+      "pancakes"
+    ],
+    "sandwich glutenfrei": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "sandwichbaguetter fine 4x75g first price": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "sans lactose free fine filtered 2% m.f. dairy product made with lactose free ultrafiltered partly skimmed milk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "sanukiya udon nama chicken no msg": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "sarrasin biologique": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "satay chicken woth jasmine roce": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "saumon au miel et soja riz basmati": [
+      "fish_tacos",
+      "fish_with_rice",
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "savoury tomato rice cakes": [
+      "bruschetta",
+      "fried_rice",
+      "rice_bowl",
+      "tomato_sauce"
+    ],
+    "sb ent ckn egg roll cld": [
+      "omelette",
+      "pancakes"
+    ],
+    "schlau kakao": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "schocko hafer crunchy": [
+      "brownies",
+      "chocolate_cake",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "schoko mac milk cocoa spread": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "schokokissen": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "schotse zalm salmon": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "schwarzer emmer": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "scottish mild & delicate smoked salmon": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "sea cuisine, natural cut tilapia with tortilla, chipotle and lime crust": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "sea salt chips 70% less fat": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "sea salt potato snacks, sea salt": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "sea salt truffles organic dark chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "seafriends chocolate chip with fruit + vegetables": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "semi seeet chocolate chunks": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "semisweet chocolate chunk cookie": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "shawarma bread": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "shawarma style boneless skinless chicken breast cutlets": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "shella good aged white cheddar and shells": [
+      "cheese_sandwich",
+      "gratin",
+      "pasta_with_tomato_sauce"
+    ],
+    "shepherd’s pie": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "shop n save, nonpariels": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "shortbread cookies 6pack": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "shortbread peaches & cream ice cream": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "shredded cheese mexican blend": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "shredded hash browns frozen potatoes": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "shrimps spaghetti": [
+      "pasta_with_tomato_sauce"
+    ],
+    "sicilian lemon mascarpone cheesecake": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "signature seasoned salmon fillets": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "simply skillets cheeseburger pasta & sauce mix": [
+      "cheese_sandwich",
+      "gratin",
+      "pasta_with_tomato_sauce"
+    ],
+    "skybar, zombie food candy": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "skyr cocco / kokos": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "sliced beef chorizo (with turkey meat)": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "sliced blueberry bagels": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "slimming world italian style salmon": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "slow cooked chunky british beef chilli": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "slow cooker beef stew": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "slowly baked biscuits for cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "smarties & joghurt mit vanillegeschmack xxl pack": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "smiths crinkl sltavin 90gm.": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "smoked cheddar": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "smoked salmon sweet cured": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "smooth creamy dark & milk chocolate": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "smooth style strawberry banana": [
+      "banana_bread",
+      "banana_smoothie",
+      "bechamel_sauce",
+      "pancakes",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "snackers cheese 25g": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "soda, orange, pineapple": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "soft 100% whole wheat bread, whole wheat": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "soft baked breakfast bars, chocolate raspberry": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "soft oaty bar strawberry & apple": [
+      "apple_crumble",
+      "apple_pie",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "soft spread cream cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "soft tortilla boats": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "solid white albacore tuna, original": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "sothwestern salad with white grilled chicken, romaine lettuce, corn, pepper, cheese, & jalapeno caeser dressing, sothwestern salad": [
+      "cheese_sandwich",
+      "chicken_curry",
+      "gratin",
+      "roast_chicken"
+    ],
+    "soup in a cup chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "soupe de tomato": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "sour cherry dark chocolate sauce": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "sour green apple whey isolate": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "sourdough bread round sliced": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "sourdough french bread": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "sous vide plant egg bites": [
+      "omelette",
+      "pancakes"
+    ],
+    "southern homestyle blackened chicken over pasta in cheese sauce with green beans": [
+      "cheese_sandwich",
+      "chicken_curry",
+      "gratin",
+      "pasta_with_tomato_sauce",
+      "roast_chicken"
+    ],
+    "soy sauce for eggs": [
+      "omelette",
+      "pancakes"
+    ],
+    "soya with calcium": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "soymilk guksu with spicy sauce kit": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "spaghetti carbonara with smoked bacon": [
+      "pasta_with_tomato_sauce"
+    ],
+    "spaghetti gericht": [
+      "bruschetta",
+      "pasta_with_tomato_sauce",
+      "tomato_sauce"
+    ],
+    "spaghetti ice cream creme de la creme whey": [
+      "pasta_with_tomato_sauce"
+    ],
+    "spaghetti no 9": [
+      "pasta_with_tomato_sauce"
+    ],
+    "spaghetti pasta di semola di grano duro": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "spaghetti tradizionali": [
+      "pasta_with_tomato_sauce"
+    ],
+    "sparkling chupa chups strawberry & cream flavour": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "sparkling raspberry and pineapple juice": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "sparkling strawberry watermelon flavour": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "sparkling zero sugar strawberry kiwi": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "spicy buffalo style glazed chicken breast with rib meat fritters, buffalo style chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "spicy hibachi chicken fried rice": [
+      "chicken_curry",
+      "fried_rice",
+      "rice_bowl",
+      "roast_chicken"
+    ],
+    "spicy piri piri": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "spicy potato sticks crackers": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "spicy roast beef and turkey hoagie, junior": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "spicy salted egg potato chips": [
+      "omelette",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "spudlove organic cracked pepper thick cut potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "sriracha ramen noodle soup chicken": [
+      "chicken_curry",
+      "pasta_with_tomato_sauce",
+      "roast_chicken"
+    ],
+    "stars cookies": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "sterne": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "stewarts macaroni and cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "stews chicken breast": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "stichfestes naturjoghurt 3,6% fett": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "strawberries & cream smash mallow snackable marshmallows, strawberries & cream": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberries with white chocolate": [
+      "brownies",
+      "chocolate_cake",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberries, blackberries, bluberries & raspberries": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberries, fresh": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry & vanilla jumbo swiss roll": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry banana fruit juice smoothie": [
+      "banana_bread",
+      "banana_smoothie",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry banana protein smoothie cubes": [
+      "banana_bread",
+      "banana_smoothie",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry cream sweedish berries": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry creamy wafer biscuits": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry filled candy": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry fruit preserves, strawberry": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry fruitscato": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry greek yogurt bar in chocolate coating": [
+      "brownies",
+      "chocolate_cake",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry ice cream mix": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry overnight oats": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry poptart": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry shorycake": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry smoothie puree, for smoothiez, small": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry swirl light ice cream pops": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry vanilla bourbon whey": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry waffle cone": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry walnut spinach salad": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "strawberry yogurt with mixed berries": [
+      "bechamel_sauce",
+      "pancakes",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "streits matzo egg onion pack": [
+      "omelette",
+      "pancakes"
+    ],
+    "stuffed atlantic salmon": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "stuffed baked potatoes": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "stuffed grilled cheese": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "sugar cookie latte almond and oat milk creamer": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "sugar free ketchup": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "sulgi's sweet potato rice cake": [
+      "fried_rice",
+      "potato_gratin",
+      "rice_bowl",
+      "roasted_potatoes"
+    ],
+    "sun bliss": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "sun drenched apple juice": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "sun dried tomatoes julienne cut with herbs": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "sunday beef pot roast": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "sunflower calrose rice": [
+      "fried_rice",
+      "potato_gratin",
+      "rice_bowl",
+      "roasted_potatoes"
+    ],
+    "sunland farm natural chips paprika": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "sunridge farms, dark chocolate almonds caramels": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "super crunch chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "super slim skim milk fat free": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "superfood bagels": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "sushi fish large selection": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "sweet & sour battered chicken with egg fried rice": [
+      "chicken_curry",
+      "fried_rice",
+      "omelette",
+      "pancakes",
+      "rice_bowl",
+      "roast_chicken"
+    ],
+    "sweet cakes collection": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "sweet chilli crisps": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "sweet potato straight cut fries": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "sweet potato thumbprint cookies": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "sweet potato tortilla chips with sea salt": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "sweet potatoes & 3 bean chilli": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "sweet traditional chocolate bar resealable": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "sweetened condensed milk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "swiss chocolate airplane": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "swiss luxury selection praline": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "synergy raw kombucha golden pineapple": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "séré demi gras": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "tabasco, spicy chocolate, spicy": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "taco blend of shredded mild cheddar and monterey jack natural cheeses with taco spices, taco blend": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "taco cheddar, monterey jack & colby cheeses with added spices": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "taco seasoned beef & cheese extra crunchy taquitos": [
+      "beef_stew",
+      "bolognese",
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "tajine poulet boeuf semoule": [
+      "beef_stew",
+      "bolognese",
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "tallarin 78": [
+      "pasta_with_tomato_sauce"
+    ],
+    "tandoori chicken & cous cous salad": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "tandoori garlic naan": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "tasmanian salmon with teriyaki sauce": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "taste the difference apple pie": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "teilentrahmte kondensmilch": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "tekov cheese 🧀 grill smoked": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "tempura chicken tenders": [
+      "bruschetta",
+      "chicken_curry",
+      "roast_chicken",
+      "sandwich"
+    ],
+    "tempura chicken with orange sauce": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "teriyaki chicken steam buns": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "teriyaki chicken stirfry": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "teriyaki glazed wild alaskan salmon": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "teriyaki tofu, soba noodles": [
+      "pasta_with_tomato_sauce"
+    ],
+    "terry's twilight chocolate pieces milk with mint": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "test": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "tex mex beef & guacamole bowl": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "thai chicken dumplings": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "thai signature chicken rice omusubi": [
+      "chicken_curry",
+      "fried_rice",
+      "rice_bowl",
+      "roast_chicken"
+    ],
+    "thai style chicken satay mini fillets": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "thalipeeth mix flour": [
+      "bread",
+      "pancakes"
+    ],
+    "the good table crunchy thai peanut sauce & crust mix for chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "thick cut shredded mild cheddar cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "thin crust chicken parmesan roller": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "thin sliced 21 grain & seeds bread": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "thin sliced bonless skinless chicken breast with rib meat": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "thin sliced nutty wheat berry bread": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "three cheese creamy melt": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "three cheese mini pizza bagels 18 count": [
+      "bruschetta",
+      "cheese_sandwich",
+      "gratin",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "three cows shredded moz. cheese 900g": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "thunfischfilets albacore natur": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "tillamook, sharp cheddar natural cheese cubes": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "tine biola melon/pasjon 1000g": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "tm chicken kibbeh": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "tmavá čokoláda pekanové ořechy": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "toasted oats tripple chocolate crunch": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "toffee apple cake": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "tomates cerises": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "tomato basil pasta sauce organic": [
+      "bruschetta",
+      "pasta_with_tomato_sauce",
+      "tomato_sauce"
+    ],
+    "tomato bisque, bowl": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "tomato hot pot base": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "tomato ketchup aux tomates": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "tomato pasta snack": [
+      "bruschetta",
+      "pasta_with_tomato_sauce",
+      "tomato_sauce"
+    ],
+    "tomato, herbs & spices": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "tomme noire des pyrénées": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "tomyum shrimp creamy flavour": [
+      "pasta_with_tomato_sauce",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "tonno in trancio": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "torsades aux oeufs": [
+      "omelette",
+      "pancakes",
+      "pasta_with_tomato_sauce"
+    ],
+    "tortilla chips bbq": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "tortilla chips cheese 475g st.maria": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "tortillas 8 stück regular (klein)": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "tortillas de blé": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "tortinhas crostata cheesecake com geleia de frutas vermelhas": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "tortitas de arroz con chocolate blanco sabor yogur": [
+      "brownies",
+      "chocolate_cake",
+      "fried_rice",
+      "potato_gratin",
+      "rice_bowl",
+      "roasted_potatoes"
+    ],
+    "tostadas de arroz clásicas sabor original": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "total 2% milkfat": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "tots, oh so organic, organic fruit juice drink, harvest apple": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "tradition chocolate chip": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "traditional horchata smoothie": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "trailblazer granola": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "tri blend whey double chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "triple cheese pizza rolls 120 count": [
+      "bruschetta",
+      "cheese_sandwich",
+      "gratin",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "triple chocolate baked nutrition brownie, triple chocolate brownie": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "triple chocolate cupcakes": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "triple pepperoni pizza rolls 40 count": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "triple threat chocolate bars, triple threat chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "tropicana apple delight juice": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "truffle and real irish butter potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "truffles, chocolate coconut": [
+      "brownies",
+      "chocolate_cake",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "tuna in veg oil": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "tuna pikant": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "tuna shredded in brine": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "tuna, corn and egg": [
+      "fish_tacos",
+      "fish_with_rice",
+      "omelette",
+      "pancakes"
+    ],
+    "turkey and chicken": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "turkey sausage, kale & sweet potato soup": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "turtles brand caramel nut clusters, original": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "tuňáková pasta s jarními bylinkami": [
+      "pasta_with_tomato_sauce"
+    ],
+    "twisted fruit ropes strawberry banana": [
+      "banana_bread",
+      "banana_smoothie",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "twix white 10 pack": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "udon noodles chili flavor": [
+      "pasta_with_tomato_sauce"
+    ],
+    "uht whipping cream": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "ultimate teriyaki chicken bowl": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "ultra thin crust creamy ranch sauce topped with mozzarella and cheddar cheeses, premium white meat chicken, bacon and caramelized onions pizza": [
+      "cheese_sandwich",
+      "chicken_curry",
+      "gratin",
+      "roast_chicken"
+    ],
+    "umeboshi potato chips": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "unbleached forever!, self rising flour": [
+      "bread",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "uncle bens express savoury chicken rice": [
+      "chicken_curry",
+      "fried_rice",
+      "potato_gratin",
+      "rice_bowl",
+      "roast_chicken",
+      "roasted_potatoes"
+    ],
+    "uncooked stuffed breaded chicken breast cutlettes": [
+      "bruschetta",
+      "chicken_curry",
+      "roast_chicken",
+      "sandwich"
+    ],
+    "uncured ham & swiss cheese omelet bites": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "uncuted beef franks": [
+      "beef_stew",
+      "bolognese"
+    ],
+    "unsweetened almondmilk barista blend": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "unsweetened pea protein": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "upsude down steak": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "vanilla blended lowfat yogurt": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "vanilla blended non fat greek yogurt, vanilla": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "vanilla chocolate balls": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "vanilla creamy bio live yoghurt": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "vanilla flavour ice cream with milk chocolate and peanuts": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "vanilla ice cream topped with a chocolate flavored coating bars": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "vaporizado arroz longo extra long grain parboiled rice": [
+      "fried_rice",
+      "rice_bowl"
+    ],
+    "variety pack (bowlin' blueberry, perfect pear) fruit & veggies on the go": [
+      "omelette",
+      "pancakes"
+    ],
+    "vegan fried popcorn chicken": [
+      "bruschetta",
+      "chicken_curry",
+      "roast_chicken",
+      "sandwich"
+    ],
+    "vegan spinach and feta veggie rolls": [
+      "omelette",
+      "pancakes"
+    ],
+    "vegane mini maultaschen": [
+      "pasta_with_tomato_sauce"
+    ],
+    "veganes (chicken) popcorn": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "vegetable fritters and tomato chutney": [
+      "bruschetta",
+      "tomato_sauce"
+    ],
+    "vegetable mix noodles": [
+      "pasta_with_tomato_sauce"
+    ],
+    "veggie crisps ketchup": [
+      "omelette",
+      "pancakes"
+    ],
+    "veggie spargel reis": [
+      "omelette",
+      "pancakes"
+    ],
+    "veggies sticks": [
+      "omelette",
+      "pancakes"
+    ],
+    "verse maaltijd gnocchi fungi": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "vienna sausage": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "village wholemeal bread": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "vintage irish cheddar cheese": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "vitalis knusper müsli klassisch": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "vitarich sandwich premium white bread": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "volkorn sandwich": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "waffle with chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "way 4) kcal milky way tm respo": [
+      "bechamel_sauce",
+      "brownies",
+      "chocolate_cake",
+      "pancakes"
+    ],
+    "weihnachts markt mini tisch adventskalender": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "weizenmehl 550": [
+      "bread",
+      "bruschetta",
+      "pancakes",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "west country farmhouse cheddar & onion": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "wheat, apple & date with milk cereal": [
+      "apple_crumble",
+      "apple_pie",
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "whey protein chocolate & orange": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "whey protein isolado chocolate": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "whey protein isolate strawberry banana": [
+      "banana_bread",
+      "banana_smoothie",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "whey protein powder strawberry blast": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "whey protein strawberry & cream flavour": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "whey protein strawberry sundae": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "white bread mix with durum wheat sourdough": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "white bread unsliced": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "white chedda black peppa crunchy cheese bites": [
+      "cheese_sandwich",
+      "gratin"
+    ],
+    "white chocolate and sicilian lemon cookies": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "white chocolate easter marshmallow": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "white clam sauce with garlic & herb": [
+      "pasta_with_tomato_sauce"
+    ],
+    "white sesame": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "white stilton with mango & ginger": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "whole buttermilk": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "whole chicken without giblets and neck": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "whole split chicken california style": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "whole wheat bagels sandwichs": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "whole wheat flour organic": [
+      "bread",
+      "pancakes"
+    ],
+    "wholemeal breadcrumbs": [
+      "bruschetta",
+      "sandwich"
+    ],
+    "wild caught alaskan sablefish": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "without yeast flourless bread": [
+      "bread",
+      "bruschetta",
+      "pancakes",
+      "sandwich"
+    ],
+    "wood £1.25 £1.25 £1 17g protein per pack 1 of 5 a": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "wulksfelder bio erdbeeren": [
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "xp chicken adobo": [
+      "chicken_curry",
+      "roast_chicken"
+    ],
+    "ych herbal egg powder sachet": [
+      "omelette",
+      "pancakes"
+    ],
+    "yellowcoate raw apple cider vinegar": [
+      "apple_crumble",
+      "apple_pie"
+    ],
+    "yellowfin chunk tuna italian style": [
+      "fish_tacos",
+      "fish_with_rice"
+    ],
+    "yoghurt snack strawberry yoghurt with cereals": [
+      "bechamel_sauce",
+      "pancakes",
+      "strawberry_cake",
+      "strawberry_jam"
+    ],
+    "yogourt nature ferme": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "yogur sabor fresa": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "yogurt lactose free 1.6%": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "yoplait, go gurt, low fat yogurt, mixed berry": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "zeezout boter": [
+      "bechamel_sauce",
+      "pancakes"
+    ],
+    "zingerman's candy manufactory, chocolate covered peanut brittle": [
+      "brownies",
+      "chocolate_cake"
+    ],
+    "zucchini with marinara veggie spirals": [
+      "omelette",
+      "pancakes"
+    ],
+    "zuckermais pasteurisiert gekocht": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "zukay live foods, raw veggie kvass probiotic cultured beet vegetable drink, beet": [
+      "omelette",
+      "pancakes"
+    ],
+    "økologiske chiafrø": [
+      "potato_gratin",
+      "roasted_potatoes"
+    ],
+    "לחם פרוסות עבות קמח קוסמין": [
+      "bruschetta",
+      "potato_gratin",
+      "roasted_potatoes",
+      "sandwich"
+    ],
+    "פטה כבשים 20%": [
+      "bechamel_sauce",
+      "cheese_sandwich",
+      "gratin",
+      "pancakes"
+    ],
+    "भू avons ce %0 zoug 0% added suga brooklea light g": [
+      "bechamel_sauce",
+      "pancakes"
+    ]
+  }
+}

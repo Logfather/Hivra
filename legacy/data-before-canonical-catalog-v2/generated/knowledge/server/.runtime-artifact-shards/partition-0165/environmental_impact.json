@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "chocolat au lait aux fruits secs (noisettes, amandes, raisins, praline), tablette": {
+      "environmentScoreMptPerKg": 0.759,
+      "climateKgCo2EqPerKg": 11.1,
+      "landUsePtPerKg": 469.0,
+      "waterDeprivationM3PerKg": 3.78
+    },
+    "courgette, purée": {
+      "environmentScoreMptPerKg": 0.116,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": 22.7,
+      "waterDeprivationM3PerKg": 0.882
+    },
+    "goûter sec fourré (\"sandwiché\") parfum fruits": {
+      "environmentScoreMptPerKg": 0.344,
+      "climateKgCo2EqPerKg": 3.05,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 3.17
+    },
+    "huile de coco": {
+      "environmentScoreMptPerKg": 0.718,
+      "climateKgCo2EqPerKg": 4.03,
+      "landUsePtPerKg": 382.0,
+      "waterDeprivationM3PerKg": 10.4
+    },
+    "maïs doux, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.177,
+      "climateKgCo2EqPerKg": 1.39,
+      "landUsePtPerKg": 68.0,
+      "waterDeprivationM3PerKg": 0.875
+    },
+    "plat légumes, avec féculent et viande/poisson, dès 6 8 mois": {
+      "environmentScoreMptPerKg": 0.33,
+      "climateKgCo2EqPerKg": 2.25,
+      "landUsePtPerKg": 50.5,
+      "waterDeprivationM3PerKg": 1.28
+    },
+    "polenta ou semoule de maïs, cuite, non salée": {
+      "environmentScoreMptPerKg": 0.0975,
+      "climateKgCo2EqPerKg": 0.662,
+      "landUsePtPerKg": 87.7,
+      "waterDeprivationM3PerKg": 0.38
+    }
+  }
+}

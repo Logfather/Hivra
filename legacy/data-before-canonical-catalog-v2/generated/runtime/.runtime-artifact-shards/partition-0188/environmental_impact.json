@@ -1,0 +1,100 @@
+{
+  "entries": {
+    "bette ou blette, cuite": {
+      "environmentScoreMptPerKg": 0.135,
+      "climateKgCo2EqPerKg": 1.45,
+      "landUsePtPerKg": -17.5,
+      "waterDeprivationM3PerKg": 0.637
+    },
+    "biscuit sec nature": {
+      "environmentScoreMptPerKg": 0.368,
+      "climateKgCo2EqPerKg": 3.59,
+      "landUsePtPerKg": 161.0,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "biscuit sec ou tuile, aux amandes": {
+      "environmentScoreMptPerKg": 0.488,
+      "climateKgCo2EqPerKg": 3.64,
+      "landUsePtPerKg": 210.0,
+      "waterDeprivationM3PerKg": 8.2
+    },
+    "boeuf, onglet, grillé": {
+      "environmentScoreMptPerKg": 3.44,
+      "climateKgCo2EqPerKg": 36.6,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "brick à la pomme de terre": {
+      "environmentScoreMptPerKg": 0.43,
+      "climateKgCo2EqPerKg": 3.11,
+      "landUsePtPerKg": 111.0,
+      "waterDeprivationM3PerKg": 7.04
+    },
+    "focaccia, garnie": {
+      "environmentScoreMptPerKg": 0.417,
+      "climateKgCo2EqPerKg": 3.23,
+      "landUsePtPerKg": 170.0,
+      "waterDeprivationM3PerKg": 1.92
+    },
+    "fromage de chèvre à pâte molle et croûte fleurie type camembert": {
+      "environmentScoreMptPerKg": 1.13,
+      "climateKgCo2EqPerKg": 8.06,
+      "landUsePtPerKg": 563.0,
+      "waterDeprivationM3PerKg": 2.89
+    },
+    "galette ou pavé au soja et légumes, préemballé": {
+      "environmentScoreMptPerKg": 0.232,
+      "climateKgCo2EqPerKg": 2.02,
+      "landUsePtPerKg": 102.0,
+      "waterDeprivationM3PerKg": 1.67
+    },
+    "gingembre, racine crue": {
+      "environmentScoreMptPerKg": 0.0809,
+      "climateKgCo2EqPerKg": 0.494,
+      "landUsePtPerKg": 12.3,
+      "waterDeprivationM3PerKg": 1.79
+    },
+    "gâteau basque, crème pâtissière": {
+      "environmentScoreMptPerKg": 0.322,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 109.0,
+      "waterDeprivationM3PerKg": 0.786
+    },
+    "haricot flageolet, appertisé, égouttés": {
+      "environmentScoreMptPerKg": 0.144,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": -162.0,
+      "waterDeprivationM3PerKg": 0.272
+    },
+    "nouilles asiatiques aromatisées, déshydratées": {
+      "environmentScoreMptPerKg": 0.217,
+      "climateKgCo2EqPerKg": 1.68,
+      "landUsePtPerKg": 105.0,
+      "waterDeprivationM3PerKg": 0.618
+    },
+    "raisin noir, cru": {
+      "environmentScoreMptPerKg": 0.0841,
+      "climateKgCo2EqPerKg": 0.51,
+      "landUsePtPerKg": 22.8,
+      "waterDeprivationM3PerKg": 4.92
+    },
+    "sorbet, en bac": {
+      "environmentScoreMptPerKg": 0.238,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": 62.0,
+      "waterDeprivationM3PerKg": 6.73
+    },
+    "sésame, grillé, graine décortiquée": {
+      "environmentScoreMptPerKg": 0.985,
+      "climateKgCo2EqPerKg": 5.2,
+      "landUsePtPerKg": 1110.0,
+      "waterDeprivationM3PerKg": 3.13
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux céréales, 0% mg": {
+      "environmentScoreMptPerKg": 0.284,
+      "climateKgCo2EqPerKg": 2.34,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 1.49
+    }
+  }
+}

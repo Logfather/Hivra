@@ -1,0 +1,88 @@
+{
+  "entries": {
+    "biscuit sec au lait": {
+      "environmentScoreMptPerKg": 0.309,
+      "climateKgCo2EqPerKg": 3.09,
+      "landUsePtPerKg": 131.0,
+      "waterDeprivationM3PerKg": 0.958
+    },
+    "boeuf, steak ou bifteck, cru": {
+      "environmentScoreMptPerKg": 2.7,
+      "climateKgCo2EqPerKg": 28.9,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.39
+    },
+    "brochette mixte de viande": {
+      "environmentScoreMptPerKg": 0.628,
+      "climateKgCo2EqPerKg": 4.74,
+      "landUsePtPerKg": 265.0,
+      "waterDeprivationM3PerKg": 3.29
+    },
+    "café au lait, café crème ou cappuccino, instantané ou non, non sucré, prêt à boire": {
+      "environmentScoreMptPerKg": 0.0593,
+      "climateKgCo2EqPerKg": 0.535,
+      "landUsePtPerKg": 18.4,
+      "waterDeprivationM3PerKg": 0.298
+    },
+    "fromage blanc nature, gourmand, 8% mg environ": {
+      "environmentScoreMptPerKg": 0.238,
+      "climateKgCo2EqPerKg": 2.34,
+      "landUsePtPerKg": 93.9,
+      "waterDeprivationM3PerKg": 0.329
+    },
+    "lait de chèvre, entier, uht": {
+      "environmentScoreMptPerKg": 0.201,
+      "climateKgCo2EqPerKg": 1.52,
+      "landUsePtPerKg": 95.9,
+      "waterDeprivationM3PerKg": 0.514
+    },
+    "munster": {
+      "environmentScoreMptPerKg": 0.5,
+      "climateKgCo2EqPerKg": 5.18,
+      "landUsePtPerKg": 246.0,
+      "waterDeprivationM3PerKg": 0.556
+    },
+    "neufchâtel": {
+      "environmentScoreMptPerKg": 0.461,
+      "climateKgCo2EqPerKg": 4.78,
+      "landUsePtPerKg": 223.0,
+      "waterDeprivationM3PerKg": 0.511
+    },
+    "piperade basquaise": {
+      "environmentScoreMptPerKg": 0.176,
+      "climateKgCo2EqPerKg": 1.71,
+      "landUsePtPerKg": 33.0,
+      "waterDeprivationM3PerKg": 0.74
+    },
+    "polenta ou semoule de maïs, précuite, sèche": {
+      "environmentScoreMptPerKg": 0.211,
+      "climateKgCo2EqPerKg": 1.47,
+      "landUsePtPerKg": 198.0,
+      "waterDeprivationM3PerKg": 0.849
+    },
+    "préparation culinaire à base de soja, type \"crème de soja\"": {
+      "environmentScoreMptPerKg": 0.148,
+      "climateKgCo2EqPerKg": 1.17,
+      "landUsePtPerKg": 116.0,
+      "waterDeprivationM3PerKg": 0.422
+    },
+    "saucisse de bière": {
+      "environmentScoreMptPerKg": 0.706,
+      "climateKgCo2EqPerKg": 5.54,
+      "landUsePtPerKg": 279.0,
+      "waterDeprivationM3PerKg": 1.83
+    },
+    "tarte aux abricots": {
+      "environmentScoreMptPerKg": 0.35,
+      "climateKgCo2EqPerKg": 2.25,
+      "landUsePtPerKg": 408.0,
+      "waterDeprivationM3PerKg": 1.74
+    },
+    "tarte ou tourte aux poireaux": {
+      "environmentScoreMptPerKg": 0.346,
+      "climateKgCo2EqPerKg": 2.9,
+      "landUsePtPerKg": 128.0,
+      "waterDeprivationM3PerKg": 0.646
+    }
+  }
+}

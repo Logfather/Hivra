@@ -1,0 +1,7505 @@
+{
+  "version": 1,
+  "mappings": [
+    {
+      "catalogKey": "100% grape juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "100% grape juice"
+    },
+    {
+      "catalogKey": "agar agar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "agar agar"
+    },
+    {
+      "catalogKey": "agave syrup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "agave syrup"
+    },
+    {
+      "catalogKey": "aged gouda cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "aged gouda cheese"
+    },
+    {
+      "catalogKey": "ajvar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ajvar"
+    },
+    {
+      "catalogKey": "alfredo sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "alfredo sauce"
+    },
+    {
+      "catalogKey": "almond bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond bar"
+    },
+    {
+      "catalogKey": "almond brittle",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond brittle"
+    },
+    {
+      "catalogKey": "almond butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond butter"
+    },
+    {
+      "catalogKey": "almond chocolate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond chocolate"
+    },
+    {
+      "catalogKey": "almond cookies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond cookies"
+    },
+    {
+      "catalogKey": "almond cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond cream"
+    },
+    {
+      "catalogKey": "almond croissant",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond croissant"
+    },
+    {
+      "catalogKey": "almond drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond drink"
+    },
+    {
+      "catalogKey": "almond flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond flour"
+    },
+    {
+      "catalogKey": "almond milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond milk"
+    },
+    {
+      "catalogKey": "almond oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond oil"
+    },
+    {
+      "catalogKey": "almond pastry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond pastry"
+    },
+    {
+      "catalogKey": "almond yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond yogurt"
+    },
+    {
+      "catalogKey": "almonds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almonds"
+    },
+    {
+      "catalogKey": "alpine milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "alpine milk"
+    },
+    {
+      "catalogKey": "alpine milk chocolate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "alpine milk chocolate"
+    },
+    {
+      "catalogKey": "amaranth",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "amaranth"
+    },
+    {
+      "catalogKey": "apple",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apple"
+    },
+    {
+      "catalogKey": "apple cherry juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apple cherry juice"
+    },
+    {
+      "catalogKey": "apple chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apple chips"
+    },
+    {
+      "catalogKey": "apple cider",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apple cider"
+    },
+    {
+      "catalogKey": "apple cider vinegar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apple cider vinegar"
+    },
+    {
+      "catalogKey": "apple juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apple juice"
+    },
+    {
+      "catalogKey": "apple pear juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apple pear juice"
+    },
+    {
+      "catalogKey": "apple sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apple sauce"
+    },
+    {
+      "catalogKey": "apple vinegar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apple vinegar"
+    },
+    {
+      "catalogKey": "apples",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apples"
+    },
+    {
+      "catalogKey": "apricot",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apricot"
+    },
+    {
+      "catalogKey": "apricot jam",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apricot jam"
+    },
+    {
+      "catalogKey": "apricots",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apricots"
+    },
+    {
+      "catalogKey": "artichoke hearts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "artichoke hearts"
+    },
+    {
+      "catalogKey": "artichokes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "artichokes"
+    },
+    {
+      "catalogKey": "arugula",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "arugula"
+    },
+    {
+      "catalogKey": "arugula salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "arugula salad"
+    },
+    {
+      "catalogKey": "asparagus",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "asparagus"
+    },
+    {
+      "catalogKey": "avocado",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "avocado"
+    },
+    {
+      "catalogKey": "avocado oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "avocado oil"
+    },
+    {
+      "catalogKey": "avocados",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "avocados"
+    },
+    {
+      "catalogKey": "baby carrots",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "baby carrots"
+    },
+    {
+      "catalogKey": "baby rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "baby rice"
+    },
+    {
+      "catalogKey": "bacon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bacon"
+    },
+    {
+      "catalogKey": "bagel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bagel"
+    },
+    {
+      "catalogKey": "bagels",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bagels"
+    },
+    {
+      "catalogKey": "baguette",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "baguette"
+    },
+    {
+      "catalogKey": "baked beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "baked beans"
+    },
+    {
+      "catalogKey": "baked fish",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "baked fish"
+    },
+    {
+      "catalogKey": "baking powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "baking powder"
+    },
+    {
+      "catalogKey": "balsamic dressing",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "balsamic dressing"
+    },
+    {
+      "catalogKey": "balsamic glaze",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "balsamic glaze"
+    },
+    {
+      "catalogKey": "balsamic salad dressing",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "balsamic salad dressing"
+    },
+    {
+      "catalogKey": "balsamic vinegar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "balsamic vinegar"
+    },
+    {
+      "catalogKey": "banana",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "banana"
+    },
+    {
+      "catalogKey": "banana chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "banana chips"
+    },
+    {
+      "catalogKey": "bananas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bananas"
+    },
+    {
+      "catalogKey": "barbecue sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "barbecue sauce"
+    },
+    {
+      "catalogKey": "barista oat drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "barista oat drink"
+    },
+    {
+      "catalogKey": "barley",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "barley"
+    },
+    {
+      "catalogKey": "barley flakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "barley flakes"
+    },
+    {
+      "catalogKey": "basil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "basil"
+    },
+    {
+      "catalogKey": "basil oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "basil oil"
+    },
+    {
+      "catalogKey": "basil pesto",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "basil pesto"
+    },
+    {
+      "catalogKey": "basmati rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "basmati rice"
+    },
+    {
+      "catalogKey": "bay leaves",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bay leaves"
+    },
+    {
+      "catalogKey": "bbq sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bbq sauce"
+    },
+    {
+      "catalogKey": "bbq seasoning",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bbq seasoning"
+    },
+    {
+      "catalogKey": "beans in tomato sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beans in tomato sauce"
+    },
+    {
+      "catalogKey": "bearnaise sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bearnaise sauce"
+    },
+    {
+      "catalogKey": "bee honey",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bee honey"
+    },
+    {
+      "catalogKey": "beef",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef"
+    },
+    {
+      "catalogKey": "beef bratwurst",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef bratwurst"
+    },
+    {
+      "catalogKey": "beef broth",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef broth"
+    },
+    {
+      "catalogKey": "beef fillet steak",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef fillet steak"
+    },
+    {
+      "catalogKey": "beef goulash",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef goulash"
+    },
+    {
+      "catalogKey": "beef ham",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef ham"
+    },
+    {
+      "catalogKey": "beef liver",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef liver"
+    },
+    {
+      "catalogKey": "beef roast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef roast"
+    },
+    {
+      "catalogKey": "beef salami",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef salami"
+    },
+    {
+      "catalogKey": "beef sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef sausage"
+    },
+    {
+      "catalogKey": "beef shank",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef shank"
+    },
+    {
+      "catalogKey": "beef steak",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef steak"
+    },
+    {
+      "catalogKey": "beer",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beer"
+    },
+    {
+      "catalogKey": "beetroot",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beetroot"
+    },
+    {
+      "catalogKey": "beetroot juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beetroot juice"
+    },
+    {
+      "catalogKey": "bell pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bell pepper"
+    },
+    {
+      "catalogKey": "bismarck herring",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bismarck herring"
+    },
+    {
+      "catalogKey": "black beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black beans"
+    },
+    {
+      "catalogKey": "black currant",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black currant"
+    },
+    {
+      "catalogKey": "black currants",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black currants"
+    },
+    {
+      "catalogKey": "black forest ham",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black forest ham"
+    },
+    {
+      "catalogKey": "black lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black lentils"
+    },
+    {
+      "catalogKey": "black olives",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black olives"
+    },
+    {
+      "catalogKey": "black pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black pepper"
+    },
+    {
+      "catalogKey": "black rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black rice"
+    },
+    {
+      "catalogKey": "black tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black tea"
+    },
+    {
+      "catalogKey": "black tea bags",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black tea bags"
+    },
+    {
+      "catalogKey": "blackberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "blackberries"
+    },
+    {
+      "catalogKey": "blackberry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "blackberry"
+    },
+    {
+      "catalogKey": "blanched almonds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "blanched almonds"
+    },
+    {
+      "catalogKey": "blood sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "blood sausage"
+    },
+    {
+      "catalogKey": "blossom honey",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "blossom honey"
+    },
+    {
+      "catalogKey": "blue cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "blue cheese"
+    },
+    {
+      "catalogKey": "blueberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "blueberries"
+    },
+    {
+      "catalogKey": "blueberry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "blueberry"
+    },
+    {
+      "catalogKey": "blueberry yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "blueberry yogurt"
+    },
+    {
+      "catalogKey": "bockwurst sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bockwurst sausage"
+    },
+    {
+      "catalogKey": "bouillon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bouillon"
+    },
+    {
+      "catalogKey": "bratwurst",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bratwurst"
+    },
+    {
+      "catalogKey": "bratwurst sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bratwurst sausage"
+    },
+    {
+      "catalogKey": "bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bread"
+    },
+    {
+      "catalogKey": "bread roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bread roll"
+    },
+    {
+      "catalogKey": "breadcrumbs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "breadcrumbs"
+    },
+    {
+      "catalogKey": "breaded fish fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "breaded fish fillet"
+    },
+    {
+      "catalogKey": "breadsticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "breadsticks"
+    },
+    {
+      "catalogKey": "breakfast bacon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "breakfast bacon"
+    },
+    {
+      "catalogKey": "breakfast cereal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "breakfast cereal"
+    },
+    {
+      "catalogKey": "breakfast roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "breakfast roll"
+    },
+    {
+      "catalogKey": "brie cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brie cheese"
+    },
+    {
+      "catalogKey": "brioche bun",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brioche bun"
+    },
+    {
+      "catalogKey": "broccoli",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "broccoli"
+    },
+    {
+      "catalogKey": "brown cane sugar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brown cane sugar"
+    },
+    {
+      "catalogKey": "brown eggs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brown eggs"
+    },
+    {
+      "catalogKey": "brown lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brown lentils"
+    },
+    {
+      "catalogKey": "brown mustard seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brown mustard seeds"
+    },
+    {
+      "catalogKey": "brown rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brown rice"
+    },
+    {
+      "catalogKey": "brown sugar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brown sugar"
+    },
+    {
+      "catalogKey": "brussels sprouts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brussels sprouts"
+    },
+    {
+      "catalogKey": "buckwheat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "buckwheat"
+    },
+    {
+      "catalogKey": "buckwheat flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "buckwheat flour"
+    },
+    {
+      "catalogKey": "buckwheat noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "buckwheat noodles"
+    },
+    {
+      "catalogKey": "buffalo mozzarella",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "buffalo mozzarella"
+    },
+    {
+      "catalogKey": "bulgur",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bulgur"
+    },
+    {
+      "catalogKey": "burger bun",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "burger bun"
+    },
+    {
+      "catalogKey": "burger seasoning mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "burger seasoning mix"
+    },
+    {
+      "catalogKey": "butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "butter"
+    },
+    {
+      "catalogKey": "butter cake",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "butter cake"
+    },
+    {
+      "catalogKey": "butter cookie",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "butter cookie"
+    },
+    {
+      "catalogKey": "butter cookies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "butter cookies"
+    },
+    {
+      "catalogKey": "butter croissant",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "butter croissant"
+    },
+    {
+      "catalogKey": "butter croissants",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "butter croissants"
+    },
+    {
+      "catalogKey": "butterhead lettuce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "butterhead lettuce"
+    },
+    {
+      "catalogKey": "buttermilk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "buttermilk"
+    },
+    {
+      "catalogKey": "butternut squash",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "butternut squash"
+    },
+    {
+      "catalogKey": "cabbage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cabbage"
+    },
+    {
+      "catalogKey": "cake mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cake mix"
+    },
+    {
+      "catalogKey": "calamari",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "calamari"
+    },
+    {
+      "catalogKey": "camembert cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "camembert cheese"
+    },
+    {
+      "catalogKey": "candies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "candies"
+    },
+    {
+      "catalogKey": "candy canes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "candy canes"
+    },
+    {
+      "catalogKey": "cane sugar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cane sugar"
+    },
+    {
+      "catalogKey": "canned asparagus",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned asparagus"
+    },
+    {
+      "catalogKey": "canned beans in tomato sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned beans in tomato sauce"
+    },
+    {
+      "catalogKey": "canned black beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned black beans"
+    },
+    {
+      "catalogKey": "canned corn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned corn"
+    },
+    {
+      "catalogKey": "canned green peas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned green peas"
+    },
+    {
+      "catalogKey": "canned lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned lentils"
+    },
+    {
+      "catalogKey": "canned mackerel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned mackerel"
+    },
+    {
+      "catalogKey": "canned mixed vegetables",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned mixed vegetables"
+    },
+    {
+      "catalogKey": "canned mushrooms",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned mushrooms"
+    },
+    {
+      "catalogKey": "canned peach",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned peach"
+    },
+    {
+      "catalogKey": "canned peaches",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned peaches"
+    },
+    {
+      "catalogKey": "canned peas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned peas"
+    },
+    {
+      "catalogKey": "canned peeled tomatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned peeled tomatoes"
+    },
+    {
+      "catalogKey": "canned pickles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned pickles"
+    },
+    {
+      "catalogKey": "canned pineapple",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned pineapple"
+    },
+    {
+      "catalogKey": "canned sardines",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned sardines"
+    },
+    {
+      "catalogKey": "canned sweet corn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned sweet corn"
+    },
+    {
+      "catalogKey": "canned tomato paste",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned tomato paste"
+    },
+    {
+      "catalogKey": "canned tomatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned tomatoes"
+    },
+    {
+      "catalogKey": "canned tuna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned tuna"
+    },
+    {
+      "catalogKey": "canned white beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned white beans"
+    },
+    {
+      "catalogKey": "cantaloupe melon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cantaloupe melon"
+    },
+    {
+      "catalogKey": "capers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "capers"
+    },
+    {
+      "catalogKey": "caramel candies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "caramel candies"
+    },
+    {
+      "catalogKey": "cardamom",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cardamom"
+    },
+    {
+      "catalogKey": "carrot",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "carrot"
+    },
+    {
+      "catalogKey": "carrot juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "carrot juice"
+    },
+    {
+      "catalogKey": "carrot sticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "carrot sticks"
+    },
+    {
+      "catalogKey": "carrots",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "carrots"
+    },
+    {
+      "catalogKey": "cashew butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cashew butter"
+    },
+    {
+      "catalogKey": "cashew cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cashew cream"
+    },
+    {
+      "catalogKey": "cashew drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cashew drink"
+    },
+    {
+      "catalogKey": "cashew milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cashew milk"
+    },
+    {
+      "catalogKey": "cashew nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cashew nuts"
+    },
+    {
+      "catalogKey": "cauliflower",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cauliflower"
+    },
+    {
+      "catalogKey": "cayenne pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cayenne pepper"
+    },
+    {
+      "catalogKey": "celery",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "celery"
+    },
+    {
+      "catalogKey": "celery juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "celery juice"
+    },
+    {
+      "catalogKey": "celery stalks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "celery stalks"
+    },
+    {
+      "catalogKey": "chai tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chai tea"
+    },
+    {
+      "catalogKey": "chamomile tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chamomile tea"
+    },
+    {
+      "catalogKey": "chanterelles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chanterelles"
+    },
+    {
+      "catalogKey": "chard",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chard"
+    },
+    {
+      "catalogKey": "cheddar cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cheddar cheese"
+    },
+    {
+      "catalogKey": "cheese crackers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cheese crackers"
+    },
+    {
+      "catalogKey": "cheese filled tortellini",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cheese filled tortellini"
+    },
+    {
+      "catalogKey": "cheese sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cheese sausage"
+    },
+    {
+      "catalogKey": "cheese slices",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cheese slices"
+    },
+    {
+      "catalogKey": "cheese sticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cheese sticks"
+    },
+    {
+      "catalogKey": "cherries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cherries"
+    },
+    {
+      "catalogKey": "cherry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cherry"
+    },
+    {
+      "catalogKey": "cherry tomatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cherry tomatoes"
+    },
+    {
+      "catalogKey": "chestnuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chestnuts"
+    },
+    {
+      "catalogKey": "chia pudding",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chia pudding"
+    },
+    {
+      "catalogKey": "chia seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chia seeds"
+    },
+    {
+      "catalogKey": "chicken breast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken breast"
+    },
+    {
+      "catalogKey": "chicken breast fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken breast fillet"
+    },
+    {
+      "catalogKey": "chicken broth",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken broth"
+    },
+    {
+      "catalogKey": "chicken curry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken curry"
+    },
+    {
+      "catalogKey": "chicken fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken fillet"
+    },
+    {
+      "catalogKey": "chicken leg",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken leg"
+    },
+    {
+      "catalogKey": "chicken liver",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken liver"
+    },
+    {
+      "catalogKey": "chicken nuggets",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken nuggets"
+    },
+    {
+      "catalogKey": "chicken rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken rice"
+    },
+    {
+      "catalogKey": "chicken sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken sausage"
+    },
+    {
+      "catalogKey": "chicken thigh",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken thigh"
+    },
+    {
+      "catalogKey": "chicken wings",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken wings"
+    },
+    {
+      "catalogKey": "chickpea curry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chickpea curry"
+    },
+    {
+      "catalogKey": "chickpea flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chickpea flour"
+    },
+    {
+      "catalogKey": "chickpea pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chickpea pasta"
+    },
+    {
+      "catalogKey": "chickpea snack",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chickpea snack"
+    },
+    {
+      "catalogKey": "chickpeas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chickpeas"
+    },
+    {
+      "catalogKey": "chicory",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicory"
+    },
+    {
+      "catalogKey": "chili",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili"
+    },
+    {
+      "catalogKey": "chili con carne",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili con carne"
+    },
+    {
+      "catalogKey": "chili flakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili flakes"
+    },
+    {
+      "catalogKey": "chili garlic sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili garlic sauce"
+    },
+    {
+      "catalogKey": "chili nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili nuts"
+    },
+    {
+      "catalogKey": "chili paste",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili paste"
+    },
+    {
+      "catalogKey": "chili peppers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili peppers"
+    },
+    {
+      "catalogKey": "chili powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili powder"
+    },
+    {
+      "catalogKey": "chili sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili sauce"
+    },
+    {
+      "catalogKey": "chili sin carne",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili sin carne"
+    },
+    {
+      "catalogKey": "chimichurri sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chimichurri sauce"
+    },
+    {
+      "catalogKey": "chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chips"
+    },
+    {
+      "catalogKey": "chives",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chives"
+    },
+    {
+      "catalogKey": "chocolate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate"
+    },
+    {
+      "catalogKey": "chocolate bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate bar"
+    },
+    {
+      "catalogKey": "chocolate cake",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate cake"
+    },
+    {
+      "catalogKey": "chocolate cookies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate cookies"
+    },
+    {
+      "catalogKey": "chocolate croissant",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate croissant"
+    },
+    {
+      "catalogKey": "chocolate ice cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate ice cream"
+    },
+    {
+      "catalogKey": "chocolate mousse",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate mousse"
+    },
+    {
+      "catalogKey": "chocolate muesli",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate muesli"
+    },
+    {
+      "catalogKey": "chocolate pudding",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate pudding"
+    },
+    {
+      "catalogKey": "chocolate rice cake",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate rice cake"
+    },
+    {
+      "catalogKey": "chocolate rice cakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate rice cakes"
+    },
+    {
+      "catalogKey": "chocolate soy milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate soy milk"
+    },
+    {
+      "catalogKey": "chocolate spread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate spread"
+    },
+    {
+      "catalogKey": "chocolate with nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chocolate with nuts"
+    },
+    {
+      "catalogKey": "chopped almonds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chopped almonds"
+    },
+    {
+      "catalogKey": "chopped tomatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chopped tomatoes"
+    },
+    {
+      "catalogKey": "chorizo",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chorizo"
+    },
+    {
+      "catalogKey": "christmas cookies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "christmas cookies"
+    },
+    {
+      "catalogKey": "ciabatta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ciabatta"
+    },
+    {
+      "catalogKey": "ciabatta bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ciabatta bread"
+    },
+    {
+      "catalogKey": "cinnamon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cinnamon"
+    },
+    {
+      "catalogKey": "cinnamon sticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cinnamon sticks"
+    },
+    {
+      "catalogKey": "classic baguette",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "classic baguette"
+    },
+    {
+      "catalogKey": "classic chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "classic chips"
+    },
+    {
+      "catalogKey": "classic cookies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "classic cookies"
+    },
+    {
+      "catalogKey": "classic mustard",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "classic mustard"
+    },
+    {
+      "catalogKey": "classic tomato sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "classic tomato sauce"
+    },
+    {
+      "catalogKey": "clementine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "clementine"
+    },
+    {
+      "catalogKey": "clementines",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "clementines"
+    },
+    {
+      "catalogKey": "cloudy apple juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cloudy apple juice"
+    },
+    {
+      "catalogKey": "cloves",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cloves"
+    },
+    {
+      "catalogKey": "coarse sea salt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coarse sea salt"
+    },
+    {
+      "catalogKey": "coca cola",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coca cola"
+    },
+    {
+      "catalogKey": "cocktail sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cocktail sauce"
+    },
+    {
+      "catalogKey": "cocoa",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cocoa"
+    },
+    {
+      "catalogKey": "cocoa butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cocoa butter"
+    },
+    {
+      "catalogKey": "cocoa drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cocoa drink"
+    },
+    {
+      "catalogKey": "cocoa nibs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cocoa nibs"
+    },
+    {
+      "catalogKey": "cocoa powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cocoa powder"
+    },
+    {
+      "catalogKey": "coconut",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut"
+    },
+    {
+      "catalogKey": "coconut bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut bar"
+    },
+    {
+      "catalogKey": "coconut blossom sugar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut blossom sugar"
+    },
+    {
+      "catalogKey": "coconut chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut chips"
+    },
+    {
+      "catalogKey": "coconut drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut drink"
+    },
+    {
+      "catalogKey": "coconut flakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut flakes"
+    },
+    {
+      "catalogKey": "coconut macaroons",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut macaroons"
+    },
+    {
+      "catalogKey": "coconut milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut milk"
+    },
+    {
+      "catalogKey": "coconut oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut oil"
+    },
+    {
+      "catalogKey": "coconut rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut rice"
+    },
+    {
+      "catalogKey": "coconut water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut water"
+    },
+    {
+      "catalogKey": "coconut yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut yogurt"
+    },
+    {
+      "catalogKey": "cod",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cod"
+    },
+    {
+      "catalogKey": "cod fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cod fillet"
+    },
+    {
+      "catalogKey": "coffee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coffee"
+    },
+    {
+      "catalogKey": "coffee beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coffee beans"
+    },
+    {
+      "catalogKey": "coffee cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coffee cream"
+    },
+    {
+      "catalogKey": "coffee pods",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coffee pods"
+    },
+    {
+      "catalogKey": "cola",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cola"
+    },
+    {
+      "catalogKey": "cola drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cola drink"
+    },
+    {
+      "catalogKey": "cola zero",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cola zero"
+    },
+    {
+      "catalogKey": "cold pressed sunflower oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cold pressed sunflower oil"
+    },
+    {
+      "catalogKey": "condensed milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "condensed milk"
+    },
+    {
+      "catalogKey": "cooked beetroot",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cooked beetroot"
+    },
+    {
+      "catalogKey": "cooked chickpeas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cooked chickpeas"
+    },
+    {
+      "catalogKey": "cooked ham",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cooked ham"
+    },
+    {
+      "catalogKey": "cooked lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cooked lentils"
+    },
+    {
+      "catalogKey": "cooked sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cooked sausage"
+    },
+    {
+      "catalogKey": "cooked shrimp",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cooked shrimp"
+    },
+    {
+      "catalogKey": "cooked wild rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cooked wild rice"
+    },
+    {
+      "catalogKey": "cookie",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cookie"
+    },
+    {
+      "catalogKey": "cookie dough",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cookie dough"
+    },
+    {
+      "catalogKey": "cookies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cookies"
+    },
+    {
+      "catalogKey": "cooking cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cooking cream"
+    },
+    {
+      "catalogKey": "coriander",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coriander"
+    },
+    {
+      "catalogKey": "coriander seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coriander seeds"
+    },
+    {
+      "catalogKey": "corn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn"
+    },
+    {
+      "catalogKey": "corn cakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn cakes"
+    },
+    {
+      "catalogKey": "corn chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn chips"
+    },
+    {
+      "catalogKey": "corn flakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn flakes"
+    },
+    {
+      "catalogKey": "corn flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn flour"
+    },
+    {
+      "catalogKey": "corn grits",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn grits"
+    },
+    {
+      "catalogKey": "corn kernels",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn kernels"
+    },
+    {
+      "catalogKey": "corn oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn oil"
+    },
+    {
+      "catalogKey": "corn on the cob",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn on the cob"
+    },
+    {
+      "catalogKey": "corn salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn salad"
+    },
+    {
+      "catalogKey": "corn salsa",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn salsa"
+    },
+    {
+      "catalogKey": "corn snack",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn snack"
+    },
+    {
+      "catalogKey": "corn starch",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn starch"
+    },
+    {
+      "catalogKey": "corn sticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corn sticks"
+    },
+    {
+      "catalogKey": "corned beef",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "corned beef"
+    },
+    {
+      "catalogKey": "cornflakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cornflakes"
+    },
+    {
+      "catalogKey": "cornichons",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cornichons"
+    },
+    {
+      "catalogKey": "cornmeal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cornmeal"
+    },
+    {
+      "catalogKey": "cottage cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cottage cheese"
+    },
+    {
+      "catalogKey": "cotton candy",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cotton candy"
+    },
+    {
+      "catalogKey": "couscous",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "couscous"
+    },
+    {
+      "catalogKey": "crab",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "crab"
+    },
+    {
+      "catalogKey": "cracked wheat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cracked wheat"
+    },
+    {
+      "catalogKey": "crackers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "crackers"
+    },
+    {
+      "catalogKey": "cranberry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cranberry"
+    },
+    {
+      "catalogKey": "cranberry juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cranberry juice"
+    },
+    {
+      "catalogKey": "cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cream"
+    },
+    {
+      "catalogKey": "cream cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cream cheese"
+    },
+    {
+      "catalogKey": "cream horseradish",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cream horseradish"
+    },
+    {
+      "catalogKey": "cream pudding",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cream pudding"
+    },
+    {
+      "catalogKey": "creme fraiche",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "creme fraiche"
+    },
+    {
+      "catalogKey": "crispbread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "crispbread"
+    },
+    {
+      "catalogKey": "croissant",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "croissant"
+    },
+    {
+      "catalogKey": "croissants",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "croissants"
+    },
+    {
+      "catalogKey": "crunchy muesli",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "crunchy muesli"
+    },
+    {
+      "catalogKey": "crustless bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "crustless bread"
+    },
+    {
+      "catalogKey": "cucumber",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cucumber"
+    },
+    {
+      "catalogKey": "cucumber salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cucumber salad"
+    },
+    {
+      "catalogKey": "cucumbers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cucumbers"
+    },
+    {
+      "catalogKey": "cumin",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cumin"
+    },
+    {
+      "catalogKey": "currants",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "currants"
+    },
+    {
+      "catalogKey": "curry ketchup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "curry ketchup"
+    },
+    {
+      "catalogKey": "curry paste",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "curry paste"
+    },
+    {
+      "catalogKey": "curry powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "curry powder"
+    },
+    {
+      "catalogKey": "curry sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "curry sauce"
+    },
+    {
+      "catalogKey": "cut green beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cut green beans"
+    },
+    {
+      "catalogKey": "cuttlefish",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cuttlefish"
+    },
+    {
+      "catalogKey": "dark chocolate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark chocolate"
+    },
+    {
+      "catalogKey": "dark chocolate 70%",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark chocolate 70%"
+    },
+    {
+      "catalogKey": "dark chocolate 85%",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark chocolate 85%"
+    },
+    {
+      "catalogKey": "dark chocolate bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark chocolate bar"
+    },
+    {
+      "catalogKey": "dark chocolate couverture",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark chocolate couverture"
+    },
+    {
+      "catalogKey": "dark chocolate with almonds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark chocolate with almonds"
+    },
+    {
+      "catalogKey": "dark chocolate with orange",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark chocolate with orange"
+    },
+    {
+      "catalogKey": "dark rye bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark rye bread"
+    },
+    {
+      "catalogKey": "dark soy sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark soy sauce"
+    },
+    {
+      "catalogKey": "date",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "date"
+    },
+    {
+      "catalogKey": "dates",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dates"
+    },
+    {
+      "catalogKey": "desiccated coconut",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "desiccated coconut"
+    },
+    {
+      "catalogKey": "diced bacon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "diced bacon"
+    },
+    {
+      "catalogKey": "diced onions",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "diced onions"
+    },
+    {
+      "catalogKey": "diced tomatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "diced tomatoes"
+    },
+    {
+      "catalogKey": "dijon mustard",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dijon mustard"
+    },
+    {
+      "catalogKey": "dill",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dill"
+    },
+    {
+      "catalogKey": "ditalini pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ditalini pasta"
+    },
+    {
+      "catalogKey": "donuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "donuts"
+    },
+    {
+      "catalogKey": "double cream cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "double cream cheese"
+    },
+    {
+      "catalogKey": "dried apricots",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried apricots"
+    },
+    {
+      "catalogKey": "dried basil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried basil"
+    },
+    {
+      "catalogKey": "dried chickpeas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried chickpeas"
+    },
+    {
+      "catalogKey": "dried coriander",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried coriander"
+    },
+    {
+      "catalogKey": "dried cranberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried cranberries"
+    },
+    {
+      "catalogKey": "dried dates",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried dates"
+    },
+    {
+      "catalogKey": "dried figs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried figs"
+    },
+    {
+      "catalogKey": "dried fruit mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried fruit mix"
+    },
+    {
+      "catalogKey": "dried ginger",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried ginger"
+    },
+    {
+      "catalogKey": "dried lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried lentils"
+    },
+    {
+      "catalogKey": "dried mango strips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried mango strips"
+    },
+    {
+      "catalogKey": "dried peaches",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried peaches"
+    },
+    {
+      "catalogKey": "dried plums",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried plums"
+    },
+    {
+      "catalogKey": "dried porcini mushrooms",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried porcini mushrooms"
+    },
+    {
+      "catalogKey": "dry red wine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dry red wine"
+    },
+    {
+      "catalogKey": "dry yeast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dry yeast"
+    },
+    {
+      "catalogKey": "duck breast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "duck breast"
+    },
+    {
+      "catalogKey": "duck leg",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "duck leg"
+    },
+    {
+      "catalogKey": "durum wheat semolina",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "durum wheat semolina"
+    },
+    {
+      "catalogKey": "edam cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "edam cheese"
+    },
+    {
+      "catalogKey": "edamame",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "edamame"
+    },
+    {
+      "catalogKey": "eel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "eel"
+    },
+    {
+      "catalogKey": "egg noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "egg noodles"
+    },
+    {
+      "catalogKey": "egg pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "egg pasta"
+    },
+    {
+      "catalogKey": "eggplant",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "eggplant"
+    },
+    {
+      "catalogKey": "eggs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "eggs"
+    },
+    {
+      "catalogKey": "elderflower syrup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "elderflower syrup"
+    },
+    {
+      "catalogKey": "emmental cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "emmental cheese"
+    },
+    {
+      "catalogKey": "energy bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "energy bar"
+    },
+    {
+      "catalogKey": "energy drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "energy drink"
+    },
+    {
+      "catalogKey": "erythritol",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "erythritol"
+    },
+    {
+      "catalogKey": "espresso beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "espresso beans"
+    },
+    {
+      "catalogKey": "extra virgin olive oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "extra virgin olive oil"
+    },
+    {
+      "catalogKey": "falafel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "falafel"
+    },
+    {
+      "catalogKey": "farfalle",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "farfalle"
+    },
+    {
+      "catalogKey": "farm eggs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "farm eggs"
+    },
+    {
+      "catalogKey": "farmhouse butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "farmhouse butter"
+    },
+    {
+      "catalogKey": "fennel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fennel"
+    },
+    {
+      "catalogKey": "fennel seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fennel seeds"
+    },
+    {
+      "catalogKey": "fenugreek",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fenugreek"
+    },
+    {
+      "catalogKey": "fenugreek seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fenugreek seeds"
+    },
+    {
+      "catalogKey": "feta cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "feta cheese"
+    },
+    {
+      "catalogKey": "feta style cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "feta style cheese"
+    },
+    {
+      "catalogKey": "fettuccine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fettuccine"
+    },
+    {
+      "catalogKey": "fig",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fig"
+    },
+    {
+      "catalogKey": "figs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "figs"
+    },
+    {
+      "catalogKey": "filter coffee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "filter coffee"
+    },
+    {
+      "catalogKey": "fish fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fish fillet"
+    },
+    {
+      "catalogKey": "fish fingers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fish fingers"
+    },
+    {
+      "catalogKey": "fish sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fish sauce"
+    },
+    {
+      "catalogKey": "flatbread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "flatbread"
+    },
+    {
+      "catalogKey": "flavored mineral water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "flavored mineral water"
+    },
+    {
+      "catalogKey": "flax seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "flax seeds"
+    },
+    {
+      "catalogKey": "flaxseed oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "flaxseed oil"
+    },
+    {
+      "catalogKey": "forest honey",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "forest honey"
+    },
+    {
+      "catalogKey": "frankfurter sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frankfurter sausage"
+    },
+    {
+      "catalogKey": "free range eggs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "free range eggs"
+    },
+    {
+      "catalogKey": "french baguette",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "french baguette"
+    },
+    {
+      "catalogKey": "french fries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "french fries"
+    },
+    {
+      "catalogKey": "french salad dressing",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "french salad dressing"
+    },
+    {
+      "catalogKey": "fresh baby spinach",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh baby spinach"
+    },
+    {
+      "catalogKey": "fresh basil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh basil"
+    },
+    {
+      "catalogKey": "fresh blueberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh blueberries"
+    },
+    {
+      "catalogKey": "fresh bratwurst",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh bratwurst"
+    },
+    {
+      "catalogKey": "fresh brussels sprouts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh brussels sprouts"
+    },
+    {
+      "catalogKey": "fresh celery",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh celery"
+    },
+    {
+      "catalogKey": "fresh corn on the cob",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh corn on the cob"
+    },
+    {
+      "catalogKey": "fresh cucumbers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh cucumbers"
+    },
+    {
+      "catalogKey": "fresh eggs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh eggs"
+    },
+    {
+      "catalogKey": "fresh figs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh figs"
+    },
+    {
+      "catalogKey": "fresh garlic",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh garlic"
+    },
+    {
+      "catalogKey": "fresh green beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh green beans"
+    },
+    {
+      "catalogKey": "fresh low fat milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh low fat milk"
+    },
+    {
+      "catalogKey": "fresh mangoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh mangoes"
+    },
+    {
+      "catalogKey": "fresh milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh milk"
+    },
+    {
+      "catalogKey": "fresh mozzarella",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh mozzarella"
+    },
+    {
+      "catalogKey": "fresh mushrooms",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh mushrooms"
+    },
+    {
+      "catalogKey": "fresh orange juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh orange juice"
+    },
+    {
+      "catalogKey": "fresh parsley",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh parsley"
+    },
+    {
+      "catalogKey": "fresh pineapple",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh pineapple"
+    },
+    {
+      "catalogKey": "fresh pizza dough",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh pizza dough"
+    },
+    {
+      "catalogKey": "fresh pretzel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh pretzel"
+    },
+    {
+      "catalogKey": "fresh radishes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh radishes"
+    },
+    {
+      "catalogKey": "fresh salad mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh salad mix"
+    },
+    {
+      "catalogKey": "fresh salmon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh salmon"
+    },
+    {
+      "catalogKey": "fresh sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh sausage"
+    },
+    {
+      "catalogKey": "fresh shrimp",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh shrimp"
+    },
+    {
+      "catalogKey": "fresh sole",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh sole"
+    },
+    {
+      "catalogKey": "fresh spinach",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh spinach"
+    },
+    {
+      "catalogKey": "fresh strawberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh strawberries"
+    },
+    {
+      "catalogKey": "fresh sweet potatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh sweet potatoes"
+    },
+    {
+      "catalogKey": "fresh whole milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh whole milk"
+    },
+    {
+      "catalogKey": "fried fish",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fried fish"
+    },
+    {
+      "catalogKey": "fried onions",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fried onions"
+    },
+    {
+      "catalogKey": "frozen berries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen berries"
+    },
+    {
+      "catalogKey": "frozen blueberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen blueberries"
+    },
+    {
+      "catalogKey": "frozen broccoli",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen broccoli"
+    },
+    {
+      "catalogKey": "frozen broccoli florets",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen broccoli florets"
+    },
+    {
+      "catalogKey": "frozen brussels sprouts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen brussels sprouts"
+    },
+    {
+      "catalogKey": "frozen cherries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen cherries"
+    },
+    {
+      "catalogKey": "frozen chicken nuggets",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen chicken nuggets"
+    },
+    {
+      "catalogKey": "frozen corn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen corn"
+    },
+    {
+      "catalogKey": "frozen corn on the cob",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen corn on the cob"
+    },
+    {
+      "catalogKey": "frozen dumplings",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen dumplings"
+    },
+    {
+      "catalogKey": "frozen edamame",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen edamame"
+    },
+    {
+      "catalogKey": "frozen french fries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen french fries"
+    },
+    {
+      "catalogKey": "frozen fruit",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen fruit"
+    },
+    {
+      "catalogKey": "frozen green beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen green beans"
+    },
+    {
+      "catalogKey": "frozen green peas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen green peas"
+    },
+    {
+      "catalogKey": "frozen mackerel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen mackerel"
+    },
+    {
+      "catalogKey": "frozen mango",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen mango"
+    },
+    {
+      "catalogKey": "frozen mixed berries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen mixed berries"
+    },
+    {
+      "catalogKey": "frozen mixed fruit",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen mixed fruit"
+    },
+    {
+      "catalogKey": "frozen mixed vegetables",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen mixed vegetables"
+    },
+    {
+      "catalogKey": "frozen mushrooms",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen mushrooms"
+    },
+    {
+      "catalogKey": "frozen pancakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen pancakes"
+    },
+    {
+      "catalogKey": "frozen peaches",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen peaches"
+    },
+    {
+      "catalogKey": "frozen peas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen peas"
+    },
+    {
+      "catalogKey": "frozen peas and carrots",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen peas and carrots"
+    },
+    {
+      "catalogKey": "frozen pizza",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen pizza"
+    },
+    {
+      "catalogKey": "frozen potatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen potatoes"
+    },
+    {
+      "catalogKey": "frozen puff pastry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen puff pastry"
+    },
+    {
+      "catalogKey": "frozen raspberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen raspberries"
+    },
+    {
+      "catalogKey": "frozen red berries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen red berries"
+    },
+    {
+      "catalogKey": "frozen salmon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen salmon"
+    },
+    {
+      "catalogKey": "frozen scallops",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen scallops"
+    },
+    {
+      "catalogKey": "frozen seafood mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen seafood mix"
+    },
+    {
+      "catalogKey": "frozen shrimp",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen shrimp"
+    },
+    {
+      "catalogKey": "frozen sour cherries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen sour cherries"
+    },
+    {
+      "catalogKey": "frozen spinach",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen spinach"
+    },
+    {
+      "catalogKey": "frozen squid rings",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen squid rings"
+    },
+    {
+      "catalogKey": "frozen strawberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen strawberries"
+    },
+    {
+      "catalogKey": "frozen vegetable mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen vegetable mix"
+    },
+    {
+      "catalogKey": "frozen vegetables",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen vegetables"
+    },
+    {
+      "catalogKey": "fruit bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fruit bar"
+    },
+    {
+      "catalogKey": "fruit gummies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fruit gummies"
+    },
+    {
+      "catalogKey": "fruit jelly",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fruit jelly"
+    },
+    {
+      "catalogKey": "fruit juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fruit juice"
+    },
+    {
+      "catalogKey": "fruit tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fruit tea"
+    },
+    {
+      "catalogKey": "fruit yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fruit yogurt"
+    },
+    {
+      "catalogKey": "frying oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frying oil"
+    },
+    {
+      "catalogKey": "fusilli pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fusilli pasta"
+    },
+    {
+      "catalogKey": "gala apple",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gala apple"
+    },
+    {
+      "catalogKey": "garlic",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "garlic"
+    },
+    {
+      "catalogKey": "garlic bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "garlic bread"
+    },
+    {
+      "catalogKey": "garlic cloves",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "garlic cloves"
+    },
+    {
+      "catalogKey": "garlic dip",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "garlic dip"
+    },
+    {
+      "catalogKey": "garlic mayonnaise",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "garlic mayonnaise"
+    },
+    {
+      "catalogKey": "garlic oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "garlic oil"
+    },
+    {
+      "catalogKey": "garlic powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "garlic powder"
+    },
+    {
+      "catalogKey": "garlic sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "garlic sauce"
+    },
+    {
+      "catalogKey": "garlic sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "garlic sausage"
+    },
+    {
+      "catalogKey": "gelatin",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gelatin"
+    },
+    {
+      "catalogKey": "ghee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ghee"
+    },
+    {
+      "catalogKey": "ginger",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ginger"
+    },
+    {
+      "catalogKey": "ginger powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ginger powder"
+    },
+    {
+      "catalogKey": "ginger root",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ginger root"
+    },
+    {
+      "catalogKey": "ginger syrup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ginger syrup"
+    },
+    {
+      "catalogKey": "ginger tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ginger tea"
+    },
+    {
+      "catalogKey": "gingerbread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gingerbread"
+    },
+    {
+      "catalogKey": "glass noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "glass noodles"
+    },
+    {
+      "catalogKey": "glucose",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "glucose"
+    },
+    {
+      "catalogKey": "gluten free bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free bread"
+    },
+    {
+      "catalogKey": "gluten free flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free flour"
+    },
+    {
+      "catalogKey": "gluten free flour mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free flour mix"
+    },
+    {
+      "catalogKey": "gluten free fusilli",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free fusilli"
+    },
+    {
+      "catalogKey": "gluten free fusilli pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free fusilli pasta"
+    },
+    {
+      "catalogKey": "gluten free pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free pasta"
+    },
+    {
+      "catalogKey": "gluten free penne",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free penne"
+    },
+    {
+      "catalogKey": "gluten free pizza",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free pizza"
+    },
+    {
+      "catalogKey": "gluten free rolled oats",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free rolled oats"
+    },
+    {
+      "catalogKey": "gluten free soy sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free soy sauce"
+    },
+    {
+      "catalogKey": "gluten free spaghetti",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free spaghetti"
+    },
+    {
+      "catalogKey": "gnocchi",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gnocchi"
+    },
+    {
+      "catalogKey": "goat cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "goat cheese"
+    },
+    {
+      "catalogKey": "goat milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "goat milk"
+    },
+    {
+      "catalogKey": "goat milk cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "goat milk cheese"
+    },
+    {
+      "catalogKey": "goat yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "goat yogurt"
+    },
+    {
+      "catalogKey": "golden raisins",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "golden raisins"
+    },
+    {
+      "catalogKey": "gouda cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gouda cheese"
+    },
+    {
+      "catalogKey": "granny smith apple",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "granny smith apple"
+    },
+    {
+      "catalogKey": "granulated garlic",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "granulated garlic"
+    },
+    {
+      "catalogKey": "grape juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "grape juice"
+    },
+    {
+      "catalogKey": "grape seed oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "grape seed oil"
+    },
+    {
+      "catalogKey": "grapefruit",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "grapefruit"
+    },
+    {
+      "catalogKey": "grapes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "grapes"
+    },
+    {
+      "catalogKey": "grated cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "grated cheese"
+    },
+    {
+      "catalogKey": "gravy",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gravy"
+    },
+    {
+      "catalogKey": "greek style yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "greek style yogurt"
+    },
+    {
+      "catalogKey": "greek yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "greek yogurt"
+    },
+    {
+      "catalogKey": "green apple",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green apple"
+    },
+    {
+      "catalogKey": "green apples",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green apples"
+    },
+    {
+      "catalogKey": "green asparagus",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green asparagus"
+    },
+    {
+      "catalogKey": "green asparagus spears",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green asparagus spears"
+    },
+    {
+      "catalogKey": "green beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green beans"
+    },
+    {
+      "catalogKey": "green chili",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green chili"
+    },
+    {
+      "catalogKey": "green grapes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green grapes"
+    },
+    {
+      "catalogKey": "green lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green lentils"
+    },
+    {
+      "catalogKey": "green olives",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green olives"
+    },
+    {
+      "catalogKey": "green peas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green peas"
+    },
+    {
+      "catalogKey": "green pesto",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green pesto"
+    },
+    {
+      "catalogKey": "green smoothie",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green smoothie"
+    },
+    {
+      "catalogKey": "green tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green tea"
+    },
+    {
+      "catalogKey": "green tea bags",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green tea bags"
+    },
+    {
+      "catalogKey": "grill cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "grill cheese"
+    },
+    {
+      "catalogKey": "grill seasoning",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "grill seasoning"
+    },
+    {
+      "catalogKey": "ground beef",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground beef"
+    },
+    {
+      "catalogKey": "ground black pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground black pepper"
+    },
+    {
+      "catalogKey": "ground cardamom",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground cardamom"
+    },
+    {
+      "catalogKey": "ground cayenne pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground cayenne pepper"
+    },
+    {
+      "catalogKey": "ground chicken",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground chicken"
+    },
+    {
+      "catalogKey": "ground chili",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground chili"
+    },
+    {
+      "catalogKey": "ground cinnamon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground cinnamon"
+    },
+    {
+      "catalogKey": "ground cloves",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground cloves"
+    },
+    {
+      "catalogKey": "ground coffee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground coffee"
+    },
+    {
+      "catalogKey": "ground coriander",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground coriander"
+    },
+    {
+      "catalogKey": "ground cumin",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground cumin"
+    },
+    {
+      "catalogKey": "ground flax seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground flax seeds"
+    },
+    {
+      "catalogKey": "ground nutmeg",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground nutmeg"
+    },
+    {
+      "catalogKey": "ground pork",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground pork"
+    },
+    {
+      "catalogKey": "ground turkey",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground turkey"
+    },
+    {
+      "catalogKey": "ground turmeric",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground turmeric"
+    },
+    {
+      "catalogKey": "ground veal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground veal"
+    },
+    {
+      "catalogKey": "ground white pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground white pepper"
+    },
+    {
+      "catalogKey": "guacamole",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "guacamole"
+    },
+    {
+      "catalogKey": "guava",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "guava"
+    },
+    {
+      "catalogKey": "gummy bears",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gummy bears"
+    },
+    {
+      "catalogKey": "gummy candies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gummy candies"
+    },
+    {
+      "catalogKey": "haddock",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "haddock"
+    },
+    {
+      "catalogKey": "haddock fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "haddock fillet"
+    },
+    {
+      "catalogKey": "hake fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hake fillet"
+    },
+    {
+      "catalogKey": "halibut",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "halibut"
+    },
+    {
+      "catalogKey": "halloumi cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "halloumi cheese"
+    },
+    {
+      "catalogKey": "ham",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ham"
+    },
+    {
+      "catalogKey": "ham sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ham sausage"
+    },
+    {
+      "catalogKey": "hard candies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hard candies"
+    },
+    {
+      "catalogKey": "hard cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hard cheese"
+    },
+    {
+      "catalogKey": "hard cider",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hard cider"
+    },
+    {
+      "catalogKey": "hazelnut butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hazelnut butter"
+    },
+    {
+      "catalogKey": "hazelnut cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hazelnut cream"
+    },
+    {
+      "catalogKey": "hazelnut milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hazelnut milk"
+    },
+    {
+      "catalogKey": "hazelnut nougat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hazelnut nougat"
+    },
+    {
+      "catalogKey": "hazelnut oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hazelnut oil"
+    },
+    {
+      "catalogKey": "hazelnuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hazelnuts"
+    },
+    {
+      "catalogKey": "hemp milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hemp milk"
+    },
+    {
+      "catalogKey": "hemp seed oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hemp seed oil"
+    },
+    {
+      "catalogKey": "hemp seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hemp seeds"
+    },
+    {
+      "catalogKey": "herb butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herb butter"
+    },
+    {
+      "catalogKey": "herb salt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herb salt"
+    },
+    {
+      "catalogKey": "herbal tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herbal tea"
+    },
+    {
+      "catalogKey": "herbes de provence",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herbes de provence"
+    },
+    {
+      "catalogKey": "herring",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herring"
+    },
+    {
+      "catalogKey": "herring fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herring fillet"
+    },
+    {
+      "catalogKey": "herring fillets",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herring fillets"
+    },
+    {
+      "catalogKey": "herring in cream sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herring in cream sauce"
+    },
+    {
+      "catalogKey": "herring in dill sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herring in dill sauce"
+    },
+    {
+      "catalogKey": "herring in oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herring in oil"
+    },
+    {
+      "catalogKey": "herring in tomato sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herring in tomato sauce"
+    },
+    {
+      "catalogKey": "himalayan salt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "himalayan salt"
+    },
+    {
+      "catalogKey": "hollandaise sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hollandaise sauce"
+    },
+    {
+      "catalogKey": "honey",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "honey"
+    },
+    {
+      "catalogKey": "honey cake",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "honey cake"
+    },
+    {
+      "catalogKey": "honey candies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "honey candies"
+    },
+    {
+      "catalogKey": "honey mustard",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "honey mustard"
+    },
+    {
+      "catalogKey": "honey mustard dressing",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "honey mustard dressing"
+    },
+    {
+      "catalogKey": "honey mustard sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "honey mustard sauce"
+    },
+    {
+      "catalogKey": "honeydew melon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "honeydew melon"
+    },
+    {
+      "catalogKey": "horseradish",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "horseradish"
+    },
+    {
+      "catalogKey": "horseradish cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "horseradish cream"
+    },
+    {
+      "catalogKey": "horseradish sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "horseradish sauce"
+    },
+    {
+      "catalogKey": "hot chili sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hot chili sauce"
+    },
+    {
+      "catalogKey": "hot ketchup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hot ketchup"
+    },
+    {
+      "catalogKey": "hot mustard",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hot mustard"
+    },
+    {
+      "catalogKey": "hot sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hot sauce"
+    },
+    {
+      "catalogKey": "hulled millet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hulled millet"
+    },
+    {
+      "catalogKey": "hummus",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hummus"
+    },
+    {
+      "catalogKey": "iceberg lettuce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "iceberg lettuce"
+    },
+    {
+      "catalogKey": "iced tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "iced tea"
+    },
+    {
+      "catalogKey": "instant broth",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "instant broth"
+    },
+    {
+      "catalogKey": "instant coffee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "instant coffee"
+    },
+    {
+      "catalogKey": "instant mashed potatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "instant mashed potatoes"
+    },
+    {
+      "catalogKey": "instant noodle soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "instant noodle soup"
+    },
+    {
+      "catalogKey": "instant noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "instant noodles"
+    },
+    {
+      "catalogKey": "instant oats",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "instant oats"
+    },
+    {
+      "catalogKey": "iodized salt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "iodized salt"
+    },
+    {
+      "catalogKey": "italian herb mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "italian herb mix"
+    },
+    {
+      "catalogKey": "italian herbs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "italian herbs"
+    },
+    {
+      "catalogKey": "italian salad dressing",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "italian salad dressing"
+    },
+    {
+      "catalogKey": "italian salami",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "italian salami"
+    },
+    {
+      "catalogKey": "italian seasoning",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "italian seasoning"
+    },
+    {
+      "catalogKey": "jackfruit",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "jackfruit"
+    },
+    {
+      "catalogKey": "jalapenos",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "jalapenos"
+    },
+    {
+      "catalogKey": "jam",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "jam"
+    },
+    {
+      "catalogKey": "jasmine long grain rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "jasmine long grain rice"
+    },
+    {
+      "catalogKey": "jasmine rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "jasmine rice"
+    },
+    {
+      "catalogKey": "jelly",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "jelly"
+    },
+    {
+      "catalogKey": "jelly candies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "jelly candies"
+    },
+    {
+      "catalogKey": "jumbo rolled oats",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "jumbo rolled oats"
+    },
+    {
+      "catalogKey": "kaiser roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kaiser roll"
+    },
+    {
+      "catalogKey": "kaiser rolls",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kaiser rolls"
+    },
+    {
+      "catalogKey": "kale",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kale"
+    },
+    {
+      "catalogKey": "kamut",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kamut"
+    },
+    {
+      "catalogKey": "kamut flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kamut flour"
+    },
+    {
+      "catalogKey": "kefir",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kefir"
+    },
+    {
+      "catalogKey": "ketchup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ketchup"
+    },
+    {
+      "catalogKey": "kidney beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kidney beans"
+    },
+    {
+      "catalogKey": "kiwi",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kiwi"
+    },
+    {
+      "catalogKey": "kiwis",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kiwis"
+    },
+    {
+      "catalogKey": "knackwurst",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "knackwurst"
+    },
+    {
+      "catalogKey": "kombucha",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kombucha"
+    },
+    {
+      "catalogKey": "lactose free milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lactose free milk"
+    },
+    {
+      "catalogKey": "lactose free yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lactose free yogurt"
+    },
+    {
+      "catalogKey": "lamb chop",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lamb chop"
+    },
+    {
+      "catalogKey": "lamb chops",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lamb chops"
+    },
+    {
+      "catalogKey": "lamb leg",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lamb leg"
+    },
+    {
+      "catalogKey": "lamb lettuce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lamb lettuce"
+    },
+    {
+      "catalogKey": "lard",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lard"
+    },
+    {
+      "catalogKey": "large eggs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "large eggs"
+    },
+    {
+      "catalogKey": "lasagna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lasagna"
+    },
+    {
+      "catalogKey": "lasagna sheets",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lasagna sheets"
+    },
+    {
+      "catalogKey": "latte macchiato",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "latte macchiato"
+    },
+    {
+      "catalogKey": "leaf spinach",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "leaf spinach"
+    },
+    {
+      "catalogKey": "lemon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemon"
+    },
+    {
+      "catalogKey": "lemon balm",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemon balm"
+    },
+    {
+      "catalogKey": "lemon juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemon juice"
+    },
+    {
+      "catalogKey": "lemon lemonade",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemon lemonade"
+    },
+    {
+      "catalogKey": "lemon rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemon rice"
+    },
+    {
+      "catalogKey": "lemon soda",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemon soda"
+    },
+    {
+      "catalogKey": "lemon sorbet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemon sorbet"
+    },
+    {
+      "catalogKey": "lemon syrup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemon syrup"
+    },
+    {
+      "catalogKey": "lemon tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemon tea"
+    },
+    {
+      "catalogKey": "lemonade",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemonade"
+    },
+    {
+      "catalogKey": "lemongrass",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemongrass"
+    },
+    {
+      "catalogKey": "lemons",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemons"
+    },
+    {
+      "catalogKey": "lentil chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lentil chips"
+    },
+    {
+      "catalogKey": "lentil soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lentil soup"
+    },
+    {
+      "catalogKey": "lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lentils"
+    },
+    {
+      "catalogKey": "licorice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "licorice"
+    },
+    {
+      "catalogKey": "light coconut milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "light coconut milk"
+    },
+    {
+      "catalogKey": "light mayonnaise",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "light mayonnaise"
+    },
+    {
+      "catalogKey": "light mozzarella",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "light mozzarella"
+    },
+    {
+      "catalogKey": "light soy sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "light soy sauce"
+    },
+    {
+      "catalogKey": "lightly salted butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lightly salted butter"
+    },
+    {
+      "catalogKey": "lime",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lime"
+    },
+    {
+      "catalogKey": "limes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "limes"
+    },
+    {
+      "catalogKey": "lingonberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lingonberries"
+    },
+    {
+      "catalogKey": "linguine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "linguine"
+    },
+    {
+      "catalogKey": "linguine pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "linguine pasta"
+    },
+    {
+      "catalogKey": "linseed oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "linseed oil"
+    },
+    {
+      "catalogKey": "liver sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "liver sausage"
+    },
+    {
+      "catalogKey": "lobster",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lobster"
+    },
+    {
+      "catalogKey": "local honey",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "local honey"
+    },
+    {
+      "catalogKey": "lollipops",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lollipops"
+    },
+    {
+      "catalogKey": "long grain basmati rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "long grain basmati rice"
+    },
+    {
+      "catalogKey": "long grain brown rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "long grain brown rice"
+    },
+    {
+      "catalogKey": "long grain jasmine rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "long grain jasmine rice"
+    },
+    {
+      "catalogKey": "long grain rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "long grain rice"
+    },
+    {
+      "catalogKey": "low fat milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "low fat milk"
+    },
+    {
+      "catalogKey": "low fat yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "low fat yogurt"
+    },
+    {
+      "catalogKey": "low sodium soy sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "low sodium soy sauce"
+    },
+    {
+      "catalogKey": "lupin flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lupin flour"
+    },
+    {
+      "catalogKey": "lychee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lychee"
+    },
+    {
+      "catalogKey": "macadamia milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "macadamia milk"
+    },
+    {
+      "catalogKey": "macadamia nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "macadamia nuts"
+    },
+    {
+      "catalogKey": "macadamia oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "macadamia oil"
+    },
+    {
+      "catalogKey": "macaroni",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "macaroni"
+    },
+    {
+      "catalogKey": "mackerel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mackerel"
+    },
+    {
+      "catalogKey": "mackerel fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mackerel fillet"
+    },
+    {
+      "catalogKey": "mackerel in oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mackerel in oil"
+    },
+    {
+      "catalogKey": "mackerel in tomato sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mackerel in tomato sauce"
+    },
+    {
+      "catalogKey": "malt coffee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "malt coffee"
+    },
+    {
+      "catalogKey": "malt extract",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "malt extract"
+    },
+    {
+      "catalogKey": "mandarin",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mandarin"
+    },
+    {
+      "catalogKey": "mandarin juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mandarin juice"
+    },
+    {
+      "catalogKey": "mandarins",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mandarins"
+    },
+    {
+      "catalogKey": "mango",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mango"
+    },
+    {
+      "catalogKey": "mango chutney",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mango chutney"
+    },
+    {
+      "catalogKey": "mangoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mangoes"
+    },
+    {
+      "catalogKey": "maple syrup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "maple syrup"
+    },
+    {
+      "catalogKey": "margarine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "margarine"
+    },
+    {
+      "catalogKey": "marinated herring",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "marinated herring"
+    },
+    {
+      "catalogKey": "marinated olives",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "marinated olives"
+    },
+    {
+      "catalogKey": "marinated tempeh",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "marinated tempeh"
+    },
+    {
+      "catalogKey": "marinated tofu",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "marinated tofu"
+    },
+    {
+      "catalogKey": "marjoram",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "marjoram"
+    },
+    {
+      "catalogKey": "marshmallows",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "marshmallows"
+    },
+    {
+      "catalogKey": "marzipan",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "marzipan"
+    },
+    {
+      "catalogKey": "matcha powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "matcha powder"
+    },
+    {
+      "catalogKey": "matcha tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "matcha tea"
+    },
+    {
+      "catalogKey": "maultaschen",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "maultaschen"
+    },
+    {
+      "catalogKey": "mayonnaise",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mayonnaise"
+    },
+    {
+      "catalogKey": "meatballs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "meatballs"
+    },
+    {
+      "catalogKey": "meatloaf",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "meatloaf"
+    },
+    {
+      "catalogKey": "melon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "melon"
+    },
+    {
+      "catalogKey": "melon mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "melon mix"
+    },
+    {
+      "catalogKey": "mie noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mie noodles"
+    },
+    {
+      "catalogKey": "mild cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mild cheese"
+    },
+    {
+      "catalogKey": "mild curry powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mild curry powder"
+    },
+    {
+      "catalogKey": "mild olive oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mild olive oil"
+    },
+    {
+      "catalogKey": "mild salami",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mild salami"
+    },
+    {
+      "catalogKey": "milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "milk"
+    },
+    {
+      "catalogKey": "milk chocolate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "milk chocolate"
+    },
+    {
+      "catalogKey": "milk chocolate with nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "milk chocolate with nuts"
+    },
+    {
+      "catalogKey": "milk coffee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "milk coffee"
+    },
+    {
+      "catalogKey": "millet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "millet"
+    },
+    {
+      "catalogKey": "millet flakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "millet flakes"
+    },
+    {
+      "catalogKey": "millet flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "millet flour"
+    },
+    {
+      "catalogKey": "mineral water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mineral water"
+    },
+    {
+      "catalogKey": "minestrone",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "minestrone"
+    },
+    {
+      "catalogKey": "minestrone soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "minestrone soup"
+    },
+    {
+      "catalogKey": "mini croissants",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mini croissants"
+    },
+    {
+      "catalogKey": "mini salami",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mini salami"
+    },
+    {
+      "catalogKey": "mini spring rolls",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mini spring rolls"
+    },
+    {
+      "catalogKey": "mint",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mint"
+    },
+    {
+      "catalogKey": "mint tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mint tea"
+    },
+    {
+      "catalogKey": "miso paste",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "miso paste"
+    },
+    {
+      "catalogKey": "mixed beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mixed beans"
+    },
+    {
+      "catalogKey": "mixed berries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mixed berries"
+    },
+    {
+      "catalogKey": "mixed grain bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mixed grain bread"
+    },
+    {
+      "catalogKey": "mixed minced meat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mixed minced meat"
+    },
+    {
+      "catalogKey": "mixed nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mixed nuts"
+    },
+    {
+      "catalogKey": "mixed pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mixed pasta"
+    },
+    {
+      "catalogKey": "mixed pickles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mixed pickles"
+    },
+    {
+      "catalogKey": "mortadella",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mortadella"
+    },
+    {
+      "catalogKey": "mozzarella",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mozzarella"
+    },
+    {
+      "catalogKey": "mozzarella sticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mozzarella sticks"
+    },
+    {
+      "catalogKey": "muesli",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "muesli"
+    },
+    {
+      "catalogKey": "muesli bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "muesli bar"
+    },
+    {
+      "catalogKey": "muffins",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "muffins"
+    },
+    {
+      "catalogKey": "multigrain bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "multigrain bread"
+    },
+    {
+      "catalogKey": "multigrain cookies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "multigrain cookies"
+    },
+    {
+      "catalogKey": "multigrain roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "multigrain roll"
+    },
+    {
+      "catalogKey": "multivitamin drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "multivitamin drink"
+    },
+    {
+      "catalogKey": "multivitamin juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "multivitamin juice"
+    },
+    {
+      "catalogKey": "mung bean sprouts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mung bean sprouts"
+    },
+    {
+      "catalogKey": "mung beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mung beans"
+    },
+    {
+      "catalogKey": "mushroom sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mushroom sauce"
+    },
+    {
+      "catalogKey": "mushrooms",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mushrooms"
+    },
+    {
+      "catalogKey": "mussel meat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mussel meat"
+    },
+    {
+      "catalogKey": "mussels",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mussels"
+    },
+    {
+      "catalogKey": "mustard",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mustard"
+    },
+    {
+      "catalogKey": "mustard dill sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mustard dill sauce"
+    },
+    {
+      "catalogKey": "mustard sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mustard sauce"
+    },
+    {
+      "catalogKey": "mustard seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mustard seeds"
+    },
+    {
+      "catalogKey": "natural almonds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "natural almonds"
+    },
+    {
+      "catalogKey": "natural cashew nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "natural cashew nuts"
+    },
+    {
+      "catalogKey": "natural cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "natural cheese"
+    },
+    {
+      "catalogKey": "natural peanuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "natural peanuts"
+    },
+    {
+      "catalogKey": "natural pistachios",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "natural pistachios"
+    },
+    {
+      "catalogKey": "natural sunflower seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "natural sunflower seeds"
+    },
+    {
+      "catalogKey": "natural walnuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "natural walnuts"
+    },
+    {
+      "catalogKey": "nectarine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nectarine"
+    },
+    {
+      "catalogKey": "nectarines",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nectarines"
+    },
+    {
+      "catalogKey": "non alcoholic beer",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "non alcoholic beer"
+    },
+    {
+      "catalogKey": "noodle soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "noodle soup"
+    },
+    {
+      "catalogKey": "nougat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nougat"
+    },
+    {
+      "catalogKey": "nut bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nut bar"
+    },
+    {
+      "catalogKey": "nut mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nut mix"
+    },
+    {
+      "catalogKey": "nutella",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nutella"
+    },
+    {
+      "catalogKey": "nutmeg",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nutmeg"
+    },
+    {
+      "catalogKey": "nutritional yeast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nutritional yeast"
+    },
+    {
+      "catalogKey": "nutritional yeast flakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nutritional yeast flakes"
+    },
+    {
+      "catalogKey": "nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nuts"
+    },
+    {
+      "catalogKey": "oat biscuits",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat biscuits"
+    },
+    {
+      "catalogKey": "oat bran",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat bran"
+    },
+    {
+      "catalogKey": "oat cookies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat cookies"
+    },
+    {
+      "catalogKey": "oat cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat cream"
+    },
+    {
+      "catalogKey": "oat drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat drink"
+    },
+    {
+      "catalogKey": "oat flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat flour"
+    },
+    {
+      "catalogKey": "oat milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat milk"
+    },
+    {
+      "catalogKey": "oat porridge",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat porridge"
+    },
+    {
+      "catalogKey": "oat yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat yogurt"
+    },
+    {
+      "catalogKey": "olive oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "olive oil"
+    },
+    {
+      "catalogKey": "olives",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "olives"
+    },
+    {
+      "catalogKey": "onion",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "onion"
+    },
+    {
+      "catalogKey": "onion bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "onion bread"
+    },
+    {
+      "catalogKey": "onion powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "onion powder"
+    },
+    {
+      "catalogKey": "onions",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "onions"
+    },
+    {
+      "catalogKey": "orange",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "orange"
+    },
+    {
+      "catalogKey": "orange juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "orange juice"
+    },
+    {
+      "catalogKey": "orange juice with pulp",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "orange juice with pulp"
+    },
+    {
+      "catalogKey": "orange marmalade",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "orange marmalade"
+    },
+    {
+      "catalogKey": "orange soda",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "orange soda"
+    },
+    {
+      "catalogKey": "orange syrup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "orange syrup"
+    },
+    {
+      "catalogKey": "oranges",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oranges"
+    },
+    {
+      "catalogKey": "orangina",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "orangina"
+    },
+    {
+      "catalogKey": "oregano",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oregano"
+    },
+    {
+      "catalogKey": "organic almond butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic almond butter"
+    },
+    {
+      "catalogKey": "organic apples",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic apples"
+    },
+    {
+      "catalogKey": "organic basmati rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic basmati rice"
+    },
+    {
+      "catalogKey": "organic bbq sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic bbq sauce"
+    },
+    {
+      "catalogKey": "organic beetroot",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic beetroot"
+    },
+    {
+      "catalogKey": "organic black rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic black rice"
+    },
+    {
+      "catalogKey": "organic carrots",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic carrots"
+    },
+    {
+      "catalogKey": "organic chicken leg",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic chicken leg"
+    },
+    {
+      "catalogKey": "organic coconut",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic coconut"
+    },
+    {
+      "catalogKey": "organic coconut oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic coconut oil"
+    },
+    {
+      "catalogKey": "organic corn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic corn"
+    },
+    {
+      "catalogKey": "organic corn flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic corn flour"
+    },
+    {
+      "catalogKey": "organic corn on the cob",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic corn on the cob"
+    },
+    {
+      "catalogKey": "organic couscous",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic couscous"
+    },
+    {
+      "catalogKey": "organic cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic cream"
+    },
+    {
+      "catalogKey": "organic eggs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic eggs"
+    },
+    {
+      "catalogKey": "organic frozen blueberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic frozen blueberries"
+    },
+    {
+      "catalogKey": "organic goat cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic goat cheese"
+    },
+    {
+      "catalogKey": "organic green tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic green tea"
+    },
+    {
+      "catalogKey": "organic ground beef",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic ground beef"
+    },
+    {
+      "catalogKey": "organic ground cinnamon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic ground cinnamon"
+    },
+    {
+      "catalogKey": "organic ground nutmeg",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic ground nutmeg"
+    },
+    {
+      "catalogKey": "organic honey",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic honey"
+    },
+    {
+      "catalogKey": "organic jasmine rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic jasmine rice"
+    },
+    {
+      "catalogKey": "organic kamut",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic kamut"
+    },
+    {
+      "catalogKey": "organic kefir",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic kefir"
+    },
+    {
+      "catalogKey": "organic ketchup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic ketchup"
+    },
+    {
+      "catalogKey": "organic lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic lentils"
+    },
+    {
+      "catalogKey": "organic linguine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic linguine"
+    },
+    {
+      "catalogKey": "organic long grain rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic long grain rice"
+    },
+    {
+      "catalogKey": "organic milk chocolate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic milk chocolate"
+    },
+    {
+      "catalogKey": "organic orange juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic orange juice"
+    },
+    {
+      "catalogKey": "organic pretzel sticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic pretzel sticks"
+    },
+    {
+      "catalogKey": "organic pumpkin seed oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic pumpkin seed oil"
+    },
+    {
+      "catalogKey": "organic quinoa",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic quinoa"
+    },
+    {
+      "catalogKey": "organic red cabbage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic red cabbage"
+    },
+    {
+      "catalogKey": "organic red lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic red lentils"
+    },
+    {
+      "catalogKey": "organic rice milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic rice milk"
+    },
+    {
+      "catalogKey": "organic sweet potatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic sweet potatoes"
+    },
+    {
+      "catalogKey": "organic tomato ketchup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic tomato ketchup"
+    },
+    {
+      "catalogKey": "organic tomato paste",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic tomato paste"
+    },
+    {
+      "catalogKey": "organic turkey breast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic turkey breast"
+    },
+    {
+      "catalogKey": "organic whole wheat bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic whole wheat bread"
+    },
+    {
+      "catalogKey": "organic wild rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic wild rice"
+    },
+    {
+      "catalogKey": "oyster mushrooms",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oyster mushrooms"
+    },
+    {
+      "catalogKey": "oysters",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oysters"
+    },
+    {
+      "catalogKey": "palm oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "palm oil"
+    },
+    {
+      "catalogKey": "papaya",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "papaya"
+    },
+    {
+      "catalogKey": "paprika chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "paprika chips"
+    },
+    {
+      "catalogKey": "paprika potato chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "paprika potato chips"
+    },
+    {
+      "catalogKey": "paprika powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "paprika powder"
+    },
+    {
+      "catalogKey": "paprika salami",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "paprika salami"
+    },
+    {
+      "catalogKey": "parboiled long grain rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "parboiled long grain rice"
+    },
+    {
+      "catalogKey": "parboiled rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "parboiled rice"
+    },
+    {
+      "catalogKey": "parmesan cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "parmesan cheese"
+    },
+    {
+      "catalogKey": "parsley",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "parsley"
+    },
+    {
+      "catalogKey": "parsnips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "parsnips"
+    },
+    {
+      "catalogKey": "passata",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "passata"
+    },
+    {
+      "catalogKey": "passion fruit",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "passion fruit"
+    },
+    {
+      "catalogKey": "pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pasta"
+    },
+    {
+      "catalogKey": "pasta mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pasta mix"
+    },
+    {
+      "catalogKey": "pea chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pea chips"
+    },
+    {
+      "catalogKey": "pea milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pea milk"
+    },
+    {
+      "catalogKey": "pea protein powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pea protein powder"
+    },
+    {
+      "catalogKey": "pea soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pea soup"
+    },
+    {
+      "catalogKey": "peach",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peach"
+    },
+    {
+      "catalogKey": "peach halves",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peach halves"
+    },
+    {
+      "catalogKey": "peach iced tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peach iced tea"
+    },
+    {
+      "catalogKey": "peach jam",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peach jam"
+    },
+    {
+      "catalogKey": "peaches",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peaches"
+    },
+    {
+      "catalogKey": "peaches in syrup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peaches in syrup"
+    },
+    {
+      "catalogKey": "peanut butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peanut butter"
+    },
+    {
+      "catalogKey": "peanut flips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peanut flips"
+    },
+    {
+      "catalogKey": "peanut oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peanut oil"
+    },
+    {
+      "catalogKey": "peanut puffs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peanut puffs"
+    },
+    {
+      "catalogKey": "peanuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peanuts"
+    },
+    {
+      "catalogKey": "pear",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pear"
+    },
+    {
+      "catalogKey": "pear cider",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pear cider"
+    },
+    {
+      "catalogKey": "pearl barley",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pearl barley"
+    },
+    {
+      "catalogKey": "pears",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pears"
+    },
+    {
+      "catalogKey": "peas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peas"
+    },
+    {
+      "catalogKey": "pecans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pecans"
+    },
+    {
+      "catalogKey": "peeled shrimp",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peeled shrimp"
+    },
+    {
+      "catalogKey": "penne pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "penne pasta"
+    },
+    {
+      "catalogKey": "penne rigate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "penne rigate"
+    },
+    {
+      "catalogKey": "pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pepper"
+    },
+    {
+      "catalogKey": "pepper mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pepper mix"
+    },
+    {
+      "catalogKey": "pepper paste",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pepper paste"
+    },
+    {
+      "catalogKey": "peppermint candies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peppermint candies"
+    },
+    {
+      "catalogKey": "peppermint tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peppermint tea"
+    },
+    {
+      "catalogKey": "pepperoni",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pepperoni"
+    },
+    {
+      "catalogKey": "pesto",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pesto"
+    },
+    {
+      "catalogKey": "pesto genovese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pesto genovese"
+    },
+    {
+      "catalogKey": "pho noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pho noodles"
+    },
+    {
+      "catalogKey": "physalis",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "physalis"
+    },
+    {
+      "catalogKey": "pickled beetroot",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pickled beetroot"
+    },
+    {
+      "catalogKey": "pickled cucumber",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pickled cucumber"
+    },
+    {
+      "catalogKey": "pickled cucumbers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pickled cucumbers"
+    },
+    {
+      "catalogKey": "pickled herring",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pickled herring"
+    },
+    {
+      "catalogKey": "pickles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pickles"
+    },
+    {
+      "catalogKey": "pineapple",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pineapple"
+    },
+    {
+      "catalogKey": "pineapple chunks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pineapple chunks"
+    },
+    {
+      "catalogKey": "pinto beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pinto beans"
+    },
+    {
+      "catalogKey": "pistachio oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pistachio oil"
+    },
+    {
+      "catalogKey": "pistachios",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pistachios"
+    },
+    {
+      "catalogKey": "pita bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pita bread"
+    },
+    {
+      "catalogKey": "pitted black olives",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pitted black olives"
+    },
+    {
+      "catalogKey": "pitted green olives",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pitted green olives"
+    },
+    {
+      "catalogKey": "pizza",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pizza"
+    },
+    {
+      "catalogKey": "pizza dough",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pizza dough"
+    },
+    {
+      "catalogKey": "pizza margherita",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pizza margherita"
+    },
+    {
+      "catalogKey": "pizza seasoning",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pizza seasoning"
+    },
+    {
+      "catalogKey": "plain coconut yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plain coconut yogurt"
+    },
+    {
+      "catalogKey": "plain cream cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plain cream cheese"
+    },
+    {
+      "catalogKey": "plain kefir",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plain kefir"
+    },
+    {
+      "catalogKey": "plain yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plain yogurt"
+    },
+    {
+      "catalogKey": "plum",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plum"
+    },
+    {
+      "catalogKey": "plum jam",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plum jam"
+    },
+    {
+      "catalogKey": "plums",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plums"
+    },
+    {
+      "catalogKey": "polenta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "polenta"
+    },
+    {
+      "catalogKey": "pollock",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pollock"
+    },
+    {
+      "catalogKey": "pomegranate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pomegranate"
+    },
+    {
+      "catalogKey": "pomegranate juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pomegranate juice"
+    },
+    {
+      "catalogKey": "pomegranates",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pomegranates"
+    },
+    {
+      "catalogKey": "pomelo",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pomelo"
+    },
+    {
+      "catalogKey": "popcorn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "popcorn"
+    },
+    {
+      "catalogKey": "poppy seed",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "poppy seed"
+    },
+    {
+      "catalogKey": "poppy seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "poppy seeds"
+    },
+    {
+      "catalogKey": "pork",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork"
+    },
+    {
+      "catalogKey": "pork belly",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork belly"
+    },
+    {
+      "catalogKey": "pork belly slices",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork belly slices"
+    },
+    {
+      "catalogKey": "pork chop",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork chop"
+    },
+    {
+      "catalogKey": "pork fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork fillet"
+    },
+    {
+      "catalogKey": "pork head cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork head cheese"
+    },
+    {
+      "catalogKey": "pork liver",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork liver"
+    },
+    {
+      "catalogKey": "pork loin",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork loin"
+    },
+    {
+      "catalogKey": "pork ribs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork ribs"
+    },
+    {
+      "catalogKey": "pork roast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork roast"
+    },
+    {
+      "catalogKey": "pork schnitzel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork schnitzel"
+    },
+    {
+      "catalogKey": "pork shoulder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork shoulder"
+    },
+    {
+      "catalogKey": "potato",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato"
+    },
+    {
+      "catalogKey": "potato bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato bread"
+    },
+    {
+      "catalogKey": "potato chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato chips"
+    },
+    {
+      "catalogKey": "potato dumplings",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato dumplings"
+    },
+    {
+      "catalogKey": "potato flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato flour"
+    },
+    {
+      "catalogKey": "potato gratin",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato gratin"
+    },
+    {
+      "catalogKey": "potato noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato noodles"
+    },
+    {
+      "catalogKey": "potato soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato soup"
+    },
+    {
+      "catalogKey": "potatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potatoes"
+    },
+    {
+      "catalogKey": "poultry sausages",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "poultry sausages"
+    },
+    {
+      "catalogKey": "powdered sugar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "powdered sugar"
+    },
+    {
+      "catalogKey": "pralines",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pralines"
+    },
+    {
+      "catalogKey": "prawn crackers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "prawn crackers"
+    },
+    {
+      "catalogKey": "premium tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "premium tea"
+    },
+    {
+      "catalogKey": "pretzel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pretzel"
+    },
+    {
+      "catalogKey": "pretzel crackers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pretzel crackers"
+    },
+    {
+      "catalogKey": "pretzel sticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pretzel sticks"
+    },
+    {
+      "catalogKey": "pretzels",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pretzels"
+    },
+    {
+      "catalogKey": "processed cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "processed cheese"
+    },
+    {
+      "catalogKey": "protein bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "protein bar"
+    },
+    {
+      "catalogKey": "protein bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "protein bread"
+    },
+    {
+      "catalogKey": "protein pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "protein pasta"
+    },
+    {
+      "catalogKey": "prunes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "prunes"
+    },
+    {
+      "catalogKey": "psyllium husks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "psyllium husks"
+    },
+    {
+      "catalogKey": "pudding",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pudding"
+    },
+    {
+      "catalogKey": "puff pastry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "puff pastry"
+    },
+    {
+      "catalogKey": "puffed millet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "puffed millet"
+    },
+    {
+      "catalogKey": "pumpernickel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpernickel"
+    },
+    {
+      "catalogKey": "pumpernickel bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpernickel bread"
+    },
+    {
+      "catalogKey": "pumpkin",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpkin"
+    },
+    {
+      "catalogKey": "pumpkin pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpkin pasta"
+    },
+    {
+      "catalogKey": "pumpkin puree",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpkin puree"
+    },
+    {
+      "catalogKey": "pumpkin seed bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpkin seed bread"
+    },
+    {
+      "catalogKey": "pumpkin seed butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpkin seed butter"
+    },
+    {
+      "catalogKey": "pumpkin seed oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpkin seed oil"
+    },
+    {
+      "catalogKey": "pumpkin seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpkin seeds"
+    },
+    {
+      "catalogKey": "pumpkin soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpkin soup"
+    },
+    {
+      "catalogKey": "quail eggs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "quail eggs"
+    },
+    {
+      "catalogKey": "quark",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "quark"
+    },
+    {
+      "catalogKey": "quince",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "quince"
+    },
+    {
+      "catalogKey": "quinoa",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "quinoa"
+    },
+    {
+      "catalogKey": "radicchio",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "radicchio"
+    },
+    {
+      "catalogKey": "radish",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "radish"
+    },
+    {
+      "catalogKey": "radishes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "radishes"
+    },
+    {
+      "catalogKey": "raisin bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raisin bread"
+    },
+    {
+      "catalogKey": "raisin roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raisin roll"
+    },
+    {
+      "catalogKey": "raisins",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raisins"
+    },
+    {
+      "catalogKey": "rapeseed oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rapeseed oil"
+    },
+    {
+      "catalogKey": "raspberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raspberries"
+    },
+    {
+      "catalogKey": "raspberry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raspberry"
+    },
+    {
+      "catalogKey": "raspberry jam",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raspberry jam"
+    },
+    {
+      "catalogKey": "raspberry juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raspberry juice"
+    },
+    {
+      "catalogKey": "raspberry lemonade",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raspberry lemonade"
+    },
+    {
+      "catalogKey": "raspberry syrup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raspberry syrup"
+    },
+    {
+      "catalogKey": "raspberry vinegar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raspberry vinegar"
+    },
+    {
+      "catalogKey": "ratatouille",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ratatouille"
+    },
+    {
+      "catalogKey": "ravioli",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ravioli"
+    },
+    {
+      "catalogKey": "ravioli in tomato sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ravioli in tomato sauce"
+    },
+    {
+      "catalogKey": "raw cashews",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raw cashews"
+    },
+    {
+      "catalogKey": "raw honey",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raw honey"
+    },
+    {
+      "catalogKey": "raw milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raw milk"
+    },
+    {
+      "catalogKey": "raw shrimp",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raw shrimp"
+    },
+    {
+      "catalogKey": "red apples",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red apples"
+    },
+    {
+      "catalogKey": "red beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red beans"
+    },
+    {
+      "catalogKey": "red cabbage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red cabbage"
+    },
+    {
+      "catalogKey": "red cherry tomatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red cherry tomatoes"
+    },
+    {
+      "catalogKey": "red currant",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red currant"
+    },
+    {
+      "catalogKey": "red grapes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red grapes"
+    },
+    {
+      "catalogKey": "red lentil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red lentil"
+    },
+    {
+      "catalogKey": "red lentil pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red lentil pasta"
+    },
+    {
+      "catalogKey": "red lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red lentils"
+    },
+    {
+      "catalogKey": "red onion",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red onion"
+    },
+    {
+      "catalogKey": "red onions",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red onions"
+    },
+    {
+      "catalogKey": "red pesto",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red pesto"
+    },
+    {
+      "catalogKey": "red quinoa",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red quinoa"
+    },
+    {
+      "catalogKey": "red rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red rice"
+    },
+    {
+      "catalogKey": "red wine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red wine"
+    },
+    {
+      "catalogKey": "red wine vinegar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red wine vinegar"
+    },
+    {
+      "catalogKey": "redfish",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "redfish"
+    },
+    {
+      "catalogKey": "refined sunflower oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "refined sunflower oil"
+    },
+    {
+      "catalogKey": "remoulade",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "remoulade"
+    },
+    {
+      "catalogKey": "remoulade sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "remoulade sauce"
+    },
+    {
+      "catalogKey": "rhubarb",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rhubarb"
+    },
+    {
+      "catalogKey": "rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice"
+    },
+    {
+      "catalogKey": "rice cakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice cakes"
+    },
+    {
+      "catalogKey": "rice crackers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice crackers"
+    },
+    {
+      "catalogKey": "rice cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice cream"
+    },
+    {
+      "catalogKey": "rice crispies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice crispies"
+    },
+    {
+      "catalogKey": "rice drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice drink"
+    },
+    {
+      "catalogKey": "rice flakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice flakes"
+    },
+    {
+      "catalogKey": "rice flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice flour"
+    },
+    {
+      "catalogKey": "rice milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice milk"
+    },
+    {
+      "catalogKey": "rice noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice noodles"
+    },
+    {
+      "catalogKey": "rice pudding",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice pudding"
+    },
+    {
+      "catalogKey": "rice vinegar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice vinegar"
+    },
+    {
+      "catalogKey": "ricotta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ricotta"
+    },
+    {
+      "catalogKey": "rigatoni pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rigatoni pasta"
+    },
+    {
+      "catalogKey": "risotto rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "risotto rice"
+    },
+    {
+      "catalogKey": "roast beef",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roast beef"
+    },
+    {
+      "catalogKey": "roasted almonds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roasted almonds"
+    },
+    {
+      "catalogKey": "roasted cashew nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roasted cashew nuts"
+    },
+    {
+      "catalogKey": "roasted chickpeas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roasted chickpeas"
+    },
+    {
+      "catalogKey": "roasted mixed nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roasted mixed nuts"
+    },
+    {
+      "catalogKey": "roasted nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roasted nuts"
+    },
+    {
+      "catalogKey": "roasted pistachios",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roasted pistachios"
+    },
+    {
+      "catalogKey": "roasted pumpkin seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roasted pumpkin seeds"
+    },
+    {
+      "catalogKey": "roasted walnut oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roasted walnut oil"
+    },
+    {
+      "catalogKey": "rolled oats",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rolled oats"
+    },
+    {
+      "catalogKey": "romaine lettuce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "romaine lettuce"
+    },
+    {
+      "catalogKey": "rooibos tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rooibos tea"
+    },
+    {
+      "catalogKey": "rosemary",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rosemary"
+    },
+    {
+      "catalogKey": "rosemary potatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rosemary potatoes"
+    },
+    {
+      "catalogKey": "rusk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rusk"
+    },
+    {
+      "catalogKey": "rye bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rye bread"
+    },
+    {
+      "catalogKey": "rye flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rye flour"
+    },
+    {
+      "catalogKey": "safflower oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "safflower oil"
+    },
+    {
+      "catalogKey": "sage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sage"
+    },
+    {
+      "catalogKey": "salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salad"
+    },
+    {
+      "catalogKey": "salad cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salad cream"
+    },
+    {
+      "catalogKey": "salad dressing",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salad dressing"
+    },
+    {
+      "catalogKey": "salad mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salad mix"
+    },
+    {
+      "catalogKey": "salami",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salami"
+    },
+    {
+      "catalogKey": "salami pizza",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salami pizza"
+    },
+    {
+      "catalogKey": "salmon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salmon"
+    },
+    {
+      "catalogKey": "salmon caviar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salmon caviar"
+    },
+    {
+      "catalogKey": "salmon fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salmon fillet"
+    },
+    {
+      "catalogKey": "salsa sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salsa sauce"
+    },
+    {
+      "catalogKey": "salt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salt"
+    },
+    {
+      "catalogKey": "salted almonds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salted almonds"
+    },
+    {
+      "catalogKey": "salted chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salted chips"
+    },
+    {
+      "catalogKey": "salted crackers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salted crackers"
+    },
+    {
+      "catalogKey": "salted nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salted nuts"
+    },
+    {
+      "catalogKey": "salted peanuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salted peanuts"
+    },
+    {
+      "catalogKey": "salted pistachios",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salted pistachios"
+    },
+    {
+      "catalogKey": "salted popcorn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salted popcorn"
+    },
+    {
+      "catalogKey": "salted potato chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salted potato chips"
+    },
+    {
+      "catalogKey": "salted pretzels",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salted pretzels"
+    },
+    {
+      "catalogKey": "saltine crackers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "saltine crackers"
+    },
+    {
+      "catalogKey": "sandwich bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sandwich bread"
+    },
+    {
+      "catalogKey": "sandwich roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sandwich roll"
+    },
+    {
+      "catalogKey": "sardines",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sardines"
+    },
+    {
+      "catalogKey": "sardines in oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sardines in oil"
+    },
+    {
+      "catalogKey": "sardines in tomato sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sardines in tomato sauce"
+    },
+    {
+      "catalogKey": "sauerkraut",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sauerkraut"
+    },
+    {
+      "catalogKey": "sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sausage"
+    },
+    {
+      "catalogKey": "sausages",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sausages"
+    },
+    {
+      "catalogKey": "savory snacks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "savory snacks"
+    },
+    {
+      "catalogKey": "scallops",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "scallops"
+    },
+    {
+      "catalogKey": "scampi",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "scampi"
+    },
+    {
+      "catalogKey": "sea salt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sea salt"
+    },
+    {
+      "catalogKey": "seaweed",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "seaweed"
+    },
+    {
+      "catalogKey": "seaweed salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "seaweed salad"
+    },
+    {
+      "catalogKey": "seaweed snack",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "seaweed snack"
+    },
+    {
+      "catalogKey": "seaweed snacks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "seaweed snacks"
+    },
+    {
+      "catalogKey": "seedless grapes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "seedless grapes"
+    },
+    {
+      "catalogKey": "seitan",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "seitan"
+    },
+    {
+      "catalogKey": "seitan strips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "seitan strips"
+    },
+    {
+      "catalogKey": "semolina",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "semolina"
+    },
+    {
+      "catalogKey": "sesame",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sesame"
+    },
+    {
+      "catalogKey": "sesame bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sesame bar"
+    },
+    {
+      "catalogKey": "sesame crackers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sesame crackers"
+    },
+    {
+      "catalogKey": "sesame oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sesame oil"
+    },
+    {
+      "catalogKey": "sesame sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sesame sauce"
+    },
+    {
+      "catalogKey": "sesame seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sesame seeds"
+    },
+    {
+      "catalogKey": "sesame sticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sesame sticks"
+    },
+    {
+      "catalogKey": "shallots",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "shallots"
+    },
+    {
+      "catalogKey": "shandy",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "shandy"
+    },
+    {
+      "catalogKey": "sheep cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sheep cheese"
+    },
+    {
+      "catalogKey": "shelled sunflower seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "shelled sunflower seeds"
+    },
+    {
+      "catalogKey": "shiitake mushrooms",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "shiitake mushrooms"
+    },
+    {
+      "catalogKey": "short grain rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "short grain rice"
+    },
+    {
+      "catalogKey": "shoyu soy sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "shoyu soy sauce"
+    },
+    {
+      "catalogKey": "shrimp",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "shrimp"
+    },
+    {
+      "catalogKey": "silken tofu",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "silken tofu"
+    },
+    {
+      "catalogKey": "skyr",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "skyr"
+    },
+    {
+      "catalogKey": "sliced almonds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sliced almonds"
+    },
+    {
+      "catalogKey": "sliced beef",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sliced beef"
+    },
+    {
+      "catalogKey": "sliced cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sliced cheese"
+    },
+    {
+      "catalogKey": "sliced cooked ham",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sliced cooked ham"
+    },
+    {
+      "catalogKey": "sliced mushrooms",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sliced mushrooms"
+    },
+    {
+      "catalogKey": "sliced roast beef",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sliced roast beef"
+    },
+    {
+      "catalogKey": "sliced smoked salmon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sliced smoked salmon"
+    },
+    {
+      "catalogKey": "sliced turkey breast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sliced turkey breast"
+    },
+    {
+      "catalogKey": "smoked bacon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked bacon"
+    },
+    {
+      "catalogKey": "smoked ham",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked ham"
+    },
+    {
+      "catalogKey": "smoked mackerel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked mackerel"
+    },
+    {
+      "catalogKey": "smoked paprika",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked paprika"
+    },
+    {
+      "catalogKey": "smoked pork loin",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked pork loin"
+    },
+    {
+      "catalogKey": "smoked salmon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked salmon"
+    },
+    {
+      "catalogKey": "smoked sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked sausage"
+    },
+    {
+      "catalogKey": "smoked sausages",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked sausages"
+    },
+    {
+      "catalogKey": "smoked sockeye salmon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked sockeye salmon"
+    },
+    {
+      "catalogKey": "smoked sprats",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked sprats"
+    },
+    {
+      "catalogKey": "smoked tofu",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked tofu"
+    },
+    {
+      "catalogKey": "smoked trout",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked trout"
+    },
+    {
+      "catalogKey": "smoked trout fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked trout fillet"
+    },
+    {
+      "catalogKey": "smooth milk chocolate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smooth milk chocolate"
+    },
+    {
+      "catalogKey": "snack sticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "snack sticks"
+    },
+    {
+      "catalogKey": "snacks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "snacks"
+    },
+    {
+      "catalogKey": "soba noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soba noodles"
+    },
+    {
+      "catalogKey": "soft cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soft cheese"
+    },
+    {
+      "catalogKey": "soft drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soft drink"
+    },
+    {
+      "catalogKey": "soft wheat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soft wheat"
+    },
+    {
+      "catalogKey": "sole",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sole"
+    },
+    {
+      "catalogKey": "sorghum",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sorghum"
+    },
+    {
+      "catalogKey": "sour cherries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sour cherries"
+    },
+    {
+      "catalogKey": "sour cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sour cream"
+    },
+    {
+      "catalogKey": "sour cream dip",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sour cream dip"
+    },
+    {
+      "catalogKey": "sourdough bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sourdough bread"
+    },
+    {
+      "catalogKey": "soy drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soy drink"
+    },
+    {
+      "catalogKey": "soy milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soy milk"
+    },
+    {
+      "catalogKey": "soy sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soy sauce"
+    },
+    {
+      "catalogKey": "soy yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soy yogurt"
+    },
+    {
+      "catalogKey": "soybean sprouts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soybean sprouts"
+    },
+    {
+      "catalogKey": "soybeans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soybeans"
+    },
+    {
+      "catalogKey": "spaetzle",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spaetzle"
+    },
+    {
+      "catalogKey": "spaghetti",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spaghetti"
+    },
+    {
+      "catalogKey": "spaghetti bolognese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spaghetti bolognese"
+    },
+    {
+      "catalogKey": "spare ribs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spare ribs"
+    },
+    {
+      "catalogKey": "sparkling mineral water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sparkling mineral water"
+    },
+    {
+      "catalogKey": "sparkling water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sparkling water"
+    },
+    {
+      "catalogKey": "sparkling wine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sparkling wine"
+    },
+    {
+      "catalogKey": "spelt bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spelt bread"
+    },
+    {
+      "catalogKey": "spelt flakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spelt flakes"
+    },
+    {
+      "catalogKey": "spelt flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spelt flour"
+    },
+    {
+      "catalogKey": "spelt spaghetti",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spelt spaghetti"
+    },
+    {
+      "catalogKey": "spelt whole grain bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spelt whole grain bread"
+    },
+    {
+      "catalogKey": "spicy potato chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spicy potato chips"
+    },
+    {
+      "catalogKey": "spicy tomato sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spicy tomato sauce"
+    },
+    {
+      "catalogKey": "spinach",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spinach"
+    },
+    {
+      "catalogKey": "spinach lasagna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spinach lasagna"
+    },
+    {
+      "catalogKey": "spread cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spread cheese"
+    },
+    {
+      "catalogKey": "squid",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "squid"
+    },
+    {
+      "catalogKey": "squid rings",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "squid rings"
+    },
+    {
+      "catalogKey": "sriracha sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sriracha sauce"
+    },
+    {
+      "catalogKey": "star anise",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "star anise"
+    },
+    {
+      "catalogKey": "steak sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "steak sauce"
+    },
+    {
+      "catalogKey": "stevia",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "stevia"
+    },
+    {
+      "catalogKey": "sticky rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sticky rice"
+    },
+    {
+      "catalogKey": "still mineral water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "still mineral water"
+    },
+    {
+      "catalogKey": "still water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "still water"
+    },
+    {
+      "catalogKey": "strawberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "strawberries"
+    },
+    {
+      "catalogKey": "strawberry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "strawberry"
+    },
+    {
+      "catalogKey": "strawberry ice cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "strawberry ice cream"
+    },
+    {
+      "catalogKey": "strawberry jam",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "strawberry jam"
+    },
+    {
+      "catalogKey": "strawberry kefir",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "strawberry kefir"
+    },
+    {
+      "catalogKey": "strawberry yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "strawberry yogurt"
+    },
+    {
+      "catalogKey": "sugar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sugar"
+    },
+    {
+      "catalogKey": "sugar cubes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sugar cubes"
+    },
+    {
+      "catalogKey": "sugar free candies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sugar free candies"
+    },
+    {
+      "catalogKey": "sugar free chocolate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sugar free chocolate"
+    },
+    {
+      "catalogKey": "sugar snap peas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sugar snap peas"
+    },
+    {
+      "catalogKey": "sun dried tomatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sun dried tomatoes"
+    },
+    {
+      "catalogKey": "sunflower bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sunflower bread"
+    },
+    {
+      "catalogKey": "sunflower oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sunflower oil"
+    },
+    {
+      "catalogKey": "sunflower seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sunflower seeds"
+    },
+    {
+      "catalogKey": "sushi rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sushi rice"
+    },
+    {
+      "catalogKey": "sweet and sour sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet and sour sauce"
+    },
+    {
+      "catalogKey": "sweet baguette",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet baguette"
+    },
+    {
+      "catalogKey": "sweet chili sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet chili sauce"
+    },
+    {
+      "catalogKey": "sweet corn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet corn"
+    },
+    {
+      "catalogKey": "sweet mustard",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet mustard"
+    },
+    {
+      "catalogKey": "sweet popcorn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet popcorn"
+    },
+    {
+      "catalogKey": "sweet potato",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet potato"
+    },
+    {
+      "catalogKey": "sweet potato chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet potato chips"
+    },
+    {
+      "catalogKey": "sweet potatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet potatoes"
+    },
+    {
+      "catalogKey": "table water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "table water"
+    },
+    {
+      "catalogKey": "tagliatelle",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tagliatelle"
+    },
+    {
+      "catalogKey": "tahini",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tahini"
+    },
+    {
+      "catalogKey": "tahini sesame paste",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tahini sesame paste"
+    },
+    {
+      "catalogKey": "tapioca",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tapioca"
+    },
+    {
+      "catalogKey": "tarragon mustard",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tarragon mustard"
+    },
+    {
+      "catalogKey": "tartar sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tartar sauce"
+    },
+    {
+      "catalogKey": "tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tea"
+    },
+    {
+      "catalogKey": "teff",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "teff"
+    },
+    {
+      "catalogKey": "teff flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "teff flour"
+    },
+    {
+      "catalogKey": "tempeh",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tempeh"
+    },
+    {
+      "catalogKey": "teriyaki sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "teriyaki sauce"
+    },
+    {
+      "catalogKey": "thin egg noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "thin egg noodles"
+    },
+    {
+      "catalogKey": "thin spaghetti",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "thin spaghetti"
+    },
+    {
+      "catalogKey": "thyme",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "thyme"
+    },
+    {
+      "catalogKey": "tilsiter cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tilsiter cheese"
+    },
+    {
+      "catalogKey": "toast bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "toast bread"
+    },
+    {
+      "catalogKey": "toasted sesame oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "toasted sesame oil"
+    },
+    {
+      "catalogKey": "tofu",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tofu"
+    },
+    {
+      "catalogKey": "tofu cubes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tofu cubes"
+    },
+    {
+      "catalogKey": "tomato",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato"
+    },
+    {
+      "catalogKey": "tomato chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato chips"
+    },
+    {
+      "catalogKey": "tomato chutney",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato chutney"
+    },
+    {
+      "catalogKey": "tomato couscous",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato couscous"
+    },
+    {
+      "catalogKey": "tomato juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato juice"
+    },
+    {
+      "catalogKey": "tomato ketchup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato ketchup"
+    },
+    {
+      "catalogKey": "tomato pasta sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato pasta sauce"
+    },
+    {
+      "catalogKey": "tomato paste",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato paste"
+    },
+    {
+      "catalogKey": "tomato paste tube",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato paste tube"
+    },
+    {
+      "catalogKey": "tomato salsa",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato salsa"
+    },
+    {
+      "catalogKey": "tomato sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato sauce"
+    },
+    {
+      "catalogKey": "tomato soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato soup"
+    },
+    {
+      "catalogKey": "tomato spread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato spread"
+    },
+    {
+      "catalogKey": "tomatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomatoes"
+    },
+    {
+      "catalogKey": "tortellini",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tortellini"
+    },
+    {
+      "catalogKey": "tortilla chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tortilla chips"
+    },
+    {
+      "catalogKey": "tortilla wraps",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tortilla wraps"
+    },
+    {
+      "catalogKey": "trail mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "trail mix"
+    },
+    {
+      "catalogKey": "trout",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "trout"
+    },
+    {
+      "catalogKey": "trout fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "trout fillet"
+    },
+    {
+      "catalogKey": "truffle oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "truffle oil"
+    },
+    {
+      "catalogKey": "tuna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tuna"
+    },
+    {
+      "catalogKey": "tuna fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tuna fillet"
+    },
+    {
+      "catalogKey": "tuna in brine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tuna in brine"
+    },
+    {
+      "catalogKey": "tuna in oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tuna in oil"
+    },
+    {
+      "catalogKey": "tuna in water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tuna in water"
+    },
+    {
+      "catalogKey": "tuna steak",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tuna steak"
+    },
+    {
+      "catalogKey": "turkey breast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "turkey breast"
+    },
+    {
+      "catalogKey": "turkey ham",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "turkey ham"
+    },
+    {
+      "catalogKey": "turkey leg",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "turkey leg"
+    },
+    {
+      "catalogKey": "turkey roast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "turkey roast"
+    },
+    {
+      "catalogKey": "turkey salami",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "turkey salami"
+    },
+    {
+      "catalogKey": "turkey sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "turkey sausage"
+    },
+    {
+      "catalogKey": "turkey schnitzel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "turkey schnitzel"
+    },
+    {
+      "catalogKey": "turkey thigh",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "turkey thigh"
+    },
+    {
+      "catalogKey": "turmeric",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "turmeric"
+    },
+    {
+      "catalogKey": "tzatziki",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tzatziki"
+    },
+    {
+      "catalogKey": "tzatziki sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tzatziki sauce"
+    },
+    {
+      "catalogKey": "uht low fat milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "uht low fat milk"
+    },
+    {
+      "catalogKey": "unsweetened almond drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "unsweetened almond drink"
+    },
+    {
+      "catalogKey": "unsweetened almond milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "unsweetened almond milk"
+    },
+    {
+      "catalogKey": "unsweetened apple juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "unsweetened apple juice"
+    },
+    {
+      "catalogKey": "unsweetened applesauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "unsweetened applesauce"
+    },
+    {
+      "catalogKey": "unsweetened cocoa powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "unsweetened cocoa powder"
+    },
+    {
+      "catalogKey": "unsweetened oat milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "unsweetened oat milk"
+    },
+    {
+      "catalogKey": "unsweetened soy milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "unsweetened soy milk"
+    },
+    {
+      "catalogKey": "vanilla extract",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vanilla extract"
+    },
+    {
+      "catalogKey": "vanilla ice cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vanilla ice cream"
+    },
+    {
+      "catalogKey": "vanilla oat milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vanilla oat milk"
+    },
+    {
+      "catalogKey": "vanilla pod",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vanilla pod"
+    },
+    {
+      "catalogKey": "vanilla pudding",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vanilla pudding"
+    },
+    {
+      "catalogKey": "vanilla pudding powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vanilla pudding powder"
+    },
+    {
+      "catalogKey": "vanilla soy milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vanilla soy milk"
+    },
+    {
+      "catalogKey": "vanilla sugar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vanilla sugar"
+    },
+    {
+      "catalogKey": "vanilla yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vanilla yogurt"
+    },
+    {
+      "catalogKey": "veal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "veal"
+    },
+    {
+      "catalogKey": "veal bratwurst",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "veal bratwurst"
+    },
+    {
+      "catalogKey": "vegan bolognese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan bolognese"
+    },
+    {
+      "catalogKey": "vegan bolognese sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan bolognese sauce"
+    },
+    {
+      "catalogKey": "vegan burger patties",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan burger patties"
+    },
+    {
+      "catalogKey": "vegan burgers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan burgers"
+    },
+    {
+      "catalogKey": "vegan butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan butter"
+    },
+    {
+      "catalogKey": "vegan cheese slices",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan cheese slices"
+    },
+    {
+      "catalogKey": "vegan chicken nuggets",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan chicken nuggets"
+    },
+    {
+      "catalogKey": "vegan chili",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan chili"
+    },
+    {
+      "catalogKey": "vegan chocolate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan chocolate"
+    },
+    {
+      "catalogKey": "vegan chocolate spread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan chocolate spread"
+    },
+    {
+      "catalogKey": "vegan cookies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan cookies"
+    },
+    {
+      "catalogKey": "vegan cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan cream"
+    },
+    {
+      "catalogKey": "vegan cream cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan cream cheese"
+    },
+    {
+      "catalogKey": "vegan falafel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan falafel"
+    },
+    {
+      "catalogKey": "vegan gyros",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan gyros"
+    },
+    {
+      "catalogKey": "vegan ice cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan ice cream"
+    },
+    {
+      "catalogKey": "vegan lasagna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan lasagna"
+    },
+    {
+      "catalogKey": "vegan mayonnaise",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan mayonnaise"
+    },
+    {
+      "catalogKey": "vegan meatballs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan meatballs"
+    },
+    {
+      "catalogKey": "vegan minced meat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan minced meat"
+    },
+    {
+      "catalogKey": "vegan mozzarella",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan mozzarella"
+    },
+    {
+      "catalogKey": "vegan nuggets",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan nuggets"
+    },
+    {
+      "catalogKey": "vegan pate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan pate"
+    },
+    {
+      "catalogKey": "vegan patties",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan patties"
+    },
+    {
+      "catalogKey": "vegan pesto",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan pesto"
+    },
+    {
+      "catalogKey": "vegan pizza",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan pizza"
+    },
+    {
+      "catalogKey": "vegan sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan sausage"
+    },
+    {
+      "catalogKey": "vegan sausages",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan sausages"
+    },
+    {
+      "catalogKey": "vegan schnitzel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan schnitzel"
+    },
+    {
+      "catalogKey": "vegan spread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan spread"
+    },
+    {
+      "catalogKey": "vegan tofu",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan tofu"
+    },
+    {
+      "catalogKey": "vegan vanilla ice cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan vanilla ice cream"
+    },
+    {
+      "catalogKey": "vegan yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan yogurt"
+    },
+    {
+      "catalogKey": "vegetable bouillon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable bouillon"
+    },
+    {
+      "catalogKey": "vegetable broth",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable broth"
+    },
+    {
+      "catalogKey": "vegetable burger",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable burger"
+    },
+    {
+      "catalogKey": "vegetable curry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable curry"
+    },
+    {
+      "catalogKey": "vegetable juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable juice"
+    },
+    {
+      "catalogKey": "vegetable lasagna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable lasagna"
+    },
+    {
+      "catalogKey": "vegetable oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable oil"
+    },
+    {
+      "catalogKey": "vegetable patties",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable patties"
+    },
+    {
+      "catalogKey": "vegetable soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable soup"
+    },
+    {
+      "catalogKey": "vegetable sticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable sticks"
+    },
+    {
+      "catalogKey": "vegetable stock",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable stock"
+    },
+    {
+      "catalogKey": "vegetarian bolognese sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian bolognese sauce"
+    },
+    {
+      "catalogKey": "vegetarian burger",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian burger"
+    },
+    {
+      "catalogKey": "vegetarian cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian cheese"
+    },
+    {
+      "catalogKey": "vegetarian chili",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian chili"
+    },
+    {
+      "catalogKey": "vegetarian ham",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian ham"
+    },
+    {
+      "catalogKey": "vegetarian lasagna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian lasagna"
+    },
+    {
+      "catalogKey": "vegetarian parmesan",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian parmesan"
+    },
+    {
+      "catalogKey": "vegetarian pizza",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian pizza"
+    },
+    {
+      "catalogKey": "vegetarian sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian sausage"
+    },
+    {
+      "catalogKey": "vegetarian sausages",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian sausages"
+    },
+    {
+      "catalogKey": "vegetarian spread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian spread"
+    },
+    {
+      "catalogKey": "vegetarian stew",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian stew"
+    },
+    {
+      "catalogKey": "vegetarian vegetable soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian vegetable soup"
+    },
+    {
+      "catalogKey": "veggie burger",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "veggie burger"
+    },
+    {
+      "catalogKey": "veggie nuggets",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "veggie nuggets"
+    },
+    {
+      "catalogKey": "venison",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "venison"
+    },
+    {
+      "catalogKey": "venison goulash",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "venison goulash"
+    },
+    {
+      "catalogKey": "venison medallions",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "venison medallions"
+    },
+    {
+      "catalogKey": "venison steak",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "venison steak"
+    },
+    {
+      "catalogKey": "vermicelli noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vermicelli noodles"
+    },
+    {
+      "catalogKey": "vinaigrette",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vinaigrette"
+    },
+    {
+      "catalogKey": "vinegar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vinegar"
+    },
+    {
+      "catalogKey": "virgin coconut oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "virgin coconut oil"
+    },
+    {
+      "catalogKey": "virgin olive oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "virgin olive oil"
+    },
+    {
+      "catalogKey": "virgin walnut oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "virgin walnut oil"
+    },
+    {
+      "catalogKey": "waffles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "waffles"
+    },
+    {
+      "catalogKey": "walnut kernels",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "walnut kernels"
+    },
+    {
+      "catalogKey": "walnut oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "walnut oil"
+    },
+    {
+      "catalogKey": "walnuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "walnuts"
+    },
+    {
+      "catalogKey": "water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "water"
+    },
+    {
+      "catalogKey": "watercress",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "watercress"
+    },
+    {
+      "catalogKey": "watermelon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "watermelon"
+    },
+    {
+      "catalogKey": "wheat beer",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wheat beer"
+    },
+    {
+      "catalogKey": "wheat bran",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wheat bran"
+    },
+    {
+      "catalogKey": "wheat bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wheat bread"
+    },
+    {
+      "catalogKey": "wheat flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wheat flour"
+    },
+    {
+      "catalogKey": "wheat germ",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wheat germ"
+    },
+    {
+      "catalogKey": "wheat pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wheat pasta"
+    },
+    {
+      "catalogKey": "wheat semolina",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wheat semolina"
+    },
+    {
+      "catalogKey": "whey",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whey"
+    },
+    {
+      "catalogKey": "whey protein",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whey protein"
+    },
+    {
+      "catalogKey": "whipping cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whipping cream"
+    },
+    {
+      "catalogKey": "white asparagus",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white asparagus"
+    },
+    {
+      "catalogKey": "white basmati rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white basmati rice"
+    },
+    {
+      "catalogKey": "white beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white beans"
+    },
+    {
+      "catalogKey": "white beans in tomato sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white beans in tomato sauce"
+    },
+    {
+      "catalogKey": "white bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white bread"
+    },
+    {
+      "catalogKey": "white cabbage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white cabbage"
+    },
+    {
+      "catalogKey": "white chocolate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white chocolate"
+    },
+    {
+      "catalogKey": "white eggs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white eggs"
+    },
+    {
+      "catalogKey": "white fish fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white fish fillet"
+    },
+    {
+      "catalogKey": "white pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white pepper"
+    },
+    {
+      "catalogKey": "white rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white rice"
+    },
+    {
+      "catalogKey": "white sandwich bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white sandwich bread"
+    },
+    {
+      "catalogKey": "white sugar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white sugar"
+    },
+    {
+      "catalogKey": "white toast bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white toast bread"
+    },
+    {
+      "catalogKey": "white vinegar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white vinegar"
+    },
+    {
+      "catalogKey": "white wine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white wine"
+    },
+    {
+      "catalogKey": "white wine vinegar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white wine vinegar"
+    },
+    {
+      "catalogKey": "whole allspice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole allspice"
+    },
+    {
+      "catalogKey": "whole almonds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole almonds"
+    },
+    {
+      "catalogKey": "whole black pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole black pepper"
+    },
+    {
+      "catalogKey": "whole cloves",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole cloves"
+    },
+    {
+      "catalogKey": "whole cow milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole cow milk"
+    },
+    {
+      "catalogKey": "whole cumin",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole cumin"
+    },
+    {
+      "catalogKey": "whole grain bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain bread"
+    },
+    {
+      "catalogKey": "whole grain cookies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain cookies"
+    },
+    {
+      "catalogKey": "whole grain crispbread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain crispbread"
+    },
+    {
+      "catalogKey": "whole grain flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain flour"
+    },
+    {
+      "catalogKey": "whole grain mustard",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain mustard"
+    },
+    {
+      "catalogKey": "whole grain rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain rice"
+    },
+    {
+      "catalogKey": "whole grain rye bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain rye bread"
+    },
+    {
+      "catalogKey": "whole grain rye flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain rye flour"
+    },
+    {
+      "catalogKey": "whole grain toast bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain toast bread"
+    },
+    {
+      "catalogKey": "whole milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole milk"
+    },
+    {
+      "catalogKey": "whole milk mozzarella",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole milk mozzarella"
+    },
+    {
+      "catalogKey": "whole wheat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole wheat"
+    },
+    {
+      "catalogKey": "whole wheat bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole wheat bread"
+    },
+    {
+      "catalogKey": "whole wheat flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole wheat flour"
+    },
+    {
+      "catalogKey": "whole wheat macaroni",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole wheat macaroni"
+    },
+    {
+      "catalogKey": "whole wheat pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole wheat pasta"
+    },
+    {
+      "catalogKey": "whole wheat penne",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole wheat penne"
+    },
+    {
+      "catalogKey": "whole wheat spaghetti",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole wheat spaghetti"
+    },
+    {
+      "catalogKey": "wide egg noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wide egg noodles"
+    },
+    {
+      "catalogKey": "wide rice noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wide rice noodles"
+    },
+    {
+      "catalogKey": "wild boar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wild boar"
+    },
+    {
+      "catalogKey": "wild rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wild rice"
+    },
+    {
+      "catalogKey": "wild rice mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wild rice mix"
+    },
+    {
+      "catalogKey": "wild salmon fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wild salmon fillet"
+    },
+    {
+      "catalogKey": "wine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wine"
+    },
+    {
+      "catalogKey": "wine gums",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wine gums"
+    },
+    {
+      "catalogKey": "worcestershire sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "worcestershire sauce"
+    },
+    {
+      "catalogKey": "yeast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yeast"
+    },
+    {
+      "catalogKey": "yeast extract spread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yeast extract spread"
+    },
+    {
+      "catalogKey": "yellow corn flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yellow corn flour"
+    },
+    {
+      "catalogKey": "yellow lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yellow lentils"
+    },
+    {
+      "catalogKey": "yellow mustard seeds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yellow mustard seeds"
+    },
+    {
+      "catalogKey": "yellow onions",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yellow onions"
+    },
+    {
+      "catalogKey": "yellow rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yellow rice"
+    },
+    {
+      "catalogKey": "yogurt dressing",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yogurt dressing"
+    },
+    {
+      "catalogKey": "yogurt salad dressing",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yogurt salad dressing"
+    },
+    {
+      "catalogKey": "zucchini",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "zucchini"
+    },
+    {
+      "catalogKey": "zucchini noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "zucchini noodles"
+    }
+  ]
+}

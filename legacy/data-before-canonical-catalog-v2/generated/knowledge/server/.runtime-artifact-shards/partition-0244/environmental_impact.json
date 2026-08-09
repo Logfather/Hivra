@@ -1,0 +1,88 @@
+{
+  "entries": {
+    "boules de maïs soufflées au miel (non enrichies en vitamines et minéraux)": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "canard, magret, grillé/poêlé": {
+      "environmentScoreMptPerKg": 2.34,
+      "climateKgCo2EqPerKg": 14.6,
+      "landUsePtPerKg": 764.0,
+      "waterDeprivationM3PerKg": 5.46
+    },
+    "chou farci": {
+      "environmentScoreMptPerKg": 0.424,
+      "climateKgCo2EqPerKg": 3.5,
+      "landUsePtPerKg": 170.0,
+      "waterDeprivationM3PerKg": 1.04
+    },
+    "frites de pommes de terre, surgelées, cuites en friteuse": {
+      "environmentScoreMptPerKg": 0.22,
+      "climateKgCo2EqPerKg": 1.46,
+      "landUsePtPerKg": 88.8,
+      "waterDeprivationM3PerKg": 1.04
+    },
+    "gnocchi à la semoule, cuit": {
+      "environmentScoreMptPerKg": 0.154,
+      "climateKgCo2EqPerKg": 1.09,
+      "landUsePtPerKg": 48.9,
+      "waterDeprivationM3PerKg": 0.336
+    },
+    "mil, cuit, non salé": {
+      "environmentScoreMptPerKg": 0.0564,
+      "climateKgCo2EqPerKg": 0.31,
+      "landUsePtPerKg": 37.1,
+      "waterDeprivationM3PerKg": 0.462
+    },
+    "moule de méditerranée, crue": {
+      "environmentScoreMptPerKg": 0.477,
+      "climateKgCo2EqPerKg": 5.33,
+      "landUsePtPerKg": 243.0,
+      "waterDeprivationM3PerKg": 0.965
+    },
+    "moule, bouillie/cuite à l'eau": {
+      "environmentScoreMptPerKg": 0.574,
+      "climateKgCo2EqPerKg": 5.92,
+      "landUsePtPerKg": 298.0,
+      "waterDeprivationM3PerKg": 0.847
+    },
+    "petit pot fruit sans banane pour bébé": {
+      "environmentScoreMptPerKg": 0.15,
+      "climateKgCo2EqPerKg": 1.57,
+      "landUsePtPerKg": 21.0,
+      "waterDeprivationM3PerKg": 1.31
+    },
+    "quinoa fr, cru": {
+      "environmentScoreMptPerKg": 0.641,
+      "climateKgCo2EqPerKg": 7.09,
+      "landUsePtPerKg": 288.0,
+      "waterDeprivationM3PerKg": 13.5
+    },
+    "salsifis noir, cru": {
+      "environmentScoreMptPerKg": 0.0533,
+      "climateKgCo2EqPerKg": 0.494,
+      "landUsePtPerKg": 10.9,
+      "waterDeprivationM3PerKg": 0.413
+    },
+    "sangria": {
+      "environmentScoreMptPerKg": 0.17,
+      "climateKgCo2EqPerKg": 1.36,
+      "landUsePtPerKg": 64.5,
+      "waterDeprivationM3PerKg": 2.72
+    },
+    "saumon fumé (version \"logiciel\" avec erreur sur l'emballage)": {
+      "environmentScoreMptPerKg": 0.97,
+      "climateKgCo2EqPerKg": 7.36,
+      "landUsePtPerKg": 300.0,
+      "waterDeprivationM3PerKg": 1.56
+    },
+    "taro, tubercule, cuit": {
+      "environmentScoreMptPerKg": 0.213,
+      "climateKgCo2EqPerKg": 1.86,
+      "landUsePtPerKg": 41.0,
+      "waterDeprivationM3PerKg": 3.58
+    }
+  }
+}

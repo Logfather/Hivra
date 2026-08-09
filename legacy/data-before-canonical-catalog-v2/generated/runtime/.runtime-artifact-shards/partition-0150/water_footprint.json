@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "foie, poulet, cuit": {
+      "litersPerKilogram": 874.0
+    },
+    "fructose": {
+      "litersPerKilogram": 4520.0
+    },
+    "jambon cuit, supérieur": {
+      "litersPerKilogram": 2480.0
+    },
+    "miettes de thon à la tomate, appertisées": {
+      "litersPerKilogram": 577.0
+    },
+    "mûre (de ronce), crue": {
+      "litersPerKilogram": 5040.0
+    },
+    "paupiette de volaille": {
+      "litersPerKilogram": 2180.0
+    },
+    "pizza type raclette ou tartiflette": {
+      "litersPerKilogram": 1380.0
+    },
+    "pizza à la viande, type bolognaise": {
+      "litersPerKilogram": 957.0
+    },
+    "pâté ou terrine de campagne": {
+      "litersPerKilogram": 1660.0
+    },
+    "roquette, crue": {
+      "litersPerKilogram": 643.0
+    }
+  }
+}

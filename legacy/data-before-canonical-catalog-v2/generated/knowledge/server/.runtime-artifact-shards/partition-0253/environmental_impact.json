@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "anchois, filets roulés aux câpres, semi conserve, égoutté": {
+      "environmentScoreMptPerKg": 0.35,
+      "climateKgCo2EqPerKg": 2.81,
+      "landUsePtPerKg": 76.7,
+      "waterDeprivationM3PerKg": 0.463
+    },
+    "artichaut, fond, surgelé, cru": {
+      "environmentScoreMptPerKg": 0.166,
+      "climateKgCo2EqPerKg": 1.41,
+      "landUsePtPerKg": 60.3,
+      "waterDeprivationM3PerKg": 0.204
+    },
+    "boisson énergisante, sucrée": {
+      "environmentScoreMptPerKg": 0.0785,
+      "climateKgCo2EqPerKg": 0.685,
+      "landUsePtPerKg": 9.68,
+      "waterDeprivationM3PerKg": 0.367
+    },
+    "huile de coton": {
+      "environmentScoreMptPerKg": 0.969,
+      "climateKgCo2EqPerKg": 4.07,
+      "landUsePtPerKg": 147.0,
+      "waterDeprivationM3PerKg": 52.5
+    },
+    "sardine, grillée": {
+      "environmentScoreMptPerKg": 0.36,
+      "climateKgCo2EqPerKg": 2.87,
+      "landUsePtPerKg": 12.7,
+      "waterDeprivationM3PerKg": 0.395
+    }
+  }
+}

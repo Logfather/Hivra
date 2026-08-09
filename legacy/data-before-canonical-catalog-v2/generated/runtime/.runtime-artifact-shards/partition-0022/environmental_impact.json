@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "bar commun ou loup (méditerranée), cru, sauvage": {
+      "environmentScoreMptPerKg": 1.65,
+      "climateKgCo2EqPerKg": 10.1,
+      "landUsePtPerKg": 13.8,
+      "waterDeprivationM3PerKg": 0.414
+    },
+    "boisson infantile céréales lactées pour le petit déjeuner dès 12 mois": {
+      "environmentScoreMptPerKg": 0.0934,
+      "climateKgCo2EqPerKg": 0.863,
+      "landUsePtPerKg": 40.6,
+      "waterDeprivationM3PerKg": 0.174
+    },
+    "confiture de fraise (extra ou classique)": {
+      "environmentScoreMptPerKg": 0.298,
+      "climateKgCo2EqPerKg": 1.75,
+      "landUsePtPerKg": 78.6,
+      "waterDeprivationM3PerKg": 7.57
+    },
+    "jambon cuit, supérieur, découenné": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "kir royal (au champagne)": {
+      "environmentScoreMptPerKg": 0.189,
+      "climateKgCo2EqPerKg": 1.56,
+      "landUsePtPerKg": 103.0,
+      "waterDeprivationM3PerKg": 0.455
+    },
+    "tarte à la tomate": {
+      "environmentScoreMptPerKg": 0.295,
+      "climateKgCo2EqPerKg": 2.54,
+      "landUsePtPerKg": 93.2,
+      "waterDeprivationM3PerKg": 0.625
+    },
+    "vermicelle de riz, cuite, non salée (version \"logiciel\" avec erreur sur l'emballage)": {
+      "environmentScoreMptPerKg": 0.244,
+      "climateKgCo2EqPerKg": 1.35,
+      "landUsePtPerKg": 28.8,
+      "waterDeprivationM3PerKg": 4.94
+    },
+    "épinard, cru": {
+      "environmentScoreMptPerKg": 0.0464,
+      "climateKgCo2EqPerKg": 0.423,
+      "landUsePtPerKg": -17.2,
+      "waterDeprivationM3PerKg": 0.259
+    }
+  }
+}

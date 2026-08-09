@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "agneau, côtelette, crue": {
+      "score": 6.93
+    },
+    "croissant au jambon fromage": {
+      "score": 1.18
+    },
+    "céréales instantanées, poudre reconstituée chez le consommateur, dès 6 mois": {
+      "score": 0.322
+    },
+    "dorade royale, ou daurade ou vraie daurade, crue, sauvage": {
+      "score": 0.414
+    },
+    "feuilleté ou friand au fromage": {
+      "score": 0.745
+    },
+    "foie, veau, cuit": {
+      "score": 4.23
+    },
+    "fourme d'ambert": {
+      "score": 0.583
+    },
+    "gâteau de riz, appertisé": {
+      "score": 2.22
+    },
+    "pizza aux fruits de mer": {
+      "score": 1.15
+    },
+    "porc, longe, cuite": {
+      "score": 2.77
+    },
+    "tajine de poulet": {
+      "score": 3.1
+    }
+  }
+}

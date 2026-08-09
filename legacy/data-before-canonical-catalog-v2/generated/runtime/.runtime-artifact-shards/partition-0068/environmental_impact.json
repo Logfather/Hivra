@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "banane, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.115,
+      "climateKgCo2EqPerKg": 0.909,
+      "landUsePtPerKg": 26.5,
+      "waterDeprivationM3PerKg": 0.572
+    },
+    "hachis parmentier à la viande": {
+      "environmentScoreMptPerKg": 1.15,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 740.0,
+      "waterDeprivationM3PerKg": 1.25
+    },
+    "lapin, viande crue": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "pastis": {
+      "environmentScoreMptPerKg": 0.12,
+      "climateKgCo2EqPerKg": 1.26,
+      "landUsePtPerKg": 18.4,
+      "waterDeprivationM3PerKg": 0.169
+    },
+    "pois chiche, cuit": {
+      "environmentScoreMptPerKg": 0.0781,
+      "climateKgCo2EqPerKg": 0.603,
+      "landUsePtPerKg": 66.3,
+      "waterDeprivationM3PerKg": 0.161
+    },
+    "sauce au vin rouge": {
+      "environmentScoreMptPerKg": 0.253,
+      "climateKgCo2EqPerKg": 1.64,
+      "landUsePtPerKg": 112.0,
+      "waterDeprivationM3PerKg": 0.522
+    },
+    "soupe pour bébé légumes, céréales et lait": {
+      "environmentScoreMptPerKg": 0.0953,
+      "climateKgCo2EqPerKg": 0.86,
+      "landUsePtPerKg": 13.7,
+      "waterDeprivationM3PerKg": 0.425
+    },
+    "spécialité végétale type fromage à tartiner, au soja, préemballée": {
+      "environmentScoreMptPerKg": 0.181,
+      "climateKgCo2EqPerKg": 1.87,
+      "landUsePtPerKg": 83.9,
+      "waterDeprivationM3PerKg": 1.38
+    }
+  }
+}

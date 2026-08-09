@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "boeuf, joue, braisée ou bouillie": {
+      "environmentScoreMptPerKg": 2.76,
+      "climateKgCo2EqPerKg": 29.5,
+      "landUsePtPerKg": 1910.0,
+      "waterDeprivationM3PerKg": 2.46
+    },
+    "chou vert, cuit": {
+      "environmentScoreMptPerKg": 0.151,
+      "climateKgCo2EqPerKg": 1.6,
+      "landUsePtPerKg": 45.3,
+      "waterDeprivationM3PerKg": 0.347
+    },
+    "crottin de chavignol (fromage de chèvre)": {
+      "environmentScoreMptPerKg": 1.08,
+      "climateKgCo2EqPerKg": 7.68,
+      "landUsePtPerKg": 504.0,
+      "waterDeprivationM3PerKg": 2.7
+    },
+    "espadon, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 1.02,
+      "climateKgCo2EqPerKg": 5.82,
+      "landUsePtPerKg": 19.0,
+      "waterDeprivationM3PerKg": 0.724
+    },
+    "légumes (3 4 sortes en mélange), purée": {
+      "environmentScoreMptPerKg": 0.147,
+      "climateKgCo2EqPerKg": 1.25,
+      "landUsePtPerKg": 29.7,
+      "waterDeprivationM3PerKg": 0.658
+    },
+    "pancetta ou poitrine roulée sèche": {
+      "environmentScoreMptPerKg": 1.8,
+      "climateKgCo2EqPerKg": 13.6,
+      "landUsePtPerKg": 626.0,
+      "waterDeprivationM3PerKg": 4.24
+    },
+    "soufflé au fromage": {
+      "environmentScoreMptPerKg": 0.411,
+      "climateKgCo2EqPerKg": 3.53,
+      "landUsePtPerKg": 147.0,
+      "waterDeprivationM3PerKg": 0.795
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aromatisé, sucré": {
+      "environmentScoreMptPerKg": 0.192,
+      "climateKgCo2EqPerKg": 1.88,
+      "landUsePtPerKg": 64.4,
+      "waterDeprivationM3PerKg": 0.458
+    }
+  }
+}

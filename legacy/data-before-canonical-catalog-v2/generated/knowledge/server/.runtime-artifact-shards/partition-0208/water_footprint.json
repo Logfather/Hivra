@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "biscuit sec chocolaté, type barquette": {
+      "litersPerKilogram": 1100.0
+    },
+    "bonbon dur et sucette": {
+      "litersPerKilogram": 2440.0
+    },
+    "chicorée, poudre soluble, réhydratée": {
+      "litersPerKilogram": 39.0
+    },
+    "coupe glacée type café ou chocolat liégeois": {
+      "litersPerKilogram": 997.0
+    },
+    "pâte à pizza crue": {
+      "litersPerKilogram": 1390.0
+    },
+    "samossas ou samoussas": {
+      "litersPerKilogram": 3190.0
+    },
+    "saucisse sèche": {
+      "litersPerKilogram": 2370.0
+    },
+    "saucisson de paris": {
+      "litersPerKilogram": 2630.0
+    }
+  }
+}

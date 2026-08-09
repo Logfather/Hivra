@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "agneau, collier, cru": {
+      "environmentScoreMptPerKg": 5.01,
+      "climateKgCo2EqPerKg": 41.3,
+      "landUsePtPerKg": 4420.0,
+      "waterDeprivationM3PerKg": 6.93
+    },
+    "anchois au sel (anchoité, semi conserve)": {
+      "environmentScoreMptPerKg": 0.374,
+      "climateKgCo2EqPerKg": 2.6,
+      "landUsePtPerKg": 8.47,
+      "waterDeprivationM3PerKg": 0.255
+    },
+    "boisson au soja, aromatisée, sucrée": {
+      "environmentScoreMptPerKg": 0.0419,
+      "climateKgCo2EqPerKg": 0.435,
+      "landUsePtPerKg": 21.6,
+      "waterDeprivationM3PerKg": 0.0815
+    },
+    "glace ou crème glacée, gourmande, en bac": {
+      "environmentScoreMptPerKg": 0.224,
+      "climateKgCo2EqPerKg": 1.96,
+      "landUsePtPerKg": 66.8,
+      "waterDeprivationM3PerKg": 0.637
+    },
+    "hareng fumé, filet, doux (version \"logiciel\" avec erreur sur l'emballage)": {
+      "environmentScoreMptPerKg": 0.323,
+      "climateKgCo2EqPerKg": 2.67,
+      "landUsePtPerKg": 10.4,
+      "waterDeprivationM3PerKg": 0.293
+    },
+    "tajine de mouton": {
+      "environmentScoreMptPerKg": 3.39,
+      "climateKgCo2EqPerKg": 27.8,
+      "landUsePtPerKg": 2940.0,
+      "waterDeprivationM3PerKg": 5.47
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux céréales": {
+      "environmentScoreMptPerKg": 0.284,
+      "climateKgCo2EqPerKg": 2.34,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 1.49
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "choucroute, sans garniture, égouttée": {
+      "environmentScoreMptPerKg": 0.152,
+      "climateKgCo2EqPerKg": 1.41,
+      "landUsePtPerKg": 18.4,
+      "waterDeprivationM3PerKg": 0.77
+    },
+    "crevette rose, crue": {
+      "environmentScoreMptPerKg": 3.3,
+      "climateKgCo2EqPerKg": 20.4,
+      "landUsePtPerKg": 248.0,
+      "waterDeprivationM3PerKg": 178.0
+    },
+    "foie gras, en bloc": {
+      "environmentScoreMptPerKg": 3.72,
+      "climateKgCo2EqPerKg": 24.7,
+      "landUsePtPerKg": 1190.0,
+      "waterDeprivationM3PerKg": 8.54
+    },
+    "macédoine de légumes, surgelée": {
+      "environmentScoreMptPerKg": 0.11,
+      "climateKgCo2EqPerKg": 0.747,
+      "landUsePtPerKg": 46.4,
+      "waterDeprivationM3PerKg": 0.682
+    },
+    "matière grasse mélangée (végétale et laitière), à tartiner, à 30 40% mg": {
+      "environmentScoreMptPerKg": 0.309,
+      "climateKgCo2EqPerKg": 3.43,
+      "landUsePtPerKg": 130.0,
+      "waterDeprivationM3PerKg": 0.654
+    },
+    "matière grasse mélangée (végétale et laitière), à tartiner, à 30 40% mg, demi sel": {
+      "environmentScoreMptPerKg": 0.309,
+      "climateKgCo2EqPerKg": 3.43,
+      "landUsePtPerKg": 130.0,
+      "waterDeprivationM3PerKg": 0.654
+    },
+    "merlan, pané": {
+      "environmentScoreMptPerKg": 2.47,
+      "climateKgCo2EqPerKg": 14.9,
+      "landUsePtPerKg": 20.6,
+      "waterDeprivationM3PerKg": 0.635
+    },
+    "pâte sablée, cuite": {
+      "environmentScoreMptPerKg": 0.388,
+      "climateKgCo2EqPerKg": 3.46,
+      "landUsePtPerKg": 165.0,
+      "waterDeprivationM3PerKg": 1.03
+    },
+    "pêche, pulpe et peau, crue": {
+      "environmentScoreMptPerKg": 0.141,
+      "climateKgCo2EqPerKg": 0.591,
+      "landUsePtPerKg": 157.0,
+      "waterDeprivationM3PerKg": 7.71
+    },
+    "son d'avoine": {
+      "environmentScoreMptPerKg": 0.116,
+      "climateKgCo2EqPerKg": 0.589,
+      "landUsePtPerKg": 90.1,
+      "waterDeprivationM3PerKg": 0.275
+    }
+  }
+}

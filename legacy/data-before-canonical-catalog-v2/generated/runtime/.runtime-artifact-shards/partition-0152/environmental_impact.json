@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "falafel ou boulette de pois chiche et/ou fève, préemballé": {
+      "environmentScoreMptPerKg": 0.207,
+      "climateKgCo2EqPerKg": 1.44,
+      "landUsePtPerKg": 145.0,
+      "waterDeprivationM3PerKg": 1.73
+    },
+    "gaufrette fourrée, aux fruits": {
+      "environmentScoreMptPerKg": 0.335,
+      "climateKgCo2EqPerKg": 2.92,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 3.14
+    },
+    "lentille blonde, cuite": {
+      "environmentScoreMptPerKg": 0.0887,
+      "climateKgCo2EqPerKg": 0.466,
+      "landUsePtPerKg": 133.0,
+      "waterDeprivationM3PerKg": 0.107
+    },
+    "matière grasse laitière à 20% mg, légère, \"à tartiner\", doux": {
+      "environmentScoreMptPerKg": 0.46,
+      "climateKgCo2EqPerKg": 4.55,
+      "landUsePtPerKg": 213.0,
+      "waterDeprivationM3PerKg": 0.526
+    },
+    "oeuf de cane, cru": {
+      "environmentScoreMptPerKg": 0.26,
+      "climateKgCo2EqPerKg": 1.88,
+      "landUsePtPerKg": 163.0,
+      "waterDeprivationM3PerKg": 0.783
+    },
+    "persil, frais": {
+      "environmentScoreMptPerKg": 0.181,
+      "climateKgCo2EqPerKg": 1.12,
+      "landUsePtPerKg": 130.0,
+      "waterDeprivationM3PerKg": 1.86
+    },
+    "sauce aux champignons et à la crème, préemballée": {
+      "environmentScoreMptPerKg": 0.585,
+      "climateKgCo2EqPerKg": 4.44,
+      "landUsePtPerKg": 115.0,
+      "waterDeprivationM3PerKg": 21.2
+    },
+    "son de blé": {
+      "environmentScoreMptPerKg": 0.0456,
+      "climateKgCo2EqPerKg": 0.372,
+      "landUsePtPerKg": 30.5,
+      "waterDeprivationM3PerKg": 0.0863
+    },
+    "tomate, purée, appertisée": {
+      "environmentScoreMptPerKg": 0.113,
+      "climateKgCo2EqPerKg": 0.825,
+      "landUsePtPerKg": 8.24,
+      "waterDeprivationM3PerKg": 0.381
+    },
+    "vin doux": {
+      "environmentScoreMptPerKg": 0.171,
+      "climateKgCo2EqPerKg": 1.35,
+      "landUsePtPerKg": 119.0,
+      "waterDeprivationM3PerKg": 0.26
+    }
+  }
+}

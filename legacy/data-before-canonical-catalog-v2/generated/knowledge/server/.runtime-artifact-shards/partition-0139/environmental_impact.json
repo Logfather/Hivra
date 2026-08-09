@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "agneau, épaule, crue": {
+      "environmentScoreMptPerKg": 4.01,
+      "climateKgCo2EqPerKg": 33.0,
+      "landUsePtPerKg": 3530.0,
+      "waterDeprivationM3PerKg": 5.54
+    },
+    "boisson préparée à partir de sirop à diluer type menthe, fraise, etc, sucré, dilué dans l'eau": {
+      "environmentScoreMptPerKg": 0.018,
+      "climateKgCo2EqPerKg": 0.125,
+      "landUsePtPerKg": 4.17,
+      "waterDeprivationM3PerKg": 0.221
+    },
+    "brick à l'oeuf": {
+      "environmentScoreMptPerKg": 0.43,
+      "climateKgCo2EqPerKg": 3.11,
+      "landUsePtPerKg": 111.0,
+      "waterDeprivationM3PerKg": 7.04
+    },
+    "flocon d'avoine précuit": {
+      "environmentScoreMptPerKg": 0.317,
+      "climateKgCo2EqPerKg": 1.56,
+      "landUsePtPerKg": 235.0,
+      "waterDeprivationM3PerKg": 0.772
+    },
+    "hareng gras, cru": {
+      "environmentScoreMptPerKg": 0.367,
+      "climateKgCo2EqPerKg": 2.68,
+      "landUsePtPerKg": 7.32,
+      "waterDeprivationM3PerKg": 0.213
+    },
+    "lait 1er âge, prêt à consommer (préparation pour nourrissons)": {
+      "environmentScoreMptPerKg": 0.0834,
+      "climateKgCo2EqPerKg": 0.795,
+      "landUsePtPerKg": 33.6,
+      "waterDeprivationM3PerKg": 0.255
+    },
+    "pétales de blé chocolatés, enrichis en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "vinaigre balsamique": {
+      "environmentScoreMptPerKg": 0.128,
+      "climateKgCo2EqPerKg": 0.96,
+      "landUsePtPerKg": 94.2,
+      "waterDeprivationM3PerKg": 0.149
+    }
+  }
+}

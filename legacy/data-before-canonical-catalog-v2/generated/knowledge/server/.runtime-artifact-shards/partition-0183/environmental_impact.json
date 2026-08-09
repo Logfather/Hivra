@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "groseille, crue": {
+      "environmentScoreMptPerKg": 0.206,
+      "climateKgCo2EqPerKg": 1.89,
+      "landUsePtPerKg": 26.6,
+      "waterDeprivationM3PerKg": 1.24
+    },
+    "hamburger, provenant de fast food": {
+      "environmentScoreMptPerKg": 1.78,
+      "climateKgCo2EqPerKg": 18.6,
+      "landUsePtPerKg": 1170.0,
+      "waterDeprivationM3PerKg": 1.88
+    },
+    "huile pour friture, sans précision": {
+      "environmentScoreMptPerKg": 0.35,
+      "climateKgCo2EqPerKg": 2.37,
+      "landUsePtPerKg": 501.0,
+      "waterDeprivationM3PerKg": 0.745
+    },
+    "lait écrémé, uht": {
+      "environmentScoreMptPerKg": 0.108,
+      "climateKgCo2EqPerKg": 1.15,
+      "landUsePtPerKg": 47.7,
+      "waterDeprivationM3PerKg": 0.143
+    },
+    "lardon fumé, cru": {
+      "environmentScoreMptPerKg": 0.907,
+      "climateKgCo2EqPerKg": 7.12,
+      "landUsePtPerKg": 354.0,
+      "waterDeprivationM3PerKg": 2.32
+    },
+    "maquereau, frit": {
+      "environmentScoreMptPerKg": 0.403,
+      "climateKgCo2EqPerKg": 3.33,
+      "landUsePtPerKg": 16.1,
+      "waterDeprivationM3PerKg": 0.373
+    }
+  }
+}

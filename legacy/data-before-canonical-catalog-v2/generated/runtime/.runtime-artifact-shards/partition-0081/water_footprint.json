@@ -1,0 +1,31 @@
+{
+  "entries": {
+    "boeuf, bavette d'aloyau, grillée/poêlée": {
+      "litersPerKilogram": 3030.0
+    },
+    "carpe, crue, élevage": {
+      "litersPerKilogram": 36500.0
+    },
+    "endive, crue": {
+      "litersPerKilogram": 170.0
+    },
+    "maquereau, rôti/cuit au four": {
+      "litersPerKilogram": 392.0
+    },
+    "mousse de foie de porc supérieure ou crème de foie": {
+      "litersPerKilogram": 873.0
+    },
+    "noix de pécan": {
+      "litersPerKilogram": 8950.0
+    },
+    "pâtes sèches, sans gluten, crues": {
+      "litersPerKilogram": 3400.0
+    },
+    "pétales de maïs glacés au sucre, enrichis en vitamines et minéraux": {
+      "litersPerKilogram": 6450.0
+    },
+    "wrap végétarien": {
+      "litersPerKilogram": 1330.0
+    }
+  }
+}

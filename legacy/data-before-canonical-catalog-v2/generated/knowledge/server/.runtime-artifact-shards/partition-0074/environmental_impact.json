@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "biscuit sec nappé aux fruits, tartelette": {
+      "environmentScoreMptPerKg": 0.304,
+      "climateKgCo2EqPerKg": 2.44,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 2.95
+    },
+    "haricot rouge, sec": {
+      "environmentScoreMptPerKg": 0.101,
+      "climateKgCo2EqPerKg": 0.858,
+      "landUsePtPerKg": -167.0,
+      "waterDeprivationM3PerKg": 0.15
+    },
+    "porc, escalope de jambon, cuite": {
+      "environmentScoreMptPerKg": 1.07,
+      "climateKgCo2EqPerKg": 8.4,
+      "landUsePtPerKg": 441.0,
+      "waterDeprivationM3PerKg": 2.77
+    },
+    "riz rouge, cru": {
+      "environmentScoreMptPerKg": 0.428,
+      "climateKgCo2EqPerKg": 2.01,
+      "landUsePtPerKg": 63.0,
+      "waterDeprivationM3PerKg": 14.3
+    }
+  }
+}

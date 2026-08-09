@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "base de pizza à la crème": {
+      "environmentScoreMptPerKg": 0.251,
+      "climateKgCo2EqPerKg": 2.36,
+      "landUsePtPerKg": 95.4,
+      "waterDeprivationM3PerKg": 0.372
+    },
+    "bresaola": {
+      "environmentScoreMptPerKg": 1.8,
+      "climateKgCo2EqPerKg": 13.6,
+      "landUsePtPerKg": 626.0,
+      "waterDeprivationM3PerKg": 4.24
+    },
+    "cassis, cru": {
+      "environmentScoreMptPerKg": 0.209,
+      "climateKgCo2EqPerKg": 1.9,
+      "landUsePtPerKg": 26.7,
+      "waterDeprivationM3PerKg": 1.24
+    },
+    "guacamole, préemballé": {
+      "environmentScoreMptPerKg": 0.337,
+      "climateKgCo2EqPerKg": 1.64,
+      "landUsePtPerKg": 77.3,
+      "waterDeprivationM3PerKg": 16.8
+    },
+    "gâteau moelleux fourré au chocolat ou aux pépites de chocolat ou au lait": {
+      "environmentScoreMptPerKg": 0.667,
+      "climateKgCo2EqPerKg": 10.1,
+      "landUsePtPerKg": 401.0,
+      "waterDeprivationM3PerKg": 0.995
+    },
+    "igname, épluchée, bouillie/cuite à l'eau": {
+      "environmentScoreMptPerKg": 0.12,
+      "climateKgCo2EqPerKg": 0.806,
+      "landUsePtPerKg": 27.2,
+      "waterDeprivationM3PerKg": 2.7
+    },
+    "langue, boeuf, crue": {
+      "environmentScoreMptPerKg": 2.14,
+      "climateKgCo2EqPerKg": 22.9,
+      "landUsePtPerKg": 1490.0,
+      "waterDeprivationM3PerKg": 1.91
+    },
+    "quenelle au tofu (ne convient pas aux véganes ou végétaliens), préemballée": {
+      "environmentScoreMptPerKg": 0.286,
+      "climateKgCo2EqPerKg": 2.26,
+      "landUsePtPerKg": 123.0,
+      "waterDeprivationM3PerKg": 1.88
+    },
+    "salade de riz": {
+      "environmentScoreMptPerKg": 0.367,
+      "climateKgCo2EqPerKg": 2.55,
+      "landUsePtPerKg": 82.9,
+      "waterDeprivationM3PerKg": 4.34
+    },
+    "tempeh": {
+      "environmentScoreMptPerKg": 0.2,
+      "climateKgCo2EqPerKg": 2.37,
+      "landUsePtPerKg": 89.9,
+      "waterDeprivationM3PerKg": 1.18
+    },
+    "veau, pied, cru": {
+      "environmentScoreMptPerKg": 2.15,
+      "climateKgCo2EqPerKg": 23.3,
+      "landUsePtPerKg": 1060.0,
+      "waterDeprivationM3PerKg": 3.17
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "farine d'épeautre (grand épeautre)": {
+      "environmentScoreMptPerKg": 0.145,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": 129.0,
+      "waterDeprivationM3PerKg": 0.587
+    },
+    "fromage de chèvre bûche, allégé en matière grasse": {
+      "environmentScoreMptPerKg": 0.903,
+      "climateKgCo2EqPerKg": 6.46,
+      "landUsePtPerKg": 444.0,
+      "waterDeprivationM3PerKg": 2.28
+    },
+    "matière grasse végétale (type margarine) à 50 63% mg, allégée, doux": {
+      "environmentScoreMptPerKg": 0.291,
+      "climateKgCo2EqPerKg": 2.0,
+      "landUsePtPerKg": 247.0,
+      "waterDeprivationM3PerKg": 2.98
+    },
+    "oeuf d'oie, cru": {
+      "environmentScoreMptPerKg": 0.26,
+      "climateKgCo2EqPerKg": 1.88,
+      "landUsePtPerKg": 163.0,
+      "waterDeprivationM3PerKg": 0.783
+    },
+    "pavot, graine": {
+      "environmentScoreMptPerKg": 0.516,
+      "climateKgCo2EqPerKg": 2.9,
+      "landUsePtPerKg": 292.0,
+      "waterDeprivationM3PerKg": 4.36
+    },
+    "perche du nil, crue": {
+      "environmentScoreMptPerKg": 1.4,
+      "climateKgCo2EqPerKg": 6.17,
+      "landUsePtPerKg": 108.0,
+      "waterDeprivationM3PerKg": 36.5
+    },
+    "saucisson de paris, fumé": {
+      "environmentScoreMptPerKg": 1.07,
+      "climateKgCo2EqPerKg": 8.15,
+      "landUsePtPerKg": 390.0,
+      "waterDeprivationM3PerKg": 2.63
+    },
+    "tarte aux noix de saint jacques": {
+      "environmentScoreMptPerKg": 0.61,
+      "climateKgCo2EqPerKg": 4.75,
+      "landUsePtPerKg": 104.0,
+      "waterDeprivationM3PerKg": 6.71
+    },
+    "veau, carré, cru": {
+      "environmentScoreMptPerKg": 1.72,
+      "climateKgCo2EqPerKg": 18.6,
+      "landUsePtPerKg": 846.0,
+      "waterDeprivationM3PerKg": 2.53
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "entries": {
+    "crêpe préemballée, fourrée fraise": {
+      "litersPerKilogram": 3240.0
+    },
+    "kombu breton (laminaria digitata), séchée ou déshydratée": {
+      "litersPerKilogram": 4830.0
+    },
+    "moules farcies (matière grasse, persillade…), crues": {
+      "litersPerKilogram": 642.0
+    },
+    "nectar de banane": {
+      "litersPerKilogram": 789.0
+    },
+    "pain courant français, 400g ou boule": {
+      "litersPerKilogram": 188.0
+    },
+    "pomme de terre, rôtie/cuite au four": {
+      "litersPerKilogram": 403.0
+    },
+    "porc, filet mignon, cuit": {
+      "litersPerKilogram": 2770.0
+    },
+    "pâtes fraîches farcies (ex : raviolis), aux légumes, cuites": {
+      "litersPerKilogram": 1070.0
+    },
+    "tomate, pulpe et peau, bouillie/cuite à l'eau": {
+      "litersPerKilogram": 1690.0
+    }
+  }
+}

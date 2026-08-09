@@ -1,0 +1,31 @@
+{
+  "entries": {
+    "betterave rouge, crue": {
+      "litersPerKilogram": 384.0
+    },
+    "compote, tout type de fruits": {
+      "litersPerKilogram": 1100.0
+    },
+    "lait fermenté ou spécialité laitière type yaourt, aromatisé, sucré, au bifidus": {
+      "litersPerKilogram": 458.0
+    },
+    "limande sole, panée, frite": {
+      "litersPerKilogram": 616.0
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop, appertisé, non égoutté": {
+      "litersPerKilogram": 3050.0
+    },
+    "pané soja et blé (ne convient pas aux véganes ou végétaliens)": {
+      "litersPerKilogram": 616.0
+    },
+    "pizza jambon fromage": {
+      "litersPerKilogram": 1910.0
+    },
+    "pomme de terre noisette, surgelée, crue": {
+      "litersPerKilogram": 533.0
+    },
+    "épaule de porc, cuite, choix, découennée dégraissée": {
+      "litersPerKilogram": 2480.0
+    }
+  }
+}

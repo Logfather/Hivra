@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "abricot, dénoyauté, cru": {
+      "environmentScoreMptPerKg": 0.224,
+      "climateKgCo2EqPerKg": 1.45,
+      "landUsePtPerKg": 494.0,
+      "waterDeprivationM3PerKg": 2.08
+    },
+    "bouillon de boeuf, déshydraté reconstitué": {
+      "environmentScoreMptPerKg": 0.0124,
+      "climateKgCo2EqPerKg": 0.113,
+      "landUsePtPerKg": 1.75,
+      "waterDeprivationM3PerKg": 0.0537
+    },
+    "carpe, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.69,
+      "climateKgCo2EqPerKg": 7.62,
+      "landUsePtPerKg": 136.0,
+      "waterDeprivationM3PerKg": 44.7
+    },
+    "chocolat noir aux fruits (orange, framboise, poire), tablette": {
+      "environmentScoreMptPerKg": 0.376,
+      "climateKgCo2EqPerKg": 5.32,
+      "landUsePtPerKg": 181.0,
+      "waterDeprivationM3PerKg": 2.86
+    },
+    "eau du robinet": {
+      "environmentScoreMptPerKg": 1.04E-4,
+      "climateKgCo2EqPerKg": 3.42E-4,
+      "landUsePtPerKg": 0.00117,
+      "waterDeprivationM3PerKg": 0.00707
+    },
+    "foie, génisse, cru": {
+      "environmentScoreMptPerKg": 2.14,
+      "climateKgCo2EqPerKg": 22.9,
+      "landUsePtPerKg": 1490.0,
+      "waterDeprivationM3PerKg": 1.91
+    },
+    "foie, génisse, cuit": {
+      "environmentScoreMptPerKg": 2.97,
+      "climateKgCo2EqPerKg": 31.5,
+      "landUsePtPerKg": 2050.0,
+      "waterDeprivationM3PerKg": 2.65
+    },
+    "huître creuse, crue": {
+      "environmentScoreMptPerKg": 0.477,
+      "climateKgCo2EqPerKg": 5.33,
+      "landUsePtPerKg": 243.0,
+      "waterDeprivationM3PerKg": 0.965
+    },
+    "jambon cuit, supérieur, avec couenne": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "pain au lait aux pépites de chocolat, préemballé": {
+      "environmentScoreMptPerKg": 0.28,
+      "climateKgCo2EqPerKg": 3.51,
+      "landUsePtPerKg": 169.0,
+      "waterDeprivationM3PerKg": 0.49
+    },
+    "rhubarbe, tige, cuite, sucrée": {
+      "environmentScoreMptPerKg": 0.169,
+      "climateKgCo2EqPerKg": 1.74,
+      "landUsePtPerKg": 47.8,
+      "waterDeprivationM3PerKg": 0.44
+    },
+    "tarte normande aux pommes (garniture farine, œufs, crème, sucre, calvados)": {
+      "environmentScoreMptPerKg": 0.406,
+      "climateKgCo2EqPerKg": 2.89,
+      "landUsePtPerKg": 150.0,
+      "waterDeprivationM3PerKg": 4.27
+    }
+  }
+}

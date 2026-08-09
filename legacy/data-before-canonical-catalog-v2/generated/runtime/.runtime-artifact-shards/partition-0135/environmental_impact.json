@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "apéritif à base de vin ou vermouth": {
+      "environmentScoreMptPerKg": 0.162,
+      "climateKgCo2EqPerKg": 1.31,
+      "landUsePtPerKg": 94.8,
+      "waterDeprivationM3PerKg": 0.404
+    },
+    "comté": {
+      "environmentScoreMptPerKg": 0.609,
+      "climateKgCo2EqPerKg": 6.38,
+      "landUsePtPerKg": 293.0,
+      "waterDeprivationM3PerKg": 0.813
+    },
+    "farine de maïs": {
+      "environmentScoreMptPerKg": 0.123,
+      "climateKgCo2EqPerKg": 0.865,
+      "landUsePtPerKg": 66.5,
+      "waterDeprivationM3PerKg": 0.748
+    },
+    "galette des rois feuilletée": {
+      "environmentScoreMptPerKg": 0.543,
+      "climateKgCo2EqPerKg": 4.0,
+      "landUsePtPerKg": 229.0,
+      "waterDeprivationM3PerKg": 6.12
+    },
+    "graisse de dinde": {
+      "environmentScoreMptPerKg": 0.298,
+      "climateKgCo2EqPerKg": 2.33,
+      "landUsePtPerKg": 77.7,
+      "waterDeprivationM3PerKg": 0.743
+    },
+    "haricot mungo germé ou pousse de \"soja\", cru": {
+      "environmentScoreMptPerKg": 0.0852,
+      "climateKgCo2EqPerKg": 0.817,
+      "landUsePtPerKg": -187.0,
+      "waterDeprivationM3PerKg": 0.0795
+    },
+    "petits pois et carottes, surgelés, cuits": {
+      "environmentScoreMptPerKg": 0.139,
+      "climateKgCo2EqPerKg": 0.911,
+      "landUsePtPerKg": 42.8,
+      "waterDeprivationM3PerKg": 0.676
+    },
+    "quatre quarts ou barre pâtissière, préemballé": {
+      "environmentScoreMptPerKg": 0.441,
+      "climateKgCo2EqPerKg": 4.39,
+      "landUsePtPerKg": 185.0,
+      "waterDeprivationM3PerKg": 1.45
+    },
+    "ravioli à la viande, sauce tomate, appertisé": {
+      "environmentScoreMptPerKg": 0.421,
+      "climateKgCo2EqPerKg": 4.1,
+      "landUsePtPerKg": 210.0,
+      "waterDeprivationM3PerKg": 1.01
+    },
+    "soupe pour bébé légumes et pomme de terre": {
+      "environmentScoreMptPerKg": 0.0859,
+      "climateKgCo2EqPerKg": 0.797,
+      "landUsePtPerKg": 8.51,
+      "waterDeprivationM3PerKg": 0.274
+    }
+  }
+}

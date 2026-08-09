@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "boisson gazeuse aux fruits (à moins de 10% de jus), non sucrée, avec édulcorants": {
+      "score": 0.0848
+    },
+    "boisson gazeuse aux fruits (à moins de 10% de jus), sucrée": {
+      "score": 0.288
+    },
+    "lasagnes ou canelloni aux légumes et au fromage de chèvre, cuits": {
+      "score": 6.46
+    },
+    "petit pot légumes, avec féculent, dès 4/6 mois": {
+      "score": 0.67
+    },
+    "pizza 4 fromages": {
+      "score": 0.825
+    },
+    "pâté au poivre vert": {
+      "score": 1.7
+    },
+    "ratatouille cuisinée": {
+      "score": 4.22
+    },
+    "risotto, aux fruits de mer": {
+      "score": 3.63
+    },
+    "sardine, crue": {
+      "score": 0.213
+    },
+    "terrine ou mousse de légumes": {
+      "score": 0.84
+    },
+    "veau, épaule, crue": {
+      "score": 2.53
+    }
+  }
+}

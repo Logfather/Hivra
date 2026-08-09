@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "boeuf, jarret, bouilli/cuit à l'eau": {
+      "environmentScoreMptPerKg": 3.45,
+      "climateKgCo2EqPerKg": 37.0,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.08
+    },
+    "camembert, sans précision": {
+      "environmentScoreMptPerKg": 0.501,
+      "climateKgCo2EqPerKg": 5.2,
+      "landUsePtPerKg": 246.0,
+      "waterDeprivationM3PerKg": 0.575
+    },
+    "pain de mie, sans croûte, préemballé": {
+      "environmentScoreMptPerKg": 0.138,
+      "climateKgCo2EqPerKg": 1.14,
+      "landUsePtPerKg": 80.3,
+      "waterDeprivationM3PerKg": 0.271
+    },
+    "poisson blanc à la sauce moutarde": {
+      "environmentScoreMptPerKg": 1.49,
+      "climateKgCo2EqPerKg": 9.35,
+      "landUsePtPerKg": 86.6,
+      "waterDeprivationM3PerKg": 0.631
+    },
+    "rascasse, crue": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "romarin, frais": {
+      "environmentScoreMptPerKg": 0.129,
+      "climateKgCo2EqPerKg": 0.879,
+      "landUsePtPerKg": 35.1,
+      "waterDeprivationM3PerKg": 5.16
+    }
+  }
+}

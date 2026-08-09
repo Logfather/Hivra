@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "batchKey": "generalized-semantic-policy-wave-005",
+  "generatedCandidateCount": 9304,
+  "acceptedCandidateCount": 2347,
+  "rejectedCandidateCount": 2341,
+  "reviewRequiredCandidateCount": 4616,
+  "missingPolicyGapCount": 1051,
+  "materializedEntryCount": 2347,
+  "expandedCatalogEntryCount": 5766,
+  "valid": true
+}

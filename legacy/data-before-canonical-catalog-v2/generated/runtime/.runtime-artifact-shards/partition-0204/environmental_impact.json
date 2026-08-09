@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "biscuit sec au beurre, sablé, galette ou palet": {
+      "environmentScoreMptPerKg": 0.365,
+      "climateKgCo2EqPerKg": 3.38,
+      "landUsePtPerKg": 177.0,
+      "waterDeprivationM3PerKg": 1.01
+    },
+    "bière faiblement alcoolisée (3° alcool)": {
+      "environmentScoreMptPerKg": 0.127,
+      "climateKgCo2EqPerKg": 1.35,
+      "landUsePtPerKg": 17.0,
+      "waterDeprivationM3PerKg": 0.258
+    },
+    "boeuf, rumsteck, grillé": {
+      "environmentScoreMptPerKg": 3.44,
+      "climateKgCo2EqPerKg": 36.6,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "céréales pour petit déjeuner fourrées, fourrage autre que chocolat, enrichies en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "figue, sèche": {
+      "environmentScoreMptPerKg": 0.373,
+      "climateKgCo2EqPerKg": 1.08,
+      "landUsePtPerKg": 438.0,
+      "waterDeprivationM3PerKg": 22.8
+    },
+    "nouilles asiatiques cuites, nature, non salées": {
+      "environmentScoreMptPerKg": 0.182,
+      "climateKgCo2EqPerKg": 1.49,
+      "landUsePtPerKg": 87.6,
+      "waterDeprivationM3PerKg": 0.55
+    },
+    "pastilla au poulet": {
+      "environmentScoreMptPerKg": 0.636,
+      "climateKgCo2EqPerKg": 3.57,
+      "landUsePtPerKg": 232.0,
+      "waterDeprivationM3PerKg": 5.13
+    },
+    "pizza aux lardons, oignons et fromage": {
+      "environmentScoreMptPerKg": 0.535,
+      "climateKgCo2EqPerKg": 3.93,
+      "landUsePtPerKg": 219.0,
+      "waterDeprivationM3PerKg": 1.38
+    },
+    "pop corn ou maïs éclaté, au caramel": {
+      "environmentScoreMptPerKg": 0.225,
+      "climateKgCo2EqPerKg": 1.73,
+      "landUsePtPerKg": 92.0,
+      "waterDeprivationM3PerKg": 1.41
+    },
+    "sandwich baguette, pâté, cornichons": {
+      "environmentScoreMptPerKg": 0.474,
+      "climateKgCo2EqPerKg": 3.46,
+      "landUsePtPerKg": 160.0,
+      "waterDeprivationM3PerKg": 1.26
+    }
+  }
+}

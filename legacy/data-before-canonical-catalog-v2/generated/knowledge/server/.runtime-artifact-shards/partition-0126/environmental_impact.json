@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "blé dur précuit cuisiné, en sachet micro ondable": {
+      "environmentScoreMptPerKg": 0.065,
+      "climateKgCo2EqPerKg": 0.557,
+      "landUsePtPerKg": 49.4,
+      "waterDeprivationM3PerKg": 0.271
+    },
+    "boeuf, plat de côtes, braisé": {
+      "environmentScoreMptPerKg": 3.46,
+      "climateKgCo2EqPerKg": 36.8,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.09
+    },
+    "cola, non sucré, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "madeleine traditionnelle, pur beurre": {
+      "environmentScoreMptPerKg": 0.375,
+      "climateKgCo2EqPerKg": 2.94,
+      "landUsePtPerKg": 181.0,
+      "waterDeprivationM3PerKg": 2.43
+    },
+    "patate douce, crue": {
+      "environmentScoreMptPerKg": 0.0333,
+      "climateKgCo2EqPerKg": 0.334,
+      "landUsePtPerKg": 19.8,
+      "waterDeprivationM3PerKg": 0.14
+    },
+    "tofu, nature": {
+      "environmentScoreMptPerKg": 0.11,
+      "climateKgCo2EqPerKg": 1.0,
+      "landUsePtPerKg": -19.8,
+      "waterDeprivationM3PerKg": 0.258
+    }
+  }
+}

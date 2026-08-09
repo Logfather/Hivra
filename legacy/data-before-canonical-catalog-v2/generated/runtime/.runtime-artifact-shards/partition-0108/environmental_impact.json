@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "canelé": {
+      "environmentScoreMptPerKg": 0.286,
+      "climateKgCo2EqPerKg": 2.16,
+      "landUsePtPerKg": 85.9,
+      "waterDeprivationM3PerKg": 0.832
+    },
+    "canneberge ou cranberry, crue": {
+      "environmentScoreMptPerKg": 0.641,
+      "climateKgCo2EqPerKg": 1.63,
+      "landUsePtPerKg": 118.0,
+      "waterDeprivationM3PerKg": 27.9
+    },
+    "couscous au poulet": {
+      "environmentScoreMptPerKg": 0.395,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 1.32
+    },
+    "fromage de chèvre frais, au lait pasteurisé ou cru (type crottin frais ou bûchette fraîche)": {
+      "environmentScoreMptPerKg": 0.888,
+      "climateKgCo2EqPerKg": 6.54,
+      "landUsePtPerKg": 410.0,
+      "waterDeprivationM3PerKg": 2.3
+    },
+    "haricot mungo germé ou pousse de \"soja\", appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.189,
+      "climateKgCo2EqPerKg": 1.95,
+      "landUsePtPerKg": -203.0,
+      "waterDeprivationM3PerKg": 0.336
+    },
+    "matière grasse végétale (type margarine) à 30 40% mg, légère, demi sel, aux esters de stérol végétal": {
+      "environmentScoreMptPerKg": 0.213,
+      "climateKgCo2EqPerKg": 2.32,
+      "landUsePtPerKg": 73.3,
+      "waterDeprivationM3PerKg": 1.11
+    },
+    "maïs entier, cru": {
+      "environmentScoreMptPerKg": 0.0864,
+      "climateKgCo2EqPerKg": 0.569,
+      "landUsePtPerKg": 52.4,
+      "waterDeprivationM3PerKg": 0.6
+    },
+    "muesli croustillant au chocolat (non enrichi en vitamines et minéraux)": {
+      "environmentScoreMptPerKg": 0.284,
+      "climateKgCo2EqPerKg": 2.55,
+      "landUsePtPerKg": 143.0,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "omelette aux fines herbes": {
+      "environmentScoreMptPerKg": 0.292,
+      "climateKgCo2EqPerKg": 2.0,
+      "landUsePtPerKg": 151.0,
+      "waterDeprivationM3PerKg": 0.804
+    },
+    "paprika": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 9.4,
+      "landUsePtPerKg": 688.0,
+      "waterDeprivationM3PerKg": 4.38
+    },
+    "sandwich baguette, thon, maïs, crudités": {
+      "environmentScoreMptPerKg": 0.358,
+      "climateKgCo2EqPerKg": 2.64,
+      "landUsePtPerKg": 84.2,
+      "waterDeprivationM3PerKg": 0.904
+    },
+    "sauce soja, préemballée": {
+      "environmentScoreMptPerKg": 0.139,
+      "climateKgCo2EqPerKg": 0.995,
+      "landUsePtPerKg": 31.2,
+      "waterDeprivationM3PerKg": 0.297
+    },
+    "sorgho entier, cru": {
+      "environmentScoreMptPerKg": 0.0857,
+      "climateKgCo2EqPerKg": 0.427,
+      "landUsePtPerKg": 44.7,
+      "waterDeprivationM3PerKg": 3.93
+    }
+  }
+}

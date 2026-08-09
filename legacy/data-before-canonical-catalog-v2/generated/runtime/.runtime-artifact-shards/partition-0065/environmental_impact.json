@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "beurre de cacahuète ou pâte d'arachide": {
+      "environmentScoreMptPerKg": 0.558,
+      "climateKgCo2EqPerKg": 4.06,
+      "landUsePtPerKg": 318.0,
+      "waterDeprivationM3PerKg": 9.27
+    },
+    "biscuit pâtissier meringué": {
+      "environmentScoreMptPerKg": 0.252,
+      "climateKgCo2EqPerKg": 2.06,
+      "landUsePtPerKg": 95.8,
+      "waterDeprivationM3PerKg": 1.44
+    },
+    "boisson lactée, lait fermenté ou yaourt à boire, nature, sucré, au l casei": {
+      "environmentScoreMptPerKg": 0.22,
+      "climateKgCo2EqPerKg": 1.98,
+      "landUsePtPerKg": 76.7,
+      "waterDeprivationM3PerKg": 1.71
+    },
+    "cardon, cuit": {
+      "environmentScoreMptPerKg": 0.163,
+      "climateKgCo2EqPerKg": 1.64,
+      "landUsePtPerKg": 45.5,
+      "waterDeprivationM3PerKg": 0.367
+    },
+    "courge hokkaïdo, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.064,
+      "climateKgCo2EqPerKg": 0.612,
+      "landUsePtPerKg": 17.2,
+      "waterDeprivationM3PerKg": 0.629
+    },
+    "galette de céréales au fromage (sans soja), préemballé": {
+      "environmentScoreMptPerKg": 0.246,
+      "climateKgCo2EqPerKg": 2.1,
+      "landUsePtPerKg": 132.0,
+      "waterDeprivationM3PerKg": 0.643
+    },
+    "gratin dauphinois": {
+      "environmentScoreMptPerKg": 0.211,
+      "climateKgCo2EqPerKg": 2.01,
+      "landUsePtPerKg": 74.3,
+      "waterDeprivationM3PerKg": 0.459
+    },
+    "haricot plat, cru": {
+      "environmentScoreMptPerKg": 0.0848,
+      "climateKgCo2EqPerKg": 0.544,
+      "landUsePtPerKg": 97.9,
+      "waterDeprivationM3PerKg": 1.22
+    },
+    "jambon cru, fumé": {
+      "environmentScoreMptPerKg": 1.8,
+      "climateKgCo2EqPerKg": 13.6,
+      "landUsePtPerKg": 626.0,
+      "waterDeprivationM3PerKg": 4.24
+    },
+    "mortadelle pistachée pur porc": {
+      "environmentScoreMptPerKg": 0.909,
+      "climateKgCo2EqPerKg": 6.91,
+      "landUsePtPerKg": 330.0,
+      "waterDeprivationM3PerKg": 2.26
+    },
+    "rillettes d'oie": {
+      "environmentScoreMptPerKg": 0.478,
+      "climateKgCo2EqPerKg": 3.49,
+      "landUsePtPerKg": 153.0,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "truite arc en ciel, élevage, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.69,
+      "climateKgCo2EqPerKg": 7.62,
+      "landUsePtPerKg": 136.0,
+      "waterDeprivationM3PerKg": 44.7
+    }
+  }
+}

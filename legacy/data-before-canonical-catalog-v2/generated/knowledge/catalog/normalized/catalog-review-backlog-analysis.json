@@ -1,0 +1,823 @@
+{
+  "version": 1,
+  "classifiedEntryCount": 349,
+  "potentiallyDeterministicCount": 49,
+  "manualReviewRequiredCount": 278,
+  "conflictingEvidenceCount": 19,
+  "splitRequiredCount": 3,
+  "potentiallyDeterministicShare": 0.14040114613180515,
+  "manualOnlyShare": 0.8595988538681948,
+  "classificationCount": 12,
+  "affectedCategoryCount": 21,
+  "countsByClassification": {
+    "BIO_ATTRIBUTE_VARIANT": 1,
+    "CANNED_FORM_VARIANT": 2,
+    "FROZEN_FORM_VARIANT": 20,
+    "MULTIPLE_DUPLICATE_REASONS": 19,
+    "POSSIBLE_SEMANTIC_DUPLICATE": 23,
+    "PUNCTUATION_VARIANT": 3,
+    "SALES_FORM_VARIANT": 31,
+    "SEMANTIC_CATEGORY_CONFLICT": 201,
+    "SINGULAR_PLURAL_VARIANT": 25,
+    "SPLIT_REQUIRED": 3,
+    "TYPO_VARIANT": 12,
+    "WORD_ORDER_VARIANT": 9
+  },
+  "countsByAutomationAssessment": {
+    "CONFLICTING_EVIDENCE": 19,
+    "MANUAL_REVIEW_REQUIRED": 278,
+    "POTENTIALLY_DETERMINISTIC": 49,
+    "SPLIT_REQUIRED": 3
+  },
+  "classificationAnalyses": [
+    {
+      "classification": "SEMANTIC_CATEGORY_CONFLICT",
+      "entryCount": 201,
+      "shareOfBacklog": 0.5759312320916905,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 201,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "entriesWithUniqueMergeTargetCount": 0,
+      "priority": "MANUAL_ONLY",
+      "recommendation": "REVIEW_SEMANTIC_CATEGORY_CONFLICTS",
+      "rationale": "Classification SEMANTIC_CATEGORY_CONFLICT contains 201 unresolved entries, including 0 potentially deterministic entries, 0 entries with conflicting evidence, and 0 split-required entries.",
+      "exampleSourceIndices": [
+        62,
+        149,
+        151,
+        173,
+        179,
+        202,
+        203,
+        245,
+        257,
+        303
+      ]
+    },
+    {
+      "classification": "SALES_FORM_VARIANT",
+      "entryCount": 31,
+      "shareOfBacklog": 0.08882521489971347,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 31,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "entriesWithUniqueMergeTargetCount": 31,
+      "priority": "LOW",
+      "recommendation": "IMPLEMENT_SALES_FORM_VARIANT_CLASSIFIER",
+      "rationale": "Classification SALES_FORM_VARIANT contains 31 unresolved entries, including 0 potentially deterministic entries, 0 entries with conflicting evidence, and 0 split-required entries.",
+      "exampleSourceIndices": [
+        798,
+        799,
+        836,
+        864,
+        982,
+        1232,
+        1233,
+        1345,
+        1346,
+        1347
+      ]
+    },
+    {
+      "classification": "SINGULAR_PLURAL_VARIANT",
+      "entryCount": 25,
+      "shareOfBacklog": 0.07163323782234957,
+      "potentiallyDeterministicCount": 25,
+      "manualReviewRequiredCount": 0,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "entriesWithUniqueMergeTargetCount": 25,
+      "priority": "HIGH",
+      "recommendation": "IMPLEMENT_SINGULAR_PLURAL_RESOLVER",
+      "rationale": "Classification SINGULAR_PLURAL_VARIANT contains 25 unresolved entries, including 25 potentially deterministic entries, 0 entries with conflicting evidence, and 0 split-required entries.",
+      "exampleSourceIndices": [
+        291,
+        758,
+        779,
+        789,
+        893,
+        926,
+        1018,
+        1168,
+        1182,
+        1246
+      ]
+    },
+    {
+      "classification": "POSSIBLE_SEMANTIC_DUPLICATE",
+      "entryCount": 23,
+      "shareOfBacklog": 0.0659025787965616,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 23,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "entriesWithUniqueMergeTargetCount": 23,
+      "priority": "MANUAL_ONLY",
+      "recommendation": "REVIEW_POSSIBLE_SEMANTIC_DUPLICATES",
+      "rationale": "Classification POSSIBLE_SEMANTIC_DUPLICATE contains 23 unresolved entries, including 0 potentially deterministic entries, 0 entries with conflicting evidence, and 0 split-required entries.",
+      "exampleSourceIndices": [
+        361,
+        411,
+        424,
+        426,
+        439,
+        441,
+        456,
+        458,
+        466,
+        483
+      ]
+    },
+    {
+      "classification": "FROZEN_FORM_VARIANT",
+      "entryCount": 20,
+      "shareOfBacklog": 0.05730659025787966,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 20,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "entriesWithUniqueMergeTargetCount": 20,
+      "priority": "LOW",
+      "recommendation": "PRESERVE_DISTINCT_PRODUCT_FORMS",
+      "rationale": "Classification FROZEN_FORM_VARIANT contains 20 unresolved entries, including 0 potentially deterministic entries, 0 entries with conflicting evidence, and 0 split-required entries.",
+      "exampleSourceIndices": [
+        952,
+        1075,
+        1641,
+        1644,
+        1684,
+        1688,
+        1727,
+        1728,
+        1818,
+        1819
+      ]
+    },
+    {
+      "classification": "MULTIPLE_DUPLICATE_REASONS",
+      "entryCount": 19,
+      "shareOfBacklog": 0.054441260744985676,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 0,
+      "conflictingEvidenceCount": 19,
+      "splitRequiredCount": 0,
+      "entriesWithUniqueMergeTargetCount": 19,
+      "priority": "MANUAL_ONLY",
+      "recommendation": "REVIEW_CONFLICTING_EVIDENCE",
+      "rationale": "Classification MULTIPLE_DUPLICATE_REASONS contains 19 unresolved entries, including 0 potentially deterministic entries, 19 entries with conflicting evidence, and 0 split-required entries.",
+      "exampleSourceIndices": [
+        136,
+        164,
+        313,
+        323,
+        511,
+        702,
+        976,
+        1284,
+        1285,
+        1411
+      ]
+    },
+    {
+      "classification": "TYPO_VARIANT",
+      "entryCount": 12,
+      "shareOfBacklog": 0.034383954154727794,
+      "potentiallyDeterministicCount": 12,
+      "manualReviewRequiredCount": 0,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "entriesWithUniqueMergeTargetCount": 12,
+      "priority": "HIGH",
+      "recommendation": "IMPLEMENT_TYPO_VARIANT_RESOLVER",
+      "rationale": "Classification TYPO_VARIANT contains 12 unresolved entries, including 12 potentially deterministic entries, 0 entries with conflicting evidence, and 0 split-required entries.",
+      "exampleSourceIndices": [
+        315,
+        764,
+        815,
+        1071,
+        1506,
+        1850,
+        2544,
+        2568,
+        2743,
+        2745
+      ]
+    },
+    {
+      "classification": "WORD_ORDER_VARIANT",
+      "entryCount": 9,
+      "shareOfBacklog": 0.025787965616045846,
+      "potentiallyDeterministicCount": 9,
+      "manualReviewRequiredCount": 0,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "entriesWithUniqueMergeTargetCount": 9,
+      "priority": "MEDIUM",
+      "recommendation": "IMPLEMENT_WORD_ORDER_VARIANT_RESOLVER",
+      "rationale": "Classification WORD_ORDER_VARIANT contains 9 unresolved entries, including 9 potentially deterministic entries, 0 entries with conflicting evidence, and 0 split-required entries.",
+      "exampleSourceIndices": [
+        232,
+        320,
+        334,
+        572,
+        1694,
+        1885,
+        1925,
+        2738,
+        3567
+      ]
+    },
+    {
+      "classification": "PUNCTUATION_VARIANT",
+      "entryCount": 3,
+      "shareOfBacklog": 0.008595988538681949,
+      "potentiallyDeterministicCount": 3,
+      "manualReviewRequiredCount": 0,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "entriesWithUniqueMergeTargetCount": 3,
+      "priority": "MEDIUM",
+      "recommendation": "IMPLEMENT_PUNCTUATION_VARIANT_RESOLVER",
+      "rationale": "Classification PUNCTUATION_VARIANT contains 3 unresolved entries, including 3 potentially deterministic entries, 0 entries with conflicting evidence, and 0 split-required entries.",
+      "exampleSourceIndices": [
+        287,
+        599,
+        664
+      ]
+    },
+    {
+      "classification": "SPLIT_REQUIRED",
+      "entryCount": 3,
+      "shareOfBacklog": 0.008595988538681949,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 0,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 3,
+      "entriesWithUniqueMergeTargetCount": 0,
+      "priority": "MANUAL_ONLY",
+      "recommendation": "RESOLVE_SPLIT_ACTIONS",
+      "rationale": "Classification SPLIT_REQUIRED contains 3 unresolved entries, including 0 potentially deterministic entries, 0 entries with conflicting evidence, and 3 split-required entries.",
+      "exampleSourceIndices": [
+        2282,
+        3032,
+        3629
+      ]
+    },
+    {
+      "classification": "CANNED_FORM_VARIANT",
+      "entryCount": 2,
+      "shareOfBacklog": 0.0057306590257879654,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 2,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "entriesWithUniqueMergeTargetCount": 2,
+      "priority": "LOW",
+      "recommendation": "PRESERVE_DISTINCT_PRODUCT_FORMS",
+      "rationale": "Classification CANNED_FORM_VARIANT contains 2 unresolved entries, including 0 potentially deterministic entries, 0 entries with conflicting evidence, and 0 split-required entries.",
+      "exampleSourceIndices": [
+        1237,
+        1239
+      ]
+    },
+    {
+      "classification": "BIO_ATTRIBUTE_VARIANT",
+      "entryCount": 1,
+      "shareOfBacklog": 0.0028653295128939827,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 1,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "entriesWithUniqueMergeTargetCount": 1,
+      "priority": "LOW",
+      "recommendation": "PRESERVE_DISTINCT_PRODUCT_FORMS",
+      "rationale": "Classification BIO_ATTRIBUTE_VARIANT contains 1 unresolved entries, including 0 potentially deterministic entries, 0 entries with conflicting evidence, and 0 split-required entries.",
+      "exampleSourceIndices": [
+        384
+      ]
+    }
+  ],
+  "categoryAnalyses": [
+    {
+      "category": "canned-food",
+      "entryCount": 70,
+      "shareOfBacklog": 0.20057306590257878,
+      "potentiallyDeterministicCount": 10,
+      "manualReviewRequiredCount": 58,
+      "conflictingEvidenceCount": 2,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "CANNED_FORM_VARIANT": 2,
+        "MULTIPLE_DUPLICATE_REASONS": 2,
+        "POSSIBLE_SEMANTIC_DUPLICATE": 6,
+        "SALES_FORM_VARIANT": 26,
+        "SEMANTIC_CATEGORY_CONFLICT": 24,
+        "SINGULAR_PLURAL_VARIANT": 4,
+        "TYPO_VARIANT": 6
+      },
+      "dominantClassification": "SALES_FORM_VARIANT",
+      "exampleSourceIndices": [
+        149,
+        151,
+        313,
+        315,
+        399,
+        439,
+        532,
+        613,
+        619,
+        692
+      ]
+    },
+    {
+      "category": "spices",
+      "entryCount": 51,
+      "shareOfBacklog": 0.14613180515759314,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 51,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "POSSIBLE_SEMANTIC_DUPLICATE": 1,
+        "SEMANTIC_CATEGORY_CONFLICT": 50
+      },
+      "dominantClassification": "SEMANTIC_CATEGORY_CONFLICT",
+      "exampleSourceIndices": [
+        202,
+        203,
+        458,
+        459,
+        594,
+        595,
+        621,
+        622,
+        623,
+        624
+      ]
+    },
+    {
+      "category": "dairy",
+      "entryCount": 43,
+      "shareOfBacklog": 0.12320916905444126,
+      "potentiallyDeterministicCount": 2,
+      "manualReviewRequiredCount": 40,
+      "conflictingEvidenceCount": 1,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "MULTIPLE_DUPLICATE_REASONS": 1,
+        "POSSIBLE_SEMANTIC_DUPLICATE": 2,
+        "SEMANTIC_CATEGORY_CONFLICT": 38,
+        "TYPO_VARIANT": 1,
+        "WORD_ORDER_VARIANT": 1
+      },
+      "dominantClassification": "SEMANTIC_CATEGORY_CONFLICT",
+      "exampleSourceIndices": [
+        62,
+        245,
+        303,
+        511,
+        572,
+        573,
+        617,
+        791,
+        792,
+        826
+      ]
+    },
+    {
+      "category": "ready-meals",
+      "entryCount": 41,
+      "shareOfBacklog": 0.1174785100286533,
+      "potentiallyDeterministicCount": 7,
+      "manualReviewRequiredCount": 28,
+      "conflictingEvidenceCount": 6,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "BIO_ATTRIBUTE_VARIANT": 1,
+        "FROZEN_FORM_VARIANT": 6,
+        "MULTIPLE_DUPLICATE_REASONS": 6,
+        "POSSIBLE_SEMANTIC_DUPLICATE": 3,
+        "SEMANTIC_CATEGORY_CONFLICT": 18,
+        "SINGULAR_PLURAL_VARIANT": 2,
+        "TYPO_VARIANT": 2,
+        "WORD_ORDER_VARIANT": 3
+      },
+      "dominantClassification": "SEMANTIC_CATEGORY_CONFLICT",
+      "exampleSourceIndices": [
+        232,
+        334,
+        384,
+        424,
+        426,
+        466,
+        764,
+        821,
+        976,
+        1218
+      ]
+    },
+    {
+      "category": "bakery",
+      "entryCount": 25,
+      "shareOfBacklog": 0.07163323782234957,
+      "potentiallyDeterministicCount": 1,
+      "manualReviewRequiredCount": 23,
+      "conflictingEvidenceCount": 1,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "MULTIPLE_DUPLICATE_REASONS": 1,
+        "SEMANTIC_CATEGORY_CONFLICT": 23,
+        "SINGULAR_PLURAL_VARIANT": 1
+      },
+      "dominantClassification": "SEMANTIC_CATEGORY_CONFLICT",
+      "exampleSourceIndices": [
+        606,
+        782,
+        999,
+        1137,
+        1168,
+        1234,
+        1235,
+        1270,
+        1329,
+        1516
+      ]
+    },
+    {
+      "category": "vegetables",
+      "entryCount": 25,
+      "shareOfBacklog": 0.07163323782234957,
+      "potentiallyDeterministicCount": 3,
+      "manualReviewRequiredCount": 16,
+      "conflictingEvidenceCount": 3,
+      "splitRequiredCount": 3,
+      "countsByClassification": {
+        "FROZEN_FORM_VARIANT": 6,
+        "MULTIPLE_DUPLICATE_REASONS": 3,
+        "POSSIBLE_SEMANTIC_DUPLICATE": 1,
+        "SEMANTIC_CATEGORY_CONFLICT": 9,
+        "SINGULAR_PLURAL_VARIANT": 2,
+        "SPLIT_REQUIRED": 3,
+        "WORD_ORDER_VARIANT": 1
+      },
+      "dominantClassification": "SEMANTIC_CATEGORY_CONFLICT",
+      "exampleSourceIndices": [
+        164,
+        257,
+        323,
+        468,
+        739,
+        1075,
+        1182,
+        1592,
+        1641,
+        1684
+      ]
+    },
+    {
+      "category": "sauces",
+      "entryCount": 16,
+      "shareOfBacklog": 0.045845272206303724,
+      "potentiallyDeterministicCount": 4,
+      "manualReviewRequiredCount": 12,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "PUNCTUATION_VARIANT": 2,
+        "SEMANTIC_CATEGORY_CONFLICT": 12,
+        "SINGULAR_PLURAL_VARIANT": 2
+      },
+      "dominantClassification": "SEMANTIC_CATEGORY_CONFLICT",
+      "exampleSourceIndices": [
+        596,
+        597,
+        599,
+        601,
+        664,
+        758,
+        771,
+        772,
+        1018,
+        1428
+      ]
+    },
+    {
+      "category": "beverages",
+      "entryCount": 13,
+      "shareOfBacklog": 0.03724928366762178,
+      "potentiallyDeterministicCount": 2,
+      "manualReviewRequiredCount": 11,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "POSSIBLE_SEMANTIC_DUPLICATE": 1,
+        "SALES_FORM_VARIANT": 3,
+        "SEMANTIC_CATEGORY_CONFLICT": 7,
+        "SINGULAR_PLURAL_VARIANT": 1,
+        "WORD_ORDER_VARIANT": 1
+      },
+      "dominantClassification": "SEMANTIC_CATEGORY_CONFLICT",
+      "exampleSourceIndices": [
+        456,
+        803,
+        982,
+        1362,
+        1518,
+        1769,
+        1770,
+        2095,
+        2191,
+        2552
+      ]
+    },
+    {
+      "category": "fish",
+      "entryCount": 13,
+      "shareOfBacklog": 0.03724928366762178,
+      "potentiallyDeterministicCount": 1,
+      "manualReviewRequiredCount": 12,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "FROZEN_FORM_VARIANT": 5,
+        "POSSIBLE_SEMANTIC_DUPLICATE": 1,
+        "SALES_FORM_VARIANT": 2,
+        "SEMANTIC_CATEGORY_CONFLICT": 4,
+        "TYPO_VARIANT": 1
+      },
+      "dominantClassification": "FROZEN_FORM_VARIANT",
+      "exampleSourceIndices": [
+        441,
+        1232,
+        1233,
+        1459,
+        1460,
+        1728,
+        1819,
+        1972,
+        2000,
+        2448
+      ]
+    },
+    {
+      "category": "fruit",
+      "entryCount": 11,
+      "shareOfBacklog": 0.03151862464183381,
+      "potentiallyDeterministicCount": 6,
+      "manualReviewRequiredCount": 4,
+      "conflictingEvidenceCount": 1,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "FROZEN_FORM_VARIANT": 1,
+        "MULTIPLE_DUPLICATE_REASONS": 1,
+        "POSSIBLE_SEMANTIC_DUPLICATE": 3,
+        "SINGULAR_PLURAL_VARIANT": 5,
+        "WORD_ORDER_VARIANT": 1
+      },
+      "dominantClassification": "SINGULAR_PLURAL_VARIANT",
+      "exampleSourceIndices": [
+        411,
+        779,
+        892,
+        1694,
+        1939,
+        2489,
+        2510,
+        2594,
+        2802,
+        2935
+      ]
+    },
+    {
+      "category": "plant-based-alternatives",
+      "entryCount": 10,
+      "shareOfBacklog": 0.02865329512893983,
+      "potentiallyDeterministicCount": 6,
+      "manualReviewRequiredCount": 2,
+      "conflictingEvidenceCount": 2,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "MULTIPLE_DUPLICATE_REASONS": 2,
+        "POSSIBLE_SEMANTIC_DUPLICATE": 2,
+        "PUNCTUATION_VARIANT": 1,
+        "SINGULAR_PLURAL_VARIANT": 3,
+        "TYPO_VARIANT": 2
+      },
+      "dominantClassification": "SINGULAR_PLURAL_VARIANT",
+      "exampleSourceIndices": [
+        287,
+        291,
+        496,
+        568,
+        1071,
+        1506,
+        2321,
+        2322,
+        3120,
+        3121
+      ]
+    },
+    {
+      "category": "confectionery",
+      "entryCount": 9,
+      "shareOfBacklog": 0.025787965616045846,
+      "potentiallyDeterministicCount": 1,
+      "manualReviewRequiredCount": 8,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "SEMANTIC_CATEGORY_CONFLICT": 8,
+        "SINGULAR_PLURAL_VARIANT": 1
+      },
+      "dominantClassification": "SEMANTIC_CATEGORY_CONFLICT",
+      "exampleSourceIndices": [
+        179,
+        547,
+        591,
+        926,
+        1393,
+        2374,
+        2550,
+        3174,
+        3190
+      ]
+    },
+    {
+      "category": "snacks",
+      "entryCount": 8,
+      "shareOfBacklog": 0.022922636103151862,
+      "potentiallyDeterministicCount": 1,
+      "manualReviewRequiredCount": 7,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "FROZEN_FORM_VARIANT": 2,
+        "SEMANTIC_CATEGORY_CONFLICT": 5,
+        "SINGULAR_PLURAL_VARIANT": 1
+      },
+      "dominantClassification": "SEMANTIC_CATEGORY_CONFLICT",
+      "exampleSourceIndices": [
+        173,
+        638,
+        893,
+        952,
+        1661,
+        1727,
+        2381,
+        3599
+      ]
+    },
+    {
+      "category": "pasta",
+      "entryCount": 4,
+      "shareOfBacklog": 0.011461318051575931,
+      "potentiallyDeterministicCount": 2,
+      "manualReviewRequiredCount": 2,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "SEMANTIC_CATEGORY_CONFLICT": 2,
+        "SINGULAR_PLURAL_VARIANT": 2
+      },
+      "dominantClassification": "SEMANTIC_CATEGORY_CONFLICT",
+      "exampleSourceIndices": [
+        2064,
+        2996,
+        3052,
+        3292
+      ]
+    },
+    {
+      "category": "rice",
+      "entryCount": 4,
+      "shareOfBacklog": 0.011461318051575931,
+      "potentiallyDeterministicCount": 2,
+      "manualReviewRequiredCount": 0,
+      "conflictingEvidenceCount": 2,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "MULTIPLE_DUPLICATE_REASONS": 2,
+        "WORD_ORDER_VARIANT": 2
+      },
+      "dominantClassification": "MULTIPLE_DUPLICATE_REASONS",
+      "exampleSourceIndices": [
+        136,
+        320,
+        702,
+        2738
+      ]
+    },
+    {
+      "category": "grains",
+      "entryCount": 1,
+      "shareOfBacklog": 0.0028653295128939827,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 1,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "POSSIBLE_SEMANTIC_DUPLICATE": 1
+      },
+      "dominantClassification": "POSSIBLE_SEMANTIC_DUPLICATE",
+      "exampleSourceIndices": [
+        361
+      ]
+    },
+    {
+      "category": "meat",
+      "entryCount": 1,
+      "shareOfBacklog": 0.0028653295128939827,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 1,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "POSSIBLE_SEMANTIC_DUPLICATE": 1
+      },
+      "dominantClassification": "POSSIBLE_SEMANTIC_DUPLICATE",
+      "exampleSourceIndices": [
+        2500
+      ]
+    },
+    {
+      "category": "oils",
+      "entryCount": 1,
+      "shareOfBacklog": 0.0028653295128939827,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 1,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "SEMANTIC_CATEGORY_CONFLICT": 1
+      },
+      "dominantClassification": "SEMANTIC_CATEGORY_CONFLICT",
+      "exampleSourceIndices": [
+        2347
+      ]
+    },
+    {
+      "category": "plant-based-drinks",
+      "entryCount": 1,
+      "shareOfBacklog": 0.0028653295128939827,
+      "potentiallyDeterministicCount": 1,
+      "manualReviewRequiredCount": 0,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "SINGULAR_PLURAL_VARIANT": 1
+      },
+      "dominantClassification": "SINGULAR_PLURAL_VARIANT",
+      "exampleSourceIndices": [
+        789
+      ]
+    },
+    {
+      "category": "sausage",
+      "entryCount": 1,
+      "shareOfBacklog": 0.0028653295128939827,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 0,
+      "conflictingEvidenceCount": 1,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "MULTIPLE_DUPLICATE_REASONS": 1
+      },
+      "dominantClassification": "MULTIPLE_DUPLICATE_REASONS",
+      "exampleSourceIndices": [
+        1284
+      ]
+    },
+    {
+      "category": "spreads",
+      "entryCount": 1,
+      "shareOfBacklog": 0.0028653295128939827,
+      "potentiallyDeterministicCount": 0,
+      "manualReviewRequiredCount": 1,
+      "conflictingEvidenceCount": 0,
+      "splitRequiredCount": 0,
+      "countsByClassification": {
+        "POSSIBLE_SEMANTIC_DUPLICATE": 1
+      },
+      "dominantClassification": "POSSIBLE_SEMANTIC_DUPLICATE",
+      "exampleSourceIndices": [
+        483
+      ]
+    }
+  ],
+  "prioritizedRecommendations": [
+    "IMPLEMENT_SINGULAR_PLURAL_RESOLVER",
+    "IMPLEMENT_TYPO_VARIANT_RESOLVER",
+    "IMPLEMENT_WORD_ORDER_VARIANT_RESOLVER",
+    "IMPLEMENT_PUNCTUATION_VARIANT_RESOLVER",
+    "IMPLEMENT_SALES_FORM_VARIANT_CLASSIFIER",
+    "PRESERVE_DISTINCT_PRODUCT_FORMS",
+    "REVIEW_SEMANTIC_CATEGORY_CONFLICTS",
+    "REVIEW_POSSIBLE_SEMANTIC_DUPLICATES",
+    "REVIEW_CONFLICTING_EVIDENCE",
+    "RESOLVE_SPLIT_ACTIONS"
+  ],
+  "nextRecommendedImplementation": "IMPLEMENT_SINGULAR_PLURAL_RESOLVER",
+  "valid": true
+}

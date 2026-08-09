@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "batchKey": "semantic-policy-batch-beverages-flavor-profile-001",
+  "generatedCandidateCount": 9304,
+  "acceptedCandidateCount": 20,
+  "rejectedCandidateCount": 825,
+  "reviewRequiredCandidateCount": 8459,
+  "missingPolicyGapCount": 1697,
+  "materializedEntryCount": 20,
+  "expandedCatalogEntryCount": 3439,
+  "valid": true
+}

@@ -1,0 +1,4648 @@
+{
+  "version": 1,
+  "aggregateFile": "/Users/logfather/AndroidStudioProjects/ShopMe/data/generated/knowledge/references/off/off-nutrition-reference-aggregates.json",
+  "runtimeFile": "/Users/logfather/AndroidStudioProjects/ShopMe/data/generated/knowledge/server/nutrition.json",
+  "conflictEntryCount": 408,
+  "evaluatedConflictEntryCount": 408,
+  "countsByClassification": {
+    "LIKELY_ENERGY_UNIT_CONVERSION_MISMATCH": 1,
+    "LIKELY_UNIFORM_SCALE_MISMATCH": 25,
+    "MULTI_NUTRIENT_PROFILE_CONFLICT": 344,
+    "SINGLE_NUTRIENT_CONFLICT": 38
+  },
+  "percentagesByClassification": {
+    "LIKELY_ENERGY_UNIT_CONVERSION_MISMATCH": 0.24509803921568626,
+    "LIKELY_UNIFORM_SCALE_MISMATCH": 6.127450980392156,
+    "MULTI_NUTRIENT_PROFILE_CONFLICT": 84.31372549019608,
+    "SINGLE_NUTRIENT_CONFLICT": 9.313725490196079
+  },
+  "countsBySeverity": {
+    "EXTREME": 49,
+    "HIGH": 170,
+    "LOW": 25,
+    "MEDIUM": 164
+  },
+  "countsByMatchType": {
+    "EXACT": 408
+  },
+  "countsByConflictingNutrientCount": {
+    "1": 39,
+    "2": 40,
+    "3": 66,
+    "4": 69,
+    "5": 71,
+    "6": 63,
+    "7": 44,
+    "8": 16
+  },
+  "classificationsByNutrient": {
+    "CARBOHYDRATES": {
+      "LIKELY_UNIFORM_SCALE_MISMATCH": 22,
+      "MULTI_NUTRIENT_PROFILE_CONFLICT": 279,
+      "SINGLE_NUTRIENT_CONFLICT": 13
+    },
+    "ENERGY": {
+      "LIKELY_ENERGY_UNIT_CONVERSION_MISMATCH": 1,
+      "LIKELY_UNIFORM_SCALE_MISMATCH": 25,
+      "MULTI_NUTRIENT_PROFILE_CONFLICT": 270,
+      "SINGLE_NUTRIENT_CONFLICT": 7
+    },
+    "FAT": {
+      "LIKELY_UNIFORM_SCALE_MISMATCH": 16,
+      "MULTI_NUTRIENT_PROFILE_CONFLICT": 232,
+      "SINGLE_NUTRIENT_CONFLICT": 3
+    },
+    "FIBER": {
+      "LIKELY_UNIFORM_SCALE_MISMATCH": 6,
+      "MULTI_NUTRIENT_PROFILE_CONFLICT": 128,
+      "SINGLE_NUTRIENT_CONFLICT": 3
+    },
+    "PROTEIN": {
+      "LIKELY_UNIFORM_SCALE_MISMATCH": 17,
+      "MULTI_NUTRIENT_PROFILE_CONFLICT": 227,
+      "SINGLE_NUTRIENT_CONFLICT": 3
+    },
+    "SALT": {
+      "LIKELY_UNIFORM_SCALE_MISMATCH": 4,
+      "MULTI_NUTRIENT_PROFILE_CONFLICT": 91,
+      "SINGLE_NUTRIENT_CONFLICT": 3
+    },
+    "SATURATED_FAT": {
+      "LIKELY_UNIFORM_SCALE_MISMATCH": 10,
+      "MULTI_NUTRIENT_PROFILE_CONFLICT": 164,
+      "SINGLE_NUTRIENT_CONFLICT": 1
+    },
+    "SUGARS": {
+      "LIKELY_UNIFORM_SCALE_MISMATCH": 16,
+      "MULTI_NUTRIENT_PROFILE_CONFLICT": 216,
+      "SINGLE_NUTRIENT_CONFLICT": 5
+    }
+  },
+  "uniformScaleMismatchCount": 25,
+  "energyUnitConversionMismatchCount": 1,
+  "singleNutrientConflictCount": 38,
+  "multiNutrientProfileConflictCount": 344,
+  "examples": [
+    {
+      "aggregateCanonicalId": "popcorn salt",
+      "runtimeCanonicalId": "popcorn salt",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 489.0,
+      "maximumToleranceMultiple": 187.565,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "energy cherry limeade",
+      "runtimeCanonicalId": "energy cherry limeade",
+      "matchType": "EXACT",
+      "classification": "SINGLE_NUTRIENT_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 1,
+      "conflictingNutrients": [
+        "CARBOHYDRATES"
+      ],
+      "maximumAbsoluteDifference": 83.122333333333,
+      "maximumToleranceMultiple": 166.244666666666,
+      "rationale": "Only CARBOHYDRATES exceeds its configured comparison tolerance."
+    },
+    {
+      "aggregateCanonicalId": "protein water green apple",
+      "runtimeCanonicalId": "protein water green apple",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 331.6,
+      "maximumToleranceMultiple": 151.44,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein milk tea",
+      "runtimeCanonicalId": "protein milk tea",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 336.0,
+      "maximumToleranceMultiple": 146.99999980926515,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "oreo zero sugar",
+      "runtimeCanonicalId": "oreo zero sugar",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 397.52,
+      "maximumToleranceMultiple": 141.536,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "breakfast essentials chocolate",
+      "runtimeCanonicalId": "breakfast essentials chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 90.327004219409,
+      "maximumToleranceMultiple": 127.215189873418,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein vanilla bean",
+      "runtimeCanonicalId": "protein vanilla bean",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 310.5,
+      "maximumToleranceMultiple": 123.26,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "kiwi strawberry",
+      "runtimeCanonicalId": "kiwi strawberry",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 291.666666666663,
+      "maximumToleranceMultiple": 110.71692535107199,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "roasted corn spicy",
+      "runtimeCanonicalId": "roasted corn spicy",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 194.0,
+      "maximumToleranceMultiple": 108.80000000000001,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "roasted salted sesame sticks",
+      "runtimeCanonicalId": "roasted salted sesame sticks",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "EXTREME",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 541.98,
+      "maximumToleranceMultiple": 108.396,
+      "inferredScaleFactor": 69.31608133086876,
+      "scaleFactorRelativeSpread": 0.09494056235417342,
+      "rationale": "At least 5 conflicting nutrients share an approximately uniform scale factor of 69.31608133086876. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "plant based protein powder vanilla",
+      "runtimeCanonicalId": "plant based protein powder vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 282.0,
+      "maximumToleranceMultiple": 107.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "active whey protein vanilla",
+      "runtimeCanonicalId": "active whey protein vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 251.0,
+      "maximumToleranceMultiple": 104.60000076293946,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "creme wafers chocolate",
+      "runtimeCanonicalId": "creme wafers chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 517.4648387096801,
+      "maximumToleranceMultiple": 103.49296774193601,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein water raspberry",
+      "runtimeCanonicalId": "protein water raspberry",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "EXTREME",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 223.43785000000003,
+      "maximumToleranceMultiple": 102.8,
+      "inferredScaleFactor": 0.3176175265015941,
+      "scaleFactorRelativeSpread": 0.09708524243409697,
+      "rationale": "At least 3 conflicting nutrients share an approximately uniform scale factor of 0.3176175265015941. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "oat milk chocolate",
+      "runtimeCanonicalId": "oat milk chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 463.0,
+      "maximumToleranceMultiple": 92.6,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "caesar vegan",
+      "runtimeCanonicalId": "caesar vegan",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 100.0,
+      "maximumToleranceMultiple": 90.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "quinoa premium whole grain",
+      "runtimeCanonicalId": "quinoa premium whole grain",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 241.70212765957,
+      "maximumToleranceMultiple": 89.75489361702199,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "curry beef",
+      "runtimeCanonicalId": "curry beef",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 374.0,
+      "maximumToleranceMultiple": 88.6,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "oatmeal crumble strawberry",
+      "runtimeCanonicalId": "oatmeal crumble strawberry",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 222.5,
+      "maximumToleranceMultiple": 86.0,
+      "inferredScaleFactor": 0.38620689655172413,
+      "scaleFactorRelativeSpread": 0.06021885999305472,
+      "rationale": "At least 5 conflicting nutrients share an approximately uniform scale factor of 0.38620689655172413. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "protein puffs nacho cheese",
+      "runtimeCanonicalId": "protein puffs nacho cheese",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 159.17741935484003,
+      "maximumToleranceMultiple": 85.30967741935501,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "dream white chocolate",
+      "runtimeCanonicalId": "dream white chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 41.7,
+      "maximumToleranceMultiple": 83.4,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "non dairy coffee creamer",
+      "runtimeCanonicalId": "non dairy coffee creamer",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT"
+      ],
+      "maximumAbsoluteDifference": 41.6666666666665,
+      "maximumToleranceMultiple": 83.333333333333,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "level 1 bar",
+      "runtimeCanonicalId": "level 1 bar",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "ENERGY",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 411.4126984126984,
+      "maximumToleranceMultiple": 82.28253968253968,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "dark chocolate 72% cacao",
+      "runtimeCanonicalId": "dark chocolate 72% cacao",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 407.0,
+      "maximumToleranceMultiple": 81.4,
+      "inferredScaleFactor": 0.3246753246753247,
+      "scaleFactorRelativeSpread": 0.2201332445370631,
+      "rationale": "At least 5 conflicting nutrients share an approximately uniform scale factor of 0.3246753246753247. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "trail mix power mix",
+      "runtimeCanonicalId": "trail mix power mix",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "EXTREME",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 383.0,
+      "maximumToleranceMultiple": 76.6,
+      "inferredScaleFactor": 0.2797202797202797,
+      "scaleFactorRelativeSpread": 0.1823215567939546,
+      "rationale": "At least 7 conflicting nutrients share an approximately uniform scale factor of 0.2797202797202797. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "sport lemon lime",
+      "runtimeCanonicalId": "sport lemon lime",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 272.72727272727,
+      "maximumToleranceMultiple": 72.727272727272,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "peanut butter cups dark chocolate",
+      "runtimeCanonicalId": "peanut butter cups dark chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 61.0,
+      "maximumToleranceMultiple": 67.35,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "dark chocolate pretzel",
+      "runtimeCanonicalId": "dark chocolate pretzel",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 265.160344827585,
+      "maximumToleranceMultiple": 67.194367816092,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "roasted seaweed sea salt",
+      "runtimeCanonicalId": "roasted seaweed sea salt",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 33.333333333333,
+      "maximumToleranceMultiple": 66.666666666666,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "organic fruit jerky banana & dark chocolate",
+      "runtimeCanonicalId": "organic fruit jerky banana & dark chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 158.0,
+      "maximumToleranceMultiple": 65.80000000000001,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "peppermint bark chocolate",
+      "runtimeCanonicalId": "peppermint bark chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 32.86,
+      "maximumToleranceMultiple": 65.72,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "breakfast biscuits blueberry",
+      "runtimeCanonicalId": "breakfast biscuits blueberry",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 46.80851063829999,
+      "maximumToleranceMultiple": 64.17021276595801,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "honey mustard rub",
+      "runtimeCanonicalId": "honey mustard rub",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 42.0,
+      "maximumToleranceMultiple": 64.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "peanut butter chocolate",
+      "runtimeCanonicalId": "peanut butter chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 208.0,
+      "maximumToleranceMultiple": 64.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "minute maid lemonade",
+      "runtimeCanonicalId": "minute maid lemonade",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "EXTREME",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 116.7,
+      "maximumToleranceMultiple": 63.84,
+      "inferredScaleFactor": 0.19230769230769232,
+      "scaleFactorRelativeSpread": 0.14358072847752396,
+      "rationale": "At least 3 conflicting nutrients share an approximately uniform scale factor of 0.19230769230769232. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "poha thick flattened rice",
+      "runtimeCanonicalId": "poha thick flattened rice",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 161.0,
+      "maximumToleranceMultiple": 62.2,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "kombucha ginger",
+      "runtimeCanonicalId": "kombucha ginger",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "EXTREME",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 132.445,
+      "maximumToleranceMultiple": 61.059006342494804,
+      "inferredScaleFactor": 8.358055555555556,
+      "scaleFactorRelativeSpread": 0.07649287568512372,
+      "rationale": "At least 3 conflicting nutrients share an approximately uniform scale factor of 8.358055555555556. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "berry bites",
+      "runtimeCanonicalId": "berry bites",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 260.857142857143,
+      "maximumToleranceMultiple": 60.28571428571399,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "snack mix paprika",
+      "runtimeCanonicalId": "snack mix paprika",
+      "matchType": "EXACT",
+      "classification": "SINGLE_NUTRIENT_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 1,
+      "conflictingNutrients": [
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 29.9999999999997,
+      "maximumToleranceMultiple": 59.9999999999994,
+      "rationale": "Only SUGARS exceeds its configured comparison tolerance."
+    },
+    {
+      "aggregateCanonicalId": "minis peanut butter chocolate chip",
+      "runtimeCanonicalId": "minis peanut butter chocolate chip",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 42.0,
+      "maximumToleranceMultiple": 56.067272727272,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "almond flour crackers fine ground sea salt",
+      "runtimeCanonicalId": "almond flour crackers fine ground sea salt",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 42.5,
+      "maximumToleranceMultiple": 55.53,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "coffee creamer french vanilla",
+      "runtimeCanonicalId": "coffee creamer french vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 160.5,
+      "maximumToleranceMultiple": 54.933333333333,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "plant protein vanilla flavour",
+      "runtimeCanonicalId": "plant protein vanilla flavour",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 27.200000000000003,
+      "maximumToleranceMultiple": 54.400000000000006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "ginger crystallized",
+      "runtimeCanonicalId": "ginger crystallized",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 266.5,
+      "maximumToleranceMultiple": 53.3,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "rice crackers sesame",
+      "runtimeCanonicalId": "rice crackers sesame",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "EXTREME",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 123.19047619047495,
+      "maximumToleranceMultiple": 53.14285714285799,
+      "inferredScaleFactor": 0.6741212121212108,
+      "scaleFactorRelativeSpread": 0.14303091601572654,
+      "rationale": "At least 4 conflicting nutrients share an approximately uniform scale factor of 0.6741212121212108. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "barbecue flavored",
+      "runtimeCanonicalId": "barbecue flavored",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 26.342857142856996,
+      "maximumToleranceMultiple": 52.68571428571399,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "granola pumpkin spice",
+      "runtimeCanonicalId": "granola pumpkin spice",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "EXTREME",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 249.0,
+      "maximumToleranceMultiple": 52.07999954223632,
+      "inferredScaleFactor": 0.4810173395076115,
+      "scaleFactorRelativeSpread": 0.10877242656358091,
+      "rationale": "At least 4 conflicting nutrients share an approximately uniform scale factor of 0.4810173395076115. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "beef jerky hot",
+      "runtimeCanonicalId": "beef jerky hot",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 109.42860000000002,
+      "maximumToleranceMultiple": 50.82860000000001,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "coconut flakes sweetened",
+      "runtimeCanonicalId": "coconut flakes sweetened",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "EXTREME",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 25.300000000000004,
+      "maximumToleranceMultiple": 50.60000000000001,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "pita chips sea salt",
+      "runtimeCanonicalId": "pita chips sea salt",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 250.0,
+      "maximumToleranceMultiple": 50.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "original non dairy coffee creamer",
+      "runtimeCanonicalId": "original non dairy coffee creamer",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "FAT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 24.5,
+      "maximumToleranceMultiple": 49.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "pea protein chocolate",
+      "runtimeCanonicalId": "pea protein chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 90.0,
+      "maximumToleranceMultiple": 48.400000000000006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "pork center cut loin filet mesquite bbq",
+      "runtimeCanonicalId": "pork center cut loin filet mesquite bbq",
+      "matchType": "EXACT",
+      "classification": "SINGLE_NUTRIENT_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 1,
+      "conflictingNutrients": [
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 24.142,
+      "maximumToleranceMultiple": 48.284,
+      "rationale": "Only SALT exceeds its configured comparison tolerance."
+    },
+    {
+      "aggregateCanonicalId": "whey chocolate",
+      "runtimeCanonicalId": "whey chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 23.965,
+      "maximumToleranceMultiple": 47.93,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "organic plant protein chocolate",
+      "runtimeCanonicalId": "organic plant protein chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 131.0,
+      "maximumToleranceMultiple": 47.7,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein bar coconut",
+      "runtimeCanonicalId": "protein bar coconut",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 87.0,
+      "maximumToleranceMultiple": 46.799999904632564,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "jerky original",
+      "runtimeCanonicalId": "jerky original",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 30.0,
+      "maximumToleranceMultiple": 46.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "dry roasted peanuts unsalted",
+      "runtimeCanonicalId": "dry roasted peanuts unsalted",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 22.85714285714285,
+      "maximumToleranceMultiple": 45.7142857142857,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "mozzarella style slices",
+      "runtimeCanonicalId": "mozzarella style slices",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT"
+      ],
+      "maximumAbsoluteDifference": 228.0,
+      "maximumToleranceMultiple": 45.6,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "dairy free almond creamer vanilla",
+      "runtimeCanonicalId": "dairy free almond creamer vanilla",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 141.66666666667,
+      "maximumToleranceMultiple": 45.333333333334,
+      "inferredScaleFactor": 6.66666666666675,
+      "scaleFactorRelativeSpread": 7.549516567451036E-15,
+      "rationale": "At least 4 conflicting nutrients share an approximately uniform scale factor of 6.66666666666675. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "gluten free",
+      "runtimeCanonicalId": "gluten free",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 22.5266666666667,
+      "maximumToleranceMultiple": 45.0533333333334,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "dressing marinade dip",
+      "runtimeCanonicalId": "dressing marinade dip",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 148.0,
+      "maximumToleranceMultiple": 44.69999999999999,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "sliced bread white",
+      "runtimeCanonicalId": "sliced bread white",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 105.0,
+      "maximumToleranceMultiple": 44.2,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "weight gainer ultimate chocolate",
+      "runtimeCanonicalId": "weight gainer ultimate chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 22.0,
+      "maximumToleranceMultiple": 44.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "fruit flavored snacks assorted fruit",
+      "runtimeCanonicalId": "fruit flavored snacks assorted fruit",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 24.96325594714,
+      "maximumToleranceMultiple": 43.348017621146,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "beef jerky peppered",
+      "runtimeCanonicalId": "beef jerky peppered",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 29.0,
+      "maximumToleranceMultiple": 43.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "hydration lemonade",
+      "runtimeCanonicalId": "hydration lemonade",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 20.772142857142995,
+      "maximumToleranceMultiple": 41.54428571428599,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "mochi ice cream green tea",
+      "runtimeCanonicalId": "mochi ice cream green tea",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 114.52142857143,
+      "maximumToleranceMultiple": 41.09142857142899,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "100% juice apple",
+      "runtimeCanonicalId": "100% juice apple",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 81.19999999999999,
+      "maximumToleranceMultiple": 40.86666666666599,
+      "inferredScaleFactor": 2.7514285714284923,
+      "scaleFactorRelativeSpread": 0.004998997102289218,
+      "rationale": "At least 3 conflicting nutrients share an approximately uniform scale factor of 2.7514285714284923. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "disorder red russian",
+      "runtimeCanonicalId": "disorder red russian",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 77.39999999999999,
+      "maximumToleranceMultiple": 40.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "nut bar hazelnut",
+      "runtimeCanonicalId": "nut bar hazelnut",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "FAT",
+        "FIBER",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 19.66666666666667,
+      "maximumToleranceMultiple": 39.33333333333334,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "omega 3 mix",
+      "runtimeCanonicalId": "omega 3 mix",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 191.5,
+      "maximumToleranceMultiple": 38.3,
+      "inferredScaleFactor": 0.6622059736497279,
+      "scaleFactorRelativeSpread": 0.12384688970108944,
+      "rationale": "At least 7 conflicting nutrients share an approximately uniform scale factor of 0.6622059736497279. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "pinto beans dry",
+      "runtimeCanonicalId": "pinto beans dry",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 119.0,
+      "maximumToleranceMultiple": 38.199999999999996,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "chips sour cream & onion",
+      "runtimeCanonicalId": "chips sour cream & onion",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 103.0,
+      "maximumToleranceMultiple": 36.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "pitted dates deglet noor",
+      "runtimeCanonicalId": "pitted dates deglet noor",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 17.828571428571003,
+      "maximumToleranceMultiple": 35.657142857142006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "extreme sour hard candy",
+      "runtimeCanonicalId": "extreme sour hard candy",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 94.0,
+      "maximumToleranceMultiple": 35.30000000000001,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whey protein fruity cereal",
+      "runtimeCanonicalId": "whey protein fruity cereal",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 26.5,
+      "maximumToleranceMultiple": 33.40000000000002,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "lmnt electrolyte drink mix",
+      "runtimeCanonicalId": "lmnt electrolyte drink mix",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY"
+      ],
+      "maximumAbsoluteDifference": 83.33333333333701,
+      "maximumToleranceMultiple": 33.33333333333201,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "butterflied pork shoulder lemon and herb",
+      "runtimeCanonicalId": "butterflied pork shoulder lemon and herb",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 152.0,
+      "maximumToleranceMultiple": 33.2,
+      "inferredScaleFactor": 0.5,
+      "scaleFactorRelativeSpread": 0.004514680354526834,
+      "rationale": "At least 8 conflicting nutrients share an approximately uniform scale factor of 0.5. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "beef tender bites teriyaki",
+      "runtimeCanonicalId": "beef tender bites teriyaki",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 120.5,
+      "maximumToleranceMultiple": 32.3,
+      "inferredScaleFactor": 1.7129186602870814,
+      "scaleFactorRelativeSpread": 0.06576281761784526,
+      "rationale": "At least 5 conflicting nutrients share an approximately uniform scale factor of 1.7129186602870814. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "chorizo mild",
+      "runtimeCanonicalId": "chorizo mild",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 156.8,
+      "maximumToleranceMultiple": 31.360000000000003,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "peanuts raw spanish",
+      "runtimeCanonicalId": "peanuts raw spanish",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 84.57140000000004,
+      "maximumToleranceMultiple": 31.24000000000001,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "freeze dried pineapple",
+      "runtimeCanonicalId": "freeze dried pineapple",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 19.928571428569967,
+      "maximumToleranceMultiple": 30.91999572753906,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "beef jerky teriyaki",
+      "runtimeCanonicalId": "beef jerky teriyaki",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 103.0,
+      "maximumToleranceMultiple": 30.871428571427998,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "goji berries organic",
+      "runtimeCanonicalId": "goji berries organic",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 14.700000000000003,
+      "maximumToleranceMultiple": 29.400000000000006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "hydration raspberry",
+      "runtimeCanonicalId": "hydration raspberry",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 127.0,
+      "maximumToleranceMultiple": 29.1,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "grass fed beef jerky",
+      "runtimeCanonicalId": "grass fed beef jerky",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 36.35714285714499,
+      "maximumToleranceMultiple": 28.622857142856997,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "carne seca beef jerky",
+      "runtimeCanonicalId": "carne seca beef jerky",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 14.285,
+      "maximumToleranceMultiple": 28.57,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "omega 3 trail mix",
+      "runtimeCanonicalId": "omega 3 trail mix",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 85.057471264365,
+      "maximumToleranceMultiple": 28.458620689656,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein bar chocolate fudge",
+      "runtimeCanonicalId": "protein bar chocolate fudge",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 36.0,
+      "maximumToleranceMultiple": 28.200000000000003,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "complete protein chocolate",
+      "runtimeCanonicalId": "complete protein chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 55.0,
+      "maximumToleranceMultiple": 27.400000000000006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "gouda lettost 16%",
+      "runtimeCanonicalId": "gouda lettost 16%",
+      "matchType": "EXACT",
+      "classification": "SINGLE_NUTRIENT_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 1,
+      "conflictingNutrients": [
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 13.67,
+      "maximumToleranceMultiple": 27.34,
+      "rationale": "Only SALT exceeds its configured comparison tolerance."
+    },
+    {
+      "aggregateCanonicalId": "californian walnuts natural",
+      "runtimeCanonicalId": "californian walnuts natural",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 98.0,
+      "maximumToleranceMultiple": 27.19999999999999,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "hummus olive tapenade",
+      "runtimeCanonicalId": "hummus olive tapenade",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 134.0,
+      "maximumToleranceMultiple": 26.8,
+      "inferredScaleFactor": 0.28000000000000363,
+      "scaleFactorRelativeSpread": 0.1195592350576523,
+      "rationale": "At least 4 conflicting nutrients share an approximately uniform scale factor of 0.28000000000000363. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "popcorn butter",
+      "runtimeCanonicalId": "popcorn butter",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 51.0,
+      "maximumToleranceMultiple": 26.799999999999997,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "ginger chews original",
+      "runtimeCanonicalId": "ginger chews original",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 66.66666666666703,
+      "maximumToleranceMultiple": 26.6666666666666,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "thick cut uncured bacon",
+      "runtimeCanonicalId": "thick cut uncured bacon",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 13.33,
+      "maximumToleranceMultiple": 26.66,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "triple creme soft ripened cheese",
+      "runtimeCanonicalId": "triple creme soft ripened cheese",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 132.5,
+      "maximumToleranceMultiple": 26.5,
+      "inferredScaleFactor": 0.6573145917738148,
+      "scaleFactorRelativeSpread": 0.06025981577355192,
+      "rationale": "At least 4 conflicting nutrients share an approximately uniform scale factor of 0.6573145917738148. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "pumpkin seeds dill pickle",
+      "runtimeCanonicalId": "pumpkin seeds dill pickle",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 35.714285714289986,
+      "maximumToleranceMultiple": 26.3392857142858,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "buffalo style chicken sliders",
+      "runtimeCanonicalId": "buffalo style chicken sliders",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 130.0,
+      "maximumToleranceMultiple": 26.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "nutritional shake vanilla",
+      "runtimeCanonicalId": "nutritional shake vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 45.045132743363,
+      "maximumToleranceMultiple": 25.858584070796,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "plant protein chocolate",
+      "runtimeCanonicalId": "plant protein chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 23.0,
+      "maximumToleranceMultiple": 25.799999999999997,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "pizza pasta sauce",
+      "runtimeCanonicalId": "pizza pasta sauce",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 30.0,
+      "maximumToleranceMultiple": 25.65,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "chicken tenders sweet chilli",
+      "runtimeCanonicalId": "chicken tenders sweet chilli",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 66.0,
+      "maximumToleranceMultiple": 25.600000190734796,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "matrix sustained release protein blend",
+      "runtimeCanonicalId": "matrix sustained release protein blend",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 22.0,
+      "maximumToleranceMultiple": 25.60000000000001,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "smart bars strawberry beet",
+      "runtimeCanonicalId": "smart bars strawberry beet",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "FAT",
+        "FIBER",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 12.5,
+      "maximumToleranceMultiple": 25.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "meal shake chocolate",
+      "runtimeCanonicalId": "meal shake chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 29.0,
+      "maximumToleranceMultiple": 24.799999999999997,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "plant based protein",
+      "runtimeCanonicalId": "plant based protein",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 21.600566572239984,
+      "maximumToleranceMultiple": 23.755114888259016,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein bar chocolate",
+      "runtimeCanonicalId": "protein bar chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 118.0,
+      "maximumToleranceMultiple": 23.6,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "matcha green tea sweet matcha",
+      "runtimeCanonicalId": "matcha green tea sweet matcha",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 25.0,
+      "maximumToleranceMultiple": 23.400000000000006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "sports drink zero",
+      "runtimeCanonicalId": "sports drink zero",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 47.4134268111323,
+      "maximumToleranceMultiple": 23.38277777777778,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "hydration blue raspberry",
+      "runtimeCanonicalId": "hydration blue raspberry",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 31.849999999999994,
+      "maximumToleranceMultiple": 22.93,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "chin chin",
+      "runtimeCanonicalId": "chin chin",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 113.09523809524,
+      "maximumToleranceMultiple": 22.619047619048,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "collagen coffee mocha",
+      "runtimeCanonicalId": "collagen coffee mocha",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 55.29999999999998,
+      "maximumToleranceMultiple": 22.329999809265136,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein bar dark chocolate",
+      "runtimeCanonicalId": "protein bar dark chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 77.0,
+      "maximumToleranceMultiple": 22.200000000000003,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "biltong chilli",
+      "runtimeCanonicalId": "biltong chilli",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 110.0,
+      "maximumToleranceMultiple": 22.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein bar peanut",
+      "runtimeCanonicalId": "protein bar peanut",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 57.0,
+      "maximumToleranceMultiple": 22.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "theatre style microwave popcorn",
+      "runtimeCanonicalId": "theatre style microwave popcorn",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 67.0,
+      "maximumToleranceMultiple": 22.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whey protein cookies n creme",
+      "runtimeCanonicalId": "whey protein cookies n creme",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 109.0,
+      "maximumToleranceMultiple": 21.8,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "english muffins original",
+      "runtimeCanonicalId": "english muffins original",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 80.466765625,
+      "maximumToleranceMultiple": 21.575000000000003,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "sardines in water",
+      "runtimeCanonicalId": "sardines in water",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 106.617647058824,
+      "maximumToleranceMultiple": 21.323529411764802,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "american potato chips",
+      "runtimeCanonicalId": "american potato chips",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 28.0,
+      "maximumToleranceMultiple": 21.28,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "potato chips barbecue",
+      "runtimeCanonicalId": "potato chips barbecue",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 10.46,
+      "maximumToleranceMultiple": 20.92,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "overload protein bar cookie commotion",
+      "runtimeCanonicalId": "overload protein bar cookie commotion",
+      "matchType": "EXACT",
+      "classification": "SINGLE_NUTRIENT_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 1,
+      "conflictingNutrients": [
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 10.379999999999999,
+      "maximumToleranceMultiple": 20.759999999999998,
+      "rationale": "Only SUGARS exceeds its configured comparison tolerance."
+    },
+    {
+      "aggregateCanonicalId": "clear protein blue raspberry",
+      "runtimeCanonicalId": "clear protein blue raspberry",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "ENERGY",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 42.0,
+      "maximumToleranceMultiple": 20.600000000000023,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "organic whey protein vanilla",
+      "runtimeCanonicalId": "organic whey protein vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 10.223076923077002,
+      "maximumToleranceMultiple": 20.446153846154004,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "almond butter crunchy",
+      "runtimeCanonicalId": "almond butter crunchy",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 38.33333333333508,
+      "maximumToleranceMultiple": 20.416666666667,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "impact whey protein salted caramel",
+      "runtimeCanonicalId": "impact whey protein salted caramel",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 31.0,
+      "maximumToleranceMultiple": 20.400000000000006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "thai style salad with chicken",
+      "runtimeCanonicalId": "thai style salad with chicken",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 100.2,
+      "maximumToleranceMultiple": 20.04,
+      "inferredScaleFactor": 3.398492462311558,
+      "scaleFactorRelativeSpread": 0.033152457662801685,
+      "rationale": "At least 6 conflicting nutrients share an approximately uniform scale factor of 3.398492462311558. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "yellowfin chunk light tuna in water",
+      "runtimeCanonicalId": "yellowfin chunk light tuna in water",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FIBER",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 10.0,
+      "maximumToleranceMultiple": 20.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "freeze dried strawberries",
+      "runtimeCanonicalId": "freeze dried strawberries",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 18.0,
+      "maximumToleranceMultiple": 19.799999999999997,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "popcorn movie theater butter",
+      "runtimeCanonicalId": "popcorn movie theater butter",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 15.714285714289986,
+      "maximumToleranceMultiple": 19.703030303029998,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "almonds cocoa",
+      "runtimeCanonicalId": "almonds cocoa",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 13.095271428569959,
+      "maximumToleranceMultiple": 19.5237428571428,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "pink & white marshmallow",
+      "runtimeCanonicalId": "pink & white marshmallow",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 13.0,
+      "maximumToleranceMultiple": 19.200000000000003,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein bar chocolate peanut butter",
+      "runtimeCanonicalId": "protein bar chocolate peanut butter",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 63.0,
+      "maximumToleranceMultiple": 19.200000000000003,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "rocky road caramel",
+      "runtimeCanonicalId": "rocky road caramel",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 96.0,
+      "maximumToleranceMultiple": 19.2,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "dubai chocolate pistachio kunafa",
+      "runtimeCanonicalId": "dubai chocolate pistachio kunafa",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 35.5,
+      "maximumToleranceMultiple": 19.1,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "liquid brekkie vanilla",
+      "runtimeCanonicalId": "liquid brekkie vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 9.5,
+      "maximumToleranceMultiple": 19.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "pumpkin seeds raw",
+      "runtimeCanonicalId": "pumpkin seeds raw",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 26.0,
+      "maximumToleranceMultiple": 19.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "disorder ultimate emerald dream",
+      "runtimeCanonicalId": "disorder ultimate emerald dream",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER"
+      ],
+      "maximumAbsoluteDifference": 17.299999999999997,
+      "maximumToleranceMultiple": 18.48,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "free range boneless butterflied chicken pitmaster inspired smoky bbq flavour",
+      "runtimeCanonicalId": "free range boneless butterflied chicken pitmaster inspired smoky bbq flavour",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 80.0,
+      "maximumToleranceMultiple": 18.4,
+      "inferredScaleFactor": 1.501366120218579,
+      "scaleFactorRelativeSpread": 0.002982871936117703,
+      "rationale": "At least 4 conflicting nutrients share an approximately uniform scale factor of 1.501366120218579. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "free range boneless butterflied chicken smokey bbq",
+      "runtimeCanonicalId": "free range boneless butterflied chicken smokey bbq",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 80.0,
+      "maximumToleranceMultiple": 18.4,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "complete protein vanilla",
+      "runtimeCanonicalId": "complete protein vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 37.0,
+      "maximumToleranceMultiple": 18.233333333332993,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein key lime pie",
+      "runtimeCanonicalId": "protein key lime pie",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FIBER",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 9.091212121212001,
+      "maximumToleranceMultiple": 18.182424242424002,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "boneless skinless chicken thighs raw",
+      "runtimeCanonicalId": "boneless skinless chicken thighs raw",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 76.0,
+      "maximumToleranceMultiple": 17.89,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whey protein chocolate ice cream",
+      "runtimeCanonicalId": "whey protein chocolate ice cream",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 17.0,
+      "maximumToleranceMultiple": 17.866666666665992,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "freeze dried beets",
+      "runtimeCanonicalId": "freeze dried beets",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 8.9285714285714,
+      "maximumToleranceMultiple": 17.8571428571428,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "disorder orange firm",
+      "runtimeCanonicalId": "disorder orange firm",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 60.9,
+      "maximumToleranceMultiple": 17.78,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "soft cheese",
+      "runtimeCanonicalId": "soft cheese",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 12.0,
+      "maximumToleranceMultiple": 17.58,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "hummus original",
+      "runtimeCanonicalId": "hummus original",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 87.31578947368499,
+      "maximumToleranceMultiple": 17.463157894736998,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "drinkable konjac jelly double berry flavor",
+      "runtimeCanonicalId": "drinkable konjac jelly double berry flavor",
+      "matchType": "EXACT",
+      "classification": "SINGLE_NUTRIENT_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 1,
+      "conflictingNutrients": [
+        "CARBOHYDRATES"
+      ],
+      "maximumAbsoluteDifference": 8.7,
+      "maximumToleranceMultiple": 17.4,
+      "rationale": "Only CARBOHYDRATES exceeds its configured comparison tolerance."
+    },
+    {
+      "aggregateCanonicalId": "peanut butter powder original",
+      "runtimeCanonicalId": "peanut butter powder original",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 87.0,
+      "maximumToleranceMultiple": 17.4,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "built bar peanut butter",
+      "runtimeCanonicalId": "built bar peanut butter",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 17.24137931035,
+      "maximumToleranceMultiple": 17.2413793103452,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "freeze dried apple slices",
+      "runtimeCanonicalId": "freeze dried apple slices",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 11.058823529410006,
+      "maximumToleranceMultiple": 17.221176470588006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "almond butter creamy",
+      "runtimeCanonicalId": "almond butter creamy",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 72.79166666667004,
+      "maximumToleranceMultiple": 17.093333333333998,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "jack o' lantern cookie kit",
+      "runtimeCanonicalId": "jack o' lantern cookie kit",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 23.0,
+      "maximumToleranceMultiple": 17.019999999999996,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "smart bars apple kale",
+      "runtimeCanonicalId": "smart bars apple kale",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 18.0,
+      "maximumToleranceMultiple": 16.666666666666003,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "collagen peptides pumpkin spice",
+      "runtimeCanonicalId": "collagen peptides pumpkin spice",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 36.0,
+      "maximumToleranceMultiple": 16.66,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "tasmanian salmon skin on",
+      "runtimeCanonicalId": "tasmanian salmon skin on",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 59.5,
+      "maximumToleranceMultiple": 16.5,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "dairy free frozen dessert",
+      "runtimeCanonicalId": "dairy free frozen dessert",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 82.0,
+      "maximumToleranceMultiple": 16.4,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "tortilla chips restaurant style",
+      "runtimeCanonicalId": "tortilla chips restaurant style",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 82.0,
+      "maximumToleranceMultiple": 16.4,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "tortilla chips sea salt",
+      "runtimeCanonicalId": "tortilla chips sea salt",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 20.357142857144993,
+      "maximumToleranceMultiple": 16.0742857142857,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein powder vanilla",
+      "runtimeCanonicalId": "protein powder vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 31.0,
+      "maximumToleranceMultiple": 15.911111111112007,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "pork fillet maple, sesame and miso flavoured",
+      "runtimeCanonicalId": "pork fillet maple, sesame and miso flavoured",
+      "matchType": "EXACT",
+      "classification": "LIKELY_ENERGY_UNIT_CONVERSION_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 1,
+      "conflictingNutrients": [
+        "ENERGY"
+      ],
+      "maximumAbsoluteDifference": 79.143404,
+      "maximumToleranceMultiple": 15.8286808,
+      "rationale": "The energy-value ratio is close to 4.184 or its reciprocal, which is compatible with a kcal/kJ unit-conversion mismatch."
+    },
+    {
+      "aggregateCanonicalId": "whey protein powder vanilla",
+      "runtimeCanonicalId": "whey protein powder vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 27.5,
+      "maximumToleranceMultiple": 15.824999999999989,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "cupcake cups red velvet",
+      "runtimeCanonicalId": "cupcake cups red velvet",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 7.700000000000003,
+      "maximumToleranceMultiple": 15.400000000000006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whole split chicken california style bbq",
+      "runtimeCanonicalId": "whole split chicken california style bbq",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 76.5,
+      "maximumToleranceMultiple": 15.399999999999999,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "blackened mahi mahi",
+      "runtimeCanonicalId": "blackened mahi mahi",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 76.54929577465,
+      "maximumToleranceMultiple": 15.30985915493,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "vegan protein french vanilla",
+      "runtimeCanonicalId": "vegan protein french vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 35.0,
+      "maximumToleranceMultiple": 15.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "roasted salted soy nuts",
+      "runtimeCanonicalId": "roasted salted soy nuts",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 13.0,
+      "maximumToleranceMultiple": 14.66,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "mixed nuts salted",
+      "runtimeCanonicalId": "mixed nuts salted",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 9.0,
+      "maximumToleranceMultiple": 14.600000000000001,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "super fine almond flour",
+      "runtimeCanonicalId": "super fine almond flour",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 7.170000000000002,
+      "maximumToleranceMultiple": 14.340000000000003,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "lightly salted halves & pieces cashews",
+      "runtimeCanonicalId": "lightly salted halves & pieces cashews",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 71.57142857143003,
+      "maximumToleranceMultiple": 14.314285714286006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "cranberry cinnamon goat cheese",
+      "runtimeCanonicalId": "cranberry cinnamon goat cheese",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 8.285714285710014,
+      "maximumToleranceMultiple": 14.285714285714,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "chicken stick buffalo style",
+      "runtimeCanonicalId": "chicken stick buffalo style",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 47.279069767440006,
+      "maximumToleranceMultiple": 14.206976744186,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "garden veggie straws sea salt",
+      "runtimeCanonicalId": "garden veggie straws sea salt",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FIBER",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 7.100000000000001,
+      "maximumToleranceMultiple": 14.200000000000003,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "dubai chocolate bar ice cream",
+      "runtimeCanonicalId": "dubai chocolate bar ice cream",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 54.0,
+      "maximumToleranceMultiple": 14.2,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "tortilla chips nacho cheese",
+      "runtimeCanonicalId": "tortilla chips nacho cheese",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 21.0,
+      "maximumToleranceMultiple": 14.142857142856997,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whipped cheesecake pumpkin spice",
+      "runtimeCanonicalId": "whipped cheesecake pumpkin spice",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "FIBER",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 7.0411764705880024,
+      "maximumToleranceMultiple": 14.082352941176005,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "beef jerky chilli",
+      "runtimeCanonicalId": "beef jerky chilli",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 62.5,
+      "maximumToleranceMultiple": 14.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "organic chewy granola bar chocolate chip",
+      "runtimeCanonicalId": "organic chewy granola bar chocolate chip",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 17.0,
+      "maximumToleranceMultiple": 14.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "nutritional shake chocolate",
+      "runtimeCanonicalId": "nutritional shake chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 25.581395348839976,
+      "maximumToleranceMultiple": 13.953488372094,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "chicken breast sliced",
+      "runtimeCanonicalId": "chicken breast sliced",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 7.0,
+      "maximumToleranceMultiple": 13.899999999999999,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "texas toast garlic",
+      "runtimeCanonicalId": "texas toast garlic",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 35.0,
+      "maximumToleranceMultiple": 13.8,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "beef jerky garlic",
+      "runtimeCanonicalId": "beef jerky garlic",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 66.0,
+      "maximumToleranceMultiple": 13.564999999999998,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "stir fry sauce",
+      "runtimeCanonicalId": "stir fry sauce",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 27.0,
+      "maximumToleranceMultiple": 13.41,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "canola oil expeller pressed",
+      "runtimeCanonicalId": "canola oil expeller pressed",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT"
+      ],
+      "maximumAbsoluteDifference": 57.0,
+      "maximumToleranceMultiple": 13.400000000000006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "olive oil classic",
+      "runtimeCanonicalId": "olive oil classic",
+      "matchType": "EXACT",
+      "classification": "SINGLE_NUTRIENT_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 1,
+      "conflictingNutrients": [
+        "ENERGY"
+      ],
+      "maximumAbsoluteDifference": 67.0,
+      "maximumToleranceMultiple": 13.4,
+      "rationale": "Only ENERGY exceeds its configured comparison tolerance."
+    },
+    {
+      "aggregateCanonicalId": "onigiri spicy salmon",
+      "runtimeCanonicalId": "onigiri spicy salmon",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 67.0,
+      "maximumToleranceMultiple": 13.4,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "saltines unsalted tops",
+      "runtimeCanonicalId": "saltines unsalted tops",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FIBER"
+      ],
+      "maximumAbsoluteDifference": 67.0,
+      "maximumToleranceMultiple": 13.4,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "maraschino cherries",
+      "runtimeCanonicalId": "maraschino cherries",
+      "matchType": "EXACT",
+      "classification": "SINGLE_NUTRIENT_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 1,
+      "conflictingNutrients": [
+        "CARBOHYDRATES"
+      ],
+      "maximumAbsoluteDifference": 6.666666666666998,
+      "maximumToleranceMultiple": 13.333333333333997,
+      "rationale": "Only CARBOHYDRATES exceeds its configured comparison tolerance."
+    },
+    {
+      "aggregateCanonicalId": "kalamata olives sliced",
+      "runtimeCanonicalId": "kalamata olives sliced",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SALT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 13.5,
+      "maximumToleranceMultiple": 13.259,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "peanut butter chunky",
+      "runtimeCanonicalId": "peanut butter chunky",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT"
+      ],
+      "maximumAbsoluteDifference": 66.25,
+      "maximumToleranceMultiple": 13.25,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "grain free pretzels sea salt",
+      "runtimeCanonicalId": "grain free pretzels sea salt",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 29.0,
+      "maximumToleranceMultiple": 13.199999999999989,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whey protein chocolate",
+      "runtimeCanonicalId": "whey protein chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 11.0,
+      "maximumToleranceMultiple": 12.800000000000011,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "vanilla ice cream protein",
+      "runtimeCanonicalId": "vanilla ice cream protein",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 10.0,
+      "maximumToleranceMultiple": 12.760000000000002,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein powder cinnamon roll",
+      "runtimeCanonicalId": "protein powder cinnamon roll",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 46.0,
+      "maximumToleranceMultiple": 12.5,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "creamy rice chocolate",
+      "runtimeCanonicalId": "creamy rice chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 11.0,
+      "maximumToleranceMultiple": 12.4875,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "lifestyle shake turmeric cream",
+      "runtimeCanonicalId": "lifestyle shake turmeric cream",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 6.200000000000003,
+      "maximumToleranceMultiple": 12.400000000000006,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "mixed vegetables frozen",
+      "runtimeCanonicalId": "mixed vegetables frozen",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 28.9,
+      "maximumToleranceMultiple": 12.400000000000002,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "iced latte vanilla",
+      "runtimeCanonicalId": "iced latte vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 20.363098070314507,
+      "maximumToleranceMultiple": 12.397880341721498,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "oat milk extra creamy",
+      "runtimeCanonicalId": "oat milk extra creamy",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 61.64999999999999,
+      "maximumToleranceMultiple": 12.329999999999998,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "peanut butter smooth",
+      "runtimeCanonicalId": "peanut butter smooth",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 6.0,
+      "maximumToleranceMultiple": 12.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "greek yogurt strawberry banana",
+      "runtimeCanonicalId": "greek yogurt strawberry banana",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 42.333333333333,
+      "maximumToleranceMultiple": 11.933333333333401,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whey protein mint chocolate",
+      "runtimeCanonicalId": "whey protein mint chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 5.899999999999999,
+      "maximumToleranceMultiple": 11.799999999999997,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "lemon lime drink",
+      "runtimeCanonicalId": "lemon lime drink",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 20.5,
+      "maximumToleranceMultiple": 11.6733333333334,
+      "inferredScaleFactor": 2.7510000000000274,
+      "scaleFactorRelativeSpread": 0.08664780672565077,
+      "rationale": "At least 3 conflicting nutrients share an approximately uniform scale factor of 2.7510000000000274. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "cooked shrimp tail on",
+      "runtimeCanonicalId": "cooked shrimp tail on",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 26.373529411765006,
+      "maximumToleranceMultiple": 11.552941176470995,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "vegan protein vanilla",
+      "runtimeCanonicalId": "vegan protein vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 5.7000000238418576,
+      "maximumToleranceMultiple": 11.400000047683715,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "pierogi potato & cheddar",
+      "runtimeCanonicalId": "pierogi potato & cheddar",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER"
+      ],
+      "maximumAbsoluteDifference": 15.460176991150007,
+      "maximumToleranceMultiple": 11.373274336283998,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "tuna creations sweet & spicy",
+      "runtimeCanonicalId": "tuna creations sweet & spicy",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 32.0,
+      "maximumToleranceMultiple": 11.200000000000003,
+      "inferredScaleFactor": 0.7393715341959335,
+      "scaleFactorRelativeSpread": 0.0022566426644919286,
+      "rationale": "At least 3 conflicting nutrients share an approximately uniform scale factor of 0.7393715341959335. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "freeze dried bananas",
+      "runtimeCanonicalId": "freeze dried bananas",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER"
+      ],
+      "maximumAbsoluteDifference": 56.0,
+      "maximumToleranceMultiple": 11.2,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "built bar double chocolate",
+      "runtimeCanonicalId": "built bar double chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 32.08333333333499,
+      "maximumToleranceMultiple": 11.133333333332999,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "beef jerky jalapeño",
+      "runtimeCanonicalId": "beef jerky jalapeño",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 5.483333333333334,
+      "maximumToleranceMultiple": 10.966666666666669,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "power plant protein banana split",
+      "runtimeCanonicalId": "power plant protein banana split",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 14.0,
+      "maximumToleranceMultiple": 10.9,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "instant oatmeal raisin, date & walnut",
+      "runtimeCanonicalId": "instant oatmeal raisin, date & walnut",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "FIBER",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 5.435135135135003,
+      "maximumToleranceMultiple": 10.870270270270005,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "feta crumbled",
+      "runtimeCanonicalId": "feta crumbled",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 53.57428571429,
+      "maximumToleranceMultiple": 10.717142857142,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "crunchy roll chicken katsu 10pcs",
+      "runtimeCanonicalId": "crunchy roll chicken katsu 10pcs",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 14.0,
+      "maximumToleranceMultiple": 10.600000000000001,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "raw shrimp peeled and deveined",
+      "runtimeCanonicalId": "raw shrimp peeled and deveined",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "ENERGY",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 17.099999999999994,
+      "maximumToleranceMultiple": 10.399999999999999,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "slim it blend chocolate flavor",
+      "runtimeCanonicalId": "slim it blend chocolate flavor",
+      "matchType": "EXACT",
+      "classification": "SINGLE_NUTRIENT_CONFLICT",
+      "severity": "HIGH",
+      "conflictCount": 1,
+      "conflictingNutrients": [
+        "FIBER"
+      ],
+      "maximumAbsoluteDifference": 5.199999809265137,
+      "maximumToleranceMultiple": 10.399999618530273,
+      "rationale": "Only FIBER exceeds its configured comparison tolerance."
+    },
+    {
+      "aggregateCanonicalId": "matzo style squares",
+      "runtimeCanonicalId": "matzo style squares",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "SALT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 50.0,
+      "maximumToleranceMultiple": 10.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein energy bar french vanilla creme",
+      "runtimeCanonicalId": "protein energy bar french vanilla creme",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 5.0,
+      "maximumToleranceMultiple": 10.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "coconut pineapple nectar from concentrate",
+      "runtimeCanonicalId": "coconut pineapple nectar from concentrate",
+      "matchType": "EXACT",
+      "classification": "SINGLE_NUTRIENT_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 1,
+      "conflictingNutrients": [
+        "ENERGY"
+      ],
+      "maximumAbsoluteDifference": 49.284825870646,
+      "maximumToleranceMultiple": 9.8569651741292,
+      "rationale": "Only ENERGY exceeds its configured comparison tolerance."
+    },
+    {
+      "aggregateCanonicalId": "corn chips zesty lime & chilli",
+      "runtimeCanonicalId": "corn chips zesty lime & chilli",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SALT",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 22.86808000000002,
+      "maximumToleranceMultiple": 9.799999999999997,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "collagen peptides vanilla",
+      "runtimeCanonicalId": "collagen peptides vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 36.5,
+      "maximumToleranceMultiple": 9.799999999999983,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "iced tea peach",
+      "runtimeCanonicalId": "iced tea peach",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "MEDIUM",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 19.391224862888002,
+      "maximumToleranceMultiple": 9.6527970749542,
+      "inferredScaleFactor": 2.0205907822572633,
+      "scaleFactorRelativeSpread": 0.07476565057267635,
+      "rationale": "At least 3 conflicting nutrients share an approximately uniform scale factor of 2.0205907822572633. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "deluxe mixed nuts no peanuts",
+      "runtimeCanonicalId": "deluxe mixed nuts no peanuts",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 48.02955665024001,
+      "maximumToleranceMultiple": 9.605911330048002,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "black angus beef top round steak",
+      "runtimeCanonicalId": "black angus beef top round steak",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 25.0,
+      "maximumToleranceMultiple": 9.600000000000001,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "snack sticks colby jack",
+      "runtimeCanonicalId": "snack sticks colby jack",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 4.76,
+      "maximumToleranceMultiple": 9.52,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "french fried potatoes",
+      "runtimeCanonicalId": "french fried potatoes",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 42.0,
+      "maximumToleranceMultiple": 9.409999999999997,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein milkshake vanilla",
+      "runtimeCanonicalId": "protein milkshake vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 14.5,
+      "maximumToleranceMultiple": 9.24,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "kalamata olives pitted",
+      "runtimeCanonicalId": "kalamata olives pitted",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "FAT",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 4.6,
+      "maximumToleranceMultiple": 9.2,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whey protein vanilla ice cream",
+      "runtimeCanonicalId": "whey protein vanilla ice cream",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 8.0,
+      "maximumToleranceMultiple": 9.199999999999989,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "free range eggs extra large",
+      "runtimeCanonicalId": "free range eggs extra large",
+      "matchType": "EXACT",
+      "classification": "LIKELY_UNIFORM_SCALE_MISMATCH",
+      "severity": "MEDIUM",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT"
+      ],
+      "maximumAbsoluteDifference": 45.5,
+      "maximumToleranceMultiple": 9.1,
+      "inferredScaleFactor": 0.721967380224261,
+      "scaleFactorRelativeSpread": 0.060508728401583445,
+      "rationale": "At least 4 conflicting nutrients share an approximately uniform scale factor of 0.721967380224261. This is compatible with a serving/base-unit mismatch but does not prove that cause."
+    },
+    {
+      "aggregateCanonicalId": "kim chi",
+      "runtimeCanonicalId": "kim chi",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 15.25,
+      "maximumToleranceMultiple": 9.1,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whey protein strawberry",
+      "runtimeCanonicalId": "whey protein strawberry",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 6.3589743589766385,
+      "maximumToleranceMultiple": 9.099999999999994,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "2 minute noodles",
+      "runtimeCanonicalId": "2 minute noodles",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 45.0,
+      "maximumToleranceMultiple": 9.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "organic tri color quinoa",
+      "runtimeCanonicalId": "organic tri color quinoa",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 4.445555555555998,
+      "maximumToleranceMultiple": 8.891111111111996,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "solid light tuna in olive oil",
+      "runtimeCanonicalId": "solid light tuna in olive oil",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 3,
+      "conflictingNutrients": [
+        "ENERGY",
+        "FAT",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 35.0,
+      "maximumToleranceMultiple": 8.879999999999999,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "fresh milk full cream",
+      "runtimeCanonicalId": "fresh milk full cream",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 4.4,
+      "maximumToleranceMultiple": 8.8,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whey protein isolate chocolate",
+      "runtimeCanonicalId": "whey protein isolate chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 4.3999999999999915,
+      "maximumToleranceMultiple": 8.799999999999983,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whey protein milk tea flavor",
+      "runtimeCanonicalId": "whey protein milk tea flavor",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 6,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 16.483747670699984,
+      "maximumToleranceMultiple": 8.666,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whey protein chocolate peanut",
+      "runtimeCanonicalId": "whey protein chocolate peanut",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SALT"
+      ],
+      "maximumAbsoluteDifference": 12.0,
+      "maximumToleranceMultiple": 8.600000000000001,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "walnuts halves & pieces",
+      "runtimeCanonicalId": "walnuts halves & pieces",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 7,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 33.33000000000004,
+      "maximumToleranceMultiple": 8.579999999999998,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "panko bread crumbs italian style",
+      "runtimeCanonicalId": "panko bread crumbs italian style",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 22.0,
+      "maximumToleranceMultiple": 8.340000000000003,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "guacamole mild",
+      "runtimeCanonicalId": "guacamole mild",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 8,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "FIBER",
+        "PROTEIN",
+        "SALT",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 33.83333333333502,
+      "maximumToleranceMultiple": 8.33,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "tuna tomato & basil",
+      "runtimeCanonicalId": "tuna tomato & basil",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FAT",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 41.395700000000005,
+      "maximumToleranceMultiple": 8.279140000000002,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "whey protein belgian chocolate",
+      "runtimeCanonicalId": "whey protein belgian chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 5,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "PROTEIN",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 10.0,
+      "maximumToleranceMultiple": 8.200000000000017,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "protein shake chocolate",
+      "runtimeCanonicalId": "protein shake chocolate",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "FIBER",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 14.899999999999999,
+      "maximumToleranceMultiple": 8.024,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "clear whey pink grapefruit",
+      "runtimeCanonicalId": "clear whey pink grapefruit",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 2,
+      "conflictingNutrients": [
+        "ENERGY",
+        "PROTEIN"
+      ],
+      "maximumAbsoluteDifference": 10.0,
+      "maximumToleranceMultiple": 8.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    },
+    {
+      "aggregateCanonicalId": "greek yogurt vanilla",
+      "runtimeCanonicalId": "greek yogurt vanilla",
+      "matchType": "EXACT",
+      "classification": "MULTI_NUTRIENT_PROFILE_CONFLICT",
+      "severity": "MEDIUM",
+      "conflictCount": 4,
+      "conflictingNutrients": [
+        "CARBOHYDRATES",
+        "ENERGY",
+        "SATURATED_FAT",
+        "SUGARS"
+      ],
+      "maximumAbsoluteDifference": 15.0,
+      "maximumToleranceMultiple": 8.0,
+      "rationale": "Multiple nutrients exceed their comparison tolerances without a sufficiently uniform scale-factor pattern."
+    }
+  ],
+  "omittedExampleCount": 158,
+  "thresholds": {
+    "minimumScaleNutrientCount": 3,
+    "minimumNearIdentityScale": 0.8,
+    "maximumNearIdentityScale": 1.25,
+    "maximumScaleFactorRelativeDeviation": 0.25,
+    "kilojoulePerKilocalorie": 4.184,
+    "energyUnitRelativeTolerance": 0.1,
+    "lowMaximumToleranceMultiple": 2.0,
+    "mediumMaximumToleranceMultiple": 10.0,
+    "highMaximumToleranceMultiple": 50.0
+  },
+  "durationMillis": 15
+}

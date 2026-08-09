@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "asperge, bouillie/cuite à l'eau": {
+      "environmentScoreMptPerKg": 0.421,
+      "climateKgCo2EqPerKg": 2.86,
+      "landUsePtPerKg": 283.0,
+      "waterDeprivationM3PerKg": 5.43
+    },
+    "biscuit sec petit beurre au chocolat": {
+      "environmentScoreMptPerKg": 0.464,
+      "climateKgCo2EqPerKg": 7.19,
+      "landUsePtPerKg": 314.0,
+      "waterDeprivationM3PerKg": 1.09
+    },
+    "blini": {
+      "environmentScoreMptPerKg": 0.179,
+      "climateKgCo2EqPerKg": 1.61,
+      "landUsePtPerKg": 83.6,
+      "waterDeprivationM3PerKg": 0.378
+    },
+    "boeuf, tende de tranche, crue": {
+      "environmentScoreMptPerKg": 2.7,
+      "climateKgCo2EqPerKg": 28.9,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.39
+    },
+    "cacahuètes (arachide) enrobées d'un biscuit, pour apéritif": {
+      "environmentScoreMptPerKg": 0.531,
+      "climateKgCo2EqPerKg": 3.28,
+      "landUsePtPerKg": 356.0,
+      "waterDeprivationM3PerKg": 10.6
+    },
+    "double cheeseburger, provenant de fast food": {
+      "environmentScoreMptPerKg": 1.36,
+      "climateKgCo2EqPerKg": 14.1,
+      "landUsePtPerKg": 847.0,
+      "waterDeprivationM3PerKg": 1.55
+    },
+    "haricot de mer (himanthalia elongata), séchée ou déshydratée": {
+      "environmentScoreMptPerKg": 1.52,
+      "climateKgCo2EqPerKg": 11.6,
+      "landUsePtPerKg": 26.4,
+      "waterDeprivationM3PerKg": 4.83
+    },
+    "perche, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 3.84,
+      "climateKgCo2EqPerKg": 6.68,
+      "landUsePtPerKg": 133.0,
+      "waterDeprivationM3PerKg": 335.0
+    }
+  }
+}

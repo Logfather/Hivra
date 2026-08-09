@@ -5,6 +5,145 @@ plugins {
     alias(libs.plugins.google.services)
 }
 
+val packageNutritionQualityReports =
+    tasks.register<Sync>(
+        "packageNutritionQualityReports"
+    ) {
+        group =
+            "knowledge"
+
+        description =
+            "Packages the approved Nutrition quality reports as " +
+                    "Android assets."
+
+        val generatedKnowledgeDirectory =
+            rootProject.layout.projectDirectory
+                .dir(
+                    "data/generated/knowledge"
+                )
+
+        val outputDirectory =
+            layout.buildDirectory.dir(
+                "generated/assets/nutritionQuality"
+            )
+
+        into(
+            outputDirectory
+        )
+
+        from(
+            generatedKnowledgeDirectory.file(
+                "reports/" +
+                        "resulting-nutrition-knowledge-validation.json"
+            )
+        ) {
+            into(
+                "knowledge/reports/nutrition"
+            )
+        }
+
+        from(
+            generatedKnowledgeDirectory.file(
+                "reports/" +
+                        "resulting-nutrition-coverage.json"
+            )
+        ) {
+            into(
+                "knowledge/reports/nutrition"
+            )
+        }
+
+        from(
+            generatedKnowledgeDirectory.file(
+                "reports/" +
+                        "resulting-nutrition-coverage-gap-classification.json"
+            )
+        ) {
+            into(
+                "knowledge/reports/nutrition"
+            )
+        }
+
+        from(
+            generatedKnowledgeDirectory.file(
+                "reports/" +
+                        "resulting-nutrition-conflict-rate.json"
+            )
+        ) {
+            into(
+                "knowledge/reports/nutrition"
+            )
+        }
+
+        from(
+            generatedKnowledgeDirectory.file(
+                "policies/" +
+                        "resulting-nutrition-conflict-policy.json"
+            )
+        ) {
+            into(
+                "knowledge/reports/nutrition"
+            )
+        }
+
+        from(
+            generatedKnowledgeDirectory.file(
+                "frozen/off/nutrition/" +
+                        "off-nutrition-source-snapshot.json"
+            )
+        ) {
+            into(
+                "knowledge/reports/nutrition"
+            )
+        }
+
+        doFirst {
+            val requiredFiles =
+                listOf(
+                    generatedKnowledgeDirectory.file(
+                        "reports/" +
+                                "resulting-nutrition-knowledge-validation.json"
+                    ),
+                    generatedKnowledgeDirectory.file(
+                        "reports/" +
+                                "resulting-nutrition-coverage.json"
+                    ),
+                    generatedKnowledgeDirectory.file(
+                        "reports/" +
+                                "resulting-nutrition-coverage-gap-classification.json"
+                    ),
+                    generatedKnowledgeDirectory.file(
+                        "reports/" +
+                                "resulting-nutrition-conflict-rate.json"
+                    ),
+                    generatedKnowledgeDirectory.file(
+                        "policies/" +
+                                "resulting-nutrition-conflict-policy.json"
+                    ),
+                    generatedKnowledgeDirectory.file(
+                        "frozen/off/nutrition/" +
+                                "off-nutrition-source-snapshot.json"
+                    )
+                )
+
+            requiredFiles.forEach { requiredFile ->
+                require(
+                    requiredFile.asFile.isFile
+                ) {
+                    "Required Nutrition quality report does not exist: " +
+                            requiredFile.asFile.absolutePath
+                }
+
+                require(
+                    requiredFile.asFile.length() > 0L
+                ) {
+                    "Required Nutrition quality report is empty: " +
+                            requiredFile.asFile.absolutePath
+                }
+            }
+        }
+    }
+
 android {
     namespace = "de.shopme"
     compileSdk = 35
@@ -74,7 +213,34 @@ android {
                     ?: "2g"
         }
     }
+
+    sourceSets {
+        getByName(
+            "main"
+        ) {
+            assets.srcDir(
+                layout.buildDirectory.dir(
+                    "generated/assets/nutritionQuality"
+                )
+            )
+        }
+    }
 }
+
+tasks
+    .matching { task ->
+        task.name.startsWith(
+            "merge"
+        ) &&
+                task.name.endsWith(
+                    "Assets"
+                )
+    }
+    .configureEach {
+        dependsOn(
+            packageNutritionQualityReports
+        )
+    }
 
 kotlin {
     compilerOptions {

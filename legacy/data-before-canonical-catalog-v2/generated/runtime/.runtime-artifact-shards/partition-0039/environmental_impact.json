@@ -1,0 +1,94 @@
+{
+  "entries": {
+    "bonite, crue": {
+      "environmentScoreMptPerKg": 1.57,
+      "climateKgCo2EqPerKg": 9.38,
+      "landUsePtPerKg": 11.9,
+      "waterDeprivationM3PerKg": 0.349
+    },
+    "chinchard, cru": {
+      "environmentScoreMptPerKg": 0.358,
+      "climateKgCo2EqPerKg": 2.62,
+      "landUsePtPerKg": 7.15,
+      "waterDeprivationM3PerKg": 0.211
+    },
+    "farine de seigle t85": {
+      "environmentScoreMptPerKg": 0.107,
+      "climateKgCo2EqPerKg": 0.716,
+      "landUsePtPerKg": 29.7,
+      "waterDeprivationM3PerKg": 0.174
+    },
+    "fromage à pate pressée cuite type emmental ou emmenthal, allégé en matière grasse": {
+      "environmentScoreMptPerKg": 0.603,
+      "climateKgCo2EqPerKg": 6.31,
+      "landUsePtPerKg": 289.0,
+      "waterDeprivationM3PerKg": 0.806
+    },
+    "jambon de porc à cuire ou jambon à rôtir/cuire au four": {
+      "environmentScoreMptPerKg": 0.891,
+      "climateKgCo2EqPerKg": 7.12,
+      "landUsePtPerKg": 368.0,
+      "waterDeprivationM3PerKg": 2.31
+    },
+    "merguez, crue": {
+      "environmentScoreMptPerKg": 2.33,
+      "climateKgCo2EqPerKg": 23.9,
+      "landUsePtPerKg": 1530.0,
+      "waterDeprivationM3PerKg": 2.83
+    },
+    "rognon, boeuf, cru": {
+      "environmentScoreMptPerKg": 2.14,
+      "climateKgCo2EqPerKg": 22.9,
+      "landUsePtPerKg": 1490.0,
+      "waterDeprivationM3PerKg": 1.91
+    },
+    "sandwich baguette, jambon, beurre": {
+      "environmentScoreMptPerKg": 0.694,
+      "climateKgCo2EqPerKg": 5.61,
+      "landUsePtPerKg": 267.0,
+      "waterDeprivationM3PerKg": 1.74
+    },
+    "sardine, sauce tomate, appertisée, égouttée": {
+      "environmentScoreMptPerKg": 0.515,
+      "climateKgCo2EqPerKg": 2.78,
+      "landUsePtPerKg": 266.0,
+      "waterDeprivationM3PerKg": 9.42
+    },
+    "sauce rouille, préemballée": {
+      "environmentScoreMptPerKg": 0.4,
+      "climateKgCo2EqPerKg": 2.33,
+      "landUsePtPerKg": 335.0,
+      "waterDeprivationM3PerKg": 3.86
+    },
+    "sauce tomate au fromage, préemballée": {
+      "environmentScoreMptPerKg": 0.228,
+      "climateKgCo2EqPerKg": 1.8,
+      "landUsePtPerKg": 85.0,
+      "waterDeprivationM3PerKg": 2.62
+    },
+    "sel blanc alimentaire, iodé, non fluoré (marin, ignigène ou gemme)": {
+      "environmentScoreMptPerKg": 0.0708,
+      "climateKgCo2EqPerKg": 0.632,
+      "landUsePtPerKg": 14.3,
+      "waterDeprivationM3PerKg": 0.0776
+    },
+    "soupe à la tomate et aux vermicelles, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.0818,
+      "climateKgCo2EqPerKg": 0.595,
+      "landUsePtPerKg": 18.0,
+      "waterDeprivationM3PerKg": 0.361
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux fruits, avec édulcorants, 0% mg": {
+      "environmentScoreMptPerKg": 0.212,
+      "climateKgCo2EqPerKg": 1.89,
+      "landUsePtPerKg": 72.1,
+      "waterDeprivationM3PerKg": 1.64
+    },
+    "épinard, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.108,
+      "climateKgCo2EqPerKg": 1.1,
+      "landUsePtPerKg": -8.77,
+      "waterDeprivationM3PerKg": 0.414
+    }
+  }
+}

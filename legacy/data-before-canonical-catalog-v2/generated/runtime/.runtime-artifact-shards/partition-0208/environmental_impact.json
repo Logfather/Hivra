@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "biscuit sec chocolaté, type barquette": {
+      "environmentScoreMptPerKg": 0.493,
+      "climateKgCo2EqPerKg": 6.54,
+      "landUsePtPerKg": 275.0,
+      "waterDeprivationM3PerKg": 1.1
+    },
+    "bonbon dur et sucette": {
+      "environmentScoreMptPerKg": 0.211,
+      "climateKgCo2EqPerKg": 1.62,
+      "landUsePtPerKg": 55.4,
+      "waterDeprivationM3PerKg": 2.44
+    },
+    "chicorée, poudre soluble, réhydratée": {
+      "environmentScoreMptPerKg": 0.0234,
+      "climateKgCo2EqPerKg": 0.166,
+      "landUsePtPerKg": 3.04,
+      "waterDeprivationM3PerKg": 0.039
+    },
+    "coupe glacée type café ou chocolat liégeois": {
+      "environmentScoreMptPerKg": 0.245,
+      "climateKgCo2EqPerKg": 2.15,
+      "landUsePtPerKg": 86.0,
+      "waterDeprivationM3PerKg": 0.997
+    },
+    "pâte à pizza crue": {
+      "environmentScoreMptPerKg": 0.196,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 82.2,
+      "waterDeprivationM3PerKg": 1.39
+    },
+    "samossas ou samoussas": {
+      "environmentScoreMptPerKg": 2.43,
+      "climateKgCo2EqPerKg": 24.8,
+      "landUsePtPerKg": 1620.0,
+      "waterDeprivationM3PerKg": 3.19
+    },
+    "saucisse sèche": {
+      "environmentScoreMptPerKg": 0.944,
+      "climateKgCo2EqPerKg": 7.41,
+      "landUsePtPerKg": 387.0,
+      "waterDeprivationM3PerKg": 2.37
+    },
+    "saucisson de paris": {
+      "environmentScoreMptPerKg": 1.07,
+      "climateKgCo2EqPerKg": 8.15,
+      "landUsePtPerKg": 390.0,
+      "waterDeprivationM3PerKg": 2.63
+    }
+  }
+}

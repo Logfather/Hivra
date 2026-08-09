@@ -1,0 +1,31 @@
+{
+  "entries": {
+    "boisson au thé, aromatisée, sucrée, avec édulcorants": {
+      "litersPerKilogram": 295.0
+    },
+    "cola, sucré": {
+      "litersPerKilogram": 307.0
+    },
+    "cordon bleu de volaille": {
+      "litersPerKilogram": 2160.0
+    },
+    "foie, agneau, cuit": {
+      "litersPerKilogram": 5030.0
+    },
+    "lingue bleue ou lingue, crue": {
+      "litersPerKilogram": 470.0
+    },
+    "poivron rouge, appertisé, égoutté": {
+      "litersPerKilogram": 424.0
+    },
+    "pâté breton": {
+      "litersPerKilogram": 1660.0
+    },
+    "spécialité chinoise ou bouchées à la vapeur, cuite": {
+      "litersPerKilogram": 95100.0
+    },
+    "veau, steak haché 15% mg, cru": {
+      "litersPerKilogram": 3890.0
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "barre céréalière aux fruits": {
+      "environmentScoreMptPerKg": 0.357,
+      "climateKgCo2EqPerKg": 3.26,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 3.28
+    },
+    "bette ou blette, crue": {
+      "environmentScoreMptPerKg": 0.0591,
+      "climateKgCo2EqPerKg": 0.581,
+      "landUsePtPerKg": -20.9,
+      "waterDeprivationM3PerKg": 0.316
+    },
+    "brocoli, surgelé, cuit": {
+      "environmentScoreMptPerKg": 0.159,
+      "climateKgCo2EqPerKg": 1.38,
+      "landUsePtPerKg": 13.8,
+      "waterDeprivationM3PerKg": 1.22
+    },
+    "dessert au soja, aux fruits, rayon frais": {
+      "environmentScoreMptPerKg": 0.148,
+      "climateKgCo2EqPerKg": 1.24,
+      "landUsePtPerKg": 40.1,
+      "waterDeprivationM3PerKg": 1.76
+    },
+    "jambon sec serrano": {
+      "environmentScoreMptPerKg": 1.8,
+      "climateKgCo2EqPerKg": 13.6,
+      "landUsePtPerKg": 626.0,
+      "waterDeprivationM3PerKg": 4.24
+    },
+    "poivre noir, poudre": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 9.4,
+      "landUsePtPerKg": 688.0,
+      "waterDeprivationM3PerKg": 4.38
+    },
+    "poivron, vert, jaune ou rouge, cru": {
+      "environmentScoreMptPerKg": 0.0803,
+      "climateKgCo2EqPerKg": 0.715,
+      "landUsePtPerKg": 6.38,
+      "waterDeprivationM3PerKg": 0.294
+    },
+    "porc, épaule, cuite": {
+      "environmentScoreMptPerKg": 1.09,
+      "climateKgCo2EqPerKg": 8.65,
+      "landUsePtPerKg": 442.0,
+      "waterDeprivationM3PerKg": 2.81
+    },
+    "rognon, boeuf, cuit": {
+      "environmentScoreMptPerKg": 2.97,
+      "climateKgCo2EqPerKg": 31.5,
+      "landUsePtPerKg": 2050.0,
+      "waterDeprivationM3PerKg": 2.65
+    },
+    "veau, noix, crue": {
+      "environmentScoreMptPerKg": 2.14,
+      "climateKgCo2EqPerKg": 23.2,
+      "landUsePtPerKg": 1060.0,
+      "waterDeprivationM3PerKg": 3.13
+    }
+  }
+}

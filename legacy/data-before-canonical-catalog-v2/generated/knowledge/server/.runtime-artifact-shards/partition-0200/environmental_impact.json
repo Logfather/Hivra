@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "biscuit apéritif soufflé, à base de maïs, à la cacahuète": {
+      "environmentScoreMptPerKg": 0.208,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 189.0,
+      "waterDeprivationM3PerKg": 0.704
+    },
+    "blé tendre entier ou froment, cru": {
+      "environmentScoreMptPerKg": 0.0846,
+      "climateKgCo2EqPerKg": 0.684,
+      "landUsePtPerKg": 72.5,
+      "waterDeprivationM3PerKg": 0.183
+    },
+    "boisson infantile céréales lactées aux fruits pour le goûter dès 4/6 mois": {
+      "environmentScoreMptPerKg": 0.0891,
+      "climateKgCo2EqPerKg": 0.851,
+      "landUsePtPerKg": 40.5,
+      "waterDeprivationM3PerKg": 0.17
+    },
+    "burger au poisson": {
+      "environmentScoreMptPerKg": 1.08,
+      "climateKgCo2EqPerKg": 7.1,
+      "landUsePtPerKg": 73.1,
+      "waterDeprivationM3PerKg": 0.708
+    },
+    "choucroute garnie": {
+      "environmentScoreMptPerKg": 0.27,
+      "climateKgCo2EqPerKg": 2.24,
+      "landUsePtPerKg": 77.0,
+      "waterDeprivationM3PerKg": 0.874
+    },
+    "couscous (semoule de blé dur roulée précuite à la vapeur), crue": {
+      "environmentScoreMptPerKg": 0.212,
+      "climateKgCo2EqPerKg": 1.48,
+      "landUsePtPerKg": 198.0,
+      "waterDeprivationM3PerKg": 0.855
+    },
+    "dinde, escalope, crue": {
+      "environmentScoreMptPerKg": 0.941,
+      "climateKgCo2EqPerKg": 5.58,
+      "landUsePtPerKg": 335.0,
+      "waterDeprivationM3PerKg": 2.49
+    },
+    "maquereau, filet sauce tomate, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.545,
+      "climateKgCo2EqPerKg": 4.55,
+      "landUsePtPerKg": 19.3,
+      "waterDeprivationM3PerKg": 0.459
+    },
+    "moule commune, crue": {
+      "environmentScoreMptPerKg": 0.477,
+      "climateKgCo2EqPerKg": 5.33,
+      "landUsePtPerKg": 243.0,
+      "waterDeprivationM3PerKg": 0.965
+    },
+    "noisette grillée, salée": {
+      "environmentScoreMptPerKg": 0.889,
+      "climateKgCo2EqPerKg": 5.01,
+      "landUsePtPerKg": 819.0,
+      "waterDeprivationM3PerKg": 11.8
+    },
+    "poulet, cuisse, viande, cru": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "poêlée de légumes assaisonnés à l'asiatiques ou wok de légumes, surgelée, crue": {
+      "environmentScoreMptPerKg": 0.136,
+      "climateKgCo2EqPerKg": 0.933,
+      "landUsePtPerKg": 17.1,
+      "waterDeprivationM3PerKg": 0.643
+    },
+    "veau, rôti, cru": {
+      "environmentScoreMptPerKg": 2.68,
+      "climateKgCo2EqPerKg": 29.0,
+      "landUsePtPerKg": 1320.0,
+      "waterDeprivationM3PerKg": 3.92
+    }
+  }
+}

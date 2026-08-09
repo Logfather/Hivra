@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "batchKey": "semantic-policy-batch-vegetables-plant-species-001",
+  "generatedCandidateCount": 9304,
+  "acceptedCandidateCount": 17,
+  "rejectedCandidateCount": 322,
+  "reviewRequiredCandidateCount": 8965,
+  "missingPolicyGapCount": 1709,
+  "materializedEntryCount": 17,
+  "expandedCatalogEntryCount": 3436,
+  "valid": true
+}

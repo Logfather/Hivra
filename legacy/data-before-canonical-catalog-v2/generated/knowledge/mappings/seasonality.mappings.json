@@ -1,0 +1,6711 @@
+{
+  "version": 1,
+  "mappings": [
+    {
+      "catalogKey": "100% grape juice",
+      "serverKey": "100% grape juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ajvar",
+      "serverKey": "ajvar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "alfredo sauce",
+      "serverKey": "alfredo sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond bar",
+      "serverKey": "almond bar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond butter",
+      "serverKey": "almond butter",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond chocolate",
+      "serverKey": "almond chocolate",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond cookies",
+      "serverKey": "almond cookies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond drink",
+      "serverKey": "almond drink",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond flour",
+      "serverKey": "almond flour",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond milk",
+      "serverKey": "almond milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond oil",
+      "serverKey": "almond oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almonds",
+      "serverKey": "almonds",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple",
+      "serverKey": "apple",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple cherry juice",
+      "serverKey": "apple cherry juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple chips",
+      "serverKey": "apple chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple cider",
+      "serverKey": "apple cider",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple cider vinegar",
+      "serverKey": "apple cider vinegar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple juice",
+      "serverKey": "apple juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple pear juice",
+      "serverKey": "apple pear juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple sauce",
+      "serverKey": "apple sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple spritzer",
+      "serverKey": "apple spritzer",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple vinegar",
+      "serverKey": "apple vinegar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apples",
+      "serverKey": "apples",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apricot",
+      "serverKey": "apricot",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apricot jam",
+      "serverKey": "apricot jam",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apricots",
+      "serverKey": "apricots",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "artichoke hearts",
+      "serverKey": "artichoke hearts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "artichokes",
+      "serverKey": "artichokes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "arugula",
+      "serverKey": "arugula",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "asparagus",
+      "serverKey": "asparagus",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "avocado",
+      "serverKey": "avocado",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "avocado oil",
+      "serverKey": "avocado oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "avocados",
+      "serverKey": "avocados",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "baby carrots",
+      "serverKey": "baby carrots",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "baby rice",
+      "serverKey": "baby rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bacon",
+      "serverKey": "bacon",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bagel",
+      "serverKey": "bagel",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bagels",
+      "serverKey": "bagels",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "baguette",
+      "serverKey": "baguette",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "baked beans",
+      "serverKey": "baked beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "balsamic dressing",
+      "serverKey": "balsamic dressing",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "balsamic glaze",
+      "serverKey": "balsamic glaze",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "balsamic vinegar",
+      "serverKey": "balsamic vinegar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "banana",
+      "serverKey": "banana",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "banana chips",
+      "serverKey": "banana chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bananas",
+      "serverKey": "bananas",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "barbecue sauce",
+      "serverKey": "barbecue sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "basil",
+      "serverKey": "basil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "basil oil",
+      "serverKey": "basil oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "basil pesto",
+      "serverKey": "basil pesto",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "basmati rice",
+      "serverKey": "basmati rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bbq sauce",
+      "serverKey": "bbq sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bbq seasoning",
+      "serverKey": "bbq seasoning",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beans in tomato sauce",
+      "serverKey": "beans in tomato sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bearnaise sauce",
+      "serverKey": "bearnaise sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beef",
+      "serverKey": "beef",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beef broth",
+      "serverKey": "beef broth",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beef goulash",
+      "serverKey": "beef goulash",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beef steak",
+      "serverKey": "beef steak",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beer",
+      "serverKey": "beer",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beetroot",
+      "serverKey": "beetroot",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beetroot juice",
+      "serverKey": "beetroot juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black beans",
+      "serverKey": "black beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black currant",
+      "serverKey": "black currant",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black forest ham",
+      "serverKey": "black forest ham",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black olives",
+      "serverKey": "black olives",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black rice",
+      "serverKey": "black rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black tea",
+      "serverKey": "black tea",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blackberries",
+      "serverKey": "blackberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blackberry",
+      "serverKey": "blackberry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blue cheese",
+      "serverKey": "blue cheese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blueberries",
+      "serverKey": "blueberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blueberry",
+      "serverKey": "blueberry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blueberry yogurt",
+      "serverKey": "blueberry yogurt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bockwurst sausage",
+      "serverKey": "bockwurst sausage",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bouillon",
+      "serverKey": "bouillon",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bratwurst",
+      "serverKey": "bratwurst",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bread",
+      "serverKey": "bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "breadcrumbs",
+      "serverKey": "breadcrumbs",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "breadsticks",
+      "serverKey": "breadsticks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "breakfast cereal",
+      "serverKey": "breakfast cereal",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "broccoli",
+      "serverKey": "broccoli",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "brown lentils",
+      "serverKey": "brown lentils",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "brown rice",
+      "serverKey": "brown rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "brown sugar",
+      "serverKey": "brown sugar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "brussels sprouts",
+      "serverKey": "brussels sprouts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bulgur",
+      "serverKey": "bulgur",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "butter",
+      "serverKey": "butter",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "butter cookies",
+      "serverKey": "butter cookies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "butter croissant",
+      "serverKey": "butter croissant",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "butterhead lettuce",
+      "serverKey": "butterhead lettuce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "butternut squash",
+      "serverKey": "butternut squash",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cabbage",
+      "serverKey": "cabbage",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cake mix",
+      "serverKey": "cake mix",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "calamari",
+      "serverKey": "calamari",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "candies",
+      "serverKey": "candies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "candy canes",
+      "serverKey": "candy canes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned asparagus",
+      "serverKey": "canned asparagus",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned beans in tomato sauce",
+      "serverKey": "canned beans in tomato sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned chopped tomatoes",
+      "serverKey": "canned chopped tomatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned corn",
+      "serverKey": "canned corn",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned green peas",
+      "serverKey": "canned green peas",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned mixed vegetables",
+      "serverKey": "canned mixed vegetables",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned mushrooms",
+      "serverKey": "canned mushrooms",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned peaches",
+      "serverKey": "canned peaches",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned peas",
+      "serverKey": "canned peas",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned peeled tomatoes",
+      "serverKey": "canned peeled tomatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned pineapple",
+      "serverKey": "canned pineapple",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned tomato paste",
+      "serverKey": "canned tomato paste",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned tomatoes",
+      "serverKey": "canned tomatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned tuna",
+      "serverKey": "canned tuna",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cantaloupe melon",
+      "serverKey": "cantaloupe melon",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "carrot",
+      "serverKey": "carrot",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "carrot juice",
+      "serverKey": "carrot juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "carrot sticks",
+      "serverKey": "carrot sticks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "carrots",
+      "serverKey": "carrots",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cashew butter",
+      "serverKey": "cashew butter",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cashew drink",
+      "serverKey": "cashew drink",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cashew nuts",
+      "serverKey": "cashew nuts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cauliflower",
+      "serverKey": "cauliflower",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cayenne pepper",
+      "serverKey": "cayenne pepper",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "celeriac",
+      "serverKey": "celeriac",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "celery",
+      "serverKey": "celery",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "celery juice",
+      "serverKey": "celery juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "celery stalks",
+      "serverKey": "celery stalks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chanterelles",
+      "serverKey": "chanterelles",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cheddar cheese",
+      "serverKey": "cheddar cheese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cheese crackers",
+      "serverKey": "cheese crackers",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cheese sticks",
+      "serverKey": "cheese sticks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cherries",
+      "serverKey": "cherries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cherry",
+      "serverKey": "cherry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cherry tomatoes",
+      "serverKey": "cherry tomatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chia pudding",
+      "serverKey": "chia pudding",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken breast",
+      "serverKey": "chicken breast",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken broth",
+      "serverKey": "chicken broth",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken curry",
+      "serverKey": "chicken curry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken nuggets",
+      "serverKey": "chicken nuggets",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken rice",
+      "serverKey": "chicken rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken sausage",
+      "serverKey": "chicken sausage",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken wings",
+      "serverKey": "chicken wings",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chickpea curry",
+      "serverKey": "chickpea curry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chickpea snack",
+      "serverKey": "chickpea snack",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chickpeas",
+      "serverKey": "chickpeas",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili",
+      "serverKey": "chili",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili con carne",
+      "serverKey": "chili con carne",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili garlic sauce",
+      "serverKey": "chili garlic sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili nuts",
+      "serverKey": "chili nuts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili powder",
+      "serverKey": "chili powder",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili sauce",
+      "serverKey": "chili sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili sin carne",
+      "serverKey": "chili sin carne",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chilled orange juice",
+      "serverKey": "chilled orange juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chimichurri sauce",
+      "serverKey": "chimichurri sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chinese cabbage",
+      "serverKey": "chinese cabbage",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chips",
+      "serverKey": "chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chives",
+      "serverKey": "chives",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate",
+      "serverKey": "chocolate",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate bar",
+      "serverKey": "chocolate bar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate cake",
+      "serverKey": "chocolate cake",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate cookies",
+      "serverKey": "chocolate cookies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate croissant",
+      "serverKey": "chocolate croissant",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate ice cream",
+      "serverKey": "chocolate ice cream",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate mousse",
+      "serverKey": "chocolate mousse",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate muesli",
+      "serverKey": "chocolate muesli",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate pudding",
+      "serverKey": "chocolate pudding",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate rice cakes",
+      "serverKey": "chocolate rice cakes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate spread",
+      "serverKey": "chocolate spread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chopped tomatoes",
+      "serverKey": "chopped tomatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chorizo",
+      "serverKey": "chorizo",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cinnamon",
+      "serverKey": "cinnamon",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cinnamon sticks",
+      "serverKey": "cinnamon sticks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "classic cookies",
+      "serverKey": "classic cookies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "classic mustard",
+      "serverKey": "classic mustard",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "classic tomato sauce",
+      "serverKey": "classic tomato sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "clementine",
+      "serverKey": "clementine",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "clementines",
+      "serverKey": "clementines",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cloudy apple juice",
+      "serverKey": "cloudy apple juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coca cola",
+      "serverKey": "coca cola",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cocktail sauce",
+      "serverKey": "cocktail sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cocoa",
+      "serverKey": "cocoa",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cocoa butter",
+      "serverKey": "cocoa butter",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut",
+      "serverKey": "coconut",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut bar",
+      "serverKey": "coconut bar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut chips",
+      "serverKey": "coconut chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut drink",
+      "serverKey": "coconut drink",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut flakes",
+      "serverKey": "coconut flakes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut macaroons",
+      "serverKey": "coconut macaroons",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut milk",
+      "serverKey": "coconut milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut oil",
+      "serverKey": "coconut oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut rice",
+      "serverKey": "coconut rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut water",
+      "serverKey": "coconut water",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut yogurt",
+      "serverKey": "coconut yogurt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cod",
+      "serverKey": "cod",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coffee",
+      "serverKey": "coffee",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cola",
+      "serverKey": "cola",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cola zero",
+      "serverKey": "cola zero",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cold pressed hazelnut oil",
+      "serverKey": "cold pressed hazelnut oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cold pressed pumpkin seed oil",
+      "serverKey": "cold pressed pumpkin seed oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cold pressed rapeseed oil",
+      "serverKey": "cold pressed rapeseed oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cold pressed sunflower oil",
+      "serverKey": "cold pressed sunflower oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cold pressed walnut oil",
+      "serverKey": "cold pressed walnut oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cooked beetroot",
+      "serverKey": "cooked beetroot",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cooked ham",
+      "serverKey": "cooked ham",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cooked lentils",
+      "serverKey": "cooked lentils",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cooked shrimp",
+      "serverKey": "cooked shrimp",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cookie",
+      "serverKey": "cookie",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cookie dough",
+      "serverKey": "cookie dough",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cookies",
+      "serverKey": "cookies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cooking cream",
+      "serverKey": "cooking cream",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn",
+      "serverKey": "corn",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn cakes",
+      "serverKey": "corn cakes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn chips",
+      "serverKey": "corn chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn flakes",
+      "serverKey": "corn flakes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn kernels",
+      "serverKey": "corn kernels",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn oil",
+      "serverKey": "corn oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn on the cob",
+      "serverKey": "corn on the cob",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn salad",
+      "serverKey": "corn salad",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn salsa",
+      "serverKey": "corn salsa",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn snack",
+      "serverKey": "corn snack",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn sticks",
+      "serverKey": "corn sticks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corned beef",
+      "serverKey": "corned beef",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cornflakes",
+      "serverKey": "cornflakes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cornichons",
+      "serverKey": "cornichons",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cottage cheese",
+      "serverKey": "cottage cheese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cotton candy",
+      "serverKey": "cotton candy",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "couscous",
+      "serverKey": "couscous",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "crackers",
+      "serverKey": "crackers",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cranberry",
+      "serverKey": "cranberry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cranberry juice",
+      "serverKey": "cranberry juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cream",
+      "serverKey": "cream",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cream cheese",
+      "serverKey": "cream cheese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cream horseradish",
+      "serverKey": "cream horseradish",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "creme fraiche",
+      "serverKey": "creme fraiche",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "croissant",
+      "serverKey": "croissant",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "croissants",
+      "serverKey": "croissants",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "crunchy muesli",
+      "serverKey": "crunchy muesli",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cucumber",
+      "serverKey": "cucumber",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cucumbers",
+      "serverKey": "cucumbers",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "currants",
+      "serverKey": "currants",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "curry ketchup",
+      "serverKey": "curry ketchup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "curry paste",
+      "serverKey": "curry paste",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "curry sauce",
+      "serverKey": "curry sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cut green beans",
+      "serverKey": "cut green beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate",
+      "serverKey": "dark chocolate",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate bar",
+      "serverKey": "dark chocolate bar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate with almonds",
+      "serverKey": "dark chocolate with almonds",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate with nuts",
+      "serverKey": "dark chocolate with nuts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate with orange",
+      "serverKey": "dark chocolate with orange",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark rye bread",
+      "serverKey": "dark rye bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "date",
+      "serverKey": "date",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dates",
+      "serverKey": "dates",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "desiccated coconut",
+      "serverKey": "desiccated coconut",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "diced onions",
+      "serverKey": "diced onions",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "diced tomatoes",
+      "serverKey": "diced tomatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dijon mustard",
+      "serverKey": "dijon mustard",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "donuts",
+      "serverKey": "donuts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried apricots",
+      "serverKey": "dried apricots",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried chickpeas",
+      "serverKey": "dried chickpeas",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried cranberries",
+      "serverKey": "dried cranberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried dates",
+      "serverKey": "dried dates",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried figs",
+      "serverKey": "dried figs",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried fruit mix",
+      "serverKey": "dried fruit mix",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried peas",
+      "serverKey": "dried peas",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried plums",
+      "serverKey": "dried plums",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried porcini mushrooms",
+      "serverKey": "dried porcini mushrooms",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "edamame",
+      "serverKey": "edamame",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "eggplant",
+      "serverKey": "eggplant",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "eggs",
+      "serverKey": "eggs",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "energy bar",
+      "serverKey": "energy bar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "energy drink",
+      "serverKey": "energy drink",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "extra virgin olive oil",
+      "serverKey": "extra virgin olive oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "falafel",
+      "serverKey": "falafel",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "feta cheese",
+      "serverKey": "feta cheese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fettuccine",
+      "serverKey": "fettuccine",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fig",
+      "serverKey": "fig",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "figs",
+      "serverKey": "figs",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fish fingers",
+      "serverKey": "fish fingers",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fish sauce",
+      "serverKey": "fish sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "flatbread",
+      "serverKey": "flatbread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "flaxseed oil",
+      "serverKey": "flaxseed oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "french fries",
+      "serverKey": "french fries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "french salad dressing",
+      "serverKey": "french salad dressing",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh basil",
+      "serverKey": "fresh basil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh blueberries",
+      "serverKey": "fresh blueberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh brussels sprouts",
+      "serverKey": "fresh brussels sprouts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh cucumbers",
+      "serverKey": "fresh cucumbers",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh figs",
+      "serverKey": "fresh figs",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh garlic",
+      "serverKey": "fresh garlic",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh green beans",
+      "serverKey": "fresh green beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh mangoes",
+      "serverKey": "fresh mangoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh mozzarella",
+      "serverKey": "fresh mozzarella",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh mushrooms",
+      "serverKey": "fresh mushrooms",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh orange juice",
+      "serverKey": "fresh orange juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh parsley",
+      "serverKey": "fresh parsley",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh pineapple",
+      "serverKey": "fresh pineapple",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh plums",
+      "serverKey": "fresh plums",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh raspberries",
+      "serverKey": "fresh raspberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh spinach",
+      "serverKey": "fresh spinach",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh strawberries",
+      "serverKey": "fresh strawberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fried onions",
+      "serverKey": "fried onions",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen berries",
+      "serverKey": "frozen berries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen berry mix",
+      "serverKey": "frozen berry mix",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen blueberries",
+      "serverKey": "frozen blueberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen broccoli",
+      "serverKey": "frozen broccoli",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen broccoli florets",
+      "serverKey": "frozen broccoli florets",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen carrots",
+      "serverKey": "frozen carrots",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen forest berries",
+      "serverKey": "frozen forest berries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen fruit",
+      "serverKey": "frozen fruit",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen green beans",
+      "serverKey": "frozen green beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen green peas",
+      "serverKey": "frozen green peas",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen grilled vegetables",
+      "serverKey": "frozen grilled vegetables",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen mango",
+      "serverKey": "frozen mango",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen mixed berries",
+      "serverKey": "frozen mixed berries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen mixed fruit",
+      "serverKey": "frozen mixed fruit",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen mixed vegetables",
+      "serverKey": "frozen mixed vegetables",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen mushrooms",
+      "serverKey": "frozen mushrooms",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen pancakes",
+      "serverKey": "frozen pancakes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen peas",
+      "serverKey": "frozen peas",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen peas and carrots",
+      "serverKey": "frozen peas and carrots",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen pizza",
+      "serverKey": "frozen pizza",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen puff pastry",
+      "serverKey": "frozen puff pastry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen raspberries",
+      "serverKey": "frozen raspberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen red berries",
+      "serverKey": "frozen red berries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen spinach",
+      "serverKey": "frozen spinach",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen strawberries",
+      "serverKey": "frozen strawberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen vegetable mix",
+      "serverKey": "frozen vegetable mix",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen vegetables",
+      "serverKey": "frozen vegetables",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fruit bar",
+      "serverKey": "fruit bar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fruit gummies",
+      "serverKey": "fruit gummies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fruit jelly",
+      "serverKey": "fruit jelly",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fruit juice",
+      "serverKey": "fruit juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fruit tea",
+      "serverKey": "fruit tea",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fruit yogurt",
+      "serverKey": "fruit yogurt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frying oil",
+      "serverKey": "frying oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fusilli pasta",
+      "serverKey": "fusilli pasta",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gala apple",
+      "serverKey": "gala apple",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic",
+      "serverKey": "garlic",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic bread",
+      "serverKey": "garlic bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic dip",
+      "serverKey": "garlic dip",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic mayonnaise",
+      "serverKey": "garlic mayonnaise",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic oil",
+      "serverKey": "garlic oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic powder",
+      "serverKey": "garlic powder",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic sauce",
+      "serverKey": "garlic sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gelatin",
+      "serverKey": "gelatin",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ghee",
+      "serverKey": "ghee",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ginger",
+      "serverKey": "ginger",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ginger tea",
+      "serverKey": "ginger tea",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gingerbread",
+      "serverKey": "gingerbread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gluten free bread",
+      "serverKey": "gluten free bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gluten free flour",
+      "serverKey": "gluten free flour",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gluten free fusilli",
+      "serverKey": "gluten free fusilli",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gluten free penne",
+      "serverKey": "gluten free penne",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gluten free pizza",
+      "serverKey": "gluten free pizza",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gluten free spaghetti",
+      "serverKey": "gluten free spaghetti",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gnocchi",
+      "serverKey": "gnocchi",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "goat cheese",
+      "serverKey": "goat cheese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "goat milk cheese",
+      "serverKey": "goat milk cheese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "golden raisins",
+      "serverKey": "golden raisins",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gooseberries",
+      "serverKey": "gooseberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gooseberry",
+      "serverKey": "gooseberry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gouda cheese",
+      "serverKey": "gouda cheese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "granny smith apple",
+      "serverKey": "granny smith apple",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "granulated garlic",
+      "serverKey": "granulated garlic",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "grape juice",
+      "serverKey": "grape juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "grape seed oil",
+      "serverKey": "grape seed oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "grapefruit",
+      "serverKey": "grapefruit",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "grapes",
+      "serverKey": "grapes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gravy",
+      "serverKey": "gravy",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "greek style yogurt",
+      "serverKey": "greek style yogurt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "greek yogurt",
+      "serverKey": "greek yogurt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green apple",
+      "serverKey": "green apple",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green apples",
+      "serverKey": "green apples",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green asparagus",
+      "serverKey": "green asparagus",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green asparagus spears",
+      "serverKey": "green asparagus spears",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green beans",
+      "serverKey": "green beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green grapes",
+      "serverKey": "green grapes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green lentils",
+      "serverKey": "green lentils",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green olives",
+      "serverKey": "green olives",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green peas",
+      "serverKey": "green peas",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green pesto",
+      "serverKey": "green pesto",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green smoothie",
+      "serverKey": "green smoothie",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green tea",
+      "serverKey": "green tea",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground beef",
+      "serverKey": "ground beef",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground chicken",
+      "serverKey": "ground chicken",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground cumin",
+      "serverKey": "ground cumin",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "guacamole",
+      "serverKey": "guacamole",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "guava",
+      "serverKey": "guava",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gummy bears",
+      "serverKey": "gummy bears",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gummy candies",
+      "serverKey": "gummy candies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ham",
+      "serverKey": "ham",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hard candies",
+      "serverKey": "hard candies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hard cider",
+      "serverKey": "hard cider",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hazelnut butter",
+      "serverKey": "hazelnut butter",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hazelnut cream",
+      "serverKey": "hazelnut cream",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hazelnut oil",
+      "serverKey": "hazelnut oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hazelnuts",
+      "serverKey": "hazelnuts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hemp seed oil",
+      "serverKey": "hemp seed oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "herb salt",
+      "serverKey": "herb salt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "herbal tea",
+      "serverKey": "herbal tea",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "herring fillets",
+      "serverKey": "herring fillets",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "herring in tomato sauce",
+      "serverKey": "herring in tomato sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "himalayan salt",
+      "serverKey": "himalayan salt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hollandaise sauce",
+      "serverKey": "hollandaise sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "honey",
+      "serverKey": "honey",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "honey mustard",
+      "serverKey": "honey mustard",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "honey mustard dressing",
+      "serverKey": "honey mustard dressing",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "horseradish",
+      "serverKey": "horseradish",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "horseradish cream",
+      "serverKey": "horseradish cream",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "horseradish sauce",
+      "serverKey": "horseradish sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hot chili sauce",
+      "serverKey": "hot chili sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hot ketchup",
+      "serverKey": "hot ketchup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hot mustard",
+      "serverKey": "hot mustard",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hot sauce",
+      "serverKey": "hot sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hummus",
+      "serverKey": "hummus",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "iceberg lettuce",
+      "serverKey": "iceberg lettuce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "iced tea",
+      "serverKey": "iced tea",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "instant coffee",
+      "serverKey": "instant coffee",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "instant mashed potatoes",
+      "serverKey": "instant mashed potatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "instant noodle soup",
+      "serverKey": "instant noodle soup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "instant noodles",
+      "serverKey": "instant noodles",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "italian herbs",
+      "serverKey": "italian herbs",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "italian salad dressing",
+      "serverKey": "italian salad dressing",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "italian salami",
+      "serverKey": "italian salami",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "italian seasoning",
+      "serverKey": "italian seasoning",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "jackfruit",
+      "serverKey": "jackfruit",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "jalapenos",
+      "serverKey": "jalapenos",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "jam",
+      "serverKey": "jam",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "jasmine rice",
+      "serverKey": "jasmine rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "jelly",
+      "serverKey": "jelly",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "jelly candies",
+      "serverKey": "jelly candies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "juniper berries",
+      "serverKey": "juniper berries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kaiser rolls",
+      "serverKey": "kaiser rolls",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kale",
+      "serverKey": "kale",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kefir",
+      "serverKey": "kefir",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ketchup",
+      "serverKey": "ketchup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kidney beans",
+      "serverKey": "kidney beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kiwi",
+      "serverKey": "kiwi",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kiwis",
+      "serverKey": "kiwis",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kohlrabi",
+      "serverKey": "kohlrabi",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kombucha",
+      "serverKey": "kombucha",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lasagna",
+      "serverKey": "lasagna",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "leaf spinach",
+      "serverKey": "leaf spinach",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon",
+      "serverKey": "lemon",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon balm",
+      "serverKey": "lemon balm",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon juice",
+      "serverKey": "lemon juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon lemonade",
+      "serverKey": "lemon lemonade",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon oil",
+      "serverKey": "lemon oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon rice",
+      "serverKey": "lemon rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon soda",
+      "serverKey": "lemon soda",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon soft drink",
+      "serverKey": "lemon soft drink",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon sorbet",
+      "serverKey": "lemon sorbet",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon syrup",
+      "serverKey": "lemon syrup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon tea",
+      "serverKey": "lemon tea",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemonade",
+      "serverKey": "lemonade",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemongrass",
+      "serverKey": "lemongrass",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemons",
+      "serverKey": "lemons",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lentil chips",
+      "serverKey": "lentil chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lentil soup",
+      "serverKey": "lentil soup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lentils",
+      "serverKey": "lentils",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "licorice",
+      "serverKey": "licorice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "light coconut milk",
+      "serverKey": "light coconut milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "light mayonnaise",
+      "serverKey": "light mayonnaise",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lime",
+      "serverKey": "lime",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "limes",
+      "serverKey": "limes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lingonberries",
+      "serverKey": "lingonberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "linguine",
+      "serverKey": "linguine",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "linseed oil",
+      "serverKey": "linseed oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lollipops",
+      "serverKey": "lollipops",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "long grain rice",
+      "serverKey": "long grain rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "low fat milk",
+      "serverKey": "low fat milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "low fat yogurt",
+      "serverKey": "low fat yogurt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lychee",
+      "serverKey": "lychee",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "macadamia milk",
+      "serverKey": "macadamia milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "macadamia nuts",
+      "serverKey": "macadamia nuts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "macadamia oil",
+      "serverKey": "macadamia oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "macaroni",
+      "serverKey": "macaroni",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mackerel",
+      "serverKey": "mackerel",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mackerel fillet",
+      "serverKey": "mackerel fillet",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mackerel in tomato sauce",
+      "serverKey": "mackerel in tomato sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mandarin",
+      "serverKey": "mandarin",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mandarin juice",
+      "serverKey": "mandarin juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mandarins",
+      "serverKey": "mandarins",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mango",
+      "serverKey": "mango",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mango chutney",
+      "serverKey": "mango chutney",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mangoes",
+      "serverKey": "mangoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "maple syrup",
+      "serverKey": "maple syrup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "margarine",
+      "serverKey": "margarine",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "marinated olives",
+      "serverKey": "marinated olives",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "marinated tofu",
+      "serverKey": "marinated tofu",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "marshmallows",
+      "serverKey": "marshmallows",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "marzipan",
+      "serverKey": "marzipan",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mayonnaise",
+      "serverKey": "mayonnaise",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "meatballs",
+      "serverKey": "meatballs",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "meatloaf",
+      "serverKey": "meatloaf",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "melon",
+      "serverKey": "melon",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "melon mix",
+      "serverKey": "melon mix",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mild olive oil",
+      "serverKey": "mild olive oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mild salami",
+      "serverKey": "mild salami",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "milk",
+      "serverKey": "milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "milk chocolate",
+      "serverKey": "milk chocolate",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "milk coffee",
+      "serverKey": "milk coffee",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "millet",
+      "serverKey": "millet",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "minestrone",
+      "serverKey": "minestrone",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "minestrone soup",
+      "serverKey": "minestrone soup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mini croissants",
+      "serverKey": "mini croissants",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mini spring rolls",
+      "serverKey": "mini spring rolls",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mint",
+      "serverKey": "mint",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "miso paste",
+      "serverKey": "miso paste",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mixed beans",
+      "serverKey": "mixed beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mixed berries",
+      "serverKey": "mixed berries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mixed nuts",
+      "serverKey": "mixed nuts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mixed pepper",
+      "serverKey": "mixed pepper",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mixed pickles",
+      "serverKey": "mixed pickles",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mixed salad",
+      "serverKey": "mixed salad",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mortadella",
+      "serverKey": "mortadella",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mozzarella",
+      "serverKey": "mozzarella",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mozzarella sticks",
+      "serverKey": "mozzarella sticks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "muesli",
+      "serverKey": "muesli",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "muesli bar",
+      "serverKey": "muesli bar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "muffins",
+      "serverKey": "muffins",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "multigrain bread",
+      "serverKey": "multigrain bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "multigrain cookies",
+      "serverKey": "multigrain cookies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "multivitamin drink",
+      "serverKey": "multivitamin drink",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "multivitamin juice",
+      "serverKey": "multivitamin juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mung bean sprouts",
+      "serverKey": "mung bean sprouts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mung beans",
+      "serverKey": "mung beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mushroom sauce",
+      "serverKey": "mushroom sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mushrooms",
+      "serverKey": "mushrooms",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mustard",
+      "serverKey": "mustard",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mustard sauce",
+      "serverKey": "mustard sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "natural cheese",
+      "serverKey": "natural cheese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nectarine",
+      "serverKey": "nectarine",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nectarines",
+      "serverKey": "nectarines",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "noodle soup",
+      "serverKey": "noodle soup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nougat",
+      "serverKey": "nougat",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nut bar",
+      "serverKey": "nut bar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nut mix",
+      "serverKey": "nut mix",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nutella",
+      "serverKey": "nutella",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nuts",
+      "serverKey": "nuts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oat biscuits",
+      "serverKey": "oat biscuits",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oat milk",
+      "serverKey": "oat milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oat porridge",
+      "serverKey": "oat porridge",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "olive oil",
+      "serverKey": "olive oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "olives",
+      "serverKey": "olives",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "onion",
+      "serverKey": "onion",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "onion granules",
+      "serverKey": "onion granules",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "onion powder",
+      "serverKey": "onion powder",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "onions",
+      "serverKey": "onions",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "orange",
+      "serverKey": "orange",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "orange juice",
+      "serverKey": "orange juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "orange juice with pulp",
+      "serverKey": "orange juice with pulp",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "orange marmalade",
+      "serverKey": "orange marmalade",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "orange soda",
+      "serverKey": "orange soda",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "orange syrup",
+      "serverKey": "orange syrup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oranges",
+      "serverKey": "oranges",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "orangina",
+      "serverKey": "orangina",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oregano",
+      "serverKey": "oregano",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic almond butter",
+      "serverKey": "organic almond butter",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic apples",
+      "serverKey": "organic apples",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic bbq sauce",
+      "serverKey": "organic bbq sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic beetroot",
+      "serverKey": "organic beetroot",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic black rice",
+      "serverKey": "organic black rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic carrots",
+      "serverKey": "organic carrots",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic coconut",
+      "serverKey": "organic coconut",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic coconut oil",
+      "serverKey": "organic coconut oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic cold pressed coconut oil",
+      "serverKey": "organic cold pressed coconut oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic corn",
+      "serverKey": "organic corn",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic fennel",
+      "serverKey": "organic fennel",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic frozen blueberries",
+      "serverKey": "organic frozen blueberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic green tea",
+      "serverKey": "organic green tea",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic honey",
+      "serverKey": "organic honey",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic kefir",
+      "serverKey": "organic kefir",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic ketchup",
+      "serverKey": "organic ketchup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic lentils",
+      "serverKey": "organic lentils",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic milk chocolate",
+      "serverKey": "organic milk chocolate",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic orange juice",
+      "serverKey": "organic orange juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic oranges",
+      "serverKey": "organic oranges",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic pumpkin seed oil",
+      "serverKey": "organic pumpkin seed oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic rapeseed oil",
+      "serverKey": "organic rapeseed oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic red lentils",
+      "serverKey": "organic red lentils",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic spelt flakes",
+      "serverKey": "organic spelt flakes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic sweet potatoes",
+      "serverKey": "organic sweet potatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic tomato ketchup",
+      "serverKey": "organic tomato ketchup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic tomato paste",
+      "serverKey": "organic tomato paste",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic walnut oil",
+      "serverKey": "organic walnut oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oyster mushrooms",
+      "serverKey": "oyster mushrooms",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "palm oil",
+      "serverKey": "palm oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "papaya",
+      "serverKey": "papaya",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "paprika chips",
+      "serverKey": "paprika chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "parboiled rice",
+      "serverKey": "parboiled rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "parsley",
+      "serverKey": "parsley",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "parsnips",
+      "serverKey": "parsnips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "passata",
+      "serverKey": "passata",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "passion fruit",
+      "serverKey": "passion fruit",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pasta",
+      "serverKey": "pasta",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pea soup",
+      "serverKey": "pea soup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peach",
+      "serverKey": "peach",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peach halves",
+      "serverKey": "peach halves",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peach iced tea",
+      "serverKey": "peach iced tea",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peach jam",
+      "serverKey": "peach jam",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peaches",
+      "serverKey": "peaches",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peanut butter",
+      "serverKey": "peanut butter",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peanut oil",
+      "serverKey": "peanut oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peanuts",
+      "serverKey": "peanuts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pear",
+      "serverKey": "pear",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pear cider",
+      "serverKey": "pear cider",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pearl barley",
+      "serverKey": "pearl barley",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pears",
+      "serverKey": "pears",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peas",
+      "serverKey": "peas",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pecans",
+      "serverKey": "pecans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "penne pasta",
+      "serverKey": "penne pasta",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "penne rigate",
+      "serverKey": "penne rigate",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pepper",
+      "serverKey": "pepper",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peppermint tea",
+      "serverKey": "peppermint tea",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pepperoni",
+      "serverKey": "pepperoni",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "persimmon",
+      "serverKey": "persimmon",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pesto",
+      "serverKey": "pesto",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pesto genovese",
+      "serverKey": "pesto genovese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "physalis",
+      "serverKey": "physalis",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pickled beetroot",
+      "serverKey": "pickled beetroot",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pickled cucumber",
+      "serverKey": "pickled cucumber",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pickled cucumbers",
+      "serverKey": "pickled cucumbers",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pickles",
+      "serverKey": "pickles",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pineapple",
+      "serverKey": "pineapple",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pineapple chunks",
+      "serverKey": "pineapple chunks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pinto beans",
+      "serverKey": "pinto beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pistachio oil",
+      "serverKey": "pistachio oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pistachios",
+      "serverKey": "pistachios",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pita bread",
+      "serverKey": "pita bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pitted green olives",
+      "serverKey": "pitted green olives",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pizza",
+      "serverKey": "pizza",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pizza dough",
+      "serverKey": "pizza dough",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pizza margherita",
+      "serverKey": "pizza margherita",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "plum",
+      "serverKey": "plum",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "plum jam",
+      "serverKey": "plum jam",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "plums",
+      "serverKey": "plums",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pomegranate",
+      "serverKey": "pomegranate",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pomegranate juice",
+      "serverKey": "pomegranate juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pomelo",
+      "serverKey": "pomelo",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "popcorn",
+      "serverKey": "popcorn",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pork",
+      "serverKey": "pork",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pork loin",
+      "serverKey": "pork loin",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pork ribs",
+      "serverKey": "pork ribs",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pork roast",
+      "serverKey": "pork roast",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "potato",
+      "serverKey": "potato",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "potato bread",
+      "serverKey": "potato bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "potato chips",
+      "serverKey": "potato chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "potato gratin",
+      "serverKey": "potato gratin",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "potato rosti",
+      "serverKey": "potato rosti",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "potato soup",
+      "serverKey": "potato soup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "potatoes",
+      "serverKey": "potatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "powdered sugar",
+      "serverKey": "powdered sugar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pralines",
+      "serverKey": "pralines",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "prawn crackers",
+      "serverKey": "prawn crackers",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pretzel",
+      "serverKey": "pretzel",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pretzel crackers",
+      "serverKey": "pretzel crackers",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pretzel sticks",
+      "serverKey": "pretzel sticks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pretzels",
+      "serverKey": "pretzels",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "protein bar",
+      "serverKey": "protein bar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "protein bread",
+      "serverKey": "protein bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "prunes",
+      "serverKey": "prunes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pudding",
+      "serverKey": "pudding",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "puff pastry",
+      "serverKey": "puff pastry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpernickel bread",
+      "serverKey": "pumpernickel bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin",
+      "serverKey": "pumpkin",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin oil",
+      "serverKey": "pumpkin oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin pasta",
+      "serverKey": "pumpkin pasta",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin puree",
+      "serverKey": "pumpkin puree",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin seed bread",
+      "serverKey": "pumpkin seed bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin seed butter",
+      "serverKey": "pumpkin seed butter",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin seed oil",
+      "serverKey": "pumpkin seed oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin seeds",
+      "serverKey": "pumpkin seeds",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin soup",
+      "serverKey": "pumpkin soup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "quark",
+      "serverKey": "quark",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "quinoa",
+      "serverKey": "quinoa",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "radicchio",
+      "serverKey": "radicchio",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "radish",
+      "serverKey": "radish",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "radishes",
+      "serverKey": "radishes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raisin bread",
+      "serverKey": "raisin bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raisins",
+      "serverKey": "raisins",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rapeseed oil",
+      "serverKey": "rapeseed oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberries",
+      "serverKey": "raspberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberry",
+      "serverKey": "raspberry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberry jam",
+      "serverKey": "raspberry jam",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberry juice",
+      "serverKey": "raspberry juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberry lemonade",
+      "serverKey": "raspberry lemonade",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberry syrup",
+      "serverKey": "raspberry syrup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberry vinegar",
+      "serverKey": "raspberry vinegar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ratatouille",
+      "serverKey": "ratatouille",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ravioli",
+      "serverKey": "ravioli",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ravioli in tomato sauce",
+      "serverKey": "ravioli in tomato sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raw ham",
+      "serverKey": "raw ham",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red apples",
+      "serverKey": "red apples",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red beans",
+      "serverKey": "red beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red bell pepper",
+      "serverKey": "red bell pepper",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red cabbage",
+      "serverKey": "red cabbage",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red cherry tomatoes",
+      "serverKey": "red cherry tomatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red grapes",
+      "serverKey": "red grapes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red lentils",
+      "serverKey": "red lentils",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red onion",
+      "serverKey": "red onion",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red onions",
+      "serverKey": "red onions",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red pesto",
+      "serverKey": "red pesto",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red quinoa",
+      "serverKey": "red quinoa",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red rice",
+      "serverKey": "red rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red wine",
+      "serverKey": "red wine",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red wine vinegar",
+      "serverKey": "red wine vinegar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "refined sunflower oil",
+      "serverKey": "refined sunflower oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "remoulade",
+      "serverKey": "remoulade",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "remoulade sauce",
+      "serverKey": "remoulade sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rhubarb",
+      "serverKey": "rhubarb",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice",
+      "serverKey": "rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice cakes",
+      "serverKey": "rice cakes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice crackers",
+      "serverKey": "rice crackers",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice drink",
+      "serverKey": "rice drink",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice noodles",
+      "serverKey": "rice noodles",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice pudding",
+      "serverKey": "rice pudding",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ricotta",
+      "serverKey": "ricotta",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "risotto rice",
+      "serverKey": "risotto rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "roast beef",
+      "serverKey": "roast beef",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "roasted almonds",
+      "serverKey": "roasted almonds",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "roasted pumpkin seeds",
+      "serverKey": "roasted pumpkin seeds",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "roasted walnut oil",
+      "serverKey": "roasted walnut oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rolled oats",
+      "serverKey": "rolled oats",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "romaine lettuce",
+      "serverKey": "romaine lettuce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rosemary",
+      "serverKey": "rosemary",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rusk",
+      "serverKey": "rusk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rye bread",
+      "serverKey": "rye bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "safflower oil",
+      "serverKey": "safflower oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salad",
+      "serverKey": "salad",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salad cream",
+      "serverKey": "salad cream",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salad dressing",
+      "serverKey": "salad dressing",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salad mix",
+      "serverKey": "salad mix",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salami",
+      "serverKey": "salami",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salmon",
+      "serverKey": "salmon",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salsa sauce",
+      "serverKey": "salsa sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salt",
+      "serverKey": "salt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted almonds",
+      "serverKey": "salted almonds",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted crackers",
+      "serverKey": "salted crackers",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted peanuts",
+      "serverKey": "salted peanuts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted pistachios",
+      "serverKey": "salted pistachios",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted popcorn",
+      "serverKey": "salted popcorn",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted potato chips",
+      "serverKey": "salted potato chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "saltine crackers",
+      "serverKey": "saltine crackers",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sandwich bread",
+      "serverKey": "sandwich bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sardines",
+      "serverKey": "sardines",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sardines in oil",
+      "serverKey": "sardines in oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sardines in tomato sauce",
+      "serverKey": "sardines in tomato sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sauerkraut",
+      "serverKey": "sauerkraut",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sausage",
+      "serverKey": "sausage",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sausages",
+      "serverKey": "sausages",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "savory snacks",
+      "serverKey": "savory snacks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "savoy cabbage",
+      "serverKey": "savoy cabbage",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "scallops",
+      "serverKey": "scallops",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sea salt",
+      "serverKey": "sea salt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "seaweed",
+      "serverKey": "seaweed",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "seaweed salad",
+      "serverKey": "seaweed salad",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "seedless grapes",
+      "serverKey": "seedless grapes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "seitan sausages",
+      "serverKey": "seitan sausages",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "semolina",
+      "serverKey": "semolina",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sesame",
+      "serverKey": "sesame",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sesame bar",
+      "serverKey": "sesame bar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sesame oil",
+      "serverKey": "sesame oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sesame sauce",
+      "serverKey": "sesame sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sesame sticks",
+      "serverKey": "sesame sticks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "shallots",
+      "serverKey": "shallots",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "shandy",
+      "serverKey": "shandy",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "shelled sunflower seeds",
+      "serverKey": "shelled sunflower seeds",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "shiitake mushrooms",
+      "serverKey": "shiitake mushrooms",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "shrimp",
+      "serverKey": "shrimp",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "skyr",
+      "serverKey": "skyr",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sliced cheese",
+      "serverKey": "sliced cheese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sliced mushrooms",
+      "serverKey": "sliced mushrooms",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "smoked paprika",
+      "serverKey": "smoked paprika",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "smoked salmon",
+      "serverKey": "smoked salmon",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "smoked sausage",
+      "serverKey": "smoked sausage",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "smoked tofu",
+      "serverKey": "smoked tofu",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "snack sticks",
+      "serverKey": "snack sticks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "snacks",
+      "serverKey": "snacks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soft cheese",
+      "serverKey": "soft cheese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soft drink",
+      "serverKey": "soft drink",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sour cherries",
+      "serverKey": "sour cherries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sour cream",
+      "serverKey": "sour cream",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sour cream dip",
+      "serverKey": "sour cream dip",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sourdough bread",
+      "serverKey": "sourdough bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soy milk",
+      "serverKey": "soy milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soy sauce",
+      "serverKey": "soy sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soy sausages",
+      "serverKey": "soy sausages",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soy strips",
+      "serverKey": "soy strips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soy yogurt",
+      "serverKey": "soy yogurt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soybeans",
+      "serverKey": "soybeans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spaghetti",
+      "serverKey": "spaghetti",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spaghetti bolognese",
+      "serverKey": "spaghetti bolognese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spare ribs",
+      "serverKey": "spare ribs",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sparkling mineral water",
+      "serverKey": "sparkling mineral water",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sparkling water",
+      "serverKey": "sparkling water",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spelt flakes",
+      "serverKey": "spelt flakes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spicy tomato sauce",
+      "serverKey": "spicy tomato sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spinach",
+      "serverKey": "spinach",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spinach lasagna",
+      "serverKey": "spinach lasagna",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spring onions",
+      "serverKey": "spring onions",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "squid",
+      "serverKey": "squid",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sriracha sauce",
+      "serverKey": "sriracha sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "steak sauce",
+      "serverKey": "steak sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "still water",
+      "serverKey": "still water",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberries",
+      "serverKey": "strawberries",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberry",
+      "serverKey": "strawberry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberry ice cream",
+      "serverKey": "strawberry ice cream",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberry jam",
+      "serverKey": "strawberry jam",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberry kefir",
+      "serverKey": "strawberry kefir",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberry yogurt",
+      "serverKey": "strawberry yogurt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sugar snap peas",
+      "serverKey": "sugar snap peas",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sun dried tomatoes",
+      "serverKey": "sun dried tomatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sunflower oil",
+      "serverKey": "sunflower oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sunflower seeds",
+      "serverKey": "sunflower seeds",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet and sour pickles",
+      "serverKey": "sweet and sour pickles",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet and sour sauce",
+      "serverKey": "sweet and sour sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet chili sauce",
+      "serverKey": "sweet chili sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet corn",
+      "serverKey": "sweet corn",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet mustard",
+      "serverKey": "sweet mustard",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet potato",
+      "serverKey": "sweet potato",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet potato chips",
+      "serverKey": "sweet potato chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet potatoes",
+      "serverKey": "sweet potatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tahini",
+      "serverKey": "tahini",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tapioca",
+      "serverKey": "tapioca",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tarragon mustard",
+      "serverKey": "tarragon mustard",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tartar sauce",
+      "serverKey": "tartar sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tea",
+      "serverKey": "tea",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tempeh",
+      "serverKey": "tempeh",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "teriyaki sauce",
+      "serverKey": "teriyaki sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "thyme",
+      "serverKey": "thyme",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "toast bread",
+      "serverKey": "toast bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "toasted sesame oil",
+      "serverKey": "toasted sesame oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "toffifee",
+      "serverKey": "toffifee",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tofu cubes",
+      "serverKey": "tofu cubes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato",
+      "serverKey": "tomato",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato chips",
+      "serverKey": "tomato chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato chutney",
+      "serverKey": "tomato chutney",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato couscous",
+      "serverKey": "tomato couscous",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato juice",
+      "serverKey": "tomato juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato ketchup",
+      "serverKey": "tomato ketchup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato pasta sauce",
+      "serverKey": "tomato pasta sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato paste",
+      "serverKey": "tomato paste",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato paste tube",
+      "serverKey": "tomato paste tube",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato salsa",
+      "serverKey": "tomato salsa",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato sauce",
+      "serverKey": "tomato sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato sauce with herbs",
+      "serverKey": "tomato sauce with herbs",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato soup",
+      "serverKey": "tomato soup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato spread",
+      "serverKey": "tomato spread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomatoes",
+      "serverKey": "tomatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tortellini",
+      "serverKey": "tortellini",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tortilla chips",
+      "serverKey": "tortilla chips",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tortilla wraps",
+      "serverKey": "tortilla wraps",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "trail mix",
+      "serverKey": "trail mix",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "trout",
+      "serverKey": "trout",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "truffle oil",
+      "serverKey": "truffle oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tuna",
+      "serverKey": "tuna",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tuna in oil",
+      "serverKey": "tuna in oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tuna in water",
+      "serverKey": "tuna in water",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "turkey breast",
+      "serverKey": "turkey breast",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "turmeric",
+      "serverKey": "turmeric",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tzatziki",
+      "serverKey": "tzatziki",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tzatziki sauce",
+      "serverKey": "tzatziki sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "unsweetened almond milk",
+      "serverKey": "unsweetened almond milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "unsweetened apple juice",
+      "serverKey": "unsweetened apple juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "unsweetened applesauce",
+      "serverKey": "unsweetened applesauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "unsweetened oat milk",
+      "serverKey": "unsweetened oat milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "unsweetened soy milk",
+      "serverKey": "unsweetened soy milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vanilla ice cream",
+      "serverKey": "vanilla ice cream",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vanilla oat milk",
+      "serverKey": "vanilla oat milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vanilla pudding",
+      "serverKey": "vanilla pudding",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vanilla yogurt",
+      "serverKey": "vanilla yogurt",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "veal bratwurst",
+      "serverKey": "veal bratwurst",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan bolognese",
+      "serverKey": "vegan bolognese",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan bolognese sauce",
+      "serverKey": "vegan bolognese sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan chocolate",
+      "serverKey": "vegan chocolate",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan cookies",
+      "serverKey": "vegan cookies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan cream",
+      "serverKey": "vegan cream",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan falafel",
+      "serverKey": "vegan falafel",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan gyros",
+      "serverKey": "vegan gyros",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan ice cream",
+      "serverKey": "vegan ice cream",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan lasagna",
+      "serverKey": "vegan lasagna",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan margarine",
+      "serverKey": "vegan margarine",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan mayonnaise",
+      "serverKey": "vegan mayonnaise",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan moussaka",
+      "serverKey": "vegan moussaka",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan nuggets",
+      "serverKey": "vegan nuggets",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan pesto",
+      "serverKey": "vegan pesto",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan pizza",
+      "serverKey": "vegan pizza",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan sausages",
+      "serverKey": "vegan sausages",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan schnitzel",
+      "serverKey": "vegan schnitzel",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan spread",
+      "serverKey": "vegan spread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan vegetable lasagna",
+      "serverKey": "vegan vegetable lasagna",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable bouillon",
+      "serverKey": "vegetable bouillon",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable broth",
+      "serverKey": "vegetable broth",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable burger",
+      "serverKey": "vegetable burger",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable curry",
+      "serverKey": "vegetable curry",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable juice",
+      "serverKey": "vegetable juice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable lasagna",
+      "serverKey": "vegetable lasagna",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable oil",
+      "serverKey": "vegetable oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable patties",
+      "serverKey": "vegetable patties",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable soup",
+      "serverKey": "vegetable soup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable stew",
+      "serverKey": "vegetable stew",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable sticks",
+      "serverKey": "vegetable sticks",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable stock",
+      "serverKey": "vegetable stock",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetarian bolognese sauce",
+      "serverKey": "vegetarian bolognese sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetarian burger",
+      "serverKey": "vegetarian burger",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetarian chili",
+      "serverKey": "vegetarian chili",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetarian gyros",
+      "serverKey": "vegetarian gyros",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetarian meatballs",
+      "serverKey": "vegetarian meatballs",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetarian pizza",
+      "serverKey": "vegetarian pizza",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetarian sausages",
+      "serverKey": "vegetarian sausages",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetarian vegetable lasagna",
+      "serverKey": "vegetarian vegetable lasagna",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetarian vegetable soup",
+      "serverKey": "vegetarian vegetable soup",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "veggie burger",
+      "serverKey": "veggie burger",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vinaigrette",
+      "serverKey": "vinaigrette",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vine tomatoes",
+      "serverKey": "vine tomatoes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vinegar",
+      "serverKey": "vinegar",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "virgin coconut oil",
+      "serverKey": "virgin coconut oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "virgin olive oil",
+      "serverKey": "virgin olive oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "waffles",
+      "serverKey": "waffles",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "walnut oil",
+      "serverKey": "walnut oil",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "walnuts",
+      "serverKey": "walnuts",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "water",
+      "serverKey": "water",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "watercress",
+      "serverKey": "watercress",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "watermelon",
+      "serverKey": "watermelon",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "wheat bread",
+      "serverKey": "wheat bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whey",
+      "serverKey": "whey",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whey protein",
+      "serverKey": "whey protein",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white asparagus",
+      "serverKey": "white asparagus",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white basmati rice",
+      "serverKey": "white basmati rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white beans",
+      "serverKey": "white beans",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white beans in tomato sauce",
+      "serverKey": "white beans in tomato sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white bread",
+      "serverKey": "white bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white cabbage",
+      "serverKey": "white cabbage",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white chocolate",
+      "serverKey": "white chocolate",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white grapes",
+      "serverKey": "white grapes",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white mushroom",
+      "serverKey": "white mushroom",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white rice",
+      "serverKey": "white rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white sandwich bread",
+      "serverKey": "white sandwich bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white toast bread",
+      "serverKey": "white toast bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole almonds",
+      "serverKey": "whole almonds",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole grain bread",
+      "serverKey": "whole grain bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole grain cookies",
+      "serverKey": "whole grain cookies",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole grain mustard",
+      "serverKey": "whole grain mustard",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole grain sandwich bread",
+      "serverKey": "whole grain sandwich bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole milk",
+      "serverKey": "whole milk",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole wheat",
+      "serverKey": "whole wheat",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole wheat bread",
+      "serverKey": "whole wheat bread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "wild rice",
+      "serverKey": "wild rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "wine",
+      "serverKey": "wine",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "wine gums",
+      "serverKey": "wine gums",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "worcestershire sauce",
+      "serverKey": "worcestershire sauce",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "yeast extract spread",
+      "serverKey": "yeast extract spread",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "yellow bell pepper",
+      "serverKey": "yellow bell pepper",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "yellow onions",
+      "serverKey": "yellow onions",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "yellow rice",
+      "serverKey": "yellow rice",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "yogurt dressing",
+      "serverKey": "yogurt dressing",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "yogurt salad dressing",
+      "serverKey": "yogurt salad dressing",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "zucchini",
+      "serverKey": "zucchini",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "zucchini noodles",
+      "serverKey": "zucchini noodles",
+      "serverArtifact": "seasonality.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    }
+  ]
+}

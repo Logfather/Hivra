@@ -1,0 +1,94 @@
+{
+  "entries": {
+    "amande, mondée, émondée ou blanchie": {
+      "environmentScoreMptPerKg": 0.746,
+      "climateKgCo2EqPerKg": 2.63,
+      "landUsePtPerKg": 378.0,
+      "waterDeprivationM3PerKg": 30.9
+    },
+    "boeuf, collier, braisé": {
+      "environmentScoreMptPerKg": 4.3,
+      "climateKgCo2EqPerKg": 45.9,
+      "landUsePtPerKg": 2980.0,
+      "waterDeprivationM3PerKg": 3.8
+    },
+    "cake salé (garniture : fromage, légumes, viande, poisson, volaille, etc.)": {
+      "environmentScoreMptPerKg": 0.539,
+      "climateKgCo2EqPerKg": 4.14,
+      "landUsePtPerKg": 245.0,
+      "waterDeprivationM3PerKg": 3.26
+    },
+    "crème dessert à la vanille, rayon frais": {
+      "environmentScoreMptPerKg": 0.203,
+      "climateKgCo2EqPerKg": 1.94,
+      "landUsePtPerKg": 66.5,
+      "waterDeprivationM3PerKg": 0.528
+    },
+    "kombu royal (saccharina latissima), séchée ou déshydratée": {
+      "environmentScoreMptPerKg": 1.55,
+      "climateKgCo2EqPerKg": 11.8,
+      "landUsePtPerKg": 26.7,
+      "waterDeprivationM3PerKg": 4.83
+    },
+    "limande sole, cuite à la vapeur": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    },
+    "légumes pour couscous, surgelés, crus": {
+      "environmentScoreMptPerKg": 0.0958,
+      "climateKgCo2EqPerKg": 0.699,
+      "landUsePtPerKg": 20.5,
+      "waterDeprivationM3PerKg": 0.465
+    },
+    "pain de mie, au son": {
+      "environmentScoreMptPerKg": 0.177,
+      "climateKgCo2EqPerKg": 1.55,
+      "landUsePtPerKg": 93.8,
+      "waterDeprivationM3PerKg": 0.383
+    },
+    "persil, séché": {
+      "environmentScoreMptPerKg": 0.778,
+      "climateKgCo2EqPerKg": 4.34,
+      "landUsePtPerKg": 590.0,
+      "waterDeprivationM3PerKg": 8.11
+    },
+    "plat légumes, avec féculent, dès 6 8 mois": {
+      "environmentScoreMptPerKg": 0.139,
+      "climateKgCo2EqPerKg": 1.09,
+      "landUsePtPerKg": 52.9,
+      "waterDeprivationM3PerKg": 1.33
+    },
+    "potée auvergnate (chou et porc)": {
+      "environmentScoreMptPerKg": 0.399,
+      "climateKgCo2EqPerKg": 3.26,
+      "landUsePtPerKg": 146.0,
+      "waterDeprivationM3PerKg": 1.17
+    },
+    "poulet, manchons marinés, rôtis/cuits au four": {
+      "environmentScoreMptPerKg": 1.31,
+      "climateKgCo2EqPerKg": 7.8,
+      "landUsePtPerKg": 450.0,
+      "waterDeprivationM3PerKg": 3.43
+    },
+    "riz au lait, rayon frais": {
+      "environmentScoreMptPerKg": 0.225,
+      "climateKgCo2EqPerKg": 1.84,
+      "landUsePtPerKg": 63.9,
+      "waterDeprivationM3PerKg": 2.2
+    },
+    "rôti de volaille en salaison, cuit": {
+      "environmentScoreMptPerKg": 1.37,
+      "climateKgCo2EqPerKg": 7.89,
+      "landUsePtPerKg": 450.0,
+      "waterDeprivationM3PerKg": 3.48
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aromatisé, sucré, à la crème": {
+      "environmentScoreMptPerKg": 0.191,
+      "climateKgCo2EqPerKg": 1.85,
+      "landUsePtPerKg": 63.3,
+      "waterDeprivationM3PerKg": 0.452
+    }
+  }
+}

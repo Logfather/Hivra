@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "bar commun ou loup, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 2.33,
+      "climateKgCo2EqPerKg": 15.2,
+      "landUsePtPerKg": 228.0,
+      "waterDeprivationM3PerKg": 3.33
+    },
+    "coquille saint jacques, noix, crue": {
+      "environmentScoreMptPerKg": 1.33,
+      "climateKgCo2EqPerKg": 9.89,
+      "landUsePtPerKg": 24.8,
+      "waterDeprivationM3PerKg": 0.435
+    },
+    "lieu ou colin d'alaska, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "oeuf, brouillé, avec matière grasse": {
+      "environmentScoreMptPerKg": 0.441,
+      "climateKgCo2EqPerKg": 3.44,
+      "landUsePtPerKg": 221.0,
+      "waterDeprivationM3PerKg": 1.05
+    },
+    "pain aux raisins (viennoiserie)": {
+      "environmentScoreMptPerKg": 0.279,
+      "climateKgCo2EqPerKg": 2.57,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 1.76
+    },
+    "rillettes de poisson": {
+      "environmentScoreMptPerKg": 0.477,
+      "climateKgCo2EqPerKg": 3.55,
+      "landUsePtPerKg": 60.7,
+      "waterDeprivationM3PerKg": 0.583
+    },
+    "soupe au potiron, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.134,
+      "climateKgCo2EqPerKg": 0.722,
+      "landUsePtPerKg": 22.9,
+      "waterDeprivationM3PerKg": 0.357
+    },
+    "surimi, fourré au fromage": {
+      "environmentScoreMptPerKg": 1.14,
+      "climateKgCo2EqPerKg": 7.57,
+      "landUsePtPerKg": 55.7,
+      "waterDeprivationM3PerKg": 1.35
+    }
+  }
+}

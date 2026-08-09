@@ -3,6 +3,7 @@ package de.shopme.tools.knowledge.mapping.catalog.runner
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.mapping.catalog.report.CatalogServerMappingArtifactCoverageEvaluator
 import de.shopme.tools.knowledge.mapping.catalog.report.CatalogServerMappingCoverageReport
 import de.shopme.tools.knowledge.mapping.catalog.report.CatalogServerMappingCoverageReportWriter
@@ -318,30 +319,18 @@ class EvaluateCatalogServerMappingsAgainstKnowledgeArtifacts(
             args: Array<String>
         ) {
 
-            val projectRoot =
-                File("..")
+            val paths =
+                KnowledgeBuildPaths.default()
+
+            paths.ensureBuildDirectories()
 
             EvaluateCatalogServerMappingsAgainstKnowledgeArtifacts(
                 mappingFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "mappings/" +
-                                "catalog-server.mappings.json"
-                    ),
+                    paths.catalogServerMappings,
                 serverArtifactDirectory =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/server"
-                    ),
+                    paths.serverRoot,
                 reportFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "catalog-server-mapping-" +
-                                "artifact-coverage.json"
-                    )
+                    paths.catalogServerMappingCoverageReport
             ).run()
         }
     }

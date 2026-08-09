@@ -1,0 +1,88 @@
+{
+  "entries": {
+    "boeuf, tende de tranche, grillée/poêlée": {
+      "environmentScoreMptPerKg": 3.42,
+      "climateKgCo2EqPerKg": 36.7,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.03
+    },
+    "couscous (semoule de blé dur roulée précuite à la vapeur), cuite, non salée": {
+      "environmentScoreMptPerKg": 0.109,
+      "climateKgCo2EqPerKg": 0.788,
+      "landUsePtPerKg": 89.3,
+      "waterDeprivationM3PerKg": 0.428
+    },
+    "farine d'orge": {
+      "environmentScoreMptPerKg": 0.139,
+      "climateKgCo2EqPerKg": 0.778,
+      "landUsePtPerKg": 98.3,
+      "waterDeprivationM3PerKg": 1.22
+    },
+    "farine de blé tendre ou froment t150": {
+      "environmentScoreMptPerKg": 0.102,
+      "climateKgCo2EqPerKg": 0.791,
+      "landUsePtPerKg": 84.2,
+      "waterDeprivationM3PerKg": 0.205
+    },
+    "glace ou crème glacée, cône (taille standard)": {
+      "environmentScoreMptPerKg": 0.229,
+      "climateKgCo2EqPerKg": 1.92,
+      "landUsePtPerKg": 77.0,
+      "waterDeprivationM3PerKg": 0.62
+    },
+    "hareng fumé, au naturel (emballage corrigé)": {
+      "environmentScoreMptPerKg": 0.374,
+      "climateKgCo2EqPerKg": 3.17,
+      "landUsePtPerKg": 29.4,
+      "waterDeprivationM3PerKg": 0.5
+    },
+    "julienne ou brunoise de légumes, surgelée, crue": {
+      "environmentScoreMptPerKg": 0.094,
+      "climateKgCo2EqPerKg": 0.687,
+      "landUsePtPerKg": 14.2,
+      "waterDeprivationM3PerKg": 0.567
+    },
+    "jus multifruit, pur jus, multivitaminé": {
+      "environmentScoreMptPerKg": 0.196,
+      "climateKgCo2EqPerKg": 0.882,
+      "landUsePtPerKg": 28.2,
+      "waterDeprivationM3PerKg": 8.98
+    },
+    "pizza au thon": {
+      "environmentScoreMptPerKg": 0.36,
+      "climateKgCo2EqPerKg": 2.71,
+      "landUsePtPerKg": 102.0,
+      "waterDeprivationM3PerKg": 1.15
+    },
+    "plat légumes, avec féculent et lait/crème, dès 12 mois": {
+      "environmentScoreMptPerKg": 0.149,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": 56.0,
+      "waterDeprivationM3PerKg": 1.26
+    },
+    "poulet, aile, viande et peau, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 1.3,
+      "climateKgCo2EqPerKg": 7.75,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "poulet, poitrine, viande et peau, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 1.28,
+      "climateKgCo2EqPerKg": 7.48,
+      "landUsePtPerKg": 444.0,
+      "waterDeprivationM3PerKg": 3.34
+    },
+    "rutabaga, cuit": {
+      "environmentScoreMptPerKg": 0.129,
+      "climateKgCo2EqPerKg": 1.35,
+      "landUsePtPerKg": 19.6,
+      "waterDeprivationM3PerKg": 0.75
+    },
+    "sirop d'agave": {
+      "environmentScoreMptPerKg": 0.755,
+      "climateKgCo2EqPerKg": 5.63,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 0.676
+    }
+  }
+}

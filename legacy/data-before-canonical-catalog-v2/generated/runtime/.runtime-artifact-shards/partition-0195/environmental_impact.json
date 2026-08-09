@@ -1,0 +1,22 @@
+{
+  "entries": {
+    "couscous de légumes": {
+      "environmentScoreMptPerKg": 0.228,
+      "climateKgCo2EqPerKg": 1.72,
+      "landUsePtPerKg": 49.4,
+      "waterDeprivationM3PerKg": 0.934
+    },
+    "feuilleté ou friand jambon fromage": {
+      "environmentScoreMptPerKg": 0.648,
+      "climateKgCo2EqPerKg": 5.8,
+      "landUsePtPerKg": 269.0,
+      "waterDeprivationM3PerKg": 1.26
+    },
+    "moussaka": {
+      "environmentScoreMptPerKg": 2.86,
+      "climateKgCo2EqPerKg": 23.6,
+      "landUsePtPerKg": 2450.0,
+      "waterDeprivationM3PerKg": 4.26
+    }
+  }
+}

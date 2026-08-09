@@ -1,0 +1,25 @@
+{
+  "entries": {
+    "agneau, collier, cru": {
+      "litersPerKilogram": 6930.0
+    },
+    "anchois au sel (anchoité, semi conserve)": {
+      "litersPerKilogram": 255.0
+    },
+    "boisson au soja, aromatisée, sucrée": {
+      "litersPerKilogram": 81.5
+    },
+    "glace ou crème glacée, gourmande, en bac": {
+      "litersPerKilogram": 637.0
+    },
+    "hareng fumé, filet, doux (version \"logiciel\" avec erreur sur l'emballage)": {
+      "litersPerKilogram": 293.0
+    },
+    "tajine de mouton": {
+      "litersPerKilogram": 5470.0
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux céréales": {
+      "litersPerKilogram": 1490.0
+    }
+  }
+}

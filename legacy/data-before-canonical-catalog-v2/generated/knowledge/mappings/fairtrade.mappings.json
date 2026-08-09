@@ -1,0 +1,810 @@
+{
+  "version": 1,
+  "mappings": [
+    {
+      "catalogKey": "agave syrup",
+      "serverKey": "agave syrup",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond butter",
+      "serverKey": "almond butter",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond chocolate",
+      "serverKey": "almond chocolate",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple chips",
+      "serverKey": "apple chips",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apricot jam",
+      "serverKey": "apricot jam",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "asparagus",
+      "serverKey": "asparagus",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bagel",
+      "serverKey": "bagel",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "banana",
+      "serverKey": "banana",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "banana chips",
+      "serverKey": "banana chips",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "basmati rice",
+      "serverKey": "basmati rice",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black pepper",
+      "serverKey": "black pepper",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black tea",
+      "serverKey": "black tea",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blueberries",
+      "serverKey": "blueberries",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blueberry",
+      "serverKey": "blueberry",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "butter cookies",
+      "serverKey": "butter cookies",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cane sugar",
+      "serverKey": "cane sugar",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cashew nuts",
+      "serverKey": "cashew nuts",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cherry tomatoes",
+      "serverKey": "cherry tomatoes",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chia seeds",
+      "serverKey": "chia seeds",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chickpeas",
+      "serverKey": "chickpeas",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate",
+      "serverKey": "chocolate",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate bar",
+      "serverKey": "chocolate bar",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate cookies",
+      "serverKey": "chocolate cookies",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate pudding",
+      "serverKey": "chocolate pudding",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate spread",
+      "serverKey": "chocolate spread",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cinnamon",
+      "serverKey": "cinnamon",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "classic cookies",
+      "serverKey": "classic cookies",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cloves",
+      "serverKey": "cloves",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cocoa",
+      "serverKey": "cocoa",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cocoa nibs",
+      "serverKey": "cocoa nibs",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cocoa powder",
+      "serverKey": "cocoa powder",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut milk",
+      "serverKey": "coconut milk",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut oil",
+      "serverKey": "coconut oil",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut rice",
+      "serverKey": "coconut rice",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut water",
+      "serverKey": "coconut water",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coffee",
+      "serverKey": "coffee",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coffee beans",
+      "serverKey": "coffee beans",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coffee pods",
+      "serverKey": "coffee pods",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cola",
+      "serverKey": "cola",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cookie dough",
+      "serverKey": "cookie dough",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cookies",
+      "serverKey": "cookies",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "crunchy muesli",
+      "serverKey": "crunchy muesli",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate",
+      "serverKey": "dark chocolate",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate 70%",
+      "serverKey": "dark chocolate 70%",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate 85%",
+      "serverKey": "dark chocolate 85%",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate couverture",
+      "serverKey": "dark chocolate couverture",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate with orange",
+      "serverKey": "dark chocolate with orange",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "energy drink",
+      "serverKey": "energy drink",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "extra virgin olive oil",
+      "serverKey": "extra virgin olive oil",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ginger",
+      "serverKey": "ginger",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "greek yogurt",
+      "serverKey": "greek yogurt",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green tea",
+      "serverKey": "green tea",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground cinnamon",
+      "serverKey": "ground cinnamon",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground coffee",
+      "serverKey": "ground coffee",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "herbal tea",
+      "serverKey": "herbal tea",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "himalayan salt",
+      "serverKey": "himalayan salt",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "honey",
+      "serverKey": "honey",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hummus",
+      "serverKey": "hummus",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "instant coffee",
+      "serverKey": "instant coffee",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "jasmine rice",
+      "serverKey": "jasmine rice",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kombucha",
+      "serverKey": "kombucha",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "latte macchiato",
+      "serverKey": "latte macchiato",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon tea",
+      "serverKey": "lemon tea",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemongrass",
+      "serverKey": "lemongrass",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mango",
+      "serverKey": "mango",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "maple syrup",
+      "serverKey": "maple syrup",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "marshmallows",
+      "serverKey": "marshmallows",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "marzipan",
+      "serverKey": "marzipan",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "milk chocolate",
+      "serverKey": "milk chocolate",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mint tea",
+      "serverKey": "mint tea",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "multivitamin juice",
+      "serverKey": "multivitamin juice",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nougat",
+      "serverKey": "nougat",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nutritional yeast",
+      "serverKey": "nutritional yeast",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oat cookies",
+      "serverKey": "oat cookies",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "orange",
+      "serverKey": "orange",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "orange juice",
+      "serverKey": "orange juice",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic green tea",
+      "serverKey": "organic green tea",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic jasmine rice",
+      "serverKey": "organic jasmine rice",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic milk chocolate",
+      "serverKey": "organic milk chocolate",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "passion fruit",
+      "serverKey": "passion fruit",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peaches",
+      "serverKey": "peaches",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peanut butter",
+      "serverKey": "peanut butter",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "penne pasta",
+      "serverKey": "penne pasta",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "physalis",
+      "serverKey": "physalis",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "plain coconut yogurt",
+      "serverKey": "plain coconut yogurt",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pralines",
+      "serverKey": "pralines",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "protein bar",
+      "serverKey": "protein bar",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "quinoa",
+      "serverKey": "quinoa",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberries",
+      "serverKey": "raspberries",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberry",
+      "serverKey": "raspberry",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raw honey",
+      "serverKey": "raw honey",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red quinoa",
+      "serverKey": "red quinoa",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted almonds",
+      "serverKey": "salted almonds",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted peanuts",
+      "serverKey": "salted peanuts",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sea salt",
+      "serverKey": "sea salt",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "shrimp",
+      "serverKey": "shrimp",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "smooth milk chocolate",
+      "serverKey": "smooth milk chocolate",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberry",
+      "serverKey": "strawberry",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberry yogurt",
+      "serverKey": "strawberry yogurt",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet chili sauce",
+      "serverKey": "sweet chili sauce",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet popcorn",
+      "serverKey": "sweet popcorn",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tea",
+      "serverKey": "tea",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tuna",
+      "serverKey": "tuna",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "unsweetened cocoa powder",
+      "serverKey": "unsweetened cocoa powder",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vanilla extract",
+      "serverKey": "vanilla extract",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan dark chocolate",
+      "serverKey": "vegan dark chocolate",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable oil",
+      "serverKey": "vegetable oil",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "virgin coconut oil",
+      "serverKey": "virgin coconut oil",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "watermelon",
+      "serverKey": "watermelon",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whey protein",
+      "serverKey": "whey protein",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white asparagus",
+      "serverKey": "white asparagus",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white chocolate",
+      "serverKey": "white chocolate",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white wine",
+      "serverKey": "white wine",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole grain cookies",
+      "serverKey": "whole grain cookies",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "zucchini",
+      "serverKey": "zucchini",
+      "serverArtifact": "fairtrade.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    }
+  ]
+}

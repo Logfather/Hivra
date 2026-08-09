@@ -1,0 +1,43 @@
+{
+  "entries": {
+    "biscotte classique": {
+      "litersPerKilogram": 557.0
+    },
+    "bûche glacée": {
+      "litersPerKilogram": 666.0
+    },
+    "cocktail à base de rhum": {
+      "litersPerKilogram": 695.0
+    },
+    "céréales instantanées, poudre à reconstituer, dès 6 mois": {
+      "litersPerKilogram": 1050.0
+    },
+    "fromage bleu d'auvergne": {
+      "litersPerKilogram": 782.0
+    },
+    "haricot mungo, sec": {
+      "litersPerKilogram": 979.0
+    },
+    "lait en poudre, écrémé": {
+      "litersPerKilogram": 994.0
+    },
+    "nectarine ou brugnon, pulpe et peau, crue": {
+      "litersPerKilogram": 1760.0
+    },
+    "pomme de terre, sans peau, cuite au four": {
+      "litersPerKilogram": 504.0
+    },
+    "pâte à pizza fine, crue": {
+      "litersPerKilogram": 1390.0
+    },
+    "sauce à la crème aux herbes": {
+      "litersPerKilogram": 542.0
+    },
+    "substitut de repas hypocalorique, poudre reconstituée avec lait écrémé": {
+      "litersPerKilogram": 805.0
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux fruits, sucré": {
+      "litersPerKilogram": 1640.0
+    }
+  }
+}

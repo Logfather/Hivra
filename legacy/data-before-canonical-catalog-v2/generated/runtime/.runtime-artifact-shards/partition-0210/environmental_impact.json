@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "calissons d'aix en provence": {
+      "environmentScoreMptPerKg": 0.142,
+      "climateKgCo2EqPerKg": 0.859,
+      "landUsePtPerKg": 24.3,
+      "waterDeprivationM3PerKg": 1.16
+    },
+    "canard en sauce (poivre vert, chasseur, etc.)": {
+      "environmentScoreMptPerKg": 0.17,
+      "climateKgCo2EqPerKg": 1.26,
+      "landUsePtPerKg": 48.4,
+      "waterDeprivationM3PerKg": 0.866
+    },
+    "noix du brésil": {
+      "environmentScoreMptPerKg": 0.6,
+      "climateKgCo2EqPerKg": 7.39,
+      "landUsePtPerKg": 502.0,
+      "waterDeprivationM3PerKg": 17.5
+    },
+    "oignon, cru": {
+      "environmentScoreMptPerKg": 0.0487,
+      "climateKgCo2EqPerKg": 0.421,
+      "landUsePtPerKg": 17.6,
+      "waterDeprivationM3PerKg": 0.736
+    },
+    "orge perlée, crue": {
+      "environmentScoreMptPerKg": 0.108,
+      "climateKgCo2EqPerKg": 0.586,
+      "landUsePtPerKg": 81.9,
+      "waterDeprivationM3PerKg": 1.03
+    },
+    "poivre de cayenne ou piment de cayenne": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 9.4,
+      "landUsePtPerKg": 688.0,
+      "waterDeprivationM3PerKg": 4.38
+    },
+    "pétales de maïs glacés au sucre (non enrichis en vitamines et minéraux)": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "soupe aux champignons, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.459,
+      "climateKgCo2EqPerKg": 3.69,
+      "landUsePtPerKg": 74.9,
+      "waterDeprivationM3PerKg": 16.6
+    },
+    "tarte à l'oignon": {
+      "environmentScoreMptPerKg": 0.337,
+      "climateKgCo2EqPerKg": 2.8,
+      "landUsePtPerKg": 132.0,
+      "waterDeprivationM3PerKg": 0.769
+    },
+    "veau, filet, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 2.74,
+      "climateKgCo2EqPerKg": 29.4,
+      "landUsePtPerKg": 1340.0,
+      "waterDeprivationM3PerKg": 3.99
+    },
+    "yaourt, lait fermenté ou spécialité laitière, nature, sucré": {
+      "environmentScoreMptPerKg": 0.191,
+      "climateKgCo2EqPerKg": 1.86,
+      "landUsePtPerKg": 63.7,
+      "waterDeprivationM3PerKg": 0.463
+    }
+  }
+}

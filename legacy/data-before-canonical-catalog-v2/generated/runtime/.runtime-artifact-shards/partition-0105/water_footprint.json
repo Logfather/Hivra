@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "asperge, pelée, crue": {
+      "litersPerKilogram": 4360.0
+    },
+    "boeuf, paleron, braisé ou bouilli": {
+      "litersPerKilogram": 3790.0
+    },
+    "bouchées ou émincé au soja et blé (ne convient pas aux véganes ou végétaliens), préemballé": {
+      "litersPerKilogram": 538.0
+    },
+    "croûton à l'ail aux fines herbes ou aux oignons, préemballé": {
+      "litersPerKilogram": 15300.0
+    },
+    "dorade grise, ou daurade grise, ou griset, crue": {
+      "litersPerKilogram": 707.0
+    },
+    "foie, porc, cuit": {
+      "litersPerKilogram": 1260.0
+    },
+    "rhum": {
+      "litersPerKilogram": 169.0
+    },
+    "rillettes pur oie": {
+      "litersPerKilogram": 1230.0
+    },
+    "sandwich baguette, thon, crudités (tomate, salade), mayonnaise": {
+      "litersPerKilogram": 1160.0
+    },
+    "sandwich pain de mie complet, poulet, crudités, mayonnaise": {
+      "litersPerKilogram": 1620.0
+    },
+    "saucisse de montbéliard": {
+      "litersPerKilogram": 1770.0
+    },
+    "topinambour, cru": {
+      "litersPerKilogram": 55.800000000000004
+    }
+  }
+}

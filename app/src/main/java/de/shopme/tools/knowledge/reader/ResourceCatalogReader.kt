@@ -3,44 +3,34 @@ package de.shopme.tools.knowledge.reader
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import de.shopme.domain.catalog.CatalogItem
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 
 class ResourceCatalogReader : CatalogReader {
 
     override fun read(): List<CatalogItem> {
 
-        val stream =
+        val catalogFile =
+            KnowledgeBuildPaths
+                .default()
+                .canonicalFoodCatalog
 
-            javaClass.classLoader!!
-
-                .getResourceAsStream(
-
-                    "catalog/supermarket_dataset.json"
-
-                ) ?: error("catalog not found")
+        require(catalogFile.isFile) {
+            "Canonical food catalog not found: ${catalogFile.absolutePath}"
+        }
 
         val json =
-
-            stream.bufferedReader()
-
+            catalogFile
+                .bufferedReader()
                 .use {
-
                     it.readText()
-
                 }
 
         val type =
-
-            object :
-                TypeToken<List<CatalogItem>>() {}.type
+            object : TypeToken<List<CatalogItem>>() {}.type
 
         return Gson().fromJson(
-
             json,
-
             type
-
         )
-
     }
-
 }

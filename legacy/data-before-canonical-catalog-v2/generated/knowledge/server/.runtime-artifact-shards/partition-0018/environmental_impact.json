@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "biscuit sec petit beurre": {
+      "environmentScoreMptPerKg": 0.269,
+      "climateKgCo2EqPerKg": 2.47,
+      "landUsePtPerKg": 131.0,
+      "waterDeprivationM3PerKg": 0.737
+    },
+    "brick garni (garniture : crevettes, légumes, volaille, viande, poisson, etc.)": {
+      "environmentScoreMptPerKg": 0.43,
+      "climateKgCo2EqPerKg": 3.11,
+      "landUsePtPerKg": 111.0,
+      "waterDeprivationM3PerKg": 7.04
+    },
+    "brocoli, cru": {
+      "environmentScoreMptPerKg": 0.0944,
+      "climateKgCo2EqPerKg": 0.951,
+      "landUsePtPerKg": 10.5,
+      "waterDeprivationM3PerKg": 1.01
+    },
+    "citron, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.172,
+      "climateKgCo2EqPerKg": 0.764,
+      "landUsePtPerKg": 25.3,
+      "waterDeprivationM3PerKg": 12.6
+    },
+    "coquille saint jacques, noix et corail, cuite": {
+      "environmentScoreMptPerKg": 1.62,
+      "climateKgCo2EqPerKg": 11.8,
+      "landUsePtPerKg": 30.5,
+      "waterDeprivationM3PerKg": 0.448
+    },
+    "corb, cru": {
+      "environmentScoreMptPerKg": 0.845,
+      "climateKgCo2EqPerKg": 4.69,
+      "landUsePtPerKg": 11.9,
+      "waterDeprivationM3PerKg": 0.483
+    },
+    "crème de marrons vanillée, appertisée": {
+      "environmentScoreMptPerKg": 0.292,
+      "climateKgCo2EqPerKg": 2.01,
+      "landUsePtPerKg": 184.0,
+      "waterDeprivationM3PerKg": 3.07
+    },
+    "foie, dinde, cru": {
+      "environmentScoreMptPerKg": 0.23,
+      "climateKgCo2EqPerKg": 1.5,
+      "landUsePtPerKg": 72.5,
+      "waterDeprivationM3PerKg": 0.614
+    },
+    "fromage frais type petit suisse, nature, 4% mg environ": {
+      "environmentScoreMptPerKg": 0.209,
+      "climateKgCo2EqPerKg": 2.03,
+      "landUsePtPerKg": 77.8,
+      "waterDeprivationM3PerKg": 0.297
+    },
+    "pizza au chèvre et lardons": {
+      "environmentScoreMptPerKg": 0.535,
+      "climateKgCo2EqPerKg": 3.93,
+      "landUsePtPerKg": 219.0,
+      "waterDeprivationM3PerKg": 1.38
+    },
+    "pâté ou terrine aux champignons (forestier)": {
+      "environmentScoreMptPerKg": 0.505,
+      "climateKgCo2EqPerKg": 4.08,
+      "landUsePtPerKg": 121.0,
+      "waterDeprivationM3PerKg": 13.2
+    },
+    "sardine, à l'huile, appertisée, égouttée (version \"logiciel\" avec erreur sur l'emballage)": {
+      "environmentScoreMptPerKg": 0.515,
+      "climateKgCo2EqPerKg": 2.78,
+      "landUsePtPerKg": 266.0,
+      "waterDeprivationM3PerKg": 9.42
+    }
+  }
+}

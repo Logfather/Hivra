@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "compote, tout type de fruits, allégée en sucres": {
+      "environmentScoreMptPerKg": 0.123,
+      "climateKgCo2EqPerKg": 1.1,
+      "landUsePtPerKg": 24.3,
+      "waterDeprivationM3PerKg": 0.777
+    },
+    "crêpe maison, fourrée à la confiture": {
+      "environmentScoreMptPerKg": 0.174,
+      "climateKgCo2EqPerKg": 1.41,
+      "landUsePtPerKg": 72.9,
+      "waterDeprivationM3PerKg": 0.753
+    },
+    "rognon, porc, cru": {
+      "environmentScoreMptPerKg": 0.338,
+      "climateKgCo2EqPerKg": 2.79,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 0.898
+    },
+    "romarin, séché": {
+      "environmentScoreMptPerKg": 0.464,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 142.0,
+      "waterDeprivationM3PerKg": 20.2
+    },
+    "sauce madère, préemballée": {
+      "environmentScoreMptPerKg": 0.571,
+      "climateKgCo2EqPerKg": 5.48,
+      "landUsePtPerKg": 331.0,
+      "waterDeprivationM3PerKg": 0.725
+    },
+    "tarte au citron": {
+      "environmentScoreMptPerKg": 0.366,
+      "climateKgCo2EqPerKg": 2.74,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 1.2
+    },
+    "tomate, pelée, appertisée, égouttée": {
+      "environmentScoreMptPerKg": 0.186,
+      "climateKgCo2EqPerKg": 1.51,
+      "landUsePtPerKg": 13.3,
+      "waterDeprivationM3PerKg": 0.614
+    },
+    "vermicelle de riz, cuite, non salée (emballage corrigé)": {
+      "environmentScoreMptPerKg": 0.236,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 36.6,
+      "waterDeprivationM3PerKg": 5.08
+    }
+  }
+}

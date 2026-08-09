@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "aubergine, cuite": {
+      "environmentScoreMptPerKg": 0.111,
+      "climateKgCo2EqPerKg": 1.16,
+      "landUsePtPerKg": 22.2,
+      "waterDeprivationM3PerKg": 0.822
+    },
+    "chicorée et café, instantané, non sucré, prête à boire (reconstituée avec du lait demi écrémé standard)": {
+      "environmentScoreMptPerKg": 0.249,
+      "climateKgCo2EqPerKg": 2.24,
+      "landUsePtPerKg": 85.2,
+      "waterDeprivationM3PerKg": 1.09
+    },
+    "cidre doux": {
+      "environmentScoreMptPerKg": 0.126,
+      "climateKgCo2EqPerKg": 1.33,
+      "landUsePtPerKg": 22.7,
+      "waterDeprivationM3PerKg": 0.76
+    },
+    "faisselle, 6% mg environ": {
+      "environmentScoreMptPerKg": 0.51,
+      "climateKgCo2EqPerKg": 5.3,
+      "landUsePtPerKg": 241.0,
+      "waterDeprivationM3PerKg": 0.593
+    },
+    "lasagnes ou cannelloni au fromage et aux épinards": {
+      "environmentScoreMptPerKg": 0.498,
+      "climateKgCo2EqPerKg": 3.84,
+      "landUsePtPerKg": 203.0,
+      "waterDeprivationM3PerKg": 1.29
+    },
+    "oignon, séché": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 3.56,
+      "landUsePtPerKg": 181.0,
+      "waterDeprivationM3PerKg": 8.29
+    },
+    "rouget barbet de roche, vapeur": {
+      "environmentScoreMptPerKg": 1.63,
+      "climateKgCo2EqPerKg": 9.22,
+      "landUsePtPerKg": 16.6,
+      "waterDeprivationM3PerKg": 0.896
+    },
+    "saint nectaire, fermier": {
+      "environmentScoreMptPerKg": 0.53,
+      "climateKgCo2EqPerKg": 5.54,
+      "landUsePtPerKg": 244.0,
+      "waterDeprivationM3PerKg": 0.732
+    },
+    "sandwich grec ou kebab, baguette, crudités": {
+      "environmentScoreMptPerKg": 1.57,
+      "climateKgCo2EqPerKg": 12.8,
+      "landUsePtPerKg": 1260.0,
+      "waterDeprivationM3PerKg": 2.94
+    }
+  }
+}

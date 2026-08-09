@@ -1,0 +1,73 @@
+package de.shopme.testing.system.tools.knowledge.catalog.semantic.compatibility
+
+enum class ProductFamilySemanticProfile {
+
+    BAKED_GOOD,
+
+    RAW_MEAT,
+    PROCESSED_MEAT,
+    MEAT_ALTERNATIVE,
+
+    FRESH_FISH,
+    PROCESSED_FISH,
+
+    CHEESE,
+    FRESH_DAIRY,
+    FAT_SPREAD,
+
+    BEVERAGE,
+    WATER,
+    JUICE,
+    PLANT_DRINK,
+
+    CEREAL,
+    PORRIDGE,
+
+    PASTA,
+    FLOUR,
+    WHOLE_GRAIN,
+
+    LEGUME,
+    PRESERVED_LEGUME,
+
+    NUT,
+    NUT_SPREAD,
+
+    VEGETABLE,
+    FRUIT,
+    PRESERVED_VEGETABLE,
+
+    FRUIT_SPREAD,
+    SAUCE,
+
+    SNACK,
+    CHOCOLATE,
+
+    SPICE,
+    HERB,
+
+    READY_MEAL,
+    SOUP_STEW,
+
+    BAKING_INGREDIENT,
+
+    GENERIC,
+
+    FISH_READY_MEAL,
+    DRESSING,
+    SEED,
+    FRUIT_NECTAR,
+    PRESERVED_FRUIT,
+    CONFECTIONERY,
+    CRUSTACEAN,
+    PICKLED_FOOD,
+    SEAFOOD_PRODUCT,
+    VEGETABLE_SPREAD,
+    CHOCOLATE_SPREAD,
+    BREAKFAST_PRODUCT,
+    CANNED_READY_MEAL,
+    PASTA_VARIANT,
+    MEAT_ALTERNATIVE_PROCESSED,
+    RICE,
+    POPCORN,
+}

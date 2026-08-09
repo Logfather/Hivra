@@ -1,0 +1,94 @@
+{
+  "entries": {
+    "abondance": {
+      "environmentScoreMptPerKg": 0.586,
+      "climateKgCo2EqPerKg": 6.13,
+      "landUsePtPerKg": 279.0,
+      "waterDeprivationM3PerKg": 0.79
+    },
+    "artichaut, coeur, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.203,
+      "climateKgCo2EqPerKg": 2.02,
+      "landUsePtPerKg": 66.4,
+      "waterDeprivationM3PerKg": 0.32
+    },
+    "chevrot (fromage de chèvre)": {
+      "environmentScoreMptPerKg": 0.987,
+      "climateKgCo2EqPerKg": 7.05,
+      "landUsePtPerKg": 456.0,
+      "waterDeprivationM3PerKg": 2.46
+    },
+    "chou rave, cru": {
+      "environmentScoreMptPerKg": 0.0533,
+      "climateKgCo2EqPerKg": 0.494,
+      "landUsePtPerKg": 10.9,
+      "waterDeprivationM3PerKg": 0.413
+    },
+    "crevette, surgelée, crue": {
+      "environmentScoreMptPerKg": 3.3,
+      "climateKgCo2EqPerKg": 19.9,
+      "landUsePtPerKg": 248.0,
+      "waterDeprivationM3PerKg": 178.0
+    },
+    "foie, canard, cru": {
+      "environmentScoreMptPerKg": 3.84,
+      "climateKgCo2EqPerKg": 24.0,
+      "landUsePtPerKg": 1280.0,
+      "waterDeprivationM3PerKg": 9.01
+    },
+    "fromage de chèvre frais, au lait cru (type palet ou crottin frais)": {
+      "environmentScoreMptPerKg": 0.797,
+      "climateKgCo2EqPerKg": 5.91,
+      "landUsePtPerKg": 362.0,
+      "waterDeprivationM3PerKg": 2.06
+    },
+    "oeuf, cru": {
+      "environmentScoreMptPerKg": 0.26,
+      "climateKgCo2EqPerKg": 1.88,
+      "landUsePtPerKg": 163.0,
+      "waterDeprivationM3PerKg": 0.783
+    },
+    "pain grillé brioché, tranché, préemballé": {
+      "environmentScoreMptPerKg": 0.227,
+      "climateKgCo2EqPerKg": 2.22,
+      "landUsePtPerKg": 107.0,
+      "waterDeprivationM3PerKg": 0.591
+    },
+    "pâte sablée, crue": {
+      "environmentScoreMptPerKg": 0.388,
+      "climateKgCo2EqPerKg": 3.46,
+      "landUsePtPerKg": 165.0,
+      "waterDeprivationM3PerKg": 1.03
+    },
+    "pétoncle ou peigne du pérou, noix, crue": {
+      "environmentScoreMptPerKg": 1.33,
+      "climateKgCo2EqPerKg": 9.89,
+      "landUsePtPerKg": 24.8,
+      "waterDeprivationM3PerKg": 0.435
+    },
+    "quenelle de poisson, crue": {
+      "environmentScoreMptPerKg": 0.816,
+      "climateKgCo2EqPerKg": 5.76,
+      "landUsePtPerKg": 129.0,
+      "waterDeprivationM3PerKg": 0.552
+    },
+    "rillettes de maquereau": {
+      "environmentScoreMptPerKg": 1.26,
+      "climateKgCo2EqPerKg": 7.96,
+      "landUsePtPerKg": 78.7,
+      "waterDeprivationM3PerKg": 1.81
+    },
+    "soupe au cresson, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.0761,
+      "climateKgCo2EqPerKg": 0.569,
+      "landUsePtPerKg": 16.5,
+      "waterDeprivationM3PerKg": 0.208
+    },
+    "sucre blanc": {
+      "environmentScoreMptPerKg": 0.126,
+      "climateKgCo2EqPerKg": 0.746,
+      "landUsePtPerKg": 31.9,
+      "waterDeprivationM3PerKg": 1.8
+    }
+  }
+}

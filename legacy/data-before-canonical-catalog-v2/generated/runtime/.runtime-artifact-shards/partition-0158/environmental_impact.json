@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "boisson gazeuse aux fruits (à moins de 10% de jus), non sucrée, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.0498,
+      "climateKgCo2EqPerKg": 0.377,
+      "landUsePtPerKg": 1.7,
+      "waterDeprivationM3PerKg": 0.0848
+    },
+    "boisson gazeuse aux fruits (à moins de 10% de jus), sucrée": {
+      "environmentScoreMptPerKg": 0.056,
+      "climateKgCo2EqPerKg": 0.409,
+      "landUsePtPerKg": 5.6,
+      "waterDeprivationM3PerKg": 0.288
+    },
+    "lasagnes ou canelloni aux légumes et au fromage de chèvre, cuits": {
+      "environmentScoreMptPerKg": 0.408,
+      "climateKgCo2EqPerKg": 3.23,
+      "landUsePtPerKg": 128.0,
+      "waterDeprivationM3PerKg": 6.46
+    },
+    "petit pot légumes, avec féculent, dès 4/6 mois": {
+      "environmentScoreMptPerKg": 0.136,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": 26.0,
+      "waterDeprivationM3PerKg": 0.67
+    },
+    "pizza 4 fromages": {
+      "environmentScoreMptPerKg": 0.478,
+      "climateKgCo2EqPerKg": 3.63,
+      "landUsePtPerKg": 248.0,
+      "waterDeprivationM3PerKg": 0.825
+    },
+    "pâté au poivre vert": {
+      "environmentScoreMptPerKg": 0.578,
+      "climateKgCo2EqPerKg": 4.82,
+      "landUsePtPerKg": 215.0,
+      "waterDeprivationM3PerKg": 1.7
+    },
+    "ratatouille cuisinée": {
+      "environmentScoreMptPerKg": 0.218,
+      "climateKgCo2EqPerKg": 1.27,
+      "landUsePtPerKg": 119.0,
+      "waterDeprivationM3PerKg": 4.22
+    },
+    "risotto, aux fruits de mer": {
+      "environmentScoreMptPerKg": 0.407,
+      "climateKgCo2EqPerKg": 3.27,
+      "landUsePtPerKg": 78.9,
+      "waterDeprivationM3PerKg": 3.63
+    },
+    "sardine, crue": {
+      "environmentScoreMptPerKg": 0.308,
+      "climateKgCo2EqPerKg": 2.28,
+      "landUsePtPerKg": 6.79,
+      "waterDeprivationM3PerKg": 0.213
+    },
+    "terrine ou mousse de légumes": {
+      "environmentScoreMptPerKg": 0.181,
+      "climateKgCo2EqPerKg": 1.55,
+      "landUsePtPerKg": 44.6,
+      "waterDeprivationM3PerKg": 0.84
+    },
+    "veau, épaule, crue": {
+      "environmentScoreMptPerKg": 1.72,
+      "climateKgCo2EqPerKg": 18.6,
+      "landUsePtPerKg": 846.0,
+      "waterDeprivationM3PerKg": 2.53
+    }
+  }
+}

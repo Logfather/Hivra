@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "brioche pur beurre": {
+      "environmentScoreMptPerKg": 0.325,
+      "climateKgCo2EqPerKg": 2.95,
+      "landUsePtPerKg": 169.0,
+      "waterDeprivationM3PerKg": 0.717
+    },
+    "carré de l'est": {
+      "environmentScoreMptPerKg": 0.476,
+      "climateKgCo2EqPerKg": 4.94,
+      "landUsePtPerKg": 232.0,
+      "waterDeprivationM3PerKg": 0.541
+    },
+    "cola, sucré, sans caféine": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "fromage frais type petit suisse, aromatisé aux fruits, 2 3% mg, enrichi en calcium et vitamine d": {
+      "environmentScoreMptPerKg": 0.199,
+      "climateKgCo2EqPerKg": 1.93,
+      "landUsePtPerKg": 72.4,
+      "waterDeprivationM3PerKg": 0.287
+    },
+    "lait écrémé, pasteurisé": {
+      "environmentScoreMptPerKg": 0.108,
+      "climateKgCo2EqPerKg": 1.15,
+      "landUsePtPerKg": 47.7,
+      "waterDeprivationM3PerKg": 0.143
+    },
+    "langue, boeuf, cuite": {
+      "environmentScoreMptPerKg": 2.97,
+      "climateKgCo2EqPerKg": 31.5,
+      "landUsePtPerKg": 2050.0,
+      "waterDeprivationM3PerKg": 2.65
+    },
+    "sablé à la noix de coco": {
+      "environmentScoreMptPerKg": 0.312,
+      "climateKgCo2EqPerKg": 2.61,
+      "landUsePtPerKg": 148.0,
+      "waterDeprivationM3PerKg": 2.29
+    },
+    "sainte maure (fromage de chèvre)": {
+      "environmentScoreMptPerKg": 0.903,
+      "climateKgCo2EqPerKg": 6.46,
+      "landUsePtPerKg": 444.0,
+      "waterDeprivationM3PerKg": 2.28
+    },
+    "salami pur porc": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 8.25,
+      "landUsePtPerKg": 391.0,
+      "waterDeprivationM3PerKg": 2.65
+    },
+    "volaille, croquette panée ou nuggets": {
+      "environmentScoreMptPerKg": 0.612,
+      "climateKgCo2EqPerKg": 3.87,
+      "landUsePtPerKg": 220.0,
+      "waterDeprivationM3PerKg": 1.51
+    }
+  }
+}

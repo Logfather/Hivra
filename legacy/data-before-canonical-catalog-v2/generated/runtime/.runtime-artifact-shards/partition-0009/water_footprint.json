@@ -1,0 +1,31 @@
+{
+  "entries": {
+    "cocktail à base de whisky": {
+      "litersPerKilogram": 162.0
+    },
+    "coeur, dinde, cuit": {
+      "litersPerKilogram": 874.0
+    },
+    "concombre, pulpe et peau, cru": {
+      "litersPerKilogram": 333.0
+    },
+    "coq au vin": {
+      "litersPerKilogram": 9880.0
+    },
+    "fraise, de saison, crue": {
+      "litersPerKilogram": 4680.0
+    },
+    "haricot flageolet, vert, sec": {
+      "litersPerKilogram": 150.0
+    },
+    "pain blanc maison (avec farine pour machine à pain)": {
+      "litersPerKilogram": 188.0
+    },
+    "riz thaï ou basmati, cru": {
+      "litersPerKilogram": 15300.0
+    },
+    "veau, steak haché 20% mg, cru": {
+      "litersPerKilogram": 3890.0
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "abricot au sirop léger, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.274,
+      "climateKgCo2EqPerKg": 1.31,
+      "landUsePtPerKg": 477.0,
+      "waterDeprivationM3PerKg": 2.02
+    },
+    "biscuit apéritif à base de pomme de terre, type tuile salée": {
+      "environmentScoreMptPerKg": 0.208,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 189.0,
+      "waterDeprivationM3PerKg": 0.704
+    },
+    "boisson à l'eau minérale ou de source, aromatisée, non sucrée, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.0498,
+      "climateKgCo2EqPerKg": 0.377,
+      "landUsePtPerKg": 1.7,
+      "waterDeprivationM3PerKg": 0.0848
+    },
+    "brème, cru": {
+      "environmentScoreMptPerKg": 1.92,
+      "climateKgCo2EqPerKg": 12.3,
+      "landUsePtPerKg": 183.0,
+      "waterDeprivationM3PerKg": 2.62
+    },
+    "farine de blé tendre ou froment t110": {
+      "environmentScoreMptPerKg": 0.102,
+      "climateKgCo2EqPerKg": 0.791,
+      "landUsePtPerKg": 84.2,
+      "waterDeprivationM3PerKg": 0.205
+    },
+    "gâteau basque, cerises": {
+      "environmentScoreMptPerKg": 0.322,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 109.0,
+      "waterDeprivationM3PerKg": 0.786
+    },
+    "lapin, viande cuite": {
+      "environmentScoreMptPerKg": 1.3,
+      "climateKgCo2EqPerKg": 7.75,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "panna cotta, rayon frais": {
+      "environmentScoreMptPerKg": 0.257,
+      "climateKgCo2EqPerKg": 2.38,
+      "landUsePtPerKg": 86.0,
+      "waterDeprivationM3PerKg": 0.666
+    },
+    "poulet, filet, sans peau, cuit": {
+      "environmentScoreMptPerKg": 1.28,
+      "climateKgCo2EqPerKg": 7.48,
+      "landUsePtPerKg": 444.0,
+      "waterDeprivationM3PerKg": 3.34
+    },
+    "quenelle de poisson, en sauce": {
+      "environmentScoreMptPerKg": 0.85,
+      "climateKgCo2EqPerKg": 5.84,
+      "landUsePtPerKg": 129.0,
+      "waterDeprivationM3PerKg": 0.584
+    }
+  }
+}

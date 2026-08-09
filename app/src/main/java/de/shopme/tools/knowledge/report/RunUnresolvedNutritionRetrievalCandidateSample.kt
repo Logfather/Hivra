@@ -1,6 +1,6 @@
 package de.shopme.tools.knowledge.report
 
-import java.io.File
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 
 object RunUnresolvedNutritionRetrievalCandidateSample {
 
@@ -13,24 +13,18 @@ object RunUnresolvedNutritionRetrievalCandidateSample {
                     "does not accept arguments."
         }
 
-        val projectRoot =
-            File("..")
+        val paths =
+            KnowledgeBuildPaths.default()
 
         UnresolvedNutritionRetrievalCandidateSampler()
             .run(
                 unresolvedFailureFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "nutrition.unresolved-retrieval-failures.json"
+                    paths.reportArtifact(
+                        "nutrition.unresolved-retrieval-failures.json"
                     ),
                 outputFile =
-                    File(
-                        projectRoot,
-                        "data/generated/knowledge/" +
-                                "reports/" +
-                                "nutrition.unresolved-retrieval-candidate-sample.json"
+                    paths.reportArtifact(
+                        "nutrition.unresolved-retrieval-candidate-sample.json"
                     )
             )
     }

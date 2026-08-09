@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "bar commun ou loup, cru, sans précision": {
+      "environmentScoreMptPerKg": 1.92,
+      "climateKgCo2EqPerKg": 12.3,
+      "landUsePtPerKg": 183.0,
+      "waterDeprivationM3PerKg": 2.62
+    },
+    "lait fermenté à boire, nature, maigre": {
+      "environmentScoreMptPerKg": 0.153,
+      "climateKgCo2EqPerKg": 1.66,
+      "landUsePtPerKg": 58.6,
+      "waterDeprivationM3PerKg": 0.301
+    },
+    "maquereau, filet sauce moutarde, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.545,
+      "climateKgCo2EqPerKg": 4.55,
+      "landUsePtPerKg": 19.3,
+      "waterDeprivationM3PerKg": 0.459
+    },
+    "maquereau, mariné": {
+      "environmentScoreMptPerKg": 0.373,
+      "climateKgCo2EqPerKg": 2.72,
+      "landUsePtPerKg": 7.33,
+      "waterDeprivationM3PerKg": 0.234
+    },
+    "noix de coco, amande, sèche": {
+      "environmentScoreMptPerKg": 0.424,
+      "climateKgCo2EqPerKg": 2.42,
+      "landUsePtPerKg": 182.0,
+      "waterDeprivationM3PerKg": 12.4
+    },
+    "pâtes fraîches, aux œufs, crues": {
+      "environmentScoreMptPerKg": 0.142,
+      "climateKgCo2EqPerKg": 1.05,
+      "landUsePtPerKg": 105.0,
+      "waterDeprivationM3PerKg": 0.438
+    },
+    "sauce au roquefort, préemballée": {
+      "environmentScoreMptPerKg": 0.509,
+      "climateKgCo2EqPerKg": 4.63,
+      "landUsePtPerKg": 236.0,
+      "waterDeprivationM3PerKg": 0.735
+    }
+  }
+}

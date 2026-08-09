@@ -1,0 +1,860 @@
+{
+  "version": 1,
+  "datasetFile": "nutrition.matcher-training-dataset.json",
+  "baselineFeatureCount": 11,
+  "extendedFeatureCount": 22,
+  "baseline": {
+    "featureNames": [
+      "diagnostic_score",
+      "reciprocal_candidate_rank",
+      "reciprocal_candidate_count",
+      "shared_token_count",
+      "shared_token_ratio",
+      "token_jaccard",
+      "catalog_token_coverage",
+      "server_token_coverage",
+      "token_count_similarity",
+      "character_length_similarity",
+      "exact_normalized_match"
+    ],
+    "trainingExampleCount": 3441,
+    "testExampleCount": 815,
+    "testPrecision": 0.42391304347826086,
+    "testRecall": 0.8764044943820225,
+    "testF1": 0.5714285714285715,
+    "testBalancedAccuracy": 0.8651994923700745,
+    "testAverageLogLoss": 0.4001236260197011,
+    "testFalsePositiveCount": 106,
+    "testFalseNegativeCount": 11,
+    "testByRole": [
+      {
+        "role": "ACCEPTED_ORIGINAL_MATCH",
+        "exampleCount": 85,
+        "positiveCount": 85,
+        "negativeCount": 0,
+        "predictedPositiveCount": 76,
+        "truePositive": 76,
+        "falsePositive": 0,
+        "trueNegative": 0,
+        "falseNegative": 9,
+        "precision": 1.0,
+        "recall": 0.8941176470588236,
+        "falsePositiveRate": 0.0
+      },
+      {
+        "role": "ACCEPTED_SELECTED",
+        "exampleCount": 4,
+        "positiveCount": 4,
+        "negativeCount": 0,
+        "predictedPositiveCount": 2,
+        "truePositive": 2,
+        "falsePositive": 0,
+        "trueNegative": 0,
+        "falseNegative": 2,
+        "precision": 1.0,
+        "recall": 0.5,
+        "falsePositiveRate": 0.0
+      },
+      {
+        "role": "NON_SELECTED_ALTERNATIVE",
+        "exampleCount": 62,
+        "positiveCount": 0,
+        "negativeCount": 62,
+        "predictedPositiveCount": 14,
+        "truePositive": 0,
+        "falsePositive": 14,
+        "trueNegative": 48,
+        "falseNegative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "falsePositiveRate": 0.22580645161290322
+      },
+      {
+        "role": "REJECTED_NO_MATCH_CANDIDATE",
+        "exampleCount": 664,
+        "positiveCount": 0,
+        "negativeCount": 664,
+        "predictedPositiveCount": 92,
+        "truePositive": 0,
+        "falsePositive": 92,
+        "trueNegative": 572,
+        "falseNegative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "falsePositiveRate": 0.13855421686746988
+      }
+    ]
+  },
+  "extended": {
+    "featureNames": [
+      "diagnostic_score",
+      "reciprocal_candidate_rank",
+      "reciprocal_candidate_count",
+      "shared_token_count",
+      "shared_token_ratio",
+      "token_jaccard",
+      "catalog_token_coverage",
+      "server_token_coverage",
+      "token_count_similarity",
+      "character_length_similarity",
+      "exact_normalized_match",
+      "domain_diet_or_substitute_difference_count",
+      "domain_cross_domain_mismatch_count",
+      "domain_same_domain_different_entity_count",
+      "domain_form_or_processing_difference_count",
+      "domain_region_or_style_difference_count",
+      "domain_compatible_relationship_count",
+      "domain_unknown_token_involved_count",
+      "domain_non_semantic_token_difference_count",
+      "domain_unknown_mismatch_count",
+      "domain_identity_conflict_count",
+      "domain_modifier_difference_count"
+    ],
+    "trainingExampleCount": 3441,
+    "testExampleCount": 815,
+    "testPrecision": 0.3979591836734694,
+    "testRecall": 0.8764044943820225,
+    "testF1": 0.5473684210526316,
+    "testBalancedAccuracy": 0.8569350295601572,
+    "testAverageLogLoss": 0.39855462731870556,
+    "testFalsePositiveCount": 118,
+    "testFalseNegativeCount": 11,
+    "testByRole": [
+      {
+        "role": "ACCEPTED_ORIGINAL_MATCH",
+        "exampleCount": 85,
+        "positiveCount": 85,
+        "negativeCount": 0,
+        "predictedPositiveCount": 76,
+        "truePositive": 76,
+        "falsePositive": 0,
+        "trueNegative": 0,
+        "falseNegative": 9,
+        "precision": 1.0,
+        "recall": 0.8941176470588236,
+        "falsePositiveRate": 0.0
+      },
+      {
+        "role": "ACCEPTED_SELECTED",
+        "exampleCount": 4,
+        "positiveCount": 4,
+        "negativeCount": 0,
+        "predictedPositiveCount": 2,
+        "truePositive": 2,
+        "falsePositive": 0,
+        "trueNegative": 0,
+        "falseNegative": 2,
+        "precision": 1.0,
+        "recall": 0.5,
+        "falsePositiveRate": 0.0
+      },
+      {
+        "role": "NON_SELECTED_ALTERNATIVE",
+        "exampleCount": 62,
+        "positiveCount": 0,
+        "negativeCount": 62,
+        "predictedPositiveCount": 14,
+        "truePositive": 0,
+        "falsePositive": 14,
+        "trueNegative": 48,
+        "falseNegative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "falsePositiveRate": 0.22580645161290322
+      },
+      {
+        "role": "REJECTED_NO_MATCH_CANDIDATE",
+        "exampleCount": 664,
+        "positiveCount": 0,
+        "negativeCount": 664,
+        "predictedPositiveCount": 104,
+        "truePositive": 0,
+        "falsePositive": 104,
+        "trueNegative": 560,
+        "falseNegative": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "falsePositiveRate": 0.1566265060240964
+      }
+    ]
+  },
+  "extendedDelta": {
+    "precision": -0.02595385980479148,
+    "recall": 0.0,
+    "f1": -0.024060150375939893,
+    "balancedAccuracy": -0.008264462809917328,
+    "averageLogLoss": -0.0015689987009955275,
+    "falsePositiveCount": 12,
+    "falseNegativeCount": 0
+  },
+  "singleFeatureComparisons": [
+    {
+      "featureName": "domain_diet_or_substitute_difference_count",
+      "featureCount": 12,
+      "testPrecision": 0.42391304347826086,
+      "testRecall": 0.8764044943820225,
+      "testF1": 0.5714285714285715,
+      "testBalancedAccuracy": 0.8651994923700745,
+      "testAverageLogLoss": 0.4002989415839301,
+      "delta": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "balancedAccuracy": 0.0,
+        "averageLogLoss": 1.7531556422900607E-4,
+        "falsePositiveCount": 0,
+        "falseNegativeCount": 0
+      },
+      "improvesF1": false,
+      "improvesBalancedAccuracy": false,
+      "improvesBothPrimaryMetrics": false,
+      "roleDeltas": [
+        {
+          "role": "ACCEPTED_ORIGINAL_MATCH",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.8941176470588236,
+          "candidateRecall": 0.8941176470588236,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "ACCEPTED_SELECTED",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.5,
+          "candidateRecall": 0.5,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "NON_SELECTED_ALTERNATIVE",
+          "baselineFalsePositiveRate": 0.22580645161290322,
+          "candidateFalsePositiveRate": 0.22580645161290322,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "REJECTED_NO_MATCH_CANDIDATE",
+          "baselineFalsePositiveRate": 0.13855421686746988,
+          "candidateFalsePositiveRate": 0.13855421686746988,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        }
+      ]
+    },
+    {
+      "featureName": "domain_cross_domain_mismatch_count",
+      "featureCount": 12,
+      "testPrecision": 0.41711229946524064,
+      "testRecall": 0.8764044943820225,
+      "testF1": 0.5652173913043479,
+      "testBalancedAccuracy": 0.8631333766675953,
+      "testAverageLogLoss": 0.39548509725028064,
+      "delta": {
+        "precision": -0.006800744013020221,
+        "recall": 0.0,
+        "f1": -0.006211180124223614,
+        "balancedAccuracy": -0.0020661157024792765,
+        "averageLogLoss": -0.004638528769420447,
+        "falsePositiveCount": 3,
+        "falseNegativeCount": 0
+      },
+      "improvesF1": false,
+      "improvesBalancedAccuracy": false,
+      "improvesBothPrimaryMetrics": false,
+      "roleDeltas": [
+        {
+          "role": "ACCEPTED_ORIGINAL_MATCH",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.8941176470588236,
+          "candidateRecall": 0.8941176470588236,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "ACCEPTED_SELECTED",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.5,
+          "candidateRecall": 0.5,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "NON_SELECTED_ALTERNATIVE",
+          "baselineFalsePositiveRate": 0.22580645161290322,
+          "candidateFalsePositiveRate": 0.22580645161290322,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "REJECTED_NO_MATCH_CANDIDATE",
+          "baselineFalsePositiveRate": 0.13855421686746988,
+          "candidateFalsePositiveRate": 0.1430722891566265,
+          "falsePositiveRateDelta": 0.004518072289156627,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        }
+      ]
+    },
+    {
+      "featureName": "domain_same_domain_different_entity_count",
+      "featureCount": 12,
+      "testPrecision": 0.42391304347826086,
+      "testRecall": 0.8764044943820225,
+      "testF1": 0.5714285714285715,
+      "testBalancedAccuracy": 0.8651994923700745,
+      "testAverageLogLoss": 0.40272317008775915,
+      "delta": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "balancedAccuracy": 0.0,
+        "averageLogLoss": 0.0025995440680580684,
+        "falsePositiveCount": 0,
+        "falseNegativeCount": 0
+      },
+      "improvesF1": false,
+      "improvesBalancedAccuracy": false,
+      "improvesBothPrimaryMetrics": false,
+      "roleDeltas": [
+        {
+          "role": "ACCEPTED_ORIGINAL_MATCH",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.8941176470588236,
+          "candidateRecall": 0.8941176470588236,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "ACCEPTED_SELECTED",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.5,
+          "candidateRecall": 0.5,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "NON_SELECTED_ALTERNATIVE",
+          "baselineFalsePositiveRate": 0.22580645161290322,
+          "candidateFalsePositiveRate": 0.22580645161290322,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "REJECTED_NO_MATCH_CANDIDATE",
+          "baselineFalsePositiveRate": 0.13855421686746988,
+          "candidateFalsePositiveRate": 0.13855421686746988,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        }
+      ]
+    },
+    {
+      "featureName": "domain_form_or_processing_difference_count",
+      "featureCount": 12,
+      "testPrecision": 0.42391304347826086,
+      "testRecall": 0.8764044943820225,
+      "testF1": 0.5714285714285715,
+      "testBalancedAccuracy": 0.8651994923700745,
+      "testAverageLogLoss": 0.40089720686947444,
+      "delta": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "balancedAccuracy": 0.0,
+        "averageLogLoss": 7.735808497733587E-4,
+        "falsePositiveCount": 0,
+        "falseNegativeCount": 0
+      },
+      "improvesF1": false,
+      "improvesBalancedAccuracy": false,
+      "improvesBothPrimaryMetrics": false,
+      "roleDeltas": [
+        {
+          "role": "ACCEPTED_ORIGINAL_MATCH",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.8941176470588236,
+          "candidateRecall": 0.8941176470588236,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "ACCEPTED_SELECTED",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.5,
+          "candidateRecall": 0.5,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "NON_SELECTED_ALTERNATIVE",
+          "baselineFalsePositiveRate": 0.22580645161290322,
+          "candidateFalsePositiveRate": 0.22580645161290322,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "REJECTED_NO_MATCH_CANDIDATE",
+          "baselineFalsePositiveRate": 0.13855421686746988,
+          "candidateFalsePositiveRate": 0.13855421686746988,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        }
+      ]
+    },
+    {
+      "featureName": "domain_region_or_style_difference_count",
+      "featureCount": 12,
+      "testPrecision": 0.42391304347826086,
+      "testRecall": 0.8764044943820225,
+      "testF1": 0.5714285714285715,
+      "testBalancedAccuracy": 0.8651994923700745,
+      "testAverageLogLoss": 0.40073761138935254,
+      "delta": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "balancedAccuracy": 0.0,
+        "averageLogLoss": 6.139853696514597E-4,
+        "falsePositiveCount": 0,
+        "falseNegativeCount": 0
+      },
+      "improvesF1": false,
+      "improvesBalancedAccuracy": false,
+      "improvesBothPrimaryMetrics": false,
+      "roleDeltas": [
+        {
+          "role": "ACCEPTED_ORIGINAL_MATCH",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.8941176470588236,
+          "candidateRecall": 0.8941176470588236,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "ACCEPTED_SELECTED",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.5,
+          "candidateRecall": 0.5,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "NON_SELECTED_ALTERNATIVE",
+          "baselineFalsePositiveRate": 0.22580645161290322,
+          "candidateFalsePositiveRate": 0.22580645161290322,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "REJECTED_NO_MATCH_CANDIDATE",
+          "baselineFalsePositiveRate": 0.13855421686746988,
+          "candidateFalsePositiveRate": 0.13855421686746988,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        }
+      ]
+    },
+    {
+      "featureName": "domain_compatible_relationship_count",
+      "featureCount": 12,
+      "testPrecision": 0.42162162162162165,
+      "testRecall": 0.8764044943820225,
+      "testF1": 0.5693430656934307,
+      "testBalancedAccuracy": 0.8645107871359148,
+      "testAverageLogLoss": 0.4014631968879364,
+      "delta": {
+        "precision": -0.0022914218566392197,
+        "recall": 0.0,
+        "f1": -0.002085505735140769,
+        "balancedAccuracy": -6.887052341597588E-4,
+        "averageLogLoss": 0.0013395708682353291,
+        "falsePositiveCount": 1,
+        "falseNegativeCount": 0
+      },
+      "improvesF1": false,
+      "improvesBalancedAccuracy": false,
+      "improvesBothPrimaryMetrics": false,
+      "roleDeltas": [
+        {
+          "role": "ACCEPTED_ORIGINAL_MATCH",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.8941176470588236,
+          "candidateRecall": 0.8941176470588236,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "ACCEPTED_SELECTED",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.5,
+          "candidateRecall": 0.5,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "NON_SELECTED_ALTERNATIVE",
+          "baselineFalsePositiveRate": 0.22580645161290322,
+          "candidateFalsePositiveRate": 0.22580645161290322,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "REJECTED_NO_MATCH_CANDIDATE",
+          "baselineFalsePositiveRate": 0.13855421686746988,
+          "candidateFalsePositiveRate": 0.14006024096385541,
+          "falsePositiveRateDelta": 0.0015060240963855331,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        }
+      ]
+    },
+    {
+      "featureName": "domain_unknown_token_involved_count",
+      "featureCount": 12,
+      "testPrecision": 0.41711229946524064,
+      "testRecall": 0.8764044943820225,
+      "testF1": 0.5652173913043479,
+      "testBalancedAccuracy": 0.8631333766675953,
+      "testAverageLogLoss": 0.39823452906701046,
+      "delta": {
+        "precision": -0.006800744013020221,
+        "recall": 0.0,
+        "f1": -0.006211180124223614,
+        "balancedAccuracy": -0.0020661157024792765,
+        "averageLogLoss": -0.0018890969526906276,
+        "falsePositiveCount": 3,
+        "falseNegativeCount": 0
+      },
+      "improvesF1": false,
+      "improvesBalancedAccuracy": false,
+      "improvesBothPrimaryMetrics": false,
+      "roleDeltas": [
+        {
+          "role": "ACCEPTED_ORIGINAL_MATCH",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.8941176470588236,
+          "candidateRecall": 0.8941176470588236,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "ACCEPTED_SELECTED",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.5,
+          "candidateRecall": 0.5,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "NON_SELECTED_ALTERNATIVE",
+          "baselineFalsePositiveRate": 0.22580645161290322,
+          "candidateFalsePositiveRate": 0.22580645161290322,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "REJECTED_NO_MATCH_CANDIDATE",
+          "baselineFalsePositiveRate": 0.13855421686746988,
+          "candidateFalsePositiveRate": 0.1430722891566265,
+          "falsePositiveRateDelta": 0.004518072289156627,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        }
+      ]
+    },
+    {
+      "featureName": "domain_non_semantic_token_difference_count",
+      "featureCount": 12,
+      "testPrecision": 0.42391304347826086,
+      "testRecall": 0.8764044943820225,
+      "testF1": 0.5714285714285715,
+      "testBalancedAccuracy": 0.8651994923700745,
+      "testAverageLogLoss": 0.4007512892072003,
+      "delta": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "balancedAccuracy": 0.0,
+        "averageLogLoss": 6.276631874992389E-4,
+        "falsePositiveCount": 0,
+        "falseNegativeCount": 0
+      },
+      "improvesF1": false,
+      "improvesBalancedAccuracy": false,
+      "improvesBothPrimaryMetrics": false,
+      "roleDeltas": [
+        {
+          "role": "ACCEPTED_ORIGINAL_MATCH",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.8941176470588236,
+          "candidateRecall": 0.8941176470588236,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "ACCEPTED_SELECTED",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.5,
+          "candidateRecall": 0.5,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "NON_SELECTED_ALTERNATIVE",
+          "baselineFalsePositiveRate": 0.22580645161290322,
+          "candidateFalsePositiveRate": 0.22580645161290322,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "REJECTED_NO_MATCH_CANDIDATE",
+          "baselineFalsePositiveRate": 0.13855421686746988,
+          "candidateFalsePositiveRate": 0.13855421686746988,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        }
+      ]
+    },
+    {
+      "featureName": "domain_unknown_mismatch_count",
+      "featureCount": 12,
+      "testPrecision": 0.42391304347826086,
+      "testRecall": 0.8764044943820225,
+      "testF1": 0.5714285714285715,
+      "testBalancedAccuracy": 0.8651994923700745,
+      "testAverageLogLoss": 0.40079390561454536,
+      "delta": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "balancedAccuracy": 0.0,
+        "averageLogLoss": 6.702795948442808E-4,
+        "falsePositiveCount": 0,
+        "falseNegativeCount": 0
+      },
+      "improvesF1": false,
+      "improvesBalancedAccuracy": false,
+      "improvesBothPrimaryMetrics": false,
+      "roleDeltas": [
+        {
+          "role": "ACCEPTED_ORIGINAL_MATCH",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.8941176470588236,
+          "candidateRecall": 0.8941176470588236,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "ACCEPTED_SELECTED",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.5,
+          "candidateRecall": 0.5,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "NON_SELECTED_ALTERNATIVE",
+          "baselineFalsePositiveRate": 0.22580645161290322,
+          "candidateFalsePositiveRate": 0.22580645161290322,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "REJECTED_NO_MATCH_CANDIDATE",
+          "baselineFalsePositiveRate": 0.13855421686746988,
+          "candidateFalsePositiveRate": 0.13855421686746988,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        }
+      ]
+    },
+    {
+      "featureName": "domain_identity_conflict_count",
+      "featureCount": 12,
+      "testPrecision": 0.4105263157894737,
+      "testRecall": 0.8764044943820225,
+      "testF1": 0.5591397849462365,
+      "testBalancedAccuracy": 0.861067260965116,
+      "testAverageLogLoss": 0.398120690405306,
+      "delta": {
+        "precision": -0.013386727688787181,
+        "recall": 0.0,
+        "f1": -0.012288786482335001,
+        "balancedAccuracy": -0.004132231404958553,
+        "averageLogLoss": -0.002002935614395074,
+        "falsePositiveCount": 6,
+        "falseNegativeCount": 0
+      },
+      "improvesF1": false,
+      "improvesBalancedAccuracy": false,
+      "improvesBothPrimaryMetrics": false,
+      "roleDeltas": [
+        {
+          "role": "ACCEPTED_ORIGINAL_MATCH",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.8941176470588236,
+          "candidateRecall": 0.8941176470588236,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "ACCEPTED_SELECTED",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.5,
+          "candidateRecall": 0.5,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "NON_SELECTED_ALTERNATIVE",
+          "baselineFalsePositiveRate": 0.22580645161290322,
+          "candidateFalsePositiveRate": 0.22580645161290322,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "REJECTED_NO_MATCH_CANDIDATE",
+          "baselineFalsePositiveRate": 0.13855421686746988,
+          "candidateFalsePositiveRate": 0.14759036144578314,
+          "falsePositiveRateDelta": 0.009036144578313254,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        }
+      ]
+    },
+    {
+      "featureName": "domain_modifier_difference_count",
+      "featureCount": 12,
+      "testPrecision": 0.42391304347826086,
+      "testRecall": 0.8764044943820225,
+      "testF1": 0.5714285714285715,
+      "testBalancedAccuracy": 0.8651994923700745,
+      "testAverageLogLoss": 0.40149257006161765,
+      "delta": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "balancedAccuracy": 0.0,
+        "averageLogLoss": 0.0013689440419165644,
+        "falsePositiveCount": 0,
+        "falseNegativeCount": 0
+      },
+      "improvesF1": false,
+      "improvesBalancedAccuracy": false,
+      "improvesBothPrimaryMetrics": false,
+      "roleDeltas": [
+        {
+          "role": "ACCEPTED_ORIGINAL_MATCH",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.8941176470588236,
+          "candidateRecall": 0.8941176470588236,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "ACCEPTED_SELECTED",
+          "baselineFalsePositiveRate": 0.0,
+          "candidateFalsePositiveRate": 0.0,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.5,
+          "candidateRecall": 0.5,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "NON_SELECTED_ALTERNATIVE",
+          "baselineFalsePositiveRate": 0.22580645161290322,
+          "candidateFalsePositiveRate": 0.22580645161290322,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        },
+        {
+          "role": "REJECTED_NO_MATCH_CANDIDATE",
+          "baselineFalsePositiveRate": 0.13855421686746988,
+          "candidateFalsePositiveRate": 0.13855421686746988,
+          "falsePositiveRateDelta": 0.0,
+          "baselineRecall": 0.0,
+          "candidateRecall": 0.0,
+          "recallDelta": 0.0
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "recommendedModel": "BASELINE",
+    "recommendedFeatureNames": [
+      "diagnostic_score",
+      "reciprocal_candidate_rank",
+      "reciprocal_candidate_count",
+      "shared_token_count",
+      "shared_token_ratio",
+      "token_jaccard",
+      "catalog_token_coverage",
+      "server_token_coverage",
+      "token_count_similarity",
+      "character_length_similarity",
+      "exact_normalized_match"
+    ],
+    "reason": "The extended model does not improve test F1 or test balanced accuracy. The smaller baseline model is retained.",
+    "baselineDominatesPrimaryMetrics": true,
+    "extendedDominatesPrimaryMetrics": false
+  }
+}

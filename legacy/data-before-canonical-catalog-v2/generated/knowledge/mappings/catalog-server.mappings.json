@@ -1,0 +1,2565 @@
+{
+  "version": 1,
+  "mappings": [
+    {
+      "catalogKey": "air dried ham",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oak smoked air dried lean ham slices"
+    },
+    {
+      "catalogKey": "air dried salami",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "air dried salami sticks barbecue 5 pack"
+    },
+    {
+      "catalogKey": "allspice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground allspice"
+    },
+    {
+      "catalogKey": "almond pudding",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pudding, almond"
+    },
+    {
+      "catalogKey": "anise",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "anise seed"
+    },
+    {
+      "catalogKey": "asian noodle stir fry ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "asian noodle stir fry"
+    },
+    {
+      "catalogKey": "baked cod",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "1 baked cod"
+    },
+    {
+      "catalogKey": "baking yeast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bakers yeast"
+    },
+    {
+      "catalogKey": "barley malt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dry organic barley malt"
+    },
+    {
+      "catalogKey": "barley malt extract",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic barley malt extract"
+    },
+    {
+      "catalogKey": "basket cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "a semi soft basket cheese"
+    },
+    {
+      "catalogKey": "basmati rice ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "basmati ready rice"
+    },
+    {
+      "catalogKey": "bavette pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bavette"
+    },
+    {
+      "catalogKey": "beef fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef tenderloin fillet"
+    },
+    {
+      "catalogKey": "bell pepper snack",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bell pepper mix snack"
+    },
+    {
+      "catalogKey": "bierwurst sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sausage bierwurst"
+    },
+    {
+      "catalogKey": "black cumin",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black zeera (black cumin)"
+    },
+    {
+      "catalogKey": "boiled potatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white potatoes boiled"
+    },
+    {
+      "catalogKey": "bread crust",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "top crust bread"
+    },
+    {
+      "catalogKey": "butter cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cheese and butter"
+    },
+    {
+      "catalogKey": "buttermilk cultures",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lowfat cultures buttermilk"
+    },
+    {
+      "catalogKey": "cabanossi sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cabanossi"
+    },
+    {
+      "catalogKey": "calcium oat milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat calcium milk"
+    },
+    {
+      "catalogKey": "candied almonds",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "valencia almonds candied"
+    },
+    {
+      "catalogKey": "canned applesauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "applesauce"
+    },
+    {
+      "catalogKey": "canned baby corn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned baby corn 410g"
+    },
+    {
+      "catalogKey": "canned beetroot",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned diced beetroot"
+    },
+    {
+      "catalogKey": "canned carrots",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned sliced carrots"
+    },
+    {
+      "catalogKey": "canned chickpeas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chickpeas (canned)"
+    },
+    {
+      "catalogKey": "canned coconut milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "milk coconut"
+    },
+    {
+      "catalogKey": "canned egg salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "egg salad"
+    },
+    {
+      "catalogKey": "canned green beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green beans (canned)"
+    },
+    {
+      "catalogKey": "canned lentil soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soup, lentil"
+    },
+    {
+      "catalogKey": "canned olives",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned sliced olives"
+    },
+    {
+      "catalogKey": "canned peach halves",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned peach halves in grape juice"
+    },
+    {
+      "catalogKey": "canned pineapple chunks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pineapple chunks, canned"
+    },
+    {
+      "catalogKey": "canned pumpkin pieces",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "canned pumpkin"
+    },
+    {
+      "catalogKey": "canned red beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red beans canned"
+    },
+    {
+      "catalogKey": "canned soup vegetables",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soup vegetables"
+    },
+    {
+      "catalogKey": "canned tomato pieces",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chopped tomato canned"
+    },
+    {
+      "catalogKey": "canned tomato soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato soup, tomato"
+    },
+    {
+      "catalogKey": "canned vegetable soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soup vegetable"
+    },
+    {
+      "catalogKey": "caraway",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "caraway seeds"
+    },
+    {
+      "catalogKey": "cashew yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "so delicious cashew yogurt"
+    },
+    {
+      "catalogKey": "cervelat sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cervelat summer sausage"
+    },
+    {
+      "catalogKey": "cheese spaetzle ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cheese egg spaetzle"
+    },
+    {
+      "catalogKey": "cherry fruit yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fruit on the bottom lowfat yogurt black cherry"
+    },
+    {
+      "catalogKey": "chicken curry ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "protein meal chicken curry"
+    },
+    {
+      "catalogKey": "chicken curry skillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "skillet thai curry chicken"
+    },
+    {
+      "catalogKey": "chicken eggs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken eggs m"
+    },
+    {
+      "catalogKey": "chicken fricassee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "boneless chicken fricassee, 72 oz"
+    },
+    {
+      "catalogKey": "chicken rice ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fortune avenue, chicken rice meal"
+    },
+    {
+      "catalogKey": "chicory coffee substitute",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic chicory coffee"
+    },
+    {
+      "catalogKey": "chili con carne ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ready to serve chili con carne, 50 ounce cans, 12 pack"
+    },
+    {
+      "catalogKey": "chilled orange juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "juice, orange"
+    },
+    {
+      "catalogKey": "chocolate pudding ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pudding [chocolate]"
+    },
+    {
+      "catalogKey": "chocolate rice milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice milk chocolate"
+    },
+    {
+      "catalogKey": "citrus fruit mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "citrus mix"
+    },
+    {
+      "catalogKey": "classic muesli",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "classic lightly toasted muesli 700g"
+    },
+    {
+      "catalogKey": "clear multivitamin juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "100% multivitamin juice"
+    },
+    {
+      "catalogKey": "cloudy orange juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "juice, orange"
+    },
+    {
+      "catalogKey": "coarse bratwurst sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bratwurst sausage links"
+    },
+    {
+      "catalogKey": "coarse cornmeal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cornmeal coarse"
+    },
+    {
+      "catalogKey": "coarse mustard",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coarse grain mustard"
+    },
+    {
+      "catalogKey": "cocoa drink powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "instant fairtrade cocoa drink powder"
+    },
+    {
+      "catalogKey": "cold pressed rapeseed oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cold pressed canola oil"
+    },
+    {
+      "catalogKey": "cold roast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roast beef cold cuts"
+    },
+    {
+      "catalogKey": "cooked bratwurst sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cooked bratwurst"
+    },
+    {
+      "catalogKey": "couscous with vegetables",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "couscous with vegetables mix"
+    },
+    {
+      "catalogKey": "cream of mushroom soup ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cream of mushroom soup"
+    },
+    {
+      "catalogKey": "creamy cream cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cream cheese (creamy)"
+    },
+    {
+      "catalogKey": "cress",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salad cress"
+    },
+    {
+      "catalogKey": "crusty bread roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roll bread"
+    },
+    {
+      "catalogKey": "curry ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ready to eat meal green curry"
+    },
+    {
+      "catalogKey": "curry rice dish",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "curry rice"
+    },
+    {
+      "catalogKey": "damson plum",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "michigan damson plum"
+    },
+    {
+      "catalogKey": "dark chocolate with nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark chocolate with nuts stevia"
+    },
+    {
+      "catalogKey": "decaffeinated coffee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coffee, decaffeinated"
+    },
+    {
+      "catalogKey": "defatted cocoa powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "baking cocoa powder"
+    },
+    {
+      "catalogKey": "delicatessen liver sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "braunschweiger liver sausage"
+    },
+    {
+      "catalogKey": "diced turkey meat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "meat turkey"
+    },
+    {
+      "catalogKey": "dried kidney beans",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried red kidney beans"
+    },
+    {
+      "catalogKey": "dried parsley",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lightly dried parsley"
+    },
+    {
+      "catalogKey": "dried peppermint",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peppermint"
+    },
+    {
+      "catalogKey": "dried red lentils",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hulled red lentils"
+    },
+    {
+      "catalogKey": "dried rosemary",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried rosemary leaves"
+    },
+    {
+      "catalogKey": "dried tarragon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tarragon"
+    },
+    {
+      "catalogKey": "dried thyme",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dried thyme leaves"
+    },
+    {
+      "catalogKey": "eggplants",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh eggplants"
+    },
+    {
+      "catalogKey": "elderberry juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic elderberry juice"
+    },
+    {
+      "catalogKey": "fine gelbwurst sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gelbwurst"
+    },
+    {
+      "catalogKey": "floury potatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "floury cooking potatoes"
+    },
+    {
+      "catalogKey": "fresh baguette",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh baked baguette"
+    },
+    {
+      "catalogKey": "fresh bratwurst sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bratwurst sausage links"
+    },
+    {
+      "catalogKey": "fresh camembert",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "camembert"
+    },
+    {
+      "catalogKey": "fresh chili peppers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili peppers whole"
+    },
+    {
+      "catalogKey": "fresh corn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "farm fresh sweet corn"
+    },
+    {
+      "catalogKey": "fresh damson plums",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plums fresh"
+    },
+    {
+      "catalogKey": "fresh fish fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh fillet fish"
+    },
+    {
+      "catalogKey": "fresh gouda cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gouda cheese fresh cut"
+    },
+    {
+      "catalogKey": "fresh herb mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herb mix"
+    },
+    {
+      "catalogKey": "fresh kohlrabi",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kohlrabi linguine fresh veggie noodles, kohlrabi linguine"
+    },
+    {
+      "catalogKey": "fresh lactose free whole milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lactose free whole milk"
+    },
+    {
+      "catalogKey": "fresh lettuce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mountain fresh living lettuce"
+    },
+    {
+      "catalogKey": "fresh liver sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "braunschweiger liver sausage"
+    },
+    {
+      "catalogKey": "fresh mandarins",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "adorbs mandarins"
+    },
+    {
+      "catalogKey": "fresh oranges",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh oranges various varieties"
+    },
+    {
+      "catalogKey": "fresh oyster mushrooms",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "blue oyster mushrooms"
+    },
+    {
+      "catalogKey": "fresh peas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green peas fresh"
+    },
+    {
+      "catalogKey": "fresh plums",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plums fresh"
+    },
+    {
+      "catalogKey": "fresh pollock fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pacific pollock fillet"
+    },
+    {
+      "catalogKey": "fresh porcini mushrooms",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "porcini mushrooms"
+    },
+    {
+      "catalogKey": "fresh pork chops",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pork chops"
+    },
+    {
+      "catalogKey": "fresh pretzel croissant",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pretzel croissant"
+    },
+    {
+      "catalogKey": "fresh quark",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "quark fresh cheese, wisconsin cheese"
+    },
+    {
+      "catalogKey": "fresh raspberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raspberries fresh"
+    },
+    {
+      "catalogKey": "fresh sorrel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sorrel"
+    },
+    {
+      "catalogKey": "fresh sweet corn",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "farm fresh sweet corn"
+    },
+    {
+      "catalogKey": "fresh tarragon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tarragon"
+    },
+    {
+      "catalogKey": "fresh trout",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "steelhead trout fresh"
+    },
+    {
+      "catalogKey": "fresh tuna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh wild ahi tuna"
+    },
+    {
+      "catalogKey": "fresh tuna fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tuna fish fillet"
+    },
+    {
+      "catalogKey": "fresh walnut kernels",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic raw walnut kernels"
+    },
+    {
+      "catalogKey": "fresh wheat baguette",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic whole wheat baguette"
+    },
+    {
+      "catalogKey": "fresh white bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh & natural white bread"
+    },
+    {
+      "catalogKey": "fresh whole grain rolls",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain deli rolls"
+    },
+    {
+      "catalogKey": "fresh whole milk cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole milk fresh cheese"
+    },
+    {
+      "catalogKey": "freshwater shrimp",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "freshwater shrimp raw iqf"
+    },
+    {
+      "catalogKey": "fried herring",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fried herring fillets"
+    },
+    {
+      "catalogKey": "fried potato seasoning",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato seasoning"
+    },
+    {
+      "catalogKey": "frozen apple slices",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "apple slices"
+    },
+    {
+      "catalogKey": "frozen asian vegetable mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "asian mix vegetable"
+    },
+    {
+      "catalogKey": "frozen berry fruit",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "berry frozen fruit"
+    },
+    {
+      "catalogKey": "frozen berry mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "berry mix (frozen)"
+    },
+    {
+      "catalogKey": "frozen berry yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen yogurt mix berry"
+    },
+    {
+      "catalogKey": "frozen bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bread fresh frozen"
+    },
+    {
+      "catalogKey": "frozen bread rolls",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen dinner rolls"
+    },
+    {
+      "catalogKey": "frozen cheese pretzel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cheddar cheese pretzel"
+    },
+    {
+      "catalogKey": "frozen cherry mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cherry mix"
+    },
+    {
+      "catalogKey": "frozen chicken fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen chicken breast fillet"
+    },
+    {
+      "catalogKey": "frozen creamed spinach",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "creamed spinach"
+    },
+    {
+      "catalogKey": "frozen curry vegetable mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "indian inspired vegetable mix (frozen)"
+    },
+    {
+      "catalogKey": "frozen doner kebab",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "doner kebab"
+    },
+    {
+      "catalogKey": "frozen fish fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen fillet fish raw"
+    },
+    {
+      "catalogKey": "frozen fish fingers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fish fingers, breaded, frozen"
+    },
+    {
+      "catalogKey": "frozen forest berries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "forest berries"
+    },
+    {
+      "catalogKey": "frozen forest berry mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "berry mix (frozen)"
+    },
+    {
+      "catalogKey": "frozen fried potatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen french fried potatoes"
+    },
+    {
+      "catalogKey": "frozen fruit smoothie pack",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red smoothie frozen fruit"
+    },
+    {
+      "catalogKey": "frozen grilled vegetables",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "grilled vegetables"
+    },
+    {
+      "catalogKey": "frozen herb mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic fresh frozen herbs italian herb mix"
+    },
+    {
+      "catalogKey": "frozen herbes de provence",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herbes de provence blend"
+    },
+    {
+      "catalogKey": "frozen lasagna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gluten free frozen italian sausage lasagna"
+    },
+    {
+      "catalogKey": "frozen leaf spinach",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spinach, frozen leaf"
+    },
+    {
+      "catalogKey": "frozen mashed potatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mashed potatoes"
+    },
+    {
+      "catalogKey": "frozen mini pizzas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen mini pizza"
+    },
+    {
+      "catalogKey": "frozen mixed salads",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mixed salads"
+    },
+    {
+      "catalogKey": "frozen pizza dough",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pizza dough (frozen)"
+    },
+    {
+      "catalogKey": "frozen pizza margherita",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen margherita pizza"
+    },
+    {
+      "catalogKey": "frozen pollock fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pacific pollock fillet"
+    },
+    {
+      "catalogKey": "frozen potato rosti",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "crispy potato rosti"
+    },
+    {
+      "catalogKey": "frozen potato sticks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato sticks"
+    },
+    {
+      "catalogKey": "frozen red berry mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "berry mix (frozen)"
+    },
+    {
+      "catalogKey": "frozen roasted vegetables",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roasted vegetables"
+    },
+    {
+      "catalogKey": "frozen salami pizza",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pizza salami"
+    },
+    {
+      "catalogKey": "frozen skillet vegetables",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "skillet vegetables"
+    },
+    {
+      "catalogKey": "frozen spinach ricotta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spinach & ricotta"
+    },
+    {
+      "catalogKey": "frozen spinach without cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chopped frozen spinach"
+    },
+    {
+      "catalogKey": "frozen spring rolls",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spring rolls"
+    },
+    {
+      "catalogKey": "frozen sugar snap peas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "freshly frozen sugar snap peas"
+    },
+    {
+      "catalogKey": "frozen vegan meatball",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan meatball style rondo"
+    },
+    {
+      "catalogKey": "frozen vegan meatballs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan meatballs classic"
+    },
+    {
+      "catalogKey": "frozen vegan nuggets",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nuggets vegan"
+    },
+    {
+      "catalogKey": "frozen vegan schnitzel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan schnitzel naturel"
+    },
+    {
+      "catalogKey": "frozen vegan spring rolls",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "all natural vegan spring rolls"
+    },
+    {
+      "catalogKey": "frozen vegetable burger",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "garden vegetable burger, garden vegetable"
+    },
+    {
+      "catalogKey": "frozen vegetable lasagna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable lasagna, vegetable"
+    },
+    {
+      "catalogKey": "frozen vegetable patties",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cauliflower & broccoli vegetable patties"
+    },
+    {
+      "catalogKey": "frozen vegetarian pizza",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian pizza, vegetarian"
+    },
+    {
+      "catalogKey": "frozen veggie patty",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "veggie patty"
+    },
+    {
+      "catalogKey": "fruit juice mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "100% fruit juice organic red mix"
+    },
+    {
+      "catalogKey": "fruit kefir",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kefir forest fruit 1%"
+    },
+    {
+      "catalogKey": "fruit yogurt cup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fruit & yogurt"
+    },
+    {
+      "catalogKey": "gelbwurst sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gelbwurst"
+    },
+    {
+      "catalogKey": "goat cream cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cream cheese (goat)"
+    },
+    {
+      "catalogKey": "gooseberries",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic green gooseberries"
+    },
+    {
+      "catalogKey": "goulash",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "goulash stoofschotel"
+    },
+    {
+      "catalogKey": "goulash soup ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef goulash soup"
+    },
+    {
+      "catalogKey": "gravlax",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salmon gravlax"
+    },
+    {
+      "catalogKey": "green bell pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh large green bell pepper"
+    },
+    {
+      "catalogKey": "green salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh green salad"
+    },
+    {
+      "catalogKey": "grilled bratwurst",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "grilled bratwurst, phoenix"
+    },
+    {
+      "catalogKey": "ground espresso",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "espresso ground coffee"
+    },
+    {
+      "catalogKey": "ground espresso coffee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "espresso ground coffee"
+    },
+    {
+      "catalogKey": "ground pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black pepper ground"
+    },
+    {
+      "catalogKey": "halibut fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "premium halibut fillet"
+    },
+    {
+      "catalogKey": "head lettuce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lettuce"
+    },
+    {
+      "catalogKey": "hemp drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hemp drink 2.5"
+    },
+    {
+      "catalogKey": "herb sour cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sour cream and herb"
+    },
+    {
+      "catalogKey": "herbal lemonade",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "victorian lemonade traditional botanical lemon beverage with herbal extracts"
+    },
+    {
+      "catalogKey": "high heat safflower oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic high heat safflower oil refined"
+    },
+    {
+      "catalogKey": "horse meat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "jar of horse meat"
+    },
+    {
+      "catalogKey": "instant cocoa",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "instant hot cocoa"
+    },
+    {
+      "catalogKey": "instant mashed potato mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "instant mashed potato"
+    },
+    {
+      "catalogKey": "instant oat porridge",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat meal instant porridge"
+    },
+    {
+      "catalogKey": "jarred cornichons",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cornichons augurken"
+    },
+    {
+      "catalogKey": "jarred tomato soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soup tomato"
+    },
+    {
+      "catalogKey": "jarred vegetable soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soup vegetable"
+    },
+    {
+      "catalogKey": "juice mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mix juice"
+    },
+    {
+      "catalogKey": "kabanos sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kabanos sausage 🌭"
+    },
+    {
+      "catalogKey": "kamut pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kamut fusilli ancient gran pasta"
+    },
+    {
+      "catalogKey": "landjaeger sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "landjaeger"
+    },
+    {
+      "catalogKey": "langoustine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "langoustine tails"
+    },
+    {
+      "catalogKey": "lasagna casserole ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oven ready lasagna"
+    },
+    {
+      "catalogKey": "lasagna ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oven ready lasagna"
+    },
+    {
+      "catalogKey": "lemon oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemon oil natural"
+    },
+    {
+      "catalogKey": "lemon soft drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lemon flavoured soft drink"
+    },
+    {
+      "catalogKey": "lentil flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic lentil flour"
+    },
+    {
+      "catalogKey": "lentil soup ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soup, lentil"
+    },
+    {
+      "catalogKey": "light ricotta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "light ricotta cheese"
+    },
+    {
+      "catalogKey": "loose black tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red label loose leaf black tea"
+    },
+    {
+      "catalogKey": "low fat quark",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "quark low fat"
+    },
+    {
+      "catalogKey": "lupin product",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lupin"
+    },
+    {
+      "catalogKey": "lupin products",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lupin"
+    },
+    {
+      "catalogKey": "mace",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "maces"
+    },
+    {
+      "catalogKey": "malt beer",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beer 100% pure malt"
+    },
+    {
+      "catalogKey": "marinated chicken breast fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "free range marinated chicken breast fillet"
+    },
+    {
+      "catalogKey": "marinated tofu cubes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "marinated tofu cubes sesame hoisin"
+    },
+    {
+      "catalogKey": "mars bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mars, milk chocolate with soft nougat and caramel centre bar"
+    },
+    {
+      "catalogKey": "mashed potatoes ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mashed potatoes"
+    },
+    {
+      "catalogKey": "mate tea",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yerba mate tea"
+    },
+    {
+      "catalogKey": "matjes herring",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "deli style matjes herring"
+    },
+    {
+      "catalogKey": "matjes herring fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "deli style matjes herring"
+    },
+    {
+      "catalogKey": "matjes herring fillets",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "matjes herring fillets in canola oil"
+    },
+    {
+      "catalogKey": "matjes herring in cream sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herring fillets in cream sauce"
+    },
+    {
+      "catalogKey": "meat sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sausage meat"
+    },
+    {
+      "catalogKey": "meatballs ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sticky bbq meatballs (ready meal)"
+    },
+    {
+      "catalogKey": "medium sparkling mineral water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mineral sparkling water"
+    },
+    {
+      "catalogKey": "melons",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "juicy melons"
+    },
+    {
+      "catalogKey": "mettwurst sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mettwurst"
+    },
+    {
+      "catalogKey": "mild plain yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yogurt plain"
+    },
+    {
+      "catalogKey": "mini salami snack",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "delikatess mini snack salami pikant"
+    },
+    {
+      "catalogKey": "mirabelle plums",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plums fresh"
+    },
+    {
+      "catalogKey": "mixed bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bread mixed grain"
+    },
+    {
+      "catalogKey": "mixed pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mixed bell pepper"
+    },
+    {
+      "catalogKey": "mixed peppercorns",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gourmet mixed peppercorns"
+    },
+    {
+      "catalogKey": "mixed rye bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "borodinskiy mixed rye bread"
+    },
+    {
+      "catalogKey": "mixed wild rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brown & wild rice"
+    },
+    {
+      "catalogKey": "mountain cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "creamy french mountain cheese"
+    },
+    {
+      "catalogKey": "muesli with nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "muesli nuts"
+    },
+    {
+      "catalogKey": "multigrain bread roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bread roll grain"
+    },
+    {
+      "catalogKey": "natural grape juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hensens, natural premium juice, white grape"
+    },
+    {
+      "catalogKey": "nougat pralines",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hazelnut nougat pralines"
+    },
+    {
+      "catalogKey": "oat coffee",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat milk coffee"
+    },
+    {
+      "catalogKey": "okra pods",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "okra"
+    },
+    {
+      "catalogKey": "onion granules",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic onion granules"
+    },
+    {
+      "catalogKey": "orange juice spritzer",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "orange spritzer"
+    },
+    {
+      "catalogKey": "organic camembert cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cheese camembert"
+    },
+    {
+      "catalogKey": "organic cashew nuts",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cashew nuts organic"
+    },
+    {
+      "catalogKey": "organic cold pressed coconut oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cold pressed organic coconut oil"
+    },
+    {
+      "catalogKey": "organic fennel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bio pure organic fennel"
+    },
+    {
+      "catalogKey": "organic french salad dressing",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic french dressing"
+    },
+    {
+      "catalogKey": "organic frozen spinach",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic frozen chopped spinach"
+    },
+    {
+      "catalogKey": "organic fruit yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic fruit & yogurt apple, banana & peach"
+    },
+    {
+      "catalogKey": "organic lasagna sheets",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "lasagna pasta sheets"
+    },
+    {
+      "catalogKey": "organic marshmallows",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "angelitos marshmallows"
+    },
+    {
+      "catalogKey": "organic mixed pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic mixed bell pepper"
+    },
+    {
+      "catalogKey": "organic pollock fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pacific pollock fillet"
+    },
+    {
+      "catalogKey": "organic rapeseed oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic refined rapeseed oil"
+    },
+    {
+      "catalogKey": "organic smoked salmon",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked organic salmon"
+    },
+    {
+      "catalogKey": "organic spelt bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic wholemeal spelt bread"
+    },
+    {
+      "catalogKey": "organic turkey breast fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic prairie, turkey breast"
+    },
+    {
+      "catalogKey": "organic vegan lasagna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "365 everyday value, organic vegan lasagna"
+    },
+    {
+      "catalogKey": "organic vegetarian burger",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian burger, vegetarian"
+    },
+    {
+      "catalogKey": "organic walnut oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic hydro therm walnut oil"
+    },
+    {
+      "catalogKey": "organic wheat flour type 405",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic wheat flour"
+    },
+    {
+      "catalogKey": "organic wine gums",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic wine gums vegan gelatin free"
+    },
+    {
+      "catalogKey": "organic yellow peas",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "timeless natural food, 100% organic yellow split peas"
+    },
+    {
+      "catalogKey": "pancake batter ready mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pancake batter"
+    },
+    {
+      "catalogKey": "parsley herbs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chopped parsley"
+    },
+    {
+      "catalogKey": "pasta ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ready pasta"
+    },
+    {
+      "catalogKey": "pea protein milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "like milk pea protein"
+    },
+    {
+      "catalogKey": "peach drinking yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "drinking yogurt peach"
+    },
+    {
+      "catalogKey": "peach fruit yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peach fruit on the bottom lowfat yogurt"
+    },
+    {
+      "catalogKey": "penis pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spencer & fleetwood penis pasta"
+    },
+    {
+      "catalogKey": "pilsner beer",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pils pilsner beer"
+    },
+    {
+      "catalogKey": "pizza margherita ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "margherita pizza"
+    },
+    {
+      "catalogKey": "plain dark chocolate",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark chocolate plain"
+    },
+    {
+      "catalogKey": "plain haddock fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "haddock fillet portions"
+    },
+    {
+      "catalogKey": "plain rice cake",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice cake thin square plain"
+    },
+    {
+      "catalogKey": "plain skyr",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plain skyr yogurt"
+    },
+    {
+      "catalogKey": "plain vegan tofu",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "firm vegan tofu"
+    },
+    {
+      "catalogKey": "plain yogurt cultures",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yogurt plain"
+    },
+    {
+      "catalogKey": "plant based coconut milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic coconut plant based milk"
+    },
+    {
+      "catalogKey": "plant margarine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vita d'or plant margarine 60% fat"
+    },
+    {
+      "catalogKey": "pollock fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pacific pollock fillet"
+    },
+    {
+      "catalogKey": "poppy seed bread roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "poppy seed roll"
+    },
+    {
+      "catalogKey": "pork roast ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "roast pork"
+    },
+    {
+      "catalogKey": "potato bread roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato roll"
+    },
+    {
+      "catalogKey": "potato gratin ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "creamy potato gratin"
+    },
+    {
+      "catalogKey": "potato rosti",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "crispy potato rosti"
+    },
+    {
+      "catalogKey": "potato salad ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato salad | ready to eat"
+    },
+    {
+      "catalogKey": "poultry breast",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh poultry breast fillets"
+    },
+    {
+      "catalogKey": "poultry breast fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "breast fillet"
+    },
+    {
+      "catalogKey": "poultry wiener sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "poultry wiener"
+    },
+    {
+      "catalogKey": "pretzel roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pretzel sandwich roll"
+    },
+    {
+      "catalogKey": "pumpkin bar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bar, pumpkin"
+    },
+    {
+      "catalogKey": "pumpkin cream soup ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cream of pumpkin soup"
+    },
+    {
+      "catalogKey": "pumpkin ginger soup ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpkin & ginger soup"
+    },
+    {
+      "catalogKey": "pumpkin soup ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "homestyle pumpkin ready to serve soup"
+    },
+    {
+      "catalogKey": "raw broccoli",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "broccoli, raw"
+    },
+    {
+      "catalogKey": "raw cod",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "raw wild caught alaskan skinless boneless cod fillets"
+    },
+    {
+      "catalogKey": "raw milk cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic raw milk cheese"
+    },
+    {
+      "catalogKey": "raw minced pork",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "minced pork"
+    },
+    {
+      "catalogKey": "ready made bolognese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bolognese ready sauce"
+    },
+    {
+      "catalogKey": "ready made bolognese sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bolognese ready sauce"
+    },
+    {
+      "catalogKey": "ready made bolognese sauces",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bolognese ready sauce"
+    },
+    {
+      "catalogKey": "ready made chicken salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken salad made with rotisserie chicken"
+    },
+    {
+      "catalogKey": "ready made chicken tikka masala",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chicken tikka masala"
+    },
+    {
+      "catalogKey": "ready made chili con carne",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ready to serve chili con carne, 50 ounce cans, 12 pack"
+    },
+    {
+      "catalogKey": "ready made chili sin carne",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili sin carne vegetar 190g toro"
+    },
+    {
+      "catalogKey": "ready made goulash soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "beef goulash soup"
+    },
+    {
+      "catalogKey": "ready made hollandaise sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "authentic hollandaise sauce"
+    },
+    {
+      "catalogKey": "ready made meatball",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "frozen ready made chicken meatballs"
+    },
+    {
+      "catalogKey": "ready made pea soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green pea soup"
+    },
+    {
+      "catalogKey": "ready made pizza",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ready to bake pizza"
+    },
+    {
+      "catalogKey": "ready made pizza dough",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ready to make pizza dough"
+    },
+    {
+      "catalogKey": "ready made pizza margherita",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "margherita pizza"
+    },
+    {
+      "catalogKey": "ready made potato casserole",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato casserole"
+    },
+    {
+      "catalogKey": "ready made potato gratin",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "creamy potato gratin"
+    },
+    {
+      "catalogKey": "ready made potato salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato salad | ready to eat"
+    },
+    {
+      "catalogKey": "ready made risotto",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "riso bello, ready risotto asparagus"
+    },
+    {
+      "catalogKey": "ready made salad mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mix salad"
+    },
+    {
+      "catalogKey": "ready made spaghetti bolognese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fitmeal spaghetti bolognese"
+    },
+    {
+      "catalogKey": "ready made tomato soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soup tomato"
+    },
+    {
+      "catalogKey": "ready made vegetable mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable mix"
+    },
+    {
+      "catalogKey": "ready made vegetable stir fry",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable stir fry"
+    },
+    {
+      "catalogKey": "ready made vegetarian pizza",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian pizza, vegetarian"
+    },
+    {
+      "catalogKey": "ready to cook bolognese sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bolognese ready sauce"
+    },
+    {
+      "catalogKey": "red currants",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red currants, frozen"
+    },
+    {
+      "catalogKey": "red long grain rice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "long grain red rice"
+    },
+    {
+      "catalogKey": "red pepper chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "red bell pepper chips"
+    },
+    {
+      "catalogKey": "reduced sugar ketchup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato ketchup reduced sugar"
+    },
+    {
+      "catalogKey": "refined corn germ oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "refined corn, cooking oil"
+    },
+    {
+      "catalogKey": "refined safflower oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic high heat safflower oil refined"
+    },
+    {
+      "catalogKey": "ribbon pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ribbon pasta enriched macaroni product"
+    },
+    {
+      "catalogKey": "rice bowl ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice bowl"
+    },
+    {
+      "catalogKey": "rice dish ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice dish"
+    },
+    {
+      "catalogKey": "rice glass noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brown rice glass noodles"
+    },
+    {
+      "catalogKey": "rice pudding ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice pudding, rice"
+    },
+    {
+      "catalogKey": "rice with vegetables ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetables with rice"
+    },
+    {
+      "catalogKey": "ripe tomatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vine ripe tomatoes"
+    },
+    {
+      "catalogKey": "round grain bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "brick oven italia round bread whole grain"
+    },
+    {
+      "catalogKey": "rye flour type 1150",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dark rye flour"
+    },
+    {
+      "catalogKey": "saffron threads",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "saffron"
+    },
+    {
+      "catalogKey": "salad oil",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salad & cooking oil"
+    },
+    {
+      "catalogKey": "salmon slices",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "norwegian salmon slices"
+    },
+    {
+      "catalogKey": "salsiccia sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "italien inspired salsiccia sausage"
+    },
+    {
+      "catalogKey": "salt free seasoning mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salt free seasoning"
+    },
+    {
+      "catalogKey": "salted herring",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salted herring fillets"
+    },
+    {
+      "catalogKey": "salted rice cakes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice cakes salted"
+    },
+    {
+      "catalogKey": "salty snacks",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "suffeli salty snacks"
+    },
+    {
+      "catalogKey": "sauce thickener",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "minor's, dry roux sauce/soup thickener"
+    },
+    {
+      "catalogKey": "savoy cabbage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "green savoy cabbage"
+    },
+    {
+      "catalogKey": "seitan gyros",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gyros style pulled seitan"
+    },
+    {
+      "catalogKey": "sheep milk yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plain sheep milk yogurt"
+    },
+    {
+      "catalogKey": "shepherds pie ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "shepherds pie"
+    },
+    {
+      "catalogKey": "skillet meal ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "skillet meal"
+    },
+    {
+      "catalogKey": "sliced fresh baguette",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh baked baguette"
+    },
+    {
+      "catalogKey": "sliced whole grain bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bread whole grain"
+    },
+    {
+      "catalogKey": "smoked knackwurst sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "smoked knackwurst"
+    },
+    {
+      "catalogKey": "smoked trout salmon style",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salmon trout smoked"
+    },
+    {
+      "catalogKey": "snack cucumbers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "snack'mms, sweet cucumbers"
+    },
+    {
+      "catalogKey": "soft wheat flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soft wheat flour 00"
+    },
+    {
+      "catalogKey": "sole fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "4 oz sole fillet"
+    },
+    {
+      "catalogKey": "sour cream potato chips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato chips sour cream"
+    },
+    {
+      "catalogKey": "sour white cabbage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sour cabbage leaves"
+    },
+    {
+      "catalogKey": "soy dip",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cindy's kitchen, rich & creamy soy dip"
+    },
+    {
+      "catalogKey": "soy meat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "carne de soya (soy meat)"
+    },
+    {
+      "catalogKey": "soy strips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegebest soy protein strips"
+    },
+    {
+      "catalogKey": "spaghetti bolognese ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spaghetti bolognese 400g meal"
+    },
+    {
+      "catalogKey": "spaghetti carbonara ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spaghetti carbonara"
+    },
+    {
+      "catalogKey": "sparkling table water",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "water sparkling"
+    },
+    {
+      "catalogKey": "spelt crispbread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rye & spelt wholegrain crispbread"
+    },
+    {
+      "catalogKey": "spelt grains",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spelt"
+    },
+    {
+      "catalogKey": "spicy curry sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "3 min. curry sauce (spicy)"
+    },
+    {
+      "catalogKey": "spinach ravioli ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plate ready ravioli spinach and garlic"
+    },
+    {
+      "catalogKey": "spirelli pasta",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spirelli"
+    },
+    {
+      "catalogKey": "steak pepper seasoning",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "steak seasoning"
+    },
+    {
+      "catalogKey": "stone oven bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spanish stone oven andaliz bread"
+    },
+    {
+      "catalogKey": "stuffed cabbage ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "stuffed cabbage"
+    },
+    {
+      "catalogKey": "sugar free chewing gum",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chewing gum (sugar free)"
+    },
+    {
+      "catalogKey": "sugar free oat milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "佐藤不利用オーツミルク (sugar free oat milk)"
+    },
+    {
+      "catalogKey": "sushi mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sushi mix flavors"
+    },
+    {
+      "catalogKey": "sweet almond butter",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "butter almond"
+    },
+    {
+      "catalogKey": "sweet and sour pickles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet & sour pickles"
+    },
+    {
+      "catalogKey": "sweet paprika powder",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet paprika"
+    },
+    {
+      "catalogKey": "sweet potato puree ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "organic sweet potato puree"
+    },
+    {
+      "catalogKey": "sweet potato soup ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sweet potato soup"
+    },
+    {
+      "catalogKey": "tabasco sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tabasco® sauce 60 ml"
+    },
+    {
+      "catalogKey": "tagliolini",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "i tagliolini"
+    },
+    {
+      "catalogKey": "thin sliced salami",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "sliced salami"
+    },
+    {
+      "catalogKey": "tofu burger patties",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tofu burger"
+    },
+    {
+      "catalogKey": "tomato basil spread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "everything spread, sun dried tomato & basil, mild"
+    },
+    {
+      "catalogKey": "tomato pieces",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato with pieces"
+    },
+    {
+      "catalogKey": "tomato sauce with herbs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "napoletana chunky pasta sauce with tomato & herbs"
+    },
+    {
+      "catalogKey": "tomato soup ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soup tomato"
+    },
+    {
+      "catalogKey": "turkey breast fillet",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "turkey fillet"
+    },
+    {
+      "catalogKey": "turkey meat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "meat turkey"
+    },
+    {
+      "catalogKey": "turkey steak",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "turkey breast steak"
+    },
+    {
+      "catalogKey": "unsweetened almond yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plain unsweetened almond milk yogurt"
+    },
+    {
+      "catalogKey": "unsweetened oat drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "unsweetened oat plant based drink"
+    },
+    {
+      "catalogKey": "unsweetened rice milk",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice milk unsweetened"
+    },
+    {
+      "catalogKey": "vanilla oat drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat vanilla"
+    },
+    {
+      "catalogKey": "vanilla rice drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "rice drink vanilla enriched"
+    },
+    {
+      "catalogKey": "vanilla soy drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vanilla soy food drink"
+    },
+    {
+      "catalogKey": "veal shank",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "veal shank sliced bone in"
+    },
+    {
+      "catalogKey": "vegan almond yogurt alternative",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "almond based yogurt alternative"
+    },
+    {
+      "catalogKey": "vegan bread spread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "original vegan spread"
+    },
+    {
+      "catalogKey": "vegan bread spreads",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan dressing & spreads"
+    },
+    {
+      "catalogKey": "vegan chili ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spicy vegan chili"
+    },
+    {
+      "catalogKey": "vegan chili sin carne",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chilli sin carne"
+    },
+    {
+      "catalogKey": "vegan cocoa pudding",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oatmilk pudding (cocoa)"
+    },
+    {
+      "catalogKey": "vegan coconut yogurt",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut based yogurt"
+    },
+    {
+      "catalogKey": "vegan coconut yogurt alternative",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "coconut yogurt alternative"
+    },
+    {
+      "catalogKey": "vegan cream cheese alternative",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan alternative for cream cheese"
+    },
+    {
+      "catalogKey": "vegan feta alternative",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan feta cheese alternative"
+    },
+    {
+      "catalogKey": "vegan fruit gummies",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cherry vegan fruit gummies"
+    },
+    {
+      "catalogKey": "vegan grated cheese alternative",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "dairy free grated cheese alternative"
+    },
+    {
+      "catalogKey": "vegan gyros seasoning",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "kebab gyros seasoning"
+    },
+    {
+      "catalogKey": "vegan herb bread spread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "herb vegan cheese spread"
+    },
+    {
+      "catalogKey": "vegan lasagna ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan bologese lasagna"
+    },
+    {
+      "catalogKey": "vegan margarine",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "*margarine"
+    },
+    {
+      "catalogKey": "vegan meatball",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan meatball style rondo"
+    },
+    {
+      "catalogKey": "vegan mince",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan magic mince"
+    },
+    {
+      "catalogKey": "vegan mince balls",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan balls"
+    },
+    {
+      "catalogKey": "vegan minced meat alternative",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "nrpt vegan minced meat plant&bean brand"
+    },
+    {
+      "catalogKey": "vegan moussaka",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "moussaka vegan"
+    },
+    {
+      "catalogKey": "vegan mozzarella alternative",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan gourmet mozzarella cheese alternative"
+    },
+    {
+      "catalogKey": "vegan oat milk alternative",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "oat oat milk"
+    },
+    {
+      "catalogKey": "vegan protein drink",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan drink with pea protein"
+    },
+    {
+      "catalogKey": "vegan ratatouille",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "french ratatouille organic gluten free vegan ingredients"
+    },
+    {
+      "catalogKey": "vegan ready made lasagna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan bologese lasagna"
+    },
+    {
+      "catalogKey": "vegan ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan spaghetti bolognese shirataki konjac spaghetti with authentic italian tomato sauce and jackfruit ready to eat meal, vegan spaghetti bolognese"
+    },
+    {
+      "catalogKey": "vegan salami",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salami vegan"
+    },
+    {
+      "catalogKey": "vegan salami slices",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salami vegan"
+    },
+    {
+      "catalogKey": "vegan sausage alternative",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "meatless vegan sausage"
+    },
+    {
+      "catalogKey": "vegan sausage slices",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "meatless vegan sausage"
+    },
+    {
+      "catalogKey": "vegan schnitzel substitute",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan schnitzel naturel"
+    },
+    {
+      "catalogKey": "vegan soy mince",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "soy mince"
+    },
+    {
+      "catalogKey": "vegan soy sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "meatless vegan sausage"
+    },
+    {
+      "catalogKey": "vegan soy yogurt alternative",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "'alternative ' soy bio yogurt"
+    },
+    {
+      "catalogKey": "vegan spreads",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan dressing & spreads"
+    },
+    {
+      "catalogKey": "vegan spring rolls",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "all natural vegan spring rolls"
+    },
+    {
+      "catalogKey": "vegan tofu salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "large vegan salad with tofu"
+    },
+    {
+      "catalogKey": "vegan tofu salami",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "salami vegan"
+    },
+    {
+      "catalogKey": "vegan tofu scramble",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tofu scramble"
+    },
+    {
+      "catalogKey": "vegan tofu slices",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tofu slices"
+    },
+    {
+      "catalogKey": "vegan tofu strips",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tofu strips"
+    },
+    {
+      "catalogKey": "vegan tomato sauce",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomato sauce."
+    },
+    {
+      "catalogKey": "vegan tomato soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan soup, organic tomato bisque"
+    },
+    {
+      "catalogKey": "vegan vegetable burger",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "black bean chipotle burger vegan vegetable burger with brown rice, black beans & jalapeno pepper, black bean"
+    },
+    {
+      "catalogKey": "vegan vegetable patties",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "cauliflower & broccoli vegetable patties"
+    },
+    {
+      "catalogKey": "vegan vegetable soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan soup, vegetable"
+    },
+    {
+      "catalogKey": "vegan whipping cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegan heavy whipping cream"
+    },
+    {
+      "catalogKey": "vegan yogurt alternative",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "yogurt alternative"
+    },
+    {
+      "catalogKey": "vegetable casserole ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "root vegetable casserole"
+    },
+    {
+      "catalogKey": "vegetable lasagna ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable lasagna, vegetable"
+    },
+    {
+      "catalogKey": "vegetable skewers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable kebabs with skewers"
+    },
+    {
+      "catalogKey": "vegetable soup ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable ready to serve soup, vegetable"
+    },
+    {
+      "catalogKey": "vegetarian bulgur salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "bulgur salad"
+    },
+    {
+      "catalogKey": "vegetarian burger patties",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetarian burger, vegetarian"
+    },
+    {
+      "catalogKey": "vegetarian chili ready meal",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili vegetarian"
+    },
+    {
+      "catalogKey": "vegetarian chili sin carne",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "chili sin carne vegetar 190g toro"
+    },
+    {
+      "catalogKey": "vegetarian gouda",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gouda"
+    },
+    {
+      "catalogKey": "vegetarian herb deli slices",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "plant based herb roasted turkey style deli slices, herb roasted"
+    },
+    {
+      "catalogKey": "vegetarian meatballs",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "original vegetarian eggplant \"meatballs\", original"
+    },
+    {
+      "catalogKey": "vegetarian mozzarella",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "part skim mozzarella vegetarian cheese"
+    },
+    {
+      "catalogKey": "vegetarian potato salad",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "potato salad"
+    },
+    {
+      "catalogKey": "vegetarian pumpkin soup",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "pumpkin soup, pumpkin"
+    },
+    {
+      "catalogKey": "vegetarian schnitzel",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ovo vegetarian schnitzel"
+    },
+    {
+      "catalogKey": "vegetarian spinach lasagna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "spinach & cheese lasagna"
+    },
+    {
+      "catalogKey": "vegetarian tofu sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tofu sausage"
+    },
+    {
+      "catalogKey": "vegetarian vegetable broth",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable broth and seasoning, vegetarian"
+    },
+    {
+      "catalogKey": "vegetarian vegetable burger",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "garden vegetable burger, garden vegetable"
+    },
+    {
+      "catalogKey": "vegetarian vegetable lasagna",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "vegetable lasagna, vegetable"
+    },
+    {
+      "catalogKey": "vegetarian wraps",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "changs vegetarian lettuce wraps, lunch"
+    },
+    {
+      "catalogKey": "veggie burger patty",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "veggie patty"
+    },
+    {
+      "catalogKey": "vine tomatoes",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "tomatoes on the vine"
+    },
+    {
+      "catalogKey": "vineyard peach juice",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "peach juice"
+    },
+    {
+      "catalogKey": "waffle batter ready mix",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "waffle mix"
+    },
+    {
+      "catalogKey": "wheat bread roll",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "wheat roll"
+    },
+    {
+      "catalogKey": "wheat flour type 550",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "all purpose wheat flour type 550"
+    },
+    {
+      "catalogKey": "white mushroom",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "mushroom, white fresh"
+    },
+    {
+      "catalogKey": "white sausage",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "skinless white cooked sausage"
+    },
+    {
+      "catalogKey": "white spaghetti",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "white sauce spaghetti"
+    },
+    {
+      "catalogKey": "whole cane sugar",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "natural whole cane sugar"
+    },
+    {
+      "catalogKey": "whole grain baguette",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ciabatta demi baguette whole grain"
+    },
+    {
+      "catalogKey": "whole grain couscous",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "near east whole grain original wheat couscous 7.6 ounce paper box"
+    },
+    {
+      "catalogKey": "whole grain crackers",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain baked crackers"
+    },
+    {
+      "catalogKey": "whole grain pita bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "hearty grain pita bread"
+    },
+    {
+      "catalogKey": "whole grain rice noodles",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "instant whole grain rice noodles"
+    },
+    {
+      "catalogKey": "whole grain sandwich bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain delicious sandwich bread, whole grain"
+    },
+    {
+      "catalogKey": "whole grain seed bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "whole grain multi seed bread"
+    },
+    {
+      "catalogKey": "whole grain spelt bread",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ancient grain spelt bread"
+    },
+    {
+      "catalogKey": "whole grain spelt flour",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "100% whole grain spelt (wheat) flour"
+    },
+    {
+      "catalogKey": "whole milk whipping cream",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "premium milk whipping cream"
+    },
+    {
+      "catalogKey": "wiener sausages",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "value pack wiener sausages"
+    },
+    {
+      "catalogKey": "wild boar meat",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "ground wild boar"
+    },
+    {
+      "catalogKey": "yellow bell pepper",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "fresh yellow bell pepper"
+    },
+    {
+      "catalogKey": "yogurt with fruit",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "grrek yogurt with fruit"
+    },
+    {
+      "catalogKey": "young gouda cheese",
+      "serverArtifact": "nutrition.json",
+      "serverKey": "gouda young cheese slices"
+    }
+  ]
+}

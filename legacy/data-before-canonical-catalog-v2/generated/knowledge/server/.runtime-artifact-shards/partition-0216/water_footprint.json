@@ -1,0 +1,22 @@
+{
+  "entries": {
+    "champagne": {
+      "litersPerKilogram": 406.0
+    },
+    "cheeseburger, provenant de fast food": {
+      "litersPerKilogram": 1910.0
+    },
+    "céréales pour petit déjeuner \"équilibre\" nature (non enrichies en vitamines et minéraux)": {
+      "litersPerKilogram": 6450.0
+    },
+    "galette de riz soufflé complet": {
+      "litersPerKilogram": 4990.0
+    },
+    "poulet, viande et peau, cru": {
+      "litersPerKilogram": 1900.0
+    },
+    "rhubarbe, tige, crue": {
+      "litersPerKilogram": 64.3
+    }
+  }
+}

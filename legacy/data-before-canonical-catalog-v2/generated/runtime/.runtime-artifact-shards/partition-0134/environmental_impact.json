@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "andouillette, sautée/poêlée": {
+      "environmentScoreMptPerKg": 1.36,
+      "climateKgCo2EqPerKg": 11.9,
+      "landUsePtPerKg": 699.0,
+      "waterDeprivationM3PerKg": 2.72
+    },
+    "avoine, crue": {
+      "environmentScoreMptPerKg": 0.21,
+      "climateKgCo2EqPerKg": 0.953,
+      "landUsePtPerKg": 179.0,
+      "waterDeprivationM3PerKg": 0.535
+    },
+    "bûche de noël pâtissière": {
+      "environmentScoreMptPerKg": 0.574,
+      "climateKgCo2EqPerKg": 8.05,
+      "landUsePtPerKg": 322.0,
+      "waterDeprivationM3PerKg": 0.911
+    },
+    "chausson aux pommes": {
+      "environmentScoreMptPerKg": 0.219,
+      "climateKgCo2EqPerKg": 2.05,
+      "landUsePtPerKg": 100.0,
+      "waterDeprivationM3PerKg": 0.712
+    },
+    "glace au yaourt": {
+      "environmentScoreMptPerKg": 0.224,
+      "climateKgCo2EqPerKg": 1.96,
+      "landUsePtPerKg": 66.8,
+      "waterDeprivationM3PerKg": 0.637
+    },
+    "morue, salée, sèche": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "mélange apéritif de graines (non salées) et raisins secs": {
+      "environmentScoreMptPerKg": 0.569,
+      "climateKgCo2EqPerKg": 2.62,
+      "landUsePtPerKg": 380.0,
+      "waterDeprivationM3PerKg": 20.7
+    },
+    "navet, pelé, cru": {
+      "environmentScoreMptPerKg": 0.0453,
+      "climateKgCo2EqPerKg": 0.396,
+      "landUsePtPerKg": 9.54,
+      "waterDeprivationM3PerKg": 0.362
+    },
+    "oeuf, jaune (jaune d'oeuf), cuit": {
+      "environmentScoreMptPerKg": 0.368,
+      "climateKgCo2EqPerKg": 2.6,
+      "landUsePtPerKg": 184.0,
+      "waterDeprivationM3PerKg": 1.01
+    },
+    "porc, gorge, découennée, crue": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "porc, rôti filet avec chaînette, cru": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "sauce nuoc mâm ou sauce au poisson, préemballée": {
+      "environmentScoreMptPerKg": 0.165,
+      "climateKgCo2EqPerKg": 1.06,
+      "landUsePtPerKg": 35.8,
+      "waterDeprivationM3PerKg": 0.562
+    },
+    "scarole, crue": {
+      "environmentScoreMptPerKg": 0.134,
+      "climateKgCo2EqPerKg": 1.03,
+      "landUsePtPerKg": 9.85,
+      "waterDeprivationM3PerKg": 0.675
+    }
+  }
+}

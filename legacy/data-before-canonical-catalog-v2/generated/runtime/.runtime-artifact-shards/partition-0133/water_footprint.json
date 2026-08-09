@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "eau de vie": {
+      "litersPerKilogram": 167.0
+    },
+    "fève, fraîche, surgelée": {
+      "litersPerKilogram": 70.9
+    },
+    "haché de volaille": {
+      "litersPerKilogram": 3360.0
+    },
+    "huile de foie de morue": {
+      "litersPerKilogram": 1030.0
+    },
+    "muesli croustillant aux fruits ou fruits secs, enrichi en vitamines et minéraux": {
+      "litersPerKilogram": 1230.0
+    },
+    "poireau, cru": {
+      "litersPerKilogram": 348.0
+    },
+    "poulet au curry et au lait de coco": {
+      "litersPerKilogram": 2810.0
+    },
+    "poulet, cuisse, viande et peau, cru": {
+      "litersPerKilogram": 2540.0
+    },
+    "pétales de maïs natures (non enrichis en vitamines et minéraux)": {
+      "litersPerKilogram": 6450.0
+    },
+    "rostis ou galette de pomme de terre": {
+      "litersPerKilogram": 509.0
+    }
+  }
+}

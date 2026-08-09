@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "barre céréalière pour petit déjeuner au lait, chocolatée ou non, enrichie en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.516,
+      "climateKgCo2EqPerKg": 6.89,
+      "landUsePtPerKg": 275.0,
+      "waterDeprivationM3PerKg": 1.24
+    },
+    "boeuf, steak ou bifteck, grillé": {
+      "environmentScoreMptPerKg": 3.44,
+      "climateKgCo2EqPerKg": 36.6,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "curcuma, poudre": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 9.4,
+      "landUsePtPerKg": 688.0,
+      "waterDeprivationM3PerKg": 4.38
+    },
+    "glace ou crème glacée, en bac": {
+      "environmentScoreMptPerKg": 0.224,
+      "climateKgCo2EqPerKg": 1.96,
+      "landUsePtPerKg": 66.8,
+      "waterDeprivationM3PerKg": 0.637
+    },
+    "lait de brebis, entier": {
+      "environmentScoreMptPerKg": 0.271,
+      "climateKgCo2EqPerKg": 2.18,
+      "landUsePtPerKg": 217.0,
+      "waterDeprivationM3PerKg": 0.166
+    },
+    "lasagnes ou cannelloni aux légumes, cuits": {
+      "environmentScoreMptPerKg": 0.408,
+      "climateKgCo2EqPerKg": 3.23,
+      "landUsePtPerKg": 128.0,
+      "waterDeprivationM3PerKg": 6.46
+    },
+    "lin, graine": {
+      "environmentScoreMptPerKg": 0.537,
+      "climateKgCo2EqPerKg": 3.52,
+      "landUsePtPerKg": 628.0,
+      "waterDeprivationM3PerKg": 2.23
+    },
+    "mimolette vieille": {
+      "environmentScoreMptPerKg": 0.68,
+      "climateKgCo2EqPerKg": 6.74,
+      "landUsePtPerKg": 304.0,
+      "waterDeprivationM3PerKg": 0.897
+    },
+    "muesli croustillant aux fruits et/ou fruits secs, graines (non enrichi en vitamines et minéraux)": {
+      "environmentScoreMptPerKg": 0.284,
+      "climateKgCo2EqPerKg": 2.55,
+      "landUsePtPerKg": 143.0,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "pizza jambon fromage champignons ou pizza royale, reine ou regina": {
+      "environmentScoreMptPerKg": 0.442,
+      "climateKgCo2EqPerKg": 3.43,
+      "landUsePtPerKg": 124.0,
+      "waterDeprivationM3PerKg": 8.09
+    },
+    "riz blanc étuvé, cuit, non salé": {
+      "environmentScoreMptPerKg": 0.216,
+      "climateKgCo2EqPerKg": 1.16,
+      "landUsePtPerKg": 29.6,
+      "waterDeprivationM3PerKg": 6.4
+    },
+    "sandwich panini, jambon cru, mozzarella, tomates": {
+      "environmentScoreMptPerKg": 0.545,
+      "climateKgCo2EqPerKg": 4.43,
+      "landUsePtPerKg": 215.0,
+      "waterDeprivationM3PerKg": 1.07
+    },
+    "spécialité fromagère non affinée environ 25% mg, type fromage en barquette à tartiner ou coque fromagère": {
+      "environmentScoreMptPerKg": 0.491,
+      "climateKgCo2EqPerKg": 5.16,
+      "landUsePtPerKg": 226.0,
+      "waterDeprivationM3PerKg": 0.629
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "entries": {
+    "anchois commun, cru": {
+      "litersPerKilogram": 231.0
+    },
+    "boisson gazeuse, sans jus de fruit, sucrée": {
+      "litersPerKilogram": 307.0
+    },
+    "chocolat blanc, tablette": {
+      "litersPerKilogram": 1190.0
+    },
+    "entremets type opéra": {
+      "litersPerKilogram": 3860.0
+    },
+    "feuilleté aux escargots": {
+      "litersPerKilogram": 725.0
+    },
+    "fontina": {
+      "litersPerKilogram": 653.0
+    },
+    "porc, poitrine cutter, sans mouille, crue": {
+      "litersPerKilogram": 2160.0
+    },
+    "saucisson sec": {
+      "litersPerKilogram": 2340.0
+    },
+    "tripes à la mode de caen": {
+      "litersPerKilogram": 2550.0
+    }
+  }
+}

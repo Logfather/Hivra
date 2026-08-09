@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "basilic, séché": {
+      "environmentScoreMptPerKg": 0.464,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 142.0,
+      "waterDeprivationM3PerKg": 20.2
+    },
+    "biscuit sec fourré à la pâte ou purée de fruits": {
+      "environmentScoreMptPerKg": 0.344,
+      "climateKgCo2EqPerKg": 3.05,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 3.17
+    },
+    "crêpe maison, fourrée au chocolat ou à la pâte à tartiner chocolat et noisettes": {
+      "environmentScoreMptPerKg": 0.174,
+      "climateKgCo2EqPerKg": 1.41,
+      "landUsePtPerKg": 72.9,
+      "waterDeprivationM3PerKg": 0.753
+    },
+    "foie, oie, cru": {
+      "environmentScoreMptPerKg": 0.23,
+      "climateKgCo2EqPerKg": 1.5,
+      "landUsePtPerKg": 72.5,
+      "waterDeprivationM3PerKg": 0.614
+    },
+    "grains de blé soufflés au miel ou caramel, enrichis en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "pomme de terre sautée/poêlée à la graisse de canard": {
+      "environmentScoreMptPerKg": 0.0701,
+      "climateKgCo2EqPerKg": 0.722,
+      "landUsePtPerKg": 30.1,
+      "waterDeprivationM3PerKg": 0.352
+    },
+    "porc, rôti, cuit": {
+      "environmentScoreMptPerKg": 1.07,
+      "climateKgCo2EqPerKg": 8.4,
+      "landUsePtPerKg": 441.0,
+      "waterDeprivationM3PerKg": 2.77
+    },
+    "pâte feuilletée, surgelée, crue": {
+      "environmentScoreMptPerKg": 0.415,
+      "climateKgCo2EqPerKg": 3.81,
+      "landUsePtPerKg": 173.0,
+      "waterDeprivationM3PerKg": 0.703
+    },
+    "rognon, veau, cru": {
+      "environmentScoreMptPerKg": 2.09,
+      "climateKgCo2EqPerKg": 22.6,
+      "landUsePtPerKg": 1030.0,
+      "waterDeprivationM3PerKg": 3.06
+    }
+  }
+}

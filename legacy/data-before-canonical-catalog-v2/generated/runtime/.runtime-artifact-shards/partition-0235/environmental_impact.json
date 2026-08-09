@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "cigarette": {
+      "environmentScoreMptPerKg": 0.301,
+      "climateKgCo2EqPerKg": 2.87,
+      "landUsePtPerKg": 120.0,
+      "waterDeprivationM3PerKg": 1.34
+    },
+    "couscous à la viande ou au poulet, allégé": {
+      "environmentScoreMptPerKg": 0.431,
+      "climateKgCo2EqPerKg": 2.78,
+      "landUsePtPerKg": 148.0,
+      "waterDeprivationM3PerKg": 1.4
+    },
+    "cône ou cornet classique, pour glace": {
+      "environmentScoreMptPerKg": 0.359,
+      "climateKgCo2EqPerKg": 3.46,
+      "landUsePtPerKg": 162.0,
+      "waterDeprivationM3PerKg": 1.13
+    },
+    "fenouil, cru": {
+      "environmentScoreMptPerKg": 0.113,
+      "climateKgCo2EqPerKg": 1.02,
+      "landUsePtPerKg": 14.1,
+      "waterDeprivationM3PerKg": 1.48
+    },
+    "macaron sec": {
+      "environmentScoreMptPerKg": 0.408,
+      "climateKgCo2EqPerKg": 2.34,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 10.5
+    },
+    "pain, baguette ou boule, bis (à la farine t80 ou t110)": {
+      "environmentScoreMptPerKg": 0.104,
+      "climateKgCo2EqPerKg": 0.776,
+      "landUsePtPerKg": 63.0,
+      "waterDeprivationM3PerKg": 0.188
+    },
+    "plat légumes, avec féculent et lait/crème, dès 6 8 mois": {
+      "environmentScoreMptPerKg": 0.149,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": 56.0,
+      "waterDeprivationM3PerKg": 1.26
+    },
+    "saint félicien": {
+      "environmentScoreMptPerKg": 0.528,
+      "climateKgCo2EqPerKg": 5.23,
+      "landUsePtPerKg": 226.0,
+      "waterDeprivationM3PerKg": 0.647
+    },
+    "sandwich baguette, saucisson, beurre": {
+      "environmentScoreMptPerKg": 0.573,
+      "climateKgCo2EqPerKg": 4.72,
+      "landUsePtPerKg": 216.0,
+      "waterDeprivationM3PerKg": 1.37
+    },
+    "sauce pesto rosso, préemballée": {
+      "environmentScoreMptPerKg": 0.504,
+      "climateKgCo2EqPerKg": 2.88,
+      "landUsePtPerKg": 314.0,
+      "waterDeprivationM3PerKg": 11.0
+    },
+    "tomme ou tome de vache": {
+      "environmentScoreMptPerKg": 0.552,
+      "climateKgCo2EqPerKg": 5.8,
+      "landUsePtPerKg": 268.0,
+      "waterDeprivationM3PerKg": 0.703
+    }
+  }
+}

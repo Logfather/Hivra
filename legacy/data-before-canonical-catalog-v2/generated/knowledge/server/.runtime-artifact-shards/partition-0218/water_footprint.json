@@ -1,0 +1,31 @@
+{
+  "entries": {
+    "canard, magret, cru": {
+      "litersPerKilogram": 5460.0
+    },
+    "cardamome, poudre": {
+      "litersPerKilogram": 4380.0
+    },
+    "foie, porc, cru": {
+      "litersPerKilogram": 898.0
+    },
+    "hareng, frit": {
+      "litersPerKilogram": 376.0
+    },
+    "limande sole, crue": {
+      "litersPerKilogram": 470.0
+    },
+    "poire, pulpe et peau, crue": {
+      "litersPerKilogram": 1420.0
+    },
+    "poulet, cuisse, viande et peau, bouilli/cuit à l'eau": {
+      "litersPerKilogram": 3400.0
+    },
+    "sucre roux": {
+      "litersPerKilogram": 6600.0
+    },
+    "tripes à la tomate ou à la provençale": {
+      "litersPerKilogram": 2029.9999999999998
+    }
+  }
+}

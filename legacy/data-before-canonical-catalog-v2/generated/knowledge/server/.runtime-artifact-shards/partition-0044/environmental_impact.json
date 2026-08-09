@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "bœuf, steak haché 5% mg, cru": {
+      "environmentScoreMptPerKg": 3.35,
+      "climateKgCo2EqPerKg": 35.7,
+      "landUsePtPerKg": 2320.0,
+      "waterDeprivationM3PerKg": 2.98
+    },
+    "calmar ou calamar ou encornet, frit ou poêlé avec matière grasse": {
+      "environmentScoreMptPerKg": 1.1,
+      "climateKgCo2EqPerKg": 6.78,
+      "landUsePtPerKg": 12.9,
+      "waterDeprivationM3PerKg": 0.268
+    },
+    "gnocchi à la pomme de terre, cuit": {
+      "environmentScoreMptPerKg": 0.154,
+      "climateKgCo2EqPerKg": 1.09,
+      "landUsePtPerKg": 48.9,
+      "waterDeprivationM3PerKg": 0.336
+    },
+    "gratin d'aubergine": {
+      "environmentScoreMptPerKg": 0.206,
+      "climateKgCo2EqPerKg": 1.94,
+      "landUsePtPerKg": 59.6,
+      "waterDeprivationM3PerKg": 0.691
+    },
+    "melon miel ou melon honeydew, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.104,
+      "climateKgCo2EqPerKg": 0.979,
+      "landUsePtPerKg": 43.1,
+      "waterDeprivationM3PerKg": 1.43
+    },
+    "rond de jambon cuit": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "soupe aux légumes verts, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.171,
+      "climateKgCo2EqPerKg": 1.05,
+      "landUsePtPerKg": 22.0,
+      "waterDeprivationM3PerKg": 1.18
+    }
+  }
+}

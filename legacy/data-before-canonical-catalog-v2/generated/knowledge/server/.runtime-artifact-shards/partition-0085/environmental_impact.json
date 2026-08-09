@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "brochette de volaille": {
+      "environmentScoreMptPerKg": 1.29,
+      "climateKgCo2EqPerKg": 7.61,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.41
+    },
+    "carotte, crue": {
+      "environmentScoreMptPerKg": 0.0453,
+      "climateKgCo2EqPerKg": 0.396,
+      "landUsePtPerKg": 9.54,
+      "waterDeprivationM3PerKg": 0.362
+    },
+    "chips de pommes de terre, standard": {
+      "environmentScoreMptPerKg": 0.196,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 226.0,
+      "waterDeprivationM3PerKg": 0.493
+    },
+    "chou de bruxelles, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.133,
+      "climateKgCo2EqPerKg": 1.3,
+      "landUsePtPerKg": 33.4,
+      "waterDeprivationM3PerKg": 0.255
+    },
+    "fajitas": {
+      "environmentScoreMptPerKg": 0.373,
+      "climateKgCo2EqPerKg": 2.37,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 1.35
+    },
+    "gâteau au fromage blanc": {
+      "environmentScoreMptPerKg": 0.307,
+      "climateKgCo2EqPerKg": 1.99,
+      "landUsePtPerKg": 136.0,
+      "waterDeprivationM3PerKg": 1.56
+    },
+    "kumquat, sans pépin, cru": {
+      "environmentScoreMptPerKg": 0.147,
+      "climateKgCo2EqPerKg": 0.577,
+      "landUsePtPerKg": 26.4,
+      "waterDeprivationM3PerKg": 10.9
+    },
+    "lait en poudre, entier": {
+      "environmentScoreMptPerKg": 1.17,
+      "climateKgCo2EqPerKg": 12.5,
+      "landUsePtPerKg": 605.0,
+      "waterDeprivationM3PerKg": 1.31
+    },
+    "mille feuille": {
+      "environmentScoreMptPerKg": 0.32,
+      "climateKgCo2EqPerKg": 2.61,
+      "landUsePtPerKg": 105.0,
+      "waterDeprivationM3PerKg": 0.777
+    },
+    "oie, viande et peau, crue": {
+      "environmentScoreMptPerKg": 0.922,
+      "climateKgCo2EqPerKg": 5.31,
+      "landUsePtPerKg": 333.0,
+      "waterDeprivationM3PerKg": 2.38
+    },
+    "pizza au speck ou jambon cru": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.23,
+      "landUsePtPerKg": 178.0,
+      "waterDeprivationM3PerKg": 1.91
+    }
+  }
+}

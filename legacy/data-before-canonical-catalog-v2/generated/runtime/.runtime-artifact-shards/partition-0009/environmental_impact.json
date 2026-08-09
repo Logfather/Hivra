@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "cocktail à base de whisky": {
+      "environmentScoreMptPerKg": 0.0963,
+      "climateKgCo2EqPerKg": 1.05,
+      "landUsePtPerKg": 11.7,
+      "waterDeprivationM3PerKg": 0.162
+    },
+    "coeur, dinde, cuit": {
+      "environmentScoreMptPerKg": 0.348,
+      "climateKgCo2EqPerKg": 2.14,
+      "landUsePtPerKg": 99.9,
+      "waterDeprivationM3PerKg": 0.874
+    },
+    "concombre, pulpe et peau, cru": {
+      "environmentScoreMptPerKg": 0.0498,
+      "climateKgCo2EqPerKg": 0.512,
+      "landUsePtPerKg": 4.53,
+      "waterDeprivationM3PerKg": 0.333
+    },
+    "coq au vin": {
+      "environmentScoreMptPerKg": 1.03,
+      "climateKgCo2EqPerKg": 6.41,
+      "landUsePtPerKg": 335.0,
+      "waterDeprivationM3PerKg": 9.88
+    },
+    "fraise, de saison, crue": {
+      "environmentScoreMptPerKg": 0.11,
+      "climateKgCo2EqPerKg": 0.511,
+      "landUsePtPerKg": 63.6,
+      "waterDeprivationM3PerKg": 4.68
+    },
+    "haricot flageolet, vert, sec": {
+      "environmentScoreMptPerKg": 0.101,
+      "climateKgCo2EqPerKg": 0.858,
+      "landUsePtPerKg": -167.0,
+      "waterDeprivationM3PerKg": 0.15
+    },
+    "pain blanc maison (avec farine pour machine à pain)": {
+      "environmentScoreMptPerKg": 0.104,
+      "climateKgCo2EqPerKg": 0.776,
+      "landUsePtPerKg": 63.0,
+      "waterDeprivationM3PerKg": 0.188
+    },
+    "riz thaï ou basmati, cru": {
+      "environmentScoreMptPerKg": 0.609,
+      "climateKgCo2EqPerKg": 2.86,
+      "landUsePtPerKg": 64.1,
+      "waterDeprivationM3PerKg": 15.3
+    },
+    "veau, steak haché 20% mg, cru": {
+      "environmentScoreMptPerKg": 2.67,
+      "climateKgCo2EqPerKg": 28.6,
+      "landUsePtPerKg": 1300.0,
+      "waterDeprivationM3PerKg": 3.89
+    }
+  }
+}

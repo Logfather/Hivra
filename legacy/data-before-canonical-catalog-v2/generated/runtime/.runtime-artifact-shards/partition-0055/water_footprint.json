@@ -1,0 +1,19 @@
+{
+  "entries": {
+    "brochette d'agneau": {
+      "litersPerKilogram": 8890.0
+    },
+    "carotte, surgelée, crue": {
+      "litersPerKilogram": 432.0
+    },
+    "cervelle, agneau, cuite": {
+      "litersPerKilogram": 5030.0
+    },
+    "rognon, porc, cuit": {
+      "litersPerKilogram": 1260.0
+    },
+    "tarte au saumon": {
+      "litersPerKilogram": 731.0
+    }
+  }
+}

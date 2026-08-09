@@ -1,0 +1,22 @@
+{
+  "entries": {
+    "groseille, crue": {
+      "litersPerKilogram": 1240.0
+    },
+    "hamburger, provenant de fast food": {
+      "litersPerKilogram": 1880.0
+    },
+    "huile pour friture, sans précision": {
+      "litersPerKilogram": 745.0
+    },
+    "lait écrémé, uht": {
+      "litersPerKilogram": 143.0
+    },
+    "lardon fumé, cru": {
+      "litersPerKilogram": 2320.0
+    },
+    "maquereau, frit": {
+      "litersPerKilogram": 373.0
+    }
+  }
+}

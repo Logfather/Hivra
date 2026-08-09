@@ -1,0 +1,22 @@
+{
+  "entries": {
+    "crumble aux pommes": {
+      "environmentScoreMptPerKg": 0.287,
+      "climateKgCo2EqPerKg": 2.24,
+      "landUsePtPerKg": 88.3,
+      "waterDeprivationM3PerKg": 0.945
+    },
+    "haricot de lima, cru": {
+      "environmentScoreMptPerKg": 0.0852,
+      "climateKgCo2EqPerKg": 0.817,
+      "landUsePtPerKg": -187.0,
+      "waterDeprivationM3PerKg": 0.0795
+    },
+    "omble chevalier, cru": {
+      "environmentScoreMptPerKg": 3.16,
+      "climateKgCo2EqPerKg": 5.4,
+      "landUsePtPerKg": 105.0,
+      "waterDeprivationM3PerKg": 274.0
+    }
+  }
+}

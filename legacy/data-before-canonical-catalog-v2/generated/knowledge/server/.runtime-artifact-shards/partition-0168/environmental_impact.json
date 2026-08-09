@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "crème dessert au caramel, rayon frais": {
+      "environmentScoreMptPerKg": 0.203,
+      "climateKgCo2EqPerKg": 1.94,
+      "landUsePtPerKg": 66.5,
+      "waterDeprivationM3PerKg": 0.528
+    },
+    "crêpe ou galette fourrée béchamel jambon fromage": {
+      "environmentScoreMptPerKg": 0.515,
+      "climateKgCo2EqPerKg": 4.32,
+      "landUsePtPerKg": 199.0,
+      "waterDeprivationM3PerKg": 1.12
+    },
+    "fève, surgelée, cuite à l'eau": {
+      "environmentScoreMptPerKg": 0.0688,
+      "climateKgCo2EqPerKg": 0.573,
+      "landUsePtPerKg": -72.8,
+      "waterDeprivationM3PerKg": 0.0891
+    },
+    "muesli floconneux aux fruits ou fruits secs, sans sucres ajoutés": {
+      "environmentScoreMptPerKg": 0.284,
+      "climateKgCo2EqPerKg": 2.55,
+      "landUsePtPerKg": 143.0,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "poêlée de pommes de terre préfrites, lardons ou poulet, et autres, sans légumes verts": {
+      "environmentScoreMptPerKg": 0.323,
+      "climateKgCo2EqPerKg": 2.59,
+      "landUsePtPerKg": 86.8,
+      "waterDeprivationM3PerKg": 6.28
+    },
+    "sandwich grec ou kebab, pita, crudités": {
+      "environmentScoreMptPerKg": 1.5,
+      "climateKgCo2EqPerKg": 12.1,
+      "landUsePtPerKg": 1240.0,
+      "waterDeprivationM3PerKg": 2.6
+    },
+    "tartine craquante, extrudée et grillée, fourrée aux fruits": {
+      "environmentScoreMptPerKg": 0.182,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 112.0,
+      "waterDeprivationM3PerKg": 0.447
+    },
+    "thon, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 0.952,
+      "climateKgCo2EqPerKg": 6.17,
+      "landUsePtPerKg": 14.9,
+      "waterDeprivationM3PerKg": 0.517
+    }
+  }
+}

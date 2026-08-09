@@ -1,0 +1,2358 @@
+{
+  "schemaVersion": 1,
+  "baselineEntryCount": 3419,
+  "regeneratedExpansionEntryCount": 1295,
+  "projectedCatalogEntryCount": 4714,
+  "duplicateGroupCount": 101,
+  "errorGroupCount": 10,
+  "reviewGroupCount": 91,
+  "affectedEntryCount": 198,
+  "errorAffectedEntryCount": 20,
+  "reviewAffectedEntryCount": 178,
+  "countsByReason": {
+    "IDENTICAL_NORMALIZED_NAME": 10,
+    "PUNCTUATION_VARIANT": 79,
+    "WORD_ORDER_VARIANT": 12
+  },
+  "groups": [
+    {
+      "severity": "ERROR",
+      "reason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "apfel",
+      "entryCount": 2,
+      "categories": [
+        "fruit"
+      ],
+      "entries": [
+        {
+          "itemName": "Äpfel",
+          "normalized": "aepfel",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Apfel",
+          "normalized": "apfel",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "ERROR",
+      "reason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "baguette klassisch",
+      "entryCount": 2,
+      "categories": [
+        "bakery"
+      ],
+      "entries": [
+        {
+          "itemName": "Baguette – Klassisch",
+          "normalized": "baguette-classic",
+          "category": "bakery",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        },
+        {
+          "itemName": "Baguette Klassisch",
+          "normalized": "baguette-klassisch",
+          "category": "bakery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "ERROR",
+      "reason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "bohnen konserviert",
+      "entryCount": 2,
+      "categories": [
+        "canned-food",
+        "legumes"
+      ],
+      "entries": [
+        {
+          "itemName": "Bohnen Konserviert",
+          "normalized": "bohnen-konserviert",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Bohnen – Konserviert",
+          "normalized": "beans-preserved",
+          "category": "legumes",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "severity": "ERROR",
+      "reason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "erbsen frisch",
+      "entryCount": 2,
+      "categories": [
+        "legumes",
+        "vegetables"
+      ],
+      "entries": [
+        {
+          "itemName": "Erbsen – Frisch",
+          "normalized": "peas-fresh",
+          "category": "legumes",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        },
+        {
+          "itemName": "Erbsen frisch",
+          "normalized": "erbsen-frisch",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "ERROR",
+      "reason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "erbsen getrocknet",
+      "entryCount": 2,
+      "categories": [
+        "legumes"
+      ],
+      "entries": [
+        {
+          "itemName": "Erbsen getrocknet",
+          "normalized": "erbsen-getrocknet",
+          "category": "legumes",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Erbsen – Getrocknet",
+          "normalized": "peas-dried",
+          "category": "legumes",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "severity": "ERROR",
+      "reason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "erbsen konserviert",
+      "entryCount": 2,
+      "categories": [
+        "canned-food",
+        "legumes"
+      ],
+      "entries": [
+        {
+          "itemName": "Erbsen Konserviert",
+          "normalized": "erbsen-konserviert",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Erbsen – Konserviert",
+          "normalized": "peas-preserved",
+          "category": "legumes",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "severity": "ERROR",
+      "reason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "granatapfel",
+      "entryCount": 2,
+      "categories": [
+        "fruit"
+      ],
+      "entries": [
+        {
+          "itemName": "Granatäpfel",
+          "normalized": "granataepfel",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Granatapfel",
+          "normalized": "granatapfel",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "ERROR",
+      "reason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "knackebrot klassisch",
+      "entryCount": 2,
+      "categories": [
+        "bakery"
+      ],
+      "entries": [
+        {
+          "itemName": "Knäckebrot – Klassisch",
+          "normalized": "crispbread-classic",
+          "category": "bakery",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        },
+        {
+          "itemName": "Knäckebrot Klassisch",
+          "normalized": "knaeckebrot-klassisch",
+          "category": "bakery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "ERROR",
+      "reason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "linsen konserviert",
+      "entryCount": 2,
+      "categories": [
+        "canned-food",
+        "legumes"
+      ],
+      "entries": [
+        {
+          "itemName": "Linsen Konserviert",
+          "normalized": "linsen-konserviert",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Linsen – Konserviert",
+          "normalized": "lentils-preserved",
+          "category": "legumes",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "severity": "ERROR",
+      "reason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "vollkorncracker",
+      "entryCount": 2,
+      "categories": [
+        "snacks"
+      ],
+      "entries": [
+        {
+          "itemName": "Vollkorncracker",
+          "normalized": "vollkorncracker",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Vollkorncräcker",
+          "normalized": "vollkorncraecker",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "apfelbirnensaft",
+      "entryCount": 2,
+      "categories": [
+        "beverages"
+      ],
+      "entries": [
+        {
+          "itemName": "Apfel-Birnen-Saft",
+          "normalized": "apfel-birnen-saft",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Apfel-Birnensaft",
+          "normalized": "apfel-birnensaft",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "apfelschorle",
+      "entryCount": 2,
+      "categories": [
+        "beverages"
+      ],
+      "entries": [
+        {
+          "itemName": "Apfel Schorle",
+          "normalized": "apfel-schorle",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Apfelschorle",
+          "normalized": "apfelschorle",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "balsamicoessig",
+      "entryCount": 2,
+      "categories": [
+        "sauces",
+        "spices"
+      ],
+      "entries": [
+        {
+          "itemName": "Balsamico Essig",
+          "normalized": "balsamico-essig",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Balsamicoessig",
+          "normalized": "balsamicoessig",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "barbecuesauce",
+      "entryCount": 2,
+      "categories": [
+        "sauces"
+      ],
+      "entries": [
+        {
+          "itemName": "Barbecue Sauce",
+          "normalized": "barbecue-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Barbecuesauce",
+          "normalized": "barbecuesauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "basmatireis",
+      "entryCount": 2,
+      "categories": [
+        "rice"
+      ],
+      "entries": [
+        {
+          "itemName": "Basmati Reis",
+          "normalized": "basmati-reis",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Basmatireis",
+          "normalized": "basmatireis",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "beerenmixtiefgekuhlt",
+      "entryCount": 2,
+      "categories": [
+        "fruit"
+      ],
+      "entries": [
+        {
+          "itemName": "Beeren-Mix Tiefgekühlt",
+          "normalized": "beeren-mix-tiefgekuehlt",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Beerenmix Tiefgekühlt",
+          "normalized": "beerenmix-tiefgekuehlt",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "beerenmixtk",
+      "entryCount": 2,
+      "categories": [
+        "fruit"
+      ],
+      "entries": [
+        {
+          "itemName": "Beeren-Mix TK",
+          "normalized": "beeren-mix-tk",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Beerenmix TK",
+          "normalized": "beerenmix-tk",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "bieralkoholfrei",
+      "entryCount": 2,
+      "categories": [
+        "beverages"
+      ],
+      "entries": [
+        {
+          "itemName": "Bier Alkoholfrei",
+          "normalized": "bier-alkoholfrei",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Bieralkoholfrei",
+          "normalized": "bieralkoholfrei",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "bohnendose",
+      "entryCount": 2,
+      "categories": [
+        "canned-food"
+      ],
+      "entries": [
+        {
+          "itemName": "Bohnen, Dose",
+          "normalized": "bohnen-dose",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Bohnendose",
+          "normalized": "bohnendose",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "cashewdrink",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Cashew-Drink",
+          "normalized": "cashew-drink",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Cashewdrink",
+          "normalized": "cashewdrink",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "cashewjoghurt",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Cashew Joghurt",
+          "normalized": "cashew-joghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Cashewjoghurt",
+          "normalized": "cashewjoghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "chiasamen",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives",
+        "spices"
+      ],
+      "entries": [
+        {
+          "itemName": "Chia Samen",
+          "normalized": "chia-samen",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Chiasamen",
+          "normalized": "chiasamen",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "chiliflocken",
+      "entryCount": 2,
+      "categories": [
+        "spices"
+      ],
+      "entries": [
+        {
+          "itemName": "Chili Flocken",
+          "normalized": "chili-flocken",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Chiliflocken",
+          "normalized": "chiliflocken",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "chilipulver",
+      "entryCount": 2,
+      "categories": [
+        "spices"
+      ],
+      "entries": [
+        {
+          "itemName": "Chili Pulver",
+          "normalized": "chili-pulver",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Chilipulver",
+          "normalized": "chilipulver",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "chilisauce",
+      "entryCount": 2,
+      "categories": [
+        "sauces"
+      ],
+      "entries": [
+        {
+          "itemName": "Chili Sauce",
+          "normalized": "chili-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Chilisauce",
+          "normalized": "chilisauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "chilisaucescharf",
+      "entryCount": 2,
+      "categories": [
+        "sauces"
+      ],
+      "entries": [
+        {
+          "itemName": "Chili Sauce scharf",
+          "normalized": "chili-sauce-scharf",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Chilisauce scharf",
+          "normalized": "chilisauce-scharf",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "cocktailsauce",
+      "entryCount": 2,
+      "categories": [
+        "sauces"
+      ],
+      "entries": [
+        {
+          "itemName": "Cocktail Sauce",
+          "normalized": "cocktail-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Cocktailsauce",
+          "normalized": "cocktailsauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "currypaste",
+      "entryCount": 2,
+      "categories": [
+        "sauces"
+      ],
+      "entries": [
+        {
+          "itemName": "Curry-Paste",
+          "normalized": "curry-paste",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Currypaste",
+          "normalized": "currypaste",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "currypulver",
+      "entryCount": 2,
+      "categories": [
+        "spices"
+      ],
+      "entries": [
+        {
+          "itemName": "Curry Pulver",
+          "normalized": "curry-pulver",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Currypulver",
+          "normalized": "currypulver",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "currysauce",
+      "entryCount": 2,
+      "categories": [
+        "sauces"
+      ],
+      "entries": [
+        {
+          "itemName": "Curry Sauce",
+          "normalized": "curry-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Currysauce",
+          "normalized": "currysauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "dinkelvollkornnudeln",
+      "entryCount": 2,
+      "categories": [
+        "pasta"
+      ],
+      "entries": [
+        {
+          "itemName": "Dinkel-Vollkornnudeln",
+          "normalized": "dinkel-vollkornnudeln",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Dinkelvollkornnudeln",
+          "normalized": "dinkelvollkornnudeln",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "dosenananas",
+      "entryCount": 2,
+      "categories": [
+        "canned-food"
+      ],
+      "entries": [
+        {
+          "itemName": "Dosen Ananas",
+          "normalized": "dosen-ananas",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Dosenananas",
+          "normalized": "dosenananas",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "dosenerbsen",
+      "entryCount": 2,
+      "categories": [
+        "canned-food"
+      ],
+      "entries": [
+        {
+          "itemName": "Dosen Erbsen",
+          "normalized": "dosen-erbsen",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Dosenerbsen",
+          "normalized": "dosenerbsen",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "dosenpfirsiche",
+      "entryCount": 2,
+      "categories": [
+        "canned-food"
+      ],
+      "entries": [
+        {
+          "itemName": "Dosen Pfirsiche",
+          "normalized": "dosen-pfirsiche",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Dosenpfirsiche",
+          "normalized": "dosenpfirsiche",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "fertiggerichtgemusecurry",
+      "entryCount": 2,
+      "categories": [
+        "ready-meals"
+      ],
+      "entries": [
+        {
+          "itemName": "Fertiggericht Gemüse-Curry",
+          "normalized": "fertiggericht-gemuese-curry",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Fertiggericht Gemüsecurry",
+          "normalized": "fertiggericht-gemuesecurry",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "fruchtriegel",
+      "entryCount": 2,
+      "categories": [
+        "confectionery"
+      ],
+      "entries": [
+        {
+          "itemName": "Frucht-Riegel",
+          "normalized": "frucht-riegel",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Fruchtriegel",
+          "normalized": "fruchtriegel",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "gemuseburger",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Gemüse Burger",
+          "normalized": "gemuese-burger",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Gemüseburger",
+          "normalized": "gemueseburger",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "gemusemixtiefgekuhlt",
+      "entryCount": 2,
+      "categories": [
+        "vegetables"
+      ],
+      "entries": [
+        {
+          "itemName": "Gemüse-Mix Tiefgekühlt",
+          "normalized": "gemuese-mix-tiefgekuehlt",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Gemüsemix Tiefgekühlt",
+          "normalized": "gemuesemix-tiefgekuehlt",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "haferflocken",
+      "entryCount": 2,
+      "categories": [
+        "breakfast",
+        "grains"
+      ],
+      "entries": [
+        {
+          "itemName": "Haferflocken",
+          "normalized": "haferflocken",
+          "category": "breakfast",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Hafer – Flocken",
+          "normalized": "oats-flakes",
+          "category": "grains",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "haferjoghurt",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Hafer Joghurt",
+          "normalized": "hafer-joghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Haferjoghurt",
+          "normalized": "haferjoghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "honigblutenhonig",
+      "entryCount": 2,
+      "categories": [
+        "confectionery"
+      ],
+      "entries": [
+        {
+          "itemName": "Honig-Blütenhonig",
+          "normalized": "honig-bluetenhonig",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Honigblütenhonig",
+          "normalized": "honigbluetenhonig",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "honigbonbons",
+      "entryCount": 2,
+      "categories": [
+        "confectionery"
+      ],
+      "entries": [
+        {
+          "itemName": "Honig Bonbons",
+          "normalized": "honig-bonbons",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Honigbonbons",
+          "normalized": "honigbonbons",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "ingwertee",
+      "entryCount": 2,
+      "categories": [
+        "beverages"
+      ],
+      "entries": [
+        {
+          "itemName": "Ingwer Tee",
+          "normalized": "ingwer-tee",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Ingwertee",
+          "normalized": "ingwertee",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "jasminreis",
+      "entryCount": 2,
+      "categories": [
+        "rice"
+      ],
+      "entries": [
+        {
+          "itemName": "Jasmin Reis",
+          "normalized": "jasmin-reis",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Jasminreis",
+          "normalized": "jasminreis",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kaffeebohnen",
+      "entryCount": 2,
+      "categories": [
+        "beverages"
+      ],
+      "entries": [
+        {
+          "itemName": "Kaffee Bohnen",
+          "normalized": "kaffee-bohnen",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Kaffeebohnen",
+          "normalized": "kaffeebohnen",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kakaobutter",
+      "entryCount": 2,
+      "categories": [
+        "oils"
+      ],
+      "entries": [
+        {
+          "itemName": "Kakao Butter",
+          "normalized": "kakao-butter",
+          "category": "oils",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Kakaobutter",
+          "normalized": "kakaobutter",
+          "category": "oils",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kakaonibs",
+      "entryCount": 2,
+      "categories": [
+        "confectionery",
+        "snacks"
+      ],
+      "entries": [
+        {
+          "itemName": "Kakaonibs",
+          "normalized": "kakaonibs",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Kakao Nibs",
+          "normalized": "kakao-nibs",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kakaopulver",
+      "entryCount": 2,
+      "categories": [
+        "confectionery",
+        "spices"
+      ],
+      "entries": [
+        {
+          "itemName": "Kakao Pulver",
+          "normalized": "kakao-pulver",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Kakaopulver",
+          "normalized": "kakaopulver",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kamutnudeln",
+      "entryCount": 2,
+      "categories": [
+        "pasta"
+      ],
+      "entries": [
+        {
+          "itemName": "Kamut-Nudeln",
+          "normalized": "kamut-nudeln",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Kamutnudeln",
+          "normalized": "kamutnudeln",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kasespatzlefertiggericht",
+      "entryCount": 2,
+      "categories": [
+        "ready-meals"
+      ],
+      "entries": [
+        {
+          "itemName": "Käse Spätzle Fertiggericht",
+          "normalized": "kaese-spaetzle-fertiggericht",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Käsespätzle Fertiggericht",
+          "normalized": "kaesespaetzle-fertiggericht",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "knoblauchsauce",
+      "entryCount": 2,
+      "categories": [
+        "sauces"
+      ],
+      "entries": [
+        {
+          "itemName": "Knoblauch Sauce",
+          "normalized": "knoblauch-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Knoblauchsauce",
+          "normalized": "knoblauchsauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "linsennudeln",
+      "entryCount": 2,
+      "categories": [
+        "pasta"
+      ],
+      "entries": [
+        {
+          "itemName": "Linsen Nudeln",
+          "normalized": "linsen-nudeln",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Linsennudeln",
+          "normalized": "linsennudeln",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "linsenpasta",
+      "entryCount": 2,
+      "categories": [
+        "pasta"
+      ],
+      "entries": [
+        {
+          "itemName": "Linsen Pasta",
+          "normalized": "linsen-pasta",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Linsenpasta",
+          "normalized": "linsenpasta",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "maisdose",
+      "entryCount": 2,
+      "categories": [
+        "canned-food"
+      ],
+      "entries": [
+        {
+          "itemName": "Mais Dose",
+          "normalized": "mais-dose",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Maisdose",
+          "normalized": "maisdose",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "mandeljoghurt",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Mandel-Joghurt",
+          "normalized": "mandel-joghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Mandeljoghurt",
+          "normalized": "mandeljoghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "musliriegel",
+      "entryCount": 2,
+      "categories": [
+        "snacks"
+      ],
+      "entries": [
+        {
+          "itemName": "Müsli Riegel",
+          "normalized": "muesli-riegel",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Müsliriegel",
+          "normalized": "muesliriegel",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "nougatpralinen",
+      "entryCount": 2,
+      "categories": [
+        "confectionery"
+      ],
+      "entries": [
+        {
+          "itemName": "Nougat Pralinen",
+          "normalized": "nougat-pralinen",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Nougatpralinen",
+          "normalized": "nougatpralinen",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "pretzelsticks",
+      "entryCount": 2,
+      "categories": [
+        "snacks"
+      ],
+      "entries": [
+        {
+          "itemName": "Pretzel Sticks",
+          "normalized": "pretzel-sticks",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Pretzelsticks",
+          "normalized": "pretzelsticks",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "proteinriegel",
+      "entryCount": 2,
+      "categories": [
+        "snacks"
+      ],
+      "entries": [
+        {
+          "itemName": "Protein Riegel",
+          "normalized": "protein-riegel",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Proteinriegel",
+          "normalized": "proteinriegel",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "putenbrustaufschnitt",
+      "entryCount": 2,
+      "categories": [
+        "sausage"
+      ],
+      "entries": [
+        {
+          "itemName": "Putenbrust Aufschnitt",
+          "normalized": "putenbrust-aufschnitt",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Putenbrustaufschnitt",
+          "normalized": "putenbrustaufschnitt",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "reisjoghurt",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Reis Joghurt",
+          "normalized": "reis-joghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Reisjoghurt",
+          "normalized": "reisjoghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "reisvollkorn",
+      "entryCount": 2,
+      "categories": [
+        "rice"
+      ],
+      "entries": [
+        {
+          "itemName": "Reis Vollkorn",
+          "normalized": "reis-vollkorn",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Reisvollkorn",
+          "normalized": "reisvollkorn",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "rooibostee",
+      "entryCount": 2,
+      "categories": [
+        "beverages"
+      ],
+      "entries": [
+        {
+          "itemName": "Rooibos Tee",
+          "normalized": "rooibos-tee",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Rooibostee",
+          "normalized": "rooibostee",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "salatkopf",
+      "entryCount": 2,
+      "categories": [
+        "vegetables"
+      ],
+      "entries": [
+        {
+          "itemName": "Salat Kopf",
+          "normalized": "salat-kopf",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Salatkopf",
+          "normalized": "salatkopf",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "schinkenroh",
+      "entryCount": 2,
+      "categories": [
+        "sausage"
+      ],
+      "entries": [
+        {
+          "itemName": "Schinken roh",
+          "normalized": "schinken-roh",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Schinkenroh",
+          "normalized": "schinkenroh",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "sellerieknolle",
+      "entryCount": 2,
+      "categories": [
+        "vegetables"
+      ],
+      "entries": [
+        {
+          "itemName": "Sellerie Knolle",
+          "normalized": "sellerie-knolle",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Sellerieknolle",
+          "normalized": "sellerieknolle",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "sojadrink",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-drinks"
+      ],
+      "entries": [
+        {
+          "itemName": "Soja-Drink",
+          "normalized": "soja-drink",
+          "category": "plant-based-drinks",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Sojadrink",
+          "normalized": "sojadrink",
+          "category": "plant-based-drinks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "sojadrinkungesusst",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-drinks"
+      ],
+      "entries": [
+        {
+          "itemName": "Soja Drink ungesüßt",
+          "normalized": "soja-drink-ungesuesst",
+          "category": "plant-based-drinks",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Sojadrink ungesüßt",
+          "normalized": "sojadrink-ungesuesst",
+          "category": "plant-based-drinks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "sojajoghurt",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Soja Joghurt",
+          "normalized": "soja-joghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Sojajoghurt",
+          "normalized": "sojajoghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "sushireis",
+      "entryCount": 2,
+      "categories": [
+        "rice"
+      ],
+      "entries": [
+        {
+          "itemName": "Sushi Reis",
+          "normalized": "sushi-reis",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Sushireis",
+          "normalized": "sushireis",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "susssauresauce",
+      "entryCount": 2,
+      "categories": [
+        "sauces"
+      ],
+      "entries": [
+        {
+          "itemName": "Süß-Saure Sauce",
+          "normalized": "suess-saure-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Süßsaure Sauce",
+          "normalized": "suesssaure-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "teriyakisauce",
+      "entryCount": 2,
+      "categories": [
+        "sauces"
+      ],
+      "entries": [
+        {
+          "itemName": "Teriyaki Sauce",
+          "normalized": "teriyaki-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Teriyakisauce",
+          "normalized": "teriyakisauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "thunfischdose",
+      "entryCount": 2,
+      "categories": [
+        "fish"
+      ],
+      "entries": [
+        {
+          "itemName": "Thunfisch Dose",
+          "normalized": "thunfisch-dose",
+          "category": "fish",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Thunfischdose",
+          "normalized": "thunfischdose",
+          "category": "fish",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "thunfischkonserve",
+      "entryCount": 2,
+      "categories": [
+        "canned-food"
+      ],
+      "entries": [
+        {
+          "itemName": "Thunfisch (Konserve)",
+          "normalized": "thunfisch-konserve",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Thunfischkonserve",
+          "normalized": "thunfischkonserve",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "tiefkuhlerbsen",
+      "entryCount": 2,
+      "categories": [
+        "vegetables"
+      ],
+      "entries": [
+        {
+          "itemName": "Tiefkühl Erbsen",
+          "normalized": "tiefkuehl-erbsen",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tiefkühlerbsen",
+          "normalized": "tiefkuehlerbsen",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "tiefkuhlgemusepfanne",
+      "entryCount": 3,
+      "categories": [
+        "ready-meals",
+        "vegetables"
+      ],
+      "entries": [
+        {
+          "itemName": "Tiefkühl-Gemüsepfanne",
+          "normalized": "tiefkuehl-gemuesepfanne",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tiefkühlgemüse Pfanne",
+          "normalized": "tiefkuehlgemuese-pfanne",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tiefkühlgemüsepfanne",
+          "normalized": "tiefkuehlgemuesepfanne",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "tiefkuhlpommes",
+      "entryCount": 2,
+      "categories": [
+        "snacks"
+      ],
+      "entries": [
+        {
+          "itemName": "Tiefkühl Pommes",
+          "normalized": "tiefkuehl-pommes",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tiefkühlpommes",
+          "normalized": "tiefkuehlpommes",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "tomatenketchup",
+      "entryCount": 2,
+      "categories": [
+        "sauces"
+      ],
+      "entries": [
+        {
+          "itemName": "Tomaten Ketchup",
+          "normalized": "tomaten-ketchup",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tomatenketchup",
+          "normalized": "tomatenketchup",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "vanillezucker",
+      "entryCount": 2,
+      "categories": [
+        "confectionery"
+      ],
+      "entries": [
+        {
+          "itemName": "Vanille Zucker",
+          "normalized": "vanille-zucker",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Vanillezucker",
+          "normalized": "vanillezucker",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganeburgerpatties",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Vegane Burger Patties",
+          "normalized": "vegane-burger-patties",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Vegane Burgerpatties",
+          "normalized": "vegane-burgerpatties",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganebutteralternative",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Vegane Butter Alternative",
+          "normalized": "vegane-butter-alternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Vegane Butteralternative",
+          "normalized": "vegane-butteralternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganefrischkasealternative",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Vegane Frischkäse Alternative",
+          "normalized": "vegane-frischkaese-alternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Vegane Frischkäsealternative",
+          "normalized": "vegane-frischkaesealternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganehackfleischalternative",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Vegane Hackfleisch Alternative",
+          "normalized": "vegane-hackfleisch-alternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Vegane Hackfleischalternative",
+          "normalized": "vegane-hackfleischalternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganesahnealternative",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Vegane Sahne Alternative",
+          "normalized": "vegane-sahne-alternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Vegane Sahnealternative",
+          "normalized": "vegane-sahnealternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganetofuwurfel",
+      "entryCount": 2,
+      "categories": [
+        "plant-based-alternatives"
+      ],
+      "entries": [
+        {
+          "itemName": "Vegane Tofu Würfel",
+          "normalized": "vegane-tofu-wuerfel",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Vegane Tofuwürfel",
+          "normalized": "vegane-tofuwuerfel",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganetofuwurstchen",
+      "entryCount": 2,
+      "categories": [
+        "sausage"
+      ],
+      "entries": [
+        {
+          "itemName": "Vegane Tofu Würstchen",
+          "normalized": "vegane-tofu-wuerstchen",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Vegane Tofuwürstchen",
+          "normalized": "vegane-tofuwuerstchen",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganewurstalternative",
+      "entryCount": 2,
+      "categories": [
+        "sausage"
+      ],
+      "entries": [
+        {
+          "itemName": "Vegane Wurst Alternative",
+          "normalized": "vegane-wurst-alternative",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Vegane Wurstalternative",
+          "normalized": "vegane-wurstalternative",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "weisskohl",
+      "entryCount": 2,
+      "categories": [
+        "vegetables"
+      ],
+      "entries": [
+        {
+          "itemName": "Weis(S)Kohl",
+          "normalized": "weis-s-kohl",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Weißkohl",
+          "normalized": "weisskohl",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "PUNCTUATION_VARIANT",
+      "fingerprint": "weissweinessig",
+      "entryCount": 2,
+      "categories": [
+        "sauces"
+      ],
+      "entries": [
+        {
+          "itemName": "Weißwein Essig",
+          "normalized": "weisswein-essig",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Weißweinessig",
+          "normalized": "weissweinessig",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "beverages::gruner|tee",
+      "entryCount": 2,
+      "categories": [
+        "beverages"
+      ],
+      "entries": [
+        {
+          "itemName": "Grüner Tee",
+          "normalized": "gruener-tee",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tee Grüner",
+          "normalized": "tee-gruener",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "dairy::bio|eier",
+      "entryCount": 2,
+      "categories": [
+        "dairy"
+      ],
+      "entries": [
+        {
+          "itemName": "Bio Eier",
+          "normalized": "bio-eier",
+          "category": "dairy",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Eier Bio",
+          "normalized": "eier-bio",
+          "category": "dairy",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "fruit::beerenmix|tk",
+      "entryCount": 2,
+      "categories": [
+        "fruit"
+      ],
+      "entries": [
+        {
+          "itemName": "Beerenmix TK",
+          "normalized": "beerenmix-tk",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tk-Beerenmix",
+          "normalized": "tk-beerenmix",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "ready-meals::carne|chili|con|fertiggericht",
+      "entryCount": 2,
+      "categories": [
+        "ready-meals"
+      ],
+      "entries": [
+        {
+          "itemName": "Chili Con Carne Fertiggericht",
+          "normalized": "chili-con-carne-fertiggericht",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Fertiggericht Chili Con Carne",
+          "normalized": "fertiggericht-chili-con-carne",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "ready-meals::fertiggericht|gemusecurry",
+      "entryCount": 2,
+      "categories": [
+        "ready-meals"
+      ],
+      "entries": [
+        {
+          "itemName": "Fertiggericht Gemüsecurry",
+          "normalized": "fertiggericht-gemuesecurry",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Gemüsecurry Fertiggericht",
+          "normalized": "gemuesecurry-fertiggericht",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "ready-meals::fertiggericht|gulasch",
+      "entryCount": 2,
+      "categories": [
+        "ready-meals"
+      ],
+      "entries": [
+        {
+          "itemName": "Fertiggericht Gulasch",
+          "normalized": "fertiggericht-gulasch",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Gulasch Fertiggericht",
+          "normalized": "gulasch-fertiggericht",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "ready-meals::margherita|pizza|tk",
+      "entryCount": 2,
+      "categories": [
+        "ready-meals"
+      ],
+      "entries": [
+        {
+          "itemName": "Pizza Margherita (TK)",
+          "normalized": "pizza-margherita-tk",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tk-Pizza Margherita",
+          "normalized": "tk-pizza-margherita",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "rice::basmati|reis",
+      "entryCount": 2,
+      "categories": [
+        "rice"
+      ],
+      "entries": [
+        {
+          "itemName": "Basmati Reis",
+          "normalized": "basmati-reis",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Reis Basmati",
+          "normalized": "reis-basmati",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "rice::reis|sushi",
+      "entryCount": 2,
+      "categories": [
+        "rice"
+      ],
+      "entries": [
+        {
+          "itemName": "Reis Sushi",
+          "normalized": "reis-sushi",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Sushi Reis",
+          "normalized": "sushi-reis",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "snacks::frites|pommes|tk",
+      "entryCount": 2,
+      "categories": [
+        "snacks"
+      ],
+      "entries": [
+        {
+          "itemName": "Pommes Frites TK",
+          "normalized": "pommes-frites-tk",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tk-Pommes Frites",
+          "normalized": "tk-pommes-frites",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "vegetables::erbsen|tiefkuhl",
+      "entryCount": 2,
+      "categories": [
+        "vegetables"
+      ],
+      "entries": [
+        {
+          "itemName": "Erbsen (Tiefkühl)",
+          "normalized": "erbsen-tiefkuehl",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tiefkühl Erbsen",
+          "normalized": "tiefkuehl-erbsen",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "severity": "REVIEW",
+      "reason": "WORD_ORDER_VARIANT",
+      "fingerprint": "vegetables::gemusepfanne|tk",
+      "entryCount": 2,
+      "categories": [
+        "vegetables"
+      ],
+      "entries": [
+        {
+          "itemName": "Gemüsepfanne TK",
+          "normalized": "gemuesepfanne-tk",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tk-Gemüsepfanne",
+          "normalized": "tk-gemuesepfanne",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    }
+  ]
+}

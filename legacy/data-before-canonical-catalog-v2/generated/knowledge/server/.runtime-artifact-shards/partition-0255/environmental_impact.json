@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "coing, cru": {
+      "environmentScoreMptPerKg": 0.055,
+      "climateKgCo2EqPerKg": 0.562,
+      "landUsePtPerKg": 19.0,
+      "waterDeprivationM3PerKg": 0.617
+    },
+    "gâteau sablé aux fruits, préemballé": {
+      "environmentScoreMptPerKg": 0.362,
+      "climateKgCo2EqPerKg": 3.34,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 3.31
+    },
+    "huile d'arachide": {
+      "environmentScoreMptPerKg": 0.956,
+      "climateKgCo2EqPerKg": 4.27,
+      "landUsePtPerKg": 777.0,
+      "waterDeprivationM3PerKg": 24.4
+    },
+    "huile de tournesol": {
+      "environmentScoreMptPerKg": 0.358,
+      "climateKgCo2EqPerKg": 2.36,
+      "landUsePtPerKg": 555.0,
+      "waterDeprivationM3PerKg": 0.788
+    },
+    "madeleine chocolatée, préemballée": {
+      "environmentScoreMptPerKg": 0.528,
+      "climateKgCo2EqPerKg": 7.6,
+      "landUsePtPerKg": 338.0,
+      "waterDeprivationM3PerKg": 0.981
+    },
+    "maïs doux, en épis, cuit": {
+      "environmentScoreMptPerKg": 0.201,
+      "climateKgCo2EqPerKg": 1.81,
+      "landUsePtPerKg": 89.3,
+      "waterDeprivationM3PerKg": 1.18
+    },
+    "muesli floconneux aux fruits ou fruits secs, enrichi en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.284,
+      "climateKgCo2EqPerKg": 2.55,
+      "landUsePtPerKg": 143.0,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "pain, baguette ou boule, au levain": {
+      "environmentScoreMptPerKg": 0.102,
+      "climateKgCo2EqPerKg": 0.748,
+      "landUsePtPerKg": 55.3,
+      "waterDeprivationM3PerKg": 0.18
+    },
+    "pain, baguette, de tradition française": {
+      "environmentScoreMptPerKg": 0.104,
+      "climateKgCo2EqPerKg": 0.776,
+      "landUsePtPerKg": 63.0,
+      "waterDeprivationM3PerKg": 0.188
+    },
+    "quenelle de volaille, crue": {
+      "environmentScoreMptPerKg": 0.727,
+      "climateKgCo2EqPerKg": 5.28,
+      "landUsePtPerKg": 302.0,
+      "waterDeprivationM3PerKg": 1.52
+    },
+    "soupe aux asperges, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.241,
+      "climateKgCo2EqPerKg": 1.52,
+      "landUsePtPerKg": 65.1,
+      "waterDeprivationM3PerKg": 2.1
+    },
+    "sésame, graine": {
+      "environmentScoreMptPerKg": 0.486,
+      "climateKgCo2EqPerKg": 2.44,
+      "landUsePtPerKg": 555.0,
+      "waterDeprivationM3PerKg": 1.56
+    },
+    "yaourt, lait fermenté ou spécialité laitière, nature": {
+      "environmentScoreMptPerKg": 0.19,
+      "climateKgCo2EqPerKg": 1.89,
+      "landUsePtPerKg": 65.7,
+      "waterDeprivationM3PerKg": 0.342
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "blanquette de veau": {
+      "environmentScoreMptPerKg": 1.88,
+      "climateKgCo2EqPerKg": 19.5,
+      "landUsePtPerKg": 854.0,
+      "waterDeprivationM3PerKg": 9.19
+    },
+    "chocolat au lait sans sucres ajoutés, avec édulcorants, tablette": {
+      "environmentScoreMptPerKg": 0.787,
+      "climateKgCo2EqPerKg": 12.6,
+      "landUsePtPerKg": 487.0,
+      "waterDeprivationM3PerKg": 1.19
+    },
+    "céleri branche, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.153,
+      "climateKgCo2EqPerKg": 1.62,
+      "landUsePtPerKg": 16.3,
+      "waterDeprivationM3PerKg": 0.623
+    },
+    "fromage frais type petit suisse, nature, 0% mg": {
+      "environmentScoreMptPerKg": 0.181,
+      "climateKgCo2EqPerKg": 1.73,
+      "landUsePtPerKg": 62.3,
+      "waterDeprivationM3PerKg": 0.267
+    },
+    "fromage à pâte ferme environ 14% mg type masdaam à teneur réduite en mg": {
+      "environmentScoreMptPerKg": 0.601,
+      "climateKgCo2EqPerKg": 5.9,
+      "landUsePtPerKg": 254.0,
+      "waterDeprivationM3PerKg": 0.816
+    },
+    "jambon cuit, choix, avec couenne": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "poisson, croquette ou beignet ou nuggets, frit": {
+      "environmentScoreMptPerKg": 1.47,
+      "climateKgCo2EqPerKg": 8.84,
+      "landUsePtPerKg": 47.4,
+      "waterDeprivationM3PerKg": 0.657
+    },
+    "pâtes à la carbonara (spaghetti, tagliatelles…)": {
+      "environmentScoreMptPerKg": 0.446,
+      "climateKgCo2EqPerKg": 3.61,
+      "landUsePtPerKg": 191.0,
+      "waterDeprivationM3PerKg": 1.52
+    },
+    "soupe à la tomate, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.0953,
+      "climateKgCo2EqPerKg": 0.375,
+      "landUsePtPerKg": 4.32,
+      "waterDeprivationM3PerKg": 0.158
+    }
+  }
+}

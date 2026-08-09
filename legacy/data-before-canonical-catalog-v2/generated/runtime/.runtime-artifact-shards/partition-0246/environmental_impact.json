@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "brochette de boeuf": {
+      "environmentScoreMptPerKg": 3.47,
+      "climateKgCo2EqPerKg": 37.0,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.19
+    },
+    "chicorée, instantanée, non sucrée, prête à boire (reconstituée avec du lait demi écrémé standard)": {
+      "environmentScoreMptPerKg": 0.13,
+      "climateKgCo2EqPerKg": 1.37,
+      "landUsePtPerKg": 58.0,
+      "waterDeprivationM3PerKg": 0.223
+    },
+    "lasagnes ou cannelloni aux légumes": {
+      "environmentScoreMptPerKg": 0.408,
+      "climateKgCo2EqPerKg": 3.23,
+      "landUsePtPerKg": 128.0,
+      "waterDeprivationM3PerKg": 6.46
+    },
+    "soupe aux champignons, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.494,
+      "climateKgCo2EqPerKg": 3.63,
+      "landUsePtPerKg": 71.7,
+      "waterDeprivationM3PerKg": 16.6
+    }
+  }
+}

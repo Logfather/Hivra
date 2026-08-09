@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "boisson au thé, aromatisée, sucrée": {
+      "litersPerKilogram": 295.0
+    },
+    "boisson à l'amande": {
+      "litersPerKilogram": 1070.0
+    },
+    "confiture de cerise (extra ou classique)": {
+      "litersPerKilogram": 7260.0
+    },
+    "crevette, crue": {
+      "litersPerKilogram": 178000.0
+    },
+    "dessert glacé type mystère ou vacherin": {
+      "litersPerKilogram": 666.0
+    },
+    "farine de blé tendre ou froment t65": {
+      "litersPerKilogram": 205.0
+    },
+    "fromage à pâte molle et croûte mixte (lavée et fleurie) colorée": {
+      "litersPerKilogram": 692.0
+    },
+    "fève, cuite": {
+      "litersPerKilogram": 116.0
+    },
+    "gâteau de semoule, appertisé": {
+      "litersPerKilogram": 548.0
+    },
+    "lait gélifié aromatisé, allégé en matière grasse et en sucre, rayon frais": {
+      "litersPerKilogram": 450.0
+    },
+    "oeuf, jaune (jaune d'oeuf), cru": {
+      "litersPerKilogram": 864.0
+    },
+    "topinambour, cuit": {
+      "litersPerKilogram": 296.0
+    }
+  }
+}

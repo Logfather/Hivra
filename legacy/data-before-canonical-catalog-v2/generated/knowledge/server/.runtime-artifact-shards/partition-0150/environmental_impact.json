@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "foie, poulet, cuit": {
+      "environmentScoreMptPerKg": 0.348,
+      "climateKgCo2EqPerKg": 2.14,
+      "landUsePtPerKg": 99.9,
+      "waterDeprivationM3PerKg": 0.874
+    },
+    "fructose": {
+      "environmentScoreMptPerKg": 0.244,
+      "climateKgCo2EqPerKg": 1.92,
+      "landUsePtPerKg": 30.2,
+      "waterDeprivationM3PerKg": 4.52
+    },
+    "jambon cuit, supérieur": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "miettes de thon à la tomate, appertisées": {
+      "environmentScoreMptPerKg": 0.872,
+      "climateKgCo2EqPerKg": 5.99,
+      "landUsePtPerKg": 21.1,
+      "waterDeprivationM3PerKg": 0.577
+    },
+    "mûre (de ronce), crue": {
+      "environmentScoreMptPerKg": 0.275,
+      "climateKgCo2EqPerKg": 0.972,
+      "landUsePtPerKg": 111.0,
+      "waterDeprivationM3PerKg": 5.04
+    },
+    "paupiette de volaille": {
+      "environmentScoreMptPerKg": 0.863,
+      "climateKgCo2EqPerKg": 5.73,
+      "landUsePtPerKg": 323.0,
+      "waterDeprivationM3PerKg": 2.18
+    },
+    "pizza type raclette ou tartiflette": {
+      "environmentScoreMptPerKg": 0.535,
+      "climateKgCo2EqPerKg": 3.93,
+      "landUsePtPerKg": 219.0,
+      "waterDeprivationM3PerKg": 1.38
+    },
+    "pizza à la viande, type bolognaise": {
+      "environmentScoreMptPerKg": 0.796,
+      "climateKgCo2EqPerKg": 7.93,
+      "landUsePtPerKg": 481.0,
+      "waterDeprivationM3PerKg": 0.957
+    },
+    "pâté ou terrine de campagne": {
+      "environmentScoreMptPerKg": 0.566,
+      "climateKgCo2EqPerKg": 4.73,
+      "landUsePtPerKg": 206.0,
+      "waterDeprivationM3PerKg": 1.66
+    },
+    "roquette, crue": {
+      "environmentScoreMptPerKg": 0.0939,
+      "climateKgCo2EqPerKg": 0.868,
+      "landUsePtPerKg": 9.16,
+      "waterDeprivationM3PerKg": 0.643
+    }
+  }
+}

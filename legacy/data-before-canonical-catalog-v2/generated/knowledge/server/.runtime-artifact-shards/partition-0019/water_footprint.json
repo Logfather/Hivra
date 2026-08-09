@@ -1,0 +1,31 @@
+{
+  "entries": {
+    "artichaut, appertisé, égoutté": {
+      "litersPerKilogram": 320.0
+    },
+    "basilic, frais": {
+      "litersPerKilogram": 5160.0
+    },
+    "beurre à 82% mg, doux, tendre": {
+      "litersPerKilogram": 866.0
+    },
+    "biscuit sec type tuile, aux fruits": {
+      "litersPerKilogram": 1450.0
+    },
+    "crème de lait, 30% mg, épaisse, rayon frais": {
+      "litersPerKilogram": 481.0
+    },
+    "figue, crue": {
+      "litersPerKilogram": 8029.999999999999
+    },
+    "fromage de brebis à pâte pressée": {
+      "litersPerKilogram": 585.0
+    },
+    "gâteau moelleux fourré aux fruits type mini roulé ou mini cake fourré": {
+      "litersPerKilogram": 1650.0
+    },
+    "nougat glacé": {
+      "litersPerKilogram": 666.0
+    }
+  }
+}

@@ -1,0 +1,478 @@
+{
+  "version": 1,
+  "inputCandidateCount": 23,
+  "reclassifiedEntryCount": 23,
+  "preserveSeparateFoodCount": 23,
+  "manualReviewRequiredCount": 0,
+  "countsByClass": {
+    "BIO_ATTRIBUTE_VARIANT": 1,
+    "CANNED_FORM_VARIANT": 2,
+    "FROZEN_FORM_VARIANT": 20
+  },
+  "countsByRecommendation": {
+    "PRESERVE_AS_SEPARATE_FOODS": 23
+  },
+  "countsBySourceCategory": {
+    "Fertiggerichte": 1,
+    "Fisch": 1,
+    "Konserven": 2,
+    "Tiefkühlprodukte": 18,
+    "Vegetarisch": 1
+  },
+  "entries": [
+    {
+      "sourceIndex": 384,
+      "sourceName": "Vegetarische Pizza Bio",
+      "sourceCategory": "Vegetarisch",
+      "targetSourceIndex": 604,
+      "targetName": "Vegetarische Pizza",
+      "targetCategory": "Vegetarisch",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "BIO_ATTRIBUTE_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "bio"
+      ],
+      "reasons": [
+        "Bio is a production or quality attribute and not a typographical variant.",
+        "Detected identity-relevant markers: bio.",
+        "Original TYPO_VARIANT classification was replaced by BIO_ATTRIBUTE_VARIANT."
+      ]
+    },
+    {
+      "sourceIndex": 952,
+      "sourceName": "TK-Pommes Frites",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 325,
+      "targetName": "Pommes Frites",
+      "targetCategory": "Tiefkühlprodukte",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT."
+      ]
+    },
+    {
+      "sourceIndex": 1075,
+      "sourceName": "Gemüsepfanne TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 2716,
+      "targetName": "Gemüsepfanne",
+      "targetCategory": "Fertiggerichte",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Fertiggerichte'."
+      ]
+    },
+    {
+      "sourceIndex": 1237,
+      "sourceName": "Bohnen in Dose",
+      "sourceCategory": "Konserven",
+      "targetSourceIndex": 2766,
+      "targetName": "Bohnen, Dose",
+      "targetCategory": "Konserven",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "CANNED_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "dose"
+      ],
+      "reasons": [
+        "Canned or preserved form is an identity-relevant product attribute.",
+        "Detected identity-relevant markers: dose.",
+        "Original TYPO_VARIANT classification was replaced by CANNED_FORM_VARIANT."
+      ]
+    },
+    {
+      "sourceIndex": 1239,
+      "sourceName": "Ananas in Dose",
+      "sourceCategory": "Konserven",
+      "targetSourceIndex": 27,
+      "targetName": "Ananas",
+      "targetCategory": "Obst",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "CANNED_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "dose"
+      ],
+      "reasons": [
+        "Canned or preserved form is an identity-relevant product attribute.",
+        "Detected identity-relevant markers: dose.",
+        "Original TYPO_VARIANT classification was replaced by CANNED_FORM_VARIANT.",
+        "Source and target categories differ: 'Konserven' versus 'Obst'."
+      ]
+    },
+    {
+      "sourceIndex": 1641,
+      "sourceName": "Grüne Erbsen TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 2165,
+      "targetName": "Grüne Erbsen",
+      "targetCategory": "Konserven",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Konserven'."
+      ]
+    },
+    {
+      "sourceIndex": 1644,
+      "sourceName": "Blätterteig TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 2059,
+      "targetName": "Blätterteig",
+      "targetCategory": "Backwaren",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Backwaren'."
+      ]
+    },
+    {
+      "sourceIndex": 1684,
+      "sourceName": "TK-Gemüsepfanne",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 2716,
+      "targetName": "Gemüsepfanne",
+      "targetCategory": "Fertiggerichte",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Fertiggerichte'."
+      ]
+    },
+    {
+      "sourceIndex": 1688,
+      "sourceName": "TK-Kartoffelgratin",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 1545,
+      "targetName": "Kartoffelgratin",
+      "targetCategory": "Fertiggerichte",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Fertiggerichte'."
+      ]
+    },
+    {
+      "sourceIndex": 1727,
+      "sourceName": "Pommes Frites TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 325,
+      "targetName": "Pommes Frites",
+      "targetCategory": "Tiefkühlprodukte",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT."
+      ]
+    },
+    {
+      "sourceIndex": 1728,
+      "sourceName": "Fischstäbchen TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 540,
+      "targetName": "Fischstäbchen",
+      "targetCategory": "Tiefkühlprodukte",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT."
+      ]
+    },
+    {
+      "sourceIndex": 1818,
+      "sourceName": "Rotbarschfilet TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 736,
+      "targetName": "Rotbarschfilet",
+      "targetCategory": "Fisch",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Fisch'."
+      ]
+    },
+    {
+      "sourceIndex": 1819,
+      "sourceName": "Lachsfilet TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 95,
+      "targetName": "Lachsfilet",
+      "targetCategory": "Fisch",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Fisch'."
+      ]
+    },
+    {
+      "sourceIndex": 1972,
+      "sourceName": "Seelachsfilet TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 96,
+      "targetName": "Seelachsfilet",
+      "targetCategory": "Fisch",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Fisch'."
+      ]
+    },
+    {
+      "sourceIndex": 2000,
+      "sourceName": "Kabeljaufilet TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 103,
+      "targetName": "Kabeljaufilet",
+      "targetCategory": "Fisch",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Fisch'."
+      ]
+    },
+    {
+      "sourceIndex": 2031,
+      "sourceName": "Maiskolben TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 1452,
+      "targetName": "Maiskolben",
+      "targetCategory": "Gemüse",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Gemüse'."
+      ]
+    },
+    {
+      "sourceIndex": 2428,
+      "sourceName": "TK-Blattspinat",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 50,
+      "targetName": "Blattspinat",
+      "targetCategory": "Gemüse",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Gemüse'."
+      ]
+    },
+    {
+      "sourceIndex": 3167,
+      "sourceName": "Gemüselaibchen TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 2119,
+      "targetName": "Gemüselaibchen",
+      "targetCategory": "Vegetarisch",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Vegetarisch'."
+      ]
+    },
+    {
+      "sourceIndex": 3171,
+      "sourceName": "Karottensticks TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 544,
+      "targetName": "Karottensticks",
+      "targetCategory": "Snacks",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Snacks'."
+      ]
+    },
+    {
+      "sourceIndex": 3417,
+      "sourceName": "Grüne Bohnen TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 1138,
+      "targetName": "Grüne Bohnen",
+      "targetCategory": "Gemüse",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Gemüse'."
+      ]
+    },
+    {
+      "sourceIndex": 3427,
+      "sourceName": "Tintenfischringe TK",
+      "sourceCategory": "Fisch",
+      "targetSourceIndex": 1804,
+      "targetName": "Tintenfischringe",
+      "targetCategory": "Fisch",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT."
+      ]
+    },
+    {
+      "sourceIndex": 3428,
+      "sourceName": "Kartoffelknödel TK",
+      "sourceCategory": "Fertiggerichte",
+      "targetSourceIndex": 2342,
+      "targetName": "Kartoffelknödel",
+      "targetCategory": "Fertiggerichte",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT."
+      ]
+    },
+    {
+      "sourceIndex": 3445,
+      "sourceName": "Blaubeeren TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "targetSourceIndex": 254,
+      "targetName": "Blaubeeren",
+      "targetCategory": "Obst",
+      "originalSubtype": "PROBABLY_MISCLASSIFIED",
+      "reclassifiedAs": "FROZEN_FORM_VARIANT",
+      "recommendation": "PRESERVE_AS_SEPARATE_FOODS",
+      "matchedMarkers": [
+        "tk"
+      ],
+      "reasons": [
+        "Detected identity-relevant markers: tk.",
+        "Frozen-state markers are identity-relevant and must not be treated as typographical noise.",
+        "Original TYPO_VARIANT classification was replaced by FROZEN_FORM_VARIANT.",
+        "Source and target categories differ: 'Tiefkühlprodukte' versus 'Obst'."
+      ]
+    }
+  ],
+  "valid": true
+}

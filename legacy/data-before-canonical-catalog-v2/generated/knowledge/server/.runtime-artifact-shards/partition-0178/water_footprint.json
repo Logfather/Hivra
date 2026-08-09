@@ -1,0 +1,31 @@
+{
+  "entries": {
+    "boeuf, entrecôte, crue": {
+      "litersPerKilogram": 2420.0
+    },
+    "chou à la crème pâtissière": {
+      "litersPerKilogram": 581.0
+    },
+    "crêpe ou galette complète (œuf, jambon, fromage)": {
+      "litersPerKilogram": 1030.0
+    },
+    "farine de blé tendre ou froment avec levure incorporée": {
+      "litersPerKilogram": 205.0
+    },
+    "gnocchi à la pomme de terre, cru": {
+      "litersPerKilogram": 299.0
+    },
+    "lapin, viande braisée": {
+      "litersPerKilogram": 3400.0
+    },
+    "rocamadour (fromage de chèvre)": {
+      "litersPerKilogram": 2490.0
+    },
+    "rocher coco ou congolais (petit gâteau à la noix de coco)": {
+      "litersPerKilogram": 3930.0
+    },
+    "sole, frite": {
+      "litersPerKilogram": 979.0
+    }
+  }
+}

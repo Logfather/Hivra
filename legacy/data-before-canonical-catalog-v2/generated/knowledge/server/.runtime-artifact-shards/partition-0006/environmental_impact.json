@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "boisson au soja, nature, enrichie en calcium": {
+      "environmentScoreMptPerKg": 0.0419,
+      "climateKgCo2EqPerKg": 0.435,
+      "landUsePtPerKg": 21.6,
+      "waterDeprivationM3PerKg": 0.0815
+    },
+    "farine de seigle t170": {
+      "environmentScoreMptPerKg": 0.107,
+      "climateKgCo2EqPerKg": 0.716,
+      "landUsePtPerKg": 29.7,
+      "waterDeprivationM3PerKg": 0.174
+    },
+    "fruit de la passion ou maracudja, pulpe et pépins, cru": {
+      "environmentScoreMptPerKg": 0.112,
+      "climateKgCo2EqPerKg": 0.938,
+      "landUsePtPerKg": 24.3,
+      "waterDeprivationM3PerKg": 2.98
+    },
+    "fève, pelée, surgelée, cuite à l'eau": {
+      "environmentScoreMptPerKg": 0.0688,
+      "climateKgCo2EqPerKg": 0.573,
+      "landUsePtPerKg": -72.8,
+      "waterDeprivationM3PerKg": 0.0891
+    },
+    "glace à l'eau": {
+      "environmentScoreMptPerKg": 0.182,
+      "climateKgCo2EqPerKg": 1.53,
+      "landUsePtPerKg": 35.5,
+      "waterDeprivationM3PerKg": 1.1
+    },
+    "lait demi écrémé, uht": {
+      "environmentScoreMptPerKg": 0.119,
+      "climateKgCo2EqPerKg": 1.27,
+      "landUsePtPerKg": 54.3,
+      "waterDeprivationM3PerKg": 0.156
+    },
+    "moule, appertisée, égouttée": {
+      "environmentScoreMptPerKg": 0.779,
+      "climateKgCo2EqPerKg": 7.03,
+      "landUsePtPerKg": 310.0,
+      "waterDeprivationM3PerKg": 1.33
+    },
+    "pain pour hamburger ou hot dog (bun), préemballé": {
+      "environmentScoreMptPerKg": 0.212,
+      "climateKgCo2EqPerKg": 1.81,
+      "landUsePtPerKg": 129.0,
+      "waterDeprivationM3PerKg": 0.392
+    },
+    "pâtes fraîches farcies (ex : ravioli), aux légumes, crues": {
+      "environmentScoreMptPerKg": 0.315,
+      "climateKgCo2EqPerKg": 2.65,
+      "landUsePtPerKg": 110.0,
+      "waterDeprivationM3PerKg": 1.07
+    },
+    "salami": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 8.25,
+      "landUsePtPerKg": 391.0,
+      "waterDeprivationM3PerKg": 2.65
+    },
+    "sauce végétale type bolognaise, préemballée": {
+      "environmentScoreMptPerKg": 0.222,
+      "climateKgCo2EqPerKg": 1.2,
+      "landUsePtPerKg": 65.0,
+      "waterDeprivationM3PerKg": 1.54
+    },
+    "sirop pour fruits appertisés au sirop": {
+      "environmentScoreMptPerKg": 0.141,
+      "climateKgCo2EqPerKg": 0.934,
+      "landUsePtPerKg": 6.58,
+      "waterDeprivationM3PerKg": 0.423
+    }
+  }
+}

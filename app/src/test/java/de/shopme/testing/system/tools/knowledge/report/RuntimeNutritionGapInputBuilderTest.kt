@@ -26,7 +26,7 @@ class RuntimeNutritionGapInputBuilderTest {
             val catalogFile =
                 File(
                     directory,
-                    "supermarket_dataset.json"
+                    "canonical-food-catalog.json"
                 )
                     .apply {
                         writeText(
@@ -538,7 +538,7 @@ class RuntimeNutritionGapInputBuilderTest {
     }
 
     @Test
-    fun collapseDuplicateTranslatedCatalogKeys() {
+    fun collapseDuplicateCanonicalCatalogKeys() {
 
         val directory =
             createTempDirectory(
@@ -551,7 +551,7 @@ class RuntimeNutritionGapInputBuilderTest {
             val catalogFile =
                 File(
                     directory,
-                    "supermarket_dataset.translated.json"
+                    "canonical-food-catalog.json"
                 )
                     .apply {
                         writeText(

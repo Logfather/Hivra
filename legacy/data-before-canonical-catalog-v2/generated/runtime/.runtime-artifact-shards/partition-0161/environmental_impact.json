@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "agneau, selle, crue": {
+      "environmentScoreMptPerKg": 5.01,
+      "climateKgCo2EqPerKg": 41.3,
+      "landUsePtPerKg": 4420.0,
+      "waterDeprivationM3PerKg": 6.93
+    },
+    "crêpe, nature, préemballée, rayon frais": {
+      "environmentScoreMptPerKg": 0.175,
+      "climateKgCo2EqPerKg": 1.5,
+      "landUsePtPerKg": 83.8,
+      "waterDeprivationM3PerKg": 0.371
+    },
+    "diabolo (limonade et sirop)": {
+      "environmentScoreMptPerKg": 0.0811,
+      "climateKgCo2EqPerKg": 0.55,
+      "landUsePtPerKg": 15.6,
+      "waterDeprivationM3PerKg": 0.499
+    },
+    "haricot mungo, cuit": {
+      "environmentScoreMptPerKg": 0.0668,
+      "climateKgCo2EqPerKg": 0.585,
+      "landUsePtPerKg": -71.7,
+      "waterDeprivationM3PerKg": 0.116
+    },
+    "jambonneau, cuit": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "pizza champignons fromage": {
+      "environmentScoreMptPerKg": 0.463,
+      "climateKgCo2EqPerKg": 3.38,
+      "landUsePtPerKg": 97.0,
+      "waterDeprivationM3PerKg": 17.4
+    },
+    "poivron vert, cuit": {
+      "environmentScoreMptPerKg": 0.156,
+      "climateKgCo2EqPerKg": 1.6,
+      "landUsePtPerKg": 14.3,
+      "waterDeprivationM3PerKg": 0.607
+    },
+    "rosette ou fuseau": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 8.25,
+      "landUsePtPerKg": 391.0,
+      "waterDeprivationM3PerKg": 2.65
+    },
+    "sole, cuite à la vapeur": {
+      "environmentScoreMptPerKg": 1.58,
+      "climateKgCo2EqPerKg": 9.22,
+      "landUsePtPerKg": 20.4,
+      "waterDeprivationM3PerKg": 0.998
+    }
+  }
+}

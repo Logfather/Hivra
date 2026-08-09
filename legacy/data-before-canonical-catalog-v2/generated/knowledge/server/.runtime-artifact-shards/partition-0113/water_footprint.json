@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "boisson au jus de fruit et au lait": {
+      "litersPerKilogram": 9020.0
+    },
+    "brocoli, surgelé, cru": {
+      "litersPerKilogram": 1010.0
+    },
+    "champignon à la grecque": {
+      "litersPerKilogram": 22100.0
+    },
+    "foie, dinde, cuit": {
+      "litersPerKilogram": 874.0
+    },
+    "haricot vert, appertisé, égoutté": {
+      "litersPerKilogram": 1380.0
+    },
+    "noisette": {
+      "litersPerKilogram": 11700.0
+    },
+    "pêche, sèche": {
+      "litersPerKilogram": 67700.0
+    },
+    "saké ou alcool de riz": {
+      "litersPerKilogram": 169.0
+    },
+    "sauce béarnaise, préemballée": {
+      "litersPerKilogram": 1080.0
+    },
+    "saucisse cocktail": {
+      "litersPerKilogram": 1510.0
+    },
+    "soupe à la tomate, préemballée à réchauffer": {
+      "litersPerKilogram": 150.0
+    }
+  }
+}

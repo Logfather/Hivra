@@ -1,0 +1,88 @@
+{
+  "entries": {
+    "agneau, côte filet, crue": {
+      "environmentScoreMptPerKg": 5.01,
+      "climateKgCo2EqPerKg": 41.3,
+      "landUsePtPerKg": 4420.0,
+      "waterDeprivationM3PerKg": 6.93
+    },
+    "biscuit sec (génoise) nappage aux fruits, type barquette": {
+      "environmentScoreMptPerKg": 0.335,
+      "climateKgCo2EqPerKg": 2.92,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 3.14
+    },
+    "bière sans alcool (<1,2° alcool)": {
+      "environmentScoreMptPerKg": 0.127,
+      "climateKgCo2EqPerKg": 1.35,
+      "landUsePtPerKg": 17.0,
+      "waterDeprivationM3PerKg": 0.258
+    },
+    "boeuf, plat de côtes, cru": {
+      "environmentScoreMptPerKg": 2.71,
+      "climateKgCo2EqPerKg": 29.1,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.42
+    },
+    "brocoli, cuit": {
+      "environmentScoreMptPerKg": 0.154,
+      "climateKgCo2EqPerKg": 1.66,
+      "landUsePtPerKg": 17.0,
+      "waterDeprivationM3PerKg": 1.28
+    },
+    "bœuf, steak haché 20% mg, cuit": {
+      "environmentScoreMptPerKg": 4.25,
+      "climateKgCo2EqPerKg": 45.2,
+      "landUsePtPerKg": 2940.0,
+      "waterDeprivationM3PerKg": 3.77
+    },
+    "cervelas obernois": {
+      "environmentScoreMptPerKg": 0.69,
+      "climateKgCo2EqPerKg": 5.3,
+      "landUsePtPerKg": 277.0,
+      "waterDeprivationM3PerKg": 1.73
+    },
+    "courge musquée, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.064,
+      "climateKgCo2EqPerKg": 0.612,
+      "landUsePtPerKg": 17.2,
+      "waterDeprivationM3PerKg": 0.629
+    },
+    "fromage rond à pâte molle et croûte fleurie environ 11% mg type coulommiers allégé en matière grasse": {
+      "environmentScoreMptPerKg": 0.482,
+      "climateKgCo2EqPerKg": 4.99,
+      "landUsePtPerKg": 235.0,
+      "waterDeprivationM3PerKg": 0.552
+    },
+    "jus d'orange, maison": {
+      "environmentScoreMptPerKg": 0.214,
+      "climateKgCo2EqPerKg": 1.6,
+      "landUsePtPerKg": 46.5,
+      "waterDeprivationM3PerKg": 2.03
+    },
+    "matière grasse laitière à 25% mg, légère, \"à tartiner\", doux": {
+      "environmentScoreMptPerKg": 0.511,
+      "climateKgCo2EqPerKg": 5.11,
+      "landUsePtPerKg": 243.0,
+      "waterDeprivationM3PerKg": 0.583
+    },
+    "nem ou pâté impérial, au poulet, cuit": {
+      "environmentScoreMptPerKg": 0.452,
+      "climateKgCo2EqPerKg": 2.92,
+      "landUsePtPerKg": 112.0,
+      "waterDeprivationM3PerKg": 6.92
+    },
+    "poulet (var. blanc), viande et peau, cru": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "salade de pomme de terre à la piémontaise, préemballée": {
+      "environmentScoreMptPerKg": 0.53,
+      "climateKgCo2EqPerKg": 4.14,
+      "landUsePtPerKg": 192.0,
+      "waterDeprivationM3PerKg": 1.79
+    }
+  }
+}

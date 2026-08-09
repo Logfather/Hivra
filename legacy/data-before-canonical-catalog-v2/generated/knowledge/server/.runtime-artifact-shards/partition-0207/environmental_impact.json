@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "chou romanesco ou brocoli à pomme, cru": {
+      "environmentScoreMptPerKg": 0.0764,
+      "climateKgCo2EqPerKg": 0.721,
+      "landUsePtPerKg": 32.9,
+      "waterDeprivationM3PerKg": 0.0741
+    },
+    "galette de tofu (steak végétal)": {
+      "environmentScoreMptPerKg": 0.252,
+      "climateKgCo2EqPerKg": 2.25,
+      "landUsePtPerKg": 121.0,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "gratin de poisson et purée ou brandade aux pommes de terre ou parmentier de poisson": {
+      "environmentScoreMptPerKg": 1.5,
+      "climateKgCo2EqPerKg": 9.61,
+      "landUsePtPerKg": 72.5,
+      "waterDeprivationM3PerKg": 0.925
+    },
+    "lapin de garenne, viande, crue": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "panga, pangasius, ou poisson chat du mékong, filet, cuit": {
+      "environmentScoreMptPerKg": 5.49,
+      "climateKgCo2EqPerKg": 18.1,
+      "landUsePtPerKg": 267.0,
+      "waterDeprivationM3PerKg": 481.0
+    },
+    "poisson en sauce, surgelé": {
+      "environmentScoreMptPerKg": 1.51,
+      "climateKgCo2EqPerKg": 9.74,
+      "landUsePtPerKg": 52.1,
+      "waterDeprivationM3PerKg": 0.834
+    },
+    "poitrine de porc demi sel": {
+      "environmentScoreMptPerKg": 1.07,
+      "climateKgCo2EqPerKg": 8.4,
+      "landUsePtPerKg": 441.0,
+      "waterDeprivationM3PerKg": 2.77
+    }
+  }
+}

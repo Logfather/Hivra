@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "biscuit sec aux œufs à la cuillère (cuiller) ou boudoir": {
+      "environmentScoreMptPerKg": 0.261,
+      "climateKgCo2EqPerKg": 2.2,
+      "landUsePtPerKg": 95.3,
+      "waterDeprivationM3PerKg": 1.47
+    },
+    "cerfeuil, frais": {
+      "environmentScoreMptPerKg": 0.129,
+      "climateKgCo2EqPerKg": 0.879,
+      "landUsePtPerKg": 35.1,
+      "waterDeprivationM3PerKg": 5.16
+    },
+    "coeur, boeuf, cru": {
+      "environmentScoreMptPerKg": 2.14,
+      "climateKgCo2EqPerKg": 22.9,
+      "landUsePtPerKg": 1490.0,
+      "waterDeprivationM3PerKg": 1.91
+    },
+    "crêpe, nature, préemballée, rayon température ambiante": {
+      "environmentScoreMptPerKg": 0.175,
+      "climateKgCo2EqPerKg": 1.5,
+      "landUsePtPerKg": 83.8,
+      "waterDeprivationM3PerKg": 0.371
+    },
+    "huile combinée (mélange d'huiles)": {
+      "environmentScoreMptPerKg": 0.35,
+      "climateKgCo2EqPerKg": 2.5,
+      "landUsePtPerKg": 409.0,
+      "waterDeprivationM3PerKg": 0.736
+    },
+    "jambon cru": {
+      "environmentScoreMptPerKg": 1.8,
+      "climateKgCo2EqPerKg": 13.6,
+      "landUsePtPerKg": 626.0,
+      "waterDeprivationM3PerKg": 4.24
+    },
+    "noix de coco, amande immature, fraîche": {
+      "environmentScoreMptPerKg": 0.424,
+      "climateKgCo2EqPerKg": 2.42,
+      "landUsePtPerKg": 182.0,
+      "waterDeprivationM3PerKg": 12.4
+    },
+    "potimarron, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.064,
+      "climateKgCo2EqPerKg": 0.612,
+      "landUsePtPerKg": 17.2,
+      "waterDeprivationM3PerKg": 0.629
+    },
+    "turbot d'élevage, cru": {
+      "environmentScoreMptPerKg": 1.92,
+      "climateKgCo2EqPerKg": 12.3,
+      "landUsePtPerKg": 183.0,
+      "waterDeprivationM3PerKg": 2.62
+    }
+  }
+}

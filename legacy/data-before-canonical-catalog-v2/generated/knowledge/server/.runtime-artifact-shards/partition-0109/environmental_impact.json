@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "biscuit moelleux fourré à l'orange et enrobé de sucre glace": {
+      "environmentScoreMptPerKg": 0.335,
+      "climateKgCo2EqPerKg": 2.92,
+      "landUsePtPerKg": 135.0,
+      "waterDeprivationM3PerKg": 3.14
+    },
+    "boulettes aux légumes (sans viande)": {
+      "environmentScoreMptPerKg": 0.341,
+      "climateKgCo2EqPerKg": 2.28,
+      "landUsePtPerKg": 192.0,
+      "waterDeprivationM3PerKg": 0.841
+    },
+    "bœuf, steak haché 20% mg, cru": {
+      "environmentScoreMptPerKg": 3.35,
+      "climateKgCo2EqPerKg": 35.7,
+      "landUsePtPerKg": 2320.0,
+      "waterDeprivationM3PerKg": 2.98
+    },
+    "couscous au mouton": {
+      "environmentScoreMptPerKg": 1.74,
+      "climateKgCo2EqPerKg": 14.4,
+      "landUsePtPerKg": 1470.0,
+      "waterDeprivationM3PerKg": 2.82
+    },
+    "fromage pané au jambon": {
+      "environmentScoreMptPerKg": 0.639,
+      "climateKgCo2EqPerKg": 6.03,
+      "landUsePtPerKg": 264.0,
+      "waterDeprivationM3PerKg": 0.984
+    },
+    "glace ou crème glacée, mini cône": {
+      "environmentScoreMptPerKg": 0.229,
+      "climateKgCo2EqPerKg": 1.92,
+      "landUsePtPerKg": 77.0,
+      "waterDeprivationM3PerKg": 0.62
+    },
+    "nouilles asiatiques cuites, aromatisées": {
+      "environmentScoreMptPerKg": 0.182,
+      "climateKgCo2EqPerKg": 1.49,
+      "landUsePtPerKg": 87.6,
+      "waterDeprivationM3PerKg": 0.55
+    },
+    "porc, jarret, cru": {
+      "environmentScoreMptPerKg": 0.834,
+      "climateKgCo2EqPerKg": 6.78,
+      "landUsePtPerKg": 350.0,
+      "waterDeprivationM3PerKg": 2.2
+    },
+    "profiterole avec glace vanille et sauce chocolat": {
+      "environmentScoreMptPerKg": 0.388,
+      "climateKgCo2EqPerKg": 4.24,
+      "landUsePtPerKg": 152.0,
+      "waterDeprivationM3PerKg": 0.55
+    },
+    "selles sur cher (fromage de chèvre)": {
+      "environmentScoreMptPerKg": 1.02,
+      "climateKgCo2EqPerKg": 7.29,
+      "landUsePtPerKg": 474.0,
+      "waterDeprivationM3PerKg": 2.55
+    },
+    "soupe minestrone, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.238,
+      "climateKgCo2EqPerKg": 1.62,
+      "landUsePtPerKg": 44.1,
+      "waterDeprivationM3PerKg": 1.86
+    },
+    "yaourt à la grecque, nature": {
+      "environmentScoreMptPerKg": 0.19,
+      "climateKgCo2EqPerKg": 1.89,
+      "landUsePtPerKg": 65.7,
+      "waterDeprivationM3PerKg": 0.342
+    }
+  }
+}

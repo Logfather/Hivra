@@ -1,0 +1,7366 @@
+{
+  "entries": {
+    "abondance": {
+      "score": 0.79
+    },
+    "abricot au sirop léger, appertisé, non égoutté": {
+      "score": 1.19
+    },
+    "abricot au sirop léger, appertisé, égoutté": {
+      "score": 2.02
+    },
+    "abricot au sirop, appertisé, non égoutté": {
+      "score": 1.19
+    },
+    "abricot au sirop, appertisé, égoutté": {
+      "score": 2.05
+    },
+    "abricot, dénoyauté, cru": {
+      "score": 2.08
+    },
+    "abricot, dénoyauté, sec": {
+      "score": 10.8
+    },
+    "accra de poisson": {
+      "score": 0.67
+    },
+    "agar (algue), cru": {
+      "score": 4.83
+    },
+    "agneau, collier, braisé ou bouilli": {
+      "score": 8.79
+    },
+    "agneau, collier, cru": {
+      "score": 6.93
+    },
+    "agneau, côte filet, crue": {
+      "score": 6.93
+    },
+    "agneau, côte filet, grillée/poêlée": {
+      "score": 8.77
+    },
+    "agneau, côte première, crue": {
+      "score": 6.93
+    },
+    "agneau, côte première, grillée/poêlée": {
+      "score": 8.77
+    },
+    "agneau, côtelette, crue": {
+      "score": 6.93
+    },
+    "agneau, côtelette, grillée": {
+      "score": 8.77
+    },
+    "agneau, gigot, braisé": {
+      "score": 8.79
+    },
+    "agneau, gigot, cru": {
+      "score": 6.93
+    },
+    "agneau, gigot, grillé/poêlé": {
+      "score": 8.77
+    },
+    "agneau, gigot, rôti/cuit au four": {
+      "score": 8.79
+    },
+    "agneau, selle, crue": {
+      "score": 6.93
+    },
+    "agneau, selle, partie maigre, grillée/poêlée": {
+      "score": 8.77
+    },
+    "agneau, selle, partie maigre, rôtie/cuite au four": {
+      "score": 8.79
+    },
+    "agneau, épaule, crue": {
+      "score": 5.54
+    },
+    "agneau, épaule, maigre, crue": {
+      "score": 5.54
+    },
+    "agneau, épaule, maigre, rôtie/cuite au four": {
+      "score": 7.04
+    },
+    "agneau, épaule, rôtie/cuite au four": {
+      "score": 7.04
+    },
+    "ail séché, poudre": {
+      "score": 0.83
+    },
+    "ail, cru": {
+      "score": 0.553
+    },
+    "alcool pur": {
+      "score": 0.169
+    },
+    "aligot (purée de pomme de terre à la tomme fraîche)": {
+      "score": 0.733
+    },
+    "amande (avec peau)": {
+      "score": 30.9
+    },
+    "amande, grillée, salée": {
+      "score": 30.9
+    },
+    "amande, mondée, émondée ou blanchie": {
+      "score": 30.9
+    },
+    "amarante, crue": {
+      "score": 0.496
+    },
+    "amidon de maïs ou fécule de maïs": {
+      "score": 3.99
+    },
+    "ananas au sirop et jus d\u0027ananas, appertisé, non égoutté": {
+      "score": 0.483
+    },
+    "ananas au sirop et jus d\u0027ananas, appertisé, égoutté": {
+      "score": 0.79
+    },
+    "ananas au sirop léger, appertisé, non égoutté": {
+      "score": 0.483
+    },
+    "ananas au sirop léger, appertisé, égoutté": {
+      "score": 0.797
+    },
+    "ananas, pulpe, cru": {
+      "score": 0.605
+    },
+    "anchois au sel (anchoité, semi conserve)": {
+      "score": 0.255
+    },
+    "anchois commun, cru": {
+      "score": 0.231
+    },
+    "anchois commun, mariné": {
+      "score": 0.413
+    },
+    "anchois, filets roulés aux câpres, semi conserve, égoutté": {
+      "score": 0.463
+    },
+    "anchois, filets à l\u0027huile, semi conserve, égoutté": {
+      "score": 3.48
+    },
+    "andouille": {
+      "score": 2.72
+    },
+    "andouille de guéméné": {
+      "score": 2.72
+    },
+    "andouille de vire": {
+      "score": 2.72
+    },
+    "andouille, réchauffée à la poêle": {
+      "score": 2.72
+    },
+    "andouillette de troyes, crue": {
+      "score": 2.68
+    },
+    "andouillette, crue": {
+      "score": 2.68
+    },
+    "andouillette, sautée/poêlée": {
+      "score": 2.72
+    },
+    "aneth, frais": {
+      "score": 5.16
+    },
+    "ao nori (enteromorpha sp.), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "apéritif à base de vin ou vermouth": {
+      "score": 0.404
+    },
+    "arachide, bouillie/cuite à l\u0027eau, salée": {
+      "score": 14.6
+    },
+    "artichaut, appertisé, égoutté": {
+      "score": 0.32
+    },
+    "artichaut, coeur, appertisé, égoutté": {
+      "score": 0.32
+    },
+    "artichaut, cru": {
+      "score": 0.176
+    },
+    "artichaut, cuit": {
+      "score": 0.456
+    },
+    "artichaut, fond, appertisé, égoutté": {
+      "score": 0.354
+    },
+    "artichaut, fond, surgelé, cru": {
+      "score": 0.204
+    },
+    "ascophylle noueux ou goémon noir (ascophyllum nodosum), séché ou déshydraté": {
+      "score": 4.83
+    },
+    "asiago": {
+      "score": 0.781
+    },
+    "asperge, appertisée, égouttée": {
+      "score": 4.14
+    },
+    "asperge, blanche ou violette, pelée, crue": {
+      "score": 4.36
+    },
+    "asperge, bouillie/cuite à l\u0027eau": {
+      "score": 5.43
+    },
+    "asperge, pelée, crue": {
+      "score": 4.36
+    },
+    "asperge, verte, crue": {
+      "score": 4.36
+    },
+    "aubergine, crue": {
+      "score": 0.551
+    },
+    "aubergine, cuite": {
+      "score": 0.822
+    },
+    "avocat, pulpe, cru": {
+      "score": 23.7
+    },
+    "avoine, crue": {
+      "score": 0.535
+    },
+    "baba au rhum, préemballé": {
+      "score": 0.623
+    },
+    "bagel": {
+      "score": 1.13
+    },
+    "baklava ou baklawa (pâtisserie orientale aux amandes et sirop)": {
+      "score": 10.2
+    },
+    "bambou, pousse, crue": {
+      "score": 3.26
+    },
+    "bambou, pousses, appertisées, égouttées": {
+      "score": 3.2
+    },
+    "banane plantain, crue": {
+      "score": 5.63
+    },
+    "banane plantain, cuite": {
+      "score": 8.21
+    },
+    "banane, pulpe, crue": {
+      "score": 0.572
+    },
+    "banane, pulpe, sèche": {
+      "score": 24.2
+    },
+    "bar commun ou loup (méditerranée), cru, sauvage": {
+      "score": 0.414
+    },
+    "bar commun ou loup (méditerranée), cru, élevage": {
+      "score": 2.62
+    },
+    "bar commun ou loup, cru, sans précision": {
+      "score": 2.62
+    },
+    "bar commun ou loup, rôti/cuit au four": {
+      "score": 3.33
+    },
+    "bar ou loup de l\u0027atlantique, cru": {
+      "score": 2.62
+    },
+    "bar rayé ou bar d\u0027amérique, cru": {
+      "score": 2.62
+    },
+    "barre biscuitée fourrée aux fruits, allégée en matière grasse": {
+      "score": 2.95
+    },
+    "barre chocolat au lait avec nougat": {
+      "score": 2.86
+    },
+    "barre chocolatée aux fruits secs": {
+      "score": 2.86
+    },
+    "barre chocolatée biscuitée": {
+      "score": 0.991
+    },
+    "barre chocolatée non biscuitée enrobée": {
+      "score": 0.865
+    },
+    "barre céréalière \"équilibre\" aux fruits, enrichie en vitamines et minéraux": {
+      "score": 3.28
+    },
+    "barre céréalière \"équilibre\" chocolatée, enrichie en vitamines et minéraux": {
+      "score": 1.24
+    },
+    "barre céréalière aux amandes ou noisettes": {
+      "score": 8.31
+    },
+    "barre céréalière aux fruits": {
+      "score": 3.28
+    },
+    "barre céréalière chocolatée": {
+      "score": 1.24
+    },
+    "barre céréalière pour petit déjeuner au lait, chocolatée ou non, enrichie en vitamines et minéraux": {
+      "score": 1.24
+    },
+    "barre glacée chocolatée": {
+      "score": 0.637
+    },
+    "barre goûter frais au lait et chocolat": {
+      "score": 0.991
+    },
+    "barre goûter frais au lait et chocolat avec génoise": {
+      "score": 0.991
+    },
+    "barre à la noix de coco, enrobée de chocolat": {
+      "score": 2.86
+    },
+    "barres ou confiserie chocolatées au lait": {
+      "score": 0.991
+    },
+    "base de pizza tomatée": {
+      "score": 2.48
+    },
+    "base de pizza à la crème": {
+      "score": 0.372
+    },
+    "basilic, frais": {
+      "score": 5.16
+    },
+    "basilic, séché": {
+      "score": 20.2
+    },
+    "beaufort": {
+      "score": 0.801
+    },
+    "beignet de crevette": {
+      "score": 74.6
+    },
+    "beignet de légumes": {
+      "score": 3.96
+    },
+    "beignet de viande, volaille ou poisson, fait maison": {
+      "score": 1.5
+    },
+    "beignet fourré aux fruits, préemballé": {
+      "score": 0.789
+    },
+    "beignet fourré goût chocolat, préemballé": {
+      "score": 0.851
+    },
+    "beignet rond moelleux, sans fourrage, saupoudré de sucre": {
+      "score": 0.804
+    },
+    "beignet à la confiture": {
+      "score": 1.04
+    },
+    "bette ou blette, crue": {
+      "score": 0.316
+    },
+    "bette ou blette, cuite": {
+      "score": 0.637
+    },
+    "betterave rouge, crue": {
+      "score": 0.384
+    },
+    "betterave rouge, cuite": {
+      "score": 0.689
+    },
+    "beurre de cacahuète ou pâte d\u0027arachide": {
+      "score": 9.27
+    },
+    "beurre de cacao": {
+      "score": 0.44
+    },
+    "beurre à 39 41% mg, léger, doux": {
+      "score": 0.701
+    },
+    "beurre à 60 62% mg, à teneur réduite en matière grasse, demi sel": {
+      "score": 0.796
+    },
+    "beurre à 60 62% mg, à teneur réduite en matière grasse, doux": {
+      "score": 0.8
+    },
+    "beurre à 80% mg, demi sel": {
+      "score": 0.859
+    },
+    "beurre à 80% mg, salé": {
+      "score": 0.859
+    },
+    "beurre à 82% mg, doux": {
+      "score": 0.866
+    },
+    "beurre à 82% mg, doux, tendre": {
+      "score": 0.866
+    },
+    "bicarbonate de soude": {
+      "score": 2.04
+    },
+    "biscotte briochée": {
+      "score": 0.557
+    },
+    "biscotte classique": {
+      "score": 0.557
+    },
+    "biscotte complète ou riche en fibres": {
+      "score": 0.557
+    },
+    "biscotte multicéréale": {
+      "score": 0.557
+    },
+    "biscotte sans adjonction de sel": {
+      "score": 0.557
+    },
+    "biscuit apéritif feuilleté": {
+      "score": 0.704
+    },
+    "biscuit apéritif soufflé, à base de maïs, sans cacahuète": {
+      "score": 0.704
+    },
+    "biscuit apéritif soufflé, à base de maïs, à la cacahuète": {
+      "score": 0.704
+    },
+    "biscuit apéritif soufflé, à base de pomme de terre": {
+      "score": 0.704
+    },
+    "biscuit apéritif soufflé, à base de pomme de terre et de soja": {
+      "score": 0.704
+    },
+    "biscuit apéritif à base de pomme de terre, type tuile salée": {
+      "score": 0.704
+    },
+    "biscuit apéritif, crackers, garni ou fourré, au fromage": {
+      "score": 0.704
+    },
+    "biscuit apéritif, crackers, nature": {
+      "score": 0.704
+    },
+    "biscuit apéritif, crackers, nature, allégé en matière grasse": {
+      "score": 0.704
+    },
+    "biscuit apéritif, mini bretzel ou sticks": {
+      "score": 0.704
+    },
+    "biscuit aux céréales pour petit déjeuner, enrichis en vitamines et minéraux": {
+      "score": 1.16
+    },
+    "biscuit de savoie": {
+      "score": 1.22
+    },
+    "biscuit moelleux fourré à l\u0027orange et enrobé de sucre glace": {
+      "score": 3.14
+    },
+    "biscuit pour bébé": {
+      "score": 1.82
+    },
+    "biscuit pâtissier meringué": {
+      "score": 1.44
+    },
+    "biscuit sec (génoise) nappage aux fruits, type barquette": {
+      "score": 3.14
+    },
+    "biscuit sec au beurre, sablé, galette ou palet": {
+      "score": 1.01
+    },
+    "biscuit sec au beurre, sablé, galette ou palet, au chocolat": {
+      "score": 0.914
+    },
+    "biscuit sec au lait": {
+      "score": 0.958
+    },
+    "biscuit sec aux fruits, hyposodé": {
+      "score": 3.17
+    },
+    "biscuit sec aux œufs à la cuillère (cuiller) ou boudoir": {
+      "score": 1.47
+    },
+    "biscuit sec avec nappage chocolat": {
+      "score": 1.27
+    },
+    "biscuit sec avec tablette de chocolat": {
+      "score": 1.27
+    },
+    "biscuit sec chocolaté, préemballé": {
+      "score": 1.13
+    },
+    "biscuit sec chocolaté, type barquette": {
+      "score": 1.1
+    },
+    "biscuit sec chocolaté, type galette": {
+      "score": 0.914
+    },
+    "biscuit sec chocolaté, type tartelette": {
+      "score": 0.914
+    },
+    "biscuit sec croquant (ex : tuile) sans chocolat, allégé en matière grasse": {
+      "score": 8.2
+    },
+    "biscuit sec croquant au chocolat, allégé en matière grasse": {
+      "score": 1.13
+    },
+    "biscuit sec feuilleté, type palmier ou autres": {
+      "score": 1.09
+    },
+    "biscuit sec fourré aux fruits, allégé en matière grasse": {
+      "score": 3.17
+    },
+    "biscuit sec fourré fruits à coque (non ou légèrement chocolaté)": {
+      "score": 8.2
+    },
+    "biscuit sec fourré à la pâte ou purée de fruits": {
+      "score": 3.17
+    },
+    "biscuit sec nappé aux fruits, tartelette": {
+      "score": 2.95
+    },
+    "biscuit sec nature": {
+      "score": 1.16
+    },
+    "biscuit sec ou tuile, aux amandes": {
+      "score": 8.2
+    },
+    "biscuit sec pauvre en glucides": {
+      "score": 1.16
+    },
+    "biscuit sec petit beurre": {
+      "score": 0.737
+    },
+    "biscuit sec petit beurre au chocolat": {
+      "score": 1.09
+    },
+    "biscuit sec pour petit déjeuner": {
+      "score": 1.16
+    },
+    "biscuit sec pour petit déjeuner, allégé en sucres": {
+      "score": 1.16
+    },
+    "biscuit sec pour petit déjeuner, au chocolat": {
+      "score": 1.13
+    },
+    "biscuit sec type langue de chat ou cigarette russe": {
+      "score": 1.31
+    },
+    "biscuit sec type tuile, aux fruits": {
+      "score": 1.45
+    },
+    "biscuit sec à teneur garantie en vitamines": {
+      "score": 1.47
+    },
+    "biscuit sec à teneur garantie en vitamines et minéraux": {
+      "score": 1.16
+    },
+    "biscuit sec, avec matière grasse végétale": {
+      "score": 1.55
+    },
+    "biscuit sec, petits fours en assortiment": {
+      "score": 1.31
+    },
+    "biscuit sec, sablé, galette ou palet, aux fruits": {
+      "score": 2.95
+    },
+    "biscuit sec, sans précision": {
+      "score": 1.16
+    },
+    "bière \"coeur de marché\" (4 5° alcool)": {
+      "score": 0.258
+    },
+    "bière \"de spécialités\" ou d\u0027abbaye, régionales ou d\u0027une brasserie (degré d\u0027alcool variable)": {
+      "score": 0.258
+    },
+    "bière \"spéciale\" (5 6° alcool)": {
+      "score": 0.258
+    },
+    "bière brune": {
+      "score": 0.258
+    },
+    "bière faiblement alcoolisée (3° alcool)": {
+      "score": 0.258
+    },
+    "bière forte (\u003e8° alcool)": {
+      "score": 0.258
+    },
+    "bière sans alcool (\u003c1,2° alcool)": {
+      "score": 0.258
+    },
+    "blanquette de veau": {
+      "score": 9.19
+    },
+    "bleu de gex ou fromage bleu du haut jura ou bleu de septmoncel (aoc)": {
+      "score": 0.591
+    },
+    "blini": {
+      "score": 0.378
+    },
+    "blé de khorasan, cru": {
+      "score": 0.183
+    },
+    "blé dur entier, cru": {
+      "score": 0.603
+    },
+    "blé dur précuit cuisiné, en sachet micro ondable": {
+      "score": 0.271
+    },
+    "blé dur précuit, entier, cru": {
+      "score": 0.603
+    },
+    "blé dur précuit, grains entiers, cuisiné, à poêler": {
+      "score": 0.269
+    },
+    "blé dur précuit, grains entiers, cuit, non salé": {
+      "score": 0.283
+    },
+    "blé tendre entier ou froment, cru": {
+      "score": 0.183
+    },
+    "boeuf aux carottes": {
+      "score": 7.52
+    },
+    "boeuf bourguignon": {
+      "score": 7.92
+    },
+    "boeuf, bavette d\u0027aloyau, crue": {
+      "score": 2.39
+    },
+    "boeuf, bavette d\u0027aloyau, grillée/poêlée": {
+      "score": 3.03
+    },
+    "boeuf, boule de macreuse, crue": {
+      "score": 2.39
+    },
+    "boeuf, boule de macreuse, grillée/poêlée": {
+      "score": 3.03
+    },
+    "boeuf, boule de macreuse, rôtie/cuite au four": {
+      "score": 3.05
+    },
+    "boeuf, boulettes cuites": {
+      "score": 3.17
+    },
+    "boeuf, braisé": {
+      "score": 3.05
+    },
+    "boeuf, collier, braisé": {
+      "score": 3.8
+    },
+    "boeuf, côte, crue": {
+      "score": 2.42
+    },
+    "boeuf, entrecôte, crue": {
+      "score": 2.42
+    },
+    "boeuf, entrecôte, partie maigre, grillée/poêlée": {
+      "score": 3.07
+    },
+    "boeuf, faux filet, cru": {
+      "score": 2.39
+    },
+    "boeuf, faux filet, grillé/poêlé": {
+      "score": 3.03
+    },
+    "boeuf, faux filet, rôti/cuit au four": {
+      "score": 3.05
+    },
+    "boeuf, gîte à la noix, cru": {
+      "score": 2.39
+    },
+    "boeuf, gîte à la noix, cuit": {
+      "score": 3.05
+    },
+    "boeuf, hampe, crue": {
+      "score": 2.39
+    },
+    "boeuf, hampe, grillée/poêlée": {
+      "score": 3.03
+    },
+    "boeuf, jarret, bouilli/cuit à l\u0027eau": {
+      "score": 3.08
+    },
+    "boeuf, jarret, cru": {
+      "score": 2.42
+    },
+    "boeuf, joue, braisée ou bouillie": {
+      "score": 2.46
+    },
+    "boeuf, joue, crue": {
+      "score": 2.39
+    },
+    "boeuf, onglet, cru": {
+      "score": 2.39
+    },
+    "boeuf, onglet, grillé": {
+      "score": 3.05
+    },
+    "boeuf, paleron, braisé ou bouilli": {
+      "score": 3.79
+    },
+    "boeuf, paleron, cru": {
+      "score": 2.99
+    },
+    "boeuf, plat de côtes, braisé": {
+      "score": 3.09
+    },
+    "boeuf, plat de côtes, cru": {
+      "score": 2.42
+    },
+    "boeuf, queue, bouillie/cuite à l\u0027eau": {
+      "score": 3.08
+    },
+    "boeuf, rosbif, rôti/cuit au four": {
+      "score": 3.05
+    },
+    "boeuf, rumsteck, cru": {
+      "score": 2.39
+    },
+    "boeuf, rumsteck, grillé": {
+      "score": 3.05
+    },
+    "boeuf, steak ou bifteck, cru": {
+      "score": 2.39
+    },
+    "boeuf, steak ou bifteck, grillé": {
+      "score": 3.05
+    },
+    "boeuf, tende de tranche, crue": {
+      "score": 2.39
+    },
+    "boeuf, tende de tranche, grillée/poêlée": {
+      "score": 3.03
+    },
+    "boeuf, tende de tranche, rôtie/cuite au four": {
+      "score": 3.05
+    },
+    "boeuf, à bourguignon ou pot au feu, cru": {
+      "score": 2.39
+    },
+    "boeuf, à bourguignon ou pot au feu, cuit": {
+      "score": 3.05
+    },
+    "boeuf, épaule, crue": {
+      "score": 2.39
+    },
+    "bogue, crue": {
+      "score": 0.193
+    },
+    "boisson au jus de fruit et au lait": {
+      "score": 9.02
+    },
+    "boisson au soja, aromatisée, sucrée": {
+      "score": 0.0815
+    },
+    "boisson au soja, aromatisée, sucrée, enrichie en calcium": {
+      "score": 0.0815
+    },
+    "boisson au soja, nature": {
+      "score": 0.0786
+    },
+    "boisson au soja, nature, enrichie en calcium": {
+      "score": 0.0815
+    },
+    "boisson au thé, aromatisée, non sucrée, avec édulcorants": {
+      "score": 0.295
+    },
+    "boisson au thé, aromatisée, sucrée": {
+      "score": 0.295
+    },
+    "boisson au thé, aromatisée, sucrée, avec édulcorants": {
+      "score": 0.295
+    },
+    "boisson aux fruits pour bébé dès 4/6mois": {
+      "score": 9.86
+    },
+    "boisson cacaotée ou au chocolat, instantanée, sucrée, enrichie en vitamines, prête à boire (reconstituée avec du lait demi écrémé standard)": {
+      "score": 0.192
+    },
+    "boisson cacaotée ou au chocolat, instantanée, sucrée, prête à boire (reconstituée avec du lait demi écrémé standard)": {
+      "score": 0.192
+    },
+    "boisson gazeuse aux fruits (de 10 à 50% de jus), sucrée": {
+      "score": 0.288
+    },
+    "boisson gazeuse aux fruits (à moins de 10% de jus), non sucrée, avec édulcorants": {
+      "score": 0.0848
+    },
+    "boisson gazeuse aux fruits (à moins de 10% de jus), non sucrée, sans édulcorant": {
+      "score": 0.0848
+    },
+    "boisson gazeuse aux fruits (à moins de 10% de jus), sucrée": {
+      "score": 0.288
+    },
+    "boisson gazeuse aux fruits (à moins de 10% de jus), sucrée, avec édulcorants": {
+      "score": 0.288
+    },
+    "boisson gazeuse, sans jus de fruit, sucrée": {
+      "score": 0.307
+    },
+    "boisson gazeuse, sans jus de fruit, sucrée, avec édulcorants": {
+      "score": 0.307
+    },
+    "boisson infantile céréales lactées aux fruits pour le goûter dès 4/6 mois": {
+      "score": 0.17
+    },
+    "boisson infantile céréales lactées aux légumes pour dîner dès 4/6 mois": {
+      "score": 0.174
+    },
+    "boisson infantile céréales lactées pour le petit déjeuner": {
+      "score": 0.174
+    },
+    "boisson infantile céréales lactées pour le petit déjeuner dès 12 mois": {
+      "score": 0.174
+    },
+    "boisson infantile céréales lactées pour le petit déjeuner dès 4/6 mois": {
+      "score": 0.174
+    },
+    "boisson infantile céréales lactées pour le petit déjeuner dès 8/9 mois": {
+      "score": 0.174
+    },
+    "boisson lactée aromatisée au chocolat, sucrée, au lait partiellement écrémé, enrichie et/ou restaurée en vitamines et/ou minéraux": {
+      "score": 0.233
+    },
+    "boisson lactée aromatisée à la fraise, sucrée, au lait partiellement écrémé, enrichie à la vitamine d": {
+      "score": 0.233
+    },
+    "boisson lactée, lait fermenté ou yaourt à boire, aromatisé, sucré": {
+      "score": 1.71
+    },
+    "boisson lactée, lait fermenté ou yaourt à boire, aux fruits, sucré": {
+      "score": 1.71
+    },
+    "boisson lactée, lait fermenté ou yaourt à boire, nature, sucré, au l casei": {
+      "score": 1.71
+    },
+    "boisson plate aux fruits (10 à 50% de jus), sucrée": {
+      "score": 0.65
+    },
+    "boisson plate aux fruits (10 à 50% de jus), à teneur réduite en sucres": {
+      "score": 0.65
+    },
+    "boisson plate aux fruits (teneur en jus non spécifiée), sucrée": {
+      "score": 0.65
+    },
+    "boisson plate aux fruits (à moins de 10% de jus), sucrée": {
+      "score": 0.65
+    },
+    "boisson plate aux fruits, (à moins de 10% de jus), non sucrée, avec édulcorants": {
+      "score": 0.0848
+    },
+    "boisson préparée à partir de sirop à diluer type menthe, fraise, etc, sucré, dilué dans l\u0027eau": {
+      "score": 0.221
+    },
+    "boisson à base d\u0027avoine, nature": {
+      "score": 0.382
+    },
+    "boisson à base de riz, nature": {
+      "score": 1.07
+    },
+    "boisson à l\u0027amande": {
+      "score": 1.07
+    },
+    "boisson à l\u0027eau minérale ou de source, aromatisée, non sucrée, avec édulcorants": {
+      "score": 0.0848
+    },
+    "boisson à l\u0027eau minérale ou de source, aromatisée, non sucrée, sans édulcorant": {
+      "score": 0.0848
+    },
+    "boisson à l\u0027eau minérale ou de source, aromatisée, sucrée": {
+      "score": 0.0848
+    },
+    "boisson à la noix de coco, nature, préemballée": {
+      "score": 2.03
+    },
+    "boisson énergisante, non sucrée, avec édulcorants": {
+      "score": 0.367
+    },
+    "boisson énergisante, sucrée": {
+      "score": 0.367
+    },
+    "bonbon / bouchée au chocolat fourrage gaufrettes / biscuit": {
+      "score": 6.07
+    },
+    "bonbon au caramel, mou": {
+      "score": 2.3
+    },
+    "bonbon dur et sucette": {
+      "score": 2.44
+    },
+    "bonbon gélifié": {
+      "score": 2.13
+    },
+    "bonbons, tout type": {
+      "score": 2.27
+    },
+    "bonite, crue": {
+      "score": 0.349
+    },
+    "bouchée chocolat fourrage fruits à coques et/ou praliné": {
+      "score": 6.07
+    },
+    "bouchée à la reine, au poisson et fruits de mer": {
+      "score": 0.723
+    },
+    "bouchée à la reine, à la viande/volaille/quenelle": {
+      "score": 11.9
+    },
+    "bouchées ou émincé au soja et blé (ne convient pas aux véganes ou végétaliens), préemballé": {
+      "score": 0.538
+    },
+    "boudin blanc truffé, cru": {
+      "score": 2.79
+    },
+    "boudin noir, rayon frais": {
+      "score": 0.634
+    },
+    "boudin noir, sauté/poêlé": {
+      "score": 0.634
+    },
+    "bouillon de boeuf, déshydraté reconstitué": {
+      "score": 0.0537
+    },
+    "bouillon de légumes, déshydraté reconstitué": {
+      "score": 0.0764
+    },
+    "bouillon de volaille, déshydraté reconstitué": {
+      "score": 0.0783
+    },
+    "boules de maïs soufflées au miel (non enrichies en vitamines et minéraux)": {
+      "score": 6.45
+    },
+    "boules de maïs soufflées au miel, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "boulette végétale au soja et/ou blé, préemballée": {
+      "score": 0.717
+    },
+    "boulettes au bœuf, à la sauce tomate": {
+      "score": 2.2
+    },
+    "boulettes aux légumes (sans viande)": {
+      "score": 0.841
+    },
+    "boulgour de blé, cru": {
+      "score": 0.496
+    },
+    "boulgour de blé, cuit, non salé": {
+      "score": 0.271
+    },
+    "bresaola": {
+      "score": 4.24
+    },
+    "brick au boeuf": {
+      "score": 7.04
+    },
+    "brick garni (garniture : crevettes, légumes, volaille, viande, poisson, etc.)": {
+      "score": 7.04
+    },
+    "brick à l\u0027oeuf": {
+      "score": 7.04
+    },
+    "brick à la pomme de terre": {
+      "score": 7.04
+    },
+    "brie de meaux": {
+      "score": 0.538
+    },
+    "brie de melun": {
+      "score": 0.543
+    },
+    "brie, sans précision": {
+      "score": 0.579
+    },
+    "brioche aux pépites de chocolat": {
+      "score": 0.586
+    },
+    "brioche fourrée au chocolat": {
+      "score": 0.662
+    },
+    "brioche fourrée aux fruits": {
+      "score": 0.662
+    },
+    "brioche fourrée crème pâtissière (type \"chinois\"), préemballée": {
+      "score": 0.672
+    },
+    "brioche pur beurre": {
+      "score": 0.717
+    },
+    "brioche, de boulangerie traditionnelle": {
+      "score": 0.781
+    },
+    "brioche, préemballée": {
+      "score": 0.717
+    },
+    "brioche, sans précision": {
+      "score": 0.717
+    },
+    "brochette d\u0027agneau": {
+      "score": 8.89
+    },
+    "brochette de boeuf": {
+      "score": 3.19
+    },
+    "brochette de poisson": {
+      "score": 0.566
+    },
+    "brochette de porc, crue": {
+      "score": 3.26
+    },
+    "brochette de volaille": {
+      "score": 3.41
+    },
+    "brochette mixte de viande": {
+      "score": 3.29
+    },
+    "brocoli, cru": {
+      "score": 1.01
+    },
+    "brocoli, cuit": {
+      "score": 1.28
+    },
+    "brocoli, purée": {
+      "score": 1.23
+    },
+    "brocoli, surgelé, cru": {
+      "score": 1.01
+    },
+    "brocoli, surgelé, cuit": {
+      "score": 1.22
+    },
+    "brownie au chocolat": {
+      "score": 2.62
+    },
+    "brème, cru": {
+      "score": 2.62
+    },
+    "burger au poisson": {
+      "score": 0.708
+    },
+    "burger au poulet": {
+      "score": 1.72
+    },
+    "burger végétarien": {
+      "score": 0.847
+    },
+    "burritos": {
+      "score": 1.24
+    },
+    "bâtonnet pané soja et blé (convient aux véganes ou végétaliens), préemballée": {
+      "score": 0.514
+    },
+    "bûche de noël pâtissière": {
+      "score": 0.911
+    },
+    "bûche glacée": {
+      "score": 0.666
+    },
+    "bœuf, steak haché 10% mg, cru": {
+      "score": 2.98
+    },
+    "bœuf, steak haché 10% mg, cuit": {
+      "score": 3.77
+    },
+    "bœuf, steak haché 15% mg, cru": {
+      "score": 2.98
+    },
+    "bœuf, steak haché 15% mg, cuit": {
+      "score": 3.77
+    },
+    "bœuf, steak haché 20% mg, cru": {
+      "score": 2.98
+    },
+    "bœuf, steak haché 20% mg, cuit": {
+      "score": 3.77
+    },
+    "bœuf, steak haché 5% mg, cru": {
+      "score": 2.98
+    },
+    "bœuf, steak haché 5% mg, cuit": {
+      "score": 3.77
+    },
+    "cabillaud, cru": {
+      "score": 0.47
+    },
+    "cabillaud, cuit à la vapeur": {
+      "score": 0.709
+    },
+    "cabillaud, rôti/cuit au four": {
+      "score": 0.709
+    },
+    "cacahuète ou arachide": {
+      "score": 14.6
+    },
+    "cacahuète, grillée": {
+      "score": 14.6
+    },
+    "cacahuète, grillée, salée": {
+      "score": 14.6
+    },
+    "cacahuètes (arachide) enrobées d\u0027un biscuit, pour apéritif": {
+      "score": 10.6
+    },
+    "cacahuètes enrobées de chocolat dragéifiées": {
+      "score": 5.9
+    },
+    "cacao, non sucré, poudre soluble": {
+      "score": 0.742
+    },
+    "café au lait, café crème ou cappuccino, instantané ou non, non sucré, prêt à boire": {
+      "score": 0.298
+    },
+    "café décaféiné, instantané, non sucré, prêt à boire": {
+      "score": 1.49
+    },
+    "café décaféiné, non instantané, non sucré, prêt à boire": {
+      "score": 0.614
+    },
+    "café expresso, non instantané, non sucré, prêt à boire": {
+      "score": 0.6
+    },
+    "café, instantané, non sucré, prêt à boire": {
+      "score": 1.46
+    },
+    "café, moulu": {
+      "score": 9.71
+    },
+    "café, non instantané, non sucré, prêt à boire": {
+      "score": 0.6
+    },
+    "caille, viande et peau, cuite": {
+      "score": 3.4
+    },
+    "cake aux fruits": {
+      "score": 1.3
+    },
+    "cake salé (garniture : fromage, légumes, viande, poisson, volaille, etc.)": {
+      "score": 3.26
+    },
+    "calissons d\u0027aix en provence": {
+      "score": 1.16
+    },
+    "calmar ou calamar ou encornet, bouilli/cuit à l\u0027eau": {
+      "score": 0.272
+    },
+    "calmar ou calamar ou encornet, cru": {
+      "score": 0.303
+    },
+    "calmar ou calamar ou encornet, frit ou poêlé avec matière grasse": {
+      "score": 0.268
+    },
+    "calmar ou calamar ou encornet, à la romaine (beignet)": {
+      "score": 0.32
+    },
+    "camembert au lait cru": {
+      "score": 0.575
+    },
+    "camembert, sans précision": {
+      "score": 0.575
+    },
+    "canard en sauce (poivre vert, chasseur, etc.)": {
+      "score": 0.866
+    },
+    "canard, cuisse avec peau, sans os, crue": {
+      "score": 1.64
+    },
+    "canard, magret fumé": {
+      "score": 5.34
+    },
+    "canard, magret, cru": {
+      "score": 5.46
+    },
+    "canard, magret, grillé/poêlé": {
+      "score": 5.46
+    },
+    "canard, viande et peau, cru": {
+      "score": 3.24
+    },
+    "canard, viande et peau, rôti/cuit au four": {
+      "score": 4.53
+    },
+    "canard, viande, crue": {
+      "score": 3.4
+    },
+    "canard, viande, rôtie/cuite au four": {
+      "score": 4.53
+    },
+    "canelé": {
+      "score": 0.832
+    },
+    "canneberge ou cranberry, crue": {
+      "score": 27.9
+    },
+    "cannelle, poudre": {
+      "score": 4.38
+    },
+    "cantal entre deux": {
+      "score": 0.776
+    },
+    "cantal, salers ou laguiole": {
+      "score": 0.783
+    },
+    "capelan, cru": {
+      "score": 0.349
+    },
+    "carambole, pulpe, crue": {
+      "score": 0.955
+    },
+    "carangue, cru": {
+      "score": 0.483
+    },
+    "cardamome, poudre": {
+      "score": 4.38
+    },
+    "cardine franche, crue": {
+      "score": 0.47
+    },
+    "cardon, cru": {
+      "score": 0.0851
+    },
+    "cardon, cuit": {
+      "score": 0.367
+    },
+    "carotte, appertisée, égouttée": {
+      "score": 0.536
+    },
+    "carotte, crue": {
+      "score": 0.362
+    },
+    "carotte, cuite": {
+      "score": 0.746
+    },
+    "carotte, purée": {
+      "score": 0.633
+    },
+    "carotte, surgelée, crue": {
+      "score": 0.432
+    },
+    "carotte, surgelée, cuite": {
+      "score": 0.544
+    },
+    "carottes râpées, avec sauce, préemballées": {
+      "score": 1.25
+    },
+    "carpaccio de saumon avec marinade": {
+      "score": 1.42
+    },
+    "carpe, crue, élevage": {
+      "score": 36.5
+    },
+    "carpe, rôtie/cuite au four": {
+      "score": 44.7
+    },
+    "carrelet ou plie, cuit à la vapeur": {
+      "score": 0.709
+    },
+    "carrelet ou plie, pané, frit": {
+      "score": 0.616
+    },
+    "carré de l\u0027est": {
+      "score": 0.541
+    },
+    "carvi, graine": {
+      "score": 4.38
+    },
+    "cassis, cru": {
+      "score": 1.24
+    },
+    "cassoulet au canard ou oie, appertisé": {
+      "score": 0.671
+    },
+    "cassoulet au porc, appertisé": {
+      "score": 1.15
+    },
+    "cassoulet, appertisé": {
+      "score": 0.719
+    },
+    "cerfeuil, frais": {
+      "score": 5.16
+    },
+    "cerise, dénoyautée, crue": {
+      "score": 6.75
+    },
+    "cervelas": {
+      "score": 2.34
+    },
+    "cervelas obernois": {
+      "score": 1.73
+    },
+    "cervelas à l\u0027ail, pur porc": {
+      "score": 1.73
+    },
+    "cervelle, agneau, crue": {
+      "score": 3.64
+    },
+    "cervelle, agneau, cuite": {
+      "score": 5.03
+    },
+    "cervelle, porc, braisée": {
+      "score": 1.26
+    },
+    "cervelle, porc, crue": {
+      "score": 0.898
+    },
+    "cervelle, veau, crue": {
+      "score": 3.06
+    },
+    "cervelle, veau, cuite": {
+      "score": 4.23
+    },
+    "chabichou (fromage de chèvre)": {
+      "score": 2.7
+    },
+    "chair à saucisse, crue": {
+      "score": 2.06
+    },
+    "chair à saucisse, porc et bœuf, crue": {
+      "score": 1.78
+    },
+    "chair à saucisse, pur porc, crue": {
+      "score": 1.78
+    },
+    "champagne": {
+      "score": 0.406
+    },
+    "champignon à la grecque": {
+      "score": 22.1
+    },
+    "champignon, morille, crue": {
+      "score": 56.2
+    },
+    "chaource": {
+      "score": 0.55
+    },
+    "chapon, viande et peau, cru": {
+      "score": 2.54
+    },
+    "chapon, viande et peau, rôti/cuit au four": {
+      "score": 3.4
+    },
+    "charlotte aux fruits": {
+      "score": 1.22
+    },
+    "chausson aux pommes": {
+      "score": 0.712
+    },
+    "cheddar": {
+      "score": 0.888
+    },
+    "cheeseburger, provenant de fast food": {
+      "score": 1.91
+    },
+    "cheesecake ou gâteau au fromage frais, rayon frais": {
+      "score": 0.945
+    },
+    "chevreau, cru": {
+      "score": 6.93
+    },
+    "chevreau, cuit": {
+      "score": 8.77
+    },
+    "chevrot (fromage de chèvre)": {
+      "score": 2.46
+    },
+    "chia, graine, séchée": {
+      "score": 8.25
+    },
+    "chicorée et café, instantané, non sucré, prêt à boire (reconstituée avec de l\u0027eau)": {
+      "score": 1.46
+    },
+    "chicorée et café, instantané, non sucré, prête à boire (reconstituée avec du lait demi écrémé standard)": {
+      "score": 1.09
+    },
+    "chicorée rouge, crue": {
+      "score": 0.479
+    },
+    "chicorée verte, crue": {
+      "score": 0.479
+    },
+    "chicorée, instantanée, non sucrée, prête à boire (reconstituée avec du lait demi écrémé standard)": {
+      "score": 0.223
+    },
+    "chicorée, poudre soluble, non réhydratée": {
+      "score": 1.42
+    },
+    "chicorée, poudre soluble, réhydratée": {
+      "score": 0.039
+    },
+    "chili con carne": {
+      "score": 1.91
+    },
+    "chinchard gras, cru": {
+      "score": 0.211
+    },
+    "chinchard maigre, cru": {
+      "score": 0.211
+    },
+    "chinchard, cru": {
+      "score": 0.211
+    },
+    "chipolata, crue": {
+      "score": 1.78
+    },
+    "chipolata, cuite": {
+      "score": 2.39
+    },
+    "chips de crevette": {
+      "score": 37.2
+    },
+    "chips de maïs ou tortilla chips": {
+      "score": 0.861
+    },
+    "chips de pommes de terre et assimilés, allégées en matière grasse": {
+      "score": 0.493
+    },
+    "chips de pommes de terre, standard": {
+      "score": 0.493
+    },
+    "chips de pommes de terre, à l\u0027ancienne": {
+      "score": 0.493
+    },
+    "chocolat au lait aux céréales croustillantes, tablette": {
+      "score": 1.19
+    },
+    "chocolat au lait aux fruits secs (noisettes, amandes, raisins, praline), tablette": {
+      "score": 3.78
+    },
+    "chocolat au lait fourré": {
+      "score": 1.33
+    },
+    "chocolat au lait fourré au praliné, tablette": {
+      "score": 1.19
+    },
+    "chocolat au lait sans sucres ajoutés, avec édulcorants, tablette": {
+      "score": 1.19
+    },
+    "chocolat au lait, tablette": {
+      "score": 1.19
+    },
+    "chocolat blanc aux fruits secs (noisettes, amandes, raisins, praliné) , tablette": {
+      "score": 1.19
+    },
+    "chocolat blanc, tablette": {
+      "score": 1.19
+    },
+    "chocolat noir aux fruits (orange, framboise, poire), tablette": {
+      "score": 2.86
+    },
+    "chocolat noir aux fruits secs (noisettes, amandes, raisins, praline), tablette": {
+      "score": 3.79
+    },
+    "chocolat noir fourrage confiseur à la menthe": {
+      "score": 1.01
+    },
+    "chocolat noir fourré praliné, tablette": {
+      "score": 0.876
+    },
+    "chocolat noir sans sucres ajoutés, avec édulcorants, en tablette": {
+      "score": 0.876
+    },
+    "chocolat noir à 40% de cacao minimum, à pâtisser, tablette": {
+      "score": 1.13
+    },
+    "chocolat noir à 70% cacao minimum, extra, dégustation, tablette": {
+      "score": 0.876
+    },
+    "chocolat noir à moins de 70% de cacao, à croquer, tablette": {
+      "score": 0.876
+    },
+    "chorizo": {
+      "score": 2.38
+    },
+    "chorizo supérieur, doux ou fort, type charcuterie en tranches": {
+      "score": 2.38
+    },
+    "chorizo supérieur, doux ou fort, type saucisse sèche": {
+      "score": 2.34
+    },
+    "chou blanc, cru": {
+      "score": 0.5
+    },
+    "chou chinois (pak choi ou pé tsai), cuit": {
+      "score": 0.347
+    },
+    "chou chinois ou pak choi ou pé tsai, cru": {
+      "score": 0.0745
+    },
+    "chou de bruxelles, appertisé, égoutté": {
+      "score": 0.255
+    },
+    "chou de bruxelles, cru": {
+      "score": 0.0607
+    },
+    "chou de bruxelles, cuit": {
+      "score": 0.307
+    },
+    "chou de bruxelles, surgelé, cru": {
+      "score": 0.157
+    },
+    "chou de bruxelles, surgelé, cuit": {
+      "score": 0.222
+    },
+    "chou farci": {
+      "score": 1.04
+    },
+    "chou fleur, cru": {
+      "score": 0.0741
+    },
+    "chou fleur, cuit": {
+      "score": 0.312
+    },
+    "chou fleur, surgelé, cru": {
+      "score": 0.162
+    },
+    "chou fleur, surgelé, cuit": {
+      "score": 0.228
+    },
+    "chou frisé, cru": {
+      "score": 0.0703
+    },
+    "chou frisé, cuit": {
+      "score": 0.346
+    },
+    "chou rave, bouilli/cuit à l\u0027eau": {
+      "score": 0.343
+    },
+    "chou rave, cru": {
+      "score": 0.413
+    },
+    "chou romanesco ou brocoli à pomme, cru": {
+      "score": 0.0741
+    },
+    "chou rouge, bouilli/cuit à l\u0027eau": {
+      "score": 0.799
+    },
+    "chou rouge, cru": {
+      "score": 0.458
+    },
+    "chou vert, cru": {
+      "score": 0.0745
+    },
+    "chou vert, cuit": {
+      "score": 0.347
+    },
+    "chou à la crème (chantilly ou pâtissière)": {
+      "score": 0.509
+    },
+    "chou à la crème chantilly": {
+      "score": 0.509
+    },
+    "chou à la crème pâtissière": {
+      "score": 0.581
+    },
+    "choucroute garnie": {
+      "score": 0.874
+    },
+    "choucroute, sans garniture, égouttée": {
+      "score": 0.77
+    },
+    "chouquette": {
+      "score": 0.797
+    },
+    "châtaigne ou marron, appertisé": {
+      "score": 3.19
+    },
+    "châtaigne, bouillie/cuite à l\u0027eau": {
+      "score": 4.56
+    },
+    "châtaigne, crue": {
+      "score": 4.92
+    },
+    "châtaigne, grillée": {
+      "score": 4.54
+    },
+    "ciboule ou ciboulette, fraîche": {
+      "score": 0.699
+    },
+    "cidre aromatisé (framboise)": {
+      "score": 0.76
+    },
+    "cidre bouché demi sec": {
+      "score": 0.76
+    },
+    "cidre brut": {
+      "score": 0.76
+    },
+    "cidre doux": {
+      "score": 0.76
+    },
+    "cidre traditionnel": {
+      "score": 0.76
+    },
+    "cigarette": {
+      "score": 1.34
+    },
+    "citron givré ou orange givrée (sorbet)": {
+      "score": 0.666
+    },
+    "citron ou lime, spécialité à diluer pour boissons, sans sucres ajoutés": {
+      "score": 0.342
+    },
+    "citron vert ou lime, pulpe, cru": {
+      "score": 11.0
+    },
+    "citron, pulpe, cru": {
+      "score": 12.6
+    },
+    "citron, zeste, cru": {
+      "score": 14.7
+    },
+    "citrouille, pulpe, crue": {
+      "score": 0.63
+    },
+    "clafoutis aux fruits, rayon frais": {
+      "score": 5.62
+    },
+    "clou de girofle": {
+      "score": 4.37
+    },
+    "clémentine, pulpe, crue": {
+      "score": 65.9
+    },
+    "cocktail sans alcool (à base de jus de fruits et de sirop)": {
+      "score": 0.583
+    },
+    "cocktail type punch, 16% alcool": {
+      "score": 0.823
+    },
+    "cocktail à base de rhum": {
+      "score": 0.695
+    },
+    "cocktail à base de whisky": {
+      "score": 0.162
+    },
+    "coeur de palmier, appertisé, égoutté": {
+      "score": 3.19
+    },
+    "coeur, agneau, cru": {
+      "score": 3.64
+    },
+    "coeur, agneau, cuit": {
+      "score": 5.03
+    },
+    "coeur, boeuf, cru": {
+      "score": 1.91
+    },
+    "coeur, boeuf, cuit": {
+      "score": 2.65
+    },
+    "coeur, dinde, cru": {
+      "score": 0.614
+    },
+    "coeur, dinde, cuit": {
+      "score": 0.874
+    },
+    "coeur, porc, cru": {
+      "score": 0.898
+    },
+    "coeur, poulet, cru": {
+      "score": 0.614
+    },
+    "coeur, poulet, cuit": {
+      "score": 0.874
+    },
+    "coeur, veau, cru": {
+      "score": 3.06
+    },
+    "coing, cru": {
+      "score": 0.617
+    },
+    "cola, non sucré, avec édulcorants": {
+      "score": 0.307
+    },
+    "cola, non sucré, avec édulcorants, sans caféine": {
+      "score": 0.307
+    },
+    "cola, sucré": {
+      "score": 0.307
+    },
+    "cola, sucré, avec édulcorants": {
+      "score": 0.307
+    },
+    "cola, sucré, sans caféine": {
+      "score": 0.307
+    },
+    "compote de pomme": {
+      "score": 0.914
+    },
+    "compote, tout type de fruits": {
+      "score": 1.1
+    },
+    "compote, tout type de fruits, allégée en sucres": {
+      "score": 0.777
+    },
+    "compote, tout type de fruits, allégée en sucres, rayon frais": {
+      "score": 0.779
+    },
+    "comté": {
+      "score": 0.813
+    },
+    "concombre, pulpe et peau, cru": {
+      "score": 0.333
+    },
+    "concombre, pulpe, cru": {
+      "score": 0.333
+    },
+    "confiserie au chocolat dragéifiée": {
+      "score": 6.07
+    },
+    "confit de canard": {
+      "score": 1.56
+    },
+    "confit de canard, viande (cuisse), sans peau, réchauffé": {
+      "score": 3.4
+    },
+    "confit de foie de porc": {
+      "score": 1.06
+    },
+    "confit de foie de volaille": {
+      "score": 0.773
+    },
+    "confiture d\u0027abricot (extra ou classique)": {
+      "score": 2.25
+    },
+    "confiture de cerise (extra ou classique)": {
+      "score": 7.26
+    },
+    "confiture de fraise (extra ou classique)": {
+      "score": 7.57
+    },
+    "confiture de framboise (extra ou classique)": {
+      "score": 2.56
+    },
+    "confiture de lait": {
+      "score": 0.887
+    },
+    "confiture, tout type de fruits, allégée en sucres (extra ou classique)": {
+      "score": 7.57
+    },
+    "congre, cru": {
+      "score": 0.47
+    },
+    "cookie aux pépites de chocolat": {
+      "score": 1.42
+    },
+    "coppa": {
+      "score": 4.24
+    },
+    "coq au vin": {
+      "score": 9.88
+    },
+    "coquille saint jacques, noix et corail, crue": {
+      "score": 0.435
+    },
+    "coquille saint jacques, noix et corail, cuite": {
+      "score": 0.448
+    },
+    "coquille saint jacques, noix, crue": {
+      "score": 0.435
+    },
+    "corb, cru": {
+      "score": 0.483
+    },
+    "cordon bleu de volaille": {
+      "score": 2.16
+    },
+    "coriandre, fraiche": {
+      "score": 1.31
+    },
+    "coriandre, graine": {
+      "score": 1.47
+    },
+    "corne de gazelle (pâtisserie orientale aux amandes et sirop)": {
+      "score": 11.2
+    },
+    "coulirou, cru": {
+      "score": 0.211
+    },
+    "coulis de fraise": {
+      "score": 11.0
+    },
+    "coulis de framboise": {
+      "score": 4.17
+    },
+    "coulommiers": {
+      "score": 0.601
+    },
+    "coupe glacée parfum pêche melba ou poire belle hélène": {
+      "score": 0.997
+    },
+    "coupe glacée type café ou chocolat liégeois": {
+      "score": 0.997
+    },
+    "courge doubeurre (butternut), pulpe, crue": {
+      "score": 0.63
+    },
+    "courge hokkaïdo, pulpe, crue": {
+      "score": 0.629
+    },
+    "courge melonnette, pulpe, crue": {
+      "score": 0.63
+    },
+    "courge musquée, pulpe, crue": {
+      "score": 0.629
+    },
+    "courge spaghetti, pulpe, crue": {
+      "score": 0.63
+    },
+    "courge spaghetti, pulpe, cuite": {
+      "score": 1.0
+    },
+    "courge, crue": {
+      "score": 0.63
+    },
+    "courgette, pulpe et peau, crue": {
+      "score": 0.551
+    },
+    "courgette, pulpe et peau, cuite": {
+      "score": 0.886
+    },
+    "courgette, pulpe et peau, surgelée, crue": {
+      "score": 0.602
+    },
+    "courgette, purée": {
+      "score": 0.882
+    },
+    "couronne de noël (brioche) aux fruits confits, préemballée": {
+      "score": 0.717
+    },
+    "court bouillon pour poissons, déshydraté": {
+      "score": 3.38
+    },
+    "couscous (semoule de blé dur roulée précuite à la vapeur), crue": {
+      "score": 0.855
+    },
+    "couscous (semoule de blé dur roulée précuite à la vapeur), cuite, non salée": {
+      "score": 0.428
+    },
+    "couscous au mouton": {
+      "score": 2.82
+    },
+    "couscous au poisson": {
+      "score": 0.754
+    },
+    "couscous au poulet": {
+      "score": 1.32
+    },
+    "couscous de légumes": {
+      "score": 0.934
+    },
+    "couscous royal (avec plusieurs viandes)": {
+      "score": 1.35
+    },
+    "couscous à la viande": {
+      "score": 1.35
+    },
+    "couscous à la viande ou au poulet, allégé": {
+      "score": 1.4
+    },
+    "crabe ou tourteau, bouilli/cuit à l\u0027eau": {
+      "score": 2.36
+    },
+    "cresson alénois, cru": {
+      "score": 0.643
+    },
+    "cresson de fontaine, cru": {
+      "score": 0.425
+    },
+    "crevette rose, crue": {
+      "score": 178.0
+    },
+    "crevette, crue": {
+      "score": 178.0
+    },
+    "crevette, cuite": {
+      "score": 218.0
+    },
+    "crevette, surgelée, crue": {
+      "score": 178.0
+    },
+    "croissant au beurre, artisanal": {
+      "score": 0.517
+    },
+    "croissant au jambon": {
+      "score": 1.18
+    },
+    "croissant au jambon fromage": {
+      "score": 1.18
+    },
+    "croissant aux amandes, artisanal": {
+      "score": 4.42
+    },
+    "croissant ordinaire, artisanal": {
+      "score": 0.684
+    },
+    "croissant, sans précision": {
+      "score": 0.62
+    },
+    "croque madame": {
+      "score": 0.993
+    },
+    "croque monsieur": {
+      "score": 1.01
+    },
+    "croque monsieur, rayon frais": {
+      "score": 0.951
+    },
+    "crosne, surgelé, cru": {
+      "score": 0.422
+    },
+    "crottin de chavignol (fromage de chèvre)": {
+      "score": 2.7
+    },
+    "crottin de chèvre, au lait cru": {
+      "score": 3.12
+    },
+    "crottin de chèvre, sans précision": {
+      "score": 3.12
+    },
+    "croûton à l\u0027ail aux fines herbes ou aux oignons, préemballé": {
+      "score": 15.3
+    },
+    "croûtons nature, préemballés": {
+      "score": 15.3
+    },
+    "crumble aux pommes": {
+      "score": 0.945
+    },
+    "crème anglaise, préemballée": {
+      "score": 0.546
+    },
+    "crème aux œufs (petit pot de crème chocolat, vanille, etc.), rayon frais": {
+      "score": 0.675
+    },
+    "crème brûlée, rayon frais": {
+      "score": 1.02
+    },
+    "crème caramel, rayon frais": {
+      "score": 0.726
+    },
+    "crème chantilly, sous pression, uht": {
+      "score": 0.458
+    },
+    "crème de cassis": {
+      "score": 1.16
+    },
+    "crème de lait, 15 à 20% mg, légère, semi épaisse, uht": {
+      "score": 0.359
+    },
+    "crème de lait, 15 à 20% mg, légère, épaisse, rayon frais": {
+      "score": 0.363
+    },
+    "crème de lait, 30% mg, semi épaisse, uht": {
+      "score": 0.477
+    },
+    "crème de lait, 30% mg, épaisse, rayon frais": {
+      "score": 0.481
+    },
+    "crème de marrons": {
+      "score": 3.4
+    },
+    "crème de marrons vanillée, appertisée": {
+      "score": 3.07
+    },
+    "crème dessert au café, rayon frais": {
+      "score": 0.528
+    },
+    "crème dessert au caramel, rayon frais": {
+      "score": 0.528
+    },
+    "crème dessert au chocolat, appertisée": {
+      "score": 0.559
+    },
+    "crème dessert au chocolat, rayon frais": {
+      "score": 0.563
+    },
+    "crème dessert à la vanille, appertisée": {
+      "score": 0.524
+    },
+    "crème dessert à la vanille, rayon frais": {
+      "score": 0.528
+    },
+    "crème dessert, allégée en mg, rayon frais": {
+      "score": 0.528
+    },
+    "crème pâtissière": {
+      "score": 0.5
+    },
+    "crêpe dentelle": {
+      "score": 1.34
+    },
+    "crêpe dentelle (pour apéritif) au fromage, préemballée": {
+      "score": 0.704
+    },
+    "crêpe dentelle au chocolat, préemballée": {
+      "score": 1.24
+    },
+    "crêpe maison, fourrée au chocolat ou à la pâte à tartiner chocolat et noisettes": {
+      "score": 0.753
+    },
+    "crêpe maison, fourrée à la confiture": {
+      "score": 0.753
+    },
+    "crêpe ou galette aux noix de st jacques": {
+      "score": 0.618
+    },
+    "crêpe ou galette complète (œuf, jambon, fromage)": {
+      "score": 1.03
+    },
+    "crêpe ou galette fourrée au poisson et / ou fruits de mer": {
+      "score": 0.685
+    },
+    "crêpe ou galette fourrée béchamel champignon": {
+      "score": 19.9
+    },
+    "crêpe ou galette fourrée béchamel champignon, cuite": {
+      "score": 1.12
+    },
+    "crêpe ou galette fourrée béchamel fromage": {
+      "score": 0.512
+    },
+    "crêpe ou galette fourrée béchamel jambon": {
+      "score": 1.12
+    },
+    "crêpe ou galette fourrée béchamel jambon fromage": {
+      "score": 1.12
+    },
+    "crêpe ou galette fourrée béchamel jambon fromage champignon": {
+      "score": 9.94
+    },
+    "crêpe préemballée, fourrée au sucre": {
+      "score": 0.806
+    },
+    "crêpe préemballée, fourrée chocolat": {
+      "score": 0.633
+    },
+    "crêpe préemballée, fourrée fraise": {
+      "score": 3.24
+    },
+    "crêpe, nature, préemballée, rayon frais": {
+      "score": 0.371
+    },
+    "crêpe, nature, préemballée, rayon température ambiante": {
+      "score": 0.371
+    },
+    "cucurbitacées, graine": {
+      "score": 8.25
+    },
+    "cumin, graine": {
+      "score": 4.38
+    },
+    "curcuma, poudre": {
+      "score": 4.38
+    },
+    "curry, poudre": {
+      "score": 4.38
+    },
+    "céleri branche, appertisé, égoutté": {
+      "score": 0.623
+    },
+    "céleri branche, cru": {
+      "score": 0.457
+    },
+    "céleri branche, cuit": {
+      "score": 0.753
+    },
+    "céleri rave, cru": {
+      "score": 0.413
+    },
+    "céleri rave, cuit": {
+      "score": 0.746
+    },
+    "céleri rave, purée": {
+      "score": 0.629
+    },
+    "céleri rémoulade, préemballé": {
+      "score": 1.3
+    },
+    "céréales chocolatées pour petit déjeuner, non fourrées, (non enrichies en vitamines et minéraux)": {
+      "score": 6.45
+    },
+    "céréales complètes soufflées, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "céréales instantanées, poudre reconstituée chez le consommateur, dès 4/6 mois": {
+      "score": 0.322
+    },
+    "céréales instantanées, poudre reconstituée chez le consommateur, dès 6 mois": {
+      "score": 0.322
+    },
+    "céréales instantanées, poudre à reconstituer, dès 4/6 mois": {
+      "score": 1.05
+    },
+    "céréales instantanées, poudre à reconstituer, dès 6 mois": {
+      "score": 1.05
+    },
+    "céréales pour petit déjeuner \"équilibre\" au chocolat (non enrichies en vitamines et minéraux)": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner \"équilibre\" au chocolat, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner \"équilibre\" aux fruits (non enrichies en vitamines et minéraux)": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner \"équilibre\" aux fruits secs (à coque), enrichis en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner \"équilibre\" aux fruits, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner \"équilibre\" nature (non enrichies en vitamines et minéraux)": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner \"équilibre\" nature ou au miel, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner chocolatées, non fourrées, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner fourrées au chocolat ou chocolat noisettes": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner fourrées au chocolat ou chocolat noisettes, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner fourrées, fourrage autre que chocolat, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner riches en fibres, au chocolat, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner riches en fibres, avec ou sans fruits, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "céréales pour petit déjeuner très riches en fibres, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "cône ou cornet classique, pour glace": {
+      "score": 1.13
+    },
+    "denté, cru": {
+      "score": 0.47
+    },
+    "dessert au soja aromatisé, rayon frais": {
+      "score": 1.76
+    },
+    "dessert au soja, aux fruits, rayon frais": {
+      "score": 1.76
+    },
+    "dessert au soja, nature, rayon frais": {
+      "score": 0.491
+    },
+    "dessert de fruits, tout type de fruits (en taux de sucres : compotes allégées en sucres \u003c desserts de fruits \u003c compotes allégée)": {
+      "score": 1.78
+    },
+    "dessert glacé feuilleté, à partager": {
+      "score": 0.666
+    },
+    "dessert glacé type mystère ou vacherin": {
+      "score": 0.666
+    },
+    "dessert glacé, type sundae": {
+      "score": 0.622
+    },
+    "dessert lacté infantile au riz ou à la semoule": {
+      "score": 0.942
+    },
+    "dessert lacté infantile nature sucré ou aux fruits": {
+      "score": 0.942
+    },
+    "dessert lacté infantile type crème dessert": {
+      "score": 0.942
+    },
+    "diabolo (limonade et sirop)": {
+      "score": 0.499
+    },
+    "dinde, aile, crue": {
+      "score": 2.54
+    },
+    "dinde, cuisse, viande et peau, crue": {
+      "score": 2.54
+    },
+    "dinde, cuisse, viande sans peau, crue": {
+      "score": 2.54
+    },
+    "dinde, escalope viennoise ou milanaise ou escalope panée": {
+      "score": 2.26
+    },
+    "dinde, escalope, crue": {
+      "score": 2.49
+    },
+    "dinde, escalope, rôtie/cuite au four": {
+      "score": 3.34
+    },
+    "dinde, escalope, sautée/poêlée": {
+      "score": 3.32
+    },
+    "dinde, viande et peau, crue": {
+      "score": 2.03
+    },
+    "dinde, viande, crue": {
+      "score": 2.03
+    },
+    "dinde, viande, rôtie/cuite au four": {
+      "score": 2.72
+    },
+    "diot, cru": {
+      "score": 1.75
+    },
+    "dorade grise, ou daurade grise, ou griset, crue": {
+      "score": 0.707
+    },
+    "dorade grise, ou daurade grise, ou griset, rôtie/cuite au four": {
+      "score": 0.998
+    },
+    "dorade rose, ou daurade rose, crue": {
+      "score": 0.707
+    },
+    "dorade royale ou daurade ou vraie daurade, crue, élevage": {
+      "score": 2.62
+    },
+    "dorade royale, ou daurade ou vraie daurade, crue, sauvage": {
+      "score": 0.414
+    },
+    "double cheeseburger, provenant de fast food": {
+      "score": 1.55
+    },
+    "dragée amande": {
+      "score": 13.0
+    },
+    "dulse (palmaria palmata), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "dés, allumettes, râpé ou haché de jambon": {
+      "score": 2.47
+    },
+    "dés, allumettes, râpé ou haché de jambon de volaille": {
+      "score": 2.59
+    },
+    "eau de vie": {
+      "score": 0.167
+    },
+    "eau de vie de vin, type armagnac, cognac": {
+      "score": 0.169
+    },
+    "eau du robinet": {
+      "score": 0.00707
+    },
+    "eau embouteillée de source": {
+      "score": 0.0986
+    },
+    "edam": {
+      "score": 0.859
+    },
+    "emmental ou emmenthal": {
+      "score": 0.804
+    },
+    "emmental ou emmenthal râpé": {
+      "score": 0.806
+    },
+    "empereur, filet, sans peau, cru": {
+      "score": 0.47
+    },
+    "endive au jambon": {
+      "score": 1.0
+    },
+    "endive, crue": {
+      "score": 0.17
+    },
+    "entremets type opéra": {
+      "score": 3.86
+    },
+    "escalope panée, soja, blé et fromage, type cordon bleu, préemballée": {
+      "score": 0.669
+    },
+    "escalope végétale ou steak à base de soja": {
+      "score": 0.625
+    },
+    "escargot en sauce au beurre persillé, cuit": {
+      "score": 0.773
+    },
+    "espadon, cru": {
+      "score": 0.483
+    },
+    "espadon, rôti/cuit au four": {
+      "score": 0.724
+    },
+    "estragon, frais": {
+      "score": 4.54
+    },
+    "faisan, viande, rôtie/cuite au four": {
+      "score": 3.4
+    },
+    "faisselle, 6% mg environ": {
+      "score": 0.593
+    },
+    "fajitas": {
+      "score": 1.35
+    },
+    "falafel ou boulette de pois chiche et/ou fève, préemballé": {
+      "score": 1.73
+    },
+    "far aux pruneaux": {
+      "score": 5.56
+    },
+    "farine d\u0027orge": {
+      "score": 1.22
+    },
+    "farine d\u0027épeautre (grand épeautre)": {
+      "score": 0.587
+    },
+    "farine de blé tendre ou froment avec levure incorporée": {
+      "score": 0.205
+    },
+    "farine de blé tendre ou froment t110": {
+      "score": 0.205
+    },
+    "farine de blé tendre ou froment t150": {
+      "score": 0.205
+    },
+    "farine de blé tendre ou froment t45 (pour pâtisserie)": {
+      "score": 0.205
+    },
+    "farine de blé tendre ou froment t55 (pour pains)": {
+      "score": 0.205
+    },
+    "farine de blé tendre ou froment t65": {
+      "score": 0.205
+    },
+    "farine de blé tendre ou froment t80": {
+      "score": 0.205
+    },
+    "farine de châtaigne": {
+      "score": 5.87
+    },
+    "farine de maïs": {
+      "score": 0.748
+    },
+    "farine de millet": {
+      "score": 1.23
+    },
+    "farine de pois chiche": {
+      "score": 0.229
+    },
+    "farine de riz": {
+      "score": 17.0
+    },
+    "farine de sarrasin": {
+      "score": 0.587
+    },
+    "farine de seigle t130": {
+      "score": 0.174
+    },
+    "farine de seigle t170": {
+      "score": 0.174
+    },
+    "farine de seigle t85": {
+      "score": 0.174
+    },
+    "farine de soja": {
+      "score": 0.215
+    },
+    "fenouil, bouilli/cuit à l\u0027eau": {
+      "score": 1.99
+    },
+    "fenouil, cru": {
+      "score": 1.48
+    },
+    "fenouil, graine": {
+      "score": 1.47
+    },
+    "fenugrec, graine": {
+      "score": 4.38
+    },
+    "feta de brebis": {
+      "score": 0.585
+    },
+    "feuilleté au poisson et / ou fruits de mer": {
+      "score": 0.904
+    },
+    "feuilleté aux escargots": {
+      "score": 0.725
+    },
+    "feuilleté ou friand au fromage": {
+      "score": 0.745
+    },
+    "feuilleté ou friand jambon fromage": {
+      "score": 1.26
+    },
+    "feuilleté ou friand à la viande": {
+      "score": 1.52
+    },
+    "ficelle picarde": {
+      "score": 1.79
+    },
+    "figue de barbarie, pulpe et graines, crue": {
+      "score": 1.42
+    },
+    "figue, crue": {
+      "score": 8.03
+    },
+    "figue, sèche": {
+      "score": 22.8
+    },
+    "filet de bacon": {
+      "score": 2.74
+    },
+    "flammenkueche ou tarte flambée aux lardons": {
+      "score": 1.03
+    },
+    "flan aux œufs, rayon frais": {
+      "score": 0.616
+    },
+    "flan de légumes": {
+      "score": 2.01
+    },
+    "flan pâtissier aux oeufs ou à la parisienne": {
+      "score": 0.607
+    },
+    "fleur de sel, non iodée, non fluorée": {
+      "score": 0.0776
+    },
+    "flocon d\u0027avoine": {
+      "score": 0.634
+    },
+    "flocon d\u0027avoine précuit": {
+      "score": 0.772
+    },
+    "flocons d\u0027avoine, bouillis/cuits à l\u0027eau": {
+      "score": 0.573
+    },
+    "florentin (biscuit sec sucré chocolaté aux amandes)": {
+      "score": 1.16
+    },
+    "flétan de l\u0027atlantique ou flétan blanc, cru": {
+      "score": 0.483
+    },
+    "flétan du groënland ou flétan noir ou flétan commun, cru": {
+      "score": 0.47
+    },
+    "flétan du groënland ou flétan noir ou flétan commun, cuit à la vapeur": {
+      "score": 0.709
+    },
+    "focaccia, garnie": {
+      "score": 1.92
+    },
+    "foie gras, en bloc": {
+      "score": 8.54
+    },
+    "foie gras, entier": {
+      "score": 9.9
+    },
+    "foie, agneau, cru": {
+      "score": 3.64
+    },
+    "foie, agneau, cuit": {
+      "score": 5.03
+    },
+    "foie, canard, cru": {
+      "score": 9.01
+    },
+    "foie, dinde, cru": {
+      "score": 0.614
+    },
+    "foie, dinde, cuit": {
+      "score": 0.874
+    },
+    "foie, génisse, cru": {
+      "score": 1.91
+    },
+    "foie, génisse, cuit": {
+      "score": 2.65
+    },
+    "foie, lapin, cru": {
+      "score": 0.614
+    },
+    "foie, oie, cru": {
+      "score": 0.614
+    },
+    "foie, porc, cru": {
+      "score": 0.898
+    },
+    "foie, porc, cuit": {
+      "score": 1.26
+    },
+    "foie, poulet, cru": {
+      "score": 0.614
+    },
+    "foie, poulet, cuit": {
+      "score": 0.874
+    },
+    "foie, veau, cru": {
+      "score": 3.06
+    },
+    "foie, veau, cuit": {
+      "score": 4.23
+    },
+    "foie, volaille, cru": {
+      "score": 0.614
+    },
+    "fondue de poireau": {
+      "score": 0.768
+    },
+    "fondue savoyarde (fromages, vin, pain)": {
+      "score": 0.893
+    },
+    "fontina": {
+      "score": 0.653
+    },
+    "fougasse, garnie": {
+      "score": 1.89
+    },
+    "fourme d\u0027ambert": {
+      "score": 0.583
+    },
+    "fourme de montbrison": {
+      "score": 0.595
+    },
+    "fraise, crue": {
+      "score": 6.66
+    },
+    "fraise, de saison, crue": {
+      "score": 4.68
+    },
+    "fraise, hors saison, crue": {
+      "score": 12.0
+    },
+    "fraisier ou framboisier": {
+      "score": 5.53
+    },
+    "framboise, crue": {
+      "score": 2.35
+    },
+    "framboise, surgelée, crue": {
+      "score": 2.45
+    },
+    "frik (blé dur immature concassé), cru": {
+      "score": 0.849
+    },
+    "frik (blé dur immature concassé), cuit, non salé": {
+      "score": 0.428
+    },
+    "frites de pommes de terre, surgelées, cuites en friteuse": {
+      "score": 1.04
+    },
+    "frites de pommes de terre, surgelées, pour cuisson en friteuse": {
+      "score": 0.286
+    },
+    "frites de pommes de terre, surgelées, pour cuisson micro ondes": {
+      "score": 0.286
+    },
+    "frites de pommes de terre, surgelées, pour cuisson rôtie/ au four": {
+      "score": 0.286
+    },
+    "frites de pommes de terre, surgelées, rôties/cuites au four": {
+      "score": 0.434
+    },
+    "fromage blanc nature, 0% mg": {
+      "score": 0.282
+    },
+    "fromage blanc nature, 3% mg environ": {
+      "score": 0.301
+    },
+    "fromage blanc nature, gourmand, 8% mg environ": {
+      "score": 0.329
+    },
+    "fromage blanc ou spécialité laitière, aux fruits, sucré, gourmand, 7% mg environ": {
+      "score": 0.826
+    },
+    "fromage bleu au lait de vache": {
+      "score": 0.769
+    },
+    "fromage bleu d\u0027auvergne": {
+      "score": 0.782
+    },
+    "fromage bleu de bresse": {
+      "score": 0.581
+    },
+    "fromage bleu de bresse allegé environ 15% mg": {
+      "score": 0.552
+    },
+    "fromage bleu des causses": {
+      "score": 0.784
+    },
+    "fromage de brebis corse à pâte molle": {
+      "score": 0.667
+    },
+    "fromage de brebis des pyrénées": {
+      "score": 0.527
+    },
+    "fromage de brebis à pâte molle et croûte fleurie": {
+      "score": 0.416
+    },
+    "fromage de brebis à pâte pressée": {
+      "score": 0.585
+    },
+    "fromage de chèvre bûche": {
+      "score": 2.07
+    },
+    "fromage de chèvre bûche, allégé en matière grasse": {
+      "score": 2.28
+    },
+    "fromage de chèvre demi sec": {
+      "score": 2.38
+    },
+    "fromage de chèvre frais, au lait cru (type palet ou crottin frais)": {
+      "score": 2.06
+    },
+    "fromage de chèvre frais, au lait pasteurisé (type bûchette fraîche)": {
+      "score": 2.48
+    },
+    "fromage de chèvre frais, au lait pasteurisé ou cru (type crottin frais ou bûchette fraîche)": {
+      "score": 2.3
+    },
+    "fromage de chèvre lactique affiné (type bûchette, crottin, sainte maure)": {
+      "score": 2.43
+    },
+    "fromage de chèvre lactique affiné, au lait cru (type crottin de chavignol, picodon, rocamadour, sainte maure de touraine)": {
+      "score": 2.52
+    },
+    "fromage de chèvre lactique affiné, au lait pasteurisé (type bûchette ou crottin)": {
+      "score": 2.43
+    },
+    "fromage de chèvre sec": {
+      "score": 2.29
+    },
+    "fromage de chèvre à pâte molle et croûte fleurie type camembert": {
+      "score": 2.89
+    },
+    "fromage de chèvre à pâte molle non pressée non cuite croûte naturelle, au lait pasteurisé": {
+      "score": 3.0
+    },
+    "fromage de tête": {
+      "score": 1.66
+    },
+    "fromage fondu double crème, environ 31% mg": {
+      "score": 0.707
+    },
+    "fromage fondu en portions ou en cubes environ 20% mg": {
+      "score": 0.676
+    },
+    "fromage fondu en tranchettes": {
+      "score": 0.596
+    },
+    "fromage frais type petit suisse, aromatisé aux fruits, 2 3% mg, enrichi en calcium et vitamine d": {
+      "score": 0.287
+    },
+    "fromage frais type petit suisse, aux fruits, 2 3% mg": {
+      "score": 0.287
+    },
+    "fromage frais type petit suisse, aux fruits, 2 3% mg, enrichi en calcium et vitamine d": {
+      "score": 0.287
+    },
+    "fromage frais type petit suisse, nature, 0% mg": {
+      "score": 0.267
+    },
+    "fromage frais type petit suisse, nature, 10% mg environ": {
+      "score": 0.344
+    },
+    "fromage frais type petit suisse, nature, 4% mg environ": {
+      "score": 0.297
+    },
+    "fromage pané au jambon": {
+      "score": 0.984
+    },
+    "fromage rond à pâte molle et croûte fleurie 5 à 11% mg type camembert allégé en matière grasse": {
+      "score": 0.547
+    },
+    "fromage rond à pâte molle et croûte fleurie environ 11% mg type coulommiers allégé en matière grasse": {
+      "score": 0.552
+    },
+    "fromage rond à pâte molle et croûte fleurie environ 5% mg type camembert allégé en matière grasse": {
+      "score": 0.555
+    },
+    "fromage type feta, au lait de vache": {
+      "score": 0.735
+    },
+    "fromage type feta, au lait de vache, à l\u0027huile et aux aromates": {
+      "score": 0.735
+    },
+    "fromage à pate pressée cuite type emmental ou emmenthal, allégé en matière grasse": {
+      "score": 0.806
+    },
+    "fromage à pâte ferme environ 14% mg type masdaam à teneur réduite en mg": {
+      "score": 0.816
+    },
+    "fromage à pâte ferme environ 27% mg type maasdam": {
+      "score": 0.848
+    },
+    "fromage à pâte molle double crème environ 30% mg": {
+      "score": 0.697
+    },
+    "fromage à pâte molle et croûte fleurie (type camembert)": {
+      "score": 0.597
+    },
+    "fromage à pâte molle et croûte lavée, allégé environ 13% mg": {
+      "score": 0.692
+    },
+    "fromage à pâte molle et croûte mixte (lavée et fleurie) colorée": {
+      "score": 0.692
+    },
+    "fromage à pâte molle triple crème environ 40% mg": {
+      "score": 0.692
+    },
+    "fromage à pâte molle à croûte lavée, au lait pasteurisé (type vieux pané)": {
+      "score": 0.709
+    },
+    "fructose": {
+      "score": 4.52
+    },
+    "fruit de la passion ou maracudja, pulpe et pépins, cru": {
+      "score": 2.98
+    },
+    "fruit à pain, cru": {
+      "score": 0.951
+    },
+    "fruits rouges, crus (framboises, fraises, groseilles, cassis)": {
+      "score": 2.35
+    },
+    "fucus vésiculeux (fucus serratus ou fucus vesiculosus), séché ou déshydraté": {
+      "score": 4.83
+    },
+    "fève à écosser, fraîche": {
+      "score": 0.15
+    },
+    "fève, cuite": {
+      "score": 0.116
+    },
+    "fève, fraîche, surgelée": {
+      "score": 0.0709
+    },
+    "fève, pelée, surgelée, crue": {
+      "score": 0.156
+    },
+    "fève, pelée, surgelée, cuite à l\u0027eau": {
+      "score": 0.0891
+    },
+    "fève, surgelée, cuite à l\u0027eau": {
+      "score": 0.0891
+    },
+    "fève, sèche": {
+      "score": 0.15
+    },
+    "galette de céréales au fromage (sans soja), préemballé": {
+      "score": 0.643
+    },
+    "galette de céréales aux légumes (sans soja), préemballé": {
+      "score": 0.973
+    },
+    "galette de riz soufflé complet": {
+      "score": 4.99
+    },
+    "galette de sarrasin, nature, préemballée": {
+      "score": 0.339
+    },
+    "galette de soja (steak végétal) à la provençale": {
+      "score": 0.688
+    },
+    "galette de tofu (steak végétal)": {
+      "score": 1.23
+    },
+    "galette des rois feuilletée": {
+      "score": 6.12
+    },
+    "galette des rois feuilletée, fourrée frangipane, et pithiviers": {
+      "score": 6.12
+    },
+    "galette ou pavé au blé (seitan) et légumes, préemballé": {
+      "score": 1.26
+    },
+    "galette ou pavé au blé et soja (convient aux véganes ou végétaliens), préemballé": {
+      "score": 0.633
+    },
+    "galette ou pavé au blé et soja (ne convient pas aux véganes ou végétaliens), préemballé": {
+      "score": 1.22
+    },
+    "galette ou pavé au soja et fromage, préemballé": {
+      "score": 1.06
+    },
+    "galette ou pavé au soja et légumes, préemballé": {
+      "score": 1.67
+    },
+    "galette ou pavé au soja, fromage et légumes, préemballé": {
+      "score": 0.971
+    },
+    "galette ou pavé aux lentilles, soja et légumes, préemballé": {
+      "score": 0.79
+    },
+    "galettes multicéréales soufflées": {
+      "score": 4.99
+    },
+    "gaufre croustillante (fine ou sèche), chocolatée, préemballée": {
+      "score": 0.922
+    },
+    "gaufre croustillante (fine ou sèche), nature ou sucrée, préemballée": {
+      "score": 0.61
+    },
+    "gaufre moelleuse (type bruxelloise ou liégeoise), chocolatée, préemballée": {
+      "score": 0.862
+    },
+    "gaufre moelleuse (type bruxelloise ou liégeoise), nature ou sucrée, préemballée": {
+      "score": 0.865
+    },
+    "gaufrette fourrée chocolat, préemballée": {
+      "score": 1.24
+    },
+    "gaufrette fourrée fruits à coque (noisette, amande, praline, etc.), chocolatée ou non, préemballée": {
+      "score": 8.17
+    },
+    "gaufrette fourrée, aux fruits": {
+      "score": 3.14
+    },
+    "gaufrette ou éventail sans fourrage": {
+      "score": 1.13
+    },
+    "gaufrette, fourrée vanille, préemballée": {
+      "score": 1.13
+    },
+    "gin": {
+      "score": 0.169
+    },
+    "gingembre, poudre": {
+      "score": 2.18
+    },
+    "gingembre, racine crue": {
+      "score": 1.79
+    },
+    "glace au yaourt": {
+      "score": 0.637
+    },
+    "glace ou crème glacée, bâtonnet, enrobé de chocolat": {
+      "score": 0.881
+    },
+    "glace ou crème glacée, cône (taille standard)": {
+      "score": 0.62
+    },
+    "glace ou crème glacée, en bac": {
+      "score": 0.637
+    },
+    "glace ou crème glacée, gourmande, en bac": {
+      "score": 0.637
+    },
+    "glace ou crème glacée, gourmande, en pot": {
+      "score": 0.622
+    },
+    "glace ou crème glacée, mini cône": {
+      "score": 0.62
+    },
+    "glace ou crème glacée, petit pot enfant": {
+      "score": 0.622
+    },
+    "glace ou crème glacée, pot individuel": {
+      "score": 0.622
+    },
+    "glace à l\u0027eau": {
+      "score": 1.1
+    },
+    "gnocchi à la pomme de terre, cru": {
+      "score": 0.299
+    },
+    "gnocchi à la pomme de terre, cuit": {
+      "score": 0.336
+    },
+    "gnocchi à la semoule, cru": {
+      "score": 0.299
+    },
+    "gnocchi à la semoule, cuit": {
+      "score": 0.336
+    },
+    "gombo, fruit, cuit": {
+      "score": 2.0
+    },
+    "gorgonzola": {
+      "score": 0.758
+    },
+    "gouda": {
+      "score": 0.861
+    },
+    "gougère": {
+      "score": 0.82
+    },
+    "goyave, pulpe, crue": {
+      "score": 2.99
+    },
+    "goûter sec fourré (\"sandwiché\") parfum chocolat": {
+      "score": 1.35
+    },
+    "goûter sec fourré (\"sandwiché\") parfum fruits": {
+      "score": 3.17
+    },
+    "goûter sec fourré (\"sandwiché\") parfum lait ou vanille": {
+      "score": 1.13
+    },
+    "gracilaire ou ogonori (gracilaria verrucosa), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "grains de blé soufflés au miel ou caramel, enrichis en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "grains de blé soufflés chocolatés, enrichis en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "graisse d\u0027oie": {
+      "score": 0.743
+    },
+    "graisse de canard": {
+      "score": 0.747
+    },
+    "graisse de dinde": {
+      "score": 0.743
+    },
+    "graisse de poulet": {
+      "score": 0.743
+    },
+    "grana padano": {
+      "score": 0.799
+    },
+    "gratin d\u0027aubergine": {
+      "score": 0.691
+    },
+    "gratin dauphinois": {
+      "score": 0.459
+    },
+    "gratin de chou fleur": {
+      "score": 0.352
+    },
+    "gratin de légumes": {
+      "score": 0.691
+    },
+    "gratin de légumes en sauce blanche type béchamel, cuit": {
+      "score": 0.352
+    },
+    "gratin de poisson et purée ou brandade aux pommes de terre ou parmentier de poisson": {
+      "score": 0.925
+    },
+    "gratin de pâtes": {
+      "score": 1.03
+    },
+    "gratin ou cassolette de poisson et / ou fruits de mer, cuit": {
+      "score": 0.787
+    },
+    "gratin ou cassolette de poisson et / ou fruits de mer, à cuire": {
+      "score": 0.581
+    },
+    "grenade, pulpe et pépins, crue": {
+      "score": 0.614
+    },
+    "grenadier (de roche), cru": {
+      "score": 0.47
+    },
+    "grenadier bleu ou hoki de nouvelle zélande, cru": {
+      "score": 0.326
+    },
+    "gressins": {
+      "score": 2.42
+    },
+    "griotte, crue": {
+      "score": 6.51
+    },
+    "grondin perlon, cru": {
+      "score": 0.47
+    },
+    "grondin, cru": {
+      "score": 0.707
+    },
+    "groseille à maquereau, crue": {
+      "score": 3.58
+    },
+    "groseille, crue": {
+      "score": 1.24
+    },
+    "gruyère": {
+      "score": 0.809
+    },
+    "gruyère igp france": {
+      "score": 0.803
+    },
+    "guacamole, préemballé": {
+      "score": 16.8
+    },
+    "guimauve ou marshmallow": {
+      "score": 2.25
+    },
+    "gâteau au chocolat": {
+      "score": 1.53
+    },
+    "gâteau au chocolat type forêt noire (génoise au chocolat et crème multi couches, avec ou sans cerises)": {
+      "score": 1.22
+    },
+    "gâteau au chocolat, cœur fondant, rayon frais": {
+      "score": 1.21
+    },
+    "gâteau au citron, tout type": {
+      "score": 1.8
+    },
+    "gâteau au fromage blanc": {
+      "score": 1.56
+    },
+    "gâteau au yaourt": {
+      "score": 1.88
+    },
+    "gâteau aux amandes type financier": {
+      "score": 6.71
+    },
+    "gâteau basque, cerises": {
+      "score": 0.786
+    },
+    "gâteau basque, crème pâtissière": {
+      "score": 0.786
+    },
+    "gâteau de riz au caramel, rayon frais": {
+      "score": 1.93
+    },
+    "gâteau de riz, appertisé": {
+      "score": 2.22
+    },
+    "gâteau de semoule aux raisins et caramel, rayon frais": {
+      "score": 0.514
+    },
+    "gâteau de semoule, appertisé": {
+      "score": 0.548
+    },
+    "gâteau marbré": {
+      "score": 1.34
+    },
+    "gâteau moelleux au chocolat, préemballé": {
+      "score": 0.995
+    },
+    "gâteau moelleux aux fruits": {
+      "score": 1.65
+    },
+    "gâteau moelleux aux fruits à coque": {
+      "score": 2.71
+    },
+    "gâteau moelleux fourré au chocolat ou aux pépites de chocolat ou au lait": {
+      "score": 0.995
+    },
+    "gâteau moelleux fourré aux fruits type mini roulé ou mini cake fourré": {
+      "score": 1.65
+    },
+    "gâteau moelleux nature type génoise": {
+      "score": 0.996
+    },
+    "gâteau mousse de fruits sur génoise, type miroir, bavarois": {
+      "score": 1.65
+    },
+    "gâteau paris brest (pâte à choux crème mousseline praliné)": {
+      "score": 0.547
+    },
+    "gâteau sablé aux fruits, préemballé": {
+      "score": 3.31
+    },
+    "gélatine, sèche": {
+      "score": 0.85
+    },
+    "génoise fourrée et nappée au chocolat": {
+      "score": 0.995
+    },
+    "génoise sèche fourrée aux fruits et nappée de chocolat": {
+      "score": 1.8
+    },
+    "gésier, poulet, cru": {
+      "score": 0.614
+    },
+    "hachis parmentier à la viande": {
+      "score": 1.25
+    },
+    "haché de volaille": {
+      "score": 3.36
+    },
+    "haché végétal à base de soja, préemballé": {
+      "score": 0.722
+    },
+    "haché à base de bœuf ou préparation de viande hachée de boeuf, 15% mg, cru": {
+      "score": 1.69
+    },
+    "haddock (fumé) ou églefin fumé": {
+      "score": 0.55
+    },
+    "hamburger, provenant de fast food": {
+      "score": 1.88
+    },
+    "hareng fumé, au naturel (emballage corrigé)": {
+      "score": 0.5
+    },
+    "hareng fumé, au naturel (version \"logiciel\" avec erreur sur l\u0027emballage)": {
+      "score": 0.293
+    },
+    "hareng fumé, filet, doux (emballage corrigé)": {
+      "score": 0.5
+    },
+    "hareng fumé, filet, doux (version \"logiciel\" avec erreur sur l\u0027emballage)": {
+      "score": 0.293
+    },
+    "hareng fumé, à l\u0027huile (emballage corrigé)": {
+      "score": 0.5
+    },
+    "hareng fumé, à l\u0027huile (version \"logiciel\" avec erreur sur l\u0027emballage)": {
+      "score": 0.293
+    },
+    "hareng gras, cru": {
+      "score": 0.213
+    },
+    "hareng maigre, cru": {
+      "score": 0.213
+    },
+    "hareng mariné ou rollmops": {
+      "score": 0.237
+    },
+    "hareng, cru": {
+      "score": 0.213
+    },
+    "hareng, frit": {
+      "score": 0.376
+    },
+    "hareng, grillé/poêlé": {
+      "score": 0.376
+    },
+    "haricot beurre, appertisé, égoutté": {
+      "score": 1.34
+    },
+    "haricot beurre, cru": {
+      "score": 1.22
+    },
+    "haricot beurre, surgelé, cru": {
+      "score": 1.2
+    },
+    "haricot blanc, appertisé, égoutté": {
+      "score": 1.08
+    },
+    "haricot blanc, cuit": {
+      "score": 0.469
+    },
+    "haricot blanc, sec": {
+      "score": 0.972
+    },
+    "haricot de lima, cru": {
+      "score": 0.0795
+    },
+    "haricot de mer (himanthalia elongata), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "haricot flageolet, appertisé, égouttés": {
+      "score": 0.272
+    },
+    "haricot flageolet, cuit": {
+      "score": 0.116
+    },
+    "haricot flageolet, surgelé": {
+      "score": 0.0709
+    },
+    "haricot flageolet, vert, cuit": {
+      "score": 0.116
+    },
+    "haricot flageolet, vert, sec": {
+      "score": 0.15
+    },
+    "haricot mungo germé ou pousse de \"soja\", appertisé, égoutté": {
+      "score": 0.336
+    },
+    "haricot mungo germé ou pousse de \"soja\", cru": {
+      "score": 0.0795
+    },
+    "haricot mungo, cuit": {
+      "score": 0.116
+    },
+    "haricot mungo, sec": {
+      "score": 0.979
+    },
+    "haricot plat, cru": {
+      "score": 1.22
+    },
+    "haricot rouge, appertisé, égoutté": {
+      "score": 0.285
+    },
+    "haricot rouge, cuit": {
+      "score": 0.116
+    },
+    "haricot rouge, sec": {
+      "score": 0.15
+    },
+    "haricot vert importé par avion, cru": {
+      "score": 1.23
+    },
+    "haricot vert, appertisé, égoutté": {
+      "score": 1.38
+    },
+    "haricot vert, cru": {
+      "score": 1.08
+    },
+    "haricot vert, cuit": {
+      "score": 1.5
+    },
+    "haricot vert, surgelé, cru": {
+      "score": 1.23
+    },
+    "haricot vert, surgelé, cuit": {
+      "score": 1.47
+    },
+    "haricots blancs à la sauce tomate, appertisés": {
+      "score": 1.0
+    },
+    "haricots verts, purée": {
+      "score": 1.5
+    },
+    "harissa (sauce condimentaire)": {
+      "score": 6.47
+    },
+    "herbes de provence, séchées": {
+      "score": 20.4
+    },
+    "hoki, tout lieu de pêche, cru": {
+      "score": 0.47
+    },
+    "homard, bouilli/cuit à l\u0027eau": {
+      "score": 2.5
+    },
+    "hot dog": {
+      "score": 1.34
+    },
+    "houmous": {
+      "score": 1.27
+    },
+    "huile combinée (mélange d\u0027huiles)": {
+      "score": 0.736
+    },
+    "huile combinée, mélange d\u0027huile d\u0027olive et de graines": {
+      "score": 4.99
+    },
+    "huile d\u0027arachide": {
+      "score": 24.4
+    },
+    "huile d\u0027avocat": {
+      "score": 107.0
+    },
+    "huile d\u0027olive vierge extra": {
+      "score": 22.2
+    },
+    "huile de beurre ou beurre concentré": {
+      "score": 0.866
+    },
+    "huile de coco": {
+      "score": 10.4
+    },
+    "huile de colza": {
+      "score": 0.602
+    },
+    "huile de coton": {
+      "score": 52.5
+    },
+    "huile de foie de morue": {
+      "score": 1.03
+    },
+    "huile de hareng": {
+      "score": 1.03
+    },
+    "huile de lin": {
+      "score": 2.31
+    },
+    "huile de maïs": {
+      "score": 10.4
+    },
+    "huile de noisette": {
+      "score": 25.4
+    },
+    "huile de palme raffinée": {
+      "score": 1.96
+    },
+    "huile de palme, sans précision": {
+      "score": 1.88
+    },
+    "huile de pépins de raisin": {
+      "score": 0.219
+    },
+    "huile de sardine": {
+      "score": 1.03
+    },
+    "huile de saumon": {
+      "score": 1.03
+    },
+    "huile de soja": {
+      "score": 0.718
+    },
+    "huile de sésame": {
+      "score": 0.923
+    },
+    "huile de tournesol": {
+      "score": 0.788
+    },
+    "huile ou graisse de coco (coprah), raffinée": {
+      "score": 8.63
+    },
+    "huile pour friture, sans précision": {
+      "score": 0.745
+    },
+    "huître creuse, crue": {
+      "score": 0.965
+    },
+    "huître plate, crue": {
+      "score": 0.965
+    },
+    "huître, sans précision, crue": {
+      "score": 0.965
+    },
+    "igname, épluchée, bouillie/cuite à l\u0027eau": {
+      "score": 2.7
+    },
+    "igname, épluchée, crue": {
+      "score": 1.89
+    },
+    "ile flottante, rayon frais": {
+      "score": 0.672
+    },
+    "jambon cru": {
+      "score": 4.24
+    },
+    "jambon cru, fumé": {
+      "score": 4.24
+    },
+    "jambon cru, fumé, allégé en matière grasse": {
+      "score": 4.24
+    },
+    "jambon cuit, choix": {
+      "score": 2.48
+    },
+    "jambon cuit, choix, avec couenne": {
+      "score": 2.48
+    },
+    "jambon cuit, choix, découenné dégraissé": {
+      "score": 2.48
+    },
+    "jambon cuit, de paris, découenné dégraissé": {
+      "score": 2.48
+    },
+    "jambon cuit, fumé": {
+      "score": 2.48
+    },
+    "jambon cuit, supérieur": {
+      "score": 2.48
+    },
+    "jambon cuit, supérieur, avec couenne": {
+      "score": 2.48
+    },
+    "jambon cuit, supérieur, découenné": {
+      "score": 2.48
+    },
+    "jambon cuit, supérieur, découenné dégraissé": {
+      "score": 2.48
+    },
+    "jambon cuit, supérieur, à teneur réduite en sel": {
+      "score": 2.48
+    },
+    "jambon de bayonne": {
+      "score": 4.24
+    },
+    "jambon de dinde ou blanc de dinde en tranche": {
+      "score": 2.6
+    },
+    "jambon de porc à cuire ou jambon à rôtir/cuire au four": {
+      "score": 2.31
+    },
+    "jambon de poulet ou blanc de poulet en tranche": {
+      "score": 2.6
+    },
+    "jambon en croûte": {
+      "score": 2.0
+    },
+    "jambon sec": {
+      "score": 4.24
+    },
+    "jambon sec de parme": {
+      "score": 4.24
+    },
+    "jambon sec serrano": {
+      "score": 4.24
+    },
+    "jambon sec, découenné, dégraissé": {
+      "score": 4.24
+    },
+    "jambon à l\u0027os braisé": {
+      "score": 3.13
+    },
+    "jambonneau, cuit": {
+      "score": 2.48
+    },
+    "joëls (petits poissons entiers) pour friture, crus": {
+      "score": 0.193
+    },
+    "julienne ou brunoise de légumes, surgelée, crue": {
+      "score": 0.567
+    },
+    "julienne ou lingue, crue": {
+      "score": 0.47
+    },
+    "julienne ou lingue, cuite": {
+      "score": 0.709
+    },
+    "jus d\u0027ananas, pur jus": {
+      "score": 0.233
+    },
+    "jus d\u0027ananas, à base de concentré": {
+      "score": 0.19
+    },
+    "jus d\u0027orange, maison": {
+      "score": 2.03
+    },
+    "jus d\u0027orange, à base de concentré": {
+      "score": 0.68
+    },
+    "jus de betterave": {
+      "score": 0.844
+    },
+    "jus de carotte, pur jus": {
+      "score": 0.6
+    },
+    "jus de citron, pur jus": {
+      "score": 0.689
+    },
+    "jus de fruits rouges": {
+      "score": 0.962
+    },
+    "jus de mangue, frais": {
+      "score": 0.591
+    },
+    "jus de pamplemousse (pomelo), pur jus": {
+      "score": 41.3
+    },
+    "jus de pomme, pur jus": {
+      "score": 0.671
+    },
+    "jus de raisin, pur jus": {
+      "score": 0.298
+    },
+    "jus de tomate, pur jus (aliment moyen)": {
+      "score": 4.03
+    },
+    "jus multifruit base orange, multivitaminé": {
+      "score": 0.514
+    },
+    "jus multifruit base pomme, standard": {
+      "score": 0.488
+    },
+    "jus multifruit, pur jus, multivitaminé": {
+      "score": 8.98
+    },
+    "jus multifruit, pur jus, standard": {
+      "score": 8.98
+    },
+    "jus multifruit, à base de concentré, standard": {
+      "score": 8.98
+    },
+    "kaki, pulpe, cru": {
+      "score": 1.47
+    },
+    "ketchup": {
+      "score": 0.908
+    },
+    "khatfa feuille de brick, préemballée": {
+      "score": 0.452
+    },
+    "kir (au vin blanc)": {
+      "score": 0.427
+    },
+    "kir royal (au champagne)": {
+      "score": 0.455
+    },
+    "kiwi, pulpe et graines, cru": {
+      "score": 2.73
+    },
+    "kombu breton (laminaria digitata), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "kombu ou kombu japonais (laminaria japonica), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "kombu royal (saccharina latissima), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "kouign amann": {
+      "score": 0.785
+    },
+    "kumquat, sans pépin, cru": {
+      "score": 10.9
+    },
+    "lait 1er âge, poudre soluble (préparation pour nourrissons)": {
+      "score": 1.98
+    },
+    "lait 1er âge, poudre soluble (préparation pour nourrissons), réhydratée chez le consommateur": {
+      "score": 0.274
+    },
+    "lait 1er âge, prêt à consommer (préparation pour nourrissons)": {
+      "score": 0.255
+    },
+    "lait 2e âge, poudre soluble (préparation de suite)": {
+      "score": 1.98
+    },
+    "lait 2e âge, poudre soluble (préparation de suite), réhydratée chez le consommateur": {
+      "score": 0.274
+    },
+    "lait 2e âge, prêt à consommer (préparation pour nourrissons)": {
+      "score": 0.255
+    },
+    "lait concentré non sucré, entier": {
+      "score": 0.323
+    },
+    "lait concentré sucré, entier": {
+      "score": 0.323
+    },
+    "lait de brebis, entier": {
+      "score": 0.166
+    },
+    "lait de chèvre, demi écrémé, uht": {
+      "score": 0.514
+    },
+    "lait de chèvre, entier, cru": {
+      "score": 0.514
+    },
+    "lait de chèvre, entier, uht": {
+      "score": 0.514
+    },
+    "lait de coco ou crème de coco": {
+      "score": 0.873
+    },
+    "lait de croissance infantile, liquide (aliment lacté destiné aux enfants en bas âge)": {
+      "score": 0.249
+    },
+    "lait de croissance infantile, poudre (réhydratée chez le consommateur)": {
+      "score": 0.274
+    },
+    "lait demi écrémé, pasteurisé": {
+      "score": 0.156
+    },
+    "lait demi écrémé, uht": {
+      "score": 0.156
+    },
+    "lait demi écrémé, uht, enrichi en vitamines": {
+      "score": 0.156
+    },
+    "lait demi écrémé, à teneur réduite en lactose": {
+      "score": 0.156
+    },
+    "lait emprésuré aromatisé, rayon frais": {
+      "score": 0.312
+    },
+    "lait en poudre, demi écrémé": {
+      "score": 1.12
+    },
+    "lait en poudre, entier": {
+      "score": 1.31
+    },
+    "lait en poudre, écrémé": {
+      "score": 0.994
+    },
+    "lait entier, pasteurisé": {
+      "score": 0.174
+    },
+    "lait entier, uht": {
+      "score": 0.174
+    },
+    "lait fermenté ou spécialité laitière type yaourt, aromatisé, sucré, au bifidus": {
+      "score": 0.458
+    },
+    "lait fermenté ou spécialité laitière type yaourt, aux fruits, sucré, au bifidus": {
+      "score": 1.64
+    },
+    "lait fermenté ou spécialité laitière type yaourt, nature, au bifidus": {
+      "score": 0.342
+    },
+    "lait fermenté à boire, nature, au lait entier": {
+      "score": 0.319
+    },
+    "lait fermenté à boire, nature, maigre": {
+      "score": 0.301
+    },
+    "lait gélifié aromatisé, allégé en matière grasse et en sucre, rayon frais": {
+      "score": 0.45
+    },
+    "lait gélifié aromatisé, nappé caramel, rayon frais": {
+      "score": 0.738
+    },
+    "lait gélifié aromatisé, rayon frais": {
+      "score": 0.45
+    },
+    "lait écrémé, pasteurisé": {
+      "score": 0.143
+    },
+    "lait écrémé, uht": {
+      "score": 0.143
+    },
+    "laitue de mer (ulva sp.), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "laitue iceberg, crue": {
+      "score": 0.678
+    },
+    "laitue romaine, crue": {
+      "score": 0.643
+    },
+    "laitue, crue": {
+      "score": 0.643
+    },
+    "langoustine, crue": {
+      "score": 2.7
+    },
+    "langres": {
+      "score": 0.522
+    },
+    "langue, boeuf, crue": {
+      "score": 1.91
+    },
+    "langue, boeuf, cuite": {
+      "score": 2.65
+    },
+    "langue, porc, crue": {
+      "score": 0.898
+    },
+    "langue, veau, crue": {
+      "score": 3.06
+    },
+    "langue, veau, cuite": {
+      "score": 4.23
+    },
+    "lapin de garenne, viande, crue": {
+      "score": 2.54
+    },
+    "lapin de garenne, viande, cuite": {
+      "score": 3.4
+    },
+    "lapin à la moutarde": {
+      "score": 2.05
+    },
+    "lapin, viande braisée": {
+      "score": 3.4
+    },
+    "lapin, viande crue": {
+      "score": 2.54
+    },
+    "lapin, viande cuite": {
+      "score": 3.4
+    },
+    "lard gras, cru": {
+      "score": 0.673
+    },
+    "lardon fumé, cru": {
+      "score": 2.32
+    },
+    "lardon fumé, cuit": {
+      "score": 2.96
+    },
+    "lardon nature, cru": {
+      "score": 2.32
+    },
+    "lardon nature, cuit": {
+      "score": 2.96
+    },
+    "lasagnes ou canelloni aux légumes et au fromage de chèvre, cuits": {
+      "score": 6.46
+    },
+    "lasagnes ou cannelloni au fromage et aux épinards": {
+      "score": 1.29
+    },
+    "lasagnes ou cannelloni au poisson": {
+      "score": 1.13
+    },
+    "lasagnes ou cannelloni aux légumes": {
+      "score": 6.46
+    },
+    "lasagnes ou cannelloni aux légumes, cuits": {
+      "score": 6.46
+    },
+    "lasagnes ou cannelloni à la viande (bolognaise)": {
+      "score": 1.52
+    },
+    "laurier, feuille": {
+      "score": 4.39
+    },
+    "lentille blonde, cuite": {
+      "score": 0.107
+    },
+    "lentille blonde, sèche": {
+      "score": 0.13
+    },
+    "lentille corail, cuite": {
+      "score": 0.107
+    },
+    "lentille corail, sèche": {
+      "score": 0.13
+    },
+    "lentille verte, cuite": {
+      "score": 0.107
+    },
+    "lentille verte, sèche": {
+      "score": 0.13
+    },
+    "lentille, cuisinée, appertisée, égouttée": {
+      "score": 0.252
+    },
+    "lentille, cuite": {
+      "score": 0.107
+    },
+    "lentille, germée": {
+      "score": 0.13
+    },
+    "lentille, sèche": {
+      "score": 0.13
+    },
+    "levure chimique ou poudre à lever": {
+      "score": 3.82
+    },
+    "lichen de mer ou pioca ou goémon rouge (chondrus crispus), séché ou déshydraté": {
+      "score": 4.83
+    },
+    "lieu jaune ou colin, cru": {
+      "score": 0.47
+    },
+    "lieu noir, cru": {
+      "score": 0.344
+    },
+    "lieu noir, cuit": {
+      "score": 0.555
+    },
+    "lieu noir, surgelé, cru": {
+      "score": 0.415
+    },
+    "lieu ou colin d\u0027alaska, cru": {
+      "score": 0.47
+    },
+    "lieu ou colin d\u0027alaska, fumé": {
+      "score": 0.55
+    },
+    "limande sole, crue": {
+      "score": 0.47
+    },
+    "limande sole, cuite à la vapeur": {
+      "score": 0.709
+    },
+    "limande sole, panée, frite": {
+      "score": 0.616
+    },
+    "limande, crue": {
+      "score": 0.47
+    },
+    "limonade, non sucrée, avec édulcorants": {
+      "score": 0.307
+    },
+    "limonade, sucrée": {
+      "score": 0.307
+    },
+    "limonade, sucrée, avec édulcorants": {
+      "score": 0.307
+    },
+    "lin, brun, graine": {
+      "score": 2.23
+    },
+    "lin, graine": {
+      "score": 2.23
+    },
+    "lingue bleue ou lingue, crue": {
+      "score": 0.47
+    },
+    "liqueur": {
+      "score": 1.24
+    },
+    "litchi, pulpe, cru": {
+      "score": 0.955
+    },
+    "livarot": {
+      "score": 0.587
+    },
+    "liégeois aux fruits": {
+      "score": 1.74
+    },
+    "liégeois ou viennois (chocolat, café, caramel ou vanille), rayon frais": {
+      "score": 0.622
+    },
+    "lotte ou baudroie, crue": {
+      "score": 0.47
+    },
+    "lotte ou baudroie, grillée/poêlée": {
+      "score": 0.709
+    },
+    "loup tacheté, cru": {
+      "score": 0.47
+    },
+    "lupin, graine crue": {
+      "score": 0.159
+    },
+    "luzerne, graine": {
+      "score": 8.25
+    },
+    "luzerne, graine germée": {
+      "score": 8.25
+    },
+    "lécithine de soja": {
+      "score": 0.673
+    },
+    "légumes (3 4 sortes en mélange), purée": {
+      "score": 0.658
+    },
+    "légumes farcis (sauf tomate)": {
+      "score": 1.28
+    },
+    "légumes pour couscous, cuits": {
+      "score": 0.584
+    },
+    "légumes pour couscous, surgelés, crus": {
+      "score": 0.465
+    },
+    "légumes pour potages, surgelés, crus": {
+      "score": 8.63
+    },
+    "légumes pour ratatouille, surgelés": {
+      "score": 0.469
+    },
+    "légumes, mélange surgelé, crus": {
+      "score": 8.63
+    },
+    "macaron moelleux fourré à la confiture ou à la crème": {
+      "score": 6.34
+    },
+    "macaron sec": {
+      "score": 10.5
+    },
+    "macédoine de légumes, appertisée, égouttée": {
+      "score": 0.641
+    },
+    "macédoine de légumes, surgelée": {
+      "score": 0.682
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop léger, appertisé, non égoutté": {
+      "score": 3.05
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop léger, appertisé, égoutté": {
+      "score": 5.02
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop, appertisé, non égoutté": {
+      "score": 3.05
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop, appertisé, égoutté": {
+      "score": 4.98
+    },
+    "madeleine chocolatée, préemballée": {
+      "score": 0.981
+    },
+    "madeleine ordinaire, préemballée": {
+      "score": 1.66
+    },
+    "madeleine traditionnelle, pur beurre": {
+      "score": 2.43
+    },
+    "mandarine, pulpe, crue": {
+      "score": 10.9
+    },
+    "mangue importée par avion, pulpe, crue": {
+      "score": 1.21
+    },
+    "mangue importée par bateau, pulpe, crue": {
+      "score": 0.965
+    },
+    "manioc, racine crue": {
+      "score": 2.02
+    },
+    "manioc, racine cuite": {
+      "score": 2.91
+    },
+    "maquereau espagnol ou maquereau blanc ou billard, cru": {
+      "score": 0.211
+    },
+    "maquereau, au naturel, appertisé, égoutté": {
+      "score": 0.459
+    },
+    "maquereau, cru": {
+      "score": 0.211
+    },
+    "maquereau, filet au vin blanc, appertisé, égoutté": {
+      "score": 0.572
+    },
+    "maquereau, filet sauce moutarde, appertisé, égoutté": {
+      "score": 0.459
+    },
+    "maquereau, filet sauce tomate, appertisé, égoutté": {
+      "score": 0.459
+    },
+    "maquereau, frit": {
+      "score": 0.373
+    },
+    "maquereau, fumé": {
+      "score": 0.291
+    },
+    "maquereau, mariné": {
+      "score": 0.234
+    },
+    "maquereau, rôti/cuit au four": {
+      "score": 0.392
+    },
+    "marjolaine, séchée": {
+      "score": 20.2
+    },
+    "marmelade d\u0027orange": {
+      "score": 4.5
+    },
+    "maroilles fermier": {
+      "score": 0.606
+    },
+    "maroilles laitier": {
+      "score": 0.594
+    },
+    "maroilles, sans précision": {
+      "score": 0.605
+    },
+    "marsala": {
+      "score": 0.201
+    },
+    "matière grasse laitière à 20% mg, légère, \"à tartiner\", doux": {
+      "score": 0.526
+    },
+    "matière grasse laitière à 25% mg, légère, \"à tartiner\", doux": {
+      "score": 0.583
+    },
+    "matière grasse mélangée (végétale et laitière) à 50 63% mg": {
+      "score": 0.703
+    },
+    "matière grasse mélangée (végétale et laitière) à 50 63% mg, demi sel": {
+      "score": 0.703
+    },
+    "matière grasse mélangée (végétale et laitière), à tartiner, à 30 40% mg": {
+      "score": 0.654
+    },
+    "matière grasse mélangée (végétale et laitière), à tartiner, à 30 40% mg, demi sel": {
+      "score": 0.654
+    },
+    "matière grasse ou graisse végétale solide (type margarine) pour friture": {
+      "score": 5.05
+    },
+    "matière grasse végétale (type margarine) à 30 40% mg, légère, demi sel, aux esters de stérol végétal": {
+      "score": 1.11
+    },
+    "matière grasse végétale (type margarine) à 50 63% mg, allégée, demi sel": {
+      "score": 1.73
+    },
+    "matière grasse végétale (type margarine) à 50 63% mg, allégée, demi sel, riche en oméga 3": {
+      "score": 0.921
+    },
+    "matière grasse végétale (type margarine) à 50 63% mg, allégée, doux": {
+      "score": 2.98
+    },
+    "matière grasse végétale (type margarine) à 50 63% mg, allégée, doux, aux esters de stérol végétal": {
+      "score": 3.18
+    },
+    "matière grasse végétale (type margarine) à 50 63% mg, allégée, doux, riche en oméga 3": {
+      "score": 0.93
+    },
+    "matière grasse végétale (type margarine) à 60% de mg, allégée, au tournesol, doux": {
+      "score": 0.952
+    },
+    "matière grasse végétale (type margarine) à 70% mg, doux": {
+      "score": 1.24
+    },
+    "matière grasse végétale (type margarine) à 80% mg, salé": {
+      "score": 2.33
+    },
+    "matière grasse végétale (type margarine), à tartiner, à 30 40% mg, légère, demi sel": {
+      "score": 0.596
+    },
+    "matière grasse végétale (type margarine), à tartiner, à 30 40% mg, légère, doux": {
+      "score": 0.584
+    },
+    "matière grasse végétale (type margarine), à tartiner, à 30 40% mg, légère, doux, riche en oméga 3": {
+      "score": 2.16
+    },
+    "matière grasse végétale ou margarine, 80% mg, doux": {
+      "score": 4.0
+    },
+    "mayonnaise (70% mg min.)": {
+      "score": 4.25
+    },
+    "mayonnaise à teneur réduite en matière grasse ou mayonnaise allégée": {
+      "score": 4.25
+    },
+    "maïs doux, appertisé, égoutté": {
+      "score": 0.875
+    },
+    "maïs doux, en épis, cuit": {
+      "score": 1.18
+    },
+    "maïs doux, en épis, surgelé, cru": {
+      "score": 0.811
+    },
+    "maïs doux, surgelé, cru": {
+      "score": 0.673
+    },
+    "maïs entier, cru": {
+      "score": 0.6
+    },
+    "melon cantaloup (par ex.: charentais, de cavaillon) pulpe, cru": {
+      "score": 1.43
+    },
+    "melon miel ou melon honeydew, pulpe, cru": {
+      "score": 1.43
+    },
+    "meloukhia, feuilles de corète séchées, en poudre": {
+      "score": 1.99
+    },
+    "menthe, fraîche": {
+      "score": 4.54
+    },
+    "merguez, boeuf et mouton, crue": {
+      "score": 5.09
+    },
+    "merguez, boeuf et mouton, cuite": {
+      "score": 5.12
+    },
+    "merguez, bœuf, mouton et porc, crue": {
+      "score": 3.97
+    },
+    "merguez, crue": {
+      "score": 2.83
+    },
+    "merguez, porc et bœuf, crue": {
+      "score": 2.83
+    },
+    "merguez, pur bœuf, crue": {
+      "score": 2.71
+    },
+    "meringue": {
+      "score": 1.8
+    },
+    "merlan, cru": {
+      "score": 0.47
+    },
+    "merlan, cuit à la vapeur": {
+      "score": 0.709
+    },
+    "merlan, frit": {
+      "score": 0.69
+    },
+    "merlan, pané": {
+      "score": 0.635
+    },
+    "merlu blanc du cap, surgelé, cru": {
+      "score": 0.416
+    },
+    "merlu, cru": {
+      "score": 0.326
+    },
+    "merlu, cuit à l\u0027étouffée": {
+      "score": 0.532
+    },
+    "merlu, filet, surgelé, cru": {
+      "score": 0.397
+    },
+    "mesclun ou salade, mélange de jeunes pousses": {
+      "score": 0.675
+    },
+    "miel": {
+      "score": 1.62
+    },
+    "miettes de thon à l\u0027huile, appertisées": {
+      "score": 12.6
+    },
+    "miettes de thon à la tomate, appertisées": {
+      "score": 0.577
+    },
+    "mil entier, cru": {
+      "score": 1.03
+    },
+    "mil, cuit, non salé": {
+      "score": 0.462
+    },
+    "milk shake, provenant de fast food": {
+      "score": 0.356
+    },
+    "mille feuille": {
+      "score": 0.777
+    },
+    "mimolette demi vieille": {
+      "score": 0.88
+    },
+    "mimolette extra vieille": {
+      "score": 0.889
+    },
+    "mimolette jeune": {
+      "score": 0.87
+    },
+    "mimolette vieille": {
+      "score": 0.897
+    },
+    "mimolette, sans précision": {
+      "score": 0.843
+    },
+    "miso": {
+      "score": 2.9
+    },
+    "mont d\u0027or ou vacherin du haut doubs (produit en france) ou vacherin mont d\u0027or (produit en suisse)": {
+      "score": 0.539
+    },
+    "morbier": {
+      "score": 0.86
+    },
+    "mortadelle": {
+      "score": 2.26
+    },
+    "mortadelle pistachée pur porc": {
+      "score": 2.26
+    },
+    "mortadelle, porc et boeuf": {
+      "score": 2.26
+    },
+    "mortadelle, pur porc": {
+      "score": 2.26
+    },
+    "morue, salée, bouillie/cuite à l\u0027eau": {
+      "score": 0.709
+    },
+    "morue, salée, sèche": {
+      "score": 0.47
+    },
+    "moule commune, crue": {
+      "score": 0.965
+    },
+    "moule de méditerranée, crue": {
+      "score": 0.965
+    },
+    "moule, appertisée, égouttée": {
+      "score": 1.33
+    },
+    "moule, bouillie/cuite à l\u0027eau": {
+      "score": 0.847
+    },
+    "moules farcies (matière grasse, persillade…), crues": {
+      "score": 0.642
+    },
+    "moules marinières (oignons et vin blanc)": {
+      "score": 0.642
+    },
+    "moules à la sauce catalane ou escabèche (tomate), appertisée, égouttée": {
+      "score": 0.943
+    },
+    "moussaka": {
+      "score": 4.26
+    },
+    "mousse au chocolat (base laitière), rayon frais": {
+      "score": 0.931
+    },
+    "mousse au chocolat traditionnelle, rayon frais": {
+      "score": 0.957
+    },
+    "mousse aux fruits, rayon frais": {
+      "score": 1.78
+    },
+    "mousse de canard": {
+      "score": 2.59
+    },
+    "mousse de foie de porc": {
+      "score": 0.873
+    },
+    "mousse de foie de porc supérieure ou crème de foie": {
+      "score": 0.873
+    },
+    "mousse liégeoise (chocolat, café, caramel ou vanille), rayon frais": {
+      "score": 0.589
+    },
+    "mousse à la crème de marrons, rayon frais": {
+      "score": 1.8
+    },
+    "moutarde": {
+      "score": 0.436
+    },
+    "moutarde à l\u0027ancienne": {
+      "score": 0.436
+    },
+    "mouton, gigot, cru": {
+      "score": 6.93
+    },
+    "mouton, pied, cru": {
+      "score": 4.56
+    },
+    "mouton, tête, crue": {
+      "score": 4.56
+    },
+    "mouton, viande, crue": {
+      "score": 5.54
+    },
+    "mouton, épaule, crue": {
+      "score": 5.54
+    },
+    "mozzarella au lait de vache": {
+      "score": 0.593
+    },
+    "muesli croustillant au chocolat (non enrichi en vitamines et minéraux)": {
+      "score": 1.23
+    },
+    "muesli croustillant au chocolat, avec ou sans fruits, enrichi en vitamines et minéraux": {
+      "score": 1.23
+    },
+    "muesli croustillant aux fruits et/ou fruits secs, graines (non enrichi en vitamines et minéraux)": {
+      "score": 1.23
+    },
+    "muesli croustillant aux fruits ou fruits secs, enrichi en vitamines et minéraux": {
+      "score": 1.23
+    },
+    "muesli floconneux aux fruits ou fruits secs (non enrichi en vitamines et minéraux)": {
+      "score": 1.23
+    },
+    "muesli floconneux aux fruits ou fruits secs, enrichi en vitamines et minéraux": {
+      "score": 1.23
+    },
+    "muesli floconneux aux fruits ou fruits secs, sans sucres ajoutés": {
+      "score": 1.23
+    },
+    "muesli floconneux ou de type traditionnel": {
+      "score": 1.23
+    },
+    "muffin anglais, complet, petit pain spécial, préemballé": {
+      "score": 0.361
+    },
+    "muffin anglais, petit pain spécial, préemballé": {
+      "score": 0.519
+    },
+    "muffin, aux myrtilles ou au chocolat": {
+      "score": 0.777
+    },
+    "mulet, cru": {
+      "score": 0.47
+    },
+    "mulet, rôti/cuit au four": {
+      "score": 0.709
+    },
+    "multi céréales soufflées ou extrudées, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "munster": {
+      "score": 0.556
+    },
+    "museau de boeuf en vinaigrette": {
+      "score": 1.93
+    },
+    "museau de porc vinaigrette": {
+      "score": 0.939
+    },
+    "myrtille, crue": {
+      "score": 0.355
+    },
+    "myrtille, surgelée, crue": {
+      "score": 0.456
+    },
+    "mâche, crue": {
+      "score": 0.643
+    },
+    "mélange apéritif de graines (non salées) et fruits séchés": {
+      "score": 20.7
+    },
+    "mélange apéritif de graines (non salées) et raisins secs": {
+      "score": 20.7
+    },
+    "mélange apéritif de graines salées et raisins secs": {
+      "score": 20.7
+    },
+    "mélange de céréales et légumineuses, cru": {
+      "score": 0.292
+    },
+    "mélasse de canne": {
+      "score": 6.6
+    },
+    "mérou, cru": {
+      "score": 0.483
+    },
+    "mûre (de ronce), crue": {
+      "score": 5.04
+    },
+    "mûre (de ronce), surgelée, crue": {
+      "score": 5.14
+    },
+    "mûre noire (du mûrier), crue": {
+      "score": 6.11
+    },
+    "navarin d\u0027agneau aux légumes": {
+      "score": 4.74
+    },
+    "navet, cuit": {
+      "score": 0.663
+    },
+    "navet, pelé, cru": {
+      "score": 0.362
+    },
+    "navet, surgelé, cru": {
+      "score": 0.432
+    },
+    "nectar d\u0027abricot": {
+      "score": 1.14
+    },
+    "nectar d\u0027orange": {
+      "score": 0.496
+    },
+    "nectar de banane": {
+      "score": 0.789
+    },
+    "nectar de mangue": {
+      "score": 0.701
+    },
+    "nectar de poire": {
+      "score": 0.855
+    },
+    "nectar de pêche": {
+      "score": 7.53
+    },
+    "nectar multifruit, multivitaminé": {
+      "score": 8.99
+    },
+    "nectar multifruit, standard": {
+      "score": 8.99
+    },
+    "nectarine ou brugnon, pulpe et peau, crue": {
+      "score": 1.76
+    },
+    "nem ou pâté impérial": {
+      "score": 6.92
+    },
+    "nem ou pâté impérial, au porc, cuit": {
+      "score": 6.92
+    },
+    "nem ou pâté impérial, au poulet, cuit": {
+      "score": 6.92
+    },
+    "nem ou pâté impérial, aux crevettes et/ou au crabe, cuit": {
+      "score": 6.92
+    },
+    "neufchâtel": {
+      "score": 0.511
+    },
+    "noisette": {
+      "score": 11.7
+    },
+    "noisette grillée": {
+      "score": 11.8
+    },
+    "noisette grillée, salée": {
+      "score": 11.8
+    },
+    "noix de cajou, grillée, salée": {
+      "score": 14.9
+    },
+    "noix de coco, amande immature, fraîche": {
+      "score": 12.4
+    },
+    "noix de coco, amande mûre, fraîche": {
+      "score": 12.4
+    },
+    "noix de coco, amande, sèche": {
+      "score": 12.4
+    },
+    "noix de macadamia": {
+      "score": 8.95
+    },
+    "noix de macadamia, grillée, salée": {
+      "score": 8.95
+    },
+    "noix de muscade": {
+      "score": 1.47
+    },
+    "noix de pécan": {
+      "score": 8.95
+    },
+    "noix de pécan, salées": {
+      "score": 8.95
+    },
+    "noix du brésil": {
+      "score": 17.5
+    },
+    "noix, fraîche": {
+      "score": 9.09
+    },
+    "noix, séchée, cerneaux": {
+      "score": 9.09
+    },
+    "nori (porphyra sp.), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "nougat glacé": {
+      "score": 0.666
+    },
+    "nougat ou touron": {
+      "score": 13.5
+    },
+    "nouilles asiatiques aromatisées, déshydratées": {
+      "score": 0.618
+    },
+    "nouilles asiatiques cuites, aromatisées": {
+      "score": 0.55
+    },
+    "nouilles asiatiques cuites, nature, non salées": {
+      "score": 0.55
+    },
+    "nouilles sautées/poêlées aux crevettes": {
+      "score": 26.9
+    },
+    "nuggets de blé (sans soja), préemballé": {
+      "score": 0.514
+    },
+    "nuggets de soja": {
+      "score": 0.557
+    },
+    "nuggets soja et blé (convient aux véganes ou végétaliens), préemballé": {
+      "score": 0.52
+    },
+    "nuggets soja et blé (ne convient pas aux véganes ou végétaliens), préemballé": {
+      "score": 0.623
+    },
+    "oeuf d\u0027oie, cru": {
+      "score": 0.783
+    },
+    "oeuf de cane, cru": {
+      "score": 0.783
+    },
+    "oeuf de dinde, cru": {
+      "score": 0.783
+    },
+    "oeuf, au plat, sans matière grasse": {
+      "score": 0.925
+    },
+    "oeuf, blanc (blanc d\u0027oeuf), cru": {
+      "score": 0.864
+    },
+    "oeuf, blanc (blanc d\u0027oeuf), cuit": {
+      "score": 1.01
+    },
+    "oeuf, blanc (blanc d\u0027oeuf), en poudre": {
+      "score": 5.43
+    },
+    "oeuf, brouillé, avec matière grasse": {
+      "score": 1.05
+    },
+    "oeuf, cru": {
+      "score": 0.783
+    },
+    "oeuf, dur": {
+      "score": 0.986
+    },
+    "oeuf, en poudre": {
+      "score": 2.95
+    },
+    "oeuf, jaune (jaune d\u0027oeuf), cru": {
+      "score": 0.864
+    },
+    "oeuf, jaune (jaune d\u0027oeuf), cuit": {
+      "score": 1.01
+    },
+    "oeuf, jaune (jaune d\u0027oeuf), en poudre": {
+      "score": 1.6
+    },
+    "oeuf, poché": {
+      "score": 0.986
+    },
+    "oeuf, à la coque": {
+      "score": 0.986
+    },
+    "oie, viande crue": {
+      "score": 2.38
+    },
+    "oie, viande et peau, crue": {
+      "score": 2.38
+    },
+    "oie, viande et peau, rôtie/cuite au four": {
+      "score": 3.4
+    },
+    "oie, viande, rôtie/cuite au four": {
+      "score": 3.4
+    },
+    "oignon, cru": {
+      "score": 0.736
+    },
+    "oignon, cuit": {
+      "score": 1.1
+    },
+    "oignon, surgelé, cru": {
+      "score": 1.24
+    },
+    "oignon, séché": {
+      "score": 8.29
+    },
+    "olives vertes, fourrées ou farcies (anchois, poivrons, etc.)": {
+      "score": 2.01
+    },
+    "omble chevalier, cru": {
+      "score": 274.0
+    },
+    "omelette au fromage": {
+      "score": 0.793
+    },
+    "omelette aux champignons": {
+      "score": 16.7
+    },
+    "omelette aux fines herbes": {
+      "score": 0.804
+    },
+    "omelette aux lardons": {
+      "score": 1.32
+    },
+    "omelette norvégienne": {
+      "score": 0.666
+    },
+    "orange, pulpe, crue": {
+      "score": 10.5
+    },
+    "oreille de porc demi sel": {
+      "score": 1.17
+    },
+    "orge entière, crue": {
+      "score": 1.03
+    },
+    "orge perlée, bouilli/cuite à l\u0027eau, non salée": {
+      "score": 0.477
+    },
+    "orge perlée, crue": {
+      "score": 1.03
+    },
+    "origan, séché": {
+      "score": 20.2
+    },
+    "orphie commune, crue": {
+      "score": 0.213
+    },
+    "oseille, crue": {
+      "score": 0.479
+    },
+    "ossau iraty": {
+      "score": 0.527
+    },
+    "osso buco": {
+      "score": 2.93
+    },
+    "pain au chocolat feuilleté, artisanal": {
+      "score": 0.617
+    },
+    "pain au chocolat, préemballé": {
+      "score": 0.553
+    },
+    "pain au lait aux pépites de chocolat, préemballé": {
+      "score": 0.49
+    },
+    "pain au lait, artisanal": {
+      "score": 0.589
+    },
+    "pain au lait, préemballé": {
+      "score": 0.526
+    },
+    "pain au son": {
+      "score": 0.171
+    },
+    "pain aux raisins (viennoiserie)": {
+      "score": 1.76
+    },
+    "pain blanc maison (avec farine pour machine à pain)": {
+      "score": 0.188
+    },
+    "pain brioché ou viennois": {
+      "score": 0.448
+    },
+    "pain complet ou intégral (à la farine t150)": {
+      "score": 0.189
+    },
+    "pain courant français, 400g ou boule": {
+      "score": 0.188
+    },
+    "pain d\u0027épices": {
+      "score": 1.39
+    },
+    "pain de campagne maison (avec farine pour machine à pain)": {
+      "score": 0.234
+    },
+    "pain de mie brioché, préemballé": {
+      "score": 0.409
+    },
+    "pain de mie, au son": {
+      "score": 0.383
+    },
+    "pain de mie, complet": {
+      "score": 0.383
+    },
+    "pain de mie, courant": {
+      "score": 0.383
+    },
+    "pain de mie, multicéréale": {
+      "score": 0.481
+    },
+    "pain de mie, sans croûte, préemballé": {
+      "score": 0.271
+    },
+    "pain de seigle, et froment": {
+      "score": 0.18
+    },
+    "pain grillé brioché, tranché, préemballé": {
+      "score": 0.591
+    },
+    "pain grillé suédois au blé complet": {
+      "score": 0.465
+    },
+    "pain grillé suédois au froment": {
+      "score": 0.465
+    },
+    "pain grillé suédois aux fruits": {
+      "score": 0.465
+    },
+    "pain grillé suédois aux graines de lin": {
+      "score": 0.465
+    },
+    "pain grillé, domestique": {
+      "score": 0.415
+    },
+    "pain grillé, tranches, au froment": {
+      "score": 0.415
+    },
+    "pain grillé, tranches, multicéréale": {
+      "score": 0.398
+    },
+    "pain panini": {
+      "score": 1.56
+    },
+    "pain perdu": {
+      "score": 0.744
+    },
+    "pain pita": {
+      "score": 1.2
+    },
+    "pain pour hamburger ou hot dog (bun), complet, préemballé": {
+      "score": 0.234
+    },
+    "pain pour hamburger ou hot dog (bun), préemballé": {
+      "score": 0.392
+    },
+    "pain, baguette ou boule, au levain": {
+      "score": 0.18
+    },
+    "pain, baguette ou boule, aux céréales et graines, artisanal": {
+      "score": 0.527
+    },
+    "pain, baguette ou boule, bio (à la farine t55 jusqu\u0027a t110)": {
+      "score": 0.225
+    },
+    "pain, baguette ou boule, bis (à la farine t80 ou t110)": {
+      "score": 0.188
+    },
+    "pain, baguette ou boule, de campagne": {
+      "score": 0.189
+    },
+    "pain, baguette, courante": {
+      "score": 0.188
+    },
+    "pain, baguette, de tradition française": {
+      "score": 0.188
+    },
+    "pain, baguette, sans sel": {
+      "score": 0.188
+    },
+    "pain, sans gluten": {
+      "score": 5.66
+    },
+    "palet ou galette de légumes, préfrit, surgelé": {
+      "score": 1.5
+    },
+    "palet ou galette de légumes, préfrit, surgelé, cuit": {
+      "score": 1.5
+    },
+    "palmier, artisanal": {
+      "score": 1.09
+    },
+    "pamplemousse chinois, pulpe, cru": {
+      "score": 49.2
+    },
+    "pan bagnat": {
+      "score": 2.12
+    },
+    "panaché (limonade et bière)": {
+      "score": 0.329
+    },
+    "panaché préemballé (\u003c1° alc.)": {
+      "score": 0.329
+    },
+    "panais, cru": {
+      "score": 0.413
+    },
+    "panais, cuit": {
+      "score": 0.746
+    },
+    "pancetta ou poitrine roulée sèche": {
+      "score": 4.24
+    },
+    "panga, pangasius, ou poisson chat du mékong, filet, cuit": {
+      "score": 481.0
+    },
+    "pangasius ou poisson chat, cru": {
+      "score": 2.62
+    },
+    "panna cotta, rayon frais": {
+      "score": 0.666
+    },
+    "pané soja et blé (ne convient pas aux véganes ou végétaliens)": {
+      "score": 0.616
+    },
+    "papaye, pulpe, crue": {
+      "score": 1.87
+    },
+    "paprika": {
+      "score": 4.38
+    },
+    "parmentier de canard": {
+      "score": 0.992
+    },
+    "parmentier de canard, cuit": {
+      "score": 0.992
+    },
+    "parmesan": {
+      "score": 0.803
+    },
+    "pastilla au poulet": {
+      "score": 5.13
+    },
+    "pastis": {
+      "score": 0.169
+    },
+    "pastèque, pulpe, crue": {
+      "score": 1.07
+    },
+    "patate douce, crue": {
+      "score": 0.14
+    },
+    "patate douce, cuite": {
+      "score": 0.38
+    },
+    "patate douce, purée, cuisinée à la crème": {
+      "score": 0.38
+    },
+    "paupiette de veau": {
+      "score": 5.98
+    },
+    "paupiette de veau, cuite au four": {
+      "score": 5.98
+    },
+    "paupiette de volaille": {
+      "score": 2.18
+    },
+    "pavot, graine": {
+      "score": 4.36
+    },
+    "paëlla": {
+      "score": 3.8
+    },
+    "pecten d\u0027amérique ou peigne du canada, noix, crue": {
+      "score": 0.435
+    },
+    "perche du nil, crue": {
+      "score": 36.5
+    },
+    "perche, crue": {
+      "score": 274.0
+    },
+    "perche, rôtie/cuite au four": {
+      "score": 335.0
+    },
+    "persil, frais": {
+      "score": 1.86
+    },
+    "persil, séché": {
+      "score": 8.11
+    },
+    "petit pot fruit avec banane pour bébé": {
+      "score": 1.31
+    },
+    "petit pot fruit sans banane pour bébé": {
+      "score": 1.31
+    },
+    "petit pot légumes, avec féculent, dès 4/6 mois": {
+      "score": 0.67
+    },
+    "petit pot légumes, dès 4 6 mois": {
+      "score": 0.67
+    },
+    "petit salé ou saucisse aux lentilles": {
+      "score": 0.813
+    },
+    "petits pois et carottes, appertisés, égouttés": {
+      "score": 0.621
+    },
+    "petits pois et carottes, surgelés, crus": {
+      "score": 0.687
+    },
+    "petits pois et carottes, surgelés, cuits": {
+      "score": 0.676
+    },
+    "petits pois, appertisés, égouttés": {
+      "score": 0.916
+    },
+    "petits pois, crus": {
+      "score": 0.187
+    },
+    "petits pois, cuits": {
+      "score": 0.431
+    },
+    "petits pois, purée": {
+      "score": 0.417
+    },
+    "petits pois, surgelés, crus": {
+      "score": 0.66
+    },
+    "petits pois, surgelés, cuits": {
+      "score": 0.809
+    },
+    "picodon (fromage de chèvre)": {
+      "score": 2.82
+    },
+    "pied de porc demi sel": {
+      "score": 1.45
+    },
+    "pigeon, viande, rôtie/cuite au four": {
+      "score": 3.4
+    },
+    "pignon de pin": {
+      "score": 14.6
+    },
+    "pilchard, sauce tomate, appertisé, égoutté": {
+      "score": 9.42
+    },
+    "piment, cru": {
+      "score": 0.294
+    },
+    "pintade, crue": {
+      "score": 2.54
+    },
+    "pintade, cuisse, crue": {
+      "score": 2.54
+    },
+    "pintade, poitrine, crue": {
+      "score": 2.49
+    },
+    "piperade basquaise": {
+      "score": 0.74
+    },
+    "pissaladière": {
+      "score": 0.964
+    },
+    "pissenlit, cru": {
+      "score": 0.643
+    },
+    "pistache, grillée": {
+      "score": 15.1
+    },
+    "pistache, grillée, salée": {
+      "score": 15.1
+    },
+    "pizza 4 fromages": {
+      "score": 0.825
+    },
+    "pizza au chorizo ou salami": {
+      "score": 0.864
+    },
+    "pizza au chèvre et lardons": {
+      "score": 1.38
+    },
+    "pizza au fromage ou pizza margherita": {
+      "score": 1.23
+    },
+    "pizza au poulet": {
+      "score": 1.93
+    },
+    "pizza au saumon": {
+      "score": 1.15
+    },
+    "pizza au speck ou jambon cru": {
+      "score": 1.91
+    },
+    "pizza au thon": {
+      "score": 1.15
+    },
+    "pizza aux fruits de mer": {
+      "score": 1.15
+    },
+    "pizza aux lardons, oignons et fromage": {
+      "score": 1.38
+    },
+    "pizza aux légumes ou pizza 4 saisons": {
+      "score": 5.56
+    },
+    "pizza champignons fromage": {
+      "score": 17.4
+    },
+    "pizza jambon fromage": {
+      "score": 1.91
+    },
+    "pizza jambon fromage champignons ou pizza royale, reine ou regina": {
+      "score": 8.09
+    },
+    "pizza kebab": {
+      "score": 1.91
+    },
+    "pizza type raclette ou tartiflette": {
+      "score": 1.38
+    },
+    "pizza à la viande, type bolognaise": {
+      "score": 0.957
+    },
+    "pizza, sauce garniture pour": {
+      "score": 2.47
+    },
+    "plat légumes, avec féculent et lait/crème, dès 12 mois": {
+      "score": 1.26
+    },
+    "plat légumes, avec féculent et lait/crème, dès 18 mois": {
+      "score": 1.26
+    },
+    "plat légumes, avec féculent et lait/crème, dès 6 8 mois": {
+      "score": 1.26
+    },
+    "plat légumes, avec féculent et lait/crème, dès 8 12 mois": {
+      "score": 1.26
+    },
+    "plat légumes, avec féculent et viande/poisson, dès 12 mois": {
+      "score": 1.28
+    },
+    "plat légumes, avec féculent et viande/poisson, dès 18 mois": {
+      "score": 1.28
+    },
+    "plat légumes, avec féculent et viande/poisson, dès 6 8 mois": {
+      "score": 1.28
+    },
+    "plat légumes, avec féculent et viande/poisson, dès 8 12 mois": {
+      "score": 1.28
+    },
+    "plat légumes, avec féculent, dès 6 8 mois": {
+      "score": 1.33
+    },
+    "plie commune, crue": {
+      "score": 0.47
+    },
+    "poire au sirop léger, appertisée, non égouttée": {
+      "score": 0.957
+    },
+    "poire belle hélène": {
+      "score": 0.666
+    },
+    "poire, pulpe et peau, crue": {
+      "score": 1.42
+    },
+    "poire, pulpe, crue": {
+      "score": 1.42
+    },
+    "poireau, cru": {
+      "score": 0.348
+    },
+    "poireau, cuit": {
+      "score": 0.671
+    },
+    "poireau, surgelé, cru": {
+      "score": 0.416
+    },
+    "pois cassé, cuit": {
+      "score": 0.158
+    },
+    "pois cassé, sec": {
+      "score": 0.247
+    },
+    "pois chiche, appertisé, égoutté": {
+      "score": 0.529
+    },
+    "pois chiche, cuit": {
+      "score": 0.161
+    },
+    "pois chiche, sec": {
+      "score": 0.254
+    },
+    "pois mange tout ou pois gourmand, bouilli/cuit à l\u0027eau": {
+      "score": 0.539
+    },
+    "pois mange tout ou pois gourmand, cru": {
+      "score": 0.236
+    },
+    "pois mange tout ou pois gourmands, cuits": {
+      "score": 0.539
+    },
+    "poisson blanc sauce oseille": {
+      "score": 0.631
+    },
+    "poisson blanc à l\u0027estragon": {
+      "score": 0.631
+    },
+    "poisson blanc à la bordelaise": {
+      "score": 28.0
+    },
+    "poisson blanc à la florentine (sauce aux épinards)": {
+      "score": 0.631
+    },
+    "poisson blanc à la marinière (sauce aux oignons, vin blanc, moules)": {
+      "score": 28.0
+    },
+    "poisson blanc à la parisienne (sauce aux champignons)": {
+      "score": 7.3
+    },
+    "poisson blanc à la provençale ou niçoise (sauce tomate)": {
+      "score": 1.66
+    },
+    "poisson blanc à la sauce moutarde": {
+      "score": 0.631
+    },
+    "poisson en sauce, surgelé": {
+      "score": 0.834
+    },
+    "poisson pané, frit": {
+      "score": 0.557
+    },
+    "poisson pané, surgelé, cru": {
+      "score": 0.516
+    },
+    "poisson, croquette ou beignet ou nuggets, frit": {
+      "score": 0.657
+    },
+    "poitrine de porc demi sel": {
+      "score": 2.77
+    },
+    "poitrine de porc, fumée, crue": {
+      "score": 2.16
+    },
+    "poivre blanc, poudre": {
+      "score": 4.38
+    },
+    "poivre de cayenne ou piment de cayenne": {
+      "score": 4.38
+    },
+    "poivre noir, poudre": {
+      "score": 4.38
+    },
+    "poivron jaune, cru": {
+      "score": 0.294
+    },
+    "poivron rouge, appertisé, égoutté": {
+      "score": 0.424
+    },
+    "poivron rouge, cru": {
+      "score": 0.294
+    },
+    "poivron rouge, cuit": {
+      "score": 0.607
+    },
+    "poivron vert, cru": {
+      "score": 0.294
+    },
+    "poivron vert, cuit": {
+      "score": 0.607
+    },
+    "poivron, vert, jaune ou rouge, cru": {
+      "score": 0.294
+    },
+    "polenta ou semoule de maïs, cuite, non salée": {
+      "score": 0.38
+    },
+    "polenta ou semoule de maïs, précuite, sèche": {
+      "score": 0.849
+    },
+    "pomelo (dit pamplemousse) jaune, pulpe, cru": {
+      "score": 21.3
+    },
+    "pomelo (dit pamplemousse) rose, pulpe, cru": {
+      "score": 21.3
+    },
+    "pomelo (dit pamplemousse), pulpe, cru": {
+      "score": 21.3
+    },
+    "pomme canada, pulpe, crue": {
+      "score": 0.543
+    },
+    "pomme de terre dauphine, surgelée, crue": {
+      "score": 0.462
+    },
+    "pomme de terre dauphine, surgelée, cuite": {
+      "score": 0.691
+    },
+    "pomme de terre de conservation, sans peau, bouillie/cuite à l\u0027eau": {
+      "score": 0.45
+    },
+    "pomme de terre duchesse, surgelée, crue": {
+      "score": 0.425
+    },
+    "pomme de terre duchesse, surgelée, cuite": {
+      "score": 0.637
+    },
+    "pomme de terre noisette, surgelée, crue": {
+      "score": 0.533
+    },
+    "pomme de terre noisette, surgelée, cuite": {
+      "score": 0.791
+    },
+    "pomme de terre nouvelle, crue": {
+      "score": 0.297
+    },
+    "pomme de terre primeur, sans peau, bouillie/cuite à l\u0027eau": {
+      "score": 0.45
+    },
+    "pomme de terre rissolée, surgelée, crue": {
+      "score": 0.319
+    },
+    "pomme de terre rissolée, surgelée, cuite": {
+      "score": 0.491
+    },
+    "pomme de terre sautée/poêlée à la graisse de canard": {
+      "score": 0.352
+    },
+    "pomme de terre vapeur, sous vide": {
+      "score": 0.484
+    },
+    "pomme de terre, bouillie/cuite à l\u0027eau": {
+      "score": 0.484
+    },
+    "pomme de terre, flocons déshydratés, au lait ou à la crème": {
+      "score": 1.16
+    },
+    "pomme de terre, flocons déshydratés, nature": {
+      "score": 1.16
+    },
+    "pomme de terre, purée à base de flocons, reconstituée avec lait demi écrémé et eau, non salée": {
+      "score": 0.216
+    },
+    "pomme de terre, purée à base de flocons, reconstituée avec lait entier, matière grasse": {
+      "score": 0.338
+    },
+    "pomme de terre, purée, avec lait et beurre, non salée": {
+      "score": 0.434
+    },
+    "pomme de terre, rôtie/cuite au four": {
+      "score": 0.403
+    },
+    "pomme de terre, sans peau, crue": {
+      "score": 0.327
+    },
+    "pomme de terre, sans peau, cuite au four": {
+      "score": 0.504
+    },
+    "pomme de terre, sautée/poêlée": {
+      "score": 0.382
+    },
+    "pomme golden, pulpe et peau, crue": {
+      "score": 0.543
+    },
+    "pomme, pulpe et peau, crue": {
+      "score": 0.543
+    },
+    "pomme, pulpe, bouillie/cuite à l\u0027eau": {
+      "score": 0.966
+    },
+    "pomme, pulpe, crue": {
+      "score": 0.543
+    },
+    "pomme, pulpe, rôtie/cuite au four": {
+      "score": 0.985
+    },
+    "pomme, sèche": {
+      "score": 2.66
+    },
+    "pont l\u0027évêque": {
+      "score": 0.592
+    },
+    "pop corn ou maïs éclaté, au caramel": {
+      "score": 1.41
+    },
+    "pop corn ou maïs éclaté, à l\u0027air, non salé": {
+      "score": 0.953
+    },
+    "pop corn ou maïs éclaté, à l\u0027huile, salé": {
+      "score": 0.771
+    },
+    "porc au caramel": {
+      "score": 2.65
+    },
+    "porc, bardière découennée, crue": {
+      "score": 0.542
+    },
+    "porc, carré, cru": {
+      "score": 2.2
+    },
+    "porc, carré, cuit": {
+      "score": 2.81
+    },
+    "porc, côte, crue": {
+      "score": 2.2
+    },
+    "porc, côte, grillée": {
+      "score": 2.81
+    },
+    "porc, escalope de jambon, crue": {
+      "score": 2.16
+    },
+    "porc, escalope de jambon, cuite": {
+      "score": 2.77
+    },
+    "porc, filet mignon, cru": {
+      "score": 2.16
+    },
+    "porc, filet mignon, cuit": {
+      "score": 2.77
+    },
+    "porc, filet, maigre, cru": {
+      "score": 2.16
+    },
+    "porc, filet, maigre, en rôti, cuit": {
+      "score": 2.77
+    },
+    "porc, gorge, découennée, crue": {
+      "score": 2.16
+    },
+    "porc, hachage sans jarret, sans bateau, découenné, dégraisssé, désossé, cru": {
+      "score": 2.16
+    },
+    "porc, jambon sans jarret, sans bateau, découenné, dégraisssé, désossé, cru": {
+      "score": 2.71
+    },
+    "porc, jambonneau arrière, découenné, dégraisssé, désossé, cru": {
+      "score": 2.2
+    },
+    "porc, jarret, cru": {
+      "score": 2.2
+    },
+    "porc, longe, crue": {
+      "score": 2.16
+    },
+    "porc, longe, cuite": {
+      "score": 2.77
+    },
+    "porc, maigre 80/20, cru": {
+      "score": 2.16
+    },
+    "porc, maigre 90/10, cru": {
+      "score": 2.16
+    },
+    "porc, palette, découennée, dégraisssée, désossée, crue": {
+      "score": 2.16
+    },
+    "porc, poitrine cutter, sans mouille, crue": {
+      "score": 2.16
+    },
+    "porc, poitrine, crue": {
+      "score": 2.16
+    },
+    "porc, rouelle de jambon, crue": {
+      "score": 2.16
+    },
+    "porc, rouelle de jambon, cuite": {
+      "score": 2.77
+    },
+    "porc, rôti filet avec chaînette, cru": {
+      "score": 2.16
+    },
+    "porc, rôti, cru": {
+      "score": 2.16
+    },
+    "porc, rôti, cuit": {
+      "score": 2.77
+    },
+    "porc, travers, braisé": {
+      "score": 2.81
+    },
+    "porc, travers, cru": {
+      "score": 2.2
+    },
+    "porc, échine, crue": {
+      "score": 2.16
+    },
+    "porc, échine, rôtie/cuite au four": {
+      "score": 2.77
+    },
+    "porc, épaule, crue": {
+      "score": 2.2
+    },
+    "porc, épaule, cuite": {
+      "score": 2.81
+    },
+    "pot au feu": {
+      "score": 1.78
+    },
+    "potimarron, pulpe, cru": {
+      "score": 0.629
+    },
+    "potiron, appertisé, égoutté": {
+      "score": 0.779
+    },
+    "potiron, cru": {
+      "score": 0.63
+    },
+    "potiron, cuit": {
+      "score": 1.0
+    },
+    "potée auvergnate (chou et porc)": {
+      "score": 1.17
+    },
+    "poule, cuisse, crue": {
+      "score": 2.54
+    },
+    "poule, viande ,crue": {
+      "score": 2.54
+    },
+    "poule, viande et peau, crue": {
+      "score": 2.54
+    },
+    "poulet (var. blanc), viande et peau, cru": {
+      "score": 2.54
+    },
+    "poulet au curry et au lait de coco": {
+      "score": 2.81
+    },
+    "poulet basquaise": {
+      "score": 2.22
+    },
+    "poulet fermier, viande et peau, cru": {
+      "score": 2.54
+    },
+    "poulet éviscéré sans abats, cru": {
+      "score": 2.38
+    },
+    "poulet, aile, viande et peau, cru": {
+      "score": 2.54
+    },
+    "poulet, aile, viande et peau, rôti/cuit au four": {
+      "score": 3.4
+    },
+    "poulet, croquette panée ou nuggets": {
+      "score": 1.51
+    },
+    "poulet, cuisse, viande et peau, bouilli/cuit à l\u0027eau": {
+      "score": 3.4
+    },
+    "poulet, cuisse, viande et peau, cru": {
+      "score": 2.54
+    },
+    "poulet, cuisse, viande et peau, rôtie/cuite au four": {
+      "score": 3.4
+    },
+    "poulet, cuisse, viande, bouilli/cuit à l\u0027eau": {
+      "score": 3.4
+    },
+    "poulet, cuisse, viande, cru": {
+      "score": 2.54
+    },
+    "poulet, cuisse, viande, rôti/cuit au four": {
+      "score": 3.4
+    },
+    "poulet, escalope panée": {
+      "score": 3.22
+    },
+    "poulet, filet, sans peau, cru": {
+      "score": 2.49
+    },
+    "poulet, filet, sans peau, cuit": {
+      "score": 3.34
+    },
+    "poulet, haut de cuisse, viande, cru": {
+      "score": 2.54
+    },
+    "poulet, manchons marinés, rôtis/cuits au four": {
+      "score": 3.43
+    },
+    "poulet, pilon, cru": {
+      "score": 2.54
+    },
+    "poulet, poitrine, viande et peau, cru": {
+      "score": 2.49
+    },
+    "poulet, poitrine, viande et peau, rôti/cuit au four": {
+      "score": 3.34
+    },
+    "poulet, viande et peau, cru": {
+      "score": 1.9
+    },
+    "poulet, viande et peau, rôti/cuit au four": {
+      "score": 2.72
+    },
+    "poulet, viande, crue": {
+      "score": 2.03
+    },
+    "pouligny saint pierre (fromage de chèvre)": {
+      "score": 2.55
+    },
+    "poêlée de légumes assaisonnés aux champignons (\"champêtre\"), surgelée": {
+      "score": 0.643
+    },
+    "poêlée de légumes assaisonnés grillée, méridionale ou méditerranéenne, surgelée, crue": {
+      "score": 0.643
+    },
+    "poêlée de légumes assaisonnés sans champignon, surgelée, crue": {
+      "score": 0.643
+    },
+    "poêlée de légumes assaisonnés à l\u0027asiatiques ou wok de légumes, surgelée, crue": {
+      "score": 0.643
+    },
+    "poêlée de pommes de terre préfrites, lardons ou poulet, et autres, sans légumes verts": {
+      "score": 6.28
+    },
+    "printanière de légumes, surgelée, crue (haricots verts, carottes, pomme de terre, petits pois, oignons)": {
+      "score": 8.63
+    },
+    "profiterole avec glace vanille et sauce chocolat": {
+      "score": 0.55
+    },
+    "profiteroles (crème pâtissière et sauce chocolat), rayon frais": {
+      "score": 0.598
+    },
+    "protéine de soja texturée": {
+      "score": 0.306
+    },
+    "protéine de soja texturée, réhydratée": {
+      "score": 0.132
+    },
+    "provolone": {
+      "score": 0.776
+    },
+    "prune reine claude, crue": {
+      "score": 6.51
+    },
+    "prune, crue": {
+      "score": 6.51
+    },
+    "pruneau, sec": {
+      "score": 26.2
+    },
+    "préparation culinaire à base de soja, type \"crème de soja\"": {
+      "score": 0.422
+    },
+    "purée de fruits, tout type de fruits, type \"compote sans sucres ajoutés\"": {
+      "score": 1.18
+    },
+    "pâte brisée, crue": {
+      "score": 0.7
+    },
+    "pâte brisée, matière grasse végétale, cuite": {
+      "score": 0.7
+    },
+    "pâte brisée, pur beurre, crue": {
+      "score": 0.7
+    },
+    "pâte brisée, pur beurre, surgelée, crue": {
+      "score": 0.685
+    },
+    "pâte d\u0027amande, préemballée": {
+      "score": 17.1
+    },
+    "pâte de fruits": {
+      "score": 5.42
+    },
+    "pâte feuilletée pur beurre, crue": {
+      "score": 0.719
+    },
+    "pâte feuilletée pur beurre, cuite": {
+      "score": 0.719
+    },
+    "pâte feuilletée pur beurre, surgelée crue": {
+      "score": 0.703
+    },
+    "pâte feuilletée, cuite": {
+      "score": 0.736
+    },
+    "pâte feuilletée, matière grasse végétale, crue": {
+      "score": 0.719
+    },
+    "pâte feuilletée, surgelée, crue": {
+      "score": 0.703
+    },
+    "pâte phyllo ou pâte filo, crue": {
+      "score": 2.02
+    },
+    "pâte sablée pur beurre, crue": {
+      "score": 1.03
+    },
+    "pâte sablée pur beurre, cuite": {
+      "score": 1.03
+    },
+    "pâte sablée pur beurre, surgelée, crue": {
+      "score": 1.0
+    },
+    "pâte sablée, crue": {
+      "score": 1.03
+    },
+    "pâte sablée, cuite": {
+      "score": 1.03
+    },
+    "pâte à pizza crue": {
+      "score": 1.39
+    },
+    "pâte à pizza cuite": {
+      "score": 1.39
+    },
+    "pâte à pizza fine, crue": {
+      "score": 1.39
+    },
+    "pâte à tartiner chocolat et noisette": {
+      "score": 2.72
+    },
+    "pâtes en sauce aux fromages (spaghetti, tagliatelles…)": {
+      "score": 0.857
+    },
+    "pâtes fraîches farcies (ex : ravioli), aux légumes, crues": {
+      "score": 1.07
+    },
+    "pâtes fraîches farcies (ex : raviolis), au fromage et aux légumes, crues": {
+      "score": 0.857
+    },
+    "pâtes fraîches farcies (ex : raviolis), au fromage et aux légumes, cuites": {
+      "score": 0.857
+    },
+    "pâtes fraîches farcies (ex : raviolis), aux légumes, cuites": {
+      "score": 1.07
+    },
+    "pâtes fraîches farcies (ex : raviolis), à la viande (ex : bolognaise), crues": {
+      "score": 1.7
+    },
+    "pâtes fraîches farcies (ex : raviolis), à la viande (ex : bolognaise), cuites": {
+      "score": 1.7
+    },
+    "pâtes fraîches farcies (ex : raviolis, ravioles du dauphiné), au fromage, crues": {
+      "score": 0.857
+    },
+    "pâtes fraîches farcies (ex : raviolis, ravioles du dauphiné), au fromage, cuites": {
+      "score": 0.857
+    },
+    "pâtes fraîches, aux œufs, crues": {
+      "score": 0.438
+    },
+    "pâtes fraîches, aux œufs, cuites, non salées": {
+      "score": 0.565
+    },
+    "pâtes sèches standard, crues": {
+      "score": 0.984
+    },
+    "pâtes sèches standard, cuites, non salées": {
+      "score": 0.458
+    },
+    "pâtes sèches, au blé complet, crues": {
+      "score": 0.932
+    },
+    "pâtes sèches, au blé complet, cuites, non salées": {
+      "score": 0.499
+    },
+    "pâtes sèches, aux œufs, crues": {
+      "score": 0.926
+    },
+    "pâtes sèches, aux œufs, cuites, non salées": {
+      "score": 0.565
+    },
+    "pâtes sèches, sans gluten, crues": {
+      "score": 3.4
+    },
+    "pâtes sèches, sans gluten, cuites, non salées": {
+      "score": 1.57
+    },
+    "pâtes à la bolognaise (spaghetti, tagliatelles…)": {
+      "score": 1.85
+    },
+    "pâtes à la carbonara (spaghetti, tagliatelles…)": {
+      "score": 1.52
+    },
+    "pâté au poivre vert": {
+      "score": 1.7
+    },
+    "pâté breton": {
+      "score": 1.66
+    },
+    "pâté de foie d\u0027oie": {
+      "score": 0.807
+    },
+    "pâté de foie de porc": {
+      "score": 0.858
+    },
+    "pâté de foie de porc, supérieur": {
+      "score": 0.867
+    },
+    "pâté de foie de volaille": {
+      "score": 0.767
+    },
+    "pâté de gibier": {
+      "score": 1.66
+    },
+    "pâté de lapin": {
+      "score": 2.06
+    },
+    "pâté en croûte": {
+      "score": 2.6
+    },
+    "pâté ou terrine aux champignons (forestier)": {
+      "score": 13.2
+    },
+    "pâté ou terrine de campagne": {
+      "score": 1.66
+    },
+    "pélardon (fromage de chèvre)": {
+      "score": 3.07
+    },
+    "pétales de blé avec noix, noisettes ou amandes, enrichis en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "pétales de blé chocolatés (non enrichis en vitamines et minéraux)": {
+      "score": 6.45
+    },
+    "pétales de blé chocolatés, enrichis en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "pétales de maïs glacés au sucre (non enrichis en vitamines et minéraux)": {
+      "score": 6.45
+    },
+    "pétales de maïs glacés au sucre, enrichis en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "pétales de maïs natures (non enrichis en vitamines et minéraux)": {
+      "score": 6.45
+    },
+    "pétales de maïs natures, enrichis en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "pétillant de fruits": {
+      "score": 0.562
+    },
+    "pétoncle ou peigne du pérou, noix, crue": {
+      "score": 0.435
+    },
+    "pêche au sirop léger, appertisée, non égouttée": {
+      "score": 4.52
+    },
+    "pêche au sirop léger, appertisée, égouttée": {
+      "score": 8.04
+    },
+    "pêche melba": {
+      "score": 1.04
+    },
+    "pêche, pulpe et peau, crue": {
+      "score": 7.71
+    },
+    "pêche, sèche": {
+      "score": 67.7
+    },
+    "quatre quarts ou barre pâtissière, préemballé": {
+      "score": 1.45
+    },
+    "quatre épices": {
+      "score": 3.36
+    },
+    "quenelle au tofu (ne convient pas aux véganes ou végétaliens), préemballée": {
+      "score": 1.88
+    },
+    "quenelle de poisson, crue": {
+      "score": 0.552
+    },
+    "quenelle de poisson, en sauce": {
+      "score": 0.584
+    },
+    "quenelle de veau, en sauce": {
+      "score": 1.04
+    },
+    "quenelle de volaille, crue": {
+      "score": 1.52
+    },
+    "quenelle de volaille, en sauce": {
+      "score": 1.56
+    },
+    "quenelle nature, crue": {
+      "score": 0.497
+    },
+    "quiche lorraine": {
+      "score": 1.08
+    },
+    "quinoa fr, cru": {
+      "score": 13.5
+    },
+    "quinoa fr, cuit": {
+      "score": 6.02
+    },
+    "quinoa, cru": {
+      "score": 30.8
+    },
+    "quinoa, cuit": {
+      "score": 13.6
+    },
+    "raclette (fromage)": {
+      "score": 0.858
+    },
+    "radis noir, cru": {
+      "score": 0.113
+    },
+    "radis rouge, cru": {
+      "score": 0.113
+    },
+    "raie, crue": {
+      "score": 0.47
+    },
+    "raie, cuite au court bouillon": {
+      "score": 0.709
+    },
+    "raie, rôtie/cuite au four": {
+      "score": 0.709
+    },
+    "raifort, cru": {
+      "score": 0.527
+    },
+    "raisin blanc, à gros grain (type italia ou dattier), cru": {
+      "score": 4.92
+    },
+    "raisin noir, cru": {
+      "score": 4.92
+    },
+    "raisin, cru": {
+      "score": 4.92
+    },
+    "raisin, sec": {
+      "score": 19.4
+    },
+    "rascasse, crue": {
+      "score": 0.47
+    },
+    "rascasse, cuite à la vapeur": {
+      "score": 0.709
+    },
+    "ratatouille cuisinée": {
+      "score": 4.22
+    },
+    "ravioli chinois à la vapeur à la crevette, cuit": {
+      "score": 92.4
+    },
+    "ravioli à la viande, sauce tomate, appertisé": {
+      "score": 1.01
+    },
+    "raviolis aux légumes, sauce tomate, appertisés": {
+      "score": 1.05
+    },
+    "reblochon": {
+      "score": 0.559
+    },
+    "requin, cru": {
+      "score": 0.47
+    },
+    "rhubarbe, tige, crue": {
+      "score": 0.0643
+    },
+    "rhubarbe, tige, cuite, sucrée": {
+      "score": 0.44
+    },
+    "rhum": {
+      "score": 0.169
+    },
+    "rillettes d\u0027oie": {
+      "score": 1.23
+    },
+    "rillettes de canard": {
+      "score": 1.2
+    },
+    "rillettes de maquereau": {
+      "score": 1.81
+    },
+    "rillettes de poisson": {
+      "score": 0.583
+    },
+    "rillettes de poulet": {
+      "score": 2.56
+    },
+    "rillettes de saumon": {
+      "score": 1.81
+    },
+    "rillettes de thon": {
+      "score": 0.583
+    },
+    "rillettes de tours": {
+      "score": 2.63
+    },
+    "rillettes du mans": {
+      "score": 2.53
+    },
+    "rillettes pur oie": {
+      "score": 1.23
+    },
+    "rillettes pur porc": {
+      "score": 2.48
+    },
+    "rillettes traditionnelles de porc": {
+      "score": 2.48
+    },
+    "ris, agneau, cru": {
+      "score": 4.56
+    },
+    "ris, agneau, cuit": {
+      "score": 6.28
+    },
+    "ris, veau, braisé ou sauté/poêlé": {
+      "score": 5.26
+    },
+    "ris, veau, cru": {
+      "score": 3.83
+    },
+    "risotto, aux fromages": {
+      "score": 3.63
+    },
+    "risotto, aux fruits de mer": {
+      "score": 3.63
+    },
+    "risotto, aux légumes": {
+      "score": 3.63
+    },
+    "riste d\u0027aubergines (aubergines, tomates, oignons)": {
+      "score": 4.22
+    },
+    "riz au lait, rayon frais": {
+      "score": 2.2
+    },
+    "riz blanc étuvé, cru": {
+      "score": 14.3
+    },
+    "riz blanc étuvé, cuit, non salé": {
+      "score": 6.4
+    },
+    "riz blanc, cru": {
+      "score": 14.3
+    },
+    "riz blanc, cuit, avec légumes et viande": {
+      "score": 2.65
+    },
+    "riz blanc, cuit, avec poulet": {
+      "score": 3.09
+    },
+    "riz blanc, cuit, non salé": {
+      "score": 6.4
+    },
+    "riz cantonais": {
+      "score": 4.67
+    },
+    "riz complet, cru": {
+      "score": 14.3
+    },
+    "riz complet, cuit, non salé": {
+      "score": 6.4
+    },
+    "riz rouge, cru": {
+      "score": 14.3
+    },
+    "riz rouge, cuit, non salé": {
+      "score": 6.4
+    },
+    "riz sauvage, cru": {
+      "score": 14.3
+    },
+    "riz sauvage, cuit, non salé": {
+      "score": 6.4
+    },
+    "riz thaï ou basmati, cru": {
+      "score": 15.3
+    },
+    "riz, mélange de variétés (blanc, complet, rouge, sauvage, etc.), cru": {
+      "score": 14.3
+    },
+    "rocamadour (fromage de chèvre)": {
+      "score": 2.49
+    },
+    "rocher chocolat fourré praliné": {
+      "score": 6.07
+    },
+    "rocher coco ou congolais (petit gâteau à la noix de coco)": {
+      "score": 3.93
+    },
+    "rognon, agneau, braisé": {
+      "score": 5.03
+    },
+    "rognon, agneau, cru": {
+      "score": 3.64
+    },
+    "rognon, boeuf, cru": {
+      "score": 1.91
+    },
+    "rognon, boeuf, cuit": {
+      "score": 2.65
+    },
+    "rognon, porc, cru": {
+      "score": 0.898
+    },
+    "rognon, porc, cuit": {
+      "score": 1.26
+    },
+    "rognon, veau, braisé ou sauté/poêlé": {
+      "score": 4.21
+    },
+    "rognon, veau, cru": {
+      "score": 3.06
+    },
+    "romarin, frais": {
+      "score": 5.16
+    },
+    "romarin, séché": {
+      "score": 20.2
+    },
+    "rond de jambon cuit": {
+      "score": 2.48
+    },
+    "roquefort": {
+      "score": 0.632
+    },
+    "roquette, crue": {
+      "score": 0.643
+    },
+    "rosette ou fuseau": {
+      "score": 2.65
+    },
+    "rostis ou galette de pomme de terre": {
+      "score": 0.509
+    },
+    "rouget barbet de roche, cru": {
+      "score": 0.707
+    },
+    "rouget barbet de roche, vapeur": {
+      "score": 0.896
+    },
+    "rouget barbet, filet avec peau, surgelé, cru (thaïlande, sénégal…)": {
+      "score": 0.789
+    },
+    "roulade de porc pistachée": {
+      "score": 2.42
+    },
+    "rouleau de printemps": {
+      "score": 16.0
+    },
+    "roussette ou petite roussette ou saumonette, crue": {
+      "score": 0.47
+    },
+    "roussette ou petite roussette ou saumonette, cuite": {
+      "score": 0.709
+    },
+    "rutabaga, cru": {
+      "score": 0.413
+    },
+    "rutabaga, cuit": {
+      "score": 0.75
+    },
+    "rôti de volaille en salaison, cuit": {
+      "score": 3.48
+    },
+    "sablé au cacao ou chocolat, au praliné ou autre": {
+      "score": 0.914
+    },
+    "sablé aux fruits (pomme, fruits rouges, etc.)": {
+      "score": 1.02
+    },
+    "sablé pâtissier": {
+      "score": 0.973
+    },
+    "sablé à la noix de coco": {
+      "score": 2.29
+    },
+    "sabre, cru": {
+      "score": 0.47
+    },
+    "safran": {
+      "score": 4.38
+    },
+    "saindoux": {
+      "score": 0.673
+    },
+    "saint félicien": {
+      "score": 0.647
+    },
+    "saint marcellin": {
+      "score": 0.636
+    },
+    "saint nectaire, fermier": {
+      "score": 0.732
+    },
+    "saint nectaire, laitier": {
+      "score": 0.732
+    },
+    "saint nectaire, sans précision": {
+      "score": 0.732
+    },
+    "saint paulin (fromage à pâte pressée non cuite demi ferme)": {
+      "score": 0.759
+    },
+    "saint pierre, cru": {
+      "score": 0.47
+    },
+    "sainte maure (fromage de chèvre)": {
+      "score": 2.28
+    },
+    "sainte maure de touraine (fromage de chèvre)": {
+      "score": 2.52
+    },
+    "saké ou alcool de riz": {
+      "score": 0.169
+    },
+    "salade composée avec viande ou poisson, appertisée, égouttée": {
+      "score": 1.17
+    },
+    "salade césar au poulet (salade verte, fromage, croûtos, sauce)": {
+      "score": 1.41
+    },
+    "salade de chou ou coleslaw, avec sauce, préemballée": {
+      "score": 1.08
+    },
+    "salade de fruits, crue": {
+      "score": 5.48
+    },
+    "salade de pomme de terre à la piémontaise, préemballée": {
+      "score": 1.79
+    },
+    "salade de pommes de terre maison": {
+      "score": 1.71
+    },
+    "salade de pâtes aux légumes, avec poisson ou viande": {
+      "score": 1.41
+    },
+    "salade de pâtes, végétarienne": {
+      "score": 1.44
+    },
+    "salade de riz": {
+      "score": 4.34
+    },
+    "salade de thon et légumes, appertisée, égouttée": {
+      "score": 1.08
+    },
+    "salade ou chicorée frisée, crue": {
+      "score": 0.479
+    },
+    "salade verte, crue, sans assaisonnement": {
+      "score": 0.643
+    },
+    "salami": {
+      "score": 2.65
+    },
+    "salami porc et boeuf": {
+      "score": 2.68
+    },
+    "salami pur porc": {
+      "score": 2.65
+    },
+    "salami type danois": {
+      "score": 2.65
+    },
+    "salers": {
+      "score": 0.783
+    },
+    "salicorne (salicornia sp.), fraîche": {
+      "score": 0.424
+    },
+    "salsifis noir, cru": {
+      "score": 0.413
+    },
+    "salsifis, appertisé, égoutté": {
+      "score": 0.579
+    },
+    "salsifis, cuit": {
+      "score": 0.746
+    },
+    "salsifis, surgelé, cru": {
+      "score": 0.465
+    },
+    "samossas ou samoussas": {
+      "score": 3.19
+    },
+    "sandwich baguette, camembert, beurre": {
+      "score": 0.789
+    },
+    "sandwich baguette, crudités diverses, mayonnaise": {
+      "score": 1.25
+    },
+    "sandwich baguette, dinde, crudités (tomate, salade), mayonnaise": {
+      "score": 1.25
+    },
+    "sandwich baguette, jambon emmental": {
+      "score": 1.48
+    },
+    "sandwich baguette, jambon, beurre": {
+      "score": 1.74
+    },
+    "sandwich baguette, jambon, emmental, beurre": {
+      "score": 1.48
+    },
+    "sandwich baguette, jambon, oeuf dur, crudités (tomate, salade), beurre": {
+      "score": 1.31
+    },
+    "sandwich baguette, merguez, ketchup moutarde": {
+      "score": 1.37
+    },
+    "sandwich baguette, oeuf, crudités (tomate, salade), mayonnaise": {
+      "score": 1.3
+    },
+    "sandwich baguette, porc, crudités (tomate, salade), mayonnaise": {
+      "score": 1.31
+    },
+    "sandwich baguette, poulet, crudités (tomate, salade), mayonnaise": {
+      "score": 1.96
+    },
+    "sandwich baguette, pâté, cornichons": {
+      "score": 1.26
+    },
+    "sandwich baguette, salami, beurre": {
+      "score": 1.74
+    },
+    "sandwich baguette, saucisson, beurre": {
+      "score": 1.37
+    },
+    "sandwich baguette, saumon fumé, beurre": {
+      "score": 0.904
+    },
+    "sandwich baguette, thon, crudités (tomate, salade), mayonnaise": {
+      "score": 1.16
+    },
+    "sandwich baguette, thon, maïs, crudités": {
+      "score": 0.904
+    },
+    "sandwich grec ou kebab, baguette, crudités": {
+      "score": 2.94
+    },
+    "sandwich grec ou kebab, pita, crudités": {
+      "score": 2.6
+    },
+    "sandwich pain de mie complet, jambon, crudités, fromage optionnel": {
+      "score": 0.967
+    },
+    "sandwich pain de mie complet, jambon, fromage": {
+      "score": 1.14
+    },
+    "sandwich pain de mie complet, poulet, crudités, mayonnaise": {
+      "score": 1.62
+    },
+    "sandwich pain de mie complet, thon, crudités, mayonnaise": {
+      "score": 0.823
+    },
+    "sandwich pain de mie, garnitures diverses": {
+      "score": 0.967
+    },
+    "sandwich panini, jambon cru, mozzarella, tomates": {
+      "score": 1.07
+    },
+    "sang, boeuf, cru": {
+      "score": 2.39
+    },
+    "sangria": {
+      "score": 2.72
+    },
+    "sardine, crue": {
+      "score": 0.213
+    },
+    "sardine, filets sans arêtes à l\u0027huile d\u0027olive, appertisés, égouttés": {
+      "score": 9.42
+    },
+    "sardine, grillée": {
+      "score": 0.395
+    },
+    "sardine, sauce tomate, appertisée, égouttée": {
+      "score": 9.42
+    },
+    "sardine, à l\u0027huile d\u0027olive, appertisée, égouttée": {
+      "score": 6.37
+    },
+    "sardine, à l\u0027huile, appertisée, égouttée (emballage corrigé)": {
+      "score": 9.36
+    },
+    "sardine, à l\u0027huile, appertisée, égouttée (version \"logiciel\" avec erreur sur l\u0027emballage)": {
+      "score": 9.42
+    },
+    "sarrasin entier, cru": {
+      "score": 0.496
+    },
+    "sarriette, séchée": {
+      "score": 20.2
+    },
+    "sauce aigre douce, préemballée": {
+      "score": 1.06
+    },
+    "sauce américaine, préemballée": {
+      "score": 0.871
+    },
+    "sauce armoricaine, préemballée": {
+      "score": 0.875
+    },
+    "sauce au beurre blanc, préemballée": {
+      "score": 0.735
+    },
+    "sauce au beurre, préemballée": {
+      "score": 0.735
+    },
+    "sauce au chocolat": {
+      "score": 0.469
+    },
+    "sauce au curry, préemballée": {
+      "score": 1.06
+    },
+    "sauce au fromage pour risotto ou pâtes, préemballée": {
+      "score": 0.623
+    },
+    "sauce au poivre vert, préemballée": {
+      "score": 0.33
+    },
+    "sauce au poivre, chaude, préemballée": {
+      "score": 0.396
+    },
+    "sauce au poivre, condimentaire, froide, préemballée": {
+      "score": 0.392
+    },
+    "sauce au roquefort, préemballée": {
+      "score": 0.735
+    },
+    "sauce au vin rouge": {
+      "score": 0.522
+    },
+    "sauce au yaourt": {
+      "score": 0.581
+    },
+    "sauce aux champignons et à la crème, préemballée": {
+      "score": 21.2
+    },
+    "sauce aux champignons, préemballée": {
+      "score": 27.3
+    },
+    "sauce aïoli, préemballée": {
+      "score": 18.0
+    },
+    "sauce barbecue, préemballée": {
+      "score": 2.04
+    },
+    "sauce basquaise ou sauce aux poivrons, préemballée": {
+      "score": 3.92
+    },
+    "sauce bourguignonne, préemballée": {
+      "score": 5.12
+    },
+    "sauce burger, préemballée": {
+      "score": 4.25
+    },
+    "sauce béarnaise, préemballée": {
+      "score": 1.08
+    },
+    "sauce béchamel, maison": {
+      "score": 0.425
+    },
+    "sauce béchamel, préemballée": {
+      "score": 0.425
+    },
+    "sauce carbonara, préemballée": {
+      "score": 1.28
+    },
+    "sauce chasseur, préemballée": {
+      "score": 8.16
+    },
+    "sauce crudités ou sauce salade, allégée en matière grasse, préemballée": {
+      "score": 4.24
+    },
+    "sauce crudités ou sauce salade, préemballée": {
+      "score": 4.24
+    },
+    "sauce grand veneur, préemballée": {
+      "score": 5.12
+    },
+    "sauce hollandaise, préemballée": {
+      "score": 1.0
+    },
+    "sauce indienne type tandoori ou tikka masala, préemballée": {
+      "score": 1.06
+    },
+    "sauce kebab, préemballée": {
+      "score": 1.1
+    },
+    "sauce madère, préemballée": {
+      "score": 0.725
+    },
+    "sauce moutarde, préemballée": {
+      "score": 0.508
+    },
+    "sauce nuoc mâm ou sauce au poisson, préemballée": {
+      "score": 0.562
+    },
+    "sauce pesto rosso, préemballée": {
+      "score": 11.0
+    },
+    "sauce pesto, préemballée": {
+      "score": 11.0
+    },
+    "sauce rouille, préemballée": {
+      "score": 3.86
+    },
+    "sauce soja, préemballée": {
+      "score": 0.297
+    },
+    "sauce tartare, préemballée": {
+      "score": 0.392
+    },
+    "sauce tomate au fromage, préemballée": {
+      "score": 2.62
+    },
+    "sauce tomate aux champignons, préemballée": {
+      "score": 5.66
+    },
+    "sauce tomate aux oignons, préemballée": {
+      "score": 2.63
+    },
+    "sauce tomate aux olives, préemballée": {
+      "score": 2.84
+    },
+    "sauce tomate aux petits légumes, préemballée": {
+      "score": 3.92
+    },
+    "sauce tomate à la viande ou sauce bolognaise, préemballée": {
+      "score": 2.43
+    },
+    "sauce vinaigrette (50 à 75% d\u0027huile), préemballée": {
+      "score": 3.73
+    },
+    "sauce végétale type bolognaise, préemballée": {
+      "score": 1.54
+    },
+    "sauce à l\u0027échalote à la crème, préemballée": {
+      "score": 0.523
+    },
+    "sauce à la crème": {
+      "score": 0.463
+    },
+    "sauce à la crème aux herbes": {
+      "score": 0.542
+    },
+    "sauce à la crème aux épices": {
+      "score": 0.542
+    },
+    "saucisse alsacienne fumée ou gendarme": {
+      "score": 1.77
+    },
+    "saucisse cocktail": {
+      "score": 1.51
+    },
+    "saucisse de bière": {
+      "score": 1.83
+    },
+    "saucisse de foie": {
+      "score": 1.57
+    },
+    "saucisse de francfort": {
+      "score": 1.78
+    },
+    "saucisse de jambon pur porc": {
+      "score": 1.83
+    },
+    "saucisse de montbéliard": {
+      "score": 1.77
+    },
+    "saucisse de morteau": {
+      "score": 1.77
+    },
+    "saucisse de morteau, bouillie/cuite à l\u0027eau": {
+      "score": 1.77
+    },
+    "saucisse de strasbourg ou knack": {
+      "score": 1.55
+    },
+    "saucisse de toulouse, crue": {
+      "score": 2.77
+    },
+    "saucisse de toulouse, cuite": {
+      "score": 2.84
+    },
+    "saucisse de volaille, façon charcutière": {
+      "score": 3.12
+    },
+    "saucisse de volaille, type knack": {
+      "score": 1.86
+    },
+    "saucisse hot dog végétale": {
+      "score": 0.642
+    },
+    "saucisse sèche": {
+      "score": 2.37
+    },
+    "saucisse viennoise, crue": {
+      "score": 2.72
+    },
+    "saucisse végétale au blé ou seitan, préemballé": {
+      "score": 0.644
+    },
+    "saucisse végétale au tofu (convient aux véganes ou végétaliens), préemballée": {
+      "score": 0.448
+    },
+    "saucisson brioché, cuit": {
+      "score": 1.4
+    },
+    "saucisson cuit pur porc": {
+      "score": 3.12
+    },
+    "saucisson de paris": {
+      "score": 2.63
+    },
+    "saucisson de paris, fumé": {
+      "score": 2.63
+    },
+    "saucisson sec": {
+      "score": 2.34
+    },
+    "saucisson sec aux noix et/ou noisettes": {
+      "score": 2.37
+    },
+    "saucisson sec pur porc": {
+      "score": 2.34
+    },
+    "saucisson sec pur porc, qualité supérieure": {
+      "score": 2.34
+    },
+    "saucisson à l\u0027ail": {
+      "score": 1.94
+    },
+    "sauge, fraîche": {
+      "score": 5.16
+    },
+    "sauge, séchée": {
+      "score": 20.2
+    },
+    "saumon fumé (emballage corrigé)": {
+      "score": 1.77
+    },
+    "saumon fumé (version \"logiciel\" avec erreur sur l\u0027emballage)": {
+      "score": 1.56
+    },
+    "saumon à l\u0027oseille": {
+      "score": 1.09
+    },
+    "saumon, appertisé, égoutté": {
+      "score": 2.04
+    },
+    "saumon, bouilli/cuit à l\u0027eau, élevage": {
+      "score": 1.48
+    },
+    "saumon, cru, élevage": {
+      "score": 1.12
+    },
+    "saumon, cuit au micro ondes, élevage": {
+      "score": 1.47
+    },
+    "saumon, cuit à la vapeur": {
+      "score": 1.5
+    },
+    "saumon, grillé/poêlé": {
+      "score": 1.48
+    },
+    "saumon, élevage, rôti/cuit au four": {
+      "score": 1.5
+    },
+    "saupe, crue": {
+      "score": 0.707
+    },
+    "scarole, crue": {
+      "score": 0.675
+    },
+    "seigle entier, cru": {
+      "score": 0.149
+    },
+    "seitan, préemballé": {
+      "score": 0.455
+    },
+    "sel au céleri": {
+      "score": 0.0776
+    },
+    "sel blanc alimentaire, iodé, non fluoré (marin, ignigène ou gemme)": {
+      "score": 0.0776
+    },
+    "sel blanc alimentaire, non iodé, non fluoré (marin, ignigène ou gemme)": {
+      "score": 0.0776
+    },
+    "sel marin gris, non iodé, non fluoré": {
+      "score": 0.0776
+    },
+    "selles sur cher (fromage de chèvre)": {
+      "score": 2.55
+    },
+    "semoule au lait, rayon frais": {
+      "score": 0.514
+    },
+    "semoule de blé dur, crue": {
+      "score": 0.957
+    },
+    "sirop d\u0027agave": {
+      "score": 0.676
+    },
+    "sirop d\u0027érable": {
+      "score": 2.5
+    },
+    "sirop léger pour fruits appertisés au sirop": {
+      "score": 0.423
+    },
+    "sirop pour fruits appertisés au sirop": {
+      "score": 0.423
+    },
+    "sirop à diluer, sucré": {
+      "score": 1.44
+    },
+    "smoothie": {
+      "score": 0.729
+    },
+    "snack pour enfants à base de fromage fondu et de gressins": {
+      "score": 0.847
+    },
+    "soja, graine entière": {
+      "score": 0.276
+    },
+    "sole tropicale ou sole langue, crue": {
+      "score": 0.707
+    },
+    "sole, bouillie/cuite à l\u0027eau": {
+      "score": 0.998
+    },
+    "sole, crue": {
+      "score": 0.707
+    },
+    "sole, cuite à la vapeur": {
+      "score": 0.998
+    },
+    "sole, frite": {
+      "score": 0.979
+    },
+    "sole, poêlée": {
+      "score": 0.998
+    },
+    "sole, rôtie/cuite au four": {
+      "score": 0.791
+    },
+    "son d\u0027avoine": {
+      "score": 0.275
+    },
+    "son de blé": {
+      "score": 0.0863
+    },
+    "son de maïs": {
+      "score": 0.306
+    },
+    "son de riz": {
+      "score": 7.1
+    },
+    "sorbet, bâtonnet": {
+      "score": 6.69
+    },
+    "sorbet, en bac": {
+      "score": 6.73
+    },
+    "sorgho entier, cru": {
+      "score": 3.93
+    },
+    "soufflé au fromage": {
+      "score": 0.795
+    },
+    "soupe asiatique, avec pâtes, déshydratée reconstituée": {
+      "score": 77.4
+    },
+    "soupe asiatique, avec pâtes, préemballée à réchauffer": {
+      "score": 77.6
+    },
+    "soupe au cresson, déshydratée reconstituée": {
+      "score": 0.217
+    },
+    "soupe au cresson, préemballée à réchauffer": {
+      "score": 0.208
+    },
+    "soupe au pistou, déshydratée reconstituée": {
+      "score": 1.18
+    },
+    "soupe au pistou, préemballée à réchauffer": {
+      "score": 1.17
+    },
+    "soupe au potiron, déshydratée reconstituée": {
+      "score": 0.357
+    },
+    "soupe au potiron, préemballée à réchauffer": {
+      "score": 0.348
+    },
+    "soupe aux asperges, déshydratée reconstituée": {
+      "score": 2.1
+    },
+    "soupe aux asperges, préemballée à réchauffer": {
+      "score": 2.1
+    },
+    "soupe aux champignons, déshydratée reconstituée": {
+      "score": 16.6
+    },
+    "soupe aux champignons, préemballée à réchauffer": {
+      "score": 16.6
+    },
+    "soupe aux céréales et aux légumes, déshydratée reconstituée": {
+      "score": 0.369
+    },
+    "soupe aux lentilles, préemballée à réchauffer": {
+      "score": 0.169
+    },
+    "soupe aux légumes avec fromage, préemballée à réchauffer": {
+      "score": 0.359
+    },
+    "soupe aux légumes variés, déshydratée reconstituée": {
+      "score": 0.313
+    },
+    "soupe aux légumes variés, préemballée à réchauffer": {
+      "score": 0.305
+    },
+    "soupe aux légumes verts, déshydratée reconstituée": {
+      "score": 1.18
+    },
+    "soupe aux légumes verts, préemballée à réchauffer": {
+      "score": 1.18
+    },
+    "soupe aux poireaux et pommes de terre, déshydratée reconstituée": {
+      "score": 0.162
+    },
+    "soupe aux poireaux et pommes de terre, préemballée à réchauffer": {
+      "score": 0.154
+    },
+    "soupe aux pois cassés, préemballée à réchauffer": {
+      "score": 0.169
+    },
+    "soupe chorba frik, à base de viande et de frik": {
+      "score": 0.899
+    },
+    "soupe de poissons et / ou crustacés, déshydratée reconstituée": {
+      "score": 1.85
+    },
+    "soupe de poissons et / ou crustacés, préemballée à réchauffer": {
+      "score": 1.84
+    },
+    "soupe froide type gaspacho ou gazpacho": {
+      "score": 0.15
+    },
+    "soupe marocaine, déshydratée reconstituée": {
+      "score": 0.851
+    },
+    "soupe minestrone, déshydratée reconstituée": {
+      "score": 1.86
+    },
+    "soupe minestrone, préemballée à réchauffer": {
+      "score": 1.85
+    },
+    "soupe pour bébé légumes et pomme de terre": {
+      "score": 0.274
+    },
+    "soupe pour bébé légumes, céréales et lait": {
+      "score": 0.425
+    },
+    "soupe à l\u0027oignon, déshydratée reconstituée": {
+      "score": 2.33
+    },
+    "soupe à l\u0027oignon, préemballée à réchauffer": {
+      "score": 2.32
+    },
+    "soupe à la carotte, préemballée à réchauffer": {
+      "score": 0.228
+    },
+    "soupe à la tomate et aux vermicelles, déshydratée reconstituée": {
+      "score": 0.369
+    },
+    "soupe à la tomate et aux vermicelles, préemballée à réchauffer": {
+      "score": 0.361
+    },
+    "soupe à la tomate, déshydratée reconstituée": {
+      "score": 0.158
+    },
+    "soupe à la tomate, préemballée à réchauffer": {
+      "score": 0.15
+    },
+    "soupe à la volaille et aux légumes, déshydratée reconstituée": {
+      "score": 0.18
+    },
+    "soupe à la volaille et aux légumes, préemballée à réchauffer": {
+      "score": 0.18
+    },
+    "soupe à la volaille et aux vermicelles, déshydratée reconstituée": {
+      "score": 0.637
+    },
+    "soupe à la volaille et aux vermicelles, préemballée à réchauffer": {
+      "score": 0.629
+    },
+    "spiruline (spirulina sp.), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "sprat, cru": {
+      "score": 0.213
+    },
+    "spécialité chinoise ou bouchées à la vapeur, cuite": {
+      "score": 95.1
+    },
+    "spécialité fromagère fondante au fromage blanc et aux noix": {
+      "score": 1.3
+    },
+    "spécialité fromagère non affinée environ 20% mg, type fromage en barquette à tartiner ou coque fromagère": {
+      "score": 0.587
+    },
+    "spécialité fromagère non affinée environ 25% mg, type fromage en barquette à tartiner ou coque fromagère": {
+      "score": 0.629
+    },
+    "spécialité fromagère non affinée à tartiner environ 30 40 % mg aromatisée (ex: ail et fines herbes)": {
+      "score": 0.629
+    },
+    "spécialité végétale type fromage en tranche, sans soja, préemballée": {
+      "score": 4.52
+    },
+    "spécialité végétale type fromage râpé, sans soja, préemballée": {
+      "score": 4.52
+    },
+    "spécialité végétale type fromage à tartiner, au soja, préemballée": {
+      "score": 1.38
+    },
+    "spécialité végétale type jambon cuit, préemballée": {
+      "score": 0.577
+    },
+    "spécialité végétale type pâté, préemballée": {
+      "score": 18.3
+    },
+    "spécialité à base de crème légère 8% mg, fluide ou épaisse": {
+      "score": 0.305
+    },
+    "spéculoos": {
+      "score": 2.55
+    },
+    "substitut de repas hypocalorique, crème dessert": {
+      "score": 0.805
+    },
+    "substitut de repas hypocalorique, poudre reconstituée avec lait écrémé": {
+      "score": 0.805
+    },
+    "substitut de repas hypocalorique, poudre reconstituée avec lait écrémé, type milk shake": {
+      "score": 0.805
+    },
+    "substitut de repas hypocalorique, prêt à boire": {
+      "score": 0.805
+    },
+    "sucre blanc": {
+      "score": 1.8
+    },
+    "sucre roux": {
+      "score": 6.6
+    },
+    "sucre vanillé": {
+      "score": 1.9
+    },
+    "sureau, baie, crue": {
+      "score": 0.165
+    },
+    "surimi, bâtonnets, tranche ou râpé saveur crabe": {
+      "score": 1.35
+    },
+    "surimi, fourré au fromage": {
+      "score": 1.35
+    },
+    "sushi ou maki aux produits de la mer": {
+      "score": 8.01
+    },
+    "sébaste du nord, ou dorade sébaste, ou daurade sébaste, crue": {
+      "score": 0.47
+    },
+    "sésame, graine": {
+      "score": 1.56
+    },
+    "sésame, graine décortiquée": {
+      "score": 3.13
+    },
+    "sésame, grillé, graine décortiquée": {
+      "score": 3.13
+    },
+    "taboulé ou salade de couscous au poulet, préemballé": {
+      "score": 1.61
+    },
+    "taboulé ou salade de couscous, préemballé": {
+      "score": 0.887
+    },
+    "tacaud, cru": {
+      "score": 0.47
+    },
+    "tahin ou purée de sésame": {
+      "score": 1.51
+    },
+    "tajine de mouton": {
+      "score": 5.47
+    },
+    "tajine de poulet": {
+      "score": 3.1
+    },
+    "tamarin, fruit immature, pulpe, cru": {
+      "score": 1.21
+    },
+    "tapenade": {
+      "score": 7.62
+    },
+    "tapioca ou perles du japon, cru": {
+      "score": 2.3
+    },
+    "tarama, préemballé": {
+      "score": 0.594
+    },
+    "taro, tubercule, cru": {
+      "score": 2.29
+    },
+    "taro, tubercule, cuit": {
+      "score": 3.58
+    },
+    "tarte au chocolat, fabrication artisanale": {
+      "score": 0.79
+    },
+    "tarte au citron": {
+      "score": 1.2
+    },
+    "tarte au fromage": {
+      "score": 0.615
+    },
+    "tarte au maroilles ou flamiche au maroilles": {
+      "score": 0.672
+    },
+    "tarte au saumon": {
+      "score": 0.731
+    },
+    "tarte aux abricots": {
+      "score": 1.74
+    },
+    "tarte aux fraises": {
+      "score": 7.88
+    },
+    "tarte aux fruits et crème pâtissière": {
+      "score": 1.95
+    },
+    "tarte aux fruits rouges": {
+      "score": 1.95
+    },
+    "tarte aux légumes": {
+      "score": 0.625
+    },
+    "tarte aux noix de saint jacques": {
+      "score": 6.71
+    },
+    "tarte aux poires amandine": {
+      "score": 4.27
+    },
+    "tarte normande aux pommes (garniture farine, œufs, crème, sucre, calvados)": {
+      "score": 4.27
+    },
+    "tarte ou tartelette aux fruits": {
+      "score": 5.77
+    },
+    "tarte ou tartelette aux pommes": {
+      "score": 0.776
+    },
+    "tarte ou tourte aux poireaux": {
+      "score": 0.646
+    },
+    "tarte tatin aux pommes": {
+      "score": 0.941
+    },
+    "tarte à l\u0027oignon": {
+      "score": 0.769
+    },
+    "tarte à la provençale": {
+      "score": 0.625
+    },
+    "tarte à la tomate": {
+      "score": 0.625
+    },
+    "tarte épinard chèvre": {
+      "score": 0.672
+    },
+    "tartiflette": {
+      "score": 0.912
+    },
+    "tartine craquante, extrudée et grillée": {
+      "score": 0.571
+    },
+    "tartine craquante, extrudée et grillée, fourrée au chocolat": {
+      "score": 0.447
+    },
+    "tartine craquante, extrudée et grillée, fourrée aux fruits": {
+      "score": 0.447
+    },
+    "tempeh": {
+      "score": 1.18
+    },
+    "terrine de canard": {
+      "score": 1.54
+    },
+    "terrine de fruits de mer, avec ou sans poisson": {
+      "score": 0.618
+    },
+    "terrine de lapin": {
+      "score": 2.07
+    },
+    "terrine de poisson": {
+      "score": 0.618
+    },
+    "terrine ou mousse de légumes": {
+      "score": 0.84
+    },
+    "thon albacore ou thon jaune, au naturel, appertisé, égoutté": {
+      "score": 0.375
+    },
+    "thon albacore ou thon jaune, cru": {
+      "score": 0.313
+    },
+    "thon germon ou thon blanc, cru": {
+      "score": 0.349
+    },
+    "thon germon ou thon blanc, cuit à la vapeur sous pression": {
+      "score": 0.487
+    },
+    "thon germon ou thon blanc, à l\u0027huile d\u0027olive, appertisé, égoutté": {
+      "score": 10.7
+    },
+    "thon listao ou bonite à ventre rayé, cru": {
+      "score": 0.31
+    },
+    "thon à l\u0027huile, appertisé, égoutté": {
+      "score": 0.738
+    },
+    "thon, au naturel, appertisé, égoutté": {
+      "score": 0.549
+    },
+    "thon, cru": {
+      "score": 0.313
+    },
+    "thon, rôti/cuit au four": {
+      "score": 0.517
+    },
+    "thon, à la catalane ou à l\u0027escabèche (sauce tomate), appertisé": {
+      "score": 0.738
+    },
+    "thym, frais": {
+      "score": 5.16
+    },
+    "thym, séché": {
+      "score": 20.2
+    },
+    "thé infusé, non sucré": {
+      "score": 0.776
+    },
+    "thé noir, infusé, non sucré": {
+      "score": 0.776
+    },
+    "thé oolong, infusé, non sucré": {
+      "score": 0.776
+    },
+    "thé vert, infusé, non sucré": {
+      "score": 0.776
+    },
+    "tielle sétoise": {
+      "score": 2.17
+    },
+    "tiramisu, rayon frais": {
+      "score": 7.74
+    },
+    "tisane infusée, non sucrée": {
+      "score": 0.776
+    },
+    "toasts ou canapés salés, garnitures diverses": {
+      "score": 0.467
+    },
+    "tofu fumé, préemballé": {
+      "score": 1.11
+    },
+    "tofu, nature": {
+      "score": 0.258
+    },
+    "tomate cerise, crue": {
+      "score": 0.379
+    },
+    "tomate de saison, crue": {
+      "score": 0.379
+    },
+    "tomate farcie": {
+      "score": 1.16
+    },
+    "tomate hors saison, crue": {
+      "score": 2.07
+    },
+    "tomate verte, crue": {
+      "score": 1.27
+    },
+    "tomate à la provençale": {
+      "score": 1.45
+    },
+    "tomate, concentré, appertisé": {
+      "score": 8.8
+    },
+    "tomate, coulis, appertisé (purée de tomates mi réduite à 11%)": {
+      "score": 0.381
+    },
+    "tomate, crue": {
+      "score": 1.27
+    },
+    "tomate, double concentré, appertisé": {
+      "score": 10.5
+    },
+    "tomate, pelée, appertisée, égouttée": {
+      "score": 0.614
+    },
+    "tomate, pulpe et peau, bouillie/cuite à l\u0027eau": {
+      "score": 1.69
+    },
+    "tomate, pulpe et peau, rôtie/cuite au four": {
+      "score": 1.71
+    },
+    "tomate, pulpe, appertisée": {
+      "score": 0.477
+    },
+    "tomate, purée, appertisée": {
+      "score": 0.381
+    },
+    "tomate, séchée": {
+      "score": 7.37
+    },
+    "tomate, séchée, à l\u0027huile": {
+      "score": 7.37
+    },
+    "tome des bauges": {
+      "score": 0.707
+    },
+    "tomme ou tome de montagne ou de savoie": {
+      "score": 0.699
+    },
+    "tomme ou tome de vache": {
+      "score": 0.703
+    },
+    "tomme ou tome, allégée en matière grasse, environ 13% mg": {
+      "score": 0.699
+    },
+    "tonic ou bitter, non sucré, avec édulcorants": {
+      "score": 0.307
+    },
+    "tonic ou bitter, sucré": {
+      "score": 0.307
+    },
+    "tonic ou bitter, sucré, avec édulcorants": {
+      "score": 0.307
+    },
+    "topinambour, cru": {
+      "score": 0.0558
+    },
+    "topinambour, cuit": {
+      "score": 0.296
+    },
+    "tortilla espagnole aux oignons (omelette aux pommes de terre et oignons)": {
+      "score": 2.68
+    },
+    "tortilla souple (à garnir), à base de blé": {
+      "score": 0.889
+    },
+    "tortilla souple (à garnir), à base de maïs": {
+      "score": 0.758
+    },
+    "tournesol, graine": {
+      "score": 1.04
+    },
+    "tournesol, graine, grillé, salé": {
+      "score": 1.04
+    },
+    "tourte au riesling": {
+      "score": 3.92
+    },
+    "tripes à la mode de caen": {
+      "score": 2.55
+    },
+    "tripes à la mode de caen, préemballées": {
+      "score": 2.55
+    },
+    "tripes à la tomate ou à la provençale": {
+      "score": 2.03
+    },
+    "tripes, boeuf, crues": {
+      "score": 2.39
+    },
+    "truite arc en ciel, crue, élevage": {
+      "score": 36.5
+    },
+    "truite arc en ciel, élevage, cuite à la vapeur": {
+      "score": 44.7
+    },
+    "truite arc en ciel, élevage, rôtie/cuite au four": {
+      "score": 44.7
+    },
+    "truite d\u0027élevage, crue": {
+      "score": 33.3
+    },
+    "truite d\u0027élevage, fumée (emballage corrigé)": {
+      "score": 40.6
+    },
+    "truite d\u0027élevage, fumée (version \"logiciel\" avec erreur sur l\u0027emballage)": {
+      "score": 40.4
+    },
+    "truite de mer, crue": {
+      "score": 36.5
+    },
+    "truite saumonée, crue": {
+      "score": 36.5
+    },
+    "truite, cuite à la vapeur": {
+      "score": 40.7
+    },
+    "truite, rôtie/cuite au four": {
+      "score": 40.7
+    },
+    "turbot d\u0027élevage, cru": {
+      "score": 2.62
+    },
+    "turbot sauvage, cru": {
+      "score": 0.414
+    },
+    "turbot, cru": {
+      "score": 2.62
+    },
+    "turbot, rôti/cuit au four": {
+      "score": 3.33
+    },
+    "tétragone cornue, cuite": {
+      "score": 0.525
+    },
+    "valençay (fromage de chèvre)": {
+      "score": 2.61
+    },
+    "vanille, extrait alcoolique": {
+      "score": 0.68
+    },
+    "vanille, extrait aqueux": {
+      "score": 0.68
+    },
+    "veau, carré, cru": {
+      "score": 2.53
+    },
+    "veau, carré, sauté/poêlé": {
+      "score": 3.21
+    },
+    "veau, collier, braisé ou bouilli": {
+      "score": 4.02
+    },
+    "veau, collier, cru": {
+      "score": 3.17
+    },
+    "veau, côte, crue": {
+      "score": 3.17
+    },
+    "veau, côte, grillée/poêlée": {
+      "score": 4.01
+    },
+    "veau, escalope panée, cuite": {
+      "score": 3.28
+    },
+    "veau, escalope, crue": {
+      "score": 3.13
+    },
+    "veau, escalope, cuite": {
+      "score": 3.99
+    },
+    "veau, filet, cru": {
+      "score": 3.13
+    },
+    "veau, filet, rôti/cuit au four": {
+      "score": 3.99
+    },
+    "veau, jarret, braisé ou bouilli": {
+      "score": 4.02
+    },
+    "veau, jarret, cru": {
+      "score": 3.17
+    },
+    "veau, noix, crue": {
+      "score": 3.13
+    },
+    "veau, noix, grillée/poêlée": {
+      "score": 3.97
+    },
+    "veau, noix, rôtie": {
+      "score": 3.99
+    },
+    "veau, pied, cru": {
+      "score": 3.17
+    },
+    "veau, poitrine, crue": {
+      "score": 2.53
+    },
+    "veau, rôti, cru": {
+      "score": 3.92
+    },
+    "veau, rôti, cuit": {
+      "score": 4.98
+    },
+    "veau, steak haché 15% mg, cru": {
+      "score": 3.89
+    },
+    "veau, steak haché 20% mg, cru": {
+      "score": 3.89
+    },
+    "veau, tête, bouillie/cuite à l\u0027eau": {
+      "score": 4.02
+    },
+    "veau, épaule, braisée ou bouillie": {
+      "score": 3.22
+    },
+    "veau, épaule, crue": {
+      "score": 2.53
+    },
+    "veau, épaule, grillée/poêlée": {
+      "score": 3.21
+    },
+    "vermicelle de riz, cuite, non salée (emballage corrigé)": {
+      "score": 5.08
+    },
+    "vermicelle de riz, cuite, non salée (version \"logiciel\" avec erreur sur l\u0027emballage)": {
+      "score": 4.94
+    },
+    "vermicelle de riz, sèche": {
+      "score": 6.1
+    },
+    "vin blanc mousseux": {
+      "score": 0.388
+    },
+    "vin blanc mousseux aromatisé": {
+      "score": 0.388
+    },
+    "vin blanc sec": {
+      "score": 0.265
+    },
+    "vin doux": {
+      "score": 0.26
+    },
+    "vin rosé": {
+      "score": 0.249
+    },
+    "vin rouge": {
+      "score": 0.231
+    },
+    "vinaigre": {
+      "score": 0.149
+    },
+    "vinaigre balsamique": {
+      "score": 0.149
+    },
+    "vinaigre de cidre": {
+      "score": 0.69
+    },
+    "vivaneau, cru": {
+      "score": 0.483
+    },
+    "vivaneau, cuit": {
+      "score": 0.724
+    },
+    "vodka": {
+      "score": 0.169
+    },
+    "volaille, croquette panée ou nuggets": {
+      "score": 1.51
+    },
+    "wakamé (undaria pinnatifida), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "wakamé atlantique (alaria esculenta), séchée ou déshydratée": {
+      "score": 4.83
+    },
+    "whisky": {
+      "score": 0.169
+    },
+    "wrap végétarien": {
+      "score": 1.33
+    },
+    "yakitori (brochettes japonaises grillées en sauce)": {
+      "score": 3.2
+    },
+    "yaourt au lait de chèvre, nature, 5% mg environ": {
+      "score": 0.692
+    },
+    "yaourt à la grecque, au lait de brebis": {
+      "score": 0.444
+    },
+    "yaourt à la grecque, nature": {
+      "score": 0.342
+    },
+    "yaourt à la grecque, sur lit de fruits": {
+      "score": 1.64
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aromatisé, avec édulcorants, 0% mg": {
+      "score": 0.458
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aromatisé, sucré": {
+      "score": 0.458
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aromatisé, sucré, à la crème": {
+      "score": 0.452
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux copeaux de chocolat, à la crème, sucré": {
+      "score": 1.06
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux céréales": {
+      "score": 1.49
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux céréales, 0% mg": {
+      "score": 1.49
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux fruits, avec édulcorants, 0% mg": {
+      "score": 1.64
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux fruits, avec édulcorants, 0% mg, enrichi en vitamine d": {
+      "score": 1.64
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux fruits, sucré": {
+      "score": 1.64
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux fruits, sucré, enrichi en vitamine d": {
+      "score": 1.64
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux fruits, sucré, à la crème": {
+      "score": 1.64
+    },
+    "yaourt, lait fermenté ou spécialité laitière, nature": {
+      "score": 0.342
+    },
+    "yaourt, lait fermenté ou spécialité laitière, nature, 0% mg": {
+      "score": 0.342
+    },
+    "yaourt, lait fermenté ou spécialité laitière, nature, sucré": {
+      "score": 0.463
+    },
+    "yaourt, lait fermenté ou spécialité laitière, nature, à la crème": {
+      "score": 0.376
+    },
+    "échalote, crue": {
+      "score": 0.529
+    },
+    "échalote, cuite": {
+      "score": 0.86
+    },
+    "éclair": {
+      "score": 0.623
+    },
+    "édulcorant à la saccharine": {
+      "score": 1.8
+    },
+    "églefin, cru": {
+      "score": 0.47
+    },
+    "églefin, cuit à la vapeur": {
+      "score": 0.709
+    },
+    "églefin, grillé/poêlé": {
+      "score": 0.69
+    },
+    "épaule de porc, cuite, choix, découennée dégraissée": {
+      "score": 2.48
+    },
+    "épaule de porc, cuite, standard, découennée dégraissée": {
+      "score": 2.48
+    },
+    "épeautre, cru": {
+      "score": 0.496
+    },
+    "éperlan, cru": {
+      "score": 0.213
+    },
+    "épinard, appertisé, égoutté": {
+      "score": 0.414
+    },
+    "épinard, cru": {
+      "score": 0.259
+    },
+    "épinard, cuit": {
+      "score": 0.525
+    },
+    "épinard, jeunes pousses pour salades, cru": {
+      "score": 0.259
+    },
+    "épinard, purée": {
+      "score": 0.521
+    },
+    "épinard, surgelé, cru": {
+      "score": 0.327
+    },
+    "épinard, surgelé, cuit": {
+      "score": 0.421
+    },
+    "épinards à la crème": {
+      "score": 0.574
+    },
+    "époisses": {
+      "score": 0.555
+    }
+  }
+}

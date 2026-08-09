@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "coupe glacée parfum pêche melba ou poire belle hélène": {
+      "environmentScoreMptPerKg": 0.245,
+      "climateKgCo2EqPerKg": 2.15,
+      "landUsePtPerKg": 86.0,
+      "waterDeprivationM3PerKg": 0.997
+    },
+    "foie, lapin, cru": {
+      "environmentScoreMptPerKg": 0.23,
+      "climateKgCo2EqPerKg": 1.5,
+      "landUsePtPerKg": 72.5,
+      "waterDeprivationM3PerKg": 0.614
+    },
+    "limonade, non sucrée, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "salsifis, surgelé, cru": {
+      "environmentScoreMptPerKg": 0.0791,
+      "climateKgCo2EqPerKg": 0.584,
+      "landUsePtPerKg": 11.5,
+      "waterDeprivationM3PerKg": 0.465
+    },
+    "tarte à la provençale": {
+      "environmentScoreMptPerKg": 0.295,
+      "climateKgCo2EqPerKg": 2.54,
+      "landUsePtPerKg": 93.2,
+      "waterDeprivationM3PerKg": 0.625
+    },
+    "tiramisu, rayon frais": {
+      "environmentScoreMptPerKg": 1.38,
+      "climateKgCo2EqPerKg": 10.7,
+      "landUsePtPerKg": 442.0,
+      "waterDeprivationM3PerKg": 7.74
+    },
+    "tomate, pulpe, appertisée": {
+      "environmentScoreMptPerKg": 0.143,
+      "climateKgCo2EqPerKg": 1.11,
+      "landUsePtPerKg": 10.3,
+      "waterDeprivationM3PerKg": 0.477
+    }
+  }
+}

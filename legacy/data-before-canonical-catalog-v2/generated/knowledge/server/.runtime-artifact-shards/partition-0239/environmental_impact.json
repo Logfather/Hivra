@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "boisson au thé, aromatisée, sucrée": {
+      "environmentScoreMptPerKg": 0.058,
+      "climateKgCo2EqPerKg": 0.419,
+      "landUsePtPerKg": 4.15,
+      "waterDeprivationM3PerKg": 0.295
+    },
+    "boisson à l'amande": {
+      "environmentScoreMptPerKg": 0.0588,
+      "climateKgCo2EqPerKg": 0.381,
+      "landUsePtPerKg": 21.0,
+      "waterDeprivationM3PerKg": 1.07
+    },
+    "confiture de cerise (extra ou classique)": {
+      "environmentScoreMptPerKg": 0.411,
+      "climateKgCo2EqPerKg": 2.2,
+      "landUsePtPerKg": 975.0,
+      "waterDeprivationM3PerKg": 7.26
+    },
+    "crevette, crue": {
+      "environmentScoreMptPerKg": 3.3,
+      "climateKgCo2EqPerKg": 20.4,
+      "landUsePtPerKg": 248.0,
+      "waterDeprivationM3PerKg": 178.0
+    },
+    "dessert glacé type mystère ou vacherin": {
+      "environmentScoreMptPerKg": 0.301,
+      "climateKgCo2EqPerKg": 2.22,
+      "landUsePtPerKg": 67.7,
+      "waterDeprivationM3PerKg": 0.666
+    },
+    "farine de blé tendre ou froment t65": {
+      "environmentScoreMptPerKg": 0.102,
+      "climateKgCo2EqPerKg": 0.791,
+      "landUsePtPerKg": 84.2,
+      "waterDeprivationM3PerKg": 0.205
+    },
+    "fromage à pâte molle et croûte mixte (lavée et fleurie) colorée": {
+      "environmentScoreMptPerKg": 0.569,
+      "climateKgCo2EqPerKg": 5.68,
+      "landUsePtPerKg": 247.0,
+      "waterDeprivationM3PerKg": 0.692
+    },
+    "fève, cuite": {
+      "environmentScoreMptPerKg": 0.0668,
+      "climateKgCo2EqPerKg": 0.585,
+      "landUsePtPerKg": -71.7,
+      "waterDeprivationM3PerKg": 0.116
+    },
+    "gâteau de semoule, appertisé": {
+      "environmentScoreMptPerKg": 0.191,
+      "climateKgCo2EqPerKg": 1.78,
+      "landUsePtPerKg": 75.4,
+      "waterDeprivationM3PerKg": 0.548
+    },
+    "lait gélifié aromatisé, allégé en matière grasse et en sucre, rayon frais": {
+      "environmentScoreMptPerKg": 0.186,
+      "climateKgCo2EqPerKg": 1.81,
+      "landUsePtPerKg": 61.7,
+      "waterDeprivationM3PerKg": 0.45
+    },
+    "oeuf, jaune (jaune d'oeuf), cru": {
+      "environmentScoreMptPerKg": 0.288,
+      "climateKgCo2EqPerKg": 2.07,
+      "landUsePtPerKg": 180.0,
+      "waterDeprivationM3PerKg": 0.864
+    },
+    "topinambour, cuit": {
+      "environmentScoreMptPerKg": 0.143,
+      "climateKgCo2EqPerKg": 1.32,
+      "landUsePtPerKg": 49.0,
+      "waterDeprivationM3PerKg": 0.296
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "entries": {
+    "fromage de chèvre lactique affiné, au lait cru (type crottin de chavignol, picodon, rocamadour, sainte maure de touraine)": {
+      "environmentScoreMptPerKg": 1.01,
+      "climateKgCo2EqPerKg": 7.21,
+      "landUsePtPerKg": 468.0,
+      "waterDeprivationM3PerKg": 2.52
+    },
+    "lait fermenté à boire, nature, au lait entier": {
+      "environmentScoreMptPerKg": 0.169,
+      "climateKgCo2EqPerKg": 1.83,
+      "landUsePtPerKg": 68.0,
+      "waterDeprivationM3PerKg": 0.319
+    }
+  }
+}

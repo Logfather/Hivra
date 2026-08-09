@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "bar commun ou loup, rôti/cuit au four": {
+      "litersPerKilogram": 3330.0
+    },
+    "coquille saint jacques, noix, crue": {
+      "litersPerKilogram": 435.0
+    },
+    "lieu ou colin d'alaska, cru": {
+      "litersPerKilogram": 470.0
+    },
+    "oeuf, brouillé, avec matière grasse": {
+      "litersPerKilogram": 1050.0
+    },
+    "pain aux raisins (viennoiserie)": {
+      "litersPerKilogram": 1760.0
+    },
+    "rillettes de poisson": {
+      "litersPerKilogram": 583.0
+    },
+    "soupe au potiron, déshydratée reconstituée": {
+      "litersPerKilogram": 357.0
+    },
+    "surimi, fourré au fromage": {
+      "litersPerKilogram": 1350.0
+    }
+  }
+}

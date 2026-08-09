@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "abricot au sirop, appertisé, non égoutté": {
+      "environmentScoreMptPerKg": 0.161,
+      "climateKgCo2EqPerKg": 0.769,
+      "landUsePtPerKg": 280.0,
+      "waterDeprivationM3PerKg": 1.19
+    },
+    "biscuit apéritif soufflé, à base de pomme de terre": {
+      "environmentScoreMptPerKg": 0.208,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 189.0,
+      "waterDeprivationM3PerKg": 0.704
+    },
+    "galettes multicéréales soufflées": {
+      "environmentScoreMptPerKg": 0.198,
+      "climateKgCo2EqPerKg": 1.07,
+      "landUsePtPerKg": 35.1,
+      "waterDeprivationM3PerKg": 4.99
+    },
+    "nuggets de blé (sans soja), préemballé": {
+      "environmentScoreMptPerKg": 0.229,
+      "climateKgCo2EqPerKg": 1.84,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 0.514
+    },
+    "thon listao ou bonite à ventre rayé, cru": {
+      "environmentScoreMptPerKg": 0.789,
+      "climateKgCo2EqPerKg": 4.95,
+      "landUsePtPerKg": 8.53,
+      "waterDeprivationM3PerKg": 0.31
+    },
+    "veau, jarret, cru": {
+      "environmentScoreMptPerKg": 2.15,
+      "climateKgCo2EqPerKg": 23.3,
+      "landUsePtPerKg": 1060.0,
+      "waterDeprivationM3PerKg": 3.17
+    }
+  }
+}

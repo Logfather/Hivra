@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "biscuit sec au beurre, sablé, galette ou palet": {
+      "litersPerKilogram": 1010.0
+    },
+    "bière faiblement alcoolisée (3° alcool)": {
+      "litersPerKilogram": 258.0
+    },
+    "boeuf, rumsteck, grillé": {
+      "litersPerKilogram": 3050.0
+    },
+    "céréales pour petit déjeuner fourrées, fourrage autre que chocolat, enrichies en vitamines et minéraux": {
+      "litersPerKilogram": 6450.0
+    },
+    "figue, sèche": {
+      "litersPerKilogram": 22800.0
+    },
+    "nouilles asiatiques cuites, nature, non salées": {
+      "litersPerKilogram": 550.0
+    },
+    "pastilla au poulet": {
+      "litersPerKilogram": 5130.0
+    },
+    "pizza aux lardons, oignons et fromage": {
+      "litersPerKilogram": 1380.0
+    },
+    "pop corn ou maïs éclaté, au caramel": {
+      "litersPerKilogram": 1410.0
+    },
+    "sandwich baguette, pâté, cornichons": {
+      "litersPerKilogram": 1260.0
+    }
+  }
+}

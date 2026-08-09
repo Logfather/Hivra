@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "artichaut, fond, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.217,
+      "climateKgCo2EqPerKg": 2.17,
+      "landUsePtPerKg": 67.8,
+      "waterDeprivationM3PerKg": 0.354
+    },
+    "cidre brut": {
+      "environmentScoreMptPerKg": 0.126,
+      "climateKgCo2EqPerKg": 1.33,
+      "landUsePtPerKg": 22.7,
+      "waterDeprivationM3PerKg": 0.76
+    },
+    "croissant aux amandes, artisanal": {
+      "environmentScoreMptPerKg": 0.389,
+      "climateKgCo2EqPerKg": 2.78,
+      "landUsePtPerKg": 145.0,
+      "waterDeprivationM3PerKg": 4.42
+    },
+    "crêpe ou galette fourrée au poisson et / ou fruits de mer": {
+      "environmentScoreMptPerKg": 0.378,
+      "climateKgCo2EqPerKg": 3.1,
+      "landUsePtPerKg": 119.0,
+      "waterDeprivationM3PerKg": 0.685
+    },
+    "gratin de chou fleur": {
+      "environmentScoreMptPerKg": 0.205,
+      "climateKgCo2EqPerKg": 1.91,
+      "landUsePtPerKg": 68.8,
+      "waterDeprivationM3PerKg": 0.352
+    },
+    "langue, veau, crue": {
+      "environmentScoreMptPerKg": 2.09,
+      "climateKgCo2EqPerKg": 22.6,
+      "landUsePtPerKg": 1030.0,
+      "waterDeprivationM3PerKg": 3.06
+    },
+    "oeuf de dinde, cru": {
+      "environmentScoreMptPerKg": 0.26,
+      "climateKgCo2EqPerKg": 1.88,
+      "landUsePtPerKg": 163.0,
+      "waterDeprivationM3PerKg": 0.783
+    },
+    "pain au son": {
+      "environmentScoreMptPerKg": 0.0963,
+      "climateKgCo2EqPerKg": 0.714,
+      "landUsePtPerKg": 54.8,
+      "waterDeprivationM3PerKg": 0.171
+    },
+    "tripes, boeuf, crues": {
+      "environmentScoreMptPerKg": 2.68,
+      "climateKgCo2EqPerKg": 28.7,
+      "landUsePtPerKg": 1870.0,
+      "waterDeprivationM3PerKg": 2.39
+    }
+  }
+}

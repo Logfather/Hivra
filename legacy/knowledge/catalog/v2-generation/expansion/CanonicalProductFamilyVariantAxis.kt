@@ -1,0 +1,24 @@
+package de.shopme.testing.system.tools.knowledge.catalog.expansion.family
+
+enum class CanonicalProductFamilyVariantAxis {
+    FOOD_TYPE,
+    PRIMARY_INGREDIENT,
+    SECONDARY_INGREDIENT,
+    RECIPE_TYPE,
+    FLAVOR_PROFILE,
+    SWEETENING_TYPE,
+    FAT_LEVEL,
+    PROTEIN_SOURCE,
+    GRAIN_TYPE,
+    ANIMAL_SPECIES,
+    PLANT_SPECIES,
+    PROCESSING_METHOD,
+    PRESERVATION_METHOD,
+    PREPARATION_STATE,
+    PHYSICAL_FORM,
+    CUT_FORM,
+    RIPENING_OR_AGING,
+    DIETARY_FORM,
+    ALLERGEN_RELEVANT_VARIANT,
+    NUTRITIONALLY_RELEVANT_VARIANT
+}

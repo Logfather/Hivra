@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "bambou, pousses, appertisées, égouttées": {
+      "environmentScoreMptPerKg": 0.287,
+      "climateKgCo2EqPerKg": 1.99,
+      "landUsePtPerKg": 168.0,
+      "waterDeprivationM3PerKg": 3.2
+    },
+    "chou fleur, surgelé, cru": {
+      "environmentScoreMptPerKg": 0.108,
+      "climateKgCo2EqPerKg": 0.85,
+      "landUsePtPerKg": 31.5,
+      "waterDeprivationM3PerKg": 0.162
+    },
+    "citron givré ou orange givrée (sorbet)": {
+      "environmentScoreMptPerKg": 0.301,
+      "climateKgCo2EqPerKg": 2.22,
+      "landUsePtPerKg": 67.7,
+      "waterDeprivationM3PerKg": 0.666
+    },
+    "citron ou lime, spécialité à diluer pour boissons, sans sucres ajoutés": {
+      "environmentScoreMptPerKg": 0.0778,
+      "climateKgCo2EqPerKg": 0.596,
+      "landUsePtPerKg": 30.4,
+      "waterDeprivationM3PerKg": 0.342
+    },
+    "dessert glacé feuilleté, à partager": {
+      "environmentScoreMptPerKg": 0.301,
+      "climateKgCo2EqPerKg": 2.22,
+      "landUsePtPerKg": 67.7,
+      "waterDeprivationM3PerKg": 0.666
+    },
+    "feta de brebis": {
+      "environmentScoreMptPerKg": 0.795,
+      "climateKgCo2EqPerKg": 6.37,
+      "landUsePtPerKg": 595.0,
+      "waterDeprivationM3PerKg": 0.585
+    },
+    "haricot blanc, sec": {
+      "environmentScoreMptPerKg": 0.0822,
+      "climateKgCo2EqPerKg": 0.448,
+      "landUsePtPerKg": 77.4,
+      "waterDeprivationM3PerKg": 0.972
+    },
+    "merguez, boeuf et mouton, cuite": {
+      "environmentScoreMptPerKg": 4.36,
+      "climateKgCo2EqPerKg": 40.5,
+      "landUsePtPerKg": 3470.0,
+      "waterDeprivationM3PerKg": 5.12
+    },
+    "sandwich baguette, porc, crudités (tomate, salade), mayonnaise": {
+      "environmentScoreMptPerKg": 0.422,
+      "climateKgCo2EqPerKg": 3.31,
+      "landUsePtPerKg": 158.0,
+      "waterDeprivationM3PerKg": 1.31
+    },
+    "sole, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.27,
+      "climateKgCo2EqPerKg": 7.48,
+      "landUsePtPerKg": 16.3,
+      "waterDeprivationM3PerKg": 0.791
+    },
+    "soupe à l'oignon, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.301,
+      "climateKgCo2EqPerKg": 2.27,
+      "landUsePtPerKg": 65.7,
+      "waterDeprivationM3PerKg": 2.33
+    }
+  }
+}

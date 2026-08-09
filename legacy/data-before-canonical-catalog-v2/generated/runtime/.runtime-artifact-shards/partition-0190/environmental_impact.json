@@ -1,0 +1,88 @@
+{
+  "entries": {
+    "agneau, collier, braisé ou bouilli": {
+      "environmentScoreMptPerKg": 6.37,
+      "climateKgCo2EqPerKg": 52.3,
+      "landUsePtPerKg": 5580.0,
+      "waterDeprivationM3PerKg": 8.79
+    },
+    "aligot (purée de pomme de terre à la tomme fraîche)": {
+      "environmentScoreMptPerKg": 0.429,
+      "climateKgCo2EqPerKg": 3.93,
+      "landUsePtPerKg": 152.0,
+      "waterDeprivationM3PerKg": 0.733
+    },
+    "camembert au lait cru": {
+      "environmentScoreMptPerKg": 0.501,
+      "climateKgCo2EqPerKg": 5.2,
+      "landUsePtPerKg": 246.0,
+      "waterDeprivationM3PerKg": 0.575
+    },
+    "confit de canard, viande (cuisse), sans peau, réchauffé": {
+      "environmentScoreMptPerKg": 1.35,
+      "climateKgCo2EqPerKg": 7.76,
+      "landUsePtPerKg": 458.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "courge spaghetti, pulpe, cuite": {
+      "environmentScoreMptPerKg": 0.14,
+      "climateKgCo2EqPerKg": 1.51,
+      "landUsePtPerKg": 27.1,
+      "waterDeprivationM3PerKg": 1.0
+    },
+    "crème pâtissière": {
+      "environmentScoreMptPerKg": 0.176,
+      "climateKgCo2EqPerKg": 1.52,
+      "landUsePtPerKg": 59.4,
+      "waterDeprivationM3PerKg": 0.5
+    },
+    "curry, poudre": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 9.4,
+      "landUsePtPerKg": 688.0,
+      "waterDeprivationM3PerKg": 4.38
+    },
+    "feuilleté au poisson et / ou fruits de mer": {
+      "environmentScoreMptPerKg": 0.558,
+      "climateKgCo2EqPerKg": 4.69,
+      "landUsePtPerKg": 191.0,
+      "waterDeprivationM3PerKg": 0.904
+    },
+    "hareng, cru": {
+      "environmentScoreMptPerKg": 0.367,
+      "climateKgCo2EqPerKg": 2.68,
+      "landUsePtPerKg": 7.32,
+      "waterDeprivationM3PerKg": 0.213
+    },
+    "houmous": {
+      "environmentScoreMptPerKg": 0.194,
+      "climateKgCo2EqPerKg": 1.11,
+      "landUsePtPerKg": 124.0,
+      "waterDeprivationM3PerKg": 1.27
+    },
+    "oeuf, blanc (blanc d'oeuf), cru": {
+      "environmentScoreMptPerKg": 0.288,
+      "climateKgCo2EqPerKg": 2.07,
+      "landUsePtPerKg": 180.0,
+      "waterDeprivationM3PerKg": 0.864
+    },
+    "sauce basquaise ou sauce aux poivrons, préemballée": {
+      "environmentScoreMptPerKg": 0.241,
+      "climateKgCo2EqPerKg": 1.24,
+      "landUsePtPerKg": 106.0,
+      "waterDeprivationM3PerKg": 3.92
+    },
+    "tétragone cornue, cuite": {
+      "environmentScoreMptPerKg": 0.11,
+      "climateKgCo2EqPerKg": 1.14,
+      "landUsePtPerKg": -14.4,
+      "waterDeprivationM3PerKg": 0.525
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux copeaux de chocolat, à la crème, sucré": {
+      "environmentScoreMptPerKg": 0.257,
+      "climateKgCo2EqPerKg": 2.5,
+      "landUsePtPerKg": 97.3,
+      "waterDeprivationM3PerKg": 1.06
+    }
+  }
+}

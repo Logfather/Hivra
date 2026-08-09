@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "biscuit sec croquant (ex : tuile) sans chocolat, allégé en matière grasse": {
+      "environmentScoreMptPerKg": 0.488,
+      "climateKgCo2EqPerKg": 3.64,
+      "landUsePtPerKg": 210.0,
+      "waterDeprivationM3PerKg": 8.2
+    },
+    "boulettes au bœuf, à la sauce tomate": {
+      "environmentScoreMptPerKg": 1.19,
+      "climateKgCo2EqPerKg": 12.3,
+      "landUsePtPerKg": 783.0,
+      "waterDeprivationM3PerKg": 2.2
+    },
+    "gouda": {
+      "environmentScoreMptPerKg": 0.645,
+      "climateKgCo2EqPerKg": 6.37,
+      "landUsePtPerKg": 282.0,
+      "waterDeprivationM3PerKg": 0.861
+    },
+    "jambon cuit, choix, découenné dégraissé": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "milk shake, provenant de fast food": {
+      "environmentScoreMptPerKg": 0.15,
+      "climateKgCo2EqPerKg": 1.51,
+      "landUsePtPerKg": 58.9,
+      "waterDeprivationM3PerKg": 0.356
+    },
+    "pain pita": {
+      "environmentScoreMptPerKg": 0.141,
+      "climateKgCo2EqPerKg": 1.08,
+      "landUsePtPerKg": 84.0,
+      "waterDeprivationM3PerKg": 1.2
+    },
+    "sauce au yaourt": {
+      "environmentScoreMptPerKg": 0.213,
+      "climateKgCo2EqPerKg": 1.68,
+      "landUsePtPerKg": 60.3,
+      "waterDeprivationM3PerKg": 0.581
+    },
+    "thym, frais": {
+      "environmentScoreMptPerKg": 0.129,
+      "climateKgCo2EqPerKg": 0.879,
+      "landUsePtPerKg": 35.1,
+      "waterDeprivationM3PerKg": 5.16
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "entries": {
+    "agneau, épaule, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 5.1,
+      "climateKgCo2EqPerKg": 41.8,
+      "landUsePtPerKg": 4470.0,
+      "waterDeprivationM3PerKg": 7.04
+    },
+    "barre goûter frais au lait et chocolat": {
+      "environmentScoreMptPerKg": 0.543,
+      "climateKgCo2EqPerKg": 7.25,
+      "landUsePtPerKg": 298.0,
+      "waterDeprivationM3PerKg": 0.991
+    },
+    "biscuit sec feuilleté, type palmier ou autres": {
+      "environmentScoreMptPerKg": 0.36,
+      "climateKgCo2EqPerKg": 3.59,
+      "landUsePtPerKg": 153.0,
+      "waterDeprivationM3PerKg": 1.09
+    },
+    "boisson cacaotée ou au chocolat, instantanée, sucrée, prête à boire (reconstituée avec du lait demi écrémé standard)": {
+      "environmentScoreMptPerKg": 0.129,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 58.6,
+      "waterDeprivationM3PerKg": 0.192
+    },
+    "corne de gazelle (pâtisserie orientale aux amandes et sirop)": {
+      "environmentScoreMptPerKg": 0.532,
+      "climateKgCo2EqPerKg": 2.83,
+      "landUsePtPerKg": 293.0,
+      "waterDeprivationM3PerKg": 11.2
+    },
+    "croque madame": {
+      "environmentScoreMptPerKg": 0.469,
+      "climateKgCo2EqPerKg": 4.14,
+      "landUsePtPerKg": 208.0,
+      "waterDeprivationM3PerKg": 0.993
+    },
+    "dragée amande": {
+      "environmentScoreMptPerKg": 0.424,
+      "climateKgCo2EqPerKg": 1.77,
+      "landUsePtPerKg": 167.0,
+      "waterDeprivationM3PerKg": 13.0
+    },
+    "grains de blé soufflés chocolatés, enrichis en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "gâteau au chocolat": {
+      "environmentScoreMptPerKg": 0.634,
+      "climateKgCo2EqPerKg": 8.41,
+      "landUsePtPerKg": 342.0,
+      "waterDeprivationM3PerKg": 1.53
+    },
+    "moules marinières (oignons et vin blanc)": {
+      "environmentScoreMptPerKg": 0.386,
+      "climateKgCo2EqPerKg": 3.48,
+      "landUsePtPerKg": 292.0,
+      "waterDeprivationM3PerKg": 0.642
+    },
+    "oignon, surgelé, cru": {
+      "environmentScoreMptPerKg": 0.108,
+      "climateKgCo2EqPerKg": 0.818,
+      "landUsePtPerKg": 20.1,
+      "waterDeprivationM3PerKg": 1.24
+    },
+    "pizza aux légumes ou pizza 4 saisons": {
+      "environmentScoreMptPerKg": 0.427,
+      "climateKgCo2EqPerKg": 3.42,
+      "landUsePtPerKg": 137.0,
+      "waterDeprivationM3PerKg": 5.56
+    },
+    "rillettes de thon": {
+      "environmentScoreMptPerKg": 0.477,
+      "climateKgCo2EqPerKg": 3.55,
+      "landUsePtPerKg": 60.7,
+      "waterDeprivationM3PerKg": 0.583
+    },
+    "sauce tomate aux petits légumes, préemballée": {
+      "environmentScoreMptPerKg": 0.227,
+      "climateKgCo2EqPerKg": 1.5,
+      "landUsePtPerKg": 106.0,
+      "waterDeprivationM3PerKg": 3.92
+    },
+    "époisses": {
+      "environmentScoreMptPerKg": 0.484,
+      "climateKgCo2EqPerKg": 5.01,
+      "landUsePtPerKg": 236.0,
+      "waterDeprivationM3PerKg": 0.555
+    }
+  }
+}

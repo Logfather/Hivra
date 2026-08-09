@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "base de pizza à la crème": {
+      "litersPerKilogram": 372.0
+    },
+    "bresaola": {
+      "litersPerKilogram": 4240.0
+    },
+    "cassis, cru": {
+      "litersPerKilogram": 1240.0
+    },
+    "guacamole, préemballé": {
+      "litersPerKilogram": 16800.0
+    },
+    "gâteau moelleux fourré au chocolat ou aux pépites de chocolat ou au lait": {
+      "litersPerKilogram": 995.0
+    },
+    "igname, épluchée, bouillie/cuite à l'eau": {
+      "litersPerKilogram": 2700.0
+    },
+    "langue, boeuf, crue": {
+      "litersPerKilogram": 1910.0
+    },
+    "quenelle au tofu (ne convient pas aux véganes ou végétaliens), préemballée": {
+      "litersPerKilogram": 1880.0
+    },
+    "salade de riz": {
+      "litersPerKilogram": 4340.0
+    },
+    "tempeh": {
+      "litersPerKilogram": 1180.0
+    },
+    "veau, pied, cru": {
+      "litersPerKilogram": 3170.0
+    }
+  }
+}

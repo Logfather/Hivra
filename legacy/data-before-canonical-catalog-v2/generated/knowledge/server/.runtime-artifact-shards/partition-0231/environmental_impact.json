@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "agneau, gigot, braisé": {
+      "environmentScoreMptPerKg": 6.37,
+      "climateKgCo2EqPerKg": 52.3,
+      "landUsePtPerKg": 5580.0,
+      "waterDeprivationM3PerKg": 8.79
+    },
+    "boisson à base de riz, nature": {
+      "environmentScoreMptPerKg": 0.059,
+      "climateKgCo2EqPerKg": 0.382,
+      "landUsePtPerKg": 21.0,
+      "waterDeprivationM3PerKg": 1.07
+    },
+    "chicorée verte, crue": {
+      "environmentScoreMptPerKg": 0.0672,
+      "climateKgCo2EqPerKg": 0.571,
+      "landUsePtPerKg": 6.82,
+      "waterDeprivationM3PerKg": 0.479
+    },
+    "fruit à pain, cru": {
+      "environmentScoreMptPerKg": 0.0583,
+      "climateKgCo2EqPerKg": 0.445,
+      "landUsePtPerKg": 30.7,
+      "waterDeprivationM3PerKg": 0.951
+    },
+    "pilchard, sauce tomate, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.515,
+      "climateKgCo2EqPerKg": 2.78,
+      "landUsePtPerKg": 266.0,
+      "waterDeprivationM3PerKg": 9.42
+    },
+    "poivron rouge, cuit": {
+      "environmentScoreMptPerKg": 0.156,
+      "climateKgCo2EqPerKg": 1.6,
+      "landUsePtPerKg": 14.3,
+      "waterDeprivationM3PerKg": 0.607
+    }
+  }
+}

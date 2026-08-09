@@ -1,0 +1,25 @@
+{
+  "entries": {
+    "bœuf, steak haché 10% mg, cru": {
+      "litersPerKilogram": 2980.0
+    },
+    "langoustine, crue": {
+      "litersPerKilogram": 2700.0
+    },
+    "pois cassé, cuit": {
+      "litersPerKilogram": 158.0
+    },
+    "sabre, cru": {
+      "litersPerKilogram": 470.0
+    },
+    "salade de thon et légumes, appertisée, égouttée": {
+      "litersPerKilogram": 1080.0
+    },
+    "salade verte, crue, sans assaisonnement": {
+      "litersPerKilogram": 643.0
+    },
+    "veau, noix, grillée/poêlée": {
+      "litersPerKilogram": 3970.0
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "cigarette": {
+      "litersPerKilogram": 1340.0
+    },
+    "couscous à la viande ou au poulet, allégé": {
+      "litersPerKilogram": 1400.0
+    },
+    "cône ou cornet classique, pour glace": {
+      "litersPerKilogram": 1130.0
+    },
+    "fenouil, cru": {
+      "litersPerKilogram": 1480.0
+    },
+    "macaron sec": {
+      "litersPerKilogram": 10500.0
+    },
+    "pain, baguette ou boule, bis (à la farine t80 ou t110)": {
+      "litersPerKilogram": 188.0
+    },
+    "plat légumes, avec féculent et lait/crème, dès 6 8 mois": {
+      "litersPerKilogram": 1260.0
+    },
+    "saint félicien": {
+      "litersPerKilogram": 647.0
+    },
+    "sandwich baguette, saucisson, beurre": {
+      "litersPerKilogram": 1370.0
+    },
+    "sauce pesto rosso, préemballée": {
+      "litersPerKilogram": 11000.0
+    },
+    "tomme ou tome de vache": {
+      "litersPerKilogram": 703.0
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "blé dur précuit, grains entiers, cuisiné, à poêler": {
+      "environmentScoreMptPerKg": 0.0623,
+      "climateKgCo2EqPerKg": 0.558,
+      "landUsePtPerKg": 50.6,
+      "waterDeprivationM3PerKg": 0.269
+    },
+    "brownie au chocolat": {
+      "environmentScoreMptPerKg": 0.629,
+      "climateKgCo2EqPerKg": 8.36,
+      "landUsePtPerKg": 392.0,
+      "waterDeprivationM3PerKg": 2.62
+    },
+    "chou rouge, cru": {
+      "environmentScoreMptPerKg": 0.0765,
+      "climateKgCo2EqPerKg": 0.905,
+      "landUsePtPerKg": 9.82,
+      "waterDeprivationM3PerKg": 0.458
+    },
+    "julienne ou lingue, cuite": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    },
+    "mousse de canard": {
+      "environmentScoreMptPerKg": 1.08,
+      "climateKgCo2EqPerKg": 7.45,
+      "landUsePtPerKg": 338.0,
+      "waterDeprivationM3PerKg": 2.59
+    },
+    "rascasse, cuite à la vapeur": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    },
+    "yaourt à la grecque, au lait de brebis": {
+      "environmentScoreMptPerKg": 0.334,
+      "climateKgCo2EqPerKg": 2.7,
+      "landUsePtPerKg": 222.0,
+      "waterDeprivationM3PerKg": 0.444
+    }
+  }
+}

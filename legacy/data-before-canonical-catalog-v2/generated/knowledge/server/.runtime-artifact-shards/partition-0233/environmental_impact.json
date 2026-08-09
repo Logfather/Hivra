@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "biscuit apéritif, crackers, nature": {
+      "environmentScoreMptPerKg": 0.208,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 189.0,
+      "waterDeprivationM3PerKg": 0.704
+    },
+    "chou de bruxelles, surgelé, cuit": {
+      "environmentScoreMptPerKg": 0.132,
+      "climateKgCo2EqPerKg": 1.06,
+      "landUsePtPerKg": 33.5,
+      "waterDeprivationM3PerKg": 0.222
+    },
+    "couscous à la viande": {
+      "environmentScoreMptPerKg": 0.506,
+      "climateKgCo2EqPerKg": 3.85,
+      "landUsePtPerKg": 252.0,
+      "waterDeprivationM3PerKg": 1.35
+    },
+    "lait entier, pasteurisé": {
+      "environmentScoreMptPerKg": 0.137,
+      "climateKgCo2EqPerKg": 1.46,
+      "landUsePtPerKg": 63.8,
+      "waterDeprivationM3PerKg": 0.174
+    },
+    "lasagnes ou cannelloni au poisson": {
+      "environmentScoreMptPerKg": 0.5,
+      "climateKgCo2EqPerKg": 4.09,
+      "landUsePtPerKg": 205.0,
+      "waterDeprivationM3PerKg": 1.13
+    },
+    "mortadelle, porc et boeuf": {
+      "environmentScoreMptPerKg": 0.909,
+      "climateKgCo2EqPerKg": 6.91,
+      "landUsePtPerKg": 330.0,
+      "waterDeprivationM3PerKg": 2.26
+    },
+    "pain de seigle, et froment": {
+      "environmentScoreMptPerKg": 0.107,
+      "climateKgCo2EqPerKg": 0.76,
+      "landUsePtPerKg": 46.5,
+      "waterDeprivationM3PerKg": 0.18
+    },
+    "pomme golden, pulpe et peau, crue": {
+      "environmentScoreMptPerKg": 0.0439,
+      "climateKgCo2EqPerKg": 0.408,
+      "landUsePtPerKg": 16.4,
+      "waterDeprivationM3PerKg": 0.543
+    },
+    "pop corn ou maïs éclaté, à l'huile, salé": {
+      "environmentScoreMptPerKg": 0.149,
+      "climateKgCo2EqPerKg": 0.94,
+      "landUsePtPerKg": 63.6,
+      "waterDeprivationM3PerKg": 0.771
+    },
+    "pâte feuilletée pur beurre, cuite": {
+      "environmentScoreMptPerKg": 0.416,
+      "climateKgCo2EqPerKg": 3.93,
+      "landUsePtPerKg": 180.0,
+      "waterDeprivationM3PerKg": 0.719
+    },
+    "snack pour enfants à base de fromage fondu et de gressins": {
+      "environmentScoreMptPerKg": 0.574,
+      "climateKgCo2EqPerKg": 5.66,
+      "landUsePtPerKg": 266.0,
+      "waterDeprivationM3PerKg": 0.847
+    },
+    "soupe au potiron, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.0983,
+      "climateKgCo2EqPerKg": 0.774,
+      "landUsePtPerKg": 26.2,
+      "waterDeprivationM3PerKg": 0.348
+    }
+  }
+}

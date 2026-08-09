@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "crème de marrons": {
+      "environmentScoreMptPerKg": 0.323,
+      "climateKgCo2EqPerKg": 2.22,
+      "landUsePtPerKg": 204.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "oignon, cuit": {
+      "environmentScoreMptPerKg": 0.114,
+      "climateKgCo2EqPerKg": 1.18,
+      "landUsePtPerKg": 26.8,
+      "waterDeprivationM3PerKg": 1.1
+    },
+    "pétales de blé avec noix, noisettes ou amandes, enrichis en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "requin, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "soupe aux lentilles, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.0712,
+      "climateKgCo2EqPerKg": 0.452,
+      "landUsePtPerKg": 38.9,
+      "waterDeprivationM3PerKg": 0.169
+    },
+    "spéculoos": {
+      "environmentScoreMptPerKg": 0.443,
+      "climateKgCo2EqPerKg": 3.82,
+      "landUsePtPerKg": 187.0,
+      "waterDeprivationM3PerKg": 2.55
+    }
+  }
+}

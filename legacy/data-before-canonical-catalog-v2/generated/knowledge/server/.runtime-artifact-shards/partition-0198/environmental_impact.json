@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "boudin blanc truffé, cru": {
+      "environmentScoreMptPerKg": 1.35,
+      "climateKgCo2EqPerKg": 12.1,
+      "landUsePtPerKg": 704.0,
+      "waterDeprivationM3PerKg": 2.79
+    },
+    "foie gras, entier": {
+      "environmentScoreMptPerKg": 4.27,
+      "climateKgCo2EqPerKg": 28.9,
+      "landUsePtPerKg": 1350.0,
+      "waterDeprivationM3PerKg": 9.9
+    },
+    "pomme de terre rissolée, surgelée, cuite": {
+      "environmentScoreMptPerKg": 0.191,
+      "climateKgCo2EqPerKg": 1.36,
+      "landUsePtPerKg": 36.4,
+      "waterDeprivationM3PerKg": 0.491
+    },
+    "porc, maigre 90/10, cru": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "poêlée de légumes assaisonnés aux champignons (\"champêtre\"), surgelée": {
+      "environmentScoreMptPerKg": 0.136,
+      "climateKgCo2EqPerKg": 0.933,
+      "landUsePtPerKg": 17.1,
+      "waterDeprivationM3PerKg": 0.643
+    },
+    "pâte brisée, matière grasse végétale, cuite": {
+      "environmentScoreMptPerKg": 0.388,
+      "climateKgCo2EqPerKg": 3.59,
+      "landUsePtPerKg": 170.0,
+      "waterDeprivationM3PerKg": 0.7
+    },
+    "spécialité végétale type jambon cuit, préemballée": {
+      "environmentScoreMptPerKg": 0.302,
+      "climateKgCo2EqPerKg": 2.17,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 0.577
+    },
+    "vin blanc mousseux": {
+      "environmentScoreMptPerKg": 0.237,
+      "climateKgCo2EqPerKg": 2.14,
+      "landUsePtPerKg": 125.0,
+      "waterDeprivationM3PerKg": 0.388
+    }
+  }
+}

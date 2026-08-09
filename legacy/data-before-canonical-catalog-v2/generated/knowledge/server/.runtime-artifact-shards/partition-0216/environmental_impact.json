@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "champagne": {
+      "environmentScoreMptPerKg": 0.245,
+      "climateKgCo2EqPerKg": 2.23,
+      "landUsePtPerKg": 126.0,
+      "waterDeprivationM3PerKg": 0.406
+    },
+    "cheeseburger, provenant de fast food": {
+      "environmentScoreMptPerKg": 1.81,
+      "climateKgCo2EqPerKg": 18.8,
+      "landUsePtPerKg": 1170.0,
+      "waterDeprivationM3PerKg": 1.91
+    },
+    "céréales pour petit déjeuner \"équilibre\" nature (non enrichies en vitamines et minéraux)": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "galette de riz soufflé complet": {
+      "environmentScoreMptPerKg": 0.198,
+      "climateKgCo2EqPerKg": 1.07,
+      "landUsePtPerKg": 35.1,
+      "waterDeprivationM3PerKg": 4.99
+    },
+    "poulet, viande et peau, cru": {
+      "environmentScoreMptPerKg": 0.735,
+      "climateKgCo2EqPerKg": 4.18,
+      "landUsePtPerKg": 267.0,
+      "waterDeprivationM3PerKg": 1.9
+    },
+    "rhubarbe, tige, crue": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.702,
+      "landUsePtPerKg": 32.8,
+      "waterDeprivationM3PerKg": 0.0643
+    }
+  }
+}

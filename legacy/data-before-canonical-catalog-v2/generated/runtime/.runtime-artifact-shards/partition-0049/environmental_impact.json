@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "brie de melun": {
+      "environmentScoreMptPerKg": 0.484,
+      "climateKgCo2EqPerKg": 5.02,
+      "landUsePtPerKg": 237.0,
+      "waterDeprivationM3PerKg": 0.543
+    },
+    "farine de millet": {
+      "environmentScoreMptPerKg": 0.151,
+      "climateKgCo2EqPerKg": 0.883,
+      "landUsePtPerKg": 100.0,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "fromage fondu en tranchettes": {
+      "environmentScoreMptPerKg": 0.504,
+      "climateKgCo2EqPerKg": 5.27,
+      "landUsePtPerKg": 240.0,
+      "waterDeprivationM3PerKg": 0.596
+    },
+    "noix de cajou, grillée, salée": {
+      "environmentScoreMptPerKg": 0.688,
+      "climateKgCo2EqPerKg": 3.56,
+      "landUsePtPerKg": 584.0,
+      "waterDeprivationM3PerKg": 14.9
+    },
+    "pain complet ou intégral (à la farine t150)": {
+      "environmentScoreMptPerKg": 0.105,
+      "climateKgCo2EqPerKg": 0.779,
+      "landUsePtPerKg": 63.3,
+      "waterDeprivationM3PerKg": 0.189
+    },
+    "truite arc en ciel, élevage, cuite à la vapeur": {
+      "environmentScoreMptPerKg": 1.69,
+      "climateKgCo2EqPerKg": 7.62,
+      "landUsePtPerKg": 136.0,
+      "waterDeprivationM3PerKg": 44.7
+    }
+  }
+}

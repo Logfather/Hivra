@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "inputFile": "/Users/logfather/AndroidStudioProjects/ShopMe/data/raw/openfoodfacts/openfoodfacts-products.jsonl.gz",
+  "inputFileSizeBytes": 12402303656,
+  "batchSize": 1000,
+  "extractedCandidateCount": 2213224,
+  "generatedCandidateCount": 865511,
+  "skippedWithoutNutritionCount": 1337184,
+  "skippedInvalidIdentityCount": 10529,
+  "skippedInvalidNutritionPayloadCount": 0,
+  "acceptedCandidateCount": 818631,
+  "rejectedCandidateCount": 46880,
+  "rejectionReasonOccurrenceCount": 65630,
+  "acceptanceRate": 0.9458354659848344,
+  "countsByReason": {
+    "EMPTY_NUTRITION_PAYLOAD": 0,
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS": 23178,
+    "NEGATIVE_NUTRITION_VALUE": 4,
+    "NON_FINITE_NUTRITION_VALUE": 0,
+    "NUTRITION_VALUE_ABOVE_MAXIMUM": 20462,
+    "SATURATED_FAT_EXCEEDS_TOTAL_FAT": 583,
+    "SUGARS_EXCEED_CARBOHYDRATES": 931,
+    "UNSUPPORTED_NUTRITION_KEY": 0,
+    "ZERO_ONLY_NUTRITION_PAYLOAD": 20472
+  },
+  "durationMillis": 647156
+}

@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "brie de meaux": {
+      "environmentScoreMptPerKg": 0.479,
+      "climateKgCo2EqPerKg": 4.97,
+      "landUsePtPerKg": 234.0,
+      "waterDeprivationM3PerKg": 0.538
+    },
+    "gruyère igp france": {
+      "environmentScoreMptPerKg": 0.599,
+      "climateKgCo2EqPerKg": 6.27,
+      "landUsePtPerKg": 287.0,
+      "waterDeprivationM3PerKg": 0.803
+    },
+    "haricots verts, purée": {
+      "environmentScoreMptPerKg": 0.137,
+      "climateKgCo2EqPerKg": 1.14,
+      "landUsePtPerKg": 107.0,
+      "waterDeprivationM3PerKg": 1.5
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.238,
+      "climateKgCo2EqPerKg": 1.38,
+      "landUsePtPerKg": 92.2,
+      "waterDeprivationM3PerKg": 4.98
+    },
+    "potiron, appertisé, égoutté": {
+      "environmentScoreMptPerKg": 0.138,
+      "climateKgCo2EqPerKg": 1.36,
+      "landUsePtPerKg": 23.3,
+      "waterDeprivationM3PerKg": 0.779
+    },
+    "sandwich pain de mie complet, jambon, crudités, fromage optionnel": {
+      "environmentScoreMptPerKg": 0.354,
+      "climateKgCo2EqPerKg": 2.57,
+      "landUsePtPerKg": 139.0,
+      "waterDeprivationM3PerKg": 0.967
+    },
+    "saumon, cru, élevage": {
+      "environmentScoreMptPerKg": 0.745,
+      "climateKgCo2EqPerKg": 5.55,
+      "landUsePtPerKg": 225.0,
+      "waterDeprivationM3PerKg": 1.12
+    },
+    "vin rosé": {
+      "environmentScoreMptPerKg": 0.175,
+      "climateKgCo2EqPerKg": 1.46,
+      "landUsePtPerKg": 112.0,
+      "waterDeprivationM3PerKg": 0.249
+    }
+  }
+}

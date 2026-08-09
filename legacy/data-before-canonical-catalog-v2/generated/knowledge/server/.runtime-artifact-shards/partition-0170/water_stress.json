@@ -1,0 +1,43 @@
+{
+  "entries": {
+    "cervelle, porc, crue": {
+      "score": 0.898
+    },
+    "cidre bouché demi sec": {
+      "score": 0.76
+    },
+    "farine de blé tendre ou froment t45 (pour pâtisserie)": {
+      "score": 0.205
+    },
+    "hareng fumé, à l'huile (emballage corrigé)": {
+      "score": 0.5
+    },
+    "livarot": {
+      "score": 0.587
+    },
+    "légumes pour ratatouille, surgelés": {
+      "score": 0.469
+    },
+    "poisson blanc sauce oseille": {
+      "score": 0.631
+    },
+    "pomelo (dit pamplemousse) jaune, pulpe, cru": {
+      "score": 21.3
+    },
+    "protéine de soja texturée": {
+      "score": 0.306
+    },
+    "riz complet, cuit, non salé": {
+      "score": 6.4
+    },
+    "saucisse de toulouse, cuite": {
+      "score": 2.84
+    },
+    "sésame, graine décortiquée": {
+      "score": 3.13
+    },
+    "veau, collier, braisé ou bouilli": {
+      "score": 4.02
+    }
+  }
+}

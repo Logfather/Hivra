@@ -1,0 +1,4849 @@
+{
+  "version": 1,
+  "mappings": [
+    {
+      "catalogKey": "100% grape juice",
+      "serverKey": "100% grape juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "agar agar",
+      "serverKey": "agar agar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "agave syrup",
+      "serverKey": "agave syrup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ajvar",
+      "serverKey": "ajvar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "alfredo sauce",
+      "serverKey": "alfredo sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond butter",
+      "serverKey": "almond butter",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond cookies",
+      "serverKey": "almond cookies",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond drink",
+      "serverKey": "almond drink",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond flour",
+      "serverKey": "almond flour",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond milk",
+      "serverKey": "almond milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almond yogurt",
+      "serverKey": "almond yogurt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "almonds",
+      "serverKey": "almonds",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "amaranth",
+      "serverKey": "amaranth",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple",
+      "serverKey": "apple",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple chips",
+      "serverKey": "apple chips",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple cider",
+      "serverKey": "apple cider",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple cider vinegar",
+      "serverKey": "apple cider vinegar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple juice",
+      "serverKey": "apple juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple pear juice",
+      "serverKey": "apple pear juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple sauce",
+      "serverKey": "apple sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apple vinegar",
+      "serverKey": "apple vinegar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apples",
+      "serverKey": "apples",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apricot",
+      "serverKey": "apricot",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "apricot jam",
+      "serverKey": "apricot jam",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "artichoke hearts",
+      "serverKey": "artichoke hearts",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "artichokes",
+      "serverKey": "artichokes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "arugula",
+      "serverKey": "arugula",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "asparagus",
+      "serverKey": "asparagus",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "avocado",
+      "serverKey": "avocado",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "avocado oil",
+      "serverKey": "avocado oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "avocados",
+      "serverKey": "avocados",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "baby carrots",
+      "serverKey": "baby carrots",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bacon",
+      "serverKey": "bacon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bagels",
+      "serverKey": "bagels",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "baguette",
+      "serverKey": "baguette",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "baked beans",
+      "serverKey": "baked beans",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "balsamic dressing",
+      "serverKey": "balsamic dressing",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "balsamic glaze",
+      "serverKey": "balsamic glaze",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "balsamic vinegar",
+      "serverKey": "balsamic vinegar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "banana",
+      "serverKey": "banana",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "banana chips",
+      "serverKey": "banana chips",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bananas",
+      "serverKey": "bananas",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "barbecue sauce",
+      "serverKey": "barbecue sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "barista oat drink",
+      "serverKey": "barista oat drink",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "barley flakes",
+      "serverKey": "barley flakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "basil",
+      "serverKey": "basil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "basil pesto",
+      "serverKey": "basil pesto",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "basmati rice",
+      "serverKey": "basmati rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bbq sauce",
+      "serverKey": "bbq sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bearnaise sauce",
+      "serverKey": "bearnaise sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beef broth",
+      "serverKey": "beef broth",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beef ham",
+      "serverKey": "beef ham",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beer",
+      "serverKey": "beer",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "beetroot",
+      "serverKey": "beetroot",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black beans",
+      "serverKey": "black beans",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black forest ham",
+      "serverKey": "black forest ham",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black lentils",
+      "serverKey": "black lentils",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black pepper",
+      "serverKey": "black pepper",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black rice",
+      "serverKey": "black rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "black tea",
+      "serverKey": "black tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blackberries",
+      "serverKey": "blackberries",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blackberry",
+      "serverKey": "blackberry",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blanched almonds",
+      "serverKey": "blanched almonds",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blossom honey",
+      "serverKey": "blossom honey",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blueberries",
+      "serverKey": "blueberries",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blueberry",
+      "serverKey": "blueberry",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "blueberry yogurt",
+      "serverKey": "blueberry yogurt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bouillon",
+      "serverKey": "bouillon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bratwurst",
+      "serverKey": "bratwurst",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bread",
+      "serverKey": "bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "brie cheese",
+      "serverKey": "brie cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "broccoli",
+      "serverKey": "broccoli",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "brown eggs",
+      "serverKey": "brown eggs",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "brown lentils",
+      "serverKey": "brown lentils",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "brown rice",
+      "serverKey": "brown rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "brown sugar",
+      "serverKey": "brown sugar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "brussels sprouts",
+      "serverKey": "brussels sprouts",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "buckwheat",
+      "serverKey": "buckwheat",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "bulgur",
+      "serverKey": "bulgur",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "butter",
+      "serverKey": "butter",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "butter cookie",
+      "serverKey": "butter cookie",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "buttermilk",
+      "serverKey": "buttermilk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "butternut squash",
+      "serverKey": "butternut squash",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "candy canes",
+      "serverKey": "candy canes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cane sugar",
+      "serverKey": "cane sugar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned corn",
+      "serverKey": "canned corn",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "canned tomatoes",
+      "serverKey": "canned tomatoes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cantaloupe melon",
+      "serverKey": "cantaloupe melon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "capers",
+      "serverKey": "capers",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cardamom",
+      "serverKey": "cardamom",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "carrot juice",
+      "serverKey": "carrot juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "carrot sticks",
+      "serverKey": "carrot sticks",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "carrots",
+      "serverKey": "carrots",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cashew butter",
+      "serverKey": "cashew butter",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cashew drink",
+      "serverKey": "cashew drink",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cashew milk",
+      "serverKey": "cashew milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cashew nuts",
+      "serverKey": "cashew nuts",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cashew yogurt",
+      "serverKey": "cashew yogurt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cauliflower",
+      "serverKey": "cauliflower",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cayenne pepper",
+      "serverKey": "cayenne pepper",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "celery",
+      "serverKey": "celery",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "celery juice",
+      "serverKey": "celery juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chai tea",
+      "serverKey": "chai tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chamomile tea",
+      "serverKey": "chamomile tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cheddar cheese",
+      "serverKey": "cheddar cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cheese slices",
+      "serverKey": "cheese slices",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cheese sticks",
+      "serverKey": "cheese sticks",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cherries",
+      "serverKey": "cherries",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cherry",
+      "serverKey": "cherry",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cherry tomatoes",
+      "serverKey": "cherry tomatoes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chia pudding",
+      "serverKey": "chia pudding",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chia seeds",
+      "serverKey": "chia seeds",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken breast",
+      "serverKey": "chicken breast",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken broth",
+      "serverKey": "chicken broth",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken liver",
+      "serverKey": "chicken liver",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken nuggets",
+      "serverKey": "chicken nuggets",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken sausage",
+      "serverKey": "chicken sausage",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chicken wings",
+      "serverKey": "chicken wings",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chickpea flour",
+      "serverKey": "chickpea flour",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chickpea pasta",
+      "serverKey": "chickpea pasta",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chickpeas",
+      "serverKey": "chickpeas",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili con carne",
+      "serverKey": "chili con carne",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili paste",
+      "serverKey": "chili paste",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili powder",
+      "serverKey": "chili powder",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chili sin carne",
+      "serverKey": "chili sin carne",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chips",
+      "serverKey": "chips",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chives",
+      "serverKey": "chives",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate",
+      "serverKey": "chocolate",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate cake",
+      "serverKey": "chocolate cake",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate cookies",
+      "serverKey": "chocolate cookies",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate ice cream",
+      "serverKey": "chocolate ice cream",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate mousse",
+      "serverKey": "chocolate mousse",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chocolate rice cakes",
+      "serverKey": "chocolate rice cakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chopped tomatoes",
+      "serverKey": "chopped tomatoes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "chorizo",
+      "serverKey": "chorizo",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ciabatta",
+      "serverKey": "ciabatta",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ciabatta bread",
+      "serverKey": "ciabatta bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cinnamon",
+      "serverKey": "cinnamon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cinnamon sticks",
+      "serverKey": "cinnamon sticks",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "clementine",
+      "serverKey": "clementine",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cloudy apple juice",
+      "serverKey": "cloudy apple juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cloves",
+      "serverKey": "cloves",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coarse cornmeal",
+      "serverKey": "coarse cornmeal",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cocktail sauce",
+      "serverKey": "cocktail sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cocoa",
+      "serverKey": "cocoa",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cocoa butter",
+      "serverKey": "cocoa butter",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cocoa nibs",
+      "serverKey": "cocoa nibs",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cocoa powder",
+      "serverKey": "cocoa powder",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut",
+      "serverKey": "coconut",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut bar",
+      "serverKey": "coconut bar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut chips",
+      "serverKey": "coconut chips",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut flakes",
+      "serverKey": "coconut flakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut milk",
+      "serverKey": "coconut milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut oil",
+      "serverKey": "coconut oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut rice",
+      "serverKey": "coconut rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coconut water",
+      "serverKey": "coconut water",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coffee",
+      "serverKey": "coffee",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coffee beans",
+      "serverKey": "coffee beans",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cola",
+      "serverKey": "cola",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cold pressed sunflower oil",
+      "serverKey": "cold pressed sunflower oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cold pressed walnut oil",
+      "serverKey": "cold pressed walnut oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cooked beetroot",
+      "serverKey": "cooked beetroot",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cooked ham",
+      "serverKey": "cooked ham",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cookie",
+      "serverKey": "cookie",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cookie dough",
+      "serverKey": "cookie dough",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cookies",
+      "serverKey": "cookies",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "coriander",
+      "serverKey": "coriander",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn",
+      "serverKey": "corn",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn cakes",
+      "serverKey": "corn cakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn flakes",
+      "serverKey": "corn flakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn grits",
+      "serverKey": "corn grits",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corn oil",
+      "serverKey": "corn oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "corned beef",
+      "serverKey": "corned beef",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cornflakes",
+      "serverKey": "cornflakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cornichons",
+      "serverKey": "cornichons",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cornmeal",
+      "serverKey": "cornmeal",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cottage cheese",
+      "serverKey": "cottage cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "couscous",
+      "serverKey": "couscous",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "crackers",
+      "serverKey": "crackers",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cranberry",
+      "serverKey": "cranberry",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cranberry juice",
+      "serverKey": "cranberry juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cream cheese",
+      "serverKey": "cream cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "creme fraiche",
+      "serverKey": "creme fraiche",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "crispbread",
+      "serverKey": "crispbread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "croissants",
+      "serverKey": "croissants",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "crunchy muesli",
+      "serverKey": "crunchy muesli",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cucumber",
+      "serverKey": "cucumber",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cucumbers",
+      "serverKey": "cucumbers",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cumin",
+      "serverKey": "cumin",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "curry ketchup",
+      "serverKey": "curry ketchup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "curry powder",
+      "serverKey": "curry powder",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "cut green beans",
+      "serverKey": "cut green beans",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate",
+      "serverKey": "dark chocolate",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate 70%",
+      "serverKey": "dark chocolate 70%",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate 85%",
+      "serverKey": "dark chocolate 85%",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dark chocolate with orange",
+      "serverKey": "dark chocolate with orange",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dates",
+      "serverKey": "dates",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "diced tomatoes",
+      "serverKey": "diced tomatoes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dijon mustard",
+      "serverKey": "dijon mustard",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dill",
+      "serverKey": "dill",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried apricots",
+      "serverKey": "dried apricots",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried cranberries",
+      "serverKey": "dried cranberries",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried dates",
+      "serverKey": "dried dates",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried figs",
+      "serverKey": "dried figs",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "dried mango strips",
+      "serverKey": "dried mango strips",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "edamame",
+      "serverKey": "edamame",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "eggs",
+      "serverKey": "eggs",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "energy drink",
+      "serverKey": "energy drink",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "erythritol",
+      "serverKey": "erythritol",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "extra virgin olive oil",
+      "serverKey": "extra virgin olive oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "falafel",
+      "serverKey": "falafel",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "farfalle",
+      "serverKey": "farfalle",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fennel",
+      "serverKey": "fennel",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "feta cheese",
+      "serverKey": "feta cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fettuccine",
+      "serverKey": "fettuccine",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fig",
+      "serverKey": "fig",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "figs",
+      "serverKey": "figs",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fish fingers",
+      "serverKey": "fish fingers",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "flax seeds",
+      "serverKey": "flax seeds",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "flaxseed oil",
+      "serverKey": "flaxseed oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "free range eggs",
+      "serverKey": "free range eggs",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "french baguette",
+      "serverKey": "french baguette",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh eggs",
+      "serverKey": "fresh eggs",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh garlic",
+      "serverKey": "fresh garlic",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh milk",
+      "serverKey": "fresh milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh mint",
+      "serverKey": "fresh mint",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fresh thyme",
+      "serverKey": "fresh thyme",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen broccoli",
+      "serverKey": "frozen broccoli",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen mango",
+      "serverKey": "frozen mango",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen peas",
+      "serverKey": "frozen peas",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen raspberries",
+      "serverKey": "frozen raspberries",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "frozen shrimp",
+      "serverKey": "frozen shrimp",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fruit bar",
+      "serverKey": "fruit bar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fruit juice",
+      "serverKey": "fruit juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fruit tea",
+      "serverKey": "fruit tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "fusilli pasta",
+      "serverKey": "fusilli pasta",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic",
+      "serverKey": "garlic",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic bread",
+      "serverKey": "garlic bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic mayonnaise",
+      "serverKey": "garlic mayonnaise",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic powder",
+      "serverKey": "garlic powder",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "garlic sauce",
+      "serverKey": "garlic sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ghee",
+      "serverKey": "ghee",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ginger",
+      "serverKey": "ginger",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ginger root",
+      "serverKey": "ginger root",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ginger syrup",
+      "serverKey": "ginger syrup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ginger tea",
+      "serverKey": "ginger tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gluten free bread",
+      "serverKey": "gluten free bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gluten free penne",
+      "serverKey": "gluten free penne",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gluten free rolled oats",
+      "serverKey": "gluten free rolled oats",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gluten free spaghetti",
+      "serverKey": "gluten free spaghetti",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gnocchi",
+      "serverKey": "gnocchi",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "goat milk",
+      "serverKey": "goat milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gouda cheese",
+      "serverKey": "gouda cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "granny smith apple",
+      "serverKey": "granny smith apple",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "grape juice",
+      "serverKey": "grape juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "grapefruit",
+      "serverKey": "grapefruit",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "grapes",
+      "serverKey": "grapes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "greek style yogurt",
+      "serverKey": "greek style yogurt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "greek yogurt",
+      "serverKey": "greek yogurt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green beans",
+      "serverKey": "green beans",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green lentils",
+      "serverKey": "green lentils",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green olives",
+      "serverKey": "green olives",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green tea",
+      "serverKey": "green tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "green tea bags",
+      "serverKey": "green tea bags",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "grill cheese",
+      "serverKey": "grill cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground beef",
+      "serverKey": "ground beef",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground black pepper",
+      "serverKey": "ground black pepper",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground cardamom",
+      "serverKey": "ground cardamom",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground chicken",
+      "serverKey": "ground chicken",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground cinnamon",
+      "serverKey": "ground cinnamon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground coffee",
+      "serverKey": "ground coffee",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground coriander",
+      "serverKey": "ground coriander",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground cumin",
+      "serverKey": "ground cumin",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground nutmeg",
+      "serverKey": "ground nutmeg",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground pork",
+      "serverKey": "ground pork",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground turkey",
+      "serverKey": "ground turkey",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground turmeric",
+      "serverKey": "ground turmeric",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ground white pepper",
+      "serverKey": "ground white pepper",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "guacamole",
+      "serverKey": "guacamole",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "gummy bears",
+      "serverKey": "gummy bears",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ham",
+      "serverKey": "ham",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hazelnuts",
+      "serverKey": "hazelnuts",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hemp seed oil",
+      "serverKey": "hemp seed oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hemp seeds",
+      "serverKey": "hemp seeds",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "herb salt",
+      "serverKey": "herb salt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "herbal tea",
+      "serverKey": "herbal tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "himalayan salt",
+      "serverKey": "himalayan salt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hollandaise sauce",
+      "serverKey": "hollandaise sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "honey",
+      "serverKey": "honey",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "honey mustard",
+      "serverKey": "honey mustard",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "honey mustard dressing",
+      "serverKey": "honey mustard dressing",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hot chili sauce",
+      "serverKey": "hot chili sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hot ketchup",
+      "serverKey": "hot ketchup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hot sauce",
+      "serverKey": "hot sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "hummus",
+      "serverKey": "hummus",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "iced tea",
+      "serverKey": "iced tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "instant coffee",
+      "serverKey": "instant coffee",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "instant oats",
+      "serverKey": "instant oats",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "italian seasoning",
+      "serverKey": "italian seasoning",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "jackfruit",
+      "serverKey": "jackfruit",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "jam",
+      "serverKey": "jam",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "jasmine rice",
+      "serverKey": "jasmine rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "jelly",
+      "serverKey": "jelly",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kale",
+      "serverKey": "kale",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kamut",
+      "serverKey": "kamut",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kamut flour",
+      "serverKey": "kamut flour",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kefir",
+      "serverKey": "kefir",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ketchup",
+      "serverKey": "ketchup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kidney beans",
+      "serverKey": "kidney beans",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kiwi",
+      "serverKey": "kiwi",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kiwis",
+      "serverKey": "kiwis",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kohlrabi",
+      "serverKey": "kohlrabi",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "kombucha",
+      "serverKey": "kombucha",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lactose free milk",
+      "serverKey": "lactose free milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "large eggs",
+      "serverKey": "large eggs",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lasagna sheets",
+      "serverKey": "lasagna sheets",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "latte macchiato",
+      "serverKey": "latte macchiato",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "leaf spinach",
+      "serverKey": "leaf spinach",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon",
+      "serverKey": "lemon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemon sorbet",
+      "serverKey": "lemon sorbet",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemonade",
+      "serverKey": "lemonade",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemongrass",
+      "serverKey": "lemongrass",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lemons",
+      "serverKey": "lemons",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lentil soup",
+      "serverKey": "lentil soup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lentils",
+      "serverKey": "lentils",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "light mayonnaise",
+      "serverKey": "light mayonnaise",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lime",
+      "serverKey": "lime",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "linguine",
+      "serverKey": "linguine",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "linguine pasta",
+      "serverKey": "linguine pasta",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "linseed oil",
+      "serverKey": "linseed oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "lollipops",
+      "serverKey": "lollipops",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "long grain brown rice",
+      "serverKey": "long grain brown rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "long grain rice",
+      "serverKey": "long grain rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "low fat milk",
+      "serverKey": "low fat milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "macadamia oil",
+      "serverKey": "macadamia oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "macaroni",
+      "serverKey": "macaroni",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "malt coffee",
+      "serverKey": "malt coffee",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mandarins",
+      "serverKey": "mandarins",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mango",
+      "serverKey": "mango",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mango chutney",
+      "serverKey": "mango chutney",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mangoes",
+      "serverKey": "mangoes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "maple syrup",
+      "serverKey": "maple syrup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "margarine",
+      "serverKey": "margarine",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "marinated tofu",
+      "serverKey": "marinated tofu",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "marjoram",
+      "serverKey": "marjoram",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "marshmallows",
+      "serverKey": "marshmallows",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "marzipan",
+      "serverKey": "marzipan",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "matcha powder",
+      "serverKey": "matcha powder",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "maultaschen",
+      "serverKey": "maultaschen",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mayonnaise",
+      "serverKey": "mayonnaise",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "melon",
+      "serverKey": "melon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "milk",
+      "serverKey": "milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "milk chocolate",
+      "serverKey": "milk chocolate",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "millet",
+      "serverKey": "millet",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "millet flakes",
+      "serverKey": "millet flakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mineral water",
+      "serverKey": "mineral water",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "minestrone",
+      "serverKey": "minestrone",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "minestrone soup",
+      "serverKey": "minestrone soup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mini salami",
+      "serverKey": "mini salami",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mint",
+      "serverKey": "mint",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mint tea",
+      "serverKey": "mint tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "miso paste",
+      "serverKey": "miso paste",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mixed beans",
+      "serverKey": "mixed beans",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mixed berries",
+      "serverKey": "mixed berries",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mixed nuts",
+      "serverKey": "mixed nuts",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mortadella",
+      "serverKey": "mortadella",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mozzarella",
+      "serverKey": "mozzarella",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "muesli",
+      "serverKey": "muesli",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "multigrain bread",
+      "serverKey": "multigrain bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mung bean sprouts",
+      "serverKey": "mung bean sprouts",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mung beans",
+      "serverKey": "mung beans",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mushroom sauce",
+      "serverKey": "mushroom sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mushrooms",
+      "serverKey": "mushrooms",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mussel meat",
+      "serverKey": "mussel meat",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mussels",
+      "serverKey": "mussels",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "mustard",
+      "serverKey": "mustard",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nutritional yeast",
+      "serverKey": "nutritional yeast",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nutritional yeast flakes",
+      "serverKey": "nutritional yeast flakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "nuts",
+      "serverKey": "nuts",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oat biscuits",
+      "serverKey": "oat biscuits",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oat bran",
+      "serverKey": "oat bran",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oat drink",
+      "serverKey": "oat drink",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oat flour",
+      "serverKey": "oat flour",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oat milk",
+      "serverKey": "oat milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "olive oil",
+      "serverKey": "olive oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "olives",
+      "serverKey": "olives",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "onion granules",
+      "serverKey": "onion granules",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "onion powder",
+      "serverKey": "onion powder",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "orange",
+      "serverKey": "orange",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "orange juice",
+      "serverKey": "orange juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oranges",
+      "serverKey": "oranges",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oregano",
+      "serverKey": "oregano",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic almond butter",
+      "serverKey": "organic almond butter",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic apples",
+      "serverKey": "organic apples",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic basmati rice",
+      "serverKey": "organic basmati rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic bbq sauce",
+      "serverKey": "organic bbq sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic beetroot",
+      "serverKey": "organic beetroot",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic black rice",
+      "serverKey": "organic black rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic carrots",
+      "serverKey": "organic carrots",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic cashew nuts",
+      "serverKey": "organic cashew nuts",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic coconut",
+      "serverKey": "organic coconut",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic coconut oil",
+      "serverKey": "organic coconut oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic cold pressed coconut oil",
+      "serverKey": "organic cold pressed coconut oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic corn",
+      "serverKey": "organic corn",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic corn flour",
+      "serverKey": "organic corn flour",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic corn on the cob",
+      "serverKey": "organic corn on the cob",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic couscous",
+      "serverKey": "organic couscous",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic eggs",
+      "serverKey": "organic eggs",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic fennel",
+      "serverKey": "organic fennel",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic goat cheese",
+      "serverKey": "organic goat cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic green tea",
+      "serverKey": "organic green tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic ground beef",
+      "serverKey": "organic ground beef",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic ground cinnamon",
+      "serverKey": "organic ground cinnamon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic ground nutmeg",
+      "serverKey": "organic ground nutmeg",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic honey",
+      "serverKey": "organic honey",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic jasmine rice",
+      "serverKey": "organic jasmine rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic kamut",
+      "serverKey": "organic kamut",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic kefir",
+      "serverKey": "organic kefir",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic ketchup",
+      "serverKey": "organic ketchup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic lentils",
+      "serverKey": "organic lentils",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic linguine",
+      "serverKey": "organic linguine",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic long grain rice",
+      "serverKey": "organic long grain rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic milk chocolate",
+      "serverKey": "organic milk chocolate",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic orange juice",
+      "serverKey": "organic orange juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic oranges",
+      "serverKey": "organic oranges",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic pretzel sticks",
+      "serverKey": "organic pretzel sticks",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic pumpkin seed oil",
+      "serverKey": "organic pumpkin seed oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic quinoa",
+      "serverKey": "organic quinoa",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic rapeseed oil",
+      "serverKey": "organic rapeseed oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic red cabbage",
+      "serverKey": "organic red cabbage",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic red lentils",
+      "serverKey": "organic red lentils",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic roasted almonds",
+      "serverKey": "organic roasted almonds",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic smoked salmon",
+      "serverKey": "organic smoked salmon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic spelt bread",
+      "serverKey": "organic spelt bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic spelt flakes",
+      "serverKey": "organic spelt flakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic sweet potatoes",
+      "serverKey": "organic sweet potatoes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic tomato ketchup",
+      "serverKey": "organic tomato ketchup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic tomato paste",
+      "serverKey": "organic tomato paste",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic turkey breast",
+      "serverKey": "organic turkey breast",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic walnut oil",
+      "serverKey": "organic walnut oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic whole wheat bread",
+      "serverKey": "organic whole wheat bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic wild rice",
+      "serverKey": "organic wild rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "organic zucchini",
+      "serverKey": "organic zucchini",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "oyster mushrooms",
+      "serverKey": "oyster mushrooms",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "papaya",
+      "serverKey": "papaya",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "paprika potato chips",
+      "serverKey": "paprika potato chips",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "parmesan cheese",
+      "serverKey": "parmesan cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "parsley",
+      "serverKey": "parsley",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "passata",
+      "serverKey": "passata",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pasta",
+      "serverKey": "pasta",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pea protein powder",
+      "serverKey": "pea protein powder",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pea soup",
+      "serverKey": "pea soup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peach",
+      "serverKey": "peach",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peach iced tea",
+      "serverKey": "peach iced tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peanut butter",
+      "serverKey": "peanut butter",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peanuts",
+      "serverKey": "peanuts",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pear",
+      "serverKey": "pear",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pearl barley",
+      "serverKey": "pearl barley",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pears",
+      "serverKey": "pears",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peas",
+      "serverKey": "peas",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pecans",
+      "serverKey": "pecans",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "penne pasta",
+      "serverKey": "penne pasta",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "penne rigate",
+      "serverKey": "penne rigate",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "peppermint tea",
+      "serverKey": "peppermint tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pesto",
+      "serverKey": "pesto",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pesto genovese",
+      "serverKey": "pesto genovese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "physalis",
+      "serverKey": "physalis",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pickled cucumbers",
+      "serverKey": "pickled cucumbers",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pickles",
+      "serverKey": "pickles",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pineapple",
+      "serverKey": "pineapple",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pineapple chunks",
+      "serverKey": "pineapple chunks",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pinto beans",
+      "serverKey": "pinto beans",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pitted black olives",
+      "serverKey": "pitted black olives",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pitted green olives",
+      "serverKey": "pitted green olives",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pizza",
+      "serverKey": "pizza",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pizza margherita",
+      "serverKey": "pizza margherita",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "plain coconut yogurt",
+      "serverKey": "plain coconut yogurt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "plain yogurt",
+      "serverKey": "plain yogurt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "plum",
+      "serverKey": "plum",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "polenta",
+      "serverKey": "polenta",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pomegranate juice",
+      "serverKey": "pomegranate juice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "popcorn",
+      "serverKey": "popcorn",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pork",
+      "serverKey": "pork",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "potato chips",
+      "serverKey": "potato chips",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "potato soup",
+      "serverKey": "potato soup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "potatoes",
+      "serverKey": "potatoes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "powdered sugar",
+      "serverKey": "powdered sugar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "protein bar",
+      "serverKey": "protein bar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "prunes",
+      "serverKey": "prunes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpernickel",
+      "serverKey": "pumpernickel",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpernickel bread",
+      "serverKey": "pumpernickel bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin",
+      "serverKey": "pumpkin",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin puree",
+      "serverKey": "pumpkin puree",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin seed butter",
+      "serverKey": "pumpkin seed butter",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin seeds",
+      "serverKey": "pumpkin seeds",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "pumpkin soup",
+      "serverKey": "pumpkin soup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "quark",
+      "serverKey": "quark",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "quinoa",
+      "serverKey": "quinoa",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raisins",
+      "serverKey": "raisins",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rapeseed oil",
+      "serverKey": "rapeseed oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberries",
+      "serverKey": "raspberries",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberry",
+      "serverKey": "raspberry",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberry jam",
+      "serverKey": "raspberry jam",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raspberry lemonade",
+      "serverKey": "raspberry lemonade",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ratatouille",
+      "serverKey": "ratatouille",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ravioli",
+      "serverKey": "ravioli",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raw cashews",
+      "serverKey": "raw cashews",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "raw honey",
+      "serverKey": "raw honey",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red beans",
+      "serverKey": "red beans",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red cabbage",
+      "serverKey": "red cabbage",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red grapes",
+      "serverKey": "red grapes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red lentil",
+      "serverKey": "red lentil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red lentils",
+      "serverKey": "red lentils",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red pesto",
+      "serverKey": "red pesto",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red quinoa",
+      "serverKey": "red quinoa",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red rice",
+      "serverKey": "red rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "red wine vinegar",
+      "serverKey": "red wine vinegar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "remoulade",
+      "serverKey": "remoulade",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice",
+      "serverKey": "rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice cakes",
+      "serverKey": "rice cakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice crackers",
+      "serverKey": "rice crackers",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice drink",
+      "serverKey": "rice drink",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice flakes",
+      "serverKey": "rice flakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice flour",
+      "serverKey": "rice flour",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice milk",
+      "serverKey": "rice milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rice pudding",
+      "serverKey": "rice pudding",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "ricotta",
+      "serverKey": "ricotta",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "roast beef",
+      "serverKey": "roast beef",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rolled oats",
+      "serverKey": "rolled oats",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rooibos tea",
+      "serverKey": "rooibos tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rosemary",
+      "serverKey": "rosemary",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rye bread",
+      "serverKey": "rye bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "rye flour",
+      "serverKey": "rye flour",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "safflower oil",
+      "serverKey": "safflower oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sage",
+      "serverKey": "sage",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salad",
+      "serverKey": "salad",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salad dressing",
+      "serverKey": "salad dressing",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salami",
+      "serverKey": "salami",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted almonds",
+      "serverKey": "salted almonds",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted peanuts",
+      "serverKey": "salted peanuts",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted popcorn",
+      "serverKey": "salted popcorn",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "salted rice cakes",
+      "serverKey": "salted rice cakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sauerkraut",
+      "serverKey": "sauerkraut",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sausage",
+      "serverKey": "sausage",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sausages",
+      "serverKey": "sausages",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sea salt",
+      "serverKey": "sea salt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "seaweed",
+      "serverKey": "seaweed",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "seaweed snack",
+      "serverKey": "seaweed snack",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "seaweed snacks",
+      "serverKey": "seaweed snacks",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "seitan",
+      "serverKey": "seitan",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "seitan sausages",
+      "serverKey": "seitan sausages",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sesame",
+      "serverKey": "sesame",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sesame oil",
+      "serverKey": "sesame oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sesame seeds",
+      "serverKey": "sesame seeds",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "shiitake mushrooms",
+      "serverKey": "shiitake mushrooms",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "shoyu soy sauce",
+      "serverKey": "shoyu soy sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "shrimp",
+      "serverKey": "shrimp",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "silken tofu",
+      "serverKey": "silken tofu",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "skyr",
+      "serverKey": "skyr",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sliced cheese",
+      "serverKey": "sliced cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sliced mushrooms",
+      "serverKey": "sliced mushrooms",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "smoked paprika",
+      "serverKey": "smoked paprika",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "smoked salmon",
+      "serverKey": "smoked salmon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "smoked tofu",
+      "serverKey": "smoked tofu",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "snack sticks",
+      "serverKey": "snack sticks",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "snacks",
+      "serverKey": "snacks",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soft cheese",
+      "serverKey": "soft cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soft wheat",
+      "serverKey": "soft wheat",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sorghum",
+      "serverKey": "sorghum",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sour cherries",
+      "serverKey": "sour cherries",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sour cream",
+      "serverKey": "sour cream",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sourdough bread",
+      "serverKey": "sourdough bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soy drink",
+      "serverKey": "soy drink",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soy milk",
+      "serverKey": "soy milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soy sauce",
+      "serverKey": "soy sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "soy sausages",
+      "serverKey": "soy sausages",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spaghetti",
+      "serverKey": "spaghetti",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spaghetti bolognese",
+      "serverKey": "spaghetti bolognese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sparkling water",
+      "serverKey": "sparkling water",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spelt bread",
+      "serverKey": "spelt bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spelt drink",
+      "serverKey": "spelt drink",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spelt flakes",
+      "serverKey": "spelt flakes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spelt flour",
+      "serverKey": "spelt flour",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spelt grains",
+      "serverKey": "spelt grains",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spelt spaghetti",
+      "serverKey": "spelt spaghetti",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spinach",
+      "serverKey": "spinach",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "spring onions",
+      "serverKey": "spring onions",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sriracha sauce",
+      "serverKey": "sriracha sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "star anise",
+      "serverKey": "star anise",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "steak sauce",
+      "serverKey": "steak sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "stevia",
+      "serverKey": "stevia",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberries",
+      "serverKey": "strawberries",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberry",
+      "serverKey": "strawberry",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberry jam",
+      "serverKey": "strawberry jam",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberry kefir",
+      "serverKey": "strawberry kefir",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "strawberry yogurt",
+      "serverKey": "strawberry yogurt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sugar",
+      "serverKey": "sugar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sugar snap peas",
+      "serverKey": "sugar snap peas",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sun dried tomatoes",
+      "serverKey": "sun dried tomatoes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sunflower oil",
+      "serverKey": "sunflower oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sunflower seeds",
+      "serverKey": "sunflower seeds",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet and sour pickles",
+      "serverKey": "sweet and sour pickles",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet chili sauce",
+      "serverKey": "sweet chili sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet corn",
+      "serverKey": "sweet corn",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet mustard",
+      "serverKey": "sweet mustard",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet potato",
+      "serverKey": "sweet potato",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet potato chips",
+      "serverKey": "sweet potato chips",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "sweet potatoes",
+      "serverKey": "sweet potatoes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tagliatelle",
+      "serverKey": "tagliatelle",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tahini",
+      "serverKey": "tahini",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tea",
+      "serverKey": "tea",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "teewurst",
+      "serverKey": "teewurst",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "teff",
+      "serverKey": "teff",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tempeh",
+      "serverKey": "tempeh",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "teriyaki sauce",
+      "serverKey": "teriyaki sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "thai curry paste",
+      "serverKey": "thai curry paste",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "thyme",
+      "serverKey": "thyme",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tofu",
+      "serverKey": "tofu",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato",
+      "serverKey": "tomato",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato ketchup",
+      "serverKey": "tomato ketchup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato paste",
+      "serverKey": "tomato paste",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato sauce",
+      "serverKey": "tomato sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomato soup",
+      "serverKey": "tomato soup",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tomatoes",
+      "serverKey": "tomatoes",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tortellini",
+      "serverKey": "tortellini",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tortilla chips",
+      "serverKey": "tortilla chips",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tortilla wraps",
+      "serverKey": "tortilla wraps",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "trail mix",
+      "serverKey": "trail mix",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "truffle oil",
+      "serverKey": "truffle oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "turkey breast",
+      "serverKey": "turkey breast",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "turmeric",
+      "serverKey": "turmeric",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "tzatziki",
+      "serverKey": "tzatziki",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "unsweetened almond milk",
+      "serverKey": "unsweetened almond milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "unsweetened applesauce",
+      "serverKey": "unsweetened applesauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "unsweetened oat drink",
+      "serverKey": "unsweetened oat drink",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "unsweetened soy milk",
+      "serverKey": "unsweetened soy milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vanilla extract",
+      "serverKey": "vanilla extract",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vanilla ice cream",
+      "serverKey": "vanilla ice cream",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vanilla soy milk",
+      "serverKey": "vanilla soy milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vanilla yogurt",
+      "serverKey": "vanilla yogurt",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan bolognese",
+      "serverKey": "vegan bolognese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan burger patties",
+      "serverKey": "vegan burger patties",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan butter",
+      "serverKey": "vegan butter",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan cheese",
+      "serverKey": "vegan cheese",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan chocolate",
+      "serverKey": "vegan chocolate",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan curry",
+      "serverKey": "vegan curry",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan mayonnaise",
+      "serverKey": "vegan mayonnaise",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan pesto",
+      "serverKey": "vegan pesto",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan protein drink",
+      "serverKey": "vegan protein drink",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan sausages",
+      "serverKey": "vegan sausages",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegan vegetable lasagna",
+      "serverKey": "vegan vegetable lasagna",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable bouillon",
+      "serverKey": "vegetable bouillon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable broth",
+      "serverKey": "vegetable broth",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable lasagna",
+      "serverKey": "vegetable lasagna",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetable stock",
+      "serverKey": "vegetable stock",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetarian chili",
+      "serverKey": "vegetarian chili",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vegetarian pate",
+      "serverKey": "vegetarian pate",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "veggie burger",
+      "serverKey": "veggie burger",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "vinaigrette",
+      "serverKey": "vinaigrette",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "virgin coconut oil",
+      "serverKey": "virgin coconut oil",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "waffles",
+      "serverKey": "waffles",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "walnuts",
+      "serverKey": "walnuts",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "watermelon",
+      "serverKey": "watermelon",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "wheat bran",
+      "serverKey": "wheat bran",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "wheat flour",
+      "serverKey": "wheat flour",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whey",
+      "serverKey": "whey",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whey protein",
+      "serverKey": "whey protein",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whipping cream",
+      "serverKey": "whipping cream",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white basmati rice",
+      "serverKey": "white basmati rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white bread",
+      "serverKey": "white bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white cabbage",
+      "serverKey": "white cabbage",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white chocolate",
+      "serverKey": "white chocolate",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white rice",
+      "serverKey": "white rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white vinegar",
+      "serverKey": "white vinegar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white wine",
+      "serverKey": "white wine",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "white wine vinegar",
+      "serverKey": "white wine vinegar",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole almonds",
+      "serverKey": "whole almonds",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole grain flour",
+      "serverKey": "whole grain flour",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole grain rice",
+      "serverKey": "whole grain rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole grain rye bread",
+      "serverKey": "whole grain rye bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole milk",
+      "serverKey": "whole milk",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole wheat bread",
+      "serverKey": "whole wheat bread",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole wheat flour",
+      "serverKey": "whole wheat flour",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole wheat penne",
+      "serverKey": "whole wheat penne",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "whole wheat spaghetti",
+      "serverKey": "whole wheat spaghetti",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "wild rice",
+      "serverKey": "wild rice",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "wild rice mix",
+      "serverKey": "wild rice mix",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "wine",
+      "serverKey": "wine",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "worcestershire sauce",
+      "serverKey": "worcestershire sauce",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "yellow onions",
+      "serverKey": "yellow onions",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "yogurt dressing",
+      "serverKey": "yogurt dressing",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    },
+    {
+      "catalogKey": "zucchini",
+      "serverKey": "zucchini",
+      "serverArtifact": "animal_welfare.json",
+      "strategy": "EXACT",
+      "confidence": 1.0
+    }
+  ]
+}

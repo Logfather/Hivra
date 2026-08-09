@@ -1,0 +1,106 @@
+{
+  "entries": {
+    "bar commun ou loup (méditerranée), cru, élevage": {
+      "environmentScoreMptPerKg": 1.92,
+      "climateKgCo2EqPerKg": 12.3,
+      "landUsePtPerKg": 183.0,
+      "waterDeprivationM3PerKg": 2.62
+    },
+    "boeuf, hampe, crue": {
+      "environmentScoreMptPerKg": 2.7,
+      "climateKgCo2EqPerKg": 28.9,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.39
+    },
+    "boisson à la noix de coco, nature, préemballée": {
+      "environmentScoreMptPerKg": 0.129,
+      "climateKgCo2EqPerKg": 0.836,
+      "landUsePtPerKg": 119.0,
+      "waterDeprivationM3PerKg": 2.03
+    },
+    "bouchée à la reine, à la viande/volaille/quenelle": {
+      "environmentScoreMptPerKg": 0.623,
+      "climateKgCo2EqPerKg": 4.71,
+      "landUsePtPerKg": 139.0,
+      "waterDeprivationM3PerKg": 11.9
+    },
+    "cacahuètes enrobées de chocolat dragéifiées": {
+      "environmentScoreMptPerKg": 0.738,
+      "climateKgCo2EqPerKg": 9.78,
+      "landUsePtPerKg": 461.0,
+      "waterDeprivationM3PerKg": 5.9
+    },
+    "canard, cuisse avec peau, sans os, crue": {
+      "environmentScoreMptPerKg": 0.679,
+      "climateKgCo2EqPerKg": 4.68,
+      "landUsePtPerKg": 208.0,
+      "waterDeprivationM3PerKg": 1.64
+    },
+    "crêpe ou galette fourrée béchamel fromage": {
+      "environmentScoreMptPerKg": 0.297,
+      "climateKgCo2EqPerKg": 2.71,
+      "landUsePtPerKg": 111.0,
+      "waterDeprivationM3PerKg": 0.512
+    },
+    "fruits rouges, crus (framboises, fraises, groseilles, cassis)": {
+      "environmentScoreMptPerKg": 0.315,
+      "climateKgCo2EqPerKg": 1.55,
+      "landUsePtPerKg": 118.0,
+      "waterDeprivationM3PerKg": 2.35
+    },
+    "pain grillé, domestique": {
+      "environmentScoreMptPerKg": 0.14,
+      "climateKgCo2EqPerKg": 1.35,
+      "landUsePtPerKg": 62.1,
+      "waterDeprivationM3PerKg": 0.415
+    },
+    "pomme de terre rissolée, surgelée, crue": {
+      "environmentScoreMptPerKg": 0.11,
+      "climateKgCo2EqPerKg": 0.895,
+      "landUsePtPerKg": 24.9,
+      "waterDeprivationM3PerKg": 0.319
+    },
+    "porc, jambonneau arrière, découenné, dégraisssé, désossé, cru": {
+      "environmentScoreMptPerKg": 0.834,
+      "climateKgCo2EqPerKg": 6.78,
+      "landUsePtPerKg": 350.0,
+      "waterDeprivationM3PerKg": 2.2
+    },
+    "pâte feuilletée pur beurre, crue": {
+      "environmentScoreMptPerKg": 0.416,
+      "climateKgCo2EqPerKg": 3.93,
+      "landUsePtPerKg": 180.0,
+      "waterDeprivationM3PerKg": 0.719
+    },
+    "pâte phyllo ou pâte filo, crue": {
+      "environmentScoreMptPerKg": 0.276,
+      "climateKgCo2EqPerKg": 1.9,
+      "landUsePtPerKg": 176.0,
+      "waterDeprivationM3PerKg": 2.02
+    },
+    "riste d'aubergines (aubergines, tomates, oignons)": {
+      "environmentScoreMptPerKg": 0.218,
+      "climateKgCo2EqPerKg": 1.27,
+      "landUsePtPerKg": 119.0,
+      "waterDeprivationM3PerKg": 4.22
+    },
+    "sauce au poivre, chaude, préemballée": {
+      "environmentScoreMptPerKg": 0.25,
+      "climateKgCo2EqPerKg": 2.03,
+      "landUsePtPerKg": 63.9,
+      "waterDeprivationM3PerKg": 0.396
+    },
+    "tomate de saison, crue": {
+      "environmentScoreMptPerKg": 0.0584,
+      "climateKgCo2EqPerKg": 0.626,
+      "landUsePtPerKg": 5.18,
+      "waterDeprivationM3PerKg": 0.379
+    },
+    "veau, filet, cru": {
+      "environmentScoreMptPerKg": 2.14,
+      "climateKgCo2EqPerKg": 23.2,
+      "landUsePtPerKg": 1060.0,
+      "waterDeprivationM3PerKg": 3.13
+    }
+  }
+}

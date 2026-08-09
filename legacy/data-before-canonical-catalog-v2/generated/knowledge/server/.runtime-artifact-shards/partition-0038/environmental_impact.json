@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "abricot au sirop léger, appertisé, non égoutté": {
+      "environmentScoreMptPerKg": 0.161,
+      "climateKgCo2EqPerKg": 0.769,
+      "landUsePtPerKg": 280.0,
+      "waterDeprivationM3PerKg": 1.19
+    },
+    "brioche aux pépites de chocolat": {
+      "environmentScoreMptPerKg": 0.294,
+      "climateKgCo2EqPerKg": 3.67,
+      "landUsePtPerKg": 168.0,
+      "waterDeprivationM3PerKg": 0.586
+    },
+    "cassoulet au canard ou oie, appertisé": {
+      "environmentScoreMptPerKg": 0.0829,
+      "climateKgCo2EqPerKg": 0.694,
+      "landUsePtPerKg": 16.4,
+      "waterDeprivationM3PerKg": 0.671
+    },
+    "crêpe préemballée, fourrée au sucre": {
+      "environmentScoreMptPerKg": 0.256,
+      "climateKgCo2EqPerKg": 1.82,
+      "landUsePtPerKg": 73.8,
+      "waterDeprivationM3PerKg": 0.806
+    },
+    "flan aux œufs, rayon frais": {
+      "environmentScoreMptPerKg": 0.222,
+      "climateKgCo2EqPerKg": 2.03,
+      "landUsePtPerKg": 80.7,
+      "waterDeprivationM3PerKg": 0.616
+    },
+    "origan, séché": {
+      "environmentScoreMptPerKg": 0.464,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 142.0,
+      "waterDeprivationM3PerKg": 20.2
+    },
+    "pomme de terre duchesse, surgelée, crue": {
+      "environmentScoreMptPerKg": 0.183,
+      "climateKgCo2EqPerKg": 1.57,
+      "landUsePtPerKg": 70.7,
+      "waterDeprivationM3PerKg": 0.425
+    },
+    "porc, filet, maigre, en rôti, cuit": {
+      "environmentScoreMptPerKg": 1.07,
+      "climateKgCo2EqPerKg": 8.4,
+      "landUsePtPerKg": 441.0,
+      "waterDeprivationM3PerKg": 2.77
+    },
+    "roussette ou petite roussette ou saumonette, crue": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "saint nectaire, laitier": {
+      "environmentScoreMptPerKg": 0.53,
+      "climateKgCo2EqPerKg": 5.54,
+      "landUsePtPerKg": 244.0,
+      "waterDeprivationM3PerKg": 0.732
+    }
+  }
+}

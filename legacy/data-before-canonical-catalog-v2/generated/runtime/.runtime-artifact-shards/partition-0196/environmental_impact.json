@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "barre biscuitée fourrée aux fruits, allégée en matière grasse": {
+      "environmentScoreMptPerKg": 0.304,
+      "climateKgCo2EqPerKg": 2.44,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 2.95
+    },
+    "carambole, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.0667,
+      "climateKgCo2EqPerKg": 0.554,
+      "landUsePtPerKg": 30.8,
+      "waterDeprivationM3PerKg": 0.955
+    },
+    "estragon, frais": {
+      "environmentScoreMptPerKg": 0.112,
+      "climateKgCo2EqPerKg": 0.735,
+      "landUsePtPerKg": 30.9,
+      "waterDeprivationM3PerKg": 4.54
+    },
+    "kiwi, pulpe et graines, cru": {
+      "environmentScoreMptPerKg": 0.126,
+      "climateKgCo2EqPerKg": 1.0,
+      "landUsePtPerKg": 44.2,
+      "waterDeprivationM3PerKg": 2.73
+    },
+    "lait demi écrémé, à teneur réduite en lactose": {
+      "environmentScoreMptPerKg": 0.119,
+      "climateKgCo2EqPerKg": 1.27,
+      "landUsePtPerKg": 54.3,
+      "waterDeprivationM3PerKg": 0.156
+    },
+    "plat légumes, avec féculent et lait/crème, dès 18 mois": {
+      "environmentScoreMptPerKg": 0.149,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": 56.0,
+      "waterDeprivationM3PerKg": 1.26
+    },
+    "porc, hachage sans jarret, sans bateau, découenné, dégraisssé, désossé, cru": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "pruneau, sec": {
+      "environmentScoreMptPerKg": 1.02,
+      "climateKgCo2EqPerKg": 3.11,
+      "landUsePtPerKg": 4060.0,
+      "waterDeprivationM3PerKg": 26.2
+    },
+    "raie, crue": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "rutabaga, cru": {
+      "environmentScoreMptPerKg": 0.0533,
+      "climateKgCo2EqPerKg": 0.494,
+      "landUsePtPerKg": 10.9,
+      "waterDeprivationM3PerKg": 0.413
+    },
+    "tapioca ou perles du japon, cru": {
+      "environmentScoreMptPerKg": 0.104,
+      "climateKgCo2EqPerKg": 0.74,
+      "landUsePtPerKg": 23.9,
+      "waterDeprivationM3PerKg": 2.3
+    },
+    "turbot, rôti/cuit au four": {
+      "environmentScoreMptPerKg": 2.33,
+      "climateKgCo2EqPerKg": 15.2,
+      "landUsePtPerKg": 228.0,
+      "waterDeprivationM3PerKg": 3.33
+    },
+    "épinards à la crème": {
+      "environmentScoreMptPerKg": 0.246,
+      "climateKgCo2EqPerKg": 2.38,
+      "landUsePtPerKg": 62.8,
+      "waterDeprivationM3PerKg": 0.574
+    }
+  }
+}

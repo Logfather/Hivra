@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "bonbon gélifié": {
+      "environmentScoreMptPerKg": 0.199,
+      "climateKgCo2EqPerKg": 1.49,
+      "landUsePtPerKg": 57.6,
+      "waterDeprivationM3PerKg": 2.13
+    },
+    "mouton, épaule, crue": {
+      "environmentScoreMptPerKg": 4.01,
+      "climateKgCo2EqPerKg": 33.0,
+      "landUsePtPerKg": 3530.0,
+      "waterDeprivationM3PerKg": 5.54
+    },
+    "prune, crue": {
+      "environmentScoreMptPerKg": 0.27,
+      "climateKgCo2EqPerKg": 1.03,
+      "landUsePtPerKg": 1010.0,
+      "waterDeprivationM3PerKg": 6.51
+    },
+    "tripes à la mode de caen, préemballées": {
+      "environmentScoreMptPerKg": 2.39,
+      "climateKgCo2EqPerKg": 25.3,
+      "landUsePtPerKg": 1540.0,
+      "waterDeprivationM3PerKg": 2.55
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aromatisé, avec édulcorants, 0% mg": {
+      "environmentScoreMptPerKg": 0.192,
+      "climateKgCo2EqPerKg": 1.88,
+      "landUsePtPerKg": 64.4,
+      "waterDeprivationM3PerKg": 0.458
+    },
+    "épinard, jeunes pousses pour salades, cru": {
+      "environmentScoreMptPerKg": 0.0464,
+      "climateKgCo2EqPerKg": 0.423,
+      "landUsePtPerKg": -17.2,
+      "waterDeprivationM3PerKg": 0.259
+    }
+  }
+}

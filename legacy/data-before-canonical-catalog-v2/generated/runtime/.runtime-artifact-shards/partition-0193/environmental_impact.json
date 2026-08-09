@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "edam": {
+      "environmentScoreMptPerKg": 0.643,
+      "climateKgCo2EqPerKg": 6.35,
+      "landUsePtPerKg": 281.0,
+      "waterDeprivationM3PerKg": 0.859
+    },
+    "glace ou crème glacée, bâtonnet, enrobé de chocolat": {
+      "environmentScoreMptPerKg": 0.26,
+      "climateKgCo2EqPerKg": 2.55,
+      "landUsePtPerKg": 67.4,
+      "waterDeprivationM3PerKg": 0.881
+    },
+    "homard, bouilli/cuit à l'eau": {
+      "environmentScoreMptPerKg": 5.69,
+      "climateKgCo2EqPerKg": 41.6,
+      "landUsePtPerKg": 89.0,
+      "waterDeprivationM3PerKg": 2.5
+    },
+    "palet ou galette de légumes, préfrit, surgelé, cuit": {
+      "environmentScoreMptPerKg": 0.18,
+      "climateKgCo2EqPerKg": 1.15,
+      "landUsePtPerKg": 59.9,
+      "waterDeprivationM3PerKg": 1.5
+    },
+    "taro, tubercule, cru": {
+      "environmentScoreMptPerKg": 0.0992,
+      "climateKgCo2EqPerKg": 0.69,
+      "landUsePtPerKg": 23.0,
+      "waterDeprivationM3PerKg": 2.29
+    },
+    "tomate, séchée": {
+      "environmentScoreMptPerKg": 1.9,
+      "climateKgCo2EqPerKg": 11.2,
+      "landUsePtPerKg": 94.7,
+      "waterDeprivationM3PerKg": 7.37
+    }
+  }
+}

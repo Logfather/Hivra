@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "gaufrette fourrée chocolat, préemballée": {
+      "environmentScoreMptPerKg": 0.544,
+      "climateKgCo2EqPerKg": 7.66,
+      "landUsePtPerKg": 313.0,
+      "waterDeprivationM3PerKg": 1.24
+    },
+    "merlu, cru": {
+      "environmentScoreMptPerKg": 1.22,
+      "climateKgCo2EqPerKg": 7.59,
+      "landUsePtPerKg": 11.7,
+      "waterDeprivationM3PerKg": 0.326
+    },
+    "mélasse de canne": {
+      "environmentScoreMptPerKg": 0.339,
+      "climateKgCo2EqPerKg": 1.04,
+      "landUsePtPerKg": 90.7,
+      "waterDeprivationM3PerKg": 6.6
+    },
+    "porc, rôti, cru": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "sauce américaine, préemballée": {
+      "environmentScoreMptPerKg": 0.437,
+      "climateKgCo2EqPerKg": 3.9,
+      "landUsePtPerKg": 145.0,
+      "waterDeprivationM3PerKg": 0.871
+    },
+    "vin blanc mousseux aromatisé": {
+      "environmentScoreMptPerKg": 0.237,
+      "climateKgCo2EqPerKg": 2.14,
+      "landUsePtPerKg": 125.0,
+      "waterDeprivationM3PerKg": 0.388
+    }
+  }
+}

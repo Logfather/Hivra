@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "betterave rouge, crue": {
+      "environmentScoreMptPerKg": 0.0375,
+      "climateKgCo2EqPerKg": 0.408,
+      "landUsePtPerKg": 4.78,
+      "waterDeprivationM3PerKg": 0.384
+    },
+    "compote, tout type de fruits": {
+      "environmentScoreMptPerKg": 0.129,
+      "climateKgCo2EqPerKg": 1.1,
+      "landUsePtPerKg": 23.4,
+      "waterDeprivationM3PerKg": 1.1
+    },
+    "lait fermenté ou spécialité laitière type yaourt, aromatisé, sucré, au bifidus": {
+      "environmentScoreMptPerKg": 0.192,
+      "climateKgCo2EqPerKg": 1.88,
+      "landUsePtPerKg": 64.4,
+      "waterDeprivationM3PerKg": 0.458
+    },
+    "limande sole, panée, frite": {
+      "environmentScoreMptPerKg": 2.45,
+      "climateKgCo2EqPerKg": 14.9,
+      "landUsePtPerKg": 23.5,
+      "waterDeprivationM3PerKg": 0.616
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop, appertisé, non égoutté": {
+      "environmentScoreMptPerKg": 0.134,
+      "climateKgCo2EqPerKg": 0.725,
+      "landUsePtPerKg": 60.8,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "pané soja et blé (ne convient pas aux véganes ou végétaliens)": {
+      "environmentScoreMptPerKg": 0.27,
+      "climateKgCo2EqPerKg": 1.95,
+      "landUsePtPerKg": 149.0,
+      "waterDeprivationM3PerKg": 0.616
+    },
+    "pizza jambon fromage": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.23,
+      "landUsePtPerKg": 178.0,
+      "waterDeprivationM3PerKg": 1.91
+    },
+    "pomme de terre noisette, surgelée, crue": {
+      "environmentScoreMptPerKg": 0.367,
+      "climateKgCo2EqPerKg": 3.41,
+      "landUsePtPerKg": 148.0,
+      "waterDeprivationM3PerKg": 0.533
+    },
+    "épaule de porc, cuite, choix, découennée dégraissée": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    }
+  }
+}

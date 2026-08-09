@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "andouille": {
+      "environmentScoreMptPerKg": 1.36,
+      "climateKgCo2EqPerKg": 11.9,
+      "landUsePtPerKg": 699.0,
+      "waterDeprivationM3PerKg": 2.72
+    },
+    "brick au boeuf": {
+      "environmentScoreMptPerKg": 0.43,
+      "climateKgCo2EqPerKg": 3.11,
+      "landUsePtPerKg": 111.0,
+      "waterDeprivationM3PerKg": 7.04
+    },
+    "fromage à pâte molle double crème environ 30% mg": {
+      "environmentScoreMptPerKg": 0.572,
+      "climateKgCo2EqPerKg": 5.68,
+      "landUsePtPerKg": 252.0,
+      "waterDeprivationM3PerKg": 0.697
+    },
+    "hoki, tout lieu de pêche, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "lait gélifié aromatisé, nappé caramel, rayon frais": {
+      "environmentScoreMptPerKg": 0.203,
+      "climateKgCo2EqPerKg": 1.76,
+      "landUsePtPerKg": 72.1,
+      "waterDeprivationM3PerKg": 0.738
+    },
+    "lieu jaune ou colin, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "maroilles fermier": {
+      "environmentScoreMptPerKg": 0.525,
+      "climateKgCo2EqPerKg": 5.45,
+      "landUsePtPerKg": 260.0,
+      "waterDeprivationM3PerKg": 0.606
+    },
+    "noix, séchée, cerneaux": {
+      "environmentScoreMptPerKg": 0.562,
+      "climateKgCo2EqPerKg": 4.11,
+      "landUsePtPerKg": 653.0,
+      "waterDeprivationM3PerKg": 9.09
+    },
+    "petits pois, crus": {
+      "environmentScoreMptPerKg": 0.0946,
+      "climateKgCo2EqPerKg": 0.702,
+      "landUsePtPerKg": 162.0,
+      "waterDeprivationM3PerKg": 0.187
+    },
+    "sauce au curry, préemballée": {
+      "environmentScoreMptPerKg": 0.16,
+      "climateKgCo2EqPerKg": 1.07,
+      "landUsePtPerKg": 23.8,
+      "waterDeprivationM3PerKg": 1.06
+    }
+  }
+}

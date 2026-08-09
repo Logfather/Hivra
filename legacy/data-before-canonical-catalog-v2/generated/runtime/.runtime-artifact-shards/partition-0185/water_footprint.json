@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "citron, zeste, cru": {
+      "litersPerKilogram": 14700.0
+    },
+    "céréales chocolatées pour petit déjeuner, non fourrées, (non enrichies en vitamines et minéraux)": {
+      "litersPerKilogram": 6450.0
+    },
+    "lait concentré sucré, entier": {
+      "litersPerKilogram": 323.0
+    },
+    "oeuf, dur": {
+      "litersPerKilogram": 986.0
+    },
+    "pain de mie brioché, préemballé": {
+      "litersPerKilogram": 409.0
+    },
+    "poisson pané, surgelé, cru": {
+      "litersPerKilogram": 516.0
+    },
+    "poulet, cuisse, viande, bouilli/cuit à l'eau": {
+      "litersPerKilogram": 3400.0
+    },
+    "soupe à la volaille et aux légumes, déshydratée reconstituée": {
+      "litersPerKilogram": 180.0
+    }
+  }
+}

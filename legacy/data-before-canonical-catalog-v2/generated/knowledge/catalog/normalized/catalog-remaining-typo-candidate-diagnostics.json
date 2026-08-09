@@ -1,0 +1,1654 @@
+{
+  "version": 1,
+  "remainingTypoCandidateCount": 35,
+  "diagnosedEntryCount": 35,
+  "existingResolverShouldHaveAcceptedCount": 0,
+  "countsBySubtype": {
+    "MULTIPLE_TOKEN_DIFFERENCE": 5,
+    "MULTI_EDIT_TYPO": 7,
+    "PROBABLY_MISCLASSIFIED": 23
+  },
+  "countsByRecommendation": {
+    "MANUAL_REVIEW_REQUIRED": 12,
+    "RECLASSIFY_DUPLICATE_REASON": 23
+  },
+  "countsByDiagnosticReason": {
+    "CATEGORY_MISMATCH": 20,
+    "EDIT_DISTANCE_EXCEEDS_LIMIT": 12,
+    "EDIT_DISTANCE_ONE": 4,
+    "LENGTH_DIFFERENCE_EXCEEDS_LIMIT": 6,
+    "MANUAL_SEMANTIC_REVIEW_REQUIRED": 12,
+    "MULTIPLE_DIFFERING_TOKENS": 5,
+    "TOKEN_BELOW_MINIMUM_LENGTH": 6,
+    "TOKEN_COUNT_MISMATCH": 23
+  },
+  "countsByCategory": {
+    "Fertiggerichte": 2,
+    "Fisch": 2,
+    "Konserven": 8,
+    "Milchprodukte": 1,
+    "Tiefkühlprodukte": 18,
+    "Vegan": 1,
+    "Vegetarisch": 3
+  },
+  "entries": [
+    {
+      "sourceIndex": 315,
+      "sourceName": "Thunfisch in Dose",
+      "sourceCategory": "Konserven",
+      "sourceNormalizedKey": "thunfisch in dose",
+      "targetSourceIndex": 613,
+      "targetName": "Thunfisch in Öl",
+      "targetCategory": "Konserven",
+      "targetNormalizedKey": "thunfisch in oel",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 613 ('Thunfisch In Öl').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '07c96cce4f942572'."
+      ],
+      "normalizedSourceText": "thunfisch in dose",
+      "normalizedTargetText": "thunfisch in öl",
+      "sourceTokens": [
+        "thunfisch",
+        "in",
+        "dose"
+      ],
+      "targetTokens": [
+        "thunfisch",
+        "in",
+        "öl"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 2,
+          "sourceToken": "dose",
+          "targetToken": "öl",
+          "normalizedSourceToken": "dose",
+          "normalizedTargetToken": "oel",
+          "sourceLength": 4,
+          "targetLength": 3,
+          "lengthDifference": 1,
+          "editDistance": 3,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTI_EDIT_TYPO",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+        "TOKEN_BELOW_MINIMUM_LENGTH"
+      ]
+    },
+    {
+      "sourceIndex": 384,
+      "sourceName": "Vegetarische Pizza Bio",
+      "sourceCategory": "Vegetarisch",
+      "sourceNormalizedKey": "vegetarische pizza bio",
+      "targetSourceIndex": 604,
+      "targetName": "Vegetarische Pizza",
+      "targetCategory": "Vegetarisch",
+      "targetNormalizedKey": "vegetarische pizza",
+      "originalAction": "REVIEW",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 604 ('Vegetarische Pizza').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: REVIEW.",
+        "Entry belongs to duplicate group '7244449db8ab0304'."
+      ],
+      "normalizedSourceText": "vegetarische pizza bio",
+      "normalizedTargetText": "vegetarische pizza",
+      "sourceTokens": [
+        "vegetarische",
+        "pizza",
+        "bio"
+      ],
+      "targetTokens": [
+        "vegetarische",
+        "pizza"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 764,
+      "sourceName": "Fertiggericht Chili sin Carne",
+      "sourceCategory": "Vegetarisch",
+      "sourceNormalizedKey": "fertiggericht chili sin carne",
+      "targetSourceIndex": 226,
+      "targetName": "Chili con Carne Fertiggericht",
+      "targetCategory": "Fertiggerichte",
+      "targetNormalizedKey": "chili con carne fertiggericht",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 226 ('Chili Con Carne Fertiggericht').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '8b333efa1eaf7fdc'."
+      ],
+      "normalizedSourceText": "fertiggericht chili sin carne",
+      "normalizedTargetText": "chili con carne fertiggericht",
+      "sourceTokens": [
+        "fertiggericht",
+        "chili",
+        "sin",
+        "carne"
+      ],
+      "targetTokens": [
+        "chili",
+        "con",
+        "carne",
+        "fertiggericht"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 0,
+          "sourceToken": "fertiggericht",
+          "targetToken": "chili",
+          "normalizedSourceToken": "fertiggericht",
+          "normalizedTargetToken": "chili",
+          "sourceLength": 13,
+          "targetLength": 5,
+          "lengthDifference": 8,
+          "editDistance": 11,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        },
+        {
+          "tokenIndex": 1,
+          "sourceToken": "chili",
+          "targetToken": "con",
+          "normalizedSourceToken": "chili",
+          "normalizedTargetToken": "con",
+          "sourceLength": 5,
+          "targetLength": 3,
+          "lengthDifference": 2,
+          "editDistance": 4,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        },
+        {
+          "tokenIndex": 2,
+          "sourceToken": "sin",
+          "targetToken": "carne",
+          "normalizedSourceToken": "sin",
+          "normalizedTargetToken": "carne",
+          "sourceLength": 3,
+          "targetLength": 5,
+          "lengthDifference": 2,
+          "editDistance": 4,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        },
+        {
+          "tokenIndex": 3,
+          "sourceToken": "carne",
+          "targetToken": "fertiggericht",
+          "normalizedSourceToken": "carne",
+          "normalizedTargetToken": "fertiggericht",
+          "sourceLength": 5,
+          "targetLength": 13,
+          "lengthDifference": 8,
+          "editDistance": 11,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTIPLE_TOKEN_DIFFERENCE",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "LENGTH_DIFFERENCE_EXCEEDS_LIMIT",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+        "MULTIPLE_DIFFERING_TOKENS",
+        "TOKEN_BELOW_MINIMUM_LENGTH"
+      ]
+    },
+    {
+      "sourceIndex": 815,
+      "sourceName": "Sardinen in Dose",
+      "sourceCategory": "Konserven",
+      "sourceNormalizedKey": "sardinen in dose",
+      "targetSourceIndex": 98,
+      "targetName": "Sardinen in Öl",
+      "targetCategory": "Fisch",
+      "targetNormalizedKey": "sardinen in oel",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 98 ('Sardinen In Öl').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group 'abe16bee70dc6ed2'."
+      ],
+      "normalizedSourceText": "sardinen in dose",
+      "normalizedTargetText": "sardinen in öl",
+      "sourceTokens": [
+        "sardinen",
+        "in",
+        "dose"
+      ],
+      "targetTokens": [
+        "sardinen",
+        "in",
+        "öl"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 2,
+          "sourceToken": "dose",
+          "targetToken": "öl",
+          "normalizedSourceToken": "dose",
+          "normalizedTargetToken": "oel",
+          "sourceLength": 4,
+          "targetLength": 3,
+          "lengthDifference": 1,
+          "editDistance": 3,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTI_EDIT_TYPO",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+        "TOKEN_BELOW_MINIMUM_LENGTH"
+      ]
+    },
+    {
+      "sourceIndex": 952,
+      "sourceName": "TK-Pommes Frites",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "tkpommes frites",
+      "targetSourceIndex": 325,
+      "targetName": "Pommes Frites",
+      "targetCategory": "Tiefkühlprodukte",
+      "targetNormalizedKey": "pommes frites",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 325 ('Pommes Frites').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '2d30bc1e75f66907'."
+      ],
+      "normalizedSourceText": "tk pommes frites",
+      "normalizedTargetText": "pommes frites",
+      "sourceTokens": [
+        "tk",
+        "pommes",
+        "frites"
+      ],
+      "targetTokens": [
+        "pommes",
+        "frites"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1071,
+      "sourceName": "Veganes Chili sin Carne",
+      "sourceCategory": "Vegan",
+      "sourceNormalizedKey": "veganes chili sin carne",
+      "targetSourceIndex": 1614,
+      "targetName": "Veganes Chili con Carne",
+      "targetCategory": "Fertiggerichte",
+      "targetNormalizedKey": "veganes chili con carne",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 1614 ('Veganes Chili Con Carne').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '93376bf84682f2e2'."
+      ],
+      "normalizedSourceText": "veganes chili sin carne",
+      "normalizedTargetText": "veganes chili con carne",
+      "sourceTokens": [
+        "veganes",
+        "chili",
+        "sin",
+        "carne"
+      ],
+      "targetTokens": [
+        "veganes",
+        "chili",
+        "con",
+        "carne"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 2,
+          "sourceToken": "sin",
+          "targetToken": "con",
+          "normalizedSourceToken": "sin",
+          "normalizedTargetToken": "con",
+          "sourceLength": 3,
+          "targetLength": 3,
+          "lengthDifference": 0,
+          "editDistance": 2,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTI_EDIT_TYPO",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+        "TOKEN_BELOW_MINIMUM_LENGTH"
+      ]
+    },
+    {
+      "sourceIndex": 1075,
+      "sourceName": "Gemüsepfanne TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "gemuesepfanne tk",
+      "targetSourceIndex": 2716,
+      "targetName": "Gemüsepfanne",
+      "targetCategory": "Fertiggerichte",
+      "targetNormalizedKey": "gemuesepfanne",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 2716 ('Gemüsepfanne').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '8a42c3c2cf4ba2e9'."
+      ],
+      "normalizedSourceText": "gemüsepfanne tk",
+      "normalizedTargetText": "gemüsepfanne",
+      "sourceTokens": [
+        "gemüsepfanne",
+        "tk"
+      ],
+      "targetTokens": [
+        "gemüsepfanne"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1237,
+      "sourceName": "Bohnen in Dose",
+      "sourceCategory": "Konserven",
+      "sourceNormalizedKey": "bohnen in dose",
+      "targetSourceIndex": 2766,
+      "targetName": "Bohnen, Dose",
+      "targetCategory": "Konserven",
+      "targetNormalizedKey": "bohnen dose",
+      "originalAction": "REVIEW",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 2766 ('Bohnen, Dose').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: REVIEW.",
+        "Entry belongs to duplicate group 'c40e030061532835'."
+      ],
+      "normalizedSourceText": "bohnen in dose",
+      "normalizedTargetText": "bohnen dose",
+      "sourceTokens": [
+        "bohnen",
+        "in",
+        "dose"
+      ],
+      "targetTokens": [
+        "bohnen",
+        "dose"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1239,
+      "sourceName": "Ananas in Dose",
+      "sourceCategory": "Konserven",
+      "sourceNormalizedKey": "ananas in dose",
+      "targetSourceIndex": 27,
+      "targetName": "Ananas",
+      "targetCategory": "Obst",
+      "targetNormalizedKey": "ananas",
+      "originalAction": "REVIEW",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 27 ('Ananas').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: REVIEW.",
+        "Entry belongs to duplicate group '6d93c503bb57046b'."
+      ],
+      "normalizedSourceText": "ananas in dose",
+      "normalizedTargetText": "ananas",
+      "sourceTokens": [
+        "ananas",
+        "in",
+        "dose"
+      ],
+      "targetTokens": [
+        "ananas"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1506,
+      "sourceName": "Chili sin Carne",
+      "sourceCategory": "Vegetarisch",
+      "sourceNormalizedKey": "chili sin carne",
+      "targetSourceIndex": 1250,
+      "targetName": "Chili con Carne",
+      "targetCategory": "Fertiggerichte",
+      "targetNormalizedKey": "chili con carne",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 1250 ('Chili Con Carne').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '439a6a1b3a240596'."
+      ],
+      "normalizedSourceText": "chili sin carne",
+      "normalizedTargetText": "chili con carne",
+      "sourceTokens": [
+        "chili",
+        "sin",
+        "carne"
+      ],
+      "targetTokens": [
+        "chili",
+        "con",
+        "carne"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 1,
+          "sourceToken": "sin",
+          "targetToken": "con",
+          "normalizedSourceToken": "sin",
+          "normalizedTargetToken": "con",
+          "sourceLength": 3,
+          "targetLength": 3,
+          "lengthDifference": 0,
+          "editDistance": 2,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTI_EDIT_TYPO",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+        "TOKEN_BELOW_MINIMUM_LENGTH"
+      ]
+    },
+    {
+      "sourceIndex": 1641,
+      "sourceName": "Grüne Erbsen TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "gruene erbsen tk",
+      "targetSourceIndex": 2165,
+      "targetName": "Grüne Erbsen",
+      "targetCategory": "Konserven",
+      "targetNormalizedKey": "gruene erbsen",
+      "originalAction": "REVIEW",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 2165 ('Grüne Erbsen').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: REVIEW.",
+        "Entry belongs to duplicate group '43e2d22d45cea630'."
+      ],
+      "normalizedSourceText": "grüne erbsen tk",
+      "normalizedTargetText": "grüne erbsen",
+      "sourceTokens": [
+        "grüne",
+        "erbsen",
+        "tk"
+      ],
+      "targetTokens": [
+        "grüne",
+        "erbsen"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1644,
+      "sourceName": "Blätterteig TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "blaetterteig tk",
+      "targetSourceIndex": 2059,
+      "targetName": "Blätterteig",
+      "targetCategory": "Backwaren",
+      "targetNormalizedKey": "blaetterteig",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 2059 ('Blätterteig').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group 'bf17101b3206882a'."
+      ],
+      "normalizedSourceText": "blätterteig tk",
+      "normalizedTargetText": "blätterteig",
+      "sourceTokens": [
+        "blätterteig",
+        "tk"
+      ],
+      "targetTokens": [
+        "blätterteig"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1684,
+      "sourceName": "TK-Gemüsepfanne",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "tkgemuesepfanne",
+      "targetSourceIndex": 2716,
+      "targetName": "Gemüsepfanne",
+      "targetCategory": "Fertiggerichte",
+      "targetNormalizedKey": "gemuesepfanne",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 2716 ('Gemüsepfanne').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '8a42c3c2cf4ba2e9'."
+      ],
+      "normalizedSourceText": "tk gemüsepfanne",
+      "normalizedTargetText": "gemüsepfanne",
+      "sourceTokens": [
+        "tk",
+        "gemüsepfanne"
+      ],
+      "targetTokens": [
+        "gemüsepfanne"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1688,
+      "sourceName": "TK-Kartoffelgratin",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "tkkartoffelgratin",
+      "targetSourceIndex": 1545,
+      "targetName": "Kartoffelgratin",
+      "targetCategory": "Fertiggerichte",
+      "targetNormalizedKey": "kartoffelgratin",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 1545 ('Kartoffelgratin').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group 'dc9216a335c5ac26'."
+      ],
+      "normalizedSourceText": "tk kartoffelgratin",
+      "normalizedTargetText": "kartoffelgratin",
+      "sourceTokens": [
+        "tk",
+        "kartoffelgratin"
+      ],
+      "targetTokens": [
+        "kartoffelgratin"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1727,
+      "sourceName": "Pommes Frites TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "pommes frites tk",
+      "targetSourceIndex": 325,
+      "targetName": "Pommes Frites",
+      "targetCategory": "Tiefkühlprodukte",
+      "targetNormalizedKey": "pommes frites",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 325 ('Pommes Frites').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '2d30bc1e75f66907'."
+      ],
+      "normalizedSourceText": "pommes frites tk",
+      "normalizedTargetText": "pommes frites",
+      "sourceTokens": [
+        "pommes",
+        "frites",
+        "tk"
+      ],
+      "targetTokens": [
+        "pommes",
+        "frites"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1728,
+      "sourceName": "Fischstäbchen TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "fischstaebchen tk",
+      "targetSourceIndex": 540,
+      "targetName": "Fischstäbchen",
+      "targetCategory": "Tiefkühlprodukte",
+      "targetNormalizedKey": "fischstaebchen",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 540 ('Fischstäbchen').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '13e4cbfddf7c30c3'."
+      ],
+      "normalizedSourceText": "fischstäbchen tk",
+      "normalizedTargetText": "fischstäbchen",
+      "sourceTokens": [
+        "fischstäbchen",
+        "tk"
+      ],
+      "targetTokens": [
+        "fischstäbchen"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1818,
+      "sourceName": "Rotbarschfilet TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "rotbarschfilet tk",
+      "targetSourceIndex": 736,
+      "targetName": "Rotbarschfilet",
+      "targetCategory": "Fisch",
+      "targetNormalizedKey": "rotbarschfilet",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 736 ('Rotbarschfilet').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '06faafb2f23683ef'."
+      ],
+      "normalizedSourceText": "rotbarschfilet tk",
+      "normalizedTargetText": "rotbarschfilet",
+      "sourceTokens": [
+        "rotbarschfilet",
+        "tk"
+      ],
+      "targetTokens": [
+        "rotbarschfilet"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1819,
+      "sourceName": "Lachsfilet TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "lachsfilet tk",
+      "targetSourceIndex": 95,
+      "targetName": "Lachsfilet",
+      "targetCategory": "Fisch",
+      "targetNormalizedKey": "lachsfilet",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 95 ('Lachsfilet').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '82dd7d0cd5f5731d'."
+      ],
+      "normalizedSourceText": "lachsfilet tk",
+      "normalizedTargetText": "lachsfilet",
+      "sourceTokens": [
+        "lachsfilet",
+        "tk"
+      ],
+      "targetTokens": [
+        "lachsfilet"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 1850,
+      "sourceName": "Weiße Bohnen konserviert",
+      "sourceCategory": "Konserven",
+      "sourceNormalizedKey": "weisse bohnen konserviert",
+      "targetSourceIndex": 2429,
+      "targetName": "Weiße Bohnen Konserve",
+      "targetCategory": "Konserven",
+      "targetNormalizedKey": "weisse bohnen konserve",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 2429 ('Weiße Bohnen Konserve').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group 'e6a260a7192a5b5b'."
+      ],
+      "normalizedSourceText": "weiße bohnen konserviert",
+      "normalizedTargetText": "weiße bohnen konserve",
+      "sourceTokens": [
+        "weiße",
+        "bohnen",
+        "konserviert"
+      ],
+      "targetTokens": [
+        "weiße",
+        "bohnen",
+        "konserve"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 2,
+          "sourceToken": "konserviert",
+          "targetToken": "konserve",
+          "normalizedSourceToken": "konserviert",
+          "normalizedTargetToken": "konserve",
+          "sourceLength": 11,
+          "targetLength": 8,
+          "lengthDifference": 3,
+          "editDistance": 3,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTI_EDIT_TYPO",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "LENGTH_DIFFERENCE_EXCEEDS_LIMIT",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "sourceIndex": 1972,
+      "sourceName": "Seelachsfilet TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "seelachsfilet tk",
+      "targetSourceIndex": 96,
+      "targetName": "Seelachsfilet",
+      "targetCategory": "Fisch",
+      "targetNormalizedKey": "seelachsfilet",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 96 ('Seelachsfilet').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '51e001646e6954dc'."
+      ],
+      "normalizedSourceText": "seelachsfilet tk",
+      "normalizedTargetText": "seelachsfilet",
+      "sourceTokens": [
+        "seelachsfilet",
+        "tk"
+      ],
+      "targetTokens": [
+        "seelachsfilet"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 2000,
+      "sourceName": "Kabeljaufilet TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "kabeljaufilet tk",
+      "targetSourceIndex": 103,
+      "targetName": "Kabeljaufilet",
+      "targetCategory": "Fisch",
+      "targetNormalizedKey": "kabeljaufilet",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 103 ('Kabeljaufilet').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '442ceaa9dde10c27'."
+      ],
+      "normalizedSourceText": "kabeljaufilet tk",
+      "normalizedTargetText": "kabeljaufilet",
+      "sourceTokens": [
+        "kabeljaufilet",
+        "tk"
+      ],
+      "targetTokens": [
+        "kabeljaufilet"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 2031,
+      "sourceName": "Maiskolben TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "maiskolben tk",
+      "targetSourceIndex": 1452,
+      "targetName": "Maiskolben",
+      "targetCategory": "Gemüse",
+      "targetNormalizedKey": "maiskolben",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 1452 ('Maiskolben').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group 'ce2cf1b6bf80504d'."
+      ],
+      "normalizedSourceText": "maiskolben tk",
+      "normalizedTargetText": "maiskolben",
+      "sourceTokens": [
+        "maiskolben",
+        "tk"
+      ],
+      "targetTokens": [
+        "maiskolben"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 2428,
+      "sourceName": "TK-Blattspinat",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "tkblattspinat",
+      "targetSourceIndex": 50,
+      "targetName": "Blattspinat",
+      "targetCategory": "Gemüse",
+      "targetNormalizedKey": "blattspinat",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 50 ('Blattspinat').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '8cd5b1d24a53c5bf'."
+      ],
+      "normalizedSourceText": "tk blattspinat",
+      "normalizedTargetText": "blattspinat",
+      "sourceTokens": [
+        "tk",
+        "blattspinat"
+      ],
+      "targetTokens": [
+        "blattspinat"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 2544,
+      "sourceName": "Fertiges Chili sin Carne",
+      "sourceCategory": "Fertiggerichte",
+      "sourceNormalizedKey": "fertiges chili sin carne",
+      "targetSourceIndex": 1686,
+      "targetName": "Fertige Chili con Carne",
+      "targetCategory": "Fertiggerichte",
+      "targetNormalizedKey": "fertige chili con carne",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 1686 ('Fertige Chili Con Carne').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '424841c12d49696f'."
+      ],
+      "normalizedSourceText": "fertiges chili sin carne",
+      "normalizedTargetText": "fertige chili con carne",
+      "sourceTokens": [
+        "fertiges",
+        "chili",
+        "sin",
+        "carne"
+      ],
+      "targetTokens": [
+        "fertige",
+        "chili",
+        "con",
+        "carne"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 0,
+          "sourceToken": "fertiges",
+          "targetToken": "fertige",
+          "normalizedSourceToken": "fertiges",
+          "normalizedTargetToken": "fertige",
+          "sourceLength": 8,
+          "targetLength": 7,
+          "lengthDifference": 1,
+          "editDistance": 1,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        },
+        {
+          "tokenIndex": 2,
+          "sourceToken": "sin",
+          "targetToken": "con",
+          "normalizedSourceToken": "sin",
+          "normalizedTargetToken": "con",
+          "sourceLength": 3,
+          "targetLength": 3,
+          "lengthDifference": 0,
+          "editDistance": 2,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTIPLE_TOKEN_DIFFERENCE",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "EDIT_DISTANCE_ONE",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+        "MULTIPLE_DIFFERING_TOKENS",
+        "TOKEN_BELOW_MINIMUM_LENGTH"
+      ]
+    },
+    {
+      "sourceIndex": 2568,
+      "sourceName": "Hering in Sahnesauce",
+      "sourceCategory": "Fisch",
+      "sourceNormalizedKey": "hering in sahnesauce",
+      "targetSourceIndex": 914,
+      "targetName": "Hering in Senfsauce",
+      "targetCategory": "Fisch",
+      "targetNormalizedKey": "hering in senfsauce",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 914 ('Hering In Senfsauce').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '322aacb63af927b4'."
+      ],
+      "normalizedSourceText": "hering in sahnesauce",
+      "normalizedTargetText": "hering in senfsauce",
+      "sourceTokens": [
+        "hering",
+        "in",
+        "sahnesauce"
+      ],
+      "targetTokens": [
+        "hering",
+        "in",
+        "senfsauce"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 2,
+          "sourceToken": "sahnesauce",
+          "targetToken": "senfsauce",
+          "normalizedSourceToken": "sahnesauce",
+          "normalizedTargetToken": "senfsauce",
+          "sourceLength": 10,
+          "targetLength": 9,
+          "lengthDifference": 1,
+          "editDistance": 3,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTI_EDIT_TYPO",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "sourceIndex": 2743,
+      "sourceName": "Mangos in Dose",
+      "sourceCategory": "Konserven",
+      "sourceNormalizedKey": "mangos in dose",
+      "targetSourceIndex": 1722,
+      "targetName": "Mais in Dosen",
+      "targetCategory": "Konserven",
+      "targetNormalizedKey": "mais in dosen",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 1722 ('Mais In Dosen').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '69bfa0b20dc5a0f6'."
+      ],
+      "normalizedSourceText": "mangos in dose",
+      "normalizedTargetText": "mais in dosen",
+      "sourceTokens": [
+        "mangos",
+        "in",
+        "dose"
+      ],
+      "targetTokens": [
+        "mais",
+        "in",
+        "dosen"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 0,
+          "sourceToken": "mangos",
+          "targetToken": "mais",
+          "normalizedSourceToken": "mangos",
+          "normalizedTargetToken": "mais",
+          "sourceLength": 6,
+          "targetLength": 4,
+          "lengthDifference": 2,
+          "editDistance": 3,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        },
+        {
+          "tokenIndex": 2,
+          "sourceToken": "dose",
+          "targetToken": "dosen",
+          "normalizedSourceToken": "dose",
+          "normalizedTargetToken": "dosen",
+          "sourceLength": 4,
+          "targetLength": 5,
+          "lengthDifference": 1,
+          "editDistance": 1,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTIPLE_TOKEN_DIFFERENCE",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "EDIT_DISTANCE_ONE",
+        "LENGTH_DIFFERENCE_EXCEEDS_LIMIT",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+        "MULTIPLE_DIFFERING_TOKENS"
+      ]
+    },
+    {
+      "sourceIndex": 2745,
+      "sourceName": "Tomatensauce in Dose",
+      "sourceCategory": "Konserven",
+      "sourceNormalizedKey": "tomatensauce in dose",
+      "targetSourceIndex": 1881,
+      "targetName": "Tomatenstücke in Dosen",
+      "targetCategory": "Konserven",
+      "targetNormalizedKey": "tomatenstuecke in dosen",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 1881 ('Tomatenstücke In Dosen').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group 'afdd1103de495e05'."
+      ],
+      "normalizedSourceText": "tomatensauce in dose",
+      "normalizedTargetText": "tomatenstücke in dosen",
+      "sourceTokens": [
+        "tomatensauce",
+        "in",
+        "dose"
+      ],
+      "targetTokens": [
+        "tomatenstücke",
+        "in",
+        "dosen"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 0,
+          "sourceToken": "tomatensauce",
+          "targetToken": "tomatenstücke",
+          "normalizedSourceToken": "tomatensauce",
+          "normalizedTargetToken": "tomatenstuecke",
+          "sourceLength": 12,
+          "targetLength": 14,
+          "lengthDifference": 2,
+          "editDistance": 3,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        },
+        {
+          "tokenIndex": 2,
+          "sourceToken": "dose",
+          "targetToken": "dosen",
+          "normalizedSourceToken": "dose",
+          "normalizedTargetToken": "dosen",
+          "sourceLength": 4,
+          "targetLength": 5,
+          "lengthDifference": 1,
+          "editDistance": 1,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTIPLE_TOKEN_DIFFERENCE",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "EDIT_DISTANCE_ONE",
+        "LENGTH_DIFFERENCE_EXCEEDS_LIMIT",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+        "MULTIPLE_DIFFERING_TOKENS"
+      ]
+    },
+    {
+      "sourceIndex": 2842,
+      "sourceName": "Kuhmilch 3,5%",
+      "sourceCategory": "Milchprodukte",
+      "sourceNormalizedKey": "kuhmilch 35",
+      "targetSourceIndex": 941,
+      "targetName": "Milch 3,5%",
+      "targetCategory": "Milchprodukte",
+      "targetNormalizedKey": "milch 35",
+      "originalAction": "REVIEW",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 941 ('Milch 3,5%').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: REVIEW.",
+        "Entry belongs to duplicate group '5b97ee4bddb12359'."
+      ],
+      "normalizedSourceText": "kuhmilch 3 5",
+      "normalizedTargetText": "milch 3 5",
+      "sourceTokens": [
+        "kuhmilch",
+        "3",
+        "5"
+      ],
+      "targetTokens": [
+        "milch",
+        "3",
+        "5"
+      ],
+      "sourceNumericTokens": [
+        "3",
+        "5"
+      ],
+      "targetNumericTokens": [
+        "3",
+        "5"
+      ],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 0,
+          "sourceToken": "kuhmilch",
+          "targetToken": "milch",
+          "normalizedSourceToken": "kuhmilch",
+          "normalizedTargetToken": "milch",
+          "sourceLength": 8,
+          "targetLength": 5,
+          "lengthDifference": 3,
+          "editDistance": 3,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTI_EDIT_TYPO",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "LENGTH_DIFFERENCE_EXCEEDS_LIMIT",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "sourceIndex": 3167,
+      "sourceName": "Gemüselaibchen TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "gemueselaibchen tk",
+      "targetSourceIndex": 2119,
+      "targetName": "Gemüselaibchen",
+      "targetCategory": "Vegetarisch",
+      "targetNormalizedKey": "gemueselaibchen",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 2119 ('Gemüselaibchen').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group 'b56b3fb2d1938df0'."
+      ],
+      "normalizedSourceText": "gemüselaibchen tk",
+      "normalizedTargetText": "gemüselaibchen",
+      "sourceTokens": [
+        "gemüselaibchen",
+        "tk"
+      ],
+      "targetTokens": [
+        "gemüselaibchen"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 3171,
+      "sourceName": "Karottensticks TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "karottensticks tk",
+      "targetSourceIndex": 544,
+      "targetName": "Karottensticks",
+      "targetCategory": "Snacks",
+      "targetNormalizedKey": "karottensticks",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 544 ('Karottensticks').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '9360dbc3bf3299c8'."
+      ],
+      "normalizedSourceText": "karottensticks tk",
+      "normalizedTargetText": "karottensticks",
+      "sourceTokens": [
+        "karottensticks",
+        "tk"
+      ],
+      "targetTokens": [
+        "karottensticks"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 3417,
+      "sourceName": "Grüne Bohnen TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "gruene bohnen tk",
+      "targetSourceIndex": 1138,
+      "targetName": "Grüne Bohnen",
+      "targetCategory": "Gemüse",
+      "targetNormalizedKey": "gruene bohnen",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 1138 ('Grüne Bohnen').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group 'bb057137685ceb6f'."
+      ],
+      "normalizedSourceText": "grüne bohnen tk",
+      "normalizedTargetText": "grüne bohnen",
+      "sourceTokens": [
+        "grüne",
+        "bohnen",
+        "tk"
+      ],
+      "targetTokens": [
+        "grüne",
+        "bohnen"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 3427,
+      "sourceName": "Tintenfischringe TK",
+      "sourceCategory": "Fisch",
+      "sourceNormalizedKey": "tintenfischringe tk",
+      "targetSourceIndex": 1804,
+      "targetName": "Tintenfischringe",
+      "targetCategory": "Fisch",
+      "targetNormalizedKey": "tintenfischringe",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 1804 ('Tintenfischringe').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '810921166bb6c722'."
+      ],
+      "normalizedSourceText": "tintenfischringe tk",
+      "normalizedTargetText": "tintenfischringe",
+      "sourceTokens": [
+        "tintenfischringe",
+        "tk"
+      ],
+      "targetTokens": [
+        "tintenfischringe"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 3428,
+      "sourceName": "Kartoffelknödel TK",
+      "sourceCategory": "Fertiggerichte",
+      "sourceNormalizedKey": "kartoffelknoedel tk",
+      "targetSourceIndex": 2342,
+      "targetName": "Kartoffelknödel",
+      "targetCategory": "Fertiggerichte",
+      "targetNormalizedKey": "kartoffelknoedel",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 2342 ('Kartoffelknödel').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group '39c5dca198aed146'."
+      ],
+      "normalizedSourceText": "kartoffelknödel tk",
+      "normalizedTargetText": "kartoffelknödel",
+      "sourceTokens": [
+        "kartoffelknödel",
+        "tk"
+      ],
+      "targetTokens": [
+        "kartoffelknödel"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 3445,
+      "sourceName": "Blaubeeren TK",
+      "sourceCategory": "Tiefkühlprodukte",
+      "sourceNormalizedKey": "blaubeeren tk",
+      "targetSourceIndex": 254,
+      "targetName": "Blaubeeren",
+      "targetCategory": "Obst",
+      "targetNormalizedKey": "blaubeeren",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 254 ('Blaubeeren').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group 'd7043c829a524bac'."
+      ],
+      "normalizedSourceText": "blaubeeren tk",
+      "normalizedTargetText": "blaubeeren",
+      "sourceTokens": [
+        "blaubeeren",
+        "tk"
+      ],
+      "targetTokens": [
+        "blaubeeren"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [],
+      "subtype": "PROBABLY_MISCLASSIFIED",
+      "recommendation": "RECLASSIFY_DUPLICATE_REASON",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "CATEGORY_MISMATCH",
+        "TOKEN_COUNT_MISMATCH"
+      ]
+    },
+    {
+      "sourceIndex": 3604,
+      "sourceName": "Tomatenstückchen in Dose",
+      "sourceCategory": "Konserven",
+      "sourceNormalizedKey": "tomatenstueckchen in dose",
+      "targetSourceIndex": 1881,
+      "targetName": "Tomatenstücke in Dosen",
+      "targetCategory": "Konserven",
+      "targetNormalizedKey": "tomatenstuecke in dosen",
+      "originalAction": "MERGE",
+      "originalReasons": [
+        "Canonical duplicate target is sourceIndex 1881 ('Tomatenstücke In Dosen').",
+        "Duplicate reasons: TYPO_VARIANT.",
+        "Duplicate recommendation: MERGE_AFTER_REVIEW.",
+        "Entry belongs to duplicate group 'afdd1103de495e05'."
+      ],
+      "normalizedSourceText": "tomatenstückchen in dose",
+      "normalizedTargetText": "tomatenstücke in dosen",
+      "sourceTokens": [
+        "tomatenstückchen",
+        "in",
+        "dose"
+      ],
+      "targetTokens": [
+        "tomatenstücke",
+        "in",
+        "dosen"
+      ],
+      "sourceNumericTokens": [],
+      "targetNumericTokens": [],
+      "tokenDifferences": [
+        {
+          "tokenIndex": 0,
+          "sourceToken": "tomatenstückchen",
+          "targetToken": "tomatenstücke",
+          "normalizedSourceToken": "tomatenstueckchen",
+          "normalizedTargetToken": "tomatenstuecke",
+          "sourceLength": 17,
+          "targetLength": 14,
+          "lengthDifference": 3,
+          "editDistance": 3,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        },
+        {
+          "tokenIndex": 2,
+          "sourceToken": "dose",
+          "targetToken": "dosen",
+          "normalizedSourceToken": "dose",
+          "normalizedTargetToken": "dosen",
+          "sourceLength": 4,
+          "targetLength": 5,
+          "lengthDifference": 1,
+          "editDistance": 1,
+          "germanOrthographyEquivalent": false,
+          "typTypeEquivalent": false,
+          "sauceSosseEquivalent": false
+        }
+      ],
+      "subtype": "MULTIPLE_TOKEN_DIFFERENCE",
+      "recommendation": "MANUAL_REVIEW_REQUIRED",
+      "existingResolverWouldAccept": false,
+      "diagnosticReasons": [
+        "EDIT_DISTANCE_EXCEEDS_LIMIT",
+        "EDIT_DISTANCE_ONE",
+        "LENGTH_DIFFERENCE_EXCEEDS_LIMIT",
+        "MANUAL_SEMANTIC_REVIEW_REQUIRED",
+        "MULTIPLE_DIFFERING_TOKENS"
+      ]
+    }
+  ],
+  "valid": true
+}

@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "agneau, selle, partie maigre, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 6.37,
+      "climateKgCo2EqPerKg": 52.3,
+      "landUsePtPerKg": 5580.0,
+      "waterDeprivationM3PerKg": 8.79
+    },
+    "boisson à base d'avoine, nature": {
+      "environmentScoreMptPerKg": 0.0763,
+      "climateKgCo2EqPerKg": 0.566,
+      "landUsePtPerKg": 40.4,
+      "waterDeprivationM3PerKg": 0.382
+    },
+    "cidre aromatisé (framboise)": {
+      "environmentScoreMptPerKg": 0.126,
+      "climateKgCo2EqPerKg": 1.33,
+      "landUsePtPerKg": 22.7,
+      "waterDeprivationM3PerKg": 0.76
+    },
+    "fenouil, bouilli/cuit à l'eau": {
+      "environmentScoreMptPerKg": 0.194,
+      "climateKgCo2EqPerKg": 1.95,
+      "landUsePtPerKg": 23.3,
+      "waterDeprivationM3PerKg": 1.99
+    },
+    "fromage frais type petit suisse, nature, 10% mg environ": {
+      "environmentScoreMptPerKg": 0.252,
+      "climateKgCo2EqPerKg": 2.48,
+      "landUsePtPerKg": 102.0,
+      "waterDeprivationM3PerKg": 0.344
+    },
+    "meloukhia, feuilles de corète séchées, en poudre": {
+      "environmentScoreMptPerKg": 0.242,
+      "climateKgCo2EqPerKg": 2.18,
+      "landUsePtPerKg": 27.5,
+      "waterDeprivationM3PerKg": 1.99
+    },
+    "mousse à la crème de marrons, rayon frais": {
+      "environmentScoreMptPerKg": 0.342,
+      "climateKgCo2EqPerKg": 2.36,
+      "landUsePtPerKg": 120.0,
+      "waterDeprivationM3PerKg": 1.8
+    },
+    "pâté de foie de porc, supérieur": {
+      "environmentScoreMptPerKg": 0.319,
+      "climateKgCo2EqPerKg": 2.82,
+      "landUsePtPerKg": 97.6,
+      "waterDeprivationM3PerKg": 0.867
+    },
+    "saupe, crue": {
+      "environmentScoreMptPerKg": 1.31,
+      "climateKgCo2EqPerKg": 7.48,
+      "landUsePtPerKg": 13.1,
+      "waterDeprivationM3PerKg": 0.707
+    }
+  }
+}

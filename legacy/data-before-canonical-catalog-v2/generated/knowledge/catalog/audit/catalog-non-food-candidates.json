@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "candidateCount": 0,
+  "automaticRemovalCount": 0,
+  "removalAfterReviewCount": 0,
+  "reviewCount": 0,
+  "keepCount": 0,
+  "uniqueReasonCount": 0,
+  "uniqueMatchedTermCount": 0,
+  "affectedCategoryCount": 0,
+  "minimumConfidence": null,
+  "maximumConfidence": null,
+  "averageConfidence": null,
+  "recommendationCounts": {
+    "KEEP": 0,
+    "REMOVE_AFTER_REVIEW": 0,
+    "REMOVE_AUTOMATICALLY": 0,
+    "REVIEW": 0
+  },
+  "reasonCounts": {},
+  "matchedTermCounts": {},
+  "categoryCounts": {},
+  "confidenceBuckets": {
+    "0.00-0.49": 0,
+    "0.50-0.79": 0,
+    "0.80-0.94": 0,
+    "0.95-1.00": 0
+  },
+  "candidates": []
+}

@@ -9,6 +9,7 @@ import de.shopme.tools.knowledge.ai.AIProviderConfig
 import de.shopme.tools.knowledge.ai.openai.OpenAIProvider
 import de.shopme.tools.knowledge.ai.openai.OpenAIProviderConfig
 import de.shopme.tools.knowledge.ai.openai.RealOpenAIHttpClient
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.mapping.catalog.CatalogKnowledgeMatchCandidate
 import de.shopme.tools.knowledge.mapping.catalog.CatalogKnowledgeMatchDecision
 import de.shopme.tools.knowledge.mapping.catalog.CatalogKnowledgeMatchDecisionContract
@@ -773,8 +774,10 @@ class RunOpenAINutritionKnowledgeMatcher(
                 exitProcess(1)
             }
 
-            val projectRoot =
-                File("..")
+            val paths =
+                KnowledgeBuildPaths.default()
+
+            paths.ensureBuildDirectories()
 
             val openAIConfig =
                 OpenAIProviderConfig
@@ -817,12 +820,7 @@ class RunOpenAINutritionKnowledgeMatcher(
                     .create()
 
             val localModelFile =
-                File(
-                    projectRoot,
-                    "data/generated/knowledge/" +
-                            "models/" +
-                            "nutrition.local-matcher-model.json"
-                )
+                paths.nutritionLocalMatcherModel
 
             require(localModelFile.isFile) {
                 "Local nutrition matcher model does not exist: " +
@@ -852,26 +850,13 @@ class RunOpenAINutritionKnowledgeMatcher(
                     matcher =
                         matcher,
                     requestFile =
-                        File(
-                            projectRoot,
-                            "data/generated/knowledge/" +
-                                    "match-requests/" +
-                                    "nutrition.match-requests.json"
-                        ),
+                        paths.nutritionMatchRequests,
+
                     decisionFile =
-                        File(
-                            projectRoot,
-                            "data/generated/knowledge/" +
-                                    "match-decisions/" +
-                                    "nutrition.match-decisions.json"
-                        ),
+                        paths.nutritionMatchDecisions,
+
                     errorFile =
-                        File(
-                            projectRoot,
-                            "data/generated/knowledge/" +
-                                    "match-decisions/" +
-                                    "nutrition.match-errors.json"
-                        )
+                        paths.nutritionMatchErrors
                 )
 
             val result =

@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "cervelas à l'ail, pur porc": {
+      "environmentScoreMptPerKg": 0.69,
+      "climateKgCo2EqPerKg": 5.3,
+      "landUsePtPerKg": 277.0,
+      "waterDeprivationM3PerKg": 1.73
+    },
+    "chou chinois (pak choi ou pé tsai), cuit": {
+      "environmentScoreMptPerKg": 0.151,
+      "climateKgCo2EqPerKg": 1.6,
+      "landUsePtPerKg": 45.3,
+      "waterDeprivationM3PerKg": 0.347
+    },
+    "foie, agneau, cru": {
+      "environmentScoreMptPerKg": 2.62,
+      "climateKgCo2EqPerKg": 21.6,
+      "landUsePtPerKg": 2300.0,
+      "waterDeprivationM3PerKg": 3.64
+    },
+    "framboise, crue": {
+      "environmentScoreMptPerKg": 0.315,
+      "climateKgCo2EqPerKg": 1.55,
+      "landUsePtPerKg": 118.0,
+      "waterDeprivationM3PerKg": 2.35
+    },
+    "fromage de brebis à pâte molle et croûte fleurie": {
+      "environmentScoreMptPerKg": 0.751,
+      "climateKgCo2EqPerKg": 5.92,
+      "landUsePtPerKg": 598.0,
+      "waterDeprivationM3PerKg": 0.416
+    },
+    "matière grasse végétale (type margarine), à tartiner, à 30 40% mg, légère, demi sel": {
+      "environmentScoreMptPerKg": 0.204,
+      "climateKgCo2EqPerKg": 2.22,
+      "landUsePtPerKg": 97.1,
+      "waterDeprivationM3PerKg": 0.596
+    },
+    "nem ou pâté impérial, aux crevettes et/ou au crabe, cuit": {
+      "environmentScoreMptPerKg": 0.452,
+      "climateKgCo2EqPerKg": 2.92,
+      "landUsePtPerKg": 112.0,
+      "waterDeprivationM3PerKg": 6.92
+    },
+    "pâte sablée pur beurre, crue": {
+      "environmentScoreMptPerKg": 0.388,
+      "climateKgCo2EqPerKg": 3.46,
+      "landUsePtPerKg": 165.0,
+      "waterDeprivationM3PerKg": 1.03
+    },
+    "salami type danois": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 8.25,
+      "landUsePtPerKg": 391.0,
+      "waterDeprivationM3PerKg": 2.65
+    }
+  }
+}

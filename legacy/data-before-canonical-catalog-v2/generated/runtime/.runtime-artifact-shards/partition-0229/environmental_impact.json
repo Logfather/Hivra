@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "galette ou pavé au blé et soja (convient aux véganes ou végétaliens), préemballé": {
+      "environmentScoreMptPerKg": 0.289,
+      "climateKgCo2EqPerKg": 2.13,
+      "landUsePtPerKg": 141.0,
+      "waterDeprivationM3PerKg": 0.633
+    },
+    "lentille verte, sèche": {
+      "environmentScoreMptPerKg": 0.152,
+      "climateKgCo2EqPerKg": 0.581,
+      "landUsePtPerKg": 309.0,
+      "waterDeprivationM3PerKg": 0.13
+    },
+    "miso": {
+      "environmentScoreMptPerKg": 0.177,
+      "climateKgCo2EqPerKg": 1.21,
+      "landUsePtPerKg": -41.1,
+      "waterDeprivationM3PerKg": 2.9
+    },
+    "pain grillé suédois au blé complet": {
+      "environmentScoreMptPerKg": 0.179,
+      "climateKgCo2EqPerKg": 1.4,
+      "landUsePtPerKg": 114.0,
+      "waterDeprivationM3PerKg": 0.465
+    },
+    "saucisse de strasbourg ou knack": {
+      "environmentScoreMptPerKg": 1.26,
+      "climateKgCo2EqPerKg": 12.4,
+      "landUsePtPerKg": 771.0,
+      "waterDeprivationM3PerKg": 1.55
+    },
+    "surimi, bâtonnets, tranche ou râpé saveur crabe": {
+      "environmentScoreMptPerKg": 1.14,
+      "climateKgCo2EqPerKg": 7.57,
+      "landUsePtPerKg": 55.7,
+      "waterDeprivationM3PerKg": 1.35
+    }
+  }
+}

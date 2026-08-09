@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "bagel": {
+      "environmentScoreMptPerKg": 0.146,
+      "climateKgCo2EqPerKg": 1.14,
+      "landUsePtPerKg": 84.3,
+      "waterDeprivationM3PerKg": 1.13
+    },
+    "biscotte complète ou riche en fibres": {
+      "environmentScoreMptPerKg": 0.156,
+      "climateKgCo2EqPerKg": 1.44,
+      "landUsePtPerKg": 76.5,
+      "waterDeprivationM3PerKg": 0.557
+    },
+    "crème de lait, 15 à 20% mg, légère, semi épaisse, uht": {
+      "environmentScoreMptPerKg": 0.258,
+      "climateKgCo2EqPerKg": 2.6,
+      "landUsePtPerKg": 116.0,
+      "waterDeprivationM3PerKg": 0.359
+    },
+    "céréales complètes soufflées, enrichies en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "filet de bacon": {
+      "environmentScoreMptPerKg": 1.06,
+      "climateKgCo2EqPerKg": 8.36,
+      "landUsePtPerKg": 404.0,
+      "waterDeprivationM3PerKg": 2.74
+    },
+    "fondue savoyarde (fromages, vin, pain)": {
+      "environmentScoreMptPerKg": 0.506,
+      "climateKgCo2EqPerKg": 4.67,
+      "landUsePtPerKg": 192.0,
+      "waterDeprivationM3PerKg": 0.893
+    },
+    "hareng mariné ou rollmops": {
+      "environmentScoreMptPerKg": 0.382,
+      "climateKgCo2EqPerKg": 2.78,
+      "landUsePtPerKg": 7.5,
+      "waterDeprivationM3PerKg": 0.237
+    },
+    "huile de sésame": {
+      "environmentScoreMptPerKg": 0.434,
+      "climateKgCo2EqPerKg": 3.94,
+      "landUsePtPerKg": 297.0,
+      "waterDeprivationM3PerKg": 0.923
+    },
+    "kaki, pulpe, cru": {
+      "environmentScoreMptPerKg": 0.103,
+      "climateKgCo2EqPerKg": 0.95,
+      "landUsePtPerKg": 13.8,
+      "waterDeprivationM3PerKg": 1.47
+    },
+    "oie, viande, rôtie/cuite au four": {
+      "environmentScoreMptPerKg": 1.3,
+      "climateKgCo2EqPerKg": 7.75,
+      "landUsePtPerKg": 445.0,
+      "waterDeprivationM3PerKg": 3.4
+    },
+    "pois mange tout ou pois gourmand, cru": {
+      "environmentScoreMptPerKg": 0.122,
+      "climateKgCo2EqPerKg": 0.958,
+      "landUsePtPerKg": 203.0,
+      "waterDeprivationM3PerKg": 0.236
+    },
+    "thé vert, infusé, non sucré": {
+      "environmentScoreMptPerKg": 0.0148,
+      "climateKgCo2EqPerKg": 0.0436,
+      "landUsePtPerKg": 4.02,
+      "waterDeprivationM3PerKg": 0.776
+    },
+    "wakamé (undaria pinnatifida), séchée ou déshydratée": {
+      "environmentScoreMptPerKg": 1.55,
+      "climateKgCo2EqPerKg": 11.8,
+      "landUsePtPerKg": 26.7,
+      "waterDeprivationM3PerKg": 4.83
+    }
+  }
+}

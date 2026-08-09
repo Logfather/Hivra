@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "boeuf, gîte à la noix, cuit": {
+      "environmentScoreMptPerKg": 3.44,
+      "climateKgCo2EqPerKg": 36.6,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "boisson au soja, nature": {
+      "environmentScoreMptPerKg": 0.039,
+      "climateKgCo2EqPerKg": 0.427,
+      "landUsePtPerKg": 21.6,
+      "waterDeprivationM3PerKg": 0.0786
+    },
+    "chair à saucisse, crue": {
+      "environmentScoreMptPerKg": 0.768,
+      "climateKgCo2EqPerKg": 6.23,
+      "landUsePtPerKg": 324.0,
+      "waterDeprivationM3PerKg": 2.06
+    },
+    "chair à saucisse, pur porc, crue": {
+      "environmentScoreMptPerKg": 0.666,
+      "climateKgCo2EqPerKg": 5.39,
+      "landUsePtPerKg": 275.0,
+      "waterDeprivationM3PerKg": 1.78
+    },
+    "chocolat noir à 70% cacao minimum, extra, dégustation, tablette": {
+      "environmentScoreMptPerKg": 0.98,
+      "climateKgCo2EqPerKg": 19.1,
+      "landUsePtPerKg": 725.0,
+      "waterDeprivationM3PerKg": 0.876
+    },
+    "farine de blé tendre ou froment t55 (pour pains)": {
+      "environmentScoreMptPerKg": 0.102,
+      "climateKgCo2EqPerKg": 0.791,
+      "landUsePtPerKg": 84.2,
+      "waterDeprivationM3PerKg": 0.205
+    },
+    "lait 2e âge, poudre soluble (préparation de suite)": {
+      "environmentScoreMptPerKg": 0.78,
+      "climateKgCo2EqPerKg": 8.05,
+      "landUsePtPerKg": 406.0,
+      "waterDeprivationM3PerKg": 1.98
+    },
+    "limonade, sucrée, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "mimolette demi vieille": {
+      "environmentScoreMptPerKg": 0.664,
+      "climateKgCo2EqPerKg": 6.56,
+      "landUsePtPerKg": 294.0,
+      "waterDeprivationM3PerKg": 0.88
+    },
+    "noisette grillée": {
+      "environmentScoreMptPerKg": 0.889,
+      "climateKgCo2EqPerKg": 5.01,
+      "landUsePtPerKg": 819.0,
+      "waterDeprivationM3PerKg": 11.8
+    },
+    "noix de macadamia": {
+      "environmentScoreMptPerKg": 0.534,
+      "climateKgCo2EqPerKg": 3.66,
+      "landUsePtPerKg": 652.0,
+      "waterDeprivationM3PerKg": 8.95
+    },
+    "rillettes du mans": {
+      "environmentScoreMptPerKg": 0.945,
+      "climateKgCo2EqPerKg": 7.58,
+      "landUsePtPerKg": 389.0,
+      "waterDeprivationM3PerKg": 2.53
+    }
+  }
+}

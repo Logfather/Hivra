@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "barre céréalière aux fruits": {
+      "litersPerKilogram": 3280.0
+    },
+    "bette ou blette, crue": {
+      "litersPerKilogram": 316.0
+    },
+    "brocoli, surgelé, cuit": {
+      "litersPerKilogram": 1220.0
+    },
+    "dessert au soja, aux fruits, rayon frais": {
+      "litersPerKilogram": 1760.0
+    },
+    "jambon sec serrano": {
+      "litersPerKilogram": 4240.0
+    },
+    "poivre noir, poudre": {
+      "litersPerKilogram": 4380.0
+    },
+    "poivron, vert, jaune ou rouge, cru": {
+      "litersPerKilogram": 294.0
+    },
+    "porc, épaule, cuite": {
+      "litersPerKilogram": 2810.0
+    },
+    "rognon, boeuf, cuit": {
+      "litersPerKilogram": 2650.0
+    },
+    "veau, noix, crue": {
+      "litersPerKilogram": 3130.0
+    }
+  }
+}

@@ -1,0 +1,306 @@
+=== RELEVANT FILES ===
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluation.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluationReportWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluator.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictClassificationPolicy.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyAction.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyDecision.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyReportWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyStatus.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyViolation.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalysis.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalyzer.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictReportWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageAnalysis.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageAnalyzer.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageCanonicalIdNormalizer.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassification.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifier.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageReportWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidationIssue.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidationReportWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidationResult.kt
+app/src/main/java/de/shopme/tools/knowledge/mapping/catalog/training/validation/NutritionMatcherTrainingDatasetValidationResult.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/freeze/OFFNutritionSourceSnapshot.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/freeze/OFFNutritionSourceSnapshotReader.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/freeze/OFFNutritionSourceSnapshotStatus.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/freeze/OFFNutritionSourceSnapshotValidator.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/freeze/OFFNutritionSourceSnapshotWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/persistence/OFFAcceptedNutritionReferenceManifest.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/persistence/OFFAcceptedNutritionReferenceManifestReader.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/persistence/OFFAcceptedNutritionReferenceManifestWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/retrieval/coverage/OFFNutritionCoverageAliasDatasetReader.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/retrieval/coverage/OFFNutritionCoverageAliasEntry.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/retrieval/coverage/OFFNutritionRawSourceCoverage.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/retrieval/coverage/OFFNutritionRawSourceCoverageScanner.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/retrieval/coverage/OFFNutritionSourceCoverageDiagnoser.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/retrieval/coverage/OFFNutritionSourceCoverageFinding.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/retrieval/coverage/OFFNutritionSourceCoverageReport.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/retrieval/coverage/OFFNutritionSourceCoverageReportWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/retrieval/coverage/OFFNutritionSourceCoverageStage.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/validation/OFFNutritionReferenceAggregateDatasetValidationReportWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/validation/OFFNutritionReferenceAggregateDatasetValidationResult.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/validation/OFFNutritionReferenceAggregateValidationEntry.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/validation/OFFNutritionReferenceAggregateValidationIssue.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/validation/OFFNutritionReferenceAggregateValidationReportWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/validation/OFFNutritionReferenceAggregateValidationResult.kt
+app/src/main/java/de/shopme/tools/knowledge/off/nutrition/reference/validation/OFFNutritionReferenceAggregateValidationStatus.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/adapter/RejectedStrongNutritionCandidateValidationEntry.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/adapter/RejectedStrongNutritionCandidateValidationReport.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/adapter/RejectedStrongNutritionCandidateValidationReportWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/adapter/RejectedStrongNutritionCandidateValidationRunner.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGap.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapAnalysis.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapAnalysisWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapAnalyzer.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapClassifier.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapGroupedAnalysis.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapGroupedAnalysisRunner.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapGroupedAnalysisWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapGroupedAnalyzer.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapReport.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapReportWriter.kt
+app/src/main/java/de/shopme/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapType.kt
+app/src/main/java/de/shopme/tools/knowledge/report/RejectedLowConfidenceNutritionValidationEntry.kt
+app/src/main/java/de/shopme/tools/knowledge/report/RejectedLowConfidenceNutritionValidationResult.kt
+app/src/main/java/de/shopme/tools/knowledge/report/RunRejectedLowConfidenceNutritionValidation.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/EvaluateResultingNutritionConflictRateTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluatorTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/MeasureResultingNutritionConflictRateTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalyzerTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ClassifyResultingNutritionCoverageGapsTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/MeasureResultingNutritionCoverageTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageAnalyzerTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifierTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/mapping/catalog/training/validation/RunNutritionMatcherTrainingDatasetValidationTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/off/nutrition/reference/persistence/OFFAcceptedNutritionReferenceManifestWriterTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/off/nutrition/reference/retrieval/coverage/DiagnoseMissingOFFNutritionSourceCoverageTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/off/nutrition/reference/retrieval/coverage/OFFNutritionSourceCoverageDiagnoserTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/off/nutrition/reference/validation/OFFNutritionReferenceAggregateDatasetValidationReportWriterTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/off/nutrition/reference/validation/OFFNutritionReferenceAggregateValidationReportWriterTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/rebuild/nutrition/adapter/RunRejectedStrongNutritionCandidateValidationTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/rebuild/nutrition/coverage/NutritionCoverageGapClassifierTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/rebuild/nutrition/coverage/RunNutritionCoverageGapAnalysisTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/rebuild/nutrition/coverage/RunNutritionCoverageGapClassificationTest.kt
+app/src/test/java/de/shopme/testing/system/tools/knowledge/rebuild/nutrition/coverage/RunNutritionCoverageGapGroupedAnalysisTest.kt
+data/generated/knowledge/frozen/off/nutrition/off-nutrition-source-snapshot.json
+data/generated/knowledge/models/comparison/nutrition.local-matcher-domain-identity-conflict-count.json
+data/generated/knowledge/off/nutrition/catalog-off-nutrition-source-coverage-diagnostic.json
+data/generated/knowledge/off/nutrition/nutrition-reference-aggregate-validation.json
+data/generated/knowledge/policies/resulting-nutrition-conflict-policy.json
+data/generated/knowledge/references/off/off-nutrition-references.accepted.manifest.json
+data/generated/knowledge/reports/nutrition.coverage-gap-analysis.json
+data/generated/knowledge/reports/nutrition.coverage-gap-type-analysis.json
+data/generated/knowledge/reports/nutrition.coverage-gaps.before-single-ingredient-aliases.json
+data/generated/knowledge/reports/nutrition.coverage-gaps.json
+data/generated/knowledge/reports/nutrition.low-confidence-validation.json
+data/generated/knowledge/reports/nutrition.mapping-validation-report.json
+data/generated/knowledge/reports/nutrition.rejected-strong-candidate-validation.json
+data/generated/knowledge/reports/off-nutrition-reference-aggregate-validation.json
+data/generated/knowledge/reports/resulting-nutrition-conflict-evaluation.json
+data/generated/knowledge/reports/resulting-nutrition-conflict-rate.json
+data/generated/knowledge/reports/resulting-nutrition-coverage-gap-classification.json
+data/generated/knowledge/reports/resulting-nutrition-coverage.json
+data/generated/knowledge/reports/resulting-nutrition-knowledge-validation.json
+
+=== CLASSES AND REPORT PATHS ===
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/analysis/ResultingNutritionMacronutrientWarningAnalysis.kt:5:data class ResultingNutritionMacronutrientWarningAnalysis(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/analysis/ResultingNutritionMacronutrientWarningAnalysis.kt:76:data class ResultingNutritionMacronutrientWarningExample(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/analysis/ResultingNutritionMacronutrientWarningAnalyzer.kt:10:class ResultingNutritionMacronutrientWarningAnalyzer(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/analysis/ResultingNutritionMacronutrientWarningAnalysisReportWriter.kt:9:class ResultingNutritionMacronutrientWarningAnalysisReportWriter {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/analysis/ResultingNutritionMacronutrientWarningAnalysisReportWriter.kt:115:data class ResultingNutritionMacronutrientWarningAnalysisReport(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/analysis/ResultingNutritionMacronutrientWarningAnalysisReportWriter.kt:142:data class ResultingNutritionMacronutrientWarningAnalysisThresholds(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidationReportWriter.kt:9:class ResultingNutritionKnowledgeValidationReportWriter {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidationReportWriter.kt:105:data class ResultingNutritionKnowledgeValidationReport(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidationReportWriter.kt:138:data class ResultingNutritionKnowledgeValidationThresholds(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalyzer.kt:12:class ResultingNutritionConflictAnalyzer(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalyzer.kt:756:                entryConflictRate =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalyzer.kt:763:                nutrientConflictRate =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluationReportWriter.kt:9:class ResultingNutritionConflictEvaluationReportWriter {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluationReportWriter.kt:155:data class ResultingNutritionConflictEvaluationReport(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluationReportWriter.kt:187:data class ResultingNutritionConflictEvaluationThresholds(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluator.kt:10:class ResultingNutritionConflictEvaluator(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluation.kt:7:data class ResultingNutritionConflictEvaluation(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluation.kt:118:data class ResultingNutritionConflictEvaluationExample(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluation.kt:166:enum class ResultingNutritionConflictClassification {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluation.kt:197:enum class ResultingNutritionConflictSeverity {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalysis.kt:5:data class ResultingNutritionConflictAnalysis(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalysis.kt:19:    val entryConflictRate: Double,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalysis.kt:20:    val nutrientConflictRate: Double,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalysis.kt:45:        require(entryConflictRate in 0.0..1.0)
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalysis.kt:46:        require(nutrientConflictRate in 0.0..1.0)
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalysis.kt:102:data class ResultingNutritionConflictExample(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalysis.kt:129:data class ResultingNutritionNutrientConflict(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalysis.kt:145:enum class ResultingNutritionConflictMatchType {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalysis.kt:150:enum class ResultingNutritionConflictNutrient(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictReportWriter.kt:9:class ResultingNutritionConflictReportWriter {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictReportWriter.kt:63:                entryConflictRate =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictReportWriter.kt:64:                    analysis.entryConflictRate,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictReportWriter.kt:66:                    analysis.entryConflictRate * 100.0,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictReportWriter.kt:67:                nutrientConflictRate =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictReportWriter.kt:68:                    analysis.nutrientConflictRate,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictReportWriter.kt:70:                    analysis.nutrientConflictRate * 100.0,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictReportWriter.kt:135:data class ResultingNutritionConflictReport(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictReportWriter.kt:150:    val entryConflictRate: Double,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictReportWriter.kt:152:    val nutrientConflictRate: Double,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:7:class ResultingNutritionConflictPolicyEvaluator(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:9:    ResultingNutritionConflictPolicy =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:10:        ResultingNutritionConflictPolicy()
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:16:    ): ResultingNutritionConflictPolicyDecision {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:28:                    ResultingNutritionConflictPolicyViolation
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:32:            analysis.entryConflictRate >
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:36:                ResultingNutritionConflictPolicyViolation(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:38:                        ResultingNutritionConflictPolicyViolationReason
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:41:                        analysis.entryConflictRate,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:51:            analysis.nutrientConflictRate >
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:55:                ResultingNutritionConflictPolicyViolation(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:57:                        ResultingNutritionConflictPolicyViolationReason
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:60:                        analysis.nutrientConflictRate,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:80:                ResultingNutritionConflictPolicyViolation(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:82:                        ResultingNutritionConflictPolicyViolationReason
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:104:                ResultingNutritionConflictPolicyViolation(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:106:                        ResultingNutritionConflictPolicyViolationReason
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:123:                ResultingNutritionConflictPolicyViolation(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:125:                        ResultingNutritionConflictPolicyViolationReason
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:142:        return ResultingNutritionConflictPolicyDecision(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:149:            entryConflictRate =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:150:                analysis.entryConflictRate,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:153:            nutrientConflictRate =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluator.kt:154:                analysis.nutrientConflictRate,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyReportWriter.kt:9:class ResultingNutritionConflictPolicyReportWriter {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyReportWriter.kt:18:        policy: ResultingNutritionConflictPolicy,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyReportWriter.kt:19:        decision: ResultingNutritionConflictPolicyDecision,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyReportWriter.kt:34:            ResultingNutritionConflictPolicyReport(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyReportWriter.kt:36:                    ResultingNutritionConflictPolicyReport
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyReportWriter.kt:77:data class ResultingNutritionConflictPolicyReport(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyReportWriter.kt:79:    val policy: ResultingNutritionConflictPolicy,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyReportWriter.kt:80:    val decision: ResultingNutritionConflictPolicyDecision
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyStatus.kt:3:enum class ResultingNutritionConflictPolicyStatus {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictClassificationPolicy.kt:5:data class ResultingNutritionConflictClassificationPolicy(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictClassificationPolicy.kt:9:    ResultingNutritionConflictPolicyAction,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictClassificationPolicy.kt:42:                    ResultingNutritionConflictPolicyAction.REJECT_BUILD
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyViolation.kt:3:data class ResultingNutritionConflictPolicyViolation(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyViolation.kt:5:    ResultingNutritionConflictPolicyViolationReason,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyViolation.kt:22:enum class ResultingNutritionConflictPolicyViolationReason {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt:6:data class ResultingNutritionConflictPolicy(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt:10:    ResultingNutritionConflictPolicyStatus =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt:11:        ResultingNutritionConflictPolicyStatus.APPROVED,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt:33:    ResultingNutritionConflictPolicyRationale =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt:34:        ResultingNutritionConflictPolicyRationale()
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt:42:        require(status == ResultingNutritionConflictPolicyStatus.APPROVED) {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt:145:                            ResultingNutritionConflictPolicyAction
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt:163:                            ResultingNutritionConflictPolicyAction
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt:181:                            ResultingNutritionConflictPolicyAction
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt:200:                            ResultingNutritionConflictPolicyAction
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicy.kt:230:data class ResultingNutritionConflictPolicyRationale(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyDecision.kt:3:data class ResultingNutritionConflictPolicyDecision(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyDecision.kt:6:    ResultingNutritionConflictPolicyStatus,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyDecision.kt:8:    val entryConflictRate: Double,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyDecision.kt:10:    val nutrientConflictRate: Double,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyDecision.kt:19:    List<ResultingNutritionConflictPolicyViolation>
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyDecision.kt:24:        require(entryConflictRate in 0.0..1.0)
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyDecision.kt:26:        require(nutrientConflictRate in 0.0..1.0)
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyAction.kt:3:enum class ResultingNutritionConflictPolicyAction {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidationIssue.kt:3:data class ResultingNutritionKnowledgeValidationIssue(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidationIssue.kt:38:enum class ResultingNutritionKnowledgeValidationSeverity {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidationIssue.kt:43:enum class ResultingNutritionKnowledgeValidationReason {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidationResult.kt:5:data class ResultingNutritionKnowledgeValidationResult(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidator.kt:10:class ResultingNutritionKnowledgeValidator(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageReportWriter.kt:9:class ResultingNutritionCoverageReportWriter {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageReportWriter.kt:109:data class ResultingNutritionCoverageReport(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageAnalysis.kt:5:data class ResultingNutritionCoverageAnalysis(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassification.kt:5:data class ResultingNutritionCoverageGapClassification(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassification.kt:15:    val effectiveCoverageRate: Double,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassification.kt:16:    val normalizationCollisionGroupCount: Long,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassification.kt:44:        require(effectiveCoverageRate in 0.0..1.0)
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassification.kt:45:        require(normalizationCollisionGroupCount >= 0L)
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassification.kt:144:data class ResultingNutritionCoverageNormalizationEquivalentPair(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifier.kt:7:class ResultingNutritionCoverageGapClassifier(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifier.kt:124:        var normalizationCollisionGroupCount =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifier.kt:147:                normalizationCollisionGroupCount++
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifier.kt:240:        val effectiveCoverageRate =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifier.kt:268:            effectiveCoverageRate =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifier.kt:269:                effectiveCoverageRate,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifier.kt:270:            normalizationCollisionGroupCount =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifier.kt:271:                normalizationCollisionGroupCount,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageAnalyzer.kt:7:class ResultingNutritionCoverageAnalyzer(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageCanonicalIdNormalizer.kt:5:class ResultingNutritionCoverageCanonicalIdNormalizer {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt:9:class ResultingNutritionCoverageGapClassificationReportWriter {
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt:63:                effectiveCoverageRate =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt:64:                    classification.effectiveCoverageRate,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt:65:                effectiveCoveragePercentage =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt:66:                    classification.effectiveCoverageRate *
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt:70:                normalizationCollisionGroupCount =
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt:71:                    classification.normalizationCollisionGroupCount,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt:124:data class ResultingNutritionCoverageGapClassificationReport(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt:137:    val effectiveCoverageRate: Double,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt:138:    val effectiveCoveragePercentage: Double,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassificationReportWriter.kt:140:    val normalizationCollisionGroupCount: Long,
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/policy/ResultingNutritionMacronutrientWarningPolicy.kt:3:data class ResultingNutritionMacronutrientWarningPolicy(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/policy/ResultingNutritionMacronutrientWarningPolicy.kt:164:data class ResultingNutritionMacronutrientWarningPolicyDecision(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/policy/ResultingNutritionMacronutrientWarningPolicy.kt:190:data class ResultingNutritionMacronutrientWarningPolicyRationale(
+app/src/main/java/de/shopme/tools/knowledge/ai/builder/runtime/validation/nutrition/policy/ResultingNutritionMacronutrientWarningPolicy.kt:224:enum class ResultingNutritionMacronutrientWarningPolicyStatus {
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/analysis/ResultingNutritionMacronutrientWarningAnalyzerTest.kt:10:class ResultingNutritionMacronutrientWarningAnalyzerTest {
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalyzerTest.kt:9:class ResultingNutritionConflictAnalyzerTest {
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalyzerTest.kt:157:                result.entryConflictRate
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/ResultingNutritionConflictAnalyzerTest.kt:162:                result.nutrientConflictRate
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/MeasureResultingNutritionConflictRateTest.kt:104:                    analysis.entryConflictRate
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/MeasureResultingNutritionConflictRateTest.kt:116:                    analysis.nutrientConflictRate
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluatorTest.kt:14:class ResultingNutritionConflictEvaluatorTest {
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluatorTest.kt:340:            entryConflictRate =
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/evaluation/ResultingNutritionConflictEvaluatorTest.kt:342:            nutrientConflictRate =
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:5:import de.shopme.tools.knowledge.ai.builder.runtime.validation.nutrition.conflict.policy.ResultingNutritionConflictPolicy
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:6:import de.shopme.tools.knowledge.ai.builder.runtime.validation.nutrition.conflict.policy.ResultingNutritionConflictPolicyEvaluator
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:7:import de.shopme.tools.knowledge.ai.builder.runtime.validation.nutrition.conflict.policy.ResultingNutritionConflictPolicyReportWriter
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:12:class DefineResultingNutritionConflictPolicyTest {
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:15:    fun defineResultingNutritionConflictPolicy() {
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:73:            ResultingNutritionConflictPolicy()
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:76:            ResultingNutritionConflictPolicyEvaluator(
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:87:        ResultingNutritionConflictPolicyReportWriter()
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:112:                            decision.entryConflictRate
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:120:                            decision.nutrientConflictRate
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:152:                    decision.entryConflictRate
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/DefineResultingNutritionConflictPolicyTest.kt:160:                    decision.nutrientConflictRate
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:11:import de.shopme.tools.knowledge.ai.builder.runtime.validation.nutrition.conflict.policy.ResultingNutritionConflictPolicy
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:12:import de.shopme.tools.knowledge.ai.builder.runtime.validation.nutrition.conflict.policy.ResultingNutritionConflictPolicyEvaluator
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:13:import de.shopme.tools.knowledge.ai.builder.runtime.validation.nutrition.conflict.policy.ResultingNutritionConflictPolicyViolationReason
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:21:class ResultingNutritionConflictPolicyEvaluatorTest {
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:37:                    entryConflictRate =
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:39:                    nutrientConflictRate =
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:52:                ResultingNutritionConflictPolicyEvaluator()
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:93:                    entryConflictRate =
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:95:                    nutrientConflictRate =
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:108:                ResultingNutritionConflictPolicyEvaluator(
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:110:                        ResultingNutritionConflictPolicy(
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:133:                            ResultingNutritionConflictPolicyViolationReason
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:141:                            ResultingNutritionConflictPolicyViolationReason
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:149:                            ResultingNutritionConflictPolicyViolationReason
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:162:            ResultingNutritionConflictPolicy()
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:183:        entryConflictRate: Double,
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:184:        nutrientConflictRate: Double
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:278:            entryConflictRate =
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:279:                entryConflictRate,
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:280:            nutrientConflictRate =
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/conflict/policy/ResultingNutritionConflictPolicyEvaluatorTest.kt:281:                nutrientConflictRate,
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/ResultingNutritionKnowledgeValidatorTest.kt:11:class ResultingNutritionKnowledgeValidatorTest {
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ClassifyResultingNutritionCoverageGapsTest.kt:86:            classification.effectiveCoverageRate >=
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ClassifyResultingNutritionCoverageGapsTest.kt:125:                    classification.effectiveCoverageRate
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ClassifyResultingNutritionCoverageGapsTest.kt:129:                    classification.normalizationCollisionGroupCount
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifierTest.kt:10:class ResultingNutritionCoverageGapClassifierTest {
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifierTest.kt:102:                result.effectiveCoverageRate
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifierTest.kt:209:                result.effectiveCoverageRate
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageGapClassifierTest.kt:280:                result.normalizationCollisionGroupCount
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/coverage/ResultingNutritionCoverageAnalyzerTest.kt:9:class ResultingNutritionCoverageAnalyzerTest {
+app/src/test/java/de/shopme/testing/system/tools/knowledge/ai/builder/runtime/validation/nutrition/policy/ResultingNutritionMacronutrientWarningPolicyTest.kt:10:class ResultingNutritionMacronutrientWarningPolicyTest {
+data/generated/knowledge/policies/resulting-nutrition-conflict-policy.json:63:    "entryConflictRate": 8.021721563685195E-4,
+data/generated/knowledge/policies/resulting-nutrition-conflict-policy.json:65:    "nutrientConflictRate": 4.7332509536345566E-4,
+data/generated/knowledge/reports/resulting-nutrition-conflict-rate.json:16:  "entryConflictRate": 8.021721563685195E-4,
+data/generated/knowledge/reports/resulting-nutrition-conflict-rate.json:18:  "nutrientConflictRate": 4.7332509536345566E-4,
+data/generated/knowledge/reports/resulting-nutrition-coverage-gap-classification.json:14:  "effectiveCoverageRate": 0.9953093445215022,
+data/generated/knowledge/reports/resulting-nutrition-coverage-gap-classification.json:15:  "effectiveCoveragePercentage": 99.53093445215022,
+data/generated/knowledge/reports/resulting-nutrition-coverage-gap-classification.json:17:  "normalizationCollisionGroupCount": 140,

@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "eau de vie": {
+      "environmentScoreMptPerKg": 0.118,
+      "climateKgCo2EqPerKg": 1.25,
+      "landUsePtPerKg": 18.3,
+      "waterDeprivationM3PerKg": 0.167
+    },
+    "fève, fraîche, surgelée": {
+      "environmentScoreMptPerKg": 0.0573,
+      "climateKgCo2EqPerKg": 0.443,
+      "landUsePtPerKg": -72.9,
+      "waterDeprivationM3PerKg": 0.0709
+    },
+    "haché de volaille": {
+      "environmentScoreMptPerKg": 1.28,
+      "climateKgCo2EqPerKg": 7.47,
+      "landUsePtPerKg": 446.0,
+      "waterDeprivationM3PerKg": 3.36
+    },
+    "huile de foie de morue": {
+      "environmentScoreMptPerKg": 0.298,
+      "climateKgCo2EqPerKg": 3.05,
+      "landUsePtPerKg": 16.8,
+      "waterDeprivationM3PerKg": 1.03
+    },
+    "muesli croustillant aux fruits ou fruits secs, enrichi en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.284,
+      "climateKgCo2EqPerKg": 2.55,
+      "landUsePtPerKg": 143.0,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "poireau, cru": {
+      "environmentScoreMptPerKg": 0.0672,
+      "climateKgCo2EqPerKg": 0.611,
+      "landUsePtPerKg": 10.1,
+      "waterDeprivationM3PerKg": 0.348
+    },
+    "poulet au curry et au lait de coco": {
+      "environmentScoreMptPerKg": 0.964,
+      "climateKgCo2EqPerKg": 5.68,
+      "landUsePtPerKg": 348.0,
+      "waterDeprivationM3PerKg": 2.81
+    },
+    "poulet, cuisse, viande et peau, cru": {
+      "environmentScoreMptPerKg": 0.955,
+      "climateKgCo2EqPerKg": 5.78,
+      "landUsePtPerKg": 336.0,
+      "waterDeprivationM3PerKg": 2.54
+    },
+    "pétales de maïs natures (non enrichis en vitamines et minéraux)": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "rostis ou galette de pomme de terre": {
+      "environmentScoreMptPerKg": 0.149,
+      "climateKgCo2EqPerKg": 0.977,
+      "landUsePtPerKg": 41.7,
+      "waterDeprivationM3PerKg": 0.509
+    }
+  }
+}

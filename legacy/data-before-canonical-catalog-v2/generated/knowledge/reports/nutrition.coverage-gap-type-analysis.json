@@ -1,0 +1,987 @@
+{
+  "version": 1,
+  "totalGapCount": 693,
+  "typeGroupCount": 8,
+  "groups": [
+    {
+      "type": "SCORE_CLUSTER",
+      "count": 316,
+      "percentage": 45.5988455988456,
+      "requestExistsCount": 316,
+      "requestMissingCount": 0,
+      "decisionExistsCount": 316,
+      "decisionMissingCount": 0,
+      "mappingExistsCount": 0,
+      "mappingMissingCount": 316,
+      "averageCandidateCount": 5.0,
+      "averageDecisionConfidence": 0.8940506329113928,
+      "averageTopCandidateScore": 0.6618806509945733,
+      "averageTopScoreDelta": 6.630500301386392E-5,
+      "decisionTypeCounts": {
+        "NO_MATCH": 316
+      },
+      "decisionSourceCounts": {
+        "CHAT_GPT": 316
+      },
+      "examples": [
+        {
+          "catalogKey": "canned chopped tomatoes",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.95,
+          "candidateCount": 5,
+          "topCandidateKey": "chopped tomatoes canned",
+          "topCandidateScore": 1.0,
+          "secondCandidateScore": 1.0,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "canned",
+            "chopped",
+            "tomatoes"
+          ],
+          "details": "The score difference between the first two candidates is only 0.0000."
+        },
+        {
+          "catalogKey": "chopped canned tomatoes",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.95,
+          "candidateCount": 5,
+          "topCandidateKey": "chopped tomatoes canned",
+          "topCandidateScore": 1.0,
+          "secondCandidateScore": 1.0,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "canned",
+            "chopped",
+            "tomatoes"
+          ],
+          "details": "The score difference between the first two candidates is only 0.0000."
+        },
+        {
+          "catalogKey": "herring in mustard sauce",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.9,
+          "candidateCount": 5,
+          "topCandidateKey": "herring filets in mustard sauce",
+          "topCandidateScore": 0.92,
+          "secondCandidateScore": 0.92,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "herring",
+            "in",
+            "mustard",
+            "sauce"
+          ],
+          "details": "The score difference between the first two candidates is only 0.0000."
+        },
+        {
+          "catalogKey": "thai curry paste",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.95,
+          "candidateCount": 5,
+          "topCandidateKey": "green thai curry paste",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.9,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "curry",
+            "paste",
+            "thai"
+          ],
+          "details": "The score difference between the first two candidates is only 0.0000."
+        },
+        {
+          "catalogKey": "canned corn kernels",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.94,
+          "candidateCount": 5,
+          "topCandidateKey": "canned sweet corn kernels",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.9,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "canned",
+            "corn",
+            "kernels"
+          ],
+          "details": "The score difference between the first two candidates is only 0.0000."
+        },
+        {
+          "catalogKey": "gluten free rice",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.94,
+          "candidateCount": 5,
+          "topCandidateKey": "gluten free rice lasagna",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.9,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "free",
+            "gluten",
+            "rice"
+          ],
+          "details": "The score difference between the first two candidates is only 0.0000."
+        },
+        {
+          "catalogKey": "vegan dark chocolate",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.94,
+          "candidateCount": 5,
+          "topCandidateKey": "vegan dark chocolate coconut",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.9,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "chocolate",
+            "dark",
+            "vegan"
+          ],
+          "details": "The score difference between the first two candidates is only 0.0000."
+        },
+        {
+          "catalogKey": "red bell pepper",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.92,
+          "candidateCount": 5,
+          "topCandidateKey": "red bell pepper chips",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.9,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "bell",
+            "pepper",
+            "red"
+          ],
+          "details": "The score difference between the first two candidates is only 0.0000."
+        },
+        {
+          "catalogKey": "whole bean coffee",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.92,
+          "candidateCount": 5,
+          "topCandidateKey": "colombian coffee whole bean coffee",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.9,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "bean",
+            "coffee",
+            "whole"
+          ],
+          "details": "The score difference between the first two candidates is only 0.0000."
+        },
+        {
+          "catalogKey": "dry white wine",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.88,
+          "candidateCount": 5,
+          "topCandidateKey": "dry white cooking wine",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.9,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "dry",
+            "white",
+            "wine"
+          ],
+          "details": "The score difference between the first two candidates is only 0.0000."
+        }
+      ]
+    },
+    {
+      "type": "NO_MATCH",
+      "count": 219,
+      "percentage": 31.601731601731604,
+      "requestExistsCount": 219,
+      "requestMissingCount": 0,
+      "decisionExistsCount": 219,
+      "decisionMissingCount": 0,
+      "mappingExistsCount": 0,
+      "mappingMissingCount": 219,
+      "averageCandidateCount": 4.9771689497716896,
+      "averageDecisionConfidence": 0.9060730593607311,
+      "averageTopCandidateScore": 0.6788649706457912,
+      "averageTopScoreDelta": 0.10345328694643746,
+      "decisionTypeCounts": {
+        "NO_MATCH": 219
+      },
+      "decisionSourceCounts": {
+        "CHAT_GPT": 219
+      },
+      "examples": [
+        {
+          "catalogKey": "leberkaese",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.84,
+          "candidateCount": 5,
+          "topCandidateKey": "meat loaf",
+          "topCandidateScore": 1.0,
+          "secondCandidateScore": 0.8666666666666666,
+          "topScoreDelta": 0.13333333333333341,
+          "topCandidateSharedTokens": [
+            "loaf",
+            "meat"
+          ],
+          "details": "A strong top candidate with diagnostic score 1.0000 was rejected as NO_MATCH."
+        },
+        {
+          "catalogKey": "vegan cheese alternative",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.93,
+          "candidateCount": 5,
+          "topCandidateKey": "vegan feta cheese alternative",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.84,
+          "topScoreDelta": 0.06000000000000005,
+          "topCandidateSharedTokens": [
+            "alternative",
+            "cheese",
+            "vegan"
+          ],
+          "details": "A strong top candidate with diagnostic score 0.9000 was rejected as NO_MATCH."
+        },
+        {
+          "catalogKey": "vegan chocolate bar",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.88,
+          "candidateCount": 5,
+          "topCandidateKey": "chocolate vegan cereal bar",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.84,
+          "topScoreDelta": 0.06000000000000005,
+          "topCandidateSharedTokens": [
+            "bar",
+            "chocolate",
+            "vegan"
+          ],
+          "details": "A strong top candidate with diagnostic score 0.9000 was rejected as NO_MATCH."
+        },
+        {
+          "catalogKey": "sugar free licorice",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.86,
+          "candidateCount": 5,
+          "topCandidateKey": "sugar free licorice bears",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.84,
+          "topScoreDelta": 0.06000000000000005,
+          "topCandidateSharedTokens": [
+            "free",
+            "licorice",
+            "sugar"
+          ],
+          "details": "A strong top candidate with diagnostic score 0.9000 was rejected as NO_MATCH."
+        },
+        {
+          "catalogKey": "vegan peanut butter",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.86,
+          "candidateCount": 5,
+          "topCandidateKey": "chocolate peanut butter vegan",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.84,
+          "topScoreDelta": 0.06000000000000005,
+          "topCandidateSharedTokens": [
+            "butter",
+            "peanut",
+            "vegan"
+          ],
+          "details": "A strong top candidate with diagnostic score 0.9000 was rejected as NO_MATCH."
+        },
+        {
+          "catalogKey": "mango drinking yogurt",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.82,
+          "candidateCount": 5,
+          "topCandidateKey": "protein drinking yogurt mango",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.7333333333333333,
+          "topScoreDelta": 0.16666666666666674,
+          "topCandidateSharedTokens": [
+            "drinking",
+            "mango",
+            "yogurt"
+          ],
+          "details": "A strong top candidate with diagnostic score 0.9000 was rejected as NO_MATCH."
+        },
+        {
+          "catalogKey": "organic ribbon pasta",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.82,
+          "candidateCount": 5,
+          "topCandidateKey": "organic edamame ribbon pasta",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.84,
+          "topScoreDelta": 0.06000000000000005,
+          "topCandidateSharedTokens": [
+            "organic",
+            "pasta",
+            "ribbon"
+          ],
+          "details": "A strong top candidate with diagnostic score 0.9000 was rejected as NO_MATCH."
+        },
+        {
+          "catalogKey": "canned kidney beans",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.78,
+          "candidateCount": 5,
+          "topCandidateKey": "canned white kidney beans",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.6333333333333333,
+          "topScoreDelta": 0.2666666666666667,
+          "topCandidateSharedTokens": [
+            "beans",
+            "canned",
+            "kidney"
+          ],
+          "details": "A strong top candidate with diagnostic score 0.9000 was rejected as NO_MATCH."
+        },
+        {
+          "catalogKey": "smoked salmon fillet",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.78,
+          "candidateCount": 5,
+          "topCandidateKey": "hot smoked salmon fillet",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.84,
+          "topScoreDelta": 0.06000000000000005,
+          "topCandidateSharedTokens": [
+            "fillet",
+            "salmon",
+            "smoked"
+          ],
+          "details": "A strong top candidate with diagnostic score 0.9000 was rejected as NO_MATCH."
+        },
+        {
+          "catalogKey": "white cane sugar",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.72,
+          "candidateCount": 5,
+          "topCandidateKey": "organic white cane sugar",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.84,
+          "topScoreDelta": 0.06000000000000005,
+          "topCandidateSharedTokens": [
+            "cane",
+            "sugar",
+            "white"
+          ],
+          "details": "A strong top candidate with diagnostic score 0.9000 was rejected as NO_MATCH."
+        }
+      ]
+    },
+    {
+      "type": "TOO_SPECIFIC",
+      "count": 130,
+      "percentage": 18.75901875901876,
+      "requestExistsCount": 130,
+      "requestMissingCount": 0,
+      "decisionExistsCount": 130,
+      "decisionMissingCount": 0,
+      "mappingExistsCount": 0,
+      "mappingMissingCount": 130,
+      "averageCandidateCount": 4.892307692307693,
+      "averageDecisionConfidence": 0.8870000000000003,
+      "averageTopCandidateScore": 0.7513950915851364,
+      "averageTopScoreDelta": 0.06525963454598803,
+      "decisionTypeCounts": {
+        "NO_MATCH": 130
+      },
+      "decisionSourceCounts": {
+        "CHAT_GPT": 130
+      },
+      "examples": [
+        {
+          "catalogKey": "organic gluten free pasta",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.92,
+          "candidateCount": 5,
+          "topCandidateKey": "organic & gluten free pasta elbows",
+          "topCandidateScore": 0.92,
+          "secondCandidateScore": 0.92,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "free",
+            "gluten",
+            "organic",
+            "pasta"
+          ],
+          "details": "The top candidate is substantially more specific than the catalog key: catalogTokens=4, candidateTokens=6."
+        },
+        {
+          "catalogKey": "strawberry fruit yogurt",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.88,
+          "candidateCount": 5,
+          "topCandidateKey": "strawberry fruit & yogurt spread",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.84,
+          "topScoreDelta": 0.06000000000000005,
+          "topCandidateSharedTokens": [
+            "fruit",
+            "strawberry",
+            "yogurt"
+          ],
+          "details": "The top candidate is substantially more specific than the catalog key: catalogTokens=3, candidateTokens=5."
+        },
+        {
+          "catalogKey": "herb cream cheese",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.86,
+          "candidateCount": 5,
+          "topCandidateKey": "cream cheese garlic & herb",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.9,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "cheese",
+            "cream",
+            "herb"
+          ],
+          "details": "The top candidate is substantially more specific than the catalog key: catalogTokens=3, candidateTokens=5."
+        },
+        {
+          "catalogKey": "frozen raspberry mix",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.82,
+          "candidateCount": 5,
+          "topCandidateKey": "frozen raspberry & blueberry mix",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.7999999999999999,
+          "topScoreDelta": 0.10000000000000009,
+          "topCandidateSharedTokens": [
+            "frozen",
+            "mix",
+            "raspberry"
+          ],
+          "details": "The top candidate is substantially more specific than the catalog key: catalogTokens=3, candidateTokens=5."
+        },
+        {
+          "catalogKey": "organic roasted almonds",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.76,
+          "candidateCount": 5,
+          "topCandidateKey": "organic almonds roasted & salted",
+          "topCandidateScore": 0.9,
+          "secondCandidateScore": 0.9,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "almonds",
+            "organic",
+            "roasted"
+          ],
+          "details": "The top candidate is substantially more specific than the catalog key: catalogTokens=3, candidateTokens=5."
+        },
+        {
+          "catalogKey": "fresh ginger",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.95,
+          "candidateCount": 5,
+          "topCandidateKey": "!, fresh soda, ginger",
+          "topCandidateScore": 0.8666666666666666,
+          "secondCandidateScore": 0.8666666666666666,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "fresh",
+            "ginger"
+          ],
+          "details": "The top candidate is substantially more specific than the catalog key: catalogTokens=2, candidateTokens=4."
+        },
+        {
+          "catalogKey": "yellow zucchini",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.93,
+          "candidateCount": 5,
+          "topCandidateKey": "yellow & green zucchini",
+          "topCandidateScore": 0.8666666666666666,
+          "secondCandidateScore": 0.8666666666666666,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "yellow",
+            "zucchini"
+          ],
+          "details": "The top candidate is substantially more specific than the catalog key: catalogTokens=2, candidateTokens=4."
+        },
+        {
+          "catalogKey": "green zucchini",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.9,
+          "candidateCount": 5,
+          "topCandidateKey": "yellow & green zucchini",
+          "topCandidateScore": 0.8666666666666666,
+          "secondCandidateScore": 0.76,
+          "topScoreDelta": 0.10666666666666658,
+          "topCandidateSharedTokens": [
+            "green",
+            "zucchini"
+          ],
+          "details": "The top candidate is substantially more specific than the catalog key: catalogTokens=2, candidateTokens=4."
+        },
+        {
+          "catalogKey": "cooked long grain rice",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.86,
+          "candidateCount": 5,
+          "topCandidateKey": "enriched pre cooked long grain rice",
+          "topCandidateScore": 0.8666666666666666,
+          "secondCandidateScore": 0.7999999999999999,
+          "topScoreDelta": 0.06666666666666665,
+          "topCandidateSharedTokens": [
+            "cooked",
+            "grain",
+            "long",
+            "rice"
+          ],
+          "details": "The top candidate is substantially more specific than the catalog key: catalogTokens=4, candidateTokens=6."
+        },
+        {
+          "catalogKey": "pear compote",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.86,
+          "candidateCount": 5,
+          "topCandidateKey": "pear & fennel compote",
+          "topCandidateScore": 0.8666666666666666,
+          "secondCandidateScore": 0.6,
+          "topScoreDelta": 0.2666666666666666,
+          "topCandidateSharedTokens": [
+            "compote",
+            "pear"
+          ],
+          "details": "The top candidate is substantially more specific than the catalog key: catalogTokens=2, candidateTokens=4."
+        }
+      ]
+    },
+    {
+      "type": "TOO_GENERIC",
+      "count": 18,
+      "percentage": 2.5974025974025974,
+      "requestExistsCount": 18,
+      "requestMissingCount": 0,
+      "decisionExistsCount": 18,
+      "decisionMissingCount": 0,
+      "mappingExistsCount": 0,
+      "mappingMissingCount": 18,
+      "averageCandidateCount": 5.0,
+      "averageDecisionConfidence": 0.8683333333333333,
+      "averageTopCandidateScore": 0.5999999999999999,
+      "averageTopScoreDelta": 0.06314814814814808,
+      "decisionTypeCounts": {
+        "NO_MATCH": 18
+      },
+      "decisionSourceCounts": {
+        "CHAT_GPT": 18
+      },
+      "examples": [
+        {
+          "catalogKey": "sesame whole grain bread roll",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.86,
+          "candidateCount": 5,
+          "topCandidateKey": "bread roll grain",
+          "topCandidateScore": 0.68,
+          "secondCandidateScore": 0.68,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "bread",
+            "grain",
+            "roll"
+          ],
+          "details": "The top candidate is substantially more generic than the catalog key: catalogTokens=5, candidateTokens=3."
+        },
+        {
+          "catalogKey": "spelt whole grain bread roll",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.82,
+          "candidateCount": 5,
+          "topCandidateKey": "bread roll grain",
+          "topCandidateScore": 0.68,
+          "secondCandidateScore": 0.68,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "bread",
+            "grain",
+            "roll"
+          ],
+          "details": "The top candidate is substantially more generic than the catalog key: catalogTokens=5, candidateTokens=3."
+        },
+        {
+          "catalogKey": "vegetarian minced meat alternative",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.96,
+          "candidateCount": 5,
+          "topCandidateKey": "minced meat",
+          "topCandidateScore": 0.6,
+          "secondCandidateScore": 0.5133333333333334,
+          "topScoreDelta": 0.08666666666666656,
+          "topCandidateSharedTokens": [
+            "meat",
+            "minced"
+          ],
+          "details": "The top candidate is substantially more generic than the catalog key: catalogTokens=4, candidateTokens=2."
+        },
+        {
+          "catalogKey": "organic goulash ready meal",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.95,
+          "candidateCount": 5,
+          "topCandidateKey": "organic meal",
+          "topCandidateScore": 0.6,
+          "secondCandidateScore": 0.5133333333333334,
+          "topScoreDelta": 0.08666666666666656,
+          "topCandidateSharedTokens": [
+            "meal",
+            "organic"
+          ],
+          "details": "The top candidate is substantially more generic than the catalog key: catalogTokens=4, candidateTokens=2."
+        },
+        {
+          "catalogKey": "organic moussaka ready meal",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.95,
+          "candidateCount": 5,
+          "topCandidateKey": "organic meal",
+          "topCandidateScore": 0.6,
+          "secondCandidateScore": 0.5133333333333334,
+          "topScoreDelta": 0.08666666666666656,
+          "topCandidateSharedTokens": [
+            "meal",
+            "organic"
+          ],
+          "details": "The top candidate is substantially more generic than the catalog key: catalogTokens=4, candidateTokens=2."
+        },
+        {
+          "catalogKey": "vegetarian cheese leek soup",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.93,
+          "candidateCount": 5,
+          "topCandidateKey": "cheese soup",
+          "topCandidateScore": 0.6,
+          "secondCandidateScore": 0.6,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "cheese",
+            "soup"
+          ],
+          "details": "The top candidate is substantially more generic than the catalog key: catalogTokens=4, candidateTokens=2."
+        },
+        {
+          "catalogKey": "canned tomato pepper stew",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.92,
+          "candidateCount": 5,
+          "topCandidateKey": "canned tomato",
+          "topCandidateScore": 0.6,
+          "secondCandidateScore": 0.5133333333333334,
+          "topScoreDelta": 0.08666666666666656,
+          "topCandidateSharedTokens": [
+            "canned",
+            "tomato"
+          ],
+          "details": "The top candidate is substantially more generic than the catalog key: catalogTokens=4, candidateTokens=2."
+        },
+        {
+          "catalogKey": "kohlrabi soup ready meal",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.92,
+          "candidateCount": 5,
+          "topCandidateKey": "meal soup",
+          "topCandidateScore": 0.6,
+          "secondCandidateScore": 0.5133333333333334,
+          "topScoreDelta": 0.08666666666666656,
+          "topCandidateSharedTokens": [
+            "meal",
+            "soup"
+          ],
+          "details": "The top candidate is substantially more generic than the catalog key: catalogTokens=4, candidateTokens=2."
+        },
+        {
+          "catalogKey": "frozen vegan vegetable patties",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.9,
+          "candidateCount": 5,
+          "topCandidateKey": "frozen vegetable",
+          "topCandidateScore": 0.6,
+          "secondCandidateScore": 0.5133333333333334,
+          "topScoreDelta": 0.08666666666666656,
+          "topCandidateSharedTokens": [
+            "frozen",
+            "vegetable"
+          ],
+          "details": "The top candidate is substantially more generic than the catalog key: catalogTokens=4, candidateTokens=2."
+        },
+        {
+          "catalogKey": "vegan paprika bread spread",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.9,
+          "candidateCount": 5,
+          "topCandidateKey": "vegan bread",
+          "topCandidateScore": 0.6,
+          "secondCandidateScore": 0.5133333333333334,
+          "topScoreDelta": 0.08666666666666656,
+          "topCandidateSharedTokens": [
+            "bread",
+            "vegan"
+          ],
+          "details": "The top candidate is substantially more generic than the catalog key: catalogTokens=4, candidateTokens=2."
+        }
+      ]
+    },
+    {
+      "type": "MODIFIER_MISMATCH",
+      "count": 4,
+      "percentage": 0.5772005772005772,
+      "requestExistsCount": 4,
+      "requestMissingCount": 0,
+      "decisionExistsCount": 4,
+      "decisionMissingCount": 0,
+      "mappingExistsCount": 0,
+      "mappingMissingCount": 4,
+      "averageCandidateCount": 5.0,
+      "averageDecisionConfidence": 0.8875,
+      "averageTopCandidateScore": 0.7226785714285714,
+      "averageTopScoreDelta": 0.032678571428571446,
+      "decisionTypeCounts": {
+        "NO_MATCH": 4
+      },
+      "decisionSourceCounts": {
+        "CHAT_GPT": 4
+      },
+      "examples": [
+        {
+          "catalogKey": "fresh cherries",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.93,
+          "candidateCount": 5,
+          "topCandidateKey": "fresh selections, dried cherries",
+          "topCandidateScore": 0.7999999999999999,
+          "secondCandidateScore": 0.76,
+          "topScoreDelta": 0.039999999999999925,
+          "topCandidateSharedTokens": [
+            "cherries",
+            "fresh"
+          ],
+          "details": "Catalog key and top candidate contain conflicting modifiers: dried vs fresh"
+        },
+        {
+          "catalogKey": "frozen salmon fillet",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.82,
+          "candidateCount": 5,
+          "topCandidateKey": "atlantic salmon fillet fresh never frozen",
+          "topCandidateScore": 0.7999999999999999,
+          "secondCandidateScore": 0.7999999999999999,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "fillet",
+            "frozen",
+            "salmon"
+          ],
+          "details": "Catalog key and top candidate contain conflicting modifiers: fresh vs frozen"
+        },
+        {
+          "catalogKey": "frozen zucchini",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.94,
+          "candidateCount": 5,
+          "topCandidateKey": "fresh frozen garden blend, broccoli, carrots, cauliflower, zucchini & yellow squash",
+          "topCandidateScore": 0.68,
+          "secondCandidateScore": 0.6,
+          "topScoreDelta": 0.08000000000000007,
+          "topCandidateSharedTokens": [
+            "frozen",
+            "zucchini"
+          ],
+          "details": "Catalog key and top candidate contain conflicting modifiers: fresh vs frozen"
+        },
+        {
+          "catalogKey": "frozen wild herb mix",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.86,
+          "candidateCount": 5,
+          "topCandidateKey": "organic fresh frozen herbs italian herb mix",
+          "topCandidateScore": 0.6107142857142858,
+          "secondCandidateScore": 0.6,
+          "topScoreDelta": 0.010714285714285787,
+          "topCandidateSharedTokens": [
+            "frozen",
+            "herb",
+            "mix"
+          ],
+          "details": "Catalog key and top candidate contain conflicting modifiers: fresh vs frozen"
+        }
+      ]
+    },
+    {
+      "type": "NO_REQUEST",
+      "count": 3,
+      "percentage": 0.4329004329004329,
+      "requestExistsCount": 0,
+      "requestMissingCount": 3,
+      "decisionExistsCount": 0,
+      "decisionMissingCount": 3,
+      "mappingExistsCount": 0,
+      "mappingMissingCount": 3,
+      "averageCandidateCount": 0.0,
+      "decisionTypeCounts": {
+        "NONE": 3
+      },
+      "decisionSourceCounts": {
+        "NONE": 3
+      },
+      "examples": [
+        {
+          "catalogKey": "chervil",
+          "candidateCount": 0,
+          "topCandidateSharedTokens": [],
+          "details": "No persisted nutrition match request exists for the missing catalog key."
+        },
+        {
+          "catalogKey": "mace",
+          "candidateCount": 0,
+          "topCandidateSharedTokens": [],
+          "details": "No persisted nutrition match request exists for the missing catalog key."
+        },
+        {
+          "catalogKey": "salsify",
+          "candidateCount": 0,
+          "topCandidateSharedTokens": [],
+          "details": "No persisted nutrition match request exists for the missing catalog key."
+        }
+      ]
+    },
+    {
+      "type": "WEAK_TOKEN_OVERLAP",
+      "count": 2,
+      "percentage": 0.2886002886002886,
+      "requestExistsCount": 2,
+      "requestMissingCount": 0,
+      "decisionExistsCount": 2,
+      "decisionMissingCount": 0,
+      "mappingExistsCount": 0,
+      "mappingMissingCount": 2,
+      "averageCandidateCount": 5.0,
+      "averageDecisionConfidence": 0.93,
+      "averageTopCandidateScore": 0.4666666666666667,
+      "averageTopScoreDelta": 0.05833333333333335,
+      "decisionTypeCounts": {
+        "NO_MATCH": 2
+      },
+      "decisionSourceCounts": {
+        "CHAT_GPT": 2
+      },
+      "examples": [
+        {
+          "catalogKey": "fresh pea pods",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.93,
+          "candidateCount": 5,
+          "topCandidateKey": "fresh",
+          "topCandidateScore": 0.4666666666666667,
+          "secondCandidateScore": 0.4666666666666667,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "fresh"
+          ],
+          "details": "The top candidate shares only 1 token(s) with a 3-token catalog key."
+        },
+        {
+          "catalogKey": "fresh yeast cube",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.93,
+          "candidateCount": 5,
+          "topCandidateKey": "fresh",
+          "topCandidateScore": 0.4666666666666667,
+          "secondCandidateScore": 0.35,
+          "topScoreDelta": 0.1166666666666667,
+          "topCandidateSharedTokens": [
+            "fresh"
+          ],
+          "details": "The top candidate shares only 1 token(s) with a 3-token catalog key."
+        }
+      ]
+    },
+    {
+      "type": "VERY_LOW_SCORE",
+      "count": 1,
+      "percentage": 0.1443001443001443,
+      "requestExistsCount": 1,
+      "requestMissingCount": 0,
+      "decisionExistsCount": 1,
+      "decisionMissingCount": 0,
+      "mappingExistsCount": 0,
+      "mappingMissingCount": 1,
+      "averageCandidateCount": 5.0,
+      "averageDecisionConfidence": 0.94,
+      "averageTopCandidateScore": 0.35,
+      "averageTopScoreDelta": 0.0,
+      "decisionTypeCounts": {
+        "NO_MATCH": 1
+      },
+      "decisionSourceCounts": {
+        "CHAT_GPT": 1
+      },
+      "examples": [
+        {
+          "catalogKey": "mostly waxy potatoes",
+          "decisionType": "NO_MATCH",
+          "decisionSource": "CHAT_GPT",
+          "decisionConfidence": 0.94,
+          "candidateCount": 5,
+          "topCandidateKey": "adrian potatoes",
+          "topCandidateScore": 0.35,
+          "secondCandidateScore": 0.35,
+          "topScoreDelta": 0.0,
+          "topCandidateSharedTokens": [
+            "potatoes"
+          ],
+          "details": "The top candidate diagnostic score 0.3500 is below the threshold 0.4500."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "banane plantain, crue": {
+      "litersPerKilogram": 5630.0
+    },
+    "café expresso, non instantané, non sucré, prêt à boire": {
+      "litersPerKilogram": 600.0
+    },
+    "denté, cru": {
+      "litersPerKilogram": 470.0
+    },
+    "gombo, fruit, cuit": {
+      "litersPerKilogram": 2000.0
+    },
+    "goûter sec fourré (\"sandwiché\") parfum chocolat": {
+      "litersPerKilogram": 1350.0
+    },
+    "pain au lait, artisanal": {
+      "litersPerKilogram": 589.0
+    },
+    "poire belle hélène": {
+      "litersPerKilogram": 666.0
+    },
+    "soupe aux asperges, préemballée à réchauffer": {
+      "litersPerKilogram": 2100.0
+    },
+    "soupe à la volaille et aux vermicelles, déshydratée reconstituée": {
+      "litersPerKilogram": 637.0
+    },
+    "tomate, crue": {
+      "litersPerKilogram": 1270.0
+    },
+    "veau, noix, rôtie": {
+      "litersPerKilogram": 3990.0
+    }
+  }
+}

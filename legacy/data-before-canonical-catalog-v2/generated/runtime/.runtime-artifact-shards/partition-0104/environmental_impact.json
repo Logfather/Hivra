@@ -1,0 +1,64 @@
+{
+  "entries": {
+    "boisson gazeuse, sans jus de fruit, sucrée, avec édulcorants": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "café, instantané, non sucré, prêt à boire": {
+      "environmentScoreMptPerKg": 0.214,
+      "climateKgCo2EqPerKg": 1.53,
+      "landUsePtPerKg": 52.6,
+      "waterDeprivationM3PerKg": 1.46
+    },
+    "croûtons nature, préemballés": {
+      "environmentScoreMptPerKg": 0.432,
+      "climateKgCo2EqPerKg": 1.06,
+      "landUsePtPerKg": 446.0,
+      "waterDeprivationM3PerKg": 15.3
+    },
+    "céréales pour petit déjeuner \"équilibre\" aux fruits, enrichies en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "escalope végétale ou steak à base de soja": {
+      "environmentScoreMptPerKg": 0.292,
+      "climateKgCo2EqPerKg": 2.17,
+      "landUsePtPerKg": 150.0,
+      "waterDeprivationM3PerKg": 0.625
+    },
+    "marsala": {
+      "environmentScoreMptPerKg": 0.151,
+      "climateKgCo2EqPerKg": 1.22,
+      "landUsePtPerKg": 95.6,
+      "waterDeprivationM3PerKg": 0.201
+    },
+    "matière grasse mélangée (végétale et laitière) à 50 63% mg, demi sel": {
+      "environmentScoreMptPerKg": 0.354,
+      "climateKgCo2EqPerKg": 3.93,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 0.703
+    },
+    "multi céréales soufflées ou extrudées, enrichies en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "saumon, bouilli/cuit à l'eau, élevage": {
+      "environmentScoreMptPerKg": 0.879,
+      "climateKgCo2EqPerKg": 7.01,
+      "landUsePtPerKg": 279.0,
+      "waterDeprivationM3PerKg": 1.48
+    },
+    "vinaigre": {
+      "environmentScoreMptPerKg": 0.128,
+      "climateKgCo2EqPerKg": 0.96,
+      "landUsePtPerKg": 94.2,
+      "waterDeprivationM3PerKg": 0.149
+    }
+  }
+}

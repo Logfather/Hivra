@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "bœuf, steak haché 10% mg, cru": {
+      "environmentScoreMptPerKg": 3.35,
+      "climateKgCo2EqPerKg": 35.7,
+      "landUsePtPerKg": 2320.0,
+      "waterDeprivationM3PerKg": 2.98
+    },
+    "langoustine, crue": {
+      "environmentScoreMptPerKg": 5.35,
+      "climateKgCo2EqPerKg": 39.2,
+      "landUsePtPerKg": 83.2,
+      "waterDeprivationM3PerKg": 2.7
+    },
+    "pois cassé, cuit": {
+      "environmentScoreMptPerKg": 0.0703,
+      "climateKgCo2EqPerKg": 0.539,
+      "landUsePtPerKg": 66.1,
+      "waterDeprivationM3PerKg": 0.158
+    },
+    "sabre, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    },
+    "salade de thon et légumes, appertisée, égouttée": {
+      "environmentScoreMptPerKg": 0.645,
+      "climateKgCo2EqPerKg": 4.52,
+      "landUsePtPerKg": 58.7,
+      "waterDeprivationM3PerKg": 1.08
+    },
+    "salade verte, crue, sans assaisonnement": {
+      "environmentScoreMptPerKg": 0.0939,
+      "climateKgCo2EqPerKg": 0.868,
+      "landUsePtPerKg": 9.16,
+      "waterDeprivationM3PerKg": 0.643
+    },
+    "veau, noix, grillée/poêlée": {
+      "environmentScoreMptPerKg": 2.72,
+      "climateKgCo2EqPerKg": 29.4,
+      "landUsePtPerKg": 1340.0,
+      "waterDeprivationM3PerKg": 3.97
+    }
+  }
+}

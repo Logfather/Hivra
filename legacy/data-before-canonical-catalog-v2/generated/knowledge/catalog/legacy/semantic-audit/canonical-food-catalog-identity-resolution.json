@@ -1,0 +1,2046 @@
+{
+  "schemaVersion": 1,
+  "inputEntryCount": 4698,
+  "conflictGroupCount": 101,
+  "resolvedGroupCount": 101,
+  "reviewGroupCount": 0,
+  "removedEntryCount": 101,
+  "resolvedEntryCount": 4597,
+  "countsByReason": {
+    "BASELINE_PREFERRED_OVER_EXPANSION": 8,
+    "GERMAN_COMPOUND_PREFERRED": 77,
+    "NATURAL_GERMAN_WORD_ORDER_PREFERRED": 4,
+    "PRODUCT_BEFORE_STATE_PREFERRED": 5,
+    "SINGULAR_PREFERRED_OVER_PLURAL": 2,
+    "SPECIFIC_DISH_BEFORE_GENERIC_CLASS_PREFERRED": 3,
+    "STANDARD_ORTHOGRAPHY_PREFERRED": 2
+  },
+  "resolutions": [
+    {
+      "duplicateReason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "baguette klassisch",
+      "decision": "MERGE",
+      "reason": "BASELINE_PREFERRED_OVER_EXPANSION",
+      "winner": {
+        "itemName": "Baguette Klassisch",
+        "normalized": "baguette-klassisch",
+        "category": "bakery",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Baguette – Klassisch",
+          "normalized": "baguette-classic",
+          "category": "bakery",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "bohnen konserviert",
+      "decision": "MERGE",
+      "reason": "BASELINE_PREFERRED_OVER_EXPANSION",
+      "winner": {
+        "itemName": "Bohnen Konserviert",
+        "normalized": "bohnen-konserviert",
+        "category": "canned-food",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Bohnen – Konserviert",
+          "normalized": "beans-preserved",
+          "category": "legumes",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "erbsen frisch",
+      "decision": "MERGE",
+      "reason": "BASELINE_PREFERRED_OVER_EXPANSION",
+      "winner": {
+        "itemName": "Erbsen frisch",
+        "normalized": "erbsen-frisch",
+        "category": "vegetables",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Erbsen – Frisch",
+          "normalized": "peas-fresh",
+          "category": "legumes",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "erbsen getrocknet",
+      "decision": "MERGE",
+      "reason": "BASELINE_PREFERRED_OVER_EXPANSION",
+      "winner": {
+        "itemName": "Erbsen getrocknet",
+        "normalized": "erbsen-getrocknet",
+        "category": "legumes",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Erbsen – Getrocknet",
+          "normalized": "peas-dried",
+          "category": "legumes",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "erbsen konserviert",
+      "decision": "MERGE",
+      "reason": "BASELINE_PREFERRED_OVER_EXPANSION",
+      "winner": {
+        "itemName": "Erbsen Konserviert",
+        "normalized": "erbsen-konserviert",
+        "category": "canned-food",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Erbsen – Konserviert",
+          "normalized": "peas-preserved",
+          "category": "legumes",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "haferflocken",
+      "decision": "MERGE",
+      "reason": "BASELINE_PREFERRED_OVER_EXPANSION",
+      "winner": {
+        "itemName": "Haferflocken",
+        "normalized": "haferflocken",
+        "category": "breakfast",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Hafer – Flocken",
+          "normalized": "oats-flakes",
+          "category": "grains",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "knackebrot klassisch",
+      "decision": "MERGE",
+      "reason": "BASELINE_PREFERRED_OVER_EXPANSION",
+      "winner": {
+        "itemName": "Knäckebrot Klassisch",
+        "normalized": "knaeckebrot-klassisch",
+        "category": "bakery",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Knäckebrot – Klassisch",
+          "normalized": "crispbread-classic",
+          "category": "bakery",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "linsen konserviert",
+      "decision": "MERGE",
+      "reason": "BASELINE_PREFERRED_OVER_EXPANSION",
+      "winner": {
+        "itemName": "Linsen Konserviert",
+        "normalized": "linsen-konserviert",
+        "category": "canned-food",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Linsen – Konserviert",
+          "normalized": "lentils-preserved",
+          "category": "legumes",
+          "sourceLayer": "REGENERATED_EXPANSION"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "apfelbirnensaft",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Apfel-Birnensaft",
+        "normalized": "apfel-birnensaft",
+        "category": "beverages",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Apfel-Birnen-Saft",
+          "normalized": "apfel-birnen-saft",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "apfelschorle",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Apfelschorle",
+        "normalized": "apfelschorle",
+        "category": "beverages",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Apfel Schorle",
+          "normalized": "apfel-schorle",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "balsamicoessig",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Balsamicoessig",
+        "normalized": "balsamicoessig",
+        "category": "spices",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Balsamico Essig",
+          "normalized": "balsamico-essig",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "barbecuesauce",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Barbecuesauce",
+        "normalized": "barbecuesauce",
+        "category": "sauces",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Barbecue Sauce",
+          "normalized": "barbecue-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "basmatireis",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Basmatireis",
+        "normalized": "basmatireis",
+        "category": "rice",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Basmati Reis",
+          "normalized": "basmati-reis",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "beerenmixtiefgekuhlt",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Beerenmix Tiefgekühlt",
+        "normalized": "beerenmix-tiefgekuehlt",
+        "category": "fruit",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Beeren-Mix Tiefgekühlt",
+          "normalized": "beeren-mix-tiefgekuehlt",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "beerenmixtk",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Beerenmix TK",
+        "normalized": "beerenmix-tk",
+        "category": "fruit",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Beeren-Mix TK",
+          "normalized": "beeren-mix-tk",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "bieralkoholfrei",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Bieralkoholfrei",
+        "normalized": "bieralkoholfrei",
+        "category": "beverages",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Bier Alkoholfrei",
+          "normalized": "bier-alkoholfrei",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "bohnendose",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Bohnendose",
+        "normalized": "bohnendose",
+        "category": "canned-food",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Bohnen, Dose",
+          "normalized": "bohnen-dose",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "cashewdrink",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Cashewdrink",
+        "normalized": "cashewdrink",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Cashew-Drink",
+          "normalized": "cashew-drink",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "cashewjoghurt",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Cashewjoghurt",
+        "normalized": "cashewjoghurt",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Cashew Joghurt",
+          "normalized": "cashew-joghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "chiasamen",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Chiasamen",
+        "normalized": "chiasamen",
+        "category": "spices",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Chia Samen",
+          "normalized": "chia-samen",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "chiliflocken",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Chiliflocken",
+        "normalized": "chiliflocken",
+        "category": "spices",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Chili Flocken",
+          "normalized": "chili-flocken",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "chilipulver",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Chilipulver",
+        "normalized": "chilipulver",
+        "category": "spices",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Chili Pulver",
+          "normalized": "chili-pulver",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "chilisauce",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Chilisauce",
+        "normalized": "chilisauce",
+        "category": "sauces",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Chili Sauce",
+          "normalized": "chili-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "chilisaucescharf",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Chilisauce scharf",
+        "normalized": "chilisauce-scharf",
+        "category": "sauces",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Chili Sauce scharf",
+          "normalized": "chili-sauce-scharf",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "cocktailsauce",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Cocktailsauce",
+        "normalized": "cocktailsauce",
+        "category": "sauces",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Cocktail Sauce",
+          "normalized": "cocktail-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "currypaste",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Currypaste",
+        "normalized": "currypaste",
+        "category": "sauces",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Curry-Paste",
+          "normalized": "curry-paste",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "currypulver",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Currypulver",
+        "normalized": "currypulver",
+        "category": "spices",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Curry Pulver",
+          "normalized": "curry-pulver",
+          "category": "spices",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "currysauce",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Currysauce",
+        "normalized": "currysauce",
+        "category": "sauces",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Curry Sauce",
+          "normalized": "curry-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "dinkelvollkornnudeln",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Dinkelvollkornnudeln",
+        "normalized": "dinkelvollkornnudeln",
+        "category": "pasta",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Dinkel-Vollkornnudeln",
+          "normalized": "dinkel-vollkornnudeln",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "dosenananas",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Dosenananas",
+        "normalized": "dosenananas",
+        "category": "canned-food",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Dosen Ananas",
+          "normalized": "dosen-ananas",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "dosenerbsen",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Dosenerbsen",
+        "normalized": "dosenerbsen",
+        "category": "canned-food",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Dosen Erbsen",
+          "normalized": "dosen-erbsen",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "dosenpfirsiche",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Dosenpfirsiche",
+        "normalized": "dosenpfirsiche",
+        "category": "canned-food",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Dosen Pfirsiche",
+          "normalized": "dosen-pfirsiche",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "fertiggerichtgemusecurry",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Fertiggericht Gemüsecurry",
+        "normalized": "fertiggericht-gemuesecurry",
+        "category": "ready-meals",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Fertiggericht Gemüse-Curry",
+          "normalized": "fertiggericht-gemuese-curry",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "fruchtriegel",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Fruchtriegel",
+        "normalized": "fruchtriegel",
+        "category": "confectionery",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Frucht-Riegel",
+          "normalized": "frucht-riegel",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "gemuseburger",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Gemüseburger",
+        "normalized": "gemueseburger",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Gemüse Burger",
+          "normalized": "gemuese-burger",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "gemusemixtiefgekuhlt",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Gemüsemix Tiefgekühlt",
+        "normalized": "gemuesemix-tiefgekuehlt",
+        "category": "vegetables",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Gemüse-Mix Tiefgekühlt",
+          "normalized": "gemuese-mix-tiefgekuehlt",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "haferjoghurt",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Haferjoghurt",
+        "normalized": "haferjoghurt",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Hafer Joghurt",
+          "normalized": "hafer-joghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "honigblutenhonig",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Honigblütenhonig",
+        "normalized": "honigbluetenhonig",
+        "category": "confectionery",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Honig-Blütenhonig",
+          "normalized": "honig-bluetenhonig",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "honigbonbons",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Honigbonbons",
+        "normalized": "honigbonbons",
+        "category": "confectionery",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Honig Bonbons",
+          "normalized": "honig-bonbons",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "ingwertee",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Ingwertee",
+        "normalized": "ingwertee",
+        "category": "beverages",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Ingwer Tee",
+          "normalized": "ingwer-tee",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "jasminreis",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Jasminreis",
+        "normalized": "jasminreis",
+        "category": "rice",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Jasmin Reis",
+          "normalized": "jasmin-reis",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kaffeebohnen",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Kaffeebohnen",
+        "normalized": "kaffeebohnen",
+        "category": "beverages",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Kaffee Bohnen",
+          "normalized": "kaffee-bohnen",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kakaobutter",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Kakaobutter",
+        "normalized": "kakaobutter",
+        "category": "oils",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Kakao Butter",
+          "normalized": "kakao-butter",
+          "category": "oils",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kakaonibs",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Kakaonibs",
+        "normalized": "kakaonibs",
+        "category": "confectionery",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Kakao Nibs",
+          "normalized": "kakao-nibs",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kakaopulver",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Kakaopulver",
+        "normalized": "kakaopulver",
+        "category": "spices",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Kakao Pulver",
+          "normalized": "kakao-pulver",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kamutnudeln",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Kamutnudeln",
+        "normalized": "kamutnudeln",
+        "category": "pasta",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Kamut-Nudeln",
+          "normalized": "kamut-nudeln",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "kasespatzlefertiggericht",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Käsespätzle Fertiggericht",
+        "normalized": "kaesespaetzle-fertiggericht",
+        "category": "ready-meals",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Käse Spätzle Fertiggericht",
+          "normalized": "kaese-spaetzle-fertiggericht",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "knoblauchsauce",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Knoblauchsauce",
+        "normalized": "knoblauchsauce",
+        "category": "sauces",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Knoblauch Sauce",
+          "normalized": "knoblauch-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "linsennudeln",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Linsennudeln",
+        "normalized": "linsennudeln",
+        "category": "pasta",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Linsen Nudeln",
+          "normalized": "linsen-nudeln",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "linsenpasta",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Linsenpasta",
+        "normalized": "linsenpasta",
+        "category": "pasta",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Linsen Pasta",
+          "normalized": "linsen-pasta",
+          "category": "pasta",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "maisdose",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Maisdose",
+        "normalized": "maisdose",
+        "category": "canned-food",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Mais Dose",
+          "normalized": "mais-dose",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "mandeljoghurt",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Mandeljoghurt",
+        "normalized": "mandeljoghurt",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Mandel-Joghurt",
+          "normalized": "mandel-joghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "musliriegel",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Müsliriegel",
+        "normalized": "muesliriegel",
+        "category": "snacks",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Müsli Riegel",
+          "normalized": "muesli-riegel",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "nougatpralinen",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Nougatpralinen",
+        "normalized": "nougatpralinen",
+        "category": "confectionery",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Nougat Pralinen",
+          "normalized": "nougat-pralinen",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "pretzelsticks",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Pretzelsticks",
+        "normalized": "pretzelsticks",
+        "category": "snacks",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Pretzel Sticks",
+          "normalized": "pretzel-sticks",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "proteinriegel",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Proteinriegel",
+        "normalized": "proteinriegel",
+        "category": "snacks",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Protein Riegel",
+          "normalized": "protein-riegel",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "putenbrustaufschnitt",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Putenbrustaufschnitt",
+        "normalized": "putenbrustaufschnitt",
+        "category": "sausage",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Putenbrust Aufschnitt",
+          "normalized": "putenbrust-aufschnitt",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "reisjoghurt",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Reisjoghurt",
+        "normalized": "reisjoghurt",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Reis Joghurt",
+          "normalized": "reis-joghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "reisvollkorn",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Reisvollkorn",
+        "normalized": "reisvollkorn",
+        "category": "rice",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Reis Vollkorn",
+          "normalized": "reis-vollkorn",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "rooibostee",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Rooibostee",
+        "normalized": "rooibostee",
+        "category": "beverages",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Rooibos Tee",
+          "normalized": "rooibos-tee",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "salatkopf",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Salatkopf",
+        "normalized": "salatkopf",
+        "category": "vegetables",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Salat Kopf",
+          "normalized": "salat-kopf",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "schinkenroh",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Schinkenroh",
+        "normalized": "schinkenroh",
+        "category": "sausage",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Schinken roh",
+          "normalized": "schinken-roh",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "sellerieknolle",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Sellerieknolle",
+        "normalized": "sellerieknolle",
+        "category": "vegetables",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Sellerie Knolle",
+          "normalized": "sellerie-knolle",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "sojadrink",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Sojadrink",
+        "normalized": "sojadrink",
+        "category": "plant-based-drinks",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Soja-Drink",
+          "normalized": "soja-drink",
+          "category": "plant-based-drinks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "sojadrinkungesusst",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Sojadrink ungesüßt",
+        "normalized": "sojadrink-ungesuesst",
+        "category": "plant-based-drinks",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Soja Drink ungesüßt",
+          "normalized": "soja-drink-ungesuesst",
+          "category": "plant-based-drinks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "sojajoghurt",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Sojajoghurt",
+        "normalized": "sojajoghurt",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Soja Joghurt",
+          "normalized": "soja-joghurt",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "sushireis",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Sushireis",
+        "normalized": "sushireis",
+        "category": "rice",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Sushi Reis",
+          "normalized": "sushi-reis",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "susssauresauce",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Süßsaure Sauce",
+        "normalized": "suesssaure-sauce",
+        "category": "sauces",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Süß-Saure Sauce",
+          "normalized": "suess-saure-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "teriyakisauce",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Teriyakisauce",
+        "normalized": "teriyakisauce",
+        "category": "sauces",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Teriyaki Sauce",
+          "normalized": "teriyaki-sauce",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "thunfischdose",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Thunfischdose",
+        "normalized": "thunfischdose",
+        "category": "fish",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Thunfisch Dose",
+          "normalized": "thunfisch-dose",
+          "category": "fish",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "thunfischkonserve",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Thunfischkonserve",
+        "normalized": "thunfischkonserve",
+        "category": "canned-food",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Thunfisch (Konserve)",
+          "normalized": "thunfisch-konserve",
+          "category": "canned-food",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "tiefkuhlerbsen",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Tiefkühlerbsen",
+        "normalized": "tiefkuehlerbsen",
+        "category": "vegetables",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Tiefkühl Erbsen",
+          "normalized": "tiefkuehl-erbsen",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "tiefkuhlgemusepfanne",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Tiefkühlgemüsepfanne",
+        "normalized": "tiefkuehlgemuesepfanne",
+        "category": "vegetables",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Tiefkühl-Gemüsepfanne",
+          "normalized": "tiefkuehl-gemuesepfanne",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        },
+        {
+          "itemName": "Tiefkühlgemüse Pfanne",
+          "normalized": "tiefkuehlgemuese-pfanne",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "tiefkuhlpommes",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Tiefkühlpommes",
+        "normalized": "tiefkuehlpommes",
+        "category": "snacks",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Tiefkühl Pommes",
+          "normalized": "tiefkuehl-pommes",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "tomatenketchup",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Tomatenketchup",
+        "normalized": "tomatenketchup",
+        "category": "sauces",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Tomaten Ketchup",
+          "normalized": "tomaten-ketchup",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "vanillezucker",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Vanillezucker",
+        "normalized": "vanillezucker",
+        "category": "confectionery",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Vanille Zucker",
+          "normalized": "vanille-zucker",
+          "category": "confectionery",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganeburgerpatties",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Vegane Burgerpatties",
+        "normalized": "vegane-burgerpatties",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Vegane Burger Patties",
+          "normalized": "vegane-burger-patties",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganebutteralternative",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Vegane Butteralternative",
+        "normalized": "vegane-butteralternative",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Vegane Butter Alternative",
+          "normalized": "vegane-butter-alternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganefrischkasealternative",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Vegane Frischkäsealternative",
+        "normalized": "vegane-frischkaesealternative",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Vegane Frischkäse Alternative",
+          "normalized": "vegane-frischkaese-alternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganehackfleischalternative",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Vegane Hackfleischalternative",
+        "normalized": "vegane-hackfleischalternative",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Vegane Hackfleisch Alternative",
+          "normalized": "vegane-hackfleisch-alternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganesahnealternative",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Vegane Sahnealternative",
+        "normalized": "vegane-sahnealternative",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Vegane Sahne Alternative",
+          "normalized": "vegane-sahne-alternative",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganetofuwurfel",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Vegane Tofuwürfel",
+        "normalized": "vegane-tofuwuerfel",
+        "category": "plant-based-alternatives",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Vegane Tofu Würfel",
+          "normalized": "vegane-tofu-wuerfel",
+          "category": "plant-based-alternatives",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganetofuwurstchen",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Vegane Tofuwürstchen",
+        "normalized": "vegane-tofuwuerstchen",
+        "category": "sausage",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Vegane Tofu Würstchen",
+          "normalized": "vegane-tofu-wuerstchen",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "veganewurstalternative",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Vegane Wurstalternative",
+        "normalized": "vegane-wurstalternative",
+        "category": "sausage",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Vegane Wurst Alternative",
+          "normalized": "vegane-wurst-alternative",
+          "category": "sausage",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "weissweinessig",
+      "decision": "MERGE",
+      "reason": "GERMAN_COMPOUND_PREFERRED",
+      "winner": {
+        "itemName": "Weißweinessig",
+        "normalized": "weissweinessig",
+        "category": "sauces",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Weißwein Essig",
+          "normalized": "weisswein-essig",
+          "category": "sauces",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "beverages::gruner|tee",
+      "decision": "MERGE",
+      "reason": "NATURAL_GERMAN_WORD_ORDER_PREFERRED",
+      "winner": {
+        "itemName": "Grüner Tee",
+        "normalized": "gruener-tee",
+        "category": "beverages",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Tee Grüner",
+          "normalized": "tee-gruener",
+          "category": "beverages",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "dairy::bio|eier",
+      "decision": "MERGE",
+      "reason": "NATURAL_GERMAN_WORD_ORDER_PREFERRED",
+      "winner": {
+        "itemName": "Bio Eier",
+        "normalized": "bio-eier",
+        "category": "dairy",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Eier Bio",
+          "normalized": "eier-bio",
+          "category": "dairy",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "rice::basmati|reis",
+      "decision": "MERGE",
+      "reason": "NATURAL_GERMAN_WORD_ORDER_PREFERRED",
+      "winner": {
+        "itemName": "Basmati Reis",
+        "normalized": "basmati-reis",
+        "category": "rice",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Reis Basmati",
+          "normalized": "reis-basmati",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "rice::reis|sushi",
+      "decision": "MERGE",
+      "reason": "NATURAL_GERMAN_WORD_ORDER_PREFERRED",
+      "winner": {
+        "itemName": "Sushi Reis",
+        "normalized": "sushi-reis",
+        "category": "rice",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Reis Sushi",
+          "normalized": "reis-sushi",
+          "category": "rice",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "fruit::beerenmix|tk",
+      "decision": "MERGE",
+      "reason": "PRODUCT_BEFORE_STATE_PREFERRED",
+      "winner": {
+        "itemName": "Beerenmix TK",
+        "normalized": "beerenmix-tk",
+        "category": "fruit",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Tk-Beerenmix",
+          "normalized": "tk-beerenmix",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "ready-meals::margherita|pizza|tk",
+      "decision": "MERGE",
+      "reason": "PRODUCT_BEFORE_STATE_PREFERRED",
+      "winner": {
+        "itemName": "Pizza Margherita (TK)",
+        "normalized": "pizza-margherita-tk",
+        "category": "ready-meals",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Tk-Pizza Margherita",
+          "normalized": "tk-pizza-margherita",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "snacks::frites|pommes|tk",
+      "decision": "MERGE",
+      "reason": "PRODUCT_BEFORE_STATE_PREFERRED",
+      "winner": {
+        "itemName": "Pommes Frites TK",
+        "normalized": "pommes-frites-tk",
+        "category": "snacks",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Tk-Pommes Frites",
+          "normalized": "tk-pommes-frites",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "vegetables::erbsen|tiefkuhl",
+      "decision": "MERGE",
+      "reason": "PRODUCT_BEFORE_STATE_PREFERRED",
+      "winner": {
+        "itemName": "Erbsen (Tiefkühl)",
+        "normalized": "erbsen-tiefkuehl",
+        "category": "vegetables",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Tiefkühl Erbsen",
+          "normalized": "tiefkuehl-erbsen",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "vegetables::gemusepfanne|tk",
+      "decision": "MERGE",
+      "reason": "PRODUCT_BEFORE_STATE_PREFERRED",
+      "winner": {
+        "itemName": "Gemüsepfanne TK",
+        "normalized": "gemuesepfanne-tk",
+        "category": "vegetables",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Tk-Gemüsepfanne",
+          "normalized": "tk-gemuesepfanne",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "apfel",
+      "decision": "MERGE",
+      "reason": "SINGULAR_PREFERRED_OVER_PLURAL",
+      "winner": {
+        "itemName": "Apfel",
+        "normalized": "apfel",
+        "category": "fruit",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Äpfel",
+          "normalized": "aepfel",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "granatapfel",
+      "decision": "MERGE",
+      "reason": "SINGULAR_PREFERRED_OVER_PLURAL",
+      "winner": {
+        "itemName": "Granatapfel",
+        "normalized": "granatapfel",
+        "category": "fruit",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Granatäpfel",
+          "normalized": "granataepfel",
+          "category": "fruit",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "ready-meals::carne|chili|con|fertiggericht",
+      "decision": "MERGE",
+      "reason": "SPECIFIC_DISH_BEFORE_GENERIC_CLASS_PREFERRED",
+      "winner": {
+        "itemName": "Chili Con Carne Fertiggericht",
+        "normalized": "chili-con-carne-fertiggericht",
+        "category": "ready-meals",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Fertiggericht Chili Con Carne",
+          "normalized": "fertiggericht-chili-con-carne",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "ready-meals::fertiggericht|gemusecurry",
+      "decision": "MERGE",
+      "reason": "SPECIFIC_DISH_BEFORE_GENERIC_CLASS_PREFERRED",
+      "winner": {
+        "itemName": "Gemüsecurry Fertiggericht",
+        "normalized": "gemuesecurry-fertiggericht",
+        "category": "ready-meals",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Fertiggericht Gemüsecurry",
+          "normalized": "fertiggericht-gemuesecurry",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "WORD_ORDER_VARIANT",
+      "fingerprint": "ready-meals::fertiggericht|gulasch",
+      "decision": "MERGE",
+      "reason": "SPECIFIC_DISH_BEFORE_GENERIC_CLASS_PREFERRED",
+      "winner": {
+        "itemName": "Gulasch Fertiggericht",
+        "normalized": "gulasch-fertiggericht",
+        "category": "ready-meals",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Fertiggericht Gulasch",
+          "normalized": "fertiggericht-gulasch",
+          "category": "ready-meals",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "IDENTICAL_NORMALIZED_NAME",
+      "fingerprint": "vollkorncracker",
+      "decision": "MERGE",
+      "reason": "STANDARD_ORTHOGRAPHY_PREFERRED",
+      "winner": {
+        "itemName": "Vollkorncracker",
+        "normalized": "vollkorncracker",
+        "category": "snacks",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Vollkorncräcker",
+          "normalized": "vollkorncraecker",
+          "category": "snacks",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    },
+    {
+      "duplicateReason": "PUNCTUATION_VARIANT",
+      "fingerprint": "weisskohl",
+      "decision": "MERGE",
+      "reason": "STANDARD_ORTHOGRAPHY_PREFERRED",
+      "winner": {
+        "itemName": "Weißkohl",
+        "normalized": "weisskohl",
+        "category": "vegetables",
+        "sourceLayer": "BASELINE"
+      },
+      "merged": [
+        {
+          "itemName": "Weis(S)Kohl",
+          "normalized": "weis-s-kohl",
+          "category": "vegetables",
+          "sourceLayer": "BASELINE"
+        }
+      ]
+    }
+  ]
+}

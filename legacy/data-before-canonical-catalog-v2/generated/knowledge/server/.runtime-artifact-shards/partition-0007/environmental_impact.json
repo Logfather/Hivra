@@ -1,0 +1,82 @@
+{
+  "entries": {
+    "agneau, gigot, grillé/poêlé": {
+      "environmentScoreMptPerKg": 6.35,
+      "climateKgCo2EqPerKg": 52.4,
+      "landUsePtPerKg": 5580.0,
+      "waterDeprivationM3PerKg": 8.77
+    },
+    "biscuit sec pour petit déjeuner, au chocolat": {
+      "environmentScoreMptPerKg": 0.502,
+      "climateKgCo2EqPerKg": 6.67,
+      "landUsePtPerKg": 274.0,
+      "waterDeprivationM3PerKg": 1.13
+    },
+    "boeuf, gîte à la noix, cru": {
+      "environmentScoreMptPerKg": 2.7,
+      "climateKgCo2EqPerKg": 28.9,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.39
+    },
+    "cassoulet au porc, appertisé": {
+      "environmentScoreMptPerKg": 0.262,
+      "climateKgCo2EqPerKg": 2.13,
+      "landUsePtPerKg": 98.4,
+      "waterDeprivationM3PerKg": 1.15
+    },
+    "jus d'orange, à base de concentré": {
+      "environmentScoreMptPerKg": 0.125,
+      "climateKgCo2EqPerKg": 0.906,
+      "landUsePtPerKg": 28.3,
+      "waterDeprivationM3PerKg": 0.68
+    },
+    "langue, porc, crue": {
+      "environmentScoreMptPerKg": 0.338,
+      "climateKgCo2EqPerKg": 2.79,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 0.898
+    },
+    "maquereau espagnol ou maquereau blanc ou billard, cru": {
+      "environmentScoreMptPerKg": 0.358,
+      "climateKgCo2EqPerKg": 2.62,
+      "landUsePtPerKg": 7.15,
+      "waterDeprivationM3PerKg": 0.211
+    },
+    "maquereau, fumé": {
+      "environmentScoreMptPerKg": 0.315,
+      "climateKgCo2EqPerKg": 2.61,
+      "landUsePtPerKg": 10.2,
+      "waterDeprivationM3PerKg": 0.291
+    },
+    "oreille de porc demi sel": {
+      "environmentScoreMptPerKg": 0.46,
+      "climateKgCo2EqPerKg": 3.61,
+      "landUsePtPerKg": 170.0,
+      "waterDeprivationM3PerKg": 1.17
+    },
+    "sandwich pain de mie complet, jambon, fromage": {
+      "environmentScoreMptPerKg": 0.583,
+      "climateKgCo2EqPerKg": 4.8,
+      "landUsePtPerKg": 237.0,
+      "waterDeprivationM3PerKg": 1.14
+    },
+    "sauce aux champignons, préemballée": {
+      "environmentScoreMptPerKg": 0.582,
+      "climateKgCo2EqPerKg": 4.13,
+      "landUsePtPerKg": 66.8,
+      "waterDeprivationM3PerKg": 27.3
+    },
+    "tomate, double concentré, appertisé": {
+      "environmentScoreMptPerKg": 0.471,
+      "climateKgCo2EqPerKg": 3.81,
+      "landUsePtPerKg": 42.4,
+      "waterDeprivationM3PerKg": 10.5
+    },
+    "éperlan, cru": {
+      "environmentScoreMptPerKg": 0.308,
+      "climateKgCo2EqPerKg": 2.28,
+      "landUsePtPerKg": 6.79,
+      "waterDeprivationM3PerKg": 0.213
+    }
+  }
+}

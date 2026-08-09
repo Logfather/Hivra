@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "boeuf, rumsteck, cru": {
+      "environmentScoreMptPerKg": 2.7,
+      "climateKgCo2EqPerKg": 28.9,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.39
+    },
+    "courge melonnette, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.0665,
+      "climateKgCo2EqPerKg": 0.639,
+      "landUsePtPerKg": 17.4,
+      "waterDeprivationM3PerKg": 0.63
+    },
+    "farine de pois chiche": {
+      "environmentScoreMptPerKg": 0.133,
+      "climateKgCo2EqPerKg": 0.974,
+      "landUsePtPerKg": 179.0,
+      "waterDeprivationM3PerKg": 0.229
+    },
+    "lait 1er âge, poudre soluble (préparation pour nourrissons)": {
+      "environmentScoreMptPerKg": 0.78,
+      "climateKgCo2EqPerKg": 8.05,
+      "landUsePtPerKg": 406.0,
+      "waterDeprivationM3PerKg": 1.98
+    },
+    "laurier, feuille": {
+      "environmentScoreMptPerKg": 0.205,
+      "climateKgCo2EqPerKg": 1.87,
+      "landUsePtPerKg": 36.8,
+      "waterDeprivationM3PerKg": 4.39
+    },
+    "nectar d'orange": {
+      "environmentScoreMptPerKg": 0.0975,
+      "climateKgCo2EqPerKg": 0.693,
+      "landUsePtPerKg": 17.7,
+      "waterDeprivationM3PerKg": 0.496
+    },
+    "porc au caramel": {
+      "environmentScoreMptPerKg": 0.89,
+      "climateKgCo2EqPerKg": 7.01,
+      "landUsePtPerKg": 380.0,
+      "waterDeprivationM3PerKg": 2.65
+    },
+    "pâtes fraîches, aux œufs, cuites, non salées": {
+      "environmentScoreMptPerKg": 0.224,
+      "climateKgCo2EqPerKg": 1.51,
+      "landUsePtPerKg": 109.0,
+      "waterDeprivationM3PerKg": 0.565
+    },
+    "risotto, aux fromages": {
+      "environmentScoreMptPerKg": 0.407,
+      "climateKgCo2EqPerKg": 3.27,
+      "landUsePtPerKg": 78.9,
+      "waterDeprivationM3PerKg": 3.63
+    },
+    "saucisson sec pur porc, qualité supérieure": {
+      "environmentScoreMptPerKg": 0.934,
+      "climateKgCo2EqPerKg": 7.33,
+      "landUsePtPerKg": 383.0,
+      "waterDeprivationM3PerKg": 2.34
+    },
+    "valençay (fromage de chèvre)": {
+      "environmentScoreMptPerKg": 1.04,
+      "climateKgCo2EqPerKg": 7.44,
+      "landUsePtPerKg": 486.0,
+      "waterDeprivationM3PerKg": 2.61
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "entries": {
+    "chia, graine, séchée": {
+      "environmentScoreMptPerKg": 0.834,
+      "climateKgCo2EqPerKg": 3.49,
+      "landUsePtPerKg": 572.0,
+      "waterDeprivationM3PerKg": 8.25
+    },
+    "croissant au jambon": {
+      "environmentScoreMptPerKg": 0.525,
+      "climateKgCo2EqPerKg": 4.56,
+      "landUsePtPerKg": 196.0,
+      "waterDeprivationM3PerKg": 1.18
+    },
+    "céréales pour petit déjeuner chocolatées, non fourrées, enrichies en vitamines et minéraux": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "gaufre moelleuse (type bruxelloise ou liégeoise), nature ou sucrée, préemballée": {
+      "environmentScoreMptPerKg": 0.276,
+      "climateKgCo2EqPerKg": 2.45,
+      "landUsePtPerKg": 131.0,
+      "waterDeprivationM3PerKg": 0.865
+    },
+    "huître plate, crue": {
+      "environmentScoreMptPerKg": 0.477,
+      "climateKgCo2EqPerKg": 5.33,
+      "landUsePtPerKg": 243.0,
+      "waterDeprivationM3PerKg": 0.965
+    },
+    "lait en poudre, demi écrémé": {
+      "environmentScoreMptPerKg": 0.993,
+      "climateKgCo2EqPerKg": 10.6,
+      "landUsePtPerKg": 509.0,
+      "waterDeprivationM3PerKg": 1.12
+    },
+    "légumes pour couscous, cuits": {
+      "environmentScoreMptPerKg": 0.129,
+      "climateKgCo2EqPerKg": 1.05,
+      "landUsePtPerKg": 26.8,
+      "waterDeprivationM3PerKg": 0.584
+    },
+    "nuggets soja et blé (convient aux véganes ou végétaliens), préemballé": {
+      "environmentScoreMptPerKg": 0.252,
+      "climateKgCo2EqPerKg": 1.83,
+      "landUsePtPerKg": 136.0,
+      "waterDeprivationM3PerKg": 0.52
+    },
+    "plat légumes, avec féculent et viande/poisson, dès 12 mois": {
+      "environmentScoreMptPerKg": 0.33,
+      "climateKgCo2EqPerKg": 2.25,
+      "landUsePtPerKg": 50.5,
+      "waterDeprivationM3PerKg": 1.28
+    },
+    "purée de fruits, tout type de fruits, type \"compote sans sucres ajoutés\"": {
+      "environmentScoreMptPerKg": 0.131,
+      "climateKgCo2EqPerKg": 1.11,
+      "landUsePtPerKg": 24.6,
+      "waterDeprivationM3PerKg": 1.18
+    },
+    "pâté de foie de porc": {
+      "environmentScoreMptPerKg": 0.317,
+      "climateKgCo2EqPerKg": 2.81,
+      "landUsePtPerKg": 95.1,
+      "waterDeprivationM3PerKg": 0.858
+    },
+    "rocher chocolat fourré praliné": {
+      "environmentScoreMptPerKg": 0.854,
+      "climateKgCo2EqPerKg": 10.5,
+      "landUsePtPerKg": 463.0,
+      "waterDeprivationM3PerKg": 6.07
+    },
+    "salade de chou ou coleslaw, avec sauce, préemballée": {
+      "environmentScoreMptPerKg": 0.137,
+      "climateKgCo2EqPerKg": 1.22,
+      "landUsePtPerKg": 59.4,
+      "waterDeprivationM3PerKg": 1.08
+    },
+    "veau, épaule, braisée ou bouillie": {
+      "environmentScoreMptPerKg": 2.19,
+      "climateKgCo2EqPerKg": 23.7,
+      "landUsePtPerKg": 1070.0,
+      "waterDeprivationM3PerKg": 3.22
+    },
+    "vin rouge": {
+      "environmentScoreMptPerKg": 0.156,
+      "climateKgCo2EqPerKg": 1.27,
+      "landUsePtPerKg": 99.4,
+      "waterDeprivationM3PerKg": 0.231
+    }
+  }
+}

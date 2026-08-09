@@ -1,0 +1,37 @@
+{
+  "entries": {
+    "carrelet ou plie, pané, frit": {
+      "score": 0.616
+    },
+    "fromage à pâte molle à croûte lavée, au lait pasteurisé (type vieux pané)": {
+      "score": 0.709
+    },
+    "galette ou pavé au blé (seitan) et légumes, préemballé": {
+      "score": 1.26
+    },
+    "huître, sans précision, crue": {
+      "score": 0.965
+    },
+    "matière grasse végétale (type margarine) à 50 63% mg, allégée, doux, riche en oméga 3": {
+      "score": 0.93
+    },
+    "pain, baguette ou boule, aux céréales et graines, artisanal": {
+      "score": 0.527
+    },
+    "porc, travers, braisé": {
+      "score": 2.81
+    },
+    "pâté de foie de volaille": {
+      "score": 0.767
+    },
+    "sauce béchamel, préemballée": {
+      "score": 0.425
+    },
+    "sauce tartare, préemballée": {
+      "score": 0.392
+    },
+    "épinard, surgelé, cru": {
+      "score": 0.327
+    }
+  }
+}

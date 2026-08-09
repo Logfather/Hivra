@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "mode": "PRODUCTIVE",
+  "before": {
+    "mappingCount": 520,
+    "catalogItemCount": 2709,
+    "exactMatchCount": 1500,
+    "mappedMatchCount": 517,
+    "runtimeEntryCount": 2017,
+    "coveredCatalogItemCount": 2017,
+    "missingCatalogItemCount": 692,
+    "coverage": 0.7445551864156515
+  },
+  "matching": {
+    "requestCount": 1209,
+    "previouslyCompletedCount": 1209,
+    "processedCount": 0,
+    "localModelDecisionCount": 0,
+    "chatGptDecisionCount": 0,
+    "gptFallbackRequiredCount": 0,
+    "matchCount": 507,
+    "noMatchCount": 706,
+    "errorCount": 0
+  },
+  "persistence": {
+    "existingMappingCount": 520,
+    "addedMappingCount": 1,
+    "removedMappingCount": 9,
+    "unchangedMappingCount": 511,
+    "conflictCount": 0,
+    "finalMappingCount": 512
+  },
+  "after": {
+    "mappingCount": 512,
+    "catalogItemCount": 2709,
+    "exactMatchCount": 1500,
+    "mappedMatchCount": 512,
+    "runtimeEntryCount": 2012,
+    "coveredCatalogItemCount": 2012,
+    "missingCatalogItemCount": 697,
+    "coverage": 0.7427094868955334
+  },
+  "delta": {
+    "mappingCount": -8,
+    "coveredCatalogItemCount": -5,
+    "missingCatalogItemCount": 5,
+    "coverage": -0.0018456995201181492
+  },
+  "files": {
+    "catalogFile": "../data/raw/catalog/supermarket_dataset.translated.json",
+    "nutritionArtifactFile": "../data/generated/knowledge/runtime/nutrition.json",
+    "requestFile": "../data/generated/knowledge/match-requests/nutrition.match-requests.json",
+    "decisionFile": "../data/generated/knowledge/match-decisions/nutrition.match-decisions.json",
+    "validationFile": "../data/generated/knowledge/reports/nutrition.mapping-validation-report.json",
+    "mappingFile": "../data/generated/knowledge/mappings/catalog-server.mappings.json",
+    "resultFile": "../data/generated/knowledge/reports/nutrition.rebuild-result.json"
+  }
+}

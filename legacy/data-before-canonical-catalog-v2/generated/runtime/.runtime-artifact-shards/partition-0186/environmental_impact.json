@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "boisson infantile céréales lactées pour le petit déjeuner dès 4/6 mois": {
+      "environmentScoreMptPerKg": 0.0934,
+      "climateKgCo2EqPerKg": 0.863,
+      "landUsePtPerKg": 40.6,
+      "waterDeprivationM3PerKg": 0.174
+    },
+    "couscous royal (avec plusieurs viandes)": {
+      "environmentScoreMptPerKg": 0.506,
+      "climateKgCo2EqPerKg": 3.85,
+      "landUsePtPerKg": 252.0,
+      "waterDeprivationM3PerKg": 1.35
+    },
+    "crevette, cuite": {
+      "environmentScoreMptPerKg": 4.23,
+      "climateKgCo2EqPerKg": 25.7,
+      "landUsePtPerKg": 316.0,
+      "waterDeprivationM3PerKg": 218.0
+    },
+    "fromage fondu double crème, environ 31% mg": {
+      "environmentScoreMptPerKg": 0.545,
+      "climateKgCo2EqPerKg": 5.68,
+      "landUsePtPerKg": 254.0,
+      "waterDeprivationM3PerKg": 0.707
+    },
+    "jambon cuit, choix": {
+      "environmentScoreMptPerKg": 0.972,
+      "climateKgCo2EqPerKg": 7.65,
+      "landUsePtPerKg": 374.0,
+      "waterDeprivationM3PerKg": 2.48
+    },
+    "parmesan": {
+      "environmentScoreMptPerKg": 0.599,
+      "climateKgCo2EqPerKg": 6.27,
+      "landUsePtPerKg": 287.0,
+      "waterDeprivationM3PerKg": 0.803
+    },
+    "sprat, cru": {
+      "environmentScoreMptPerKg": 0.308,
+      "climateKgCo2EqPerKg": 2.28,
+      "landUsePtPerKg": 6.79,
+      "waterDeprivationM3PerKg": 0.213
+    },
+    "églefin, cuit à la vapeur": {
+      "environmentScoreMptPerKg": 2.41,
+      "climateKgCo2EqPerKg": 14.8,
+      "landUsePtPerKg": 24.2,
+      "waterDeprivationM3PerKg": 0.709
+    }
+  }
+}

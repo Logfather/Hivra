@@ -1,0 +1,3456 @@
+{
+  "version": 2,
+  "sourceDirectory": "../data/generated/openfoodfacts",
+  "sourceFileCount": 1,
+  "scannedProductCount": 4591866,
+  "targetCount": 3,
+  "entries": [
+    {
+      "catalogKey": "chervil",
+      "aliases": [
+        "chervil",
+        "kerbel"
+      ],
+      "matchingOffProductCount": 255,
+      "directProductMatchCount": 25,
+      "ingredientOnlyMatchCount": 230,
+      "directProductsWithAnyNutritionCount": 0,
+      "directProductsWithCompleteNutritionCount": 0,
+      "productsWithAnyNutritionCount": 25,
+      "productsWithCompleteNutritionCount": 24,
+      "productsWithoutNutritionCount": 230,
+      "productsWithIncompleteCoreNutritionCount": 1,
+      "estimatedExtractorEligibleCount": 0,
+      "estimatedExtractorRejectedCount": 25,
+      "countsByAvailabilityReason": {
+        "COMPLETE_CORE_NUTRITION": 24,
+        "INCOMPLETE_CORE_NUTRITION": 1,
+        "NO_NUTRITION_VALUES": 230
+      },
+      "samples": [
+        {
+          "productIdentifier": "code:00099080",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Mushroom & Herb Risotto",
+          "normalizedName": "Mushroom & Herb Risotto",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "mushroom herb risotto"
+          ],
+          "ingredientIdentityValues": [
+            "superfino arborio rice onions mushroom salt corn starch autolyzed yeast soy sauce soybeans wheat salt dextrose chablis wine whey milk protein sugar chicken fat chervil soybean oil parsley natural flavor nonhydrolyzed fermented yeast turmeric celery extract"
+          ],
+          "identityValues": [
+            "mushroom herb risotto",
+            "superfino arborio rice onions mushroom salt corn starch autolyzed yeast soy sauce soybeans wheat salt dextrose chablis wine whey milk protein sugar chicken fat chervil soybean oil parsley natural flavor nonhydrolyzed fermented yeast turmeric celery extract"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "748.0",
+                "numericValue": 748.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "187.0",
+                "numericValue": 187.0
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "5.67",
+                "numericValue": 5.67
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "5.71",
+                "numericValue": 5.71
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "17.0",
+                "numericValue": 17.0
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "3.97",
+                "numericValue": 3.97
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:0016291441279",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Herbs From Provence With Lavender",
+          "normalizedName": "Herbs From Provence With Lavender",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "herbs from provence with lavender"
+          ],
+          "ingredientIdentityValues": [
+            "contains chervil basil rosemary tarragon garlic lavender marjoram savory thyme and parsley"
+          ],
+          "identityValues": [
+            "contains chervil basil rosemary tarragon garlic lavender marjoram savory thyme and parsley",
+            "herbs from provence with lavender"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:0052100019444",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Mccormick gourmet, herbes de provence roasted chicken & potatoes recipe & seasoning mix",
+          "normalizedName": "Mccormick gourmet, herbes de provence roasted chicken & potatoes recipe & seasoning mix",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "mccormick gourmet herbes de provence roasted chicken potatoes recipe seasoning mix"
+          ],
+          "ingredientIdentityValues": [
+            "onion sea salt herbes de provence rosemary chervil marjoram thyme savory and lavender garlic spices corn starch unrefined sugar sunflower oil and citric acid"
+          ],
+          "identityValues": [
+            "mccormick gourmet herbes de provence roasted chicken potatoes recipe seasoning mix",
+            "onion sea salt herbes de provence rosemary chervil marjoram thyme savory and lavender garlic spices corn starch unrefined sugar sunflower oil and citric acid"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "286.0",
+                "numericValue": 286.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "57.14",
+                "numericValue": 57.14
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "25.715",
+                "numericValue": 25.715
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:0089836189011",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Salad Sprinkle Seasoning",
+          "normalizedName": "Salad Sprinkle Seasoning",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "salad sprinkle seasoning"
+          ],
+          "ingredientIdentityValues": [
+            "sesame seed bell peppers black pepper lemon peel green onion celery flakes chervil"
+          ],
+          "identityValues": [
+            "salad sprinkle seasoning",
+            "sesame seed bell peppers black pepper lemon peel green onion celery flakes chervil"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:0651219101615",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Fine Herbs Chevre Goat Cheese",
+          "normalizedName": "Fine Herbs Chevre Goat Cheese",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "fine herbs chevre goat cheese"
+          ],
+          "ingredientIdentityValues": [
+            "pasteurized grade a goat milk chervil parsley french tarragon chives cultures kosher enzymes salt"
+          ],
+          "identityValues": [
+            "fine herbs chevre goat cheese",
+            "pasteurized grade a goat milk chervil parsley french tarragon chives cultures kosher enzymes salt"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "214.0",
+                "numericValue": 214.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "17.86",
+                "numericValue": 17.86
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "8.93",
+                "numericValue": 8.93
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "3.57",
+                "numericValue": 3.57
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "14.29",
+                "numericValue": 14.29
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "0.58",
+                "numericValue": 0.58
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:0655516151021",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Split Pea & Garden Herbs Soup Mix",
+          "normalizedName": "Split Pea & Garden Herbs Soup Mix",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "split pea garden herbs soup mix"
+          ],
+          "ingredientIdentityValues": [
+            "green split peas carrots onion celery red green bell peppers tomato garlic parsley chervil tarragon chives bay leaf"
+          ],
+          "identityValues": [
+            "green split peas carrots onion celery red green bell peppers tomato garlic parsley chervil tarragon chives bay leaf",
+            "split pea garden herbs soup mix"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "352.0",
+                "numericValue": 352.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "0.93",
+                "numericValue": 0.93
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "62.96",
+                "numericValue": 62.96
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "9.26",
+                "numericValue": 9.26
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "25.9",
+                "numericValue": 25.9
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "24.07",
+                "numericValue": 24.07
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "0.0925",
+                "numericValue": 0.0925
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:0655516151663",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Country Corn Chowder",
+          "normalizedName": "Country Corn Chowder",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "country corn chowder"
+          ],
+          "ingredientIdentityValues": [
+            "freeze dried corn potato cubes potato flakes red green bell peppers onions celery carrots chives tarragon parsley chervil bay leaf"
+          ],
+          "identityValues": [
+            "country corn chowder",
+            "freeze dried corn potato cubes potato flakes red green bell peppers onions celery carrots chives tarragon parsley chervil bay leaf"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "367.0",
+                "numericValue": 367.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "1.67",
+                "numericValue": 1.67
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "80.0",
+                "numericValue": 80.0
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "13.33",
+                "numericValue": 13.33
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "10.0",
+                "numericValue": 10.0
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "10.0",
+                "numericValue": 10.0
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "0.2925",
+                "numericValue": 0.2925
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:0687927809048",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Bloody Mary Mix",
+          "normalizedName": "Bloody Mary Mix",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "bloody mary mix"
+          ],
+          "ingredientIdentityValues": [
+            "tomato juice water tomato paste clam juice orange juice water orange juice concentrate worcestershire sauce water distilled vinegar dextrose salt sugar garlic spices citric acid natural spice extracts lemon juice horseradish horseradish water vinegar salt blue agave nectar mango pepper sauce fresh mangos and carrots sugar cane vinegar lemon juice habanero peppers tomato paste onions vinegar salt salt apple cider vinegar distilled vinegar hot pepper sauce peppers vinegar salt garlic powder onion powder celery powder chervil tarragon parsley chives"
+          ],
+          "identityValues": [
+            "bloody mary mix",
+            "tomato juice water tomato paste clam juice orange juice water orange juice concentrate worcestershire sauce water distilled vinegar dextrose salt sugar garlic spices citric acid natural spice extracts lemon juice horseradish horseradish water vinegar salt blue agave nectar mango pepper sauce fresh mangos and carrots sugar cane vinegar lemon juice habanero peppers tomato paste onions vinegar salt salt apple cider vinegar distilled vinegar hot pepper sauce peppers vinegar salt garlic powder onion powder celery powder chervil tarragon parsley chives"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "29.0",
+                "numericValue": 29.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "6.67",
+                "numericValue": 6.67
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "5.0",
+                "numericValue": 5.0
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "0.8",
+                "numericValue": 0.8
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "0.83",
+                "numericValue": 0.83
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "0.8325",
+                "numericValue": 0.8325
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:0857494005130",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Brightfresh, Micro Kale Mix, Micro Greens",
+          "normalizedName": "Brightfresh, Micro Kale Mix, Micro Greens",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "brightfresh micro kale mix micro greens"
+          ],
+          "ingredientIdentityValues": [
+            "may contains basil chervil chives dill fennel mint oregano thyme"
+          ],
+          "identityValues": [
+            "brightfresh micro kale mix micro greens",
+            "may contains basil chervil chives dill fennel mint oregano thyme"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "29.0",
+                "numericValue": 29.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:2000091023146",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Motuo",
+          "normalizedName": "Motuo",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "motuo"
+          ],
+          "ingredientIdentityValues": [
+            "chou blanc 2296 carotte bio 14 riz blanc riz rouqe 12 salade 12 poulet vita roti poulet sel dextrose epices aromes chou chinois 606 coco noix de coco conservateurs dioxyde de dlsulflte de sodium pomme 396 pomme antioxydant acide citrique huile de sesame bio cerfeuil sel curry madras moutarde curcuma poivrez des inqredients sont issus de itaqriculture bioloqique certifie par certisys be bio 01 traces dtautres allergenes possibles inqredients white cabbaqe 2296 orqanic carrot 1406 white oq rice red rice 120 6 lettuce 1296 roasted vita chicken chicken belqium t salt dextrose spices flavouring napa cabbage 696 coconut 306 coconut conservateurs sulphur dloxide sodium metabisulphite apple 306 apple antioxidant citric acid orqanlc sesame oil chervil sait madras curry mustard turmenic pepper 15 506 of the ingredients are sourced from organic farmlng certified by certysls bf bio 01 traces of other possible allergens valeurs numuoneltes pour 100g numuonat values per 100g energie cnergy kilkcal 419 ioo graisse fat 4 30g dont sabltes includinq subred fat sugar 2 90g fibres"
+          ],
+          "identityValues": [
+            "chou blanc 2296 carotte bio 14 riz blanc riz rouqe 12 salade 12 poulet vita roti poulet sel dextrose epices aromes chou chinois 606 coco noix de coco conservateurs dioxyde de dlsulflte de sodium pomme 396 pomme antioxydant acide citrique huile de sesame bio cerfeuil sel curry madras moutarde curcuma poivrez des inqredients sont issus de itaqriculture bioloqique certifie par certisys be bio 01 traces dtautres allergenes possibles inqredients white cabbaqe 2296 orqanic carrot 1406 white oq rice red rice 120 6 lettuce 1296 roasted vita chicken chicken belqium t salt dextrose spices flavouring napa cabbage 696 coconut 306 coconut conservateurs sulphur dloxide sodium metabisulphite apple 306 apple antioxidant citric acid orqanlc sesame oil chervil sait madras curry mustard turmenic pepper 15 506 of the ingredients are sourced from organic farmlng certified by certysls bf bio 01 traces of other possible allergens valeurs numuoneltes pour 100g numuonat values per 100g energie cnergy kilkcal 419 ioo graisse fat 4 30g dont sabltes includinq subred fat sugar 2 90g fibres",
+            "motuo"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:22113610",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Lasagne Bolognese",
+          "normalizedName": "Lasagne Bolognese",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "kerbel"
+          ],
+          "directIdentityValues": [
+            "lasagne bolognese"
+          ],
+          "ingredientIdentityValues": [
+            "tomatenpuree hartweizengrieß wasser gegrillte paprika 7 5 rapsol vollmilch gegrillte auberginen 3 8 gegrillte zucchini 3 8 eier starke karotten sellerie zwiebeln krauter basilikum petersilie oregano thymian rosmarin majoran bohnenkraut kerbel liebstockel edamer milch 1 9 emmentaler milch 1 9 sahne milch weizenmehl knoblauch hartkase milch spinat speisesalz pecorino hartkase aus schafsmilch zucker weizenstarke gewurze weizenprotein"
+          ],
+          "identityValues": [
+            "lasagne bolognese",
+            "tomatenpuree hartweizengrieß wasser gegrillte paprika 7 5 rapsol vollmilch gegrillte auberginen 3 8 gegrillte zucchini 3 8 eier starke karotten sellerie zwiebeln krauter basilikum petersilie oregano thymian rosmarin majoran bohnenkraut kerbel liebstockel edamer milch 1 9 emmentaler milch 1 9 sahne milch weizenmehl knoblauch hartkase milch spinat speisesalz pecorino hartkase aus schafsmilch zucker weizenstarke gewurze weizenprotein"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:22173171",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Delikatess Remoulade",
+          "normalizedName": "Delikatess Remoulade",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "kerbel"
+          ],
+          "directIdentityValues": [
+            "delikatess remoulade"
+          ],
+          "ingredientIdentityValues": [
+            "sonnenblumenol 80 eigelb 6 8 branntweinessig krauter kerbel petersilie zucker speisesalz senf wasser senfsaaten branntweinessig speisesalz gewurze gewurze enthalten senf"
+          ],
+          "identityValues": [
+            "delikatess remoulade",
+            "sonnenblumenol 80 eigelb 6 8 branntweinessig krauter kerbel petersilie zucker speisesalz senf wasser senfsaaten branntweinessig speisesalz gewurze gewurze enthalten senf"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3011360084781",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Knorr ® Bouillon Poule Dégraissé 12 tablettes de 10 g = 120g (24 portions)",
+          "normalizedName": "Knorr ® Bouillon Poule Dégraissé 12 tablettes de 10 g = 120g (24 portions)",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "knorr bouillon poule degraisse 12 tablettes de 10 g 120g 24 portions"
+          ],
+          "ingredientIdentityValues": [
+            "salt flavor enhancers glutamate sodium inosinate and guanylate potato starch palm fat flavors including egg yeast extract chicken meat 2 4 spices and herbs turmeric tarragon parsley 0 1 chervil 0 1 chives 0 1 nutmeg pepper carrot 1 caramel maltodextrin antioxidant rosemary extracts may contain celery milk gluten mustard",
+            "sel exhausteurs de gout glutamate inosinate et guanylate de sodium amidon de pomme de terre graisse de palme aromes dont œuf extrait de levure viande de poule 2 4 epices et aromates curcuma estragon persil 0 1 cerfeuil 0 1 ciboulette 0 1 noix de muscade poivre carotte 1 caramel maltodextrine antioxydant extraits de romarin peut contenir celeri lait gluten moutarde"
+          ],
+          "identityValues": [
+            "knorr bouillon poule degraisse 12 tablettes de 10 g 120g 24 portions",
+            "salt flavor enhancers glutamate sodium inosinate and guanylate potato starch palm fat flavors including egg yeast extract chicken meat 2 4 spices and herbs turmeric tarragon parsley 0 1 chervil 0 1 chives 0 1 nutmeg pepper carrot 1 caramel maltodextrin antioxidant rosemary extracts may contain celery milk gluten mustard",
+            "sel exhausteurs de gout glutamate inosinate et guanylate de sodium amidon de pomme de terre graisse de palme aromes dont œuf extrait de levure viande de poule 2 4 epices et aromates curcuma estragon persil 0 1 cerfeuil 0 1 ciboulette 0 1 noix de muscade poivre carotte 1 caramel maltodextrine antioxydant extraits de romarin peut contenir celeri lait gluten moutarde"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3036811363161",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Mouliné de 10 légumes",
+          "normalizedName": "Mouliné de 10 légumes",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "mouline de 10 legumes"
+          ],
+          "ingredientIdentityValues": [
+            "vegetables 55 potato carrot onion celeriac cauliflower leek concentrated tomato juice parsnips zucchini chervil water salt rapeseed oil cooking butter aromas"
+          ],
+          "identityValues": [
+            "mouline de 10 legumes",
+            "vegetables 55 potato carrot onion celeriac cauliflower leek concentrated tomato juice parsnips zucchini chervil water salt rapeseed oil cooking butter aromas"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3036811366346",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "PurSoup' Mouliné de Légumes d'Hiver",
+          "normalizedName": "PurSoup' Mouliné de Légumes d'Hiver",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "pursoup mouline de legumes d hiver"
+          ],
+          "ingredientIdentityValues": [
+            "eau pomme de terre 12 carotte poireau 8 celeri rave navet chou vert lentilles cuites 3 3 creme fraiche haricot vert petits pois sel amidon transforme de mais aromes contient lait cerfeuil peut contenir des traces de ble gluten et oeuf",
+            "water potato 12 carrot leek 8 celeriac turnip green cabbage lentils cooked 3 3 creme fraiche green bean peas salt processed corn starch aromas contains milk chervil may contain traces of wheat gluten and egg"
+          ],
+          "identityValues": [
+            "eau pomme de terre 12 carotte poireau 8 celeri rave navet chou vert lentilles cuites 3 3 creme fraiche haricot vert petits pois sel amidon transforme de mais aromes contient lait cerfeuil peut contenir des traces de ble gluten et oeuf",
+            "pursoup mouline de legumes d hiver",
+            "water potato 12 carrot leek 8 celeriac turnip green cabbage lentils cooked 3 3 creme fraiche green bean peas salt processed corn starch aromas contains milk chervil may contain traces of wheat gluten and egg"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3036811366476",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Mouliné de 10 légumes",
+          "normalizedName": "Mouliné de 10 légumes",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "mouline de 10 legumes"
+          ],
+          "ingredientIdentityValues": [
+            "legumes 55 pomme de terre carotte oignon celeri rave chou fleur poireau jus de tomates a base de concentre panais courgette cerfeuil eau sel huile de colza beurre de cuisine aromes peut contenir des traces de ble et œuf",
+            "vegetables 55 potato carrot onion celeriac cauliflower leek concentrate based tomato juice parsnips zucchini chervil water salt rapeseed oil butter aromas may contain traces of wheat and egg"
+          ],
+          "identityValues": [
+            "legumes 55 pomme de terre carotte oignon celeri rave chou fleur poireau jus de tomates a base de concentre panais courgette cerfeuil eau sel huile de colza beurre de cuisine aromes peut contenir des traces de ble et œuf",
+            "mouline de 10 legumes",
+            "vegetables 55 potato carrot onion celeriac cauliflower leek concentrate based tomato juice parsnips zucchini chervil water salt rapeseed oil butter aromas may contain traces of wheat and egg"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3250390109389",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Sauce béarnaise 235g",
+          "normalizedName": "Sauce béarnaise 235g",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "sauce bearnaise 235g"
+          ],
+          "ingredientIdentityValues": [
+            "huile de colza eau jaune d oeuf vinaigre d alcool sucre amidon modifie de mais sel jus concentre de citron echalote deshydratee 0 5 estragon deshydrate 0 4 cerfeuil deshydrate 0 075 piment fort colorant beta carotene",
+            "rapeseed oil water egg yolk alcohol vinegar sugar modified corn starch salt concentrated lemon juice dehydrated shallot 0 5 dehydrated tarragon 0 4 dehydrated chervil 0 075 hot pepper color beta carotene"
+          ],
+          "identityValues": [
+            "huile de colza eau jaune d oeuf vinaigre d alcool sucre amidon modifie de mais sel jus concentre de citron echalote deshydratee 0 5 estragon deshydrate 0 4 cerfeuil deshydrate 0 075 piment fort colorant beta carotene",
+            "rapeseed oil water egg yolk alcohol vinegar sugar modified corn starch salt concentrated lemon juice dehydrated shallot 0 5 dehydrated tarragon 0 4 dehydrated chervil 0 075 hot pepper color beta carotene",
+            "sauce bearnaise 235g"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3270190117773",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Vinaigrette saveur fines herbes",
+          "normalizedName": "Vinaigrette saveur fines herbes",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "vinaigrette fines herbes",
+            "vinaigrette saveur fines herbes"
+          ],
+          "ingredientIdentityValues": [
+            "eau huile de colza 25 vinaigre de vin blanc vinaigre d alcool moutarde de dijon eau graines de moutarde vinaigre d alcool sel acidifiant acide citrique plantes aromatiques rehydratees 2 5 estragon cerfeuil persil sel amidon modifie de pomme de terre sucre epaississant gomme xanthane jus de citron concentre arome naturel contient celeri colorant luteine poivre blanc moulu arome naturel ail",
+            "water rapeseed oil 25 white wine vinegar spirit vinegar dijon mustard water mustard seeds spirit vinegar salt acidifier citric acid rehydrated herbs 2 5 tarragon chervil parsley salt modified potato starch sugar thickener xanthan gum concentrated lemon juice natural flavouring contains celery colour lutein ground white pepper natural garlic flavouring"
+          ],
+          "identityValues": [
+            "eau huile de colza 25 vinaigre de vin blanc vinaigre d alcool moutarde de dijon eau graines de moutarde vinaigre d alcool sel acidifiant acide citrique plantes aromatiques rehydratees 2 5 estragon cerfeuil persil sel amidon modifie de pomme de terre sucre epaississant gomme xanthane jus de citron concentre arome naturel contient celeri colorant luteine poivre blanc moulu arome naturel ail",
+            "vinaigrette fines herbes",
+            "vinaigrette saveur fines herbes",
+            "water rapeseed oil 25 white wine vinegar spirit vinegar dijon mustard water mustard seeds spirit vinegar salt acidifier citric acid rehydrated herbs 2 5 tarragon chervil parsley salt modified potato starch sugar thickener xanthan gum concentrated lemon juice natural flavouring contains celery colour lutein ground white pepper natural garlic flavouring"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3274930000387",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Soupe - Mouliné de légumes verts et quinoa",
+          "normalizedName": "Soupe - Mouliné de légumes verts et quinoa",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "soupe mouline de legumes verts et quinoa"
+          ],
+          "ingredientIdentityValues": [
+            "eau legumes 37 dont 25 2 de legumes verts courgettes 9 2 brocolis 6 6 oignons 6 3 epinards 3 7 carottes 2 9 poireaux 2 9 celeq rave haricots verts 2 6 amidon de mais quinoa 1 8 cerfeuil creme de riz complet huile d olive vierge extra sel arome issu de l agriculture biologique thym poudre d ail",
+            "water vegetables 37 of which 25 2 greens zucchini 9 2 broccoli 6 6 onions 6 3 spinach 3 7 carrots 2 9 leeks 2 9 celeq rave green beans 2 6 corn starch quinoa 1 8 chervil whole rice cream extra virgin olive oil salt aroma from organic farming thyme garlic powder"
+          ],
+          "identityValues": [
+            "eau legumes 37 dont 25 2 de legumes verts courgettes 9 2 brocolis 6 6 oignons 6 3 epinards 3 7 carottes 2 9 poireaux 2 9 celeq rave haricots verts 2 6 amidon de mais quinoa 1 8 cerfeuil creme de riz complet huile d olive vierge extra sel arome issu de l agriculture biologique thym poudre d ail",
+            "soupe mouline de legumes verts et quinoa",
+            "water vegetables 37 of which 25 2 greens zucchini 9 2 broccoli 6 6 onions 6 3 spinach 3 7 carrots 2 9 leeks 2 9 celeq rave green beans 2 6 corn starch quinoa 1 8 chervil whole rice cream extra virgin olive oil salt aroma from organic farming thyme garlic powder"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3274935201703",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Cream of Green Vegetables Soup",
+          "normalizedName": "Cream of Green Vegetables Soup",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "cream of green vegetables soup"
+          ],
+          "ingredientIdentityValues": [
+            "water vegetables potatoes celeriac green beans broccoli leek spinach carrots watercress chervil rehydrated onions buttermilk corn starch salt butter yeast extract"
+          ],
+          "identityValues": [
+            "cream of green vegetables soup",
+            "water vegetables potatoes celeriac green beans broccoli leek spinach carrots watercress chervil rehydrated onions buttermilk corn starch salt butter yeast extract"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3280220912117",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Sauce fines herbes 175mL",
+          "normalizedName": "Sauce fines herbes 175mL",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "sauce fines herbes 175ml"
+          ],
+          "ingredientIdentityValues": [
+            "eau huile de colza vinaigre fines herbes 2 8 basilic cerfeuil estragon jaune d œuf amidon modifie de pomme de terre sel sucre echalote deshydratee 0 9 jus de citron concentre epaississant gomme xanthane arome naturel de moutarde epice",
+            "water rapeseed oil vinegar herbs 2 8 basil chervil tarragon egg yolk modified potato starch salt sugar dehydrated shallot 0 9 concentrated lemon juice thickening xanthan gum natural mustard aroma spice"
+          ],
+          "identityValues": [
+            "eau huile de colza vinaigre fines herbes 2 8 basilic cerfeuil estragon jaune d œuf amidon modifie de pomme de terre sel sucre echalote deshydratee 0 9 jus de citron concentre epaississant gomme xanthane arome naturel de moutarde epice",
+            "sauce fines herbes 175ml",
+            "water rapeseed oil vinegar herbs 2 8 basil chervil tarragon egg yolk modified potato starch salt sugar dehydrated shallot 0 9 concentrated lemon juice thickening xanthan gum natural mustard aroma spice"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3564700004500",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Vinaigrette fines herbes",
+          "normalizedName": "Vinaigrette fines herbes",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "vinaigrette fines herbes"
+          ],
+          "ingredientIdentityValues": [
+            "eau huile de colza 25 vinaigre de vin blanc dont conservateur disulfite de potassium vinaigre d alcool moutarde de dijon eau graines de moutarde vinaigre d alcool sel acidifiant acide citrique sel amidon modifie de pomme de terre sucre fines herbes deshydratees 0 43 estragon cerfeuil persil jus de citron concentre 0 35 epaississant gomme xanthane arome naturel dont celeri colorant luteine poivre arome naturel d ail traces de lait",
+            "water rapeseed oil 25 white wine vinegar including preservative potassium disulphite alcohol vinegar dijon mustard water mustard seeds alcohol vinegar salt acidifier citric acid salt modified potato starch sugar dehydrated herbs 0 43 tarragon chervil parsley concentrated lemon juice 0 35 thickener xanthan gum natural flavour including celery dye lutein pepper natural garlic flavour milk traces"
+          ],
+          "identityValues": [
+            "eau huile de colza 25 vinaigre de vin blanc dont conservateur disulfite de potassium vinaigre d alcool moutarde de dijon eau graines de moutarde vinaigre d alcool sel acidifiant acide citrique sel amidon modifie de pomme de terre sucre fines herbes deshydratees 0 43 estragon cerfeuil persil jus de citron concentre 0 35 epaississant gomme xanthane arome naturel dont celeri colorant luteine poivre arome naturel d ail traces de lait",
+            "vinaigrette fines herbes",
+            "water rapeseed oil 25 white wine vinegar including preservative potassium disulphite alcohol vinegar dijon mustard water mustard seeds alcohol vinegar salt acidifier citric acid salt modified potato starch sugar dehydrated herbs 0 43 tarragon chervil parsley concentrated lemon juice 0 35 thickener xanthan gum natural flavour including celery dye lutein pepper natural garlic flavour milk traces"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3564700888988",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Sauce béarnaise - pot",
+          "normalizedName": "Sauce béarnaise - pot",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "sauce bearnaise pot"
+          ],
+          "ingredientIdentityValues": [
+            "eau huile de colza vinaigre d alcool amidon de mais jaune d œuf sel echalotes rehydratees 1 8 sucre estragon rehydrate 1 5 cerfeuil rehydrate acidifiant acide citrique epaississant gomme xanthane arome naturel d estragon jus de citron concentre epices colorant carotenoides",
+            "water rapeseed oil spirit vinegar corn starch egg yolk salt rehydrated shallots 1 8 sugar rehydrated tarragon 1 5 rehydrated chervil acidifier citric acid thickener xanthan gum natural tarragon flavour concentrated lemon juice spices colour carotenoids"
+          ],
+          "identityValues": [
+            "eau huile de colza vinaigre d alcool amidon de mais jaune d œuf sel echalotes rehydratees 1 8 sucre estragon rehydrate 1 5 cerfeuil rehydrate acidifiant acide citrique epaississant gomme xanthane arome naturel d estragon jus de citron concentre epices colorant carotenoides",
+            "sauce bearnaise pot",
+            "water rapeseed oil spirit vinegar corn starch egg yolk salt rehydrated shallots 1 8 sugar rehydrated tarragon 1 5 rehydrated chervil acidifier citric acid thickener xanthan gum natural tarragon flavour concentrated lemon juice spices colour carotenoids"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3660603004774",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Sauce Béarnaise bocal",
+          "normalizedName": "Sauce Béarnaise bocal",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "sauce bearnaise",
+            "sauce bearnaise bocal"
+          ],
+          "ingredientIdentityValues": [
+            "huile de colza eau vinaigre d alcool jaunes d œufs sel sucre estragon 1 5 echalotes 1 5 cerfeuil jus de citron a base de concentre piment fort arome naturel amidon modifie colorant beta carotene",
+            "rape oil water alcohol vinegar egg yolks salt sugar tarragon 1 5 shallots 1 5 chervil concentrated lemon juice hot pepper natural aroma modified starch colouring beta carotene"
+          ],
+          "identityValues": [
+            "huile de colza eau vinaigre d alcool jaunes d œufs sel sucre estragon 1 5 echalotes 1 5 cerfeuil jus de citron a base de concentre piment fort arome naturel amidon modifie colorant beta carotene",
+            "rape oil water alcohol vinegar egg yolks salt sugar tarragon 1 5 shallots 1 5 chervil concentrated lemon juice hot pepper natural aroma modified starch colouring beta carotene",
+            "sauce bearnaise",
+            "sauce bearnaise bocal"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3660603090029",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Sauce Béarnaise",
+          "normalizedName": "Sauce Béarnaise",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "chervil"
+          ],
+          "directIdentityValues": [
+            "sauce bearnaise",
+            "sauce bernaise"
+          ],
+          "ingredientIdentityValues": [
+            "huile de colza eau vinaigre d alcool jaunes d œufs sel estragon 1 5 echalotes 1 5 cerfeuil jus de citron a base de concentre piment de cayenne sucre arome naturel amidon modifie colorant beta carotene",
+            "rape oil water alcohol vinegar egg yolks salt tarragon 1 5 shallots 1 5 chervil concentrated lemon juice cayenne pepper sugar natural flavour modified starch colouring beta carotene"
+          ],
+          "identityValues": [
+            "huile de colza eau vinaigre d alcool jaunes d œufs sel estragon 1 5 echalotes 1 5 cerfeuil jus de citron a base de concentre piment de cayenne sucre arome naturel amidon modifie colorant beta carotene",
+            "rape oil water alcohol vinegar egg yolks salt tarragon 1 5 shallots 1 5 chervil concentrated lemon juice cayenne pepper sugar natural flavour modified starch colouring beta carotene",
+            "sauce bearnaise",
+            "sauce bernaise"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        }
+      ]
+    },
+    {
+      "catalogKey": "mace",
+      "aliases": [
+        "ground mace",
+        "mace",
+        "macis",
+        "macisbluete",
+        "macisblüte",
+        "muskatbluete",
+        "muskatblüte"
+      ],
+      "matchingOffProductCount": 2262,
+      "directProductMatchCount": 41,
+      "ingredientOnlyMatchCount": 2221,
+      "directProductsWithAnyNutritionCount": 0,
+      "directProductsWithCompleteNutritionCount": 0,
+      "productsWithAnyNutritionCount": 305,
+      "productsWithCompleteNutritionCount": 277,
+      "productsWithoutNutritionCount": 1957,
+      "productsWithIncompleteCoreNutritionCount": 28,
+      "estimatedExtractorEligibleCount": 0,
+      "estimatedExtractorRejectedCount": 41,
+      "countsByAvailabilityReason": {
+        "COMPLETE_CORE_NUTRITION": 277,
+        "INCOMPLETE_CORE_NUTRITION": 28,
+        "NO_NUTRITION_VALUES": 1957
+      },
+      "samples": [
+        {
+          "productIdentifier": "code:00022941",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Saucisses Premium 93%porc",
+          "normalizedName": "Saucisses Premium 93%porc",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "macis"
+          ],
+          "directIdentityValues": [
+            "saucisses premium 93 porc",
+            "super soft both in one wraps"
+          ],
+          "ingredientIdentityValues": [
+            "viande de porc eleve en plein air diorigine britannique 93 eau farine de riz s er farine de pois chiches dextrose epices moulues macis coriandre noix de muscade gingembre poivre noir concasse conservateur e223 sulfites feuilles de laurier moulues fecule de mais saucisses embossees dans du boyau en proteine de porc pour les allergenes voir les inaredients indiques en gras importanfveuillez"
+          ],
+          "identityValues": [
+            "saucisses premium 93 porc",
+            "super soft both in one wraps",
+            "viande de porc eleve en plein air diorigine britannique 93 eau farine de riz s er farine de pois chiches dextrose epices moulues macis coriandre noix de muscade gingembre poivre noir concasse conservateur e223 sulfites feuilles de laurier moulues fecule de mais saucisses embossees dans du boyau en proteine de porc pour les allergenes voir les inaredients indiques en gras importanfveuillez"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:00039352",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "6 Olde english farmhouse pork sausages",
+          "normalizedName": "6 Olde english farmhouse pork sausages",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "6 olde english farmhouse pork sausages"
+          ],
+          "ingredientIdentityValues": [
+            "british outdoor bred pork 90 water gluten free crumb rice flour chickpea flour cornflour salt dextrose salt parsley lemon zest dried herbs thyme sage parsley oregano marjoram ground spices nutmeg mace coriander cayenne black pepper onions dextrose preservative e223 sulphites rapeseed oil antioxidant ascorbic acid sausages filled into natural pork casings"
+          ],
+          "identityValues": [
+            "6 olde english farmhouse pork sausages",
+            "british outdoor bred pork 90 water gluten free crumb rice flour chickpea flour cornflour salt dextrose salt parsley lemon zest dried herbs thyme sage parsley oregano marjoram ground spices nutmeg mace coriander cayenne black pepper onions dextrose preservative e223 sulphites rapeseed oil antioxidant ascorbic acid sausages filled into natural pork casings"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:00062299",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Chicken jalfrezi & pilau Rice",
+          "normalizedName": "Chicken jalfrezi & pilau Rice",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "chicken jalfrezi pilau rice"
+          ],
+          "ingredientIdentityValues": [
+            "cooked basmati rice 40 water basmati rice chicken breast 20 onions tomatoes 7 tomato paste rapeseed oil flame seared red peppers 3 butter milk single cream milk ginger garlic puree low fat yogurt milk salt cider vinegar coriander red chilli puree lemon juice cornflour ground coriander green chillies ground cumin balti garam masala sweet paprika roasted cardamom roasted coriander roasted cumin crushed red chillies roasted black pepper roasted cassia star anise nutmeg ajwain seeds chilli powder bay leaves cumin seeds turmeric chilli powder sugar ground garam masala roasted coriander roasted cumin black pepper cinnamon mace roasted green cardamom seeds ginger fennel cloves nutmeg bay leaves whole black cardamom seeds ground paprika ground fenugreek fennel seeds ground smoked paprika ground cinnamon cloves saffron chilli extract"
+          ],
+          "identityValues": [
+            "chicken jalfrezi pilau rice",
+            "cooked basmati rice 40 water basmati rice chicken breast 20 onions tomatoes 7 tomato paste rapeseed oil flame seared red peppers 3 butter milk single cream milk ginger garlic puree low fat yogurt milk salt cider vinegar coriander red chilli puree lemon juice cornflour ground coriander green chillies ground cumin balti garam masala sweet paprika roasted cardamom roasted coriander roasted cumin crushed red chillies roasted black pepper roasted cassia star anise nutmeg ajwain seeds chilli powder bay leaves cumin seeds turmeric chilli powder sugar ground garam masala roasted coriander roasted cumin black pepper cinnamon mace roasted green cardamom seeds ginger fennel cloves nutmeg bay leaves whole black cardamom seeds ground paprika ground fenugreek fennel seeds ground smoked paprika ground cinnamon cloves saffron chilli extract"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:00080897",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Poulet Korma & Riz Pilaf",
+          "normalizedName": "Poulet Korma & Riz Pilaf",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "macis"
+          ],
+          "directIdentityValues": [
+            "poulet korma riz pilaf"
+          ],
+          "ingredientIdentityValues": [
+            "riz basmati cuit 40 eau riz basmati blanc de poulet 20 oignons creme britannique lait 11 lait de coco 3 5 extrait de noix de coco eau yaourt britannique lait huile de colza concentre de tomate amandes effilees grillees puree de gingembre puree d ail sel yaourt britannique a faible teneur en matieres grasses lait jus de citron beurre lait noix de coco deshydratee coriandre fecule de mais sucre coriandre moulue cumin moulu garam masala moulu poivre noir grille coriandre grillee macis grille graines de fenouil grillees ecorce de cannelle de chine grillee clous de girofle grilles gingembre cumin grille poivre noir cannelle macis graines de cardamome verte grillees clous de girofle fenouil noix de muscade feuilles de laurier cardamome verte moulue curcuma graines de cumin graines de cardamome noire entieres graines de fenouil paprika moulu macis moulu paprika fume moulu cannelle moulue poudre de piment cardamome verte grillee clous de girofle safran coriandre grillee cumin grille extrait de piment"
+          ],
+          "identityValues": [
+            "poulet korma riz pilaf",
+            "riz basmati cuit 40 eau riz basmati blanc de poulet 20 oignons creme britannique lait 11 lait de coco 3 5 extrait de noix de coco eau yaourt britannique lait huile de colza concentre de tomate amandes effilees grillees puree de gingembre puree d ail sel yaourt britannique a faible teneur en matieres grasses lait jus de citron beurre lait noix de coco deshydratee coriandre fecule de mais sucre coriandre moulue cumin moulu garam masala moulu poivre noir grille coriandre grillee macis grille graines de fenouil grillees ecorce de cannelle de chine grillee clous de girofle grilles gingembre cumin grille poivre noir cannelle macis graines de cardamome verte grillees clous de girofle fenouil noix de muscade feuilles de laurier cardamome verte moulue curcuma graines de cumin graines de cardamome noire entieres graines de fenouil paprika moulu macis moulu paprika fume moulu cannelle moulue poudre de piment cardamome verte grillee clous de girofle safran coriandre grillee cumin grille extrait de piment"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:00083164",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Poulet Korma et riz pilaf",
+          "normalizedName": "Poulet Korma et riz pilaf",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "macis"
+          ],
+          "directIdentityValues": [
+            "poulet korma et riz pilaf"
+          ],
+          "ingredientIdentityValues": [
+            "riz basmati cuit 40 eau riz basmati blanc de poulet 20 oignons lait ecreme lait de coco 3 5 extrait de noix de coco eau creme britannique lait 3 huile de colza yaourt britannique lait concentre de tomate puree de gingembre amandes effilees grillees lentilles cuites eau puree d ail lentilles chana dahl lait yaourt britannique a faible teneur en matieres grasses lait sel fecule de mais jus de citron beurre noix de coco deshydratee coriandre sucre coriandre moulue cumin moulu garam masala de dumka moulu poivre noir grille coriandre grillee macis grille graines de fenouil grillees ecorce de cannelle de chine grillee de girofle grilles gingembre graines de cumin cardamome verte moulue curcuma clous garam masala du pendjab moulu cardamome noire grillee coriandre grillee cumin grille poivre noir cannelle macis cardamome verte grillee gingembre graines de fenouil clous de girofle noix de muscade feuilles de laurier graines de cardamome noire entieres graines de fenouil paprika fume moulu cardamome noire moulue paprika moulu cannelle moulue macis moulu poudre de piment clous de girofle safran extrait de piment pour les allergenes voir les ingredients indiques en gras ne convient pas aux personnes allergiques aux arachides aux autres fruits a coque et au sesame en raison des methodes de fabrication important peut contenir de petits os information peut contenir des herbes et des epices entieres en raison de la recette de la sauce la separation de l huile est une caracteristique de ce produit il suffit de bien melanger la sauce avant de servir ce poulet korma et riz a teneur reduite en matieres grasses contient 36 de matieres grasses en moins compare au poulet korma et riz pilaf marks spencer cuisson cuisson au micro ondes conseillee retirer l emballage percer le film 850 w 4 min 30 sec laisser reposer pendant 1 min melanger apres la cuisson conseils de cuisson pour un seul paquet four prechauffer le four retirer l emballage percer le film placer sur une plaque de four 180 c 25 min chaleur tournante 160 c 25 min laisser reposer pendant 1 min melanger apres la cuisson ne pas rechauffer apres utilisation conservation"
+          ],
+          "identityValues": [
+            "poulet korma et riz pilaf",
+            "riz basmati cuit 40 eau riz basmati blanc de poulet 20 oignons lait ecreme lait de coco 3 5 extrait de noix de coco eau creme britannique lait 3 huile de colza yaourt britannique lait concentre de tomate puree de gingembre amandes effilees grillees lentilles cuites eau puree d ail lentilles chana dahl lait yaourt britannique a faible teneur en matieres grasses lait sel fecule de mais jus de citron beurre noix de coco deshydratee coriandre sucre coriandre moulue cumin moulu garam masala de dumka moulu poivre noir grille coriandre grillee macis grille graines de fenouil grillees ecorce de cannelle de chine grillee de girofle grilles gingembre graines de cumin cardamome verte moulue curcuma clous garam masala du pendjab moulu cardamome noire grillee coriandre grillee cumin grille poivre noir cannelle macis cardamome verte grillee gingembre graines de fenouil clous de girofle noix de muscade feuilles de laurier graines de cardamome noire entieres graines de fenouil paprika fume moulu cardamome noire moulue paprika moulu cannelle moulue macis moulu poudre de piment clous de girofle safran extrait de piment pour les allergenes voir les ingredients indiques en gras ne convient pas aux personnes allergiques aux arachides aux autres fruits a coque et au sesame en raison des methodes de fabrication important peut contenir de petits os information peut contenir des herbes et des epices entieres en raison de la recette de la sauce la separation de l huile est une caracteristique de ce produit il suffit de bien melanger la sauce avant de servir ce poulet korma et riz a teneur reduite en matieres grasses contient 36 de matieres grasses en moins compare au poulet korma et riz pilaf marks spencer cuisson cuisson au micro ondes conseillee retirer l emballage percer le film 850 w 4 min 30 sec laisser reposer pendant 1 min melanger apres la cuisson conseils de cuisson pour un seul paquet four prechauffer le four retirer l emballage percer le film placer sur une plaque de four 180 c 25 min chaleur tournante 160 c 25 min laisser reposer pendant 1 min melanger apres la cuisson ne pas rechauffer apres utilisation conservation"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:0011225557019",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Seafood Seasoning",
+          "normalizedName": "Seafood Seasoning",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "seafood seasoning"
+          ],
+          "ingredientIdentityValues": [
+            "salt paprika color and spice black pepper celery mustard mace cinnamon ginger allspice and bay"
+          ],
+          "identityValues": [
+            "salt paprika color and spice black pepper celery mustard mace cinnamon ginger allspice and bay",
+            "seafood seasoning"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:0016229906214",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Massa man curry pasta",
+          "normalizedName": "Massa man curry pasta",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "macis"
+          ],
+          "directIdentityValues": [
+            "massa man curry pasta"
+          ],
+          "ingredientIdentityValues": [
+            "echalote piments rouges seches 21 ail citronnelle sel galanga epices macis cannelle graines de cardamome graines de coriandre cumin en poudre"
+          ],
+          "identityValues": [
+            "echalote piments rouges seches 21 ail citronnelle sel galanga epices macis cannelle graines de cardamome graines de coriandre cumin en poudre",
+            "massa man curry pasta"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:0019951053270",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Daystar Desserts, Holiday Cheesecake Sampler, Strawberry Swirl & Apple Spice, New York Style & Pumpkin",
+          "normalizedName": "Daystar Desserts, Holiday Cheesecake Sampler, Strawberry Swirl & Apple Spice, New York Style & Pumpkin",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "daystar desserts holiday cheesecake sampler strawberry swirl apple spice new york style pumpkin"
+          ],
+          "ingredientIdentityValues": [
+            "cream cheese pasteurized milk and cream cheese culture salt stabilizers carob bean and or xanthan and or guar gums water whey protein concentrate modified food starch salt cream lactic acid milk potassium sorbate xanthan gum cheese culture natural flavor enzymes sugar graham crackers unbleached unenriched wheat flour whole wheat graham flour sugar palm and palm kernel oil molasses honey salt sodium bicarbonate eggs sour cream cultured cream food starch modified sodium phosphate guar gum carrageenan locust bean gum potassium sorbate apple filling water high fructose corn syrup sugar evaporated apples preserved with sulfur dioxide food starch modified corn syrup citric acid sodium benzoate and potassium sorbate as preservatives salt spice soybean oil water pumpkin cornstarch palm oil caramel sweetened condensed whole milk corn syrup palm oil cream water glycerin pectin salt disodium phosphate soy lecithin as an emulsifier natural and artificial flavors carrageenan and potassium sorbate streusel topping enriched bleached wheat flour wheat flour malted barley flour niacin ferrous sulfate thiamine mononitrate riboflavin folic acid sugar vegetable shortening partially hydrogenated soybean and cottonseed oil high fructose corn syrup dextrose and 2 or less of each of the following cinnamon salt mono and diglycerides silicon dioxide flow aid natural and artificial flavors caramel color vanilla lemon juice water concentrated orange juice strawberries strawberry flavor water sugar propylene clycol citric acid alcohol malic acid natural and artificial strawberry flavor unsulphured molasses natural flavor ginger cake flour wheat flour niacin iron thiamin mononitrate riboflavin folic acid red food coloring water fd c red 40 citric acid sodium benzoate mace cinnamon nutmeg"
+          ],
+          "identityValues": [
+            "cream cheese pasteurized milk and cream cheese culture salt stabilizers carob bean and or xanthan and or guar gums water whey protein concentrate modified food starch salt cream lactic acid milk potassium sorbate xanthan gum cheese culture natural flavor enzymes sugar graham crackers unbleached unenriched wheat flour whole wheat graham flour sugar palm and palm kernel oil molasses honey salt sodium bicarbonate eggs sour cream cultured cream food starch modified sodium phosphate guar gum carrageenan locust bean gum potassium sorbate apple filling water high fructose corn syrup sugar evaporated apples preserved with sulfur dioxide food starch modified corn syrup citric acid sodium benzoate and potassium sorbate as preservatives salt spice soybean oil water pumpkin cornstarch palm oil caramel sweetened condensed whole milk corn syrup palm oil cream water glycerin pectin salt disodium phosphate soy lecithin as an emulsifier natural and artificial flavors carrageenan and potassium sorbate streusel topping enriched bleached wheat flour wheat flour malted barley flour niacin ferrous sulfate thiamine mononitrate riboflavin folic acid sugar vegetable shortening partially hydrogenated soybean and cottonseed oil high fructose corn syrup dextrose and 2 or less of each of the following cinnamon salt mono and diglycerides silicon dioxide flow aid natural and artificial flavors caramel color vanilla lemon juice water concentrated orange juice strawberries strawberry flavor water sugar propylene clycol citric acid alcohol malic acid natural and artificial strawberry flavor unsulphured molasses natural flavor ginger cake flour wheat flour niacin iron thiamin mononitrate riboflavin folic acid red food coloring water fd c red 40 citric acid sodium benzoate mace cinnamon nutmeg",
+            "daystar desserts holiday cheesecake sampler strawberry swirl apple spice new york style pumpkin"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "296.0",
+                "numericValue": 296.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "16.9",
+                "numericValue": 16.9
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "8.45",
+                "numericValue": 8.45
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "33.1",
+                "numericValue": 33.1
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "22.54",
+                "numericValue": 22.54
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "1.4",
+                "numericValue": 1.4
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "4.23",
+                "numericValue": 4.23
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "0.7575",
+                "numericValue": 0.7575
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:00101639",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Pork Sausage Rolls",
+          "normalizedName": "Pork Sausage Rolls",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "pork sausage rolls"
+          ],
+          "ingredientIdentityValues": [
+            "fortified wheat flour wheat flour calcium carbonate iron niacin thiamin british pork 27 water palm oil potato starch onion wheat flour salt rapeseed oil skimmed cows milk powder black pepper sugar nutmeg yeast extract parsley mace onion powder white pepper garlic powder"
+          ],
+          "identityValues": [
+            "fortified wheat flour wheat flour calcium carbonate iron niacin thiamin british pork 27 water palm oil potato starch onion wheat flour salt rapeseed oil skimmed cows milk powder black pepper sugar nutmeg yeast extract parsley mace onion powder white pepper garlic powder",
+            "pork sausage rolls"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:00104456",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Haggis",
+          "normalizedName": "Haggis",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "haggis"
+          ],
+          "ingredientIdentityValues": [
+            "pork lung 32 beef fat 25 oatmeal 19 pork stock water pork lung pork heart pork heart 1 5 salt dried onions ground spices white pepper pimentoes mace nutmeg coriander black pepper rapeseed oil"
+          ],
+          "identityValues": [
+            "haggis",
+            "pork lung 32 beef fat 25 oatmeal 19 pork stock water pork lung pork heart pork heart 1 5 salt dried onions ground spices white pepper pimentoes mace nutmeg coriander black pepper rapeseed oil"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:00133647",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Mortadella",
+          "normalizedName": "Mortadella",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "mortadella"
+          ],
+          "ingredientIdentityValues": [
+            "pork salt sugar white pepper antioxidant ascorbic acid garlic preservative sodium nitrite coriander bay leaf cinnamon clove rosemary nutmeg mace orange peel"
+          ],
+          "identityValues": [
+            "mortadella",
+            "pork salt sugar white pepper antioxidant ascorbic acid garlic preservative sodium nitrite coriander bay leaf cinnamon clove rosemary nutmeg mace orange peel"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:00160919",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Lamb rogan josh",
+          "normalizedName": "Lamb rogan josh",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "lamb rogan josh"
+          ],
+          "ingredientIdentityValues": [
+            "lamb 37 onions 21 tomatoes 14 yogurt milk rapeseed oil tomato paste garlic puree ginger puree salt ground smoked paprika ground garam masala roasted coriander roasted cumin sweet cinnamon cassia green cardamom cinnamon nutmeg black pepper kashmiri chilli powder cloves bay leaves fennel star anise mace kashmiri chilli powder cornflour coriander ground fennel seeds ground cinnamon cider vinegar lemon juice ground black pepper coriander seeds whole green cardamom turmeric"
+          ],
+          "identityValues": [
+            "lamb 37 onions 21 tomatoes 14 yogurt milk rapeseed oil tomato paste garlic puree ginger puree salt ground smoked paprika ground garam masala roasted coriander roasted cumin sweet cinnamon cassia green cardamom cinnamon nutmeg black pepper kashmiri chilli powder cloves bay leaves fennel star anise mace kashmiri chilli powder cornflour coriander ground fennel seeds ground cinnamon cider vinegar lemon juice ground black pepper coriander seeds whole green cardamom turmeric",
+            "lamb rogan josh"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:0020138003230",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Cherry Apple Chutney",
+          "normalizedName": "Cherry Apple Chutney",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "cherry apple chutney"
+          ],
+          "ingredientIdentityValues": [
+            "sugar water cherries apples distilled vinegar jalapeno peppers with salt vinegar and water pectin garam masala cumin coriander cardamom black pepper cloves mace cinnamon and bay leaves spices"
+          ],
+          "identityValues": [
+            "cherry apple chutney",
+            "sugar water cherries apples distilled vinegar jalapeno peppers with salt vinegar and water pectin garam masala cumin coriander cardamom black pepper cloves mace cinnamon and bay leaves spices"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "319.0",
+                "numericValue": 319.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "79.7",
+                "numericValue": 79.7
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "73.3",
+                "numericValue": 73.3
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "3.21",
+                "numericValue": 3.21
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "2.01E-4",
+                "numericValue": 2.01E-4
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:0023547840014",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Aloo Matar",
+          "normalizedName": "Aloo Matar",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "aloo matar"
+          ],
+          "ingredientIdentityValues": [
+            "potato tomato onion green peas sunflower oil ginger green chilies coriander leaves garlic salt cumin seeds tamarind corn flour turmeric powder cinnamon cumin powder black pepper nutmeg mace cloves black cardamom water"
+          ],
+          "identityValues": [
+            "aloo matar",
+            "potato tomato onion green peas sunflower oil ginger green chilies coriander leaves garlic salt cumin seeds tamarind corn flour turmeric powder cinnamon cumin powder black pepper nutmeg mace cloves black cardamom water"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "2520.0",
+                "numericValue": 2520.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "151.0",
+                "numericValue": 151.0
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "12.6",
+                "numericValue": 12.6
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "201.0",
+                "numericValue": 201.0
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "50.9",
+                "numericValue": 50.9
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "88.1",
+                "numericValue": 88.1
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "0.0179",
+                "numericValue": 0.0179
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:0023547847013",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Mother India, Punjabi Chhole",
+          "normalizedName": "Mother India, Punjabi Chhole",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "mother india punjabi chhole"
+          ],
+          "ingredientIdentityValues": [
+            "chickpeas onion tomato garlic coriander leaves sunflower oil green chilies ginger salt ghee clarified butter pomegranate seeds cumin powder tea powder corn flour black cardamom cinnamon mace caraway seeds black pepper coriander seeds fenugreek leaves sugar cloves water"
+          ],
+          "identityValues": [
+            "chickpeas onion tomato garlic coriander leaves sunflower oil green chilies ginger salt ghee clarified butter pomegranate seeds cumin powder tea powder corn flour black cardamom cinnamon mace caraway seeds black pepper coriander seeds fenugreek leaves sugar cloves water",
+            "mother india punjabi chhole"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "133.0",
+                "numericValue": 133.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "5.33",
+                "numericValue": 5.33
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "1.0",
+                "numericValue": 1.0
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "18.0",
+                "numericValue": 18.0
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "6.0",
+                "numericValue": 6.0
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "4.0",
+                "numericValue": 4.0
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "0.75",
+                "numericValue": 0.75
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:0028672249824",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Gourmet Popcorn",
+          "normalizedName": "Gourmet Popcorn",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "gourmet popcorn"
+          ],
+          "ingredientIdentityValues": [
+            "brown sugar popcorn butter cream milk old bay seasoning celery salt salt celery seed spices including mustard red pepper black pepper bay laurel leaves clove allspice pimento ginger mace cardamom cinnamon and paprika corn syrup"
+          ],
+          "identityValues": [
+            "brown sugar popcorn butter cream milk old bay seasoning celery salt salt celery seed spices including mustard red pepper black pepper bay laurel leaves clove allspice pimento ginger mace cardamom cinnamon and paprika corn syrup",
+            "gourmet popcorn"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "1630.0",
+                "numericValue": 1630.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "41.1",
+                "numericValue": 41.1
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "27.4",
+                "numericValue": 27.4
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "302.0",
+                "numericValue": 302.0
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "192.0",
+                "numericValue": 192.0
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "13.7",
+                "numericValue": 13.7
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "13.7",
+                "numericValue": 13.7
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "0.00206",
+                "numericValue": 0.00206
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:00246132",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Chicken Piri Piri",
+          "normalizedName": "Chicken Piri Piri",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "macis"
+          ],
+          "directIdentityValues": [
+            "chicken piri piri"
+          ],
+          "ingredientIdentityValues": [
+            "poitrine de poulet 35 ornions 25 tomates 10 huile de colza pate de tomate vinaigre de vin blanc piments rouges melasse yaourt faible en gras lait creme lait colorant caramel extrait de paprika puree de gingembre puree d ail piments verts jus de citron coriandre moulue maizena sel curcuma graines de cumin poivre noir moulu fenugrec moulu coriandre garam masala coriandre rotie cumin roti poivre noir cannelle macis graines de cardamome vertes grillees gingembre fenouil clous de girofle feuilles de muscade poudre de chili paprika fume moulu paprika moulu extrait de piment"
+          ],
+          "identityValues": [
+            "chicken piri piri",
+            "poitrine de poulet 35 ornions 25 tomates 10 huile de colza pate de tomate vinaigre de vin blanc piments rouges melasse yaourt faible en gras lait creme lait colorant caramel extrait de paprika puree de gingembre puree d ail piments verts jus de citron coriandre moulue maizena sel curcuma graines de cumin poivre noir moulu fenugrec moulu coriandre garam masala coriandre rotie cumin roti poivre noir cannelle macis graines de cardamome vertes grillees gingembre fenouil clous de girofle feuilles de muscade poudre de chili paprika fume moulu paprika moulu extrait de piment"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:00264525",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Coconut chicken bowl",
+          "normalizedName": "Coconut chicken bowl",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "coconut chicken bowl"
+          ],
+          "ingredientIdentityValues": [
+            "chicken 29 water butternut squash 11 onions cooked brown basmati rice 10 basmati rice water sunflower oil spinach cornflour yogurt milk creamed coconut 1 5 sugar tomato puree coriander leaf desiccated coconut salt garlic puree rapeseed oil ginger puree green chilli puree tapioca ground spices turmeric cumin coriander cardamom black pepper cloves mace cassia ginger nutmeg fennel bay leaves concentrated lemon juice ground roasted spices coriander cumin for allergens see ingredients in bold"
+          ],
+          "identityValues": [
+            "chicken 29 water butternut squash 11 onions cooked brown basmati rice 10 basmati rice water sunflower oil spinach cornflour yogurt milk creamed coconut 1 5 sugar tomato puree coriander leaf desiccated coconut salt garlic puree rapeseed oil ginger puree green chilli puree tapioca ground spices turmeric cumin coriander cardamom black pepper cloves mace cassia ginger nutmeg fennel bay leaves concentrated lemon juice ground roasted spices coriander cumin for allergens see ingredients in bold",
+            "coconut chicken bowl"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:00280655",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "SAUSAGE PASTA",
+          "normalizedName": "SAUSAGE PASTA",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "sausage pasta"
+          ],
+          "ingredientIdentityValues": [
+            "cooked penne pasta durum wheat semolina water water tomato passata british pork sausage filled in to alginate casings 8 pork water fortified wheat flour wheat flour calcium carbonate niacin iron thiamin potato within the use by date starch rapeseed oil salt calcium alginate casing in 2 months water thickener guar gum calcium chloride dextrose tapioca preservative potassium sorbate dextrose stabiliser sodium triphosphate black per adult ri adult ri pepper chilli powder coriander powder mace pepper extract mace extract nutmeg extract ginger extract 8400 antioxidant sodium ascorbate tomato juice mature 2000 cheddar cheese 3 cows milk tomato puree garlic puree rapeseed oil onion cornflour sugar balsamic vinegar red wine vinegar white wine vinegar grape must carrot salt basil oregano black pepper"
+          ],
+          "identityValues": [
+            "cooked penne pasta durum wheat semolina water water tomato passata british pork sausage filled in to alginate casings 8 pork water fortified wheat flour wheat flour calcium carbonate niacin iron thiamin potato within the use by date starch rapeseed oil salt calcium alginate casing in 2 months water thickener guar gum calcium chloride dextrose tapioca preservative potassium sorbate dextrose stabiliser sodium triphosphate black per adult ri adult ri pepper chilli powder coriander powder mace pepper extract mace extract nutmeg extract ginger extract 8400 antioxidant sodium ascorbate tomato juice mature 2000 cheddar cheese 3 cows milk tomato puree garlic puree rapeseed oil onion cornflour sugar balsamic vinegar red wine vinegar white wine vinegar grape must carrot salt basil oregano black pepper",
+            "sausage pasta"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:0036406371796",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Butternut Squash Soup",
+          "normalizedName": "Butternut Squash Soup",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "ground mace",
+            "mace"
+          ],
+          "directIdentityValues": [
+            "butternut squash soup"
+          ],
+          "ingredientIdentityValues": [
+            "butternut squash water carrots onion butter orange juice sugar sea salt ginger vegetable broth vegetable tomato carrot onion sea salt dextrose organic evaporated cane juice canola oil natural flavoring potato flour ground mace peppe"
+          ],
+          "identityValues": [
+            "butternut squash soup",
+            "butternut squash water carrots onion butter orange juice sugar sea salt ginger vegetable broth vegetable tomato carrot onion sea salt dextrose organic evaporated cane juice canola oil natural flavoring potato flour ground mace peppe"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "61.8",
+                "numericValue": 61.8
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "3.17",
+                "numericValue": 3.17
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "2.0",
+                "numericValue": 2.0
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "7.83",
+                "numericValue": 7.83
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "3.67",
+                "numericValue": 3.67
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "0.98",
+                "numericValue": 0.98
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "0.498",
+                "numericValue": 0.498
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "2.34E-4",
+                "numericValue": 2.34E-4
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:00348232",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "LOW FAT 6 SAUSAGES",
+          "normalizedName": "LOW FAT 6 SAUSAGES",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "low fat 6 sausages"
+          ],
+          "ingredientIdentityValues": [
+            "british outdoor bred pork 70 water gluten free crumb rice flour chickpea flour cornflour salt dextrose pasteurised egg white potato fibre salt dextrose yeast extract stabiliser e450 guar gum antioxidant e301 preservative e223 sulphites flavouring dried onions spice extracts black pepper mace ginger coriander cinnamon sausages filled into vegetable based casings"
+          ],
+          "identityValues": [
+            "british outdoor bred pork 70 water gluten free crumb rice flour chickpea flour cornflour salt dextrose pasteurised egg white potato fibre salt dextrose yeast extract stabiliser e450 guar gum antioxidant e301 preservative e223 sulphites flavouring dried onions spice extracts black pepper mace ginger coriander cinnamon sausages filled into vegetable based casings",
+            "low fat 6 sausages"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:00364102",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Pilau Rice",
+          "normalizedName": "Pilau Rice",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "ground mace",
+            "mace"
+          ],
+          "directIdentityValues": [
+            "pilau rice"
+          ],
+          "ingredientIdentityValues": [
+            "cooked basmati rice water basmati rice onions 4 vegetable oil sunflower rapeseed dried vegetable stock salt dried onions potato starch yeast extract sugar dried garlic parsley extract rapeseed oil lovage root extract turmeric ground white pepper ground nutmeg ground mace dried onions salt turmeri c cumin seeds cumin extract colour e100 ground cumin cardamom",
+            "eau riz basmati oignons 4 huile de tournesol arome graines de cumin emulsifiant e471 stabilisant gomme guar gomme xanthane"
+          ],
+          "identityValues": [
+            "cooked basmati rice water basmati rice onions 4 vegetable oil sunflower rapeseed dried vegetable stock salt dried onions potato starch yeast extract sugar dried garlic parsley extract rapeseed oil lovage root extract turmeric ground white pepper ground nutmeg ground mace dried onions salt turmeri c cumin seeds cumin extract colour e100 ground cumin cardamom",
+            "eau riz basmati oignons 4 huile de tournesol arome graines de cumin emulsifiant e471 stabilisant gomme guar gomme xanthane",
+            "pilau rice"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:00369848",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Tarka Dal",
+          "normalizedName": "Tarka Dal",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "tarka dal"
+          ],
+          "ingredientIdentityValues": [
+            "cooked lentils 75 water red lentils chana dal lentils rapeseed oil tomatoes 4 5 garlic puree shallots tomato paste ginger puree green chillies cinger salt coriander turmeric ground cumin ground garam masala roasted black pepper roasted coriander mace roasted fennel seeds sweet cinnamon cassia ginger cloves ground paprika cumin seeds curry leaves black mustard seeds dried red chillies"
+          ],
+          "identityValues": [
+            "cooked lentils 75 water red lentils chana dal lentils rapeseed oil tomatoes 4 5 garlic puree shallots tomato paste ginger puree green chillies cinger salt coriander turmeric ground cumin ground garam masala roasted black pepper roasted coriander mace roasted fennel seeds sweet cinnamon cassia ginger cloves ground paprika cumin seeds curry leaves black mustard seeds dried red chillies",
+            "tarka dal"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:0041190463978",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Corned beef, potatoes and cabbage homestyle meal",
+          "normalizedName": "Corned beef, potatoes and cabbage homestyle meal",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "corned beef potatoes and cabbage homestyle meal"
+          ],
+          "ingredientIdentityValues": [
+            "cabbage corned beef beef brisket tenderized with papain cured with water salt sodium erythorbate sodium nitrite and flavorings potatoes broth beef water carrots onions celery cider vinegar garlic spice blend cinnamon allspice mustard seed coriander bay leaves ginger chilies cloves black pepper mace cardamom and sulfiting agents salt"
+          ],
+          "identityValues": [
+            "cabbage corned beef beef brisket tenderized with papain cured with water salt sodium erythorbate sodium nitrite and flavorings potatoes broth beef water carrots onions celery cider vinegar garlic spice blend cinnamon allspice mustard seed coriander bay leaves ginger chilies cloves black pepper mace cardamom and sulfiting agents salt",
+            "corned beef potatoes and cabbage homestyle meal"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "112.0",
+                "numericValue": 112.0
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "6.09",
+                "numericValue": 6.09
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "2.56",
+                "numericValue": 2.56
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "7.6899999999999995",
+                "numericValue": 7.6899999999999995
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "1.6",
+                "numericValue": 1.6
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "1.6",
+                "numericValue": 1.6
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "7.37",
+                "numericValue": 7.37
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "1.21",
+                "numericValue": 1.21
+              }
+            ]
+          }
+        },
+        {
+          "productIdentifier": "code:0043182003919",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Not chickn bouillon cubes",
+          "normalizedName": "Not chickn bouillon cubes",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "mace"
+          ],
+          "directIdentityValues": [
+            "not chickn bouillon cubes"
+          ],
+          "ingredientIdentityValues": [
+            "sea salt organic shea butter yeast extract organic maltodextrin organic cane sugar organic garlic organic mace powder"
+          ],
+          "identityValues": [
+            "not chickn bouillon cubes",
+            "sea salt organic shea butter yeast extract organic maltodextrin organic cane sugar organic garlic organic mace powder"
+          ],
+          "hasAnyNutrition": true,
+          "hasCompleteCoreNutrition": true,
+          "availabilityReason": "COMPLETE_CORE_NUTRITION",
+          "presentDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "fiber",
+            "protein",
+            "salt",
+            "saturatedFat",
+            "sugars"
+          ],
+          "missingCoreDimensions": [],
+          "nutrientValues": {
+            "energy": [
+              {
+                "path": "nutriments.energy-kcal_100g",
+                "rawValue": "333.33333333333",
+                "numericValue": 333.33333333333
+              }
+            ],
+            "fat": [
+              {
+                "path": "nutriments.fat_100g",
+                "rawValue": "22.222222222222",
+                "numericValue": 22.222222222222
+              }
+            ],
+            "saturatedFat": [
+              {
+                "path": "nutriments.saturated-fat_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "carbohydrates": [
+              {
+                "path": "nutriments.carbohydrates_100g",
+                "rawValue": "22.222222222222",
+                "numericValue": 22.222222222222
+              }
+            ],
+            "sugars": [
+              {
+                "path": "nutriments.sugars_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "fiber": [
+              {
+                "path": "nutriments.fiber_100g",
+                "rawValue": "0.0",
+                "numericValue": 0.0
+              }
+            ],
+            "protein": [
+              {
+                "path": "nutriments.proteins_100g",
+                "rawValue": "22.222222222222",
+                "numericValue": 22.222222222222
+              }
+            ],
+            "salt": [
+              {
+                "path": "nutriments.salt_100g",
+                "rawValue": "25.0",
+                "numericValue": 25.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "catalogKey": "salsify",
+      "aliases": [
+        "black salsify",
+        "salsify",
+        "schwarzwurzel",
+        "schwarzwurzeln"
+      ],
+      "matchingOffProductCount": 98,
+      "directProductMatchCount": 64,
+      "ingredientOnlyMatchCount": 34,
+      "directProductsWithAnyNutritionCount": 0,
+      "directProductsWithCompleteNutritionCount": 0,
+      "productsWithAnyNutritionCount": 0,
+      "productsWithCompleteNutritionCount": 0,
+      "productsWithoutNutritionCount": 98,
+      "productsWithIncompleteCoreNutritionCount": 0,
+      "estimatedExtractorEligibleCount": 0,
+      "estimatedExtractorRejectedCount": 64,
+      "countsByAvailabilityReason": {
+        "NO_NUTRITION_VALUES": 98
+      },
+      "samples": [
+        {
+          "productIdentifier": "code:20004255",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Schwarzwurzeln",
+          "normalizedName": "Schwarzwurzeln",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "schwarzwurzeln"
+          ],
+          "ingredientIdentityValues": [
+            "salz e330 e300 wasser schwarzwurzeln"
+          ],
+          "identityValues": [
+            "salz e330 e300 wasser schwarzwurzeln",
+            "schwarzwurzeln"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:3257980020154",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Salsifis, Boîte De 250 Grammes, Schwarzwurzeln",
+          "normalizedName": "Salsifis, Boîte De 250 Grammes, Schwarzwurzeln",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "salsifis boite de 250 grammes schwarzwurzeln"
+          ],
+          "ingredientIdentityValues": [
+            "salsifis composition satsffs eau sel acidifiant acide citrique schorsei erei saaseqeren bœd ngszvtz aqtaœ t"
+          ],
+          "identityValues": [
+            "salsifis boite de 250 grammes schwarzwurzeln",
+            "salsifis composition satsffs eau sel acidifiant acide citrique schorsei erei saaseqeren bœd ngszvtz aqtaœ t"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:4250426200362",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Schwarzwurzeln",
+          "normalizedName": "Schwarzwurzeln",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "schwarzwurzeln"
+          ],
+          "ingredientIdentityValues": [],
+          "identityValues": [
+            "schwarzwurzeln"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:5410601598038",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzel"
+          ],
+          "directIdentityValues": [],
+          "ingredientIdentityValues": [
+            "he ole kokos raps aromen konzentrat von schwarzwurzel karotte schw sauerungsmittel milchsaure pflanze lien kokos koolzood aroma s concentrar van zwarte wortel wortel e a a doua kingszuurve huiles vegetales coco colza aromes concentre de carotte no 200ge and are not e amidon gelatine de plant ant acide la 5 410601 598038"
+          ],
+          "identityValues": [
+            "he ole kokos raps aromen konzentrat von schwarzwurzel karotte schw sauerungsmittel milchsaure pflanze lien kokos koolzood aroma s concentrar van zwarte wortel wortel e a a doua kingszuurve huiles vegetales coco colza aromes concentre de carotte no 200ge and are not e amidon gelatine de plant ant acide la 5 410601 598038"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:6847522095749",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Schwarzwurzeln Migros",
+          "normalizedName": "Schwarzwurzeln Migros",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "schwarzwurzeln migros"
+          ],
+          "ingredientIdentityValues": [],
+          "identityValues": [
+            "schwarzwurzeln migros"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7610200095749",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Salsifis",
+          "normalizedName": "Salsifis",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "salsify",
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "cut salsify",
+            "salsifis",
+            "schwarzwurzeln geschnitten"
+          ],
+          "ingredientIdentityValues": [
+            "salsifis 63 eau sel de cuisine antioxydant acide ascorbique acidifiant acide citrique",
+            "salsify 63 water cooking salt antioxidant ascorbic acid acidifier citric acid",
+            "schwarzwurzeln 63 wasser kochsalz antioxidationsmittel ascorbinsaure sauerungsmittel citronensaure"
+          ],
+          "identityValues": [
+            "cut salsify",
+            "salsifis",
+            "salsifis 63 eau sel de cuisine antioxydant acide ascorbique acidifiant acide citrique",
+            "salsify 63 water cooking salt antioxidant ascorbic acid acidifier citric acid",
+            "schwarzwurzeln 63 wasser kochsalz antioxidationsmittel ascorbinsaure sauerungsmittel citronensaure",
+            "schwarzwurzeln geschnitten"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7610800001225",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Qualité & Prix Gemüseplatte mit Eierschwammes",
+          "normalizedName": "Qualité & Prix Gemüseplatte mit Eierschwammes",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "canned russian salad vegetables",
+            "gemuseplatte mit eierschwammen",
+            "qualite prix gemuseplatte mit eierschwammes"
+          ],
+          "ingredientIdentityValues": [
+            "gemuse 56 erbsen schweiz pariser karotten schweiz schwarzwurzeln belgien wasser eierschwamme 5 polen weissrussland kochsalz tafelessig",
+            "legumes 56 petits pois suisse carottes courtes suisse scorsoneres belgique eau chanterelles 5 pologne bielorussie sel de cuisine vinaigre de table"
+          ],
+          "identityValues": [
+            "canned russian salad vegetables",
+            "gemuse 56 erbsen schweiz pariser karotten schweiz schwarzwurzeln belgien wasser eierschwamme 5 polen weissrussland kochsalz tafelessig",
+            "gemuseplatte mit eierschwammen",
+            "legumes 56 petits pois suisse carottes courtes suisse scorsoneres belgique eau chanterelles 5 pologne bielorussie sel de cuisine vinaigre de table",
+            "qualite prix gemuseplatte mit eierschwammes"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7610800001294",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Salsifis noirs",
+          "normalizedName": "Salsifis noirs",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "salsifis noirs",
+            "schwarzwurzeln geschnitten"
+          ],
+          "ingredientIdentityValues": [
+            "salsifis eau sel de cuisine acidifiant e 330 antioxydant e 300",
+            "schwarzwurzeln wasser kochsalz sauerungsmittel e 330 antioxidans e 300"
+          ],
+          "identityValues": [
+            "salsifis eau sel de cuisine acidifiant e 330 antioxydant e 300",
+            "salsifis noirs",
+            "schwarzwurzeln geschnitten",
+            "schwarzwurzeln wasser kochsalz sauerungsmittel e 330 antioxidans e 300"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7610800001324",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Légumes aux chanterelles",
+          "normalizedName": "Légumes aux chanterelles",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "legumes aux chanterelles",
+            "qualite prix gemuseplatte mit eierschwammen"
+          ],
+          "ingredientIdentityValues": [
+            "gemuse 53 erbsen schweiz pariser karotten schweiz schwarzwurzeln europa wasser eierschwamme 5 polen weissrussland kochsalz tafelessig",
+            "legumes 53 petits pois suisse carottes courtes suisse scorsoneres europe eau chanterelles 5 pologne bielorussie sel de cuisine vinaigre de table"
+          ],
+          "identityValues": [
+            "gemuse 53 erbsen schweiz pariser karotten schweiz schwarzwurzeln europa wasser eierschwamme 5 polen weissrussland kochsalz tafelessig",
+            "legumes 53 petits pois suisse carottes courtes suisse scorsoneres europe eau chanterelles 5 pologne bielorussie sel de cuisine vinaigre de table",
+            "legumes aux chanterelles",
+            "qualite prix gemuseplatte mit eierschwammen"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7610818167951",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Qualité & Prix Légumes aux chanterelles",
+          "normalizedName": "Qualité & Prix Légumes aux chanterelles",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "qualite prix gemuseplatte mit eierschwammen",
+            "qualite prix legumes aux chanterelles"
+          ],
+          "ingredientIdentityValues": [
+            "gemuse 58 erbsen schweiz pariser karotten schweiz schwarzwurzeln belgien wasser eierschwamme 5 polen weissrussland kochsalz jodiert tafelessig",
+            "legumes 58 petits pois suisse carottes courtes suisse scorsoneres belgique eau chanterelles 5 pologne bielorussie sel de cuisine iode vinaigre de table"
+          ],
+          "identityValues": [
+            "gemuse 58 erbsen schweiz pariser karotten schweiz schwarzwurzeln belgien wasser eierschwamme 5 polen weissrussland kochsalz jodiert tafelessig",
+            "legumes 58 petits pois suisse carottes courtes suisse scorsoneres belgique eau chanterelles 5 pologne bielorussie sel de cuisine iode vinaigre de table",
+            "qualite prix gemuseplatte mit eierschwammen",
+            "qualite prix legumes aux chanterelles"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7613034450128",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Marché Mix de Légumes Bretagne",
+          "normalizedName": "Marché Mix de Légumes Bretagne",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "marche gemuse mix bretagne",
+            "marche mix de legumes bretagne"
+          ],
+          "ingredientIdentityValues": [
+            "broccoli 25 blumenkohl 25 karotten 20 bohnen 15 schwarzwurzeln 10 salz getrocknete gemuse zwiebeln tomaten knoblauch stabilisator reisstarke petersilie zucker",
+            "brocoli 25 choux fleur 25 carottes 20 haricots 15 salsifis 10 sel legumes deshydrates oignons tomates ail stabilisant amidon de riz persil sucre"
+          ],
+          "identityValues": [
+            "broccoli 25 blumenkohl 25 karotten 20 bohnen 15 schwarzwurzeln 10 salz getrocknete gemuse zwiebeln tomaten knoblauch stabilisator reisstarke petersilie zucker",
+            "brocoli 25 choux fleur 25 carottes 20 haricots 15 salsifis 10 sel legumes deshydrates oignons tomates ail stabilisant amidon de riz persil sucre",
+            "marche gemuse mix bretagne",
+            "marche mix de legumes bretagne"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7614200009812",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Gemüseplatte",
+          "normalizedName": "Gemüseplatte",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "gemuseplatte"
+          ],
+          "ingredientIdentityValues": [
+            "gemuse erbsen 24 karotten 24 schwarzwurzeln 6 5 champignons 6 4 zucker kochsalz aromen speiseessig",
+            "legumes petits pois 24 carottes 24 scorsoneres 6 5 champignons de paris 6 4 sucre sel de cuisine aromes vinaigre comestible"
+          ],
+          "identityValues": [
+            "gemuse erbsen 24 karotten 24 schwarzwurzeln 6 5 champignons 6 4 zucker kochsalz aromen speiseessig",
+            "gemuseplatte",
+            "legumes petits pois 24 carottes 24 scorsoneres 6 5 champignons de paris 6 4 sucre sel de cuisine aromes vinaigre comestible"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7614200009874",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Choix de légumes avec chanterelles",
+          "normalizedName": "Choix de légumes avec chanterelles",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "choix de legumes avec chanterelles",
+            "gemuseplatte mit eierschammen"
+          ],
+          "ingredientIdentityValues": [
+            "erbsen 25 karotten 25 schwarzwurzeln 9 9 eierschwamme 4 2 zucker jodiertes kochsalz gewurzextrakte antioxidantien e 330 e 300 speiseessig kochsalzgehalt insgesamt 1 0",
+            "petits pois 25 carottes 25 scorsoneres 9 9 chanterelles 4 2 sucre sel de cuisine iode extraits d epices antioxydants e 330 e 300 vinaigre comestible teneur totale en sel de cuisine 1 0"
+          ],
+          "identityValues": [
+            "choix de legumes avec chanterelles",
+            "erbsen 25 karotten 25 schwarzwurzeln 9 9 eierschwamme 4 2 zucker jodiertes kochsalz gewurzextrakte antioxidantien e 330 e 300 speiseessig kochsalzgehalt insgesamt 1 0",
+            "gemuseplatte mit eierschammen",
+            "petits pois 25 carottes 25 scorsoneres 9 9 chanterelles 4 2 sucre sel de cuisine iode extraits d epices antioxydants e 330 e 300 vinaigre comestible teneur totale en sel de cuisine 1 0"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7614200009898",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Erbsli & Rüebli mit Eierschwämmen",
+          "normalizedName": "Erbsli & Rüebli mit Eierschwämmen",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "erbsli ruebli mit eierschwammen",
+            "gemuseplatte mit eierschwammen"
+          ],
+          "ingredientIdentityValues": [
+            "gemuse karotten 24 erbsen 24 schwarzwurzeln 8 9 eierschwamme 4 1 zucker kochsalz aromen speiseessig",
+            "legumes carottes 24 petits ps scorsoneres 8 9 chanterelles 4 1 sucre sel de cuisine aromes vinaigre comestible"
+          ],
+          "identityValues": [
+            "erbsli ruebli mit eierschwammen",
+            "gemuse karotten 24 erbsen 24 schwarzwurzeln 8 9 eierschwamme 4 1 zucker kochsalz aromen speiseessig",
+            "gemuseplatte mit eierschwammen",
+            "legumes carottes 24 petits ps scorsoneres 8 9 chanterelles 4 1 sucre sel de cuisine aromes vinaigre comestible"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7616800304151",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Gemüsebouquet  - Migros",
+          "normalizedName": "Gemüsebouquet  - Migros",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "gemusebouquet migros",
+            "gemuseplatt nach jagerart"
+          ],
+          "ingredientIdentityValues": [
+            "eau petits pois ch carottes ch salsifis 9 chanterelles 5 sel de cuisine iode vinaigre de table antioxydants acide ascorbique et e224 acidifiant acide citrique",
+            "wasser erbsen ch karotten ch schwarzwurzeln 9 eierschwamme 5 jodiertes kochsalz tafelessig antioxidationsmittel ascorbinsaure und e224 sauerungsmittel citronensaure"
+          ],
+          "identityValues": [
+            "eau petits pois ch carottes ch salsifis 9 chanterelles 5 sel de cuisine iode vinaigre de table antioxydants acide ascorbique et e224 acidifiant acide citrique",
+            "gemusebouquet migros",
+            "gemuseplatt nach jagerart",
+            "wasser erbsen ch karotten ch schwarzwurzeln 9 eierschwamme 5 jodiertes kochsalz tafelessig antioxidationsmittel ascorbinsaure und e224 sauerungsmittel citronensaure"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7616800304175",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Jardinière de légumes à la chasseur",
+          "normalizedName": "Jardinière de légumes à la chasseur",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "gemuseplatte nach jagerart",
+            "jardiniere de legumes a la chasseur"
+          ],
+          "ingredientIdentityValues": [
+            "eau petits pois suisse carottes suisse salsifis 9 chanterelles 5 sel de cuisine iode vinaigre de table antioxydants acide ascorbique et e224 acidifiant acide citrique",
+            "wasser erbsen ch karotten ch schwarzwurzeln 9 eierschwamme 5 jodiertes kochsalz tafelessig antioxidationsmittel ascorbinsaure und e224 sauerungsmittel citronensaure"
+          ],
+          "identityValues": [
+            "eau petits pois suisse carottes suisse salsifis 9 chanterelles 5 sel de cuisine iode vinaigre de table antioxydants acide ascorbique et e224 acidifiant acide citrique",
+            "gemuseplatte nach jagerart",
+            "jardiniere de legumes a la chasseur",
+            "wasser erbsen ch karotten ch schwarzwurzeln 9 eierschwamme 5 jodiertes kochsalz tafelessig antioxidationsmittel ascorbinsaure und e224 sauerungsmittel citronensaure"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:8013399180019",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Sour tongues The Original",
+          "normalizedName": "Sour tongues The Original",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzel"
+          ],
+          "directIdentityValues": [
+            "sour tongues the original"
+          ],
+          "ingredientIdentityValues": [
+            "sucre sirop de glucose amidon de pommes de terre modifie amidon de mais acidifiants acide lactique acide malique gelatine aromes concentre de carotte noire cassis spirulina safran colorant extrait de paprika",
+            "sugar glucose syrup modified potato starch maize starch acidifiers lactic acid malic acid gelatin flavors concentrate of black carrot blackcurrant spirulina saffron dye paprika extract",
+            "zucker glukosesirup modifizierte kartoffelstarke maisstarke sauerungsmitteln milchsaure apfelsaure gelatine aromen konzentrat von schwarzwurzel schwarze johannisbeere spirulina saflor farbstoff paprikaextrakt"
+          ],
+          "identityValues": [
+            "sour tongues the original",
+            "sucre sirop de glucose amidon de pommes de terre modifie amidon de mais acidifiants acide lactique acide malique gelatine aromes concentre de carotte noire cassis spirulina safran colorant extrait de paprika",
+            "sugar glucose syrup modified potato starch maize starch acidifiers lactic acid malic acid gelatin flavors concentrate of black carrot blackcurrant spirulina saffron dye paprika extract",
+            "zucker glukosesirup modifizierte kartoffelstarke maisstarke sauerungsmitteln milchsaure apfelsaure gelatine aromen konzentrat von schwarzwurzel schwarze johannisbeere spirulina saflor farbstoff paprikaextrakt"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:8713800252556",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Smile",
+          "normalizedName": "Smile",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzel"
+          ],
+          "directIdentityValues": [
+            "smile"
+          ],
+          "ingredientIdentityValues": [
+            "glukosesirup zucker modifizierte starke starke gelatine sauerungsmittel milchsaure pflanzliche ole kokos palm aromen konzentrat von schwarzwurzel spirulina saflor karotte schwarze tohannisbeere uberzugsmittel bienenwachs farbstoffe paprikaextrakt kurkumin"
+          ],
+          "identityValues": [
+            "glukosesirup zucker modifizierte starke starke gelatine sauerungsmittel milchsaure pflanzliche ole kokos palm aromen konzentrat von schwarzwurzel spirulina saflor karotte schwarze tohannisbeere uberzugsmittel bienenwachs farbstoffe paprikaextrakt kurkumin",
+            "smile"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:4311501429921",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Landgemüse",
+          "normalizedName": "Landgemüse",
+          "matchOrigin": "INGREDIENT_ONLY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "landgemuse"
+          ],
+          "ingredientIdentityValues": [
+            "45 rosenkohl 30 karotten 10 schwarzwurzeln 10 pastinaken 5 staudensellerie durchschnittliche"
+          ],
+          "identityValues": [
+            "45 rosenkohl 30 karotten 10 schwarzwurzeln 10 pastinaken 5 staudensellerie durchschnittliche",
+            "landgemuse"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:42260219",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Schwarzwurzeln",
+          "normalizedName": "Schwarzwurzeln",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "schwarzwurzeln"
+          ],
+          "ingredientIdentityValues": [],
+          "identityValues": [
+            "schwarzwurzeln"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:23236493",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Schwarzwurzeln",
+          "normalizedName": "Schwarzwurzeln",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "schwarzwurzeln"
+          ],
+          "ingredientIdentityValues": [],
+          "identityValues": [
+            "schwarzwurzeln"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:4311501345382",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Edeka Schwarzwurzeln 4311501345382",
+          "normalizedName": "Edeka Schwarzwurzeln 4311501345382",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "edeka schwarzwurzeln 4311501345382"
+          ],
+          "ingredientIdentityValues": [
+            "schwarzwurzeln wasser speisesalz sauerungsmittel citronensaure antioxidationsmittel ascorbinsaure"
+          ],
+          "identityValues": [
+            "edeka schwarzwurzeln 4311501345382",
+            "schwarzwurzeln wasser speisesalz sauerungsmittel citronensaure antioxidationsmittel ascorbinsaure"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:7613269197669",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Jardinière de légumes à la chasseur",
+          "normalizedName": "Jardinière de légumes à la chasseur",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "schwarzwurzel"
+          ],
+          "directIdentityValues": [
+            "erbs ruebli schwarzwurzel pilz",
+            "jardiniere de legumes a la chasseur"
+          ],
+          "ingredientIdentityValues": [
+            "eau petits pois 34 carottes 14 salsifis 8 chanterelles 4 5 sel de cuisine vinaigre d eau de vie antioxydant acide ascorbique",
+            "wasser erbsen 34 karotten 14 scharzwurzeln 8 eirschwamme 4 5 kochsalz branntweinessig antioxidationsmittel ascorbinsaure"
+          ],
+          "identityValues": [
+            "eau petits pois 34 carottes 14 salsifis 8 chanterelles 4 5 sel de cuisine vinaigre d eau de vie antioxydant acide ascorbique",
+            "erbs ruebli schwarzwurzel pilz",
+            "jardiniere de legumes a la chasseur",
+            "wasser erbsen 34 karotten 14 scharzwurzeln 8 eirschwamme 4 5 kochsalz branntweinessig antioxidationsmittel ascorbinsaure"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:5410153035647",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Schwarzwurzel",
+          "normalizedName": "Schwarzwurzel",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "schwarzwurzel"
+          ],
+          "directIdentityValues": [
+            "schwarzwurzel"
+          ],
+          "ingredientIdentityValues": [
+            "schwarzwurzeln wasser salz sauerungsmittel chronensaure antioxidationsmittel ascorbinsaure nahrwertdeklaration pro 100g angesattigte fettsauren hydrate zucker ststoffe 102 kl 24 kcal 0 2g 0 0 g 3 4 g 1 0 g 2 5 g 1 0 g 0 62 g indestens haltbar bis siehe deckel"
+          ],
+          "identityValues": [
+            "schwarzwurzel",
+            "schwarzwurzeln wasser salz sauerungsmittel chronensaure antioxidationsmittel ascorbinsaure nahrwertdeklaration pro 100g angesattigte fettsauren hydrate zucker ststoffe 102 kl 24 kcal 0 2g 0 0 g 3 4 g 1 0 g 2 5 g 1 0 g 0 62 g indestens haltbar bis siehe deckel"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        },
+        {
+          "productIdentifier": "code:4388844053700",
+          "sourceFile": "openfoodfacts-products.slim.jsonl.gz",
+          "itemName": "Schwarzwurzeln",
+          "normalizedName": "Schwarzwurzeln",
+          "matchOrigin": "DIRECT_PRODUCT_IDENTITY",
+          "matchedAliases": [
+            "schwarzwurzeln"
+          ],
+          "directIdentityValues": [
+            "schwarzwurzeln"
+          ],
+          "ingredientIdentityValues": [],
+          "identityValues": [
+            "schwarzwurzeln"
+          ],
+          "hasAnyNutrition": false,
+          "hasCompleteCoreNutrition": false,
+          "availabilityReason": "NO_NUTRITION_VALUES",
+          "presentDimensions": [],
+          "missingCoreDimensions": [
+            "carbohydrates",
+            "energy",
+            "fat",
+            "protein",
+            "salt"
+          ],
+          "nutrientValues": {}
+        }
+      ]
+    }
+  ]
+}

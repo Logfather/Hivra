@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "brie de meaux": {
+      "litersPerKilogram": 538.0
+    },
+    "gruyère igp france": {
+      "litersPerKilogram": 803.0
+    },
+    "haricots verts, purée": {
+      "litersPerKilogram": 1500.0
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop, appertisé, égoutté": {
+      "litersPerKilogram": 4980.0
+    },
+    "potiron, appertisé, égoutté": {
+      "litersPerKilogram": 779.0
+    },
+    "sandwich pain de mie complet, jambon, crudités, fromage optionnel": {
+      "litersPerKilogram": 967.0
+    },
+    "saumon, cru, élevage": {
+      "litersPerKilogram": 1120.0
+    },
+    "vin rosé": {
+      "litersPerKilogram": 249.0
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "boisson infantile céréales lactées pour le petit déjeuner dès 8/9 mois": {
+      "environmentScoreMptPerKg": 0.0934,
+      "climateKgCo2EqPerKg": 0.863,
+      "landUsePtPerKg": 40.6,
+      "waterDeprivationM3PerKg": 0.174
+    },
+    "crabe ou tourteau, bouilli/cuit à l'eau": {
+      "environmentScoreMptPerKg": 5.5,
+      "climateKgCo2EqPerKg": 33.0,
+      "landUsePtPerKg": 90.8,
+      "waterDeprivationM3PerKg": 2.36
+    },
+    "céréales pour petit déjeuner fourrées au chocolat ou chocolat noisettes": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.4,
+      "landUsePtPerKg": 156.0,
+      "waterDeprivationM3PerKg": 6.45
+    },
+    "fromage de brebis corse à pâte molle": {
+      "environmentScoreMptPerKg": 1.15,
+      "climateKgCo2EqPerKg": 9.02,
+      "landUsePtPerKg": 935.0,
+      "waterDeprivationM3PerKg": 0.667
+    },
+    "gougère": {
+      "environmentScoreMptPerKg": 0.437,
+      "climateKgCo2EqPerKg": 3.8,
+      "landUsePtPerKg": 166.0,
+      "waterDeprivationM3PerKg": 0.82
+    },
+    "huile d'olive vierge extra": {
+      "environmentScoreMptPerKg": 0.6,
+      "climateKgCo2EqPerKg": 1.63,
+      "landUsePtPerKg": 621.0,
+      "waterDeprivationM3PerKg": 22.2
+    },
+    "muffin, aux myrtilles ou au chocolat": {
+      "environmentScoreMptPerKg": 0.409,
+      "climateKgCo2EqPerKg": 4.63,
+      "landUsePtPerKg": 194.0,
+      "waterDeprivationM3PerKg": 0.777
+    },
+    "pizza kebab": {
+      "environmentScoreMptPerKg": 0.423,
+      "climateKgCo2EqPerKg": 3.23,
+      "landUsePtPerKg": 178.0,
+      "waterDeprivationM3PerKg": 1.91
+    },
+    "poivron jaune, cru": {
+      "environmentScoreMptPerKg": 0.0803,
+      "climateKgCo2EqPerKg": 0.715,
+      "landUsePtPerKg": 6.38,
+      "waterDeprivationM3PerKg": 0.294
+    },
+    "riz blanc, cuit, avec poulet": {
+      "environmentScoreMptPerKg": 0.408,
+      "climateKgCo2EqPerKg": 2.91,
+      "landUsePtPerKg": 108.0,
+      "waterDeprivationM3PerKg": 3.09
+    },
+    "terrine de poisson": {
+      "environmentScoreMptPerKg": 1.38,
+      "climateKgCo2EqPerKg": 8.57,
+      "landUsePtPerKg": 63.7,
+      "waterDeprivationM3PerKg": 0.618
+    }
+  }
+}

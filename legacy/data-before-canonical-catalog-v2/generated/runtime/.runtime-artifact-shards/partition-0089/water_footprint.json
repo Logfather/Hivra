@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "jambon cuit, fumé": {
+      "litersPerKilogram": 2480.0
+    },
+    "pois chiche, appertisé, égoutté": {
+      "litersPerKilogram": 529.0
+    },
+    "pâtes sèches, au blé complet, crues": {
+      "litersPerKilogram": 932.0
+    },
+    "sandwich baguette, jambon, oeuf dur, crudités (tomate, salade), beurre": {
+      "litersPerKilogram": 1310.0
+    },
+    "saucisse de volaille, type knack": {
+      "litersPerKilogram": 1860.0
+    },
+    "saucisse hot dog végétale": {
+      "litersPerKilogram": 642.0
+    },
+    "terrine de lapin": {
+      "litersPerKilogram": 2070.0
+    },
+    "échalote, cuite": {
+      "litersPerKilogram": 860.0
+    }
+  }
+}

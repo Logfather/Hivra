@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "chou frisé, cru": {
+      "environmentScoreMptPerKg": 0.0743,
+      "climateKgCo2EqPerKg": 0.713,
+      "landUsePtPerKg": 32.9,
+      "waterDeprivationM3PerKg": 0.0703
+    },
+    "coeur, poulet, cuit": {
+      "environmentScoreMptPerKg": 0.348,
+      "climateKgCo2EqPerKg": 2.14,
+      "landUsePtPerKg": 99.9,
+      "waterDeprivationM3PerKg": 0.874
+    },
+    "fromage de chèvre bûche": {
+      "environmentScoreMptPerKg": 0.823,
+      "climateKgCo2EqPerKg": 5.91,
+      "landUsePtPerKg": 402.0,
+      "waterDeprivationM3PerKg": 2.07
+    },
+    "lait fermenté ou spécialité laitière type yaourt, aux fruits, sucré, au bifidus": {
+      "environmentScoreMptPerKg": 0.212,
+      "climateKgCo2EqPerKg": 1.89,
+      "landUsePtPerKg": 72.1,
+      "waterDeprivationM3PerKg": 1.64
+    },
+    "pintade, poitrine, crue": {
+      "environmentScoreMptPerKg": 0.941,
+      "climateKgCo2EqPerKg": 5.58,
+      "landUsePtPerKg": 335.0,
+      "waterDeprivationM3PerKg": 2.49
+    },
+    "sardine, à l'huile d'olive, appertisée, égouttée": {
+      "environmentScoreMptPerKg": 0.524,
+      "climateKgCo2EqPerKg": 3.77,
+      "landUsePtPerKg": 182.0,
+      "waterDeprivationM3PerKg": 6.37
+    },
+    "yaourt, lait fermenté ou spécialité laitière, nature, 0% mg": {
+      "environmentScoreMptPerKg": 0.19,
+      "climateKgCo2EqPerKg": 1.89,
+      "landUsePtPerKg": 65.7,
+      "waterDeprivationM3PerKg": 0.342
+    }
+  }
+}

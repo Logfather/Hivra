@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "bleu de gex ou fromage bleu du haut jura ou bleu de septmoncel (aoc)": {
+      "score": 0.591
+    },
+    "boeuf, joue, crue": {
+      "score": 2.39
+    },
+    "boisson au soja, aromatisée, sucrée, enrichie en calcium": {
+      "score": 0.0815
+    },
+    "courgette, pulpe et peau, surgelée, crue": {
+      "score": 0.602
+    },
+    "patate douce, cuite": {
+      "score": 0.38
+    },
+    "porc, échine, rôtie/cuite au four": {
+      "score": 2.77
+    },
+    "quenelle de volaille, en sauce": {
+      "score": 1.56
+    },
+    "saumon, cuit à la vapeur": {
+      "score": 1.5
+    }
+  }
+}

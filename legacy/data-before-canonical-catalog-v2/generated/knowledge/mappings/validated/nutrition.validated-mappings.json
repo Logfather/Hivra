@@ -1,0 +1,3525 @@
+{
+  "version": 1,
+  "mappings": [
+    {
+      "catalogKey": "air dried ham",
+      "serverKey": "oak smoked air dried lean ham slices",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate is an air dried ham product; added descriptors like oak smoked, lean, and slices do not change the core food identity."
+    },
+    {
+      "catalogKey": "allspice",
+      "serverKey": "ground allspice",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog food is allspice; 'ground allspice' is a direct same-food match, while the other candidates are either whole-form/product-specific or mixtures/seasonings."
+    },
+    {
+      "catalogKey": "almond pudding",
+      "serverKey": "pudding, almond",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "Candidate 'pudding, almond' is the same food as almond pudding, just with reversed word order."
+    },
+    {
+      "catalogKey": "anise",
+      "serverKey": "anise seed",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item 'anise' refers to the spice commonly represented as anise seed; other candidates are prepared foods or a powdered form."
+    },
+    {
+      "catalogKey": "asian noodle stir fry ready meal",
+      "serverKey": "asian noodle stir fry",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate exactly matches the core food name; 'ready meal' describes format rather than a different food."
+    },
+    {
+      "catalogKey": "baked cod",
+      "serverKey": "1 baked cod",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "Candidate 1 clearly denotes baked cod; other candidates are broader, different cod types, or include additional ingredients."
+    },
+    {
+      "catalogKey": "baking yeast",
+      "serverKey": "bakers yeast",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "\"bakers yeast\" is a direct synonym for baking yeast; other candidates are either broader, less exact, or different foods."
+    },
+    {
+      "catalogKey": "barley malt",
+      "serverKey": "dry organic barley malt",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is barley malt, and this candidate is the same food with only dry/organic descriptors; syrup and extract candidates are different forms."
+    },
+    {
+      "catalogKey": "barley malt extract",
+      "serverKey": "organic barley malt extract",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.96,
+      "reason": "The candidate is the same food name with only an organic modifier added."
+    },
+    {
+      "catalogKey": "basket cheese",
+      "serverKey": "a semi soft basket cheese",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog food is generic basket cheese; this candidate directly describes basket cheese, while the others are different specific variants or unrelated products."
+    },
+    {
+      "catalogKey": "basmati rice ready meal",
+      "serverKey": "basmati ready rice",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate 1 contains the same core identity: basmati rice in ready/ready-to-eat form; other candidates are either generic basmati rice or different meals."
+    },
+    {
+      "catalogKey": "bavette pasta",
+      "serverKey": "bavette",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is generic bavette pasta; 'bavette' is the matching pasta shape, while the other pasta candidates add qualifiers such as artisan or flavored."
+    },
+    {
+      "catalogKey": "beef fillet",
+      "serverKey": "beef tenderloin fillet",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Beef fillet commonly refers to the tenderloin cut; this candidate directly represents that food, while the others specify different cuts or preparations."
+    },
+    {
+      "catalogKey": "bell pepper snack",
+      "serverKey": "bell pepper mix snack",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.84,
+      "reason": "The candidate is the only one that preserves the bell pepper snack identity; others describe different forms or preparations such as crisps, roasted, sticks, or strips."
+    },
+    {
+      "catalogKey": "bierwurst sausage",
+      "serverKey": "sausage bierwurst",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "Candidate 1 contains the same food terms as the catalog item and clearly represents bierwurst sausage."
+    },
+    {
+      "catalogKey": "black cumin",
+      "serverKey": "black zeera (black cumin)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The candidate explicitly names black cumin as the same food; other candidates are oil, prepared foods, or less direct variants."
+    },
+    {
+      "catalogKey": "boiled potatoes",
+      "serverKey": "white potatoes boiled",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.97,
+      "reason": "Candidate exactly represents boiled potatoes; other candidates are prepared dishes or unrelated potato items."
+    },
+    {
+      "catalogKey": "bread crust",
+      "serverKey": "top crust bread",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is bread crust, and the candidate 'top crust bread' specifically refers to a bread crust portion. The other candidates are different foods or ingredients involving crust."
+    },
+    {
+      "catalogKey": "butter cheese",
+      "serverKey": "cheese and butter",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate is the same two-item food combination as 'butter cheese', just with the items reversed; the other candidates add different food forms or products."
+    },
+    {
+      "catalogKey": "buttermilk cultures",
+      "serverKey": "lowfat cultures buttermilk",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate denotes cultured buttermilk and is the only option representing the same food; the others are different buttermilk-containing foods or less specific variants."
+    },
+    {
+      "catalogKey": "cabanossi sausage",
+      "serverKey": "cabanossi",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "The candidate 'cabanossi' is the same specific sausage type as cabanossi sausage."
+    },
+    {
+      "catalogKey": "calcium oat milk",
+      "serverKey": "oat calcium milk",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 contains the same food terms as the catalog item, only reordered: oat, calcium, milk."
+    },
+    {
+      "catalogKey": "candied almonds",
+      "serverKey": "valencia almonds candied",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.96,
+      "reason": "Candidate is candied almonds, matching the catalog food; other candidates are mixes, desserts, or plain almonds."
+    },
+    {
+      "catalogKey": "canned applesauce",
+      "serverKey": "applesauce",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The catalog food is canned applesauce, and the candidate 'applesauce' represents the same food generically; other candidates are variants or unrelated branded/modified forms."
+    },
+    {
+      "catalogKey": "canned baby corn",
+      "serverKey": "canned baby corn 410g",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate is canned baby corn, with only package size added."
+    },
+    {
+      "catalogKey": "canned beetroot",
+      "serverKey": "canned diced beetroot",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate is canned beetroot, with only the cut style specified as diced."
+    },
+    {
+      "catalogKey": "canned carrots",
+      "serverKey": "canned sliced carrots",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "Canned sliced carrots are the same food as canned carrots; the other candidates are different foods or mixtures."
+    },
+    {
+      "catalogKey": "canned chickpeas",
+      "serverKey": "chickpeas (canned)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate exactly represents the catalog food canned chickpeas; other candidates add extra qualifiers or brand/noise."
+    },
+    {
+      "catalogKey": "canned coconut milk",
+      "serverKey": "milk coconut",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate denotes coconut milk generically, which corresponds to canned coconut milk; the other candidates add different modifiers or product types."
+    },
+    {
+      "catalogKey": "canned egg salad",
+      "serverKey": "egg salad",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is egg salad with a canned/packaging descriptor; the generic candidate \"egg salad\" represents the same food, while the other candidates are specific variants."
+    },
+    {
+      "catalogKey": "canned green beans",
+      "serverKey": "green beans (canned)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate names the same food: green beans in canned form."
+    },
+    {
+      "catalogKey": "canned lentil soup",
+      "serverKey": "soup, lentil",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is the generic lentil soup entry and clearly corresponds to canned lentil soup; the other candidates are specific variant flavors or styles."
+    },
+    {
+      "catalogKey": "canned olives",
+      "serverKey": "canned sliced olives",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate is canned olives with slicing specified, which is the same food form/category as canned olives; other candidates are different olive preparations or varieties."
+    },
+    {
+      "catalogKey": "canned peach halves",
+      "serverKey": "canned peach halves in grape juice",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate 1 contains the same core food form: canned peach halves; the added grape juice describes the packing medium."
+    },
+    {
+      "catalogKey": "canned pineapple chunks",
+      "serverKey": "pineapple chunks, canned",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 exactly represents canned pineapple chunks; other candidates are either qualified differently or less specific."
+    },
+    {
+      "catalogKey": "canned red beans",
+      "serverKey": "red beans canned",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "The candidate exactly represents canned red beans with the same food type and preparation."
+    },
+    {
+      "catalogKey": "canned soup vegetables",
+      "serverKey": "soup vegetables",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is vegetable soup, and candidate 1 is the generic vegetable soup entry; the other candidates specify different variants or added ingredients."
+    },
+    {
+      "catalogKey": "canned tomato pieces",
+      "serverKey": "chopped tomato canned",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Canned tomato pieces are chopped/diced canned tomatoes; this candidate matches the form and preservation, unlike whole or generic tomato options."
+    },
+    {
+      "catalogKey": "canned tomato soup",
+      "serverKey": "tomato soup, tomato",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "This candidate explicitly represents tomato soup; the other canned tomato candidates are tomatoes, not soup."
+    },
+    {
+      "catalogKey": "caraway",
+      "serverKey": "caraway seeds",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Caraway as a food ingredient most directly refers to the seeds; the other candidates are flavored prepared foods or a less specific spice label."
+    },
+    {
+      "catalogKey": "cashew yogurt",
+      "serverKey": "so delicious cashew yogurt",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "This candidate is the plain branded form of cashew yogurt, while the others add flavors, mix-ins, or a different drinkable form."
+    },
+    {
+      "catalogKey": "cervelat sausage",
+      "serverKey": "cervelat summer sausage",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate names the same cervelat sausage food; the other candidates are different sausage types or generic sausage entries."
+    },
+    {
+      "catalogKey": "cheese spaetzle ready meal",
+      "serverKey": "cheese egg spaetzle",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate shares the distinctive food identity of cheese spaetzle; 'egg' is consistent with spaetzle, while the other candidates are different cheese or ready meals."
+    },
+    {
+      "catalogKey": "chicken eggs",
+      "serverKey": "chicken eggs m",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate is chicken eggs with only a likely size qualifier; other candidates are prepared dishes or more specific product descriptions."
+    },
+    {
+      "catalogKey": "chicken fricassee",
+      "serverKey": "boneless chicken fricassee, 72 oz",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is chicken fricassee; the selected candidate is chicken fricassee with only boneless/size details, while the rice candidate includes an added side/component."
+    },
+    {
+      "catalogKey": "chicken rice ready meal",
+      "serverKey": "fortune avenue, chicken rice meal",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The catalog food is a chicken rice ready meal, and this candidate specifically represents a chicken rice meal; the others are different chicken dishes such as drumsticks, tacos, noodles, or freeze-dried fried rice."
+    },
+    {
+      "catalogKey": "chili con carne ready meal",
+      "serverKey": "ready to serve chili con carne, 50 ounce cans, 12 pack",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is ready-to-serve chili con carne, matching the catalog food's chili con carne ready meal identity; other candidates lack the ready meal/ready-to-serve indication."
+    },
+    {
+      "catalogKey": "chilled orange juice",
+      "serverKey": "juice, orange",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is orange juice; this candidate directly represents orange juice, while the chilled blend/brand and redundant variants are less exact."
+    },
+    {
+      "catalogKey": "chocolate rice milk",
+      "serverKey": "rice milk chocolate",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 is the same food name with the same components reordered; the other candidates are chocolate-covered rice cakes, chips, or crackers."
+    },
+    {
+      "catalogKey": "citrus fruit mix",
+      "serverKey": "citrus mix",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "Candidate 'citrus mix' best represents a citrus fruit mix; other candidates are either broader fruit mixes or candy/gummies."
+    },
+    {
+      "catalogKey": "classic muesli",
+      "serverKey": "classic lightly toasted muesli 700g",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "This candidate is a classic muesli product; the others are a macadamia variant, muesli bars, or too generic."
+    },
+    {
+      "catalogKey": "coarse bratwurst sausage",
+      "serverKey": "bratwurst sausage links",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog food is a bratwurst sausage; this candidate directly represents bratwurst sausage links, while other candidates are generic, regional, smoked, or redundant/less direct."
+    },
+    {
+      "catalogKey": "coarse cornmeal",
+      "serverKey": "cornmeal coarse",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "The candidate exactly represents coarse cornmeal with the same food and granularity."
+    },
+    {
+      "catalogKey": "coarse mustard",
+      "serverKey": "coarse grain mustard",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Catalog food 'coarse mustard' is best represented by the generic candidate 'coarse grain mustard'; other candidates specify distinct variants such as Dijon, hot, or harvest."
+    },
+    {
+      "catalogKey": "cocoa drink powder",
+      "serverKey": "instant fairtrade cocoa drink powder",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate is a cocoa drink powder; added descriptors 'instant' and 'fairtrade' do not change the food identity."
+    },
+    {
+      "catalogKey": "cold pressed rapeseed oil",
+      "serverKey": "cold pressed canola oil",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Canola oil is edible rapeseed oil, and both specify cold pressed; the lemon-infused option is a flavored variant, not the plain oil."
+    },
+    {
+      "catalogKey": "cold roast",
+      "serverKey": "roast beef cold cuts",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The only food candidate matching cold roast as a cold roasted meat item is roast beef cold cuts; the other candidates are cold brew coffee products."
+    },
+    {
+      "catalogKey": "cooked bratwurst sausage",
+      "serverKey": "cooked bratwurst",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The candidate exactly matches the food as cooked bratwurst; bratwurst is a sausage."
+    },
+    {
+      "catalogKey": "cream of mushroom soup ready meal",
+      "serverKey": "cream of mushroom soup",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The catalog item is cream of mushroom soup; this candidate matches the same non-condensed soup, while the condensed options are different."
+    },
+    {
+      "catalogKey": "creamy cream cheese",
+      "serverKey": "cream cheese (creamy)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "The catalog food is creamy cream cheese, and the selected candidate is the same food; the other candidates are cream cheese frosting."
+    },
+    {
+      "catalogKey": "cress",
+      "serverKey": "salad cress",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is plain cress, and the only candidate that represents cress as the food itself rather than a prepared dish containing cress is \"salad cress\"."
+    },
+    {
+      "catalogKey": "crusty bread roll",
+      "serverKey": "roll bread",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate \"roll bread\" represents a bread roll; the other candidates are mixes, baguette/vienna breads, or grain-specific rolls rather than the same generic crusty bread roll."
+    },
+    {
+      "catalogKey": "curry rice dish",
+      "serverKey": "curry rice",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog food is the curry rice dish; 'curry rice' is the direct matching food name, while the others are generic, differently phrased, or add ingredients."
+    },
+    {
+      "catalogKey": "damson plum",
+      "serverKey": "michigan damson plum",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is damson plum; the selected candidate is the same plum type with only a geographic descriptor. Other candidates are processed products or different plums."
+    },
+    {
+      "catalogKey": "dark chocolate with nuts",
+      "serverKey": "dark chocolate with nuts stevia",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is the same core food, dark chocolate with nuts, with only stevia noted as an added sweetener; other candidates add distinct foods or formats."
+    },
+    {
+      "catalogKey": "decaffeinated coffee",
+      "serverKey": "coffee, decaffeinated",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.97,
+      "reason": "Candidate exactly matches the catalog food as generic decaffeinated coffee; other candidates add size or preparation qualifiers."
+    },
+    {
+      "catalogKey": "defatted cocoa powder",
+      "serverKey": "baking cocoa powder",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "Defatted cocoa powder is ordinary cocoa powder with fat removed; baking cocoa powder is the generic cocoa powder candidate, while the others specify distinct variants or mixtures."
+    },
+    {
+      "catalogKey": "delicatessen liver sausage",
+      "serverKey": "braunschweiger liver sausage",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "Braunschweiger is a deli-style liver sausage, while the other candidates are a flavored variant, liver alone, or non-specific sausages."
+    },
+    {
+      "catalogKey": "diced turkey meat",
+      "serverKey": "meat turkey",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is turkey meat with a diced cut; the generic candidate \"meat turkey\" represents the same food, while the others specify different preparations or forms."
+    },
+    {
+      "catalogKey": "dried kidney beans",
+      "serverKey": "dried red kidney beans",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The catalog food is dried kidney beans, and the candidate specifies dried red kidney beans, which is the same dried kidney bean food with a common color specification."
+    },
+    {
+      "catalogKey": "dried parsley",
+      "serverKey": "lightly dried parsley",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is parsley in a dried form; the other candidates are mixed products or unrelated dried foods."
+    },
+    {
+      "catalogKey": "dried red lentils",
+      "serverKey": "hulled red lentils",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "Hulled red lentils are the same lentil type as dried red lentils; the other candidates are different foods or preparations."
+    },
+    {
+      "catalogKey": "dried rosemary",
+      "serverKey": "dried rosemary leaves",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate is dried rosemary leaves, which clearly represents dried rosemary; other candidates are mixed foods containing rosemary."
+    },
+    {
+      "catalogKey": "dried tarragon",
+      "serverKey": "tarragon",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is the same herb, while the other candidates are unrelated dried foods or drying terms."
+    },
+    {
+      "catalogKey": "dried thyme",
+      "serverKey": "dried thyme leaves",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 'dried thyme leaves' clearly represents dried thyme; the others are unrelated dried foods or descriptors."
+    },
+    {
+      "catalogKey": "duck breast fillet",
+      "serverKey": "duck breast fillets",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "Candidate is the same duck breast fillet item, differing only by plural form."
+    },
+    {
+      "catalogKey": "eggplants",
+      "serverKey": "fresh eggplants",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Catalog item is generic eggplants; fresh eggplants is the unprepared ingredient, while other candidates are cooked or styled preparations."
+    },
+    {
+      "catalogKey": "elderberry juice",
+      "serverKey": "organic elderberry juice",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate is elderberry juice with only an organic modifier; other candidates are blends, concentrate, or a shot."
+    },
+    {
+      "catalogKey": "fine gelbwurst sausage",
+      "serverKey": "gelbwurst",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The catalog item is gelbwurst sausage; the candidate 'gelbwurst' directly names the same food, while the other sausage candidates are different or generic."
+    },
+    {
+      "catalogKey": "floury potatoes",
+      "serverKey": "floury cooking potatoes",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.94,
+      "reason": "The candidate names the same floury potato type, with 'cooking' as a descriptive qualifier."
+    },
+    {
+      "catalogKey": "fresh baguette",
+      "serverKey": "fresh baked baguette",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The candidate is the same plain food item, a fresh baguette; the other candidates are different items or less specific."
+    },
+    {
+      "catalogKey": "fresh bratwurst sausage",
+      "serverKey": "bratwurst sausage links",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Catalog item is fresh bratwurst sausage; this candidate is the generic bratwurst sausage link entry, while others specify different variants such as smoked, turkey, or Alaskan."
+    },
+    {
+      "catalogKey": "fresh camembert",
+      "serverKey": "camembert",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog food is fresh camembert, and the candidate \"camembert\" represents the same cheese; the other candidates are only freshness-related or different foods."
+    },
+    {
+      "catalogKey": "fresh chili peppers",
+      "serverKey": "chili peppers whole",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is generic fresh chili peppers, and the candidate 'chili peppers whole' represents whole chili peppers rather than a prepared dish or crushed product."
+    },
+    {
+      "catalogKey": "fresh corn",
+      "serverKey": "farm fresh sweet corn",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "Catalog item is generic fresh corn; this candidate represents fresh sweet corn, while the others specify juice, kernels, cut corn, or frozen/cut forms."
+    },
+    {
+      "catalogKey": "fresh damson plums",
+      "serverKey": "plums fresh",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Fresh damson plums are a type of fresh plum, and the candidate represents fresh plums."
+    },
+    {
+      "catalogKey": "fresh fish fillet",
+      "serverKey": "fresh fillet fish",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "The selected candidate contains the same food terms as the catalog item, only in a different word order."
+    },
+    {
+      "catalogKey": "fresh gouda cheese",
+      "serverKey": "gouda cheese fresh cut",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate exactly matches Gouda cheese with fresh/fresh-cut descriptor; other candidates are less specific."
+    },
+    {
+      "catalogKey": "fresh herb mix",
+      "serverKey": "herb mix",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "Candidate represents a herb mix, matching the catalog food; other candidates are frozen/specific, vague, fruit, or flowers."
+    },
+    {
+      "catalogKey": "fresh kohlrabi",
+      "serverKey": "kohlrabi linguine fresh veggie noodles, kohlrabi linguine",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "Candidate 1 is a fresh kohlrabi-only item; other candidates are mixed dishes, generic fresh, or different foods."
+    },
+    {
+      "catalogKey": "fresh lactose free whole milk",
+      "serverKey": "lactose free whole milk",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The candidate matches lactose-free whole milk; 'fresh' is a general descriptor and does not change the food identity."
+    },
+    {
+      "catalogKey": "fresh mandarins",
+      "serverKey": "adorbs mandarins",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate represents mandarins, while other candidates are generic or include a different food such as extra virgin olive oil."
+    },
+    {
+      "catalogKey": "fresh peas",
+      "serverKey": "green peas fresh",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is generic fresh peas; 'green peas fresh' directly represents fresh green peas, while the other candidates are more specific or different pea types."
+    },
+    {
+      "catalogKey": "fresh plums",
+      "serverKey": "plums fresh",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "The candidate exactly represents fresh plums with the same food and form."
+    },
+    {
+      "catalogKey": "fresh pollock fillet",
+      "serverKey": "pacific pollock fillet",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is a pollock fillet, matching the catalog food; other candidates are generic fish or different meats/species."
+    },
+    {
+      "catalogKey": "fresh porcini mushrooms",
+      "serverKey": "porcini mushrooms",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate is the same generic food, porcini mushrooms; 'fresh' is consistent with the unprocessed generic item, while other candidates specify fried, marinated, or regional variants."
+    },
+    {
+      "catalogKey": "fresh pork chops",
+      "serverKey": "pork chops",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The catalog item is generic fresh pork chops, and the candidate \"pork chops\" represents the same food without added preparation or modifiers."
+    },
+    {
+      "catalogKey": "fresh pretzel croissant",
+      "serverKey": "pretzel croissant",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate exactly matches the core food name; 'fresh' is only a freshness descriptor."
+    },
+    {
+      "catalogKey": "fresh quark",
+      "serverKey": "quark fresh cheese, wisconsin cheese",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate explicitly contains quark and fresh cheese, which represents fresh quark; the other candidates are unrelated fresh foods."
+    },
+    {
+      "catalogKey": "fresh raspberries",
+      "serverKey": "raspberries fresh",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "Candidate exactly represents fresh raspberries; other candidates include frozen, preserves, or chocolate preparations."
+    },
+    {
+      "catalogKey": "fresh sorrel",
+      "serverKey": "sorrel",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog item is fresh sorrel; candidate \"sorrel\" is the same food, while the other candidates are generic or different foods."
+    },
+    {
+      "catalogKey": "fresh sweet corn",
+      "serverKey": "farm fresh sweet corn",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate is the same food, fresh sweet corn, with only an added descriptive term 'farm'; other candidates specify cut, steamed, or frozen forms."
+    },
+    {
+      "catalogKey": "fresh tarragon",
+      "serverKey": "tarragon",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate 'tarragon' represents the same herb as fresh tarragon; other candidates are vinegar, generic freshness, or unrelated foods."
+    },
+    {
+      "catalogKey": "fresh tuna fillet",
+      "serverKey": "tuna fish fillet",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is a tuna fish fillet, which clearly represents the catalog food fresh tuna fillet; other candidates are generic, different fish, roll, or smoked."
+    },
+    {
+      "catalogKey": "fresh walnut kernels",
+      "serverKey": "organic raw walnut kernels",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "This is the same plain walnut kernel food; 'raw' aligns with fresh, while organic is only a production descriptor."
+    },
+    {
+      "catalogKey": "fresh white bread",
+      "serverKey": "fresh & natural white bread",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "Candidate exactly matches the core food description 'fresh white bread' with only the additional descriptor 'natural'."
+    },
+    {
+      "catalogKey": "fresh whole grain rolls",
+      "serverKey": "whole grain deli rolls",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "Candidate is the only roll item and matches the whole grain rolls description; other candidates are broader or different foods."
+    },
+    {
+      "catalogKey": "fresh whole milk cheese",
+      "serverKey": "whole milk fresh cheese",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 contains the same food identity terms as the catalog item, only in a different word order."
+    },
+    {
+      "catalogKey": "freshwater shrimp",
+      "serverKey": "freshwater shrimp raw iqf",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate explicitly names freshwater shrimp; raw IQF are form/processing descriptors and do not change the food identity."
+    },
+    {
+      "catalogKey": "fried herring",
+      "serverKey": "fried herring fillets",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate is fried herring in fillet form, which clearly represents the same food; the pickled herring option is a different preparation."
+    },
+    {
+      "catalogKey": "fried potato seasoning",
+      "serverKey": "potato seasoning",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is a seasoning for fried potatoes; among the candidates, only \"potato seasoning\" represents a seasoning rather than a fried potato food product or unrelated seasoning."
+    },
+    {
+      "catalogKey": "frozen apple slices",
+      "serverKey": "apple slices",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is the generic same food, apple slices; the catalog's frozen state does not indicate a different apple variety or preparation beyond storage state."
+    },
+    {
+      "catalogKey": "frozen asian vegetable mix",
+      "serverKey": "asian mix vegetable",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is the same generic Asian vegetable mix; other candidates are less specific or add a different style/variant."
+    },
+    {
+      "catalogKey": "frozen berry fruit",
+      "serverKey": "berry frozen fruit",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 is the same generic food with the same words in different order: frozen berry fruit."
+    },
+    {
+      "catalogKey": "frozen berry mix",
+      "serverKey": "berry mix (frozen)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.96,
+      "reason": "The selected candidate is the same food as frozen berry mix, with identical concepts of berry mix and frozen state."
+    },
+    {
+      "catalogKey": "frozen berry yogurt",
+      "serverKey": "frozen yogurt mix berry",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog food is a generic frozen berry yogurt, and the candidate 'frozen yogurt mix berry' represents the same basic food, while the others add distinct product attributes or formats."
+    },
+    {
+      "catalogKey": "frozen bread",
+      "serverKey": "bread fresh frozen",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The catalog item is generic frozen bread; candidate 1 represents plain bread that is frozen, while the others are specific flavored or specialty breads."
+    },
+    {
+      "catalogKey": "frozen bread rolls",
+      "serverKey": "frozen dinner rolls",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is frozen bread rolls; the candidate 'frozen dinner rolls' denotes frozen rolls and is the closest same food among the supplied options."
+    },
+    {
+      "catalogKey": "frozen chicken fillet",
+      "serverKey": "frozen chicken breast fillet",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog food is a frozen chicken fillet, and this candidate specifies frozen chicken breast fillet, which is the same type of food; other candidates are more specific/different products or not chicken fillet."
+    },
+    {
+      "catalogKey": "frozen creamed spinach",
+      "serverKey": "creamed spinach",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog item is frozen creamed spinach; among the candidates, only \"creamed spinach\" represents the same prepared food, while the others add asiago, baked preparation, or omit the creamed component."
+    },
+    {
+      "catalogKey": "frozen curry vegetable mix",
+      "serverKey": "indian inspired vegetable mix (frozen)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is a frozen curry-style vegetable mix, and this candidate specifically describes a frozen Indian-inspired vegetable mix; other candidates are generic or for kids."
+    },
+    {
+      "catalogKey": "frozen doner kebab",
+      "serverKey": "doner kebab",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate is the same food, with only the frozen state omitted; other candidates are different variants or products."
+    },
+    {
+      "catalogKey": "frozen fish fillet",
+      "serverKey": "frozen fillet fish raw",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The candidate is the same generic frozen fish fillet item, with matching core terms and no conflicting preparation or species."
+    },
+    {
+      "catalogKey": "frozen fish fingers",
+      "serverKey": "fish fingers, breaded, frozen",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.97,
+      "reason": "Candidate exactly represents frozen fish fingers, including fish fingers and frozen form."
+    },
+    {
+      "catalogKey": "frozen forest berries",
+      "serverKey": "forest berries",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate exactly matches the core food 'forest berries'; 'frozen' is a storage/state descriptor, while other candidates are broader or less exact."
+    },
+    {
+      "catalogKey": "frozen forest berry mix",
+      "serverKey": "berry mix (frozen)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is a frozen mixed berry product; this candidate directly represents frozen berry mix. Other candidates are yogurt mix or trail mix, or less exact wording."
+    },
+    {
+      "catalogKey": "frozen fried potatoes",
+      "serverKey": "frozen french fried potatoes",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The catalog item is a generic frozen fried potato product, and the candidate is the same generic food described as frozen french fried potatoes; other candidates specify distinct forms or cuts."
+    },
+    {
+      "catalogKey": "frozen grilled vegetables",
+      "serverKey": "grilled vegetables",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is grilled vegetables with frozen as a storage state; the candidate 'grilled vegetables' represents the same food, while the other candidates are not grilled vegetables or include other foods."
+    },
+    {
+      "catalogKey": "frozen herb mix",
+      "serverKey": "organic fresh frozen herbs italian herb mix",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "Candidate is a frozen herb mix; other candidates are either not specifically frozen herbs or are unrelated mixes."
+    },
+    {
+      "catalogKey": "frozen herbes de provence",
+      "serverKey": "herbes de provence blend",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is Herbes de Provence; the blend candidate represents the same herb mixture, while vinaigrette and lamb shank are different prepared foods."
+    },
+    {
+      "catalogKey": "frozen lasagna",
+      "serverKey": "gluten free frozen italian sausage lasagna",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is a specific frozen lasagna product; other candidates are too generic or lack frozen lasagna identity."
+    },
+    {
+      "catalogKey": "frozen leaf spinach",
+      "serverKey": "spinach, frozen leaf",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "The selected candidate is the same food as the catalog item, with identical terms reordered: frozen leaf spinach."
+    },
+    {
+      "catalogKey": "frozen mashed potatoes",
+      "serverKey": "mashed potatoes",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate is the same generic food; 'frozen' describes storage state, while other candidates add ingredients or flavors."
+    },
+    {
+      "catalogKey": "frozen mini pizzas",
+      "serverKey": "frozen mini pizza",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.96,
+      "reason": "The candidate is the singular form of the same food, frozen mini pizzas; other candidates add different modifiers or refer to different items."
+    },
+    {
+      "catalogKey": "frozen mixed salads",
+      "serverKey": "mixed salads",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate 'mixed salads' matches the core food name; the other candidates are berries or vegetables, not salads."
+    },
+    {
+      "catalogKey": "frozen peas and carrots mix",
+      "serverKey": "frozen peas & carrots",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.97,
+      "reason": "The candidate exactly denotes frozen peas and carrots, the same food as a frozen peas and carrots mix."
+    },
+    {
+      "catalogKey": "frozen pizza margherita",
+      "serverKey": "frozen margherita pizza",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 contains the same food terms and frozen state as the catalog food, just in a different word order."
+    },
+    {
+      "catalogKey": "frozen pollock fillet",
+      "serverKey": "pacific pollock fillet",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.84,
+      "reason": "The candidate is the only pollock fillet; other candidates are different fish or generic fish fillets. It lacks the frozen attribute but represents the same core food."
+    },
+    {
+      "catalogKey": "frozen potato rosti",
+      "serverKey": "crispy potato rosti",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Both refer to potato rosti; 'frozen' and 'crispy' describe state/preparation rather than a different food."
+    },
+    {
+      "catalogKey": "frozen potato sticks",
+      "serverKey": "potato sticks",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate 'potato sticks' clearly matches the core food; 'frozen' describes the product state, while other candidates add different modifiers or are a different food."
+    },
+    {
+      "catalogKey": "frozen red berry mix",
+      "serverKey": "berry mix (frozen)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is a frozen berry mix; this candidate directly represents a frozen berry mix. Other candidates are yogurt, granola/trail mix, or less exact wording."
+    },
+    {
+      "catalogKey": "frozen roasted vegetables",
+      "serverKey": "roasted vegetables",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is frozen roasted vegetables; the generic candidate 'roasted vegetables' represents the same food, while the others add different specific modifiers or vegetable types."
+    },
+    {
+      "catalogKey": "frozen salami pizza",
+      "serverKey": "pizza salami",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate is salami pizza, matching the catalog food's pizza type; other frozen pizza candidates have different toppings or styles."
+    },
+    {
+      "catalogKey": "frozen skillet vegetables",
+      "serverKey": "skillet vegetables",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate matches the distinctive food identity 'skillet vegetables'; the catalog's 'frozen' describes the storage state rather than a different vegetable type."
+    },
+    {
+      "catalogKey": "frozen spinach ricotta",
+      "serverKey": "spinach & ricotta",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog food is spinach ricotta; this candidate matches that food name without adding a different dish type. Other candidates add ravioli/cannelloni or omit ricotta."
+    },
+    {
+      "catalogKey": "frozen spinach without cream",
+      "serverKey": "chopped frozen spinach",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is frozen spinach without cream; this candidate is frozen spinach and does not indicate cream."
+    },
+    {
+      "catalogKey": "frozen sugar snap peas",
+      "serverKey": "freshly frozen sugar snap peas",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "Candidate 1 clearly represents frozen sugar snap peas; the added word 'freshly' does not change the food identity."
+    },
+    {
+      "catalogKey": "frozen vegan meatball",
+      "serverKey": "vegan meatball style rondo",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is a vegan meatball product; the other candidates are frozen desserts or a burrito and do not represent meatballs."
+    },
+    {
+      "catalogKey": "frozen vegan meatballs",
+      "serverKey": "vegan meatballs classic",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is vegan meatballs, matching the food identity; other candidates are non-vegan meatballs or unrelated vegan frozen yogurt."
+    },
+    {
+      "catalogKey": "frozen vegan nuggets",
+      "serverKey": "nuggets vegan",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate represents vegan nuggets; other candidates either omit vegan, refer to chicken nuggets, yogurt, or a more specific chick’n-style product."
+    },
+    {
+      "catalogKey": "frozen vegan schnitzel",
+      "serverKey": "vegan schnitzel naturel",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is a vegan schnitzel, matching the core food identity; the other candidates are different frozen vegan desserts or burritos."
+    },
+    {
+      "catalogKey": "frozen vegan spring rolls",
+      "serverKey": "all natural vegan spring rolls",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate matches the core food as vegan spring rolls; other candidates either omit vegan, add a distinct filling, are too generic, or include dipping sauce."
+    },
+    {
+      "catalogKey": "frozen vegetable lasagna",
+      "serverKey": "vegetable lasagna, vegetable",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is a vegetable lasagna, matching the catalog food; other candidates are either not lasagna or add different specific variants."
+    },
+    {
+      "catalogKey": "frozen veggie patty",
+      "serverKey": "veggie patty",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The catalog food is a generic frozen veggie patty; the candidate \"veggie patty\" represents the same food, while the others add different or more specific variants."
+    },
+    {
+      "catalogKey": "fruit juice mix",
+      "serverKey": "100% fruit juice organic red mix",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is a mixed fruit juice; this candidate is also a mixed fruit juice. The other candidates describe fruit pieces in juice or include broccoli, which are different foods."
+    },
+    {
+      "catalogKey": "fruit yogurt cup",
+      "serverKey": "fruit & yogurt",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is a fruit yogurt cup, and the candidate 'fruit & yogurt' represents the same food without changing the item; other candidates omit yogurt or add cereal."
+    },
+    {
+      "catalogKey": "gelbwurst sausage",
+      "serverKey": "gelbwurst",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 'gelbwurst' is the specific sausage type named in the catalog food."
+    },
+    {
+      "catalogKey": "goat cream cheese",
+      "serverKey": "cream cheese (goat)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "Candidate exactly represents goat cream cheese with the same food type and animal source."
+    },
+    {
+      "catalogKey": "gooseberries",
+      "serverKey": "organic green gooseberries",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "Organic green gooseberries are the same food as generic gooseberries; the other candidates are different species, processed in syrup, or part of another food."
+    },
+    {
+      "catalogKey": "goulash",
+      "serverKey": "goulash stoofschotel",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "Goulash is commonly a stew, and this candidate explicitly denotes goulash stew; the other candidates specify different variants such as pork, soup, ostrich, or plant-based."
+    },
+    {
+      "catalogKey": "goulash soup ready meal",
+      "serverKey": "beef goulash soup",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate is the same goulash soup food; ready meal describes format, not a different food."
+    },
+    {
+      "catalogKey": "gravlax",
+      "serverKey": "salmon gravlax",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.97,
+      "reason": "The candidate names the same food as the catalog item: gravlax, a cured salmon preparation."
+    },
+    {
+      "catalogKey": "green bell pepper",
+      "serverKey": "fresh large green bell pepper",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate is the same food, a green bell pepper; other candidates are diced, organic-specific, blends, or mixed dishes."
+    },
+    {
+      "catalogKey": "green salad",
+      "serverKey": "fresh green salad",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The catalog item is generic green salad; 'fresh green salad' is the same food with only a freshness descriptor, while the others are more specific named variants."
+    },
+    {
+      "catalogKey": "grilled bratwurst",
+      "serverKey": "grilled bratwurst, phoenix",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.91,
+      "reason": "Candidate 1 contains the exact food identity 'grilled bratwurst'; the added 'phoenix' appears to be an extra descriptor rather than a different food."
+    },
+    {
+      "catalogKey": "ground espresso",
+      "serverKey": "espresso ground coffee",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The catalog item is ground espresso coffee, and this candidate states the same food without extra distinguishing modifiers."
+    },
+    {
+      "catalogKey": "ground espresso coffee",
+      "serverKey": "espresso ground coffee",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 contains the same food terms as the catalog item, just in a different order; the others add modifiers or represent different products."
+    },
+    {
+      "catalogKey": "ground pepper",
+      "serverKey": "black pepper ground",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.87,
+      "reason": "Ground pepper most commonly refers to ground black pepper; red/chili/Cameroun peppers are different foods, and this candidate is the clearest supplied match."
+    },
+    {
+      "catalogKey": "halibut fillet",
+      "serverKey": "premium halibut fillet",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is the same core food, halibut fillet, with only a non-identity quality descriptor."
+    },
+    {
+      "catalogKey": "herb sour cream",
+      "serverKey": "sour cream and herb",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate 3 is the same sour cream and herb food/flavor description; the other candidates are specific crackers or chips."
+    },
+    {
+      "catalogKey": "herbal lemonade",
+      "serverKey": "victorian lemonade traditional botanical lemon beverage with herbal extracts",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "This candidate describes a lemon beverage/lemonade made with herbal extracts, matching herbal lemonade; the other candidates are either more specific variants or too broad."
+    },
+    {
+      "catalogKey": "high heat safflower oil",
+      "serverKey": "organic high heat safflower oil refined",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate 1 is the same safflower oil intended for high-heat use; the added terms organic and refined are compatible descriptors rather than a different food."
+    },
+    {
+      "catalogKey": "horse meat",
+      "serverKey": "jar of horse meat",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate denotes horse meat, with only packaging/container wording added; the others are flavored or generic meat items."
+    },
+    {
+      "catalogKey": "instant cocoa",
+      "serverKey": "instant hot cocoa",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog food 'instant cocoa' is best represented by 'instant hot cocoa'; other candidates add coffee, peppermint, cereal, or oatmeal and are different foods."
+    },
+    {
+      "catalogKey": "instant mashed potato mix",
+      "serverKey": "instant mashed potato",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate names the same generic instant mashed potato product; other candidates are less exact due to missing instant or specifying brand/form."
+    },
+    {
+      "catalogKey": "instant oat porridge",
+      "serverKey": "oat meal instant porridge",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The selected candidate is the same generic instant oat porridge; other candidates add specific flavors, ingredients, or are less complete."
+    },
+    {
+      "catalogKey": "jarred cornichons",
+      "serverKey": "cornichons augurken",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is generic jarred cornichons; 'cornichons augurken' represents generic cornichons/gherkins, while the other candidates specify distinct varieties or flavors."
+    },
+    {
+      "catalogKey": "jarred tomato soup",
+      "serverKey": "soup tomato",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is tomato soup; the selected candidate is the generic tomato soup entry. Other candidates specify variants such as chunky, classic, or condensed."
+    },
+    {
+      "catalogKey": "jarred vegetable soup",
+      "serverKey": "soup vegetable",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is generic vegetable soup, matching jarred vegetable soup aside from packaging; other candidates specify beef or an additional qualifier."
+    },
+    {
+      "catalogKey": "juice mix",
+      "serverKey": "mix juice",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 contains the same food terms as the catalog item, only in reversed order; the other candidates are more specific variants."
+    },
+    {
+      "catalogKey": "kabanos sausage",
+      "serverKey": "kabanos sausage 🌭",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 directly names the same food, while the others add modifiers or variants."
+    },
+    {
+      "catalogKey": "kamut pasta",
+      "serverKey": "kamut fusilli ancient gran pasta",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate is a kamut pasta product; fusilli is a pasta shape and does not change the food identity."
+    },
+    {
+      "catalogKey": "landjaeger sausage",
+      "serverKey": "landjaeger",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is generic landjaeger sausage, and the candidate 'landjaeger' refers to the same food without extra variant descriptors."
+    },
+    {
+      "catalogKey": "langoustine",
+      "serverKey": "langoustine tails",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "Langoustine tails are the same seafood as langoustine, while the other candidate is a mixed prawn and langoustine product."
+    },
+    {
+      "catalogKey": "lasagna ready meal",
+      "serverKey": "oven ready lasagna",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog food is a ready-meal lasagna, and \"oven ready lasagna\" clearly represents the same type of food; the other candidates are different meals or more specifically qualified variants."
+    },
+    {
+      "catalogKey": "lemon oil",
+      "serverKey": "lemon oil natural",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The candidate is the same food with only the descriptor \"natural\" added; other candidates are different lemon-flavored carrier oils."
+    },
+    {
+      "catalogKey": "lemon soft drink",
+      "serverKey": "lemon flavoured soft drink",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "This candidate is the same generic food as the catalog item: a lemon soft drink. Other candidates add carbonation, stillness, or brand-specific details."
+    },
+    {
+      "catalogKey": "lentil flour",
+      "serverKey": "organic lentil flour",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The candidate is lentil flour with only an organic qualifier, representing the same food."
+    },
+    {
+      "catalogKey": "lentil soup ready meal",
+      "serverKey": "soup, lentil",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is lentil soup; the candidate 'soup, lentil' directly represents generic lentil soup, while the others specify variants such as citrus or classic."
+    },
+    {
+      "catalogKey": "light ricotta",
+      "serverKey": "light ricotta cheese",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Light ricotta is ricotta cheese with a light/reduced-fat descriptor; the selected key is the clear exact equivalent, while other candidates are broader or add extra modifiers."
+    },
+    {
+      "catalogKey": "loose black tea",
+      "serverKey": "red label loose leaf black tea",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The selected candidate is an unflavored loose leaf black tea, while the other candidates are flavored or specialty variants."
+    },
+    {
+      "catalogKey": "low fat quark",
+      "serverKey": "quark low fat",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "Candidate 'quark low fat' contains the same food type and low-fat attribute as the catalog food."
+    },
+    {
+      "catalogKey": "lupin product",
+      "serverKey": "lupin",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog food is a generic lupin product, and the candidate 'lupin' represents the same generic lupin food; the other candidates are different or more specific forms."
+    },
+    {
+      "catalogKey": "lupin products",
+      "serverKey": "lupin",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.83,
+      "reason": "The catalog item is a generic lupin product category, and the generic candidate \"lupin\" is the only broad candidate representing the same food; the others are either non-food or more specific forms."
+    },
+    {
+      "catalogKey": "malt beer",
+      "serverKey": "beer 100% pure malt",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate is a beer described as malt/pure malt, matching the catalog food 'malt beer'; other candidates are generic beer, malt alone, root beer, or nonalcoholic beer."
+    },
+    {
+      "catalogKey": "marinated chicken breast fillet",
+      "serverKey": "free range marinated chicken breast fillet",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate matches marinated chicken breast fillet exactly apart from the added free range descriptor; other candidates are less specific or different preparations."
+    },
+    {
+      "catalogKey": "mars bar",
+      "serverKey": "mars, milk chocolate with soft nougat and caramel centre bar",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.96,
+      "reason": "The catalog item is a Mars bar, and this candidate specifically describes the standard Mars milk chocolate bar with nougat and caramel."
+    },
+    {
+      "catalogKey": "mashed potatoes ready meal",
+      "serverKey": "mashed potatoes",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is mashed potatoes as a prepared ready meal; the generic candidate 'mashed potatoes' represents the same food, while the others include added meats, gravy, vegetables, or flavor variants."
+    },
+    {
+      "catalogKey": "mate tea",
+      "serverKey": "yerba mate tea",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "Catalog item 'mate tea' refers to yerba mate tea; other candidates are flavored or distinct variants."
+    },
+    {
+      "catalogKey": "matjes herring",
+      "serverKey": "deli style matjes herring",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The candidate is the same named food, matjes herring; the others are either more specific variants or different herring products."
+    },
+    {
+      "catalogKey": "matjes herring fillet",
+      "serverKey": "deli style matjes herring",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is matjes herring, and this candidate explicitly names matjes herring; the others are generic or differently prepared herring fillets."
+    },
+    {
+      "catalogKey": "matjes herring fillets",
+      "serverKey": "matjes herring fillets in canola oil",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is the only one that includes matjes herring fillets; the added canola oil describes the packing medium rather than a different food identity."
+    },
+    {
+      "catalogKey": "matjes herring in cream sauce",
+      "serverKey": "herring fillets in cream sauce",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.87,
+      "reason": "Candidate is herring in cream sauce and 'fillets' is compatible with matjes herring; other candidates add smoked, wine sauce, or different foods."
+    },
+    {
+      "catalogKey": "meat sausage",
+      "serverKey": "sausage meat",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate 'sausage meat' uses the same terms and represents the same generic food, while the others add specific modifiers or alternatives."
+    },
+    {
+      "catalogKey": "meatballs ready meal",
+      "serverKey": "sticky bbq meatballs (ready meal)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate is a meatballs ready meal; other candidates are different ready meals or different meatball dishes."
+    },
+    {
+      "catalogKey": "medium sparkling mineral water",
+      "serverKey": "mineral sparkling water",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate is the same unflavored sparkling mineral water; 'medium' appears to describe size or carbonation level rather than a different food identity."
+    },
+    {
+      "catalogKey": "melons",
+      "serverKey": "juicy melons",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog food is generic melons, and only “juicy melons” directly represents melons; the others are gum or mixed fruit/melon mixes rather than the same simple food."
+    },
+    {
+      "catalogKey": "mettwurst sausage",
+      "serverKey": "mettwurst",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "The candidate 'mettwurst' is the specific sausage type named in the catalog food."
+    },
+    {
+      "catalogKey": "mild plain yogurt",
+      "serverKey": "yogurt plain",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog food is plain yogurt with a mild descriptor, and the generic candidate \"yogurt plain\" represents the same food more clearly than branded or fat-specific variants."
+    },
+    {
+      "catalogKey": "mixed bread",
+      "serverKey": "bread mixed grain",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item 'mixed bread' most clearly corresponds to the generic mixed-grain bread candidate; the other candidates add specific types or attributes."
+    },
+    {
+      "catalogKey": "mixed pepper",
+      "serverKey": "mixed bell pepper",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Catalog item is mixed peppers; candidate 'mixed bell pepper' represents the same basic food, while chips, strips, and relish are different forms or products."
+    },
+    {
+      "catalogKey": "mixed peppercorns",
+      "serverKey": "gourmet mixed peppercorns",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate is the same food with only a descriptive qualifier; alternatives are less exact or add different ingredients."
+    },
+    {
+      "catalogKey": "mixed rye bread",
+      "serverKey": "borodinskiy mixed rye bread",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "This candidate contains the full food identity 'mixed rye bread'; the other candidates describe different rye bread variants or mixed seeds."
+    },
+    {
+      "catalogKey": "mountain cheese",
+      "serverKey": "creamy french mountain cheese",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.84,
+      "reason": "The catalog item is a mountain cheese; this candidate is specifically a mountain cheese with descriptive qualifiers, while the others are salami, goat cheese, or pizza products."
+    },
+    {
+      "catalogKey": "muesli with nuts",
+      "serverKey": "muesli nuts",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate is a direct shorthand for muesli with nuts, while the others add fruit, supplements, granola, or specific product variants."
+    },
+    {
+      "catalogKey": "multigrain bread roll",
+      "serverKey": "bread roll grain",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate denotes a grain bread roll, which best corresponds to a multigrain bread roll; other candidates omit either the roll form or the grain/multigrain aspect."
+    },
+    {
+      "catalogKey": "natural grape juice",
+      "serverKey": "hensens, natural premium juice, white grape",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "Candidate 1 is a natural grape juice product; the others are fruit drinks or juice blends with other fruits."
+    },
+    {
+      "catalogKey": "nougat pralines",
+      "serverKey": "hazelnut nougat pralines",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is the only one that includes both nougat and pralines and represents a specific type of nougat pralines."
+    },
+    {
+      "catalogKey": "oat coffee",
+      "serverKey": "oat milk coffee",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item 'oat coffee' is best represented by 'oat milk coffee'; other candidates describe oat milk for coffee, a creamer, or include additional flax."
+    },
+    {
+      "catalogKey": "okra pods",
+      "serverKey": "okra",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "Okra pods are the edible form of okra; the candidate \"okra\" represents the same food, while the others are generic or different preparations."
+    },
+    {
+      "catalogKey": "onion granules",
+      "serverKey": "organic onion granules",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate is onion granules with only an organic attribute, representing the same food."
+    },
+    {
+      "catalogKey": "orange juice spritzer",
+      "serverKey": "orange spritzer",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is an orange juice spritzer; among the candidates, only \"orange spritzer\" represents the same spritzer-style orange beverage, while the others are plain orange juice."
+    },
+    {
+      "catalogKey": "organic camembert cheese",
+      "serverKey": "cheese camembert",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is camembert cheese; this candidate directly represents camembert cheese, while the others are broader or specify different variants."
+    },
+    {
+      "catalogKey": "organic cashew nuts",
+      "serverKey": "cashew nuts organic",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "The selected candidate contains the same food terms and organic attribute as the catalog food."
+    },
+    {
+      "catalogKey": "organic cold pressed coconut oil",
+      "serverKey": "cold pressed organic coconut oil",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 contains the same food description terms as the catalog item, just in a different order; other candidates add refined or virgin specificity not present in the catalog."
+    },
+    {
+      "catalogKey": "organic fennel",
+      "serverKey": "bio pure organic fennel",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.97,
+      "reason": "The candidate is organic fennel itself, while the others are teas or prepared meat products containing fennel."
+    },
+    {
+      "catalogKey": "organic french salad dressing",
+      "serverKey": "organic french dressing",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The catalog item is organic French salad dressing; this candidate is the same food, with 'dressing' implying salad dressing."
+    },
+    {
+      "catalogKey": "organic lasagna sheets",
+      "serverKey": "lasagna pasta sheets",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is lasagna sheets; 'lasagna pasta sheets' clearly names the same pasta form, while other candidates are prepared lasagna or specify different variants."
+    },
+    {
+      "catalogKey": "organic mixed pepper",
+      "serverKey": "organic mixed bell pepper",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The catalog item is organic mixed peppers, and this candidate represents organic mixed bell peppers; other candidates differ by product type or preparation."
+    },
+    {
+      "catalogKey": "organic rapeseed oil",
+      "serverKey": "organic refined rapeseed oil",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate is organic rapeseed oil; the added descriptor 'refined' is a processing detail and no other rapeseed oil candidate is present."
+    },
+    {
+      "catalogKey": "organic smoked salmon",
+      "serverKey": "smoked organic salmon",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 contains the same descriptors and food as the catalog item, only reordered."
+    },
+    {
+      "catalogKey": "organic turkey breast fillet",
+      "serverKey": "organic prairie, turkey breast",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "This is the only candidate that represents plain organic turkey breast; the others specify diced, roast/roasted, or smoked forms, which differ from a fillet."
+    },
+    {
+      "catalogKey": "organic vegan lasagna",
+      "serverKey": "365 everyday value, organic vegan lasagna",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.96,
+      "reason": "Candidate 1 includes the full food identity 'organic vegan lasagna'; other candidates are less specific or different foods."
+    },
+    {
+      "catalogKey": "organic vegetarian burger",
+      "serverKey": "vegetarian burger, vegetarian",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is a vegetarian burger, matching the catalog food type; the missing organic attribute is less identity-defining than the other candidates, which are beef, burger mix, chili, or falafel."
+    },
+    {
+      "catalogKey": "organic walnut oil",
+      "serverKey": "organic hydro therm walnut oil",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is an organic walnut oil; extra terms do not indicate a different food."
+    },
+    {
+      "catalogKey": "organic wheat flour type 405",
+      "serverKey": "organic wheat flour",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is organic wheat flour; type 405 indicates a refined wheat flour grade, and the only candidate matching the same base food without conflicting modifiers is \"organic wheat flour\"."
+    },
+    {
+      "catalogKey": "organic wine gums",
+      "serverKey": "organic wine gums vegan gelatin free",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate 1 contains the exact food identity 'organic wine gums'; the added 'vegan gelatin free' describes a dietary variant rather than a different food."
+    },
+    {
+      "catalogKey": "organic yellow peas",
+      "serverKey": "timeless natural food, 100% organic yellow split peas",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is organic yellow peas, with the added form descriptor 'split'; other candidates are less specific or different legumes."
+    },
+    {
+      "catalogKey": "pancake batter ready mix",
+      "serverKey": "pancake batter",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog food is pancake batter ready mix; 'pancake batter' is the clearest same-food candidate, while the others are broader or different mix products."
+    },
+    {
+      "catalogKey": "paprika powder",
+      "serverKey": "paprika",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Paprika powder is the ground spice commonly listed as paprika; other candidates are generic powder or different foods."
+    },
+    {
+      "catalogKey": "parsley herbs",
+      "serverKey": "chopped parsley",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "Catalog item is parsley as an herb; the candidate \"chopped parsley\" represents the same food, while the others include different foods or are too generic."
+    },
+    {
+      "catalogKey": "pea protein milk",
+      "serverKey": "like milk pea protein",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate denotes pea protein milk, while the others add tea/sesame or omit milk/pea specificity."
+    },
+    {
+      "catalogKey": "peach drinking yogurt",
+      "serverKey": "drinking yogurt peach",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "Candidate exactly represents peach drinking yogurt with the same food type and flavor."
+    },
+    {
+      "catalogKey": "peach fruit yogurt",
+      "serverKey": "peach fruit on the bottom lowfat yogurt",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "This candidate is the standard peach fruit yogurt option; other candidates add drink form, other fruits, Greek style, or cream variants."
+    },
+    {
+      "catalogKey": "penis pasta",
+      "serverKey": "spencer & fleetwood penis pasta",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.96,
+      "reason": "The candidate exactly includes the distinctive food name 'penis pasta'; the others are unrelated pasta types sharing only 'pasta'."
+    },
+    {
+      "catalogKey": "pilsner beer",
+      "serverKey": "pils pilsner beer",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate directly names pilsner beer; other candidates add subtype, brand, or are different foods."
+    },
+    {
+      "catalogKey": "pizza margherita ready meal",
+      "serverKey": "margherita pizza",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The catalog food is a margherita pizza ready meal, and this candidate is the same generic food without extra brand or style qualifiers."
+    },
+    {
+      "catalogKey": "plain dark chocolate",
+      "serverKey": "dark chocolate plain",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 exactly represents plain dark chocolate with the same food terms; other candidates add specifics or are less exact."
+    },
+    {
+      "catalogKey": "plain haddock fillet",
+      "serverKey": "haddock fillet portions",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "This candidate is an unbreaded, unseasoned haddock fillet product; the others include breading, vegetable/seasoning additions, or more specific product attributes."
+    },
+    {
+      "catalogKey": "plain rice cake",
+      "serverKey": "rice cake thin square plain",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate is explicitly a plain rice cake, with only shape/thinness added as descriptors."
+    },
+    {
+      "catalogKey": "plain skyr",
+      "serverKey": "plain skyr yogurt",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog item is plain skyr, and this candidate is the same food with 'yogurt' as a descriptive synonym; the others add qualifiers like organic, simple ingredient, or whole milk."
+    },
+    {
+      "catalogKey": "plain vegan tofu",
+      "serverKey": "firm vegan tofu",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is plain tofu and vegan; 'firm' specifies texture but still represents the same basic food, unlike the other prepared or different items."
+    },
+    {
+      "catalogKey": "plain yogurt cultures",
+      "serverKey": "yogurt plain",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Catalog item is plain yogurt; 'cultures' describes yogurt cultures rather than a distinct food. The generic candidate 'yogurt plain' best represents the same food."
+    },
+    {
+      "catalogKey": "plant based coconut milk",
+      "serverKey": "organic coconut plant based milk",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate 1 is the same coconut plant-based milk, with only an organic modifier; other candidates are blends, generic, or flavored."
+    },
+    {
+      "catalogKey": "plant margarine",
+      "serverKey": "vita d'or plant margarine 60% fat",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The selected candidate explicitly contains plant margarine and is the only candidate that clearly represents the same food."
+    },
+    {
+      "catalogKey": "pollock fillet",
+      "serverKey": "pacific pollock fillet",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.94,
+      "reason": "The candidate is the same food as the catalog item, with only the species descriptor 'pacific' added."
+    },
+    {
+      "catalogKey": "poppy seed bread roll",
+      "serverKey": "poppy seed roll",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog item is a poppy seed bread roll, and the candidate 'poppy seed roll' directly represents the same generic food."
+    },
+    {
+      "catalogKey": "pork roast ready meal",
+      "serverKey": "roast pork",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog food is pork roast as a ready meal; among the candidates, only \"roast pork\" represents the same core prepared pork roast food, while the others are kits or flavored variants."
+    },
+    {
+      "catalogKey": "potato bread roll",
+      "serverKey": "potato roll",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The catalog item is a potato-based bread roll, and the candidate 'potato roll' directly represents that food."
+    },
+    {
+      "catalogKey": "potato rosti",
+      "serverKey": "crispy potato rosti",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.96,
+      "reason": "Candidate is the same potato rosti dish with only a texture descriptor added; other candidates are different or less specific."
+    },
+    {
+      "catalogKey": "potato salad ready meal",
+      "serverKey": "potato salad | ready to eat",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog item is potato salad as a ready meal, and this candidate specifically represents ready-to-eat potato salad."
+    },
+    {
+      "catalogKey": "poultry breast",
+      "serverKey": "fresh poultry breast fillets",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate is the same generic poultry breast food, described as fresh poultry breast fillets."
+    },
+    {
+      "catalogKey": "poultry breast fillet",
+      "serverKey": "breast fillet",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog food is a generic poultry breast fillet; the candidate \"breast fillet\" is the generic same cut, while the others add specific preparations or modifiers."
+    },
+    {
+      "catalogKey": "poultry wiener sausage",
+      "serverKey": "poultry wiener",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The catalog food is a poultry wiener sausage; 'poultry wiener' clearly refers to the same poultry wiener product, while the other candidates are either generic or Italian-style sausages."
+    },
+    {
+      "catalogKey": "pretzel roll",
+      "serverKey": "pretzel sandwich roll",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "A pretzel sandwich roll is the same bread item as a pretzel roll; other candidates add fillings, size/style, or different forms."
+    },
+    {
+      "catalogKey": "pumpkin bar",
+      "serverKey": "bar, pumpkin",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "The candidate is the same generic food name as the catalog item, with the words reversed."
+    },
+    {
+      "catalogKey": "pumpkin cream soup ready meal",
+      "serverKey": "cream of pumpkin soup",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog food is pumpkin cream soup; candidate 1 names the same soup type, while the others add different ingredients or are less specific."
+    },
+    {
+      "catalogKey": "pumpkin ginger soup ready meal",
+      "serverKey": "pumpkin & ginger soup",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.89,
+      "reason": "Candidate matches the catalog food as a pumpkin and ginger soup; other candidates add carrot or omit either pumpkin or ginger."
+    },
+    {
+      "catalogKey": "pumpkin soup ready meal",
+      "serverKey": "homestyle pumpkin ready to serve soup",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is a ready-to-serve pumpkin soup, matching the catalog food described as pumpkin soup ready meal."
+    },
+    {
+      "catalogKey": "raw broccoli",
+      "serverKey": "broccoli, raw",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "Candidate 1 represents the same food as raw broccoli; the other candidates are different prepared or composite foods."
+    },
+    {
+      "catalogKey": "raw cod",
+      "serverKey": "raw wild caught alaskan skinless boneless cod fillets",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate is raw cod fillets, which clearly represents the same food as raw cod."
+    },
+    {
+      "catalogKey": "raw milk cheese",
+      "serverKey": "organic raw milk cheese",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is the same base food, raw milk cheese, with only an organic attribute added; the others specify cow milk or cheddar subtypes."
+    },
+    {
+      "catalogKey": "raw minced pork",
+      "serverKey": "minced pork",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate 'minced pork' represents the same food form as raw minced pork; the other candidates are flavors or different pork cuts."
+    },
+    {
+      "catalogKey": "ready made bolognese",
+      "serverKey": "bolognese ready sauce",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Catalog item is ready-made bolognese; candidate is a ready bolognese sauce, while the others are a base or unrelated ready-made foods."
+    },
+    {
+      "catalogKey": "ready made bolognese sauce",
+      "serverKey": "bolognese ready sauce",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate describes the same prepared bolognese sauce and includes the key terms bolognese, ready, and sauce."
+    },
+    {
+      "catalogKey": "ready made bolognese sauces",
+      "serverKey": "bolognese ready sauce",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate is a ready bolognese sauce, matching the catalog food; other candidates are a base or unrelated ready-made foods."
+    },
+    {
+      "catalogKey": "ready made chicken salad",
+      "serverKey": "chicken salad made with rotisserie chicken",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is chicken salad; this candidate is also chicken salad, with only an added detail that it is made with rotisserie chicken. Other candidates describe chicken pieces, meatballs, or chicken served with salad."
+    },
+    {
+      "catalogKey": "ready made chicken tikka masala",
+      "serverKey": "chicken tikka masala",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog item is ready-made chicken tikka masala; candidate 1 is the same dish without the preparation descriptor. Other candidates add rice, bowl format, or redundant wording."
+    },
+    {
+      "catalogKey": "ready made chili con carne",
+      "serverKey": "ready to serve chili con carne, 50 ounce cans, 12 pack",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate is ready-to-serve chili con carne, which clearly matches ready made chili con carne; packaging size does not change the food identity."
+    },
+    {
+      "catalogKey": "ready made chili sin carne",
+      "serverKey": "chili sin carne vegetar 190g toro",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is a packaged vegetarian chili sin carne product, matching the ready-made chili sin carne description."
+    },
+    {
+      "catalogKey": "ready made goulash soup",
+      "serverKey": "beef goulash soup",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is goulash soup; this candidate is the same soup type, with beef specified as the common meat base. Other candidates are unrelated or less specific."
+    },
+    {
+      "catalogKey": "ready made hollandaise sauce",
+      "serverKey": "authentic hollandaise sauce",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog item is a ready-made hollandaise sauce; candidate 2 is the same prepared sauce, while the mix candidates are not ready-made sauces."
+    },
+    {
+      "catalogKey": "ready made meatball",
+      "serverKey": "frozen ready made chicken meatballs",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.83,
+      "reason": "The candidate is ready made meatballs, differing only by added details such as frozen and chicken."
+    },
+    {
+      "catalogKey": "ready made pizza dough",
+      "serverKey": "ready to make pizza dough",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate denotes prepared pizza dough intended for making pizza, matching the catalog food; other candidates specify different variants."
+    },
+    {
+      "catalogKey": "ready made pizza margherita",
+      "serverKey": "margherita pizza",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is a ready-made margherita pizza; the candidate key exactly names the same food type."
+    },
+    {
+      "catalogKey": "ready made potato casserole",
+      "serverKey": "potato casserole",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog item is a generic ready-made potato casserole, and the candidate \"potato casserole\" represents the same generic food; other candidates specify different variants."
+    },
+    {
+      "catalogKey": "ready made potato salad",
+      "serverKey": "potato salad | ready to eat",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "The catalog food is ready made potato salad, and the candidate explicitly represents potato salad ready to eat."
+    },
+    {
+      "catalogKey": "ready made risotto",
+      "serverKey": "riso bello, ready risotto asparagus",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is a ready risotto product, matching the catalog food; other candidates are different ready-made foods."
+    },
+    {
+      "catalogKey": "ready made tomato soup",
+      "serverKey": "soup tomato",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog food is generic ready-made tomato soup, and this candidate is the generic tomato soup entry; condensed and chunky/classic variants are less exact."
+    },
+    {
+      "catalogKey": "ready made vegetable mix",
+      "serverKey": "vegetable mix",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.87,
+      "reason": "The catalog item is a ready-made vegetable mix; candidate 'vegetable mix' directly represents the same food, while the others add different qualifiers or are less exact."
+    },
+    {
+      "catalogKey": "ready made vegetable stir fry",
+      "serverKey": "vegetable stir fry",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is a ready-made vegetable stir fry, and the candidate 'vegetable stir fry' represents the same food; the other candidates add modifiers such as chicken, baby vegetables, or broccoli."
+    },
+    {
+      "catalogKey": "ready made vegetarian pizza",
+      "serverKey": "vegetarian pizza, vegetarian",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is a generic vegetarian pizza, matching the catalog food; other candidates are brand-specific, a crust only, or different foods."
+    },
+    {
+      "catalogKey": "ready to cook bolognese sauce",
+      "serverKey": "bolognese ready sauce",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate 1 uniquely refers to bolognese sauce with ready/ready-to-cook wording; the other candidates are generic or different foods."
+    },
+    {
+      "catalogKey": "red currants",
+      "serverKey": "red currants, frozen",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate is the same fruit, red currants, with only frozen state specified; other candidates are mixtures, generic, or different currant types."
+    },
+    {
+      "catalogKey": "red long grain rice",
+      "serverKey": "long grain red rice",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 contains the same food terms as the catalog item, only in a different order."
+    },
+    {
+      "catalogKey": "red pepper chips",
+      "serverKey": "red bell pepper chips",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog food is generic red pepper chips; this candidate is the same food with 'bell' specifying the red pepper, while the others add distinct bases or flavors such as pita, corn, garlic, or hummus."
+    },
+    {
+      "catalogKey": "reduced sugar ketchup",
+      "serverKey": "tomato ketchup reduced sugar",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "Candidate 2 directly represents reduced sugar ketchup; other candidates add reduced sodium/salt or honey, or are a different food."
+    },
+    {
+      "catalogKey": "refined corn germ oil",
+      "serverKey": "refined corn, cooking oil",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The catalog item is refined corn germ oil, which is effectively refined corn oil used for cooking; the selected candidate uniquely specifies refined corn oil."
+    },
+    {
+      "catalogKey": "refined safflower oil",
+      "serverKey": "organic high heat safflower oil refined",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "Candidate is refined safflower oil with only additional descriptors such as organic/high heat; other candidates are generic or different oils."
+    },
+    {
+      "catalogKey": "ribbon pasta",
+      "serverKey": "ribbon pasta enriched macaroni product",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The catalog item is generic ribbon pasta, and this candidate directly represents ribbon pasta; the others are specific soy/edamame/spinach variants."
+    },
+    {
+      "catalogKey": "rice dish ready meal",
+      "serverKey": "rice dish",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is a generic rice dish ready meal; among the candidates, \"rice dish\" clearly represents the same generic food type, while the others are specific ready rice products or flavors."
+    },
+    {
+      "catalogKey": "rice glass noodles",
+      "serverKey": "brown rice glass noodles",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "It is the only candidate that includes the distinctive food identity 'rice glass noodles'; the added 'brown' qualifier indicates a specific variant."
+    },
+    {
+      "catalogKey": "rice pudding ready meal",
+      "serverKey": "rice pudding, rice",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.84,
+      "reason": "The catalog food is rice pudding; this candidate is the generic rice pudding option, while the others are plain ready rice or specific variants."
+    },
+    {
+      "catalogKey": "ripe tomatoes",
+      "serverKey": "vine ripe tomatoes",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Vine ripe tomatoes are ripe tomatoes, while the other candidates are different tomato types or not tomatoes."
+    },
+    {
+      "catalogKey": "round grain bread",
+      "serverKey": "brick oven italia round bread whole grain",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.84,
+      "reason": "Candidate contains the defining terms round, bread, and grain/whole grain; other candidates are generic grain breads without the round bread identity."
+    },
+    {
+      "catalogKey": "saffron threads",
+      "serverKey": "saffron",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "Saffron threads are the common whole form of the spice saffron; the candidate 'saffron' represents the same food, while the others are different foods or preparations."
+    },
+    {
+      "catalogKey": "salad oil",
+      "serverKey": "salad & cooking oil",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog food is generic salad oil, and this candidate is the closest generic oil entry; the others add a specific oil type, brand, or flavor/style."
+    },
+    {
+      "catalogKey": "salsiccia sausage",
+      "serverKey": "italien inspired salsiccia sausage",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate 1 contains the same defining food name, salsiccia sausage; the other candidates are different or generic sausage types."
+    },
+    {
+      "catalogKey": "salt free seasoning mix",
+      "serverKey": "salt free seasoning",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "Candidate is the same generic salt-free seasoning; other candidates specify variants or different seasoning types."
+    },
+    {
+      "catalogKey": "salted herring",
+      "serverKey": "salted herring fillets",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate is the same food, salted herring, with only the form specified as fillets."
+    },
+    {
+      "catalogKey": "salted rice cakes",
+      "serverKey": "rice cakes salted",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "Candidate 1 is the same food with the same terms reordered; the others specify lightly salted variants."
+    },
+    {
+      "catalogKey": "sauce thickener",
+      "serverKey": "minor's, dry roux sauce/soup thickener",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate explicitly describes a sauce/soup thickener, matching the catalog food 'sauce thickener'."
+    },
+    {
+      "catalogKey": "savoy cabbage",
+      "serverKey": "green savoy cabbage",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate is the same whole vegetable, savoy cabbage, with only a color descriptor; other candidates are prepared bowls or salad kits."
+    },
+    {
+      "catalogKey": "seitan gyros",
+      "serverKey": "gyros style pulled seitan",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate is a gyros-style seitan item, which clearly represents seitan gyros."
+    },
+    {
+      "catalogKey": "sheep milk yogurt",
+      "serverKey": "plain sheep milk yogurt",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The catalog item is unflavored sheep milk yogurt; the selected candidate explicitly matches it as plain sheep milk yogurt. Other candidates are flavored, branded, or less specific variants."
+    },
+    {
+      "catalogKey": "shepherds pie ready meal",
+      "serverKey": "shepherds pie",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is a shepherds pie ready meal, and the generic candidate \"shepherds pie\" represents the same food; other candidates are variants or different foods."
+    },
+    {
+      "catalogKey": "skillet meal ready meal",
+      "serverKey": "skillet meal",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is a generic skillet meal ready meal, and the candidate 'skillet meal' directly represents the same generic food without extra qualifiers."
+    },
+    {
+      "catalogKey": "sliced fresh baguette",
+      "serverKey": "fresh baked baguette",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog food is a fresh baguette, with sliced as a serving form; the only candidate representing the same food is fresh baked baguette."
+    },
+    {
+      "catalogKey": "sliced whole grain bread",
+      "serverKey": "bread whole grain",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is generic sliced whole grain bread; this candidate is the generic whole grain bread entry, while the others add specific variants such as oat, thin-sliced, sprouted, or organic."
+    },
+    {
+      "catalogKey": "smoked knackwurst sausage",
+      "serverKey": "smoked knackwurst",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.96,
+      "reason": "The candidate specifically matches smoked knackwurst, which is the same food as smoked knackwurst sausage."
+    },
+    {
+      "catalogKey": "smoked trout salmon style",
+      "serverKey": "salmon trout smoked",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is smoked trout described as salmon style; this candidate includes smoked, trout, and salmon, while the others are smoked salmon items without trout."
+    },
+    {
+      "catalogKey": "snack cucumbers",
+      "serverKey": "snack'mms, sweet cucumbers",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate describes cucumbers intended as a snack, with only an added descriptor/brand-like text."
+    },
+    {
+      "catalogKey": "soft wheat flour",
+      "serverKey": "soft wheat flour 00",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is a soft wheat flour; the other close candidates are branded flour or tortillas, and tortillas are different foods."
+    },
+    {
+      "catalogKey": "sole fillet",
+      "serverKey": "4 oz sole fillet",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog food is generic sole fillet; this candidate is the same food with only a portion size added, while the others add specific species, frozen/IQF, or other qualifiers."
+    },
+    {
+      "catalogKey": "sour cream potato chips",
+      "serverKey": "potato chips sour cream",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate 1 directly represents sour cream flavored potato chips; cheddar variants add a different flavor."
+    },
+    {
+      "catalogKey": "soy dip",
+      "serverKey": "cindy's kitchen, rich & creamy soy dip",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The selected candidate explicitly names the food as soy dip; the other candidates are soy ginger dressing/marinade dips or too generic."
+    },
+    {
+      "catalogKey": "soy meat",
+      "serverKey": "carne de soya (soy meat)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "Candidate explicitly includes '(soy meat)' and represents the same generic soy meat food; other candidates are more specific forms or variants."
+    },
+    {
+      "catalogKey": "soy strips",
+      "serverKey": "vegebest soy protein strips",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is soy strips; this candidate is soy protein strips and is the only clear generic soy-strip food among the candidates."
+    },
+    {
+      "catalogKey": "spaghetti bolognese ready meal",
+      "serverKey": "spaghetti bolognese 400g meal",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.94,
+      "reason": "Candidate 2 clearly matches spaghetti bolognese as a meal; other candidates are different sauces, starters, marinara, or vegan/shirataki variants."
+    },
+    {
+      "catalogKey": "spaghetti carbonara ready meal",
+      "serverKey": "spaghetti carbonara",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate exactly names the dish spaghetti carbonara; 'ready meal' describes format rather than a different food."
+    },
+    {
+      "catalogKey": "sparkling table water",
+      "serverKey": "water sparkling",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The catalog food is generic sparkling table water, and the candidate \"water sparkling\" represents the same generic food; the other candidates are branded or more specific variants."
+    },
+    {
+      "catalogKey": "spelt grains",
+      "serverKey": "spelt",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Catalog item is plain spelt grains; the candidate \"spelt\" represents the same basic food, while the others are sprouted, bread, or prepared dishes with added ingredients."
+    },
+    {
+      "catalogKey": "spicy curry sauce",
+      "serverKey": "3 min. curry sauce (spicy)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate is a curry sauce explicitly labeled spicy, matching the catalog food; other candidates are more specific varieties or a prepared dish."
+    },
+    {
+      "catalogKey": "spinach ravioli ready meal",
+      "serverKey": "plate ready ravioli spinach and garlic",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "This candidate includes spinach ravioli and indicates a ready/plate-ready prepared meal, matching the catalog food more specifically than the generic ravioli candidates."
+    },
+    {
+      "catalogKey": "spirelli pasta",
+      "serverKey": "spirelli",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The catalog food is spirelli pasta, and the candidate 'spirelli' is the same pasta type; other candidates are different pasta dishes."
+    },
+    {
+      "catalogKey": "steak pepper seasoning",
+      "serverKey": "steak seasoning",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is a seasoning intended for steak; this candidate is the only clear seasoning product for steak, while pepper steak is a dish and the others are less specific or ambiguous."
+    },
+    {
+      "catalogKey": "stone oven bread",
+      "serverKey": "spanish stone oven andaliz bread",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "This candidate clearly contains the same core identity, stone oven bread; the others are different bread types or less specific stone-related items."
+    },
+    {
+      "catalogKey": "stuffed cabbage ready meal",
+      "serverKey": "stuffed cabbage",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The catalog food is a ready-meal form of stuffed cabbage, and the candidate 'stuffed cabbage' represents the same food without adding a different ingredient or variant."
+    },
+    {
+      "catalogKey": "sugar free chewing gum",
+      "serverKey": "chewing gum (sugar free)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 is the same generic food as the catalog item; the other candidates add specific flavors or varieties."
+    },
+    {
+      "catalogKey": "sugar free oat milk",
+      "serverKey": "佐藤不利用オーツミルク (sugar free oat milk)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 explicitly names sugar free oat milk, matching the catalog food."
+    },
+    {
+      "catalogKey": "sushi mix",
+      "serverKey": "sushi mix flavors",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is the only one that directly represents a sushi mix; the others are snack mix or specific sushi assortments/variants."
+    },
+    {
+      "catalogKey": "sweet almond butter",
+      "serverKey": "butter almond",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate denotes almond butter, which represents the catalog food; the other candidates are different foods or mixed dishes."
+    },
+    {
+      "catalogKey": "sweet and sour pickles",
+      "serverKey": "sweet & sour pickles",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate uses equivalent wording and includes the same food item: sweet and sour pickles."
+    },
+    {
+      "catalogKey": "sweet paprika powder",
+      "serverKey": "sweet paprika",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "Sweet paprika is the same spice as sweet paprika powder; the powder form is implicit for paprika."
+    },
+    {
+      "catalogKey": "sweet potato puree ready meal",
+      "serverKey": "organic sweet potato puree",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is the same basic food, sweet potato puree; other candidates include different added ingredients or a different form."
+    },
+    {
+      "catalogKey": "sweet potato soup ready meal",
+      "serverKey": "sweet potato soup",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog food is generic sweet potato soup in ready-meal form; the candidate 'sweet potato soup' represents the same food, while the others add specific flavors or ingredients."
+    },
+    {
+      "catalogKey": "tagliolini",
+      "serverKey": "i tagliolini",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The candidate is the same food name with only an added article; the other candidates specify different forms or grain types."
+    },
+    {
+      "catalogKey": "thin sliced salami",
+      "serverKey": "sliced salami",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is generic thin sliced salami; 'sliced salami' represents the same food without adding a different subtype."
+    },
+    {
+      "catalogKey": "tofu burger patties",
+      "serverKey": "tofu burger",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.84,
+      "reason": "The catalog item is tofu-based burger patties; 'tofu burger' clearly denotes the same tofu burger patty food, while the other candidates are either broader or less specific."
+    },
+    {
+      "catalogKey": "tomato basil spread",
+      "serverKey": "everything spread, sun dried tomato & basil, mild",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Only this candidate is explicitly a spread and includes tomato and basil; the others omit the spread identity."
+    },
+    {
+      "catalogKey": "tomato pieces",
+      "serverKey": "tomato with pieces",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "Candidate 1 refers to tomato pieces, while the other candidates are chicken or bacon dishes containing tomato."
+    },
+    {
+      "catalogKey": "tomato sauce with herbs",
+      "serverKey": "napoletana chunky pasta sauce with tomato & herbs",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is a tomato sauce with herbs; this candidate is a pasta sauce with tomato and herbs, while the others are bolognese or a salmon dish."
+    },
+    {
+      "catalogKey": "tomato soup ready meal",
+      "serverKey": "soup tomato",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is tomato soup; this candidate directly represents tomato soup, while the others are generic, redundant/unclear, or different prepared soup meals."
+    },
+    {
+      "catalogKey": "turkey breast fillet",
+      "serverKey": "turkey fillet",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is a turkey breast fillet; 'turkey fillet' is the closest same food, while other candidates are generic, seasoned, or different turkey breast forms."
+    },
+    {
+      "catalogKey": "turkey meat",
+      "serverKey": "meat turkey",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "The candidate is the same food as the catalog item, with the words in reversed order; other candidates add qualifiers such as honey, minced, roasted, or deli."
+    },
+    {
+      "catalogKey": "turkey steak",
+      "serverKey": "turkey breast steak",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Turkey breast steak is the specific turkey steak item; other candidates are flavored, overly broad, or incomplete."
+    },
+    {
+      "catalogKey": "uht milk",
+      "serverKey": "uht standard milk",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is unflavored UHT milk; among the candidates, only 'uht standard milk' represents regular unflavored UHT milk, while the others are lite/toned or flavored variants."
+    },
+    {
+      "catalogKey": "unsweetened almond yogurt",
+      "serverKey": "plain unsweetened almond milk yogurt",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog food is unsweetened almond yogurt; the plain unsweetened almond milk yogurt candidate represents the same unflavored almond-based yogurt, while the vanilla option adds a distinct flavor."
+    },
+    {
+      "catalogKey": "unsweetened oat drink",
+      "serverKey": "unsweetened oat plant based drink",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The candidate denotes an unsweetened oat drink; 'plant based' is consistent with oat drink, while other candidates add organic, are incomplete, or include another ingredient."
+    },
+    {
+      "catalogKey": "unsweetened rice milk",
+      "serverKey": "rice milk unsweetened",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "Candidate 1 contains the same food identity: rice milk that is unsweetened."
+    },
+    {
+      "catalogKey": "vanilla pod",
+      "serverKey": "pod, vanilla bean",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Vanilla pod is the same food as a vanilla bean; the other candidates are prepared products or generic vanilla."
+    },
+    {
+      "catalogKey": "vanilla rice drink",
+      "serverKey": "rice drink vanilla enriched",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate is the same food type and flavor: a vanilla rice drink. Other candidates add berry, a different base, or brand/sweetening specifics."
+    },
+    {
+      "catalogKey": "vanilla soy drink",
+      "serverKey": "vanilla soy food drink",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.94,
+      "reason": "Candidate 1 contains the same core food identity: vanilla soy drink. Other candidates add differences such as less sugar or protein drink mix, or are less specific."
+    },
+    {
+      "catalogKey": "veal shank",
+      "serverKey": "veal shank sliced bone in",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "Candidate is veal shank with additional descriptors for slicing and bone-in form; others are different meats or veal products."
+    },
+    {
+      "catalogKey": "vegan almond yogurt alternative",
+      "serverKey": "almond based yogurt alternative",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is a generic vegan almond yogurt alternative, and this candidate is the same generic almond-based yogurt alternative without added flavor or conflicting details."
+    },
+    {
+      "catalogKey": "vegan chili ready meal",
+      "serverKey": "spicy vegan chili",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate represents vegan chili; other candidates are different foods or not clearly vegan ready chili."
+    },
+    {
+      "catalogKey": "vegan chili sin carne",
+      "serverKey": "chilli sin carne",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.84,
+      "reason": "The candidate is the same generic dish as vegan chili sin carne, with only a spelling variation in chili/chilli; other candidates are more specific variants or products."
+    },
+    {
+      "catalogKey": "vegan cocoa pudding",
+      "serverKey": "oatmilk pudding (cocoa)",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is a cocoa pudding made with oat milk, which clearly aligns with a vegan cocoa pudding; other candidates lack the vegan/oatmilk distinction or refer to different foods."
+    },
+    {
+      "catalogKey": "vegan coconut yogurt",
+      "serverKey": "coconut based yogurt",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Catalog item is vegan coconut yogurt, which is best represented by coconut based yogurt; other candidates add flavors or preparations or are less specific."
+    },
+    {
+      "catalogKey": "vegan coconut yogurt alternative",
+      "serverKey": "coconut yogurt alternative",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "The catalog item is a vegan coconut yogurt alternative; the selected candidate is the same food description, with 'vegan' implicit in a coconut yogurt alternative."
+    },
+    {
+      "catalogKey": "vegan cream cheese alternative",
+      "serverKey": "vegan alternative for cream cheese",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 clearly represents a vegan alternative for cream cheese, matching the catalog food."
+    },
+    {
+      "catalogKey": "vegan feta alternative",
+      "serverKey": "vegan feta cheese alternative",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.97,
+      "reason": "The candidate exactly represents a vegan feta cheese alternative; other candidates are less specific or different foods."
+    },
+    {
+      "catalogKey": "vegan fruit gummies",
+      "serverKey": "cherry vegan fruit gummies",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is the same vegan fruit gummy food with an added cherry flavor descriptor; other candidates are less specific or refer to different products such as delta 9, CBD, or biscuits."
+    },
+    {
+      "catalogKey": "vegan grated cheese alternative",
+      "serverKey": "dairy free grated cheese alternative",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is a generic vegan grated cheese alternative, and the supplied generic dairy-free grated cheese alternative is the only candidate that clearly matches without specifying a different cheese style such as parmesan, romano, or feta."
+    },
+    {
+      "catalogKey": "vegan lasagna ready meal",
+      "serverKey": "vegan bologese lasagna",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is a vegan lasagna, matching the catalog food; other candidates differ by being non-vegan, different pasta dishes, or too generic."
+    },
+    {
+      "catalogKey": "vegan margarine",
+      "serverKey": "*margarine",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is a type of margarine; the generic margarine candidate is the only candidate representing that food, while the others are too broad or different vegan foods."
+    },
+    {
+      "catalogKey": "vegan meatball",
+      "serverKey": "vegan meatball style rondo",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate describes a vegan meatball-style product, matching the catalog food; other candidates are generic or different foods."
+    },
+    {
+      "catalogKey": "vegan minced meat alternative",
+      "serverKey": "nrpt vegan minced meat plant&bean brand",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate is a vegan minced meat plant-based product, matching the catalog food; other candidates are animal meats or different vegan alternatives."
+    },
+    {
+      "catalogKey": "vegan moussaka",
+      "serverKey": "moussaka vegan",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.99,
+      "reason": "The candidate contains both terms and clearly represents vegan moussaka."
+    },
+    {
+      "catalogKey": "vegan mozzarella alternative",
+      "serverKey": "vegan gourmet mozzarella cheese alternative",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate describes a vegan mozzarella cheese alternative, matching the catalog food; other candidates are less complete or add a specific shred form."
+    },
+    {
+      "catalogKey": "vegan protein drink",
+      "serverKey": "vegan drink with pea protein",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is a vegan protein drink; other candidates are flavored variants or lack the vegan attribute."
+    },
+    {
+      "catalogKey": "vegan ratatouille",
+      "serverKey": "french ratatouille organic gluten free vegan ingredients",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "Candidate 1 clearly represents vegan ratatouille, with matching ratatouille and vegan descriptors; other candidates are too generic or different foods."
+    },
+    {
+      "catalogKey": "vegan ready made lasagna",
+      "serverKey": "vegan bologese lasagna",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The selected candidate is a vegan lasagna dish, while the other candidates are oven-ready lasagna pasta products or non-vegan."
+    },
+    {
+      "catalogKey": "vegan salami",
+      "serverKey": "salami vegan",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "Candidate 1 is the same food as the catalog item, with the same terms in reversed order; other candidates are more specific flavored or style variants."
+    },
+    {
+      "catalogKey": "vegan salami slices",
+      "serverKey": "salami vegan",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is vegan salami; this candidate represents vegan salami, while the others omit either vegan or salami or specify non-vegan/meat salami."
+    },
+    {
+      "catalogKey": "vegan sausage alternative",
+      "serverKey": "meatless vegan sausage",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The catalog item is a generic vegan sausage substitute, and this candidate explicitly describes a meatless vegan sausage. Other candidates are either less specific or specific flavored/regional variants."
+    },
+    {
+      "catalogKey": "vegan schnitzel substitute",
+      "serverKey": "vegan schnitzel naturel",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate represents a vegan schnitzel, which is the same core food as a vegan schnitzel substitute; other candidates are different or too generic."
+    },
+    {
+      "catalogKey": "vegan soy mince",
+      "serverKey": "soy mince",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The candidate \"soy mince\" directly represents soy-based mince; the catalog term's vegan descriptor is consistent with soy mince and does not indicate a different food."
+    },
+    {
+      "catalogKey": "vegan soy sausage",
+      "serverKey": "meatless vegan sausage",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is a vegan soy sausage; the generic meatless vegan sausage is the only candidate representing the same sausage food, while others are distinct variants or non-sausage items."
+    },
+    {
+      "catalogKey": "vegan soy yogurt alternative",
+      "serverKey": "'alternative ' soy bio yogurt",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "Candidate specifies soy yogurt alternative, matching the catalog food; other candidates are generic or different bases."
+    },
+    {
+      "catalogKey": "vegan spreads",
+      "serverKey": "vegan dressing & spreads",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate includes both defining terms, vegan and spreads; other candidates are broader or unrelated."
+    },
+    {
+      "catalogKey": "vegan spring rolls",
+      "serverKey": "all natural vegan spring rolls",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.91,
+      "reason": "Candidate is the same food with only a non-identifying marketing modifier; other candidates are generic or different variants/add sauce."
+    },
+    {
+      "catalogKey": "vegan tofu salad",
+      "serverKey": "large vegan salad with tofu",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate 1 directly represents a vegan salad with tofu; the added size descriptor does not change the food identity."
+    },
+    {
+      "catalogKey": "vegan tofu salami",
+      "serverKey": "salami vegan",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The candidate \"salami vegan\" represents vegan salami, matching the catalog food; the other candidates are tofu dishes or tofu products but not salami."
+    },
+    {
+      "catalogKey": "vegan tofu scramble",
+      "serverKey": "tofu scramble",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate exactly names the same dish; vegan tofu scramble is represented by tofu scramble, while other candidates are ingredient-only or specific variants."
+    },
+    {
+      "catalogKey": "vegan tofu slices",
+      "serverKey": "tofu slices",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is vegan tofu slices; tofu slices directly represents the same sliced tofu food, with vegan being a dietary descriptor."
+    },
+    {
+      "catalogKey": "vegan tofu strips",
+      "serverKey": "tofu strips",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The candidate is the same tofu strip food; the catalog's vegan descriptor is compatible with tofu and does not indicate a different item."
+    },
+    {
+      "catalogKey": "vegan tomato soup",
+      "serverKey": "vegan soup, organic tomato bisque",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is a vegan tomato-based soup/bisque and best represents vegan tomato soup; other candidates lack vegan status or add different features like pasta/chunky style."
+    },
+    {
+      "catalogKey": "vegan vegetable burger",
+      "serverKey": "black bean chipotle burger vegan vegetable burger with brown rice, black beans & jalapeno pepper, black bean",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "Candidate 2 explicitly includes the phrase vegan vegetable burger and describes a vegan vegetable/bean burger, while the others are broader or different variants."
+    },
+    {
+      "catalogKey": "vegan vegetable soup",
+      "serverKey": "vegan soup, vegetable",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.98,
+      "reason": "The selected candidate contains the same identity terms: vegan, vegetable, and soup."
+    },
+    {
+      "catalogKey": "vegan whipping cream",
+      "serverKey": "vegan heavy whipping cream",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.92,
+      "reason": "The candidate is the same vegan whipping cream product type; the other candidates are non-vegan or different specific whipping creams."
+    },
+    {
+      "catalogKey": "vegan yogurt alternative",
+      "serverKey": "yogurt alternative",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is a generic vegan yogurt alternative, and the candidate 'yogurt alternative' represents the same generic food; other candidates are specific variants or a different food."
+    },
+    {
+      "catalogKey": "vegetable lasagna ready meal",
+      "serverKey": "vegetable lasagna, vegetable",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item is a generic vegetable lasagna ready meal, and this candidate is the only generic vegetable lasagna entry; the others add specific modifiers or differ in meaning."
+    },
+    {
+      "catalogKey": "vegetable skewers",
+      "serverKey": "vegetable kebabs with skewers",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.95,
+      "reason": "The candidate explicitly describes vegetable kebabs served on skewers, which is the same food as vegetable skewers."
+    },
+    {
+      "catalogKey": "vegetable soup ready meal",
+      "serverKey": "vegetable ready to serve soup, vegetable",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is a generic ready-to-eat vegetable soup; candidate 1 is the generic vegetable ready-to-serve soup, while the others specify variants such as chunky, hearty, classic, or beef."
+    },
+    {
+      "catalogKey": "vegetarian bulgur salad",
+      "serverKey": "bulgur salad",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate \"bulgur salad\" matches the core food; \"vegetarian\" is a dietary descriptor and the other candidates are different salad types."
+    },
+    {
+      "catalogKey": "vegetarian chili ready meal",
+      "serverKey": "chili vegetarian",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is a vegetarian chili ready meal; the generic candidate 'chili vegetarian' represents the same food, while the others add unsupported variants such as beans, Mexican style, organic, or meal mix."
+    },
+    {
+      "catalogKey": "vegetarian chili sin carne",
+      "serverKey": "chili sin carne vegetar 190g toro",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate names the same dish, chili sin carne, and includes a vegetarian indication; other candidates are broader or specify different ingredient variants."
+    },
+    {
+      "catalogKey": "vegetarian herb deli slices",
+      "serverKey": "plant based herb roasted turkey style deli slices, herb roasted",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is plant-based/vegetarian herb deli slices and matches the catalog food more specifically than the generic deli slice options."
+    },
+    {
+      "catalogKey": "vegetarian meatballs",
+      "serverKey": "original vegetarian eggplant \"meatballs\", original",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.84,
+      "reason": "Candidate 1 is a vegetarian meatball product; other candidates are only generic vegetarian or non-vegetarian meatballs."
+    },
+    {
+      "catalogKey": "vegetarian mozzarella",
+      "serverKey": "part skim mozzarella vegetarian cheese",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate is a vegetarian mozzarella cheese; other candidates are a pasta salad, generic vegetarian items, or non-vegetarian-specific mozzarella."
+    },
+    {
+      "catalogKey": "vegetarian potato salad",
+      "serverKey": "potato salad",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The generic candidate \"potato salad\" represents the same food as vegetarian potato salad; the other candidates are specific variants."
+    },
+    {
+      "catalogKey": "vegetarian pumpkin soup",
+      "serverKey": "pumpkin soup, pumpkin",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is the generic pumpkin soup entry and represents the same food; other candidates are either too broad or specify different variants."
+    },
+    {
+      "catalogKey": "vegetarian schnitzel",
+      "serverKey": "ovo vegetarian schnitzel",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate contains the full food name 'vegetarian schnitzel' with only an additional ovo-vegetarian qualifier; other candidates are broader, partial, or a different style."
+    },
+    {
+      "catalogKey": "vegetarian spinach lasagna",
+      "serverKey": "spinach & cheese lasagna",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Spinach and cheese lasagna is a vegetarian spinach lasagna; turkey option is not vegetarian and other candidates are less specific variants."
+    },
+    {
+      "catalogKey": "vegetarian tofu sausage",
+      "serverKey": "tofu sausage",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.94,
+      "reason": "Candidate exactly matches the core food 'tofu sausage'; 'vegetarian' is consistent with tofu sausage and other candidates are different items or variants."
+    },
+    {
+      "catalogKey": "vegetarian vegetable broth",
+      "serverKey": "vegetable broth and seasoning, vegetarian",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Candidate explicitly includes vegetable broth and vegetarian, matching the catalog food; added seasoning does not change the broth identity."
+    },
+    {
+      "catalogKey": "vegetarian vegetable lasagna",
+      "serverKey": "vegetable lasagna, vegetable",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "The candidate is a generic vegetable lasagna, which represents the same food as vegetarian vegetable lasagna; other candidates are non-lasagna or more specific variants."
+    },
+    {
+      "catalogKey": "veggie burger patty",
+      "serverKey": "veggie patty",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is a veggie burger patty, and 'veggie patty' clearly represents the same food type; other candidates are less specific or imply non-veggie burger patties."
+    },
+    {
+      "catalogKey": "vine tomatoes",
+      "serverKey": "tomatoes on the vine",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Catalog item 'vine tomatoes' refers to tomatoes sold on the vine; 'tomatoes on the vine' is the same food, while other candidates add ripeness wording, basil, or are crushed/processed products."
+    },
+    {
+      "catalogKey": "vineyard peach juice",
+      "serverKey": "peach juice",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The catalog item is a peach juice; the candidate 'peach juice' represents the same food, while the others are mixed, modified, or less specific variants."
+    },
+    {
+      "catalogKey": "waffle batter ready mix",
+      "serverKey": "waffle mix",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "Catalog item is a ready mix for waffle batter; the candidate 'waffle mix' directly represents the same food."
+    },
+    {
+      "catalogKey": "wheat bread roll",
+      "serverKey": "wheat roll",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "The catalog item is a wheat bread roll, and the candidate 'wheat roll' clearly represents the same wheat roll food."
+    },
+    {
+      "catalogKey": "wheat flour type 550",
+      "serverKey": "all purpose wheat flour type 550",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.97,
+      "reason": "Candidate 1 includes the same food name and type number: wheat flour type 550."
+    },
+    {
+      "catalogKey": "white mushroom",
+      "serverKey": "mushroom, white fresh",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.94,
+      "reason": "This candidate directly denotes fresh white mushroom; the others are sauce, sliced form, or different mushroom types."
+    },
+    {
+      "catalogKey": "white sausage",
+      "serverKey": "skinless white cooked sausage",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is a white sausage item; other candidates are sandwiches, pudding sausage, or cheddar smoked sausage variants."
+    },
+    {
+      "catalogKey": "white spaghetti",
+      "serverKey": "white sauce spaghetti",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The catalog item 'white spaghetti' most clearly refers to spaghetti with a white sauce; the other candidates describe different pasta products or specific variants."
+    },
+    {
+      "catalogKey": "whole cane sugar",
+      "serverKey": "natural whole cane sugar",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate is the generic same food, whole cane sugar, with only the non-distinguishing descriptor 'natural'; other candidates add specific forms or synonyms such as panela/rapadura."
+    },
+    {
+      "catalogKey": "whole grain baguette",
+      "serverKey": "ciabatta demi baguette whole grain",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "Candidate includes the full identity of a whole grain baguette; other candidates are broader or different grain/bread descriptions."
+    },
+    {
+      "catalogKey": "whole grain couscous",
+      "serverKey": "near east whole grain original wheat couscous 7.6 ounce paper box",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.88,
+      "reason": "Candidate is an original whole grain wheat couscous product; other candidates are flavored or too broad."
+    },
+    {
+      "catalogKey": "whole grain crackers",
+      "serverKey": "whole grain baked crackers",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.84,
+      "reason": "This candidate is the only generic whole grain cracker option; the others add distinct types or ingredients such as cheese, saltine, seeds, or animal crackers."
+    },
+    {
+      "catalogKey": "whole grain rice noodles",
+      "serverKey": "instant whole grain rice noodles",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate 1 contains the full food identity 'whole grain rice noodles'; 'instant' is an added form descriptor, while other candidates are missing rice or noodles."
+    },
+    {
+      "catalogKey": "whole grain sandwich bread",
+      "serverKey": "whole grain delicious sandwich bread, whole grain",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "Candidate 1 clearly describes whole grain sandwich bread; other candidates are less specific or refer to a prepared sandwich rather than the bread itself."
+    },
+    {
+      "catalogKey": "whole grain seed bread",
+      "serverKey": "whole grain multi seed bread",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "The candidate matches the catalog food as whole grain bread with seeds; other candidates are either less specific or specify a different seed/type."
+    },
+    {
+      "catalogKey": "whole grain spelt flour",
+      "serverKey": "100% whole grain spelt (wheat) flour",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.97,
+      "reason": "Candidate 1 explicitly represents whole grain spelt flour; the others are less specific or different prepared foods."
+    },
+    {
+      "catalogKey": "whole milk whipping cream",
+      "serverKey": "premium milk whipping cream",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.84,
+      "reason": "Only this candidate is a whipping cream product; the others are whole milk or flavored milk products rather than whipping cream."
+    },
+    {
+      "catalogKey": "wiener sausages",
+      "serverKey": "value pack wiener sausages",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.82,
+      "reason": "The candidate is wiener sausages with only a packaging/pack-size descriptor, while other candidates are size/type variants or less specific."
+    },
+    {
+      "catalogKey": "yeast extract spread",
+      "serverKey": "yeast spread",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.9,
+      "reason": "\"yeast spread\" clearly refers to the same yeast-based spread as yeast extract spread; the other candidates are generic or different foods."
+    },
+    {
+      "catalogKey": "yogurt with fruit",
+      "serverKey": "grrek yogurt with fruit",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.86,
+      "reason": "This candidate directly represents yogurt with fruit; the others are distinct forms such as parfait, mousse, smoothie, or melties."
+    },
+    {
+      "catalogKey": "young gouda cheese",
+      "serverKey": "gouda young cheese slices",
+      "sourceArtifact": "nutrition.json",
+      "method": "AI_VALIDATED",
+      "confidence": 0.93,
+      "reason": "Candidate 1 explicitly matches young gouda cheese, with only the form specified as slices."
+    }
+  ]
+}

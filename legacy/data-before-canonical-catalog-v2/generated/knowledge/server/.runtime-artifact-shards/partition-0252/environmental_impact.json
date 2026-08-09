@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "boeuf, hampe, grillée/poêlée": {
+      "environmentScoreMptPerKg": 3.42,
+      "climateKgCo2EqPerKg": 36.7,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.03
+    },
+    "fromage de chèvre à pâte molle non pressée non cuite croûte naturelle, au lait pasteurisé": {
+      "environmentScoreMptPerKg": 1.19,
+      "climateKgCo2EqPerKg": 8.47,
+      "landUsePtPerKg": 564.0,
+      "waterDeprivationM3PerKg": 3.0
+    },
+    "gâteau moelleux au chocolat, préemballé": {
+      "environmentScoreMptPerKg": 0.667,
+      "climateKgCo2EqPerKg": 10.1,
+      "landUsePtPerKg": 401.0,
+      "waterDeprivationM3PerKg": 0.995
+    },
+    "lapin à la moutarde": {
+      "environmentScoreMptPerKg": 0.777,
+      "climateKgCo2EqPerKg": 4.6,
+      "landUsePtPerKg": 276.0,
+      "waterDeprivationM3PerKg": 2.05
+    },
+    "lupin, graine crue": {
+      "environmentScoreMptPerKg": 0.131,
+      "climateKgCo2EqPerKg": 1.1,
+      "landUsePtPerKg": -166.0,
+      "waterDeprivationM3PerKg": 0.159
+    },
+    "mangue importée par bateau, pulpe, crue": {
+      "environmentScoreMptPerKg": 0.0859,
+      "climateKgCo2EqPerKg": 0.728,
+      "landUsePtPerKg": 31.7,
+      "waterDeprivationM3PerKg": 0.965
+    },
+    "pizza au fromage ou pizza margherita": {
+      "environmentScoreMptPerKg": 0.239,
+      "climateKgCo2EqPerKg": 1.84,
+      "landUsePtPerKg": 91.1,
+      "waterDeprivationM3PerKg": 1.23
+    },
+    "tarte au maroilles ou flamiche au maroilles": {
+      "environmentScoreMptPerKg": 0.494,
+      "climateKgCo2EqPerKg": 4.2,
+      "landUsePtPerKg": 242.0,
+      "waterDeprivationM3PerKg": 0.672
+    },
+    "wakamé atlantique (alaria esculenta), séchée ou déshydratée": {
+      "environmentScoreMptPerKg": 1.52,
+      "climateKgCo2EqPerKg": 11.6,
+      "landUsePtPerKg": 26.4,
+      "waterDeprivationM3PerKg": 4.83
+    }
+  }
+}

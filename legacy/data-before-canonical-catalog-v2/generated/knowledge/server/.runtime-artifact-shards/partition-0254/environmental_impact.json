@@ -1,0 +1,52 @@
+{
+  "entries": {
+    "boisson lactée aromatisée à la fraise, sucrée, au lait partiellement écrémé, enrichie à la vitamine d": {
+      "environmentScoreMptPerKg": 0.142,
+      "climateKgCo2EqPerKg": 1.51,
+      "landUsePtPerKg": 56.2,
+      "waterDeprivationM3PerKg": 0.233
+    },
+    "compote, tout type de fruits, allégée en sucres, rayon frais": {
+      "environmentScoreMptPerKg": 0.128,
+      "climateKgCo2EqPerKg": 1.12,
+      "landUsePtPerKg": 24.4,
+      "waterDeprivationM3PerKg": 0.779
+    },
+    "olives vertes, fourrées ou farcies (anchois, poivrons, etc.)": {
+      "environmentScoreMptPerKg": 0.137,
+      "climateKgCo2EqPerKg": 1.17,
+      "landUsePtPerKg": 48.9,
+      "waterDeprivationM3PerKg": 2.01
+    },
+    "perche, crue": {
+      "environmentScoreMptPerKg": 3.16,
+      "climateKgCo2EqPerKg": 5.4,
+      "landUsePtPerKg": 105.0,
+      "waterDeprivationM3PerKg": 274.0
+    },
+    "poisson blanc à la marinière (sauce aux oignons, vin blanc, moules)": {
+      "environmentScoreMptPerKg": 1.64,
+      "climateKgCo2EqPerKg": 10.4,
+      "landUsePtPerKg": 158.0,
+      "waterDeprivationM3PerKg": 28.0
+    },
+    "quiche lorraine": {
+      "environmentScoreMptPerKg": 0.553,
+      "climateKgCo2EqPerKg": 4.57,
+      "landUsePtPerKg": 227.0,
+      "waterDeprivationM3PerKg": 1.08
+    },
+    "saucisse alsacienne fumée ou gendarme": {
+      "environmentScoreMptPerKg": 0.701,
+      "climateKgCo2EqPerKg": 5.37,
+      "landUsePtPerKg": 271.0,
+      "waterDeprivationM3PerKg": 1.77
+    },
+    "soupe marocaine, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.542,
+      "climateKgCo2EqPerKg": 4.02,
+      "landUsePtPerKg": 403.0,
+      "waterDeprivationM3PerKg": 0.851
+    }
+  }
+}

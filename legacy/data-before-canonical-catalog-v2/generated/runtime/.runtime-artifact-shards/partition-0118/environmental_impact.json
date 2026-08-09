@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "asperge, verte, crue": {
+      "environmentScoreMptPerKg": 0.294,
+      "climateKgCo2EqPerKg": 1.64,
+      "landUsePtPerKg": 235.0,
+      "waterDeprivationM3PerKg": 4.36
+    },
+    "beaufort": {
+      "environmentScoreMptPerKg": 0.597,
+      "climateKgCo2EqPerKg": 6.25,
+      "landUsePtPerKg": 286.0,
+      "waterDeprivationM3PerKg": 0.801
+    },
+    "boisson plate aux fruits (teneur en jus non spécifiée), sucrée": {
+      "environmentScoreMptPerKg": 0.0848,
+      "climateKgCo2EqPerKg": 0.566,
+      "landUsePtPerKg": 11.4,
+      "waterDeprivationM3PerKg": 0.65
+    },
+    "carottes râpées, avec sauce, préemballées": {
+      "environmentScoreMptPerKg": 0.164,
+      "climateKgCo2EqPerKg": 1.36,
+      "landUsePtPerKg": 30.8,
+      "waterDeprivationM3PerKg": 1.25
+    },
+    "chou à la crème chantilly": {
+      "environmentScoreMptPerKg": 0.325,
+      "climateKgCo2EqPerKg": 2.58,
+      "landUsePtPerKg": 115.0,
+      "waterDeprivationM3PerKg": 0.509
+    },
+    "coquille saint jacques, noix et corail, crue": {
+      "environmentScoreMptPerKg": 1.33,
+      "climateKgCo2EqPerKg": 9.89,
+      "landUsePtPerKg": 24.8,
+      "waterDeprivationM3PerKg": 0.435
+    },
+    "lentille blonde, sèche": {
+      "environmentScoreMptPerKg": 0.152,
+      "climateKgCo2EqPerKg": 0.581,
+      "landUsePtPerKg": 309.0,
+      "waterDeprivationM3PerKg": 0.13
+    },
+    "nectar de mangue": {
+      "environmentScoreMptPerKg": 0.0888,
+      "climateKgCo2EqPerKg": 0.657,
+      "landUsePtPerKg": 34.5,
+      "waterDeprivationM3PerKg": 0.701
+    },
+    "pop corn ou maïs éclaté, à l'air, non salé": {
+      "environmentScoreMptPerKg": 0.164,
+      "climateKgCo2EqPerKg": 1.02,
+      "landUsePtPerKg": 79.7,
+      "waterDeprivationM3PerKg": 0.953
+    },
+    "sauce au poivre vert, préemballée": {
+      "environmentScoreMptPerKg": 0.188,
+      "climateKgCo2EqPerKg": 1.44,
+      "landUsePtPerKg": 36.0,
+      "waterDeprivationM3PerKg": 0.33
+    },
+    "whisky": {
+      "environmentScoreMptPerKg": 0.12,
+      "climateKgCo2EqPerKg": 1.26,
+      "landUsePtPerKg": 18.4,
+      "waterDeprivationM3PerKg": 0.169
+    }
+  }
+}

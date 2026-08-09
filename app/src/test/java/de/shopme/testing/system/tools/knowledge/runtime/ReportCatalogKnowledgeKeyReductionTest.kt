@@ -3,7 +3,7 @@ package de.shopme.testing.system.tools.knowledge.runtime
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
-import java.io.File
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
@@ -16,12 +16,12 @@ class ReportCatalogKnowledgeKeyReductionTest {
     fun reportCatalogKnowledgeKeyReduction() {
 
         val file =
-            File(
-                "../data/raw/catalog/supermarket_dataset.translated.json"
-            )
+            KnowledgeBuildPaths
+                .default()
+                .canonicalFoodCatalog
 
         assertTrue(
-            file.exists(),
+            file.isFile,
             "Catalog file missing: ${file.path}"
         )
 
@@ -61,16 +61,20 @@ class ReportCatalogKnowledgeKeyReductionTest {
             when {
                 normalizedEnglish != null -> {
                     normalizedEnglishCount++
-                    keys += normalizeKey(
-                        normalizedEnglish
-                    )
+
+                    keys +=
+                        normalizeKey(
+                            normalizedEnglish
+                        )
                 }
 
                 fallback != null -> {
                     fallbackCount++
-                    keys += normalizeKey(
-                        fallback
-                    )
+
+                    keys +=
+                        normalizeKey(
+                            fallback
+                        )
                 }
 
                 else -> {
@@ -85,9 +89,11 @@ class ReportCatalogKnowledgeKeyReductionTest {
             }
 
         val grouped =
-            nonBlankKeys.groupingBy {
-                it
-            }.eachCount()
+            nonBlankKeys
+                .groupingBy {
+                    it
+                }
+                .eachCount()
 
         val duplicateGroups =
             grouped.filterValues {

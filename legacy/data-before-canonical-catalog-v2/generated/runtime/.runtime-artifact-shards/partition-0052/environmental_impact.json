@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "lieu noir, cuit": {
+      "environmentScoreMptPerKg": 1.61,
+      "climateKgCo2EqPerKg": 10.2,
+      "landUsePtPerKg": 19.9,
+      "waterDeprivationM3PerKg": 0.555
+    },
+    "pain, baguette, sans sel": {
+      "environmentScoreMptPerKg": 0.104,
+      "climateKgCo2EqPerKg": 0.776,
+      "landUsePtPerKg": 63.0,
+      "waterDeprivationM3PerKg": 0.188
+    },
+    "pomme de terre, sans peau, crue": {
+      "environmentScoreMptPerKg": 0.0692,
+      "climateKgCo2EqPerKg": 0.788,
+      "landUsePtPerKg": 24.7,
+      "waterDeprivationM3PerKg": 0.327
+    },
+    "pâte feuilletée, matière grasse végétale, crue": {
+      "environmentScoreMptPerKg": 0.416,
+      "climateKgCo2EqPerKg": 3.93,
+      "landUsePtPerKg": 180.0,
+      "waterDeprivationM3PerKg": 0.719
+    },
+    "sauce au chocolat": {
+      "environmentScoreMptPerKg": 0.402,
+      "climateKgCo2EqPerKg": 6.88,
+      "landUsePtPerKg": 263.0,
+      "waterDeprivationM3PerKg": 0.469
+    },
+    "tarte aux fruits rouges": {
+      "environmentScoreMptPerKg": 0.454,
+      "climateKgCo2EqPerKg": 2.94,
+      "landUsePtPerKg": 157.0,
+      "waterDeprivationM3PerKg": 1.95
+    },
+    "veau, collier, cru": {
+      "environmentScoreMptPerKg": 2.15,
+      "climateKgCo2EqPerKg": 23.3,
+      "landUsePtPerKg": 1060.0,
+      "waterDeprivationM3PerKg": 3.17
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "entries": {
+    "biscuit sec, sablé, galette ou palet, aux fruits": {
+      "environmentScoreMptPerKg": 0.304,
+      "climateKgCo2EqPerKg": 2.44,
+      "landUsePtPerKg": 134.0,
+      "waterDeprivationM3PerKg": 2.95
+    },
+    "boeuf, à bourguignon ou pot au feu, cuit": {
+      "environmentScoreMptPerKg": 3.44,
+      "climateKgCo2EqPerKg": 36.6,
+      "landUsePtPerKg": 2390.0,
+      "waterDeprivationM3PerKg": 3.05
+    },
+    "crème dessert, allégée en mg, rayon frais": {
+      "environmentScoreMptPerKg": 0.203,
+      "climateKgCo2EqPerKg": 1.94,
+      "landUsePtPerKg": 66.5,
+      "waterDeprivationM3PerKg": 0.528
+    },
+    "goûter sec fourré (\"sandwiché\") parfum lait ou vanille": {
+      "environmentScoreMptPerKg": 0.502,
+      "climateKgCo2EqPerKg": 6.67,
+      "landUsePtPerKg": 274.0,
+      "waterDeprivationM3PerKg": 1.13
+    },
+    "madeleine ordinaire, préemballée": {
+      "environmentScoreMptPerKg": 0.227,
+      "climateKgCo2EqPerKg": 1.54,
+      "landUsePtPerKg": 148.0,
+      "waterDeprivationM3PerKg": 1.66
+    },
+    "paupiette de veau, cuite au four": {
+      "environmentScoreMptPerKg": 2.04,
+      "climateKgCo2EqPerKg": 21.1,
+      "landUsePtPerKg": 954.0,
+      "waterDeprivationM3PerKg": 5.98
+    },
+    "pomme de terre, purée à base de flocons, reconstituée avec lait demi écrémé et eau, non salée": {
+      "environmentScoreMptPerKg": 0.0893,
+      "climateKgCo2EqPerKg": 0.744,
+      "landUsePtPerKg": 26.6,
+      "waterDeprivationM3PerKg": 0.216
+    },
+    "riz cantonais": {
+      "environmentScoreMptPerKg": 0.453,
+      "climateKgCo2EqPerKg": 3.1,
+      "landUsePtPerKg": 136.0,
+      "waterDeprivationM3PerKg": 4.67
+    },
+    "sandwich baguette, poulet, crudités (tomate, salade), mayonnaise": {
+      "environmentScoreMptPerKg": 0.579,
+      "climateKgCo2EqPerKg": 3.82,
+      "landUsePtPerKg": 220.0,
+      "waterDeprivationM3PerKg": 1.96
+    },
+    "sauce au poivre, condimentaire, froide, préemballée": {
+      "environmentScoreMptPerKg": 0.246,
+      "climateKgCo2EqPerKg": 2.02,
+      "landUsePtPerKg": 63.8,
+      "waterDeprivationM3PerKg": 0.392
+    },
+    "soupe au cresson, déshydratée reconstituée": {
+      "environmentScoreMptPerKg": 0.112,
+      "climateKgCo2EqPerKg": 0.518,
+      "landUsePtPerKg": 13.3,
+      "waterDeprivationM3PerKg": 0.217
+    },
+    "tacaud, cru": {
+      "environmentScoreMptPerKg": 1.98,
+      "climateKgCo2EqPerKg": 12.0,
+      "landUsePtPerKg": 16.2,
+      "waterDeprivationM3PerKg": 0.47
+    }
+  }
+}

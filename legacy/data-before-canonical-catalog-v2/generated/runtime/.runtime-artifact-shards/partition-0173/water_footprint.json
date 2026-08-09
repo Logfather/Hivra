@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "beignet de viande, volaille ou poisson, fait maison": {
+      "litersPerKilogram": 1500.0
+    },
+    "biscuit sec aux fruits, hyposodé": {
+      "litersPerKilogram": 3170.0
+    },
+    "bière brune": {
+      "litersPerKilogram": 258.0
+    },
+    "chicorée rouge, crue": {
+      "litersPerKilogram": 479.0
+    },
+    "cresson de fontaine, cru": {
+      "litersPerKilogram": 425.0
+    },
+    "haricot flageolet, surgelé": {
+      "litersPerKilogram": 70.9
+    },
+    "maquereau, filet au vin blanc, appertisé, égoutté": {
+      "litersPerKilogram": 572.0
+    },
+    "pain, sans gluten": {
+      "litersPerKilogram": 5660.0
+    },
+    "petit salé ou saucisse aux lentilles": {
+      "litersPerKilogram": 813.0
+    },
+    "veau, escalope, cuite": {
+      "litersPerKilogram": 3990.0
+    }
+  }
+}

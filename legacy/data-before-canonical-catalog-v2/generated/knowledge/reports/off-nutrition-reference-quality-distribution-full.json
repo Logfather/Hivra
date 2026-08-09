@@ -1,0 +1,1197 @@
+{
+  "version": 1,
+  "analyzedCandidateCount": 865511,
+  "acceptedCandidateCount": 818631,
+  "rejectedCandidateCount": 46880,
+  "rejectionReasonOccurrenceCount": 65630,
+  "multipleReasonRejectionCount": 18632,
+  "countsByReason": {
+    "EMPTY_NUTRITION_PAYLOAD": 0,
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS": 23178,
+    "NEGATIVE_NUTRITION_VALUE": 4,
+    "NON_FINITE_NUTRITION_VALUE": 0,
+    "NUTRITION_VALUE_ABOVE_MAXIMUM": 20462,
+    "SATURATED_FAT_EXCEEDS_TOTAL_FAT": 583,
+    "SUGARS_EXCEED_CARBOHYDRATES": 931,
+    "UNSUPPORTED_NUTRITION_KEY": 0,
+    "ZERO_ONLY_NUTRITION_PAYLOAD": 20472
+  },
+  "countsByReasonCombination": {
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS": 4642,
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS+NEGATIVE_NUTRITION_VALUE+NUTRITION_VALUE_ABOVE_MAXIMUM": 1,
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS+NUTRITION_VALUE_ABOVE_MAXIMUM": 18419,
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS+NUTRITION_VALUE_ABOVE_MAXIMUM+SATURATED_FAT_EXCEEDS_TOTAL_FAT": 49,
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS+NUTRITION_VALUE_ABOVE_MAXIMUM+SATURATED_FAT_EXCEEDS_TOTAL_FAT+SUGARS_EXCEED_CARBOHYDRATES": 10,
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS+NUTRITION_VALUE_ABOVE_MAXIMUM+SUGARS_EXCEED_CARBOHYDRATES": 41,
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS+SATURATED_FAT_EXCEEDS_TOTAL_FAT": 7,
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS+SATURATED_FAT_EXCEEDS_TOTAL_FAT+SUGARS_EXCEED_CARBOHYDRATES": 1,
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS+SUGARS_EXCEED_CARBOHYDRATES": 8,
+    "NEGATIVE_NUTRITION_VALUE": 1,
+    "NEGATIVE_NUTRITION_VALUE+NUTRITION_VALUE_ABOVE_MAXIMUM": 1,
+    "NEGATIVE_NUTRITION_VALUE+NUTRITION_VALUE_ABOVE_MAXIMUM+SUGARS_EXCEED_CARBOHYDRATES": 1,
+    "NUTRITION_VALUE_ABOVE_MAXIMUM": 1884,
+    "NUTRITION_VALUE_ABOVE_MAXIMUM+SATURATED_FAT_EXCEEDS_TOTAL_FAT": 16,
+    "NUTRITION_VALUE_ABOVE_MAXIMUM+SATURATED_FAT_EXCEEDS_TOTAL_FAT+SUGARS_EXCEED_CARBOHYDRATES": 5,
+    "NUTRITION_VALUE_ABOVE_MAXIMUM+SUGARS_EXCEED_CARBOHYDRATES": 35,
+    "SATURATED_FAT_EXCEEDS_TOTAL_FAT": 457,
+    "SATURATED_FAT_EXCEEDS_TOTAL_FAT+SUGARS_EXCEED_CARBOHYDRATES": 38,
+    "SUGARS_EXCEED_CARBOHYDRATES": 792,
+    "ZERO_ONLY_NUTRITION_PAYLOAD": 20472
+  },
+  "countsByReasonCount": {
+    "1": 28248,
+    "2": 18524,
+    "3": 98,
+    "4": 10
+  },
+  "negativeValueCountsByNutritionKey": {
+    "carbohydratesPer100g": 1,
+    "fiberPer100g": 1,
+    "proteinsPer100g": 2
+  },
+  "aboveMaximumCountsByNutritionKey": {
+    "carbohydratesPer100g": 13250,
+    "energyKcalPer100g": 14286,
+    "fatPer100g": 5778,
+    "fiberPer100g": 275,
+    "proteinsPer100g": 1418,
+    "saltPer100g": 1080,
+    "saturatedFatPer100g": 859,
+    "sugarsPer100g": 6150
+  },
+  "aboveMaximumExcessBucketsByNutritionKey": {
+    "carbohydratesPer100g": {
+      "GT_0_5_TO_1": 128,
+      "GT_100": 5959,
+      "GT_1_TO_5": 463,
+      "GT_20_TO_100": 5394,
+      "GT_5_TO_20": 1306
+    },
+    "energyKcalPer100g": {
+      "GT_0_5_TO_1": 21,
+      "GT_100": 12699,
+      "GT_1_TO_5": 34,
+      "GT_20_TO_100": 1299,
+      "GT_5_TO_20": 233
+    },
+    "fatPer100g": {
+      "GT_0_5_TO_1": 115,
+      "GT_100": 1605,
+      "GT_1_TO_5": 364,
+      "GT_20_TO_100": 2541,
+      "GT_5_TO_20": 1153
+    },
+    "fiberPer100g": {
+      "GT_0_5_TO_1": 4,
+      "GT_0_TO_0_5": 1,
+      "GT_100": 147,
+      "GT_1_TO_5": 9,
+      "GT_20_TO_100": 92,
+      "GT_5_TO_20": 22
+    },
+    "proteinsPer100g": {
+      "GT_0_5_TO_1": 39,
+      "GT_0_TO_0_5": 1,
+      "GT_100": 501,
+      "GT_1_TO_5": 143,
+      "GT_20_TO_100": 536,
+      "GT_5_TO_20": 198
+    },
+    "saltPer100g": {
+      "GT_0_5_TO_1": 2,
+      "GT_100": 774,
+      "GT_1_TO_5": 39,
+      "GT_20_TO_100": 194,
+      "GT_5_TO_20": 71
+    },
+    "saturatedFatPer100g": {
+      "GT_0_5_TO_1": 8,
+      "GT_100": 282,
+      "GT_1_TO_5": 209,
+      "GT_20_TO_100": 274,
+      "GT_5_TO_20": 86
+    },
+    "sugarsPer100g": {
+      "GT_0_5_TO_1": 44,
+      "GT_0_TO_0_5": 1,
+      "GT_100": 1963,
+      "GT_1_TO_5": 253,
+      "GT_20_TO_100": 2860,
+      "GT_5_TO_20": 1029
+    }
+  },
+  "macronutrientSumBuckets": {
+    "GT_105_TO_110": 416,
+    "GT_110_TO_120": 1358,
+    "GT_120_TO_150": 3242,
+    "GT_150": 18162
+  },
+  "sugarExcessBuckets": {
+    "GT_0_5_TO_1": 108,
+    "GT_1_TO_5": 335,
+    "GT_20": 215,
+    "GT_5_TO_20": 273
+  },
+  "saturatedFatExcessBuckets": {
+    "GT_0_5_TO_1": 78,
+    "GT_1_TO_5": 228,
+    "GT_20": 125,
+    "GT_5_TO_20": 152
+  },
+  "zeroOnlyCountsByPresentKeyCount": {
+    "1": 445,
+    "2": 5575,
+    "3": 125,
+    "4": 1045,
+    "5": 2247,
+    "6": 2669,
+    "7": 2526,
+    "8_OR_MORE": 5840
+  },
+  "valueRangesByNutritionKey": {
+    "carbohydratesPer100g": {
+      "observationCount": 851000,
+      "minimum": -1.0,
+      "maximum": 8761109.0
+    },
+    "energyKcalPer100g": {
+      "observationCount": 854047,
+      "minimum": 0.0,
+      "maximum": 408000.0
+    },
+    "fatPer100g": {
+      "observationCount": 848245,
+      "minimum": 0.0,
+      "maximum": 90937.0
+    },
+    "fiberPer100g": {
+      "observationCount": 617032,
+      "minimum": -44.7,
+      "maximum": 938364.0
+    },
+    "proteinsPer100g": {
+      "observationCount": 849608,
+      "minimum": -12.6,
+      "maximum": 1.0E8
+    },
+    "saltPer100g": {
+      "observationCount": 738507,
+      "minimum": 0.0,
+      "maximum": 355942.5
+    },
+    "saturatedFatPer100g": {
+      "observationCount": 750859,
+      "minimum": 0.0,
+      "maximum": 9.9999999E7
+    },
+    "sugarsPer100g": {
+      "observationCount": 783675,
+      "minimum": 0.0,
+      "maximum": 9.9999999999999E13
+    }
+  },
+  "examplesByReason": {
+    "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS": [
+      {
+        "sourceId": "0000105000073",
+        "canonicalId": "herbal tea, hibiscus",
+        "productName": "herbal tea, hibiscus",
+        "nutrition": {
+          "carbohydratesPer100g": 60.0,
+          "energyKcalPer100g": 267.0,
+          "fatPer100g": 0.0,
+          "proteinsPer100g": 66.67,
+          "saltPer100g": 0.33782
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS"
+        ]
+      },
+      {
+        "sourceId": "0000111301201",
+        "canonicalId": "® original vegetable oil spread tub",
+        "productName": "canola harvest® original vegetable oil spread tub",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 4590.0,
+          "fatPer100g": 510.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 12.7,
+          "saturatedFatPer100g": 76.4,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "00002220",
+        "canonicalId": "monterey jack",
+        "productName": "monterey jack",
+        "nutrition": {
+          "carbohydratesPer100g": 12.6,
+          "energyKcalPer100g": 50.4,
+          "fatPer100g": 101.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 88.2,
+          "saltPer100g": 5.44,
+          "saturatedFatPer100g": 63.0,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000417011002",
+        "canonicalId": "knusperflakes mit knusprigen cornflakes",
+        "productName": "knusperflakes mit knusprigen cornflakes",
+        "nutrition": {
+          "carbohydratesPer100g": 240.0,
+          "energyKcalPer100g": 960.0,
+          "fatPer100g": 112.0,
+          "fiberPer100g": 8.0,
+          "proteinsPer100g": 32.0,
+          "saltPer100g": 1.6,
+          "saturatedFatPer100g": 73.6,
+          "sugarsPer100g": 198.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000417296003",
+        "canonicalId": "milk chocolate with caramelized almonds",
+        "productName": "milk chocolate with caramelized almonds",
+        "nutrition": {
+          "carbohydratesPer100g": 229.0,
+          "energyKcalPer100g": 915.0,
+          "fatPer100g": 125.0,
+          "fiberPer100g": 9.6,
+          "proteinsPer100g": 28.8,
+          "saltPer100g": 0.569,
+          "saturatedFatPer100g": 67.2,
+          "sugarsPer100g": 224.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000433821494",
+        "canonicalId": "oatmeal raisin cookies",
+        "productName": "oatmeal raisin cookies",
+        "nutrition": {
+          "carbohydratesPer100g": 242.0,
+          "energyKcalPer100g": 969.0,
+          "fatPer100g": 76.5,
+          "fiberPer100g": 12.9,
+          "proteinsPer100g": 25.5,
+          "saltPer100g": 1.91,
+          "saturatedFatPer100g": 44.6,
+          "sugarsPer100g": 102.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000433821500",
+        "canonicalId": "the best peanut butter cookies",
+        "productName": "the best peanut butter cookies",
+        "nutrition": {
+          "carbohydratesPer100g": 242.0,
+          "energyKcalPer100g": 969.0,
+          "fatPer100g": 76.5,
+          "fiberPer100g": 12.9,
+          "proteinsPer100g": 25.5,
+          "saltPer100g": 1.91,
+          "saturatedFatPer100g": 44.6,
+          "sugarsPer100g": 102.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000433906030",
+        "canonicalId": "best ginger snap cookies",
+        "productName": "best ginger snap cookies",
+        "nutrition": {
+          "carbohydratesPer100g": 147.0,
+          "energyKcalPer100g": 588.0,
+          "fatPer100g": 51.9,
+          "fiberPer100g": 4.41,
+          "proteinsPer100g": 8.65,
+          "saltPer100g": 1.08,
+          "saturatedFatPer100g": 30.3,
+          "sugarsPer100g": 51.9
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000522061596",
+        "canonicalId": "salted sticks & salted pretzels",
+        "productName": "salted sticks & salted pretzels",
+        "nutrition": {
+          "carbohydratesPer100g": 233.0,
+          "energyKcalPer100g": 933.0,
+          "fatPer100g": 12.2,
+          "proteinsPer100g": 36.7,
+          "saturatedFatPer100g": 5.57,
+          "sugarsPer100g": 3.33
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000609124107",
+        "canonicalId": "solid milk chocolate",
+        "productName": "solid milk chocolate",
+        "nutrition": {
+          "carbohydratesPer100g": 105.0,
+          "energyKcalPer100g": 421.0,
+          "fatPer100g": 57.4,
+          "fiberPer100g": 3.21,
+          "proteinsPer100g": 12.7,
+          "saltPer100g": 0.357,
+          "saturatedFatPer100g": 35.1,
+          "sugarsPer100g": 98.9
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      }
+    ],
+    "NEGATIVE_NUTRITION_VALUE": [
+      {
+        "sourceId": "0028400231053",
+        "canonicalId": "traditional tender cracklins chicharrones",
+        "productName": "traditional tender cracklins chicharrones",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 2000.0,
+          "fatPer100g": 222.0,
+          "fiberPer100g": -44.7,
+          "saltPer100g": 0.0422,
+          "saturatedFatPer100g": 88.9,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "NEGATIVE_NUTRITION_VALUE",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0036800416727",
+        "canonicalId": "whole cashews",
+        "productName": "whole cashews",
+        "nutrition": {
+          "carbohydratesPer100g": 101.0,
+          "energyKcalPer100g": 1830.0,
+          "fatPer100g": 164.0,
+          "fiberPer100g": 12.7,
+          "proteinsPer100g": -12.6,
+          "saltPer100g": 0.00347,
+          "saturatedFatPer100g": 31.5,
+          "sugarsPer100g": 12.6
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NEGATIVE_NUTRITION_VALUE",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "7702011074294",
+        "canonicalId": "grissly gomas",
+        "productName": "grissly gomas",
+        "nutrition": {
+          "carbohydratesPer100g": 91.7,
+          "energyKcalPer100g": 375.0,
+          "fatPer100g": 0.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": -8.33,
+          "saltPer100g": 0.208,
+          "saturatedFatPer100g": 0.0,
+          "sugarsPer100g": 50.0
+        },
+        "reasons": [
+          "NEGATIVE_NUTRITION_VALUE"
+        ]
+      },
+      {
+        "sourceId": "0635519142219",
+        "canonicalId": "seasoning mix",
+        "productName": "seasoning mix",
+        "nutrition": {
+          "carbohydratesPer100g": -1.0,
+          "energyKcalPer100g": 0.0,
+          "fatPer100g": 0.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 115.0,
+          "saturatedFatPer100g": 0.0,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "NEGATIVE_NUTRITION_VALUE",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM",
+          "SUGARS_EXCEED_CARBOHYDRATES"
+        ]
+      }
+    ],
+    "NUTRITION_VALUE_ABOVE_MAXIMUM": [
+      {
+        "sourceId": "0000111301201",
+        "canonicalId": "® original vegetable oil spread tub",
+        "productName": "canola harvest® original vegetable oil spread tub",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 4590.0,
+          "fatPer100g": 510.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 12.7,
+          "saturatedFatPer100g": 76.4,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "00002220",
+        "canonicalId": "monterey jack",
+        "productName": "monterey jack",
+        "nutrition": {
+          "carbohydratesPer100g": 12.6,
+          "energyKcalPer100g": 50.4,
+          "fatPer100g": 101.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 88.2,
+          "saltPer100g": 5.44,
+          "saturatedFatPer100g": 63.0,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000417011002",
+        "canonicalId": "knusperflakes mit knusprigen cornflakes",
+        "productName": "knusperflakes mit knusprigen cornflakes",
+        "nutrition": {
+          "carbohydratesPer100g": 240.0,
+          "energyKcalPer100g": 960.0,
+          "fatPer100g": 112.0,
+          "fiberPer100g": 8.0,
+          "proteinsPer100g": 32.0,
+          "saltPer100g": 1.6,
+          "saturatedFatPer100g": 73.6,
+          "sugarsPer100g": 198.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000417296003",
+        "canonicalId": "milk chocolate with caramelized almonds",
+        "productName": "milk chocolate with caramelized almonds",
+        "nutrition": {
+          "carbohydratesPer100g": 229.0,
+          "energyKcalPer100g": 915.0,
+          "fatPer100g": 125.0,
+          "fiberPer100g": 9.6,
+          "proteinsPer100g": 28.8,
+          "saltPer100g": 0.569,
+          "saturatedFatPer100g": 67.2,
+          "sugarsPer100g": 224.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000433821494",
+        "canonicalId": "oatmeal raisin cookies",
+        "productName": "oatmeal raisin cookies",
+        "nutrition": {
+          "carbohydratesPer100g": 242.0,
+          "energyKcalPer100g": 969.0,
+          "fatPer100g": 76.5,
+          "fiberPer100g": 12.9,
+          "proteinsPer100g": 25.5,
+          "saltPer100g": 1.91,
+          "saturatedFatPer100g": 44.6,
+          "sugarsPer100g": 102.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000433821500",
+        "canonicalId": "the best peanut butter cookies",
+        "productName": "the best peanut butter cookies",
+        "nutrition": {
+          "carbohydratesPer100g": 242.0,
+          "energyKcalPer100g": 969.0,
+          "fatPer100g": 76.5,
+          "fiberPer100g": 12.9,
+          "proteinsPer100g": 25.5,
+          "saltPer100g": 1.91,
+          "saturatedFatPer100g": 44.6,
+          "sugarsPer100g": 102.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000433906030",
+        "canonicalId": "best ginger snap cookies",
+        "productName": "best ginger snap cookies",
+        "nutrition": {
+          "carbohydratesPer100g": 147.0,
+          "energyKcalPer100g": 588.0,
+          "fatPer100g": 51.9,
+          "fiberPer100g": 4.41,
+          "proteinsPer100g": 8.65,
+          "saltPer100g": 1.08,
+          "saturatedFatPer100g": 30.3,
+          "sugarsPer100g": 51.9
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000522061596",
+        "canonicalId": "salted sticks & salted pretzels",
+        "productName": "salted sticks & salted pretzels",
+        "nutrition": {
+          "carbohydratesPer100g": 233.0,
+          "energyKcalPer100g": 933.0,
+          "fatPer100g": 12.2,
+          "proteinsPer100g": 36.7,
+          "saturatedFatPer100g": 5.57,
+          "sugarsPer100g": 3.33
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000609124107",
+        "canonicalId": "solid milk chocolate",
+        "productName": "solid milk chocolate",
+        "nutrition": {
+          "carbohydratesPer100g": 105.0,
+          "energyKcalPer100g": 421.0,
+          "fatPer100g": 57.4,
+          "fiberPer100g": 3.21,
+          "proteinsPer100g": 12.7,
+          "saltPer100g": 0.357,
+          "saturatedFatPer100g": 35.1,
+          "sugarsPer100g": 98.9
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      },
+      {
+        "sourceId": "0000609231508",
+        "canonicalId": "milk chocolate rose",
+        "productName": "milk chocolate rose",
+        "nutrition": {
+          "carbohydratesPer100g": 272.0,
+          "energyKcalPer100g": 1090.0,
+          "fatPer100g": 159.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 45.3,
+          "saltPer100g": 0.845,
+          "saturatedFatPer100g": 102.0,
+          "sugarsPer100g": 272.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM"
+        ]
+      }
+    ],
+    "SATURATED_FAT_EXCEEDS_TOTAL_FAT": [
+      {
+        "sourceId": "0008295661050",
+        "canonicalId": "balsamic vinegar of modena",
+        "productName": "balsamic vinegar of modena",
+        "nutrition": {
+          "carbohydratesPer100g": 133.0,
+          "energyKcalPer100g": 533.0,
+          "fatPer100g": 0.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0,
+          "saturatedFatPer100g": 22.2,
+          "sugarsPer100g": 33.3
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM",
+          "SATURATED_FAT_EXCEEDS_TOTAL_FAT"
+        ]
+      },
+      {
+        "sourceId": "0011110372680",
+        "canonicalId": "dried cranberries",
+        "productName": "dried cranberries",
+        "nutrition": {
+          "carbohydratesPer100g": 206.0,
+          "energyKcalPer100g": 825.0,
+          "fatPer100g": 0.0,
+          "fiberPer100g": 12.5,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0,
+          "saturatedFatPer100g": 3.12,
+          "sugarsPer100g": 162.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM",
+          "SATURATED_FAT_EXCEEDS_TOTAL_FAT"
+        ]
+      },
+      {
+        "sourceId": "0011110866318",
+        "canonicalId": "chunky beef soup",
+        "productName": "chunky beef soup",
+        "nutrition": {
+          "carbohydratesPer100g": 3.33,
+          "energyKcalPer100g": 20.9,
+          "fatPer100g": 0.249,
+          "fiberPer100g": 0.49,
+          "proteinsPer100g": 1.33,
+          "saltPer100g": 2.0E-4,
+          "saturatedFatPer100g": 6.8,
+          "sugarsPer100g": 0.665
+        },
+        "reasons": [
+          "SATURATED_FAT_EXCEEDS_TOTAL_FAT"
+        ]
+      },
+      {
+        "sourceId": "0011150253642",
+        "canonicalId": "iced brownies",
+        "productName": "iced brownies",
+        "nutrition": {
+          "carbohydratesPer100g": 159.0,
+          "energyKcalPer100g": 883.0,
+          "fatPer100g": 24.2,
+          "fiberPer100g": 6.84,
+          "proteinsPer100g": 6.92,
+          "saltPer100g": 0.00112,
+          "saturatedFatPer100g": 55.4,
+          "sugarsPer100g": 125.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM",
+          "SATURATED_FAT_EXCEEDS_TOTAL_FAT"
+        ]
+      },
+      {
+        "sourceId": "0011150253659",
+        "canonicalId": "easter pink frosted brownies",
+        "productName": "easter pink frosted brownies",
+        "nutrition": {
+          "carbohydratesPer100g": 159.0,
+          "energyKcalPer100g": 883.0,
+          "fatPer100g": 24.2,
+          "fiberPer100g": 6.84,
+          "proteinsPer100g": 6.92,
+          "saltPer100g": 0.00112,
+          "saturatedFatPer100g": 55.4,
+          "sugarsPer100g": 125.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM",
+          "SATURATED_FAT_EXCEEDS_TOTAL_FAT"
+        ]
+      },
+      {
+        "sourceId": "0011150940290",
+        "canonicalId": "tzatziki sauce",
+        "productName": "tzatziki sauce",
+        "nutrition": {
+          "carbohydratesPer100g": 25.5,
+          "energyKcalPer100g": 211.0,
+          "fatPer100g": 6.39,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 12.7,
+          "saltPer100g": 0.00367,
+          "saturatedFatPer100g": 19.1,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "SATURATED_FAT_EXCEEDS_TOTAL_FAT"
+        ]
+      },
+      {
+        "sourceId": "0011300232497",
+        "canonicalId": "peppermint nougats",
+        "productName": "peppermint nougats",
+        "nutrition": {
+          "carbohydratesPer100g": 208.0,
+          "energyKcalPer100g": 994.0,
+          "fatPer100g": 17.9,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 8.17E-4,
+          "saturatedFatPer100g": 18.5,
+          "sugarsPer100g": 161.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM",
+          "SATURATED_FAT_EXCEEDS_TOTAL_FAT"
+        ]
+      },
+      {
+        "sourceId": "0013971030006",
+        "canonicalId": "toasted coconut chips",
+        "productName": "toasted coconut chips",
+        "nutrition": {
+          "carbohydratesPer100g": 189.0,
+          "energyKcalPer100g": 1900.0,
+          "fatPer100g": 122.0,
+          "fiberPer100g": 66.7,
+          "proteinsPer100g": 11.1,
+          "saltPer100g": 0.00472,
+          "saturatedFatPer100g": 131.0,
+          "sugarsPer100g": 122.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM",
+          "SATURATED_FAT_EXCEEDS_TOTAL_FAT"
+        ]
+      },
+      {
+        "sourceId": "0013971050004",
+        "canonicalId": "organic toasted coconut chips",
+        "productName": "organic toasted coconut chips",
+        "nutrition": {
+          "carbohydratesPer100g": 200.0,
+          "energyKcalPer100g": 2090.0,
+          "fatPer100g": 133.0,
+          "fiberPer100g": 44.3,
+          "proteinsPer100g": 22.2,
+          "saltPer100g": 0.00528,
+          "saturatedFatPer100g": 156.0,
+          "sugarsPer100g": 133.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM",
+          "SATURATED_FAT_EXCEEDS_TOTAL_FAT"
+        ]
+      },
+      {
+        "sourceId": "0014834911265",
+        "canonicalId": "pie crust",
+        "productName": "pie crust",
+        "nutrition": {
+          "carbohydratesPer100g": 59.5,
+          "energyKcalPer100g": 583.0,
+          "fatPer100g": 35.7,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 5.95,
+          "saltPer100g": 4.45E-4,
+          "saturatedFatPer100g": 40.7,
+          "sugarsPer100g": 17.9
+        },
+        "reasons": [
+          "SATURATED_FAT_EXCEEDS_TOTAL_FAT"
+        ]
+      }
+    ],
+    "SUGARS_EXCEED_CARBOHYDRATES": [
+      {
+        "sourceId": "0009542011734",
+        "canonicalId": "peppermint white chocolate truffles",
+        "productName": "peppermint white chocolate truffles",
+        "nutrition": {
+          "carbohydratesPer100g": 108.0,
+          "energyKcalPer100g": 432.0,
+          "fatPer100g": 139.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 15.4,
+          "saltPer100g": 0.576,
+          "saturatedFatPer100g": 100.0,
+          "sugarsPer100g": 123.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM",
+          "SUGARS_EXCEED_CARBOHYDRATES"
+        ]
+      },
+      {
+        "sourceId": "0010300064213",
+        "canonicalId": "nut & granola mix with glazed walnuts",
+        "productName": "nut & granola mix with glazed walnuts",
+        "nutrition": {
+          "carbohydratesPer100g": 6.2,
+          "energyKcalPer100g": 24.8,
+          "fatPer100g": 7.75,
+          "fiberPer100g": 3.34,
+          "proteinsPer100g": 3.32,
+          "saltPer100g": 0.207,
+          "saturatedFatPer100g": 2.22,
+          "sugarsPer100g": 21.0
+        },
+        "reasons": [
+          "SUGARS_EXCEED_CARBOHYDRATES"
+        ]
+      },
+      {
+        "sourceId": "0010300343257",
+        "canonicalId": "natural almonds",
+        "productName": "natural almonds",
+        "nutrition": {
+          "carbohydratesPer100g": 2.64,
+          "energyKcalPer100g": 10.6,
+          "fatPer100g": 41.8,
+          "fiberPer100g": 9.27,
+          "proteinsPer100g": 18.6,
+          "saltPer100g": 0.0,
+          "saturatedFatPer100g": 2.32,
+          "sugarsPer100g": 4.64
+        },
+        "reasons": [
+          "SUGARS_EXCEED_CARBOHYDRATES"
+        ]
+      },
+      {
+        "sourceId": "0010300930112",
+        "canonicalId": "salty sweet chocolate & peanut butter",
+        "productName": "salty sweet chocolate & peanut butter",
+        "nutrition": {
+          "carbohydratesPer100g": 0.576,
+          "energyKcalPer100g": 2.31,
+          "fatPer100g": 7.84,
+          "fiberPer100g": 1.39,
+          "proteinsPer100g": 3.23,
+          "saltPer100g": 0.173,
+          "saturatedFatPer100g": 0.924,
+          "sugarsPer100g": 4.15
+        },
+        "reasons": [
+          "SUGARS_EXCEED_CARBOHYDRATES"
+        ]
+      },
+      {
+        "sourceId": "0010300941170",
+        "canonicalId": "dill pickle cashews",
+        "productName": "dill pickle cashews",
+        "nutrition": {
+          "carbohydratesPer100g": 0.624,
+          "energyKcalPer100g": 2.5,
+          "fatPer100g": 10.9,
+          "fiberPer100g": 0.69,
+          "proteinsPer100g": 4.08,
+          "saltPer100g": 0.204,
+          "saturatedFatPer100g": 1.7,
+          "sugarsPer100g": 1.36
+        },
+        "reasons": [
+          "SUGARS_EXCEED_CARBOHYDRATES"
+        ]
+      },
+      {
+        "sourceId": "0010300942177",
+        "canonicalId": "jalapeno cashews",
+        "productName": "jalapeno cashews",
+        "nutrition": {
+          "carbohydratesPer100g": 0.624,
+          "energyKcalPer100g": 2.5,
+          "fatPer100g": 10.8,
+          "fiberPer100g": 0.667,
+          "proteinsPer100g": 4.04,
+          "saltPer100g": 0.32,
+          "saturatedFatPer100g": 1.68,
+          "sugarsPer100g": 2.02
+        },
+        "reasons": [
+          "SUGARS_EXCEED_CARBOHYDRATES"
+        ]
+      },
+      {
+        "sourceId": "0010315944111",
+        "canonicalId": "muchacha, salsa, mild",
+        "productName": "muchacha, salsa, mild",
+        "nutrition": {
+          "carbohydratesPer100g": 3.57,
+          "energyKcalPer100g": 71.0,
+          "fatPer100g": 5.36,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.6807200000000001,
+          "saturatedFatPer100g": 0.0,
+          "sugarsPer100g": 7.14
+        },
+        "reasons": [
+          "SUGARS_EXCEED_CARBOHYDRATES"
+        ]
+      },
+      {
+        "sourceId": "0010315944142",
+        "canonicalId": "muchacha, medium salsa",
+        "productName": "muchacha, medium salsa",
+        "nutrition": {
+          "carbohydratesPer100g": 3.57,
+          "energyKcalPer100g": 71.0,
+          "fatPer100g": 5.36,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.6807200000000001,
+          "saturatedFatPer100g": 0.0,
+          "sugarsPer100g": 7.14
+        },
+        "reasons": [
+          "SUGARS_EXCEED_CARBOHYDRATES"
+        ]
+      },
+      {
+        "sourceId": "0010315944173",
+        "canonicalId": "muchacho, hot salsa, hot",
+        "productName": "muchacho, hot salsa, hot",
+        "nutrition": {
+          "carbohydratesPer100g": 3.57,
+          "energyKcalPer100g": 71.0,
+          "fatPer100g": 5.36,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.6807200000000001,
+          "saturatedFatPer100g": 0.0,
+          "sugarsPer100g": 7.14
+        },
+        "reasons": [
+          "SUGARS_EXCEED_CARBOHYDRATES"
+        ]
+      },
+      {
+        "sourceId": "0011110005175",
+        "canonicalId": "seasoned rice vinegar",
+        "productName": "seasoned rice vinegar",
+        "nutrition": {
+          "carbohydratesPer100g": 178.0,
+          "energyKcalPer100g": 711.0,
+          "fatPer100g": 0.0,
+          "fiberPer100g": 3.33,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 29.4,
+          "saturatedFatPer100g": 0.0,
+          "sugarsPer100g": 267.0
+        },
+        "reasons": [
+          "MACRONUTRIENT_SUM_EXCEEDS_100_GRAMS",
+          "NUTRITION_VALUE_ABOVE_MAXIMUM",
+          "SUGARS_EXCEED_CARBOHYDRATES"
+        ]
+      }
+    ],
+    "ZERO_ONLY_NUTRITION_PAYLOAD": [
+      {
+        "sourceId": "0000105000417",
+        "canonicalId": "dieter's herbal tea",
+        "productName": "lagg's, dieter's herbal tea",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 0.0,
+          "fatPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0
+        },
+        "reasons": [
+          "ZERO_ONLY_NUTRITION_PAYLOAD"
+        ]
+      },
+      {
+        "sourceId": "00067867",
+        "canonicalId": "natural mountain spring water",
+        "productName": "natural mountain spring water",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 0.0,
+          "fatPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0
+        },
+        "reasons": [
+          "ZERO_ONLY_NUTRITION_PAYLOAD"
+        ]
+      },
+      {
+        "sourceId": "00073448",
+        "canonicalId": "21 seasoning salute",
+        "productName": "21 seasoning salute",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 0.0,
+          "fatPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0,
+          "saturatedFatPer100g": 0.0,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "ZERO_ONLY_NUTRITION_PAYLOAD"
+        ]
+      },
+      {
+        "sourceId": "0009800006304",
+        "canonicalId": "fruit adventure mint",
+        "productName": "tic tac fruit adventure mint",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 0.0,
+          "fatPer100g": 0.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0,
+          "saturatedFatPer100g": 0.0,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "ZERO_ONLY_NUTRITION_PAYLOAD"
+        ]
+      },
+      {
+        "sourceId": "0009800007318",
+        "canonicalId": "freshmints",
+        "productName": "freshmints",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 0.0,
+          "fatPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0
+        },
+        "reasons": [
+          "ZERO_ONLY_NUTRITION_PAYLOAD"
+        ]
+      },
+      {
+        "sourceId": "0009800057771",
+        "canonicalId": "tic tac wintergreen packs",
+        "productName": "tic tac wintergreen packs",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 0.0,
+          "fatPer100g": 0.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0,
+          "saturatedFatPer100g": 0.0,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "ZERO_ONLY_NUTRITION_PAYLOAD"
+        ]
+      },
+      {
+        "sourceId": "0010415900222",
+        "canonicalId": "sniffle free tea",
+        "productName": "sniffle free tea",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 0.0,
+          "fatPer100g": 0.0,
+          "fiberPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0,
+          "saturatedFatPer100g": 0.0,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "ZERO_ONLY_NUTRITION_PAYLOAD"
+        ]
+      },
+      {
+        "sourceId": "0011110005151",
+        "canonicalId": "natural rice vinegar",
+        "productName": "natural rice vinegar",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 0.0,
+          "fatPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0
+        },
+        "reasons": [
+          "ZERO_ONLY_NUTRITION_PAYLOAD"
+        ]
+      },
+      {
+        "sourceId": "0011110663993",
+        "canonicalId": "iced tea",
+        "productName": "iced tea",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 0.0,
+          "fatPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "ZERO_ONLY_NUTRITION_PAYLOAD"
+        ]
+      },
+      {
+        "sourceId": "0011110702050",
+        "canonicalId": "100% juice lemon",
+        "productName": "100% juice lemon",
+        "nutrition": {
+          "carbohydratesPer100g": 0.0,
+          "energyKcalPer100g": 0.0,
+          "fatPer100g": 0.0,
+          "proteinsPer100g": 0.0,
+          "saltPer100g": 0.0,
+          "saturatedFatPer100g": 0.0,
+          "sugarsPer100g": 0.0
+        },
+        "reasons": [
+          "ZERO_ONLY_NUTRITION_PAYLOAD"
+        ]
+      }
+    ]
+  }
+}

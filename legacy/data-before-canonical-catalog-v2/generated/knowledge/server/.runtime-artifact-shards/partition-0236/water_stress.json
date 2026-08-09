@@ -1,0 +1,43 @@
+{
+  "entries": {
+    "bagel": {
+      "score": 1.13
+    },
+    "biscotte complète ou riche en fibres": {
+      "score": 0.557
+    },
+    "crème de lait, 15 à 20% mg, légère, semi épaisse, uht": {
+      "score": 0.359
+    },
+    "céréales complètes soufflées, enrichies en vitamines et minéraux": {
+      "score": 6.45
+    },
+    "filet de bacon": {
+      "score": 2.74
+    },
+    "fondue savoyarde (fromages, vin, pain)": {
+      "score": 0.893
+    },
+    "hareng mariné ou rollmops": {
+      "score": 0.237
+    },
+    "huile de sésame": {
+      "score": 0.923
+    },
+    "kaki, pulpe, cru": {
+      "score": 1.47
+    },
+    "oie, viande, rôtie/cuite au four": {
+      "score": 3.4
+    },
+    "pois mange tout ou pois gourmand, cru": {
+      "score": 0.236
+    },
+    "thé vert, infusé, non sucré": {
+      "score": 0.776
+    },
+    "wakamé (undaria pinnatifida), séchée ou déshydratée": {
+      "score": 4.83
+    }
+  }
+}

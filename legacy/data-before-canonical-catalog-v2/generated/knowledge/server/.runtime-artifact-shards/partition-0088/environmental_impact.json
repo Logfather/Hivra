@@ -1,0 +1,58 @@
+{
+  "entries": {
+    "anchois commun, cru": {
+      "environmentScoreMptPerKg": 0.359,
+      "climateKgCo2EqPerKg": 2.51,
+      "landUsePtPerKg": 8.29,
+      "waterDeprivationM3PerKg": 0.231
+    },
+    "boisson gazeuse, sans jus de fruit, sucrée": {
+      "environmentScoreMptPerKg": 0.071,
+      "climateKgCo2EqPerKg": 0.493,
+      "landUsePtPerKg": 13.2,
+      "waterDeprivationM3PerKg": 0.307
+    },
+    "chocolat blanc, tablette": {
+      "environmentScoreMptPerKg": 0.727,
+      "climateKgCo2EqPerKg": 11.5,
+      "landUsePtPerKg": 438.0,
+      "waterDeprivationM3PerKg": 1.19
+    },
+    "entremets type opéra": {
+      "environmentScoreMptPerKg": 0.511,
+      "climateKgCo2EqPerKg": 5.23,
+      "landUsePtPerKg": 236.0,
+      "waterDeprivationM3PerKg": 3.86
+    },
+    "feuilleté aux escargots": {
+      "environmentScoreMptPerKg": 0.393,
+      "climateKgCo2EqPerKg": 3.87,
+      "landUsePtPerKg": 141.0,
+      "waterDeprivationM3PerKg": 0.725
+    },
+    "fontina": {
+      "environmentScoreMptPerKg": 0.511,
+      "climateKgCo2EqPerKg": 5.4,
+      "landUsePtPerKg": 240.0,
+      "waterDeprivationM3PerKg": 0.653
+    },
+    "porc, poitrine cutter, sans mouille, crue": {
+      "environmentScoreMptPerKg": 0.819,
+      "climateKgCo2EqPerKg": 6.58,
+      "landUsePtPerKg": 349.0,
+      "waterDeprivationM3PerKg": 2.16
+    },
+    "saucisson sec": {
+      "environmentScoreMptPerKg": 0.934,
+      "climateKgCo2EqPerKg": 7.33,
+      "landUsePtPerKg": 383.0,
+      "waterDeprivationM3PerKg": 2.34
+    },
+    "tripes à la mode de caen": {
+      "environmentScoreMptPerKg": 2.39,
+      "climateKgCo2EqPerKg": 25.3,
+      "landUsePtPerKg": 1540.0,
+      "waterDeprivationM3PerKg": 2.55
+    }
+  }
+}

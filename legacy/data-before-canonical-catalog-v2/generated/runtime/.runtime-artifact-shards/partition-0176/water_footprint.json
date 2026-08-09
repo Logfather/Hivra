@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "boisson plate aux fruits, (à moins de 10% de jus), non sucrée, avec édulcorants": {
+      "litersPerKilogram": 84.8
+    },
+    "brie, sans précision": {
+      "litersPerKilogram": 579.0
+    },
+    "brioche, préemballée": {
+      "litersPerKilogram": 717.0
+    },
+    "chevreau, cuit": {
+      "litersPerKilogram": 8770.0
+    },
+    "clafoutis aux fruits, rayon frais": {
+      "litersPerKilogram": 5620.0
+    },
+    "hareng fumé, au naturel (version \"logiciel\" avec erreur sur l'emballage)": {
+      "litersPerKilogram": 293.0
+    },
+    "haricot rouge, cuit": {
+      "litersPerKilogram": 116.0
+    },
+    "macédoine ou cocktail ou salade de fruits, au sirop léger, appertisé, non égoutté": {
+      "litersPerKilogram": 3050.0
+    },
+    "plat légumes, avec féculent et viande/poisson, dès 8 12 mois": {
+      "litersPerKilogram": 1280.0
+    },
+    "pomme de terre, flocons déshydratés, nature": {
+      "litersPerKilogram": 1160.0
+    },
+    "rillettes pur porc": {
+      "litersPerKilogram": 2480.0
+    },
+    "roulade de porc pistachée": {
+      "litersPerKilogram": 2420.0
+    },
+    "sauce bourguignonne, préemballée": {
+      "litersPerKilogram": 5120.0
+    },
+    "soupe de poissons et / ou crustacés, déshydratée reconstituée": {
+      "litersPerKilogram": 1850.0
+    }
+  }
+}

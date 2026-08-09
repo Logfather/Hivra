@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "boeuf, faux filet, cru": {
+      "environmentScoreMptPerKg": 2.7,
+      "climateKgCo2EqPerKg": 28.9,
+      "landUsePtPerKg": 1890.0,
+      "waterDeprivationM3PerKg": 2.39
+    },
+    "feuilleté ou friand à la viande": {
+      "environmentScoreMptPerKg": 1.39,
+      "climateKgCo2EqPerKg": 14.3,
+      "landUsePtPerKg": 860.0,
+      "waterDeprivationM3PerKg": 1.52
+    },
+    "lait entier, uht": {
+      "environmentScoreMptPerKg": 0.137,
+      "climateKgCo2EqPerKg": 1.46,
+      "landUsePtPerKg": 63.8,
+      "waterDeprivationM3PerKg": 0.174
+    },
+    "saint paulin (fromage à pâte pressée non cuite demi ferme)": {
+      "environmentScoreMptPerKg": 0.556,
+      "climateKgCo2EqPerKg": 5.81,
+      "landUsePtPerKg": 260.0,
+      "waterDeprivationM3PerKg": 0.759
+    },
+    "soupe au pistou, préemballée à réchauffer": {
+      "environmentScoreMptPerKg": 0.0927,
+      "climateKgCo2EqPerKg": 0.525,
+      "landUsePtPerKg": 37.3,
+      "waterDeprivationM3PerKg": 1.17
+    },
+    "tortilla souple (à garnir), à base de blé": {
+      "environmentScoreMptPerKg": 0.165,
+      "climateKgCo2EqPerKg": 1.24,
+      "landUsePtPerKg": 105.0,
+      "waterDeprivationM3PerKg": 0.889
+    },
+    "yaourt, lait fermenté ou spécialité laitière, aux fruits, avec édulcorants, 0% mg, enrichi en vitamine d": {
+      "environmentScoreMptPerKg": 0.212,
+      "climateKgCo2EqPerKg": 1.89,
+      "landUsePtPerKg": 72.1,
+      "waterDeprivationM3PerKg": 1.64
+    }
+  }
+}
