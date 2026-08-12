@@ -26,10 +26,14 @@ class KnowledgeBuildPaths private constructor(
     val catalogReleasesRoot: File =
         catalogRoot.resolve("releases")
 
+    val knowledgeRoot: File =
+        dataRoot.resolve("knowledge")
+
     val canonicalCatalogMasterRoot: File =
-        dataRoot.resolve(
-            "knowledge.catalog.master.product-only"
-        )
+        knowledgeRoot
+            .resolve("catalog")
+            .resolve("master")
+            .resolve("product-only")
 
     /**
      * The one and only productive canonical Product-Only catalog authority.
@@ -332,10 +336,11 @@ class KnowledgeBuildPaths private constructor(
     companion object {
 
         const val CANONICAL_CATALOG_SHA256 =
-            "72d837193a6083df7def41b5084b37673d4a8e126a100e9b968d082a03708dcf"
+            "922e3fc71a624a94d6787d772e40bba2e31e102212e16c4b315bd9f5dfa30f4f"
 
         const val CANONICAL_CATALOG_ENTRY_COUNT =
-            4596
+            1384
+
 
         fun default(): KnowledgeBuildPaths =
             fromProjectRoot(

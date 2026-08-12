@@ -1,8 +1,8 @@
 package de.shopme.testing.system.tools.knowledge.agribalyse
 
 import de.shopme.tools.knowledge.agribalyse.parser.AgribalyseRawSourceReducer
-import java.io.File
-import kotlin.test.Test
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
+import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
@@ -11,66 +11,130 @@ class AgribalyseRawSourceReducerTest {
     @Test
     fun reduceAgribalyseRawSourceToSlimTsv() {
 
+        val paths =
+            KnowledgeBuildPaths.default()
+
         val input =
-            File(
-                "../data/raw/agribalyse/" +
-                        "AGRIBALYSE3.2_Tableur produits alimentaires_PublieAOUT25.xlsx"
+            paths.projectRoot.resolve(
+                "data/sources/agribalyse/" +
+                        "AGRIBALYSE3.2_Tableur produits alimentaires_" +
+                        "PublieAOUT25.xlsx"
             )
 
         val output =
-            File(
-                "../data/generated/agribalyse/" +
+            paths.projectRoot.resolve(
+                "build/knowledge/references/agribalyse/" +
                         "agribalyse-foods.slim.tsv"
             )
 
         AgribalyseRawSourceReducer()
             .reduce(
-                input = input,
-                output = output,
-                sheetName = "Synthese"
+                input =
+                    input,
+                output =
+                    output,
+                sheetName =
+                    "Synthese"
             )
 
-        println("exists=${output.exists()}")
-        println("length=${output.length()}")
+        assertTrue(
+            output.isFile
+        )
 
-        assertTrue(output.exists())
-        assertTrue(output.length() > 0)
+        assertTrue(
+            output.length() > 0L
+        )
 
         val lines =
             output.readLines()
 
-        println("lineCount=${lines.size}")
-        println("firstLines:")
-        lines.take(10).forEachIndexed { index, line ->
-            println("[$index] $line")
-        }
-
-        assertTrue(lines.isNotEmpty())
+        assertTrue(
+            lines.size > 1
+        )
 
         val header =
             lines.first()
+                .split("\t")
 
-        val columns =
-            header.split("\t")
+        assertEquals(
+            expected =
+                listOf(
+                    "code_agb",
+                    "code_ciqual",
+                    "food_group",
+                    "food_sub_group",
+                    "name_fr",
+                    "name_en",
+                    "data_quality_score",
+                    "environment_score_mpt_per_kg",
+                    "climate_total_kg_co2_eq_per_kg",
+                    "land_use_pt_per_kg",
+                    "water_deprivation_m3_per_kg",
+                    "climate_biogenic_kg_co2_eq_per_kg",
+                    "climate_fossil_kg_co2_eq_per_kg",
+                    "climate_land_use_change_kg_co2_eq_per_kg"
+                ),
+            actual =
+                header
+        )
 
-        println("columns=${columns.size}")
-        println("header=$header")
+        assertEquals(
+            expected =
+                14,
+            actual =
+                header.size
+        )
 
-        assertEquals(14, columns.size)
+        /*
+         * Regression gegen den ersten bekannten AGRIBALYSE-3.2-Datensatz.
+         *
+         * Dadurch prüfen wir insbesondere die vier identisch benannten
+         * CO2-Spalten.
+         */
+        val firstRow =
+            lines[1]
+                .split("\t")
 
-        assertEquals("code_agb", columns[0])
-        assertEquals("code_ciqual", columns[1])
-        assertEquals("food_group", columns[2])
-        assertEquals("food_sub_group", columns[3])
-        assertEquals("name_fr", columns[4])
-        assertEquals("name_en", columns[5])
-        assertEquals("data_quality_score", columns[6])
-        assertEquals("environment_score_mpt_per_kg", columns[7])
-        assertEquals("climate_total_kg_co2_eq_per_kg", columns[8])
-        assertEquals("land_use_pt_per_kg", columns[9])
-        assertEquals("water_deprivation_m3_per_kg", columns[10])
-        assertEquals("climate_biogenic_kg_co2_eq_per_kg", columns[11])
-        assertEquals("climate_fossil_kg_co2_eq_per_kg", columns[12])
-        assertEquals("climate_land_use_change_kg_co2_eq_per_kg", columns[13])
+        assertEquals(
+            expected =
+                14,
+            actual =
+                firstRow.size
+        )
+
+        assertEquals(
+            expected =
+                "11172",
+            actual =
+                firstRow[0]
+        )
+
+        assertEquals(
+            expected =
+                "7.58",
+            actual =
+                firstRow[8]
+        )
+
+        assertEquals(
+            expected =
+                "0.104",
+            actual =
+                firstRow[11]
+        )
+
+        assertEquals(
+            expected =
+                "7.46",
+            actual =
+                firstRow[12]
+        )
+
+        assertEquals(
+            expected =
+                "0.0212",
+            actual =
+                firstRow[13]
+        )
     }
 }

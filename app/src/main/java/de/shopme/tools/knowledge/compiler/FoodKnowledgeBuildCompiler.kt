@@ -1,30 +1,26 @@
 package de.shopme.tools.knowledge.compiler
 
 import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
-import de.shopme.tools.knowledge.compiler.candidate.CatalogImportWorkflow
-import de.shopme.tools.knowledge.compiler.candidate.CatalogImportWriter
-import de.shopme.tools.knowledge.foods.DefaultFoodLookup
+import de.shopme.tools.knowledge.foods.EmptyFoodLookup
 import de.shopme.tools.knowledge.foods.FoodsKnowledgeGenerator
 import de.shopme.tools.knowledge.foods.FoodsKnowledgeWriter
-import de.shopme.tools.knowledge.foods.loader.FileFoodsKnowledgeLoader
 import de.shopme.tools.knowledge.foods.report.FoodsKnowledgeCoverageAnalyzer
 import de.shopme.tools.knowledge.foods.report.FoodsKnowledgeCoveragePrinter
 import de.shopme.tools.knowledge.foods.runtime.NutritionRuntimeArtifactGenerator
 import de.shopme.tools.knowledge.nutrition.NutritionKnowledgeJsonWriter
 import de.shopme.tools.knowledge.publisher.KnowledgeArtifactPublisher
 import de.shopme.tools.knowledge.reader.ResourceCatalogReader
-import java.io.File
 
 class FoodKnowledgeBuildCompiler {
 
-    fun build(
-        importFile: File? = null
-    ) {
+    fun build() {
 
         val paths =
             KnowledgeBuildPaths.default()
 
         paths.ensureBuildDirectories()
+
+        paths.validateCanonicalCatalogAuthority()
 
         val foodsRuntimeFile =
             paths.runtimeArtifact(
@@ -36,91 +32,14 @@ class FoodKnowledgeBuildCompiler {
                 "nutrition.json"
             )
 
-        val proposedCatalogFile =
-            paths.intermediateArtifact(
-                "catalog/foods.proposed.json"
-            )
-
         val reader =
             ResourceCatalogReader()
 
         var catalog =
             reader.read()
 
-        if (importFile != null) {
-
-            val importResult =
-                CatalogImportWorkflow()
-                    .import(
-                        existingItems =
-                            catalog,
-                        importFile =
-                            importFile
-                    )
-
-            if (!importResult.isSuccess) {
-                error(
-                    "Catalog import failed:\n" +
-                            importResult.errors
-                                .joinToString("\n")
-                )
-            }
-
-            val mergeResult =
-                importResult.mergeResult
-                    ?: error(
-                        "Catalog import did not produce merge result"
-                    )
-
-            catalog =
-                mergeResult.items
-
-            CatalogImportWriter()
-                .write(
-                    items =
-                        catalog,
-                    file =
-                        proposedCatalogFile
-                )
-
-            println()
-            println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-            println("🧠 CATALOG IMPORT")
-            println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-            println(
-                "Imported : " +
-                        mergeResult.summary.importedItems
-            )
-            println(
-                "Added    : " +
-                        mergeResult.summary.addedItems
-            )
-            println(
-                "Updated  : " +
-                        mergeResult.summary.updatedItems
-            )
-            println(
-                "Merged   : " +
-                        mergeResult.summary.mergedItems
-            )
-            println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-            println()
-        }
-
-        require(foodsRuntimeFile.isFile) {
-            "Bootstrap foods knowledge does not exist: " +
-                    foodsRuntimeFile.absolutePath
-        }
-
-        val bootstrapFoodsKnowledge =
-            FileFoodsKnowledgeLoader(
-                foodsRuntimeFile
-            ).load()
-
         val foodLookup =
-            DefaultFoodLookup(
-                bootstrapFoodsKnowledge
-            )
+            EmptyFoodLookup
 
         val resolvers =
             BuildKnowledgeResolversFactory(

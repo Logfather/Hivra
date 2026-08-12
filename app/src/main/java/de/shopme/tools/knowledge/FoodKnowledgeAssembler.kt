@@ -44,9 +44,17 @@ class FoodKnowledgeAssembler :
 
             recipes = context.recipes.toSet(),
 
-            taxonomyPath = context.taxonomyPath.toList(),
+            taxonomyPaths =
+                context.taxonomyPaths
+                    .map { path ->
+                        path.toList()
+                    },
 
-            waterFootprint = context.waterFootprint,
+            taxonomyPath =
+                context.taxonomyPath.toList(),
+
+            waterFootprint =
+                context.waterFootprint,
 
             biodiversity = context.biodiversity,
 

@@ -11,6 +11,7 @@ import de.shopme.tools.knowledge.ki_candidates.normalizer.KnowledgeCandidateNorm
 import de.shopme.tools.knowledge.ki_candidates.partition.KnowledgeCandidatePartitioner
 import de.shopme.tools.knowledge.ki_candidates.partition.PartitionedKnowledgeCandidateMerger
 import de.shopme.tools.knowledge.ki_candidates.partition.PartitionedKnowledgeCandidateStore
+import de.shopme.tools.knowledge.mapping.catalog.retrieval.SourceKnowledgeIdentityIndexWriter
 import de.shopme.tools.knowledge.off.extractor.OFFCandidateExtractor
 import de.shopme.tools.knowledge.off.nutrition.reference.adapter.OFFNutritionAggregateKnowledgeCandidateAdapter
 import de.shopme.tools.knowledge.off.nutrition.reference.aggregation.OFFNutritionReferenceAggregateDatasetReader
@@ -80,6 +81,15 @@ class MultiSourceRuntimeKnowledgeBuild {
                     )
             )
 
+        val sourceIdentityIndexWriter =
+            SourceKnowledgeIdentityIndexWriter(
+                directory =
+                    outputDir.resolve(
+                        SourceKnowledgeIdentityIndexWriter
+                            .DIRECTORY_NAME
+                    )
+            )
+
         var offCandidateCount =
             0
 
@@ -106,6 +116,11 @@ class MultiSourceRuntimeKnowledgeBuild {
 
             normalizedCandidateCount +=
                 normalizedBatch.size
+
+            sourceIdentityIndexWriter.appendAll(
+                candidates =
+                    normalizedBatch
+            )
 
             partitionStore.appendAll(
                 normalizedBatch
@@ -228,6 +243,11 @@ class MultiSourceRuntimeKnowledgeBuild {
             normalizedCandidateCount +=
                 normalizedAgribalyseCandidates.size
 
+            sourceIdentityIndexWriter.appendAll(
+                candidates =
+                    normalizedAgribalyseCandidates
+            )
+
             partitionStore.appendAll(
                 normalizedAgribalyseCandidates
             )
@@ -259,8 +279,20 @@ class MultiSourceRuntimeKnowledgeBuild {
             normalizedCandidateCount +=
                 normalizedCiqualCandidates.size
 
+            sourceIdentityIndexWriter.appendAll(
+                candidates =
+                    normalizedCiqualCandidates
+            )
+
             partitionStore.appendAll(
                 normalizedCiqualCandidates
+            )
+
+            sourceIdentityIndexWriter.close()
+
+            println(
+                "Source identity records=" +
+                        sourceIdentityIndexWriter.count()
             )
 
             /*
@@ -355,12 +387,11 @@ class MultiSourceRuntimeKnowledgeBuild {
             )
 
             /*
-             * In diesem Commit werden die partitionsweisen Runtime-
-             * Artefakte als Shards erzeugt.
+             * Der External-Shard-Merge ist abgeschlossen.
              *
-             * Die folgenden File-Objekte definieren bereits die finalen
-             * Zielpfade. Die Dateien selbst werden im nachfolgenden
-             * External-Shard-Merge erzeugt.
+             * Die folgenden File-Objekte referenzieren ausschließlich
+             * die finalen Server-Artefakte unter outputDir. Der temporäre
+             * Shard-Workspace wird vor der erfolgreichen Rückgabe gelöscht.
              */
             val nutritionFile =
                 artifactShardMergeResult.outputFileOrDefault(
@@ -546,7 +577,8 @@ class MultiSourceRuntimeKnowledgeBuild {
                         outputDir
                 )
 
-            return MultiSourceRuntimeKnowledgeBuildResult(
+            val result =
+                MultiSourceRuntimeKnowledgeBuildResult(
                 offNutritionAggregateCount =
                     offNutritionAggregateCount,
                 offCandidateCount =
@@ -782,8 +814,51 @@ class MultiSourceRuntimeKnowledgeBuild {
                 recipeGraphArtifactFile =
                     recipeGraphFile
             )
+            /*
+             * Runtime artifact shards are strictly transient build artifacts.
+             *
+             * A clean shard workspace is created before every build. Once all
+             * shards have been merged successfully into the final server
+             * artifacts, the shard workspace must not survive the build.
+             *
+             * Failed builds may leave their workspace behind for diagnostics;
+             * the next build removes it deterministically via resetDirectory().
+             */
+            deleteDirectory(
+                directory =
+                    artifactShardDirectory,
+                description =
+                    "runtime artifact shard directory"
+            )
+
+            return result
+
         } finally {
             partitionStore.close()
+        }
+    }
+
+    private fun deleteDirectory(
+        directory: File,
+        description: String
+    ) {
+
+        if (!directory.exists()) {
+            return
+        }
+
+        check(
+            directory.deleteRecursively()
+        ) {
+            "Could not delete $description: " +
+                    directory.absolutePath
+        }
+
+        check(
+            !directory.exists()
+        ) {
+            "$description still exists after deletion: " +
+                    directory.absolutePath
         }
     }
 

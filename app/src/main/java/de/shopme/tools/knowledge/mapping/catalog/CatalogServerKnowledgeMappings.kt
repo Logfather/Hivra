@@ -17,10 +17,15 @@ data class CatalogServerKnowledgeMappings(
 
     private fun requireNoDuplicateMappings() {
 
-        val duplicateCatalogKeys =
+        val duplicateMappings =
             mappings
                 .groupingBy {
-                    it.catalogKey
+                    MappingIdentity(
+                        catalogKey =
+                            it.catalogKey,
+                        sourceArtifact =
+                            it.sourceArtifact
+                    )
                 }
                 .eachCount()
                 .filterValues {
@@ -28,12 +33,28 @@ data class CatalogServerKnowledgeMappings(
                 }
                 .keys
 
-        require(duplicateCatalogKeys.isEmpty()) {
+        require(
+            duplicateMappings.isEmpty()
+        ) {
             "Duplicate catalog server knowledge mappings: " +
-                    duplicateCatalogKeys.sorted()
+                    duplicateMappings
+                        .sortedWith(
+                            compareBy<MappingIdentity> {
+                                it.catalogKey
+                            }
+                                .thenBy {
+                                    it.sourceArtifact
+                                }
+                        )
+                        .joinToString()
         }
+
     }
 
+    private data class MappingIdentity(
+        val catalogKey: String,
+        val sourceArtifact: String
+    )
 
     private fun requireMappingsAreDeterministicallyOrdered() {
 
@@ -55,8 +76,12 @@ data class CatalogServerKnowledgeMappings(
                 Comparator<CatalogServerKnowledgeMapping> =
             compareBy<CatalogServerKnowledgeMapping> {
                 it.catalogKey
-            }.thenBy {
-                it.serverKey
             }
+                .thenBy {
+                    it.sourceArtifact
+                }
+                .thenBy {
+                    it.serverKey
+                }
     }
 }

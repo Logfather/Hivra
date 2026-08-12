@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFComment
 import org.xml.sax.InputSource
 import org.xml.sax.helpers.XMLReaderFactory
 import java.io.File
+import java.util.Locale
 
 class AgribalyseRawSourceReducer {
 
@@ -18,90 +19,155 @@ class AgribalyseRawSourceReducer {
         sheetName: String = "Synthese",
         maxRows: Int? = null
     ) {
-        if (!input.exists()) {
-            error("Agribalyse input missing: ${input.absolutePath}")
+
+        require(input.isFile) {
+            "Agribalyse input missing: " +
+                    input.absolutePath
         }
 
-        output.parentFile?.mkdirs()
-
-        output.bufferedWriter().use { writer ->
-
-            OPCPackage.open(input).use { pkg ->
-
-                val reader =
-                    XSSFReader(pkg)
-
-                val sharedStrings =
-                    ReadOnlySharedStringsTable(pkg)
-
-                val sheetIterator =
-                    reader.sheetsData as XSSFReader.SheetIterator
-
-                var foundSheet = false
-                var writtenRows = 0
-
-                while (sheetIterator.hasNext()) {
-                    val stream =
-                        sheetIterator.next()
-
-                    val currentSheetName =
-                        sheetIterator.sheetName
-
-                    if (currentSheetName != sheetName) {
-                        stream.close()
-                        continue
-                    }
-
-                    foundSheet = true
-
-                    stream.use { sheetStream ->
-
-                        val handler =
-                            AgribalyseSlimTsvHandler(
-                                maxRows = maxRows,
-                                onRow = { row ->
-
-                                    if (maxRows == null || writtenRows < maxRows) {
-                                        writer.appendLine(
-                                            row.joinToString("\t") { value ->
-                                                value.cleanForTsv()
-                                            }
-                                        )
-                                        writtenRows++
-                                    }
-                                }
-                            )
-
-                        val xmlReader =
-                            XMLReaderFactory.createXMLReader()
-
-                        xmlReader.contentHandler =
-                            XSSFSheetXMLHandler(
-                                reader.stylesTable,
-                                sharedStrings,
-                                handler,
-                                DataFormatter(),
-                                false
-                            )
-
-                        xmlReader.parse(InputSource(sheetStream))
-                    }
-
-                    break
-                }
-
-                if (!foundSheet) {
-                    error("Agribalyse sheet '$sheetName' not found")
-                }
+        val outputDirectory =
+            requireNotNull(
+                output.parentFile
+            ) {
+                "Agribalyse output has no parent directory: " +
+                        output.absolutePath
             }
+
+        require(
+            outputDirectory.exists() ||
+                    outputDirectory.mkdirs()
+        ) {
+            "Could not create Agribalyse output directory: " +
+                    outputDirectory.absolutePath
         }
+
+        output
+            .bufferedWriter()
+            .use { writer ->
+
+                OPCPackage
+                    .open(input)
+                    .use { pkg ->
+
+                        val reader =
+                            XSSFReader(pkg)
+
+                        val sharedStrings =
+                            ReadOnlySharedStringsTable(pkg)
+
+                        val sheetIterator =
+                            reader.sheetsData as
+                                    XSSFReader.SheetIterator
+
+                        var foundSheet =
+                            false
+
+                        while (
+                            sheetIterator.hasNext()
+                        ) {
+
+                            val stream =
+                                sheetIterator.next()
+
+                            val currentSheetName =
+                                sheetIterator.sheetName
+
+                            if (
+                                currentSheetName !=
+                                sheetName
+                            ) {
+
+                                stream.close()
+                                continue
+                            }
+
+                            foundSheet =
+                                true
+
+                            stream.use { sheetStream ->
+
+                                val handler =
+                                    AgribalyseSlimTsvHandler(
+                                        maxRows =
+                                            maxRows,
+                                        onRow = { row ->
+
+                                            writer.appendLine(
+                                                row.joinToString(
+                                                    separator = "\t"
+                                                ) { value ->
+                                                    value.cleanForTsv()
+                                                }
+                                            )
+                                        }
+                                    )
+
+                                val xmlReader =
+                                    XMLReaderFactory
+                                        .createXMLReader()
+
+                                xmlReader.contentHandler =
+                                    XSSFSheetXMLHandler(
+                                        reader.stylesTable,
+                                        sharedStrings,
+                                        handler,
+                                        DataFormatter(
+                                            Locale.ROOT
+                                        ),
+                                        false
+                                    )
+
+                                xmlReader.parse(
+                                    InputSource(
+                                        sheetStream
+                                    )
+                                )
+                            }
+
+                            break
+                        }
+
+                        require(foundSheet) {
+                            "Agribalyse sheet '$sheetName' not found."
+                        }
+                    }
+            }
     }
 
     private fun String.cleanForTsv(): String {
-        return replace("\t", " ")
-            .replace("\n", " ")
-            .replace("\r", " ")
-            .trim()
+
+        val cleaned =
+            replace(
+                "\t",
+                " "
+            )
+                .replace(
+                    "\n",
+                    " "
+                )
+                .replace(
+                    "\r",
+                    " "
+                )
+                .trim()
+
+        val numericValue =
+            cleaned
+                .toDoubleOrNull()
+
+        return if (numericValue != null) {
+
+            java.math.BigDecimal
+                .valueOf(
+                    numericValue
+                )
+                .stripTrailingZeros()
+                .toPlainString()
+
+        } else {
+
+            cleaned
+        }
     }
 }
 
@@ -110,39 +176,17 @@ private class AgribalyseSlimTsvHandler(
     private val onRow: (List<String>) -> Unit
 ) : XSSFSheetXMLHandler.SheetContentsHandler {
 
-    private val keepColumns =
-        listOf(
-            "Code AGB",
-            "Code CIQUAL",
-            "Groupe d'aliment",
-            "Sous-groupe d'aliment",
-            "Nom du Produit en Français",
-            "LCI Name",
-            "DQR - Note de qualité de la donnée (1 excellente ; 5 très faible)",
-            "mPt/kg de produit",
-            "kg CO2 eq/kg de produit",
-            "Pt/kg de produit",
-            "m3 depriv./kg de produit"
-        )
-
-    private val keepColumnKeys =
-        keepColumns
-            .map { value ->
-                value.normalizedHeader()
-            }
-            .toSet()
-
     private val currentRow =
         mutableMapOf<Int, String>()
-
-    private var emittedRows =
-        0
 
     private var headerFound =
         false
 
     private var selectedColumns =
         emptyList<Int>()
+
+    private var emittedDataRows =
+        0
 
     private val outputHeaders =
         listOf(
@@ -162,61 +206,64 @@ private class AgribalyseSlimTsvHandler(
             "climate_land_use_change_kg_co2_eq_per_kg"
         )
 
-    override fun startRow(rowNum: Int) {
+    override fun startRow(
+        rowNum: Int
+    ) {
         currentRow.clear()
     }
 
-    override fun endRow(rowNum: Int) {
-
-        if (!headerFound) {
-
-            val values =
-                currentRowValues()
-
-            val normalizedValues =
-                values.map { value ->
-                    value.normalizedHeader()
-                }
-
-            if ("code agb" in normalizedValues) {
-
-                selectedColumns =
-                    values.mapIndexedNotNull { index, value ->
-                        if (value.normalizedHeader() in keepColumnKeys) {
-                            index
-                        } else {
-                            null
-                        }
-                    }
-
-                if (selectedColumns.isEmpty()) {
-                    error("Agribalyse header found, but no selected columns matched.")
-                }
-
-                if (selectedColumns.size != outputHeaders.size) {
-                    error(
-                        "Agribalyse selected column count mismatch. " +
-                                "selected=${selectedColumns.size}, headers=${outputHeaders.size}"
-                    )
-                }
-
-                onRow(outputHeaders)
-
-                headerFound = true
-                emittedRows++
-
-                println("Agribalyse selected columns=${selectedColumns.size}")
-            }
-
-            return
-        }
-
-        if (maxRows != null && emittedRows >= maxRows) {
-            return
-        }
+    override fun endRow(
+        rowNum: Int
+    ) {
 
         val values =
             currentRowValues()
+
+        if (!headerFound) {
+
+            if (
+                !isSynthesisHeader(
+                    values = values
+                )
+            ) {
+                return
+            }
+
+            selectedColumns =
+                resolveSelectedColumns(
+                    values = values
+                )
+
+            require(
+                selectedColumns.size ==
+                        outputHeaders.size
+            ) {
+                "Agribalyse selected column count mismatch. " +
+                        "selected=${selectedColumns.size}, " +
+                        "headers=${outputHeaders.size}"
+            }
+
+            onRow(
+                outputHeaders
+            )
+
+            headerFound =
+                true
+
+            println(
+                "Agribalyse selected columns=" +
+                        selectedColumns.size
+            )
+
+            return
+        }
+
+        if (
+            maxRows != null &&
+            emittedDataRows >= maxRows
+        ) {
+            return
+        }
 
         if (values.isEmpty()) {
             return
@@ -224,12 +271,27 @@ private class AgribalyseSlimTsvHandler(
 
         val reduced =
             selectedColumns.map { index ->
-                values.getOrNull(index).orEmpty()
+                values
+                    .getOrNull(index)
+                    .orEmpty()
             }
 
-        onRow(reduced)
+        /*
+         * Keine vollständig leere Datenzeile persistieren.
+         */
+        if (
+            reduced.all {
+                it.isBlank()
+            }
+        ) {
+            return
+        }
 
-        emittedRows++
+        onRow(
+            reduced
+        )
+
+        emittedDataRows++
     }
 
     override fun cell(
@@ -237,8 +299,10 @@ private class AgribalyseSlimTsvHandler(
         formattedValue: String?,
         comment: XSSFComment?
     ) {
+
         val columnIndex =
-            cellReference.toColumnIndex()
+            cellReference
+                .toColumnIndex()
 
         currentRow[columnIndex] =
             formattedValue.orEmpty()
@@ -250,35 +314,210 @@ private class AgribalyseSlimTsvHandler(
         tagName: String?
     ) = Unit
 
-    private fun currentRowValues(): List<String> {
+    private fun isSynthesisHeader(
+        values: List<String>
+    ): Boolean {
+
+        val normalized =
+            values.map {
+                it.normalizedHeader()
+            }
+
+        return normalized
+            .getOrNull(0) ==
+                "code agb" &&
+                normalized
+                    .getOrNull(1) ==
+                "code ciqual"
+    }
+
+    private fun resolveSelectedColumns(
+        values: List<String>
+    ): List<Int> {
+
+        val normalized =
+            values.map {
+                it.normalizedHeader()
+            }
+
+        fun requiredIndex(
+            header: String
+        ): Int {
+
+            val normalizedHeader =
+                header.normalizedHeader()
+
+            val index =
+                normalized.indexOf(
+                    normalizedHeader
+                )
+
+            require(
+                index >= 0
+            ) {
+                "Required Agribalyse column not found: " +
+                        "'$header'"
+            }
+
+            return index
+        }
+
+        fun requiredOccurrence(
+            header: String,
+            occurrence: Int
+        ): Int {
+
+            require(
+                occurrence > 0
+            ) {
+                "Header occurrence must be > 0."
+            }
+
+            val normalizedHeader =
+                header.normalizedHeader()
+
+            val matches =
+                normalized
+                    .mapIndexedNotNull { index, value ->
+                        index.takeIf {
+                            value ==
+                                    normalizedHeader
+                        }
+                    }
+
+            require(
+                matches.size >= occurrence
+            ) {
+                "Required Agribalyse column occurrence not found: " +
+                        "'$header', occurrence=$occurrence, " +
+                        "found=${matches.size}"
+            }
+
+            return matches[
+                occurrence - 1
+            ]
+        }
+
+        return listOf(
+            requiredIndex(
+                "Code AGB"
+            ),
+            requiredIndex(
+                "Code CIQUAL"
+            ),
+            requiredIndex(
+                "Groupe d'aliment"
+            ),
+            requiredIndex(
+                "Sous-groupe d'aliment"
+            ),
+            requiredIndex(
+                "Nom du Produit en Français"
+            ),
+            requiredIndex(
+                "LCI Name"
+            ),
+            requiredIndex(
+                "DQR - Note de qualité de la donnée " +
+                        "(1 excellente ; 5 très faible)"
+            ),
+            requiredIndex(
+                "mPt/kg de produit"
+            ),
+
+            /*
+             * 1. Vorkommen:
+             * Changement climatique – total.
+             */
+            requiredOccurrence(
+                header =
+                    "kg CO2 eq/kg de produit",
+                occurrence =
+                    1
+            ),
+
+            requiredIndex(
+                "Pt/kg de produit"
+            ),
+            requiredIndex(
+                "m3 depriv./kg de produit"
+            ),
+
+            /*
+             * Die Synthese-Tabelle besitzt vier identisch benannte
+             * CO2-Spalten. Ihre Reihenfolge ist in AGRIBALYSE 3.2:
+             *
+             * 1 = total
+             * 2 = biogenic
+             * 3 = fossil
+             * 4 = land-use change
+             */
+            requiredOccurrence(
+                header =
+                    "kg CO2 eq/kg de produit",
+                occurrence =
+                    2
+            ),
+            requiredOccurrence(
+                header =
+                    "kg CO2 eq/kg de produit",
+                occurrence =
+                    3
+            ),
+            requiredOccurrence(
+                header =
+                    "kg CO2 eq/kg de produit",
+                occurrence =
+                    4
+            )
+        )
+    }
+
+    private fun currentRowValues():
+            List<String> {
 
         val maxColumn =
-            currentRow.keys.maxOrNull()
+            currentRow
+                .keys
+                .maxOrNull()
                 ?: return emptyList()
 
-        return (0..maxColumn).map { index ->
-            currentRow[index].orEmpty()
-        }
+        return (0..maxColumn)
+            .map { index ->
+                currentRow[
+                    index
+                ].orEmpty()
+            }
     }
 }
 
-private fun String.normalizedHeader(): String {
-    return trim()
+private fun String.normalizedHeader(): String =
+    trim()
         .lowercase()
-        .replace(Regex("\\s+"), " ")
-}
+        .replace(
+            Regex("\\s+"),
+            " "
+        )
 
 private fun String.toColumnIndex(): Int {
+
     val letters =
         takeWhile { char ->
             char.isLetter()
         }
 
-    var result = 0
+    var result =
+        0
 
     letters.forEach { char ->
-        result *= 26
-        result += char.uppercaseChar() - 'A' + 1
+
+        result *=
+            26
+
+        result +=
+            char.uppercaseChar() -
+                    'A' +
+                    1
     }
 
     return result - 1

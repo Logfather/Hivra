@@ -17,36 +17,53 @@ class TaxonomyCompilerPass(
         context: CompilerContext
     ) {
 
+        /*
+         * Canonical taxonomyPaths are authoritative and come directly
+         * from the Product-Only master via CatalogItem.
+         *
+         * This pass must never overwrite them.
+         */
+
+        if (context.taxonomyPaths.isNotEmpty()) {
+            return
+        }
+
+        /*
+         * Compatibility fallback for non-master CatalogItems.
+         *
+         * This path exists only for legacy/test callers that do not yet
+         * provide canonical taxonomyPaths.
+         */
+
         val taxonomy =
-
             resolver.resolve(
-
                 context.nutritionReference
                     ?: context.normalizedName
-
             )
 
-        val path =
-
+        val fallbackPath =
             foodLookup.taxonomy(
-
                 context.normalizedName
-
             )
                 ?: taxonomy?.let { entry ->
-
                     listOf(
-
                         entry.parent,
-
                         context.normalizedName
-
                     )
                 }
                 ?: emptyList()
 
-        context.taxonomyPath.clear()
+        if (fallbackPath.isEmpty()) {
+            return
+        }
 
-        context.taxonomyPath.addAll(path)
+        context.taxonomyPaths.add(
+            fallbackPath.toList()
+        )
+
+        context.taxonomyPath.clear()
+        context.taxonomyPath.addAll(
+            fallbackPath
+        )
     }
 }

@@ -1,13 +1,13 @@
 package de.shopme.tools.knowledge.dimension.capabilities
 
 import de.shopme.domain.food.FoodKnowledgeEntry
-import de.shopme.tools.knowledge.dimension.KnowledgeSection
 import de.shopme.tools.knowledge.dimension.AbstractKnowledgeDimensionCapability
 import de.shopme.tools.knowledge.dimension.KnowledgeDimensionId
 import de.shopme.tools.knowledge.dimension.KnowledgeDimensionInfo
 import de.shopme.tools.knowledge.dimension.KnowledgeDimensionInterpretation
 import de.shopme.tools.knowledge.dimension.KnowledgeDimensionResult
 import de.shopme.tools.knowledge.dimension.KnowledgeIndicator
+import de.shopme.tools.knowledge.dimension.KnowledgeSection
 import de.shopme.tools.report.CoverageDimension
 
 class FoodTaxonomyCapability : AbstractKnowledgeDimensionCapability() {
@@ -35,15 +35,31 @@ class FoodTaxonomyCapability : AbstractKnowledgeDimensionCapability() {
             )
         )
 
-    override fun result(knowledge: FoodKnowledgeEntry): KnowledgeDimensionResult {
-        val path = knowledge.taxonomyPath
+    override fun result(
+        knowledge: FoodKnowledgeEntry
+    ): KnowledgeDimensionResult {
 
-        if (path.isEmpty()) return unknownResult()
+        val paths =
+            knowledge.taxonomyPaths
+
+        if (paths.isEmpty()) {
+            return unknownResult()
+        }
+
+        val summary =
+            paths.joinToString(
+                separator = " · "
+            ) { path ->
+                path.joinToString(" → ")
+            }
 
         return KnowledgeDimensionResult(
-            indicator = KnowledgeIndicator.LIGHTGREEN,
-            summary = path.joinToString(" → "),
-            recommendation = "Diese Klassifikation beschreibt die fachliche Einordnung und ist keine Qualitätsbewertung."
+            indicator =
+                KnowledgeIndicator.LIGHTGREEN,
+            summary =
+                summary,
+            recommendation =
+                "Diese Klassifikation beschreibt die fachliche Einordnung und ist keine Qualitätsbewertung."
         )
     }
 }

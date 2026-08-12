@@ -1,24 +1,16 @@
 package de.shopme.tools.knowledge.compiler
 
-import java.io.File
-
 object CreateFoodKnowledge {
 
     @JvmStatic
-    fun main(args: Array<String>) {
-
-        val importFile =
-            args
-                .firstOrNull()
-                ?.let(::File)
-
-        build(importFile)
+    fun main(
+        args: Array<String>
+    ) {
+        build()
     }
 
-    fun build(
-        importFile: File? = null
-    ) {
+    fun build() {
         FoodKnowledgeBuildCompiler()
-            .build(importFile)
+            .build()
     }
 }

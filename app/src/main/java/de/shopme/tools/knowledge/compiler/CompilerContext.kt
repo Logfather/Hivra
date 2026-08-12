@@ -37,8 +37,29 @@ data class CompilerContext(
     var normalizedName: String =
         catalogItem.normalized,
 
+    /**
+     * Authoritative canonical taxonomy paths from the Product-Only master.
+     *
+     * A canonical food may belong to multiple taxonomy branches.
+     */
+    val taxonomyPaths: MutableList<List<String>> =
+        catalogItem.taxonomyPaths
+            .map { path ->
+                path.toList()
+            }
+            .toMutableList(),
+
+    /**
+     * Legacy single-path projection.
+     *
+     * Kept temporarily for consumers that still expect exactly one taxonomy path.
+     * Must never be used as the canonical taxonomy authority.
+     */
     val taxonomyPath: MutableList<String> =
-        mutableListOf(),
+        catalogItem.taxonomyPaths
+            .firstOrNull()
+            .orEmpty()
+            .toMutableList(),
 
     /**
      * Canonical supermarket category resolved from

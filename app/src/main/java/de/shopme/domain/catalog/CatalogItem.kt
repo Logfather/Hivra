@@ -13,7 +13,8 @@ data class CatalogItem(
     val phonetic_tokens: List<String>,
     val autocomplete_tokens: List<String>,
     val nutritionReference: String? = null,
-    val knowledge: KnowledgeReferences? = KnowledgeReferences()
+    val knowledge: KnowledgeReferences? = KnowledgeReferences(),
+    val taxonomyPaths: List<List<String>> = emptyList()
 
 ) {
 

@@ -51,6 +51,17 @@ data class FoodKnowledgeEntry(
 
     val recipes: Set<String>,
 
+    /**
+     * Complete canonical taxonomy assignments.
+     */
+    val taxonomyPaths: List<List<String>>,
+
+    /**
+     * Temporary legacy single-path projection.
+     *
+     * This field exists only for backward compatibility while runtime
+     * consumers are migrated to taxonomyPaths.
+     */
     val taxonomyPath: List<String>,
 
     val waterFootprint: WaterFootprint?,
