@@ -1,4 +1,4 @@
-package de.shopme.tools.knowledge.compiler.migration
+package de.shopme.tools.knowledge.compiler.model
 
 data class FoodDefinitionEntry(
 

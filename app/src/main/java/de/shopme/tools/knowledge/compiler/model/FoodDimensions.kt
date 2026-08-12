@@ -1,4 +1,4 @@
-package de.shopme.tools.knowledge.compiler.migration
+package de.shopme.tools.knowledge.compiler.model
 
 import de.shopme.domain.food.GlycemicIndexLevel
 import de.shopme.tools.knowledge.animalwelfare.AnimalWelfare

@@ -1,6 +1,6 @@
 package de.shopme.tools.knowledge.compiler
 
-import de.shopme.tools.knowledge.compiler.migration.FoodDefinitionEntry
+import de.shopme.tools.knowledge.compiler.model.FoodDefinitionEntry
 
 class DomainKnowledgeCompiler(
 
