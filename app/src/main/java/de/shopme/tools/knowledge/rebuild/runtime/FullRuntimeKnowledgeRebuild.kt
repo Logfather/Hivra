@@ -1,5 +1,6 @@
 package de.shopme.tools.knowledge.rebuild.runtime
 
+import de.shopme.tools.knowledge.build.ActiveFoodKnowledgeScope
 import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.runtime.CatalogRuntimeKnowledgeGenerator
 import java.io.File
@@ -40,6 +41,11 @@ class FullRuntimeKnowledgeRebuild(
                 directory =
                     paths.serverRoot
             )
+                .filter {
+                    ActiveFoodKnowledgeScope.isActive(
+                        it.name
+                    )
+                }
 
         cleanRuntimeArtifacts(
             directory =
@@ -182,14 +188,32 @@ class FullRuntimeKnowledgeRebuild(
                     paths.catalogServerMappings.absolutePath
         }
 
-        require(
+        val activeServerArtifactNames =
             jsonFiles(
                 directory =
                     paths.serverRoot
-            ).isNotEmpty()
+            )
+                .map {
+                    it.name
+                }
+                .filter(
+                    ActiveFoodKnowledgeScope::isActive
+                )
+                .toSet()
+
+        val missingActiveServerArtifacts =
+            ActiveFoodKnowledgeScope
+                .activeArtifacts
+                .minus(
+                    activeServerArtifactNames
+                )
+                .sorted()
+
+        require(
+            missingActiveServerArtifacts.isEmpty()
         ) {
-            "No server Knowledge artifacts found in: " +
-                    paths.serverRoot.absolutePath
+            "Active Server Knowledge artifacts missing: " +
+                    missingActiveServerArtifacts.joinToString()
         }
     }
 

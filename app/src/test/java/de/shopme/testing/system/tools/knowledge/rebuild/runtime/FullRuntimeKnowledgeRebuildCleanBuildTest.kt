@@ -1,5 +1,6 @@
 package de.shopme.testing.system.tools.knowledge.rebuild.runtime
 
+import de.shopme.tools.knowledge.build.ActiveFoodKnowledgeScope
 import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import de.shopme.tools.knowledge.rebuild.runtime.FullRuntimeKnowledgeRebuild
 import org.junit.Assert.assertFalse
@@ -52,6 +53,26 @@ class FullRuntimeKnowledgeRebuildCleanBuildTest {
             assertTrue(
                 "Clean rebuild produced no Runtime Knowledge artifacts.",
                 firstResult.runtimeArtifactCount > 0
+            )
+
+            assertTrue(
+                "Unexpected active Server Knowledge artifact count: " +
+                        firstResult.serverArtifactCount,
+                firstResult.serverArtifactCount ==
+                        ActiveFoodKnowledgeScope.activeArtifacts.size
+            )
+
+            assertTrue(
+                "Unexpected Runtime Knowledge artifact count: " +
+                        firstResult.runtimeArtifactCount,
+                firstResult.runtimeArtifactCount ==
+                        ActiveFoodKnowledgeScope.activeArtifacts.size
+            )
+
+            assertTrue(
+                "Runtime Knowledge artifact set differs from active Food Knowledge scope.",
+                firstResult.runtimeArtifacts.toSet() ==
+                        ActiveFoodKnowledgeScope.activeArtifacts
             )
 
             val staleRuntimeArtifact =

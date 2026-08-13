@@ -6,6 +6,7 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
+import de.shopme.tools.knowledge.build.ActiveFoodKnowledgeScope
 import java.io.File
 
 class CatalogRuntimeKnowledgeGenerator(
@@ -70,6 +71,9 @@ class CatalogRuntimeKnowledgeGenerator(
                             file.extension.equals(
                                 other = "json",
                                 ignoreCase = true
+                            ) &&
+                            ActiveFoodKnowledgeScope.isActive(
+                                file.name
                             )
                 }
                 ?.sortedBy {
@@ -77,9 +81,26 @@ class CatalogRuntimeKnowledgeGenerator(
                 }
                 .orEmpty()
 
-        require(serverFiles.isNotEmpty()) {
-            "No server artifacts found in " +
-                    serverArtifactDirectory.absolutePath
+        val serverArtifactNames =
+            serverFiles
+                .map {
+                    it.name
+                }
+                .toSet()
+
+        val missingActiveArtifacts =
+            ActiveFoodKnowledgeScope
+                .activeArtifacts
+                .minus(
+                    serverArtifactNames
+                )
+                .sorted()
+
+        require(
+            missingActiveArtifacts.isEmpty()
+        ) {
+            "Active Server Knowledge artifacts missing: " +
+                    missingActiveArtifacts.joinToString()
         }
 
         printLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
