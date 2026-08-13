@@ -40,18 +40,28 @@ class CatalogRuntimeKnowledgeGenerator(
         }
 
         ensureDirectoryExists(
-            directory = runtimeArtifactDirectory
+            directory =
+                runtimeArtifactDirectory
         )
 
         val catalogKeys =
             readCatalogKeys(
-                file = catalogFile
+                file =
+                    catalogFile
             )
 
-        val mappings =
+        val mappingsByServerArtifact =
             readMappings(
-                file = catalogServerMappingFile
+                file =
+                    catalogServerMappingFile
             )
+
+        val mappingCount =
+            mappingsByServerArtifact
+                .values
+                .sumOf {
+                    it.size
+                }
 
         val serverFiles =
             serverArtifactDirectory
@@ -76,19 +86,22 @@ class CatalogRuntimeKnowledgeGenerator(
         printLine("CATALOG RUNTIME KNOWLEDGE BUILD")
         printLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
         printLine("Catalog keys=${catalogKeys.size}")
-        printLine("Catalog-server mappings=${mappings.size}")
+        printLine("Catalog-server mappings=$mappingCount")
 
         val artifactReports =
             serverFiles.map { serverFile ->
 
                 generateArtifact(
-                    serverFile = serverFile,
+                    serverFile =
+                        serverFile,
                     runtimeDirectory =
                         runtimeArtifactDirectory,
                     catalogKeys =
                         catalogKeys,
                     mappings =
-                        mappings
+                        mappingsByServerArtifact[
+                            serverFile.name
+                        ].orEmpty()
                 )
             }
 
@@ -96,7 +109,7 @@ class CatalogRuntimeKnowledgeGenerator(
             catalogKeyCount =
                 catalogKeys.size,
             mappingCount =
-                mappings.size,
+                mappingCount,
             artifacts =
                 artifactReports
         )
@@ -112,7 +125,8 @@ class CatalogRuntimeKnowledgeGenerator(
 
         val serverEntries =
             readEntries(
-                file = serverFile
+                file =
+                    serverFile
             )
 
         val normalizedServerEntries =
@@ -120,7 +134,8 @@ class CatalogRuntimeKnowledgeGenerator(
                 .associateBy(
                     keySelector = {
                         normalizeKey(
-                            value = it.key
+                            value =
+                                it.key
                         )
                     },
                     valueTransform = {
@@ -148,7 +163,8 @@ class CatalogRuntimeKnowledgeGenerator(
 
                 runtimeEntries[
                     catalogKey
-                ] = exactEntry.value.deepCopy()
+                ] =
+                    exactEntry.value.deepCopy()
 
                 exactMatchCount++
 
@@ -164,207 +180,89 @@ class CatalogRuntimeKnowledgeGenerator(
             val mappedEntry =
                 normalizedServerEntries[
                     normalizeKey(
-                        value = mappedServerKey
+                        value =
+                            mappedServerKey
                     )
                 ]
                     ?: return@forEach
 
             /*
-             * Der Runtime-Key bleibt der Catalog-Key.
+             * The Runtime key remains the canonical Catalog key.
              *
-             * Nur der Knowledge-Wert wird über den gemappten
-             * Server-Key aufgelöst.
+             * Only the Knowledge value is resolved through the
+             * artifact-specific Server mapping.
              */
             runtimeEntries[
                 catalogKey
-            ] = mappedEntry.value.deepCopy()
+            ] =
+                mappedEntry.value.deepCopy()
 
             mappedMatchCount++
         }
 
-        val expectedCoveredCatalogKeys =
-            catalogKeys
-                .asSequence()
-                .filter { catalogKey ->
-
-                    if (
-                        catalogKey in normalizedServerEntries
-                    ) {
-                        return@filter true
-                    }
-
-                    val mappedServerKey =
-                        mappings[
-                            catalogKey
-                        ]
-                            ?: return@filter false
-
-                    normalizeKey(
-                        value =
-                            mappedServerKey
-                    ) in normalizedServerEntries
-                }
-                .toSortedSet()
-
-        val runtimeCatalogKeys =
-            runtimeEntries
-                .keys
-                .toSortedSet()
-
-        val missingRuntimeCatalogKeys =
-            expectedCoveredCatalogKeys
-                .minus(
-                    runtimeCatalogKeys
-                )
-                .toSortedSet()
-
-        val unexpectedRuntimeCatalogKeys =
-            runtimeCatalogKeys
-                .minus(
-                    expectedCoveredCatalogKeys
-                )
-                .toSortedSet()
-
-        val unresolvedMappedCatalogKeys =
-            catalogKeys
-                .asSequence()
-                .filter { catalogKey ->
-
-                    /*
-                     * Ein Exact Match benötigt kein Mapping und ist für
-                     * dieses Artefakt bereits vollständig aufgelöst.
-                     */
-                    catalogKey !in normalizedServerEntries
-                }
-                .mapNotNull { catalogKey ->
-
-                    val mappedServerKey =
-                        mappings[
-                            catalogKey
-                        ]
-                            ?: return@mapNotNull null
-
-                    val normalizedMappedServerKey =
-                        normalizeKey(
-                            value =
-                                mappedServerKey
-                        )
-
-                    if (
-                        normalizedMappedServerKey in
-                        normalizedServerEntries
-                    ) {
-                        return@mapNotNull null
-                    }
-
-                    RuntimeNutritionUnresolvedMapping(
-                        catalogKey =
-                            catalogKey,
-                        mappedServerKey =
-                            mappedServerKey,
-                        normalizedMappedServerKey =
-                            normalizedMappedServerKey
-                    )
-                }
-                .sortedBy {
-                    it.catalogKey
-                }
-                .toList()
-
-        require(
-            missingRuntimeCatalogKeys.isEmpty() &&
-                    unexpectedRuntimeCatalogKeys.isEmpty()
-        ) {
-            buildString {
-
-                append(
-                    "Runtime knowledge coverage mismatch for artifact "
-                )
-                append(
-                    "'${serverFile.name}': "
-                )
-                append(
-                    "expected=${expectedCoveredCatalogKeys.size}, "
-                )
-                append(
-                    "runtime=${runtimeCatalogKeys.size}, "
-                )
-                append(
-                    "missing=${missingRuntimeCatalogKeys.size}, "
-                )
-                append(
-                    "unexpected=${unexpectedRuntimeCatalogKeys.size}."
-                )
-
-                if (
-                    missingRuntimeCatalogKeys.isNotEmpty()
-                ) {
-                    append(
-                        "\nMissing runtime catalog keys: "
-                    )
-                    append(
-                        missingRuntimeCatalogKeys.joinToString()
-                    )
-                }
-
-                if (
-                    unexpectedRuntimeCatalogKeys.isNotEmpty()
-                ) {
-                    append(
-                        "\nUnexpected runtime catalog keys: "
-                    )
-                    append(
-                        unexpectedRuntimeCatalogKeys.joinToString()
-                    )
-                }
-
-                if (
-                    unresolvedMappedCatalogKeys.isNotEmpty()
-                ) {
-                    append(
-                        "\nMappings whose server keys do not exist:"
-                    )
-
-                    unresolvedMappedCatalogKeys
-                        .take(
-                            MAX_DIAGNOSTIC_KEYS
-                        )
-                        .forEach { mapping ->
-
-                            append(
-                                "\n- catalogKey='${mapping.catalogKey}', " +
-                                        "serverKey='${mapping.mappedServerKey}', " +
-                                        "normalizedServerKey=" +
-                                        "'${mapping.normalizedMappedServerKey}'"
-                            )
-                        }
-                }
-            }
-        }
-
         val runtimeFile =
-            File(
-                runtimeDirectory,
+            runtimeDirectory.resolve(
                 serverFile.name
             )
 
-        writeRuntimeArtifact(
-            entries = runtimeEntries,
-            file = runtimeFile
+        val outputRoot =
+            JsonObject().apply {
+
+                addProperty(
+                    "version",
+                    1
+                )
+
+                add(
+                    "entries",
+                    JsonObject().apply {
+
+                        runtimeEntries
+                            .forEach { (key, value) ->
+
+                                add(
+                                    key,
+                                    value
+                                )
+                            }
+                    }
+                )
+            }
+
+        runtimeFile.writeText(
+            gson.toJson(
+                outputRoot
+            )
         )
 
-        val missingCount =
-            catalogKeys.size -
-                    runtimeEntries.size
+        val missingCatalogKeys =
+            catalogKeys
+                .filterNot {
+                    runtimeEntries.containsKey(
+                        it
+                    )
+                }
+                .sorted()
 
-        printLine("")
-        printLine(serverFile.name)
-        printLine("server entries=${serverEntries.size}")
-        printLine("exact matches=$exactMatchCount")
-        printLine("mapped matches=$mappedMatchCount")
-        printLine("runtime entries=${runtimeEntries.size}")
-        printLine("missing=$missingCount")
-        printLine("runtime artifact=${runtimeFile.path}")
+        printLine(
+            "${serverFile.name}: " +
+                    "runtime=${runtimeEntries.size}, " +
+                    "exact=$exactMatchCount, " +
+                    "mapped=$mappedMatchCount, " +
+                    "missing=${missingCatalogKeys.size}"
+        )
+
+        if (missingCatalogKeys.isNotEmpty()) {
+
+            printLine(
+                "  missing sample: " +
+                        missingCatalogKeys
+                            .take(
+                                MAX_DIAGNOSTIC_KEYS
+                            )
+                            .joinToString()
+            )
+        }
 
         return CatalogRuntimeKnowledgeArtifactReport(
             artifact =
@@ -378,7 +276,7 @@ class CatalogRuntimeKnowledgeGenerator(
             runtimeEntryCount =
                 runtimeEntries.size,
             missingCount =
-                missingCount,
+                missingCatalogKeys.size,
             runtimeFile =
                 runtimeFile.path
         )
@@ -400,26 +298,72 @@ class CatalogRuntimeKnowledgeGenerator(
                 type
             )
 
-        return items
-            .mapNotNull { item ->
-                item.string("normalizedEnglish")
-                    ?: item.string("name")
-                    ?: item.string("productName")
-                    ?: item.string("title")
+        require(
+            items.isNotEmpty()
+        ) {
+            "Canonical catalog contains no entries: " +
+                    file.absolutePath
+        }
+
+        val catalogKeys =
+            items.mapIndexed { index, item ->
+
+                val canonicalIdentity =
+                    item.requiredString(
+                        key = "normalized"
+                    )
+
+                val catalogKey =
+                    normalizeKey(
+                        value =
+                            canonicalIdentity
+                    )
+
+                require(
+                    catalogKey.isNotBlank()
+                ) {
+                    "Canonical catalog entry at index $index " +
+                            "has an empty normalized identity."
+                }
+
+                catalogKey
             }
-            .map {
-                normalizeKey(
-                    value = it
-                )
-            }
-            .filter(String::isNotBlank)
+
+        val duplicateCatalogKeys =
+            catalogKeys
+                .groupingBy {
+                    it
+                }
+                .eachCount()
+                .filterValues { count ->
+                    count > 1
+                }
+                .keys
+                .sorted()
+
+        require(
+            duplicateCatalogKeys.isEmpty()
+        ) {
+            "Canonical catalog contains duplicate normalized identities: " +
+                    duplicateCatalogKeys.joinToString()
+        }
+
+        require(
+            catalogKeys.size ==
+                    items.size
+        ) {
+            "Canonical catalog identity count differs from entry count: " +
+                    "entries=${items.size}, identities=${catalogKeys.size}"
+        }
+
+        return catalogKeys
             .toSortedSet()
     }
 
 
     private fun readMappings(
         file: File?
-    ): Map<String, String> {
+    ): Map<String, Map<String, String>> {
 
         if (
             file == null ||
@@ -446,46 +390,78 @@ class CatalogRuntimeKnowledgeGenerator(
                 ?.asJsonArray
                 ?: return emptyMap()
 
+        data class ParsedMapping(
+            val catalogKey: String,
+            val serverArtifact: String,
+            val serverKey: String
+        )
+
         val parsedMappings =
             mappings.map { element ->
 
                 val mapping =
                     element.asJsonObject
 
-                val catalogKey =
-                    normalizeKey(
-                        value =
-                            mapping.requiredString(
-                                key = "catalogKey"
-                            )
-                    )
-
-                val serverKey =
-                    mapping.requiredString(
-                        key = "serverKey"
-                    )
-
-                catalogKey to serverKey
+                ParsedMapping(
+                    catalogKey =
+                        normalizeKey(
+                            value =
+                                mapping.requiredString(
+                                    key = "catalogKey"
+                                )
+                        ),
+                    serverArtifact =
+                        mapping.requiredString(
+                            key = "serverArtifact"
+                        ),
+                    serverKey =
+                        mapping.requiredString(
+                            key = "serverKey"
+                        )
+                )
             }
 
-        val duplicateCatalogKeys =
+        val duplicateMappings =
             parsedMappings
-                .groupingBy {
-                    it.first
+                .groupingBy { mapping ->
+                    mapping.serverArtifact to
+                            mapping.catalogKey
                 }
                 .eachCount()
-                .filterValues {
-                    it > 1
+                .filterValues { count ->
+                    count > 1
                 }
                 .keys
 
-        require(duplicateCatalogKeys.isEmpty()) {
+        require(
+            duplicateMappings.isEmpty()
+        ) {
             "Duplicate catalog-server mappings: " +
-                    duplicateCatalogKeys.sorted()
+                    duplicateMappings
+                        .sortedWith(
+                            compareBy<Pair<String, String>>(
+                                { it.first },
+                                { it.second }
+                            )
+                        )
+                        .joinToString { duplicate ->
+                            "${duplicate.first}:${duplicate.second}"
+                        }
         }
 
         return parsedMappings
-            .toMap()
+            .groupBy {
+                it.serverArtifact
+            }
+            .mapValues { (_, artifactMappings) ->
+
+                artifactMappings
+                    .associate { mapping ->
+                        mapping.catalogKey to
+                                mapping.serverKey
+                    }
+                    .toSortedMap()
+            }
             .toSortedMap()
     }
 
