@@ -161,6 +161,12 @@ class KnowledgeBuildPaths private constructor(
     val knowledgeBuildRoot: File =
         projectRoot.resolve("build/knowledge")
 
+    val legacyRoot: File =
+        knowledgeBuildRoot.resolve("legacy")
+
+    val legacyServerRoot: File =
+        legacyRoot.resolve("server")
+
     val diagnosticsRoot: File =
         knowledgeBuildRoot.resolve("diagnostics")
 
@@ -299,7 +305,9 @@ class KnowledgeBuildPaths private constructor(
             mappingsRoot,
             reportsRoot,
             runtimeRoot,
-            serverRoot
+            serverRoot,
+            legacyRoot,
+            legacyServerRoot
         ).forEach { directory ->
             check(
                 directory.exists() ||

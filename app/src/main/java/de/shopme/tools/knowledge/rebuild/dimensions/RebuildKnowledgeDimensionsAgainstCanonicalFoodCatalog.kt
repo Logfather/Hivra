@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
 import de.shopme.tools.knowledge.agribalyse.parser.AgribalyseRawSourceReducer
 import de.shopme.tools.knowledge.ai.builder.runtime.MultiSourceRuntimeKnowledgeBuild
+import de.shopme.tools.knowledge.build.ActiveFoodKnowledgeScope
 import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import java.io.File
 import java.security.MessageDigest
@@ -34,6 +35,7 @@ data class KnowledgeDimensionRebuildReport(
 ) {
 
     companion object {
+
         const val CURRENT_VERSION =
             1
     }
@@ -173,63 +175,117 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
                     ciqualDirectory
             )
 
-        val artifacts =
+        /*
+         * MultiSourceRuntimeKnowledgeBuild may still produce the historical
+         * superset of Food Knowledge artifacts.
+         *
+         * At this boundary we enforce the productive Product-Only scope.
+         */
+        val generatedArtifacts =
             readGeneratedArtifacts(
                 directory =
                     serverRebuildDirectory
             )
 
+        val generatedNames =
+            generatedArtifacts
+                .map {
+                    it.artifact
+                }
+                .toSet()
+
+        val knownArtifacts =
+            ActiveFoodKnowledgeScope.activeArtifacts +
+                    ActiveFoodKnowledgeScope.legacyArtifacts
+
+        val missingActiveArtifacts =
+            ActiveFoodKnowledgeScope
+                .activeArtifacts
+                .minus(
+                    generatedNames
+                )
+                .sorted()
+
         require(
-            artifacts.size ==
-                    EXPECTED_SERVER_ARTIFACTS.size
+            missingActiveArtifacts.isEmpty()
         ) {
-            buildString {
-                append(
-                    "Expected "
-                )
-                append(
-                    EXPECTED_SERVER_ARTIFACTS.size
-                )
-                append(
-                    " server Knowledge artifacts, found "
-                )
-                append(
-                    artifacts.size
-                )
-                append(
-                    "."
-                )
-            }
+            "Active Server Knowledge artifacts were not generated: " +
+                    missingActiveArtifacts.joinToString()
         }
 
-        publishServerRebuild(
+        val unexpectedArtifacts =
+            generatedNames
+                .minus(
+                    knownArtifacts
+                )
+                .sorted()
+
+        require(
+            unexpectedArtifacts.isEmpty()
+        ) {
+            "Unknown Server Knowledge artifacts generated: " +
+                    unexpectedArtifacts.joinToString()
+        }
+
+        /*
+         * Publish only active Product-Only Food Knowledge artifacts into the
+         * productive Server Knowledge directory.
+         */
+        publishServerArtifacts(
             rebuildDirectory =
                 serverRebuildDirectory,
-            serverDirectory =
-                paths.serverRoot
+            targetDirectory =
+                paths.serverRoot,
+            artifactNames =
+                ActiveFoodKnowledgeScope.activeArtifacts
         )
 
-        val generatedNames =
-            artifacts
+        /*
+         * Preserve inactive historical dimensions separately.
+         *
+         * They are intentionally not part of productive Server Knowledge,
+         * but remain available for later inspection or reactivation.
+         */
+        publishServerArtifacts(
+            rebuildDirectory =
+                serverRebuildDirectory,
+            targetDirectory =
+                paths.legacyServerRoot,
+            artifactNames =
+                ActiveFoodKnowledgeScope.legacyArtifacts
+        )
+
+        /*
+         * Validate the productive Server Knowledge publication.
+         */
+        val publishedArtifacts =
+            readGeneratedArtifacts(
+                directory =
+                    paths.serverRoot
+            )
+
+        val publishedNames =
+            publishedArtifacts
                 .map {
                     it.artifact
                 }
                 .toSet()
 
         require(
-            generatedNames ==
-                    EXPECTED_SERVER_ARTIFACTS
+            publishedNames ==
+                    ActiveFoodKnowledgeScope.activeArtifacts
         ) {
             buildString {
+
                 appendLine(
-                    "Generated server Knowledge artifact set differs."
+                    "Published Server Knowledge artifact set differs from active scope."
                 )
 
                 appendLine(
                     "Missing: " +
                             (
-                                    EXPECTED_SERVER_ARTIFACTS -
-                                            generatedNames
+                                    ActiveFoodKnowledgeScope.activeArtifacts -
+                                            publishedNames
                                     )
                                 .sorted()
                                 .joinToString()
@@ -238,8 +294,56 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
                 appendLine(
                     "Unexpected: " +
                             (
-                                    generatedNames -
-                                            EXPECTED_SERVER_ARTIFACTS
+                                    publishedNames -
+                                            ActiveFoodKnowledgeScope.activeArtifacts
+                                    )
+                                .sorted()
+                                .joinToString()
+                )
+            }
+        }
+
+        /*
+         * Validate the archived Legacy Knowledge publication.
+         */
+        val legacyArtifacts =
+            readGeneratedArtifacts(
+                directory =
+                    paths.legacyServerRoot
+            )
+
+        val legacyNames =
+            legacyArtifacts
+                .map {
+                    it.artifact
+                }
+                .toSet()
+
+        require(
+            legacyNames ==
+                    ActiveFoodKnowledgeScope.legacyArtifacts
+        ) {
+            buildString {
+
+                appendLine(
+                    "Legacy Server Knowledge artifact set differs from legacy scope."
+                )
+
+                appendLine(
+                    "Missing: " +
+                            (
+                                    ActiveFoodKnowledgeScope.legacyArtifacts -
+                                            legacyNames
+                                    )
+                                .sorted()
+                                .joinToString()
+                )
+
+                appendLine(
+                    "Unexpected: " +
+                            (
+                                    legacyNames -
+                                            ActiveFoodKnowledgeScope.legacyArtifacts
                                     )
                                 .sorted()
                                 .joinToString()
@@ -251,12 +355,10 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
             paths.canonicalFoodCatalog
                 .readBytes()
 
-        val publishedArtifacts =
-            readGeneratedArtifacts(
-                directory =
-                    paths.serverRoot
-            )
-
+        /*
+         * The rebuild report represents productive Server Knowledge only.
+         * Legacy artifacts are intentionally excluded.
+         */
         val report =
             KnowledgeDimensionRebuildReport(
                 version =
@@ -265,11 +367,13 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
                     paths.canonicalFoodCatalog.path,
                 catalogEntryCount =
                     readCatalogEntryCount(
-                        file = paths.canonicalFoodCatalog
+                        file =
+                            paths.canonicalFoodCatalog
                     ),
                 catalogSha256 =
                     sha256(
-                        bytes = catalogBytes
+                        bytes =
+                            catalogBytes
                     ),
                 offSourceFile =
                     offFile.path,
@@ -364,25 +468,33 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
         ciqualDirectory: File?
     ) {
 
-        require(offFile.isFile) {
+        require(
+            offFile.isFile
+        ) {
             "OFF source file does not exist: " +
                     offFile.absolutePath
         }
 
-        require(offNutritionAggregateFile.isFile) {
+        require(
+            offNutritionAggregateFile.isFile
+        ) {
             "OFF nutrition aggregate file does not exist: " +
                     offNutritionAggregateFile.absolutePath
         }
 
-        require(agribalyseSourceFile.isFile) {
+        require(
+            agribalyseSourceFile.isFile
+        ) {
             "Agribalyse source file does not exist: " +
                     agribalyseSourceFile.absolutePath
         }
 
         require(
             agribalyseSourceFile.extension.equals(
-                other = "xlsx",
-                ignoreCase = true
+                other =
+                    "xlsx",
+                ignoreCase =
+                    true
             )
         ) {
             "Agribalyse source must be an XLSX file: " +
@@ -390,7 +502,10 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
         }
 
         if (ciqualDirectory != null) {
-            require(ciqualDirectory.isDirectory) {
+
+            require(
+                ciqualDirectory.isDirectory
+            ) {
                 "CIQUAL source directory does not exist: " +
                         ciqualDirectory.absolutePath
             }
@@ -419,75 +534,88 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
         }
     }
 
-    private fun publishServerRebuild(
+    private fun publishServerArtifacts(
         rebuildDirectory: File,
-        serverDirectory: File
+        targetDirectory: File,
+        artifactNames: Set<String>
     ) {
 
-        val rebuiltArtifacts =
-            rebuildDirectory
-                .listFiles()
-                .orEmpty()
-                .filter {
-                    it.isFile &&
-                            it.extension.equals(
-                                "json",
-                                ignoreCase = true
-                            )
+        resetJsonDirectory(
+            directory =
+                targetDirectory
+        )
+
+        artifactNames
+            .sorted()
+            .forEach { artifactName ->
+
+                val source =
+                    rebuildDirectory.resolve(
+                        artifactName
+                    )
+
+                require(
+                    source.isFile
+                ) {
+                    "Generated Server Knowledge artifact missing: " +
+                            source.absolutePath
                 }
 
+                source.copyTo(
+                    target =
+                        targetDirectory.resolve(
+                            artifactName
+                        ),
+                    overwrite =
+                        true
+                )
+            }
+    }
+
+    private fun resetJsonDirectory(
+        directory: File
+    ) {
+
+        if (!directory.exists()) {
+
+            require(
+                directory.mkdirs()
+            ) {
+                "Could not create Knowledge artifact directory: " +
+                        directory.absolutePath
+            }
+
+            return
+        }
+
         require(
-            rebuiltArtifacts.size ==
-                    EXPECTED_SERVER_ARTIFACTS.size
+            directory.isDirectory
         ) {
-            "Cannot publish incomplete server Knowledge rebuild."
+            "Knowledge artifact path is not a directory: " +
+                    directory.absolutePath
         }
 
-        val previousDirectory =
-            serverDirectory.resolveSibling(
-                "server.previous"
-            )
-
-        if (previousDirectory.exists()) {
-            previousDirectory.deleteRecursively()
-        }
-
-        if (serverDirectory.exists()) {
-
-            require(
-                serverDirectory.renameTo(
-                    previousDirectory
-                )
-            ) {
-                "Could not backup current server directory."
+        directory
+            .listFiles()
+            .orEmpty()
+            .filter {
+                it.isFile &&
+                        it.extension.equals(
+                            other =
+                                "json",
+                            ignoreCase =
+                                true
+                        )
             }
-        }
+            .forEach { file ->
 
-        try {
-
-            require(
-                rebuildDirectory.renameTo(
-                    serverDirectory
-                )
-            ) {
-                "Could not publish rebuilt server directory."
+                require(
+                    file.delete()
+                ) {
+                    "Could not remove stale Knowledge artifact: " +
+                            file.absolutePath
+                }
             }
-
-            previousDirectory.deleteRecursively()
-
-        } catch (t: Throwable) {
-
-            if (
-                !serverDirectory.exists() &&
-                previousDirectory.exists()
-            ) {
-                previousDirectory.renameTo(
-                    serverDirectory
-                )
-            }
-
-            throw t
-        }
     }
 
     private fun readGeneratedArtifacts(
@@ -502,8 +630,10 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
             }
             .filter {
                 it.extension.equals(
-                    other = "json",
-                    ignoreCase = true
+                    other =
+                        "json",
+                    ignoreCase =
+                        true
                 )
             }
             .sortedBy {
@@ -572,7 +702,9 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
         val entries =
             root
                 .asJsonObject
-                .get("entries")
+                .get(
+                    "entries"
+                )
 
         require(
             entries != null
@@ -673,10 +805,14 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
 
                 println(
                     artifact.artifact
-                        .padEnd(30) +
+                        .padEnd(
+                            30
+                        ) +
                             artifact.entryCount
                                 .toString()
-                                .padStart(8)
+                                .padStart(
+                                    8
+                                )
                 )
             }
 
@@ -700,8 +836,10 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
                 bytes
             )
             .joinToString(
-                separator = ""
+                separator =
+                    ""
             ) { byte ->
+
                 "%02x".format(
                     byte.toInt() and 0xff
                 )
@@ -714,32 +852,5 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
                 .setPrettyPrinting()
                 .disableHtmlEscaping()
                 .create()
-
-        private val EXPECTED_SERVER_ARTIFACTS =
-            setOf(
-                "allergens.json",
-                "animal_welfare.json",
-                "biodiversity.json",
-                "diet_classification.json",
-                "environmental_impact.json",
-                "fairtrade.json",
-                "food_miles.json",
-                "food_taxonomy.json",
-                "ingredient_graph.json",
-                "ingredients.json",
-                "locality.json",
-                "nutri_score.json",
-                "nutrition.json",
-                "packaging.json",
-                "pesticides.json",
-                "pollinator.json",
-                "processing.json",
-                "production.json",
-                "recipe_graph.json",
-                "recipes.json",
-                "seasonality.json",
-                "water_footprint.json",
-                "water_stress.json"
-            )
     }
 }
