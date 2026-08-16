@@ -3,6 +3,7 @@ package de.shopme.tools.knowledge.ai.builder.runtime
 import de.shopme.tools.knowledge.agribalyse.extractor.AgribalyseCandidateExtractor
 import de.shopme.tools.knowledge.ai.builder.runtime.partition.PartitionedRuntimeKnowledgeArtifactBuild
 import de.shopme.tools.knowledge.ai.builder.runtime.partition.PartitionedRuntimeKnowledgeArtifactShardMerger
+import de.shopme.tools.knowledge.build.ActiveFoodKnowledgeScope
 import de.shopme.tools.knowledge.ciqual.extractor.CiqualNutritionCandidateExtractor
 import de.shopme.tools.knowledge.ciqual.model.CiqualSourceFiles
 import de.shopme.tools.knowledge.ki_candidates.CanonicalKnowledgeCandidate
@@ -132,10 +133,29 @@ class MultiSourceRuntimeKnowledgeBuild {
         fun appendCandidate(
             candidate: CanonicalKnowledgeCandidate
         ) {
-            batch +=
-                candidate
 
-            if (batch.size >= CANDIDATE_BATCH_SIZE) {
+            val activeDimensions =
+                candidate.dimensions
+                    .filter { dimension ->
+                        ActiveFoodKnowledgeScope.isActive(
+                            dimension.dimension
+                        )
+                    }
+
+            if (activeDimensions.isEmpty()) {
+                return
+            }
+
+            batch +=
+                candidate.copy(
+                    dimensions =
+                        activeDimensions
+                )
+
+            if (
+                batch.size >=
+                CANDIDATE_BATCH_SIZE
+            ) {
                 flushBatch()
             }
         }
@@ -409,26 +429,10 @@ class MultiSourceRuntimeKnowledgeBuild {
                         outputDir
                 )
 
-            val ingredientsFile =
-                artifactShardMergeResult.outputFileOrDefault(
-                    fileName =
-                        INGREDIENTS_FILE_NAME,
-                    outputDirectory =
-                        outputDir
-                )
-
             val allergenFile =
                 artifactShardMergeResult.outputFileOrDefault(
                     fileName =
                         ALLERGENS_FILE_NAME,
-                    outputDirectory =
-                        outputDir
-                )
-
-            val packagingFile =
-                artifactShardMergeResult.outputFileOrDefault(
-                    fileName =
-                        PACKAGING_FILE_NAME,
                     outputDirectory =
                         outputDir
                 )
@@ -464,35 +468,10 @@ class MultiSourceRuntimeKnowledgeBuild {
                     outputDirectory =
                         outputDir
                 )
-
-            val biodiversityFile =
-                artifactShardMergeResult.outputFileOrDefault(
-                    fileName =
-                        BIODIVERSITY_FILE_NAME,
-                    outputDirectory =
-                        outputDir
-                )
-
-            val pollinatorFile =
-                artifactShardMergeResult.outputFileOrDefault(
-                    fileName =
-                        POLLINATOR_FILE_NAME,
-                    outputDirectory =
-                        outputDir
-                )
-
             val pesticidesFile =
                 artifactShardMergeResult.outputFileOrDefault(
                     fileName =
                         PESTICIDES_FILE_NAME,
-                    outputDirectory =
-                        outputDir
-                )
-
-            val productionFile =
-                artifactShardMergeResult.outputFileOrDefault(
-                    fileName =
-                        PRODUCTION_FILE_NAME,
                     outputDirectory =
                         outputDir
                 )
@@ -505,26 +484,10 @@ class MultiSourceRuntimeKnowledgeBuild {
                         outputDir
                 )
 
-            val localityFile =
-                artifactShardMergeResult.outputFileOrDefault(
-                    fileName =
-                        LOCALITY_FILE_NAME,
-                    outputDirectory =
-                        outputDir
-                )
-
             val nutriScoreFile =
                 artifactShardMergeResult.outputFileOrDefault(
                     fileName =
                         NUTRI_SCORE_FILE_NAME,
-                    outputDirectory =
-                        outputDir
-                )
-
-            val seasonalityFile =
-                artifactShardMergeResult.outputFileOrDefault(
-                    fileName =
-                        SEASONALITY_FILE_NAME,
                     outputDirectory =
                         outputDir
                 )
@@ -537,14 +500,6 @@ class MultiSourceRuntimeKnowledgeBuild {
                         outputDir
                 )
 
-            val fairTradeFile =
-                artifactShardMergeResult.outputFileOrDefault(
-                    fileName =
-                        FAIRTRADE_FILE_NAME,
-                    outputDirectory =
-                        outputDir
-                )
-
             val animalWelfareFile =
                 artifactShardMergeResult.outputFileOrDefault(
                     fileName =
@@ -553,267 +508,145 @@ class MultiSourceRuntimeKnowledgeBuild {
                         outputDir
                 )
 
-            val recipeFile =
-                artifactShardMergeResult.outputFileOrDefault(
-                    fileName =
-                        RECIPES_FILE_NAME,
-                    outputDirectory =
-                        outputDir
-                )
-
-            val ingredientGraphFile =
-                artifactShardMergeResult.outputFileOrDefault(
-                    fileName =
-                        INGREDIENT_GRAPH_FILE_NAME,
-                    outputDirectory =
-                        outputDir
-                )
-
-            val recipeGraphFile =
-                artifactShardMergeResult.outputFileOrDefault(
-                    fileName =
-                        RECIPE_GRAPH_FILE_NAME,
-                    outputDirectory =
-                        outputDir
-                )
-
             val result =
                 MultiSourceRuntimeKnowledgeBuildResult(
-                offNutritionAggregateCount =
-                    offNutritionAggregateCount,
-                offCandidateCount =
-                    offCandidateCount,
-                agribalyseCandidateCount =
-                    agribalyseCandidates.size,
-                ciqualCandidateCount =
-                    ciqualCandidates.size,
-                inputCandidateCount =
-                    inputCandidateCount,
-                normalizedCandidateCount =
-                    normalizedCandidateCount,
-                mergedCandidateCount =
-                    partitionMergeResult
-                        .mergedCandidateCount
-                        .toInt(),
-                conflictCount =
-                    partitionMergeResult
-                        .conflictCount
-                        .toInt(),
-                blockedHighFanoutKeys =
-                    partitionMergeResult
-                        .blockedHighFanoutKeys,
+                    offNutritionAggregateCount =
+                        offNutritionAggregateCount,
+                    offCandidateCount =
+                        offCandidateCount,
+                    agribalyseCandidateCount =
+                        agribalyseCandidates.size,
+                    ciqualCandidateCount =
+                        ciqualCandidates.size,
+                    inputCandidateCount =
+                        inputCandidateCount,
+                    normalizedCandidateCount =
+                        normalizedCandidateCount,
+                    mergedCandidateCount =
+                        partitionMergeResult
+                            .mergedCandidateCount
+                            .toInt(),
+                    conflictCount =
+                        partitionMergeResult
+                            .conflictCount
+                            .toInt(),
 
-                nutritionCandidateCount =
-                    artifactCounts
-                        .nutritionCandidateCount,
-                nutritionArtifactEntryCount =
-                    artifactCounts
-                        .nutritionArtifactEntryCount,
-                nutritionArtifactFile =
-                    nutritionFile,
+                    multiDimensionCandidateCount =
+                        artifactCounts
+                            .multiDimensionCandidateCount,
 
-                environmentalImpactCandidateCount =
-                    artifactCounts
-                        .environmentalCandidateCount,
-                environmentalImpactArtifactEntryCount =
-                    artifactCounts
-                        .environmentalImpactArtifactEntryCount,
-                environmentalImpactArtifactFile =
-                    environmentalImpactFile,
+                    nutritionCandidateCount =
+                        artifactCounts
+                            .nutritionCandidateCount,
+                    nutritionArtifactEntryCount =
+                        artifactCounts
+                            .nutritionArtifactEntryCount,
+                    nutritionArtifactFile =
+                        nutritionFile,
 
-                multiDimensionCandidateCount =
-                    artifactCounts
-                        .multiDimensionCandidateCount,
+                    environmentalImpactCandidateCount =
+                        artifactCounts
+                            .environmentalCandidateCount,
+                    environmentalImpactArtifactEntryCount =
+                        artifactCounts
+                            .environmentalImpactArtifactEntryCount,
+                    environmentalImpactArtifactFile =
+                        environmentalImpactFile,
 
-                ingredientsCandidateCount =
-                    artifactCounts
-                        .ingredientsCandidateCount,
-                ingredientsArtifactEntryCount =
-                    artifactCounts
-                        .ingredientsArtifactEntryCount,
-                ingredientsArtifactFile =
-                    ingredientsFile,
+                    allergensCandidateCount =
+                        artifactCounts
+                            .allergensCandidateCount,
+                    allergenArtifactEntryCount =
+                        artifactCounts
+                            .allergenArtifactEntryCount,
+                    allergenArtifactFile =
+                        allergenFile,
 
-                allergensCandidateCount =
-                    artifactCounts
-                        .allergensCandidateCount,
-                allergenArtifactEntryCount =
-                    artifactCounts
-                        .allergenArtifactEntryCount,
-                allergenArtifactFile =
-                    allergenFile,
+                    taxonomyCandidateCount =
+                        artifactCounts
+                            .taxonomyCandidateCount,
+                    taxonomyArtifactEntryCount =
+                        artifactCounts
+                            .taxonomyArtifactEntryCount,
+                    taxonomyArtifactFile =
+                        foodTaxonomyFile,
 
-                packagingCandidateCount =
-                    artifactCounts
-                        .packagingCandidateCount,
-                packagingArtifactEntryCount =
-                    artifactCounts
-                        .packagingArtifactEntryCount,
-                packagingArtifactFile =
-                    packagingFile,
+                    processingCandidateCount =
+                        artifactCounts
+                            .processingCandidateCount,
+                    processingArtifactEntryCount =
+                        artifactCounts
+                            .processingArtifactEntryCount,
+                    processingArtifactFile =
+                        processingFile,
 
-                taxonomyCandidateCount =
-                    artifactCounts
-                        .taxonomyCandidateCount,
-                taxonomyArtifactEntryCount =
-                    artifactCounts
-                        .taxonomyArtifactEntryCount,
-                taxonomyArtifactFile =
-                    foodTaxonomyFile,
+                    waterCandidateCount =
+                        artifactCounts
+                            .waterCandidateCount,
+                    waterArtifactEntryCount =
+                        artifactCounts
+                            .waterArtifactEntryCount,
+                    waterArtifactFile =
+                        waterFile,
 
-                processingCandidateCount =
-                    artifactCounts
-                        .processingCandidateCount,
-                processingArtifactEntryCount =
-                    artifactCounts
-                        .processingArtifactEntryCount,
-                processingArtifactFile =
-                    processingFile,
+                    waterStressCandidateCount =
+                        artifactCounts
+                            .waterStressCandidateCount,
+                    waterStressArtifactEntryCount =
+                        artifactCounts
+                            .waterStressArtifactEntryCount,
+                    waterStressArtifactFile =
+                        waterStressFile,
 
-                waterCandidateCount =
-                    artifactCounts
-                        .waterCandidateCount,
-                waterArtifactEntryCount =
-                    artifactCounts
-                        .waterArtifactEntryCount,
-                waterArtifactFile =
-                    waterFile,
+                    pesticidesCandidateCount =
+                        artifactCounts
+                            .pesticidesCandidateCount,
+                    pesticidesArtifactEntryCount =
+                        artifactCounts
+                            .pesticidesArtifactEntryCount,
+                    pesticidesArtifactFile =
+                        pesticidesFile,
 
-                waterStressCandidateCount =
-                    artifactCounts
-                        .waterStressCandidateCount,
-                waterStressArtifactEntryCount =
-                    artifactCounts
-                        .waterStressArtifactEntryCount,
-                waterStressArtifactFile =
-                    waterStressFile,
+                    foodMilesCandidateCount =
+                        artifactCounts
+                            .foodMilesCandidateCount,
+                    foodMilesArtifactEntryCount =
+                        artifactCounts
+                            .foodMilesArtifactEntryCount,
+                    foodMilesArtifactFile =
+                        foodMilesFile,
 
-                biodiversityCandidateCount =
-                    artifactCounts
-                        .biodiversityCandidateCount,
-                biodiversityArtifactEntryCount =
-                    artifactCounts
-                        .biodiversityArtifactEntryCount,
-                biodiversityArtifactFile =
-                    biodiversityFile,
+                    nutriScoreCandidateCount =
+                        artifactCounts
+                            .nutriScoreCandidateCount,
+                    nutriScoreArtifactEntryCount =
+                        artifactCounts
+                            .nutriScoreArtifactEntryCount,
+                    nutriScoreArtifactFile =
+                        nutriScoreFile,
 
-                pollinatorCandidateCount =
-                    artifactCounts
-                        .pollinatorCandidateCount,
-                pollinatorArtifactEntryCount =
-                    artifactCounts
-                        .pollinatorArtifactEntryCount,
-                pollinatorArtifactFile =
-                    pollinatorFile,
+                    dietCandidateCount =
+                        artifactCounts
+                            .dietCandidateCount,
+                    dietArtifactEntryCount =
+                        artifactCounts
+                            .dietArtifactEntryCount,
+                    dietArtifactFile =
+                        dietFile,
 
-                pesticidesCandidateCount =
-                    artifactCounts
-                        .pesticidesCandidateCount,
-                pesticidesArtifactEntryCount =
-                    artifactCounts
-                        .pesticidesArtifactEntryCount,
-                pesticidesArtifactFile =
-                    pesticidesFile,
+                    animalWelfareCandidateCount =
+                        artifactCounts
+                            .animalWelfareCandidateCount,
+                    animalWelfareArtifactEntryCount =
+                        artifactCounts
+                            .animalWelfareArtifactEntryCount,
+                    animalWelfareArtifactFile =
+                        animalWelfareFile,
 
-                productionCandidateCount =
-                    artifactCounts
-                        .productionCandidateCount,
-                productionArtifactEntryCount =
-                    artifactCounts
-                        .productionArtifactEntryCount,
-                productionArtifactFile =
-                    productionFile,
-
-                foodMilesCandidateCount =
-                    artifactCounts
-                        .foodMilesCandidateCount,
-                foodMilesArtifactEntryCount =
-                    artifactCounts
-                        .foodMilesArtifactEntryCount,
-                foodMilesArtifactFile =
-                    foodMilesFile,
-
-                localityCandidateCount =
-                    artifactCounts
-                        .localityCandidateCount,
-                localityArtifactEntryCount =
-                    artifactCounts
-                        .localityArtifactEntryCount,
-                localityArtifactFile =
-                    localityFile,
-
-                nutriScoreCandidateCount =
-                    artifactCounts
-                        .nutriScoreCandidateCount,
-                nutriScoreArtifactEntryCount =
-                    artifactCounts
-                        .nutriScoreArtifactEntryCount,
-                nutriScoreArtifactFile =
-                    nutriScoreFile,
-
-                seasonalityCandidateCount =
-                    artifactCounts
-                        .seasonalityCandidateCount,
-                seasonalityArtifactEntryCount =
-                    artifactCounts
-                        .seasonalityArtifactEntryCount,
-                seasonalityArtifactFile =
-                    seasonalityFile,
-
-                dietCandidateCount =
-                    artifactCounts
-                        .dietCandidateCount,
-                dietArtifactEntryCount =
-                    artifactCounts
-                        .dietArtifactEntryCount,
-                dietArtifactFile =
-                    dietFile,
-
-                fairTradeCandidateCount =
-                    artifactCounts
-                        .fairTradeCandidateCount,
-                fairTradeArtifactEntryCount =
-                    artifactCounts
-                        .fairTradeArtifactEntryCount,
-                fairTradeArtifactFile =
-                    fairTradeFile,
-
-                animalWelfareCandidateCount =
-                    artifactCounts
-                        .animalWelfareCandidateCount,
-                animalWelfareArtifactEntryCount =
-                    artifactCounts
-                        .animalWelfareArtifactEntryCount,
-                animalWelfareArtifactFile =
-                    animalWelfareFile,
-
-                recipeCandidateCount =
-                    artifactCounts
-                        .recipeCandidateCount,
-                recipeArtifactEntryCount =
-                    artifactCounts
-                        .recipeArtifactEntryCount,
-                recipeArtifactFile =
-                    recipeFile,
-
-                ingredientGraphCandidateCount =
-                    artifactCounts
-                        .ingredientGraphCandidateCount,
-                ingredientGraphArtifactEntryCount =
-                    artifactCounts
-                        .ingredientGraphArtifactEntryCount,
-                ingredientGraphArtifactFile =
-                    ingredientGraphFile,
-
-                recipeGraphCandidateCount =
-                    artifactCounts
-                        .recipeGraphCandidateCount,
-                recipeGraphArtifactEntryCount =
-                    artifactCounts
-                        .recipeGraphArtifactEntryCount,
-                recipeGraphArtifactFile =
-                    recipeGraphFile
-            )
+                    blockedHighFanoutKeys =
+                        partitionMergeResult
+                            .blockedHighFanoutKeys
+                )
             /*
              * Runtime artifact shards are strictly transient build artifacts.
              *

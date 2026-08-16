@@ -1,7 +1,8 @@
 package de.shopme.testing.system.tools.knowledge.multisource
 
+import de.shopme.tools.knowledge.agribalyse.parser.AgribalyseRawSourceReducer
 import de.shopme.tools.knowledge.ai.builder.runtime.MultiSourceRuntimeKnowledgeBuild
-import java.io.File
+import de.shopme.tools.knowledge.build.KnowledgeBuildPaths
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -10,34 +11,110 @@ class MultiSourceKnowledgeCandidateMergeTest {
 
     @Test
     fun mergeOpenFoodFactsAgribalyseAndCiqualCandidates() {
+
+        val paths =
+            KnowledgeBuildPaths.default()
+
+        val agribalyseSourceFile =
+            paths.agribalyseSourceRoot.resolve(
+                "AGRIBALYSE3.2_Tableur produits alimentaires_PublieAOUT25.xlsx"
+            )
+
+        val outputDirectory =
+            paths.projectRoot.resolve(
+                "build/knowledge/test/multisource-runtime"
+            )
+
+        if (outputDirectory.exists()) {
+            require(
+                outputDirectory.deleteRecursively()
+            ) {
+                "Could not reset MultiSource Runtime Knowledge test directory: " +
+                        outputDirectory.absolutePath
+            }
+        }
+
+        require(
+            outputDirectory.mkdirs()
+        ) {
+            "Could not create MultiSource Runtime Knowledge test directory: " +
+                    outputDirectory.absolutePath
+        }
+
+        require(
+            paths.openFoodFactsProducts.isFile
+        ) {
+            "Open Food Facts source does not exist: " +
+                    paths.openFoodFactsProducts.absolutePath
+        }
+
+        require(
+            paths.offNutritionReferenceAggregates.isFile
+        ) {
+            "OFF Nutrition aggregate source does not exist: " +
+                    paths.offNutritionReferenceAggregates.absolutePath
+        }
+
+        require(
+            agribalyseSourceFile.isFile
+        ) {
+            "Agribalyse source does not exist: " +
+                    agribalyseSourceFile.absolutePath
+        }
+
+        require(
+            paths.ciqualSourceRoot.isDirectory
+        ) {
+            "CIQUAL source directory does not exist: " +
+                    paths.ciqualSourceRoot.absolutePath
+        }
+
+        val agribalyseReferenceFile =
+            outputDirectory.resolve(
+                "agribalyse-foods.slim.tsv"
+            )
+
+        AgribalyseRawSourceReducer()
+            .reduce(
+                input =
+                    agribalyseSourceFile,
+                output =
+                    agribalyseReferenceFile,
+                sheetName =
+                    "Synthese"
+            )
+
+        require(
+            agribalyseReferenceFile.isFile
+        ) {
+            "Agribalyse reference file was not generated: " +
+                    agribalyseReferenceFile.absolutePath
+        }
+
+        require(
+            agribalyseReferenceFile.length() > 0L
+        ) {
+            "Agribalyse reference file is empty: " +
+                    agribalyseReferenceFile.absolutePath
+        }
+
         val result =
             MultiSourceRuntimeKnowledgeBuild()
                 .build(
                     offNutritionAggregateFile =
-                        File(
-                            "../data/generated/knowledge/references/off/" +
-                                    "off-nutrition-reference-aggregates.json"
-                        ),
+                        paths.offNutritionReferenceAggregates,
                     offFile =
-                        File(
-                            "../data/preview/openfoodfacts/off-products-preview-50k.jsonl.gz"
-                        ),
+                        paths.openFoodFactsProducts,
                     agribalyseFile =
-                        File(
-                            "../data/generated/agribalyse/agribalyse-foods.slim.tsv"
-                        ),
+                        agribalyseReferenceFile,
                     ciqualDirectory =
-                        File(
-                            "../data/raw/ciqual/Ciqual"
-                        ),
+                        paths.ciqualSourceRoot,
                     outputDir =
-                        File(
-                            "../data/generated/runtime"
-                        ),
+                        outputDirectory,
                     maxOffCandidates =
                         50_000,
                     maxOffNutritionAggregates =
-                        50_000,
+                        50_000
                 )
 
         printBlockedFanoutKeys(
@@ -48,117 +125,202 @@ class MultiSourceKnowledgeCandidateMergeTest {
         println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
         println("MULTI SOURCE RUNTIME KNOWLEDGE BUILD")
         println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-        println("OFF candidates=${result.offCandidateCount}")
-        println("Agribalyse candidates=${result.agribalyseCandidateCount}")
-        println("CIQUAL candidates=${result.ciqualCandidateCount}")
-        println("Input candidates=${result.inputCandidateCount}")
-        println("Normalized=${result.normalizedCandidateCount}")
-        println("Merged=${result.mergedCandidateCount}")
-        println("Conflicts=${result.conflictCount}")
+        println(
+            "OFF candidates=" +
+                    result.offCandidateCount
+        )
+        println(
+            "OFF nutrition aggregates=" +
+                    result.offNutritionAggregateCount
+        )
+        println(
+            "Agribalyse candidates=" +
+                    result.agribalyseCandidateCount
+        )
+        println(
+            "CIQUAL candidates=" +
+                    result.ciqualCandidateCount
+        )
+        println(
+            "Input candidates=" +
+                    result.inputCandidateCount
+        )
+        println(
+            "Normalized=" +
+                    result.normalizedCandidateCount
+        )
+        println(
+            "Merged=" +
+                    result.mergedCandidateCount
+        )
+        println(
+            "Conflicts=" +
+                    result.conflictCount
+        )
+        println(
+            "Multi dimension=" +
+                    result.multiDimensionCandidateCount
+        )
+
         println()
-        println("Nutrition candidates=${result.nutritionCandidateCount}")
-        println("Environmental candidates=${result.environmentalImpactCandidateCount}")
-        println("Multi dimension=${result.multiDimensionCandidateCount}")
+        println("ACTIVE KNOWLEDGE DIMENSIONS")
         println()
-        println("Nutrition artifact entries=${result.nutritionArtifactEntryCount}")
-        println("Environmental artifact entries=${result.environmentalImpactArtifactEntryCount}")
-        println()
-        println("Nutrition artifact=${result.nutritionArtifactFile.path}")
-        println("Environmental artifact=${result.environmentalImpactArtifactFile.path}")
 
-        println("Ingredients candidates=${result.ingredientsCandidateCount}")
+        println(
+            "Nutrition candidates=" +
+                    result.nutritionCandidateCount
+        )
+        println(
+            "Nutrition artifact entries=" +
+                    result.nutritionArtifactEntryCount
+        )
+        println(
+            "Nutrition artifact=" +
+                    result.nutritionArtifactFile.path
+        )
 
-        println("Ingredients artifact entries=${result.ingredientsArtifactEntryCount}")
-        println("Ingredients artifact=${result.ingredientsArtifactFile.path}")
+        println(
+            "Environmental candidates=" +
+                    result.environmentalImpactCandidateCount
+        )
+        println(
+            "Environmental artifact entries=" +
+                    result.environmentalImpactArtifactEntryCount
+        )
+        println(
+            "Environmental artifact=" +
+                    result.environmentalImpactArtifactFile.path
+        )
 
-        println("Allergens candidates=${result.allergensCandidateCount}")
+        println(
+            "Allergens candidates=" +
+                    result.allergensCandidateCount
+        )
+        println(
+            "Allergen artifact entries=" +
+                    result.allergenArtifactEntryCount
+        )
+        println(
+            "Allergen artifact=" +
+                    result.allergenArtifactFile.path
+        )
 
-        println("Allergen artifact entries=${result.allergenArtifactEntryCount}")
-        println("Allergen artifact=${result.allergenArtifactFile.path}")
+        println(
+            "Taxonomy candidates=" +
+                    result.taxonomyCandidateCount
+        )
+        println(
+            "Taxonomy artifact entries=" +
+                    result.taxonomyArtifactEntryCount
+        )
+        println(
+            "Taxonomy artifact=" +
+                    result.taxonomyArtifactFile.path
+        )
 
-        println("Packaging candidates=${result.packagingCandidateCount}")
+        println(
+            "Processing candidates=" +
+                    result.processingCandidateCount
+        )
+        println(
+            "Processing artifact entries=" +
+                    result.processingArtifactEntryCount
+        )
+        println(
+            "Processing artifact=" +
+                    result.processingArtifactFile.path
+        )
 
-        println("Packaging artifact entries=${result.packagingArtifactEntryCount}")
-        println("Packaging artifact=${result.packagingArtifactFile.path}")
+        println(
+            "Water candidates=" +
+                    result.waterCandidateCount
+        )
+        println(
+            "Water artifact entries=" +
+                    result.waterArtifactEntryCount
+        )
+        println(
+            "Water artifact=" +
+                    result.waterArtifactFile.path
+        )
 
-        println("Taxonomy candidates=${result.taxonomyCandidateCount}")
+        println(
+            "Water Stress candidates=" +
+                    result.waterStressCandidateCount
+        )
+        println(
+            "Water Stress artifact entries=" +
+                    result.waterStressArtifactEntryCount
+        )
+        println(
+            "Water Stress artifact=" +
+                    result.waterStressArtifactFile.path
+        )
 
-        println("Taxonomy artifact entries=${result.taxonomyArtifactEntryCount}")
-        println("Taxonomy artifact=${result.taxonomyArtifactFile.path}")
+        println(
+            "Pesticides candidates=" +
+                    result.pesticidesCandidateCount
+        )
+        println(
+            "Pesticides artifact entries=" +
+                    result.pesticidesArtifactEntryCount
+        )
+        println(
+            "Pesticides artifact=" +
+                    result.pesticidesArtifactFile.path
+        )
 
-        println("Processing candidates=${result.processingCandidateCount}")
+        println(
+            "Food Miles candidates=" +
+                    result.foodMilesCandidateCount
+        )
+        println(
+            "Food Miles artifact entries=" +
+                    result.foodMilesArtifactEntryCount
+        )
+        println(
+            "Food Miles artifact=" +
+                    result.foodMilesArtifactFile.path
+        )
 
-        println("Processing artifact entries=${result.processingArtifactEntryCount}")
-        println("Processing artifact=${result.processingArtifactFile.path}")
+        println(
+            "Nutri Score candidates=" +
+                    result.nutriScoreCandidateCount
+        )
+        println(
+            "Nutri Score artifact entries=" +
+                    result.nutriScoreArtifactEntryCount
+        )
+        println(
+            "Nutri Score artifact=" +
+                    result.nutriScoreArtifactFile.path
+        )
 
-        println("Water candidates=${result.waterCandidateCount}")
-        println("Water artifact entries=${result.waterArtifactEntryCount}")
-        println("Water artifact=${result.waterArtifactFile.path}")
+        println(
+            "Diet candidates=" +
+                    result.dietCandidateCount
+        )
+        println(
+            "Diet artifact entries=" +
+                    result.dietArtifactEntryCount
+        )
+        println(
+            "Diet artifact=" +
+                    result.dietArtifactFile.path
+        )
 
-        println("Water Stress candidates=${result.waterStressCandidateCount}")
-        println("Water Stress artifact entries=${result.waterStressArtifactEntryCount}")
-        println("Water Stress artifact=${result.waterStressArtifactFile.path}")
-
-        println("Biodiversity candidates=${result.biodiversityCandidateCount}")
-        println("Biodiversity artifact entries=${result.biodiversityArtifactEntryCount}")
-        println("Biodiversity artifact=${result.biodiversityArtifactFile.path}")
-
-        println("Pollinator candidates=${result.pollinatorCandidateCount}")
-        println("Pollinator artifact entries=${result.pollinatorArtifactEntryCount}")
-        println("Pollinator artifact=${result.pollinatorArtifactFile.path}")
-
-        println("Pesticides candidates=${result.pesticidesCandidateCount}")
-        println("Pesticides artifact entries=${result.pesticidesArtifactEntryCount}")
-        println("Pesticides artifact=${result.pesticidesArtifactFile.path}")
-
-        println("Production candidates=${result.productionCandidateCount}")
-        println("Production artifact entries=${result.productionArtifactEntryCount}")
-        println("Production artifact=${result.productionArtifactFile.path}")
-
-        println("Food Miles candidates=${result.foodMilesCandidateCount}")
-        println("Food Miles artifact entries=${result.foodMilesArtifactEntryCount}")
-        println("Food Miles artifact=${result.foodMilesArtifactFile.path}")
-
-        println("Locality candidates=${result.localityCandidateCount}")
-        println("Locality artifact entries=${result.localityArtifactEntryCount}")
-        println("Locality artifact=${result.localityArtifactFile.path}")
-
-        println("Nutri Score candidates=${result.nutriScoreCandidateCount}")
-        println("Nutri Score artifact entries=${result.nutriScoreArtifactEntryCount}")
-        println("Nutri Score artifact=${result.nutriScoreArtifactFile.path}")
-
-        println("Seasonality candidates=${result.seasonalityCandidateCount}")
-        println("Seasonality artifact entries=${result.seasonalityArtifactEntryCount}")
-        println("Seasonality artifact=${result.seasonalityArtifactFile.path}")
-
-        println("Diet candidates=${result.dietCandidateCount}")
-        println("Diet artifact entries=${result.dietArtifactEntryCount}")
-        println("Diet artifact=${result.dietArtifactFile.path}")
-
-        println("FairTrade candidates=${result.fairTradeCandidateCount}")
-        println("FairTrade artifact entries=${result.fairTradeArtifactEntryCount}")
-        println("FairTrade artifact=${result.fairTradeArtifactFile.path}")
-
-        println("Animal Welfare candidates=${result.animalWelfareCandidateCount}")
-        println("Animal Welfare artifact entries=${result.animalWelfareArtifactEntryCount}")
-        println("Animal Welfare artifact=${result.animalWelfareArtifactFile.path}")
-
-        println("Recipe candidates=${result.recipeCandidateCount}")
-        println("Recipe artifact entries=${result.recipeArtifactEntryCount}")
-        println("Recipe artifact=${result.recipeArtifactFile.path}")
-
-        println("Ingredient Graph candidates=${result.ingredientGraphCandidateCount}")
-        println("Ingredient Graph artifact entries=${result.ingredientGraphArtifactEntryCount}")
-        println("Ingredient Graph artifact=${result.ingredientGraphArtifactFile.path}")
-
-        println("Recipe Graph candidates=${result.recipeGraphCandidateCount}")
-        println("Recipe Graph artifact entries=${result.recipeGraphArtifactEntryCount}")
-        println("Recipe Graph artifact=${result.recipeGraphArtifactFile.path}")
-
-
-        //############################################################################//
-
-        assertTrue(result.ingredientsCandidateCount > 0)
+        println(
+            "Animal Welfare candidates=" +
+                    result.animalWelfareCandidateCount
+        )
+        println(
+            "Animal Welfare artifact entries=" +
+                    result.animalWelfareArtifactEntryCount
+        )
+        println(
+            "Animal Welfare artifact=" +
+                    result.animalWelfareArtifactFile.path
+        )
 
         assertTrue(
             result.offCandidateCount > 0,
@@ -199,7 +361,8 @@ class MultiSourceKnowledgeCandidateMergeTest {
         )
 
         assertTrue(
-            result.normalizedCandidateCount <= result.inputCandidateCount,
+            result.normalizedCandidateCount <=
+                    result.inputCandidateCount,
             "Normalization must not increase the number of source candidates."
         )
 
@@ -209,116 +372,140 @@ class MultiSourceKnowledgeCandidateMergeTest {
         )
 
         assertTrue(
-            result.mergedCandidateCount <= result.normalizedCandidateCount,
+            result.mergedCandidateCount <=
+                    result.normalizedCandidateCount,
             "Merging must not increase the number of normalized candidates."
         )
 
-        assertTrue(result.nutritionCandidateCount > 0)
-        assertTrue(result.environmentalImpactCandidateCount > 0)
+        assertTrue(
+            result.multiDimensionCandidateCount > 0
+        )
 
-        assertTrue(result.multiDimensionCandidateCount > 0)
+        assertTrue(
+            result.nutritionCandidateCount > 0
+        )
+        assertTrue(
+            result.nutritionArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.nutritionArtifactFile.isFile
+        )
 
-        assertTrue(result.nutritionArtifactEntryCount > 0)
-        assertTrue(result.environmentalImpactArtifactEntryCount > 0)
+        assertTrue(
+            result.environmentalImpactCandidateCount > 0
+        )
+        assertTrue(
+            result.environmentalImpactArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.environmentalImpactArtifactFile.isFile
+        )
 
-        assertTrue(result.nutritionArtifactFile.exists())
-        assertTrue(result.environmentalImpactArtifactFile.exists())
+        assertTrue(
+            result.allergensCandidateCount > 0
+        )
+        assertTrue(
+            result.allergenArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.allergenArtifactFile.isFile
+        )
 
-        assertTrue(result.ingredientsArtifactEntryCount > 0)
-        assertTrue(result.ingredientsArtifactFile.exists())
+        assertTrue(
+            result.taxonomyCandidateCount > 0
+        )
+        assertTrue(
+            result.taxonomyArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.taxonomyArtifactFile.isFile
+        )
 
-        assertTrue(result.allergensCandidateCount > 0)
+        assertTrue(
+            result.processingCandidateCount > 0
+        )
+        assertTrue(
+            result.processingArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.processingArtifactFile.isFile
+        )
 
-        assertTrue(result.allergenArtifactEntryCount > 0)
-        assertTrue(result.allergenArtifactFile.exists())
+        assertTrue(
+            result.waterCandidateCount > 0
+        )
+        assertTrue(
+            result.waterArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.waterArtifactFile.isFile
+        )
 
-        assertTrue(result.packagingCandidateCount > 0)
+        assertTrue(
+            result.waterStressCandidateCount > 0
+        )
+        assertTrue(
+            result.waterStressArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.waterStressArtifactFile.isFile
+        )
 
-        assertTrue(result.packagingArtifactEntryCount > 0)
-        assertTrue(result.packagingArtifactFile.exists())
+        assertTrue(
+            result.pesticidesCandidateCount > 0
+        )
+        assertTrue(
+            result.pesticidesArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.pesticidesArtifactFile.isFile
+        )
 
-        assertTrue(result.taxonomyCandidateCount > 0)
+        assertTrue(
+            result.foodMilesCandidateCount > 0
+        )
+        assertTrue(
+            result.foodMilesArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.foodMilesArtifactFile.isFile
+        )
 
-        assertTrue(result.taxonomyArtifactEntryCount > 0)
-        assertTrue(result.taxonomyArtifactFile.exists())
+        assertTrue(
+            result.nutriScoreCandidateCount > 0
+        )
+        assertTrue(
+            result.nutriScoreArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.nutriScoreArtifactFile.isFile
+        )
 
-        assertTrue(result.processingCandidateCount > 0)
+        assertTrue(
+            result.dietCandidateCount > 0
+        )
+        assertTrue(
+            result.dietArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.dietArtifactFile.isFile
+        )
 
-        assertTrue(result.processingArtifactEntryCount > 0)
-        assertTrue(result.processingArtifactFile.exists())
-
-        assertTrue(result.waterCandidateCount > 0)
-        assertTrue(result.waterArtifactEntryCount > 0)
-        assertTrue(result.waterArtifactFile.exists())
-
-        assertTrue(result.waterStressCandidateCount > 0)
-        assertTrue(result.waterStressArtifactEntryCount > 0)
-        assertTrue(result.waterStressArtifactFile.exists())
-
-        assertTrue(result.biodiversityCandidateCount > 0)
-        assertTrue(result.biodiversityArtifactEntryCount > 0)
-        assertTrue(result.biodiversityArtifactFile.exists())
-
-        assertTrue(result.pollinatorCandidateCount > 0)
-        assertTrue(result.pollinatorArtifactEntryCount > 0)
-        assertTrue(result.pollinatorArtifactFile.exists())
-
-        assertTrue(result.pesticidesCandidateCount > 0)
-        assertTrue(result.pesticidesArtifactEntryCount > 0)
-        assertTrue(result.pesticidesArtifactFile.exists())
-
-        assertTrue(result.productionCandidateCount > 0)
-        assertTrue(result.productionArtifactEntryCount > 0)
-        assertTrue(result.productionArtifactFile.exists())
-
-        assertTrue(result.foodMilesCandidateCount > 0)
-        assertTrue(result.foodMilesArtifactEntryCount > 0)
-        assertTrue(result.foodMilesArtifactFile.exists())
-
-        assertTrue(result.localityCandidateCount > 0)
-        assertTrue(result.localityArtifactEntryCount > 0)
-        assertTrue(result.localityArtifactFile.exists())
-
-        assertTrue(result.nutriScoreCandidateCount > 0)
-        assertTrue(result.nutriScoreArtifactEntryCount > 0)
-        assertTrue(result.nutriScoreArtifactFile.exists())
-
-        assertTrue(result.seasonalityCandidateCount > 0)
-        assertTrue(result.seasonalityArtifactEntryCount > 0)
-        assertTrue(result.seasonalityArtifactFile.exists())
-
-        assertTrue(result.dietCandidateCount > 0)
-        assertTrue(result.dietArtifactEntryCount > 0)
-        assertTrue(result.dietArtifactFile.exists())
-
-        assertTrue(result.fairTradeCandidateCount > 0)
-        assertTrue(result.fairTradeArtifactEntryCount > 0)
-        assertTrue(result.fairTradeArtifactFile.exists())
-
-        assertTrue(result.animalWelfareCandidateCount > 0)
-        assertTrue(result.animalWelfareArtifactEntryCount > 0)
-        assertTrue(result.animalWelfareArtifactFile.exists())
-
-        assertTrue(result.recipeCandidateCount > 0)
-        assertTrue(result.recipeArtifactEntryCount > 0)
-        assertTrue(result.recipeArtifactFile.exists())
-
-        assertTrue(result.ingredientGraphCandidateCount > 0)
-        assertTrue(result.ingredientGraphArtifactEntryCount > 0)
-        assertTrue(result.ingredientGraphArtifactFile.exists())
-
-//        assertEquals(0, result.recipeGraphCandidateCount)
-//        assertEquals(0, result.recipeGraphArtifactEntryCount)
-//        assertFalse(result.recipeGraphArtifactFile.exists())
-
-        assertTrue(result.recipeGraphCandidateCount > 0)
-        assertTrue(result.recipeGraphArtifactEntryCount > 0)
-        assertTrue(result.recipeGraphArtifactFile.exists())
+        assertTrue(
+            result.animalWelfareCandidateCount > 0
+        )
+        assertTrue(
+            result.animalWelfareArtifactEntryCount > 0
+        )
+        assertTrue(
+            result.animalWelfareArtifactFile.isFile
+        )
     }
 
     private fun printBlockedFanoutKeys(
         keys: Map<String, Int>
     ) {
+
         println()
         println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
         println("BLOCKED HIGH FANOUT MATCH KEYS")
@@ -326,10 +513,16 @@ class MultiSourceKnowledgeCandidateMergeTest {
 
         keys
             .entries
-            .sortedByDescending { it.value }
-            .take(30)
+            .sortedByDescending {
+                it.value
+            }
+            .take(
+                30
+            )
             .forEach {
-                println("${it.key}=${it.value}")
+                println(
+                    "${it.key}=${it.value}"
+                )
             }
     }
 }

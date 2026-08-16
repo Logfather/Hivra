@@ -176,10 +176,10 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
             )
 
         /*
-         * MultiSourceRuntimeKnowledgeBuild may still produce the historical
-         * superset of Food Knowledge artifacts.
+         * From Commit 5 onward the producer itself must generate exactly
+         * the active Product-Only Food Knowledge artifact scope.
          *
-         * At this boundary we enforce the productive Product-Only scope.
+         * Legacy dimensions must no longer be regenerated here.
          */
         val generatedArtifacts =
             readGeneratedArtifacts(
@@ -194,42 +194,44 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
                 }
                 .toSet()
 
-        val knownArtifacts =
-            ActiveFoodKnowledgeScope.activeArtifacts +
-                    ActiveFoodKnowledgeScope.legacyArtifacts
-
-        val missingActiveArtifacts =
-            ActiveFoodKnowledgeScope
-                .activeArtifacts
-                .minus(
-                    generatedNames
-                )
-                .sorted()
-
         require(
-            missingActiveArtifacts.isEmpty()
+            generatedNames ==
+                    ActiveFoodKnowledgeScope.activeArtifacts
         ) {
-            "Active Server Knowledge artifacts were not generated: " +
-                    missingActiveArtifacts.joinToString()
-        }
+            buildString {
 
-        val unexpectedArtifacts =
-            generatedNames
-                .minus(
-                    knownArtifacts
+                appendLine(
+                    "Generated Server Knowledge artifact set differs from active scope."
                 )
-                .sorted()
 
-        require(
-            unexpectedArtifacts.isEmpty()
-        ) {
-            "Unknown Server Knowledge artifacts generated: " +
-                    unexpectedArtifacts.joinToString()
+                appendLine(
+                    "Missing: " +
+                            (
+                                    ActiveFoodKnowledgeScope.activeArtifacts -
+                                            generatedNames
+                                    )
+                                .sorted()
+                                .joinToString()
+                )
+
+                appendLine(
+                    "Unexpected: " +
+                            (
+                                    generatedNames -
+                                            ActiveFoodKnowledgeScope.activeArtifacts
+                                    )
+                                .sorted()
+                                .joinToString()
+                )
+            }
         }
 
         /*
-         * Publish only active Product-Only Food Knowledge artifacts into the
-         * productive Server Knowledge directory.
+         * Publish only the active Product-Only Server Knowledge artifacts.
+         *
+         * build/knowledge/legacy/server is intentionally not touched here.
+         * It remains an archive of the last historical Legacy Knowledge
+         * artifact state.
          */
         publishServerArtifacts(
             rebuildDirectory =
@@ -238,21 +240,6 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
                 paths.serverRoot,
             artifactNames =
                 ActiveFoodKnowledgeScope.activeArtifacts
-        )
-
-        /*
-         * Preserve inactive historical dimensions separately.
-         *
-         * They are intentionally not part of productive Server Knowledge,
-         * but remain available for later inspection or reactivation.
-         */
-        publishServerArtifacts(
-            rebuildDirectory =
-                serverRebuildDirectory,
-            targetDirectory =
-                paths.legacyServerRoot,
-            artifactNames =
-                ActiveFoodKnowledgeScope.legacyArtifacts
         )
 
         /*
@@ -303,61 +290,12 @@ class RebuildKnowledgeDimensionsAgainstCanonicalFoodCatalog(
             }
         }
 
-        /*
-         * Validate the archived Legacy Knowledge publication.
-         */
-        val legacyArtifacts =
-            readGeneratedArtifacts(
-                directory =
-                    paths.legacyServerRoot
-            )
-
-        val legacyNames =
-            legacyArtifacts
-                .map {
-                    it.artifact
-                }
-                .toSet()
-
-        require(
-            legacyNames ==
-                    ActiveFoodKnowledgeScope.legacyArtifacts
-        ) {
-            buildString {
-
-                appendLine(
-                    "Legacy Server Knowledge artifact set differs from legacy scope."
-                )
-
-                appendLine(
-                    "Missing: " +
-                            (
-                                    ActiveFoodKnowledgeScope.legacyArtifacts -
-                                            legacyNames
-                                    )
-                                .sorted()
-                                .joinToString()
-                )
-
-                appendLine(
-                    "Unexpected: " +
-                            (
-                                    legacyNames -
-                                            ActiveFoodKnowledgeScope.legacyArtifacts
-                                    )
-                                .sorted()
-                                .joinToString()
-                )
-            }
-        }
-
         val catalogBytes =
             paths.canonicalFoodCatalog
                 .readBytes()
 
         /*
          * The rebuild report represents productive Server Knowledge only.
-         * Legacy artifacts are intentionally excluded.
          */
         val report =
             KnowledgeDimensionRebuildReport(

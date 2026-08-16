@@ -636,27 +636,16 @@ class PartitionedRuntimeKnowledgeArtifactShardMerger(
             listOf(
                 "nutrition.json",
                 "environmental_impact.json",
-                "ingredients.json",
                 "allergens.json",
-                "packaging.json",
                 "food_taxonomy.json",
                 "processing.json",
                 "water_footprint.json",
                 "water_stress.json",
-                "biodiversity.json",
-                "pollinator.json",
                 "pesticides.json",
-                "production.json",
                 "food_miles.json",
-                "locality.json",
                 "nutri_score.json",
-                "seasonality.json",
                 "diet_classification.json",
-                "fairtrade.json",
-                "animal_welfare.json",
-                "recipes.json",
-                "ingredient_graph.json",
-                "recipe_graph.json"
+                "animal_welfare.json"
             )
     }
 }

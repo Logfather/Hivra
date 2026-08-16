@@ -1,5 +1,7 @@
 package de.shopme.tools.knowledge.build
 
+import de.shopme.tools.knowledge.ki_candidates.KnowledgeDimensionCandidateType
+
 /**
  * Productive Food Knowledge artifact scope.
  *
@@ -42,6 +44,28 @@ object ActiveFoodKnowledgeScope {
             "recipes.json",
             "seasonality.json"
         )
+
+    val activeCandidateDimensions:
+            Set<KnowledgeDimensionCandidateType> =
+        setOf(
+            KnowledgeDimensionCandidateType.NUTRITION,
+            KnowledgeDimensionCandidateType.ENVIRONMENTAL_IMPACT,
+            KnowledgeDimensionCandidateType.ALLERGENS,
+            KnowledgeDimensionCandidateType.TAXONOMY,
+            KnowledgeDimensionCandidateType.PROCESSING,
+            KnowledgeDimensionCandidateType.WATER,
+            KnowledgeDimensionCandidateType.WATER_STRESS,
+            KnowledgeDimensionCandidateType.PESTICIDES,
+            KnowledgeDimensionCandidateType.FOOD_MILES,
+            KnowledgeDimensionCandidateType.NUTRI_SCORE,
+            KnowledgeDimensionCandidateType.DIET,
+            KnowledgeDimensionCandidateType.ANIMAL_WELFARE
+        )
+
+    fun isActive(
+        dimension: KnowledgeDimensionCandidateType
+    ): Boolean =
+        dimension in activeCandidateDimensions
 
     init {
         require(
