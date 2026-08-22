@@ -10,11 +10,13 @@ import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.HimS
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.HimSemanticInferenceSuccess
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.HimSemanticInformationGainJudgment
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthGenerationPersistenceV1
+import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthResultIdentityV1
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthOutputValidatorV1
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthProviderOutcomeV1
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthProviderV1
 import de.shopme.tools.knowledge.him.training.teacher.HimSemanticInferenceTeacherProviderAdapterV1
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
@@ -33,6 +35,7 @@ class RunHimSmallMultiItemTeacherPaidPilotContinuationV1Test {
         val continuationMarker = Files.createTempFile("him-f3-8g4-continuation-marker", ".txt").toFile().also { it.delete() }
         val state = runner.resolveContinuationState(root, continuationMarker)
 
+        assertExistingPaidEvidenceIsReadableAndValid(root, state)
         assertEquals(listOf("Makrelen", "Rindergulasch"), state.continuationItems.map { it.rawInput })
         assertEquals("Salbei", state.item1.rawInput)
         assertEquals(state.item1Result, HimTeacherGroundTruthGenerationPersistenceV1.readResult(root.resolve(state.item1.resultPath)))
@@ -66,8 +69,18 @@ class RunHimSmallMultiItemTeacherPaidPilotContinuationV1Test {
 
         assertEquals(listOf("Makrelen", "Rindergulasch"), calls)
         assertEquals(2, completed.size)
+        assertEquals(
+            listOf(
+                "him-f3-8g4-item-01a250090599.result.v1.json",
+                "him-f3-8g4-item-03c60a01f03b.result.v1.json",
+            ),
+            completed.map { it.item.resultPath.substringAfterLast('/') },
+        )
         completed.forEach { item ->
-            val resultFile = outputDirectory.resolve(item.item.resultPath.substringAfterLast('/'))
+            val resultFile = outputDirectory.resolve(item.item.resultPath)
+            val rootLevelResult = outputDirectory.resolve(item.item.resultPath.substringAfterLast('/'))
+            assertTrue(resultFile.isFile)
+            assertFalse(rootLevelResult.isFile)
             val reloaded = HimTeacherGroundTruthGenerationPersistenceV1.readResult(resultFile)
             assertEquals(item.result, reloaded)
             assertEquals(HimSemanticInformationGainJudgment.NO_EXPECTED_INFORMATION_GAIN, reloaded.output.informationGain)
@@ -103,8 +116,14 @@ class RunHimSmallMultiItemTeacherPaidPilotContinuationV1Test {
     fun `stops before item three when item two fails offline`() {
         val root = projectRoot()
         val runner = RunHimSmallMultiItemTeacherGroundTruthPaidPilotV1Test()
+        val missionFile = root.resolve(MISSION_PATH)
+        val priorReportFile = root.resolve(PRIOR_REPORT_PATH)
+        val missionBefore = missionFile.readBytes()
+        val priorReportBefore = priorReportFile.readBytes()
+        val protectedBefore = runner.protectedArtifactSnapshotForTest(root)
         val continuationMarker = Files.createTempFile("him-f3-8g4-continuation-failure-marker", ".txt").toFile().also { it.delete() }
         val state = runner.resolveContinuationState(root, continuationMarker)
+        assertExistingPaidEvidenceIsReadableAndValid(root, state)
         val calls = mutableListOf<String>()
         val provider = HimTeacherGroundTruthProviderV1 { request ->
             calls += request.observedTerm
@@ -115,6 +134,29 @@ class RunHimSmallMultiItemTeacherPaidPilotContinuationV1Test {
         assertFails { runner.executeContinuationItemsForTest(state, outputDirectory, provider) { calls.size } }
         assertEquals(listOf("Makrelen"), calls)
         assertTrue(outputDirectory.listFiles().orEmpty().isEmpty())
+        assertFalse(outputDirectory.resolve(state.continuationItems[0].resultPath).exists())
+        assertFalse(outputDirectory.resolve(state.continuationItems[1].resultPath).exists())
+        assertFalse(outputDirectory.resolve(state.continuationItems[0].resultPath.substringAfterLast('/')).exists())
+        assertFalse(outputDirectory.resolve(state.continuationItems[1].resultPath.substringAfterLast('/')).exists())
+        assertTrue(missionBefore.contentEquals(missionFile.readBytes()))
+        assertTrue(priorReportBefore.contentEquals(priorReportFile.readBytes()))
+        assertEquals(protectedBefore, runner.protectedArtifactSnapshotForTest(root))
+    }
+
+    private fun assertExistingPaidEvidenceIsReadableAndValid(
+        root: File,
+        state: HimTeacherPaidPilotContinuationStateV1,
+    ) {
+        state.continuationItems.forEach { item ->
+            val misplacedFile = root.resolve(item.resultPath.substringAfterLast('/'))
+            val destinationFile = root.resolve(item.resultPath)
+            assertTrue(misplacedFile.isFile)
+            assertFalse(destinationFile.exists())
+            val reloaded = HimTeacherGroundTruthGenerationPersistenceV1.readResult(misplacedFile)
+            assertEquals(reloaded.resultReference, HimTeacherGroundTruthResultIdentityV1.reference(reloaded))
+            assertEquals(reloaded.logicalDigest, HimTeacherGroundTruthResultIdentityV1.digest(reloaded))
+            HimTeacherGroundTruthOutputValidatorV1.validate(item.request, reloaded.output)
+        }
     }
 
     private fun provenance(

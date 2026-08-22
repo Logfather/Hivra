@@ -423,7 +423,7 @@ class RunHimSmallMultiItemTeacherGroundTruthPaidPilotV1Test {
             val result = HimTeacherGroundTruthGenerationPipelineV1().generate(state.plan, item.request, provider, mode)
             val attempts = physicalAttempts() - attemptsBefore
             require(attempts in 1..2) { "Continuation item ${index + 2} exceeded the two-attempt limit" }
-            val resultFile = outputDirectory.resolve(item.resultPath.substringAfterLast('/'))
+            val resultFile = outputDirectory.resolve(item.resultPath)
             HimTeacherGroundTruthGenerationPersistenceV1.writeNewResult(resultFile, result)
             val reloaded = HimTeacherGroundTruthGenerationPersistenceV1.readResult(resultFile)
             require(result == reloaded) { "Continuation result reload mismatch for item ${index + 2}" }
