@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder
 import de.shopme.testing.system.tools.knowledge.him.support.HimTestExecutionBoundaryV1.requireSourceIntegrationEnabled
 import de.shopme.tools.knowledge.him.canonical.family.HimEntityId
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamily
+import de.shopme.tools.knowledge.him.canonical.family.HimLifecycleStatus
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyPaths
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyPersistence
 import de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonicalMasterReader
@@ -60,6 +61,7 @@ import de.shopme.tools.knowledge.him.training.teacher.HimSmallMultiItemTeacherPi
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
@@ -90,6 +92,16 @@ class RunHimPositiveSingleItemTeacherPilotSelectionV1Test {
         val sourceArtifactSha256: HimSha256,
         val search: (String, HimEvidenceSearchLimit) -> List<HimEvidenceSearchResult>,
         val fetch: (HimEvidenceRecordReference) -> HimEvidenceSearchResult?,
+    )
+
+    private data class CandidateBuildOutcome(
+        val candidate: HimPositiveSingleItemTeacherPilotCandidate?,
+        val exclusionReason: String?,
+    )
+
+    private data class CandidateBuildBatch(
+        val candidates: List<HimPositiveSingleItemTeacherPilotCandidate>,
+        val exclusions: List<String>,
     )
 
     private companion object {
@@ -220,6 +232,56 @@ class RunHimPositiveSingleItemTeacherPilotSelectionV1Test {
         assertEquals(selected.map { it.reference }, selected.map { it.reference }.distinct())
     }
 
+    @Test fun `canonical retrieval uses persisted family normalization`() {
+        val family = testFamily(HimEntityId("A00001"), "Sataysoße", "sataysosse")
+        val query = canonicalRetrievalQuery(family)
+        val context = HimCanonicalFamilyCandidateRetrieval(listOf(family)).retrieve(query)
+
+        assertEquals("Sataysoße", query.rawQuery)
+        assertEquals("sataysosse", query.normalizedQuery)
+        assertNotEquals(family.normalizedName, normalize(family.canonicalName))
+        assertEquals(family.canonicalId, context.single().canonicalId)
+    }
+
+    @Test fun `canonical context miss excludes only that candidate without evidence access`() {
+        val first = workItemFor("a", HimEntityId("A00001"), HimTrainingPartitionV1.VALIDATION)
+        val second = workItemFor("b", HimEntityId("B00002"), HimTrainingPartitionV1.VALIDATION)
+        val firstFamily = testFamily(first.canonicalId, "Missing context", "missing-context")
+        val secondFamily = testFamily(second.canonicalId, "Present context", "present-context")
+
+        fun run(counters: MutableMap<HimGroundTruthSource, Int>): CandidateBuildBatch = buildCandidates(
+            listOf(first, second),
+            mapOf(first.canonicalId to firstFamily, second.canonicalId to secondFamily),
+            listOf(secondFamily),
+            first.groundTruthReleaseReference,
+            fakeEvidenceStores(counters),
+        )
+
+        val missCounters = linkedMapOf<HimGroundTruthSource, Int>()
+        val missRun = buildCandidates(
+            listOf(first),
+            mapOf(first.canonicalId to firstFamily),
+            listOf(secondFamily),
+            first.groundTruthReleaseReference,
+            fakeEvidenceStores(missCounters),
+        )
+        val firstCounters = linkedMapOf<HimGroundTruthSource, Int>()
+        val firstRun = run(firstCounters)
+        val secondCounters = linkedMapOf<HimGroundTruthSource, Int>()
+        val secondRun = run(secondCounters)
+
+        assertEquals(listOf("${first.reference}|CANONICAL_CONTEXT_NOT_FOUND"), missRun.exclusions)
+        assertEquals(0, missCounters.values.sum())
+        assertEquals(listOf("${first.reference}|CANONICAL_CONTEXT_NOT_FOUND"), firstRun.exclusions)
+        assertEquals(firstRun.exclusions, secondRun.exclusions)
+        assertEquals(listOf(second.reference), firstRun.candidates.map { it.workItemReference })
+        assertEquals(firstRun.candidates.map { it.workItemReference }, secondRun.candidates.map { it.workItemReference })
+        assertEquals(HimTrainingPartitionV1.VALIDATION, firstRun.candidates.single().partition)
+        assertTrue(firstCounters.values.sum() > 0)
+        assertTrue(secondCounters.values.sum() > 0)
+        assertEquals(second.reference, select(firstRun.candidates.single()).selectedCandidate.workItemReference)
+    }
+
     private fun executeRealSelection(root: File) {
         require(System.getProperty("him.paidNetwork.enabled") != "true")
         val selectionFile = root.resolve(SELECTION_ARTIFACT_PATH)
@@ -273,10 +335,18 @@ class RunHimPositiveSingleItemTeacherPilotSelectionV1Test {
                     it.reference !in oldMission.excludedWorkItemReferences &&
                     it.reference !in persisted
             }
-        val candidates = eligible.mapNotNull { item ->
-            val family = familyById[item.canonicalId] ?: return@mapNotNull null
-            buildCandidate(item, family, authority.families, active.releaseReference, stores)
-        }.filter { it.validProjectionCount >= 1 && it.directEvidenceCount >= 1 }
+        val candidateBatch = buildCandidates(
+            eligible,
+            familyById,
+            authority.families,
+            active.releaseReference,
+            stores,
+        )
+        candidateBatch.exclusions.forEach { println("REAL_POSITIVE_SINGLE_ITEM_SELECTION exclusion=$it") }
+        if (candidateBatch.candidates.isEmpty()) {
+            error("BLOCKED_NO_ELIGIBLE_EVIDENCE_RICH_VALIDATION_ITEM")
+        }
+        val candidates = candidateBatch.candidates
         val selection = HimPositiveSingleItemTeacherPilotSelectionV1.select(
             checkpoint,
             preflight,
@@ -346,17 +416,38 @@ class RunHimPositiveSingleItemTeacherPilotSelectionV1Test {
         )
     }
 
+    private fun buildCandidates(
+        items: List<HimTeacherGroundTruthWorkItemV1>,
+        familyById: Map<HimEntityId, HimCanonicalFamily>,
+        families: List<HimCanonicalFamily>,
+        release: HimGroundTruthReleaseIdentityV1,
+        stores: Map<HimGroundTruthSource, EvidenceStore>,
+    ): CandidateBuildBatch {
+        val exclusions = mutableListOf<String>()
+        val candidates = items.sortedBy { it.reference }.mapNotNull { item ->
+            val family = familyById[item.canonicalId] ?: return@mapNotNull null
+            val outcome = buildCandidate(item, family, families, release, stores)
+            if (outcome.candidate == null && outcome.exclusionReason != null) {
+                exclusions += "${item.reference}|${outcome.exclusionReason}"
+            }
+            outcome.candidate
+        }.filter { it.validProjectionCount >= 1 && it.directEvidenceCount >= 1 }
+        return CandidateBuildBatch(candidates, exclusions.sorted())
+    }
+
     private fun buildCandidate(
         item: HimTeacherGroundTruthWorkItemV1,
         family: HimCanonicalFamily,
         families: List<HimCanonicalFamily>,
         release: HimGroundTruthReleaseIdentityV1,
         stores: Map<HimGroundTruthSource, EvidenceStore>,
-    ): HimPositiveSingleItemTeacherPilotCandidate {
+    ): CandidateBuildOutcome {
         val context = HimCanonicalFamilyCandidateRetrieval(families).retrieve(
-            HimCanonicalRetrievalQuery(family.canonicalName, normalize(family.canonicalName)),
+            canonicalRetrievalQuery(family),
         )
-        require(context.any { it.canonicalId == item.canonicalId })
+        if (context.none { it.canonicalId == item.canonicalId }) {
+            return CandidateBuildOutcome(null, "CANONICAL_CONTEXT_NOT_FOUND")
+        }
         val inference = HimSemanticInferenceRequest(
             "teacher-f3-8g4:${item.reference}",
             family.canonicalName,
@@ -398,19 +489,61 @@ class RunHimPositiveSingleItemTeacherPilotSelectionV1Test {
             }
             HimPositiveSingleItemTeacherPilotEvidenceSummary(source, evidence, evidence.size, evidence.size)
         }
-        return HimPositiveSingleItemTeacherPilotCandidate(
-            item.reference,
-            family.canonicalId,
-            family.canonicalName,
-            item.partition,
-            request.requestReference,
-            release,
-            evidenceBySource,
-            evidenceBySource.count { it.validProjectionCount > 0 },
-            evidenceBySource.sumOf { it.validProjectionCount },
-            evidenceBySource.sumOf { it.directEvidenceCount },
+        return CandidateBuildOutcome(
+            HimPositiveSingleItemTeacherPilotCandidate(
+                item.reference,
+                family.canonicalId,
+                family.canonicalName,
+                item.partition,
+                request.requestReference,
+                release,
+                evidenceBySource,
+                evidenceBySource.count { it.validProjectionCount > 0 },
+                evidenceBySource.sumOf { it.validProjectionCount },
+                evidenceBySource.sumOf { it.directEvidenceCount },
+            ),
+            null,
         )
     }
+
+    private fun canonicalRetrievalQuery(family: HimCanonicalFamily) =
+        HimCanonicalRetrievalQuery(family.canonicalName, family.normalizedName)
+
+    private fun testFamily(id: HimEntityId, name: String, normalized: String) = HimCanonicalFamily(
+        canonicalId = id,
+        canonicalName = name,
+        normalizedName = normalized,
+        taxonomyPaths = listOf(listOf("food", normalized)),
+        lifecycleStatus = HimLifecycleStatus.ACTIVE,
+        identities = emptyList(),
+        variants = emptyList(),
+        aliases = emptyList(),
+    )
+
+    private fun fakeEvidenceStores(counters: MutableMap<HimGroundTruthSource, Int>): Map<HimGroundTruthSource, EvidenceStore> =
+        HimGroundTruthSource.entries.associateWith { source ->
+            val reference = HimEvidenceRecordReference.parse(source, probeReference(source))
+            val result = HimEvidenceSearchResult(
+                source,
+                reference,
+                when (source) {
+                    HimGroundTruthSource.OPEN_FOOD_FACTS -> HimEvidenceRecordKind.OFF_PRODUCT
+                    HimGroundTruthSource.AGRIBALYSE -> HimEvidenceRecordKind.AGRIBALYSE_RECORD
+                    HimGroundTruthSource.CIQUAL -> HimEvidenceRecordKind.CIQUAL_FOOD
+                    HimGroundTruthSource.GLYCEMIC_INDEX -> HimEvidenceRecordKind.GI_MEASUREMENT
+                },
+                1,
+                HimEvidenceProjection("{\"source\":\"${source.name}\"}"),
+            )
+            EvidenceStore(
+                HimSha256("b".repeat(64)),
+                { _, _ ->
+                    counters[source] = (counters[source] ?: 0) + 1
+                    listOf(result)
+                },
+                { requested -> result.takeIf { it.sourceRecordReference == requested } },
+            )
+        }
 
     private fun normalize(value: String): String = Normalizer.normalize(value, Normalizer.Form.NFKC)
         .trim()
@@ -572,9 +705,19 @@ class RunHimPositiveSingleItemTeacherPilotSelectionV1Test {
 
     private fun allSources() = HimGroundTruthSource.entries.toSet()
     private fun ref(index: Int) = "teacher-work:v1:${index.toString(16).padStart(64, '0')}"
-    private fun workItem(value: String, partition: HimTrainingPartitionV1) = HimTeacherGroundTruthWorkItemV1(
-        "teacher-work:v1:${value.repeat(64)}",
+    private fun workItem(value: String, partition: HimTrainingPartitionV1) = workItemFor(
+        value,
         HimEntityId("W${value}0000"),
+        partition,
+    )
+
+    private fun workItemFor(
+        value: String,
+        canonicalId: HimEntityId,
+        partition: HimTrainingPartitionV1,
+    ) = HimTeacherGroundTruthWorkItemV1(
+        "teacher-work:v1:${value.repeat(64)}",
+        canonicalId,
         partition,
         listOf(HimTrainingClassificationV1.IDENTITY),
         HimCanonicalGroundTruthScalingWorkReasonV1.MISSING_SEMANTIC_COVERAGE,
