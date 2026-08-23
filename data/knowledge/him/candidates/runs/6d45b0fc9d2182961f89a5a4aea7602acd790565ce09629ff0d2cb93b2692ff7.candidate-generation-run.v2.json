@@ -1,0 +1,1359 @@
+{
+  "runReference": {
+    "value": "run:v2:6d45b0fc9d2182961f89a5a4aea7602acd790565ce09629ff0d2cb93b2692ff7"
+  },
+  "generationMissionReference": "F3D-FIRST-REAL-CANDIDATE-GENERATION-PILOT-V1",
+  "runInputSetIdentity": {
+    "value": "c8f1333747d2731d0667d190d9eb8b2669d989ea65ee08ba68e7abe587d77aa1"
+  },
+  "state": "COMPLETE",
+  "inputRuns": [
+    {
+      "inputRunReference": {
+        "value": "input-run:v1:26fc1896d1442eff812e32a3b1ef3bad2de492b7540e25bf643470e85e93274f"
+      },
+      "input": {
+        "rawInput": "Hering eingelegt",
+        "normalizedLookup": "hering eingelegt"
+      },
+      "canonicalContext": [
+        {
+          "rank": 1,
+          "canonicalId": {
+            "value": "X90WhW"
+          },
+          "canonicalName": "Bismarckhering",
+          "fullRecordCanonicalJson": "{\"canonicalId\":{\"value\":\"X90WhW\"},\"canonicalName\":\"Bismarckhering\",\"normalizedName\":\"bismarckhering\",\"taxonomyPaths\":[[\"canned-food\",\"fish-preserves\",\"hering\",\"bismarckhering\"]],\"lifecycleStatus\":\"ACTIVE\",\"identities\":[],\"variants\":[],\"aliases\":[]}"
+        },
+        {
+          "rank": 2,
+          "canonicalId": {
+            "value": "vZC8ay"
+          },
+          "canonicalName": "Brathering",
+          "fullRecordCanonicalJson": "{\"canonicalId\":{\"value\":\"vZC8ay\"},\"canonicalName\":\"Brathering\",\"normalizedName\":\"brathering\",\"taxonomyPaths\":[[\"canned-food\",\"fish-preserves\",\"hering\",\"brathering\"]],\"lifecycleStatus\":\"ACTIVE\",\"identities\":[],\"variants\":[],\"aliases\":[]}"
+        },
+        {
+          "rank": 3,
+          "canonicalId": {
+            "value": "fd8oPG"
+          },
+          "canonicalName": "Eingelegte Paprika",
+          "fullRecordCanonicalJson": "{\"canonicalId\":{\"value\":\"fd8oPG\"},\"canonicalName\":\"Eingelegte Paprika\",\"normalizedName\":\"eingelegte-paprika\",\"taxonomyPaths\":[[\"canned-food\",\"vegetable-preserves\",\"eingelegte-paprika\"]],\"lifecycleStatus\":\"ACTIVE\",\"identities\":[],\"variants\":[],\"aliases\":[]}"
+        },
+        {
+          "rank": 4,
+          "canonicalId": {
+            "value": "OzlByp"
+          },
+          "canonicalName": "Hering",
+          "fullRecordCanonicalJson": null
+        },
+        {
+          "rank": 5,
+          "canonicalId": {
+            "value": "gGlvRP"
+          },
+          "canonicalName": "Heringssalat",
+          "fullRecordCanonicalJson": null
+        }
+      ],
+      "retrievalHistory": [
+        {
+          "round": {
+            "value": 1
+          },
+          "directive": {
+            "sourceQueries": [
+              {
+                "source": "OPEN_FOOD_FACTS",
+                "queries": [
+                  "Hering eingelegt",
+                  "eingelegter Hering",
+                  "pickled herring"
+                ]
+              },
+              {
+                "source": "AGRIBALYSE",
+                "queries": [
+                  "hareng mariné",
+                  "hareng au vinaigre"
+                ]
+              },
+              {
+                "source": "CIQUAL",
+                "queries": [
+                  "hareng mariné",
+                  "hareng au vinaigre"
+                ]
+              }
+            ],
+            "informationGainJudgment": "MORE_EVIDENCE_MAY_HELP"
+          },
+          "steps": [
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "semanticQuery": "Hering eingelegt",
+              "evidenceReferences": [
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:2006020:code:4047247209755"
+                }
+              ]
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "semanticQuery": "eingelegter Hering",
+              "evidenceReferences": [
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:4530988:code:5701157480343"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:2069288:code:4311501743966"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:3474828:code:4030800079766"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:641761:code:4030800511044"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:833492:code:4311501626474"
+                }
+              ]
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "semanticQuery": "pickled herring",
+              "evidenceReferences": [
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:2798296:code:0727496291162"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:2103716:code:0071888295116"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:1560985:code:0015292773129"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:4473308:code:0036642125009"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:4314649:code:5709345001349"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:4164642:code:6410405333292"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:3932166:code:8588001156862"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:3453424:code:0850051424009"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:1146571:code:5901150007046"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:1900756:code:0023384124063"
+                }
+              ]
+            },
+            {
+              "source": "AGRIBALYSE",
+              "semanticQuery": "hareng mariné",
+              "evidenceReferences": [
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:2171:agb:26010"
+                }
+              ]
+            },
+            {
+              "source": "AGRIBALYSE",
+              "semanticQuery": "hareng au vinaigre",
+              "evidenceReferences": []
+            },
+            {
+              "source": "CIQUAL",
+              "semanticQuery": "hareng mariné",
+              "evidenceReferences": [
+                {
+                  "source": "CIQUAL",
+                  "sourceArtifactSha256": {
+                    "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+                  },
+                  "sourceRecordIdentity": "ciqual:food:26010"
+                }
+              ]
+            },
+            {
+              "source": "CIQUAL",
+              "semanticQuery": "hareng au vinaigre",
+              "evidenceReferences": []
+            }
+          ],
+          "includedEvidenceReferences": [
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:2006020:code:4047247209755"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:4530988:code:5701157480343"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:2798296:code:0727496291162"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:2069288:code:4311501743966"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:2103716:code:0071888295116"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:3474828:code:4030800079766"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:1560985:code:0015292773129"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:641761:code:4030800511044"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:4473308:code:0036642125009"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:833492:code:4311501626474"
+            },
+            {
+              "source": "AGRIBALYSE",
+              "sourceArtifactSha256": {
+                "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+              },
+              "sourceRecordIdentity": "agribalyse:row:2171:agb:26010"
+            },
+            {
+              "source": "CIQUAL",
+              "sourceArtifactSha256": {
+                "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+              },
+              "sourceRecordIdentity": "ciqual:food:26010"
+            }
+          ],
+          "omittedDueToBudgetEvidenceReferences": []
+        }
+      ],
+      "finalInformationGainJudgment": "NO_EXPECTED_INFORMATION_GAIN",
+      "terminalState": "SUFFICIENT_EVIDENCE",
+      "completionState": "COMPLETED",
+      "finalOutcome": "SUCCESS_WITH_PERSISTED_CANDIDATE",
+      "confidenceDiagnostics": {
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "noConfidence": 0
+      },
+      "knownRelations": [],
+      "authorityConflicts": [],
+      "persistedCandidateReferences": [
+        {
+          "value": "candidate:v1:ddc2a1bc14a203b07aa376369f424edb5e89556627696ff7106265890a1fe30d"
+        }
+      ],
+      "inference": {
+        "provider": "OPENAI",
+        "model": "gpt-5.6-sol",
+        "providerConfigurationFingerprint": {
+          "value": "5317efd22a62e1cf485a7e5c3c6627c9d53e419ff4a63bbe91bc38fa4a592003"
+        },
+        "inferenceSchema": "HIM_SEMANTIC_INFERENCE_OUTPUT_V2_1",
+        "instructionPolicy": "HIM_SEMANTIC_INFERENCE_INSTRUCTION_POLICY_V2_1",
+        "contextBudgetPolicy": "HIM_SEMANTIC_CONTEXT_BUDGET_POLICY_V1",
+        "retrievalFoundationRelease": "F3D_2_RETRIEVAL_FOUNDATION_V1",
+        "retrievalFoundationReleaseSha256": {
+          "value": "b4814fbd8141c43b04b97bd0f87c5e01d5128b7143ff74b80ed873a8f0068023"
+        },
+        "retrievalFoundationDigest": {
+          "value": "9780a1dc28ece40e1251981f007a509418de5db4c1e8921ba3402ac2dcf3fd86"
+        },
+        "technicalAttemptCount": 1,
+        "usage": {
+          "inputTokens": 33251,
+          "outputTokens": 848,
+          "cachedInputTokens": 1440
+        }
+      },
+      "technicalFailure": null
+    },
+    {
+      "inputRunReference": {
+        "value": "input-run:v1:65b0516a913ac658a2f2f2e44efa5f57a8ee0581beed790cfd4908a5fec5c799"
+      },
+      "input": {
+        "rawInput": "Hering in Öl",
+        "normalizedLookup": "hering in öl"
+      },
+      "canonicalContext": [
+        {
+          "rank": 1,
+          "canonicalId": {
+            "value": "FgFNzp"
+          },
+          "canonicalName": "Amarettini",
+          "fullRecordCanonicalJson": "{\"canonicalId\":{\"value\":\"FgFNzp\"},\"canonicalName\":\"Amarettini\",\"normalizedName\":\"amarettini\",\"taxonomyPaths\":[[\"biscuits-and-sweet-baked-goods\",\"biscuits\"]],\"lifecycleStatus\":\"ACTIVE\",\"identities\":[],\"variants\":[],\"aliases\":[]}"
+        },
+        {
+          "rank": 2,
+          "canonicalId": {
+            "value": "M3OCVW"
+          },
+          "canonicalName": "Auberginen",
+          "fullRecordCanonicalJson": "{\"canonicalId\":{\"value\":\"M3OCVW\"},\"canonicalName\":\"Auberginen\",\"normalizedName\":\"auberginen\",\"taxonomyPaths\":[[\"vegetables\",\"mediterranean-vegetables\",\"aubergines\"]],\"lifecycleStatus\":\"ACTIVE\",\"identities\":[],\"variants\":[],\"aliases\":[]}"
+        },
+        {
+          "rank": 3,
+          "canonicalId": {
+            "value": "vsq2hJ"
+          },
+          "canonicalName": "Babyspinat",
+          "fullRecordCanonicalJson": "{\"canonicalId\":{\"value\":\"vsq2hJ\"},\"canonicalName\":\"Babyspinat\",\"normalizedName\":\"babyspinat\",\"taxonomyPaths\":[[\"vegetables\",\"leafy-vegetables\"]],\"lifecycleStatus\":\"ACTIVE\",\"identities\":[],\"variants\":[],\"aliases\":[]}"
+        },
+        {
+          "rank": 4,
+          "canonicalId": {
+            "value": "S5HQh3"
+          },
+          "canonicalName": "Balsamicodressing",
+          "fullRecordCanonicalJson": null
+        },
+        {
+          "rank": 5,
+          "canonicalId": {
+            "value": "7bvj78"
+          },
+          "canonicalName": "Belugalinsen",
+          "fullRecordCanonicalJson": null
+        },
+        {
+          "rank": 6,
+          "canonicalId": {
+            "value": "OTvy4j"
+          },
+          "canonicalName": "Berglinsen",
+          "fullRecordCanonicalJson": null
+        },
+        {
+          "rank": 7,
+          "canonicalId": {
+            "value": "0c96TF"
+          },
+          "canonicalName": "Bierschinken",
+          "fullRecordCanonicalJson": null
+        },
+        {
+          "rank": 8,
+          "canonicalId": {
+            "value": "X90WhW"
+          },
+          "canonicalName": "Bismarckhering",
+          "fullRecordCanonicalJson": null
+        },
+        {
+          "rank": 9,
+          "canonicalId": {
+            "value": "A7EC45"
+          },
+          "canonicalName": "Blattspinat",
+          "fullRecordCanonicalJson": null
+        },
+        {
+          "rank": 10,
+          "canonicalId": {
+            "value": "6Vbdz7"
+          },
+          "canonicalName": "Bohneneintopf",
+          "fullRecordCanonicalJson": null
+        }
+      ],
+      "retrievalHistory": [
+        {
+          "round": {
+            "value": 1
+          },
+          "directive": {
+            "sourceQueries": [
+              {
+                "source": "OPEN_FOOD_FACTS",
+                "queries": [
+                  "Hering in Öl",
+                  "Ölhering"
+                ]
+              },
+              {
+                "source": "AGRIBALYSE",
+                "queries": [
+                  "hareng à l'huile",
+                  "hareng huile"
+                ]
+              },
+              {
+                "source": "CIQUAL",
+                "queries": [
+                  "hareng à l'huile",
+                  "hareng huile"
+                ]
+              }
+            ],
+            "informationGainJudgment": "MORE_EVIDENCE_MAY_HELP"
+          },
+          "steps": [
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "semanticQuery": "Hering in Öl",
+              "evidenceReferences": [
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:3237645:code:4032549033559"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:1329680:code:4030957081353"
+                }
+              ]
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "semanticQuery": "Ölhering",
+              "evidenceReferences": []
+            },
+            {
+              "source": "AGRIBALYSE",
+              "semanticQuery": "hareng à l'huile",
+              "evidenceReferences": [
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:2113:agb:26232"
+                },
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:2112:agb:26232"
+                }
+              ]
+            },
+            {
+              "source": "AGRIBALYSE",
+              "semanticQuery": "hareng huile",
+              "evidenceReferences": [
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:1335:agb:17650"
+                },
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:2113:agb:26232"
+                },
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:2112:agb:26232"
+                }
+              ]
+            },
+            {
+              "source": "CIQUAL",
+              "semanticQuery": "hareng à l'huile",
+              "evidenceReferences": [
+                {
+                  "source": "CIQUAL",
+                  "sourceArtifactSha256": {
+                    "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+                  },
+                  "sourceRecordIdentity": "ciqual:food:26232"
+                }
+              ]
+            },
+            {
+              "source": "CIQUAL",
+              "semanticQuery": "hareng huile",
+              "evidenceReferences": [
+                {
+                  "source": "CIQUAL",
+                  "sourceArtifactSha256": {
+                    "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+                  },
+                  "sourceRecordIdentity": "ciqual:food:17650"
+                },
+                {
+                  "source": "CIQUAL",
+                  "sourceArtifactSha256": {
+                    "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+                  },
+                  "sourceRecordIdentity": "ciqual:food:26232"
+                }
+              ]
+            }
+          ],
+          "includedEvidenceReferences": [
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:3237645:code:4032549033559"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:1329680:code:4030957081353"
+            },
+            {
+              "source": "AGRIBALYSE",
+              "sourceArtifactSha256": {
+                "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+              },
+              "sourceRecordIdentity": "agribalyse:row:2113:agb:26232"
+            },
+            {
+              "source": "AGRIBALYSE",
+              "sourceArtifactSha256": {
+                "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+              },
+              "sourceRecordIdentity": "agribalyse:row:1335:agb:17650"
+            },
+            {
+              "source": "AGRIBALYSE",
+              "sourceArtifactSha256": {
+                "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+              },
+              "sourceRecordIdentity": "agribalyse:row:2112:agb:26232"
+            },
+            {
+              "source": "CIQUAL",
+              "sourceArtifactSha256": {
+                "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+              },
+              "sourceRecordIdentity": "ciqual:food:26232"
+            },
+            {
+              "source": "CIQUAL",
+              "sourceArtifactSha256": {
+                "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+              },
+              "sourceRecordIdentity": "ciqual:food:17650"
+            }
+          ],
+          "omittedDueToBudgetEvidenceReferences": []
+        }
+      ],
+      "finalInformationGainJudgment": "NO_EXPECTED_INFORMATION_GAIN",
+      "terminalState": "SUFFICIENT_EVIDENCE",
+      "completionState": "COMPLETED",
+      "finalOutcome": "SUCCESS_WITH_PERSISTED_CANDIDATE",
+      "confidenceDiagnostics": {
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "noConfidence": 0
+      },
+      "knownRelations": [],
+      "authorityConflicts": [],
+      "persistedCandidateReferences": [
+        {
+          "value": "candidate:v1:efa131c7a2e8686f8d1541e8a8c42454eea79092fb9c2bb074ad0c09922dbb85"
+        }
+      ],
+      "inference": {
+        "provider": "OPENAI",
+        "model": "gpt-5.6-sol",
+        "providerConfigurationFingerprint": {
+          "value": "5317efd22a62e1cf485a7e5c3c6627c9d53e419ff4a63bbe91bc38fa4a592003"
+        },
+        "inferenceSchema": "HIM_SEMANTIC_INFERENCE_OUTPUT_V2_1",
+        "instructionPolicy": "HIM_SEMANTIC_INFERENCE_INSTRUCTION_POLICY_V2_1",
+        "contextBudgetPolicy": "HIM_SEMANTIC_CONTEXT_BUDGET_POLICY_V1",
+        "retrievalFoundationRelease": "F3D_2_RETRIEVAL_FOUNDATION_V1",
+        "retrievalFoundationReleaseSha256": {
+          "value": "b4814fbd8141c43b04b97bd0f87c5e01d5128b7143ff74b80ed873a8f0068023"
+        },
+        "retrievalFoundationDigest": {
+          "value": "9780a1dc28ece40e1251981f007a509418de5db4c1e8921ba3402ac2dcf3fd86"
+        },
+        "technicalAttemptCount": 1,
+        "usage": {
+          "inputTokens": 20337,
+          "outputTokens": 768,
+          "cachedInputTokens": 1440
+        }
+      },
+      "technicalFailure": null
+    },
+    {
+      "inputRunReference": {
+        "value": "input-run:v1:c7d643160b0e012c5a4ca0c742d38fa707e671a56a44ef3bfb5d9911bf5e1b1d"
+      },
+      "input": {
+        "rawInput": "Hering geräuchert",
+        "normalizedLookup": "hering geräuchert"
+      },
+      "canonicalContext": [
+        {
+          "rank": 1,
+          "canonicalId": {
+            "value": "X90WhW"
+          },
+          "canonicalName": "Bismarckhering",
+          "fullRecordCanonicalJson": "{\"canonicalId\":{\"value\":\"X90WhW\"},\"canonicalName\":\"Bismarckhering\",\"normalizedName\":\"bismarckhering\",\"taxonomyPaths\":[[\"canned-food\",\"fish-preserves\",\"hering\",\"bismarckhering\"]],\"lifecycleStatus\":\"ACTIVE\",\"identities\":[],\"variants\":[],\"aliases\":[]}"
+        },
+        {
+          "rank": 2,
+          "canonicalId": {
+            "value": "vZC8ay"
+          },
+          "canonicalName": "Brathering",
+          "fullRecordCanonicalJson": "{\"canonicalId\":{\"value\":\"vZC8ay\"},\"canonicalName\":\"Brathering\",\"normalizedName\":\"brathering\",\"taxonomyPaths\":[[\"canned-food\",\"fish-preserves\",\"hering\",\"brathering\"]],\"lifecycleStatus\":\"ACTIVE\",\"identities\":[],\"variants\":[],\"aliases\":[]}"
+        },
+        {
+          "rank": 3,
+          "canonicalId": {
+            "value": "OzlByp"
+          },
+          "canonicalName": "Hering",
+          "fullRecordCanonicalJson": "{\"canonicalId\":{\"value\":\"OzlByp\"},\"canonicalName\":\"Hering\",\"normalizedName\":\"hering\",\"taxonomyPaths\":[[\"canned-food\",\"fish-preserves\",\"hering\"],[\"fish-and-seafood\",\"saltwater-fish\"]],\"lifecycleStatus\":\"ACTIVE\",\"identities\":[],\"variants\":[],\"aliases\":[]}"
+        },
+        {
+          "rank": 4,
+          "canonicalId": {
+            "value": "gGlvRP"
+          },
+          "canonicalName": "Heringssalat",
+          "fullRecordCanonicalJson": null
+        }
+      ],
+      "retrievalHistory": [
+        {
+          "round": {
+            "value": 1
+          },
+          "directive": {
+            "sourceQueries": [
+              {
+                "source": "OPEN_FOOD_FACTS",
+                "queries": [
+                  "Hering geräuchert",
+                  "smoked herring"
+                ]
+              },
+              {
+                "source": "AGRIBALYSE",
+                "queries": [
+                  "hareng fumé"
+                ]
+              },
+              {
+                "source": "CIQUAL",
+                "queries": [
+                  "hareng fumé"
+                ]
+              }
+            ],
+            "informationGainJudgment": "MORE_EVIDENCE_MAY_HELP"
+          },
+          "steps": [
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "semanticQuery": "Hering geräuchert",
+              "evidenceReferences": []
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "semanticQuery": "smoked herring",
+              "evidenceReferences": [
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:1917208:code:0034800600511"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:4391954:code:8714852008818"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:4288385:code:0037071241063"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:1249139:code:0041331035248"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:3117733:code:4751017400692"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:3777912:code:0027568070375"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:4010095:code:5032674000517"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:91043:code:0074027001906"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:4392192:code:0860010977958"
+                },
+                {
+                  "source": "OPEN_FOOD_FACTS",
+                  "sourceArtifactSha256": {
+                    "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+                  },
+                  "sourceRecordIdentity": "off:product:row:88607:code:0073230000027"
+                }
+              ]
+            },
+            {
+              "source": "AGRIBALYSE",
+              "semanticQuery": "hareng fumé",
+              "evidenceReferences": [
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:2115:agb:26013"
+                },
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:2117:agb:25998"
+                },
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:2113:agb:26232"
+                },
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:2114:agb:26013"
+                },
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:2116:agb:25998"
+                },
+                {
+                  "source": "AGRIBALYSE",
+                  "sourceArtifactSha256": {
+                    "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+                  },
+                  "sourceRecordIdentity": "agribalyse:row:2112:agb:26232"
+                }
+              ]
+            },
+            {
+              "source": "CIQUAL",
+              "semanticQuery": "hareng fumé",
+              "evidenceReferences": [
+                {
+                  "source": "CIQUAL",
+                  "sourceArtifactSha256": {
+                    "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+                  },
+                  "sourceRecordIdentity": "ciqual:food:25998"
+                },
+                {
+                  "source": "CIQUAL",
+                  "sourceArtifactSha256": {
+                    "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+                  },
+                  "sourceRecordIdentity": "ciqual:food:26013"
+                },
+                {
+                  "source": "CIQUAL",
+                  "sourceArtifactSha256": {
+                    "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+                  },
+                  "sourceRecordIdentity": "ciqual:food:26232"
+                }
+              ]
+            }
+          ],
+          "includedEvidenceReferences": [
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:1917208:code:0034800600511"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:4391954:code:8714852008818"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:4288385:code:0037071241063"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:1249139:code:0041331035248"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:3117733:code:4751017400692"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:3777912:code:0027568070375"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:4010095:code:5032674000517"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:91043:code:0074027001906"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:4392192:code:0860010977958"
+            },
+            {
+              "source": "OPEN_FOOD_FACTS",
+              "sourceArtifactSha256": {
+                "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+              },
+              "sourceRecordIdentity": "off:product:row:88607:code:0073230000027"
+            },
+            {
+              "source": "AGRIBALYSE",
+              "sourceArtifactSha256": {
+                "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+              },
+              "sourceRecordIdentity": "agribalyse:row:2115:agb:26013"
+            },
+            {
+              "source": "AGRIBALYSE",
+              "sourceArtifactSha256": {
+                "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+              },
+              "sourceRecordIdentity": "agribalyse:row:2117:agb:25998"
+            },
+            {
+              "source": "AGRIBALYSE",
+              "sourceArtifactSha256": {
+                "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+              },
+              "sourceRecordIdentity": "agribalyse:row:2113:agb:26232"
+            },
+            {
+              "source": "AGRIBALYSE",
+              "sourceArtifactSha256": {
+                "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+              },
+              "sourceRecordIdentity": "agribalyse:row:2114:agb:26013"
+            },
+            {
+              "source": "AGRIBALYSE",
+              "sourceArtifactSha256": {
+                "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+              },
+              "sourceRecordIdentity": "agribalyse:row:2116:agb:25998"
+            },
+            {
+              "source": "AGRIBALYSE",
+              "sourceArtifactSha256": {
+                "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+              },
+              "sourceRecordIdentity": "agribalyse:row:2112:agb:26232"
+            },
+            {
+              "source": "CIQUAL",
+              "sourceArtifactSha256": {
+                "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+              },
+              "sourceRecordIdentity": "ciqual:food:25998"
+            },
+            {
+              "source": "CIQUAL",
+              "sourceArtifactSha256": {
+                "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+              },
+              "sourceRecordIdentity": "ciqual:food:26013"
+            },
+            {
+              "source": "CIQUAL",
+              "sourceArtifactSha256": {
+                "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+              },
+              "sourceRecordIdentity": "ciqual:food:26232"
+            }
+          ],
+          "omittedDueToBudgetEvidenceReferences": []
+        }
+      ],
+      "finalInformationGainJudgment": "NO_EXPECTED_INFORMATION_GAIN",
+      "terminalState": "SUFFICIENT_EVIDENCE",
+      "completionState": "COMPLETED",
+      "finalOutcome": "SUCCESS_WITH_PERSISTED_CANDIDATE",
+      "confidenceDiagnostics": {
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "noConfidence": 0
+      },
+      "knownRelations": [],
+      "authorityConflicts": [],
+      "persistedCandidateReferences": [
+        {
+          "value": "candidate:v1:9e4387b2c5a93f565b5ba1ef5c14ff930d68e5c898f427ba12baa3445aa999e8"
+        }
+      ],
+      "inference": {
+        "provider": "OPENAI",
+        "model": "gpt-5.6-sol",
+        "providerConfigurationFingerprint": {
+          "value": "5317efd22a62e1cf485a7e5c3c6627c9d53e419ff4a63bbe91bc38fa4a592003"
+        },
+        "inferenceSchema": "HIM_SEMANTIC_INFERENCE_OUTPUT_V2_1",
+        "instructionPolicy": "HIM_SEMANTIC_INFERENCE_INSTRUCTION_POLICY_V2_1",
+        "contextBudgetPolicy": "HIM_SEMANTIC_CONTEXT_BUDGET_POLICY_V1",
+        "retrievalFoundationRelease": "F3D_2_RETRIEVAL_FOUNDATION_V1",
+        "retrievalFoundationReleaseSha256": {
+          "value": "b4814fbd8141c43b04b97bd0f87c5e01d5128b7143ff74b80ed873a8f0068023"
+        },
+        "retrievalFoundationDigest": {
+          "value": "9780a1dc28ece40e1251981f007a509418de5db4c1e8921ba3402ac2dcf3fd86"
+        },
+        "technicalAttemptCount": 1,
+        "usage": {
+          "inputTokens": 39925,
+          "outputTokens": 563,
+          "cachedInputTokens": 1440
+        }
+      },
+      "technicalFailure": null
+    }
+  ],
+  "occurrences": [
+    {
+      "occurrenceReference": {
+        "value": "occurrence:v1:871f1ee6ae0a0d8fdc32ce181fcfd264c7601f988a19aa879ad15934598955b5"
+      },
+      "inputRunReference": {
+        "value": "input-run:v1:65b0516a913ac658a2f2f2e44efa5f57a8ee0581beed790cfd4908a5fec5c799"
+      },
+      "candidate": {
+        "candidateReference": {
+          "value": "candidate:v1:efa131c7a2e8686f8d1541e8a8c42454eea79092fb9c2bb074ad0c09922dbb85"
+        },
+        "candidateTerm": "Hering in Öl",
+        "normalizedCandidateTerm": "hering in öl",
+        "relation": {
+          "scope": {
+            "canonicalId": {
+              "value": "OzlByp"
+            }
+          },
+          "candidateType": "VARIANT"
+        },
+        "confidence": "HIGH",
+        "evidenceOrigin": "MIXED",
+        "shortRationale": "The term denotes existing Hering differentiated by the packing medium oil; sources directly or narrowly support herring products in oil."
+      },
+      "evidence": [
+        {
+          "reference": {
+            "source": "AGRIBALYSE",
+            "sourceArtifactSha256": {
+              "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+            },
+            "sourceRecordIdentity": "agribalyse:row:2113:agb:26232"
+          },
+          "recordKind": "AGRIBALYSE_RECORD",
+          "retrievalRank": 1,
+          "includedInProviderContext": true,
+          "omittedDueToContextBudget": false,
+          "himAssignedRelation": "VARIANT"
+        },
+        {
+          "reference": {
+            "source": "CIQUAL",
+            "sourceArtifactSha256": {
+              "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+            },
+            "sourceRecordIdentity": "ciqual:food:26232"
+          },
+          "recordKind": "CIQUAL_FOOD",
+          "retrievalRank": 1,
+          "includedInProviderContext": true,
+          "omittedDueToContextBudget": false,
+          "himAssignedRelation": "VARIANT"
+        },
+        {
+          "reference": {
+            "source": "OPEN_FOOD_FACTS",
+            "sourceArtifactSha256": {
+              "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+            },
+            "sourceRecordIdentity": "off:product:row:1329680:code:4030957081353"
+          },
+          "recordKind": "OFF_PRODUCT",
+          "retrievalRank": 2,
+          "includedInProviderContext": true,
+          "omittedDueToContextBudget": false,
+          "himAssignedRelation": "RELATED"
+        },
+        {
+          "reference": {
+            "source": "OPEN_FOOD_FACTS",
+            "sourceArtifactSha256": {
+              "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+            },
+            "sourceRecordIdentity": "off:product:row:3237645:code:4032549033559"
+          },
+          "recordKind": "OFF_PRODUCT",
+          "retrievalRank": 1,
+          "includedInProviderContext": true,
+          "omittedDueToContextBudget": false,
+          "himAssignedRelation": "DIRECT"
+        }
+      ]
+    },
+    {
+      "occurrenceReference": {
+        "value": "occurrence:v1:a35191eb1051dbf90b5efe5326372713bb4d9ed13b645be61138c06abe6ef4ab"
+      },
+      "inputRunReference": {
+        "value": "input-run:v1:26fc1896d1442eff812e32a3b1ef3bad2de492b7540e25bf643470e85e93274f"
+      },
+      "candidate": {
+        "candidateReference": {
+          "value": "candidate:v1:ddc2a1bc14a203b07aa376369f424edb5e89556627696ff7106265890a1fe30d"
+        },
+        "candidateTerm": "Eingelegter Hering",
+        "normalizedCandidateTerm": "eingelegter hering",
+        "relation": {},
+        "confidence": "HIGH",
+        "evidenceOrigin": "SOURCE_SUPPORTED",
+        "shortRationale": "Sources directly recognize pickled or marinated herring as a food category. It is broader than the existing Bismarckhering and Rollmops forms, so mapping to either would be overly narrow."
+      },
+      "evidence": [
+        {
+          "reference": {
+            "source": "AGRIBALYSE",
+            "sourceArtifactSha256": {
+              "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+            },
+            "sourceRecordIdentity": "agribalyse:row:2171:agb:26010"
+          },
+          "recordKind": "AGRIBALYSE_RECORD",
+          "retrievalRank": 1,
+          "includedInProviderContext": true,
+          "omittedDueToContextBudget": false,
+          "himAssignedRelation": "DIRECT"
+        },
+        {
+          "reference": {
+            "source": "CIQUAL",
+            "sourceArtifactSha256": {
+              "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+            },
+            "sourceRecordIdentity": "ciqual:food:26010"
+          },
+          "recordKind": "CIQUAL_FOOD",
+          "retrievalRank": 1,
+          "includedInProviderContext": true,
+          "omittedDueToContextBudget": false,
+          "himAssignedRelation": "DIRECT"
+        },
+        {
+          "reference": {
+            "source": "OPEN_FOOD_FACTS",
+            "sourceArtifactSha256": {
+              "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+            },
+            "sourceRecordIdentity": "off:product:row:2006020:code:4047247209755"
+          },
+          "recordKind": "OFF_PRODUCT",
+          "retrievalRank": 1,
+          "includedInProviderContext": true,
+          "omittedDueToContextBudget": false,
+          "himAssignedRelation": "RELATED"
+        },
+        {
+          "reference": {
+            "source": "OPEN_FOOD_FACTS",
+            "sourceArtifactSha256": {
+              "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+            },
+            "sourceRecordIdentity": "off:product:row:4530988:code:5701157480343"
+          },
+          "recordKind": "OFF_PRODUCT",
+          "retrievalRank": 1,
+          "includedInProviderContext": true,
+          "omittedDueToContextBudget": false,
+          "himAssignedRelation": "DIRECT"
+        }
+      ]
+    },
+    {
+      "occurrenceReference": {
+        "value": "occurrence:v1:e36102b402163d860dda2aa19d251508e9adfc1fd9737049673a3f08e92f192b"
+      },
+      "inputRunReference": {
+        "value": "input-run:v1:c7d643160b0e012c5a4ca0c742d38fa707e671a56a44ef3bfb5d9911bf5e1b1d"
+      },
+      "candidate": {
+        "candidateReference": {
+          "value": "candidate:v1:9e4387b2c5a93f565b5ba1ef5c14ff930d68e5c898f427ba12baa3445aa999e8"
+        },
+        "candidateTerm": "Hering geräuchert",
+        "normalizedCandidateTerm": "hering geräuchert",
+        "relation": {
+          "scope": {
+            "canonicalId": {
+              "value": "OzlByp"
+            }
+          },
+          "candidateType": "VARIANT"
+        },
+        "confidence": "HIGH",
+        "evidenceOrigin": "SOURCE_SUPPORTED",
+        "shortRationale": "Smoking is a preparation state of the existing Hering canonical, directly supported by CIQUAL, AGRIBALYSE, and Open Food Facts records for smoked herring."
+      },
+      "evidence": [
+        {
+          "reference": {
+            "source": "AGRIBALYSE",
+            "sourceArtifactSha256": {
+              "value": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297"
+            },
+            "sourceRecordIdentity": "agribalyse:row:2115:agb:26013"
+          },
+          "recordKind": "AGRIBALYSE_RECORD",
+          "retrievalRank": 1,
+          "includedInProviderContext": true,
+          "omittedDueToContextBudget": false,
+          "himAssignedRelation": "DIRECT"
+        },
+        {
+          "reference": {
+            "source": "CIQUAL",
+            "sourceArtifactSha256": {
+              "value": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff"
+            },
+            "sourceRecordIdentity": "ciqual:food:25998"
+          },
+          "recordKind": "CIQUAL_FOOD",
+          "retrievalRank": 1,
+          "includedInProviderContext": true,
+          "omittedDueToContextBudget": false,
+          "himAssignedRelation": "DIRECT"
+        },
+        {
+          "reference": {
+            "source": "OPEN_FOOD_FACTS",
+            "sourceArtifactSha256": {
+              "value": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+            },
+            "sourceRecordIdentity": "off:product:row:4391954:code:8714852008818"
+          },
+          "recordKind": "OFF_PRODUCT",
+          "retrievalRank": 2,
+          "includedInProviderContext": true,
+          "omittedDueToContextBudget": false,
+          "himAssignedRelation": "DIRECT"
+        }
+      ]
+    }
+  ]
+}

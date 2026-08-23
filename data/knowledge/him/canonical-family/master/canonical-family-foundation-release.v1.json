@@ -1,0 +1,24 @@
+{
+  "releaseVersion": "F2_V1",
+  "productOnlyMaster": {
+    "path": "data/knowledge/catalog/master/product-only/canonical-food-catalog.product-only.master.json",
+    "sha256": "922e3fc71a624a94d6787d772e40bba2e31e102212e16c4b315bd9f5dfa30f4f",
+    "recordCount": 1384
+  },
+  "entityIdRegistry": {
+    "path": "data/knowledge/him/canonical-family/master/him-entity-id-registry.v1.json",
+    "sha256": "46145e663b483777228894a099f958f8150773af98b3772882823745b365cf9a",
+    "recordCount": 1384
+  },
+  "canonicalFamilyAuthority": {
+    "path": "data/knowledge/him/canonical-family/master/canonical-family-authority.v1.json",
+    "sha256": "86b29621ecd21c91d53231d4a76f633cd172fced7c6f73fe47a7577bb600e184",
+    "recordCount": 1384
+  },
+  "fingerprintIndex": {
+    "path": "data/knowledge/him/canonical-family/index/him-entity-fingerprint-index.v1.json",
+    "sha256": "6dcb065d6dce0aaa22c8d1d3dd620372fc90d3fe9a3ec9d20ee54737a8f9a951",
+    "recordCount": 1384
+  },
+  "foundationState": "RELEASED"
+}

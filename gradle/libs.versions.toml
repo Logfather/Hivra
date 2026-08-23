@@ -31,6 +31,7 @@ monitor = "1.8.0"
 
 # Apache POI
 poi = "5.2.5"
+sqlite-jdbc = "3.53.2.1"
 
 
 
@@ -79,6 +80,7 @@ androidx-monitor = { group = "androidx.test", name = "monitor", version.ref = "m
 
 # Apache Poi
 apache-poi-ooxml = { module = "org.apache.poi:poi-ooxml", version.ref = "poi" }
+sqlite-jdbc = { module = "org.xerial:sqlite-jdbc", version.ref = "sqlite-jdbc" }
 
 
 [plugins]

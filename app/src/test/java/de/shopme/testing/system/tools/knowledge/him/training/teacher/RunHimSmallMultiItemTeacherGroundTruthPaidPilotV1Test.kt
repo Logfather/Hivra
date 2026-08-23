@@ -61,6 +61,7 @@ internal data class HimTeacherPaidPilotContinuationCompletedItemV1(
 class RunHimSmallMultiItemTeacherGroundTruthPaidPilotV1Test {
     @Test
     fun executeExactlyThreeSequentialRealTeacherItems() {
+        de.shopme.testing.system.tools.knowledge.him.support.HimTestExecutionBoundaryV1.requirePaidNetworkEnabled()
         val root = projectRoot()
         if (root.resolve(MISSION_PATH).exists()) {
             continueFromItem2(root)

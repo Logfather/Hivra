@@ -25,3 +25,32 @@ captures/
 
 # Data Sorage
 data/
+
+# Persistent HIM Canonical Family authorities
+!data/
+data/*
+!data/knowledge/
+data/knowledge/*
+!data/knowledge/him/
+data/knowledge/him/*
+!data/knowledge/him/canonical-family/
+data/knowledge/him/canonical-family/*
+!data/knowledge/him/canonical-family/master/
+data/knowledge/him/canonical-family/master/*
+!data/knowledge/him/canonical-family/master/him-entity-id-registry.v1.json
+!data/knowledge/him/canonical-family/master/canonical-family-authority.v1.json
+!data/knowledge/him/canonical-family/master/canonical-family-foundation-release.v1.json
+
+# Persistent HIM Retrieval Foundation release
+!data/knowledge/him/retrieval/
+data/knowledge/him/retrieval/*
+!data/knowledge/him/retrieval/master/
+data/knowledge/him/retrieval/master/*
+!data/knowledge/him/retrieval/master/him-retrieval-foundation-release.v1.json
+!data/knowledge/him/retrieval/master/him-production-index-file-identity-release.v1.json
+
+# Persistent HIM Candidate Dataset (hypotheses and immutable run provenance)
+!data/knowledge/him/candidates/
+data/knowledge/him/candidates/*
+!data/knowledge/him/candidates/master/
+!data/knowledge/him/candidates/runs/

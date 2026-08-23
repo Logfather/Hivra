@@ -1,0 +1,88 @@
+{
+  "artifactType": "HIM_RETRIEVAL_FOUNDATION_RELEASE",
+  "releaseVersion": "F3D_2_RETRIEVAL_FOUNDATION_V1",
+  "releaseState": "RELEASED",
+  "retrievalContract": {
+    "schemaVersion": "HIM_EVIDENCE_RETRIEVAL_INDEX_SCHEMA_V1",
+    "buildPolicyVersion": "HIM_EVIDENCE_RETRIEVAL_INDEX_BUILD_V1",
+    "evidenceProjectionPolicyVersion": "HIM_EVIDENCE_PROJECTION_V1",
+    "foundationDigestContract": "HIM_FOUR_SOURCE_RETRIEVAL_FOUNDATION_DIGEST_V1"
+  },
+  "foundationCompatibility": [
+    {"path": "data/knowledge/catalog/master/product-only/canonical-food-catalog.product-only.master.json", "sha256": "922e3fc71a624a94d6787d772e40bba2e31e102212e16c4b315bd9f5dfa30f4f"},
+    {"path": "data/knowledge/him/canonical-family/master/him-entity-id-registry.v1.json", "sha256": "46145e663b483777228894a099f958f8150773af98b3772882823745b365cf9a"},
+    {"path": "data/knowledge/him/canonical-family/master/canonical-family-authority.v1.json", "sha256": "86b29621ecd21c91d53231d4a76f633cd172fced7c6f73fe47a7577bb600e184"},
+    {"path": "data/knowledge/him/canonical-family/master/canonical-family-foundation-release.v1.json", "sha256": "4afc7490bd69f2f8919558d33d98c912771d128da4ac7a782cc116a1c9fccb6e"},
+    {"path": "data/knowledge/him/canonical-family/index/him-entity-fingerprint-index.v1.json", "sha256": "6dcb065d6dce0aaa22c8d1d3dd620372fc90d3fe9a3ec9d20ee54737a8f9a951"}
+  ],
+  "canonicalSourceOrder": [
+    "OPEN_FOOD_FACTS",
+    "AGRIBALYSE",
+    "CIQUAL",
+    "GLYCEMIC_INDEX"
+  ],
+  "sources": [
+    {
+      "source": "OPEN_FOOD_FACTS",
+      "optimizedSourceArtifactPath": "data/sources/openfoodfacts/optimized/off-him-final-source.jsonl.gz",
+      "optimizedSourceArtifactSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236",
+      "logicalRecordCounts": {
+        "products": 4591865
+      },
+      "productionEvidenceIndexPath": "data/sources/openfoodfacts/index/off-him-evidence-index.v1.sqlite",
+      "evidenceRowCount": 4591865,
+      "ftsRowCount": 4591865,
+      "indexLogicalContentSha256": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+      "indexState": "VALIDATED"
+    },
+    {
+      "source": "AGRIBALYSE",
+      "optimizedSourceArtifactPath": "data/sources/agribalyse/optimized/agribalyse-him-final-source.jsonl.gz",
+      "optimizedSourceArtifactSha256": "9068c89fa887ef087e87dcc51f758dd29e9623b93d9bd0a2277a4faae57c2297",
+      "logicalRecordCounts": {
+        "records": 2458
+      },
+      "productionEvidenceIndexPath": "data/sources/agribalyse/index/agribalyse-him-evidence-index.v1.sqlite",
+      "evidenceRowCount": 2458,
+      "ftsRowCount": 2458,
+      "indexLogicalContentSha256": "2d4036d35413f3a2f98b4798fcf8511960e94b2584efcf057616bf41de8660f6",
+      "indexState": "VALIDATED"
+    },
+    {
+      "source": "CIQUAL",
+      "optimizedSourceArtifactPath": "data/sources/ciqual/optimized/ciqual-him-final-source.json.gz",
+      "optimizedSourceArtifactSha256": "807d16c222f0e812831c10bdd89f1a5ebbc74c95e8a4944723db486add96dcff",
+      "logicalRecordCounts": {
+        "foods": 3484,
+        "taxonomy": 138,
+        "constituents": 74,
+        "sources": 1978
+      },
+      "productionEvidenceIndexPath": "data/sources/ciqual/index/ciqual-him-evidence-index.v1.sqlite",
+      "evidenceRowCount": 5674,
+      "ftsRowCount": 5674,
+      "indexLogicalContentSha256": "b9f2d2a162093234729a53855804042debe8a2b290a04a4db1654e54fa3489bc",
+      "indexState": "VALIDATED"
+    },
+    {
+      "source": "GLYCEMIC_INDEX",
+      "optimizedSourceArtifactPath": "data/sources/glycemic-index/optimized/glycemic-index-him-final-source.json.gz",
+      "optimizedSourceArtifactSha256": "6891c2ff2ab3734a1d2768339c1f660f7093a31b97a856c82bf9b8c3c88422b5",
+      "logicalRecordCounts": {
+        "measurements": 2091,
+        "meanSummaries": 122,
+        "categoryNotes": 15,
+        "footnotes": 26
+      },
+      "productionEvidenceIndexPath": "data/sources/glycemic-index/index/glycemic-index-him-evidence-index.v1.sqlite",
+      "evidenceRowCount": 2254,
+      "ftsRowCount": 2254,
+      "indexLogicalContentSha256": "03cd3c46e7153f915d3043095a22434aeba3b0e2a36e5c28a56d2d3d9e57935a",
+      "indexState": "VALIDATED"
+    }
+  ],
+  "fourSourceFoundation": {
+    "digestContract": "HIM_FOUR_SOURCE_RETRIEVAL_FOUNDATION_DIGEST_V1",
+    "sha256": "9780a1dc28ece40e1251981f007a509418de5db4c1e8921ba3402ac2dcf3fd86"
+  }
+}
