@@ -23,6 +23,9 @@ import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimC
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimGroundTruthSource
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimRetrievalRound
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.dataset.HimCandidateCanonicalContext
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.dataset.HimCandidateDatasetContractV2
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.dataset.HimCandidateDatasetPersistenceV2
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.dataset.HimCandidateIdentityV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.*
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.*
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.provider.openai.*
@@ -32,6 +35,7 @@ import de.shopme.tools.knowledge.him.training.scaling.HimCanonicalGroundTruthSca
 import de.shopme.tools.knowledge.him.training.scaling.HimCanonicalGroundTruthScalingPlannerInputV1
 import de.shopme.tools.knowledge.him.training.scaling.HimCanonicalGroundTruthScalingPlannerV1
 import de.shopme.tools.knowledge.him.training.scaling.HimCanonicalGroundTruthScalingWorkReasonV1
+import de.shopme.tools.knowledge.him.training.scaling.HimCandidateDatasetBindingV1
 import de.shopme.tools.knowledge.him.training.scaling.HimTeacherGroundTruthWorkItemV1
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthGenerationContractV1
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthGenerationPersistenceV1
@@ -53,6 +57,7 @@ import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertTrue
 import org.junit.Assume.assumeTrue
 import org.junit.Test
@@ -154,6 +159,58 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         assertFails { require(prepared.selection.indexBindings.distinctBy { it.retrievalBinding.source }.size == 3) }
     }
 
+    @Test fun `candidate dataset binding changes the deterministic work item identity`() {
+        val catalog = de.shopme.tools.knowledge.him.training.scaling.HimCanonicalCatalogBindingV1("catalog.json", HimSha256("a".repeat(64)), 1)
+        val release = HimGroundTruthReleaseIdentityV1("release:v1:${"b".repeat(64)}")
+        val nullBinding = de.shopme.tools.knowledge.him.training.scaling.HimTeacherGroundTruthWorkItemIdentityV1.reference(
+            HimEntityId("uEV2jY"),
+            listOf(HimTrainingClassificationV1.ALIAS, HimTrainingClassificationV1.IDENTITY, HimTrainingClassificationV1.VARIANT),
+            HimCanonicalGroundTruthScalingWorkReasonV1.MISSING_SEMANTIC_COVERAGE,
+            catalog,
+            release,
+            null,
+        )
+        val binding = HimCandidateDatasetBindingV1("data/knowledge/him/candidates/master/candidate-dataset.v2.json", HimSha256("c".repeat(64)))
+        val bound = de.shopme.tools.knowledge.him.training.scaling.HimTeacherGroundTruthWorkItemIdentityV1.reference(
+            HimEntityId("uEV2jY"),
+            listOf(HimTrainingClassificationV1.ALIAS, HimTrainingClassificationV1.IDENTITY, HimTrainingClassificationV1.VARIANT),
+            HimCanonicalGroundTruthScalingWorkReasonV1.MISSING_SEMANTIC_COVERAGE,
+            catalog,
+            release,
+            binding,
+        )
+        assertNotEquals(nullBinding, bound)
+    }
+
+    @Test fun `work item join requires exactly one frozen reference`() {
+        val fixture = fixture()
+        val candidate = prepared().selection.selectedCandidate
+        val item = fixture.plan.workItems.single()
+        val duplicate = item.copy(reference = "teacher-work:v1:${"b".repeat(64)}")
+        assertEquals(item, joinWorkItem(fixture.plan.copy(workItems = listOf(item, duplicate)), candidate))
+        assertFails { joinWorkItem(fixture.plan.copy(workItems = listOf(duplicate)), candidate) }
+        assertFails { joinWorkItem(fixture.plan.copy(workItems = listOf(item, item)), candidate) }
+    }
+
+    @Test fun `missing or duplicate work item join fails before provider invocation`() {
+        var providerCalls = 0
+        val fixture = fixture()
+        val candidate = prepared().selection.selectedCandidate
+        val wrong = fixture.plan.workItems.single().copy(reference = "teacher-work:v1:${"c".repeat(64)}")
+        assertFails {
+            joinWorkItem(fixture.plan.copy(workItems = listOf(wrong)), candidate)
+        }
+        assertEquals(0, providerCalls)
+    }
+
+    @Test fun `builds frozen Vanille request offline without paid provider`() {
+        assumeTrue(System.getProperty(HimTestExecutionBoundaryV1.SOURCE_INTEGRATION_PROPERTY) == "true")
+        assertFalse(HimTestExecutionBoundaryV1.paidNetworkEnabled(System.getProperty(HimTestExecutionBoundaryV1.PAID_NETWORK_PROPERTY), System.getProperty(HimTestExecutionBoundaryV1.PAID_NETWORK_CONFIRMATION_PROPERTY)))
+        val request = buildFrozenRequestOffline(projectRoot())
+        assertEquals("teacher-work:v1:1ac878a8b015493878574df8ccc2b2a45aa78622c6fa00211e7b7b6b6d0be4c5", request.workItemReference)
+        assertEquals("teacher-request:v1:b281b6dbc97b3459ed597296cb730c0f2789dec1583dfa15436519f630d2d186", request.requestReference)
+    }
+
     @Test fun `fake successful provider runs exactly once and persists reloads and idempotently repeats`() {
         val fixture = fixture()
         var calls = 0
@@ -247,13 +304,13 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         val v2File = root.resolve(V2_PATH)
         val v2 = HimTeacherPaidPilotOfflinePreflightV2.read(v2File)
         require(HimTeacherPaidPilotOfflinePreflightV2.evaluate(v2, v2) == HimTeacherPaidPilotOfflinePreflightV2Status.CURRENT)
-        val selectionFile = root.resolve(SELECTION_R3_PATH)
+        val selectionFile = root.resolve(SELECTION_R4_PATH)
         val selection = HimPositiveSingleItemTeacherPilotSelectionV1.read(selectionFile)
         validateFrozenSelection(selection, head, HimPositiveSingleItemTeacherPilotPreflightBinding.from(v2, HimSha256(sha256(v2File))))
         val active = HimActiveGroundTruthResolutionV1().resolve(root)
         val catalog = HimProductOnlyCanonicalMasterReader().read(HimCanonicalFamilyPaths(root))
         val authority = HimCanonicalFamilyPersistence().readAuthority(active.authorityFile)
-        val plan = HimCanonicalGroundTruthScalingPlannerV1().plan(HimCanonicalGroundTruthScalingPlannerInputV1(catalog, authority, active.releaseReference, null, emptyList()))
+        val plan = HimCanonicalGroundTruthScalingPlannerV1().plan(HimCanonicalGroundTruthScalingPlannerInputV1(catalog, authority, active.releaseReference, candidateBinding(root), emptyList()))
         val family = authority.families.single { it.canonicalId == selection.selectedCandidate.entityId }
         val stores = openStores(root)
         val evidence = selection.selectedCandidate.evidenceBySource.flatMap { summary ->
@@ -377,7 +434,57 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         val teacherContext = context.map { HimCandidateCanonicalContext(it.rank, it.canonicalId, it.canonicalName, (it as? HimCanonicalRetrievalResult.Full)?.let { full -> GsonBuilder().create().toJson(full.family) }) }
         val history = listOf(HimSemanticRetrievalHistoryEntry(HimRetrievalRound(1), HimSemanticRetrievalDirective(evidence.map { HimSemanticSourceQueries(it.source, listOf(candidate.rawInput)) }, HimSemanticInformationGainJudgment.MORE_EVIDENCE_MAY_HELP), evidence.map(HimSemanticSourceArtifactIdentityV1::reference)))
         val inference = HimSemanticInferenceRequest("teacher-f3-8g4:${candidate.workItemReference}", candidate.rawInput, context, evidence, HimRetrievalRound(1), sources().toSet(), history)
-        return HimTeacherGroundTruthGenerationRequestV1.create(plan.workItems.single { it.reference == candidate.workItemReference }, candidate.rawInput, teacherContext, inference, HimTeacherGroundTruthPolicyBindingsV1(providerConfigurationFingerprint = fingerprint, contextBudgetPolicyVersion = HimSemanticContextBudgetPolicy.VERSION))
+        val matches = plan.workItems.filter { it.reference == candidate.workItemReference }
+        require(matches.size == 1) {
+            "Paid request work-item join failed: reference=${candidate.workItemReference}; canonicalId=${candidate.entityId.value}; candidateDatasetBindingPresent=${plan.candidateDatasetBinding != null}; matchCount=${matches.size}"
+        }
+        return HimTeacherGroundTruthGenerationRequestV1.create(matches.single(), candidate.rawInput, teacherContext, inference, HimTeacherGroundTruthPolicyBindingsV1(providerConfigurationFingerprint = fingerprint, contextBudgetPolicyVersion = HimSemanticContextBudgetPolicy.VERSION))
+    }
+
+    private fun joinWorkItem(plan: HimCanonicalGroundTruthScalingPlanV1, candidate: HimPositiveSingleItemTeacherPilotCandidate): HimTeacherGroundTruthWorkItemV1 {
+        val matches = plan.workItems.filter { it.reference == candidate.workItemReference }
+        require(matches.size == 1) {
+            "Paid request work-item join failed: reference=${candidate.workItemReference}; canonicalId=${candidate.entityId.value}; candidateDatasetBindingPresent=${plan.candidateDatasetBinding != null}; matchCount=${matches.size}"
+        }
+        return matches.single()
+    }
+
+    private fun buildFrozenRequestOffline(root: File): HimTeacherGroundTruthGenerationRequestV1 {
+        val head = command(root, "rev-parse", "HEAD")
+        val v2File = root.resolve(V2_PATH)
+        val v2 = HimTeacherPaidPilotOfflinePreflightV2.read(v2File)
+        require(HimTeacherPaidPilotOfflinePreflightV2.evaluate(v2, v2) == HimTeacherPaidPilotOfflinePreflightV2Status.CURRENT)
+        val selection = HimPositiveSingleItemTeacherPilotSelectionV1.read(root.resolve(SELECTION_R4_PATH))
+        validateFrozenSelection(selection, head, HimPositiveSingleItemTeacherPilotPreflightBinding.from(v2, HimSha256(sha256(v2File))))
+        val active = HimActiveGroundTruthResolutionV1().resolve(root)
+        val catalog = HimProductOnlyCanonicalMasterReader().read(HimCanonicalFamilyPaths(root))
+        val authority = HimCanonicalFamilyPersistence().readAuthority(active.authorityFile)
+        val plan = HimCanonicalGroundTruthScalingPlannerV1().plan(HimCanonicalGroundTruthScalingPlannerInputV1(catalog, authority, active.releaseReference, candidateBinding(root), emptyList()))
+        val family = authority.families.single { it.canonicalId == selection.selectedCandidate.entityId }
+        val stores = openStores(root)
+        val evidence = selection.selectedCandidate.evidenceBySource.flatMap { summary ->
+            summary.evidence.map { frozen ->
+                val reference = HimEvidenceRecordReference.parse(summary.source, frozen.reference.sourceRecordIdentity)
+                requireNotNull(stores.getValue(summary.source)(reference)).also {
+                    require(HimSemanticSourceArtifactIdentityV1.reference(it).sourceArtifactSha256 == frozen.reference.sourceArtifactSha256)
+                }
+            }
+        }
+        require(evidence.size == 4)
+        val request = buildRequest(plan, selection.selectedCandidate, authority.families, evidence, HimOpenAiSemanticProviderConfiguration().fingerprint())
+        HimTeacherGroundTruthRequestValidatorV1.validateAgainstPlan(plan, request)
+        require(request.requestReference == selection.selectedCandidate.requestReference)
+        require(family.canonicalId == request.canonicalId)
+        return request
+    }
+
+    private fun candidateBinding(root: File): HimCandidateDatasetBindingV1? {
+        val file = root.resolve("${HimCandidateDatasetContractV2.MASTER_ROOT}/candidate-dataset.v2.json")
+        if (!file.isFile) return null
+        return HimCandidateDatasetBindingV1(
+            "${HimCandidateDatasetContractV2.MASTER_ROOT}/candidate-dataset.v2.json",
+            HimCandidateIdentityV1.datasetDigest(HimCandidateDatasetPersistenceV2.readDataset(file)),
+        )
     }
 
     private fun output() = HimTeacherGroundTruthOutputV1(HimTeacherGroundTruthGenerationContractV1.OUTPUT_SCHEMA_VERSION, listOf(HimTeacherSemanticProposalV1("proposal-vanille-1", "Vanille", HimTeacherSemanticRelationV1.Identity(HimEntityId("uEV2jY")), HimCandidateConfidence.HIGH, HimSemanticEvidenceOrigin.SOURCE_SUPPORTED, sources().map { HimSemanticEvidenceAssessment(HimSemanticSourceArtifactIdentityV1.reference(evidence(it)), HimSemanticEvidenceRelation.DIRECT) }, "bound positive evidence fixture")), HimSemanticInformationGainJudgment.NO_EXPECTED_INFORMATION_GAIN)
@@ -418,7 +525,7 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
     private companion object {
         const val HEAD = "22ea98d11773109bbe07b8d36c254e46513cce75"
         const val V2_PATH = "build/knowledge/reports/him/training/him-teacher-paid-pilot-offline-preflight.v2.json"
-        const val SELECTION_R3_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.selection.v1.r3.json"
+        const val SELECTION_R4_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.selection.v1.r4.json"
         const val RESULT_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.result.v1.json"
         const val REPORT_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.txt"
         val RELEASE = HimGroundTruthReleaseIdentityV1("release:v1:${"d".repeat(64)}")
