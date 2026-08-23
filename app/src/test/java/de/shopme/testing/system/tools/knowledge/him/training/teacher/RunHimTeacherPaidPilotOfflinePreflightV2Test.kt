@@ -20,6 +20,7 @@ import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
+import java.io.InputStream
 import java.nio.file.Files
 import java.security.MessageDigest
 
@@ -97,6 +98,29 @@ class RunHimTeacherPaidPilotOfflinePreflightV2Test {
         assertArrayEquals(HimTeacherPaidPilotOfflinePreflightV2.serialize(first), HimTeacherPaidPilotOfflinePreflightV2.serialize(second))
         assertEquals(first.logicalArtifactDigest, second.logicalArtifactDigest)
         assertEquals(1, requireNotNull(file.parentFile).listFiles().orEmpty().size)
+    }
+
+    @Test fun `streaming digest matches reference and uses at most one MiB reads`() {
+        val bytes = ByteArray(HimTeacherPaidPilotOfflinePreflightV2.STREAMING_DIGEST_BUFFER_BYTES * 2 + 17) { index -> (index * 31).toByte() }
+        val input = RecordingInputStream(bytes)
+        val expected = MessageDigest.getInstance("SHA-256").digest(bytes).joinToString("") { "%02x".format(it.toInt() and 0xff) }
+
+        assertEquals(expected, HimTeacherPaidPilotOfflinePreflightV2.streamingSha256(input))
+        assertEquals(HimTeacherPaidPilotOfflinePreflightV2.STREAMING_DIGEST_BUFFER_BYTES, input.maximumRequestedBytes)
+        assertTrue(input.maximumRequestedBytes <= 1024 * 1024)
+    }
+
+    @Test fun `artifact binding streams a multi-megabyte file with the stable digest`() {
+        val root = Files.createTempDirectory("him-preflight-v2-digest").toFile()
+        val relativePath = "large-artifact.bin"
+        val bytes = ByteArray(HimTeacherPaidPilotOfflinePreflightV2.STREAMING_DIGEST_BUFFER_BYTES * 2 + 17) { index -> (index * 13).toByte() }
+        root.resolve(relativePath).writeBytes(bytes)
+        val expected = MessageDigest.getInstance("SHA-256").digest(bytes).joinToString("") { "%02x".format(it.toInt() and 0xff) }
+
+        val binding = HimTeacherPaidPilotOfflinePreflightV2.artifactBinding(root, relativePath, "TEST_STREAMING_DIGEST_V1")
+
+        assertEquals(bytes.size.toLong(), binding.byteSize)
+        assertEquals(expected, binding.sha256)
     }
 
     @Test fun `V1 artifact remains unchanged and independently readable`() {
@@ -242,4 +266,21 @@ class RunHimTeacherPaidPilotOfflinePreflightV2Test {
         return current
     }
     private fun assertFails(block: () -> Unit) = assertTrue(runCatching(block).isFailure)
+
+    private class RecordingInputStream(private val bytes: ByteArray) : InputStream() {
+        private var position = 0
+        var maximumRequestedBytes: Int = 0
+            private set
+
+        override fun read(): Int = if (position == bytes.size) -1 else bytes[position++].toInt() and 0xff
+
+        override fun read(target: ByteArray, offset: Int, length: Int): Int {
+            maximumRequestedBytes = maxOf(maximumRequestedBytes, length)
+            if (position == bytes.size) return -1
+            val count = minOf(length, bytes.size - position)
+            bytes.copyInto(target, offset, position, position + count)
+            position += count
+            return count
+        }
+    }
 }

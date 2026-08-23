@@ -8,6 +8,7 @@ import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimG
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.HimSemanticSourceArtifactIdentityV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimEvidenceRecordReference
 import java.io.File
+import java.io.InputStream
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import java.security.MessageDigest
@@ -126,6 +127,7 @@ data class HimTeacherPaidPilotOfflinePreflightV2Artifact(
 enum class HimTeacherPaidPilotOfflinePreflightV2Status { CURRENT, INVALID, STALE_IMPLEMENTATION_CHECKPOINT, STALE_CANONICAL_BINDING, STALE_RETRIEVAL_BINDING }
 
 object HimTeacherPaidPilotOfflinePreflightV2 {
+    const val STREAMING_DIGEST_BUFFER_BYTES = 1024 * 1024
     private val gson = GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create()
     private val sha256Pattern = Regex("[0-9a-f]{64}")
     private val headPattern = Regex("[0-9a-f]{40}")
@@ -141,7 +143,7 @@ object HimTeacherPaidPilotOfflinePreflightV2 {
         val entries = paths.map { path ->
             val file = root.resolve(path)
             require(file.isFile) { "Implementation manifest file is missing: $path" }
-            HimTeacherPaidPilotOfflinePreflightV2ManifestEntry(path, file.length(), sha256(file.readBytes()))
+            HimTeacherPaidPilotOfflinePreflightV2ManifestEntry(path, file.length(), sha256(file))
         }
         return HimTeacherPaidPilotOfflinePreflightV2ImplementationManifest(
             HimTeacherPaidPilotOfflinePreflightV2Contract.MANIFEST_VERSION,
@@ -156,7 +158,7 @@ object HimTeacherPaidPilotOfflinePreflightV2 {
         val canonicalRoot = root.canonicalFile
         require(file.path == canonicalRoot.path || file.path.startsWith(canonicalRoot.path + File.separator))
         require(file.isFile && file.canRead()) { "Artifact is unavailable: $path" }
-        return HimTeacherPaidPilotOfflinePreflightV2ArtifactBinding(path, file.length(), sha256(file.readBytes()), identity, logicalDigest)
+        return HimTeacherPaidPilotOfflinePreflightV2ArtifactBinding(path, file.length(), sha256(file), identity, logicalDigest)
     }
 
     fun buildArtifact(
@@ -261,6 +263,16 @@ object HimTeacherPaidPilotOfflinePreflightV2 {
 
     private fun relative(root: File, file: File): String = root.toPath().relativize(file.toPath()).toString().replace(File.separatorChar, '/')
     private fun isRepositoryRelative(path: String): Boolean = path.isNotBlank() && !path.startsWith('/') && !path.contains("..") && !path.contains('\\')
-    private fun sha256(file: File): String = sha256(file.readBytes())
+    private fun sha256(file: File): String = file.inputStream().use(::streamingSha256)
+    internal fun streamingSha256(input: InputStream): String {
+        val digest = MessageDigest.getInstance("SHA-256")
+        val buffer = ByteArray(STREAMING_DIGEST_BUFFER_BYTES)
+        while (true) {
+            val count = input.read(buffer)
+            if (count < 0) break
+            if (count > 0) digest.update(buffer, 0, count)
+        }
+        return digest.digest().joinToString("") { "%02x".format(it.toInt() and 0xff) }
+    }
     private fun sha256(bytes: ByteArray): String = MessageDigest.getInstance("SHA-256").digest(bytes).joinToString("") { "%02x".format(it.toInt() and 0xff) }
 }
