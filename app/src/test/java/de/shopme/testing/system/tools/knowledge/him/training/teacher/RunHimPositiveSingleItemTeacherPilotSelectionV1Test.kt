@@ -1,13 +1,39 @@
 package de.shopme.testing.system.tools.knowledge.him.training.teacher
 
+import com.google.gson.GsonBuilder
 import de.shopme.testing.system.tools.knowledge.him.support.HimTestExecutionBoundaryV1.requireSourceIntegrationEnabled
 import de.shopme.tools.knowledge.him.canonical.family.HimEntityId
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamily
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyPaths
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyPersistence
+import de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonicalMasterReader
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimEvidenceReference
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimGroundTruthReleaseIdentityV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimSha256
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimActiveGroundTruthResolutionV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimGroundTruthSource
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimCanonicalFamilyCandidateRetrieval
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimCanonicalRetrievalQuery
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimCanonicalRetrievalResult
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimRetrievalRound
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.dataset.HimCandidateDatasetContractV2
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.dataset.HimCandidateDatasetPersistenceV2
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.dataset.HimCandidateCanonicalContext
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.dataset.HimCandidateIdentityV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.HimSemanticEvidenceRelation
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.HimSemanticContextBudgetPolicy
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.HimSemanticInferenceRequest
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.HimSemanticInferenceSchema
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimEvidenceRecordReference
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.*
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.provider.openai.HimOpenAiSemanticProviderConfiguration
+import de.shopme.tools.knowledge.him.training.scaling.HimCandidateDatasetBindingV1
+import de.shopme.tools.knowledge.him.training.scaling.HimCanonicalGroundTruthScalingPlannerInputV1
+import de.shopme.tools.knowledge.him.training.scaling.HimCanonicalGroundTruthScalingPlannerV1
+import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthGenerationContractV1
+import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthGenerationPersistenceV1
+import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthGenerationRequestV1
+import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthPolicyBindingsV1
 import de.shopme.tools.knowledge.him.training.corpus.HimTrainingClassificationV1
 import de.shopme.tools.knowledge.him.training.corpus.HimTrainingPartitionV1
 import de.shopme.tools.knowledge.him.training.scaling.HimCanonicalGroundTruthScalingWorkReasonV1
@@ -29,16 +55,49 @@ import de.shopme.tools.knowledge.him.training.teacher.HimTeacherPaidPilotOffline
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherPaidPilotOfflinePreflightV2Contract
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherPaidPilotOfflinePreflightV2PositiveE2EBinding
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherPaidPilotOfflinePreflightV2
+import de.shopme.tools.knowledge.him.training.teacher.HimTeacherPaidPilotOfflinePreflightV2Status
 import de.shopme.tools.knowledge.him.training.teacher.HimSmallMultiItemTeacherPilotSelectionV1
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
 import java.nio.file.Files
 import java.security.MessageDigest
+import java.text.Normalizer
+import java.util.Locale
 
 class RunHimPositiveSingleItemTeacherPilotSelectionV1Test {
+    private val gson = GsonBuilder().disableHtmlEscaping().create()
+
+    private data class MissionItemDto(
+        val workItemReference: String,
+        val rawInput: String,
+        val partition: String,
+        val requestReference: String,
+    )
+
+    private data class FrozenMissionDto(
+        val contract: String,
+        val expectedItems: Int,
+        val ordering: List<String>,
+        val items: List<MissionItemDto>,
+        val provider: String,
+    )
+
+    private data class EvidenceStore(
+        val sourceArtifactSha256: HimSha256,
+        val search: (String, HimEvidenceSearchLimit) -> List<HimEvidenceSearchResult>,
+        val fetch: (HimEvidenceRecordReference) -> HimEvidenceSearchResult?,
+    )
+
+    private companion object {
+        const val TRAINING_DIRECTORY = "build/knowledge/reports/him/training"
+        const val SELECTION_ARTIFACT_PATH = "$TRAINING_DIRECTORY/him-positive-single-item-teacher-paid-pilot.selection.v1.json"
+        const val OLD_MISSION_PATH = HimPositiveSingleItemTeacherPilotSelectionV1Contract.OLD_MISSION_PATH
+    }
+
     @Test fun `selects exactly one validation item`() {
         val selection = select(candidate(1), candidate(2))
         assertEquals(1, selection.selectedRank)
@@ -133,7 +192,15 @@ class RunHimPositiveSingleItemTeacherPilotSelectionV1Test {
     @Test fun `source integration entrypoint is skipped without opt in`() {
         requireSourceIntegrationEnabled()
         check(System.getProperty("him.paidNetwork.enabled") != "true")
-        error("Real four-store selection is reserved for the separate freeze mission")
+        executeRealSelection(projectRoot())
+    }
+
+    @Test fun `selection entrypoint keeps the real artifact path separate from the legacy mission`() {
+        assertEquals(
+            "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.selection.v1.json",
+            SELECTION_ARTIFACT_PATH,
+        )
+        assertFalse(SELECTION_ARTIFACT_PATH == HimPositiveSingleItemTeacherPilotSelectionV1Contract.OLD_MISSION_PATH)
     }
 
     @Test fun `new production file is included by the V2 manifest`() {
@@ -151,6 +218,226 @@ class RunHimPositiveSingleItemTeacherPilotSelectionV1Test {
         val selected = HimSmallMultiItemTeacherPilotSelectionV1.select(items, emptySet())
         assertEquals(3, selected.size)
         assertEquals(selected.map { it.reference }, selected.map { it.reference }.distinct())
+    }
+
+    private fun executeRealSelection(root: File) {
+        require(System.getProperty("him.paidNetwork.enabled") != "true")
+        val selectionFile = root.resolve(SELECTION_ARTIFACT_PATH)
+        val v2File = root.resolve(HimTeacherPaidPilotOfflinePreflightV2Contract.ARTIFACT)
+        require(v2File.isFile)
+        val v2 = HimTeacherPaidPilotOfflinePreflightV2.read(v2File)
+        require(HimTeacherPaidPilotOfflinePreflightV2.evaluate(v2, v2) == HimTeacherPaidPilotOfflinePreflightV2Status.CURRENT)
+
+        val head = command(root, "rev-parse", "HEAD")
+        require(v2.checkpoint.headSha256 == head)
+        val preflight = HimPositiveSingleItemTeacherPilotPreflightBinding.from(v2, HimSha256(sha256(v2File)))
+        val checkpoint = HimPositiveSingleItemTeacherPilotCheckpointBinding(
+            head,
+            v2.checkpoint.headSha256,
+            HimSha256(v2.implementationManifest.digest),
+        )
+        val oldMission = readFrozenMission(root)
+        val active = HimActiveGroundTruthResolutionV1().resolve(root)
+        val paths = HimCanonicalFamilyPaths(root)
+        val catalog = HimProductOnlyCanonicalMasterReader().read(paths)
+        val authority = HimCanonicalFamilyPersistence().readAuthority(active.authorityFile)
+        val plan = HimCanonicalGroundTruthScalingPlannerV1().plan(
+            HimCanonicalGroundTruthScalingPlannerInputV1(
+                catalog,
+                authority,
+                active.releaseReference,
+                candidateBinding(root),
+                emptyList(),
+            ),
+        )
+        val persisted = existingPaidWorkItems(root)
+        val stores = openEvidenceStores(root)
+        val indexBindings = v2.retrievalBindings
+            .map { HimPositiveSingleItemTeacherPilotEvidenceIndexBinding(it, HimPositiveSingleItemTeacherPilotSelectionV1Contract.INDEX_VALIDATION_PASS) }
+        require(indexBindings.map { it.retrievalBinding.source }.sorted() == HimPositiveSingleItemTeacherPilotSelectionV1Contract.REQUIRED_SOURCES)
+        val configuration = HimOpenAiSemanticProviderConfiguration()
+        val executionIdentity = HimPositiveSingleItemTeacherPilotExecutionIdentity(
+            active.releaseReference,
+            HimPositiveSingleItemTeacherPilotSelectionV1Contract.PROVIDER_CONTRACT,
+            configuration.model,
+            HimTeacherGroundTruthGenerationContractV1.REQUEST_SCHEMA_VERSION,
+            HimTeacherGroundTruthGenerationContractV1.OUTPUT_SCHEMA_VERSION,
+            HimSemanticInferenceSchema.INSTRUCTION_POLICY_VERSION,
+            configuration.fingerprint(),
+        )
+        val familyById = authority.families.associateBy { it.canonicalId }
+        val eligible = plan.workItems
+            .sortedBy { it.reference }
+            .filter {
+                it.partition == HimTrainingPartitionV1.VALIDATION &&
+                    it.reference !in oldMission.excludedWorkItemReferences &&
+                    it.reference !in persisted
+            }
+        val candidates = eligible.mapNotNull { item ->
+            val family = familyById[item.canonicalId] ?: return@mapNotNull null
+            buildCandidate(item, family, authority.families, active.releaseReference, stores)
+        }.filter { it.validProjectionCount >= 1 && it.directEvidenceCount >= 1 }
+        val selection = HimPositiveSingleItemTeacherPilotSelectionV1.select(
+            checkpoint,
+            preflight,
+            oldMission,
+            executionIdentity,
+            indexBindings,
+            candidates,
+        )
+        val priorBytes = selectionFile.takeIf { it.isFile }?.readBytes()
+        HimPositiveSingleItemTeacherPilotSelectionV1.writeIdempotent(selectionFile, selection)
+        val reloaded = HimPositiveSingleItemTeacherPilotSelectionV1.read(selectionFile)
+        require(reloaded == selection)
+        if (priorBytes != null) assertArrayEquals(priorBytes, selectionFile.readBytes())
+        println("REAL_POSITIVE_SINGLE_ITEM_SELECTION candidates=${candidates.size} selected=${selection.selectedCandidate.workItemReference} rawInput=${selection.selectedCandidate.rawInput} partition=${selection.selectedCandidate.partition}")
+    }
+
+    private fun readFrozenMission(root: File): HimPositiveSingleItemTeacherPilotOldMissionBinding {
+        val file = root.resolve(OLD_MISSION_PATH)
+        require(file.isFile)
+        require(sha256(file) == HimPositiveSingleItemTeacherPilotSelectionV1Contract.OLD_MISSION_SHA256)
+        val mission = gson.fromJson(file.readText(), FrozenMissionDto::class.java)
+        require(mission.contract == HimPositiveSingleItemTeacherPilotSelectionV1Contract.OLD_MISSION_CONTRACT)
+        require(mission.expectedItems == 3)
+        require(mission.ordering == mission.items.map { it.workItemReference })
+        require(mission.ordering == HimPositiveSingleItemTeacherPilotSelectionV1Contract.EXCLUDED_WORK_ITEM_REFERENCES)
+        require(mission.provider == HimPositiveSingleItemTeacherPilotSelectionV1Contract.PROVIDER_CONTRACT)
+        return HimPositiveSingleItemTeacherPilotOldMissionBinding(
+            OLD_MISSION_PATH,
+            HimSha256(HimPositiveSingleItemTeacherPilotSelectionV1Contract.OLD_MISSION_SHA256),
+            mission.contract,
+            mission.ordering,
+        )
+    }
+
+    private fun candidateBinding(root: File): HimCandidateDatasetBindingV1? {
+        val file = root.resolve("${HimCandidateDatasetContractV2.MASTER_ROOT}/candidate-dataset.v2.json")
+        if (!file.isFile) return null
+        return HimCandidateDatasetBindingV1(
+            "${HimCandidateDatasetContractV2.MASTER_ROOT}/candidate-dataset.v2.json",
+            HimCandidateIdentityV1.datasetDigest(HimCandidateDatasetPersistenceV2.readDataset(file)),
+        )
+    }
+
+    private fun existingPaidWorkItems(root: File): Set<String> = root.resolve(TRAINING_DIRECTORY).listFiles().orEmpty()
+        .filter { it.isFile && it.name.endsWith(".result.v1.json") }
+        .mapNotNull { runCatching { HimTeacherGroundTruthGenerationPersistenceV1.readResult(it).workItemReference }.getOrNull() }
+        .toSet()
+
+    private fun openEvidenceStores(root: File): Map<HimGroundTruthSource, EvidenceStore> {
+        val offFile = root.resolve(HimOffProductionEvidenceIndexPaths.FINAL_INDEX)
+        val offValidation = HimOffEvidenceIndexValidator.validateReadOnly(offFile)
+        val off = HimOffSqliteEvidenceRetrievalStore.openAfterValidation(offFile, offValidation)
+        val agribalyseFile = root.resolve(HimAgribalyseProductionEvidenceIndexPaths.FINAL_INDEX)
+        val agribalyseValidation = HimAgribalyseEvidenceIndexValidator.validateReadOnly(agribalyseFile)
+        val agribalyse = HimAgribalyseSqliteEvidenceRetrievalStore.openAfterValidation(agribalyseFile, agribalyseValidation)
+        val ciqualFile = root.resolve(HimCiqualProductionEvidenceIndexPaths.FINAL_INDEX)
+        val ciqualValidation = HimCiqualEvidenceIndexValidator.validateReadOnly(ciqualFile)
+        val ciqual = HimCiqualSqliteEvidenceRetrievalStore.openAfterValidation(ciqualFile, ciqualValidation)
+        val giFile = root.resolve(HimGlycemicIndexProductionEvidenceIndexPaths.FINAL_INDEX)
+        val giValidation = HimGlycemicIndexEvidenceIndexValidator.validateReadOnly(giFile)
+        val gi = HimGlycemicIndexSqliteEvidenceRetrievalStore.openAfterValidation(giFile, giValidation)
+        return linkedMapOf(
+            HimGroundTruthSource.OPEN_FOOD_FACTS to EvidenceStore(HimSha256(offValidation.metadata.sourceArtifactSha256.value), off::search, off::fetch),
+            HimGroundTruthSource.AGRIBALYSE to EvidenceStore(HimSha256(agribalyseValidation.metadata.sourceArtifactSha256.value), agribalyse::search, agribalyse::fetch),
+            HimGroundTruthSource.CIQUAL to EvidenceStore(HimSha256(ciqualValidation.metadata.sourceArtifactSha256.value), ciqual::search, ciqual::fetch),
+            HimGroundTruthSource.GLYCEMIC_INDEX to EvidenceStore(HimSha256(giValidation.metadata.sourceArtifactSha256.value), gi::search, gi::fetch),
+        )
+    }
+
+    private fun buildCandidate(
+        item: HimTeacherGroundTruthWorkItemV1,
+        family: HimCanonicalFamily,
+        families: List<HimCanonicalFamily>,
+        release: HimGroundTruthReleaseIdentityV1,
+        stores: Map<HimGroundTruthSource, EvidenceStore>,
+    ): HimPositiveSingleItemTeacherPilotCandidate {
+        val context = HimCanonicalFamilyCandidateRetrieval(families).retrieve(
+            HimCanonicalRetrievalQuery(family.canonicalName, normalize(family.canonicalName)),
+        )
+        require(context.any { it.canonicalId == item.canonicalId })
+        val inference = HimSemanticInferenceRequest(
+            "teacher-f3-8g4:${item.reference}",
+            family.canonicalName,
+            context,
+            emptyList(),
+            HimRetrievalRound(0),
+        )
+        val teacherContext = context.map { result ->
+            HimCandidateCanonicalContext(
+                result.rank,
+                result.canonicalId,
+                result.canonicalName,
+                (result as? HimCanonicalRetrievalResult.Full)?.let { gson.toJson(it.family) },
+            )
+        }
+        val request = HimTeacherGroundTruthGenerationRequestV1.create(
+            item,
+            family.canonicalName,
+            teacherContext,
+            inference,
+            HimTeacherGroundTruthPolicyBindingsV1(
+                providerConfigurationFingerprint = HimOpenAiSemanticProviderConfiguration().fingerprint(),
+                contextBudgetPolicyVersion = HimSemanticContextBudgetPolicy.VERSION,
+            ),
+        )
+        val evidenceBySource = HimGroundTruthSource.entries.map { source ->
+            val store = stores.getValue(source)
+            val hit = store.search(family.canonicalName, HimEvidenceSearchLimit(10)).firstOrNull()
+            val fetched = hit?.let { store.fetch(it.sourceRecordReference) }
+            val evidence = if (hit != null && fetched == hit) {
+                listOf(
+                    HimPositiveSingleItemTeacherPilotEvidence(
+                        HimEvidenceReference(source.name, store.sourceArtifactSha256, hit.sourceRecordReference.value),
+                        HimSemanticEvidenceRelation.DIRECT,
+                    ),
+                )
+            } else {
+                emptyList()
+            }
+            HimPositiveSingleItemTeacherPilotEvidenceSummary(source, evidence, evidence.size, evidence.size)
+        }
+        return HimPositiveSingleItemTeacherPilotCandidate(
+            item.reference,
+            family.canonicalId,
+            family.canonicalName,
+            item.partition,
+            request.requestReference,
+            release,
+            evidenceBySource,
+            evidenceBySource.count { it.validProjectionCount > 0 },
+            evidenceBySource.sumOf { it.validProjectionCount },
+            evidenceBySource.sumOf { it.directEvidenceCount },
+        )
+    }
+
+    private fun normalize(value: String): String = Normalizer.normalize(value, Normalizer.Form.NFKC)
+        .trim()
+        .lowercase(Locale.ROOT)
+
+    private fun command(root: File, vararg args: String): String {
+        val process = ProcessBuilder(listOf("git") + args.toList())
+            .directory(root)
+            .redirectErrorStream(true)
+            .start()
+        val output = process.inputStream.bufferedReader().readText().trim()
+        require(process.waitFor() == 0) { output }
+        return output
+    }
+
+    private fun sha256(file: File): String {
+        require(file.isFile)
+        val digest = MessageDigest.getInstance("SHA-256")
+        file.inputStream().buffered(1024 * 1024).use { input ->
+            val buffer = ByteArray(1024 * 1024)
+            while (true) {
+                val count = input.read(buffer)
+                if (count < 0) break
+                digest.update(buffer, 0, count)
+            }
+        }
+        return digest.digest().joinToString("") { "%02x".format(it.toInt() and 0xff) }
     }
 
     private fun select(vararg candidates: HimPositiveSingleItemTeacherPilotCandidate) = buildSelection(baseInput().copy(candidates = candidates.toList()))
