@@ -83,6 +83,50 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         assertEquals(HimTrainingPartitionV1.VALIDATION, prepared.selection.selectedCandidate.partition)
     }
 
+    @Test fun `accepts multiple ranked candidates with exactly one rank one Vanille winner`() {
+        val prepared = preparedWithRankedCandidates(3)
+        validateFrozenSelection(prepared.selection, HEAD, validV2Binding(HEAD))
+        assertTrue(prepared.selection.rankedCandidates.size >= 3)
+        assertEquals(1, prepared.selection.selectedRank)
+        assertEquals("Vanille", prepared.selection.selectedCandidate.rawInput)
+        assertEquals(HimEntityId("uEV2jY"), prepared.selection.selectedCandidate.entityId)
+    }
+
+    @Test fun `accepts a large complete ranking with one selected winner`() {
+        val prepared = preparedWithRankedCandidates(129)
+        validateFrozenSelection(prepared.selection, HEAD, validV2Binding(HEAD))
+        assertEquals(129, prepared.selection.rankedCandidates.size)
+        assertEquals(1, prepared.selection.selectedRank)
+        assertEquals("Vanille", prepared.selection.selectedCandidate.rawInput)
+    }
+
+    @Test fun `rejects invalid ranking and winner invariants`() {
+        val selection = preparedWithRankedCandidates(3).selection
+        val v2 = validV2Binding(HEAD)
+        assertFails { validateFrozenSelection(selection.copy(rankedCandidates = emptyList()), HEAD, v2) }
+        assertFails { validateFrozenSelection(selection.copy(selectedRank = 2), HEAD, v2) }
+        assertFails { validateFrozenSelection(selection.copy(selectedCandidate = selection.rankedCandidates[1].candidate), HEAD, v2) }
+        assertFails { validateFrozenSelection(selection.copy(rankedCandidates = selection.rankedCandidates + selection.rankedCandidates.first().copy(rank = 4)), HEAD, v2) }
+        assertFails {
+            validateFrozenSelection(
+                selection.copy(rankedCandidates = selection.rankedCandidates.mapIndexed { index, ranked -> if (index == 0) ranked.copy(rank = 2) else ranked }),
+                HEAD,
+                v2,
+            )
+        }
+        assertFails {
+            validateFrozenSelection(
+                selection.copy(
+                    rankedCandidates = listOf(selection.rankedCandidates[1], selection.rankedCandidates[0]) + selection.rankedCandidates.drop(2),
+                    selectedCandidate = selection.rankedCandidates[1].candidate,
+                    selectedRank = 1,
+                ),
+                HEAD,
+                v2,
+            )
+        }
+    }
+
     @Test fun `rejects zero, multiple, and three-item selections`() {
         val prepared = prepared()
         listOf(emptyList(), listOf(prepared.selection.selectedCandidate, prepared.selection.selectedCandidate)).forEach { candidates ->
@@ -203,7 +247,7 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         val v2File = root.resolve(V2_PATH)
         val v2 = HimTeacherPaidPilotOfflinePreflightV2.read(v2File)
         require(HimTeacherPaidPilotOfflinePreflightV2.evaluate(v2, v2) == HimTeacherPaidPilotOfflinePreflightV2Status.CURRENT)
-        val selectionFile = root.resolve(SELECTION_R2_PATH)
+        val selectionFile = root.resolve(SELECTION_R3_PATH)
         val selection = HimPositiveSingleItemTeacherPilotSelectionV1.read(selectionFile)
         validateFrozenSelection(selection, head, HimPositiveSingleItemTeacherPilotPreflightBinding.from(v2, HimSha256(sha256(v2File))))
         val active = HimActiveGroundTruthResolutionV1().resolve(root)
@@ -250,22 +294,58 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         HimPositiveSingleItemTeacherPilotSelectionV1.validate(selection)
         require(selection.checkpoint.headSha256 == head)
         require(selection.preflight == v2)
-        require(selection.rankedCandidates.size == 1)
-        require(selection.selectedCandidate.rawInput == "Vanille")
-        require(selection.selectedCandidate.entityId == HimEntityId("uEV2jY"))
-        require(selection.selectedCandidate.partition == HimTrainingPartitionV1.VALIDATION)
-        require(selection.selectedCandidate.evidenceBySource.size == 4)
-        require(selection.selectedCandidate.evidenceBySource.flatMap { it.evidence }.size == 4)
-        require(selection.selectedCandidate.evidenceBySource.sumOf { it.validProjectionCount } == 4)
-        require(selection.selectedCandidate.evidenceBySource.sumOf { it.directEvidenceCount } == 4)
-        require(selection.selectedCandidate.evidenceBySource.flatMap { it.evidence }.all { it.relation == HimSemanticEvidenceRelation.DIRECT })
+        require(selection.rankedCandidates.isNotEmpty())
+        require(selection.selectedRank == 1)
+        val winner = selection.selectedCandidate
+        val winnerEntries = selection.rankedCandidates.filter { it.candidate.workItemReference == winner.workItemReference }
+        require(winnerEntries.size == 1)
+        require(winnerEntries.single().rank == 1)
+        val first = selection.rankedCandidates.first()
+        require(first.candidate.workItemReference == winner.workItemReference)
+        require(first.candidate.entityId == winner.entityId)
+        require(first.candidate == winner)
+        require(winner.rawInput == "Vanille")
+        require(winner.entityId == HimEntityId("uEV2jY"))
+        require(winner.partition == HimTrainingPartitionV1.VALIDATION)
+        require(winner.evidenceBySource.size == 4)
+        require(winner.evidenceBySource.flatMap { it.evidence }.size == 4)
+        require(winner.evidenceBySource.sumOf { it.validProjectionCount } == 4)
+        require(winner.evidenceBySource.sumOf { it.directEvidenceCount } == 4)
+        require(winner.evidenceBySource.flatMap { it.evidence }.all { it.relation == HimSemanticEvidenceRelation.DIRECT })
     }
 
     private fun prepared(): Prepared {
         val fixture = fixture()
         val candidate = HimPositiveSingleItemTeacherPilotCandidate(fixture.request.workItemReference, fixture.request.canonicalId, "Vanille", HimTrainingPartitionV1.VALIDATION, fixture.request.requestReference, RELEASE, sources().map { source -> HimPositiveSingleItemTeacherPilotEvidenceSummary(source, listOf(HimPositiveSingleItemTeacherPilotEvidence(HimSemanticSourceArtifactIdentityV1.reference(evidence(source)), HimSemanticEvidenceRelation.DIRECT)), 1, 1) }, 4, 4, 4)
+        return prepared(fixture, listOf(candidate))
+    }
+
+    private fun preparedWithRankedCandidates(count: Int): Prepared {
+        require(count >= 1)
+        val fixture = fixture()
+        val candidate = HimPositiveSingleItemTeacherPilotCandidate(fixture.request.workItemReference, fixture.request.canonicalId, "Vanille", HimTrainingPartitionV1.VALIDATION, fixture.request.requestReference, RELEASE, sources().map { source -> HimPositiveSingleItemTeacherPilotEvidenceSummary(source, listOf(HimPositiveSingleItemTeacherPilotEvidence(HimSemanticSourceArtifactIdentityV1.reference(evidence(source)), HimSemanticEvidenceRelation.DIRECT)), 1, 1) }, 4, 4, 4)
+        val alternatives = (1 until count).map { index ->
+            val suffix = index.toString(16).padStart(64, '0')
+            val lowerCoverage = candidate.evidenceBySource.mapIndexed { sourceIndex, summary ->
+                if (sourceIndex == candidate.evidenceBySource.lastIndex) summary.copy(evidence = emptyList(), validProjectionCount = 0, directEvidenceCount = 0) else summary
+            }
+            candidate.copy(
+                workItemReference = "teacher-work:v1:$suffix",
+                entityId = HimEntityId("A%05d".format(index)),
+                rawInput = "Alternative-$index",
+                requestReference = "teacher-request:v1:$suffix",
+                evidenceBySource = lowerCoverage,
+                sourceCoverageCount = 3,
+                validProjectionCount = 3,
+                directEvidenceCount = 3,
+            )
+        }
+        return prepared(fixture, listOf(candidate) + alternatives)
+    }
+
+    private fun prepared(fixture: Fixture, candidates: List<HimPositiveSingleItemTeacherPilotCandidate>): Prepared {
         val preflight = validV2Binding(HEAD)
-        val selection = HimPositiveSingleItemTeacherPilotSelectionV1.select(checkpoint(HEAD), preflight, oldMission(), identity(), indexBindings(), listOf(candidate))
+        val selection = HimPositiveSingleItemTeacherPilotSelectionV1.select(checkpoint(HEAD), preflight, oldMission(), identity(), indexBindings(), candidates)
         return Prepared(selection, fixture.request, sources().map(::evidence))
     }
 
@@ -338,7 +418,7 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
     private companion object {
         const val HEAD = "22ea98d11773109bbe07b8d36c254e46513cce75"
         const val V2_PATH = "build/knowledge/reports/him/training/him-teacher-paid-pilot-offline-preflight.v2.json"
-        const val SELECTION_R2_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.selection.v1.r2.json"
+        const val SELECTION_R3_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.selection.v1.r3.json"
         const val RESULT_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.result.v1.json"
         const val REPORT_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.txt"
         val RELEASE = HimGroundTruthReleaseIdentityV1("release:v1:${"d".repeat(64)}")
