@@ -106,7 +106,7 @@ class RunHimPositiveSingleItemTeacherPilotSelectionV1Test {
 
     private companion object {
         const val TRAINING_DIRECTORY = "build/knowledge/reports/him/training"
-        const val SELECTION_ARTIFACT_PATH = "$TRAINING_DIRECTORY/him-positive-single-item-teacher-paid-pilot.selection.v1.json"
+        const val SELECTION_ARTIFACT_PATH = "$TRAINING_DIRECTORY/him-positive-single-item-teacher-paid-pilot.selection.v1.r2.json"
         const val OLD_MISSION_PATH = HimPositiveSingleItemTeacherPilotSelectionV1Contract.OLD_MISSION_PATH
     }
 
@@ -209,7 +209,7 @@ class RunHimPositiveSingleItemTeacherPilotSelectionV1Test {
 
     @Test fun `selection entrypoint keeps the real artifact path separate from the legacy mission`() {
         assertEquals(
-            "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.selection.v1.json",
+            "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.selection.v1.r2.json",
             SELECTION_ARTIFACT_PATH,
         )
         assertFalse(SELECTION_ARTIFACT_PATH == HimPositiveSingleItemTeacherPilotSelectionV1Contract.OLD_MISSION_PATH)
