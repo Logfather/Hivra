@@ -2,6 +2,8 @@ package de.shopme.testing.system.tools.knowledge.him.canonical.family.groundtrut
 
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalAlias
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamily
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyAuthority
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilySourceCatalog
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalIdentity
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalVariant
 import de.shopme.tools.knowledge.him.canonical.family.HimEntityId
@@ -11,9 +13,12 @@ import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.HimS
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimEvidenceAlignmentClassificationV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimEvidenceAlignmentContractV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimEvidenceAlignmentInputV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimDeterministicEvidenceAlignmentEvaluatorV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimOffEvidenceProjectionV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimPrimaryIdentityStateV1
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertFalse
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
@@ -115,6 +120,71 @@ class RunHimEvidenceAlignmentContractV1Test {
         assertEquals(listOf("Bourbon"), first.uncoveredModifiers)
     }
 
+    @Test
+    fun rasElHanoutAgreementUsesCanonicalSeparatorNormalization() {
+        val family = emptyFamily("Ras el Hanout", "ras-el-hanout", "r00001")
+        val catalog = de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonicalMaster(
+            path = "fixture/catalog.json",
+            contentSha256 = "fixture",
+            records = listOf(
+                de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonical(
+                    itemname = "Ras el Hanout",
+                    normalized = "ras-el-hanout",
+                    taxonomyPaths = emptyList(),
+                ),
+            ),
+        )
+        val authority = HimCanonicalFamilyAuthority(
+            schemaVersion = "fixture",
+            sourceCatalog = HimCanonicalFamilySourceCatalog("fixture/catalog.json", "fixture", 1),
+            families = listOf(family),
+        )
+        val record = HimOffEvidenceProjectionV1.fromProjectionJson(
+            """
+                {"rowOrdinal":2458164,"source":{"code":"4049162121761"},"identity":{"productName":"Ras El Hanout Schubeck","brands":["xx:schuhbeck-s-gewurze"]},"taxonomy":{"categories":["en:ras-el-hanout"]},"quality":{}}
+            """.trimIndent(),
+        )
+
+        val result = HimDeterministicEvidenceAlignmentEvaluatorV1.evaluate(record, catalog, authority, family)
+
+        assertNull(result.primaryIdentity)
+        assertEquals(HimEvidenceAlignmentClassificationV1.UNRESOLVED_PRIMARY_IDENTITY, result.alignment.classification)
+        assertFalse(result.directEvidenceSupported)
+    }
+
+    @Test
+    fun sataysoseAgreementPreservesSharpSSNormalization() {
+        val family = emptyFamily("Sataysoße", "sataysosse", "r00002")
+
+        val result = HimEvidenceAlignmentContractV1.evaluate(
+            HimEvidenceAlignmentInputV1(
+                sourceRecordIdentity = "fixture:sataysose",
+                primaryIdentity = "Sataysoße",
+                primaryIdentityState = HimPrimaryIdentityStateV1.RESOLVED,
+            ),
+            family,
+        )
+
+        assertEquals(HimEvidenceAlignmentClassificationV1.PRIMARY_CANONICAL_MATCH, result.classification)
+        assertTrue(result.directEvidenceSupported)
+    }
+
+    @Test
+    fun genuinelyMismatchedCanonicalNormalizationStillFailsClosed() {
+        val failure = assertFailsWith<IllegalArgumentException> {
+            HimEvidenceAlignmentContractV1.evaluate(
+                HimEvidenceAlignmentInputV1(
+                    sourceRecordIdentity = "fixture:bad-normalization",
+                    primaryIdentity = null,
+                    primaryIdentityState = HimPrimaryIdentityStateV1.UNRESOLVED,
+                ),
+                emptyFamily("Sataysoße", "satay-sosse", "r00003"),
+            )
+        }
+
+        assertEquals("Canonical name and normalized name do not agree.", failure.message)
+    }
+
     private fun evaluate(
         primary: String?,
         modifiers: List<String> = emptyList(),
@@ -161,6 +231,17 @@ class RunHimEvidenceAlignmentContractV1Test {
                 ),
             ),
         ) else emptyList(),
+        variants = emptyList(),
+        aliases = emptyList(),
+    )
+
+    private fun emptyFamily(canonicalName: String, normalizedName: String, id: String) = HimCanonicalFamily(
+        canonicalId = HimEntityId(id),
+        canonicalName = canonicalName,
+        normalizedName = normalizedName,
+        taxonomyPaths = emptyList(),
+        lifecycleStatus = HimLifecycleStatus.ACTIVE,
+        identities = emptyList(),
         variants = emptyList(),
         aliases = emptyList(),
     )

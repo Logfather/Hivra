@@ -4,6 +4,7 @@ import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamily
 import de.shopme.tools.knowledge.him.canonical.family.HimEntityId
 import de.shopme.tools.knowledge.him.canonical.family.HimEntityType
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.inference.HimSemanticEvidenceRelation
+import de.shopme.tools.knowledge.catalog.truecanonical.TrueCanonicalFoodNameNormalizer
 import java.text.Normalizer
 import java.util.Locale
 
@@ -14,6 +15,7 @@ import java.util.Locale
  */
 object HimEvidenceAlignmentContractV1 {
     const val VERSION = "HIM_SOURCE_AGNOSTIC_EVIDENCE_ALIGNMENT_CONTRACT_V1"
+    private val canonicalNameNormalizer = TrueCanonicalFoodNameNormalizer()
 
     fun evaluate(
         input: HimEvidenceAlignmentInputV1,
@@ -22,7 +24,10 @@ object HimEvidenceAlignmentContractV1 {
         val canonicalName = normalize(canonicalFamily.canonicalName)
         val canonicalStoredName = normalize(canonicalFamily.normalizedName)
         require(canonicalName.isNotEmpty() && canonicalStoredName.isNotEmpty())
-        require(canonicalName == canonicalStoredName) {
+        require(
+            canonicalNameNormalizer.normalize(canonicalFamily.canonicalName) ==
+                canonicalNameNormalizer.normalize(canonicalFamily.normalizedName),
+        ) {
             "Canonical name and normalized name do not agree."
         }
 
