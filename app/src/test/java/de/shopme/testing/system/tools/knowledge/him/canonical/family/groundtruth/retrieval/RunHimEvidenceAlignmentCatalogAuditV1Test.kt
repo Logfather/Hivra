@@ -42,6 +42,7 @@ import java.io.File
 import java.io.InputStream
 import java.sql.DriverManager
 import java.util.TreeMap
+import org.junit.Assume.assumeTrue
 
 class RunHimEvidenceAlignmentCatalogAuditV1Test {
     private companion object {
@@ -131,83 +132,8 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
         }
         val missionBefore = missionFile.takeIf { it.isFile }?.readBytes()
 
-        val paths = HimCanonicalFamilyPaths(root)
-        val catalog = HimProductOnlyCanonicalMasterReader().read(paths)
-        val persistence = HimCanonicalFamilyPersistence()
-        val masterRegistry = persistence.readRegistry(paths.entityIdRegistry)
-        val masterAuthority = persistence.readAuthority(paths.familyAuthority)
-        HimCanonicalFamilyValidator().validate(catalog, masterRegistry, masterAuthority)
-
-        val foundationRelease = HimCanonicalFamilyFoundationReleasePersistence().read(
-            root.resolve(HimCanonicalFamilyFoundationReleaseBuilder.RELEASE_RECORD_PATH),
-        )
-        HimCanonicalFamilyFoundationReleaseValidator().validate(foundationRelease)
-
-        val active = HimActiveGroundTruthResolutionV1().resolve(root)
-        val authority = persistence.readAuthority(active.authorityFile)
-        require(authority.sourceCatalog.path == catalog.path)
-        require(authority.sourceCatalog.contentSha256 == catalog.contentSha256)
-        require(authority.sourceCatalog.recordCount == catalog.records.size)
-        val release = HimGroundTruthReleasePersistenceV1().read(active.releaseFile)
-        require(release.state == HimGroundTruthReleaseState.RELEASED)
-        validateActiveGroundTruthRelease(root, active, authority, release)
-
-        val productionReleaseFile = root.resolve(HimProductionIndexFileIdentityReleaseContractV1.PATH)
-        val productionRelease = HimProductionIndexFileIdentityReleasePersistenceV1.read(productionReleaseFile)
-        val indexSizes = productionRelease.sources.associate { source ->
-            source.indexPath to root.resolve(source.indexPath).length()
-        }
-        HimProductionIndexFileIdentityReleasePersistenceV1.validate(productionRelease, indexSizes)
-        val sourceBindings = productionRelease.sources.map { source ->
-            val index = root.resolve(source.indexPath)
-            val metadata = readIndexMetadata(index)
-            require(metadata.source == HimGroundTruthSource.valueOf(source.source))
-            require(metadata.sourceArtifactPath == source.optimizedSourcePath)
-            require(metadata.sourceArtifactSha256.value == source.optimizedSourceSha256)
-            require(metadata.schemaVersion == source.schemaVersion)
-            require(metadata.indexBuildPolicyVersion == source.buildPolicyVersion)
-            require(metadata.evidenceProjectionPolicyVersion == source.projectionPolicyVersion)
-            require(metadata.evidenceRecordCount == source.evidenceRows)
-            require(metadata.ftsRowCount == source.ftsRows)
-            require(metadata.indexedRecordCount == source.evidenceRows)
-            require(metadata.logicalContentSha256.value == source.logicalIndexDigest)
-            require(metadata.buildState == HimEvidenceRetrievalIndexBuildState.VALIDATED)
-            require(
-                HimEvidenceRetrievalIndexValidator.runtimeEligibility(
-                    metadata,
-                    HimExpectedEvidenceRetrievalIndex(metadata.source, metadata.sourceArtifactSha256),
-                ) == HimEvidenceRetrievalIndexEligibility.Ready,
-            )
-            val sqliteDigest = HimEvidenceAlignmentCatalogAuditRuntimeV1.streamingSha256(index)
-            require(sqliteDigest == source.sqliteFileSha256)
-            HimEvidenceAlignmentCatalogAuditSourceBindingV1(
-                source = metadata.source,
-                indexRelativePath = source.indexPath,
-                indexByteSize = index.length(),
-                sqliteFileSha256 = sqliteDigest,
-                sourceArtifactPath = metadata.sourceArtifactPath,
-                sourceArtifactSha256 = metadata.sourceArtifactSha256.value,
-                schemaVersion = metadata.schemaVersion,
-                indexBuildPolicyVersion = metadata.indexBuildPolicyVersion,
-                evidenceProjectionPolicyVersion = metadata.evidenceProjectionPolicyVersion,
-                logicalContentSha256 = metadata.logicalContentSha256.value,
-                buildState = metadata.buildState,
-            )
-        }
-        require(sourceBindings.map { it.source } == HimEvidenceAlignmentCatalogAuditContractV1.SOURCE_ORDER)
-
-        val manifest = HimTeacherPaidPilotOfflinePreflightV2.implementationManifest(root)
-        val request = HimEvidenceAlignmentCatalogAuditMissionFreezeRequestV1(
-            root = root,
-            gitHead = head,
-            catalogRelativePath = HimCanonicalFamilyPaths.PRODUCT_ONLY_MASTER_PATH,
-            authorityRelativePath = relativePath(root, active.authorityFile),
-            groundTruthReleaseReference = active.releaseReference.value,
-            implementationManifestRelativePaths = manifest.entries.map { it.path },
-            sourceBindings = sourceBindings,
-            authority = authority,
-            maxItemsPerShard = REAL_MAX_ITEMS_PER_SHARD,
-        )
+        val context = loadRealAuditContext(root, requireMission = false, openStores = false)
+        val request = missionFreezeRequest(context)
 
         // The committed runtime API receives this explicit freeze gate. No audit property is read here;
         // the only external opt-in is HimTestExecutionBoundaryV1.requireSourceIntegrationEnabled().
@@ -228,6 +154,92 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
         assertTrue(!shardDirectory.exists())
         assertFalse(aggregateFile.exists())
         assertFalse(aggregateTextFile.exists())
+    }
+
+    @Test
+    fun `executes exactly one current real-bound catalog alignment audit shard`() {
+        HimTestExecutionBoundaryV1.requireSourceIntegrationEnabled()
+        val gate = realShardGate()
+        require(gate.enabled)
+        val shardId = System.getProperty(HimEvidenceAlignmentCatalogAuditRuntimeGateV1.SHARD_ID_PROPERTY)
+            ?.takeIf { it.isNotBlank() }
+            ?: error("SHARD_ID_REQUIRED")
+        require(shardId.matches(Regex("shard-[0-9]{6}"))) { "INVALID_SHARD_ID" }
+
+        val context = loadRealAuditContext(projectRoot(), requireMission = true, openStores = true)
+        val mission = requireNotNull(context.mission)
+        require(mission.bindings.gitHead == context.currentGitHead) { "MISSION_HEAD_MISMATCH" }
+        require(mission.bindings == context.bindings) { "MISSION_BINDING_MISMATCH" }
+        val shard = mission.shards.singleOrNull { it.shardId == shardId }
+            ?: error("UNKNOWN_SHARD")
+        val output = HimEvidenceAlignmentCatalogAuditPathsV1.shard(context.root, shardId)
+        require(!output.exists()) { "SHARD_RESULT_ALREADY_EXISTS" }
+        require(!HimEvidenceAlignmentCatalogAuditPathsV1.aggregate(context.root).exists()) { "AGGREGATE_ALREADY_EXISTS" }
+        require(!HimEvidenceAlignmentCatalogAuditPathsV1.aggregateText(context.root).exists()) { "AGGREGATE_TEXT_ALREADY_EXISTS" }
+        require(context.stores.map { it.source } == HimEvidenceAlignmentCatalogAuditContractV1.SOURCE_ORDER) {
+            "SOURCE_ORDER_MISMATCH"
+        }
+        require(context.stores.all { it.binding == mission.bindings.sourceBindings.single { binding -> binding.source == it.source } }) {
+            "SOURCE_BINDING_MISMATCH"
+        }
+
+        val result = HimEvidenceAlignmentCatalogAuditRuntimeV1.executeShard(
+            HimEvidenceAlignmentCatalogAuditShardRequestV1(
+                root = context.root,
+                currentGitHead = context.currentGitHead,
+                currentBindings = context.bindings,
+                catalog = context.catalog,
+                authority = context.authority,
+                stores = context.stores,
+                shardId = shardId,
+            ),
+            gate,
+        )
+        val shardResult = assertIs<HimEvidenceAlignmentCatalogAuditRuntimeResult.Completed<*>>(result).value
+            as HimEvidenceAlignmentCatalogAuditShardResultV1
+        require(shardResult.shardId == shardId)
+        require(shardResult.state == HimEvidenceAlignmentCatalogAuditState.COMPLETE)
+        require(shardResult.missionDigest == mission.missionDigest)
+        require(shardResult.shardBindingDigest == HimEvidenceAlignmentCatalogAuditPersistenceV1.shardBindingDigest(mission, shard))
+        require(shardResult.cells.size == shard.canonicalCount * HimEvidenceAlignmentCatalogAuditContractV1.SOURCE_ORDER.size)
+        require(shardResult.cells.map { it.entityId to it.source } == shard.canonicalEntityIds.flatMap { entityId ->
+            HimEvidenceAlignmentCatalogAuditContractV1.SOURCE_ORDER.map { source -> entityId to source }
+        })
+        require(shardResult.cells.all { it.completed && it.technicalValid && it.technicalErrors == 0 })
+        require(shardResult.counters.coverageGaps == 0)
+        require(shardResult.counters.technicalErrors == 0)
+        val reloaded = HimEvidenceAlignmentCatalogAuditPersistenceV1.readShard(output, mission)
+        require(reloaded == shardResult)
+        require(!HimEvidenceAlignmentCatalogAuditPathsV1.aggregate(context.root).exists())
+        require(!HimEvidenceAlignmentCatalogAuditPathsV1.aggregateText(context.root).exists())
+    }
+
+    @Test
+    fun `aggregates current complete real-bound catalog alignment audit without opening stores`() {
+        assumeTrue(System.getProperty(HimEvidenceAlignmentCatalogAuditRuntimeGateV1.CATALOG_AUDIT_PROPERTY) == "true")
+        assumeTrue(System.getProperty(HimEvidenceAlignmentCatalogAuditRuntimeGateV1.CONFIRMATION_PROPERTY) == HimEvidenceAlignmentCatalogAuditRuntimeGateV1.CONFIRMATION)
+        val context = loadRealAuditContext(projectRoot(), requireMission = true, openStores = false)
+        val mission = requireNotNull(context.mission)
+        require(mission.bindings.gitHead == context.currentGitHead) { "MISSION_HEAD_MISMATCH" }
+        require(mission.bindings == context.bindings) { "MISSION_BINDING_MISMATCH" }
+        require(mission.shards.all { HimEvidenceAlignmentCatalogAuditPathsV1.shard(context.root, it.shardId).isFile }) {
+            "MISSING_SHARD"
+        }
+        val aggregateFile = HimEvidenceAlignmentCatalogAuditPathsV1.aggregate(context.root)
+        val aggregateTextFile = HimEvidenceAlignmentCatalogAuditPathsV1.aggregateText(context.root)
+        val aggregateBefore = aggregateFile.takeIf { it.isFile }?.readBytes()
+        val aggregateTextBefore = aggregateTextFile.takeIf { it.isFile }?.readBytes()
+
+        val result = HimEvidenceAlignmentCatalogAuditRuntimeV1.aggregate(context.root)
+        val aggregate = assertIs<HimEvidenceAlignmentCatalogAuditRuntimeResult.Completed<*>>(result).value
+            as HimEvidenceAlignmentCatalogAuditAggregateV1
+        require(aggregate.state == HimEvidenceAlignmentCatalogAuditState.COMPLETE)
+        val reloaded = HimEvidenceAlignmentCatalogAuditPersistenceV1.readAggregate(aggregateFile, mission)
+        require(reloaded == aggregate)
+        require(aggregateBefore == null || aggregateBefore.contentEquals(aggregateFile.readBytes()))
+        require(aggregateTextBefore == null || aggregateTextBefore.contentEquals(aggregateTextFile.readBytes()))
+        require(aggregateTextFile.readText().startsWith("HIM_EVIDENCE_ALIGNMENT_CATALOG_AUDIT_V1\n"))
+        require(aggregateTextFile.readText().contains("logicalDigest=${aggregate.logicalDigest}"))
     }
 
     @Test
@@ -688,6 +700,199 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
         require(active.releaseDirectory.canonicalFile.path.startsWith(root.canonicalFile.path))
     }
 
+    private data class RealAuditContext(
+        val root: File,
+        val currentGitHead: String,
+        val catalog: HimProductOnlyCanonicalMaster,
+        val authority: HimCanonicalFamilyAuthority,
+        val groundTruthRelease: HimGroundTruthRelease,
+        val bindings: HimEvidenceAlignmentCatalogAuditBindingsV1,
+        val mission: HimEvidenceAlignmentCatalogAuditMissionPlanV1?,
+        val stores: List<HimEvidenceAlignmentCatalogAuditStoreV1>,
+    )
+
+    private fun missionFreezeRequest(context: RealAuditContext) =
+        HimEvidenceAlignmentCatalogAuditMissionFreezeRequestV1(
+            root = context.root,
+            gitHead = context.currentGitHead,
+            catalogRelativePath = context.bindings.canonicalCatalog.relativePath,
+            authorityRelativePath = context.bindings.authority.relativePath,
+            groundTruthReleaseReference = context.bindings.groundTruthReleaseReference,
+            implementationManifestRelativePaths = HimTeacherPaidPilotOfflinePreflightV2
+                .implementationManifest(context.root).entries.map { it.path },
+            sourceBindings = context.bindings.sourceBindings,
+            authority = context.authority,
+            maxItemsPerShard = REAL_MAX_ITEMS_PER_SHARD,
+        )
+
+    private fun loadRealAuditContext(
+        root: File,
+        requireMission: Boolean,
+        openStores: Boolean,
+    ): RealAuditContext {
+        val currentGitHead = git(root, "rev-parse", "HEAD")
+        require(currentGitHead.matches(Regex("[0-9a-f]{40}")))
+        val paths = HimCanonicalFamilyPaths(root)
+        val catalog = HimProductOnlyCanonicalMasterReader().read(paths)
+        val persistence = HimCanonicalFamilyPersistence()
+        val masterRegistry = persistence.readRegistry(paths.entityIdRegistry)
+        val masterAuthority = persistence.readAuthority(paths.familyAuthority)
+        HimCanonicalFamilyValidator().validate(catalog, masterRegistry, masterAuthority)
+
+        val foundationRelease = HimCanonicalFamilyFoundationReleasePersistence().read(
+            root.resolve(HimCanonicalFamilyFoundationReleaseBuilder.RELEASE_RECORD_PATH),
+        )
+        HimCanonicalFamilyFoundationReleaseValidator().validate(foundationRelease)
+
+        val active = HimActiveGroundTruthResolutionV1().resolve(root)
+        val authority = persistence.readAuthority(active.authorityFile)
+        require(authority.sourceCatalog.path == catalog.path)
+        require(authority.sourceCatalog.contentSha256 == catalog.contentSha256)
+        require(authority.sourceCatalog.recordCount == catalog.records.size)
+        val release = HimGroundTruthReleasePersistenceV1().read(active.releaseFile)
+        require(release.state == HimGroundTruthReleaseState.RELEASED)
+        validateActiveGroundTruthRelease(root, active, authority, release)
+
+        val productionReleaseFile = root.resolve(HimProductionIndexFileIdentityReleaseContractV1.PATH)
+        val productionRelease = HimProductionIndexFileIdentityReleasePersistenceV1.read(productionReleaseFile)
+        val indexSizes = productionRelease.sources.associate { source ->
+            source.indexPath to root.resolve(source.indexPath).length()
+        }
+        HimProductionIndexFileIdentityReleasePersistenceV1.validate(productionRelease, indexSizes)
+        val sourceBindings = productionRelease.sources.map { source ->
+            val index = root.resolve(source.indexPath)
+            val metadata = readIndexMetadata(index)
+            require(metadata.source == HimGroundTruthSource.valueOf(source.source))
+            require(metadata.sourceArtifactPath == source.optimizedSourcePath)
+            require(metadata.sourceArtifactSha256.value == source.optimizedSourceSha256)
+            require(metadata.schemaVersion == source.schemaVersion)
+            require(metadata.indexBuildPolicyVersion == source.buildPolicyVersion)
+            require(metadata.evidenceProjectionPolicyVersion == source.projectionPolicyVersion)
+            require(metadata.evidenceRecordCount == source.evidenceRows)
+            require(metadata.ftsRowCount == source.ftsRows)
+            require(metadata.indexedRecordCount == source.evidenceRows)
+            require(metadata.logicalContentSha256.value == source.logicalIndexDigest)
+            require(metadata.buildState == HimEvidenceRetrievalIndexBuildState.VALIDATED)
+            require(
+                HimEvidenceRetrievalIndexValidator.runtimeEligibility(
+                    metadata,
+                    HimExpectedEvidenceRetrievalIndex(metadata.source, metadata.sourceArtifactSha256),
+                ) == HimEvidenceRetrievalIndexEligibility.Ready,
+            )
+            val sqliteDigest = HimEvidenceAlignmentCatalogAuditRuntimeV1.streamingSha256(index)
+            require(sqliteDigest == source.sqliteFileSha256)
+            HimEvidenceAlignmentCatalogAuditSourceBindingV1(
+                source = metadata.source,
+                indexRelativePath = source.indexPath,
+                indexByteSize = index.length(),
+                sqliteFileSha256 = sqliteDigest,
+                sourceArtifactPath = metadata.sourceArtifactPath,
+                sourceArtifactSha256 = metadata.sourceArtifactSha256.value,
+                schemaVersion = metadata.schemaVersion,
+                indexBuildPolicyVersion = metadata.indexBuildPolicyVersion,
+                evidenceProjectionPolicyVersion = metadata.evidenceProjectionPolicyVersion,
+                logicalContentSha256 = metadata.logicalContentSha256.value,
+                buildState = metadata.buildState,
+            )
+        }
+        require(sourceBindings.map { it.source } == HimEvidenceAlignmentCatalogAuditContractV1.SOURCE_ORDER)
+
+        val manifest = HimTeacherPaidPilotOfflinePreflightV2.implementationManifest(root)
+        val implementationPaths = manifest.entries.map { it.path }
+        val implementationBindingSha256 = implementationBindingSha256(root, implementationPaths)
+        val bindings = HimEvidenceAlignmentCatalogAuditBindingsV1(
+            gitHead = currentGitHead,
+            implementationBindingSha256 = implementationBindingSha256,
+            canonicalCatalog = HimEvidenceAlignmentCatalogAuditFileBindingV1(
+                HimCanonicalFamilyPaths.PRODUCT_ONLY_MASTER_PATH,
+                root.resolve(HimCanonicalFamilyPaths.PRODUCT_ONLY_MASTER_PATH).length(),
+                HimEvidenceAlignmentCatalogAuditRuntimeV1.streamingSha256(
+                    root.resolve(HimCanonicalFamilyPaths.PRODUCT_ONLY_MASTER_PATH),
+                ),
+            ),
+            authority = HimEvidenceAlignmentCatalogAuditFileBindingV1(
+                relativePath(root, active.authorityFile),
+                active.authorityFile.length(),
+                HimEvidenceAlignmentCatalogAuditRuntimeV1.streamingSha256(active.authorityFile),
+            ),
+            groundTruthReleaseReference = active.releaseReference.value,
+            sourceBindings = sourceBindings,
+        )
+        bindings.validate()
+        val missionFile = HimEvidenceAlignmentCatalogAuditPathsV1.mission(root)
+        val mission = missionFile.takeIf { it.isFile }?.let(HimEvidenceAlignmentCatalogAuditPersistenceV1::readMission)
+        if (requireMission) requireNotNull(mission) { "MISSION_MISSING" }
+
+        val stores = if (openStores) realStores(root, sourceBindings) else emptyList()
+        return RealAuditContext(root, currentGitHead, catalog, authority, release, bindings, mission, stores)
+    }
+
+    private fun implementationBindingSha256(root: File, relativePaths: List<String>): String {
+        val paths = relativePaths.distinct().sorted()
+        require(paths.size == relativePaths.size)
+        val entries = paths.map { path ->
+            val file = root.resolve(path)
+            require(file.isFile && file.canRead())
+            "$path|${file.length()}|${HimEvidenceAlignmentCatalogAuditRuntimeV1.streamingSha256(file)}"
+        }
+        return HimEvidenceAlignmentCatalogAuditPersistenceV1.sha256(entries.joinToString("\n") + "\n")
+    }
+
+    private fun realStores(
+        root: File,
+        bindings: List<HimEvidenceAlignmentCatalogAuditSourceBindingV1>,
+    ): List<HimEvidenceAlignmentCatalogAuditStoreV1> {
+        val offFile = root.resolve(HimOffProductionEvidenceIndexPaths.FINAL_INDEX)
+        val offValidation = HimOffEvidenceIndexValidator.validateReadOnly(offFile)
+        val off = HimOffSqliteEvidenceRetrievalStore.openAfterValidation(offFile, offValidation)
+        val agribalyseFile = root.resolve(HimAgribalyseProductionEvidenceIndexPaths.FINAL_INDEX)
+        val agribalyseValidation = HimAgribalyseEvidenceIndexValidator.validateReadOnly(agribalyseFile)
+        val agribalyse = HimAgribalyseSqliteEvidenceRetrievalStore.openAfterValidation(agribalyseFile, agribalyseValidation)
+        val ciqualFile = root.resolve(HimCiqualProductionEvidenceIndexPaths.FINAL_INDEX)
+        val ciqualValidation = HimCiqualEvidenceIndexValidator.validateReadOnly(ciqualFile)
+        val ciqual = HimCiqualSqliteEvidenceRetrievalStore.openAfterValidation(ciqualFile, ciqualValidation)
+        val glycemicIndexFile = root.resolve(HimGlycemicIndexProductionEvidenceIndexPaths.FINAL_INDEX)
+        val glycemicIndexValidation = HimGlycemicIndexEvidenceIndexValidator.validateReadOnly(glycemicIndexFile)
+        val glycemicIndex = HimGlycemicIndexSqliteEvidenceRetrievalStore.openAfterValidation(glycemicIndexFile, glycemicIndexValidation)
+        require(relativePath(root, offFile) == bindings.single { it.source == HimGroundTruthSource.OPEN_FOOD_FACTS }.indexRelativePath)
+        require(relativePath(root, agribalyseFile) == bindings.single { it.source == HimGroundTruthSource.AGRIBALYSE }.indexRelativePath)
+        require(relativePath(root, ciqualFile) == bindings.single { it.source == HimGroundTruthSource.CIQUAL }.indexRelativePath)
+        require(relativePath(root, glycemicIndexFile) == bindings.single { it.source == HimGroundTruthSource.GLYCEMIC_INDEX }.indexRelativePath)
+        return listOf(
+            RealStore(HimGroundTruthSource.OPEN_FOOD_FACTS, bindings.single { it.source == HimGroundTruthSource.OPEN_FOOD_FACTS }, off::search) { reference ->
+                off.fetch(reference)?.let(::toIndexRecord)
+            },
+            RealStore(HimGroundTruthSource.AGRIBALYSE, bindings.single { it.source == HimGroundTruthSource.AGRIBALYSE }, agribalyse::search) { reference ->
+                agribalyse.fetch(reference)?.let(::toIndexRecord)
+            },
+            RealStore(HimGroundTruthSource.CIQUAL, bindings.single { it.source == HimGroundTruthSource.CIQUAL }, ciqual::search) { reference ->
+                ciqual.fetch(reference)?.let(::toIndexRecord)
+            },
+            RealStore(HimGroundTruthSource.GLYCEMIC_INDEX, bindings.single { it.source == HimGroundTruthSource.GLYCEMIC_INDEX }, glycemicIndex::search) { reference ->
+                glycemicIndex.fetch(reference)?.let(::toIndexRecord)
+            },
+        )
+    }
+
+    private fun toIndexRecord(result: HimEvidenceSearchResult): HimEvidenceRetrievalIndexRecord = when (result.source) {
+        HimGroundTruthSource.OPEN_FOOD_FACTS -> HimOffEvidenceProjectionV1.fromProjectionJson(result.evidenceProjection.deterministicJson)
+        HimGroundTruthSource.AGRIBALYSE -> HimAgribalyseEvidenceProjectionV1.fromProjectionJson(result.evidenceProjection.deterministicJson)
+        HimGroundTruthSource.CIQUAL -> HimCiqualEvidenceProjectionV1.fromProjectionJson(result.evidenceProjection.deterministicJson, 1)
+        HimGroundTruthSource.GLYCEMIC_INDEX -> HimGlycemicIndexEvidenceProjectionV1.fromProjectionJson(result.evidenceProjection.deterministicJson, 1)
+    }
+
+    private fun realShardGate() = HimEvidenceAlignmentCatalogAuditRuntimeGateV1.fromProperties().also {
+        require(System.getProperty(HimEvidenceAlignmentCatalogAuditRuntimeGateV1.SOURCE_INTEGRATION_PROPERTY) == "true") {
+            "SOURCE_INTEGRATION_REQUIRED"
+        }
+        require(System.getProperty(HimEvidenceAlignmentCatalogAuditRuntimeGateV1.CATALOG_AUDIT_PROPERTY) == "true") {
+            "AUDIT_OPT_IN_REQUIRED"
+        }
+        require(System.getProperty(HimEvidenceAlignmentCatalogAuditRuntimeGateV1.CONFIRMATION_PROPERTY) == HimEvidenceAlignmentCatalogAuditRuntimeGateV1.CONFIRMATION) {
+            "AUDIT_CONFIRMATION_REQUIRED"
+        }
+    }
+
     private fun readIndexMetadata(index: File): HimEvidenceRetrievalIndexMetadata {
         require(index.isFile && index.canRead())
         Class.forName("org.sqlite.JDBC")
@@ -813,6 +1018,17 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
         """{"recordKind":"MEASUREMENT","arrayOrdinal":823,"foodNumber":823,"pageNumber":1,"foodItem":{"lexicalValue":"Prince Petit Déjeuner Vanille (LU, France and Spain)","status":"PRESENT"},"country":{"lexicalValue":"France","status":"PRESENT"},"year":{"lexicalValue":"2010","status":"PRESENT"},"gi":{"lexicalValue":"73","status":"PRESENT"},"sem":{"lexicalValue":"6","status":"PRESENT"},"gl":{"lexicalValue":"11","status":"PRESENT"},"subjects":{"lexicalValue":"10","status":"PRESENT"},"availableCarbohydrate":{"lexicalValue":"50","status":"PRESENT"},"testPortion":{"lexicalValue":"119","status":"PRESENT"},"referenceFoodTime":{"lexicalValue":"Bread, 2h","status":"PRESENT"},"timepoints":{"lexicalValue":"Standard","status":"PRESENT"},"sampleCollection":{"lexicalValue":"Capillary","status":"PRESENT"},"analysisMethod":{"lexicalValue":"YSI","status":"PRESENT"},"referenceCode":{"lexicalValue":"UO7","status":"PRESENT"},"sourceContext":{"majorCategory":"COOKIES","subcategory":null,"deeperHeading":null}}""",
         4,
     )
+
+    private class RealStore(
+        override val source: HimGroundTruthSource,
+        override val binding: HimEvidenceAlignmentCatalogAuditSourceBindingV1,
+        private val searcher: (String, HimEvidenceSearchLimit) -> List<HimEvidenceSearchResult>,
+        private val fetcher: (HimEvidenceRecordReference) -> HimEvidenceRetrievalIndexRecord?,
+    ) : HimEvidenceAlignmentCatalogAuditStoreV1 {
+        override fun search(query: String, limit: HimEvidenceSearchLimit) = searcher(query, limit)
+
+        override fun fetch(reference: HimEvidenceRecordReference) = fetcher(reference)
+    }
 
     private class FakeStore(
         override val source: HimGroundTruthSource,
