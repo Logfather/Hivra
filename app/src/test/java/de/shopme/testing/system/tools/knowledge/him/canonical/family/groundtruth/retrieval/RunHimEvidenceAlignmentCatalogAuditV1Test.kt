@@ -38,6 +38,8 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertIs
 import kotlin.test.assertTrue
+import kotlin.test.assertFailsWith
+import kotlin.test.fail
 import java.io.File
 import java.io.InputStream
 import java.sql.DriverManager
@@ -145,8 +147,7 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
                 confirmation = HimEvidenceAlignmentCatalogAuditRuntimeGateV1.CONFIRMATION,
             ),
         )
-        val plan = assertIs<HimEvidenceAlignmentCatalogAuditRuntimeResult.Completed<*>>(result).value
-            as HimEvidenceAlignmentCatalogAuditMissionPlanV1
+        val plan = runtimeValue<HimEvidenceAlignmentCatalogAuditMissionPlanV1>(result)
         val missionAfter = missionFile.readBytes()
         if (missionBefore != null) assertTrue(missionBefore.contentEquals(missionAfter))
         assertEquals(plan, HimEvidenceAlignmentCatalogAuditPersistenceV1.readMission(missionFile))
@@ -195,8 +196,7 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
             ),
             gate,
         )
-        val shardResult = assertIs<HimEvidenceAlignmentCatalogAuditRuntimeResult.Completed<*>>(result).value
-            as HimEvidenceAlignmentCatalogAuditShardResultV1
+        val shardResult = runtimeValue<HimEvidenceAlignmentCatalogAuditShardResultV1>(result)
         require(shardResult.shardId == shardId)
         require(shardResult.state == HimEvidenceAlignmentCatalogAuditState.COMPLETE)
         require(shardResult.missionDigest == mission.missionDigest)
@@ -231,8 +231,7 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
         val aggregateTextBefore = aggregateTextFile.takeIf { it.isFile }?.readBytes()
 
         val result = HimEvidenceAlignmentCatalogAuditRuntimeV1.aggregate(context.root)
-        val aggregate = assertIs<HimEvidenceAlignmentCatalogAuditRuntimeResult.Completed<*>>(result).value
-            as HimEvidenceAlignmentCatalogAuditAggregateV1
+        val aggregate = runtimeValue<HimEvidenceAlignmentCatalogAuditAggregateV1>(result)
         require(aggregate.state == HimEvidenceAlignmentCatalogAuditState.COMPLETE)
         val reloaded = HimEvidenceAlignmentCatalogAuditPersistenceV1.readAggregate(aggregateFile, mission)
         require(reloaded == aggregate)
@@ -494,6 +493,33 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
         )
         assertIs<HimEvidenceAlignmentCatalogAuditRuntimeResult.Skipped>(result)
         assertFalse(HimEvidenceAlignmentCatalogAuditPathsV1.mission(root).exists())
+    }
+
+    @Test
+    fun runtimeResultCompletedReturnsTypedValue() {
+        val value = runtimeValue<String>(HimEvidenceAlignmentCatalogAuditRuntimeResult.Completed("completed-value"))
+        assertEquals("completed-value", value)
+    }
+
+    @Test
+    fun runtimeResultFailureAndSkipReasonsRemainExact() {
+        val reasons = listOf(
+            "AUDIT_FAILURE reason=EVALUATOR_FAILURE shard=shard-000001 canonical=abc source=CIQUAL query=Vanille",
+            "MISSION_HEAD_MISMATCH",
+            "SOURCE_BINDING_MISMATCH",
+        )
+        reasons.forEach { reason ->
+            val failure = assertFailsWith<AssertionError> {
+                runtimeValue<String>(HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(reason))
+            }
+            assertEquals(reason, failure.message)
+            assertFalse(failure.message.orEmpty().contains("/"))
+        }
+
+        val skipped = assertFailsWith<AssertionError> {
+            runtimeValue<String>(HimEvidenceAlignmentCatalogAuditRuntimeResult.Skipped("AUDIT_OPT_IN_REQUIRED"))
+        }
+        assertEquals("AUDIT_OPT_IN_REQUIRED", skipped.message)
     }
 
     @Test
@@ -891,6 +917,14 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
         require(System.getProperty(HimEvidenceAlignmentCatalogAuditRuntimeGateV1.CONFIRMATION_PROPERTY) == HimEvidenceAlignmentCatalogAuditRuntimeGateV1.CONFIRMATION) {
             "AUDIT_CONFIRMATION_REQUIRED"
         }
+    }
+
+    private inline fun <reified T> runtimeValue(
+        result: HimEvidenceAlignmentCatalogAuditRuntimeResult<T>,
+    ): T = when (result) {
+        is HimEvidenceAlignmentCatalogAuditRuntimeResult.Completed -> assertIs<T>(result.value)
+        is HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed -> fail(result.reason)
+        is HimEvidenceAlignmentCatalogAuditRuntimeResult.Skipped -> fail(result.reason)
     }
 
     private fun readIndexMetadata(index: File): HimEvidenceRetrievalIndexMetadata {
