@@ -28,6 +28,10 @@ class TrueCanonicalFoodNameNormalizer {
                     "ß",
                     "ss"
                 )
+                .replace(
+                    STANDALONE_AMPERSAND_REGEX,
+                    " und "
+                )
 
         val decomposed =
             Normalizer.normalize(
@@ -63,6 +67,11 @@ class TrueCanonicalFoodNameNormalizer {
         private val NON_ALPHANUMERIC_REGEX =
             Regex(
                 """[^a-z0-9]+"""
+            )
+
+        private val STANDALONE_AMPERSAND_REGEX =
+            Regex(
+                """(?<![\p{L}\p{N}])&+(?![\p{L}\p{N}])"""
             )
 
         private val MULTIPLE_HYPHEN_REGEX =

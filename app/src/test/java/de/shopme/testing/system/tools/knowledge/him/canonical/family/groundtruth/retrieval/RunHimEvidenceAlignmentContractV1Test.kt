@@ -170,6 +170,43 @@ class RunHimEvidenceAlignmentContractV1Test {
     }
 
     @Test
+    fun erbsenAndMoehrenAgreementUsesStoredConjunctionKey() {
+        val family = emptyFamily("Erbsen & Möhren", "erbsen-und-moehren", "r00004")
+        val catalog = de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonicalMaster(
+            path = "fixture/catalog.json",
+            contentSha256 = "fixture",
+            records = listOf(
+                de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonical(
+                    itemname = "Erbsen",
+                    normalized = "erbsen",
+                    taxonomyPaths = emptyList(),
+                ),
+                de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonical(
+                    itemname = "Erbsen & Möhren",
+                    normalized = "erbsen-und-moehren",
+                    taxonomyPaths = emptyList(),
+                ),
+            ),
+        )
+        val authority = HimCanonicalFamilyAuthority(
+            schemaVersion = "fixture",
+            sourceCatalog = HimCanonicalFamilySourceCatalog("fixture/catalog.json", "fixture", 2),
+            families = listOf(family),
+        )
+        val record = HimOffEvidenceProjectionV1.fromProjectionJson(
+            """
+                {"rowOrdinal":1971769,"source":{"code":"3017800233832"},"identity":{"productName":"Erbsen mit Möhren"},"taxonomy":{},"quality":{}}
+            """.trimIndent(),
+        )
+
+        val result = HimDeterministicEvidenceAlignmentEvaluatorV1.evaluate(record, catalog, authority, family)
+
+        assertEquals("Erbsen", result.primaryIdentity)
+        assertEquals(HimEvidenceAlignmentClassificationV1.OTHER_PRIMARY_IDENTITY, result.alignment.classification)
+        assertFalse(result.directEvidenceSupported)
+    }
+
+    @Test
     fun genuinelyMismatchedCanonicalNormalizationStillFailsClosed() {
         val failure = assertFailsWith<IllegalArgumentException> {
             HimEvidenceAlignmentContractV1.evaluate(

@@ -21,15 +21,8 @@ object HimEvidenceAlignmentContractV1 {
         input: HimEvidenceAlignmentInputV1,
         canonicalFamily: HimCanonicalFamily,
     ): HimEvidenceAlignmentResultV1 {
+        validateCanonicalAgreement(canonicalFamily)
         val canonicalName = normalize(canonicalFamily.canonicalName)
-        val canonicalStoredName = normalize(canonicalFamily.normalizedName)
-        require(canonicalName.isNotEmpty() && canonicalStoredName.isNotEmpty())
-        require(
-            canonicalNameNormalizer.normalize(canonicalFamily.canonicalName) ==
-                canonicalNameNormalizer.normalize(canonicalFamily.normalizedName),
-        ) {
-            "Canonical name and normalized name do not agree."
-        }
 
         val boundTerms = authorityBoundTerms(canonicalFamily)
         val normalizedPrimary = input.primaryIdentity?.let(::normalize)
@@ -100,6 +93,16 @@ object HimEvidenceAlignmentContractV1 {
             claimedEvidenceRelation = input.claimedEvidenceRelation,
             modifierCoverage = modifierCoverage,
         )
+    }
+
+    /** Validates only the authoritative canonical-name/stored-key agreement. */
+    fun validateCanonicalAgreement(canonicalFamily: HimCanonicalFamily) {
+        val canonicalName = canonicalNameNormalizer.normalize(canonicalFamily.canonicalName)
+        val canonicalStoredName = canonicalNameNormalizer.normalize(canonicalFamily.normalizedName)
+        require(canonicalName.isNotEmpty() && canonicalStoredName.isNotEmpty())
+        require(canonicalName == canonicalStoredName) {
+            "Canonical name and normalized name do not agree."
+        }
     }
 
     private fun authorityBoundTerms(family: HimCanonicalFamily): List<BoundTerm> = buildList {
