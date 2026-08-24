@@ -41,6 +41,7 @@ import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthGener
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthGenerationPersistenceV1
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthGenerationPipelineV1
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthGenerationRequestV1
+import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthRequestIdentityV1
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthOutputValidatorV1
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthPolicyBindingsV1
 import de.shopme.tools.knowledge.him.training.teacher.HimTeacherGroundTruthProviderOutcomeV1
@@ -208,7 +209,7 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         assertFalse(HimTestExecutionBoundaryV1.paidNetworkEnabled(System.getProperty(HimTestExecutionBoundaryV1.PAID_NETWORK_PROPERTY), System.getProperty(HimTestExecutionBoundaryV1.PAID_NETWORK_CONFIRMATION_PROPERTY)))
         val request = buildFrozenRequestOffline(projectRoot())
         assertEquals("teacher-work:v1:1ac878a8b015493878574df8ccc2b2a45aa78622c6fa00211e7b7b6b6d0be4c5", request.workItemReference)
-        assertEquals("teacher-request:v1:b281b6dbc97b3459ed597296cb730c0f2789dec1583dfa15436519f630d2d186", request.requestReference)
+        assertEquals("teacher-request:v1:c0fe080f302199536bb6d0c89ef13b8e7649f082fc66bd16774c16f522c1902e", request.requestReference)
     }
 
     @Test fun `fake successful provider runs exactly once and persists reloads and idempotently repeats`() {
@@ -326,7 +327,7 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         require(evidence.size == 4)
         val request = buildRequest(plan, selection.selectedCandidate, authority.families, evidence, HimOpenAiSemanticProviderConfiguration().fingerprint())
         HimTeacherGroundTruthRequestValidatorV1.validateAgainstPlan(plan, request)
-        require(request.requestReference == selection.selectedCandidate.requestReference)
+        assertEvidenceBoundRequest(selection, plan, request, evidence)
         val resultFile = root.resolve(RESULT_PATH)
         require(!resultFile.exists()) { "Paid result already exists; refusing overwrite" }
         val reportFile = root.resolve(REPORT_PATH)
@@ -473,9 +474,46 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         require(evidence.size == 4)
         val request = buildRequest(plan, selection.selectedCandidate, authority.families, evidence, HimOpenAiSemanticProviderConfiguration().fingerprint())
         HimTeacherGroundTruthRequestValidatorV1.validateAgainstPlan(plan, request)
-        require(request.requestReference == selection.selectedCandidate.requestReference)
+        assertEvidenceBoundRequest(selection, plan, request, evidence)
+        val repeated = buildRequest(plan, selection.selectedCandidate, authority.families, evidence, HimOpenAiSemanticProviderConfiguration().fingerprint())
+        HimTeacherGroundTruthRequestValidatorV1.validateAgainstPlan(plan, repeated)
+        assertEvidenceBoundRequest(selection, plan, repeated, evidence)
+        assertEquals(request, repeated)
+        assertEquals(request.requestReference, repeated.requestReference)
+        assertEquals(HimTeacherGroundTruthRequestIdentityV1.canonical(request), HimTeacherGroundTruthRequestIdentityV1.canonical(repeated))
+        assertEquals(request.inferenceRequest.evidence.map { it.sourceRecordReference.value }, repeated.inferenceRequest.evidence.map { it.sourceRecordReference.value })
         require(family.canonicalId == request.canonicalId)
         return request
+    }
+
+    private fun assertEvidenceBoundRequest(
+        selection: HimPositiveSingleItemTeacherPilotSelection,
+        plan: HimCanonicalGroundTruthScalingPlanV1,
+        request: HimTeacherGroundTruthGenerationRequestV1,
+        evidence: List<HimEvidenceSearchResult>,
+    ) {
+        val selectionCandidate = selection.selectedCandidate
+        val expectedEvidence = listOf(
+            "off:product:row:4474818:code:4260694945322",
+            "agribalyse:row:1804:agb:31044",
+            "ciqual:food:11057",
+            "gi:measurement:823",
+        )
+        assertEquals(EXPECTED_WORK_ITEM_REFERENCE, selectionCandidate.workItemReference)
+        assertEquals(EXPECTED_WORK_ITEM_REFERENCE, request.workItemReference)
+        assertEquals(HimEntityId("uEV2jY"), request.canonicalId)
+        assertEquals("Vanille", request.observedTerm)
+        assertEquals(HimTrainingPartitionV1.VALIDATION, request.partition)
+        assertEquals("data/knowledge/him/candidates/master/candidate-dataset.v2.json", plan.candidateDatasetBinding?.path)
+        assertNotNull(plan.candidateDatasetBinding?.digest)
+        assertEquals(1, plan.workItems.count { it.reference == selectionCandidate.workItemReference })
+        assertEquals(expectedEvidence, evidence.map { it.sourceRecordReference.value })
+        assertEquals(expectedEvidence, request.inferenceRequest.evidence.map { it.sourceRecordReference.value })
+        assertEquals(1, request.inferenceRequest.retrievalRound.value)
+        assertEquals(1, request.inferenceRequest.retrievalHistory.size)
+        assertEquals(expectedEvidence, request.inferenceRequest.retrievalHistory.single().retrievedEvidenceReferences.map { it.sourceRecordIdentity })
+        assertEquals(HimSemanticInformationGainJudgment.MORE_EVIDENCE_MAY_HELP, request.inferenceRequest.retrievalHistory.single().directive.informationGainJudgment)
+        assertNotEquals(selectionCandidate.requestReference, request.requestReference)
     }
 
     private fun candidateBinding(root: File): HimCandidateDatasetBindingV1? {
@@ -524,6 +562,7 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
 
     private companion object {
         const val HEAD = "22ea98d11773109bbe07b8d36c254e46513cce75"
+        const val EXPECTED_WORK_ITEM_REFERENCE = "teacher-work:v1:1ac878a8b015493878574df8ccc2b2a45aa78622c6fa00211e7b7b6b6d0be4c5"
         const val V2_PATH = "build/knowledge/reports/him/training/him-teacher-paid-pilot-offline-preflight.v2.json"
         const val SELECTION_R4_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.selection.v1.r4.json"
         const val RESULT_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.result.v1.json"
