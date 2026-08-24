@@ -79,9 +79,7 @@ object HimEvidenceAlignmentCatalogAuditContractV1 {
     }
 
     fun canonicalDescriptor(family: HimCanonicalFamily): HimEvidenceAlignmentCatalogAuditCanonicalV1 {
-        val normalizedName = normalizeQuery(family.canonicalName)
-        require(normalizedName.isNotEmpty())
-        require(normalizedName == normalizeQuery(family.normalizedName))
+        val normalizedName = boundNormalizedKey(family.normalizedName)
         return HimEvidenceAlignmentCatalogAuditCanonicalV1(
             entityId = family.canonicalId.value,
             canonicalName = family.canonicalName,
@@ -172,17 +170,14 @@ object HimEvidenceAlignmentCatalogAuditContractV1 {
 
     private fun queryTerms(family: HimCanonicalFamily): List<HimEvidenceAlignmentCatalogAuditQueryTermV1> {
         val candidates = buildList {
-            add(HimEvidenceAlignmentCatalogAuditQueryTermV1(
-                family.canonicalName, normalizeQuery(family.canonicalName),
-                HimEvidenceAlignmentCatalogAuditQueryTermKind.CANONICAL_NAME,
-            ))
+            add(queryTerm(family.canonicalName, family.normalizedName, HimEvidenceAlignmentCatalogAuditQueryTermKind.CANONICAL_NAME))
             family.identities.forEach { identity ->
-                add(HimEvidenceAlignmentCatalogAuditQueryTermV1(identity.identityName, normalizeQuery(identity.identityName), HimEvidenceAlignmentCatalogAuditQueryTermKind.IDENTITY))
-                identity.variants.forEach { add(HimEvidenceAlignmentCatalogAuditQueryTermV1(it.variantName, normalizeQuery(it.variantName), HimEvidenceAlignmentCatalogAuditQueryTermKind.VARIANT)) }
-                identity.aliases.forEach { add(HimEvidenceAlignmentCatalogAuditQueryTermV1(it.aliasName, normalizeQuery(it.aliasName), HimEvidenceAlignmentCatalogAuditQueryTermKind.ALIAS)) }
+                add(queryTerm(identity.identityName, identity.normalizedName, HimEvidenceAlignmentCatalogAuditQueryTermKind.IDENTITY))
+                identity.variants.forEach { add(queryTerm(it.variantName, it.normalizedName, HimEvidenceAlignmentCatalogAuditQueryTermKind.VARIANT)) }
+                identity.aliases.forEach { add(queryTerm(it.aliasName, it.normalizedName, HimEvidenceAlignmentCatalogAuditQueryTermKind.ALIAS)) }
             }
-            family.variants.forEach { add(HimEvidenceAlignmentCatalogAuditQueryTermV1(it.variantName, normalizeQuery(it.variantName), HimEvidenceAlignmentCatalogAuditQueryTermKind.VARIANT)) }
-            family.aliases.forEach { add(HimEvidenceAlignmentCatalogAuditQueryTermV1(it.aliasName, normalizeQuery(it.aliasName), HimEvidenceAlignmentCatalogAuditQueryTermKind.ALIAS)) }
+            family.variants.forEach { add(queryTerm(it.variantName, it.normalizedName, HimEvidenceAlignmentCatalogAuditQueryTermKind.VARIANT)) }
+            family.aliases.forEach { add(queryTerm(it.aliasName, it.normalizedName, HimEvidenceAlignmentCatalogAuditQueryTermKind.ALIAS)) }
         }
         val result = candidates.filter { it.normalizedTerm.isNotEmpty() }
             .distinctBy { it.normalizedTerm }
@@ -190,6 +185,18 @@ object HimEvidenceAlignmentCatalogAuditContractV1 {
             "Unbounded query plan rejected for ${family.canonicalId.value}."
         }
         return result
+    }
+
+    private fun queryTerm(
+        term: String,
+        normalizedTerm: String,
+        kind: HimEvidenceAlignmentCatalogAuditQueryTermKind,
+    ) = HimEvidenceAlignmentCatalogAuditQueryTermV1(term, boundNormalizedKey(normalizedTerm), kind)
+
+    private fun boundNormalizedKey(value: String): String {
+        require(value.isNotBlank())
+        require(normalizeQuery(value) == value)
+        return value
     }
 
     private fun canonicalDescriptorSortKey(value: String) = value
@@ -336,8 +343,8 @@ data class HimEvidenceAlignmentCatalogAuditQueryTermV1(
 ) {
     init {
         require(term.isNotBlank())
-        require(normalizedTerm == HimEvidenceAlignmentCatalogAuditContractV1.normalizeQuery(term))
         require(normalizedTerm.isNotBlank())
+        require(normalizedTerm == HimEvidenceAlignmentCatalogAuditContractV1.normalizeQuery(normalizedTerm))
     }
 }
 

@@ -77,6 +77,70 @@ class RunHimEvidenceAlignmentCatalogAuditContractV1Test {
     }
 
     @Test
+    fun boundCanonicalKeyIsUsedForSataysosseWithoutSpecialHandling() {
+        val canonical = HimEvidenceAlignmentCatalogAuditContractV1.canonicalDescriptor(
+            family("a00006", "Sataysoße", "sataysosse", "Scharf", "c00006"),
+        )
+
+        assertEquals("sataysosse", canonical.normalizedName)
+        assertEquals("Sataysoße", canonical.queryTerms.first().term)
+        assertEquals("sataysosse", canonical.queryTerms.first().normalizedTerm)
+        assertNotEquals(
+            HimEvidenceAlignmentCatalogAuditContractV1.normalizeQuery("Sataysoße"),
+            canonical.queryTerms.first().normalizedTerm,
+        )
+    }
+
+    @Test
+    fun generalBoundCanonicalKeysDoNotDependOnWordSpecificRules() {
+        val families = listOf(
+            family("a00006", "Straße", "strasse", "Süß", "c00006"),
+            family("a00007", "Crème", "creme", "Frisch", "c00007"),
+        )
+
+        val plan = plan(families)
+        assertEquals(
+            listOf("strasse", "creme"),
+            plan.canonicalOrder.map { it.normalizedName },
+        )
+    }
+
+    @Test
+    fun boundIdentityVariantAndAliasKeysRemainStableAndDeduplicated() {
+        val family = family("a00006", "Frucht", "frucht", "Süß", "c00006").copy(
+            identities = listOf(
+                HimCanonicalIdentity(
+                    identityId = HimEntityId("b00006"),
+                    identityName = "Äpfel",
+                    normalizedName = "aepfel",
+                    lifecycleStatus = HimLifecycleStatus.ACTIVE,
+                    variants = listOf(
+                        HimCanonicalVariant(HimEntityId("d00006"), "Süß", "suess", HimLifecycleStatus.ACTIVE),
+                    ),
+                    aliases = listOf(
+                        HimCanonicalAlias(HimEntityId("e00006"), "Straße", "strasse", HimLifecycleStatus.ACTIVE),
+                    ),
+                ),
+            ),
+            variants = listOf(
+                HimCanonicalVariant(HimEntityId("d00007"), "Süß", "suess", HimLifecycleStatus.ACTIVE),
+            ),
+            aliases = listOf(
+                HimCanonicalAlias(HimEntityId("e00007"), "Straße", "strasse", HimLifecycleStatus.ACTIVE),
+            ),
+        )
+
+        val first = HimEvidenceAlignmentCatalogAuditContractV1.canonicalDescriptor(family)
+        val second = HimEvidenceAlignmentCatalogAuditContractV1.canonicalDescriptor(family)
+        assertEquals(first, second)
+        assertEquals(
+            listOf("frucht", "aepfel", "suess", "strasse"),
+            first.queryTerms.map { it.normalizedTerm },
+        )
+        assertEquals(first.queryTerms.size, first.queryTerms.map { it.normalizedTerm }.distinct().size)
+    }
+
+    @Test
     fun queryAndFetchLimitsAreBounded() {
         assertFailsWith<IllegalArgumentException> { HimEvidenceSearchLimit(11) }
         val terms = (1..33).map {

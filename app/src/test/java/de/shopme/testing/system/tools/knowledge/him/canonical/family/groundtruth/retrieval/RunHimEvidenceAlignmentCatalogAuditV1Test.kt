@@ -62,6 +62,51 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
     }
 
     @Test
+    fun invalidCatalogBindingHasSafeStageDiagnostic() {
+        val result = HimEvidenceAlignmentCatalogAuditRuntimeV1.freezeMission(
+            freezeRequest(fixtureRoot()).copy(catalogRelativePath = "missing/catalog.json"),
+            enabledGate(),
+        )
+
+        assertEquals(
+            HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(
+                HimEvidenceAlignmentCatalogAuditRuntimeV1.MISSION_FREEZE_CATALOG_BINDING_FAILED,
+            ),
+            result,
+        )
+    }
+
+    @Test
+    fun missingImplementationBindingHasSafeStageDiagnostic() {
+        val result = HimEvidenceAlignmentCatalogAuditRuntimeV1.freezeMission(
+            freezeRequest(fixtureRoot()).copy(implementationManifestRelativePaths = listOf("missing/implementation.kt")),
+            enabledGate(),
+        )
+
+        assertEquals(
+            HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(
+                HimEvidenceAlignmentCatalogAuditRuntimeV1.MISSION_FREEZE_IMPLEMENTATION_BINDING_FAILED,
+            ),
+            result,
+        )
+    }
+
+    @Test
+    fun invalidPlanInvariantHasSafeStageDiagnostic() {
+        val result = HimEvidenceAlignmentCatalogAuditRuntimeV1.freezeMission(
+            freezeRequest(fixtureRoot(), maxItemsPerShard = 0),
+            enabledGate(),
+        )
+
+        assertEquals(
+            HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(
+                HimEvidenceAlignmentCatalogAuditRuntimeV1.MISSION_FREEZE_PLAN_FAILED,
+            ),
+            result,
+        )
+    }
+
+    @Test
     fun `writes current real-bound catalog alignment audit mission without executing shards`() {
         HimTestExecutionBoundaryV1.requireSourceIntegrationEnabled()
 

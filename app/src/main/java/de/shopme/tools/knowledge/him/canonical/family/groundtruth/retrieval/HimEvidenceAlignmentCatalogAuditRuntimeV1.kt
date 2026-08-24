@@ -99,38 +99,76 @@ interface HimEvidenceAlignmentCatalogAuditStoreV1 {
 
 object HimEvidenceAlignmentCatalogAuditRuntimeV1 {
     const val STREAMING_DIGEST_BUFFER_BYTES = 1024 * 1024
+    const val MISSION_FREEZE_CATALOG_BINDING_FAILED = "MISSION_FREEZE_CATALOG_BINDING_FAILED"
+    const val MISSION_FREEZE_AUTHORITY_BINDING_FAILED = "MISSION_FREEZE_AUTHORITY_BINDING_FAILED"
+    const val MISSION_FREEZE_IMPLEMENTATION_BINDING_FAILED = "MISSION_FREEZE_IMPLEMENTATION_BINDING_FAILED"
+    const val MISSION_FREEZE_BINDINGS_CONTRACT_FAILED = "MISSION_FREEZE_BINDINGS_CONTRACT_FAILED"
+    const val MISSION_FREEZE_PLAN_FAILED = "MISSION_FREEZE_PLAN_FAILED"
+    const val MISSION_FREEZE_WRITE_FAILED = "MISSION_FREEZE_WRITE_FAILED"
+    const val MISSION_FREEZE_RELOAD_FAILED = "MISSION_FREEZE_RELOAD_FAILED"
 
     fun freezeMission(
         request: HimEvidenceAlignmentCatalogAuditMissionFreezeRequestV1,
         gate: HimEvidenceAlignmentCatalogAuditRuntimeGateV1,
     ): HimEvidenceAlignmentCatalogAuditRuntimeResult<HimEvidenceAlignmentCatalogAuditMissionPlanV1> {
         if (!gate.enabled) return HimEvidenceAlignmentCatalogAuditRuntimeResult.Skipped("AUDIT_OPT_IN_REQUIRED")
-        return runCatching {
+        try {
             require(request.gitHead.matches(Regex("[0-9a-f]{40}")))
             require(request.implementationManifestRelativePaths.isNotEmpty())
-            val catalogBinding = fileBinding(request.root, request.catalogRelativePath)
-            val authorityBinding = fileBinding(request.root, request.authorityRelativePath)
-            val implementationBinding = implementationBinding(request.root, request.implementationManifestRelativePaths)
-            val bindings = HimEvidenceAlignmentCatalogAuditBindingsV1(
-                gitHead = request.gitHead,
-                implementationBindingSha256 = implementationBinding,
-                canonicalCatalog = catalogBinding,
-                authority = authorityBinding,
-                groundTruthReleaseReference = request.groundTruthReleaseReference,
-                sourceBindings = request.sourceBindings,
-            )
-            val plan = HimEvidenceAlignmentCatalogAuditContractV1.plan(
+        } catch (_: Throwable) {
+            return HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(MISSION_FREEZE_BINDINGS_CONTRACT_FAILED)
+        }
+
+        val catalogBinding = try {
+            fileBinding(request.root, request.catalogRelativePath)
+        } catch (_: Throwable) {
+            return HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(MISSION_FREEZE_CATALOG_BINDING_FAILED)
+        }
+        val authorityBinding = try {
+            fileBinding(request.root, request.authorityRelativePath)
+        } catch (_: Throwable) {
+            return HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(MISSION_FREEZE_AUTHORITY_BINDING_FAILED)
+        }
+        val implementationBinding = try {
+            implementationBinding(request.root, request.implementationManifestRelativePaths)
+        } catch (_: Throwable) {
+            return HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(MISSION_FREEZE_IMPLEMENTATION_BINDING_FAILED)
+        }
+        val bindings = HimEvidenceAlignmentCatalogAuditBindingsV1(
+            gitHead = request.gitHead,
+            implementationBindingSha256 = implementationBinding,
+            canonicalCatalog = catalogBinding,
+            authority = authorityBinding,
+            groundTruthReleaseReference = request.groundTruthReleaseReference,
+            sourceBindings = request.sourceBindings,
+        )
+        try {
+            bindings.validate()
+        } catch (_: Throwable) {
+            return HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(MISSION_FREEZE_BINDINGS_CONTRACT_FAILED)
+        }
+        val plan = try {
+            HimEvidenceAlignmentCatalogAuditContractV1.plan(
                 bindings = bindings,
                 authority = request.authority,
                 maxItemsPerShard = request.maxItemsPerShard,
             )
-            val missionFile = HimEvidenceAlignmentCatalogAuditPathsV1.mission(request.root)
+        } catch (_: Throwable) {
+            return HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(MISSION_FREEZE_PLAN_FAILED)
+        }
+        val missionFile = HimEvidenceAlignmentCatalogAuditPathsV1.mission(request.root)
+        try {
             HimEvidenceAlignmentCatalogAuditPersistenceV1.writeMission(missionFile, plan)
-            HimEvidenceAlignmentCatalogAuditPersistenceV1.readMission(missionFile)
-        }.fold(
-            onSuccess = { HimEvidenceAlignmentCatalogAuditRuntimeResult.Completed(it) },
-            onFailure = { HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed("MISSION_FREEZE_FAILED") },
-        )
+        } catch (_: Throwable) {
+            return HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(MISSION_FREEZE_WRITE_FAILED)
+        }
+        return try {
+            HimEvidenceAlignmentCatalogAuditRuntimeResult.Completed(
+                HimEvidenceAlignmentCatalogAuditPersistenceV1.readMission(missionFile),
+            )
+        } catch (_: Throwable) {
+            HimEvidenceAlignmentCatalogAuditRuntimeResult.Failed(MISSION_FREEZE_RELOAD_FAILED)
+        }
     }
 
     fun executeShard(
