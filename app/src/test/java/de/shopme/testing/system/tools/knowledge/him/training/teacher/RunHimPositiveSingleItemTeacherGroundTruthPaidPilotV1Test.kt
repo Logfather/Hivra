@@ -305,7 +305,7 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         val v2File = root.resolve(V2_PATH)
         val v2 = HimTeacherPaidPilotOfflinePreflightV2.read(v2File)
         require(HimTeacherPaidPilotOfflinePreflightV2.evaluate(v2, v2) == HimTeacherPaidPilotOfflinePreflightV2Status.CURRENT)
-        val selectionFile = root.resolve(SELECTION_R4_PATH)
+        val selectionFile = root.resolve(SELECTION_R5_PATH)
         val selection = HimPositiveSingleItemTeacherPilotSelectionV1.read(selectionFile)
         validateFrozenSelection(selection, head, HimPositiveSingleItemTeacherPilotPreflightBinding.from(v2, HimSha256(sha256(v2File))))
         val active = HimActiveGroundTruthResolutionV1().resolve(root)
@@ -455,7 +455,7 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         val v2File = root.resolve(V2_PATH)
         val v2 = HimTeacherPaidPilotOfflinePreflightV2.read(v2File)
         require(HimTeacherPaidPilotOfflinePreflightV2.evaluate(v2, v2) == HimTeacherPaidPilotOfflinePreflightV2Status.CURRENT)
-        val selection = HimPositiveSingleItemTeacherPilotSelectionV1.read(root.resolve(SELECTION_R4_PATH))
+        val selection = HimPositiveSingleItemTeacherPilotSelectionV1.read(root.resolve(SELECTION_R5_PATH))
         validateFrozenSelection(selection, head, HimPositiveSingleItemTeacherPilotPreflightBinding.from(v2, HimSha256(sha256(v2File))))
         val active = HimActiveGroundTruthResolutionV1().resolve(root)
         val catalog = HimProductOnlyCanonicalMasterReader().read(HimCanonicalFamilyPaths(root))
@@ -564,7 +564,7 @@ class RunHimPositiveSingleItemTeacherGroundTruthPaidPilotV1Test {
         const val HEAD = "22ea98d11773109bbe07b8d36c254e46513cce75"
         const val EXPECTED_WORK_ITEM_REFERENCE = "teacher-work:v1:1ac878a8b015493878574df8ccc2b2a45aa78622c6fa00211e7b7b6b6d0be4c5"
         const val V2_PATH = "build/knowledge/reports/him/training/him-teacher-paid-pilot-offline-preflight.v2.json"
-        const val SELECTION_R4_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.selection.v1.r4.json"
+        const val SELECTION_R5_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.selection.v1.r5.json"
         const val RESULT_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.result.v1.json"
         const val REPORT_PATH = "build/knowledge/reports/him/training/him-positive-single-item-teacher-paid-pilot.txt"
         val RELEASE = HimGroundTruthReleaseIdentityV1("release:v1:${"d".repeat(64)}")
