@@ -1,15 +1,37 @@
 package de.shopme.testing.system.tools.knowledge.him.canonical.family.groundtruth.retrieval
 
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonParser
+import de.shopme.testing.system.tools.knowledge.him.support.HimTestExecutionBoundaryV1
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalAlias
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamily
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyAuthority
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyFoundationReleasePersistence
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyFoundationReleaseValidator
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyPaths
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyPersistence
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyValidator
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyFoundationReleaseBuilder
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilySourceCatalog
 import de.shopme.tools.knowledge.him.canonical.family.HimEntityId
+import de.shopme.tools.knowledge.him.canonical.family.HimEntityFingerprintIndexPersistence
 import de.shopme.tools.knowledge.him.canonical.family.HimLifecycleStatus
 import de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonical
 import de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonicalMaster
+import de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonicalMasterReader
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimActiveGroundTruthArtifactsV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimActiveGroundTruthResolutionV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimCanonicalFamilyMutationLedgerPersistenceV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimGroundTruthRelease
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimGroundTruthReleaseBuildInputV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimGroundTruthReleasePersistenceV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimGroundTruthReleaseState
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimGroundTruthReleaseValidatorV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimRetiredEntityIdRegistry
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimSha256
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimGroundTruthSource
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.*
+import de.shopme.tools.knowledge.him.training.teacher.HimTeacherPaidPilotOfflinePreflightV2
 import kotlin.io.path.createTempDirectory
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -18,8 +40,18 @@ import kotlin.test.assertIs
 import kotlin.test.assertTrue
 import java.io.File
 import java.io.InputStream
+import java.sql.DriverManager
+import java.util.TreeMap
 
 class RunHimEvidenceAlignmentCatalogAuditV1Test {
+    private companion object {
+        const val REAL_MAX_ITEMS_PER_SHARD = 128
+        val HIM_SCOPE = arrayOf(
+            "app/src/main/java/de/shopme/tools/knowledge/him",
+            "app/src/test/java/de/shopme/testing/system/tools/knowledge/him",
+        )
+    }
+
     @Test
     fun missionFreezePerformsNoSearchOrFetch() {
         val root = fixtureRoot()
@@ -27,6 +59,130 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
         val completed = assertIs<HimEvidenceAlignmentCatalogAuditRuntimeResult.Completed<*>>(result)
         assertIs<HimEvidenceAlignmentCatalogAuditMissionPlanV1>(completed.value)
         assertTrue(HimEvidenceAlignmentCatalogAuditPathsV1.mission(root).isFile)
+    }
+
+    @Test
+    fun `writes current real-bound catalog alignment audit mission without executing shards`() {
+        HimTestExecutionBoundaryV1.requireSourceIntegrationEnabled()
+
+        val root = projectRoot()
+        val head = git(root, "rev-parse", "HEAD")
+        require(head.matches(Regex("[0-9a-f]{40}")))
+        require(gitExit(root, "diff", "--quiet", "--", *HIM_SCOPE) == 0) {
+            "Relevant HIM scope has uncommitted work."
+        }
+        require(gitExit(root, "diff", "--cached", "--quiet", "--", *HIM_SCOPE) == 0) {
+            "Relevant HIM scope has staged work."
+        }
+
+        val missionFile = HimEvidenceAlignmentCatalogAuditPathsV1.mission(root)
+        val shardDirectory = root.resolve(HimEvidenceAlignmentCatalogAuditPathsV1.REPORT_ROOT)
+            .resolve(HimEvidenceAlignmentCatalogAuditPathsV1.SHARDS_DIRECTORY_NAME)
+        val aggregateFile = HimEvidenceAlignmentCatalogAuditPathsV1.aggregate(root)
+        val aggregateTextFile = HimEvidenceAlignmentCatalogAuditPathsV1.aggregateText(root)
+        require(!shardDirectory.exists()) { "Real mission freeze found an existing shard directory." }
+        require(!aggregateFile.exists() && !aggregateTextFile.exists()) {
+            "Real mission freeze found an existing aggregate artifact."
+        }
+        val missionBefore = missionFile.takeIf { it.isFile }?.readBytes()
+
+        val paths = HimCanonicalFamilyPaths(root)
+        val catalog = HimProductOnlyCanonicalMasterReader().read(paths)
+        val persistence = HimCanonicalFamilyPersistence()
+        val masterRegistry = persistence.readRegistry(paths.entityIdRegistry)
+        val masterAuthority = persistence.readAuthority(paths.familyAuthority)
+        HimCanonicalFamilyValidator().validate(catalog, masterRegistry, masterAuthority)
+
+        val foundationRelease = HimCanonicalFamilyFoundationReleasePersistence().read(
+            root.resolve(HimCanonicalFamilyFoundationReleaseBuilder.RELEASE_RECORD_PATH),
+        )
+        HimCanonicalFamilyFoundationReleaseValidator().validate(foundationRelease)
+
+        val active = HimActiveGroundTruthResolutionV1().resolve(root)
+        val authority = persistence.readAuthority(active.authorityFile)
+        require(authority.sourceCatalog.path == catalog.path)
+        require(authority.sourceCatalog.contentSha256 == catalog.contentSha256)
+        require(authority.sourceCatalog.recordCount == catalog.records.size)
+        val release = HimGroundTruthReleasePersistenceV1().read(active.releaseFile)
+        require(release.state == HimGroundTruthReleaseState.RELEASED)
+        validateActiveGroundTruthRelease(root, active, authority, release)
+
+        val productionReleaseFile = root.resolve(HimProductionIndexFileIdentityReleaseContractV1.PATH)
+        val productionRelease = HimProductionIndexFileIdentityReleasePersistenceV1.read(productionReleaseFile)
+        val indexSizes = productionRelease.sources.associate { source ->
+            source.indexPath to root.resolve(source.indexPath).length()
+        }
+        HimProductionIndexFileIdentityReleasePersistenceV1.validate(productionRelease, indexSizes)
+        val sourceBindings = productionRelease.sources.map { source ->
+            val index = root.resolve(source.indexPath)
+            val metadata = readIndexMetadata(index)
+            require(metadata.source == HimGroundTruthSource.valueOf(source.source))
+            require(metadata.sourceArtifactPath == source.optimizedSourcePath)
+            require(metadata.sourceArtifactSha256.value == source.optimizedSourceSha256)
+            require(metadata.schemaVersion == source.schemaVersion)
+            require(metadata.indexBuildPolicyVersion == source.buildPolicyVersion)
+            require(metadata.evidenceProjectionPolicyVersion == source.projectionPolicyVersion)
+            require(metadata.evidenceRecordCount == source.evidenceRows)
+            require(metadata.ftsRowCount == source.ftsRows)
+            require(metadata.indexedRecordCount == source.evidenceRows)
+            require(metadata.logicalContentSha256.value == source.logicalIndexDigest)
+            require(metadata.buildState == HimEvidenceRetrievalIndexBuildState.VALIDATED)
+            require(
+                HimEvidenceRetrievalIndexValidator.runtimeEligibility(
+                    metadata,
+                    HimExpectedEvidenceRetrievalIndex(metadata.source, metadata.sourceArtifactSha256),
+                ) == HimEvidenceRetrievalIndexEligibility.Ready,
+            )
+            val sqliteDigest = HimEvidenceAlignmentCatalogAuditRuntimeV1.streamingSha256(index)
+            require(sqliteDigest == source.sqliteFileSha256)
+            HimEvidenceAlignmentCatalogAuditSourceBindingV1(
+                source = metadata.source,
+                indexRelativePath = source.indexPath,
+                indexByteSize = index.length(),
+                sqliteFileSha256 = sqliteDigest,
+                sourceArtifactPath = metadata.sourceArtifactPath,
+                sourceArtifactSha256 = metadata.sourceArtifactSha256.value,
+                schemaVersion = metadata.schemaVersion,
+                indexBuildPolicyVersion = metadata.indexBuildPolicyVersion,
+                evidenceProjectionPolicyVersion = metadata.evidenceProjectionPolicyVersion,
+                logicalContentSha256 = metadata.logicalContentSha256.value,
+                buildState = metadata.buildState,
+            )
+        }
+        require(sourceBindings.map { it.source } == HimEvidenceAlignmentCatalogAuditContractV1.SOURCE_ORDER)
+
+        val manifest = HimTeacherPaidPilotOfflinePreflightV2.implementationManifest(root)
+        val request = HimEvidenceAlignmentCatalogAuditMissionFreezeRequestV1(
+            root = root,
+            gitHead = head,
+            catalogRelativePath = HimCanonicalFamilyPaths.PRODUCT_ONLY_MASTER_PATH,
+            authorityRelativePath = relativePath(root, active.authorityFile),
+            groundTruthReleaseReference = active.releaseReference.value,
+            implementationManifestRelativePaths = manifest.entries.map { it.path },
+            sourceBindings = sourceBindings,
+            authority = authority,
+            maxItemsPerShard = REAL_MAX_ITEMS_PER_SHARD,
+        )
+
+        // The committed runtime API receives this explicit freeze gate. No audit property is read here;
+        // the only external opt-in is HimTestExecutionBoundaryV1.requireSourceIntegrationEnabled().
+        val result = HimEvidenceAlignmentCatalogAuditRuntimeV1.freezeMission(
+            request,
+            HimEvidenceAlignmentCatalogAuditRuntimeGateV1(
+                sourceIntegrationEnabled = true,
+                catalogAuditEnabled = true,
+                confirmation = HimEvidenceAlignmentCatalogAuditRuntimeGateV1.CONFIRMATION,
+            ),
+        )
+        val plan = assertIs<HimEvidenceAlignmentCatalogAuditRuntimeResult.Completed<*>>(result).value
+            as HimEvidenceAlignmentCatalogAuditMissionPlanV1
+        val missionAfter = missionFile.readBytes()
+        if (missionBefore != null) assertTrue(missionBefore.contentEquals(missionAfter))
+        assertEquals(plan, HimEvidenceAlignmentCatalogAuditPersistenceV1.readMission(missionFile))
+        assertEquals(plan.missionDigest, HimEvidenceAlignmentCatalogAuditPersistenceV1.readMission(missionFile).missionDigest)
+        assertTrue(!shardDirectory.exists())
+        assertFalse(aggregateFile.exists())
+        assertFalse(aggregateTextFile.exists())
     }
 
     @Test
@@ -453,6 +609,116 @@ class RunHimEvidenceAlignmentCatalogAuditV1Test {
             logicalContentSha256 = "f".repeat(64),
             buildState = HimEvidenceRetrievalIndexBuildState.VALIDATED,
         )
+    }
+
+    private fun validateActiveGroundTruthRelease(
+        root: File,
+        active: HimActiveGroundTruthArtifactsV1,
+        authority: HimCanonicalFamilyAuthority,
+        release: HimGroundTruthRelease,
+    ) {
+        val persistence = HimCanonicalFamilyPersistence()
+        val registry = persistence.readRegistry(active.activeRegistryFile)
+        val retired = GsonBuilder().create().fromJson(
+            active.retiredRegistryBytes.toString(Charsets.UTF_8),
+            HimRetiredEntityIdRegistry::class.java,
+        )
+        val ledger = HimCanonicalFamilyMutationLedgerPersistenceV1().read(active.mutationLedgerFile)
+        val fingerprint = HimEntityFingerprintIndexPersistence().read(active.fingerprintIndexFile)
+        HimGroundTruthReleaseValidatorV1().validate(
+            release = release,
+            input = HimGroundTruthReleaseBuildInputV1(
+                authority = authority,
+                activeEntityIdRegistry = registry,
+                retiredEntityIdRegistry = retired,
+                mutationLedger = ledger,
+                entityFingerprintIndex = fingerprint,
+                authorityArtifact = release.sources.canonicalFamilyAuthority,
+                activeEntityIdRegistryArtifact = release.sources.activeEntityIdRegistry,
+                retiredEntityIdRegistryArtifact = release.sources.retiredEntityIdRegistry,
+                mutationLedgerArtifact = release.sources.mutationLedger,
+                entityFingerprintIndexArtifact = release.sources.entityFingerprintIndex,
+            ),
+        )
+        require(active.releaseDirectory.canonicalFile.path.startsWith(root.canonicalFile.path))
+    }
+
+    private fun readIndexMetadata(index: File): HimEvidenceRetrievalIndexMetadata {
+        require(index.isFile && index.canRead())
+        Class.forName("org.sqlite.JDBC")
+        val url = "jdbc:sqlite:file:${index.canonicalFile.path}?mode=ro"
+        return DriverManager.getConnection(url).use { connection ->
+            connection.createStatement().use { statement ->
+                statement.execute("PRAGMA query_only=ON")
+                statement.executeQuery(
+                    """
+                    SELECT schema_version, source, source_artifact_path, source_artifact_sha256,
+                           source_record_count, logical_record_counts_json,
+                           index_build_policy_version, evidence_projection_policy_version,
+                           indexed_record_count, evidence_record_count, fts_row_count,
+                           logical_content_sha256, build_state, sqlite_runtime_version,
+                           sqlite_file_sha256
+                    FROM index_metadata WHERE singleton_id=1
+                    """.trimIndent(),
+                ).use { result ->
+                    require(result.next())
+                    val logicalCounts = JsonParser.parseString(
+                        result.getString("logical_record_counts_json"),
+                    ).asJsonObject.entrySet().associate { it.key to it.value.asLong }.toSortedMap()
+                    HimEvidenceRetrievalIndexMetadata(
+                        schemaVersion = result.getString("schema_version"),
+                        source = HimGroundTruthSource.valueOf(result.getString("source")),
+                        sourceArtifactPath = result.getString("source_artifact_path"),
+                        sourceArtifactSha256 = HimSha256(result.getString("source_artifact_sha256")),
+                        sourceRecordCount = result.getLong("source_record_count"),
+                        logicalRecordCounts = TreeMap(logicalCounts),
+                        indexBuildPolicyVersion = result.getString("index_build_policy_version"),
+                        evidenceProjectionPolicyVersion = result.getString("evidence_projection_policy_version"),
+                        indexedRecordCount = result.getLong("indexed_record_count"),
+                        evidenceRecordCount = result.getLong("evidence_record_count"),
+                        ftsRowCount = result.getLong("fts_row_count"),
+                        logicalContentSha256 = HimSha256(result.getString("logical_content_sha256")),
+                        buildState = HimEvidenceRetrievalIndexBuildState.valueOf(result.getString("build_state")),
+                        sqliteRuntimeVersion = result.getString("sqlite_runtime_version"),
+                        sqliteFileSha256 = result.getString("sqlite_file_sha256")?.let(::HimSha256),
+                    )
+                }
+            }
+        }
+    }
+
+    private fun projectRoot(): File {
+        var current = File(System.getProperty("user.dir") ?: error("user.dir unavailable")).canonicalFile
+        while (true) {
+            if (current.resolve("settings.gradle.kts").isFile) return current
+            current = current.parentFile ?: error("Repository root not found")
+        }
+    }
+
+    private fun relativePath(root: File, file: File): String {
+        val canonicalRoot = root.canonicalFile.toPath()
+        val canonicalFile = file.canonicalFile.toPath()
+        require(canonicalFile.startsWith(canonicalRoot))
+        return canonicalRoot.relativize(canonicalFile).toString().replace(File.separatorChar, '/')
+    }
+
+    private fun git(root: File, vararg arguments: String): String {
+        val process = ProcessBuilder(listOf("git") + arguments.toList())
+            .directory(root)
+            .redirectErrorStream(true)
+            .start()
+        val output = process.inputStream.bufferedReader().use { it.readText() }.trim()
+        require(process.waitFor() == 0) { "Git command failed: ${arguments.joinToString(" ")}: $output" }
+        return output
+    }
+
+    private fun gitExit(root: File, vararg arguments: String): Int {
+        val process = ProcessBuilder(listOf("git") + arguments.toList())
+            .directory(root)
+            .redirectErrorStream(true)
+            .start()
+        process.inputStream.bufferedReader().use { it.readText() }
+        return process.waitFor()
     }
 
     private fun stores(
