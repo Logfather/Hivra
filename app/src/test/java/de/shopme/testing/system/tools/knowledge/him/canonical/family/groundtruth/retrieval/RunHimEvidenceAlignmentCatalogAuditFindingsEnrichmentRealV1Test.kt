@@ -41,8 +41,13 @@ class RunHimEvidenceAlignmentCatalogAuditFindingsEnrichmentRealV1Test {
 
         val root = projectRoot()
         val audit = loadAuditArtifacts(root)
-        require(audit.plan.bindings.gitHead == audit.currentHead) { "MISSION_HEAD_MISMATCH" }
         val mission = buildEnrichmentMission(root, audit)
+        require(mission.provenance.auditHead == audit.plan.bindings.gitHead) {
+            "AUDIT_HEAD_MISMATCH"
+        }
+        require(mission.provenance.enrichmentImplementationHead == audit.currentHead) {
+            "IMPLEMENTATION_HEAD_MISMATCH"
+        }
         val output = enrichmentMission(root)
         val before = output.takeIf { it.isFile }?.readBytes()
 
