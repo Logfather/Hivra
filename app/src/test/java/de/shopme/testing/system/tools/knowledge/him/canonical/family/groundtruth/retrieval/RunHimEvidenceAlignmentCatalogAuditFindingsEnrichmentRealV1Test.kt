@@ -299,10 +299,21 @@ class RunHimEvidenceAlignmentCatalogAuditFindingsEnrichmentRealV1Test {
         val paths = HimCanonicalFamilyPaths(root)
         val catalog = HimProductOnlyCanonicalMasterReader().read(paths)
         val persistence = HimCanonicalFamilyPersistence()
-        val registry = persistence.readRegistry(paths.entityIdRegistry)
+        val masterRegistry = persistence.readRegistry(paths.entityIdRegistry)
+        val masterAuthority = persistence.readAuthority(paths.familyAuthority)
+        HimCanonicalFamilyValidator().validate(catalog, masterRegistry, masterAuthority)
+
         val active = HimActiveGroundTruthResolutionV1().resolve(root)
         val authority = persistence.readAuthority(active.authorityFile)
-        HimCanonicalFamilyValidator().validate(catalog, registry, authority)
+        require(authority.sourceCatalog.path == catalog.path) {
+            "AUTHORITY_SOURCE_CATALOG_MISMATCH"
+        }
+        require(authority.sourceCatalog.contentSha256 == catalog.contentSha256) {
+            "AUTHORITY_SOURCE_CATALOG_MISMATCH"
+        }
+        require(authority.sourceCatalog.recordCount == catalog.records.size) {
+            "AUTHORITY_SOURCE_CATALOG_MISMATCH"
+        }
         val catalogBinding = mission.provenance.auditBindings.canonicalCatalog
         val authorityBinding = mission.provenance.auditBindings.authority
         require(catalogBinding.relativePath == relativePath(root, paths.productOnlyMaster)) { "CATALOG_BINDING_MISMATCH" }
