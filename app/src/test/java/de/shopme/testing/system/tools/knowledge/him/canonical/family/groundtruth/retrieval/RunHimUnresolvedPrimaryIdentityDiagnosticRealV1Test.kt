@@ -463,47 +463,10 @@ class RunHimUnresolvedPrimaryIdentityDiagnosticRealV1Test {
         mission: HimUnresolvedPrimaryIdentityDiagnosticMissionV1,
         shards: List<HimUnresolvedPrimaryIdentityDiagnosticShardResultV1>,
     ): HimUnresolvedPrimaryIdentityDiagnosticAggregateV1 {
-        val counters = shards.fold(
-            HimUnresolvedPrimaryIdentityDiagnosticCountersV1(
-                unresolvedOccurrences = 0,
-                canonicalTargets = 0,
-                uniqueEvidenceReferences = 0,
-                exactFetches = 0,
-                recordsLoaded = 0,
-                identityFieldsPresent = 0,
-                recordsWithNoIdentityFields = 0,
-                recordsWithOnlyEmptyIdentityFields = 0,
-                zeroCandidateRecords = 0,
-                singleCandidateRecords = 0,
-                multipleCandidateRecords = 0,
-                perSourceReferences = HimUnresolvedPrimaryIdentityDiagnosticContractV1.SOURCE_ORDER.map {
-                    HimUnresolvedPrimaryIdentityDiagnosticSourceCounterV1(it, 0)
-                },
-                technicalErrors = 0,
-            ),
-        ) { left, right ->
-            HimUnresolvedPrimaryIdentityDiagnosticCountersV1(
-                unresolvedOccurrences = left.unresolvedOccurrences + right.counters.unresolvedOccurrences,
-                canonicalTargets = left.canonicalTargets + right.counters.canonicalTargets,
-                uniqueEvidenceReferences = left.uniqueEvidenceReferences + right.counters.uniqueEvidenceReferences,
-                exactFetches = left.exactFetches + right.counters.exactFetches,
-                recordsLoaded = left.recordsLoaded + right.counters.recordsLoaded,
-                identityFieldsPresent = left.identityFieldsPresent + right.counters.identityFieldsPresent,
-                recordsWithNoIdentityFields = left.recordsWithNoIdentityFields + right.counters.recordsWithNoIdentityFields,
-                recordsWithOnlyEmptyIdentityFields = left.recordsWithOnlyEmptyIdentityFields + right.counters.recordsWithOnlyEmptyIdentityFields,
-                zeroCandidateRecords = left.zeroCandidateRecords + right.counters.zeroCandidateRecords,
-                singleCandidateRecords = left.singleCandidateRecords + right.counters.singleCandidateRecords,
-                multipleCandidateRecords = left.multipleCandidateRecords + right.counters.multipleCandidateRecords,
-                perSourceReferences = HimUnresolvedPrimaryIdentityDiagnosticContractV1.SOURCE_ORDER.map { source ->
-                    HimUnresolvedPrimaryIdentityDiagnosticSourceCounterV1(
-                        source,
-                        left.perSourceReferences.single { it.source == source }.references +
-                            right.counters.perSourceReferences.single { it.source == source }.references,
-                    )
-                },
-                technicalErrors = left.technicalErrors + right.counters.technicalErrors,
+        val counters =
+            HimUnresolvedPrimaryIdentityDiagnosticRuntimeV1.deriveCounters(
+                shards.flatMap { it.records },
             )
-        }
         val unsigned = HimUnresolvedPrimaryIdentityDiagnosticAggregateV1(
             missionDigest = mission.logicalDigest,
             state = HimUnresolvedPrimaryIdentityDiagnosticResultStateV1.COMPLETE,
