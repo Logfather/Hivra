@@ -40,7 +40,10 @@ object HimZeroCandidateCauseAnalysisRuntimeV1 {
     ): HimZeroCandidateCauseAnalysisRuntimeResult<HimZeroCandidateCauseAnalysisReportV1> {
         if (!request.enabled) return HimZeroCandidateCauseAnalysisRuntimeResult.Skipped("ANALYSIS_OPT_IN_REQUIRED")
         return try {
-            val aggregate = normalizeAggregate(request.aggregate)
+            val aggregate = normalizeAggregate(
+                request.aggregate,
+                request.mission,
+            )
             validateInput(request, aggregate)
             val sourceRecords = aggregate.shardResults
                 .flatMap { it.records }
@@ -117,20 +120,73 @@ object HimZeroCandidateCauseAnalysisRuntimeV1 {
 
     private fun normalizeAggregate(
         aggregate: HimUnresolvedPrimaryIdentityDiagnosticAggregateV1,
+        mission: HimUnresolvedPrimaryIdentityDiagnosticMissionV1,
     ): HimUnresolvedPrimaryIdentityDiagnosticAggregateV1 {
         val orderedShards = aggregate.shardResults.sortedBy {
             HimUnresolvedPrimaryIdentityDiagnosticContractV1.SHARD_IDS.indexOf(it.shardId)
         }
-        require(orderedShards.map { it.shardId } == HimUnresolvedPrimaryIdentityDiagnosticContractV1.SHARD_IDS) {
-            fail(HimZeroCandidateCauseAnalysisFailureReasonV1.AGGREGATE_VALIDATION_FAILED, "shards")
+        require(
+            orderedShards.map { it.shardId } ==
+                    HimUnresolvedPrimaryIdentityDiagnosticContractV1.SHARD_IDS,
+        ) {
+            fail(
+                HimZeroCandidateCauseAnalysisFailureReasonV1.AGGREGATE_VALIDATION_FAILED,
+                "shards",
+            )
         }
+
         val normalizedShards = orderedShards.map { shard ->
-            val records = shard.records.sortedWith(diagnosticRecordComparator)
-            val unsigned = shard.copy(records = records, logicalDigest = "")
-            unsigned.copy(logicalDigest = HimUnresolvedPrimaryIdentityDiagnosticPersistenceV1.logicalDigest(unsigned))
+            val plan = mission.shards.singleOrNull { it.shardId == shard.shardId }
+                ?: fail(
+                    HimZeroCandidateCauseAnalysisFailureReasonV1.AGGREGATE_VALIDATION_FAILED,
+                    "shardPlan",
+                )
+
+            val recordsByKey = shard.records.associateBy { record ->
+                HimUnresolvedPrimaryIdentityDiagnosticContractV1.referenceKey(
+                    record.source,
+                    record.evidenceReference,
+                )
+            }
+            require(recordsByKey.size == shard.records.size) {
+                fail(
+                    HimZeroCandidateCauseAnalysisFailureReasonV1.AGGREGATE_VALIDATION_FAILED,
+                    "duplicateShardReference",
+                )
+            }
+
+            val records = plan.referencePlanKeys.map { key ->
+                recordsByKey[key]
+                    ?: fail(
+                        HimZeroCandidateCauseAnalysisFailureReasonV1.AGGREGATE_VALIDATION_FAILED,
+                        "missingShardReference",
+                    )
+            }
+            require(records.size == shard.records.size) {
+                fail(
+                    HimZeroCandidateCauseAnalysisFailureReasonV1.AGGREGATE_VALIDATION_FAILED,
+                    "foreignShardReference",
+                )
+            }
+
+            val unsigned = shard.copy(
+                records = records,
+                logicalDigest = "",
+            )
+            unsigned.copy(
+                logicalDigest =
+                    HimUnresolvedPrimaryIdentityDiagnosticPersistenceV1.logicalDigest(unsigned),
+            )
         }
-        val unsigned = aggregate.copy(shardResults = normalizedShards, logicalDigest = "")
-        return unsigned.copy(logicalDigest = HimUnresolvedPrimaryIdentityDiagnosticPersistenceV1.logicalDigest(unsigned))
+
+        val unsigned = aggregate.copy(
+            shardResults = normalizedShards,
+            logicalDigest = "",
+        )
+        return unsigned.copy(
+            logicalDigest =
+                HimUnresolvedPrimaryIdentityDiagnosticPersistenceV1.logicalDigest(unsigned),
+        )
     }
 
     private fun analyzeRecord(
