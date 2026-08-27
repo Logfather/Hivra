@@ -76,12 +76,77 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRealV1Test {
             "AUTHORIZED_P1_PILOT_REVIEW_PACKET_CONTEXT_ONLY_OFFLINE",
             CONFIRMATION,
         )
+        assertEquals(
+            "him.zeroCandidateRecoveryHumanReviewP1PilotReviewPacket.authorizedExecutionHead",
+            AUTHORIZED_EXECUTION_HEAD_PROPERTY,
+        )
     }
 
     @Test
-    fun `expected implementation head is frozen`() {
-        assertEquals("b44d28e4750e6d5d47210d91eb08c03ec033d3d2", EXPECTED_IMPLEMENTATION_HEAD)
-        assertTrue(EXPECTED_IMPLEMENTATION_HEAD.matches(HEAD))
+    fun `core runtime baseline head is frozen`() {
+        assertEquals("b44d28e4750e6d5d47210d91eb08c03ec033d3d2", CORE_RUNTIME_BASELINE_HEAD)
+        assertTrue(CORE_RUNTIME_BASELINE_HEAD.matches(HEAD))
+    }
+
+    @Test
+    fun `core runtime baseline is not the execution head`() {
+        val authorizedExecutionHead = "c".repeat(40)
+        assertEquals(authorizedExecutionHead, executionHeadForPacket(authorizedExecutionHead))
+        assertTrue(CORE_RUNTIME_BASELINE_HEAD != executionHeadForPacket(authorizedExecutionHead))
+    }
+
+    @Test
+    fun `missing authorized execution head is rejected before repository access`() {
+        assertEquals(null, parseAuthorizedExecutionHead(null))
+        assertEquals(false, repositoryAccessAllowed(null))
+    }
+
+    @Test
+    fun `blank authorized execution head is rejected`() {
+        assertEquals(null, parseAuthorizedExecutionHead(""))
+        assertEquals(null, parseAuthorizedExecutionHead("   "))
+    }
+
+    @Test
+    fun `uppercase authorized execution head is rejected`() {
+        assertEquals(null, parseAuthorizedExecutionHead("A".repeat(40)))
+    }
+
+    @Test
+    fun `wrong length authorized execution head is rejected`() {
+        assertEquals(null, parseAuthorizedExecutionHead("a".repeat(39)))
+        assertEquals(null, parseAuthorizedExecutionHead("a".repeat(41)))
+    }
+
+    @Test
+    fun `non hexadecimal authorized execution head is rejected`() {
+        assertEquals(null, parseAuthorizedExecutionHead("g".repeat(40)))
+    }
+
+    @Test
+    fun `authorized execution head mismatch is fail closed`() {
+        assertEquals(
+            "EXECUTION_HEAD_MISMATCH",
+            executionHeadFailure("a".repeat(40), "b".repeat(40)),
+        )
+    }
+
+    @Test
+    fun `core runtime baseline must be an ancestor`() {
+        assertTrue(ancestorResult(0))
+        assertFalse(ancestorResult(1))
+    }
+
+    @Test
+    fun `runtime request receives the authorized execution head`() {
+        val authorizedExecutionHead = "d".repeat(40)
+        assertEquals(authorizedExecutionHead, executionHeadForPacket(authorizedExecutionHead))
+    }
+
+    @Test
+    fun `request binding does not use a fixed future entrypoint commit`() {
+        val authorizedExecutionHead = "e".repeat(40)
+        assertFalse(executionHeadForPacket(authorizedExecutionHead) == CORE_RUNTIME_BASELINE_HEAD)
     }
 
     @Test
@@ -187,10 +252,13 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRealV1Test {
 
     @Test
     fun `writes current real bound P1 pilot review packet twice without review decisions`() {
-        requireRealGate()
+        val authorizedExecutionHead = requireRealGate()
         val root = projectRoot()
         val currentHead = git(root, "rev-parse", "HEAD")
-        require(currentHead == EXPECTED_IMPLEMENTATION_HEAD) { "PILOT_PACKET_HEAD_MISMATCH" }
+        require(currentHead == authorizedExecutionHead) { "PILOT_PACKET_EXECUTION_HEAD_MISMATCH" }
+        require(isAncestor(root, CORE_RUNTIME_BASELINE_HEAD, authorizedExecutionHead)) {
+            "PILOT_PACKET_CORE_HEAD_NOT_ANCESTOR"
+        }
 
         val corpusFile = root.resolve(CORPUS_JSON_PATH)
         require(corpusFile.isFile) { "RECOVERY_REVIEW_CORPUS_MISSING" }
@@ -234,7 +302,7 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRealV1Test {
             active.authorityFile,
         ).distinctBy { it.canonicalFile }
             .associateWith { it.readBytes() }
-        val inputBinding = inputBinding(root, corpusFile, corpus, catalog, authority, active.authorityFile, currentHead, persistence)
+        val inputBinding = inputBinding(root, corpusFile, corpus, catalog, authority, active.authorityFile, authorizedExecutionHead, persistence)
         require(inputBinding.validate().valid) { "PILOT_PACKET_INPUT_BINDING_INVALID" }
 
         val outputRoot = root.resolve(HimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketPersistenceV1.OUTPUT_ROOT)
@@ -252,11 +320,11 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRealV1Test {
             catalog = catalog,
             registry = registry,
             authority = authority,
-            packetImplementationHead = EXPECTED_IMPLEMENTATION_HEAD,
+            packetImplementationHead = executionHeadForPacket(authorizedExecutionHead),
             packetOutputRoot = outputRoot,
         )
         val first = completed(HimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRuntimeV1.execute(request))
-        validateRealResult(first, jsonFile, markdownFile)
+        validateRealResult(first, jsonFile, markdownFile, authorizedExecutionHead)
         val firstJson = jsonFile.readBytes()
         val firstMarkdown = markdownFile.readBytes()
         require(previousJson == null || previousJson.contentEquals(firstJson)) { "PILOT_PACKET_EXISTING_JSON_CHANGED" }
@@ -268,7 +336,7 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRealV1Test {
         require(second.persistenceStatus == HimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketPersistenceStatusV1.ALREADY_PRESENT_IDENTICAL) {
             "PILOT_PACKET_SECOND_STATUS_MISMATCH"
         }
-        validateRealResult(second, jsonFile, markdownFile)
+        validateRealResult(second, jsonFile, markdownFile, authorizedExecutionHead)
         val secondReload = HimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketPersistenceV1.readPacket(jsonFile)
         require(first.packet == second.packet && first.packet == secondReload) { "PILOT_PACKET_SECOND_RELOAD_MISMATCH" }
         require(firstJson.contentEquals(jsonFile.readBytes())) { "PILOT_PACKET_JSON_NOT_IDEMPOTENT" }
@@ -282,6 +350,7 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRealV1Test {
         result: HimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRuntimeResultV1.Completed,
         jsonFile: File,
         markdownFile: File,
+        authorizedExecutionHead: String,
     ) {
         require(result.runtimeContractId == HimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRuntimeV1.CONTRACT_ID)
         require(result.runtimeVersion == HimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRuntimeV1.VERSION)
@@ -305,7 +374,7 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRealV1Test {
         require(result.packet.items.none { item -> item.contextLimitations.any { it.name.contains("DECISION") || it.name.contains("GOLD") } })
         require(result.packet.corpusLogicalDigest == CORPUS_LOGICAL_DIGEST)
         require(result.packet.corpusBindingDigest == CORPUS_BINDING_DIGEST)
-        require(result.packet.packetImplementationHead == EXPECTED_IMPLEMENTATION_HEAD)
+        require(result.packet.packetImplementationHead == authorizedExecutionHead)
         require(jsonFile.isFile && markdownFile.isFile)
         require(jsonFile.length() == result.jsonByteSize)
         require(markdownFile.length() == result.markdownByteSize)
@@ -376,11 +445,26 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRealV1Test {
 
     private fun safeDiagnostic(reason: String, safeContext: String): String = "$reason $safeContext"
 
-    private fun requireRealGate() {
+    private fun requireRealGate(): String {
         assumeTrue(System.getProperty(ENABLED_PROPERTY) == "true")
         assumeTrue(System.getProperty(CONFIRMATION_PROPERTY) == CONFIRMATION)
+        val authorizedExecutionHead = parseAuthorizedExecutionHead(System.getProperty(AUTHORIZED_EXECUTION_HEAD_PROPERTY))
+        assumeTrue(authorizedExecutionHead != null)
         HimTestExecutionBoundaryV1.requireSourceIntegrationEnabled()
+        return requireNotNull(authorizedExecutionHead)
     }
+
+    private fun parseAuthorizedExecutionHead(value: String?): String? = value?.takeIf { it.isNotBlank() && it.matches(HEAD) }
+
+    private fun repositoryAccessAllowed(authorizedExecutionHead: String?): Boolean =
+        authorizedExecutionHead != null && authorizedExecutionHead.matches(HEAD)
+
+    private fun executionHeadFailure(authorizedExecutionHead: String, currentHead: String): String? =
+        if (authorizedExecutionHead == currentHead) null else "EXECUTION_HEAD_MISMATCH"
+
+    private fun ancestorResult(exitCode: Int): Boolean = exitCode == 0
+
+    private fun executionHeadForPacket(authorizedExecutionHead: String): String = authorizedExecutionHead
 
     private fun gate(enabled: String?, confirmation: String?) = Gate(
         enabled = enabled == "true",
@@ -413,14 +497,24 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRealV1Test {
         return output
     }
 
+    private fun isAncestor(root: File, ancestor: String, descendant: String): Boolean {
+        val process = ProcessBuilder("git", "merge-base", "--is-ancestor", ancestor, descendant)
+            .directory(root)
+            .redirectErrorStream(true)
+            .start()
+        process.inputStream.close()
+        return process.waitFor() == 0
+    }
+
     private data class Gate(val enabled: Boolean, val confirmation: String?)
 
     companion object {
         const val ENABLED_PROPERTY = "him.zeroCandidateRecoveryHumanReviewP1PilotReviewPacket.enabled"
         const val CONFIRMATION_PROPERTY = "him.zeroCandidateRecoveryHumanReviewP1PilotReviewPacket.confirmation"
+        const val AUTHORIZED_EXECUTION_HEAD_PROPERTY = "him.zeroCandidateRecoveryHumanReviewP1PilotReviewPacket.authorizedExecutionHead"
         const val CONFIRMATION = "AUTHORIZED_P1_PILOT_REVIEW_PACKET_CONTEXT_ONLY_OFFLINE"
         const val SOURCE_INTEGRATION_PROPERTY = "him.sourceIntegration.enabled"
-        const val EXPECTED_IMPLEMENTATION_HEAD = "b44d28e4750e6d5d47210d91eb08c03ec033d3d2"
+        const val CORE_RUNTIME_BASELINE_HEAD = "b44d28e4750e6d5d47210d91eb08c03ec033d3d2"
         const val CORPUS_JSON_PATH =
             "build/knowledge/reports/him/evidence-alignment/catalog-audit/zero-candidate-recovery-review-corpus/v1/review-corpus.v1.json"
         const val CORPUS_BYTES = 2359985L
