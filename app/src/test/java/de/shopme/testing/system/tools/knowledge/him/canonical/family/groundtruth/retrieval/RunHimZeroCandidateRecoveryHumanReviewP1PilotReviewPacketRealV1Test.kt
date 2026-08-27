@@ -39,10 +39,7 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRealV1Test {
 
     @Test
     fun `gate is disabled by default`() {
-        val gate = gate(
-            System.getProperty(ENABLED_PROPERTY),
-            System.getProperty(CONFIRMATION_PROPERTY),
-        )
+        val gate = gate(null, null)
         assertFalse(gate.enabled)
         assertFalse(gate.confirmation == CONFIRMATION)
     }
@@ -319,7 +316,7 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketRealV1Test {
             inputBinding = inputBinding,
             catalog = catalog,
             registry = registry,
-            authority = authority,
+            authority = masterAuthority,
             packetImplementationHead = executionHeadForPacket(authorizedExecutionHead),
             packetOutputRoot = outputRoot,
         )
