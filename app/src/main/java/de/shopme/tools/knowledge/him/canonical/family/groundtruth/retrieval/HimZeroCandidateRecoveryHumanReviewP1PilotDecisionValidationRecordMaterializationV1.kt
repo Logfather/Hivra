@@ -30,8 +30,8 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRecordMateria
         if (
             binding.packetId != HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.PACKET_ID ||
             binding.packetInputBindingDigest != HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.REVIEW_PACKET_INPUT_BINDING_DIGEST ||
-            binding.packetBindingDigest != HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.REVIEW_PACKET_BINDING_DIGEST ||
-            binding.packetLogicalDigest != HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.REVIEW_PACKET_LOGICAL_DIGEST ||
+            binding.packetBindingDigest != HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.DECISION_VALIDATION_PACKET_BINDING_DIGEST ||
+            binding.packetLogicalDigest != HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.DECISION_VALIDATION_PACKET_LOGICAL_DIGEST ||
             binding.originalReviewerRef != HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationContractV1.ORIGINAL_REVIEWER_REF ||
             binding.originalReviewRound != HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationContractV1.VALIDATION_ROUND ||
             binding.originalRevision != HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationContractV1.VALIDATION_REVISION

@@ -164,6 +164,44 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRecordMater
         )
     }
 
+    @Test
+    fun upstreamReviewPacketBindingDigestCannotBeMaterializedForP1() {
+        val original = completedSubmission()
+        val upstreamBinding = original.packetBinding.copy(
+            packetBindingDigest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.REVIEW_PACKET_BINDING_DIGEST,
+        )
+        val unsigned = original.copy(packetBinding = upstreamBinding, inputBindingDigest = "", logicalDigest = "")
+        val withBinding = unsigned.copy(
+            inputBindingDigest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionContractV1.inputBindingDigest(unsigned),
+        )
+        val foreignSubmission = withBinding.copy(
+            logicalDigest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionContractV1.logicalDigest(withBinding),
+        )
+        assertFailure(
+            materialize(foreignSubmission),
+            HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionFailureReasonV1.INVALID_PACKET_BINDING,
+        )
+    }
+
+    @Test
+    fun upstreamReviewPacketLogicalDigestCannotBeMaterializedForP1() {
+        val original = completedSubmission()
+        val upstreamBinding = original.packetBinding.copy(
+            packetLogicalDigest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.REVIEW_PACKET_LOGICAL_DIGEST,
+        )
+        val unsigned = original.copy(packetBinding = upstreamBinding, inputBindingDigest = "", logicalDigest = "")
+        val withBinding = unsigned.copy(
+            inputBindingDigest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionContractV1.inputBindingDigest(unsigned),
+        )
+        val foreignSubmission = withBinding.copy(
+            logicalDigest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionContractV1.logicalDigest(withBinding),
+        )
+        assertFailure(
+            materialize(foreignSubmission),
+            HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionFailureReasonV1.INVALID_PACKET_BINDING,
+        )
+    }
+
     private fun materialize(
         submission: HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionV1 = completedSubmission(),
     ) = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRecordMaterializationV1.materialize(submission)
@@ -232,8 +270,8 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRecordMater
         allowedValidationAssessments = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.VALIDATION_ASSESSMENTS,
         allowedValidationReasonCodes = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.VALIDATION_REASON_CODES,
         counters = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketCountersV1(4, 4, 2, 2, 0, 0, 4, 0, 0, 4, 4, 2, 2, 0, 0, 0, 0),
-        packetBindingDigest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.REVIEW_PACKET_BINDING_DIGEST,
-        packetLogicalDigest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.REVIEW_PACKET_LOGICAL_DIGEST,
+        packetBindingDigest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.DECISION_VALIDATION_PACKET_BINDING_DIGEST,
+        packetLogicalDigest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.DECISION_VALIDATION_PACKET_LOGICAL_DIGEST,
     )
 
     private fun packetInputBinding() = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketInputBindingV1(
