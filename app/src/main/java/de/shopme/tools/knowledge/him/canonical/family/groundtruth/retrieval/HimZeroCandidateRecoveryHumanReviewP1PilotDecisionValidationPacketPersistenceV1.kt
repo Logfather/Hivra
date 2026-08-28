@@ -49,7 +49,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
         return try {
             canonicalJson(packet).toByteArray(StandardCharsets.UTF_8)
         } catch (_: Throwable) {
-            fail(PersistenceFailureReason.SERIALIZATION_FAILED, "packet")
+            fail(ValidationPacketPersistenceFailureReason.SERIALIZATION_FAILED, "packet")
         }
     }
 
@@ -57,30 +57,30 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
         return try {
             requireSingleFinalLf(bytes)
             val root = parseStrictJson(bytes).takeIf { it.isJsonObject }
-                ?: fail(PersistenceFailureReason.DESERIALIZATION_FAILED, "root")
+                ?: fail(ValidationPacketPersistenceFailureReason.DESERIALIZATION_FAILED, "root")
             val packet = gson.fromJson(root, HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketV1::class.java)
-                ?: fail(PersistenceFailureReason.DESERIALIZATION_FAILED, "packet")
+                ?: fail(ValidationPacketPersistenceFailureReason.DESERIALIZATION_FAILED, "packet")
             val canonical = JsonParser.parseString(canonicalJson(packet))
-            if (canonical != root) fail(PersistenceFailureReason.DESERIALIZATION_FAILED, "fields")
+            if (canonical != root) fail(ValidationPacketPersistenceFailureReason.DESERIALIZATION_FAILED, "fields")
             requireValid(packet)
             packet
         } catch (failure: PersistenceFailure) {
             throw failure
         } catch (_: Throwable) {
-            fail(PersistenceFailureReason.DESERIALIZATION_FAILED, "packet")
+            fail(ValidationPacketPersistenceFailureReason.DESERIALIZATION_FAILED, "packet")
         }
     }
 
     fun readPacket(file: File): HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketV1 {
         if (!file.isFile || Files.isSymbolicLink(file.toPath())) {
-            fail(PersistenceFailureReason.READ_FAILED, "packet")
+            fail(ValidationPacketPersistenceFailureReason.READ_FAILED, "packet")
         }
         return try {
             deserializePacket(file.readBytes())
         } catch (failure: PersistenceFailure) {
             throw failure
         } catch (_: Throwable) {
-            fail(PersistenceFailureReason.READ_FAILED, "packet")
+            fail(ValidationPacketPersistenceFailureReason.READ_FAILED, "packet")
         }
     }
 
@@ -190,7 +190,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
         } catch (failure: PersistenceFailure) {
             throw failure
         } catch (_: Throwable) {
-            fail(PersistenceFailureReason.MARKDOWN_RENDER_FAILED, "markdown")
+            fail(ValidationPacketPersistenceFailureReason.MARKDOWN_RENDER_FAILED, "markdown")
         }
     }
 
@@ -199,7 +199,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
     ): HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceResultV1 {
         if (!request.enabled) return HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceResultV1.Disabled
         return try {
-            if (!SAFE_PACKET_ID.matches(request.packet.packetId)) fail(PersistenceFailureReason.INVALID_PACKET_ID, "packetId")
+            if (!SAFE_PACKET_ID.matches(request.packet.packetId)) fail(ValidationPacketPersistenceFailureReason.INVALID_PACKET_ID, "packetId")
             requireValid(request.packet)
             val paths = resolvePaths(request.outputRoot.toPath(), request.packet.packetId)
             val jsonBytes = serializePacket(request.packet)
@@ -212,7 +212,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
             )
         } catch (_: Throwable) {
             HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceResultV1.Failed(
-                PersistenceFailureReason.WRITE_FAILED,
+                ValidationPacketPersistenceFailureReason.WRITE_FAILED,
                 "persistence",
             )
         }
@@ -227,19 +227,19 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
         inspectDirectory(paths.directory, paths)
         val jsonExists = Files.exists(paths.json, LinkOption.NOFOLLOW_LINKS)
         val markdownExists = Files.exists(paths.markdown, LinkOption.NOFOLLOW_LINKS)
-        if (jsonExists != markdownExists) fail(PersistenceFailureReason.PARTIAL_PACKET_ARTIFACT_STATE, "pair")
+        if (jsonExists != markdownExists) fail(ValidationPacketPersistenceFailureReason.PARTIAL_PACKET_ARTIFACT_STATE, "pair")
         if (jsonExists) {
             val existingJson = readBytes(paths.json, "json")
-            if (!existingJson.contentEquals(jsonBytes)) fail(PersistenceFailureReason.EXISTING_JSON_CONFLICT, "json")
+            if (!existingJson.contentEquals(jsonBytes)) fail(ValidationPacketPersistenceFailureReason.EXISTING_JSON_CONFLICT, "json")
             val existingMarkdown = readBytes(paths.markdown, "markdown")
-            if (!existingMarkdown.contentEquals(markdownBytes)) fail(PersistenceFailureReason.EXISTING_MARKDOWN_CONFLICT, "markdown")
+            if (!existingMarkdown.contentEquals(markdownBytes)) fail(ValidationPacketPersistenceFailureReason.EXISTING_MARKDOWN_CONFLICT, "markdown")
             val reloaded = try {
                 deserializePacket(existingJson)
             } catch (_: Throwable) {
-                fail(PersistenceFailureReason.RELOAD_MISMATCH, "reload")
+                fail(ValidationPacketPersistenceFailureReason.RELOAD_MISMATCH, "reload")
             }
             if (reloaded != packet || !renderMarkdown(reloaded).toByteArray(StandardCharsets.UTF_8).contentEquals(existingMarkdown)) {
-                fail(PersistenceFailureReason.RELOAD_MISMATCH, "reload")
+                fail(ValidationPacketPersistenceFailureReason.RELOAD_MISMATCH, "reload")
             }
             return completed(
                 HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceStatusV1.ALREADY_PRESENT_IDENTICAL,
@@ -255,12 +255,12 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
         var markdownPublished = false
         try {
             Files.createDirectories(paths.directory)
-            if (Files.isSymbolicLink(paths.directory)) fail(PersistenceFailureReason.SYMLINK_ESCAPE, "directory")
+            if (Files.isSymbolicLink(paths.directory)) fail(ValidationPacketPersistenceFailureReason.SYMLINK_ESCAPE, "directory")
             inspectDirectory(paths.directory, paths)
             if (Files.exists(paths.tempJson, LinkOption.NOFOLLOW_LINKS) ||
                 Files.exists(paths.tempMarkdown, LinkOption.NOFOLLOW_LINKS)
             ) {
-                fail(PersistenceFailureReason.ATOMIC_PUBLICATION_FAILED, "temporary")
+                fail(ValidationPacketPersistenceFailureReason.ATOMIC_PUBLICATION_FAILED, "temporary")
             }
             writeNew(paths.tempJson, jsonBytes)
             tempJsonCreated = true
@@ -275,23 +275,23 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
             throw failure
         } catch (_: Throwable) {
             cleanupPublished(paths, jsonBytes, markdownBytes, tempJsonCreated, tempMarkdownCreated, jsonPublished, markdownPublished)
-            fail(PersistenceFailureReason.ATOMIC_PUBLICATION_FAILED, "publish")
+            fail(ValidationPacketPersistenceFailureReason.ATOMIC_PUBLICATION_FAILED, "publish")
         }
         try {
             val persistedJson = readBytes(paths.json, "json")
-            if (!persistedJson.contentEquals(jsonBytes)) fail(PersistenceFailureReason.JSON_BYTE_MISMATCH, "json")
+            if (!persistedJson.contentEquals(jsonBytes)) fail(ValidationPacketPersistenceFailureReason.JSON_BYTE_MISMATCH, "json")
             val persistedMarkdown = readBytes(paths.markdown, "markdown")
-            if (!persistedMarkdown.contentEquals(markdownBytes)) fail(PersistenceFailureReason.MARKDOWN_BYTE_MISMATCH, "markdown")
+            if (!persistedMarkdown.contentEquals(markdownBytes)) fail(ValidationPacketPersistenceFailureReason.MARKDOWN_BYTE_MISMATCH, "markdown")
             val reloaded = try {
                 deserializePacket(persistedJson)
             } catch (_: Throwable) {
-                fail(PersistenceFailureReason.RELOAD_MISMATCH, "reload")
+                fail(ValidationPacketPersistenceFailureReason.RELOAD_MISMATCH, "reload")
             }
-            if (reloaded != packet) fail(PersistenceFailureReason.RELOAD_MISMATCH, "reload")
-            if (reloaded.packetBindingDigest != packet.packetBindingDigest) fail(PersistenceFailureReason.BINDING_DIGEST_MISMATCH, "binding")
-            if (reloaded.packetLogicalDigest != packet.packetLogicalDigest) fail(PersistenceFailureReason.LOGICAL_DIGEST_MISMATCH, "logical")
+            if (reloaded != packet) fail(ValidationPacketPersistenceFailureReason.RELOAD_MISMATCH, "reload")
+            if (reloaded.packetBindingDigest != packet.packetBindingDigest) fail(ValidationPacketPersistenceFailureReason.BINDING_DIGEST_MISMATCH, "binding")
+            if (reloaded.packetLogicalDigest != packet.packetLogicalDigest) fail(ValidationPacketPersistenceFailureReason.LOGICAL_DIGEST_MISMATCH, "logical")
             if (!renderMarkdown(reloaded).toByteArray(StandardCharsets.UTF_8).contentEquals(persistedMarkdown)) {
-                fail(PersistenceFailureReason.RELOAD_MISMATCH, "markdown")
+                fail(ValidationPacketPersistenceFailureReason.RELOAD_MISMATCH, "markdown")
             }
             return completed(
                 HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceStatusV1.CREATED,
@@ -305,7 +305,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
             throw failure
         } catch (_: Throwable) {
             cleanupPublished(paths, jsonBytes, markdownBytes, false, false, jsonPublished, markdownPublished)
-            fail(PersistenceFailureReason.RELOAD_MISMATCH, "reload")
+            fail(ValidationPacketPersistenceFailureReason.RELOAD_MISMATCH, "reload")
         }
     }
 
@@ -329,22 +329,22 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
     )
 
     private fun resolvePaths(outputRoot: Path, packetId: String): ResolvedPaths {
-        if (!SAFE_PACKET_ID.matches(packetId)) fail(PersistenceFailureReason.INVALID_PACKET_ID, "packetId")
-        if (outputRoot.toString().isBlank()) fail(PersistenceFailureReason.INVALID_OUTPUT_ROOT, "root")
+        if (!SAFE_PACKET_ID.matches(packetId)) fail(ValidationPacketPersistenceFailureReason.INVALID_PACKET_ID, "packetId")
+        if (outputRoot.toString().isBlank()) fail(ValidationPacketPersistenceFailureReason.INVALID_OUTPUT_ROOT, "root")
         val root = try { outputRoot.toAbsolutePath().normalize() } catch (_: Throwable) {
-            fail(PersistenceFailureReason.INVALID_OUTPUT_ROOT, "root")
+            fail(ValidationPacketPersistenceFailureReason.INVALID_OUTPUT_ROOT, "root")
         }
         if (Files.exists(root, LinkOption.NOFOLLOW_LINKS) && Files.isSymbolicLink(root)) {
-            fail(PersistenceFailureReason.SYMLINK_ESCAPE, "root")
+            fail(ValidationPacketPersistenceFailureReason.SYMLINK_ESCAPE, "root")
         }
         val directory = root.resolve(packetId).normalize()
         if (!directory.startsWith(root) || directory == root || hasSymlinkComponentWithin(directory, root)) {
-            fail(PersistenceFailureReason.UNSAFE_TARGET_PATH, "target")
+            fail(ValidationPacketPersistenceFailureReason.UNSAFE_TARGET_PATH, "target")
         }
         val json = directory.resolve(JSON_FILE_NAME).normalize()
         val markdown = directory.resolve(MARKDOWN_FILE_NAME).normalize()
         if (!json.startsWith(directory) || !markdown.startsWith(directory)) {
-            fail(PersistenceFailureReason.UNSAFE_TARGET_PATH, "target")
+            fail(ValidationPacketPersistenceFailureReason.UNSAFE_TARGET_PATH, "target")
         }
         return ResolvedPaths(
             directory = directory,
@@ -360,20 +360,20 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
     private fun inspectDirectory(directory: Path, paths: ResolvedPaths) {
         if (!Files.exists(directory, LinkOption.NOFOLLOW_LINKS)) return
         if (Files.isSymbolicLink(directory) || !Files.isDirectory(directory, LinkOption.NOFOLLOW_LINKS)) {
-            fail(PersistenceFailureReason.UNSAFE_TARGET_PATH, "directory")
+            fail(ValidationPacketPersistenceFailureReason.UNSAFE_TARGET_PATH, "directory")
         }
         try {
             Files.newDirectoryStream(directory).use { entries ->
                 for (entry in entries) {
                     if (entry != paths.json && entry != paths.markdown && entry != paths.tempJson && entry != paths.tempMarkdown) {
-                        fail(PersistenceFailureReason.UNEXPECTED_OUTPUT_FILE, "directory")
+                        fail(ValidationPacketPersistenceFailureReason.UNEXPECTED_OUTPUT_FILE, "directory")
                     }
                 }
             }
         } catch (failure: PersistenceFailure) {
             throw failure
         } catch (_: Throwable) {
-            fail(PersistenceFailureReason.READ_FAILED, "directory")
+            fail(ValidationPacketPersistenceFailureReason.READ_FAILED, "directory")
         }
     }
 
@@ -392,22 +392,22 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
             Files.write(path, bytes, StandardOpenOption.CREATE_NEW, StandardOpenOption.WRITE)
             FileOutputStream(path.toFile(), true).use { it.fd.sync() }
         } catch (_: Throwable) {
-            fail(PersistenceFailureReason.WRITE_FAILED, "temporary")
+            fail(ValidationPacketPersistenceFailureReason.WRITE_FAILED, "temporary")
         }
     }
 
     private fun moveNoReplace(source: Path, target: Path) {
-        if (Files.exists(target, LinkOption.NOFOLLOW_LINKS)) fail(PersistenceFailureReason.ATOMIC_PUBLICATION_FAILED, "publish")
+        if (Files.exists(target, LinkOption.NOFOLLOW_LINKS)) fail(ValidationPacketPersistenceFailureReason.ATOMIC_PUBLICATION_FAILED, "publish")
         try {
             Files.move(source, target, StandardCopyOption.ATOMIC_MOVE)
         } catch (_: AtomicMoveNotSupportedException) {
             try {
                 Files.move(source, target)
             } catch (_: Throwable) {
-                fail(PersistenceFailureReason.ATOMIC_PUBLICATION_FAILED, "publish")
+                fail(ValidationPacketPersistenceFailureReason.ATOMIC_PUBLICATION_FAILED, "publish")
             }
         } catch (_: Throwable) {
-            fail(PersistenceFailureReason.ATOMIC_PUBLICATION_FAILED, "publish")
+            fail(ValidationPacketPersistenceFailureReason.ATOMIC_PUBLICATION_FAILED, "publish")
         }
     }
 
@@ -437,12 +437,12 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
 
     private fun readBytes(path: Path, context: String): ByteArray {
         if (!Files.isRegularFile(path, LinkOption.NOFOLLOW_LINKS) || Files.isSymbolicLink(path)) {
-            fail(PersistenceFailureReason.READ_FAILED, context)
+            fail(ValidationPacketPersistenceFailureReason.READ_FAILED, context)
         }
         return try {
             Files.readAllBytes(path)
         } catch (_: Throwable) {
-            fail(PersistenceFailureReason.READ_FAILED, context)
+            fail(ValidationPacketPersistenceFailureReason.READ_FAILED, context)
         }
     }
 
@@ -456,15 +456,15 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
 
     private fun mapContractReason(
         reason: HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketFailureReasonV1,
-    ): PersistenceFailureReason = when (reason) {
+    ): ValidationPacketPersistenceFailureReason = when (reason) {
         HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketFailureReasonV1.PACKET_BINDING_DIGEST_MISMATCH,
         HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketFailureReasonV1.ITEM_BINDING_DIGEST_MISMATCH,
         HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketFailureReasonV1.RECORD_BINDING_MISMATCH,
-        -> PersistenceFailureReason.BINDING_DIGEST_MISMATCH
+        -> ValidationPacketPersistenceFailureReason.BINDING_DIGEST_MISMATCH
         HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketFailureReasonV1.PACKET_LOGICAL_DIGEST_MISMATCH,
         HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketFailureReasonV1.ITEM_LOGICAL_DIGEST_MISMATCH,
-        -> PersistenceFailureReason.LOGICAL_DIGEST_MISMATCH
-        else -> PersistenceFailureReason.INVALID_PACKET
+        -> ValidationPacketPersistenceFailureReason.LOGICAL_DIGEST_MISMATCH
+        else -> ValidationPacketPersistenceFailureReason.INVALID_PACKET
     }
 
     private fun canonicalJson(packet: HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketV1): String =
@@ -472,7 +472,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
 
     private fun requireSingleFinalLf(bytes: ByteArray) {
         if (bytes.isEmpty() || bytes.last() != '\n'.code.toByte() || bytes.dropLast(1).contains('\n'.code.toByte())) {
-            fail(PersistenceFailureReason.DESERIALIZATION_FAILED, "json")
+            fail(ValidationPacketPersistenceFailureReason.DESERIALIZATION_FAILED, "json")
         }
     }
 
@@ -480,7 +480,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
         val reader = JsonReader(StringReader(bytes.toString(StandardCharsets.UTF_8).dropLast(1)))
         reader.isLenient = false
         val result = readJson(reader)
-        if (reader.peek() != JsonToken.END_DOCUMENT) fail(PersistenceFailureReason.DESERIALIZATION_FAILED, "json")
+        if (reader.peek() != JsonToken.END_DOCUMENT) fail(ValidationPacketPersistenceFailureReason.DESERIALIZATION_FAILED, "json")
         return result
     }
 
@@ -490,7 +490,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
             val result = JsonObject()
             while (reader.hasNext()) {
                 val name = reader.nextName()
-                if (result.has(name)) fail(PersistenceFailureReason.DESERIALIZATION_FAILED, "duplicate")
+                if (result.has(name)) fail(ValidationPacketPersistenceFailureReason.DESERIALIZATION_FAILED, "duplicate")
                 result.add(name, readJson(reader))
             }
             reader.endObject()
@@ -507,7 +507,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
         JsonToken.NUMBER -> JsonPrimitive(BigDecimal(reader.nextString()))
         JsonToken.BOOLEAN -> JsonPrimitive(reader.nextBoolean())
         JsonToken.NULL -> { reader.nextNull(); JsonNull.INSTANCE }
-        else -> fail(PersistenceFailureReason.DESERIALIZATION_FAILED, "json")
+        else -> fail(ValidationPacketPersistenceFailureReason.DESERIALIZATION_FAILED, "json")
     }
 
     private fun appendEvidenceCards(
@@ -582,7 +582,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
         .digest(bytes)
         .joinToString("") { "%02x".format(it.toInt() and 0xff) }
 
-    private fun fail(reason: PersistenceFailureReason, safeContext: String): Nothing =
+    private fun fail(reason: ValidationPacketPersistenceFailureReason, safeContext: String): Nothing =
         throw PersistenceFailure(reason, safeContext)
 
     private data class ResolvedPaths(
@@ -596,7 +596,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersist
     )
 
     private data class PersistenceFailure(
-        val reason: PersistenceFailureReason,
+        val reason: ValidationPacketPersistenceFailureReason,
         val safeContext: String,
     ) : IllegalArgumentException()
 }
@@ -631,7 +631,7 @@ enum class HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPer
     MARKDOWN_RENDER_FAILED,
 }
 
-private typealias PersistenceFailureReason = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceFailureReasonV1
+private typealias ValidationPacketPersistenceFailureReason = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceFailureReasonV1
 
 sealed interface HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceResultV1 {
     data object Disabled : HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceResultV1
