@@ -1,14 +1,29 @@
 package de.shopme.testing.system.tools.knowledge.him.canonical.family.groundtruth.retrieval
 
 import de.shopme.testing.system.tools.knowledge.him.support.HimTestExecutionBoundaryV1
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamily
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyAuthority
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyPaths
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyPersistence
+import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilySourceCatalog
 import de.shopme.tools.knowledge.him.canonical.family.HimCanonicalFamilyValidator
+import de.shopme.tools.knowledge.him.canonical.family.HimEntityId
 import de.shopme.tools.knowledge.him.canonical.family.HimEntityIdRegistry
+import de.shopme.tools.knowledge.him.canonical.family.HimEntityIdRegistryEntry
+import de.shopme.tools.knowledge.him.canonical.family.HimEntitySourceReferenceType
+import de.shopme.tools.knowledge.him.canonical.family.HimEntityType
+import de.shopme.tools.knowledge.him.canonical.family.HimLifecycleStatus
+import de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonical
 import de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonicalMaster
 import de.shopme.tools.knowledge.him.canonical.family.HimProductOnlyCanonicalMasterReader
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.HimActiveGroundTruthResolutionV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimGroundTruthSource
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimEvidenceRecordKind
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimEvidenceRecordReference
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateCauseAnalysisFileBindingV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateCauseAnalysisPrimaryBucketV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewContractV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewAlternativeCanonicalProposalV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewDecisionRecordV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewDecisionV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewFileBindingV1
@@ -20,13 +35,34 @@ import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZ
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDirectEvidenceSupplementPersistenceV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotReviewPacketPersistenceV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewPersistenceV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewPersistenceStatusV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewReasonCodeV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewReviewUnitV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewRuntimeV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewRuntimeFailureReasonV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewRuntimeRequestV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewRuntimeResult
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewScopeV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewCorpusContractV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewCorpusEntryV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewCorpusFileBindingV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewCorpusInputBindingV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewCorpusPersistenceV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewCorpusReportV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewPriorityCounterV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewPriorityV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewRecordKindBreakdownV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewSelectionReasonBreakdownV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewSelectionReasonV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewSourceBreakdownV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewStateV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewAssociationStateV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewCanonicalTargetV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryReviewCorpusCountersV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewEvidenceDirectnessV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewEvidenceKindV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewEvidencePositionV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewEvidenceReferenceV1
 import java.io.File
 import java.lang.reflect.Modifier
 import java.nio.file.Files
@@ -408,22 +444,69 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionRealV1Test 
     }
 
     @Test
-    fun `real-bound entrypoint does not invoke runtime or persistence`() {
+    fun `real-bound entrypoint invokes runtime only after full authorization`() {
         assertEquals(
-            "writes current real-bound P1 pilot decision submission without persisting decisions",
+            "persists current real-bound P1 pilot decision submission only when fully authorized",
             REAL_EXECUTION_TEST_NAME,
         )
-        assertTrue(NO_PERSISTENCE_IN_CURRENT_OFFLINE_ENTRYPOINT)
+        assertTrue(HERMETIC_FIXTURES_ONLY)
+        assertTrue(GATE_STAGES.indexOf("sourceIntegration") < GATE_STAGES.indexOf("repositoryInputs"))
     }
 
     @Test
-    fun `hermetic tests do not create decision batches`() {
+    fun `persistence stub marker is absent`() {
+        assertTrue(
+            companionObjectFields().none { it == "NO_PERSISTENCE_IN_CURRENT_OFFLINE_ENTRYPOINT" },
+        )
+    }
+
+    @Test
+    fun `hermetic runtime persistence is idempotent and fail closed`() {
         val root = Files.createTempDirectory("him-p1-submission-hermetic-").toFile()
-        val paths = outputPaths(root, batchIdForSubmission(submission()))
-        assertFalse(paths.batch.exists())
-        assertFalse(paths.reportJson.exists())
-        assertFalse(paths.reportText.exists())
-        root.deleteRecursively()
+        val conflictRoot = Files.createTempDirectory("him-p1-submission-conflict-").toFile()
+        try {
+            val first = completed(SyntheticFixture.execute(root))
+            val paths = syntheticOutputPaths(root, SyntheticFixture.BATCH_ID)
+            assertTrue(paths.batch.isFile)
+            assertTrue(paths.reportJson.isFile)
+            assertTrue(paths.reportText.isFile)
+            assertEquals(4, first.decisionBatch.decisionRecords.size)
+            assertEquals(4, first.submittedDecisionRecords.size)
+            assertEquals(2, first.decisionBatch.counters.decisionBreakdown.first { it.decision == HimZeroCandidateRecoveryHumanReviewDecisionV1.CONFIRM_ASSOCIATION }.records)
+            assertEquals(2, first.decisionBatch.counters.decisionBreakdown.first { it.decision == HimZeroCandidateRecoveryHumanReviewDecisionV1.REJECT_ASSOCIATION }.records)
+            first.persistenceResult.report.validate()
+            val firstBatchBytes = paths.batch.readBytes()
+            val firstReportJsonBytes = paths.reportJson.readBytes()
+            val firstReportTextBytes = paths.reportText.readBytes()
+            val reloaded = HimZeroCandidateRecoveryHumanReviewPersistenceV1.readBatch(paths.batch)
+            assertEquals(first.decisionBatch, reloaded)
+
+            val second = completed(SyntheticFixture.execute(root))
+            assertEquals(HimZeroCandidateRecoveryHumanReviewPersistenceStatusV1.CREATED, first.persistenceResult.persistenceStatus)
+            assertEquals(HimZeroCandidateRecoveryHumanReviewPersistenceStatusV1.ALREADY_PRESENT_IDENTICAL, second.persistenceResult.persistenceStatus)
+            assertEquals(first.decisionBatch, second.decisionBatch)
+            assertEquals(first.persistenceResult.batch, second.persistenceResult.batch)
+            assertEquals(first.persistenceResult.report, second.persistenceResult.report)
+            assertEquals(firstBatchBytes.toList(), paths.batch.readBytes().toList())
+            assertEquals(firstReportJsonBytes.toList(), paths.reportJson.readBytes().toList())
+            assertEquals(firstReportTextBytes.toList(), paths.reportText.readBytes().toList())
+
+            paths.reportText.delete()
+            val partial = failed(SyntheticFixture.execute(root))
+            assertEquals(HimZeroCandidateRecoveryHumanReviewRuntimeFailureReasonV1.PERSISTENCE_FAILED, partial.reason)
+
+            val conflictFirst = completed(SyntheticFixture.execute(conflictRoot))
+            val conflictPaths = syntheticOutputPaths(conflictRoot, SyntheticFixture.BATCH_ID)
+            conflictPaths.batch.writeText("foreign")
+            val conflict = failed(SyntheticFixture.execute(conflictRoot))
+            assertEquals(HimZeroCandidateRecoveryHumanReviewRuntimeFailureReasonV1.PERSISTENCE_FAILED, conflict.reason)
+            assertEquals(4, conflictFirst.decisionBatch.decisionRecords.size)
+            assertTrue(paths.batch.parentFile.listFiles()?.map { it.name }?.toSet() == setOf(DECISION_BATCH_FILE_NAME))
+            assertTrue(conflictPaths.batch.parentFile.listFiles()?.map { it.name }?.toSet() == setOf(DECISION_BATCH_FILE_NAME))
+        } finally {
+            root.deleteRecursively()
+            conflictRoot.deleteRecursively()
+        }
     }
 
     @Test
@@ -458,12 +541,8 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionRealV1Test 
         assertFalse(HERMETIC_CORPUS_PATH.startsWith("build/"))
     }
 
-    /**
-     * This is deliberately the only method that can pass the opt-in boundary. It does not
-     * execute the HumanReview runtime in this phase: doing so would publish a decision batch.
-     */
     @Test
-    fun `writes current real-bound P1 pilot decision submission without persisting decisions`() {
+    fun `persists current real-bound P1 pilot decision submission only when fully authorized`() {
         val authorizedExecutionHead = requireRealGate()
         val root = projectRoot()
         val currentHead = git(root, "rev-parse", "HEAD")
@@ -525,6 +604,32 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionRealV1Test 
         }
         require(materialized.size == 4) { "MATERIALIZED_DECISION_COUNT_MISMATCH" }
         materialized.forEach { record -> require(record.validate().valid) { "DECISION_RECORD_INVALID" } }
+        require(
+            materialized.map { it.decision } == listOf(
+                HimZeroCandidateRecoveryHumanReviewDecisionV1.CONFIRM_ASSOCIATION,
+                HimZeroCandidateRecoveryHumanReviewDecisionV1.REJECT_ASSOCIATION,
+                HimZeroCandidateRecoveryHumanReviewDecisionV1.CONFIRM_ASSOCIATION,
+                HimZeroCandidateRecoveryHumanReviewDecisionV1.REJECT_ASSOCIATION,
+            ),
+        ) { "DECISION_ORDER_MISMATCH" }
+        require(materialized.flatMap { it.evidenceReferences }.size == 12) {
+            "EVIDENCE_COUNT_MISMATCH"
+        }
+        require(materialized.flatMap { it.evidenceReferences }.map { it.evidenceReferenceId }.distinct().size == 12) {
+            "EVIDENCE_DUPLICATE"
+        }
+        require(
+            materialized.filter { it.decision == HimZeroCandidateRecoveryHumanReviewDecisionV1.REJECT_ASSOCIATION }
+                .all {
+                    it.reasonCodes.toSet() == setOf(
+                        HimZeroCandidateRecoveryHumanReviewReasonCodeV1.DIRECT_SEMANTIC_MISMATCH,
+                        HimZeroCandidateRecoveryHumanReviewReasonCodeV1.DIRECT_ASSOCIATION_CONTRADICTED,
+                    )
+                },
+        ) { "REJECT_REASON_MISMATCH" }
+        require(materialized.all { it.alternativeCanonicalProposal == null }) {
+            "ALTERNATIVE_CANONICAL_PROPOSAL_PRESENT"
+        }
 
         val scope = scope(inputBinding, materialized)
         val request = HimZeroCandidateRecoveryHumanReviewRuntimeRequestV1(
@@ -543,9 +648,306 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionRealV1Test 
         )
         require(request.enabled && request.submittedDecisionRecords.size == 4) { "REQUEST_SHAPE_INVALID" }
         val outputs = outputPaths(root, request.batchId)
-        require(!outputs.batch.exists() && !outputs.reportJson.exists() && !outputs.reportText.exists()) {
-            "REAL_OUTPUT_ALREADY_EXISTS"
+        requireCompleteOrAbsent(outputs)
+
+        val first = completed(HimZeroCandidateRecoveryHumanReviewRuntimeV1.execute(request))
+        validateCompletedRun(first, request, outputs)
+        val firstBatchBytes = outputs.batch.readBytes()
+        val firstReportJsonBytes = outputs.reportJson.readBytes()
+        val firstReportTextBytes = outputs.reportText.readBytes()
+
+        val second = completed(HimZeroCandidateRecoveryHumanReviewRuntimeV1.execute(request))
+        validateCompletedRun(second, request, outputs)
+        require(first.decisionBatch == second.decisionBatch) { "RUNTIME_RELOAD_MISMATCH" }
+        require(first.persistenceResult.batch == second.persistenceResult.batch) { "PERSISTENCE_RELOAD_MISMATCH" }
+        require(first.persistenceResult.report == second.persistenceResult.report) { "REPORT_RELOAD_MISMATCH" }
+        require(first.counters == second.counters) { "RUNTIME_COUNTER_MISMATCH" }
+        require(firstBatchBytes.contentEquals(outputs.batch.readBytes())) { "BATCH_BYTES_CHANGED" }
+        require(firstReportJsonBytes.contentEquals(outputs.reportJson.readBytes())) { "REPORT_JSON_BYTES_CHANGED" }
+        require(firstReportTextBytes.contentEquals(outputs.reportText.readBytes())) { "REPORT_TEXT_BYTES_CHANGED" }
+        require(outputFileNames(outputs) == setOf(DECISION_BATCH_FILE_NAME)) { "EXTRA_BATCH_FILE" }
+        require(outputReportFileNames(outputs) == setOf(PERSISTENCE_REPORT_JSON_FILE_NAME, PERSISTENCE_REPORT_TEXT_FILE_NAME)) {
+            "EXTRA_REPORT_FILE"
         }
+    }
+
+    private fun completed(
+        result: HimZeroCandidateRecoveryHumanReviewRuntimeResult,
+    ): HimZeroCandidateRecoveryHumanReviewRuntimeResult.Completed = when (result) {
+        is HimZeroCandidateRecoveryHumanReviewRuntimeResult.Completed -> result
+        is HimZeroCandidateRecoveryHumanReviewRuntimeResult.Failed ->
+            fail(safeDiagnostic(result.reason.name, result.safeContext))
+        HimZeroCandidateRecoveryHumanReviewRuntimeResult.Disabled -> fail("RUNTIME_DISABLED")
+    }
+
+    private fun failed(
+        result: HimZeroCandidateRecoveryHumanReviewRuntimeResult,
+    ): HimZeroCandidateRecoveryHumanReviewRuntimeResult.Failed = when (result) {
+        is HimZeroCandidateRecoveryHumanReviewRuntimeResult.Failed -> result
+        is HimZeroCandidateRecoveryHumanReviewRuntimeResult.Completed -> fail("RUNTIME_COMPLETED")
+        HimZeroCandidateRecoveryHumanReviewRuntimeResult.Disabled -> fail("RUNTIME_DISABLED")
+    }
+
+    private fun requireCompleteOrAbsent(outputs: OutputPaths) {
+        val present = listOf(outputs.batch, outputs.reportJson, outputs.reportText).map { it.isFile }
+        require(present.all { it } || present.none { it }) { "PARTIAL_ARTIFACT_STATE" }
+    }
+
+    private fun validateCompletedRun(
+        result: HimZeroCandidateRecoveryHumanReviewRuntimeResult.Completed,
+        request: HimZeroCandidateRecoveryHumanReviewRuntimeRequestV1,
+        outputs: OutputPaths,
+    ) {
+        require(result.runtimeContractId == HimZeroCandidateRecoveryHumanReviewRuntimeV1.CONTRACT_ID) {
+            "RUNTIME_CONTRACT_MISMATCH"
+        }
+        require(result.runtimeVersion == HimZeroCandidateRecoveryHumanReviewRuntimeV1.VERSION) {
+            "RUNTIME_VERSION_MISMATCH"
+        }
+        require(result.decisionBatch.batchId == request.batchId) { "BATCH_ID_MISMATCH" }
+        require(result.decisionBatch.inputBinding == request.inputBinding) { "INPUT_BINDING_MISMATCH" }
+        require(result.decisionBatch.decisionRecords.size == 4) { "DECISION_COUNT_MISMATCH" }
+        require(result.decisionBatch.counters.decisionRecords == 4) { "COUNTER_RECORD_COUNT_MISMATCH" }
+        require(result.decisionBatch.counters.uniqueReviewUnits == 4) { "COUNTER_UNIT_COUNT_MISMATCH" }
+        require(result.decisionBatch.counters.uniqueReviewers == 1) { "COUNTER_REVIEWER_COUNT_MISMATCH" }
+        require(result.decisionBatch.counters.alternativeCanonicalProposals == 0) {
+            "COUNTER_ALTERNATIVE_PROPOSAL_MISMATCH"
+        }
+        require(result.decisionBatch.counters.abstainedRecords == 0) { "COUNTER_ABSTENTION_MISMATCH" }
+        require(result.decisionBatch.counters.escalatedRecords == 0) { "COUNTER_ESCALATION_MISMATCH" }
+        require(result.persistenceResult.report.validate() == Unit) { "REPORT_VALIDATION_FAILED" }
+        require(outputs.batch.isFile && outputs.reportJson.isFile && outputs.reportText.isFile) {
+            "PERSISTED_OUTPUT_MISSING"
+        }
+        val reloaded = HimZeroCandidateRecoveryHumanReviewPersistenceV1.readBatch(outputs.batch)
+        require(reloaded == result.decisionBatch) { "PERSISTENCE_RELOAD_MISMATCH" }
+        require(outputFileNames(outputs) == setOf(DECISION_BATCH_FILE_NAME)) { "BATCH_PATH_INVALID" }
+        require(outputReportFileNames(outputs) == setOf(PERSISTENCE_REPORT_JSON_FILE_NAME, PERSISTENCE_REPORT_TEXT_FILE_NAME)) {
+            "REPORT_PATH_INVALID"
+        }
+    }
+
+    private fun outputFileNames(outputs: OutputPaths): Set<String> =
+        outputs.batch.parentFile.listFiles()?.map { it.name }?.toSet().orEmpty()
+
+    private fun outputReportFileNames(outputs: OutputPaths): Set<String> =
+        outputs.reportJson.parentFile.listFiles()?.map { it.name }?.toSet().orEmpty()
+
+    private fun companionObjectFields(): List<String> =
+        this::class.java.declaredClasses.single { it.simpleName == "Companion" }
+            .declaredFields.map { it.name }
+
+    private object SyntheticFixture {
+        const val BATCH_ID = "synthetic-p1-decision-batch-v1"
+        private const val ENTRY_ID = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        private val TARGET_IDS = listOf("c00001", "c00002", "c00003", "c00004")
+
+        fun execute(root: File): HimZeroCandidateRecoveryHumanReviewRuntimeResult {
+            val corpus = corpus()
+            val binding = inputBinding(corpus)
+            val records = decisions()
+            val scope = scope(binding, records)
+            val catalog = catalog()
+            return HimZeroCandidateRecoveryHumanReviewRuntimeV1.execute(
+                HimZeroCandidateRecoveryHumanReviewRuntimeRequestV1(
+                    enabled = true,
+                    batchId = BATCH_ID,
+                    inputBinding = binding,
+                    corpus = corpus,
+                    catalog = catalog,
+                    registry = registry(),
+                    authority = authority(catalog),
+                    reviewScope = scope,
+                    priorDecisionRecords = emptyList(),
+                    submittedDecisionRecords = records,
+                    durableDecisionBatchRoot = root.resolve("data"),
+                    derivedReportRoot = root.resolve("build"),
+                ),
+            )
+        }
+
+        private fun decisions() = TARGET_IDS.mapIndexed { index, targetId ->
+            val reject = index % 2 == 1
+            decision(
+                unit = HimZeroCandidateRecoveryHumanReviewReviewUnitV1(ENTRY_ID, targetId),
+                decision = if (reject) {
+                    HimZeroCandidateRecoveryHumanReviewDecisionV1.REJECT_ASSOCIATION
+                } else {
+                    HimZeroCandidateRecoveryHumanReviewDecisionV1.CONFIRM_ASSOCIATION
+                },
+                evidence = (if (reject) rejectEvidence(('a'.code + index * 2).toChar()) else confirmEvidence(('a'.code + index * 2).toChar()))
+                    .sortedBy { it.evidenceReferenceId },
+                reasons = if (reject) {
+                    listOf(
+                        HimZeroCandidateRecoveryHumanReviewReasonCodeV1.DIRECT_SEMANTIC_MISMATCH,
+                        HimZeroCandidateRecoveryHumanReviewReasonCodeV1.DIRECT_ASSOCIATION_CONTRADICTED,
+                    ).sortedBy { it.ordinal }
+                } else {
+                    listOf(HimZeroCandidateRecoveryHumanReviewReasonCodeV1.DIRECT_ASSOCIATION_SUPPORTED)
+                },
+            )
+        }
+
+        private fun decision(
+            unit: HimZeroCandidateRecoveryHumanReviewReviewUnitV1,
+            decision: HimZeroCandidateRecoveryHumanReviewDecisionV1,
+            evidence: List<HimZeroCandidateRecoveryHumanReviewEvidenceReferenceV1>,
+            reasons: List<HimZeroCandidateRecoveryHumanReviewReasonCodeV1>,
+        ) = HimZeroCandidateRecoveryHumanReviewDecisionRecordV1(
+            HimZeroCandidateRecoveryHumanReviewContractV1.VERSION,
+            unit,
+            "reviewer-1",
+            1,
+            1,
+            decision,
+            reasons,
+            evidence,
+            null,
+        )
+
+        private fun confirmEvidence(seed: Char) = listOf(
+            evidence(seed, HimZeroCandidateRecoveryHumanReviewEvidenceKindV1.SOURCE_EVIDENCE_PROJECTION, HimZeroCandidateRecoveryHumanReviewEvidencePositionV1.SUPPORTS_ASSOCIATION),
+            evidence((seed + 1), HimZeroCandidateRecoveryHumanReviewEvidenceKindV1.CANONICAL_CATALOG_RECORD, HimZeroCandidateRecoveryHumanReviewEvidencePositionV1.SUPPORTS_ASSOCIATION),
+        )
+
+        private fun rejectEvidence(seed: Char) = listOf(
+            evidence(seed, HimZeroCandidateRecoveryHumanReviewEvidenceKindV1.SOURCE_EVIDENCE_PROJECTION, HimZeroCandidateRecoveryHumanReviewEvidencePositionV1.CONTRADICTS_ASSOCIATION),
+            evidence((seed + 1), HimZeroCandidateRecoveryHumanReviewEvidenceKindV1.CANONICAL_CATALOG_RECORD, HimZeroCandidateRecoveryHumanReviewEvidencePositionV1.CONTRADICTS_ASSOCIATION),
+        )
+
+        private fun evidence(
+            seed: Char,
+            kind: HimZeroCandidateRecoveryHumanReviewEvidenceKindV1,
+            position: HimZeroCandidateRecoveryHumanReviewEvidencePositionV1,
+        ) = HimZeroCandidateRecoveryHumanReviewEvidenceReferenceV1(
+            HimZeroCandidateRecoveryReviewCorpusPersistenceV1.sha256("evidence:$seed"),
+            kind,
+            HimZeroCandidateRecoveryHumanReviewEvidenceDirectnessV1.DIRECT,
+            position,
+            "data/evidence/artifact.json",
+            "record:$seed",
+            HimZeroCandidateRecoveryReviewCorpusPersistenceV1.sha256("artifact:$seed"),
+            null,
+            listOf("identity.name"),
+        )
+
+        private fun corpus(): HimZeroCandidateRecoveryReviewCorpusReportV1 {
+            val targets = TARGET_IDS.map { id ->
+                HimZeroCandidateRecoveryReviewCanonicalTargetV1(id, "Canonical $id", emptyList(), emptyList())
+            }
+            val entries = listOf(
+                HimZeroCandidateRecoveryReviewCorpusEntryV1(
+                    ENTRY_ID,
+                    HimGroundTruthSource.OPEN_FOOD_FACTS,
+                    EVIDENCE_REFERENCE,
+                    HimEvidenceRecordKind.OFF_PRODUCT,
+                    "shard-000001",
+                    listOf(HimZeroCandidateRecoveryReviewCorpusPersistenceV1.sha256(EVIDENCE_REFERENCE)),
+                    targets,
+                    emptyList(),
+                    emptyList(),
+                    HimZeroCandidateCauseAnalysisPrimaryBucketV1.PRIMARY_TEXT_PRESENT_NO_MATCH,
+                    emptyList(),
+                    listOf(HimZeroCandidateRecoveryReviewSelectionReasonV1.RECURRING_PRIMARY_VALUE_GROUP),
+                    emptyList(),
+                    HimZeroCandidateRecoveryReviewAssociationStateV1.UNVERIFIED_AUDIT_ASSOCIATION,
+                    HimZeroCandidateRecoveryReviewStateV1.UNREVIEWED,
+                ),
+            )
+            val input = corpusInputBinding()
+            val unsigned = HimZeroCandidateRecoveryReviewCorpusReportV1(
+                HimZeroCandidateRecoveryReviewCorpusContractV1.VERSION,
+                input,
+                HimZeroCandidateRecoveryReviewCorpusCountersV1(1, 0, 0, 0, 0, 1, targets.size, 1, 0),
+                HimZeroCandidateRecoveryReviewCorpusContractV1.PRIORITY_ORDER.map { HimZeroCandidateRecoveryReviewPriorityCounterV1(it, 0, 0, 0) },
+                HimZeroCandidateRecoveryReviewCorpusContractV1.SOURCE_ORDER.map { HimZeroCandidateRecoveryReviewSourceBreakdownV1(it, if (it == HimGroundTruthSource.OPEN_FOOD_FACTS) 1 else 0) },
+                HimZeroCandidateRecoveryReviewCorpusContractV1.RECORD_KIND_ORDER.map { HimZeroCandidateRecoveryReviewRecordKindBreakdownV1(it, if (it == HimEvidenceRecordKind.OFF_PRODUCT) 1 else 0) },
+                HimZeroCandidateRecoveryReviewCorpusContractV1.SELECTION_REASON_ORDER.map { HimZeroCandidateRecoveryReviewSelectionReasonBreakdownV1(it, if (it == HimZeroCandidateRecoveryReviewSelectionReasonV1.RECURRING_PRIMARY_VALUE_GROUP) 1 else 0) },
+                entries,
+                "",
+            )
+            return unsigned.copy(logicalDigest = HimZeroCandidateRecoveryReviewCorpusPersistenceV1.logicalDigest(unsigned))
+        }
+
+        private fun scope(
+            binding: HimZeroCandidateRecoveryHumanReviewInputBindingV1,
+            records: List<HimZeroCandidateRecoveryHumanReviewDecisionRecordV1>,
+        ): HimZeroCandidateRecoveryHumanReviewScopeV1 {
+            val base = HimZeroCandidateRecoveryHumanReviewScopeV1(
+                "scope-01",
+                1,
+                records.map { it.reviewUnit.reviewUnitId }.sorted(),
+                records.size,
+                binding.bindingDigest,
+                "",
+            )
+            return base.copy(scopeDigest = HimZeroCandidateRecoveryHumanReviewRuntimeV1.scopeDigest(base))
+        }
+
+        private fun inputBinding(corpus: HimZeroCandidateRecoveryReviewCorpusReportV1) = run {
+            val base = HimZeroCandidateRecoveryHumanReviewInputBindingV1(
+                HimZeroCandidateRecoveryHumanReviewFileBindingV1("fixture/review-corpus.json", 1, "3".repeat(64), corpus.logicalDigest),
+                corpus.logicalDigest,
+                "4".repeat(64),
+                corpus.inputBinding.bindingDigest,
+                corpus.inputBinding,
+                HimZeroCandidateRecoveryHumanReviewFileBindingV1("fixture/registry.json", 1, "5".repeat(64), "6".repeat(64)),
+                HimZeroCandidateRecoveryHumanReviewContractV1.VERSION,
+                HimZeroCandidateRecoveryHumanReviewContractV1.VERSION,
+                "a".repeat(40),
+                "",
+            )
+            base.copy(bindingDigest = HimZeroCandidateRecoveryHumanReviewPersistenceV1.bindingDigest(base))
+        }
+
+        private fun corpusInputBinding() = run {
+            val cause = HimZeroCandidateCauseAnalysisFileBindingV1("fixture/cause.json", 1, "a".repeat(64), "b".repeat(64))
+            val base = HimZeroCandidateRecoveryReviewCorpusInputBindingV1(
+                cause,
+                HimZeroCandidateRecoveryReviewCorpusFileBindingV1("fixture/catalog.json", 1, "1".repeat(64), "c".repeat(64)),
+                HimZeroCandidateRecoveryReviewCorpusFileBindingV1("fixture/authority.json", 1, "2".repeat(64), "d".repeat(64)),
+                "b".repeat(64),
+                "a".repeat(40),
+                "",
+            )
+            base.copy(bindingDigest = HimZeroCandidateRecoveryReviewCorpusPersistenceV1.bindingDigest(base))
+        }
+
+        private fun catalog() = HimProductOnlyCanonicalMaster(
+            "fixture/catalog.json",
+            "1".repeat(64),
+            (1..1384).map { HimProductOnlyCanonical("Canonical c%05d".format(it), "canonical%05d".format(it), emptyList()) },
+        )
+
+        private fun registry() = HimEntityIdRegistry(
+            (1..1384).map { index ->
+                HimEntityIdRegistryEntry(
+                    HimEntityId("c%05d".format(index)),
+                    HimEntityType.CANONICAL,
+                    HimEntitySourceReferenceType.PRODUCT_ONLY_CANONICAL_NORMALIZED,
+                    "canonical%05d".format(index),
+                )
+            },
+        )
+
+        private fun authority(catalog: HimProductOnlyCanonicalMaster) = HimCanonicalFamilyAuthority(
+            "1",
+            HimCanonicalFamilySourceCatalog(catalog.path, catalog.contentSha256, 1384),
+            (1..1384).map { index ->
+                HimCanonicalFamily(
+                    HimEntityId("c%05d".format(index)),
+                    "Canonical c%05d".format(index),
+                    "canonical%05d".format(index),
+                    emptyList(),
+                    HimLifecycleStatus.ACTIVE,
+                    emptyList(),
+                    emptyList(),
+                    emptyList(),
+                )
+            },
+        )
+
+        private val EVIDENCE_REFERENCE = HimEvidenceRecordReference.offProduct(1L, "1").value
     }
 
     private fun submission() =
@@ -618,6 +1020,12 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionRealV1Test 
             .resolve("batches/$batchId/$PERSISTENCE_REPORT_JSON_FILE_NAME"),
         reportText = root.resolve(HimZeroCandidateRecoveryHumanReviewContractV1.DERIVED_REPORT_ROOT)
             .resolve("batches/$batchId/$PERSISTENCE_REPORT_TEXT_FILE_NAME"),
+    )
+
+    private fun syntheticOutputPaths(root: File, batchId: String) = OutputPaths(
+        batch = root.resolve("data/$batchId/$DECISION_BATCH_FILE_NAME"),
+        reportJson = root.resolve("build/batches/$batchId/$PERSISTENCE_REPORT_JSON_FILE_NAME"),
+        reportText = root.resolve("build/batches/$batchId/$PERSISTENCE_REPORT_TEXT_FILE_NAME"),
     )
 
     private fun logicalDigest(serialized: ByteArray): String = sha256(
@@ -754,15 +1162,14 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionRealV1Test 
         const val FOUNDATION_VALIDATOR = "HimCanonicalFamilyValidator"
         const val INPUT_ACCESS_REQUIRES_COMPLETE_GATE = true
         const val OUTPUT_ACCESS_REQUIRES_COMPLETE_GATE = true
-        const val NO_PERSISTENCE_IN_CURRENT_OFFLINE_ENTRYPOINT = true
         const val HERMETIC_FIXTURES_ONLY = true
         const val HERMETIC_PACKET_PATH = "fixture/review-packet.v1.json"
         const val HERMETIC_SUPPLEMENT_PATH = "fixture/direct-evidence-supplement.v1.json"
         const val HERMETIC_CORPUS_PATH = "fixture/review-corpus.v1.json"
         const val REAL_EXECUTION_TEST_NAME =
-            "writes current real-bound P1 pilot decision submission without persisting decisions"
+            "persists current real-bound P1 pilot decision submission only when fully authorized"
         const val REAL_EXECUTION_METHOD_NAME =
-            "writes current real-bound P1 pilot decision submission without persisting decisions"
+            "persists current real-bound P1 pilot decision submission only when fully authorized"
         const val CORPUS_FILE_NAME = "review-corpus.v1.json"
         const val PACKET_FILE_NAME = "review-packet.v1.json"
         const val SUPPLEMENT_FILE_NAME = "direct-evidence-supplement.v1.json"
