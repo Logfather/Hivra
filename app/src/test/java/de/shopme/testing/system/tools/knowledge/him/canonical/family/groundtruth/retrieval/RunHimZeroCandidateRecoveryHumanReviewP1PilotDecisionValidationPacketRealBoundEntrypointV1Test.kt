@@ -1,14 +1,19 @@
 package de.shopme.testing.system.tools.knowledge.him.canonical.family.groundtruth.retrieval
 
+import de.shopme.testing.system.tools.knowledge.him.support.HimTestExecutionBoundaryV1
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.candidate.HimGroundTruthSource
 import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.*
+import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
+import java.security.MessageDigest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertIs
 import kotlin.test.assertTrue
+import kotlin.test.fail
+import org.junit.Assume.assumeTrue
 
 class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1Test {
     @Test
@@ -147,6 +152,168 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealB
         assertTrue(requests.all { it.implementationHead == AUTHORIZED_HEAD })
         assertEquals(requests[0], requests[1])
         assertTrue(root.toFile().listFiles().isNullOrEmpty())
+    }
+
+    @Test
+    fun `writes real-bound P1 pilot decision validation packet only when fully authorized`() {
+        val enabled = System.getProperty(
+            HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.ENABLED_PROPERTY,
+        )
+        val confirmation = System.getProperty(
+            HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.CONFIRMATION_PROPERTY,
+        )
+        val authorizedExecutionHead = System.getProperty(
+            HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.AUTHORIZED_EXECUTION_HEAD_PROPERTY,
+        )
+        val gate = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.GateV1(
+            enabled = enabled == "true",
+            confirmation = confirmation,
+            authorizedExecutionHead = authorizedExecutionHead,
+            sourceIntegrationEnabled = System.getProperty(
+                HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.SOURCE_INTEGRATION_PROPERTY,
+            ) == "true",
+        )
+        assumeTrue(gate.isComplete())
+        HimTestExecutionBoundaryV1.requireSourceIntegrationEnabled()
+
+        val root = projectRoot()
+        val result = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1
+            .executeFromSystemProperties(root)
+        val completed = when (result) {
+            is HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.ResultV1.Completed -> result
+            is HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.ResultV1.Failed ->
+                fail("${result.reason} ${result.safeContext}")
+            HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.ResultV1.Disabled ->
+                fail("UNEXPECTED_DISABLED")
+        }
+        val runtime = completed.runtime
+        val packet = runtime.packet
+        val contract = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1
+        val persistence = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceV1
+        val counters = packet.counters
+
+        assertEquals(contract.CONTRACT_ID, packet.contractId)
+        assertEquals(contract.VERSION, packet.version)
+        assertEquals(contract.STATE, packet.state)
+        assertEquals(contract.PACKET_ID, packet.packetId)
+        assertEquals(contract.frozenInputBinding(), packet.inputBinding)
+        assertTrue(
+            completed.runtime.persistenceStatus == HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceStatusV1.CREATED ||
+                completed.runtime.persistenceStatus == HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketPersistenceStatusV1.ALREADY_PRESENT_IDENTICAL,
+        )
+
+        assertEquals(4, counters.packetItems)
+        assertEquals(4, counters.distinctReviewUnits)
+        assertEquals(2, counters.originalConfirmDecisions)
+        assertEquals(2, counters.originalRejectDecisions)
+        assertEquals(0, counters.originalAbstainDecisions)
+        assertEquals(0, counters.originalEscalateDecisions)
+        assertEquals(4, counters.sourceEvidenceRecords)
+        assertEquals(4, counters.catalogEvidenceRecords)
+        assertEquals(4, counters.authorityEvidenceRecords)
+        assertEquals(12, counters.directEvidenceReferences)
+        assertEquals(12, counters.distinctEvidenceReferences)
+        assertEquals(4, counters.supportsAssociationEvidence)
+        assertEquals(2, counters.contradictsAssociationEvidence)
+        assertEquals(6, counters.contextOnlyEvidence)
+        assertEquals(0, counters.itemsWithAlternativeCanonicalProposal)
+        assertEquals(0, counters.itemsWithValidationAssessment)
+        assertEquals(0, counters.itemsWithDownstreamRoute)
+
+        assertEquals(
+            listOf(
+                HimZeroCandidateRecoveryHumanReviewDecisionV1.CONFIRM_ASSOCIATION,
+                HimZeroCandidateRecoveryHumanReviewDecisionV1.REJECT_ASSOCIATION,
+                HimZeroCandidateRecoveryHumanReviewDecisionV1.CONFIRM_ASSOCIATION,
+                HimZeroCandidateRecoveryHumanReviewDecisionV1.REJECT_ASSOCIATION,
+            ),
+            packet.items.map { it.originalDecision },
+        )
+        val rejectReasonCodes = packet.items
+            .filter { it.originalDecision == HimZeroCandidateRecoveryHumanReviewDecisionV1.REJECT_ASSOCIATION }
+            .flatMap { it.originalReasonCodes }
+            .toSet()
+        assertEquals(
+            setOf(
+                HimZeroCandidateRecoveryHumanReviewReasonCodeV1.DIRECT_SEMANTIC_MISMATCH,
+                HimZeroCandidateRecoveryHumanReviewReasonCodeV1.DIRECT_ASSOCIATION_CONTRADICTED,
+            ),
+            rejectReasonCodes,
+        )
+        assertTrue(packet.items.all { it.alternativeCanonicalProposal == null })
+
+        val evidence = packet.items.flatMap { item ->
+            assertEquals(1, item.directEvidence.count { it.kind == HimZeroCandidateRecoveryHumanReviewEvidenceKindV1.SOURCE_EVIDENCE_PROJECTION })
+            assertEquals(1, item.directEvidence.count { it.kind == HimZeroCandidateRecoveryHumanReviewEvidenceKindV1.CANONICAL_CATALOG_RECORD })
+            assertEquals(1, item.directEvidence.count { it.kind == HimZeroCandidateRecoveryHumanReviewEvidenceKindV1.CANONICAL_FAMILY_AUTHORITY_RECORD })
+            item.directEvidence
+        }
+        assertEquals(12, evidence.size)
+        assertEquals(12, evidence.map { it.evidenceReferenceId }.distinct().size)
+        assertTrue(evidence.all { it.directness == HimZeroCandidateRecoveryHumanReviewEvidenceDirectnessV1.DIRECT })
+        assertEquals(4, evidence.count { it.position == HimZeroCandidateRecoveryHumanReviewEvidencePositionV1.SUPPORTS_ASSOCIATION })
+        assertEquals(2, evidence.count { it.position == HimZeroCandidateRecoveryHumanReviewEvidencePositionV1.CONTRADICTS_ASSOCIATION })
+        assertEquals(6, evidence.count { it.position == HimZeroCandidateRecoveryHumanReviewEvidencePositionV1.CONTEXT_ONLY })
+
+        assertFalse(runtime.jsonPath.startsWith('/'))
+        assertFalse(runtime.markdownPath.startsWith('/'))
+        assertEquals("${packet.packetId}/${persistence.JSON_FILE_NAME}", runtime.jsonPath)
+        assertEquals("${packet.packetId}/${persistence.MARKDOWN_FILE_NAME}", runtime.markdownPath)
+        val outputRoot = root.resolve(persistence.OUTPUT_ROOT).canonicalFile.toPath()
+        val outputDirectory = outputRoot.resolve(packet.packetId).normalize()
+        val json = outputRoot.resolve(runtime.jsonPath).normalize().toFile()
+        val markdown = outputRoot.resolve(runtime.markdownPath).normalize().toFile()
+        assertTrue(json.toPath().startsWith(outputRoot))
+        assertTrue(markdown.toPath().startsWith(outputRoot))
+        assertTrue(json.toPath().startsWith(outputDirectory))
+        assertTrue(markdown.toPath().startsWith(outputDirectory))
+        assertTrue(json.isFile)
+        assertTrue(markdown.isFile)
+        assertFalse(Files.isSymbolicLink(json.toPath()))
+        assertFalse(Files.isSymbolicLink(markdown.toPath()))
+        assertEquals(
+            setOf(persistence.JSON_FILE_NAME, persistence.MARKDOWN_FILE_NAME),
+            outputDirectory.toFile().list()?.toSet(),
+        )
+        assertFalse(root.resolve(persistence.JSON_FILE_NAME).isFile)
+        assertFalse(root.resolve(persistence.MARKDOWN_FILE_NAME).isFile)
+
+        val jsonBytes = json.readBytes()
+        val markdownBytes = markdown.readBytes()
+        assertTrue(jsonBytes.isNotEmpty() && jsonBytes.last() == '\n'.code.toByte())
+        assertTrue(markdownBytes.isNotEmpty() && markdownBytes.last() == '\n'.code.toByte())
+        assertEquals(json.length(), jsonBytes.size.toLong())
+        assertEquals(markdown.length(), markdownBytes.size.toLong())
+        assertEquals(runtime.jsonSha256, sha256(jsonBytes))
+        assertEquals(runtime.markdownSha256, sha256(markdownBytes))
+        assertEquals(packet.packetBindingDigest, runtime.packetBindingDigest)
+        assertEquals(packet.packetLogicalDigest, runtime.packetLogicalDigest)
+        assertEquals(packet.packetBindingDigest, contract.packetBindingDigest(packet))
+        assertEquals(packet.packetLogicalDigest, contract.packetLogicalDigest(packet))
+
+        val reloaded = persistence.readPacket(json)
+        assertEquals(packet, reloaded)
+        assertTrue(persistence.validatePacket(reloaded).valid)
+        assertEquals(runtime.packetBindingDigest, reloaded.packetBindingDigest)
+        assertEquals(runtime.packetLogicalDigest, reloaded.packetLogicalDigest)
+        println(
+            "HIM_P1_DECISION_VALIDATION_PACKET " +
+                "status=${runtime.persistenceStatus} " +
+                "packetId=${packet.packetId} " +
+                "state=${packet.state} " +
+                "json=${runtime.jsonPath} " +
+                "markdown=${runtime.markdownPath} " +
+                "items=${counters.packetItems} " +
+                "reviewUnits=${counters.distinctReviewUnits} " +
+                "directEvidence=${counters.directEvidenceReferences} " +
+                "uniqueEvidence=${counters.distinctEvidenceReferences} " +
+                "packetBindingDigest=${runtime.packetBindingDigest} " +
+                "packetLogicalDigest=${runtime.packetLogicalDigest} " +
+                "jsonBytes=${jsonBytes.size} " +
+                "jsonSha256=${runtime.jsonSha256} " +
+                "markdownBytes=${markdownBytes.size} " +
+                "markdownSha256=${runtime.markdownSha256}",
+        )
     }
 
     private fun execute(
@@ -402,6 +569,18 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealB
             root.toFile().deleteRecursively()
         }
     }
+
+    private fun projectRoot(): File {
+        var current = File(System.getProperty("user.dir") ?: error("USER_DIR_UNAVAILABLE")).canonicalFile
+        while (true) {
+            if (current.resolve("settings.gradle.kts").isFile) return current
+            current = current.parentFile ?: error("REPOSITORY_ROOT_NOT_FOUND")
+        }
+    }
+
+    private fun sha256(bytes: ByteArray): String = MessageDigest.getInstance("SHA-256")
+        .digest(bytes)
+        .joinToString("") { "%02x".format(it.toInt() and 0xff) }
 
     private companion object {
         val AUTHORIZED_HEAD = "b".repeat(40)
