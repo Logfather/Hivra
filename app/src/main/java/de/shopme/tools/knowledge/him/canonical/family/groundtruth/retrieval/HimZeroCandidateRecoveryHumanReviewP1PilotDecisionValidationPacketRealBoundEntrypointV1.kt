@@ -44,6 +44,16 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBou
         RUNTIME_DISABLED,
         OUTPUT_CONFLICT,
         INPUT_LOAD_FAILED,
+        DECISION_BATCH_FILE_BINDING_INVALID,
+        DECISION_BATCH_READ_FAILED,
+        DECISION_BATCH_CONTRACT_INVALID,
+        DECISION_BATCH_ID_MISMATCH,
+        DECISION_BATCH_SUBMISSION_ID_MISMATCH,
+        DECISION_BATCH_INPUT_BINDING_DIGEST_MISMATCH,
+        DECISION_BATCH_LOGICAL_DIGEST_MISMATCH,
+        DECISION_BATCH_COUNTER_MISMATCH,
+        DECISION_BATCH_PILOT_CONTENT_MISMATCH,
+        DECISION_BATCH_PACKET_BINDING_MISMATCH,
     }
 
     data class GateV1(
@@ -150,44 +160,48 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBou
             return ResultV1.Failed(FailureReasonV1.REPOSITORY_ROOT_INVALID, "repository-root")
         }
 
-        return try {
-            val currentHead = request.repository.currentHead(request.repositoryRoot)
-            if (currentHead != executionHead) {
-                return ResultV1.Failed(FailureReasonV1.EXECUTION_HEAD_MISMATCH, "execution-head")
-            }
-            if (!request.repository.isAncestor(request.repositoryRoot, CORE_BASELINE_HEAD, executionHead)) {
-                return ResultV1.Failed(FailureReasonV1.CORE_BASELINE_NOT_ANCESTOR, "core-baseline")
-            }
-            val inputs = request.inputLoader.load(request.repositoryRoot)
-            validateInputs(inputs)
-            val runtimeRequest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRuntimeRequestV1(
-                enabled = true,
-                outputRoot = request.outputRoot,
-                implementationHead = executionHead,
-                decisionBatch = inputs.decisionBatch,
-                reviewPacket = inputs.reviewPacket,
-                directEvidenceSupplement = inputs.directEvidenceSupplement,
-            )
-            when (val result = request.runtimeInvoker.execute(runtimeRequest)) {
-                is HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRuntimeResultV1.Completed ->
-                    ResultV1.Completed(result, executionHead)
-                is HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRuntimeResultV1.Failed ->
-                    ResultV1.Failed(FailureReasonV1.RUNTIME_FAILED, result.reason.name, result.reason)
-                HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRuntimeResultV1.Disabled ->
-                    ResultV1.Failed(FailureReasonV1.RUNTIME_DISABLED, "runtime")
-            }
+        val currentHead = request.repository.currentHead(request.repositoryRoot)
+        if (currentHead != executionHead) {
+            return ResultV1.Failed(FailureReasonV1.EXECUTION_HEAD_MISMATCH, "execution-head")
+        }
+        if (!request.repository.isAncestor(request.repositoryRoot, CORE_BASELINE_HEAD, executionHead)) {
+            return ResultV1.Failed(FailureReasonV1.CORE_BASELINE_NOT_ANCESTOR, "core-baseline")
+        }
+        val inputs = try {
+            request.inputLoader.load(request.repositoryRoot)
         } catch (failure: BoundInputFailureV1) {
-            ResultV1.Failed(failure.reason, failure.safeContext)
-        } catch (_: Throwable) {
-            ResultV1.Failed(FailureReasonV1.INPUT_LOAD_FAILED, "inputs")
+            return ResultV1.Failed(failure.reason, failure.safeContext)
+        }
+        try {
+            validateInputs(inputs)
+        } catch (failure: BoundInputFailureV1) {
+            return ResultV1.Failed(failure.reason, failure.safeContext)
+        }
+        val runtimeRequest = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRuntimeRequestV1(
+            enabled = true,
+            outputRoot = request.outputRoot,
+            implementationHead = executionHead,
+            decisionBatch = inputs.decisionBatch,
+            reviewPacket = inputs.reviewPacket,
+            directEvidenceSupplement = inputs.directEvidenceSupplement,
+        )
+        return when (val result = request.runtimeInvoker.execute(runtimeRequest)) {
+            is HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRuntimeResultV1.Completed ->
+                ResultV1.Completed(result, executionHead)
+            is HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRuntimeResultV1.Failed ->
+                ResultV1.Failed(FailureReasonV1.RUNTIME_FAILED, result.reason.name, result.reason)
+            HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRuntimeResultV1.Disabled ->
+                ResultV1.Failed(FailureReasonV1.RUNTIME_DISABLED, "runtime")
         }
     }
 
     private fun validateInputs(inputs: BoundInputsV1) {
-        when (HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionContractV1.validate(inputs.decisionBatch)) {
+        when (val validation = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionContractV1.validate(inputs.decisionBatch)) {
             HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionValidationResultV1.Valid -> Unit
-            is HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionValidationResultV1.Invalid ->
-                fail(FailureReasonV1.INVALID_DECISION_BATCH, "decision-batch")
+            is HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionValidationResultV1.Invalid -> {
+                val failure = decisionBatchContractFailure(validation.reason)
+                fail(failure.reason, failure.safeContext)
+            }
         }
         val mission = HimZeroCandidateRecoveryHumanReviewP1PilotMissionContractV1.FROZEN_MISSION
         when (
@@ -213,13 +227,46 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBou
             inputs.decisionBatch.supplementBinding.bindingDigest != expected.supplementBindingDigest ||
             inputs.decisionBatch.supplementBinding.logicalDigest != expected.supplementLogicalDigest ||
             inputs.decisionBatch.corpusBindingDigest != expected.corpusBindingDigest
-        ) fail(FailureReasonV1.INPUT_BINDING_MISMATCH, "decision-bindings")
+        ) fail(FailureReasonV1.DECISION_BATCH_PACKET_BINDING_MISMATCH, "decision-batch:packet-binding")
         val supplementBinding = inputs.directEvidenceSupplement.binding
         if (supplementBinding.packetInputBindingDigest != expected.reviewPacketInputBindingDigest ||
             supplementBinding.packetBindingDigest != expected.reviewPacketBindingDigest ||
             supplementBinding.packetLogicalDigest != expected.reviewPacketLogicalDigest ||
             supplementBinding.corpusBindingDigest != expected.corpusBindingDigest
-        ) fail(FailureReasonV1.INPUT_BINDING_MISMATCH, "supplement-bindings")
+        ) fail(FailureReasonV1.DECISION_BATCH_PACKET_BINDING_MISMATCH, "decision-batch:packet-binding")
+    }
+
+    private data class FailureClassificationV1(
+        val reason: FailureReasonV1,
+        val safeContext: String,
+    )
+
+    private fun decisionBatchContractFailure(
+        reason: HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1,
+    ): FailureClassificationV1 = when (reason) {
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.INVALID_SUBMISSION_ID ->
+            FailureClassificationV1(FailureReasonV1.DECISION_BATCH_SUBMISSION_ID_MISMATCH, "decision-batch:submission-id")
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.INVALID_PACKET_BINDING,
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.INVALID_SUPPLEMENT_BINDING,
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.INVALID_CORPUS_BINDING ->
+            FailureClassificationV1(FailureReasonV1.DECISION_BATCH_PACKET_BINDING_MISMATCH, "decision-batch:packet-binding")
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.INVALID_COUNTERS ->
+            FailureClassificationV1(FailureReasonV1.DECISION_BATCH_COUNTER_MISMATCH, "decision-batch:counters")
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.SUBMISSION_BINDING_DIGEST_MISMATCH ->
+            FailureClassificationV1(FailureReasonV1.DECISION_BATCH_INPUT_BINDING_DIGEST_MISMATCH, "decision-batch:input-binding")
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.SUBMISSION_LOGICAL_DIGEST_MISMATCH ->
+            FailureClassificationV1(FailureReasonV1.DECISION_BATCH_LOGICAL_DIGEST_MISMATCH, "decision-batch:logical-digest")
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.INVALID_REVIEWER_REF,
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.INVALID_REVIEW_ROUND,
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.INVALID_REVISION,
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.INVALID_DECISION_COUNT,
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.DECISION_MISMATCH,
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.REASON_CODES_MISMATCH,
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.EVIDENCE_REFERENCE_IDS_MISMATCH,
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.ALTERNATIVE_CANONICAL_PROPOSAL_FORBIDDEN,
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionFailureReasonV1.REVIEWER_NOTE_FORBIDDEN ->
+            FailureClassificationV1(FailureReasonV1.DECISION_BATCH_PILOT_CONTENT_MISMATCH, "decision-batch:pilot-content")
+        else -> FailureClassificationV1(FailureReasonV1.DECISION_BATCH_CONTRACT_INVALID, "decision-batch:contract")
     }
 
     private fun fail(reason: FailureReasonV1, safeContext: String): Nothing =
@@ -258,21 +305,27 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBou
     private object RealInputLoaderV1 : InputLoaderV1 {
         override fun load(root: File): BoundInputsV1 {
             val binding = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.frozenInputBinding()
-            val decisionBatchFile = boundFile(root, binding.decisionBatch)
+            val decisionBatchFile = boundFile(
+                root,
+                binding.decisionBatch,
+                FailureReasonV1.DECISION_BATCH_FILE_BINDING_INVALID,
+                "decision-batch:file-binding",
+            )
             val reviewPacketFile = boundFile(root, binding.reviewPacketJson)
             val supplementFile = boundFile(root, binding.supplementJson)
-            val oldBatch = try {
-                HimZeroCandidateRecoveryHumanReviewPersistenceV1.readBatch(decisionBatchFile)
-            } catch (_: Throwable) {
-                fail(FailureReasonV1.INVALID_DECISION_BATCH, "decision-batch")
+            val oldBatch = readDecisionBatch(decisionBatchFile)
+            if (oldBatch.batchId != binding.decisionBatchId) {
+                fail(FailureReasonV1.DECISION_BATCH_ID_MISMATCH, "decision-batch:id")
             }
-            if (oldBatch.batchId != binding.decisionBatchId ||
-                oldBatch.inputBinding.bindingDigest != binding.originalInputBindingDigest ||
-                oldBatch.batchLogicalDigest != binding.originalBatchLogicalDigest
-            ) fail(FailureReasonV1.INPUT_BINDING_MISMATCH, "decision-batch-binding")
+            if (oldBatch.inputBinding.bindingDigest != binding.originalInputBindingDigest) {
+                fail(FailureReasonV1.DECISION_BATCH_INPUT_BINDING_DIGEST_MISMATCH, "decision-batch:input-binding")
+            }
+            if (oldBatch.batchLogicalDigest != binding.originalBatchLogicalDigest) {
+                fail(FailureReasonV1.DECISION_BATCH_LOGICAL_DIGEST_MISMATCH, "decision-batch:logical-digest")
+            }
             val selections = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionContractV1.FROZEN_SELECTIONS.map { expected ->
                 val record = oldBatch.decisionRecords.singleOrNull { it.reviewUnit.reviewUnitId == expected.reviewUnitId }
-                    ?: fail(FailureReasonV1.INVALID_DECISION_BATCH, "decision-unit")
+                    ?: fail(FailureReasonV1.DECISION_BATCH_PILOT_CONTENT_MISMATCH, "decision-batch:pilot-content")
                 if (record.reviewUnit.stableEntryId != expected.stableEntryId ||
                     record.reviewUnit.canonicalEntityId != expected.canonicalEntityId ||
                     record.reviewerRef != binding.originalReviewerRef ||
@@ -283,7 +336,7 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBou
                     record.evidenceReferences.map { it.evidenceReferenceId } != expected.evidenceReferenceIds ||
                     record.alternativeCanonicalProposal != null ||
                     record.reviewerNote != null
-                ) fail(FailureReasonV1.INVALID_DECISION_BATCH, "decision-content")
+                ) fail(FailureReasonV1.DECISION_BATCH_PILOT_CONTENT_MISMATCH, "decision-batch:pilot-content")
                 HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSelectionV1(
                     record.reviewUnit.reviewUnitId,
                     record.reviewUnit.stableEntryId,
@@ -313,6 +366,8 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBou
         private fun boundFile(
             root: File,
             binding: HimZeroCandidateRecoveryHumanReviewFileBindingV1,
+            failureReason: FailureReasonV1 = FailureReasonV1.INPUT_MISSING,
+            failureContext: String = "input-file",
         ): File {
             val rootPath = root.canonicalFile.toPath()
             val file = root.resolve(binding.relativePath).canonicalFile
@@ -321,8 +376,23 @@ object HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBou
                 Files.isSymbolicLink(file.toPath()) ||
                 file.length() != binding.byteSize ||
                 sha256(file) != binding.sha256
-            ) fail(FailureReasonV1.INPUT_MISSING, "input-file")
+            ) fail(failureReason, failureContext)
             return file
+        }
+
+        private fun readDecisionBatch(file: File): HimZeroCandidateRecoveryHumanReviewDecisionBatchV1 = try {
+            HimZeroCandidateRecoveryHumanReviewPersistenceV1.readBatch(file)
+        } catch (failure: IllegalArgumentException) {
+            when (failure.message) {
+                "DESERIALIZATION_FAILED" ->
+                    fail(FailureReasonV1.DECISION_BATCH_READ_FAILED, "decision-batch:deserialization")
+                "READ_FAILED" ->
+                    fail(FailureReasonV1.DECISION_BATCH_READ_FAILED, "decision-batch:read")
+                else ->
+                    fail(FailureReasonV1.DECISION_BATCH_READ_FAILED, "decision-batch:read")
+            }
+        } catch (_: Throwable) {
+            fail(FailureReasonV1.DECISION_BATCH_READ_FAILED, "decision-batch:read")
         }
 
         private fun sha256(file: File): String {

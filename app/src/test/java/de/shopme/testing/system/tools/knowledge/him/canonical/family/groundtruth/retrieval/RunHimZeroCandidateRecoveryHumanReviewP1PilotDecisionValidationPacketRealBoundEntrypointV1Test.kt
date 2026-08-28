@@ -88,8 +88,30 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealB
                 runtimeFailure()
             },
         )
-        assertFailure(result, "INVALID_DECISION_BATCH")
+        assertFailure(result, "DECISION_BATCH_CONTRACT_INVALID", "decision-batch:contract")
         assertFalse(invoked)
+    }
+
+    @Test
+    fun decisionBatchFailureDiagnosticsUseOnlyClosedSafeStages() {
+        val reasons = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.FailureReasonV1.entries
+            .map { it.name }
+            .toSet()
+        assertTrue(
+            setOf(
+                "DECISION_BATCH_FILE_BINDING_INVALID",
+                "DECISION_BATCH_READ_FAILED",
+                "DECISION_BATCH_CONTRACT_INVALID",
+                "DECISION_BATCH_ID_MISMATCH",
+                "DECISION_BATCH_SUBMISSION_ID_MISMATCH",
+                "DECISION_BATCH_INPUT_BINDING_DIGEST_MISMATCH",
+                "DECISION_BATCH_LOGICAL_DIGEST_MISMATCH",
+                "DECISION_BATCH_COUNTER_MISMATCH",
+                "DECISION_BATCH_PILOT_CONTENT_MISMATCH",
+                "DECISION_BATCH_PACKET_BINDING_MISMATCH",
+            ).all { it in reasons },
+        )
+        assertTrue(reasons.none { it.contains("THROWABLE") || it.contains("EXCEPTION") || it.contains("PATH") })
     }
 
     @Test
@@ -362,9 +384,14 @@ class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealB
     private fun field(reference: String, value: String) = HimZeroCandidateRecoveryHumanReviewP1PilotDirectEvidenceFieldV1(reference, value, HimZeroCandidateRecoveryHumanReviewP1PilotDirectEvidenceFieldV1.sha256(value))
     private fun sha256(value: String) = HimZeroCandidateRecoveryReviewCorpusPersistenceV1.sha256(value)
 
-    private fun assertFailure(result: HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.ResultV1, expected: String) {
+    private fun assertFailure(
+        result: HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.ResultV1,
+        expected: String,
+        expectedContext: String? = null,
+    ) {
         val failure = assertIs<HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketRealBoundEntrypointV1.ResultV1.Failed>(result)
         assertEquals(expected, failure.reason.name)
+        expectedContext?.let { assertEquals(it, failure.safeContext) }
     }
 
     private fun withRoot(block: (Path) -> Unit) {
