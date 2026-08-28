@@ -1,0 +1,379 @@
+package de.shopme.testing.system.tools.knowledge.him.canonical.family.groundtruth.retrieval
+
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionContractV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationAssessmentV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationContractV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeFailureReasonV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeRequestV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeResultV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationReasonCodeV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionAssessmentInputV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionResultV1
+import de.shopme.tools.knowledge.him.canonical.family.groundtruth.retrieval.HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionContractV1
+import com.google.gson.Gson
+import java.io.File
+import java.io.ByteArrayInputStream
+import java.io.InputStreamReader
+import java.util.Base64
+import java.util.zip.GZIPInputStream
+import java.security.MessageDigest
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertIs
+import kotlin.test.assertTrue
+
+class RunHimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeV1Test {
+    @Test
+    fun contractIdentityAndStateAreFrozen() {
+        assertEquals(
+            "HIM_ZERO_CANDIDATE_RECOVERY_HUMAN_REVIEW_P1_PILOT_DECISION_VALIDATION_REAL_BOUND_INPUT_BRIDGE_V1",
+            HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeV1.CONTRACT_ID,
+        )
+        assertEquals("1", HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeV1.VERSION)
+        assertEquals("REAL_BOUND_INPUT_PREPARATION_ONLY", HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeV1.STATE)
+    }
+
+    @Test
+    fun disabledStopsBeforeMaterialization() {
+        val result = prepare(validRequest().copy(enabled = false))
+        assertIs<HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeResultV1.Disabled>(result)
+    }
+
+    @Test
+    fun validInputsPrepareSubmissionRecordsAndExistingRuntimeRequest() {
+        val request = validRequest()
+        val packetValidation = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.validate(request.packet)
+        assertTrue(packetValidation.valid)
+        assertEquals(
+            HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.DECISION_VALIDATION_PACKET_BINDING_DIGEST,
+            request.packet.packetBindingDigest,
+        )
+        assertEquals(
+            HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketContractV1.DECISION_VALIDATION_PACKET_LOGICAL_DIGEST,
+            request.packet.packetLogicalDigest,
+        )
+        val prepared = assertIs<HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeResultV1.Prepared>(prepare(request))
+        assertIs<HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionResultV1.Completed>(
+            HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionContractV1.create(
+                request.packet,
+                request.validatorReviewerRef,
+                request.validationRound,
+                request.validationRevision,
+                request.assessments,
+            ),
+        )
+        assertEquals(4, prepared.records.size)
+        assertEquals(request.packet.items.map { it.reviewUnitId }, prepared.records.map { it.originalDecision.reviewUnitId })
+        assertEquals(request.validatorReviewerRef, prepared.submission.validatorReviewerRef)
+        assertEquals(request.validationRound, prepared.submission.validationRound)
+        assertEquals(request.validationRevision, prepared.submission.validationRevision)
+        assertEquals(request.assessments.map { it.assessment }, prepared.records.map { it.assessment })
+        assertEquals(request.assessments.map { it.reasonCodes }, prepared.records.map { it.reasonCodes })
+        assertEquals(request.assessments.map { it.evidenceReferenceIds }, prepared.records.map { it.evidenceReferenceIds })
+        assertEquals(request.assessments.map { it.rationale }, prepared.records.map { it.rationale })
+        assertEquals(request.enabled, prepared.runtimeRequest.enabled)
+        assertEquals(request.validationBatchId, prepared.runtimeRequest.validationBatchId)
+        assertEquals(request.validatorReviewerRef, prepared.runtimeRequest.validatorReviewerRef)
+        assertEquals(request.validationRound, prepared.runtimeRequest.validationRound)
+        assertEquals(request.validationRevision, prepared.runtimeRequest.validationRevision)
+        assertEquals(4, prepared.runtimeRequest.submittedValidationRecords.size)
+        assertEquals(prepared.records, prepared.runtimeRequest.submittedValidationRecords)
+        assertEquals(HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationContractV1.FROZEN_INPUT_BINDING, prepared.runtimeRequest.inputBinding)
+        assertEquals(request.originalDecisionBatch, prepared.runtimeRequest.originalDecisionBatch)
+        assertEquals(request.validationBatchId, prepared.runtimeRequest.validationBatchId)
+        assertEquals(request.durableRoot, prepared.runtimeRequest.durableRoot)
+        assertEquals(request.reportRoot, prepared.runtimeRequest.reportRoot)
+        assertEquals(0, declaredOperationalCalls(HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeV1::class.java))
+    }
+
+    @Test
+    fun identicalInputsProduceIdenticalPreparation() {
+        val request = validRequest()
+        val first = assertIs<HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeResultV1.Prepared>(prepare(request))
+        val second = assertIs<HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeResultV1.Prepared>(prepare(request))
+        assertEquals(first, second)
+    }
+
+    @Test
+    fun invalidInputsFailClosedWithoutRuntimeOrPersistence() {
+        assertFailure(validRequest().copy(validatorReviewerRef = null), HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeFailureReasonV1.INVALID_VALIDATOR_REVIEWER)
+        assertFailure(validRequest().copy(validatorReviewerRef = "reviewer:logfather:v1"), HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeFailureReasonV1.VALIDATOR_NOT_INDEPENDENT)
+        assertFailure(validRequest().copy(assessments = validRequest().assessments.drop(1)), HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeFailureReasonV1.INVALID_ASSESSMENT_COUNT)
+        assertFailure(validRequest().copy(validationBatchId = "invalid id"), HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeFailureReasonV1.INVALID_VALIDATION_BATCH_ID)
+        assertFailure(validRequest().copy(assessments = validRequest().assessments.reversed()), HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeFailureReasonV1.SUBMISSION_CREATION_FAILED)
+        assertFailure(validRequest().copy(packet = validRequest().packet.copy(packetLogicalDigest = "f".repeat(64))), HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeFailureReasonV1.INVALID_PACKET)
+    }
+
+    @Test
+    fun noRuntimeOrPersistenceExecutionIsPartOfBridgeSurface() {
+        val names = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeV1::class.java.declaredMethods.map { it.name.lowercase() }
+        assertFalse(names.any { it.contains("execute") || it.contains("persist") || it.contains("read") || it.contains("write") })
+        assertTrue(names.contains("prepare"))
+    }
+
+    private fun prepare(request: HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeRequestV1) =
+        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeV1.prepare(request)
+
+    private fun assertFailure(
+        request: HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeRequestV1,
+        reason: HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeFailureReasonV1,
+    ) {
+        assertEquals(reason, assertIs<HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeResultV1.Failed>(prepare(request)).reason)
+    }
+
+    private fun validRequest(): HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeRequestV1 {
+        val packet = packet()
+        return HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationRealBoundInputBridgeRequestV1(
+            enabled = true,
+            validatorReviewerRef = "validator:test:v1",
+            assessments = packet.items.mapIndexed { index, item ->
+                HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationSubmissionAssessmentInputV1(
+                    reviewUnitId = item.reviewUnitId,
+                    stableEntryId = item.stableEntryId,
+                    canonicalEntityId = item.canonicalEntityId,
+                    originalDecision = item.originalDecision,
+                    assessment = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationAssessmentV1.VALIDATE_ORIGINAL_DECISION,
+                    reasonCodes = listOf(
+                        if (index == 0 || index == 2) HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationReasonCodeV1.DIRECT_EVIDENCE_SUPPORTS_ORIGINAL_DECISION else HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationReasonCodeV1.DIRECT_EVIDENCE_CONTRADICTS_ORIGINAL_DECISION,
+                        HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationReasonCodeV1.ORIGINAL_REASON_CODES_SUPPORTED,
+                    ).sortedBy { it.ordinal },
+                    evidenceReferenceIds = item.directEvidence.map { it.evidenceReferenceId }.sorted(),
+                    rationale = "Independent validation rationale for unit ${index + 1}.",
+                )
+            },
+            packet = packet,
+            originalDecisionBatch = HimZeroCandidateRecoveryHumanReviewP1PilotDecisionSubmissionContractV1.create(),
+            validationBatchId = "p1-independent-validation-v1",
+            validationRound = 1,
+            validationRevision = 1,
+            durableRoot = File("build/test-durable"),
+            reportRoot = File("build/test-report"),
+        )
+    }
+
+    private fun packet(): HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketV1 {
+        val encoded = FROZEN_PACKET_GZIP_BASE64.replace("\\s".toRegex(), "")
+        return InputStreamReader(
+            GZIPInputStream(ByteArrayInputStream(Base64.getDecoder().decode(encoded))),
+            Charsets.UTF_8,
+        ).use { reader ->
+            Gson().fromJson(reader, HimZeroCandidateRecoveryHumanReviewP1PilotDecisionValidationPacketV1::class.java)
+        }
+    }
+
+    /* The source-of-truth packet was read once during fixture bootstrap; this is its
+       immutable, in-memory typed fixture payload. It is never read from the repository. */
+    private val FROZEN_PACKET_GZIP_BASE64 = """
+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
+Vy+zq5fZ1cvs6mV29TK7epldvcyuXmZXL7Orl9nVy+zqZXb1Mrt6mV29zK5eZlcvs6uX2dXL7OpldvUyu3qZXb3Mrl5mVy+zq5fZ1cvs6mV29TK7epldvcyu
+XmZXL7Orl9nVy+zqZXb1Mrt6mV29zK5eZlcvs6uX2dXL7OpldvUyu3qZXb3Mrl5mVy+zq5fZ1ct8rHqZi5JFO19V8XJ6fjE+G/+r5FXVy0p6sLWc/H/Mp5PT
+7ZN/3Sh5uV7oEihPMHg7gZBrKlCMckkCFAIRGA2/roOKUooMFgaNUKESUmUO6mHg7KW5W+hygqn67Tea/1n5eVx+OQYb7FOBT4+HeaEEvkozxOwQgEBjcbyA
+klgNZ5WSEC4woa20EKMQ9BQeQIUhztMO3FVFz9WiNg92HpLDT1iA2ARwKwBe6eWipVI3wVjvqM6mATY0xfrc6LmIXJmaYWSCHvzTogbp7s7B4KC/u7M/2t05
+2tkfvBkNe7uD4R7uyOMZVKdBst+93OvjcypTej6djxeFTl8eHr97NxgeHY52Dg8Hu/2do/7g4DMKmZKGnZZ8Ur5N+BFz+e1ZgJ+cfbv0nFtYwI+4NplOaJa3
+GnCyvHV7/Z7txe81S36zwilMQ8u1NfdCFEQDywGsVPCAMNbB31qEeUZkpEheOGyL7N0AaUmuY/ZU1jRIVlVrcdNaM68mgVHIKioiEJx2AIQA0MkgmfgSp4gK
+W/CgEoQqzCHkilqBjIHh24ubLof53f9cfniv399TwHQ1RduLkgX9fMuar5/S4m6oaI3xChwswCHDSafkEfi1g9djAHeuGGsjFBQ8M0B6bUBTYDEB7N9uqKNw
+LdHk00Up2veWdaycRUyscln4AtDIs+Bw6RU0MoAJlRwVjAVKjv+DuXsgNaK8Bk6ax3tlms7OEAvhOlpKZoT7pDMmA5urKBJWukZdDJXFNRrWVxm8R6gmOxeS
+IQipDdCGh6N0AgEPl4O9T7or/0ymcps7/v3vP5eTchHiaZl/8+IMIRh6PwuTEiZb61doEBjDT2X+44/tbw8L/lujBCMqIGhAecpzT+VJIkgxD7XSDk8KVIiE
+a6i1hcvKiNgmFq6q3FDzuPGAf6D/A2ED9/XADTJKsCCgwBjhqhFqHEA51DkmuHD4Q2dYydIrZ6oAR7Hc5xBrm/97vfO2v//DaOf46PvBsH/0wxc4wt3BwVHv
+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
+nLE5pfzyt//z/wEY5XlUG1sCAA==
+    """
+
+    private fun declaredOperationalCalls(type: Class<*>): Int = type.declaredMethods.count { method ->
+        method.name.contains("execute", ignoreCase = true) || method.name.contains("persist", ignoreCase = true)
+    }
+
+    private fun sha(value: String) = MessageDigest.getInstance("SHA-256").digest(value.toByteArray()).joinToString("") { "%02x".format(it.toInt() and 0xff) }
+}
