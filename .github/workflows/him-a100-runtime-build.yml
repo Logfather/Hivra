@@ -192,10 +192,24 @@ jobs:
 
       - name: Read back registry digest and validate immutable repull
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -Eeuo pipefail
-          registry_digest=$(docker buildx imagetools inspect "$IMAGE:$CONTENT_TAG" \
-            | awk '$1 == "Digest:" { print $2; exit }')
+          package_versions_url="https://api.github.com/users/${GITHUB_REPOSITORY_OWNER}/packages/container/him-a100-reference-runtime/versions?per_page=100"
+          response_file="$RUNNER_TEMP/readback-package-versions.json"
+          status_code=$(curl --silent --show-error --location \
+            --header "Accept: application/vnd.github+json" \
+            --header "Authorization: Bearer $GITHUB_TOKEN" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            --output "$response_file" \
+            --write-out '%{http_code}' \
+            "$package_versions_url")
+          test "$status_code" = "200"
+          test "$(jq -r 'type' "$response_file")" = array
+          registry_digest=$(jq -r --arg tag "$CONTENT_TAG" \
+            '[.[] | select((.metadata.container.tags // []) | index($tag)) | .name] | first // empty' \
+            "$response_file")
           test -n "$registry_digest"
           local_digest=$(jq -r '."containerimage.digest" // empty' "$RUNNER_TEMP/build-metadata.json")
           test "$registry_digest" = "$local_digest"
