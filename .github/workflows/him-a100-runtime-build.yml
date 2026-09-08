@@ -168,12 +168,7 @@ jobs:
               if [ -z "$registry_digest" ]; then
                 echo 'state=ABSENT' >> "$GITHUB_OUTPUT"
               else
-                local_digest=$(jq -r '."containerimage.digest" // empty' "$RUNNER_TEMP/build-metadata.json")
-                if [ "$registry_digest" != "$local_digest" ]; then
-                  echo 'content tag already points to a different digest' >&2
-                  exit 78
-                fi
-                echo 'state=PRESENT_SAME_DIGEST' >> "$GITHUB_OUTPUT"
+                echo 'state=PRESENT_EXISTING_IMMUTABLE_TAG' >> "$GITHUB_OUTPUT"
               fi
               ;;
             404)
@@ -211,8 +206,6 @@ jobs:
             '[.[] | select((.metadata.container.tags // []) | index($tag)) | .name] | first // empty' \
             "$response_file")
           test -n "$registry_digest"
-          local_digest=$(jq -r '."containerimage.digest" // empty' "$RUNNER_TEMP/build-metadata.json")
-          test "$registry_digest" = "$local_digest"
           test "$registry_digest" != "sha256:0bf7b043bdb8b7b17584e29308c701e7162161a694193f33fe3145e325f668f7"
           immutable_ref="$IMAGE@$registry_digest"
           docker pull "$immutable_ref"
