@@ -3,6 +3,9 @@ name = "him-python-pytorch-runtime"
 version = "0.1.0"
 requires-python = "==3.13.14"
 dependencies = [
+    "safetensors==0.7.0",
+    "sentencepiece==0.2.2",
+    "tokenizers==0.23.1",
     "torch==2.14.0",
 ]
 
@@ -14,5 +17,13 @@ name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
 explicit = true
 
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
 [tool.uv.sources]
-torch = { index = "pytorch-cpu" }
+torch = [
+    { index = "pytorch-cpu", marker = "sys_platform == 'darwin'" },
+    { index = "pytorch-cu130", marker = "sys_platform == 'linux'" },
+]

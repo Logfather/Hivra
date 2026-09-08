@@ -1,0 +1,97 @@
+{
+  "runtimeImageId": "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1",
+  "baseImage": "nvcr.io/nvidia/cuda-dl-base:25.08-cuda13.0-runtime-ubuntu24.04",
+  "target": {
+    "os": "linux",
+    "architecture": "amd64"
+  },
+  "python": {
+    "version": "3.13.14",
+    "realization": "uv-managed-python-at-image-build"
+  },
+  "uv": {
+    "version": "0.12.2",
+    "realization": "official-astral-version-pinned-installer"
+  },
+  "dependencies": {
+    "realization": "IMAGE_BUILD_FROM_UNCHANGED_UV_LOCK",
+    "authority": "training/him/uv.lock",
+    "linuxTorchSource": "pytorch-cu130",
+    "torch": "2.14.0+cu130",
+    "tokenizers": "0.23.1",
+    "sentencepiece": "0.2.2",
+    "safetensors": "0.7.0",
+    "transformers": "ABSENT"
+  },
+  "runtimeLayout": {
+    "pythonHome": "/opt/him/python",
+    "projectEnvironment": "/opt/him/runtime",
+    "authoritativePython": "/opt/him/runtime/bin/python",
+    "sitePackages": "/opt/him/runtime/lib/python3.13/site-packages",
+    "uvBinary": "/usr/local/bin/uv",
+    "dependencyAuthorityRoot": "/opt/him/dependency-authority"
+  },
+  "runtimeValidation": {
+    "contractId": "HIM_A100_RUNTIME_VALIDATION_V1",
+    "validatorPath": "/opt/him/validation/him_runtime_validation_v1.py",
+    "buildMode": "PYTHON_TORCH_VERSION_AND_CUDA_BUILD",
+    "a100Mode": "PYTHON_TORCH_CUDA_A100_AND_GENERIC_CUDA_SMOKE",
+    "failClosed": true
+  },
+  "rootfsExport": {
+    "requiredPaths": [
+      "/opt/him/python",
+      "/opt/him/runtime",
+      "/opt/him/runtime/bin/python",
+      "/opt/him/runtime/lib/python3.13/site-packages",
+      "/opt/him/runtime/runtime-identity.json",
+      "/usr/local/bin/uv"
+    ],
+    "validationBeforeOciExport": true,
+    "assertionsFailClosed": true
+  },
+  "buildLineage": {
+    "path": "/opt/him/validation/build-lineage.json",
+    "containsSecrets": false
+  },
+  "ssh": {
+    "opensshServerInstalledAtImageBuild": true,
+    "publicKeyEnvironmentVariable": "PUBLIC_KEY",
+    "passwordAuthentication": false,
+    "permitEmptyPasswords": false,
+    "rootPasswordCreated": false,
+    "runtimeHostKeyGeneration": true,
+    "privateKeysBakedIntoImage": false,
+    "userPublicKeyBakedIntoImage": false
+  },
+  "paths": {
+    "immutableRuntimeRoot": "/opt/him",
+    "pythonRuntimeRoot": "/opt/him/runtime",
+    "validationRoot": "/opt/him/validation",
+    "mutableWorkspaceRoot": "/workspace"
+  },
+  "autostart": {
+    "training": false,
+    "modelDownload": false,
+    "dataDownload": false
+  },
+  "imageContents": {
+    "modelArtifacts": false,
+    "trainingData": false,
+    "trainingRequest": false,
+    "checkpoints": false,
+    "a100ValidationTool": true
+  },
+  "providerBoundary": {
+    "runtimeCore": "PROVIDER_NEUTRAL_RUNTIME_CORE",
+    "runpodAdapter": "RUNPOD_REMOTE_ACCESS_ADAPTER",
+    "resourceIdentifiersBakedIn": false,
+    "apiCredentialsBakedIn": false
+  },
+  "referenceEnvironmentContractDigest": "e5bfa4442a50e154c7f23735def545cfc545798f8b326ff38051f2eea57111d9",
+  "runtimeImageDefinitionDigestScope": [
+    "Dockerfile",
+    "start.sh",
+    "runtime-image-definition.json"
+  ]
+}
