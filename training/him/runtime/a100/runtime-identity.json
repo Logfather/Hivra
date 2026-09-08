@@ -2,8 +2,8 @@
   "identitySchema": "HIM_A100_RUNTIME_IDENTITY_V1",
   "runtimeImageId": "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1",
   "referenceEnvironmentContractDigest": "e5bfa4442a50e154c7f23735def545cfc545798f8b326ff38051f2eea57111d9",
-  "buildContextDigest": "8b74ce98c234ee4918db58178f14074b601e85f581a2866e07635e4407b48f9a",
-  "runtimeImageDefinitionDigest": "337db7b29475d7830fc824fd30638c005edd90dd0a56bc3e1fbfa74596b0508d",
+  "buildContextDigest": "4423d9db37e2fc024f5d2a16cca5648a51b1f011e0f89a7f841738f7bafad54b",
+  "runtimeImageDefinitionDigest": "e708db86dc8f3671f9379856d606a77457af61b3450638b778b5394862df74f9",
   "ociImageDigest": null,
   "runtimeIdentityRuntimePath": "/opt/him/runtime/runtime-identity.json",
   "runtimeImageDefinitionDigestExcludedFields": [
@@ -13,7 +13,7 @@
   ],
   "contentTagSchemeVersion": "V1",
   "contentTagPrefixLength": 12,
-  "contentDerivedDeploymentTag": "def-337db7b29475",
+  "contentDerivedDeploymentTag": "def-e708db86dc8f",
   "previousContentDerivedDeploymentTag": "def-e5562d215017",
   "buildContextDigestRule": "Canonical runtime-image-definition.json bytes exclude derived identity outputs; runtime-identity.json is derived metadata and excluded from the authority digest."
 }

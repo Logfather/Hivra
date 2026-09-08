@@ -37,7 +37,6 @@ RUN install --directory --mode=0755 \
 COPY pyproject.toml uv.lock /opt/him/dependency-authority/
 COPY validation/a100_validation_v1.py /opt/him/validation/a100_validation_v1.py
 COPY runtime-image-definition.json /opt/him/runtime-image-definition.json
-COPY runtime-identity.json /opt/him/runtime/runtime-identity.json
 COPY start.sh /opt/him/bin/start.sh
 COPY validation/him_runtime_validation_v1.py /opt/him/validation/him_runtime_validation_v1.py
 
@@ -56,6 +55,8 @@ RUN uv python install "${PYTHON_VERSION}" \
         /opt/him/validation/him_runtime_validation_v1.py \
         --mode build \
         --lineage-output /opt/him/validation/build-lineage.json
+
+COPY runtime-identity.json /opt/him/runtime/runtime-identity.json
 
 RUN chmod 0755 /opt/him/bin/start.sh \
     && chmod 0644 /opt/him/validation/a100_validation_v1.py \
