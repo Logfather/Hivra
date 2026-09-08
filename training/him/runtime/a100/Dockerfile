@@ -44,7 +44,9 @@ COPY validation/him_runtime_validation_v1.py /opt/him/validation/him_runtime_val
 # Python and all numerical dependencies are realized from exact version and
 # lock authority at image build time; no manual torch installation is used.
 RUN uv python install "${PYTHON_VERSION}" \
-    && test -x /opt/him/python/bin/python3.13 \
+    && python_path="$(uv python find --managed-python "${PYTHON_VERSION}")" \
+    && test -x "$python_path" \
+    && test "${python_path#"/opt/him/python/"}" != "$python_path" \
     && uv sync --frozen --no-dev \
         --project /opt/him/dependency-authority \
         --python "${PYTHON_VERSION}" \

@@ -212,7 +212,9 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
 
     def test_dockerfile_has_explicit_runtime_validation_gate(self) -> None:
         self.assertIn("COPY validation/him_runtime_validation_v1.py", self.dockerfile)
-        self.assertIn("test -x /opt/him/python/bin/python3.13", self.dockerfile)
+        self.assertIn('python_path="$(uv python find --managed-python "${PYTHON_VERSION}")"', self.dockerfile)
+        self.assertIn('test -x "$python_path"', self.dockerfile)
+        self.assertIn('test "${python_path#"/opt/him/python/"}" != "$python_path"', self.dockerfile)
         self.assertIn("test -x /opt/him/runtime/bin/python", self.dockerfile)
         self.assertIn("/opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py", self.dockerfile)
         self.assertIn("--mode build", self.dockerfile)
