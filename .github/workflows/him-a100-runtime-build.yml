@@ -146,25 +146,44 @@ jobs:
       - name: Check immutable content tag collision
         id: collision
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -Eeuo pipefail
-          if docker buildx imagetools inspect "$IMAGE:$CONTENT_TAG" \
-              > "$RUNNER_TEMP/tag-inspect.txt" 2> "$RUNNER_TEMP/tag-inspect.err"; then
-            registry_digest=$(awk '$1 == "Digest:" { print $2; exit }' "$RUNNER_TEMP/tag-inspect.txt")
-            test -n "$registry_digest"
-            local_digest=$(jq -r '."containerimage.digest" // empty' "$RUNNER_TEMP/build-metadata.json")
-            if [ "$registry_digest" != "$local_digest" ]; then
-              echo 'content tag already points to a different digest' >&2
+          package_versions_url="https://api.github.com/users/${GITHUB_REPOSITORY_OWNER}/packages/container/him-a100-reference-runtime/versions?per_page=100"
+          response_file="$RUNNER_TEMP/package-versions.json"
+          status_code=$(curl --silent --show-error --location \
+            --header "Accept: application/vnd.github+json" \
+            --header "Authorization: Bearer $GITHUB_TOKEN" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            --output "$response_file" \
+            --write-out '%{http_code}' \
+            "$package_versions_url")
+          case "$status_code" in
+            200)
+              test "$(jq -r 'type' "$response_file")" = array
+              registry_digest=$(jq -r --arg tag "$CONTENT_TAG" \
+                '[.[] | select((.metadata.container.tags // []) | index($tag)) | .name] | first // empty' \
+                "$response_file")
+              if [ -z "$registry_digest" ]; then
+                echo 'state=ABSENT' >> "$GITHUB_OUTPUT"
+              else
+                local_digest=$(jq -r '."containerimage.digest" // empty' "$RUNNER_TEMP/build-metadata.json")
+                if [ "$registry_digest" != "$local_digest" ]; then
+                  echo 'content tag already points to a different digest' >&2
+                  exit 78
+                fi
+                echo 'state=PRESENT_SAME_DIGEST' >> "$GITHUB_OUTPUT"
+              fi
+              ;;
+            404)
+              echo 'state=ABSENT' >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "GitHub Packages collision lookup failed with HTTP $status_code" >&2
               exit 78
-            fi
-            echo 'state=PRESENT_SAME_DIGEST' >> "$GITHUB_OUTPUT"
-          else
-            if ! grep -qiE 'no such manifest|manifest unknown|not found' "$RUNNER_TEMP/tag-inspect.err"; then
-              cat "$RUNNER_TEMP/tag-inspect.err" >&2
-              exit 78
-            fi
-            echo 'state=ABSENT' >> "$GITHUB_OUTPUT"
-          fi
+              ;;
+          esac
 
       - name: Publish only the corrected content tag
         if: steps.collision.outputs.state == 'ABSENT'
