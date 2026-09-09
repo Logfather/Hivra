@@ -28,7 +28,6 @@ install -d -m 0755 \
     "$ROOTFS/opt/him/bin" \
     "$ROOTFS/opt/him/dependency-authority" \
     "$ROOTFS/opt/him/validation" \
-    "$ROOTFS/opt/him/runtime" \
     "$ROOTFS/opt/him/python" \
     "$ROOTFS/workspace"
 
@@ -38,8 +37,6 @@ install -m 0644 "$REPOSITORY_ROOT/training/him/uv.lock" \
     "$ROOTFS/opt/him/dependency-authority/uv.lock"
 install -m 0644 "$DEFINITION_ROOT/runtime-image-definition.json" \
     "$ROOTFS/opt/him/runtime-image-definition.json"
-install -m 0644 "$DEFINITION_ROOT/runtime-identity.json" \
-    "$ROOTFS/opt/him/runtime/runtime-identity.json"
 install -m 0644 "$REPOSITORY_ROOT/training/him/src/him_trainer/a100_validation_v1.py" \
     "$ROOTFS/opt/him/validation/a100_validation_v1.py"
 install -m 0644 "$DEFINITION_ROOT/him_runtime_validation_v1.py" \
@@ -72,18 +69,22 @@ env -i \
         fi
         test -x /opt/him/python/bin/python3.13
         /opt/him/python/bin/python3.13 --version
+        test ! -e /opt/him/runtime
         uv sync --frozen --no-dev \
           --project /opt/him/dependency-authority \
           --python /opt/him/python/bin/python3.13
         test -x /opt/him/runtime/bin/python
         test -f /opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py
-        test -f /opt/him/runtime/runtime-identity.json
         test -x /usr/local/bin/uv
-        /opt/him/runtime/bin/python \
-          /opt/him/validation/him_runtime_validation_v1.py \
-          --mode build \
-          --lineage-output /opt/him/validation/build-lineage.json
     '
+
+install -m 0644 "$DEFINITION_ROOT/runtime-identity.json" \
+    "$ROOTFS/opt/him/runtime/runtime-identity.json"
+
+chroot "$ROOTFS" /opt/him/runtime/bin/python \
+    /opt/him/validation/him_runtime_validation_v1.py \
+    --mode build \
+    --lineage-output /opt/him/validation/build-lineage.json
 
 readonly TRAINER_RUNTIME_PACKAGE_ROOT="$ROOTFS/opt/him/runtime/lib/python3.13/site-packages/him_trainer"
 install -d -m 0755 "$TRAINER_RUNTIME_PACKAGE_ROOT"

@@ -31,13 +31,11 @@ RUN install --directory --mode=0755 \
         /opt/him/bin \
         /opt/him/dependency-authority \
         /opt/him/validation \
-        /opt/him/runtime \
         /workspace
 
 COPY pyproject.toml uv.lock /opt/him/dependency-authority/
 COPY validation/a100_validation_v1.py /opt/him/validation/a100_validation_v1.py
 COPY runtime-image-definition.json /opt/him/runtime-image-definition.json
-COPY runtime-identity.json /opt/him/runtime/runtime-identity.json
 COPY start.sh /opt/him/bin/start.sh
 COPY validation/him_runtime_validation_v1.py /opt/him/validation/him_runtime_validation_v1.py
 
@@ -54,12 +52,16 @@ RUN uv python install --install-dir "${UV_PYTHON_INSTALL_DIR}" "${PYTHON_VERSION
     fi \
     && test -x /opt/him/python/bin/python3.13 \
     && /opt/him/python/bin/python3.13 --version \
+    && test ! -e /opt/him/runtime \
     && uv sync --frozen --no-dev \
         --project /opt/him/dependency-authority \
         --python /opt/him/python/bin/python3.13 \
     && test -x /opt/him/runtime/bin/python \
-    && test -f /opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py \
-    && /opt/him/runtime/bin/python \
+    && test -f /opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py
+
+COPY runtime-identity.json /opt/him/runtime/runtime-identity.json
+
+RUN /opt/him/runtime/bin/python \
         /opt/him/validation/him_runtime_validation_v1.py \
         --mode build \
         --lineage-output /opt/him/validation/build-lineage.json
