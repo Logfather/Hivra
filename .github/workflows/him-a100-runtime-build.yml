@@ -13,9 +13,9 @@ permissions:
 
 env:
   IMAGE: ghcr.io/logfather/him-a100-reference-runtime
-  CONTENT_TAG: def-01dbea990652
-  EXPECTED_RUNTIME_DEFINITION_DIGEST: 01dbea990652fede7ec6dba99368f76bf19789da01a5728c339da7f824d2ea77
-  EXPECTED_BUILD_CONTEXT_DIGEST: f024cec7bb1f4d67c324b351381cced1b5e0d5d433b6a656200cfbe6c8ab5898
+  CONTENT_TAG: def-435a214d319c
+  EXPECTED_RUNTIME_DEFINITION_DIGEST: 435a214d319c865d107c0d00cb641aace0aecd6a54da7ca79b73f22e893aa74f
+  EXPECTED_BUILD_CONTEXT_DIGEST: 47f37ee84406af1f18155a1dac40f6178bf722519287bb2c05ae761600b33554
   EXPECTED_PYTHON_VERSION: 3.13.14
   EXPECTED_TORCH_VERSION: 2.14.0+cu130
   EXPECTED_TORCH_CUDA_BUILD: "13.0"
@@ -136,7 +136,7 @@ jobs:
             test -f /opt/him/validation/build-lineage.json
           '
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$IMAGE:$CONTENT_TAG" \
-            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "01dbea990652fede7ec6dba99368f76bf19789da01a5728c339da7f824d2ea77"; assert d["buildContextDigest"] == "f024cec7bb1f4d67c324b351381cced1b5e0d5d433b6a656200cfbe6c8ab5898"'
+            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "435a214d319c865d107c0d00cb641aace0aecd6a54da7ca79b73f22e893aa74f"; assert d["buildContextDigest"] == "47f37ee84406af1f18155a1dac40f6178bf722519287bb2c05ae761600b33554"'
 
       - name: Authenticate to GHCR with repository token
         shell: bash
@@ -195,7 +195,7 @@ jobs:
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
             /opt/him/validation/him_runtime_validation_v1.py --mode build
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
-            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "01dbea990652fede7ec6dba99368f76bf19789da01a5728c339da7f824d2ea77"; assert d["buildContextDigest"] == "f024cec7bb1f4d67c324b351381cced1b5e0d5d433b6a656200cfbe6c8ab5898"'
+            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "435a214d319c865d107c0d00cb641aace0aecd6a54da7ca79b73f22e893aa74f"; assert d["buildContextDigest"] == "47f37ee84406af1f18155a1dac40f6178bf722519287bb2c05ae761600b33554"'
           printf 'CORRECTED_IMMUTABLE_REFERENCE=%s\n' "$immutable_ref"
           printf 'NEW_REGISTRY_OCI_DIGEST=%s\n' "$registry_digest"
 
