@@ -177,25 +177,51 @@ jobs:
         shell: bash
         run: |
           set -Eeuo pipefail
+          post_push_phase=INITIALIZATION
+          trap 'printf "HIM_POST_PUSH_FAILURE_PHASE=%s\nHIM_POST_PUSH_FAILURE_COMMAND=%s\n" "$post_push_phase" "$BASH_COMMAND" >&2' ERR
+          post_push_phase=DIGEST_RESOLUTION
+          printf '=== HIM_POST_PUSH_DIGEST_RESOLUTION_BEGIN ===\n'
           registry_digest=$(docker buildx imagetools inspect "$IMAGE:$CONTENT_TAG" \
             | awk '$1 == "Digest:" { print $2; exit }')
           test -n "$registry_digest"
           local_digest=$(jq -r '."containerimage.digest" // empty' "$RUNNER_TEMP/build-metadata.json")
           test "$registry_digest" = "$local_digest"
           test "$registry_digest" != "sha256:0bf7b043bdb8b7b17584e29308c701e7162161a694193f33fe3145e325f668f7"
+          printf '=== HIM_POST_PUSH_DIGEST_RESOLUTION_END ===\n'
+          post_push_phase=IMMUTABLE_PULL
+          printf '=== HIM_POST_PUSH_IMMUTABLE_PULL_BEGIN ===\n'
           immutable_ref="$IMAGE@$registry_digest"
           docker pull "$immutable_ref"
+          printf '=== HIM_POST_PUSH_IMMUTABLE_PULL_END ===\n'
+          post_push_phase=IMAGE_INSPECT
+          printf '=== HIM_POST_PUSH_IMAGE_INSPECT_BEGIN ===\n'
           python_version=$(docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" --version)
           test "$python_version" = "Python $EXPECTED_PYTHON_VERSION"
           torch_info=$(docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
             -c 'import torch; print(torch.__version__); print(torch.version.cuda)')
           test "$torch_info" = $'2.14.0+cu130\n13.0'
-          docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
-            -c 'import him_trainer; import him_trainer.__main__ as entrypoint; assert callable(entrypoint.run)'
+          docker run --rm --entrypoint /bin/bash "$immutable_ref" -ceu '
+            test -d /opt/him/python
+            test -d /opt/him/runtime
+            test -x /opt/him/runtime/bin/python
+            test -d /opt/him/runtime/lib/python3.13/site-packages
+            test -f /opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py
+            test -f /opt/him/runtime/runtime-identity.json
+            test -f /opt/him/runtime/lib/python3.13/site-packages/him_trainer/protocol_v1.py
+          '
+          printf '=== HIM_POST_PUSH_IMAGE_INSPECT_END ===\n'
+          post_push_phase=RUNTIME_VALIDATION
+          printf '=== HIM_POST_PUSH_RUNTIME_VALIDATION_BEGIN ===\n'
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
             /opt/him/validation/him_runtime_validation_v1.py --mode build
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
             -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "68f69540cf6c57c780fe9b236076783867e45d735d3b40c084861db7971c555b"; assert d["buildContextDigest"] == "c2765a08e82fad8571263eb3a99f05a0c5f0ed224548288c19f02116dfa5aded"'
+          printf '=== HIM_POST_PUSH_RUNTIME_VALIDATION_END ===\n'
+          post_push_phase=TRAINER_VALIDATION
+          printf '=== HIM_POST_PUSH_TRAINER_VALIDATION_BEGIN ===\n'
+          docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
+            -c 'import him_trainer; import him_trainer.__main__ as entrypoint; assert callable(entrypoint.run)'
+          printf '=== HIM_POST_PUSH_TRAINER_VALIDATION_END ===\n'
           printf 'CORRECTED_IMMUTABLE_REFERENCE=%s\n' "$immutable_ref"
           printf 'NEW_REGISTRY_OCI_DIGEST=%s\n' "$registry_digest"
 
