@@ -16,6 +16,7 @@ env:
   CONTENT_TAG: def-68f69540cf6c
   EXPECTED_RUNTIME_DEFINITION_DIGEST: 68f69540cf6c57c780fe9b236076783867e45d735d3b40c084861db7971c555b
   EXPECTED_BUILD_CONTEXT_DIGEST: c2765a08e82fad8571263eb3a99f05a0c5f0ed224548288c19f02116dfa5aded
+  EXPECTED_CONTENT_DIGEST: sha256:f6f9dfaec0343d7bd07752a11a795b5cdec8b7afc4d564cc967f42b4679c2828
   EXPECTED_PYTHON_VERSION: 3.13.14
   EXPECTED_TORCH_VERSION: 2.14.0+cu130
   EXPECTED_TORCH_CUDA_BUILD: "13.0"
@@ -94,7 +95,54 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Authenticate to GHCR with repository token
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          printf '%s' '${{ secrets.GITHUB_TOKEN }}' | docker login ghcr.io \
+            --username '${{ github.actor }}' --password-stdin
+
+      - name: Check immutable content tag collision
+        id: collision
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -Eeuo pipefail
+          package_versions_url="https://api.github.com/users/${GITHUB_REPOSITORY_OWNER}/packages/container/him-a100-reference-runtime/versions?per_page=100"
+          response_file="$RUNNER_TEMP/content-tag-package-versions.json"
+          status_code=$(curl --silent --show-error --location \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer $GITHUB_TOKEN" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            --output "$response_file" \
+            --write-out '%{http_code}' \
+            "$package_versions_url")
+          test "$status_code" = "200"
+          test "$(jq -r 'type' "$response_file")" = "array"
+          registry_digest=$(jq -r --arg tag "$CONTENT_TAG" \
+            '[.[] | select((.metadata.container.tags // []) | index($tag)) | .name] | first // empty' \
+            "$response_file")
+          printf 'HIM_CONTENT_TAG=%s\n' "$CONTENT_TAG"
+          printf 'HIM_CURRENT_TAG_DIGEST=%s\n' "${registry_digest:-NONE}"
+          printf 'HIM_EXPECTED_DIGEST=%s\n' "$EXPECTED_CONTENT_DIGEST"
+          if [ -z "$registry_digest" ]; then
+            printf 'HIM_CONTENT_TAG_STATE=ABSENT\n'
+            printf 'state=ABSENT\n' >> "$GITHUB_OUTPUT"
+            printf 'registry_digest=\n' >> "$GITHUB_OUTPUT"
+          elif [ "$registry_digest" = "$EXPECTED_CONTENT_DIGEST" ]; then
+            printf 'HIM_CONTENT_TAG_STATE=ALREADY_PRESENT_IDENTICAL\n'
+            printf 'state=ALREADY_PRESENT_IDENTICAL\n' >> "$GITHUB_OUTPUT"
+            printf 'registry_digest=%s\n' "$registry_digest" >> "$GITHUB_OUTPUT"
+          else
+            printf 'HIM_CONTENT_TAG_STATE=DIFFERENT_DIGEST_COLLISION\n'
+            printf 'different digest collision: current=%s expected=%s\n' \
+              "$registry_digest" "$EXPECTED_CONTENT_DIGEST" >&2
+            exit 78
+          fi
+
       - name: Build exact linux/amd64 OCI image
+        if: steps.collision.outputs.state == 'ABSENT'
         shell: bash
         env:
           CONTEXT_DIR: ${{ steps.authority.outputs.context }}
@@ -113,6 +161,7 @@ jobs:
           echo "local_digest=$local_digest" >> "$GITHUB_OUTPUT"
 
       - name: Validate built runtime before publication
+        if: steps.collision.outputs.state == 'ABSENT'
         shell: bash
         run: |
           set -Eeuo pipefail
@@ -138,36 +187,6 @@ jobs:
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$IMAGE:$CONTENT_TAG" \
             -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "68f69540cf6c57c780fe9b236076783867e45d735d3b40c084861db7971c555b"; assert d["buildContextDigest"] == "c2765a08e82fad8571263eb3a99f05a0c5f0ed224548288c19f02116dfa5aded"'
 
-      - name: Authenticate to GHCR with repository token
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          printf '%s' '${{ secrets.GITHUB_TOKEN }}' | docker login ghcr.io \
-            --username '${{ github.actor }}' --password-stdin
-
-      - name: Check immutable content tag collision
-        id: collision
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          if docker buildx imagetools inspect "$IMAGE:$CONTENT_TAG" \
-              > "$RUNNER_TEMP/tag-inspect.txt" 2> "$RUNNER_TEMP/tag-inspect.err"; then
-            registry_digest=$(awk '$1 == "Digest:" { print $2; exit }' "$RUNNER_TEMP/tag-inspect.txt")
-            test -n "$registry_digest"
-            local_digest=$(jq -r '."containerimage.digest" // empty' "$RUNNER_TEMP/build-metadata.json")
-            if [ "$registry_digest" != "$local_digest" ]; then
-              echo 'content tag already points to a different digest' >&2
-              exit 78
-            fi
-            echo 'state=PRESENT_SAME_DIGEST' >> "$GITHUB_OUTPUT"
-          else
-            if ! rg -qi 'no such manifest|manifest unknown|not found' "$RUNNER_TEMP/tag-inspect.err"; then
-              cat "$RUNNER_TEMP/tag-inspect.err" >&2
-              exit 78
-            fi
-            echo 'state=ABSENT' >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Publish only the corrected content tag
         if: steps.collision.outputs.state == 'ABSENT'
         shell: bash
@@ -175,23 +194,45 @@ jobs:
 
       - name: Read back registry digest and validate immutable repull
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -Eeuo pipefail
           post_push_phase=INITIALIZATION
           trap 'printf "HIM_POST_PUSH_FAILURE_PHASE=%s\nHIM_POST_PUSH_FAILURE_COMMAND=%s\n" "$post_push_phase" "$BASH_COMMAND" >&2' ERR
           post_push_phase=DIGEST_RESOLUTION
           printf '=== HIM_POST_PUSH_DIGEST_RESOLUTION_BEGIN ===\n'
-          registry_digest=$(docker buildx imagetools inspect "$IMAGE:$CONTENT_TAG" \
-            | awk '$1 == "Digest:" { print $2; exit }')
+          package_versions_url="https://api.github.com/users/${GITHUB_REPOSITORY_OWNER}/packages/container/him-a100-reference-runtime/versions?per_page=100"
+          response_file="$RUNNER_TEMP/post-push-package-versions.json"
+          status_code=$(curl --silent --show-error --location \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer $GITHUB_TOKEN" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            --output "$response_file" \
+            --write-out '%{http_code}' \
+            "$package_versions_url")
+          test "$status_code" = "200"
+          test "$(jq -r 'type' "$response_file")" = "array"
+          registry_digest=$(jq -r --arg tag "$CONTENT_TAG" \
+            '[.[] | select((.metadata.container.tags // []) | index($tag)) | .name] | first // empty' \
+            "$response_file")
           test -n "$registry_digest"
-          local_digest=$(jq -r '."containerimage.digest" // empty' "$RUNNER_TEMP/build-metadata.json")
-          test "$registry_digest" = "$local_digest"
-          test "$registry_digest" != "sha256:0bf7b043bdb8b7b17584e29308c701e7162161a694193f33fe3145e325f668f7"
+          test "$registry_digest" = "$EXPECTED_CONTENT_DIGEST"
+          printf 'HIM_CONTENT_TAG=%s\n' "$CONTENT_TAG"
+          printf 'HIM_CURRENT_TAG_DIGEST=%s\n' "$registry_digest"
+          printf 'HIM_EXPECTED_DIGEST=%s\n' "$EXPECTED_CONTENT_DIGEST"
+          printf 'HIM_CONTENT_TAG_STATE=ALREADY_PRESENT_IDENTICAL\n'
           printf '=== HIM_POST_PUSH_DIGEST_RESOLUTION_END ===\n'
           post_push_phase=IMMUTABLE_PULL
           printf '=== HIM_POST_PUSH_IMMUTABLE_PULL_BEGIN ===\n'
           immutable_ref="$IMAGE@$registry_digest"
           docker pull "$immutable_ref"
+          pulled_digest=$(docker image inspect "$immutable_ref" \
+            --format '{{range .RepoDigests}}{{println .}}{{end}}' \
+            | awk -F@ -v image="$IMAGE" '$1 == image { print $2; exit }')
+          test "$pulled_digest" = "$registry_digest"
+          printf 'HIM_IMMUTABLE_PULL=PASS\n'
+          printf 'HIM_DIGEST_READBACK=PASS\n'
           printf '=== HIM_POST_PUSH_IMMUTABLE_PULL_END ===\n'
           post_push_phase=IMAGE_INSPECT
           printf '=== HIM_POST_PUSH_IMAGE_INSPECT_BEGIN ===\n'
@@ -221,6 +262,14 @@ jobs:
           printf '=== HIM_POST_PUSH_TRAINER_VALIDATION_BEGIN ===\n'
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
             -c 'import him_trainer; import him_trainer.__main__ as entrypoint; assert callable(entrypoint.run)'
+          printf 'HIM_TRAINER_IMPORT=PASS\n'
+          docker run --rm --entrypoint /bin/bash "$immutable_ref" -ceu '
+            set +e
+            /opt/him/runtime/bin/python -m him_trainer --request-manifest /dev/null
+            module_exit=$?
+            test "$module_exit" -eq 1
+          '
+          printf 'HIM_TRAINER_MODULE_EXECUTION=PASS\n'
           printf '=== HIM_POST_PUSH_TRAINER_VALIDATION_END ===\n'
           printf 'CORRECTED_IMMUTABLE_REFERENCE=%s\n' "$immutable_ref"
           printf 'NEW_REGISTRY_OCI_DIGEST=%s\n' "$registry_digest"
