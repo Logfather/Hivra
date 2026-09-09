@@ -44,10 +44,19 @@ COPY validation/him_runtime_validation_v1.py /opt/him/validation/him_runtime_val
 # Python and all numerical dependencies are realized from exact version and
 # lock authority at image build time; no manual torch installation is used.
 RUN uv python install --install-dir "${UV_PYTHON_INSTALL_DIR}" "${PYTHON_VERSION}" \
+    && test -x /opt/him/python/cpython-3.13.14-linux-x86_64-gnu/bin/python3.13 \
+    && install --directory --mode=0755 /opt/him/python/bin \
+    && if [ -e /opt/him/python/bin/python3.13 ] || [ -L /opt/him/python/bin/python3.13 ]; then \
+        test -L /opt/him/python/bin/python3.13 \
+        && test "$(readlink /opt/him/python/bin/python3.13)" = "../cpython-3.13.14-linux-x86_64-gnu/bin/python3.13"; \
+    else \
+        ln -s ../cpython-3.13.14-linux-x86_64-gnu/bin/python3.13 /opt/him/python/bin/python3.13; \
+    fi \
     && test -x /opt/him/python/bin/python3.13 \
+    && /opt/him/python/bin/python3.13 --version \
     && uv sync --frozen --no-dev \
         --project /opt/him/dependency-authority \
-        --python "${PYTHON_VERSION}" \
+        --python /opt/him/python/bin/python3.13 \
     && test -x /opt/him/runtime/bin/python \
     && test -f /opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py \
     && /opt/him/runtime/bin/python \

@@ -62,10 +62,19 @@ env -i \
           | env UV_VERSION="$UV_VERSION" UV_UNMANAGED_INSTALL=/usr/local/bin sh
         export PATH=/opt/him/runtime/bin:/opt/him/python/bin:/usr/local/bin:$PATH
         uv python install --install-dir "$UV_PYTHON_INSTALL_DIR" "$PYTHON_VERSION"
+        test -x /opt/him/python/cpython-3.13.14-linux-x86_64-gnu/bin/python3.13
+        install -d -m 0755 /opt/him/python/bin
+        if [ -e /opt/him/python/bin/python3.13 ] || [ -L /opt/him/python/bin/python3.13 ]; then
+            test -L /opt/him/python/bin/python3.13
+            test "$(readlink /opt/him/python/bin/python3.13)" = "../cpython-3.13.14-linux-x86_64-gnu/bin/python3.13"
+        else
+            ln -s ../cpython-3.13.14-linux-x86_64-gnu/bin/python3.13 /opt/him/python/bin/python3.13
+        fi
         test -x /opt/him/python/bin/python3.13
+        /opt/him/python/bin/python3.13 --version
         uv sync --frozen --no-dev \
           --project /opt/him/dependency-authority \
-          --python "$PYTHON_VERSION"
+          --python /opt/him/python/bin/python3.13
         test -x /opt/him/runtime/bin/python
         test -f /opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py
         test -f /opt/him/runtime/runtime-identity.json

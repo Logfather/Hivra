@@ -275,16 +275,55 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         rootfs_builder = ROOTFS_BUILDER.read_text()
         for build_script in (self.dockerfile, rootfs_builder):
             install = build_script.index("uv python install --install-dir")
-            python_gate = build_script.index("test -x /opt/him/python/bin/python3.13", install)
-            sync = build_script.index("uv sync --frozen --no-dev", python_gate)
+            internal_gate = build_script.index(
+                "test -x /opt/him/python/cpython-3.13.14-linux-x86_64-gnu/bin/python3.13",
+                install,
+            )
+            stable_root = build_script.index("/opt/him/python/bin", internal_gate)
+            stable_gate = build_script.index("test -x /opt/him/python/bin/python3.13", stable_root)
+            sync = build_script.index("uv sync --frozen --no-dev", stable_gate)
             runtime_gate = build_script.index("test -x /opt/him/runtime/bin/python", sync)
             torch_gate = build_script.index("test -f /opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py", runtime_gate)
             validator = build_script.index("--mode build", torch_gate)
-            self.assertLess(install, python_gate)
-            self.assertLess(python_gate, sync)
+            self.assertLess(install, internal_gate)
+            self.assertLess(internal_gate, stable_root)
+            self.assertLess(stable_root, stable_gate)
+            self.assertLess(stable_gate, sync)
             self.assertLess(sync, runtime_gate)
             self.assertLess(runtime_gate, torch_gate)
             self.assertLess(torch_gate, validator)
+
+    def test_stable_managed_python_binding_is_explicit_and_fail_closed(self) -> None:
+        rootfs_builder = ROOTFS_BUILDER.read_text()
+        internal_path = "/opt/him/python/cpython-3.13.14-linux-x86_64-gnu/bin/python3.13"
+        stable_path = "/opt/him/python/bin/python3.13"
+        stable_target = "../cpython-3.13.14-linux-x86_64-gnu/bin/python3.13"
+        for build_script in (self.dockerfile, rootfs_builder):
+            self.assertIn(internal_path, build_script)
+            self.assertIn(stable_path, build_script)
+            self.assertIn(stable_target, build_script)
+            self.assertIn("test -L /opt/him/python/bin/python3.13", build_script)
+            self.assertIn("readlink /opt/him/python/bin/python3.13", build_script)
+            self.assertIn("ln -s ../cpython-3.13.14-linux-x86_64-gnu/bin/python3.13", build_script)
+            self.assertNotIn("ln -sfn", build_script)
+            self.assertNotIn("UV_MANAGED_PYTHON_LAYOUT_BEGIN", build_script)
+            self.assertNotIn("/root/.local", build_script)
+        self.assertIn("--python /opt/him/python/bin/python3.13", self.dockerfile)
+        self.assertIn("--python /opt/him/python/bin/python3.13", rootfs_builder)
+
+    def test_dockerfile_and_rootfs_binding_sequences_have_parity(self) -> None:
+        rootfs_builder = ROOTFS_BUILDER.read_text()
+        required_fragments = (
+            "cpython-3.13.14-linux-x86_64-gnu/bin/python3.13",
+            "python/bin/python3.13",
+            "readlink",
+            "ln -s",
+            "uv sync --frozen --no-dev",
+            "--python",
+        )
+        for fragment in required_fragments:
+            self.assertIn(fragment, self.dockerfile)
+            self.assertIn(fragment, rootfs_builder)
 
     def test_runtime_layout_and_export_assertions_are_authoritative(self) -> None:
         self.assertEqual(self.metadata["runtimeLayout"]["authoritativePython"], "/opt/him/runtime/bin/python")
