@@ -27,6 +27,7 @@
     "pythonHome": "/opt/him/python",
     "projectEnvironment": "/opt/him/runtime",
     "authoritativePython": "/opt/him/runtime/bin/python",
+    "trainerPackageRoot": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer",
     "sitePackages": "/opt/him/runtime/lib/python3.13/site-packages",
     "uvBinary": "/usr/local/bin/uv",
     "dependencyAuthorityRoot": "/opt/him/dependency-authority"
@@ -80,7 +81,8 @@
     "trainingData": false,
     "trainingRequest": false,
     "checkpoints": false,
-    "a100ValidationTool": true
+    "a100ValidationTool": true,
+    "trainerPackage": true
   },
   "providerBoundary": {
     "runtimeCore": "PROVIDER_NEUTRAL_RUNTIME_CORE",

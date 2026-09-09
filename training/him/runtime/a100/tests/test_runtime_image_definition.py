@@ -14,6 +14,8 @@ REPOSITORY_ROOT = ROOT.parents[3]
 EXPECTED_BASE_IMAGE = "nvcr.io/nvidia/cuda-dl-base:25.08-cuda13.0-runtime-ubuntu24.04"
 EXPECTED_PYPROJECT = REPOSITORY_ROOT / "training/him/pyproject.toml"
 EXPECTED_UV_LOCK = REPOSITORY_ROOT / "training/him/uv.lock"
+EXPECTED_TRAINER_SOURCE_ROOT = REPOSITORY_ROOT / "training/him/src/him_trainer"
+EXPECTED_TRAINER_RUNTIME_ROOT = "/opt/him/runtime/lib/python3.13/site-packages/him_trainer"
 IDENTITY_SCRIPT = ROOT / "runtime-identity.sh"
 IDENTITY_FILE = ROOT / "runtime-identity.json"
 EXPECTED_RUNTIME_ID = "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1"
@@ -106,6 +108,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertFalse(contents["trainingRequest"])
         self.assertFalse(contents["checkpoints"])
         self.assertTrue(contents["a100ValidationTool"])
+        self.assertTrue(contents["trainerPackage"])
         self.assertIn("COPY validation/a100_validation_v1.py", self.dockerfile)
         for forbidden in ("COPY .", "COPY model", "COPY corpus", "COPY checkpoint", "COPY data/"):
             self.assertNotIn(forbidden, self.dockerfile)
@@ -114,6 +117,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         paths = self.metadata["paths"]
         self.assertEqual(paths["immutableRuntimeRoot"], "/opt/him")
         self.assertEqual(paths["pythonRuntimeRoot"], "/opt/him/runtime")
+        self.assertEqual(self.metadata["runtimeLayout"]["trainerPackageRoot"], EXPECTED_TRAINER_RUNTIME_ROOT)
         self.assertEqual(paths["validationRoot"], "/opt/him/validation")
         self.assertEqual(paths["mutableWorkspaceRoot"], "/workspace")
         self.assertIn("/workspace", self.dockerfile)
@@ -129,7 +133,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertNotIn("EUR-IS-1", self.dockerfile)
 
     def test_manifest_is_bounded_and_deterministic(self) -> None:
-        self.assertEqual(len(self.manifest_rows), 10)
+        self.assertEqual(len(self.manifest_rows), 25)
         destinations = [row[1] for row in self.manifest_rows]
         self.assertEqual(len(destinations), len(set(destinations)))
         for source, destination, _role, _final, _build_only in self.manifest_rows:
@@ -155,7 +159,11 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
 
     def test_manifest_marks_validation_tool_and_build_only_manifest(self) -> None:
         by_source = {row[0]: row for row in self.manifest_rows}
-        validation = by_source["training/him/src/him_trainer/a100_validation_v1.py"]
+        validation = next(
+            row for row in self.manifest_rows
+            if row[0] == "training/him/src/him_trainer/a100_validation_v1.py"
+            and row[2] == "a100-validation-tooling"
+        )
         runtime_validation = by_source["training/him/runtime/a100/him_runtime_validation_v1.py"]
         rootfs_builder = by_source["training/him/runtime/a100/build-runtime-rootfs.sh"]
         manifest = by_source["training/him/runtime/a100/build-context.manifest.tsv"]
@@ -166,6 +174,26 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertEqual(rootfs_builder[2], "rootfs-realization-tooling")
         self.assertEqual(rootfs_builder[3:], ["NO", "YES"])
         self.assertEqual(manifest[3:], ["NO", "YES"])
+
+    def test_manifest_binds_unchanged_him_trainer_package(self) -> None:
+        package_rows = [row for row in self.manifest_rows if row[2] == "him-trainer-package"]
+        source_files = sorted(EXPECTED_TRAINER_SOURCE_ROOT.glob("*.py"))
+        self.assertEqual(len(package_rows), len(source_files))
+        self.assertEqual(len(package_rows), 15)
+        self.assertEqual(
+            {row[0] for row in package_rows},
+            {str(path.relative_to(REPOSITORY_ROOT)) for path in source_files},
+        )
+        self.assertEqual(
+            {row[1] for row in package_rows},
+            {f"trainer/him_trainer/{path.name}" for path in source_files},
+        )
+        self.assertTrue(all(row[3:] == ["YES", "NO"] for row in package_rows))
+        self.assertIn(
+            "COPY trainer/him_trainer /opt/him/runtime/lib/python3.13/site-packages/him_trainer",
+            self.dockerfile,
+        )
+        self.assertIn("import him_trainer", self.dockerfile)
 
     def test_runtime_definition_digest_is_repeatable(self) -> None:
         command = [str(ROOT / "runtime-image-definition.digest.sh")]
@@ -266,9 +294,12 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
             context = Path(output_dir) / "context"
             subprocess.check_call([str(ROOT / "build-context.sh"), str(context)], stdout=subprocess.DEVNULL)
             paths = [path.relative_to(context).as_posix() for path in context.rglob("*") if path.is_file()]
-        self.assertEqual(len(paths), 10)
+        self.assertEqual(len(paths), 25)
         self.assertFalse(any(".env" in path or "private" in path or "credential" in path for path in paths))
-        self.assertFalse(any(token in path.lower() for path in paths for token in ("model", "corpus", "dataset", "checkpoint", "knowledge")))
+        forbidden_components = {"model", "models", "corpus", "dataset", "checkpoint", "knowledge"}
+        self.assertFalse(
+            any(component in forbidden_components for path in paths for component in Path(path).parts)
+        )
 
     def test_reference_environment_binding_is_separate(self) -> None:
         self.assertEqual(

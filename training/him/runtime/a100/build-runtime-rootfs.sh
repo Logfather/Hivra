@@ -76,11 +76,21 @@ env -i \
           --lineage-output /opt/him/validation/build-lineage.json
     '
 
+readonly TRAINER_RUNTIME_PACKAGE_ROOT="$ROOTFS/opt/him/runtime/lib/python3.13/site-packages/him_trainer"
+install -d -m 0755 "$TRAINER_RUNTIME_PACKAGE_ROOT"
+while IFS= read -r trainer_source; do
+    install -m 0644 "$trainer_source" "$TRAINER_RUNTIME_PACKAGE_ROOT/$(basename "$trainer_source")"
+done < <(find "$REPOSITORY_ROOT/training/him/src/him_trainer" -maxdepth 1 -type f -name '*.py' -print | sort)
+
+chroot "$ROOTFS" /opt/him/runtime/bin/python \
+    -c 'import him_trainer; import him_trainer.__main__ as entrypoint; assert callable(entrypoint.run)'
+
 for required_path in \
     "$ROOTFS/opt/him/python" \
     "$ROOTFS/opt/him/runtime" \
     "$ROOTFS/opt/him/runtime/bin/python" \
     "$ROOTFS/opt/him/runtime/lib/python3.13/site-packages" \
+    "$ROOTFS/opt/him/runtime/lib/python3.13/site-packages/him_trainer/protocol_v1.py" \
     "$ROOTFS/opt/him/runtime/runtime-identity.json" \
     "$ROOTFS/usr/local/bin/uv" \
     "$ROOTFS/opt/him/validation/build-lineage.json"; do

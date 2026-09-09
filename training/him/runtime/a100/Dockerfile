@@ -55,6 +55,14 @@ RUN uv python install "${PYTHON_VERSION}" \
         --mode build \
         --lineage-output /opt/him/validation/build-lineage.json
 
+# Copy the existing trainer/parser package unchanged into the canonical
+# interpreter site-packages path.
+COPY trainer/him_trainer /opt/him/runtime/lib/python3.13/site-packages/him_trainer
+
+RUN /opt/him/runtime/bin/python \
+        -c 'import him_trainer; import him_trainer.__main__ as entrypoint; assert callable(entrypoint.run)' \
+    && test -f /opt/him/runtime/lib/python3.13/site-packages/him_trainer/protocol_v1.py
+
 RUN chmod 0755 /opt/him/bin/start.sh \
     && chmod 0644 /opt/him/validation/a100_validation_v1.py \
     && chmod 0644 /opt/him/validation/him_runtime_validation_v1.py \
