@@ -196,6 +196,39 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         )
         self.assertIn("import him_trainer", self.dockerfile)
 
+    def test_runtime_root_is_uv_owned_until_sync(self) -> None:
+        rootfs_builder = ROOTFS_BUILDER.read_text()
+        for build_script in (self.dockerfile, rootfs_builder):
+            sync = build_script.index("uv sync --frozen --no-dev")
+            pre_sync = build_script[:sync]
+            self.assertIn("test ! -e /opt/him/runtime", pre_sync)
+            self.assertNotIn("        /opt/him/runtime \\", pre_sync)
+            self.assertNotIn('    "$ROOTFS/opt/him/runtime"', pre_sync)
+            self.assertNotIn("runtime-identity.json /opt/him/runtime", pre_sync)
+            self.assertNotIn('"$ROOTFS/opt/him/runtime/runtime-identity.json"', pre_sync)
+
+    def test_runtime_validation_and_trainer_packaging_follow_valid_environment(self) -> None:
+        rootfs_builder = ROOTFS_BUILDER.read_text()
+        for build_script in (self.dockerfile, rootfs_builder):
+            sync = build_script.index("uv sync --frozen --no-dev")
+            runtime_gate = build_script.index("test -x /opt/him/runtime/bin/python", sync)
+            torch_gate = build_script.index(
+                "test -f /opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py",
+                runtime_gate,
+            )
+            identity_copy = build_script.index("runtime-identity.json", torch_gate)
+            validator = build_script.index("him_runtime_validation_v1.py", identity_copy)
+            trainer_package = build_script.index("him_trainer", validator)
+            trainer_import = build_script.index("import him_trainer", trainer_package)
+            self.assertLess(sync, runtime_gate)
+            self.assertLess(runtime_gate, torch_gate)
+            self.assertLess(torch_gate, identity_copy)
+            self.assertLess(identity_copy, validator)
+            self.assertLess(validator, trainer_package)
+            self.assertLess(trainer_package, trainer_import)
+        self.assertIn("COPY runtime-identity.json /opt/him/runtime/runtime-identity.json", self.dockerfile)
+        self.assertIn("install -m 0644 \"$DEFINITION_ROOT/runtime-identity.json\"", rootfs_builder)
+
     def test_runtime_definition_digest_is_repeatable(self) -> None:
         command = [str(ROOT / "runtime-image-definition.digest.sh")]
         first = subprocess.check_output(command, text=True).strip()
