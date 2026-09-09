@@ -61,7 +61,7 @@ env -i \
         curl --fail --silent --show-error --location https://astral.sh/uv/install.sh \
           | env UV_VERSION="$UV_VERSION" UV_UNMANAGED_INSTALL=/usr/local/bin sh
         export PATH=/opt/him/runtime/bin:/opt/him/python/bin:/usr/local/bin:$PATH
-        uv python install "$PYTHON_VERSION"
+        uv python install --install-dir "$UV_PYTHON_INSTALL_DIR" "$PYTHON_VERSION"
         test -x /opt/him/python/bin/python3.13
         uv sync --frozen --no-dev \
           --project /opt/him/dependency-authority \

@@ -18,6 +18,7 @@ EXPECTED_TRAINER_SOURCE_ROOT = REPOSITORY_ROOT / "training/him/src/him_trainer"
 EXPECTED_TRAINER_RUNTIME_ROOT = "/opt/him/runtime/lib/python3.13/site-packages/him_trainer"
 IDENTITY_SCRIPT = ROOT / "runtime-identity.sh"
 IDENTITY_FILE = ROOT / "runtime-identity.json"
+ROOTFS_BUILDER = ROOT / "build-runtime-rootfs.sh"
 EXPECTED_RUNTIME_ID = "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1"
 EXPECTED_REFERENCE_DIGEST = "e5bfa4442a50e154c7f23735def545cfc545798f8b326ff38051f2eea57111d9"
 EXPECTED_EXCLUDED_FIELDS = ["buildContextDigest", "runtimeImageDefinitionDigest", "ociImageDigest"]
@@ -245,6 +246,45 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertIn("/opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py", self.dockerfile)
         self.assertIn("--mode build", self.dockerfile)
         self.assertNotIn("runtime-image-definition.json \\\\", self.dockerfile)
+
+    def test_uv_python_install_root_is_explicitly_bound(self) -> None:
+        rootfs_builder = ROOTFS_BUILDER.read_text()
+        self.assertIn("ENV UV_PYTHON_INSTALL_DIR=/opt/him/python", self.dockerfile)
+        self.assertIn(
+            'RUN uv python install --install-dir "${UV_PYTHON_INSTALL_DIR}" "${PYTHON_VERSION}"',
+            self.dockerfile,
+        )
+        self.assertIn("UV_PYTHON_INSTALL_DIR=/opt/him/python", rootfs_builder)
+        self.assertIn(
+            'uv python install --install-dir "$UV_PYTHON_INSTALL_DIR" "$PYTHON_VERSION"',
+            rootfs_builder,
+        )
+        self.assertNotIn("/root/.local", self.dockerfile)
+        self.assertNotIn("/root/.local", rootfs_builder)
+
+    def test_canonical_runtime_python_is_not_managed_python_authority(self) -> None:
+        rootfs_builder = ROOTFS_BUILDER.read_text()
+        self.assertIn("test -x /opt/him/python/bin/python3.13", self.dockerfile)
+        self.assertIn("test -x /opt/him/python/bin/python3.13", rootfs_builder)
+        self.assertIn("test -x /opt/him/runtime/bin/python", self.dockerfile)
+        self.assertIn("test -x /opt/him/runtime/bin/python", rootfs_builder)
+        self.assertEqual(self.metadata["runtimeLayout"]["authoritativePython"], "/opt/him/runtime/bin/python")
+        self.assertEqual(self.metadata["runtimeLayout"]["pythonHome"], "/opt/him/python")
+
+    def test_python_install_gates_precede_dependency_and_runtime_validation(self) -> None:
+        rootfs_builder = ROOTFS_BUILDER.read_text()
+        for build_script in (self.dockerfile, rootfs_builder):
+            install = build_script.index("uv python install --install-dir")
+            python_gate = build_script.index("test -x /opt/him/python/bin/python3.13", install)
+            sync = build_script.index("uv sync --frozen --no-dev", python_gate)
+            runtime_gate = build_script.index("test -x /opt/him/runtime/bin/python", sync)
+            torch_gate = build_script.index("test -f /opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py", runtime_gate)
+            validator = build_script.index("--mode build", torch_gate)
+            self.assertLess(install, python_gate)
+            self.assertLess(python_gate, sync)
+            self.assertLess(sync, runtime_gate)
+            self.assertLess(runtime_gate, torch_gate)
+            self.assertLess(torch_gate, validator)
 
     def test_runtime_layout_and_export_assertions_are_authoritative(self) -> None:
         self.assertEqual(self.metadata["runtimeLayout"]["authoritativePython"], "/opt/him/runtime/bin/python")
