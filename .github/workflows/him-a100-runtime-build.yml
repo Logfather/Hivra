@@ -217,21 +217,26 @@ jobs:
           registry_digest=$(jq -r --arg tag "$CONTENT_TAG" \
             '[.[] | select((.metadata.container.tags // []) | index($tag)) | .name] | first // empty' \
             "$response_file")
-          test -n "$registry_digest"
           expected_content_digest="$EXPECTED_CONTENT_DIGEST"
           if [ "$expected_content_digest" = "NONE" ]; then
-            expected_content_digest='${{ steps.build.outputs.local_digest }}'
+            expected_digest_source=POST_PUSH_REGISTRY
+            expected_content_digest="${registry_digest:-NONE}"
+          else
+            expected_digest_source=PREEXISTING_REGISTRY
           fi
+          printf 'HIM_CONTENT_TAG=%s\n' "$CONTENT_TAG"
+          printf 'HIM_CURRENT_TAG_DIGEST=%s\n' "${registry_digest:-NONE}"
+          printf 'HIM_EXPECTED_DIGEST_SOURCE=%s\n' "$expected_digest_source"
+          printf 'HIM_EXPECTED_DIGEST=%s\n' "$expected_content_digest"
+          test -n "$registry_digest"
           test -n "$expected_content_digest"
           test "$registry_digest" = "$expected_content_digest"
-          printf 'HIM_CONTENT_TAG=%s\n' "$CONTENT_TAG"
-          printf 'HIM_CURRENT_TAG_DIGEST=%s\n' "$registry_digest"
-          printf 'HIM_EXPECTED_DIGEST=%s\n' "$expected_content_digest"
+          effective_immutable_digest="$registry_digest"
           printf 'HIM_CONTENT_TAG_STATE=ALREADY_PRESENT_IDENTICAL\n'
           printf '=== HIM_POST_PUSH_DIGEST_RESOLUTION_END ===\n'
           post_push_phase=IMMUTABLE_PULL
           printf '=== HIM_POST_PUSH_IMMUTABLE_PULL_BEGIN ===\n'
-          immutable_ref="$IMAGE@$registry_digest"
+          immutable_ref="$IMAGE@$effective_immutable_digest"
           docker pull "$immutable_ref"
           pulled_digest=$(docker image inspect "$immutable_ref" \
             --format '{{range .RepoDigests}}{{println .}}{{end}}' \
