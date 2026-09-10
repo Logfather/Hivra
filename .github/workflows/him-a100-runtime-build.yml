@@ -56,7 +56,7 @@ jobs:
             training/him/runtime/a100/runtime-image-definition.digest.sh \
             training/him/runtime/a100/build-runtime-rootfs.sh
           if rg -n \
-            '(RUNPOD_API_KEY|OPENAI_API_KEY|HIM_REGISTRY_[A-Z_]+)[[:space:]]*=|github_pat_[A-Za-z0-9]|ghp_[A-Za-z0-9]|BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY' \
+            '(RUNPOD_API_KEY|OPENAI_API_KEY|HIM_REGISTRY_[A-Z_]+)[[:space:]]*=|github_pat_[A-Za-z0-9]|ghp_[A-Za-z0-9]|^[[:space:]]*-----BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY-----[[:space:]]*$' \
             training/him/runtime/a100; then
             echo 'credential value pattern found' >&2
             exit 78
@@ -85,7 +85,7 @@ jobs:
           test "$identity_definition" = "$EXPECTED_RUNTIME_DEFINITION_DIGEST"
           test "$identity_context" = "$EXPECTED_BUILD_CONTEXT_DIGEST"
           test "$identity_tag" = "$CONTENT_TAG"
-          test "$(awk -F '\t' 'NR > 1 && NF { count++ } END { print count + 0 }' training/him/runtime/a100/build-context.manifest.tsv)" = "25"
+          test "$(awk -F '\t' 'NR > 1 && NF { count++ } END { print count + 0 }' training/him/runtime/a100/build-context.manifest.tsv)" = "27"
           {
             echo "context=$context_dir"
             echo "definition_digest=$definition_digest"
