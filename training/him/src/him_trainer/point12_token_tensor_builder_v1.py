@@ -15,6 +15,11 @@ from typing import Any
 import torch
 from tokenizers import Encoding, Tokenizer
 
+from .execution_device_v1 import (
+    EXECUTION_DEVICE_CPU_V1,
+    EXECUTION_DEVICE_CUDA_V1,
+    resolve_him_execution_device_v1,
+)
 from .point12_protocol_v1 import (
     Point12Batch,
     Point12ProtocolError,
@@ -97,6 +102,57 @@ class Point12TensorBatchV1:
             (self.secondary_mask, "SECONDARY_MASK"),
         ):
             _fail_if(tuple(tensor.shape) != (batch_size,), f"{name}_SHAPE_INVALID")
+
+
+@dataclass(frozen=True)
+class Point12ExecutionTensorBatchV1:
+    """Explicitly device-bound view of a validated CPU tensor batch."""
+
+    input_ids: torch.Tensor
+    attention_mask: torch.Tensor
+    primary_target: torch.Tensor
+    secondary_target: torch.Tensor
+    primary_mask: torch.Tensor
+    secondary_mask: torch.Tensor
+    execution_device: torch.device
+
+    def __post_init__(self) -> None:
+        tensors = (self.input_ids, self.attention_mask, self.primary_target, self.secondary_target, self.primary_mask, self.secondary_mask)
+        _fail_if(any(value.device != self.execution_device for value in tensors), "EXECUTION_TENSOR_DEVICE_MISMATCH")
+
+
+def move_point12_tensor_batch_to_device_v1(
+    batch: Point12TensorBatchV1,
+    execution_device: str | torch.device,
+) -> Point12ExecutionTensorBatchV1:
+    """Perform the one explicit host-to-device boundary for model inputs."""
+
+    _fail_if(not isinstance(batch, Point12TensorBatchV1), "TENSOR_BATCH_TYPE_INVALID")
+    if isinstance(execution_device, str):
+        if execution_device == "cpu":
+            device = resolve_him_execution_device_v1(EXECUTION_DEVICE_CPU_V1, 0, torch_module=torch)
+        elif execution_device == "cuda:0":
+            device = resolve_him_execution_device_v1(EXECUTION_DEVICE_CUDA_V1, 0, torch_module=torch)
+        else:
+            raise Point12TensorBuildError("EXECUTION_DEVICE_UNSUPPORTED")
+    elif isinstance(execution_device, torch.device):
+        if execution_device.type == "cpu" and execution_device.index is None:
+            device = resolve_him_execution_device_v1(EXECUTION_DEVICE_CPU_V1, 0, torch_module=torch)
+        elif execution_device.type == "cuda" and execution_device.index == 0:
+            device = resolve_him_execution_device_v1(EXECUTION_DEVICE_CUDA_V1, 0, torch_module=torch)
+        else:
+            raise Point12TensorBuildError("EXECUTION_DEVICE_UNSUPPORTED")
+    else:
+        raise Point12TensorBuildError("EXECUTION_DEVICE_INVALID")
+    tensors = (
+        batch.input_ids.to(device),
+        batch.attention_mask.to(device),
+        batch.primary_target.to(device),
+        batch.secondary_target.to(device),
+        batch.primary_mask.to(device),
+        batch.secondary_mask.to(device),
+    )
+    return Point12ExecutionTensorBatchV1(*tensors, execution_device=device)
 
 
 def load_pinned_xlm_r_tokenizer_v1(path: str | Path = DEFAULT_TOKENIZER_PATH) -> Tokenizer:

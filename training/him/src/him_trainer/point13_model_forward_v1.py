@@ -17,6 +17,11 @@ from typing import Any, Mapping
 import torch
 from safetensors.torch import safe_open
 from torch import Tensor, nn
+
+from .execution_device_v1 import (
+    HimExecutionDeviceError,
+    resolve_him_execution_device_v1,
+)
 from torch.nn import functional as F
 
 from him_trainer.protocol_v1 import (
@@ -542,13 +547,14 @@ class HimXlmRobertaBackboneV1(nn.Module):
 class HimXlmRobertaBaseModelV1(nn.Module):
     """HIM base wrapper: exactly input_ids + attention_mask, no task heads."""
 
-    def __init__(self, config: HimXlmRobertaConfigV1) -> None:
+    def __init__(self, config: HimXlmRobertaConfigV1, execution_device: str | torch.device = "cpu") -> None:
         super().__init__()
         self.config = config
+        self.execution_device = _resolve_model_execution_device(execution_device)
         self.roberta = HimXlmRobertaBackboneV1(config)
 
     def forward(self, input_ids: Tensor, attention_mask: Tensor) -> HimEncoderOutputV1:
-        _validate_model_inputs(input_ids, attention_mask, self.config)
+        _validate_model_inputs(input_ids, attention_mask, self.config, self.execution_device)
         additive_mask = additive_attention_mask_v1(attention_mask, self.roberta.embeddings.word_embeddings.weight.dtype)
         last_hidden_state = self.roberta(input_ids, additive_mask)
         representation = last_hidden_state[:, 0, :]
@@ -634,6 +640,7 @@ class HimMultiHeadModelV1(nn.Module):
         execution_binding: ModelExecutionBinding,
         expected_base_model_binding_logical_digest: str,
         expected_training_configuration_seed: int,
+        execution_device: str | torch.device = "cpu",
     ) -> None:
         super().__init__()
         if not isinstance(base_model, HimXlmRobertaBaseModelV1):
@@ -649,16 +656,22 @@ class HimMultiHeadModelV1(nn.Module):
             expected_training_configuration_seed,
         )
         self.base_model = base_model
+        self.execution_device = _resolve_model_execution_device(execution_device)
+        self.base_model.execution_device = self.execution_device
         self.contract = contract
         self.execution_binding = execution_binding
         self.primary_head = HimPrimaryTargetKindHeadV1(contract)
         self.secondary_head = HimSecondaryCompatibilityHeadV1(contract)
         initialize_him_heads_v1(self.primary_head, self.secondary_head, contract, base_model.config)
+        if self.execution_device != torch.device("cpu"):
+            self.to(self.execution_device)
+        if any(parameter.device != self.execution_device or parameter.dtype != torch.float32 for parameter in self.parameters()):
+            raise HimHeadContractError("MODEL_PARAMETER_DEVICE_OR_DTYPE_INVALID")
 
     def forward(self, input_ids: Tensor, attention_mask: Tensor) -> HimMultiHeadForwardOutputV1:
         encoder_output = self.base_model(input_ids, attention_mask)
         representation = encoder_output.representation
-        validate_shared_representation_v1(representation, self.contract)
+        validate_shared_representation_v1(representation, self.contract, self.execution_device)
         primary_logits = self.primary_head(representation)
         secondary_logits = self.secondary_head(representation)
         if tuple(primary_logits.shape) != (representation.shape[0], self.contract.primary_class_count):
@@ -667,6 +680,8 @@ class HimMultiHeadModelV1(nn.Module):
             raise HimHeadContractError("SECONDARY_LOGITS_SHAPE_INVALID")
         if primary_logits.dtype != representation.dtype or secondary_logits.dtype != representation.dtype:
             raise HimHeadContractError("HEAD_LOGITS_DTYPE_INVALID")
+        if primary_logits.device != self.execution_device or secondary_logits.device != self.execution_device:
+            raise HimHeadContractError("HEAD_LOGITS_DEVICE_INVALID")
         return HimMultiHeadForwardOutputV1(
             encoder_output=encoder_output,
             representation=representation,
@@ -675,14 +690,18 @@ class HimMultiHeadModelV1(nn.Module):
         )
 
 
-def validate_shared_representation_v1(representation: Tensor, contract: HimMultiHeadContractV1) -> None:
+def validate_shared_representation_v1(
+    representation: Tensor,
+    contract: HimMultiHeadContractV1,
+    execution_device: torch.device | None = None,
+) -> None:
     if not isinstance(representation, Tensor) or representation.ndim != 2:
         raise HimHeadContractError("SHARED_REPRESENTATION_RANK_INVALID")
     if representation.shape[0] == 0:
         raise HimHeadContractError("SHARED_REPRESENTATION_BATCH_EMPTY")
     if representation.shape[1] != contract.representation_width:
         raise HimHeadContractError("SHARED_REPRESENTATION_WIDTH_INVALID")
-    if representation.dtype != torch.float32 or representation.device.type != "cpu":
+    if representation.dtype != torch.float32 or (execution_device is not None and representation.device != execution_device):
         raise HimHeadContractError("SHARED_REPRESENTATION_DEVICE_OR_DTYPE_INVALID")
 
 
@@ -691,23 +710,25 @@ def build_him_multi_head_model_v1(
     execution_binding: ModelExecutionBinding,
     expected_base_model_binding_logical_digest: str,
     expected_training_configuration_seed: int,
+    execution_device: str | torch.device = "cpu",
 ) -> HimMultiHeadModelV1:
     contract = build_him_multi_head_contract_v1(
         base_model.config,
         execution_binding.head_initialization_binding.seed,
     )
-    return HimMultiHeadModelV1(base_model, contract, execution_binding, expected_base_model_binding_logical_digest, expected_training_configuration_seed)
+    return HimMultiHeadModelV1(base_model, contract, execution_binding, expected_base_model_binding_logical_digest, expected_training_configuration_seed, execution_device)
 
 
 def load_pinned_him_multi_head_model_v1(
     execution_binding: ModelExecutionBinding,
     expected_base_model_binding_logical_digest: str,
     expected_training_configuration_seed: int,
+    execution_device: str | torch.device = "cpu",
 ) -> HimMultiHeadModelV1:
     """Load the pinned base only under an explicit model-execution authority."""
 
     base_model = load_pinned_him_xlm_roberta_base_v1()
-    model = build_him_multi_head_model_v1(base_model, execution_binding, expected_base_model_binding_logical_digest, expected_training_configuration_seed)
+    model = build_him_multi_head_model_v1(base_model, execution_binding, expected_base_model_binding_logical_digest, expected_training_configuration_seed, execution_device)
     model.eval()
     return model
 
@@ -846,10 +867,38 @@ def validate_him_model_execution_binding_v1(
         raise HimHeadContractError("MODEL_EXECUTION_BINDING_DIGEST_MISMATCH")
 
 
-def _validate_model_inputs(input_ids: Tensor, attention_mask: Tensor, config: HimXlmRobertaConfigV1) -> None:
+def _resolve_model_execution_device(value: str | torch.device) -> torch.device:
+    if isinstance(value, str):
+        if value == "cpu":
+            return torch.device("cpu")
+        if value == "cuda:0":
+            try:
+                return resolve_him_execution_device_v1("CUDA", 0, torch_module=torch)
+            except HimExecutionDeviceError as error:
+                raise HimModelArchitectureError(str(error)) from error
+        raise HimModelArchitectureError("UNKNOWN_EXECUTION_DEVICE")
+    if not isinstance(value, torch.device):
+        raise HimModelArchitectureError("EXECUTION_DEVICE_INVALID")
+    if value.type == "cpu" and value.index is None:
+        return value
+    if value.type == "cuda" and value.index == 0:
+        try:
+            resolve_him_execution_device_v1("CUDA", 0, torch_module=torch)
+        except HimExecutionDeviceError as error:
+            raise HimModelArchitectureError(str(error)) from error
+        return value
+    raise HimModelArchitectureError("EXECUTION_DEVICE_INVALID")
+
+
+def _validate_model_inputs(
+    input_ids: Tensor,
+    attention_mask: Tensor,
+    config: HimXlmRobertaConfigV1,
+    execution_device: torch.device = torch.device("cpu"),
+) -> None:
     if not isinstance(input_ids, Tensor) or input_ids.dtype != torch.int64 or input_ids.ndim != 2:
         raise HimModelArchitectureError("INPUT_IDS_INVALID")
-    if input_ids.device.type != "cpu" or not input_ids.is_contiguous():
+    if input_ids.device != execution_device or not input_ids.is_contiguous():
         raise HimModelArchitectureError("INPUT_IDS_DEVICE_OR_LAYOUT_INVALID")
     if input_ids.shape[0] == 0 or input_ids.shape[1] == 0 or input_ids.shape[1] > config.max_position_embeddings:
         raise HimModelArchitectureError("INPUT_SEQUENCE_LENGTH_INVALID")

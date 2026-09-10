@@ -26,6 +26,7 @@ LR_SCHEDULER_NONE_V1 = "NONE"
 WARMUP_NONE_V1 = "NONE"
 PRECISION_FP32_V1 = "FP32"
 DEVICE_CPU_V1 = "CPU"
+DEVICE_CUDA_V1 = "CUDA"
 
 
 class HimOptimizerExecutionPolicyError(ValueError):
@@ -123,8 +124,12 @@ def _finalize(policy: HimOptimizerExecutionPolicyV1) -> HimOptimizerExecutionPol
 def build_him_optimizer_execution_policy_v1(
     *,
     gradient_accumulation_steps: int = 1,
+    device_policy: str = DEVICE_CPU_V1,
 ) -> HimOptimizerExecutionPolicyV1:
-    """Build the selected, fully explicit CPU/FP32 AdamW authority."""
+    """Build the selected, fully explicit CPU/CUDA FP32 AdamW authority."""
+
+    if device_policy not in {DEVICE_CPU_V1, DEVICE_CUDA_V1}:
+        raise HimOptimizerExecutionPolicyError("DEVICE_POLICY_UNSUPPORTED")
 
     return _finalize(
         HimOptimizerExecutionPolicyV1(
@@ -158,7 +163,7 @@ def build_him_optimizer_execution_policy_v1(
             precision_policy=PRECISION_FP32_V1,
             amp_enabled=False,
             grad_scaler_enabled=False,
-            device_policy=DEVICE_CPU_V1,
+            device_policy=device_policy,
             optimizer_step_train_split_only=True,
             logical_digest="0" * 64,
             reference="",
@@ -210,7 +215,7 @@ def validate_him_optimizer_execution_policy_v1(
         raise HimOptimizerExecutionPolicyError("SCHEDULER_POLICY_MISMATCH")
     if policy.precision_policy != PRECISION_FP32_V1 or policy.amp_enabled or policy.grad_scaler_enabled:
         raise HimOptimizerExecutionPolicyError("PRECISION_POLICY_MISMATCH")
-    if policy.device_policy != DEVICE_CPU_V1 or not policy.optimizer_step_train_split_only:
+    if policy.device_policy not in {DEVICE_CPU_V1, DEVICE_CUDA_V1} or not policy.optimizer_step_train_split_only:
         raise HimOptimizerExecutionPolicyError("DEVICE_OR_SPLIT_POLICY_MISMATCH")
     if policy.logical_digest != _digest(policy.identity_payload()):
         raise HimOptimizerExecutionPolicyError("OPTIMIZER_POLICY_DIGEST_MISMATCH")

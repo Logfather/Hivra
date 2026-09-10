@@ -10,7 +10,7 @@ from pathlib import Path
 from .protocol_v1 import (
     ExternalTrainerRequest,
     HimTrainerProtocolV1Error,
-    decode_external_trainer_request_v1,
+    decode_durable_training_request_manifest_v1,
 )
 
 
@@ -206,7 +206,8 @@ def run(arguments: list[str] | None = None) -> int:
         if manifest.is_symlink() or not manifest.is_file():
             raise ValueError("REQUEST_MANIFEST_INVALID")
         raw = manifest.read_bytes()
-        request = decode_external_trainer_request_v1(raw)
+        manifest_request = decode_durable_training_request_manifest_v1(raw)
+        request = manifest_request.payload
         sys.stdout.write(_liveness_signal(request))
         sys.stdout.write("\n")
         sys.stdout.write(_result(request))

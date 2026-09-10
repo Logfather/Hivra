@@ -25,6 +25,7 @@ from .point13_optimizer_execution_policy_v1 import (
     HimOptimizerExecutionPolicyV1,
     decode_him_optimizer_execution_policy_v1,
 )
+from .execution_device_v1 import resolve_him_execution_device_v1
 
 
 _DIGEST = re.compile(r"[0-9a-f]{64}\Z")
@@ -545,6 +546,7 @@ class ExternalTrainerRequest:
     execution_request_logical_digest: str
     trainer: TrainerIdentity
     device: str
+    device_index: int
     launcher: str
     working_directory: str
     request_transport: str
@@ -558,18 +560,41 @@ class ExternalTrainerRequest:
     def sample_count(self) -> int:
         return len(self.training_request.records)
 
+    def resolve_execution_device(self, *, torch_module: Any) -> Any:
+        """Realize only the device transported by this request."""
+
+        return resolve_him_execution_device_v1(self.device, self.device_index, torch_module=torch_module)
+
+
+@dataclass(frozen=True)
+class DurableTrainingRequestManifestV1:
+    contract_id: str
+    version: str
+    state: str
+    format_id: str
+    productive_request_logical_digest: str
+    productive_request_reference: str
+    payload_contract_id: str
+    payload_version: str
+    payload_encoding: str
+    payload_sha256: str
+    payload_byte_sha256: str
+    payload: ExternalTrainerRequest
+
 
 def decode_external_trainer_request_v1(payload: str | bytes) -> ExternalTrainerRequest:
     """Decode one complete canonical external-trainer request, fail-closed."""
 
     root = _parse_json(payload)
-    _keys(root, {
+    request_fields = {
         "contractId", "version", "state", "formatId", "processBindingReference",
         "processBindingLogicalDigest", "runtimeBindingReference", "runtimeBindingLogicalDigest",
         "executionRequestReference", "executionRequestLogicalDigest", "trainer", "device", "launcher",
         "workingDirectory", "requestTransport", "policies", "runtimeEnvironment", "artifacts",
         "trainingRequest", "contentSha256",
-    }, "REQUEST")
+    }
+    if set(root) != request_fields and set(root) != request_fields | {"deviceIndex"}:
+        raise HimTrainerProtocolV1Error("REQUEST_FIELDS_INVALID")
     _equals(_string(root, "contractId"), "HIM_EXTERNAL_TRAINER_PROCESS_REQUEST_SERIALIZATION_V1", "REQUEST_CONTRACT_MISMATCH")
     _equals(_string(root, "version"), "1", "REQUEST_VERSION_MISMATCH")
     _equals(_string(root, "state"), "EXTERNAL_TRAINER_PROCESS_REQUEST_SERIALIZED", "REQUEST_STATE_MISMATCH")
@@ -581,7 +606,9 @@ def decode_external_trainer_request_v1(payload: str | bytes) -> ExternalTrainerR
     _bound_ref(root, "runtimeBindingReference", "external-trainer-runtime-binding:v1:", runtime_digest)
     _bound_ref(root, "executionRequestReference", "external-trainer-execution-request:v1:", execution_digest)
     trainer = _decode_trainer(_object(root, "trainer"))
-    device = _enum_string(root, "device", {"CPU", "MPS"}, "UNKNOWN_DEVICE")
+    device = _enum_string(root, "device", {"CPU", "MPS", "CUDA"}, "UNKNOWN_DEVICE")
+    device_index = _integer(root, "deviceIndex") if "deviceIndex" in root else 0
+    _require(device_index == 0, "DEVICE_INDEX_UNSUPPORTED")
     launcher = _enum_string(root, "launcher", {"UV"}, "UNKNOWN_LAUNCHER")
     working_directory = _string(root, "workingDirectory")
     _require(working_directory == "training/him", "WORKING_DIRECTORY_MISMATCH")
@@ -598,10 +625,53 @@ def decode_external_trainer_request_v1(payload: str | bytes) -> ExternalTrainerR
         format_id=_string(root, "formatId"), process_binding_reference=_string(root, "processBindingReference"),
         process_binding_logical_digest=process_digest, runtime_binding_reference=_string(root, "runtimeBindingReference"),
         runtime_binding_logical_digest=runtime_digest, execution_request_reference=_string(root, "executionRequestReference"),
-        execution_request_logical_digest=execution_digest, trainer=trainer, device=device, launcher=launcher,
+        execution_request_logical_digest=execution_digest, trainer=trainer, device=device, device_index=device_index, launcher=launcher,
         working_directory=working_directory, request_transport=request_transport, policies=policies,
         runtime_environment=environment, artifacts=artifacts, training_request=training_request,
         content_sha256=content_sha256,
+    )
+
+
+def decode_durable_training_request_manifest_v1(payload: str | bytes) -> DurableTrainingRequestManifestV1:
+    """Decode a durable manifest envelope and its exact trainer payload."""
+
+    root = _parse_json(payload)
+    _keys(root, {
+        "contractId", "version", "state", "formatId", "productiveRequestLogicalDigest",
+        "productiveRequestReference", "payloadContractId", "payloadVersion", "payloadEncoding",
+        "payloadSha256", "payloadByteSha256", "payload",
+    }, "DURABLE_MANIFEST")
+    _equals(_string(root, "contractId"), "HIM_TRAINING_REQUEST_DURABLE_MANIFEST_V1", "MANIFEST_CONTRACT_MISMATCH")
+    _equals(_string(root, "version"), "1", "MANIFEST_VERSION_MISMATCH")
+    _equals(_string(root, "state"), "TRAINING_REQUEST_DURABLE_MANIFEST_PERSISTED", "MANIFEST_STATE_MISMATCH")
+    _equals(_string(root, "formatId"), "him-training-request-durable-manifest:v1", "MANIFEST_FORMAT_MISMATCH")
+    productive_digest = _sha(root, "productiveRequestLogicalDigest")
+    _bound_ref(root, "productiveRequestReference", "productive-training-request:v1:", productive_digest)
+    _equals(_string(root, "payloadContractId"), "HIM_EXTERNAL_TRAINER_PROCESS_REQUEST_SERIALIZATION_V1", "MANIFEST_PAYLOAD_CONTRACT_MISMATCH")
+    _equals(_string(root, "payloadVersion"), "1", "MANIFEST_PAYLOAD_VERSION_MISMATCH")
+    _equals(_string(root, "payloadEncoding"), "UTF_8_CANONICAL_JSON_STRING", "MANIFEST_PAYLOAD_ENCODING_MISMATCH")
+    payload_sha256 = _sha(root, "payloadSha256")
+    payload_byte_sha256 = _sha(root, "payloadByteSha256")
+    payload_text = _string(root, "payload")
+    payload_bytes = payload_text.encode("utf-8")
+    _equals(hashlib.sha256(payload_bytes).hexdigest(), payload_byte_sha256, "MANIFEST_PAYLOAD_BYTE_DIGEST_MISMATCH")
+    trainer_request = decode_external_trainer_request_v1(payload_bytes)
+    _equals(trainer_request.contract_id, _string(root, "payloadContractId"), "MANIFEST_PAYLOAD_CONTRACT_MISMATCH")
+    _equals(trainer_request.version, _string(root, "payloadVersion"), "MANIFEST_PAYLOAD_VERSION_MISMATCH")
+    _equals(trainer_request.content_sha256, payload_sha256, "MANIFEST_PAYLOAD_CONTENT_DIGEST_MISMATCH")
+    return DurableTrainingRequestManifestV1(
+        contract_id=_string(root, "contractId"),
+        version=_string(root, "version"),
+        state=_string(root, "state"),
+        format_id=_string(root, "formatId"),
+        productive_request_logical_digest=productive_digest,
+        productive_request_reference=_string(root, "productiveRequestReference"),
+        payload_contract_id=_string(root, "payloadContractId"),
+        payload_version=_string(root, "payloadVersion"),
+        payload_encoding=_string(root, "payloadEncoding"),
+        payload_sha256=payload_sha256,
+        payload_byte_sha256=payload_byte_sha256,
+        payload=trainer_request,
     )
 
 

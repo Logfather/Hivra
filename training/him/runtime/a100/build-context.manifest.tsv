@@ -10,6 +10,7 @@ training/him/runtime/a100/him_runtime_validation_v1.py	validation/him_runtime_va
 training/him/runtime/a100/build-runtime-rootfs.sh	build-runtime-rootfs.sh	rootfs-realization-tooling	NO	YES
 training/him/runtime/a100/build-context.manifest.tsv	build-context.manifest.tsv	build-context-manifest	NO	YES
 training/him/src/him_trainer/__init__.py	trainer/him_trainer/__init__.py	him-trainer-package	YES	NO
+training/him/src/him_trainer/execution_device_v1.py	trainer/him_trainer/execution_device_v1.py	him-trainer-package	YES	NO
 training/him/src/him_trainer/__main__.py	trainer/him_trainer/__main__.py	him-trainer-package	YES	NO
 training/him/src/him_trainer/a100_validation_v1.py	trainer/him_trainer/a100_validation_v1.py	him-trainer-package	YES	NO
 training/him/src/him_trainer/point12_protocol_v1.py	trainer/him_trainer/point12_protocol_v1.py	him-trainer-package	YES	NO
@@ -24,3 +25,4 @@ training/him/src/him_trainer/point13_rng_v1.py	trainer/him_trainer/point13_rng_v
 training/him/src/him_trainer/point13_trainability_policy_v1.py	trainer/him_trainer/point13_trainability_policy_v1.py	him-trainer-package	YES	NO
 training/him/src/him_trainer/point13_trainability_projection_v1.py	trainer/him_trainer/point13_trainability_projection_v1.py	him-trainer-package	YES	NO
 training/him/src/him_trainer/protocol_v1.py	trainer/him_trainer/protocol_v1.py	him-trainer-package	YES	NO
+training/him/runtime/a100/cuda-protocol-parse-gate.py	build-gate/cuda-protocol-parse-gate.py	cuda-protocol-parse-gate	NO	YES

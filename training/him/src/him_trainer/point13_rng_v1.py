@@ -1,9 +1,9 @@
-"""Isolated CPU train-forward RNG execution for Point 13.
+"""Isolated train-forward RNG execution for Point 13.
 
 Standard PyTorch Dropout remains in the model.  This runtime owns the
-sequence by restoring its private CPU RNG state inside ``fork_rng`` for each
-forward, then retaining the advanced state for the next forward.  The caller's
-global RNG state is restored when the forward returns.
+sequence by restoring its private CPU or CUDA RNG state inside ``fork_rng``
+for each forward, then retaining the advanced state for the next forward.  The
+caller's global RNG state is restored when the forward returns.
 """
 
 from __future__ import annotations
@@ -24,12 +24,13 @@ class HimTrainForwardRngError(ValueError):
 
 
 class HimTrainForwardRngV1:
-    """One run-scoped, sequential CPU RNG stream for train-mode forwards."""
+    """One run-scoped, sequential device RNG stream for train-mode forwards."""
 
     def __init__(self, contract: HimTrainForwardRngContractV1) -> None:
         validate_him_train_forward_rng_contract_v1(contract)
         self.contract = contract
-        generator = torch.Generator(device="cpu")
+        self._device = torch.device(contract.device)
+        generator = torch.Generator(device=self._device)
         generator.manual_seed(contract.derived_forward_seed)
         self._initial_state = generator.get_state().clone()
         self._state = self._initial_state.clone()
@@ -41,7 +42,7 @@ class HimTrainForwardRngV1:
 
     @property
     def state(self) -> Tensor:
-        """Return a defensive copy of the current runtime-only RNG state."""
+        """Return a defensive copy of the current device-local RNG state."""
 
         return self._state.clone()
 
@@ -52,7 +53,7 @@ class HimTrainForwardRngV1:
         self._forward_count = 0
 
     def restore_state(self, state: Tensor) -> None:
-        if not isinstance(state, Tensor) or state.device.type != "cpu" or state.dtype != torch.uint8:
+        if not isinstance(state, Tensor) or state.device != self._device or state.dtype != torch.uint8:
             raise HimTrainForwardRngError("FORWARD_RNG_STATE_INVALID")
         self._state = state.clone()
 
@@ -66,13 +67,21 @@ class HimTrainForwardRngV1:
 
         if not isinstance(model, nn.Module) or not model.training:
             raise HimTrainForwardRngError("TRAIN_MODE_REQUIRED")
-        if input_ids.device.type != "cpu" or attention_mask.device.type != "cpu":
-            raise HimTrainForwardRngError("FORWARD_RNG_CPU_INPUTS_REQUIRED")
-        with torch.random.fork_rng(devices=[]):
-            torch.set_rng_state(self._state)
+        if input_ids.device != self._device or attention_mask.device != self._device:
+            raise HimTrainForwardRngError("FORWARD_RNG_INPUT_DEVICE_MISMATCH")
+        cuda_devices = [] if self._device.type == "cpu" else [self._device.index]
+        with torch.random.fork_rng(devices=cuda_devices):
+            if self._device.type == "cpu":
+                torch.set_rng_state(self._state)
+            else:
+                torch.cuda.set_rng_state(self._state, device=self._device)
             with torch.no_grad():
                 result = model(input_ids, attention_mask)
-            self._state = torch.get_rng_state().clone()
+            self._state = (
+                torch.get_rng_state().clone()
+                if self._device.type == "cpu"
+                else torch.cuda.get_rng_state(device=self._device).clone()
+            )
         self._forward_count += 1
         return result
 

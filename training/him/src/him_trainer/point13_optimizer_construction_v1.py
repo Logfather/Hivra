@@ -147,8 +147,16 @@ def construct_him_adamw_v1(
 ) -> tuple[torch.optim.AdamW, HimOptimizerConstructionV1]:
     """Construct one explicit AdamW instance without executing it."""
 
-    groups = build_him_optimizer_parameter_groups_v1(model, policy, projection)
     named_parameters = dict(model.named_parameters())
+    if not named_parameters:
+        raise HimOptimizerExecutionPolicyError("MODEL_PARAMETER_SET_EMPTY")
+    expected_device_type = "cpu" if policy.device_policy == "CPU" else "cuda"
+    if any(parameter.device.type != expected_device_type for parameter in named_parameters.values()):
+        raise HimOptimizerExecutionPolicyError("OPTIMIZER_MODEL_DEVICE_MISMATCH")
+    if expected_device_type == "cuda" and any(parameter.device.index != 0 for parameter in named_parameters.values()):
+        raise HimOptimizerExecutionPolicyError("OPTIMIZER_MODEL_DEVICE_INDEX_MISMATCH")
+
+    groups = build_him_optimizer_parameter_groups_v1(model, policy, projection)
     requires_grad_before = {name: parameter.requires_grad for name, parameter in named_parameters.items()}
     optimizer = torch.optim.AdamW(
         [

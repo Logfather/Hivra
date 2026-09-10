@@ -52,6 +52,7 @@ def compute_him_masked_multi_objective_loss_v1(
     primary_mask: Tensor,
     secondary_mask: Tensor,
     loss_contract: HimMaskedMultiObjectiveLossContractV1,
+    selected_execution_device: torch.device | None = None,
 ) -> HimMaskedMultiObjectiveLossResultV1:
     """Compute two independently masked CE objectives and their weighted sum."""
 
@@ -68,7 +69,9 @@ def compute_him_masked_multi_objective_loss_v1(
     devices = {value.device for value in tensors}
     if len(devices) != 1:
         raise HimMaskedMultiObjectiveLossError("LOSS_DEVICE_MISMATCH")
-    if primary_logits.device.type != secondary_logits.device.type:
+    if selected_execution_device is not None and primary_logits.device != selected_execution_device:
+        raise HimMaskedMultiObjectiveLossError("LOSS_DEVICE_MISMATCH")
+    if primary_logits.device != secondary_logits.device:
         raise HimMaskedMultiObjectiveLossError("LOSS_DEVICE_MISMATCH")
     if primary_logits.dtype != torch.float32 or secondary_logits.dtype != torch.float32:
         raise HimMaskedMultiObjectiveLossError("LOGITS_DTYPE_INVALID")

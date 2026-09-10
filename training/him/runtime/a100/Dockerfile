@@ -38,6 +38,7 @@ COPY validation/a100_validation_v1.py /opt/him/validation/a100_validation_v1.py
 COPY runtime-image-definition.json /opt/him/runtime-image-definition.json
 COPY start.sh /opt/him/bin/start.sh
 COPY validation/him_runtime_validation_v1.py /opt/him/validation/him_runtime_validation_v1.py
+COPY build-gate/cuda-protocol-parse-gate.py /tmp/cuda-protocol-parse-gate.py
 
 # Python and all numerical dependencies are realized from exact version and
 # lock authority at image build time; no manual torch installation is used.
@@ -73,6 +74,9 @@ COPY trainer/him_trainer /opt/him/runtime/lib/python3.13/site-packages/him_train
 RUN /opt/him/runtime/bin/python \
         -c 'import him_trainer; import him_trainer.__main__ as entrypoint; assert callable(entrypoint.run)' \
     && test -f /opt/him/runtime/lib/python3.13/site-packages/him_trainer/protocol_v1.py
+
+RUN /opt/him/runtime/bin/python /tmp/cuda-protocol-parse-gate.py \
+    && rm -f /tmp/cuda-protocol-parse-gate.py
 
 RUN chmod 0755 /opt/him/bin/start.sh \
     && chmod 0644 /opt/him/validation/a100_validation_v1.py \

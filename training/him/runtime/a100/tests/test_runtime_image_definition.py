@@ -134,7 +134,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertNotIn("EUR-IS-1", self.dockerfile)
 
     def test_manifest_is_bounded_and_deterministic(self) -> None:
-        self.assertEqual(len(self.manifest_rows), 25)
+        self.assertEqual(len(self.manifest_rows), 27)
         destinations = [row[1] for row in self.manifest_rows]
         self.assertEqual(len(destinations), len(set(destinations)))
         for source, destination, _role, _final, _build_only in self.manifest_rows:
@@ -180,7 +180,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         package_rows = [row for row in self.manifest_rows if row[2] == "him-trainer-package"]
         source_files = sorted(EXPECTED_TRAINER_SOURCE_ROOT.glob("*.py"))
         self.assertEqual(len(package_rows), len(source_files))
-        self.assertEqual(len(package_rows), 15)
+        self.assertEqual(len(package_rows), 16)
         self.assertEqual(
             {row[0] for row in package_rows},
             {str(path.relative_to(REPOSITORY_ROOT)) for path in source_files},
@@ -195,6 +195,14 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
             self.dockerfile,
         )
         self.assertIn("import him_trainer", self.dockerfile)
+
+    def test_cuda_protocol_parse_gate_is_build_only(self) -> None:
+        by_source = {row[0]: row for row in self.manifest_rows}
+        gate = by_source["training/him/runtime/a100/cuda-protocol-parse-gate.py"]
+        self.assertEqual(gate[2:], ["cuda-protocol-parse-gate", "NO", "YES"])
+        self.assertIn("build-gate/cuda-protocol-parse-gate.py", self.dockerfile)
+        self.assertIn("HIM_CUDA_PROTOCOL_PARSE_GATE=PASS", (ROOT / "cuda-protocol-parse-gate.py").read_text())
+        self.assertNotIn("/workspace/him", (ROOT / "cuda-protocol-parse-gate.py").read_text())
 
     def test_runtime_root_is_uv_owned_until_sync(self) -> None:
         rootfs_builder = ROOTFS_BUILDER.read_text()
@@ -248,7 +256,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertEqual(self.identity["contentTagSchemeVersion"], "V1")
         self.assertEqual(self.identity["contentTagPrefixLength"], 12)
         self.assertEqual(self.identity["contentDerivedDeploymentTag"], f"def-{definition_digest[:12]}")
-        self.assertEqual(self.identity["previousContentDerivedDeploymentTag"], "def-e5562d215017")
+        self.assertEqual(self.identity["previousContentDerivedDeploymentTag"], "def-68f69540cf6c")
         self.assertNotEqual(self.identity["contentDerivedDeploymentTag"], self.identity["previousContentDerivedDeploymentTag"])
 
     def test_identity_exclusion_rule_is_exact_and_non_circular(self) -> None:
@@ -406,7 +414,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
             context = Path(output_dir) / "context"
             subprocess.check_call([str(ROOT / "build-context.sh"), str(context)], stdout=subprocess.DEVNULL)
             paths = [path.relative_to(context).as_posix() for path in context.rglob("*") if path.is_file()]
-        self.assertEqual(len(paths), 25)
+        self.assertEqual(len(paths), 27)
         self.assertFalse(any(".env" in path or "private" in path or "credential" in path for path in paths))
         forbidden_components = {"model", "models", "corpus", "dataset", "checkpoint", "knowledge"}
         self.assertFalse(

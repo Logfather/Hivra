@@ -17,11 +17,13 @@ FORWARD_RNG_CONTRACT_VERSION_V1 = "1"
 FORWARD_RNG_STATE_V1 = "TRAIN_FORWARD_RNG_AUTHORITY_DEFINED"
 FORWARD_RNG_ROOT_SEED_SOURCE_V1 = "training-configuration.seed"
 FORWARD_RNG_DOMAIN_SEPARATOR_V1 = "HIM_TRAIN_FORWARD_RNG_V1:MODEL_FORWARD"
-FORWARD_RNG_DEVICE_V1 = "cpu"
+FORWARD_RNG_CPU_DEVICE_V1 = "cpu"
+FORWARD_RNG_CUDA_DEVICE_V1 = "cuda:0"
 FORWARD_RNG_INITIALIZATION_V1 = "ONCE_PER_RUN"
 FORWARD_RNG_RESET_POLICY_V1 = "NO_RESET_BEFORE_BATCH"
 FORWARD_RNG_STREAM_SEMANTICS_V1 = "SEQUENTIAL_STATE_ADVANCE"
-FORWARD_RNG_GLOBAL_STATE_POLICY_V1 = "FORKED_CPU_RNG_STATE_RESTORED"
+FORWARD_RNG_GLOBAL_STATE_POLICY_CPU_V1 = "FORKED_CPU_RNG_STATE_RESTORED"
+FORWARD_RNG_GLOBAL_STATE_POLICY_CUDA_V1 = "FORKED_CUDA_RNG_STATE_RESTORED"
 FORWARD_RNG_REFERENCE_PREFIX_V1 = "train-forward-rng:v1:"
 FORWARD_RNG_MAX_SEED_V1 = (1 << 63) - 1
 
@@ -97,8 +99,16 @@ class HimTrainForwardRngContractV1:
 def build_him_train_forward_rng_contract_v1(
     root_seed: int,
     domain_separator: str = FORWARD_RNG_DOMAIN_SEPARATOR_V1,
+    device: str = FORWARD_RNG_CPU_DEVICE_V1,
 ) -> HimTrainForwardRngContractV1:
+    if device not in {FORWARD_RNG_CPU_DEVICE_V1, FORWARD_RNG_CUDA_DEVICE_V1}:
+        raise HimForwardRngContractError("FORWARD_RNG_DEVICE_UNSUPPORTED")
     derived_seed = derive_him_train_forward_rng_seed_v1(root_seed, domain_separator)
+    global_state_policy = (
+        FORWARD_RNG_GLOBAL_STATE_POLICY_CPU_V1
+        if device == FORWARD_RNG_CPU_DEVICE_V1
+        else FORWARD_RNG_GLOBAL_STATE_POLICY_CUDA_V1
+    )
     unsigned = HimTrainForwardRngContractV1(
         contract_id=FORWARD_RNG_CONTRACT_ID_V1,
         version=FORWARD_RNG_CONTRACT_VERSION_V1,
@@ -107,11 +117,11 @@ def build_him_train_forward_rng_contract_v1(
         root_seed=root_seed,
         domain_separator=domain_separator,
         derived_forward_seed=derived_seed,
-        device=FORWARD_RNG_DEVICE_V1,
+        device=device,
         initialization=FORWARD_RNG_INITIALIZATION_V1,
         reset_policy=FORWARD_RNG_RESET_POLICY_V1,
         stream_semantics=FORWARD_RNG_STREAM_SEMANTICS_V1,
-        global_state_policy=FORWARD_RNG_GLOBAL_STATE_POLICY_V1,
+        global_state_policy=global_state_policy,
         logical_digest="0" * 64,
         reference="",
     )
@@ -149,7 +159,7 @@ def validate_him_train_forward_rng_contract_v1(
     expected_seed = derive_him_train_forward_rng_seed_v1(contract.root_seed, contract.domain_separator)
     if contract.derived_forward_seed != expected_seed or not 0 <= contract.derived_forward_seed <= FORWARD_RNG_MAX_SEED_V1:
         raise HimForwardRngContractError("FORWARD_RNG_DERIVED_SEED_INVALID")
-    if contract.device != FORWARD_RNG_DEVICE_V1:
+    if contract.device not in {FORWARD_RNG_CPU_DEVICE_V1, FORWARD_RNG_CUDA_DEVICE_V1}:
         raise HimForwardRngContractError("FORWARD_RNG_DEVICE_UNSUPPORTED")
     if contract.initialization != FORWARD_RNG_INITIALIZATION_V1:
         raise HimForwardRngContractError("FORWARD_RNG_INITIALIZATION_POLICY_INVALID")
@@ -157,7 +167,12 @@ def validate_him_train_forward_rng_contract_v1(
         raise HimForwardRngContractError("FORWARD_RNG_RESET_POLICY_INVALID")
     if contract.stream_semantics != FORWARD_RNG_STREAM_SEMANTICS_V1:
         raise HimForwardRngContractError("FORWARD_RNG_STREAM_SEMANTICS_INVALID")
-    if contract.global_state_policy != FORWARD_RNG_GLOBAL_STATE_POLICY_V1:
+    expected_global_state_policy = (
+        FORWARD_RNG_GLOBAL_STATE_POLICY_CPU_V1
+        if contract.device == FORWARD_RNG_CPU_DEVICE_V1
+        else FORWARD_RNG_GLOBAL_STATE_POLICY_CUDA_V1
+    )
+    if contract.global_state_policy != expected_global_state_policy:
         raise HimForwardRngContractError("FORWARD_RNG_GLOBAL_STATE_POLICY_INVALID")
     expected_digest = _canonical_digest(contract.identity_payload())
     if contract.logical_digest != expected_digest:

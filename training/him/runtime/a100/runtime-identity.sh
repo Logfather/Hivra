@@ -109,7 +109,7 @@ elif operation == "--generate":
         "contentTagSchemeVersion": "V1",
         "contentTagPrefixLength": 12,
         "contentDerivedDeploymentTag": f"def-{definition_digest[:12]}",
-        "previousContentDerivedDeploymentTag": "def-e5562d215017",
+        "previousContentDerivedDeploymentTag": "def-68f69540cf6c",
         "buildContextDigestRule": (
             "Canonical runtime-image-definition.json bytes exclude derived identity outputs; "
             "runtime-identity.json is derived metadata and excluded from the authority digest."

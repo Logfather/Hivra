@@ -13,10 +13,10 @@ permissions:
 
 env:
   IMAGE: ghcr.io/logfather/him-a100-reference-runtime
-  CONTENT_TAG: def-68f69540cf6c
-  EXPECTED_RUNTIME_DEFINITION_DIGEST: 68f69540cf6c57c780fe9b236076783867e45d735d3b40c084861db7971c555b
-  EXPECTED_BUILD_CONTEXT_DIGEST: c2765a08e82fad8571263eb3a99f05a0c5f0ed224548288c19f02116dfa5aded
-  EXPECTED_CONTENT_DIGEST: sha256:f6f9dfaec0343d7bd07752a11a795b5cdec8b7afc4d564cc967f42b4679c2828
+  CONTENT_TAG: def-3b77e48809a1
+  EXPECTED_RUNTIME_DEFINITION_DIGEST: 3b77e48809a1351ed601c7ed54db89a69cfb05fa0ef25c329eae7e4e6f9d3c1a
+  EXPECTED_BUILD_CONTEXT_DIGEST: b66237b182a72ab5e58185d25ddb43728e2ade0fd15e7cc730e97c3106a5fa35
+  EXPECTED_CONTENT_DIGEST: NONE
   EXPECTED_PYTHON_VERSION: 3.13.14
   EXPECTED_TORCH_VERSION: 2.14.0+cu130
   EXPECTED_TORCH_CUDA_BUILD: "13.0"
@@ -130,7 +130,7 @@ jobs:
             printf 'HIM_CONTENT_TAG_STATE=ABSENT\n'
             printf 'state=ABSENT\n' >> "$GITHUB_OUTPUT"
             printf 'registry_digest=\n' >> "$GITHUB_OUTPUT"
-          elif [ "$registry_digest" = "$EXPECTED_CONTENT_DIGEST" ]; then
+          elif [ "$EXPECTED_CONTENT_DIGEST" != "NONE" ] && [ "$registry_digest" = "$EXPECTED_CONTENT_DIGEST" ]; then
             printf 'HIM_CONTENT_TAG_STATE=ALREADY_PRESENT_IDENTICAL\n'
             printf 'state=ALREADY_PRESENT_IDENTICAL\n' >> "$GITHUB_OUTPUT"
             printf 'registry_digest=%s\n' "$registry_digest" >> "$GITHUB_OUTPUT"
@@ -142,6 +142,7 @@ jobs:
           fi
 
       - name: Build exact linux/amd64 OCI image
+        id: build
         if: steps.collision.outputs.state == 'ABSENT'
         shell: bash
         env:
@@ -185,7 +186,7 @@ jobs:
             test -f /opt/him/validation/build-lineage.json
           '
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$IMAGE:$CONTENT_TAG" \
-            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "68f69540cf6c57c780fe9b236076783867e45d735d3b40c084861db7971c555b"; assert d["buildContextDigest"] == "c2765a08e82fad8571263eb3a99f05a0c5f0ed224548288c19f02116dfa5aded"'
+            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "3b77e48809a1351ed601c7ed54db89a69cfb05fa0ef25c329eae7e4e6f9d3c1a"; assert d["buildContextDigest"] == "b66237b182a72ab5e58185d25ddb43728e2ade0fd15e7cc730e97c3106a5fa35"'
 
       - name: Publish only the corrected content tag
         if: steps.collision.outputs.state == 'ABSENT'
@@ -217,10 +218,15 @@ jobs:
             '[.[] | select((.metadata.container.tags // []) | index($tag)) | .name] | first // empty' \
             "$response_file")
           test -n "$registry_digest"
-          test "$registry_digest" = "$EXPECTED_CONTENT_DIGEST"
+          expected_content_digest="$EXPECTED_CONTENT_DIGEST"
+          if [ "$expected_content_digest" = "NONE" ]; then
+            expected_content_digest='${{ steps.build.outputs.local_digest }}'
+          fi
+          test -n "$expected_content_digest"
+          test "$registry_digest" = "$expected_content_digest"
           printf 'HIM_CONTENT_TAG=%s\n' "$CONTENT_TAG"
           printf 'HIM_CURRENT_TAG_DIGEST=%s\n' "$registry_digest"
-          printf 'HIM_EXPECTED_DIGEST=%s\n' "$EXPECTED_CONTENT_DIGEST"
+          printf 'HIM_EXPECTED_DIGEST=%s\n' "$expected_content_digest"
           printf 'HIM_CONTENT_TAG_STATE=ALREADY_PRESENT_IDENTICAL\n'
           printf '=== HIM_POST_PUSH_DIGEST_RESOLUTION_END ===\n'
           post_push_phase=IMMUTABLE_PULL
@@ -256,7 +262,7 @@ jobs:
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
             /opt/him/validation/him_runtime_validation_v1.py --mode build
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
-            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "68f69540cf6c57c780fe9b236076783867e45d735d3b40c084861db7971c555b"; assert d["buildContextDigest"] == "c2765a08e82fad8571263eb3a99f05a0c5f0ed224548288c19f02116dfa5aded"'
+            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "3b77e48809a1351ed601c7ed54db89a69cfb05fa0ef25c329eae7e4e6f9d3c1a"; assert d["buildContextDigest"] == "b66237b182a72ab5e58185d25ddb43728e2ade0fd15e7cc730e97c3106a5fa35"'
           printf '=== HIM_POST_PUSH_RUNTIME_VALIDATION_END ===\n'
           post_push_phase=TRAINER_VALIDATION
           printf '=== HIM_POST_PUSH_TRAINER_VALIDATION_BEGIN ===\n'
