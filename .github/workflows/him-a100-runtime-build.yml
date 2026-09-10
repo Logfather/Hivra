@@ -40,8 +40,8 @@ jobs:
           test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
           test "$(git branch --show-current)" = ""
           test "$(python3 -c 'import json; print(json.load(open("training/him/runtime/a100/runtime-identity.json"))["runtimeImageId"])')" = "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1"
-          rg -n 'pytorch-cu130|torch==2\.14\.0|requires-python = "==3\.13\.14"' training/him/pyproject.toml
-          rg -n '2\.14\.0\+cu130|download-r2\.pytorch\.org/whl/cu130' training/him/uv.lock
+          grep -E -n -- 'pytorch-cu130|torch==2\.14\.0|requires-python = "==3\.13\.14"' training/him/pyproject.toml
+          grep -E -n -- '2\.14\.0\+cu130|download-r2\.pytorch\.org/whl/cu130' training/him/uv.lock
 
       - name: Run focused runtime tests and static gates
         shell: bash
@@ -55,7 +55,7 @@ jobs:
             training/him/runtime/a100/runtime-identity.sh \
             training/him/runtime/a100/runtime-image-definition.digest.sh \
             training/him/runtime/a100/build-runtime-rootfs.sh
-          if rg -n \
+          if grep -E -R -n -- \
             '(RUNPOD_API_KEY|OPENAI_API_KEY|HIM_REGISTRY_[A-Z_]+)[[:space:]]*=|github_pat_[A-Za-z0-9]|ghp_[A-Za-z0-9]|^[[:space:]]*-----BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY-----[[:space:]]*$' \
             training/him/runtime/a100; then
             echo 'credential value pattern found' >&2
