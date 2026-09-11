@@ -24,6 +24,7 @@ from him_trainer.productive_training_v2 import (
     run_evidence_payload,
     validate_startup,
 )
+from him_trainer.checkpoint_v2 import build_prepared_checkpoint_bindings
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -114,6 +115,23 @@ class ProductiveTrainingV2Test(unittest.TestCase):
         self.assertEqual("RUN_FAILED", evidence["state"])
         self.assertEqual(self.prepared.plan["reference"], evidence["executionPlanReference"])
         self.assertFalse(evidence["reloadValidation"]["passed"])
+
+    def test_checkpoint_bindings_use_authoritative_packet_reference_fields(self) -> None:
+        bindings = build_prepared_checkpoint_bindings(
+            self.prepared,
+            runtime_identity={"device": "cpu", "runtimeImage": "test"},
+            optimizer_identity={"optimizerId": "optimizer:adamw:v1"},
+        )
+        self.assertNotIn("reference", self.prepared.packet["examples"])
+        self.assertNotIn("reference", self.prepared.packet["corpus"])
+        self.assertEqual(
+            self.prepared.packet["examples"]["authorityReference"],
+            bindings["completeTrainingExamplesReference"],
+        )
+        self.assertEqual(
+            self.prepared.packet["corpus"]["corpusReference"],
+            bindings["corpusReference"],
+        )
 
     def test_atomic_json_round_trip(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
