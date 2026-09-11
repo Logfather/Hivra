@@ -53,6 +53,7 @@ def compute_him_masked_multi_objective_loss_v1(
     secondary_mask: Tensor,
     loss_contract: HimMaskedMultiObjectiveLossContractV1,
     selected_execution_device: torch.device | None = None,
+    allow_primary_target_absence: bool = False,
 ) -> HimMaskedMultiObjectiveLossResultV1:
     """Compute two independently masked CE objectives and their weighted sum."""
 
@@ -92,16 +93,32 @@ def compute_him_masked_multi_objective_loss_v1(
     _validate_binary_mask(secondary_mask, "SECONDARY_MASK")
     if bool(((primary_mask == 0.0) & (secondary_mask == 0.0)).any().item()):
         raise HimMaskedMultiObjectiveLossError("BOTH_OBJECTIVES_INACTIVE_FOR_EXAMPLE")
-    if bool((primary_target < 1).any().item()) or bool((primary_target > 5).any().item()):
+    if allow_primary_target_absence:
+        inactive_primary = primary_mask == 0.0
+        if bool((primary_target[inactive_primary] != 0).any().item()):
+            raise HimMaskedMultiObjectiveLossError("PRIMARY_TARGET_ABSENCE_INVALID")
+        if bool((primary_target[primary_mask == 1.0] < 1).any().item()) or bool((primary_target[primary_mask == 1.0] > 5).any().item()):
+            raise HimMaskedMultiObjectiveLossError("PRIMARY_TARGET_OUT_OF_DOMAIN")
+    elif bool((primary_target < 1).any().item()) or bool((primary_target > 5).any().item()):
         raise HimMaskedMultiObjectiveLossError("PRIMARY_TARGET_OUT_OF_DOMAIN")
     if bool((secondary_target < 0).any().item()) or bool((secondary_target > 1).any().item()):
         raise HimMaskedMultiObjectiveLossError("SECONDARY_TARGET_OUT_OF_DOMAIN")
 
     # Mapping is deliberately non-mutating: Point-12 semantic code 1..5
     # becomes the CrossEntropy index 0..4 in a new INT64 tensor.
-    primary_loss_index = primary_target - 1
     secondary_loss_index = secondary_target
-    primary_raw_loss = F.cross_entropy(primary_logits, primary_loss_index, reduction="none")
+    if allow_primary_target_absence:
+        primary_active = primary_mask == 1.0
+        primary_loss_index = torch.zeros_like(primary_target)
+        primary_raw_loss = torch.zeros((batch_size,), dtype=primary_logits.dtype, device=primary_logits.device)
+        if bool(primary_active.any().item()):
+            active_indices = primary_target[primary_active] - 1
+            primary_loss_index = primary_loss_index.masked_scatter(primary_active, active_indices)
+            active_raw_loss = F.cross_entropy(primary_logits[primary_active], active_indices, reduction="none")
+            primary_raw_loss = primary_raw_loss.masked_scatter(primary_active, active_raw_loss)
+    else:
+        primary_loss_index = primary_target - 1
+        primary_raw_loss = F.cross_entropy(primary_logits, primary_loss_index, reduction="none")
     secondary_raw_loss = F.cross_entropy(secondary_logits, secondary_loss_index, reduction="none")
     if not bool(torch.isfinite(primary_raw_loss).all().item()) or not bool(torch.isfinite(secondary_raw_loss).all().item()):
         raise HimMaskedMultiObjectiveLossError("RAW_LOSS_NON_FINITE")
