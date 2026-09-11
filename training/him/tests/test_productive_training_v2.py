@@ -17,7 +17,6 @@ from him_trainer.productive_training_v2 import (
     EXPECTED_VALIDATION_COUNT,
     ProductiveTrainingV2Error,
     atomic_json_write,
-    checkpoint_payload,
     load_packet,
     prepare_productive_v2,
     project_examples,
@@ -110,12 +109,11 @@ class ProductiveTrainingV2Test(unittest.TestCase):
                 load_packet(PACKET, Path(directory) / "request.json")
 
     def test_checkpoint_and_run_evidence_bind_plan_and_authorities(self) -> None:
-        checkpoint = checkpoint_payload(self.prepared, "productive-training-run:v2:test", 12, "a" * 64)
-        self.assertEqual("HIM_TRAINING_CHECKPOINT_CONTRACT_V1", checkpoint["contractId"])
-        self.assertEqual(self.prepared.plan["reference"], checkpoint["executionPlanReference"])
+        checkpoint = {"reference": "him-training-checkpoint:v2:test", "logicalDigest": "a" * 64, "reload": {"passed": False}}
         evidence = run_evidence_payload(self.prepared, "productive-training-run:v2:test", "RUN_FAILED", checkpoint, "TEST")
         self.assertEqual("RUN_FAILED", evidence["state"])
         self.assertEqual(self.prepared.plan["reference"], evidence["executionPlanReference"])
+        self.assertFalse(evidence["reloadValidation"]["passed"])
 
     def test_atomic_json_round_trip(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

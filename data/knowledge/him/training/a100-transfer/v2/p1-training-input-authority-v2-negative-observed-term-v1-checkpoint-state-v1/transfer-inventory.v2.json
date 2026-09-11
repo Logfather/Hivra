@@ -1,0 +1,190 @@
+{
+  "checkpointIncluded": false,
+  "contractId": "HIM_P1_PRODUCTIVE_TRAINING_V2_TRANSFER_INVENTORY",
+  "fileCount": 29,
+  "files": [
+    {
+      "relativePath": "authority/model-visible-observed-term-authority.v2.json",
+      "role": "AUTHORITY_DATA",
+      "sha256": "5fde4fbde67b28f3586a2e352f6a25ceee0838e89d9ff9b518f274f268bedd91",
+      "size": 3540
+    },
+    {
+      "relativePath": "authority/training-input-authority.v2.json",
+      "role": "AUTHORITY_DATA",
+      "sha256": "7bd74b6c3f672e4a96a317b486952521d68687fdda32fc0442a9701545f4cf78",
+      "size": 67197
+    },
+    {
+      "relativePath": "dataset/complete-training-examples.v2.json",
+      "role": "AUTHORITY_DATA",
+      "sha256": "0ac7e8643e78aac6e7bb150dc077caef81b92ba3a14561a58b7e4e5adcf50300",
+      "size": 69604
+    },
+    {
+      "relativePath": "dataset/corpus.v2.json",
+      "role": "AUTHORITY_DATA",
+      "sha256": "03aacb40195e5ce573f657a4852e04508bbc0a8a04c72a0a1ad8ef55572a1428",
+      "size": 70400
+    },
+    {
+      "relativePath": "dataset/partition.v2.json",
+      "role": "AUTHORITY_DATA",
+      "sha256": "eecf4e907994a19803a6573470323e2cf7cfa73eaaca49a0d1055e0ca73954b8",
+      "size": 15090
+    },
+    {
+      "relativePath": "manifest/productive-training-manifest.v2.json",
+      "role": "AUTHORITY_DATA",
+      "sha256": "59c6d8c70c134ca3ab56dfa549c811ee3258e400163e4869dc5559eecadcb27f",
+      "size": 3828
+    },
+    {
+      "relativePath": "readiness/evaluation-readiness.v2.json",
+      "role": "AUTHORITY_DATA",
+      "sha256": "e2908e4866e7cb4be151099bf91f635fa73f37af6ca3e157b8a130dd284af796",
+      "size": 1833
+    },
+    {
+      "relativePath": "readiness/productive-training-readiness.v2.json",
+      "role": "AUTHORITY_DATA",
+      "sha256": "cf658c793790f9c6d411b70ce2d4d7903109e3b0f69aab6c0b8522eb5c485f59",
+      "size": 1943
+    },
+    {
+      "relativePath": "request/productive-training-request.v2.json",
+      "role": "AUTHORITY_DATA",
+      "sha256": "3b601d2113de6c42209e7892eaead0e9f533491199e2c4655ad4e14acdc9c682",
+      "size": 3909
+    },
+    {
+      "relativePath": "runtime/external-runtime-binding.v2.json",
+      "role": "EXTERNAL_RUNTIME_BINDING",
+      "sha256": "2e60ede84bac412b488d90b2754de44cf26aec619b2846bdda6011852479af08",
+      "size": 725
+    },
+    {
+      "relativePath": "runtime/tokenizer.json",
+      "role": "TOKENIZER_ARTIFACT",
+      "sha256": "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c",
+      "size": 9096718
+    },
+    {
+      "relativePath": "trainer/him_trainer/__init__.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "4167c84d79144ed04933eee5dfd2a88dd60cf4633c24cb4714113b3971306a7e",
+      "size": 130
+    },
+    {
+      "relativePath": "trainer/him_trainer/__main__.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "5b31cfa8b6584c16ec58a1a5a887eadb3d41178c4fe101072814214046d18ec6",
+      "size": 10606
+    },
+    {
+      "relativePath": "trainer/him_trainer/a100_validation_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "d9ff3501178fd1d1a2fdb43a8a1940d00b5884c1bc81081deca92c1e1b4c2a01",
+      "size": 7728
+    },
+    {
+      "relativePath": "trainer/him_trainer/checkpoint_v2.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "e0517ffe3ba50a00e27493340659a2a042bd5de1fd307206558b6412b27174ff",
+      "size": 19955
+    },
+    {
+      "relativePath": "trainer/him_trainer/execution_device_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "b6719d411f06f65c6526a21f3a66e009f601915e9e54287430679ed54128508a",
+      "size": 1539
+    },
+    {
+      "relativePath": "trainer/him_trainer/point12_protocol_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "c51513ca6ddb080586ca418503c9faba52fca5961c02ddd49b0099927002f6a2",
+      "size": 23500
+    },
+    {
+      "relativePath": "trainer/him_trainer/point12_token_tensor_builder_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "b4665f853b70a4d01dc7c4341517d6561fb09fd80c2ba7589a9b27e1e9b08bab",
+      "size": 18059
+    },
+    {
+      "relativePath": "trainer/him_trainer/point13_forward_rng_contract_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "9aa338e300f85a58848e7d2da31b634c3199998ba3885740a2ac4e7328a54af1",
+      "size": 10704
+    },
+    {
+      "relativePath": "trainer/him_trainer/point13_loss_contract_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "06fd5d1693f0a0bd2eec4c1630611582f66e77a4dd9ba46bab1b4057cd8e6427",
+      "size": 9227
+    },
+    {
+      "relativePath": "trainer/him_trainer/point13_loss_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "719a07ebeedc84eb79c2d644cda40fe69df00a2d59f3d8a40c558137c828bf13",
+      "size": 7612
+    },
+    {
+      "relativePath": "trainer/him_trainer/point13_model_forward_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "5e0c9dc3dd5570ffdee24d1da721ff764edc38fb87fff932e3b1ad470befff97",
+      "size": 47423
+    },
+    {
+      "relativePath": "trainer/him_trainer/point13_optimizer_construction_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "3837973454e3c7afd776a528b3b50e57356256011b9935840c70d85f34271467",
+      "size": 8347
+    },
+    {
+      "relativePath": "trainer/him_trainer/point13_optimizer_execution_policy_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "ede1e90237d07d70f5aeab95f2cb7ec1f982105164f831845d28da9b1292ca74",
+      "size": 12434
+    },
+    {
+      "relativePath": "trainer/him_trainer/point13_rng_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "ff01f34535ccb1b77496fe03ea2d4cd0bb7143cfb7fce5fb0df1e8565ad44dc1",
+      "size": 3400
+    },
+    {
+      "relativePath": "trainer/him_trainer/point13_trainability_policy_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "b3ffd6568af8fc38f6372f54f6dc011ead80ebe25f5fffde1d09bcf3e03cb7f4",
+      "size": 8406
+    },
+    {
+      "relativePath": "trainer/him_trainer/point13_trainability_projection_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "1956598bd64b2d0babcc9031f1d7a74aa9287a61d10bf24042ee67c1e03f0c3d",
+      "size": 2892
+    },
+    {
+      "relativePath": "trainer/him_trainer/productive_training_v2.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "573dcfe660fe9c42c3c15c03d487a7c6e502abe62e5f2454a0006f3f0c7aea55",
+      "size": 36626
+    },
+    {
+      "relativePath": "trainer/him_trainer/protocol_v1.py",
+      "role": "TRAINER_SOURCE",
+      "sha256": "b071e43ba38fa888dbc7f80df00a92e3bc5df72824ee0919ae53709a8f164f57",
+      "size": 62298
+    }
+  ],
+  "modelBinaryIncluded": false,
+  "packetNamespace": "p1-training-input-authority-v2-negative-observed-term-v1-checkpoint-state-v1",
+  "runEvidenceIncluded": false,
+  "runnerMode": "PRODUCTIVE_TRAINING_V2",
+  "sourceAuthoritySnapshot": "p1-training-input-authority-v2-negative-observed-term-v1",
+  "state": "EXECUTABLE_PACKET_INVENTORIED",
+  "version": "2",
+  "inventoryReference": "a100-transfer-inventory:v2:323820dda7ce574b13cb6b15691d146adbfe4fe12c72b39d672681953dbccaeb",
+  "logicalDigest": "323820dda7ce574b13cb6b15691d146adbfe4fe12c72b39d672681953dbccaeb"
+}
