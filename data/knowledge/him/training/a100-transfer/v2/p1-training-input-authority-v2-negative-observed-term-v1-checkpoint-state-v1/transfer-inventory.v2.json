@@ -90,8 +90,8 @@
     {
       "relativePath": "trainer/him_trainer/checkpoint_v2.py",
       "role": "TRAINER_SOURCE",
-      "sha256": "e0517ffe3ba50a00e27493340659a2a042bd5de1fd307206558b6412b27174ff",
-      "size": 19955
+      "sha256": "37972e3c762016899a0ddfcc1f75f93f328c70b7c6fa80ddbc6c40841e80f354",
+      "size": 19970
     },
     {
       "relativePath": "trainer/him_trainer/execution_device_v1.py",
@@ -185,6 +185,6 @@
   "sourceAuthoritySnapshot": "p1-training-input-authority-v2-negative-observed-term-v1",
   "state": "EXECUTABLE_PACKET_INVENTORIED",
   "version": "2",
-  "inventoryReference": "a100-transfer-inventory:v2:323820dda7ce574b13cb6b15691d146adbfe4fe12c72b39d672681953dbccaeb",
-  "logicalDigest": "323820dda7ce574b13cb6b15691d146adbfe4fe12c72b39d672681953dbccaeb"
+  "inventoryReference": "a100-transfer-inventory:v2:a8b2204758e5a61ed09504ecc8f97d0c07a82cd49a29bbe474753999ce409b3c",
+  "logicalDigest": "a8b2204758e5a61ed09504ecc8f97d0c07a82cd49a29bbe474753999ce409b3c"
 }
