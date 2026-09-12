@@ -203,7 +203,11 @@ def _request_manifest_argument(arguments: list[str]) -> Path:
 def run(arguments: list[str] | None = None) -> int:
     raw_arguments = list(sys.argv[1:] if arguments is None else arguments)
     if raw_arguments and raw_arguments[0] == "--mode":
-        from .productive_training_v2 import run_cli
+        mode = raw_arguments[1] if len(raw_arguments) > 1 else ""
+        if mode == "P2_PRODUCTIVE_TRAINING_V1":
+            from .productive_training_p2_real import run_cli
+        else:
+            from .productive_training_v2 import run_cli
 
         return run_cli(raw_arguments)
     try:
