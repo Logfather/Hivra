@@ -9,8 +9,10 @@ only for leakage checks.
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Mapping, Sequence
@@ -51,6 +53,18 @@ EXPECTED_AUTHORITY_REFERENCES = {
     "holdout": "p2-family-isolated-holdout-authority:v1:dc19557950bb3737ea51fc94d04616f2f2c96233868be294773bd120509b7c5a",
     "limitations": "p2-evaluation-limitations-authority:v1:dd63d332d8c6e152b5a0c431213f4806853559f69f73f68f836050c8bdea4de1",
 }
+EXPECTED_RUNTIME_BINDING = {
+    "cuda": "13.0",
+    "python": "3.13.14",
+    "pytorch": "2.14.0+cu130",
+    "sentencepiece": "0.2.2",
+    "tokenizers": "0.23.1",
+    "transformers": "ABSENT",
+    "ociImage": "ghcr.io/logfather/him-a100-reference-runtime@sha256:9c8bd248de40b13b5275c7afcc20fc0b365c6f73f3b86d3edd9a1232d2894edb",
+    "runtimeImageDefinitionDigest": "3b77e48809a1351ed601c7ed54db89a69cfb05fa0ef25c329eae7e4e6f9d3c1a",
+}
+PACKET_DRY_RUN_OUTPUT_NAME = "expanded-validation-dry-run.v1.json"
+EVALUATOR_ENTRYPOINT = "him_trainer.expanded_validation_p2"
 
 
 class ExpandedValidationContractError(ValueError):
@@ -179,6 +193,192 @@ class ExpandedEvaluationExample:
             "secondaryMask": self.secondary_mask,
             "orderingIndex": self.ordering_index,
         }
+
+
+@dataclass(frozen=True)
+class ExpandedEvaluationModelInput:
+    """The target-free, model-visible batch for Expanded Validation."""
+
+    input_ids: Any
+    attention_mask: Any
+    examples: tuple[ExpandedEvaluationExample, ...]
+
+
+def _validate_evaluation_examples_for_execution(examples: Sequence[ExpandedEvaluationExample]) -> tuple[ExpandedEvaluationExample, ...]:
+    resolved = tuple(examples)
+    _require(len(resolved) == EXPECTED_TOTAL, "EXPANDED_EXECUTION_EXAMPLE_COUNT_INVALID")
+    _require([item.ordering_index for item in resolved] == list(range(EXPECTED_TOTAL)), "EXPANDED_EXECUTION_ORDER_INVALID")
+    _require(all(item.evaluation_bucket.startswith("EXPANDED_VALIDATION_") for item in resolved), "NON_EXPANDED_EXECUTION_RECORD")
+    _require(all(item.secondary_active and item.secondary_mask == 1 for item in resolved), "SECONDARY_EXECUTION_MASK_INVALID")
+    _require(all(item.primary_mask in (0, 1) for item in resolved), "PRIMARY_EXECUTION_MASK_INVALID")
+    _require(all(item.primary_active or item.primary_target is None for item in resolved), "SECONDARY_ONLY_PRIMARY_TARGET_INVALID")
+    _require(not any(item.evaluation_bucket == "FROZEN_HOLDOUT" for item in resolved), "HOLDOUT_EXECUTION_RECORD")
+    return resolved
+
+
+def build_evaluation_model_input(
+    examples: Sequence[ExpandedEvaluationExample],
+    tokenizer: Any,
+) -> ExpandedEvaluationModelInput:
+    """Project frozen evaluation examples using the training input semantics.
+
+    This intentionally emits only input ids and attention masks. Targets and
+    masks remain evaluator-owned and are never placed in the model input.
+    """
+
+    import torch
+
+    resolved = _validate_evaluation_examples_for_execution(examples)
+    encoded: list[list[int]] = []
+    for item in resolved:
+        result = tokenizer.encode(
+            item.observed_term,
+            f"CANDIDATE {item.canonical_name}",
+            add_special_tokens=True,
+        )
+        ids = [int(value) for value in result.ids]
+        _require(ids and len(ids) <= 128, "EVALUATION_TOKEN_SEQUENCE_INVALID")
+        _require(ids[0] == 0 and ids[-1] == 2, "EVALUATION_SPECIAL_TOKEN_LAYOUT_INVALID")
+        _require(1 not in ids, "EVALUATION_PADDING_BEFORE_COLLATION")
+        encoded.append(ids)
+    target_length = max(len(ids) for ids in encoded)
+    input_ids = [ids + [1] * (target_length - len(ids)) for ids in encoded]
+    attention_mask = [[1] * len(ids) + [0] * (target_length - len(ids)) for ids in encoded]
+    return ExpandedEvaluationModelInput(
+        input_ids=torch.tensor(input_ids, dtype=torch.int64),
+        attention_mask=torch.tensor(attention_mask, dtype=torch.int64),
+        examples=resolved,
+    )
+
+
+def _resolve_explicit_path(value: str | Path) -> Path:
+    path = Path(value)
+    return path if path.is_absolute() else Path.cwd() / path
+
+
+def validate_evaluation_execution_binding(
+    candidate_binding: Mapping[str, Any],
+    runtime_binding: Mapping[str, Any],
+) -> None:
+    """Validate the packet's frozen candidate/checkpoint/runtime identity."""
+
+    _require(candidate_binding.get("candidateReference") == EXPECTED_CANDIDATE_REFERENCE, "CANDIDATE_EXECUTION_BINDING_MISMATCH")
+    _require(candidate_binding.get("checkpointReference") == EXPECTED_CHECKPOINT_REFERENCE, "CHECKPOINT_EXECUTION_BINDING_MISMATCH")
+    _require(candidate_binding.get("checkpointLogicalDigest") == EXPECTED_CHECKPOINT_DIGEST, "CHECKPOINT_EXECUTION_DIGEST_MISMATCH")
+    _require(candidate_binding.get("modelDeserializationThisMission") is False, "MODEL_DESERIALIZATION_AUTHORITY_INVALID")
+    for field, expected in EXPECTED_RUNTIME_BINDING.items():
+        _require(runtime_binding.get(field) == expected, f"RUNTIME_EXECUTION_BINDING_MISMATCH:{field}")
+
+
+def _load_model_state_read_only(
+    model: Any,
+    manifest_path: Path,
+    candidate_binding: Mapping[str, Any],
+) -> Any:
+    """Load only the verified model state; never constructs or loads an optimizer."""
+
+    import torch
+
+    manifest_sha = _sha256(manifest_path.read_bytes())
+    _require(manifest_sha == candidate_binding.get("checkpointManifestSha256"), "CHECKPOINT_MANIFEST_DIGEST_MISMATCH")
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except Exception as error:
+        raise ExpandedValidationContractError("CHECKPOINT_MANIFEST_JSON_INVALID") from error
+    _require(isinstance(manifest, dict), "CHECKPOINT_MANIFEST_OBJECT_INVALID")
+    _require(manifest.get("checkpointReference") == EXPECTED_CHECKPOINT_REFERENCE, "CHECKPOINT_REFERENCE_MISMATCH")
+    _require(manifest.get("checkpointLogicalDigest") == EXPECTED_CHECKPOINT_DIGEST, "CHECKPOINT_DIGEST_MISMATCH")
+    authority_bindings = manifest.get("authorityBindings")
+    _require(isinstance(authority_bindings, Mapping), "CHECKPOINT_AUTHORITY_BINDINGS_INVALID")
+
+    # Reuse the existing strict manifest and artifact-digest gate. It also
+    # verifies optimizer metadata/files but does not deserialize optimizer
+    # state; this adapter deliberately consumes only its model-path result.
+    from .checkpoint_v2 import _strict_manifest_gate
+
+    _, model_state_path, _optimizer_state_path = _strict_manifest_gate(
+        manifest_path,
+        authority_bindings,
+        int(manifest.get("optimizerStep")),
+        torch,
+    )
+    bound_model_path = _resolve_explicit_path(str(candidate_binding.get("modelStatePath")))
+    _require(model_state_path.resolve() == bound_model_path.resolve(), "CHECKPOINT_MODEL_STATE_PATH_MISMATCH")
+    try:
+        model_state = torch.load(model_state_path, map_location="cpu", weights_only=True)
+    except Exception as error:
+        raise ExpandedValidationContractError("CHECKPOINT_MODEL_STATE_DESERIALIZATION_FAILED") from error
+    _require(isinstance(model_state, Mapping), "CHECKPOINT_MODEL_STATE_INVALID")
+    try:
+        model.load_state_dict(model_state, strict=True)
+    except Exception as error:
+        raise ExpandedValidationContractError("CHECKPOINT_MODEL_STATE_RELOAD_FAILED") from error
+    _require(not getattr(model, "training", True), "MODEL_EVAL_MODE_REQUIRED")
+    return model
+
+
+def load_frozen_evaluation_model(
+    *,
+    packet_root: str | Path,
+    candidate_binding: Mapping[str, Any],
+    runtime_binding: Mapping[str, Any],
+    model_root: str | Path | None = None,
+    checkpoint_manifest_path: str | Path | None = None,
+) -> Any:
+    """Load the exact frozen candidate model for evaluation-only execution."""
+
+    validate_evaluation_execution_binding(candidate_binding, runtime_binding)
+    import torch  # noqa: F401 - runtime guard is intentionally execution-only
+    from .point13_model_forward_v1 import (
+        MODEL_ROOT,
+        build_him_model_execution_binding_v1,
+        load_pinned_him_multi_head_model_from_root_v1,
+        load_pinned_model_config_from_root_v1,
+    )
+
+    packet_root_path = Path(packet_root)
+    _require(packet_root_path.is_dir() and not packet_root_path.is_symlink(), "PACKET_ROOT_INVALID")
+    manifest_path = _resolve_explicit_path(
+        checkpoint_manifest_path or str(candidate_binding.get("checkpointManifestPath")),
+    )
+    _require(manifest_path.is_file() and not manifest_path.is_symlink(), "CHECKPOINT_MANIFEST_INVALID")
+    selected_model_root = Path(model_root) if model_root is not None else MODEL_ROOT
+    config = load_pinned_model_config_from_root_v1(selected_model_root)
+    model_binding = build_him_model_execution_binding_v1(config, 7, "7eb19b673b8176e7c54ee0ebaac565b61781af60daac696ccaf76ef9adacb6bb")
+    model = load_pinned_him_multi_head_model_from_root_v1(
+        model_binding,
+        "7eb19b673b8176e7c54ee0ebaac565b61781af60daac696ccaf76ef9adacb6bb",
+        7,
+        selected_model_root,
+        "cuda:0",
+    )
+    return _load_model_state_read_only(model, manifest_path, candidate_binding)
+
+
+def extract_evaluation_predictions(model: Any, model_input: ExpandedEvaluationModelInput) -> Mapping[str, Any]:
+    """Call the existing two-head forward and expose its raw outputs."""
+
+    import torch
+
+    _require(not getattr(model, "training", True), "MODEL_EVAL_MODE_REQUIRED")
+    device = getattr(model, "execution_device", None)
+    if device is None:
+        try:
+            device = next(model.parameters()).device
+        except (AttributeError, StopIteration) as error:
+            raise ExpandedValidationContractError("MODEL_EXECUTION_DEVICE_UNAVAILABLE") from error
+    output = model(model_input.input_ids.to(device), model_input.attention_mask.to(device))
+    primary_logits = getattr(output, "primary_logits", None)
+    secondary_logits = getattr(output, "secondary_logits", None)
+    _require(isinstance(primary_logits, torch.Tensor) and isinstance(secondary_logits, torch.Tensor), "MODEL_HEAD_OUTPUT_INVALID")
+    _require(tuple(primary_logits.shape) == (EXPECTED_TOTAL, 5), "PRIMARY_HEAD_OUTPUT_SHAPE_INVALID")
+    _require(tuple(secondary_logits.shape) == (EXPECTED_TOTAL, 2), "SECONDARY_HEAD_OUTPUT_SHAPE_INVALID")
+    return {
+        "primaryLogits": primary_logits,
+        "secondaryLogits": secondary_logits,
+        "primaryPredictions": primary_logits.argmax(dim=1) + 1,
+        "secondaryPredictions": secondary_logits.argmax(dim=1),
+    }
 
 
 def _source_map(authority: Mapping[str, Any]) -> dict[str, Mapping[str, Any]]:
@@ -397,6 +597,146 @@ def build_dry_run(*, authority_root: str | Path, candidate_reference: str, check
     return {**payload, "logicalDigest": _sha256(encoded), "reference": f"p2-expanded-validation-dry-run:v1:{_sha256(encoded)}"}
 
 
+def _packet_json(packet_root: Path, relative_path: str) -> dict[str, Any]:
+    path = packet_root / relative_path
+    _require(path.is_file() and not path.is_symlink(), f"PACKET_FILE_INVALID:{relative_path}")
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except Exception as error:
+        raise ExpandedValidationContractError(f"PACKET_JSON_INVALID:{relative_path}") from error
+    _require(isinstance(value, dict), f"PACKET_OBJECT_INVALID:{relative_path}")
+    return value
+
+
+def _load_packet_context(packet_root: str | Path) -> tuple[AuthorityBundle, tuple[ExpandedEvaluationExample, ...], dict[str, Any], dict[str, Any]]:
+    root = Path(packet_root)
+    _require(root.is_dir() and not root.is_symlink(), "PACKET_ROOT_INVALID")
+    manifest = _packet_json(root, "packet-manifest.v1.json")
+    validate_packet_manifest(root, manifest)
+    _require(packet_secret_scan(root) == 0, "PACKET_SECRET_SCAN_FAILED")
+
+    readiness = _packet_json(root, "packet-readiness.v1.json")
+    _require(readiness.get("state") == "READY", "PACKET_READINESS_INVALID")
+    _require(readiness.get("packetPurpose") == "EVALUATION_ONLY", "PACKET_PURPOSE_INVALID")
+    _require(readiness.get("evaluatorEntrypoint") == EVALUATOR_ENTRYPOINT, "PACKET_EVALUATOR_ENTRYPOINT_INVALID")
+    _require(readiness.get("exampleCount") == EXPECTED_TOTAL, "PACKET_EXAMPLE_COUNT_INVALID")
+    _require(readiness.get("executableHoldoutInputCount") == 0, "PACKET_HOLDOUT_INPUT_INVALID")
+    _require(readiness.get("secretCount") == 0, "PACKET_SECRET_COUNT_INVALID")
+    for field in ("authorityBindingReady", "candidateCheckpointBindingReady", "holdoutExclusionReady", "limitationsBindingReady", "runtimeBindingReady", "evaluatorReady"):
+        _require(readiness.get(field) is True, f"PACKET_READINESS_FIELD_INVALID:{field}")
+
+    bundle = load_authorities(root / "authority")
+    examples = resolve_expanded_examples(bundle)
+    candidate_binding = _packet_json(root, "candidate/frozen-candidate-checkpoint-binding.v1.json")
+    _require(candidate_binding.get("candidateReference") == EXPECTED_CANDIDATE_REFERENCE, "CANDIDATE_BINDING_INVALID")
+    _require(candidate_binding.get("checkpointReference") == EXPECTED_CHECKPOINT_REFERENCE, "CHECKPOINT_BINDING_INVALID")
+    _require(candidate_binding.get("checkpointLogicalDigest") == EXPECTED_CHECKPOINT_DIGEST, "CHECKPOINT_DIGEST_BINDING_INVALID")
+    _require(candidate_binding.get("modelDeserializationThisMission") is False, "MODEL_DESERIALIZATION_AUTHORITY_INVALID")
+
+    runtime = _packet_json(root, "runtime/runtime-binding.v1.json")
+    for field, expected in EXPECTED_RUNTIME_BINDING.items():
+        _require(runtime.get(field) == expected, f"RUNTIME_BINDING_INVALID:{field}")
+    _require(runtime.get("evaluatorSource") == "training/him/src/him_trainer/expanded_validation_p2.py", "RUNTIME_EVALUATOR_SOURCE_INVALID")
+
+    holdout_exclusion = _packet_json(root, "holdout/exclusion-binding.v1.json")
+    _require(holdout_exclusion.get("frozen") is True, "HOLDOUT_FREEZE_INVALID")
+    _require(holdout_exclusion.get("executableInputIncluded") is False, "HOLDOUT_EXECUTABLE_INPUT_INVALID")
+    _require(holdout_exclusion.get("holdoutAuthorityReference") == EXPECTED_AUTHORITY_REFERENCES["holdout"], "HOLDOUT_AUTHORITY_BINDING_INVALID")
+    _require(holdout_exclusion.get("holdoutLogicalDigest") == EXPECTED_AUTHORITY_REFERENCES["holdout"].rsplit(":", 1)[-1], "HOLDOUT_DIGEST_INVALID")
+    validate_holdout_exclusion(examples, bundle.holdout)
+
+    packet_input = _packet_json(root, "evaluation/expanded-validation-input.v1.json")
+    _require(packet_input.get("authorityReference") == EXPECTED_AUTHORITY_REFERENCES["expanded"], "EVALUATION_AUTHORITY_BINDING_INVALID")
+    _require(packet_input.get("recordCount") == EXPECTED_TOTAL, "EVALUATION_INPUT_COUNT_INVALID")
+    packet_records = packet_input.get("records")
+    _require(isinstance(packet_records, list), "EVALUATION_INPUT_RECORDS_INVALID")
+    packet_sources = [record.get("sourceRecordReference") for record in packet_records if isinstance(record, Mapping)]
+    _require(len(packet_sources) == len(packet_records), "EVALUATION_INPUT_RECORD_INVALID")
+    _require(packet_sources == [item.source_record_reference for item in examples], "EVALUATION_INPUT_ORDER_INVALID")
+
+    entrypoint = root / "runtime/ENTRYPOINT.txt"
+    _require(entrypoint.is_file() and not entrypoint.is_symlink(), "PACKET_ENTRYPOINT_INVALID")
+    _require(entrypoint.read_text(encoding="utf-8").splitlines()[:2] == [EVALUATOR_ENTRYPOINT, "mode=EVALUATION_ONLY"], "PACKET_ENTRYPOINT_BINDING_INVALID")
+    execution = _packet_json(root, "execution/execution-command.v1.json")
+    command = execution.get("command", "")
+    _require(execution.get("inputAuthority") == EXPECTED_AUTHORITY_REFERENCES["expanded"], "EXECUTION_AUTHORITY_BINDING_INVALID")
+    _require(execution.get("candidateReference") == EXPECTED_CANDIDATE_REFERENCE, "EXECUTION_CANDIDATE_BINDING_INVALID")
+    _require(execution.get("checkpointReference") == EXPECTED_CHECKPOINT_REFERENCE, "EXECUTION_CHECKPOINT_BINDING_INVALID")
+    for token in (f"-m {EVALUATOR_ENTRYPOINT}", "--packet-root", "--output-root", "--execute"):
+        _require(token in command, f"EXECUTION_COMMAND_INVALID:{token}")
+    return bundle, examples, candidate_binding, runtime
+
+
+def _prepare_output_root(output_root: str | Path) -> Path:
+    root = Path(output_root)
+    _require(not root.is_symlink(), "OUTPUT_ROOT_SYMLINK")
+    if root.exists():
+        _require(root.is_dir(), "OUTPUT_ROOT_NOT_DIRECTORY")
+        _require(not any(root.iterdir()), "OUTPUT_ROOT_NOT_EMPTY")
+    else:
+        root.mkdir(parents=True)
+    return root
+
+
+def _write_dry_run_output(output_root: Path, report: Mapping[str, Any]) -> Path:
+    destination = output_root / PACKET_DRY_RUN_OUTPUT_NAME
+    destination.write_bytes(_canonical(report) + b"\n")
+    return destination
+
+
+def run_cli(arguments: Sequence[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(prog="him_trainer.expanded_validation_p2")
+    parser.add_argument("--packet-root", required=True)
+    parser.add_argument("--output-root", required=True)
+    parser.add_argument("--model-root")
+    parser.add_argument("--checkpoint-manifest")
+    parser.add_argument("--execute", action="store_true")
+    args = parser.parse_args(list(arguments) if arguments is not None else None)
+    try:
+        bundle, examples, candidate_binding, runtime = _load_packet_context(args.packet_root)
+        output_root = _prepare_output_root(args.output_root)
+        if args.execute:
+            guards = EvaluationExecutionGuards()
+            tokenizer = None
+
+            def input_builder(items: Sequence[ExpandedEvaluationExample]) -> ExpandedEvaluationModelInput:
+                nonlocal tokenizer
+                if tokenizer is None:
+                    from .point12_token_tensor_builder_v1 import load_pinned_xlm_r_tokenizer_v1
+
+                    tokenizer = load_pinned_xlm_r_tokenizer_v1()
+                return build_evaluation_model_input(items, tokenizer)
+
+            result = execute_evaluation(
+                examples=examples,
+                model_loader=lambda: load_frozen_evaluation_model(
+                    packet_root=args.packet_root,
+                    candidate_binding=candidate_binding,
+                    runtime_binding=runtime,
+                    model_root=args.model_root,
+                    checkpoint_manifest_path=args.checkpoint_manifest,
+                ),
+                input_builder=input_builder,
+                prediction_fn=extract_evaluation_predictions,
+                guards=guards,
+            )
+            sys.stdout.write(json.dumps({"state": "EXPANDED_VALIDATION_EXECUTION_COMPLETE", "counters": result["counters"]}, sort_keys=True) + "\n")
+            return 0
+        report = build_dry_run(
+            authority_root=Path(args.packet_root) / "authority",
+            candidate_reference=str(candidate_binding["candidateReference"]),
+            checkpoint_reference=str(candidate_binding["checkpointReference"]),
+            checkpoint_digest=str(candidate_binding["checkpointLogicalDigest"]),
+            execution_reference="p2-expanded-validation-execution:v1:CLI_DRY_RUN",
+        )
+        destination = _write_dry_run_output(output_root, report)
+        sys.stdout.write(json.dumps({"state": report["state"], "reference": report["reference"], "output": str(destination)}, ensure_ascii=False, sort_keys=True) + "\n")
+        return 0
+    except (ExpandedValidationContractError, OSError, UnicodeError, ValueError) as error:
+        sys.stderr.write(f"{type(error).__name__}: {error}\n")
+        return 1
+
+
 @dataclass
 class EvaluationExecutionGuards:
     model_deserialization_count: int = 0
@@ -476,3 +816,7 @@ def packet_secret_scan(packet_root: str | Path) -> int:
             data = path.read_bytes()
             count += sum(data.count(pattern) for pattern in patterns)
     return count
+
+
+if __name__ == "__main__":
+    raise SystemExit(run_cli())

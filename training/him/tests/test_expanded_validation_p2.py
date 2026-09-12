@@ -1,22 +1,38 @@
 import copy
+import contextlib
 import json
 import pathlib
+import io
+import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
+from unittest.mock import patch
 
 from him_trainer.expanded_validation_p2 import (
     EXPECTED_AUTHORITY_REFERENCES,
+    EXPECTED_CANDIDATE_REFERENCE,
+    EXPECTED_CHECKPOINT_DIGEST,
+    EXPECTED_CHECKPOINT_REFERENCE,
+    EXPECTED_RUNTIME_BINDING,
     EXPECTED_TOTAL,
+    ExpandedEvaluationModelInput,
     ExpandedValidationContractError,
     EvaluationExecutionGuards,
     build_aggregate_evidence,
     build_dry_run,
+    build_evaluation_model_input,
     build_per_example_evidence,
     build_packet_manifest,
+    execute_evaluation,
+    extract_evaluation_predictions,
     load_authorities,
+    _load_model_state_read_only,
     resolve_expanded_examples,
     packet_secret_scan,
+    run_cli,
     validate_holdout_exclusion,
+    validate_evaluation_execution_binding,
     validate_historical_leakage,
     validate_packet_manifest,
 )
@@ -26,7 +42,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[3]
 AUTHORITY_ROOT = ROOT / "data/knowledge/him/training/expansions/p2/evaluation-expansion/v1"
 CANDIDATE = "p2-trained-candidate:v1:f3c4105735ee742c53638784bf07fb19db11df52456a11d5918176030c61ee00"
 CHECKPOINT = "him-training-checkpoint:v2:29312dac2a6524d1ca2e20563831d19346ae5cd831610db5a2bf160229437622"
-PACKET_ROOT = ROOT / "data/knowledge/him/training/a100-transfer/p2-expanded-validation/v1/46553e60e94908c2d73585ee514758b96fc2d33b18d39027dc989ad7a974044d/packet"
+PACKET_ROOT = ROOT / "data/knowledge/him/training/a100-transfer/p2-expanded-validation/v1/46553e60e94908c2d73585ee514758b96fc2d33b18d39027dc989ad7a974044d-adapter-v1/packet"
+HISTORICAL_PACKET_ROOT = ROOT / "data/knowledge/him/training/a100-transfer/p2-expanded-validation/v1/46553e60e94908c2d73585ee514758b96fc2d33b18d39027dc989ad7a974044d/packet"
 
 
 class ExpandedValidationP2Test(unittest.TestCase):
@@ -116,6 +133,231 @@ class ExpandedValidationP2Test(unittest.TestCase):
         self.assertEqual([record["orderingIndex"] for record in packet_input["records"]], list(range(19)))
         self.assertEqual(json.loads((PACKET_ROOT / "holdout/exclusion-binding.v1.json").read_text(encoding="utf-8"))["executableInputIncluded"], False)
         self.assertEqual(json.loads((PACKET_ROOT / "packet-readiness.v1.json").read_text(encoding="utf-8"))["state"], "READY")
+        historical_manifest = json.loads((HISTORICAL_PACKET_ROOT / "packet-manifest.v1.json").read_text(encoding="utf-8"))
+        validate_packet_manifest(HISTORICAL_PACKET_ROOT, historical_manifest)
+        self.assertNotEqual(
+            (HISTORICAL_PACKET_ROOT / "runtime/him_trainer/expanded_validation_p2.py").read_bytes(),
+            pathlib.Path(ROOT / "training/him/src/him_trainer/expanded_validation_p2.py").read_bytes(),
+        )
+
+    def test_cli_dry_run_entrypoint_is_model_free(self):
+        stdout = io.StringIO()
+        with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(stdout):
+            result = run_cli(["--packet-root", str(PACKET_ROOT), "--output-root", directory])
+            output = json.loads((pathlib.Path(directory) / "expanded-validation-dry-run.v1.json").read_text(encoding="utf-8"))
+        self.assertEqual(result, 0)
+        self.assertEqual(output["state"], "DRY_RUN_COMPLETE")
+        self.assertEqual(output["counts"]["total"], 19)
+        self.assertEqual(output["executionCounters"], {"modelDeserialization": 0, "forward": 0, "backward": 0, "optimizer": 0, "gpu": 0, "runpod": 0})
+        self.assertNotIn("torch", sys.modules)
+
+    def test_cli_required_arguments_and_unknown_arguments_fail_closed(self):
+        with self.assertRaises(SystemExit) as missing:
+            run_cli([])
+        self.assertEqual(missing.exception.code, 2)
+        with self.assertRaises(SystemExit) as unknown:
+            run_cli(["--packet-root", str(PACKET_ROOT), "--output-root", "/tmp/him-output", "--unknown"])
+        self.assertEqual(unknown.exception.code, 2)
+
+    def test_cli_invalid_packet_and_output_roots_fail_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output_root = pathlib.Path(directory) / "output"
+            self.assertEqual(run_cli(["--packet-root", str(pathlib.Path(directory) / "missing"), "--output-root", str(output_root)]), 1)
+            invalid_output = pathlib.Path(directory) / "file"
+            invalid_output.write_text("occupied", encoding="utf-8")
+            self.assertEqual(run_cli(["--packet-root", str(PACKET_ROOT), "--output-root", str(invalid_output)]), 1)
+
+    def test_cli_execute_flag_reaches_evaluation_adapter_path(self):
+        counters = {
+            "model_deserialization_count": 1,
+            "forward_count": 1,
+            "backward_count": 0,
+            "optimizer_step_count": 0,
+            "holdout_forward_count": 0,
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            with patch("him_trainer.expanded_validation_p2.execute_evaluation", return_value={"counters": counters}) as execute:
+                result = run_cli(["--packet-root", str(PACKET_ROOT), "--output-root", directory, "--execute"])
+        self.assertEqual(result, 0)
+        execute.assert_called_once()
+        self.assertFalse((pathlib.Path(directory) / "expanded-validation-dry-run.v1.json").exists())
+
+    def test_evaluation_execution_binding_accepts_frozen_candidate_checkpoint_and_runtime(self):
+        candidate = json.loads((PACKET_ROOT / "candidate/frozen-candidate-checkpoint-binding.v1.json").read_text(encoding="utf-8"))
+        runtime = json.loads((PACKET_ROOT / "runtime/runtime-binding.v1.json").read_text(encoding="utf-8"))
+        validate_evaluation_execution_binding(candidate, runtime)
+        self.assertEqual(candidate["candidateReference"], EXPECTED_CANDIDATE_REFERENCE)
+        self.assertEqual(candidate["checkpointReference"], EXPECTED_CHECKPOINT_REFERENCE)
+        self.assertEqual(candidate["checkpointLogicalDigest"], EXPECTED_CHECKPOINT_DIGEST)
+        for field, expected in EXPECTED_RUNTIME_BINDING.items():
+            self.assertEqual(runtime[field], expected)
+        self.assertEqual(runtime["evaluatorSource"], "training/him/src/him_trainer/expanded_validation_p2.py")
+
+    def test_evaluation_execution_binding_rejects_candidate_checkpoint_digest_and_runtime_mutations(self):
+        candidate = json.loads((PACKET_ROOT / "candidate/frozen-candidate-checkpoint-binding.v1.json").read_text(encoding="utf-8"))
+        runtime = json.loads((PACKET_ROOT / "runtime/runtime-binding.v1.json").read_text(encoding="utf-8"))
+        for field, value in (
+            ("candidateReference", "wrong-candidate"),
+            ("checkpointReference", "wrong-checkpoint"),
+            ("checkpointLogicalDigest", "0" * 64),
+            ("modelDeserializationThisMission", True),
+        ):
+            broken = copy.deepcopy(candidate)
+            broken[field] = value
+            with self.subTest(field=field):
+                with self.assertRaises(ExpandedValidationContractError):
+                    validate_evaluation_execution_binding(broken, runtime)
+        broken_runtime = copy.deepcopy(runtime)
+        broken_runtime["pytorch"] = "wrong"
+        with self.assertRaises(ExpandedValidationContractError):
+            validate_evaluation_execution_binding(candidate, broken_runtime)
+
+    def test_evaluation_model_input_projection_is_deterministic(self):
+        from him_trainer.point12_token_tensor_builder_v1 import load_pinned_xlm_r_tokenizer_v1
+
+        tokenizer = load_pinned_xlm_r_tokenizer_v1()
+        first = build_evaluation_model_input(self.examples, tokenizer)
+        second = build_evaluation_model_input(self.examples, tokenizer)
+        import torch
+
+        self.assertTrue(torch.equal(first.input_ids, second.input_ids))
+        self.assertTrue(torch.equal(first.attention_mask, second.attention_mask))
+        self.assertEqual(first.examples, second.examples)
+
+    def test_evaluation_input_matches_training_tensor_semantics_for_identity_variant_and_secondary_only_reject(self):
+        from him_trainer.point12_token_tensor_builder_v1 import load_pinned_xlm_r_tokenizer_v1
+        from him_trainer.productive_training_p2_real import PRIMARY_ENCODING, P2Example, _tensor_view
+        import torch
+
+        tokenizer = load_pinned_xlm_r_tokenizer_v1()
+        training_items = tuple(
+            P2Example(
+                reference=item.evaluation_example_reference,
+                family=item.family_reference,
+                candidate_id=item.canonical_id,
+                candidate_name=item.canonical_name,
+                observed_term=item.observed_term,
+                target_kind=item.primary_target,
+                relation=item.relation,
+                compatibility=item.secondary_target,
+                primary_target=PRIMARY_ENCODING[item.primary_target] if item.primary_active else 0,
+                secondary_target=1 if item.secondary_target == "COMPATIBLE" else 0,
+                primary_mask=float(item.primary_mask),
+                secondary_mask=float(item.secondary_mask),
+                source_record_reference=item.source_record_reference,
+                source_evidence_reference=item.source_evidence_reference,
+            )
+            for item in self.examples
+        )
+        training_view = _tensor_view(training_items, tokenizer)
+        evaluation_view = build_evaluation_model_input(self.examples, tokenizer)
+        self.assertTrue(torch.equal(training_view.input_ids, evaluation_view.input_ids))
+        self.assertTrue(torch.equal(training_view.attention_mask, evaluation_view.attention_mask))
+        for label, item in (
+            ("identity", next(x for x in self.examples if x.primary_target == "IDENTITY")),
+            ("variant", next(x for x in self.examples if x.primary_target == "VARIANT")),
+            ("secondary-only reject", next(x for x in self.examples if x.secondary_target == "REJECT")),
+        ):
+            with self.subTest(label=label):
+                index = item.ordering_index
+                self.assertTrue(torch.equal(training_view.input_ids[index], evaluation_view.input_ids[index]))
+                self.assertTrue(torch.equal(training_view.attention_mask[index], evaluation_view.attention_mask[index]))
+
+    def test_read_only_model_state_loader_uses_no_optimizer_or_persistence(self):
+        import hashlib
+        import torch
+
+        class EvalModel:
+            training = False
+
+            def __init__(self):
+                self.loaded_state = None
+
+            def load_state_dict(self, state, strict=True):
+                self.loaded_state = (state, strict)
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = pathlib.Path(directory)
+            manifest_path = root / "checkpoint-manifest.json"
+            model_path = root / "model-state.pt"
+            optimizer_path = root / "optimizer-state.pt"
+            model_path.write_bytes(b"model-state-placeholder")
+            optimizer_path.write_bytes(b"optimizer-state-placeholder")
+            manifest = {
+                "checkpointReference": EXPECTED_CHECKPOINT_REFERENCE,
+                "checkpointLogicalDigest": EXPECTED_CHECKPOINT_DIGEST,
+                "authorityBindings": {"runtimeIdentity": "runtime", "optimizerIdentity": "optimizer"},
+                "optimizerStep": 12,
+            }
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            candidate = {
+                "checkpointManifestSha256": hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
+                "modelStatePath": str(model_path),
+            }
+            model = EvalModel()
+            with patch("him_trainer.checkpoint_v2._strict_manifest_gate", return_value=(manifest, model_path, optimizer_path)) as gate:
+                with patch.object(torch, "load", return_value={"weight": torch.tensor([1.0])}) as load:
+                    loaded = _load_model_state_read_only(model, manifest_path, candidate)
+            self.assertIs(loaded, model)
+            gate.assert_called_once()
+            load.assert_called_once_with(model_path, map_location="cpu", weights_only=True)
+            self.assertEqual(model.loaded_state[1], True)
+            self.assertFalse(hasattr(model, "optimizer"))
+            self.assertEqual(optimizer_path.read_bytes(), b"optimizer-state-placeholder")
+
+    def test_evaluation_predictions_preserve_raw_two_head_logits_and_shapes(self):
+        import torch
+
+        primary_logits = torch.arange(EXPECTED_TOTAL * 5, dtype=torch.float32).reshape(EXPECTED_TOTAL, 5)
+        secondary_logits = torch.arange(EXPECTED_TOTAL * 2, dtype=torch.float32).reshape(EXPECTED_TOTAL, 2)
+
+        class EvalModel:
+            training = False
+            execution_device = torch.device("cpu")
+
+            def __call__(self, input_ids, attention_mask):
+                self.seen_input_ids = input_ids
+                self.seen_attention_mask = attention_mask
+                return SimpleNamespace(primary_logits=primary_logits, secondary_logits=secondary_logits)
+
+        model_input = ExpandedEvaluationModelInput(
+            input_ids=torch.zeros((EXPECTED_TOTAL, 4), dtype=torch.int64),
+            attention_mask=torch.ones((EXPECTED_TOTAL, 4), dtype=torch.int64),
+            examples=self.examples,
+        )
+        result = extract_evaluation_predictions(EvalModel(), model_input)
+        self.assertIs(result["primaryLogits"], primary_logits)
+        self.assertIs(result["secondaryLogits"], secondary_logits)
+        self.assertEqual(tuple(result["primaryLogits"].shape), (19, 5))
+        self.assertEqual(tuple(result["secondaryLogits"].shape), (19, 2))
+        self.assertTrue(torch.equal(result["primaryPredictions"], primary_logits.argmax(dim=1) + 1))
+        self.assertTrue(torch.equal(result["secondaryPredictions"], secondary_logits.argmax(dim=1)))
+
+    def test_evaluation_execution_is_eval_only_and_keeps_backward_optimizer_and_holdout_zero(self):
+        class EvalModel:
+            training = False
+
+        guards = EvaluationExecutionGuards()
+        predictions = {"primaryLogits": "raw", "secondaryLogits": "raw"}
+        result = execute_evaluation(
+            examples=self.examples,
+            model_loader=EvalModel,
+            input_builder=lambda items: (items, "model-input"),
+            prediction_fn=lambda model, model_input: predictions,
+            guards=guards,
+        )
+        self.assertIs(result["predictions"], predictions)
+        self.assertEqual(result["counters"]["backward_count"], 0)
+        self.assertEqual(result["counters"]["optimizer_step_count"], 0)
+        self.assertEqual(result["counters"]["holdout_forward_count"], 0)
+        self.assertEqual(result["counters"]["holdout_model_exposure_count"], 0)
+
+    def test_cli_output_preserves_holdout_exclusion_and_existing_evaluator_contract(self):
+        with tempfile.TemporaryDirectory() as directory:
+            self.assertEqual(run_cli(["--packet-root", str(PACKET_ROOT), "--output-root", directory]), 0)
+            output = json.loads((pathlib.Path(directory) / "expanded-validation-dry-run.v1.json").read_text(encoding="utf-8"))
+        self.assertEqual(output["holdout"], {"allowed": False, "overlap": {"example": 0, "sourceRecord": 0, "family": 0}})
+        self.assertEqual(output["counts"], {"total": 19, "primaryActive": 13, "primaryInactive": 6, "secondaryActive": 19, "identity": 6, "variant": 7, "compatible": 13, "reject": 6})
 
     def test_fail_closed_count_and_binding_mutations(self):
         expanded = copy.deepcopy(self.bundle.expanded)
