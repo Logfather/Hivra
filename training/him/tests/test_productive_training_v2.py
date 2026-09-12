@@ -46,6 +46,37 @@ class ProductiveTrainingV2Test(unittest.TestCase):
         self.assertEqual(EXPECTED_COMPATIBLE_COUNT, sum(x.compatibility == "COMPATIBLE" for x in self.prepared.examples))
         self.assertEqual(EXPECTED_REJECT_COUNT, sum(x.compatibility == "REJECT" for x in self.prepared.examples))
 
+    def test_current_source_runner_regression_is_independent_of_historical_packet(self) -> None:
+        prepared = self.prepared
+        self.assertEqual(40, len(prepared.examples))
+        self.assertEqual(15, len({item.family_group_reference for item in prepared.examples}))
+        self.assertEqual(32, len(prepared.train))
+        self.assertEqual(6, len(prepared.validation))
+        self.assertEqual(2, len(prepared.holdout))
+        self.assertEqual(38, sum(item.compatibility == "COMPATIBLE" for item in prepared.examples))
+        self.assertEqual(2, sum(item.compatibility == "REJECT" for item in prepared.examples))
+        self.assertEqual(32, len(prepared.tensors["TRAIN"].examples))
+        self.assertEqual(6, len(prepared.tensors["VALIDATION"].examples))
+        self.assertEqual(2, len(prepared.tensors["HOLDOUT"].examples))
+        self.assertTrue(all(item.primary_target in {1, 2, 3, 4, 5} for item in prepared.examples))
+        self.assertTrue(all(item.secondary_mask == 1.0 for item in prepared.examples))
+        self.assertEqual("3", prepared.plan["identity"]["trajectory"]["epochs"])
+        self.assertEqual("8", prepared.plan["identity"]["trajectory"]["microBatchSize"])
+        self.assertEqual("12", prepared.plan["identity"]["trajectory"]["trainingSteps"])
+        self.assertEqual("EACH_EPOCH_AND_FINAL", prepared.plan["identity"]["trajectory"]["validationPolicy"])
+        training_configuration = prepared.plan["identity"]["trainingConfiguration"]
+        self.assertEqual("0.0001", training_configuration["learningRate"])
+        self.assertEqual("optimizer:adamw:v1", training_configuration["optimizerId"])
+        self.assertEqual("7", training_configuration["trainingSeed"])
+        self.assertEqual("1", training_configuration["gradientAccumulationSteps"])
+        self.assertEqual("HIM_P1_PRODUCTIVE_TRAINING_EXECUTION_PLAN_V2", prepared.plan["contractId"])
+        self.assertNotIn("HIM_P2_PRODUCTIVE_TRAINING", json.dumps(prepared.plan, ensure_ascii=False))
+        self.assertTrue(all(float(value) == 1.0 for view in prepared.tensors.values() for value in view.primary_mask.tolist()))
+        self.assertTrue(all(float(value) == 1.0 for view in prepared.tensors.values() for value in view.secondary_mask.tolist()))
+        self.assertFalse(prepared.plan["identity"]["holdout"]["training"])
+        self.assertFalse(prepared.plan["identity"]["holdout"]["validation"])
+        self.assertFalse(prepared.plan["identity"]["holdout"]["modelSelection"])
+
     def test_negative_observed_terms_are_packet_authority(self) -> None:
         negatives = [x for x in self.prepared.examples if x.compatibility == "REJECT"]
         self.assertEqual(["Brie double crème", "Brie double crème"], [x.observed_term for x in negatives])

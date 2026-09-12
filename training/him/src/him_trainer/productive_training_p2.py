@@ -121,6 +121,38 @@ class P2TrainingConfiguration:
         }
 
 
+def validate_p2_authority_identity(identity: Mapping[str, Any] | None) -> None:
+    """Reject missing, foreign, version-drifted, or otherwise altered P2 authority."""
+
+    _require(isinstance(identity, Mapping), "P2_CONFIGURATION_AUTHORITY_MISSING")
+    _require(dict(identity) == P2TrainingConfiguration.current().identity(), "P2_CONFIGURATION_AUTHORITY_MISMATCH")
+
+
+def validate_p2_configuration(configuration: P2TrainingConfiguration | None) -> P2TrainingConfiguration:
+    _require(isinstance(configuration, P2TrainingConfiguration), "P2_CONFIGURATION_AUTHORITY_MISSING")
+    expected = P2TrainingConfiguration.current()
+    _require(configuration == expected and configuration.reference == expected.reference, "P2_CONFIGURATION_AUTHORITY_MISMATCH")
+    validate_p2_authority_identity(configuration.identity())
+    return configuration
+
+
+def validate_p2_trajectory(trajectory: Mapping[str, Any]) -> None:
+    expected = {
+        "trainExamplesPerEpoch": 26,
+        "batchesPerEpoch": 4,
+        "optimizerStepsPerEpoch": 4,
+        "epochs": 3,
+        "totalTrainBatches": 12,
+        "totalOptimizerSteps": 12,
+    }
+    _require(dict(trajectory) == expected, "P2_TRAJECTORY_AUTHORITY_MISMATCH")
+
+
+def _train_batch_sizes(total_examples: int, micro_batch_size: int) -> tuple[int, ...]:
+    _require(total_examples > 0 and micro_batch_size > 0, "TRAIN_BATCH_CONFIGURATION_INVALID")
+    return tuple(min(micro_batch_size, total_examples - start) for start in range(0, total_examples, micro_batch_size))
+
+
 @dataclass(frozen=True)
 class P2DryRunResult:
     counts: Mapping[str, int]
@@ -129,9 +161,12 @@ class P2DryRunResult:
     expected_backward_count: int
     expected_validation_forward_count: int
     expected_holdout_forward_count: int
+    holdout_prediction_count: int
+    holdout_metric_count: int
+    train_batch_sizes: tuple[int, ...]
 
     def to_dict(self) -> dict[str, Any]:
-        return {"counts": dict(self.counts), "trajectory": dict(self.trajectory), "validationBatchCount": self.validation_batch_count, "expectedBackwardCount": self.expected_backward_count, "expectedValidationForwardCount": self.expected_validation_forward_count, "expectedHoldoutForwardCount": self.expected_holdout_forward_count, "modelDeserializationCount": 0}
+        return {"counts": dict(self.counts), "trajectory": dict(self.trajectory), "validationBatchCount": self.validation_batch_count, "expectedBackwardCount": self.expected_backward_count, "expectedValidationForwardCount": self.expected_validation_forward_count, "expectedHoldoutForwardCount": self.expected_holdout_forward_count, "holdoutPredictionCount": self.holdout_prediction_count, "holdoutMetricCount": self.holdout_metric_count, "trainBatchSizes": list(self.train_batch_sizes), "modelDeserializationCount": 0}
 
 
 def _assignment_counts(corpus: Mapping[str, Any], partition: Mapping[str, Any]) -> dict[str, Any]:
@@ -187,9 +222,13 @@ def validate_p2_inputs(corpus: Mapping[str, Any], partition: Mapping[str, Any]) 
 
 
 def build_p2_dry_run(corpus: Mapping[str, Any], partition: Mapping[str, Any], configuration: P2TrainingConfiguration | None = None) -> P2DryRunResult:
-    config = configuration or P2TrainingConfiguration.current()
+    config = validate_p2_configuration(configuration)
     split = validate_p2_inputs(corpus, partition)["splits"]
-    return P2DryRunResult(split["TRAIN"], config.trajectory(), 1, config.optimizer_steps, 1, 0)
+    trajectory = config.trajectory()
+    validate_p2_trajectory(trajectory)
+    batch_sizes = _train_batch_sizes(26, config.micro_batch_size)
+    _require(batch_sizes == (8, 8, 8, 2), "P2_PARTIAL_BATCH_AUTHORITY_MISMATCH")
+    return P2DryRunResult(split["TRAIN"], trajectory, 1, config.optimizer_steps, 1, 0, 0, 0, batch_sizes)
 
 
 def run_cli(argv: list[str] | None = None) -> int:
@@ -201,7 +240,7 @@ def run_cli(argv: list[str] | None = None) -> int:
     _require(args.dry_run, "P2_REAL_EXECUTION_NOT_AVAILABLE_IN_AUTHORITY_CLOSURE")
     corpus = json.loads(Path(args.corpus).read_text(encoding="utf-8"))
     partition = json.loads(Path(args.partition).read_text(encoding="utf-8"))
-    print(json.dumps(build_p2_dry_run(corpus, partition).to_dict(), sort_keys=True))
+    print(json.dumps(build_p2_dry_run(corpus, partition, P2TrainingConfiguration.current()).to_dict(), sort_keys=True))
     return 0
 
 
