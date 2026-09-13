@@ -21,6 +21,7 @@ from him_trainer.expanded_validation_p2 import (
     ExpandedEvaluationModelInput,
     ExpandedValidationContractError,
     EvaluationExecutionGuards,
+    RUNTIME_REQUIRED_BASE_MODEL_FILES,
     build_aggregate_evidence,
     build_dry_run,
     build_evaluation_model_input,
@@ -33,6 +34,7 @@ from him_trainer.expanded_validation_p2 import (
     resolve_expanded_examples,
     packet_secret_scan,
     run_cli,
+    resolve_pinned_tokenizer_path_for_model_root,
     validate_holdout_exclusion,
     validate_evaluation_execution_binding,
     validate_historical_leakage,
@@ -259,6 +261,62 @@ class ExpandedValidationP2Test(unittest.TestCase):
         broken_runtime["pytorch"] = "wrong"
         with self.assertRaises(ExpandedValidationContractError):
             validate_evaluation_execution_binding(candidate, broken_runtime)
+
+    def test_execution_tokenizer_is_bound_to_explicit_model_root(self):
+        from him_trainer import point12_token_tensor_builder_v1 as point12
+
+        with tempfile.TemporaryDirectory() as directory:
+            model_root = pathlib.Path(directory) / "model"
+            model_root.mkdir()
+            explicit_tokenizer = model_root / "tokenizer.json"
+            shutil.copyfile(point12.DEFAULT_TOKENIZER_PATH, explicit_tokenizer)
+            with patch.object(point12, "DEFAULT_TOKENIZER_PATH", model_root / "missing-default-tokenizer.json"):
+                resolved = resolve_pinned_tokenizer_path_for_model_root(model_root)
+                tokenizer = point12.load_pinned_xlm_r_tokenizer_v1(resolved)
+            self.assertEqual(resolved, explicit_tokenizer)
+            self.assertEqual(tokenizer.token_to_id("<pad>"), 1)
+            self.assertEqual(tokenizer.token_to_id("<s>"), 0)
+            self.assertEqual(tokenizer.token_to_id("</s>"), 2)
+
+    def test_execution_tokenizer_binding_rejects_invalid_explicit_artifacts(self):
+        from him_trainer import point12_token_tensor_builder_v1 as point12
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = pathlib.Path(directory)
+            valid = root / "tokenizer.json"
+            shutil.copyfile(point12.DEFAULT_TOKENIZER_PATH, valid)
+            cases = (
+                ("missing", root / "missing" / "tokenizer.json", "TOKENIZER_ARTIFACT_INVALID"),
+                ("wrong filename", root / "wrong.json", "TOKENIZER_FILENAME_INVALID"),
+            )
+            shutil.copyfile(valid, root / "wrong.json")
+            for label, path, expected in cases:
+                with self.subTest(label=label):
+                    with self.assertRaises(point12.Point12TensorBuildError) as raised:
+                        point12.load_pinned_xlm_r_tokenizer_v1(path)
+                    self.assertEqual(str(raised.exception), expected)
+
+            wrong_digest_root = root / "wrong-digest"
+            wrong_digest_root.mkdir()
+            wrong_digest = wrong_digest_root / "tokenizer.json"
+            content = bytearray(valid.read_bytes())
+            content[-1] = (content[-1] + 1) % 256
+            wrong_digest.write_bytes(content)
+            with self.assertRaises(point12.Point12TensorBuildError) as raised:
+                point12.load_pinned_xlm_r_tokenizer_v1(wrong_digest)
+            self.assertEqual(str(raised.exception), "TOKENIZER_DIGEST_MISMATCH")
+
+            symlink = root / "symlink-tokenizer.json"
+            symlink.symlink_to(valid)
+            with self.assertRaises(point12.Point12TensorBuildError) as raised:
+                point12.load_pinned_xlm_r_tokenizer_v1(symlink)
+            self.assertEqual(str(raised.exception), "TOKENIZER_ARTIFACT_INVALID")
+
+    def test_runtime_model_root_requires_exact_base_model_file_set(self):
+        self.assertEqual(
+            RUNTIME_REQUIRED_BASE_MODEL_FILES,
+            ("config.json", "model.safetensors", "tokenizer.json"),
+        )
 
     def test_evaluation_model_input_projection_is_deterministic(self):
         from him_trainer.point12_token_tensor_builder_v1 import load_pinned_xlm_r_tokenizer_v1

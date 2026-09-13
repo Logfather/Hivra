@@ -65,6 +65,8 @@ EXPECTED_RUNTIME_BINDING = {
 }
 PACKET_DRY_RUN_OUTPUT_NAME = "expanded-validation-dry-run.v1.json"
 EVALUATOR_ENTRYPOINT = "him_trainer.expanded_validation_p2"
+RUNTIME_REQUIRED_BASE_MODEL_FILES = ("config.json", "model.safetensors", "tokenizer.json")
+TOKENIZER_FILENAME = "tokenizer.json"
 
 
 class ExpandedValidationContractError(ValueError):
@@ -254,6 +256,21 @@ def build_evaluation_model_input(
 def _resolve_explicit_path(value: str | Path) -> Path:
     path = Path(value)
     return path if path.is_absolute() else Path.cwd() / path
+
+
+def resolve_pinned_tokenizer_path_for_model_root(model_root: str | Path | None = None) -> Path:
+    """Resolve the tokenizer beside the selected frozen model root.
+
+    An explicit deployment root is authoritative for execution.  The
+    repository-local Point-13 root is used only when no root is supplied,
+    preserving the existing local entrypoint semantics.
+    """
+
+    if model_root is not None:
+        return Path(model_root) / TOKENIZER_FILENAME
+    from .point13_model_forward_v1 import MODEL_ROOT
+
+    return MODEL_ROOT / TOKENIZER_FILENAME
 
 
 def validate_evaluation_execution_binding(
@@ -698,13 +715,14 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
         if args.execute:
             guards = EvaluationExecutionGuards()
             tokenizer = None
+            tokenizer_path = resolve_pinned_tokenizer_path_for_model_root(args.model_root)
 
             def input_builder(items: Sequence[ExpandedEvaluationExample]) -> ExpandedEvaluationModelInput:
                 nonlocal tokenizer
                 if tokenizer is None:
                     from .point12_token_tensor_builder_v1 import load_pinned_xlm_r_tokenizer_v1
 
-                    tokenizer = load_pinned_xlm_r_tokenizer_v1()
+                    tokenizer = load_pinned_xlm_r_tokenizer_v1(tokenizer_path)
                 return build_evaluation_model_input(items, tokenizer)
 
             result = execute_evaluation(
