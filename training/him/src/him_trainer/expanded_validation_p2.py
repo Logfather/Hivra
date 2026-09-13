@@ -12,7 +12,10 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
+import os
 import sys
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Mapping, Sequence
@@ -64,9 +67,22 @@ EXPECTED_RUNTIME_BINDING = {
     "runtimeImageDefinitionDigest": "b016c8805c52f2fab3d4883dcae3f859fda40332c3c4ce17507f09a6cc541b4e",
 }
 PACKET_DRY_RUN_OUTPUT_NAME = "expanded-validation-dry-run.v1.json"
+REAL_EVALUATION_RESULT_FILENAME = "expanded-validation-result.v1.json"
+REAL_EVALUATION_RESULT_CONTRACT_ID = "HIM_P2_EXPANDED_VALIDATION_RESULT_V1"
+REAL_EVALUATION_RESULT_SCHEMA_VERSION = 1
 EVALUATOR_ENTRYPOINT = "him_trainer.expanded_validation_p2"
 RUNTIME_REQUIRED_BASE_MODEL_FILES = ("config.json", "model.safetensors", "tokenizer.json")
 TOKENIZER_FILENAME = "tokenizer.json"
+PRIMARY_CLASS_ORDER = ("EC", "ID", "VAR", "ALIAS", "NEW_CANONICAL")
+PRIMARY_CLASS_CODES = {
+    "EXISTING_CANONICAL": 1,
+    "IDENTITY": 2,
+    "VARIANT": 3,
+    "ALIAS": 4,
+    "NEW_CANONICAL": 5,
+}
+SECONDARY_CLASS_ORDER = ("COMPATIBLE", "REJECT")
+SECONDARY_CLASS_CODES = {"COMPATIBLE": 0, "REJECT": 1}
 
 
 class ExpandedValidationContractError(ValueError):
@@ -84,6 +100,21 @@ def _canonical(value: Any) -> bytes:
 
 def _sha256(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
+
+
+def _json_value(value: Any) -> Any:
+    """Convert a tensor-like value to deterministic JSON-compatible values."""
+
+    detached = value.detach() if hasattr(value, "detach") else value
+    cpu_value = detached.cpu() if hasattr(detached, "cpu") else detached
+    result = cpu_value.tolist() if hasattr(cpu_value, "tolist") else cpu_value
+    if isinstance(result, list):
+        return [_json_value(item) for item in result]
+    if isinstance(result, tuple):
+        return [_json_value(item) for item in result]
+    if isinstance(result, float):
+        _require(math.isfinite(result), "RESULT_NON_FINITE_VALUE")
+    return result
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -291,6 +322,7 @@ def _load_model_state_read_only(
     model: Any,
     manifest_path: Path,
     candidate_binding: Mapping[str, Any],
+    guards: "EvaluationExecutionGuards | None" = None,
 ) -> Any:
     """Load only the verified model state; never constructs or loads an optimizer."""
 
@@ -331,6 +363,8 @@ def _load_model_state_read_only(
     except Exception as error:
         raise ExpandedValidationContractError("CHECKPOINT_MODEL_STATE_RELOAD_FAILED") from error
     _require(not getattr(model, "training", True), "MODEL_EVAL_MODE_REQUIRED")
+    if guards is not None:
+        guards.checkpoint_model_state_load_count += 1
     return model
 
 
@@ -341,6 +375,7 @@ def load_frozen_evaluation_model(
     runtime_binding: Mapping[str, Any],
     model_root: str | Path | None = None,
     checkpoint_manifest_path: str | Path | None = None,
+    guards: "EvaluationExecutionGuards | None" = None,
 ) -> Any:
     """Load the exact frozen candidate model for evaluation-only execution."""
 
@@ -369,7 +404,7 @@ def load_frozen_evaluation_model(
         selected_model_root,
         "cuda:0",
     )
-    return _load_model_state_read_only(model, manifest_path, candidate_binding)
+    return _load_model_state_read_only(model, manifest_path, candidate_binding, guards)
 
 
 def extract_evaluation_predictions(model: Any, model_input: ExpandedEvaluationModelInput) -> Mapping[str, Any]:
@@ -396,6 +431,300 @@ def extract_evaluation_predictions(model: Any, model_input: ExpandedEvaluationMo
         "primaryPredictions": primary_logits.argmax(dim=1) + 1,
         "secondaryPredictions": secondary_logits.argmax(dim=1),
     }
+
+
+def build_evaluation_authority_binding(bundle: AuthorityBundle) -> dict[str, dict[str, str]]:
+    """Return the seven finalized authority identities used by the result."""
+
+    return {
+        name: {
+            "reference": str(value["reference"]),
+            "logicalDigest": str(value["logicalDigest"]),
+        }
+        for name, value in bundle.as_dict().items()
+    }
+
+
+def build_packet_binding(packet_root: str | Path) -> dict[str, Any]:
+    """Bind a result to the exact packet manifest bytes that produced it."""
+
+    root = Path(packet_root)
+    manifest_path = root / "packet-manifest.v1.json"
+    manifest = _packet_json(root, "packet-manifest.v1.json")
+    return {
+        "manifestReference": str(manifest["reference"]),
+        "manifestLogicalDigest": str(manifest["logicalDigest"]),
+        "manifestSha256": _sha256(manifest_path.read_bytes()),
+        "fileCount": int(manifest["fileCount"]),
+        "totalBytes": int(manifest["totalBytes"]),
+    }
+
+
+def _checkpoint_binding(candidate_binding: Mapping[str, Any]) -> dict[str, Any]:
+    fields = (
+        "checkpointReference",
+        "checkpointLogicalDigest",
+        "checkpointManifestPath",
+        "checkpointManifestSha256",
+        "modelStatePath",
+    )
+    return {field: candidate_binding[field] for field in fields if field in candidate_binding}
+
+
+def _prediction_rows(value: Any, *, expected_rows: int, expected_width: int, code: str) -> list[list[float]]:
+    rows = _json_value(value)
+    _require(isinstance(rows, list) and len(rows) == expected_rows, f"{code}_ROW_COUNT_INVALID")
+    for row in rows:
+        _require(isinstance(row, list) and len(row) == expected_width, f"{code}_DIMENSION_INVALID")
+        _require(all(isinstance(item, (int, float)) and not isinstance(item, bool) and math.isfinite(float(item)) for item in row), f"{code}_VALUE_INVALID")
+    return rows
+
+
+def _prediction_vector(value: Any, *, expected_rows: int, code: str) -> list[int]:
+    values = _json_value(value)
+    _require(isinstance(values, list) and len(values) == expected_rows, f"{code}_COUNT_INVALID")
+    result: list[int] = []
+    for item in values:
+        _require(isinstance(item, int) and not isinstance(item, bool), f"{code}_VALUE_INVALID")
+        result.append(int(item))
+    return result
+
+
+def _confusion_matrix(expected: Sequence[int], predicted: Sequence[int], class_codes: Mapping[str, int], class_order: Sequence[str]) -> dict[str, Any]:
+    matrix = {target: {prediction: 0 for prediction in class_order} for target in class_order}
+    if class_codes is PRIMARY_CLASS_CODES:
+        code_to_name = dict(zip(range(1, len(class_order) + 1), class_order))
+    else:
+        code_to_name = dict(zip(range(len(class_order)), class_order))
+    for actual, guess in zip(expected, predicted):
+        _require(actual in code_to_name and guess in code_to_name, "RESULT_PREDICTION_CODE_INVALID")
+        matrix[code_to_name[actual]][code_to_name[guess]] += 1
+    return {"classOrder": list(class_order), "matrix": matrix}
+
+
+def compute_evaluation_metrics(per_example_results: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+    """Compute exact masked metrics from persisted per-example predictions."""
+
+    primary = [item for item in per_example_results if item.get("primaryActive") is True]
+    secondary = list(per_example_results)
+    _require(len(primary) == EXPECTED_PRIMARY_ACTIVE, "PRIMARY_DENOMINATOR_INVALID")
+    _require(len(secondary) == EXPECTED_SECONDARY_ACTIVE, "SECONDARY_DENOMINATOR_INVALID")
+
+    primary_expected = [int(item["primaryExpected"]) for item in primary]
+    primary_predicted = [int(item["primaryPredicted"]) for item in primary]
+    secondary_expected = [int(item["secondaryExpected"]) for item in secondary]
+    secondary_predicted = [int(item["secondaryPredicted"]) for item in secondary]
+    primary_correct = sum(actual == guess for actual, guess in zip(primary_expected, primary_predicted))
+    secondary_correct = sum(actual == guess for actual, guess in zip(secondary_expected, secondary_predicted))
+    return {
+        "primary": {
+            "total": len(primary),
+            "correct": primary_correct,
+            "incorrect": len(primary) - primary_correct,
+            "accuracy": primary_correct / len(primary),
+            "confusionMatrix": _confusion_matrix(primary_expected, primary_predicted, PRIMARY_CLASS_CODES, PRIMARY_CLASS_ORDER),
+        },
+        "secondary": {
+            "total": len(secondary),
+            "correct": secondary_correct,
+            "incorrect": len(secondary) - secondary_correct,
+            "accuracy": secondary_correct / len(secondary),
+            "confusionMatrix": _confusion_matrix(secondary_expected, secondary_predicted, SECONDARY_CLASS_CODES, SECONDARY_CLASS_ORDER),
+        },
+    }
+
+
+def _result_execution_counters(counters: Mapping[str, Any]) -> dict[str, int]:
+    names = (
+        "modelDeserializationCount", "checkpointModelStateLoadCount", "checkpointOptimizerStateLoadCount",
+        "forwardCount", "realExpandedValidationForwardCount", "predictionCount", "logitCount",
+        "trainingCount", "retrainingCount", "backwardCount", "optimizerCreatedCount", "optimizerStateLoadCount",
+        "optimizerStepCount", "schedulerStepCount", "parameterMutationCount", "checkpointMutationCount",
+        "holdoutExposureCount",
+    )
+    source_names = {name: {
+        "modelDeserializationCount": "model_deserialization_count", "checkpointModelStateLoadCount": "checkpoint_model_state_load_count",
+        "checkpointOptimizerStateLoadCount": "checkpoint_optimizer_state_load_count", "forwardCount": "forward_count",
+        "realExpandedValidationForwardCount": "real_expanded_validation_forward_count", "predictionCount": "prediction_count",
+        "logitCount": "logit_count", "trainingCount": "training_count", "retrainingCount": "retraining_count",
+        "backwardCount": "backward_count", "optimizerCreatedCount": "optimizer_created_count", "optimizerStateLoadCount": "optimizer_state_load_count",
+        "optimizerStepCount": "optimizer_step_count", "schedulerStepCount": "scheduler_step_count", "parameterMutationCount": "parameter_mutation_count",
+        "checkpointMutationCount": "checkpoint_mutation_count", "holdoutExposureCount": "holdout_model_exposure_count",
+    }.get(name, "") for name in names}
+    return {name: int(counters.get(source_names[name], 0)) for name in names}
+
+
+def build_real_evaluation_result(
+    *,
+    examples: Sequence[ExpandedEvaluationExample],
+    predictions: Mapping[str, Any],
+    candidate_binding: Mapping[str, Any],
+    runtime_binding: Mapping[str, Any],
+    authority_binding: Mapping[str, Any],
+    packet_binding: Mapping[str, Any],
+    execution_counters: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Build the immutable, target-bound result from evaluator outputs."""
+
+    resolved = _validate_evaluation_examples_for_execution(examples)
+    primary_logits = _prediction_rows(predictions.get("primaryLogits"), expected_rows=EXPECTED_TOTAL, expected_width=5, code="PRIMARY_LOGITS")
+    secondary_logits = _prediction_rows(predictions.get("secondaryLogits"), expected_rows=EXPECTED_TOTAL, expected_width=2, code="SECONDARY_LOGITS")
+    primary_predicted = _prediction_vector(predictions.get("primaryPredictions"), expected_rows=EXPECTED_TOTAL, code="PRIMARY_PREDICTION")
+    secondary_predicted = _prediction_vector(predictions.get("secondaryPredictions"), expected_rows=EXPECTED_TOTAL, code="SECONDARY_PREDICTION")
+    per_example: list[dict[str, Any]] = []
+    for index, item in enumerate(resolved):
+        primary_expected = None if not item.primary_active else PRIMARY_CLASS_CODES[item.primary_target]
+        primary_guess = None if not item.primary_active else primary_predicted[index]
+        per_example.append({
+            "exampleId": item.evaluation_example_reference,
+            "family": item.family_reference,
+            "relation": item.relation,
+            "targetReference": item.target_reference,
+            "primaryTarget": item.primary_target,
+            "primaryActive": item.primary_active,
+            "primaryExpected": primary_expected,
+            "primaryPredicted": primary_guess,
+            "primaryLogits": primary_logits[index],
+            "primaryCorrect": None if not item.primary_active else primary_guess == primary_expected,
+            "secondaryExpected": SECONDARY_CLASS_CODES[item.secondary_target],
+            "secondaryPredicted": secondary_predicted[index],
+            "secondaryLogits": secondary_logits[index],
+            "secondaryCorrect": secondary_predicted[index] == SECONDARY_CLASS_CODES[item.secondary_target],
+            "candidateReference": candidate_binding["candidateReference"],
+            "relationAuthorityReference": item.relation_authority_reference,
+            "primaryTargetAuthorityReference": item.primary_target_authority_reference,
+            "candidateCompatibilityAuthorityReference": item.candidate_compatibility_authority_reference,
+            "expandedValidationAuthorityReference": authority_binding["expanded"]["reference"],
+        })
+    metrics = compute_evaluation_metrics(per_example)
+    result = {
+        "contractId": REAL_EVALUATION_RESULT_CONTRACT_ID,
+        "schemaVersion": REAL_EVALUATION_RESULT_SCHEMA_VERSION,
+        "state": "REAL_EVALUATION_COMPLETE",
+        "createdFromPacket": dict(packet_binding),
+        "candidateBinding": dict(candidate_binding),
+        "checkpointBinding": _checkpoint_binding(candidate_binding),
+        "runtimeBinding": dict(runtime_binding),
+        "evaluationAuthorityBinding": dict(authority_binding),
+        "packetBinding": dict(packet_binding),
+        "exampleCount": len(per_example),
+        "primaryEvaluatedCount": sum(item["primaryActive"] for item in per_example),
+        "primaryInactiveCount": sum(not item["primaryActive"] for item in per_example),
+        "secondaryEvaluatedCount": len(per_example),
+        "perExampleResults": per_example,
+        "metrics": metrics,
+        "executionCounters": _result_execution_counters(execution_counters),
+        "holdoutCounters": {
+            "inputConstructionCount": 0, "tokenizationCount": 0, "modelDeserializationCount": 0,
+            "forwardCount": 0, "predictionCount": 0, "logitCount": 0, "metricsCount": 0, "exposureCount": 0,
+        },
+    }
+    semantic = _canonical(result)
+    digest = _sha256(semantic)
+    result["logicalDigest"] = digest
+    result["resultIdentity"] = f"expanded-validation-result:v1:{digest}"
+    return result
+
+
+def _require_result_bindings(result: Mapping[str, Any], *, candidate_binding: Mapping[str, Any], runtime_binding: Mapping[str, Any], authority_binding: Mapping[str, Any], packet_binding: Mapping[str, Any]) -> None:
+    _require(result.get("candidateBinding") == dict(candidate_binding), "RESULT_CANDIDATE_BINDING_MISMATCH")
+    _require(result.get("checkpointBinding") == _checkpoint_binding(candidate_binding), "RESULT_CHECKPOINT_BINDING_MISMATCH")
+    _require(result.get("runtimeBinding") == dict(runtime_binding), "RESULT_RUNTIME_BINDING_MISMATCH")
+    _require(result.get("evaluationAuthorityBinding") == dict(authority_binding), "RESULT_AUTHORITY_BINDING_MISMATCH")
+    _require(result.get("packetBinding") == dict(packet_binding), "RESULT_PACKET_BINDING_MISMATCH")
+    _require(result.get("createdFromPacket") == dict(packet_binding), "RESULT_CREATED_FROM_PACKET_MISMATCH")
+
+
+def validate_real_evaluation_result(
+    result: Mapping[str, Any],
+    *,
+    examples: Sequence[ExpandedEvaluationExample],
+    candidate_binding: Mapping[str, Any],
+    runtime_binding: Mapping[str, Any],
+    authority_binding: Mapping[str, Any],
+    packet_binding: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Fail-closed validation and metric recomputation for a persisted result."""
+
+    _require(result.get("contractId") == REAL_EVALUATION_RESULT_CONTRACT_ID, "RESULT_SCHEMA_INVALID")
+    _require(result.get("schemaVersion") == REAL_EVALUATION_RESULT_SCHEMA_VERSION, "RESULT_SCHEMA_VERSION_INVALID")
+    _require(result.get("state") == "REAL_EVALUATION_COMPLETE", "RESULT_STATE_INVALID")
+    _require_result_bindings(result, candidate_binding=candidate_binding, runtime_binding=runtime_binding, authority_binding=authority_binding, packet_binding=packet_binding)
+    resolved = tuple(examples)
+    records = result.get("perExampleResults")
+    _require(isinstance(records, list), "RESULT_PER_EXAMPLE_INVALID")
+    _require(result.get("exampleCount") == EXPECTED_TOTAL and len(records) == EXPECTED_TOTAL, "RESULT_EXAMPLE_COUNT_INVALID")
+    expected_ids = [item.evaluation_example_reference for item in resolved]
+    actual_ids = [item.get("exampleId") for item in records if isinstance(item, Mapping)]
+    _require(len(actual_ids) == EXPECTED_TOTAL, "RESULT_PER_EXAMPLE_RECORD_INVALID")
+    _require(len(set(actual_ids)) == EXPECTED_TOTAL, "RESULT_DUPLICATE_EXAMPLE")
+    _require(actual_ids == expected_ids, "RESULT_EXAMPLE_MEMBERSHIP_INVALID")
+    by_id = {item.evaluation_example_reference: item for item in resolved}
+    for record in records:
+        item = by_id[record["exampleId"]]
+        active = bool(item.primary_active)
+        _require(record.get("family") == item.family_reference and record.get("relation") == item.relation and record.get("targetReference") == item.target_reference, "RESULT_EXAMPLE_IDENTITY_MISMATCH")
+        _require(record.get("primaryActive") is active, "RESULT_PRIMARY_MASK_MISMATCH")
+        expected_primary = None if not active else PRIMARY_CLASS_CODES[item.primary_target]
+        _require(record.get("primaryExpected") == expected_primary, "RESULT_PRIMARY_EXPECTATION_MISMATCH")
+        _require(record.get("primaryPredicted") is None if not active else isinstance(record.get("primaryPredicted"), int), "RESULT_PRIMARY_PREDICTION_INVALID")
+        _prediction_rows([record.get("primaryLogits")], expected_rows=1, expected_width=5, code="PRIMARY_LOGITS")
+        _require(record.get("primaryCorrect") is None if not active else record.get("primaryCorrect") == (record.get("primaryPredicted") == expected_primary), "RESULT_PRIMARY_CORRECTNESS_INVALID")
+        expected_secondary = SECONDARY_CLASS_CODES[item.secondary_target]
+        _require(record.get("secondaryExpected") == expected_secondary and isinstance(record.get("secondaryPredicted"), int), "RESULT_SECONDARY_PREDICTION_INVALID")
+        _prediction_rows([record.get("secondaryLogits")], expected_rows=1, expected_width=2, code="SECONDARY_LOGITS")
+        _require(record.get("secondaryCorrect") == (record.get("secondaryPredicted") == expected_secondary), "RESULT_SECONDARY_CORRECTNESS_INVALID")
+        _require(record.get("candidateReference") == candidate_binding["candidateReference"], "RESULT_EXAMPLE_CANDIDATE_BINDING_MISMATCH")
+    _require(result.get("primaryEvaluatedCount") == EXPECTED_PRIMARY_ACTIVE, "RESULT_PRIMARY_COUNT_INVALID")
+    _require(result.get("primaryInactiveCount") == EXPECTED_PRIMARY_INACTIVE, "RESULT_PRIMARY_INACTIVE_COUNT_INVALID")
+    _require(result.get("secondaryEvaluatedCount") == EXPECTED_SECONDARY_ACTIVE, "RESULT_SECONDARY_COUNT_INVALID")
+    counters = result.get("executionCounters")
+    holdout = result.get("holdoutCounters")
+    _require(isinstance(counters, Mapping) and isinstance(holdout, Mapping), "RESULT_COUNTERS_INVALID")
+    _require(counters.get("modelDeserializationCount", 0) > 0, "RESULT_MODEL_NOT_DESERIALIZED")
+    _require(counters.get("checkpointModelStateLoadCount", 0) > 0, "RESULT_CHECKPOINT_MODEL_STATE_NOT_LOADED")
+    _require(counters.get("forwardCount", 0) > 0 and counters.get("realExpandedValidationForwardCount", 0) > 0, "RESULT_FORWARD_NOT_EXECUTED")
+    _require(counters.get("predictionCount") == EXPECTED_TOTAL and counters.get("logitCount") == EXPECTED_TOTAL, "RESULT_PREDICTION_LOGIT_COUNT_INVALID")
+    for name in ("checkpointOptimizerStateLoadCount", "trainingCount", "retrainingCount", "backwardCount", "optimizerCreatedCount", "optimizerStateLoadCount", "optimizerStepCount", "schedulerStepCount", "parameterMutationCount", "checkpointMutationCount", "holdoutExposureCount"):
+        _require(counters.get(name) == 0, f"RESULT_NONZERO_SAFETY_COUNTER:{name}")
+    for name in ("inputConstructionCount", "tokenizationCount", "modelDeserializationCount", "forwardCount", "predictionCount", "logitCount", "metricsCount", "exposureCount"):
+        _require(holdout.get(name) == 0, f"RESULT_NONZERO_HOLDOUT_COUNTER:{name}")
+    recomputed = compute_evaluation_metrics(records)
+    _require(result.get("metrics") == recomputed, "RESULT_METRICS_MISMATCH")
+    semantic = {key: value for key, value in result.items() if key not in ("logicalDigest", "resultIdentity")}
+    digest = _sha256(_canonical(semantic))
+    _require(result.get("logicalDigest") == digest and result.get("resultIdentity") == f"expanded-validation-result:v1:{digest}", "RESULT_IDENTITY_MISMATCH")
+    return dict(result)
+
+
+def persist_real_evaluation_result(output_root: str | Path, result: Mapping[str, Any]) -> Path:
+    """Persist one immutable result file using the project's atomic writer."""
+
+    root = _prepare_output_root(output_root)
+    destination = root / REAL_EVALUATION_RESULT_FILENAME
+    payload = _canonical(result) + b"\n"
+    temporary: str | None = None
+    try:
+        fd, temporary = tempfile.mkstemp(prefix=f".{destination.name}.", suffix=".tmp", dir=str(root))
+        with os.fdopen(fd, "wb") as handle:
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, destination)
+        temporary = None
+    finally:
+        if temporary is not None:
+            try:
+                os.unlink(temporary)
+            except OSError:
+                pass
+    return destination
+
+
+def reload_real_evaluation_result(path: str | Path, **validation: Any) -> dict[str, Any]:
+    destination = Path(path)
+    _require(destination.name == REAL_EVALUATION_RESULT_FILENAME and destination.is_file() and not destination.is_symlink(), "RESULT_FILE_INVALID")
+    return validate_real_evaluation_result(_read_json(destination), **validation)
 
 
 def _source_map(authority: Mapping[str, Any]) -> dict[str, Mapping[str, Any]]:
@@ -733,12 +1062,34 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
                     runtime_binding=runtime,
                     model_root=args.model_root,
                     checkpoint_manifest_path=args.checkpoint_manifest,
+                    guards=guards,
                 ),
                 input_builder=input_builder,
                 prediction_fn=extract_evaluation_predictions,
                 guards=guards,
             )
-            sys.stdout.write(json.dumps({"state": "EXPANDED_VALIDATION_EXECUTION_COMPLETE", "counters": result["counters"]}, sort_keys=True) + "\n")
+            packet_binding = build_packet_binding(args.packet_root)
+            authority_binding = build_evaluation_authority_binding(bundle)
+            execution_reference = f"p2-expanded-validation-execution:v1:{packet_binding['manifestLogicalDigest']}"
+            report = build_real_evaluation_result(
+                examples=examples,
+                predictions=result["predictions"],
+                candidate_binding=candidate_binding,
+                runtime_binding=runtime,
+                authority_binding=authority_binding,
+                packet_binding=packet_binding,
+                execution_counters=result["counters"],
+            )
+            destination = persist_real_evaluation_result(output_root, report)
+            reload_real_evaluation_result(
+                destination,
+                examples=examples,
+                candidate_binding=candidate_binding,
+                runtime_binding=runtime,
+                authority_binding=authority_binding,
+                packet_binding=packet_binding,
+            )
+            sys.stdout.write(json.dumps({"state": report["state"], "resultIdentity": report["resultIdentity"], "output": str(destination), "counters": report["executionCounters"]}, sort_keys=True) + "\n")
             return 0
         report = build_dry_run(
             authority_root=Path(args.packet_root) / "authority",
@@ -758,8 +1109,17 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
 @dataclass
 class EvaluationExecutionGuards:
     model_deserialization_count: int = 0
+    checkpoint_model_state_load_count: int = 0
+    checkpoint_optimizer_state_load_count: int = 0
     forward_count: int = 0
+    real_expanded_validation_forward_count: int = 0
+    prediction_count: int = 0
+    logit_count: int = 0
+    training_count: int = 0
+    retraining_count: int = 0
     backward_count: int = 0
+    optimizer_created_count: int = 0
+    optimizer_state_load_count: int = 0
     optimizer_step_count: int = 0
     scheduler_step_count: int = 0
     training_state_advance_count: int = 0
@@ -802,6 +1162,9 @@ def execute_evaluation(*, examples: Sequence[ExpandedEvaluationExample], model_l
     with torch.no_grad():
         predictions = prediction_fn(model, model_input)
     state.forward_count += 1
+    state.real_expanded_validation_forward_count += 1
+    state.prediction_count += len(examples)
+    state.logit_count += len(examples)
     state.require_evaluation_only()
     return {"predictions": predictions, "counters": state.__dict__.copy()}
 

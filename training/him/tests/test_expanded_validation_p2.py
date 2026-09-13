@@ -22,11 +22,16 @@ from him_trainer.expanded_validation_p2 import (
     ExpandedValidationContractError,
     EvaluationExecutionGuards,
     RUNTIME_REQUIRED_BASE_MODEL_FILES,
+    REAL_EVALUATION_RESULT_FILENAME,
     build_aggregate_evidence,
     build_dry_run,
+    build_evaluation_authority_binding,
     build_evaluation_model_input,
+    build_packet_binding,
     build_per_example_evidence,
     build_packet_manifest,
+    build_real_evaluation_result,
+    compute_evaluation_metrics,
     execute_evaluation,
     extract_evaluation_predictions,
     load_authorities,
@@ -35,6 +40,9 @@ from him_trainer.expanded_validation_p2 import (
     packet_secret_scan,
     run_cli,
     resolve_pinned_tokenizer_path_for_model_root,
+    reload_real_evaluation_result,
+    persist_real_evaluation_result,
+    validate_real_evaluation_result,
     validate_holdout_exclusion,
     validate_evaluation_execution_binding,
     validate_historical_leakage,
@@ -73,6 +81,52 @@ class ExpandedValidationP2Test(unittest.TestCase):
         )
         global PACKET_ROOT
         PACKET_ROOT = current_packet_root
+
+    def _result_dependencies(self):
+        candidate = json.loads((PACKET_ROOT / "candidate/frozen-candidate-checkpoint-binding.v1.json").read_text(encoding="utf-8"))
+        runtime = json.loads((PACKET_ROOT / "runtime/runtime-binding.v1.json").read_text(encoding="utf-8"))
+        return candidate, runtime, build_evaluation_authority_binding(self.bundle), build_packet_binding(PACKET_ROOT)
+
+    def _synthetic_predictions(self, wrong_primary_index=None, wrong_secondary_index=None):
+        primary_logits = [[float(index == column) for column in range(5)] for index in range(EXPECTED_TOTAL)]
+        secondary_logits = [[float(index == column) for column in range(2)] for index in range(EXPECTED_TOTAL)]
+        primary_predictions = [0] * EXPECTED_TOTAL
+        secondary_predictions = [0] * EXPECTED_TOTAL
+        for index, item in enumerate(self.examples):
+            if item.primary_active:
+                primary_predictions[index] = {"IDENTITY": 2, "VARIANT": 3}[item.primary_target]
+            secondary_predictions[index] = {"COMPATIBLE": 0, "REJECT": 1}[item.secondary_target]
+        if wrong_primary_index is not None:
+            primary_predictions[wrong_primary_index] = 1 if primary_predictions[wrong_primary_index] != 1 else 2
+        if wrong_secondary_index is not None:
+            secondary_predictions[wrong_secondary_index] = 1 - secondary_predictions[wrong_secondary_index]
+        return {
+            "primaryLogits": primary_logits,
+            "secondaryLogits": secondary_logits,
+            "primaryPredictions": primary_predictions,
+            "secondaryPredictions": secondary_predictions,
+        }
+
+    def _synthetic_result(self, wrong_primary_index=None, wrong_secondary_index=None):
+        candidate, runtime, authorities, packet = self._result_dependencies()
+        counters = EvaluationExecutionGuards(
+            model_deserialization_count=1,
+            checkpoint_model_state_load_count=1,
+            forward_count=1,
+            real_expanded_validation_forward_count=1,
+            prediction_count=EXPECTED_TOTAL,
+            logit_count=EXPECTED_TOTAL,
+        )
+        result = build_real_evaluation_result(
+            examples=self.examples,
+            predictions=self._synthetic_predictions(wrong_primary_index, wrong_secondary_index),
+            candidate_binding=candidate,
+            runtime_binding=runtime,
+            authority_binding=authorities,
+            packet_binding=packet,
+            execution_counters=counters.__dict__,
+        )
+        return result, candidate, runtime, authorities, packet
 
     def test_exact_input_counts(self):
         self.assertEqual(len(self.examples), 19)
@@ -192,13 +246,17 @@ class ExpandedValidationP2Test(unittest.TestCase):
     def test_cli_execute_flag_reaches_evaluation_adapter_path(self):
         counters = {
             "model_deserialization_count": 1,
+            "checkpoint_model_state_load_count": 1,
             "forward_count": 1,
+            "real_expanded_validation_forward_count": 1,
+            "prediction_count": EXPECTED_TOTAL,
+            "logit_count": EXPECTED_TOTAL,
             "backward_count": 0,
             "optimizer_step_count": 0,
             "holdout_forward_count": 0,
         }
         with tempfile.TemporaryDirectory() as directory:
-            with patch("him_trainer.expanded_validation_p2.execute_evaluation", return_value={"counters": counters}) as execute:
+            with patch("him_trainer.expanded_validation_p2.execute_evaluation", return_value={"predictions": self._synthetic_predictions(), "counters": counters}) as execute:
                 result = run_cli(["--packet-root", str(PACKET_ROOT), "--output-root", directory, "--execute"])
         self.assertEqual(result, 0)
         execute.assert_called_once()
@@ -464,6 +522,101 @@ class ExpandedValidationP2Test(unittest.TestCase):
             output = json.loads((pathlib.Path(directory) / "expanded-validation-dry-run.v1.json").read_text(encoding="utf-8"))
         self.assertEqual(output["holdout"], {"allowed": False, "overlap": {"example": 0, "sourceRecord": 0, "family": 0}})
         self.assertEqual(output["counts"], {"total": 19, "primaryActive": 13, "primaryInactive": 6, "secondaryActive": 19, "identity": 6, "variant": 7, "compatible": 13, "reject": 6})
+
+    def test_model_free_real_result_pipeline_persists_and_reloads(self):
+        result, candidate, runtime, authorities, packet = self._synthetic_result()
+        self.assertEqual(result["exampleCount"], 19)
+        self.assertEqual(result["primaryEvaluatedCount"], 13)
+        self.assertEqual(result["secondaryEvaluatedCount"], 19)
+        with tempfile.TemporaryDirectory() as directory:
+            destination = persist_real_evaluation_result(directory, result)
+            self.assertEqual(destination.name, REAL_EVALUATION_RESULT_FILENAME)
+            reloaded = reload_real_evaluation_result(destination, examples=self.examples, candidate_binding=candidate, runtime_binding=runtime, authority_binding=authorities, packet_binding=packet)
+        self.assertEqual(reloaded, result)
+        self.assertEqual(reloaded["logicalDigest"], result["logicalDigest"])
+        self.assertEqual(compute_evaluation_metrics(result["perExampleResults"]), result["metrics"])
+
+    def test_real_result_requires_exact_19_membership_and_rejects_duplicate_missing_or_extra(self):
+        result, candidate, runtime, authorities, packet = self._synthetic_result()
+        with tempfile.TemporaryDirectory() as directory:
+            for label, records in (
+                ("duplicate", result["perExampleResults"][:-1] + [copy.deepcopy(result["perExampleResults"][0])]),
+                ("missing", result["perExampleResults"][:-1]),
+                ("extra", result["perExampleResults"] + [copy.deepcopy(result["perExampleResults"][0])]),
+            ):
+                with self.subTest(label=label):
+                    broken = copy.deepcopy(result)
+                    broken["perExampleResults"] = records
+                    broken["exampleCount"] = len(records)
+                    with self.assertRaises(ExpandedValidationContractError):
+                        validate_real_evaluation_result(broken, examples=self.examples, candidate_binding=candidate, runtime_binding=runtime, authority_binding=authorities, packet_binding=packet)
+
+    def test_real_result_metrics_exclude_inactive_primary_and_recompute(self):
+        result, candidate, runtime, authorities, packet = self._synthetic_result(wrong_primary_index=0, wrong_secondary_index=1)
+        self.assertEqual(result["metrics"]["primary"]["total"], 13)
+        self.assertEqual(result["metrics"]["primary"]["correct"], 12)
+        self.assertEqual(result["metrics"]["secondary"]["total"], 19)
+        self.assertEqual(result["metrics"]["secondary"]["correct"], 18)
+        self.assertEqual(compute_evaluation_metrics(result["perExampleResults"]), result["metrics"])
+        self.assertTrue(all(item["primaryCorrect"] is None for item in result["perExampleResults"] if not item["primaryActive"]))
+
+    def test_real_result_rejects_invalid_logit_dimensions(self):
+        result, candidate, runtime, authorities, packet = self._synthetic_result()
+        for key, width in (("primaryLogits", 4), ("secondaryLogits", 3)):
+            with self.subTest(key=key):
+                broken_predictions = self._synthetic_predictions()
+                broken_predictions[key] = [row[:width] + [0.0] * max(0, width - len(row)) for row in broken_predictions[key]]
+                with self.assertRaises(ExpandedValidationContractError):
+                    build_real_evaluation_result(examples=self.examples, predictions=broken_predictions, candidate_binding=candidate, runtime_binding=runtime, authority_binding=authorities, packet_binding=packet, execution_counters=EvaluationExecutionGuards().__dict__)
+
+    def test_real_result_rejects_binding_mutations(self):
+        result, candidate, runtime, authorities, packet = self._synthetic_result()
+        for field, value in (("candidateBinding", {**candidate, "candidateReference": "wrong"}), ("checkpointBinding", {"checkpointReference": "wrong"}), ("runtimeBinding", {**runtime, "pytorch": "wrong"}), ("packetBinding", {**packet, "manifestLogicalDigest": "wrong"}), ("evaluationAuthorityBinding", {**authorities, "expanded": {**authorities["expanded"], "reference": "wrong"}})):
+            with self.subTest(field=field):
+                broken = copy.deepcopy(result)
+                broken[field] = value
+                with self.assertRaises(ExpandedValidationContractError):
+                    validate_real_evaluation_result(broken, examples=self.examples, candidate_binding=candidate, runtime_binding=runtime, authority_binding=authorities, packet_binding=packet)
+
+    def test_real_result_rejects_nonzero_training_or_holdout_safety_counters(self):
+        result, candidate, runtime, authorities, packet = self._synthetic_result()
+        for field in ("trainingCount", "backwardCount", "optimizerStepCount", "parameterMutationCount", "checkpointMutationCount", "holdoutExposureCount"):
+            with self.subTest(field=field):
+                broken = copy.deepcopy(result)
+                broken["executionCounters"][field] = 1
+                with self.assertRaises(ExpandedValidationContractError):
+                    validate_real_evaluation_result(broken, examples=self.examples, candidate_binding=candidate, runtime_binding=runtime, authority_binding=authorities, packet_binding=packet)
+        broken = copy.deepcopy(result)
+        broken["holdoutCounters"]["forwardCount"] = 1
+        with self.assertRaises(ExpandedValidationContractError):
+            validate_real_evaluation_result(broken, examples=self.examples, candidate_binding=candidate, runtime_binding=runtime, authority_binding=authorities, packet_binding=packet)
+
+    def test_real_result_rejects_tampered_metrics_identity_and_malformed_output(self):
+        result, candidate, runtime, authorities, packet = self._synthetic_result()
+        for label, mutate in (
+            ("primary metrics", lambda x: x["metrics"]["primary"].__setitem__("correct", 0)),
+            ("secondary metrics", lambda x: x["metrics"]["secondary"].__setitem__("correct", 0)),
+            ("identity", lambda x: x.__setitem__("logicalDigest", "0" * 64)),
+        ):
+            with self.subTest(label=label):
+                broken = copy.deepcopy(result)
+                mutate(broken)
+                with self.assertRaises(ExpandedValidationContractError):
+                    validate_real_evaluation_result(broken, examples=self.examples, candidate_binding=candidate, runtime_binding=runtime, authority_binding=authorities, packet_binding=packet)
+        with tempfile.TemporaryDirectory() as directory:
+            path = pathlib.Path(directory) / REAL_EVALUATION_RESULT_FILENAME
+            path.write_text("{malformed", encoding="utf-8")
+            with self.assertRaises(ExpandedValidationContractError):
+                reload_real_evaluation_result(path, examples=self.examples, candidate_binding=candidate, runtime_binding=runtime, authority_binding=authorities, packet_binding=packet)
+
+    def test_real_result_atomic_output_root_rejects_populated_reuse_and_secret_scan_remains_safe(self):
+        result, _, _, _, _ = self._synthetic_result()
+        with tempfile.TemporaryDirectory() as directory:
+            root = pathlib.Path(directory)
+            persist_real_evaluation_result(root, result)
+            with self.assertRaises(ExpandedValidationContractError):
+                persist_real_evaluation_result(root, result)
+            self.assertEqual(packet_secret_scan(root), 0)
 
     def test_fail_closed_count_and_binding_mutations(self):
         expanded = copy.deepcopy(self.bundle.expanded)
