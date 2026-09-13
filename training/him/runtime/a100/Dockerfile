@@ -67,13 +67,13 @@ RUN /opt/him/runtime/bin/python \
         --mode build \
         --lineage-output /opt/him/validation/build-lineage.json
 
-# Copy the existing trainer/parser package unchanged into the canonical
-# interpreter site-packages path.
+# Copy the explicit HIM runtime source closure unchanged into the one
+# canonical interpreter site-packages path.
 COPY trainer/him_trainer /opt/him/runtime/lib/python3.13/site-packages/him_trainer
 
 RUN /opt/him/runtime/bin/python \
-        -c 'import him_trainer; import him_trainer.__main__ as entrypoint; assert callable(entrypoint.run)' \
-    && test -f /opt/him/runtime/lib/python3.13/site-packages/him_trainer/protocol_v1.py
+        -c 'import hashlib, importlib.util, json, pathlib; import him_trainer; import him_trainer.__main__ as entrypoint; import him_trainer.point13_model_forward_v1 as point13; import tokenizers, sentencepiece, torch; assert callable(entrypoint.run); assert point13.__file__ == "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/point13_model_forward_v1.py"; assert hasattr(point13, "load_pinned_him_multi_head_model_from_root_v1"); assert hasattr(point13, "build_him_multi_head_model_v1"); assert hasattr(point13, "HimMultiHeadModelV1"); assert hasattr(point13, "HimMultiHeadForwardOutputV1"); assert torch.__version__ == "2.14.0+cu130"; assert torch.version.cuda == "13.0"; assert tokenizers.__version__ == "0.23.1"; assert sentencepiece.__version__ == "0.2.2"; assert importlib.util.find_spec("transformers") is None; identity=json.loads(pathlib.Path("/opt/him/runtime/runtime-identity.json").read_text()); point13_digest=hashlib.sha256(pathlib.Path(point13.__file__).read_bytes()).hexdigest(); point13_entry=next(item for item in identity["sourceTreeFileDigests"] if item["sourcePath"].endswith("/point13_model_forward_v1.py")); assert point13_digest == point13_entry["sha256"]' \
+    && test "$(find /opt/him/runtime/lib/python3.13/site-packages/him_trainer -maxdepth 1 -type f -name '*.py' | wc -l | tr -d ' ')" = "13"
 
 RUN /opt/him/runtime/bin/python /tmp/cuda-protocol-parse-gate.py \
     && rm -f /tmp/cuda-protocol-parse-gate.py

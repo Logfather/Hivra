@@ -22,6 +22,22 @@ ROOTFS_BUILDER = ROOT / "build-runtime-rootfs.sh"
 EXPECTED_RUNTIME_ID = "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1"
 EXPECTED_REFERENCE_DIGEST = "e5bfa4442a50e154c7f23735def545cfc545798f8b326ff38051f2eea57111d9"
 EXPECTED_EXCLUDED_FIELDS = ["buildContextDigest", "runtimeImageDefinitionDigest", "ociImageDigest"]
+EXPECTED_IDENTITY_SCHEMA = "HIM_A100_RUNTIME_IDENTITY_V2"
+EXPECTED_RUNTIME_SOURCE_FILES = {
+    "training/him/src/him_trainer/__init__.py",
+    "training/him/src/him_trainer/__main__.py",
+    "training/him/src/him_trainer/a100_validation_v1.py",
+    "training/him/src/him_trainer/checkpoint_v2.py",
+    "training/him/src/him_trainer/execution_device_v1.py",
+    "training/him/src/him_trainer/point12_protocol_v1.py",
+    "training/him/src/him_trainer/point12_token_tensor_builder_v1.py",
+    "training/him/src/him_trainer/point13_forward_rng_contract_v1.py",
+    "training/him/src/him_trainer/point13_loss_contract_v1.py",
+    "training/him/src/him_trainer/point13_model_forward_v1.py",
+    "training/him/src/him_trainer/point13_optimizer_execution_policy_v1.py",
+    "training/him/src/him_trainer/point13_trainability_policy_v1.py",
+    "training/him/src/him_trainer/protocol_v1.py",
+}
 
 
 def sha256(path: Path) -> str:
@@ -134,7 +150,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertNotIn("EUR-IS-1", self.dockerfile)
 
     def test_manifest_is_bounded_and_deterministic(self) -> None:
-        self.assertEqual(len(self.manifest_rows), 27)
+        self.assertEqual(len(self.manifest_rows), 24)
         destinations = [row[1] for row in self.manifest_rows]
         self.assertEqual(len(destinations), len(set(destinations)))
         for source, destination, _role, _final, _build_only in self.manifest_rows:
@@ -154,9 +170,12 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
 
     def test_manifest_excludes_model_training_and_user_data(self) -> None:
         manifest_text = (ROOT / "build-context.manifest.tsv").read_text().lower()
-        for forbidden in ("models/", "corpus/", "dataset/", "checkpoint", "decision", "review", "knowledge/", "firestore", "firebase"):
+        for forbidden in ("models/", "corpus/", "dataset/", "decision", "review", "knowledge/", "firestore", "firebase"):
             self.assertNotIn(forbidden, manifest_text)
         self.assertNotIn("data/", manifest_text)
+        self.assertNotIn("productive_training", manifest_text)
+        self.assertNotIn("point13_loss_v1.py", manifest_text)
+        self.assertNotIn("point13_optimizer_construction_v1.py", manifest_text)
 
     def test_manifest_marks_validation_tool_and_build_only_manifest(self) -> None:
         by_source = {row[0]: row for row in self.manifest_rows}
@@ -177,17 +196,16 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertEqual(manifest[3:], ["NO", "YES"])
 
     def test_manifest_binds_unchanged_him_trainer_package(self) -> None:
-        package_rows = [row for row in self.manifest_rows if row[2] == "him-trainer-package"]
-        source_files = sorted(EXPECTED_TRAINER_SOURCE_ROOT.glob("*.py"))
-        self.assertEqual(len(package_rows), len(source_files))
-        self.assertEqual(len(package_rows), 16)
+        package_rows = [row for row in self.manifest_rows if row[2] == "him-trainer-runtime-source"]
+        self.assertEqual(len(package_rows), len(EXPECTED_RUNTIME_SOURCE_FILES))
+        self.assertEqual(len(package_rows), 13)
         self.assertEqual(
             {row[0] for row in package_rows},
-            {str(path.relative_to(REPOSITORY_ROOT)) for path in source_files},
+            EXPECTED_RUNTIME_SOURCE_FILES,
         )
         self.assertEqual(
             {row[1] for row in package_rows},
-            {f"trainer/him_trainer/{path.name}" for path in source_files},
+            {f"trainer/him_trainer/{Path(source).name}" for source in EXPECTED_RUNTIME_SOURCE_FILES},
         )
         self.assertTrue(all(row[3:] == ["YES", "NO"] for row in package_rows))
         self.assertIn(
@@ -377,7 +395,16 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertEqual(self.identity["runtimeIdentityRuntimePath"], "/opt/him/runtime/runtime-identity.json")
         self.assertRegex(self.identity["buildContextDigest"], r"^[0-9a-f]{64}$")
         self.assertRegex(self.identity["runtimeImageDefinitionDigest"], r"^[0-9a-f]{64}$")
-        self.assertEqual(self.identity["identitySchema"], "HIM_A100_RUNTIME_IDENTITY_V1")
+        self.assertEqual(self.identity["identitySchema"], EXPECTED_IDENTITY_SCHEMA)
+        self.assertEqual(self.identity["sourceGitHead"], subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip())
+        self.assertRegex(self.identity["dependencyLockDigest"], r"^[0-9a-f]{64}$")
+        self.assertRegex(self.identity["runtimeSourceLogicalDigest"], r"^[0-9a-f]{64}$")
+        self.assertEqual(self.identity["buildDefinitionDigest"], self.identity["runtimeImageDefinitionDigest"])
+        self.assertEqual(self.identity["runtimeSourceClosure"]["fileCount"], 13)
+        self.assertEqual(
+            {entry["sourcePath"] for entry in self.identity["sourceTreeFileDigests"]},
+            EXPECTED_RUNTIME_SOURCE_FILES,
+        )
 
     def _runtime_definition_digest(self) -> str:
         return subprocess.check_output([str(ROOT / "runtime-image-definition.digest.sh")], text=True).strip()
@@ -414,7 +441,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
             context = Path(output_dir) / "context"
             subprocess.check_call([str(ROOT / "build-context.sh"), str(context)], stdout=subprocess.DEVNULL)
             paths = [path.relative_to(context).as_posix() for path in context.rglob("*") if path.is_file()]
-        self.assertEqual(len(paths), 27)
+        self.assertEqual(len(paths), 24)
         self.assertFalse(any(".env" in path or "private" in path or "credential" in path for path in paths))
         forbidden_components = {"model", "models", "corpus", "dataset", "checkpoint", "knowledge"}
         self.assertFalse(

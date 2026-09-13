@@ -4,6 +4,7 @@ set -Eeuo pipefail
 readonly DEFINITION_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly REPOSITORY_ROOT="$(cd "$DEFINITION_ROOT/../../../.." && pwd)"
 readonly MANIFEST="$DEFINITION_ROOT/build-context.manifest.tsv"
+readonly RUNTIME_SOURCE_ROLE="him-trainer-runtime-source"
 
 sha256_file() {
     if command -v sha256sum >/dev/null 2>&1; then
@@ -80,6 +81,9 @@ actual_count="$(find "$OUTPUT_ROOT" -type f -print | wc -l | tr -d ' ')"
 [[ "$actual_count" == "$EXPECTED_COUNT" ]] \
     || fail "generated file count differs from manifest"
 
+runtime_source_count="$(awk -F '\t' -v role="$RUNTIME_SOURCE_ROLE" 'NR > 1 && $3 == role { count++ } END { print count + 0 }' "$MANIFEST")"
+[[ "$runtime_source_count" -gt 0 ]] || fail "runtime source closure is empty"
+
 if find "$OUTPUT_ROOT" -type f \( \
     -iname '.env' -o -iname '.env.*' -o -iname '*credential*' -o \
     -iname '*secret*' -o -iname '*private*key*' -o -iname '*.pem' -o \
@@ -122,3 +126,13 @@ printf 'BUILD_CONTEXT_ROOT=%s\n' "$OUTPUT_ROOT"
 printf 'BUILD_CONTEXT_FILE_COUNT=%s\n' "$EXPECTED_COUNT"
 printf 'BUILD_CONTEXT_TOTAL_BYTES=%s\n' "$total_bytes"
 printf 'BUILD_CONTEXT_DIGEST=%s\n' "$context_digest"
+python3 - "$REPOSITORY_ROOT/training/him/runtime/a100/runtime-identity.json" <<'PY'
+import json
+import sys
+
+identity = json.loads(open(sys.argv[1], encoding="utf-8").read())
+print(f"SOURCE_GIT_HEAD={identity['sourceGitHead']}")
+print(f"RUNTIME_SOURCE_LOGICAL_DIGEST={identity['runtimeSourceLogicalDigest']}")
+print(f"DEPENDENCY_LOCK_DIGEST={identity['dependencyLockDigest']}")
+print(f"BUILD_DEFINITION_DIGEST={identity['buildDefinitionDigest']}")
+PY

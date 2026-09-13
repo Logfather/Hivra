@@ -13,9 +13,9 @@ permissions:
 
 env:
   IMAGE: ghcr.io/logfather/him-a100-reference-runtime
-  CONTENT_TAG: def-3b77e48809a1
-  EXPECTED_RUNTIME_DEFINITION_DIGEST: 3b77e48809a1351ed601c7ed54db89a69cfb05fa0ef25c329eae7e4e6f9d3c1a
-  EXPECTED_BUILD_CONTEXT_DIGEST: b66237b182a72ab5e58185d25ddb43728e2ade0fd15e7cc730e97c3106a5fa35
+  CONTENT_TAG: def-b016c8805c52
+  EXPECTED_RUNTIME_DEFINITION_DIGEST: b016c8805c52f2fab3d4883dcae3f859fda40332c3c4ce17507f09a6cc541b4e
+  EXPECTED_BUILD_CONTEXT_DIGEST: 1eba8a7434f5a973a1743329737217ba7066b71aca68ffe2414adf9b06cceb11
   EXPECTED_CONTENT_DIGEST: NONE
   EXPECTED_PYTHON_VERSION: 3.13.14
   EXPECTED_TORCH_VERSION: 2.14.0+cu130
@@ -73,11 +73,16 @@ jobs:
           bash training/him/runtime/a100/build-context.sh "$context_dir" > "$RUNNER_TEMP/build-context-output.txt"
           definition_digest=$(bash training/him/runtime/a100/runtime-identity.sh --definition-digest)
           context_digest=$(bash training/him/runtime/a100/runtime-identity.sh --build-context-digest)
+          source_digest=$(awk -F= '$1 == "RUNTIME_SOURCE_LOGICAL_DIGEST" { print $2 }' "$RUNNER_TEMP/build-context-output.txt")
           definition_digest_again=$(bash training/him/runtime/a100/runtime-identity.sh --definition-digest)
           context_digest_again=$(bash training/him/runtime/a100/runtime-identity.sh --build-context-digest)
           identity_definition=$(python3 -c 'import json; print(json.load(open("training/him/runtime/a100/runtime-identity.json"))["runtimeImageDefinitionDigest"])')
           identity_context=$(python3 -c 'import json; print(json.load(open("training/him/runtime/a100/runtime-identity.json"))["buildContextDigest"])')
           identity_tag=$(python3 -c 'import json; print(json.load(open("training/him/runtime/a100/runtime-identity.json"))["contentDerivedDeploymentTag"])')
+          identity_source_head=$(python3 -c 'import json; print(json.load(open("training/him/runtime/a100/runtime-identity.json"))["sourceGitHead"])')
+          identity_source_digest=$(python3 -c 'import json; print(json.load(open("training/him/runtime/a100/runtime-identity.json"))["runtimeSourceLogicalDigest"])')
+          identity_lock_digest=$(python3 -c 'import json; print(json.load(open("training/him/runtime/a100/runtime-identity.json"))["dependencyLockDigest"])')
+          identity_build_definition=$(python3 -c 'import json; print(json.load(open("training/him/runtime/a100/runtime-identity.json"))["buildDefinitionDigest"])')
           test "$definition_digest" = "$EXPECTED_RUNTIME_DEFINITION_DIGEST"
           test "$context_digest" = "$EXPECTED_BUILD_CONTEXT_DIGEST"
           test "$definition_digest" = "$definition_digest_again"
@@ -85,11 +90,17 @@ jobs:
           test "$identity_definition" = "$EXPECTED_RUNTIME_DEFINITION_DIGEST"
           test "$identity_context" = "$EXPECTED_BUILD_CONTEXT_DIGEST"
           test "$identity_tag" = "$CONTENT_TAG"
-          test "$(awk -F '\t' 'NR > 1 && NF { count++ } END { print count + 0 }' training/him/runtime/a100/build-context.manifest.tsv)" = "27"
+          test "$identity_source_head" = "$GITHUB_SHA"
+          test "$identity_source_digest" = "$source_digest"
+          test "$identity_lock_digest" = "$(sha256sum training/him/uv.lock | awk '{print $1}')"
+          test "$identity_build_definition" = "$definition_digest"
+          test "$(awk -F '\t' 'NR > 1 && NF { count++ } END { print count + 0 }' training/him/runtime/a100/build-context.manifest.tsv)" = "24"
           {
             echo "context=$context_dir"
             echo "definition_digest=$definition_digest"
             echo "context_digest=$context_digest"
+            echo "source_head=$identity_source_head"
+            echo "source_digest=$identity_source_digest"
           } >> "$GITHUB_OUTPUT"
 
       - name: Set up Docker Buildx
@@ -186,7 +197,7 @@ jobs:
             test -f /opt/him/validation/build-lineage.json
           '
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$IMAGE:$CONTENT_TAG" \
-            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "3b77e48809a1351ed601c7ed54db89a69cfb05fa0ef25c329eae7e4e6f9d3c1a"; assert d["buildContextDigest"] == "b66237b182a72ab5e58185d25ddb43728e2ade0fd15e7cc730e97c3106a5fa35"'
+            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "${{ steps.authority.outputs.definition_digest }}"; assert d["buildContextDigest"] == "${{ steps.authority.outputs.context_digest }}"; assert d["sourceGitHead"] == "${{ steps.authority.outputs.source_head }}"; assert d["runtimeSourceLogicalDigest"] == "${{ steps.authority.outputs.source_digest }}"'
 
       - name: Publish only the corrected content tag
         if: steps.collision.outputs.state == 'ABSENT'
@@ -267,7 +278,7 @@ jobs:
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
             /opt/him/validation/him_runtime_validation_v1.py --mode build
           docker run --rm --entrypoint /opt/him/runtime/bin/python "$immutable_ref" \
-            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "3b77e48809a1351ed601c7ed54db89a69cfb05fa0ef25c329eae7e4e6f9d3c1a"; assert d["buildContextDigest"] == "b66237b182a72ab5e58185d25ddb43728e2ade0fd15e7cc730e97c3106a5fa35"'
+            -c 'import json; d=json.load(open("/opt/him/runtime/runtime-identity.json")); assert d["runtimeImageDefinitionDigest"] == "${{ steps.authority.outputs.definition_digest }}"; assert d["buildContextDigest"] == "${{ steps.authority.outputs.context_digest }}"; assert d["sourceGitHead"] == "${{ steps.authority.outputs.source_head }}"; assert d["runtimeSourceLogicalDigest"] == "${{ steps.authority.outputs.source_digest }}"'
           printf '=== HIM_POST_PUSH_RUNTIME_VALIDATION_END ===\n'
           post_push_phase=TRAINER_VALIDATION
           printf '=== HIM_POST_PUSH_TRAINER_VALIDATION_BEGIN ===\n'

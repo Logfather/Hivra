@@ -5,6 +5,8 @@ readonly DEFINITION_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly REPOSITORY_ROOT="$(cd "$DEFINITION_ROOT/../../../.." && pwd)"
 readonly PYTHON_VERSION=3.13.14
 readonly UV_VERSION=0.12.2
+readonly BUILD_CONTEXT_MANIFEST="$DEFINITION_ROOT/build-context.manifest.tsv"
+readonly RUNTIME_SOURCE_ROLE="him-trainer-runtime-source"
 
 fail() {
     printf 'runtime-rootfs: %s\n' "$1" >&2
@@ -88,9 +90,20 @@ chroot "$ROOTFS" /opt/him/runtime/bin/python \
 
 readonly TRAINER_RUNTIME_PACKAGE_ROOT="$ROOTFS/opt/him/runtime/lib/python3.13/site-packages/him_trainer"
 install -d -m 0755 "$TRAINER_RUNTIME_PACKAGE_ROOT"
-while IFS= read -r trainer_source; do
-    install -m 0644 "$trainer_source" "$TRAINER_RUNTIME_PACKAGE_ROOT/$(basename "$trainer_source")"
-done < <(find "$REPOSITORY_ROOT/training/him/src/him_trainer" -maxdepth 1 -type f -name '*.py' -print | sort)
+runtime_source_count=0
+while IFS=$'\t' read -r source_path destination_path role copied_to_final_image build_only; do
+    [[ "$source_path" == "source_path" ]] && continue
+    [[ "$role" == "$RUNTIME_SOURCE_ROLE" ]] || continue
+    [[ "$copied_to_final_image" == "YES" && "$build_only" == "NO" ]] \
+        || fail "runtime source closure row is not final-image material"
+    [[ "$destination_path" == trainer/him_trainer/*.py ]] \
+        || fail "runtime source closure destination is not a trainer module: $destination_path"
+    trainer_source="$REPOSITORY_ROOT/$source_path"
+    [[ -f "$trainer_source" ]] || fail "runtime source closure source missing: $source_path"
+    install -m 0644 "$trainer_source" "$TRAINER_RUNTIME_PACKAGE_ROOT/$(basename "$destination_path")"
+    runtime_source_count=$((runtime_source_count + 1))
+done < "$BUILD_CONTEXT_MANIFEST"
+[[ "$runtime_source_count" -gt 0 ]] || fail "runtime source closure is empty"
 
 chroot "$ROOTFS" /opt/him/runtime/bin/python \
     -c 'import him_trainer; import him_trainer.__main__ as entrypoint; assert callable(entrypoint.run)'

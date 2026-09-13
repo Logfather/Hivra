@@ -23,6 +23,23 @@
     "safetensors": "0.7.0",
     "transformers": "ABSENT"
   },
+  "sourceProvenance": {
+    "contractId": "HIM_A100_RUNTIME_SOURCE_PROVENANCE_V2",
+    "closureAuthority": "training/him/runtime/a100/build-context.manifest.tsv",
+    "closureRole": "him-trainer-runtime-source",
+    "sourceGitHeadBinding": "runtime-identity.json",
+    "sourceTreeFileDigestsBinding": "runtime-identity.json",
+    "runtimeSourceLogicalDigestBinding": "runtime-identity.json",
+    "singleAuthoritativeInstallation": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer",
+    "excludedSourceDomains": [
+      "productive-training-runners",
+      "training-loss-execution",
+      "optimizer-construction",
+      "model-artifacts",
+      "training-data",
+      "evaluation-packet"
+    ]
+  },
   "runtimeLayout": {
     "pythonHome": "/opt/him/python",
     "projectEnvironment": "/opt/him/runtime",

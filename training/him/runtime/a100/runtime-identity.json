@@ -1,9 +1,97 @@
 {
-  "identitySchema": "HIM_A100_RUNTIME_IDENTITY_V1",
+  "identitySchema": "HIM_A100_RUNTIME_IDENTITY_V2",
   "runtimeImageId": "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1",
   "referenceEnvironmentContractDigest": "e5bfa4442a50e154c7f23735def545cfc545798f8b326ff38051f2eea57111d9",
-  "buildContextDigest": "b66237b182a72ab5e58185d25ddb43728e2ade0fd15e7cc730e97c3106a5fa35",
-  "runtimeImageDefinitionDigest": "3b77e48809a1351ed601c7ed54db89a69cfb05fa0ef25c329eae7e4e6f9d3c1a",
+  "buildContextDigest": "1eba8a7434f5a973a1743329737217ba7066b71aca68ffe2414adf9b06cceb11",
+  "runtimeImageDefinitionDigest": "b016c8805c52f2fab3d4883dcae3f859fda40332c3c4ce17507f09a6cc541b4e",
+  "buildDefinitionDigest": "b016c8805c52f2fab3d4883dcae3f859fda40332c3c4ce17507f09a6cc541b4e",
+  "dependencyLockDigest": "90a18bf32eed8f5a5b042b34d4bc624fe63e8230e8f9a6d767eea1b2a98a1131",
+  "sourceGitHead": "5faa219c4b49c14648b3b18e1e4355933274d46c",
+  "runtimeSourceLogicalDigest": "47171dafea33ff1a8000c210259ce4e37a73b0588681166b810cf09f45e91dee",
+  "runtimeSourceClosure": {
+    "manifest": "training/him/runtime/a100/build-context.manifest.tsv",
+    "fileCount": 13
+  },
+  "sourceTreeFileDigests": [
+    {
+      "sourcePath": "training/him/src/him_trainer/__init__.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/__init__.py",
+      "sizeBytes": 130,
+      "sha256": "4167c84d79144ed04933eee5dfd2a88dd60cf4633c24cb4714113b3971306a7e"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/__main__.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/__main__.py",
+      "sizeBytes": 10799,
+      "sha256": "702fc1b17a4770bc96b08a790a2bedbe7044a4b7db3ab83c8d90254ddb9ce598"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/a100_validation_v1.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/a100_validation_v1.py",
+      "sizeBytes": 7728,
+      "sha256": "d9ff3501178fd1d1a2fdb43a8a1940d00b5884c1bc81081deca92c1e1b4c2a01"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/checkpoint_v2.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/checkpoint_v2.py",
+      "sizeBytes": 19970,
+      "sha256": "37972e3c762016899a0ddfcc1f75f93f328c70b7c6fa80ddbc6c40841e80f354"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/execution_device_v1.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/execution_device_v1.py",
+      "sizeBytes": 1539,
+      "sha256": "b6719d411f06f65c6526a21f3a66e009f601915e9e54287430679ed54128508a"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/point12_protocol_v1.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/point12_protocol_v1.py",
+      "sizeBytes": 23500,
+      "sha256": "c51513ca6ddb080586ca418503c9faba52fca5961c02ddd49b0099927002f6a2"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/point12_token_tensor_builder_v1.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/point12_token_tensor_builder_v1.py",
+      "sizeBytes": 18059,
+      "sha256": "b4665f853b70a4d01dc7c4341517d6561fb09fd80c2ba7589a9b27e1e9b08bab"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/point13_forward_rng_contract_v1.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/point13_forward_rng_contract_v1.py",
+      "sizeBytes": 10704,
+      "sha256": "9aa338e300f85a58848e7d2da31b634c3199998ba3885740a2ac4e7328a54af1"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/point13_loss_contract_v1.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/point13_loss_contract_v1.py",
+      "sizeBytes": 9227,
+      "sha256": "06fd5d1693f0a0bd2eec4c1630611582f66e77a4dd9ba46bab1b4057cd8e6427"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/point13_model_forward_v1.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/point13_model_forward_v1.py",
+      "sizeBytes": 47423,
+      "sha256": "5e0c9dc3dd5570ffdee24d1da721ff764edc38fb87fff932e3b1ad470befff97"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/point13_optimizer_execution_policy_v1.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/point13_optimizer_execution_policy_v1.py",
+      "sizeBytes": 12434,
+      "sha256": "ede1e90237d07d70f5aeab95f2cb7ec1f982105164f831845d28da9b1292ca74"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/point13_trainability_policy_v1.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/point13_trainability_policy_v1.py",
+      "sizeBytes": 8406,
+      "sha256": "b3ffd6568af8fc38f6372f54f6dc011ead80ebe25f5fffde1d09bcf3e03cb7f4"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/protocol_v1.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/protocol_v1.py",
+      "sizeBytes": 62298,
+      "sha256": "b071e43ba38fa888dbc7f80df00a92e3bc5df72824ee0919ae53709a8f164f57"
+    }
+  ],
   "ociImageDigest": null,
   "runtimeIdentityRuntimePath": "/opt/him/runtime/runtime-identity.json",
   "runtimeImageDefinitionDigestExcludedFields": [
@@ -13,7 +101,7 @@
   ],
   "contentTagSchemeVersion": "V1",
   "contentTagPrefixLength": 12,
-  "contentDerivedDeploymentTag": "def-3b77e48809a1",
+  "contentDerivedDeploymentTag": "def-b016c8805c52",
   "previousContentDerivedDeploymentTag": "def-68f69540cf6c",
   "buildContextDigestRule": "Canonical runtime-image-definition.json bytes exclude derived identity outputs; runtime-identity.json is derived metadata and excluded from the authority digest."
 }
