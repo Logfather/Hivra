@@ -60,8 +60,8 @@ EXPECTED_RUNTIME_BINDING = {
     "sentencepiece": "0.2.2",
     "tokenizers": "0.23.1",
     "transformers": "ABSENT",
-    "ociImage": "ghcr.io/logfather/him-a100-reference-runtime@sha256:9c8bd248de40b13b5275c7afcc20fc0b365c6f73f3b86d3edd9a1232d2894edb",
-    "runtimeImageDefinitionDigest": "3b77e48809a1351ed601c7ed54db89a69cfb05fa0ef25c329eae7e4e6f9d3c1a",
+    "ociImage": "ghcr.io/logfather/him-a100-reference-runtime@sha256:87b74e2b58b3918840890209c42f1a0bf468135cc37156e00d2d3591dd20723a",
+    "runtimeImageDefinitionDigest": "b016c8805c52f2fab3d4883dcae3f859fda40332c3c4ce17507f09a6cc541b4e",
 }
 PACKET_DRY_RUN_OUTPUT_NAME = "expanded-validation-dry-run.v1.json"
 EVALUATOR_ENTRYPOINT = "him_trainer.expanded_validation_p2"

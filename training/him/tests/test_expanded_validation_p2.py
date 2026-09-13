@@ -1,8 +1,10 @@
 import copy
 import contextlib
+import hashlib
 import json
 import pathlib
 import io
+import shutil
 import sys
 import tempfile
 import unittest
@@ -44,6 +46,11 @@ CANDIDATE = "p2-trained-candidate:v1:f3c4105735ee742c53638784bf07fb19db11df52456
 CHECKPOINT = "him-training-checkpoint:v2:29312dac2a6524d1ca2e20563831d19346ae5cd831610db5a2bf160229437622"
 PACKET_ROOT = ROOT / "data/knowledge/him/training/a100-transfer/p2-expanded-validation/v1/46553e60e94908c2d73585ee514758b96fc2d33b18d39027dc989ad7a974044d-adapter-v1/packet"
 HISTORICAL_PACKET_ROOT = ROOT / "data/knowledge/him/training/a100-transfer/p2-expanded-validation/v1/46553e60e94908c2d73585ee514758b96fc2d33b18d39027dc989ad7a974044d/packet"
+REISSUED_PACKET_ROOT = ROOT / "data/knowledge/him/training/a100-transfer/p2-expanded-validation/v1/46553e60e94908c2d73585ee514758b96fc2d33b18d39027dc989ad7a974044d-reissued/packet"
+P2_CHECKPOINT_MANIFEST = ROOT / "data/knowledge/him/models/p2/a3a152b77b3ca51f356b262267d6230533f8b9ea9031f48e0e813e415a7e599e/checkpoint/checkpoint-manifest.json"
+CURRENT_RUNTIME_V2_OCI = "ghcr.io/logfather/him-a100-reference-runtime@sha256:87b74e2b58b3918840890209c42f1a0bf468135cc37156e00d2d3591dd20723a"
+HISTORICAL_RUNTIME_OCI = "ghcr.io/logfather/him-a100-reference-runtime@sha256:9c8bd248de40b13b5275c7afcc20fc0b365c6f73f3b86d3edd9a1232d2894edb"
+CURRENT_RUNTIME_V2_DEFINITION_DIGEST = "b016c8805c52f2fab3d4883dcae3f859fda40332c3c4ce17507f09a6cc541b4e"
 
 
 class ExpandedValidationP2Test(unittest.TestCase):
@@ -51,6 +58,19 @@ class ExpandedValidationP2Test(unittest.TestCase):
     def setUpClass(cls):
         cls.bundle = load_authorities(AUTHORITY_ROOT)
         cls.examples = resolve_expanded_examples(cls.bundle)
+        cls.packet_fixture_directory = tempfile.TemporaryDirectory()
+        current_packet_root = pathlib.Path(cls.packet_fixture_directory.name) / "packet"
+        shutil.copytree(REISSUED_PACKET_ROOT, current_packet_root)
+        (current_packet_root / "runtime/him_trainer/expanded_validation_p2.py").write_bytes(
+            pathlib.Path(ROOT / "training/him/src/him_trainer/expanded_validation_p2.py").read_bytes()
+        )
+        manifest = build_packet_manifest(current_packet_root)
+        (current_packet_root / "packet-manifest.v1.json").write_text(
+            json.dumps(manifest, ensure_ascii=False, sort_keys=True, separators=(",", ":")),
+            encoding="utf-8",
+        )
+        global PACKET_ROOT
+        PACKET_ROOT = current_packet_root
 
     def test_exact_input_counts(self):
         self.assertEqual(len(self.examples), 19)
@@ -192,6 +212,34 @@ class ExpandedValidationP2Test(unittest.TestCase):
         for field, expected in EXPECTED_RUNTIME_BINDING.items():
             self.assertEqual(runtime[field], expected)
         self.assertEqual(runtime["evaluatorSource"], "training/him/src/him_trainer/expanded_validation_p2.py")
+
+    def test_current_runtime_v2_is_the_evaluation_runtime_and_packet_binding_is_accepted(self):
+        candidate = json.loads((PACKET_ROOT / "candidate/frozen-candidate-checkpoint-binding.v1.json").read_text(encoding="utf-8"))
+        runtime = json.loads((PACKET_ROOT / "runtime/runtime-binding.v1.json").read_text(encoding="utf-8"))
+        validate_evaluation_execution_binding(candidate, runtime)
+        self.assertEqual(EXPECTED_RUNTIME_BINDING["ociImage"], CURRENT_RUNTIME_V2_OCI)
+        self.assertEqual(EXPECTED_RUNTIME_BINDING["runtimeImageDefinitionDigest"], CURRENT_RUNTIME_V2_DEFINITION_DIGEST)
+        self.assertEqual(runtime["ociImage"], CURRENT_RUNTIME_V2_OCI)
+        self.assertEqual(runtime["runtimeImageDefinitionDigest"], CURRENT_RUNTIME_V2_DEFINITION_DIGEST)
+
+    def test_historical_checkpoint_runtime_may_differ_and_remains_provenance(self):
+        checkpoint = json.loads(P2_CHECKPOINT_MANIFEST.read_text(encoding="utf-8"))
+        historical = checkpoint["runtimeIdentity"]["runtimeImage"]
+        self.assertEqual(historical, HISTORICAL_RUNTIME_OCI)
+        self.assertNotEqual(historical, CURRENT_RUNTIME_V2_OCI)
+
+    def test_stale_runtime_v1_packet_is_rejected_as_current_execution_binding(self):
+        candidate = json.loads((HISTORICAL_PACKET_ROOT / "candidate/frozen-candidate-checkpoint-binding.v1.json").read_text(encoding="utf-8"))
+        runtime = json.loads((HISTORICAL_PACKET_ROOT / "runtime/runtime-binding.v1.json").read_text(encoding="utf-8"))
+        with self.assertRaises(ExpandedValidationContractError):
+            validate_evaluation_execution_binding(candidate, runtime)
+
+    def test_genuinely_mismatched_current_oci_fails_closed(self):
+        candidate = json.loads((PACKET_ROOT / "candidate/frozen-candidate-checkpoint-binding.v1.json").read_text(encoding="utf-8"))
+        runtime = json.loads((PACKET_ROOT / "runtime/runtime-binding.v1.json").read_text(encoding="utf-8"))
+        runtime["ociImage"] = "ghcr.io/logfather/him-a100-reference-runtime@sha256:" + ("0" * 64)
+        with self.assertRaises(ExpandedValidationContractError):
+            validate_evaluation_execution_binding(candidate, runtime)
 
     def test_evaluation_execution_binding_rejects_candidate_checkpoint_digest_and_runtime_mutations(self):
         candidate = json.loads((PACKET_ROOT / "candidate/frozen-candidate-checkpoint-binding.v1.json").read_text(encoding="utf-8"))
