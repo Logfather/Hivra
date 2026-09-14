@@ -424,6 +424,8 @@ def execute_authorized_p2_v2(
         "batchAuthorityReference": bundle["batch"]["reference"],
         "sequenceReference": "sequence-length-authority:v2:97130457decd4f283492da2d09a0faddb4bb99fc70f7d79732fbd390794cc509",
         "modelBindingDigest": binding.runtime_authority["modelBindingDigest"],
+        "runtimeIdentity": dict(runtime_identity),
+        "optimizerIdentity": dict(optimizer_identity),
     }
     checkpoint = persist_checkpoint(output_root, model=model, optimizer=optimizer, run_reference=run_reference, optimizer_step=optimizer_step, authority_bindings=authority_bindings, runtime_identity=runtime_identity, optimizer_identity=optimizer_identity, training_history=tuple(metrics))
     return {"state": "P2_V2_RUN_COMPLETED", "runReference": run_reference, "optimizerSteps": optimizer_step, "validationForwardCount": EPOCHS + 1, "holdoutForwardCount": 0, "checkpoint": checkpoint.evidence_fields(), "metrics": metrics}

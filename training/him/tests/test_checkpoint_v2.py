@@ -145,6 +145,54 @@ class CheckpointV2Test(unittest.TestCase):
             with self.assertRaises(CheckpointRuntimeError):
                 reload_checkpoint(result.manifest_path, model=_model_and_optimizer()[0], optimizer=_model_and_optimizer()[1], expected_bindings=wrong, expected_optimizer_step=1)
 
+    def test_previous_runner_runtime_identity_mismatch_is_reproduced(self) -> None:
+        bindings = _bindings()
+        stale_runner_bindings = dict(bindings)
+        stale_runner_bindings.pop("runtimeIdentity")
+        stale_runner_bindings.pop("optimizerIdentity")
+        with tempfile.TemporaryDirectory() as directory:
+            model, optimizer = _model_and_optimizer()
+            with self.assertRaisesRegex(CheckpointRuntimeError, "CHECKPOINT_RUNTIME_IDENTITY_MISMATCH"):
+                persist_checkpoint(
+                    directory,
+                    model=model,
+                    optimizer=optimizer,
+                    run_reference="productive-training-run:v2:runtime-identity-regression",
+                    optimizer_step=1,
+                    authority_bindings=stale_runner_bindings,
+                    runtime_identity=bindings["runtimeIdentity"],
+                    optimizer_identity=bindings["optimizerIdentity"],
+                )
+
+    def test_runtime_identity_and_oci_digest_pair_is_strict(self) -> None:
+        bindings = _bindings()
+        current_runtime_identity = {"device": "cuda:0", "runtimeImageDigest": "sha256:" + "a" * 64}
+        bindings["runtimeIdentity"] = current_runtime_identity
+        with tempfile.TemporaryDirectory() as directory:
+            model, optimizer = _model_and_optimizer()
+            result = persist_checkpoint(
+                directory,
+                model=model,
+                optimizer=optimizer,
+                run_reference="productive-training-run:v2:runtime-identity-pair",
+                optimizer_step=1,
+                authority_bindings=bindings,
+                runtime_identity=current_runtime_identity,
+                optimizer_identity=bindings["optimizerIdentity"],
+            )
+            reload_checkpoint(result.manifest_path, model=model, optimizer=optimizer, expected_bindings=bindings, expected_optimizer_step=1)
+            original = json.loads(result.manifest_path.read_text(encoding="utf-8"))
+            for wrong_identity in (
+                {"device": "cpu", "runtimeImageDigest": current_runtime_identity["runtimeImageDigest"]},
+                {"device": "cuda:0", "runtimeImageDigest": "sha256:" + "b" * 64},
+            ):
+                mutated = dict(original)
+                mutated["runtimeIdentity"] = wrong_identity
+                result.manifest_path.write_text(json.dumps(mutated, sort_keys=True) + "\n", encoding="utf-8")
+                with self.assertRaisesRegex(CheckpointRuntimeError, "CHECKPOINT_RUNTIME_IDENTITY_MISMATCH"):
+                    reload_checkpoint(result.manifest_path, model=model, optimizer=optimizer, expected_bindings=bindings, expected_optimizer_step=1)
+            result.manifest_path.write_text(json.dumps(original, sort_keys=True) + "\n", encoding="utf-8")
+
     def test_corrupt_model_state_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             _, _, result = self._persist(directory)
