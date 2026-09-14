@@ -8,7 +8,7 @@ from typing import Any
 
 
 REQUIRED_RUNTIME_MODULES = (
-    "__init__.py", "__main__.py", "a100_validation_v1.py", "batch_size_authority_v2.py",
+    "__init__.py", "__main__.py", "a100_validation_v1.py", "blind_expanded_validation_v2.py", "batch_size_authority_v2.py",
     "checkpoint_v2.py", "corpus_assembly_v2.py", "corpus_coverage_v2.py", "evidence_projection_v2.py",
     "execution_device_v1.py", "input_representation_v2.py", "partition_leakage_v2.py", "partition_v2.py",
     "point12_protocol_v1.py", "point12_token_tensor_builder_v1.py", "point13_forward_rng_contract_v1.py",

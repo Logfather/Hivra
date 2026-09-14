@@ -12,6 +12,7 @@ training/him/runtime/a100/build-context.manifest.tsv	build-context.manifest.tsv	
 training/him/src/him_trainer/__init__.py	trainer/him_trainer/__init__.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/__main__.py	trainer/him_trainer/__main__.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/a100_validation_v1.py	trainer/him_trainer/a100_validation_v1.py	him-trainer-runtime-source	YES	NO
+training/him/src/him_trainer/blind_expanded_validation_v2.py	trainer/him_trainer/blind_expanded_validation_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/checkpoint_v2.py	trainer/him_trainer/checkpoint_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/execution_device_v1.py	trainer/him_trainer/execution_device_v1.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/point12_protocol_v1.py	trainer/him_trainer/point12_protocol_v1.py	him-trainer-runtime-source	YES	NO

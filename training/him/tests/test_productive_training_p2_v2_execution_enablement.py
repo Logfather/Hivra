@@ -48,7 +48,7 @@ def _authorities(directory: Path, *, execution: bool = True, readiness_ok: bool 
         {
             "runtimeImageDigest": "sha256:" + "a" * 64,
             "runtimeImageReference": "ghcr.io/logfather/him-a100-reference-runtime@sha256:" + "a" * 64,
-            "runtimeSourceModuleCount": 30,
+            "runtimeSourceModuleCount": 31,
             "trainer": {"runnerModule": RUNNER_MODULE, "supportsRealExecution": True},
             "trainingInputAuthorityReference": json.loads((ROOT / "data/knowledge/him/training/p2/canonical-catalog-expansion/v2/runtime-authority/training-input-authority.v2.json").read_text(encoding="utf-8"))["reference"],
             "batchAuthorityReference": bundle["batch"]["reference"],
