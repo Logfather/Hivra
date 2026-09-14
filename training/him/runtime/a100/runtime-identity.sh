@@ -6,7 +6,7 @@ readonly REPOSITORY_ROOT="$(cd "$DEFINITION_ROOT/../../../.." && pwd)"
 readonly MANIFEST="$DEFINITION_ROOT/build-context.manifest.tsv"
 readonly IDENTITY_FILE="$DEFINITION_ROOT/runtime-identity.json"
 
-python3 - "$DEFINITION_ROOT" "$REPOSITORY_ROOT" "$MANIFEST" "$IDENTITY_FILE" "${1:---generate}" <<'PY'
+python3 - "$DEFINITION_ROOT" "$REPOSITORY_ROOT" "$MANIFEST" "$IDENTITY_FILE" "${1:---generate}" "${@:2}" <<'PY'
 from __future__ import annotations
 
 import hashlib
@@ -30,10 +30,23 @@ excluded_fields = (
 runtime_definition_source = "training/him/runtime/a100/runtime-image-definition.json"
 runtime_identity_source = "training/him/runtime/a100/runtime-identity.json"
 runtime_source_role = "him-trainer-runtime-source"
+content_tag_prefix = "ctx-"
 
 
 def sha256_bytes(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
+
+
+def legacy_content_tag(definition_digest: str) -> str:
+    """Preserve the V1 mapping for already-published historical artifacts."""
+
+    return f"def-{definition_digest[:12]}"
+
+
+def content_derived_deployment_tag(context_digest: str) -> str:
+    """Address all files that can contribute to the produced runtime image."""
+
+    return f"{content_tag_prefix}{context_digest[:12]}"
 
 
 def canonical_runtime_definition_bytes() -> bytes:
@@ -144,11 +157,12 @@ elif operation == "--generate":
     definition_digest = runtime_definition_digest()
     source_entries = runtime_source_file_digests()
     source_digest = runtime_source_logical_digest(source_entries)
+    context_digest = build_context_digest()
     identity = {
         "identitySchema": "HIM_A100_RUNTIME_IDENTITY_V2",
         "runtimeImageId": "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1",
         "referenceEnvironmentContractDigest": "e5bfa4442a50e154c7f23735def545cfc545798f8b326ff38051f2eea57111d9",
-        "buildContextDigest": build_context_digest(),
+        "buildContextDigest": context_digest,
         "runtimeImageDefinitionDigest": definition_digest,
         "buildDefinitionDigest": definition_digest,
         "dependencyLockDigest": dependency_lock_digest(),
@@ -162,18 +176,25 @@ elif operation == "--generate":
         "ociImageDigest": None,
         "runtimeIdentityRuntimePath": "/opt/him/runtime/runtime-identity.json",
         "runtimeImageDefinitionDigestExcludedFields": list(excluded_fields),
-        "contentTagSchemeVersion": "V1",
+        "contentTagSchemeVersion": "V2",
+        "contentTagPrefix": content_tag_prefix,
         "contentTagPrefixLength": 12,
-        "contentDerivedDeploymentTag": f"def-{definition_digest[:12]}",
-        "previousContentDerivedDeploymentTag": "def-68f69540cf6c",
+        "contentDerivedDeploymentTag": content_derived_deployment_tag(context_digest),
+        "previousContentDerivedDeploymentTag": "def-06d5dd647f2a",
+        "legacyContentTagScheme": "V1:def-<runtimeImageDefinitionDigest[:12]>",
         "buildContextDigestRule": (
             "Canonical runtime-image-definition.json bytes exclude derived identity outputs; "
-            "runtime-identity.json is derived metadata and excluded from the authority digest."
+            "runtime-identity.json is derived metadata and excluded from the authority digest; "
+            "the V2 content tag is derived from the complete build-context digest."
         ),
     }
     encoded = (json.dumps(identity, ensure_ascii=False, indent=2) + "\n").encode()
     identity_path.write_bytes(encoded)
     print(identity_path)
+elif operation == "--legacy-content-tag":
+    if len(sys.argv) != 7 or len(sys.argv[6]) != 64:
+        raise SystemExit("legacy content tag: expected one 64-character definition digest")
+    print(legacy_content_tag(sys.argv[6]))
 else:
     raise SystemExit(f"unsupported operation: {operation}")
 PY

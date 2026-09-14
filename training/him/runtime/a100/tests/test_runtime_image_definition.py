@@ -283,18 +283,28 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertEqual(self.identity["runtimeImageDefinitionDigest"], self._runtime_definition_digest())
         self.assertIsNone(self.identity["ociImageDigest"])
 
-    def test_content_tag_is_derived_from_final_definition_digest(self) -> None:
-        definition_digest = self._runtime_definition_digest()
-        self.assertEqual(self.identity["contentTagSchemeVersion"], "V1")
+    def test_content_tag_is_derived_from_complete_build_context_digest(self) -> None:
+        context_digest = self._build_context_digest()
+        self.assertEqual(self.identity["contentTagSchemeVersion"], "V2")
+        self.assertEqual(self.identity["contentTagPrefix"], "ctx-")
         self.assertEqual(self.identity["contentTagPrefixLength"], 12)
-        self.assertEqual(self.identity["contentDerivedDeploymentTag"], f"def-{definition_digest[:12]}")
-        self.assertEqual(self.identity["previousContentDerivedDeploymentTag"], "def-68f69540cf6c")
+        self.assertEqual(self.identity["contentDerivedDeploymentTag"], f"ctx-{context_digest[:12]}")
+        self.assertEqual(self.identity["previousContentDerivedDeploymentTag"], "def-06d5dd647f2a")
         self.assertNotEqual(self.identity["contentDerivedDeploymentTag"], self.identity["previousContentDerivedDeploymentTag"])
+
+    def test_legacy_content_tag_mapping_reproduces_historical_tag(self) -> None:
+        historical_definition_digest = "06d5dd647f2a1a0c642d09ae3c9e946b2599171167b78d720fe2784ee45b8422"
+        tag = subprocess.check_output(
+            [str(IDENTITY_SCRIPT), "--legacy-content-tag", historical_definition_digest],
+            text=True,
+        ).strip()
+        self.assertEqual(tag, "def-06d5dd647f2a")
 
     def test_identity_exclusion_rule_is_exact_and_non_circular(self) -> None:
         self.assertEqual(self.identity["runtimeImageDefinitionDigestExcludedFields"], EXPECTED_EXCLUDED_FIELDS)
         self.assertIn("Canonical runtime-image-definition.json bytes exclude", self.identity["buildContextDigestRule"])
         self.assertIn("runtime-identity.json is derived metadata and excluded", self.identity["buildContextDigestRule"])
+        self.assertIn("complete build-context digest", self.identity["buildContextDigestRule"])
 
     def test_runtime_identity_generation_is_byte_identical(self) -> None:
         first = IDENTITY_FILE.read_bytes()
@@ -440,6 +450,23 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         second_digest = next(line for line in second.splitlines() if line.startswith("BUILD_CONTEXT_DIGEST=") )
         self.assertEqual(first_digest, second_digest)
         self.assertRegex(first_digest.split("=", 1)[1], r"^[0-9a-f]{64}$")
+
+    def test_collision_guard_preserves_idempotency_and_fails_closed(self) -> None:
+        workflow = (REPOSITORY_ROOT / ".github/workflows/him-a100-runtime-build.yml").read_text()
+        self.assertIn("HIM_CONTENT_TAG_STATE=ABSENT", workflow)
+        self.assertIn("HIM_CONTENT_TAG_STATE=ALREADY_PRESENT_IDENTICAL", workflow)
+        self.assertIn("HIM_CONTENT_TAG_STATE=DIFFERENT_DIGEST_COLLISION", workflow)
+        self.assertIn("different digest collision:", workflow)
+        self.assertIn("exit 78", workflow)
+        self.assertIn("EXPECTED_CONTENT_DIGEST", workflow)
+
+    def test_content_tag_changes_when_runtime_source_changes(self) -> None:
+        original = (ROOT / "runtime-identity.json").read_bytes()
+        identity = json.loads(original)
+        context_digest = identity["buildContextDigest"]
+        self.assertEqual(identity["contentDerivedDeploymentTag"], f"ctx-{context_digest[:12]}")
+        self.assertNotEqual(identity["contentDerivedDeploymentTag"], "def-06d5dd647f2a")
+        self.assertEqual(identity["contentTagSchemeVersion"], "V2")
 
     def test_build_context_carries_exact_authority_bytes(self) -> None:
         with tempfile.TemporaryDirectory() as output_dir:
