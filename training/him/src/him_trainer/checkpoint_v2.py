@@ -14,7 +14,7 @@ import os
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, Mapping, Sequence
 
 
 CHECKPOINT_CONTRACT_ID = "HIM_TRAINING_CHECKPOINT_CONTRACT_V1"
@@ -200,6 +200,7 @@ def _manifest_identity(
     model_state: Mapping[str, Any],
     optimizer_state: Mapping[str, Any],
     state_digest: str,
+    training_history: Sequence[Mapping[str, Any]],
 ) -> dict[str, Any]:
     return {
         "runReference": run_reference,
@@ -210,6 +211,7 @@ def _manifest_identity(
         "stateDigest": state_digest,
         "modelStateFormat": MODEL_STATE_FORMAT,
         "optimizerStateFormat": OPTIMIZER_STATE_FORMAT,
+        "trainingHistory": [dict(entry) for entry in training_history],
     }
 
 
@@ -243,6 +245,7 @@ class CheckpointResult:
             "optimizerStatePath": OPTIMIZER_STATE_RELATIVE_PATH,
             "optimizerStateSha256": self.optimizer_state_sha256,
             "optimizerStep": self.manifest["optimizerStep"],
+            "trainingHistory": self.manifest["identity"].get("trainingHistory", []),
             "reload": {
                 "passed": self.reload.model_state_equivalent and self.reload.optimizer_state_equivalent and self.reload.step_equivalent,
                 "modelStateEquivalence": self.reload.model_state_equivalent,
@@ -268,6 +271,7 @@ def _strict_manifest_gate(manifest_path: Path, expected_bindings: Mapping[str, A
     _fail(identity.get("optimizerStep") == expected_step and manifest.get("optimizerStep") == expected_step, "CHECKPOINT_STEP_MISMATCH")
     _fail(manifest.get("runtimeIdentity") == identity.get("authorityBindings", {}).get("runtimeIdentity"), "CHECKPOINT_RUNTIME_IDENTITY_MISMATCH")
     _fail(manifest.get("optimizerIdentity") == identity.get("authorityBindings", {}).get("optimizerIdentity"), "CHECKPOINT_OPTIMIZER_IDENTITY_MISMATCH")
+    _fail(manifest.get("trainingHistory", []) == identity.get("trainingHistory", []), "CHECKPOINT_TRAINING_HISTORY_MISMATCH")
     _fail(identity.get("modelStateFormat") == MODEL_STATE_FORMAT and identity.get("optimizerStateFormat") == OPTIMIZER_STATE_FORMAT, "CHECKPOINT_FORMAT_INVALID")
     model_meta = manifest.get("modelState")
     optimizer_meta = manifest.get("optimizerState")
@@ -331,6 +335,7 @@ def persist_checkpoint(
     authority_bindings: Mapping[str, Any],
     runtime_identity: Mapping[str, Any],
     optimizer_identity: Mapping[str, Any],
+    training_history: Sequence[Mapping[str, Any]] = (),
 ) -> CheckpointResult:
     """Persist actual numerical state and publish a strict success manifest last."""
 
@@ -354,7 +359,7 @@ def persist_checkpoint(
         model_meta = {"relativePath": MODEL_STATE_RELATIVE_PATH, "size": model_path.stat().st_size, "sha256": model_sha}
         optimizer_meta = {"relativePath": OPTIMIZER_STATE_RELATIVE_PATH, "size": optimizer_path.stat().st_size, "sha256": optimizer_sha}
         state_digest = _sha256_bytes(_canonical({"modelStateSha256": model_sha, "optimizerStateSha256": optimizer_sha, "optimizerStep": optimizer_step}))
-        identity = _manifest_identity(run_reference=run_reference, optimizer_step=optimizer_step, authority_bindings=authority_bindings, model_state=model_meta, optimizer_state=optimizer_meta, state_digest=state_digest)
+        identity = _manifest_identity(run_reference=run_reference, optimizer_step=optimizer_step, authority_bindings=authority_bindings, model_state=model_meta, optimizer_state=optimizer_meta, state_digest=state_digest, training_history=list(training_history))
         logical_digest = _sha256_bytes(_canonical(identity))
         reference = f"him-training-checkpoint:v2:{_sha256_bytes(_canonical({'runReference': run_reference, 'checkpointLogicalDigest': logical_digest}))}"
         manifest = {
@@ -372,6 +377,7 @@ def persist_checkpoint(
             "modelState": model_meta,
             "optimizerState": optimizer_meta,
             "stateDigest": state_digest,
+            "trainingHistory": [dict(entry) for entry in training_history],
         }
         _atomic_bytes_write(manifest_path, _canonical(manifest) + b"\n")
         manifest_sha = _sha256_file(manifest_path)
