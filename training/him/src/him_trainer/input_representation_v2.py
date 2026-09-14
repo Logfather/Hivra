@@ -20,7 +20,12 @@ from typing import Any, Iterable, Mapping, Sequence
 CONTRACT_ID = "HIM_INPUT_REPRESENTATION_V2"
 CONTRACT_VERSION = "2"
 MISSING_VALUE = "UNKNOWN"
-MAX_SEQUENCE_LENGTH = 128
+# Legacy reporting threshold only.  Sequence authority for active V2 tensor
+# construction is sequence_length_authority_v2.SEQUENCE_LENGTH_V2 (256).
+LEGACY_TOKEN_BUDGET_REPORTING_LIMIT = 128
+# Backward-compatible name for pre-existing reports/tests.  It is not an
+# active sequence limit; active V2 execution binds the separate 256 authority.
+MAX_SEQUENCE_LENGTH = LEGACY_TOKEN_BUDGET_REPORTING_LIMIT
 
 FIELD_ORDER = ("O", "L", "I", "K", "G", "T", "C", "N", "X")
 MANDATORY_FIELDS = ("O", "L", "I", "C", "N", "X")
@@ -365,7 +370,7 @@ def token_budget(lengths: Iterable[int]) -> dict[str, int]:
         "median": ordered[(len(ordered) - 1) // 2],
         "p90": ordered[p90_index],
         "max": ordered[-1],
-        "over128": sum(length > MAX_SEQUENCE_LENGTH for length in ordered),
+        "over128": sum(length > LEGACY_TOKEN_BUDGET_REPORTING_LIMIT for length in ordered),
     }
 
 
@@ -380,6 +385,7 @@ __all__ = [
     "HimInputRepresentationV2",
     "InputRepresentationV2Error",
     "MANDATORY_FIELDS",
+    "LEGACY_TOKEN_BUDGET_REPORTING_LIMIT",
     "MAX_SEQUENCE_LENGTH",
     "MISSING_VALUE",
     "OBSERVED_CONDITIONING_V2_FIELDS",
