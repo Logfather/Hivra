@@ -24,6 +24,7 @@ from .batch_size_authority_v2 import (
 RUNTIME_IMAGE_DIGEST = "sha256:87b74e2b58b3918840890209c42f1a0bf468135cc37156e00d2d3591dd20723a"
 MODEL_REFERENCE = "FacebookAI/xlm-roberta-base@e73636d4f797dec63c3081bb6ed5c7b0bb3f2089"
 TOKENIZER_REFERENCE = "xlm-roberta-base-tokenizer@a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c"
+REAL_EXECUTION_RUNNER_MODULE = "him_trainer.productive_training_p2_v2"
 
 
 class TrainingRuntimeAuthorityV2Error(ValueError):
@@ -104,6 +105,104 @@ def build_training_runtime_authority_v2(batch: BatchSizeAuthorityV2 | None = Non
     }
 
 
+def build_execution_enabled_training_runtime_authority_v2(
+    *,
+    runtime_image_digest: str,
+    runtime_source_logical_digest: str,
+    source_git_head: str,
+    training_input_authority_reference: str,
+    batch_authority_reference: str,
+    sequence_reference: str,
+    corpus_reference: str,
+    partition_reference: str,
+    leakage_reference: str,
+    model_binding_digest: str,
+    runtime_source_module_count: int = 30,
+) -> dict[str, Any]:
+    """Issue a new immutable execution-enabled runtime binding.
+
+    The historical blocked authority is never edited.  This constructor is
+    intentionally data-only so it can be used before model execution and
+    after an OCI build when the final digest becomes known.
+    """
+
+    _require(isinstance(runtime_image_digest, str) and runtime_image_digest.startswith("sha256:") and len(runtime_image_digest) == 71, "RUNTIME_DIGEST_INVALID")
+    _require(isinstance(runtime_source_logical_digest, str) and len(runtime_source_logical_digest) == 64, "RUNTIME_SOURCE_DIGEST_INVALID")
+    _require(isinstance(source_git_head, str) and len(source_git_head) == 40, "SOURCE_HEAD_INVALID")
+    _require(runtime_source_module_count == 30, "RUNTIME_SOURCE_MODULE_COUNT_INVALID")
+    identity = {
+        "contractId": "HIM_P2_TRAINING_RUNTIME_AUTHORITY_V2",
+        "version": "2",
+        "referencePrefix": "him-p2-training-runtime-authority-execution-enabled:v2",
+        "runtimeImageDigest": runtime_image_digest,
+        "runtimeImageReference": f"ghcr.io/logfather/him-a100-reference-runtime@{runtime_image_digest}",
+        "runtime": dict(RUNTIME_CORE_IDENTITY, runtimeImageDigest=runtime_image_digest),
+        "modelBindingDigest": model_binding_digest,
+        "modelReference": MODEL_REFERENCE,
+        "tokenizerReference": TOKENIZER_REFERENCE,
+        "runtimeSourceLogicalDigest": runtime_source_logical_digest,
+        "runtimeSourceModuleCount": runtime_source_module_count,
+        "sourceGitHead": source_git_head,
+        "trainer": {"runnerModule": REAL_EXECUTION_RUNNER_MODULE, "supportsRealExecution": True, "supportsModelDeserialization": True},
+        "trainingInputAuthorityReference": training_input_authority_reference,
+        "batchAuthorityReference": batch_authority_reference,
+        "sequenceReference": sequence_reference,
+        "corpusReference": corpus_reference,
+        "partitionReference": partition_reference,
+        "leakageReference": leakage_reference,
+        "holdoutOpened": False,
+        "trainingRuntimeAuthorized": True,
+        "realTrainingExecutionAuthorized": True,
+        "status": "AUTHORIZED",
+    }
+    digest = _digest(identity)
+    return {**identity, "logicalDigest": digest, "reference": f"him-p2-training-runtime-authority-execution-enabled:v2:{digest}"}
+
+
+def validate_execution_enabled_training_runtime_authority_v2(value: Mapping[str, Any]) -> None:
+    """Validate the reissued authority without accepting the old blocked one."""
+
+    _require(value.get("contractId") == "HIM_P2_TRAINING_RUNTIME_AUTHORITY_V2", "RUNTIME_AUTHORITY_CONTRACT_MISMATCH")
+    _require(value.get("status") == "AUTHORIZED", "RUNTIME_AUTHORITY_STATUS_INVALID")
+    _require(value.get("trainingRuntimeAuthorized") is True, "RUNTIME_AUTHORITY_NOT_AUTHORIZED")
+    _require(value.get("realTrainingExecutionAuthorized") is True, "REAL_EXECUTION_NOT_AUTHORIZED")
+    _require(value.get("holdoutOpened") is False, "HOLDOUT_MUST_REMAIN_CLOSED")
+    _require(value.get("runtimeSourceModuleCount") == 30, "RUNTIME_SOURCE_MODULE_COUNT_INVALID")
+    _require(value.get("trainer", {}).get("runnerModule") == REAL_EXECUTION_RUNNER_MODULE, "RUNNER_MODULE_MISMATCH")
+    _require(value.get("trainer", {}).get("supportsRealExecution") is True, "REAL_EXECUTION_SUPPORT_MISSING")
+    _require(value.get("runtimeImageReference") == f"ghcr.io/logfather/him-a100-reference-runtime@{value.get('runtimeImageDigest')}", "RUNTIME_IMAGE_REFERENCE_MISMATCH")
+    identity = {key: item for key, item in value.items() if key not in {"logicalDigest", "reference"}}
+    _require(value.get("logicalDigest") == _digest(identity), "RUNTIME_AUTHORITY_DIGEST_MISMATCH")
+    _require(value.get("reference") == f"him-p2-training-runtime-authority-execution-enabled:v2:{value.get('logicalDigest')}", "RUNTIME_AUTHORITY_REFERENCE_MISMATCH")
+
+
+def persist_execution_enabled_training_runtime_authority_v2(path: str | Path, value: Mapping[str, Any]) -> None:
+    """Persist one reissued authority without overwriting a different one."""
+
+    validate_execution_enabled_training_runtime_authority_v2(value)
+    target = Path(path)
+    payload = _canonical(dict(value)) + b"\n"
+    if target.exists() or target.is_symlink():
+        _require(not target.is_symlink() and target.read_bytes() == payload, "EXECUTION_AUTHORITY_IMMUTABLE_COLLISION")
+        return
+    target.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix=f".{target.name}.", suffix=".tmp", dir=target.parent)
+    try:
+        with os.fdopen(fd, "wb") as handle:
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, target)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
+def reload_execution_enabled_training_runtime_authority_v2(path: str | Path) -> dict[str, Any]:
+    value = json.loads(Path(path).read_text(encoding="utf-8"))
+    _require(isinstance(value, Mapping), "EXECUTION_AUTHORITY_OBJECT_REQUIRED")
+    validate_execution_enabled_training_runtime_authority_v2(value)
+    return dict(value)
 def validate_training_runtime_authority_v2(value: Mapping[str, Any], batch: BatchSizeAuthorityV2 | None = None) -> None:
     expected = build_training_runtime_authority_v2(batch)
     _require(dict(value) == expected, "TRAINING_RUNTIME_AUTHORITY_MISMATCH")

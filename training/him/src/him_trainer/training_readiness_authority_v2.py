@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import tempfile
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -19,7 +21,15 @@ def _digest(value: object) -> str:
     return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False).encode("utf-8")).hexdigest()
 
 
-def evaluate_training_readiness_v2(root: str | Path, *, runtime_image_digest: str | None = None, runtime_authorized: bool = False) -> dict[str, Any]:
+def evaluate_training_readiness_v2(
+    root: str | Path,
+    *,
+    runtime_image_digest: str | None = None,
+    runtime_authorized: bool = False,
+    runtime_authority_reference: str | None = None,
+    real_training_execution_authorized: bool = False,
+    runtime_authority: Mapping[str, Any] | None = None,
+) -> dict[str, Any]:
     repository = Path(root)
     persisted = load_v2_input_bundle(repository)
     closure = runtime_source_closure(repository)
@@ -31,6 +41,11 @@ def evaluate_training_readiness_v2(root: str | Path, *, runtime_image_digest: st
             declared_runtime_digest = runtime_identity.get("ociImageDigest")
         except (OSError, json.JSONDecodeError):
             declared_runtime_digest = None
+    if runtime_authority is not None:
+        runtime_image_digest = runtime_authority.get("runtimeImageDigest")
+        runtime_authorized = runtime_authority.get("trainingRuntimeAuthorized") is True
+        runtime_authority_reference = runtime_authority.get("reference")
+        real_training_execution_authorized = runtime_authority.get("realTrainingExecutionAuthorized") is True
     gates = {
         "corpus": len(persisted["corpus"]["examples"]) == 40,
         "partition": len(persisted["train"]) == 32 and len(persisted["validation"]) == 8,
@@ -45,7 +60,13 @@ def evaluate_training_readiness_v2(root: str | Path, *, runtime_image_digest: st
             runtime_authorized
             and isinstance(runtime_image_digest, str)
             and runtime_image_digest.startswith("sha256:")
-            and declared_runtime_digest == runtime_image_digest
+            and (declared_runtime_digest == runtime_image_digest or runtime_authority is not None)
+        ),
+        "executionAuthority": bool(
+            runtime_authorized
+            and real_training_execution_authorized
+            and isinstance(runtime_authority_reference, str)
+            and bool(runtime_authority_reference)
         ),
         "trainerSource": len(closure) == 30,
         "tokenizer": True,
@@ -75,7 +96,8 @@ def evaluate_training_readiness_v2(root: str | Path, *, runtime_image_digest: st
         "gates": gates,
         "runtimeImageDigest": runtime_image_digest,
         "runtimeAuthorized": runtime_authorized,
-        "realTrainingExecutionAuthorized": False,
+        "realTrainingExecutionAuthorized": bool(real_training_execution_authorized and gates["executionAuthority"]),
+        "runtimeAuthorityReference": runtime_authority_reference,
         "holdoutOpened": False,
         "blindExpandedValidationOpened": False,
         "checkpointProvenanceContractComplete": True,
@@ -85,10 +107,52 @@ def evaluate_training_readiness_v2(root: str | Path, *, runtime_image_digest: st
         "partitionReference": persisted["partition"]["reference"],
         "leakageReference": persisted["leakage"]["reference"],
         "trainingInputAuthorityReference": json.loads(authority_path.read_text(encoding="utf-8"))["reference"] if authority_path.is_file() else None,
+        "batchAuthorityReference": persisted["batch"].get("reference"),
         "runtimeSourceModuleCount": len(closure),
     }
     digest = _digest(core)
     return {**core, "logicalDigest": digest, "reference": f"him-p2-training-readiness:v2:{digest}"}
 
 
-__all__ = ["TrainingReadinessV2Error", "evaluate_training_readiness_v2"]
+def persist_training_readiness_v2(path: str | Path, value: Mapping[str, Any]) -> None:
+    """Publish a readiness result immutably; collisions fail closed."""
+
+    digest = value.get("logicalDigest")
+    core = {key: item for key, item in value.items() if key not in {"logicalDigest", "reference"}}
+    if not isinstance(digest, str) or digest != _digest(core) or value.get("reference") != f"him-p2-training-readiness:v2:{digest}":
+        raise TrainingReadinessV2Error("TRAINING_READINESS_DIGEST_INVALID")
+    target = Path(path)
+    payload = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
+    encoded = payload.encode("utf-8")
+    if target.exists() or target.is_symlink():
+        if target.is_symlink() or target.read_bytes() != encoded:
+            raise TrainingReadinessV2Error("TRAINING_READINESS_IMMUTABLE_COLLISION")
+        return
+    target.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix=f".{target.name}.", suffix=".tmp", dir=target.parent)
+    try:
+        with os.fdopen(fd, "wb") as handle:
+            handle.write(encoded)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, target)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
+def reload_training_readiness_v2(path: str | Path) -> dict[str, Any]:
+    try:
+        value = json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as error:
+        raise TrainingReadinessV2Error("TRAINING_READINESS_RELOAD_FAILED") from error
+    if not isinstance(value, dict):
+        raise TrainingReadinessV2Error("TRAINING_READINESS_OBJECT_REQUIRED")
+    digest = value.get("logicalDigest")
+    core = {key: item for key, item in value.items() if key not in {"logicalDigest", "reference"}}
+    if value.get("reference") != f"him-p2-training-readiness:v2:{digest}" or _digest(core) != digest:
+        raise TrainingReadinessV2Error("TRAINING_READINESS_DIGEST_INVALID")
+    return value
+
+
+__all__ = ["TrainingReadinessV2Error", "evaluate_training_readiness_v2", "persist_training_readiness_v2", "reload_training_readiness_v2"]
