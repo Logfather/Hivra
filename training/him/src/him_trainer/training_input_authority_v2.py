@@ -13,6 +13,7 @@ import json
 import os
 import tempfile
 from pathlib import Path
+from dataclasses import dataclass
 from typing import Any, Mapping
 
 from .corpus_assembly_v2 import parse_model_input_v2
@@ -40,6 +41,59 @@ BATCH_RELATIVE = Path("data/knowledge/him/training/p2/canonical-catalog-expansio
 RUNTIME_RELATIVE = Path("data/knowledge/him/training/p2/canonical-catalog-expansion/v2/runtime-authority/training-runtime-authority.v2.json")
 AUTHORITY_RELATIVE = Path("data/knowledge/him/training/p2/canonical-catalog-expansion/v2/runtime-authority/training-input-authority.v2.json")
 INVENTORY_RELATIVE = Path("data/knowledge/him/training/p2/canonical-catalog-expansion/v2/runtime-authority/training-input-inventory.v2.json")
+
+
+@dataclass(frozen=True)
+class TrainingInputArtifactSet:
+    """Concrete file bindings for one immutable P2 V2 training-input authority."""
+
+    corpus: Path
+    partition: Path
+    leakage: Path
+    coverage: Path
+    batch: Path
+    runtime: Path | None
+    authority: Path | None
+    inventory: Path | None
+    corpus_reference: str | None = None
+    partition_reference: str | None = None
+    leakage_reference: str | None = None
+    batch_reference: str | None = None
+    runtime_reference: str | None = None
+
+
+def _default_artifact_set(repository: Path) -> TrainingInputArtifactSet:
+    return TrainingInputArtifactSet(
+        corpus=repository / CORPUS_RELATIVE,
+        partition=repository / PARTITION_RELATIVE,
+        leakage=repository / LEAKAGE_RELATIVE,
+        coverage=repository / COVERAGE_RELATIVE,
+        batch=repository / BATCH_RELATIVE,
+        runtime=repository / RUNTIME_RELATIVE,
+        authority=repository / AUTHORITY_RELATIVE,
+        inventory=repository / INVENTORY_RELATIVE,
+        corpus_reference=CORPUS_REFERENCE,
+        partition_reference=PARTITION_REFERENCE,
+        leakage_reference=LEAKAGE_REFERENCE,
+        batch_reference=BATCH_REFERENCE,
+        runtime_reference=RUNTIME_REFERENCE,
+    )
+
+
+def artifact_set_from_directory(directory: str | Path) -> TrainingInputArtifactSet:
+    """Bind a versioned assembly directory without changing semantic contents."""
+
+    base = Path(directory)
+    return TrainingInputArtifactSet(
+        corpus=base / "corpus.v2.json",
+        partition=base / "partition.v2.json",
+        leakage=base / "leakage-validation.v2.json",
+        coverage=base / "coverage.v2.json",
+        batch=base / "batch-authority.v2.json",
+        runtime=None,
+        authority=base / "training-input-authority.v2.json",
+        inventory=base / "training-input-inventory.v2.json",
+    )
 
 
 class TrainingInputV2Error(ValueError):
@@ -81,6 +135,20 @@ def _verify_artifact(path: Path, reference: str, contract_id: str | None = None,
     return value
 
 
+def _verify_self_describing_artifact(path: Path, contract_id: str | None = None, *, recompute: bool = True) -> dict[str, Any]:
+    value = _load(path)
+    reference = value.get("reference")
+    digest = value.get("logicalDigest")
+    _fail(isinstance(reference, str) and isinstance(digest, str), f"REFERENCE_OR_DIGEST_MISSING:{path}")
+    _fail(reference.endswith(f":{digest}"), f"REFERENCE_MISMATCH:{path}")
+    if recompute:
+        core = {key: item for key, item in value.items() if key not in {"reference", "logicalDigest"}}
+        _fail(logical_digest(core) == digest, f"DIGEST_RECOMPUTATION_MISMATCH:{path}")
+    if contract_id is not None:
+        _fail(value.get("contractId") == contract_id, f"CONTRACT_MISMATCH:{path}")
+    return value
+
+
 def _entry_digest(serialized: str) -> str:
     return hashlib.sha256(serialized.encode("utf-8")).hexdigest()
 
@@ -93,12 +161,12 @@ def validate_v2_authority_identity(*, corpus_reference: str, partition_reference
     _fail(sequence_reference == SEQUENCE_REFERENCE, "SEQUENCE_256_AUTHORITY_REQUIRED")
 
 
-def _partition_entries(partition: Mapping[str, Any]) -> tuple[dict[str, Any], ...]:
+def _partition_entries(partition: Mapping[str, Any], expected_count: int) -> tuple[dict[str, Any], ...]:
     members = partition.get("members")
     _fail(isinstance(members, list), "PARTITION_MEMBERS_MISSING")
     result = tuple(dict(item) for item in members)
-    _fail(len(result) == 40, "PARTITION_MEMBER_COUNT_INVALID")
-    _fail(len({item.get("exampleReference") for item in result}) == 40, "PARTITION_MEMBER_DUPLICATE")
+    _fail(len(result) == expected_count, "PARTITION_MEMBER_COUNT_INVALID")
+    _fail(len({item.get("exampleReference") for item in result}) == expected_count, "PARTITION_MEMBER_DUPLICATE")
     _fail(all(item.get("partition") in {TRAIN_SPLIT, VALIDATION_SPLIT} for item in result), "HOLDOUT_MEMBER_PRESENT")
     return result
 
@@ -150,33 +218,76 @@ def _inventory_entry(example: Mapping[str, Any], split: str) -> dict[str, Any]:
     }
 
 
-def load_v2_input_bundle(root: str | Path = DEFAULT_ROOT) -> dict[str, Any]:
-    """Reload every persisted V2 authority and reconstruct exactly 32/8 inputs."""
+def _load_artifact_set(repository: Path, artifact_set: TrainingInputArtifactSet) -> dict[str, Any]:
+    if artifact_set.corpus_reference is None:
+        corpus = _verify_self_describing_artifact(artifact_set.corpus, "HIM_P2_CORPUS_V2")
+        partition = _verify_self_describing_artifact(artifact_set.partition, "HIM_P2_PARTITION_AUTHORITY_V2")
+        leakage = _verify_self_describing_artifact(artifact_set.leakage, recompute=True)
+        batch = _verify_self_describing_artifact(artifact_set.batch, "HIM_P2_BATCH_SIZE_AUTHORITY_V2")
+    else:
+        validate_v2_authority_identity(corpus_reference=artifact_set.corpus_reference, partition_reference=artifact_set.partition_reference or "", sequence_reference=SEQUENCE_REFERENCE)
+        corpus = _verify_artifact(artifact_set.corpus, artifact_set.corpus_reference, "HIM_P2_CORPUS_V2")
+        partition = _verify_artifact(artifact_set.partition, artifact_set.partition_reference or "", "HIM_P2_PARTITION_AUTHORITY_V2", recompute=False)
+        leakage = _verify_artifact(artifact_set.leakage, artifact_set.leakage_reference or "", "HIM_P2_LEAKAGE_VALIDATION_AUTHORITY_V2", recompute=False)
+        batch = _verify_artifact(artifact_set.batch, artifact_set.batch_reference or "", "HIM_P2_BATCH_SIZE_AUTHORITY_V2", recompute=False)
+    runtime = _verify_artifact(artifact_set.runtime, artifact_set.runtime_reference or "", "HIM_P2_TRAINING_RUNTIME_AUTHORITY_V2", recompute=False) if artifact_set.runtime is not None else None
+    coverage = _load(artifact_set.coverage)
+    inventory = _verify_self_describing_artifact(artifact_set.inventory, "HIM_P2_TRAINING_INPUT_INVENTORY_V2") if artifact_set.inventory is not None and artifact_set.inventory.is_file() else None
+    authority = _verify_self_describing_artifact(artifact_set.authority, "HIM_P2_TRAINING_INPUT_AUTHORITY_V2") if artifact_set.authority is not None and artifact_set.authority.is_file() else None
+    return {"corpus": corpus, "partition": partition, "leakage": leakage, "batch": batch, "runtime": runtime, "coverage": coverage, "inventory": inventory, "authority": authority}
+
+
+def _coverage_count(coverage: Mapping[str, Any], split: str) -> int | None:
+    section = coverage.get(split.lower())
+    if isinstance(section, Mapping):
+        value = section.get("example_count", section.get("exampleCount"))
+        if isinstance(value, int) and not isinstance(value, bool):
+            return value
+    return None
+
+
+def load_v2_input_bundle(root: str | Path = DEFAULT_ROOT, *, artifact_directory: str | Path | None = None) -> dict[str, Any]:
+    """Reload persisted V2 authority bindings and reconstruct partitioned inputs."""
 
     repository = Path(root)
-    validate_v2_authority_identity(corpus_reference=CORPUS_REFERENCE, partition_reference=PARTITION_REFERENCE, sequence_reference=SEQUENCE_REFERENCE)
-    corpus = _verify_artifact(repository / CORPUS_RELATIVE, CORPUS_REFERENCE, "HIM_P2_CORPUS_V2")
-    partition = _verify_artifact(repository / PARTITION_RELATIVE, PARTITION_REFERENCE, "HIM_P2_PARTITION_AUTHORITY_V2", recompute=False)
-    leakage = _verify_artifact(repository / LEAKAGE_RELATIVE, LEAKAGE_REFERENCE, "HIM_P2_LEAKAGE_VALIDATION_AUTHORITY_V2", recompute=False)
-    batch = _verify_artifact(repository / BATCH_RELATIVE, BATCH_REFERENCE, "HIM_P2_BATCH_SIZE_AUTHORITY_V2", recompute=False)
-    runtime = _verify_artifact(repository / RUNTIME_RELATIVE, RUNTIME_REFERENCE, "HIM_P2_TRAINING_RUNTIME_AUTHORITY_V2", recompute=False)
-    coverage = _load(repository / COVERAGE_RELATIVE)
-    _fail(corpus.get("exampleCount") == 40 and len(corpus.get("examples", [])) == 40, "CORPUS_COUNT_INVALID")
-    _fail(partition.get("corpusReference") == CORPUS_REFERENCE and partition.get("corpusLogicalDigest") == CORPUS_REFERENCE.rsplit(":", 1)[-1], "PARTITION_CORPUS_BINDING_INVALID")
-    _fail(leakage.get("partitionReference") == PARTITION_REFERENCE and leakage.get("status") == "PASS", "LEAKAGE_AUTHORITY_INVALID")
+    artifacts = _load_artifact_set(repository, artifact_set_from_directory(artifact_directory) if artifact_directory is not None else _default_artifact_set(repository))
+    corpus = artifacts["corpus"]
+    partition = artifacts["partition"]
+    leakage = artifacts["leakage"]
+    batch = artifacts["batch"]
+    runtime = artifacts["runtime"]
+    coverage = artifacts["coverage"]
+    expected_total = corpus.get("exampleCount")
+    _fail(isinstance(expected_total, int) and not isinstance(expected_total, bool), "CORPUS_COUNT_INVALID")
+    _fail(len(corpus.get("examples", [])) == expected_total, "CORPUS_COUNT_INVALID")
+    _fail(partition.get("corpusReference") == corpus.get("reference") and partition.get("corpusLogicalDigest") == corpus.get("logicalDigest"), "PARTITION_CORPUS_BINDING_INVALID")
+    _fail(leakage.get("partitionReference") == partition.get("reference") and leakage.get("status") == "PASS", "LEAKAGE_AUTHORITY_INVALID")
     _fail(batch.get("physicalBatchSize") == 8 and batch.get("gradientAccumulationSteps") == 1 and batch.get("validationBatchSize") == 8, "BATCH_AUTHORITY_INVALID")
-    _fail(batch.get("batchSizeAuthorized") is False, "UNEXPECTED_OLD_BATCH_AUTHORIZATION")
-    _fail(runtime.get("batchAuthorityReference") == BATCH_REFERENCE and runtime.get("sequenceReference") == SEQUENCE_REFERENCE, "RUNTIME_BINDING_INVALID")
-    _fail(coverage.get("train", {}).get("example_count") == 32 and coverage.get("validation", {}).get("example_count") == 8, "COVERAGE_COUNTS_INVALID")
+    if runtime is not None:
+        _fail(runtime.get("batchAuthorityReference") == batch.get("reference") and runtime.get("sequenceReference") == SEQUENCE_REFERENCE, "RUNTIME_BINDING_INVALID")
     examples = {item["exampleReference"]: item for item in corpus["examples"]}
-    members = _partition_entries(partition)
+    members = _partition_entries(partition, expected_total)
     _fail(set(examples) == {item["exampleReference"] for item in members}, "CORPUS_PARTITION_MEMBER_SET_MISMATCH")
     by_split: dict[str, list[dict[str, Any]]] = {TRAIN_SPLIT: [], VALIDATION_SPLIT: []}
     for member in members:
         by_split[member["partition"]].append(_inventory_entry(examples[member["exampleReference"]], member["partition"]))
-    _fail(len(by_split[TRAIN_SPLIT]) == 32 and len(by_split[VALIDATION_SPLIT]) == 8, "V2_SPLIT_COUNTS_INVALID")
+    train_count = len(by_split[TRAIN_SPLIT])
+    validation_count = len(by_split[VALIDATION_SPLIT])
+    _fail(train_count > 0 and validation_count > 0 and train_count + validation_count == expected_total, "V2_SPLIT_COUNTS_INVALID")
+    _fail(_coverage_count(coverage, TRAIN_SPLIT) == train_count and _coverage_count(coverage, VALIDATION_SPLIT) == validation_count, "COVERAGE_COUNTS_INVALID")
+    if batch.get("trainExampleCount") is not None:
+        _fail(batch.get("trainExampleCount") == train_count and batch.get("validationExampleCount") == validation_count, "BATCH_COUNT_BINDING_INVALID")
+    if artifacts["inventory"] is not None:
+        inventory = artifacts["inventory"]
+        _fail(inventory.get("corpusReference") == corpus.get("reference") and inventory.get("partitionReference") == partition.get("reference"), "INVENTORY_BINDING_INVALID")
+        _fail(inventory.get("splitCounts") == {"TRAIN": train_count, "VALIDATION": validation_count, "HOLDOUT": 0}, "INVENTORY_SPLIT_COUNT_INVALID")
+    if artifacts["authority"] is not None:
+        authority = artifacts["authority"]
+        _fail(authority.get("corpusReference") == corpus.get("reference") and authority.get("partitionReference") == partition.get("reference"), "TRAINING_INPUT_AUTHORITY_BINDING_INVALID")
+        if artifacts["inventory"] is not None:
+            _fail(authority.get("inventoryReference") == artifacts["inventory"].get("reference"), "TRAINING_INPUT_AUTHORITY_INVENTORY_MISMATCH")
     _fail(not set(item["exampleReference"] for item in by_split[TRAIN_SPLIT]) & set(item["exampleReference"] for item in by_split[VALIDATION_SPLIT]), "TRAIN_VALIDATION_OVERLAP")
-    return {"corpus": corpus, "partition": partition, "leakage": leakage, "batch": batch, "runtime": runtime, "coverage": coverage, "train": tuple(by_split[TRAIN_SPLIT]), "validation": tuple(by_split[VALIDATION_SPLIT]), "holdout": ()}
+    return {"corpus": corpus, "partition": partition, "leakage": leakage, "batch": batch, "runtime": runtime, "coverage": coverage, "inventory": artifacts["inventory"], "authority": artifacts["authority"], "train": tuple(by_split[TRAIN_SPLIT]), "validation": tuple(by_split[VALIDATION_SPLIT]), "holdout": ()}
 
 
 def build_training_input_inventory(bundle: Mapping[str, Any]) -> dict[str, Any]:
@@ -273,6 +384,6 @@ def validate_training_input_authority(value: Mapping[str, Any], bundle: Mapping[
 __all__ = [
     "AUTHORITY_RELATIVE", "BATCH_REFERENCE", "CORPUS_REFERENCE", "DEFAULT_ROOT", "EVIDENCE_ID", "INVENTORY_RELATIVE",
     "LEAKAGE_REFERENCE", "MAX_SEQUENCE_LENGTH", "PARTITION_REFERENCE", "RUNTIME_REFERENCE", "SEQUENCE_REFERENCE",
-    "TrainingInputV2Error", "build_training_input_authority", "build_training_input_inventory", "load_v2_input_bundle",
+    "TrainingInputV2Error", "artifact_set_from_directory", "build_training_input_authority", "build_training_input_inventory", "load_v2_input_bundle",
     "logical_digest", "persist_training_input_authority", "validate_training_input_authority",
 ]

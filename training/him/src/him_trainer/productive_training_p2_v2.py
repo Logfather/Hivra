@@ -27,8 +27,6 @@ from .training_input_authority_v2 import (
 
 
 RUNNER_MODULE = "him_trainer.productive_training_p2_v2"
-TRAIN_COUNT = 32
-VALIDATION_COUNT = 8
 PHYSICAL_BATCH_SIZE = 8
 GRADIENT_ACCUMULATION_STEPS = 1
 EPOCHS = 3
@@ -55,6 +53,46 @@ class ExecutionAuthorityBinding:
     readiness: Mapping[str, Any]
     input_authority_reference: str
     runtime_image_digest: str
+    artifact_directory: Path | None
+
+
+@dataclass(frozen=True)
+class TrainingCountContract:
+    train_count: int
+    validation_count: int
+    batches_per_epoch: int
+    optimizer_steps_per_epoch: int
+    total_optimizer_steps: int
+
+
+def _candidate_artifact_directory(readiness_path: str | Path) -> Path | None:
+    directory = Path(readiness_path).parent
+    names = ("corpus.v2.json", "partition.v2.json", "leakage-validation.v2.json", "coverage.v2.json", "batch-authority.v2.json")
+    return directory if all((directory / name).is_file() for name in names) else None
+
+
+def training_count_contract(bundle: Mapping[str, Any]) -> TrainingCountContract:
+    train_count = len(bundle["train"])
+    validation_count = len(bundle["validation"])
+    if train_count <= 0 or validation_count <= 0 or bundle["holdout"] != ():
+        raise TrainingInputV2Error("TRAINING_COUNT_CONTRACT_INVALID")
+    batch = bundle["batch"]
+    if batch.get("physicalBatchSize") != PHYSICAL_BATCH_SIZE or batch.get("gradientAccumulationSteps") != GRADIENT_ACCUMULATION_STEPS:
+        raise TrainingInputV2Error("BATCH_AUTHORITY_INVALID")
+    if train_count % PHYSICAL_BATCH_SIZE:
+        raise TrainingInputV2Error("TRAINING_BATCH_COUNT_INVALID")
+    batches_per_epoch = train_count // PHYSICAL_BATCH_SIZE
+    optimizer_steps_per_epoch = int(batch.get("optimizerStepsPerEpoch", batches_per_epoch))
+    total_optimizer_steps = int(batch.get("totalOptimizerSteps", optimizer_steps_per_epoch * EPOCHS))
+    if optimizer_steps_per_epoch != batches_per_epoch or total_optimizer_steps != batches_per_epoch * EPOCHS:
+        raise TrainingInputV2Error("OPTIMIZER_STEP_COUNT_INVALID")
+    if batch.get("trainExampleCount") is not None and batch.get("trainExampleCount") != train_count:
+        raise TrainingInputV2Error("BATCH_TRAIN_COUNT_MISMATCH")
+    if batch.get("validationExampleCount") is not None and batch.get("validationExampleCount") != validation_count:
+        raise TrainingInputV2Error("BATCH_VALIDATION_COUNT_MISMATCH")
+    if batch.get("batchesPerEpoch") is not None and batch.get("batchesPerEpoch") != batches_per_epoch:
+        raise TrainingInputV2Error("BATCHES_PER_EPOCH_MISMATCH")
+    return TrainingCountContract(train_count, validation_count, batches_per_epoch, optimizer_steps_per_epoch, total_optimizer_steps)
 
 
 def _read_authority(path: str | Path, code: str) -> dict[str, Any]:
@@ -95,14 +133,16 @@ def validate_execution_authority(
     not open Holdout.  It is therefore also the remote pre-training probe.
     """
 
-    bundle = load_v2_input_bundle(root)
     runtime = _read_authority(runtime_authority_path, "RUNTIME_AUTHORITY")
     readiness = _read_authority(readiness_path, "TRAINING_READINESS")
+    artifact_directory = _candidate_artifact_directory(readiness_path)
+    bundle = load_v2_input_bundle(root, artifact_directory=artifact_directory)
+    count_contract = training_count_contract(bundle)
     _verify_logical_digest(runtime, "RUNTIME_AUTHORITY")
     _verify_logical_digest(readiness, "TRAINING_READINESS")
     if runtime.get("contractId") != EXECUTION_AUTHORITY_CONTRACT:
         raise TrainingInputV2Error("RUNTIME_AUTHORITY_CONTRACT_MISMATCH")
-    if readiness.get("contractId") != READINESS_AUTHORITY_CONTRACT:
+    if readiness.get("contractId") not in {READINESS_AUTHORITY_CONTRACT, "HIM_P2_TARGETED_CONTRAST_RETRAINING_READINESS_V2"}:
         raise TrainingInputV2Error("TRAINING_READINESS_CONTRACT_MISMATCH")
     if runtime.get("status") != "AUTHORIZED" or runtime.get("trainingRuntimeAuthorized") is not True:
         raise TrainingInputV2Error(EXECUTION_AUTHORITY_ERROR)
@@ -118,29 +158,43 @@ def validate_execution_authority(
     trainer = runtime.get("trainer")
     if runtime.get("runtimeSourceModuleCount") != 31 or not isinstance(trainer, Mapping) or trainer.get("runnerModule") != RUNNER_MODULE:
         raise TrainingInputV2Error("TRAINER_SOURCE_AUTHORITY_MISMATCH")
-    if readiness.get("status") != "AUTHORIZED" or readiness.get("trainingReady") is not True:
+    targeted_ready = readiness.get("finalTargetedRetrainingReadiness") == "PASS"
+    if readiness.get("contractId") == READINESS_AUTHORITY_CONTRACT and (readiness.get("status") != "AUTHORIZED" or readiness.get("trainingReady") is not True):
         raise TrainingInputV2Error("TRAINING_READINESS_MISMATCH")
-    if readiness.get("runtimeAuthorityReference") != runtime.get("reference"):
+    if readiness.get("contractId") != READINESS_AUTHORITY_CONTRACT and not targeted_ready:
+        raise TrainingInputV2Error("TRAINING_READINESS_MISMATCH")
+    if readiness.get("runtimeAuthorityReference") is not None and readiness.get("runtimeAuthorityReference") != runtime.get("reference"):
         raise TrainingInputV2Error("RUNTIME_READINESS_BINDING_MISMATCH")
     if readiness.get("runtimeImageDigest") != runtime_digest:
         raise TrainingInputV2Error("RUNTIME_READINESS_DIGEST_MISMATCH")
-    if readiness.get("runtimeAuthorized") is not True or readiness.get("realTrainingExecutionAuthorized") is not True:
+    if readiness.get("contractId") == READINESS_AUTHORITY_CONTRACT and (readiness.get("runtimeAuthorized") is not True or readiness.get("realTrainingExecutionAuthorized") is not True):
         raise TrainingInputV2Error("EXECUTION_AUTHORITY_GATE_FAILED")
     gates = readiness.get("gates")
     required_gates = ("corpus", "partition", "leakage", "coverage", "sequence", "batch", "trainingInput", "runtime", "trainerSource", "tokenizer", "baseModel", "holdoutClosed")
-    if not isinstance(gates, Mapping) or any(gates.get(name) is not True for name in required_gates):
+    targeted_required_gates = ("CORPUS_GATE", "PARTITION_GATE", "LEAKAGE_GATE", "COVERAGE_GATE", "SEQUENCE_GATE", "BATCH_GATE", "TRAINING_INPUT_GATE", "RUNTIME_GATE", "TOKENIZER_GATE", "BASE_MODEL_GATE", "HOLDOUT_EXCLUSION_GATE")
+    if not isinstance(gates, Mapping) or (
+        any(gates.get(name) is not True for name in required_gates)
+        and any(gates.get(name) != "PASS" for name in targeted_required_gates)
+    ):
         raise TrainingInputV2Error("TRAINING_READINESS_GATES_FAILED")
-    input_path = Path(root) / "data/knowledge/him/training/p2/canonical-catalog-expansion/v2/runtime-authority/training-input-authority.v2.json"
-    input_authority = _read_authority(input_path, "TRAINING_INPUT_AUTHORITY")
+    if bundle.get("authority") is not None:
+        input_authority = dict(bundle["authority"])
+    else:
+        input_path = Path(root) / "data/knowledge/him/training/p2/canonical-catalog-expansion/v2/runtime-authority/training-input-authority.v2.json"
+        input_authority = _read_authority(input_path, "TRAINING_INPUT_AUTHORITY")
     if input_authority.get("reference") != readiness.get("trainingInputAuthorityReference"):
         raise TrainingInputV2Error("TRAINING_INPUT_AUTHORITY_MISMATCH")
     if readiness.get("corpusReference") != bundle["corpus"].get("reference") or readiness.get("partitionReference") != bundle["partition"].get("reference") or readiness.get("leakageReference") != bundle["leakage"].get("reference"):
         raise TrainingInputV2Error("DATA_AUTHORITY_MISMATCH")
-    if readiness.get("holdoutOpened") is not False or bundle["holdout"] != ():
+    if readiness.get("holdoutOpened") is True or bundle["holdout"] != ():
         raise TrainingInputV2Error("HOLDOUT_EXECUTION_FORBIDDEN")
-    if runtime.get("batchAuthorityReference") not in {bundle["batch"].get("reference"), readiness.get("batchAuthorityReference")}:
+    if readiness.get("batchAuthorityReference") != bundle["batch"].get("reference"):
         raise TrainingInputV2Error("BATCH_AUTHORITY_MISMATCH")
-    return ExecutionAuthorityBinding(runtime, readiness, input_authority["reference"], runtime_digest)
+    if runtime.get("batchAuthorityReference") not in {bundle["batch"].get("reference"), readiness.get("batchAuthorityReference"), input_authority.get("batchAuthorityReference")}:
+        raise TrainingInputV2Error("BATCH_AUTHORITY_MISMATCH")
+    if bundle["batch"].get("totalOptimizerSteps") is not None and bundle["batch"].get("totalOptimizerSteps") != count_contract.total_optimizer_steps:
+        raise TrainingInputV2Error("BATCH_TOTAL_OPTIMIZER_STEPS_MISMATCH")
+    return ExecutionAuthorityBinding(runtime, readiness, input_authority["reference"], runtime_digest, artifact_directory)
 
 
 def execution_preflight(
@@ -158,6 +212,8 @@ def execution_preflight(
         readiness_path=readiness_path,
         expected_runtime_image_digest=expected_runtime_image_digest,
     )
+    bundle = load_v2_input_bundle(root, artifact_directory=binding.artifact_directory)
+    count_contract = training_count_contract(bundle)
     return {
         "state": "P2_V2_EXECUTION_AUTHORITY_ACCEPTED",
         "executionAccepted": True,
@@ -165,8 +221,11 @@ def execution_preflight(
         "runtimeAuthorityReference": binding.runtime_authority["reference"],
         "readinessReference": binding.readiness["reference"],
         "runtimeImageDigest": binding.runtime_image_digest,
-        "train": TRAIN_COUNT,
-        "validation": VALIDATION_COUNT,
+        "train": count_contract.train_count,
+        "validation": count_contract.validation_count,
+        "batchesPerEpoch": count_contract.batches_per_epoch,
+        "optimizerStepsPerEpoch": count_contract.optimizer_steps_per_epoch,
+        "totalOptimizerSteps": count_contract.total_optimizer_steps,
         "holdout": 0,
         "modelDeserializationCount": 0,
         "forwardCount": 0,
@@ -335,7 +394,8 @@ def execute_authorized_p2_v2(
     from .point13_trainability_projection_v1 import project_him_trainability_policy_v1
 
     repository = Path(root)
-    bundle = load_v2_input_bundle(repository)
+    bundle = load_v2_input_bundle(repository, artifact_directory=binding.artifact_directory)
+    count_contract = training_count_contract(bundle)
     tokenizer_file = Path(tokenizer_path)
     if not tokenizer_file.is_file() or hashlib.sha256(tokenizer_file.read_bytes()).hexdigest() != TOKENIZER_SHA256:
         raise TrainingInputV2Error("TOKENIZER_AUTHORITY_MISMATCH")
@@ -385,11 +445,11 @@ def execute_authorized_p2_v2(
                 selected_execution_device=device,
                 allow_primary_target_absence=True,
             )
-            metrics.append({"epoch": epoch, "validationLoss": float(losses.total_loss.detach().cpu().item()), "validationExampleCount": VALIDATION_COUNT})
+            metrics.append({"epoch": epoch, "validationLoss": float(losses.total_loss.detach().cpu().item()), "validationExampleCount": count_contract.validation_count})
         model.train()
 
     for epoch in range(EPOCHS):
-        for start in range(0, TRAIN_COUNT, PHYSICAL_BATCH_SIZE):
+        for start in range(0, count_contract.train_count, PHYSICAL_BATCH_SIZE):
             end = start + PHYSICAL_BATCH_SIZE
             optimizer.zero_grad(set_to_none=True)
             output = model(train_view.input_ids[start:end].to(device), train_view.attention_mask[start:end].to(device))
@@ -410,6 +470,8 @@ def execute_authorized_p2_v2(
             metrics.append({"epoch": epoch + 1, "optimizerStep": optimizer_step, "loss": float(losses.total_loss.detach().cpu().item())})
         evaluate(epoch + 1)
     evaluate(EPOCHS)
+    if optimizer_step != count_contract.total_optimizer_steps:
+        raise TrainingInputV2Error("OPTIMIZER_STEP_COUNT_INVALID")
     run_reference = f"productive-training-run:p2-v2:{binding.runtime_authority['logicalDigest']}:{binding.readiness['logicalDigest']}"
     runtime_identity = {"device": str(device), "runtimeImageDigest": binding.runtime_image_digest, "modelRevision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089", "tokenizerSha256": "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c"}
     optimizer_identity = {"optimizerId": "optimizer:adamw:v1", "learningRate": "0.0001", "weightDecay": "0.01", "gradientAccumulationSteps": 1, "seed": 7}
@@ -501,5 +563,5 @@ __all__ = [
     "EXECUTION_AUTHORITY_ERROR", "ExecutionAuthorityBinding", "RUNNER_MODULE",
     "build_batch_tensor_shape_contract", "build_partition_bound_batches", "build_tensor_shape_contract",
     "execution_preflight", "execute_authorized_p2_v2", "future_training_command", "preflight",
-    "validate_execution_authority",
+    "training_count_contract", "validate_execution_authority",
 ]

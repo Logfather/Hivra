@@ -10,11 +10,10 @@ from pathlib import Path
 from him_trainer.productive_training_p2_v2 import (
     EXECUTION_AUTHORITY_ERROR,
     RUNNER_MODULE,
-    TRAIN_COUNT,
-    VALIDATION_COUNT,
     execution_preflight,
     load_v2_input_bundle,
     main,
+    training_count_contract,
 )
 from him_trainer.training_input_authority_v2 import logical_digest
 from him_trainer.training_readiness_authority_v2 import (
@@ -32,6 +31,7 @@ from him_trainer.training_runtime_authority_v2 import (
 
 ROOT = Path(__file__).resolve().parents[3]
 FINAL_AUTHORITY = ROOT / "build/knowledge/reports/him/p2-v2/runtime-workflow-retry/final-authority"
+TARGETED_AUTHORITY = ROOT / "data/knowledge/him/training/p2/canonical-catalog-expansion/v2/corpus-assembly-targeted-contrast-v2"
 
 
 def _rebind(value: dict[str, object], *, reference_prefix: str) -> dict[str, object]:
@@ -71,6 +71,11 @@ def _authorities(directory: Path, *, execution: bool = True, readiness_ok: bool 
             "realTrainingExecutionAuthorized": execution,
             "trainingReady": readiness_ok and execution,
             "status": "AUTHORIZED" if readiness_ok and execution else "BLOCKED",
+            "batchAuthorityReference": bundle["batch"]["reference"],
+            "trainingInputAuthorityReference": runtime["trainingInputAuthorityReference"],
+            "corpusReference": bundle["corpus"]["reference"],
+            "partitionReference": bundle["partition"]["reference"],
+            "leakageReference": bundle["leakage"]["reference"],
         },
     )
     readiness["gates"] = {**readiness["gates"], "executionAuthority": readiness_ok and execution}  # type: ignore[index]
@@ -117,12 +122,73 @@ class ProductiveTrainingP2V2ExecutionEnablementTest(unittest.TestCase):
     def test_execution_enablement_does_not_change_scientific_binding(self) -> None:
         bundle = load_v2_input_bundle(ROOT)
         self.assertEqual((32, 8, 0), (len(bundle["train"]), len(bundle["validation"]), len(bundle["holdout"])))
-        self.assertEqual((32, 8, 1, 8, 256), (TRAIN_COUNT, VALIDATION_COUNT, 1, 8, 256))
+        historical_contract = training_count_contract(bundle)
+        self.assertEqual((32, 8, 4, 4, 12), (
+            historical_contract.train_count,
+            historical_contract.validation_count,
+            historical_contract.batches_per_epoch,
+            historical_contract.optimizer_steps_per_epoch,
+            historical_contract.total_optimizer_steps,
+        ))
         self.assertEqual(3, 3)
         self.assertEqual("0.0001", "0.0001")
         self.assertEqual("0.01", "0.01")
         self.assertEqual(7, 7)
         self.assertEqual("FP32", "FP32")
+
+    def test_targeted_count_contract_is_loaded_from_authorities(self) -> None:
+        bundle = load_v2_input_bundle(ROOT, artifact_directory=TARGETED_AUTHORITY)
+        contract = training_count_contract(bundle)
+        self.assertEqual((48, 8, 6, 6, 18), (
+            contract.train_count,
+            contract.validation_count,
+            contract.batches_per_epoch,
+            contract.optimizer_steps_per_epoch,
+            contract.total_optimizer_steps,
+        ))
+        self.assertEqual("him-p2-corpus-targeted-contrast-revision:v2:0ba145a70d188d893bd9f17300b8b411c0692808460a8f01473a8080d5005d53", bundle["corpus"]["reference"])
+        self.assertEqual("him-p2-training-input-authority-targeted-contrast:v2:3f1bd80dcf1f724b0a174cbb4140bb3e03c4c5029da7a95dcfcc7ecf71fb284b", bundle["authority"]["reference"])
+
+    def test_targeted_execution_preflight_reaches_model_free_handoff(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            runtime = json.loads((FINAL_AUTHORITY / "runtime-authority.final.v2.json").read_text(encoding="utf-8"))
+            target_bundle = load_v2_input_bundle(ROOT, artifact_directory=TARGETED_AUTHORITY)
+            runtime.update(
+                {
+                    "runtimeImageDigest": "sha256:357fa16d8d766c7d4c4d63a20b59513046023f6c9548dcc69b7075f9cd225531",
+                    "runtimeImageReference": "ghcr.io/logfather/him-a100-reference-runtime@sha256:357fa16d8d766c7d4c4d63a20b59513046023f6c9548dcc69b7075f9cd225531",
+                    "runtimeSourceModuleCount": 31,
+                    "trainer": {"runnerModule": RUNNER_MODULE, "supportsRealExecution": True},
+                    "trainingInputAuthorityReference": target_bundle["authority"]["reference"],
+                    "batchAuthorityReference": target_bundle["batch"]["reference"],
+                    "sequenceReference": "sequence-length-authority:v2:97130457decd4f283492da2d09a0faddb4bb99fc70f7d79732fbd390794cc509",
+                    "corpusReference": target_bundle["corpus"]["reference"],
+                    "partitionReference": target_bundle["partition"]["reference"],
+                    "leakageReference": target_bundle["leakage"]["reference"],
+                    "realTrainingExecutionAuthorized": True,
+                    "trainingRuntimeAuthorized": True,
+                    "status": "AUTHORIZED",
+                },
+            )
+            runtime["runtime"] = {**runtime["runtime"], "runtimeImageDigest": runtime["runtimeImageDigest"]}  # type: ignore[index]
+            runtime = _rebind(runtime, reference_prefix="him-p2-training-runtime-authority-execution-enabled:v2")
+            runtime_path = Path(directory) / "runtime-authority.json"
+            runtime_path.write_text(json.dumps(runtime, sort_keys=True), encoding="utf-8")
+            result = execution_preflight(
+                ROOT,
+                runtime_authority_path=runtime_path,
+                readiness_path=TARGETED_AUTHORITY / "training-readiness.v2.json",
+                expected_runtime_image_digest="sha256:357fa16d8d766c7d4c4d63a20b59513046023f6c9548dcc69b7075f9cd225531",
+            )
+            self.assertEqual("P2_V2_EXECUTION_AUTHORITY_ACCEPTED", result["state"])
+            self.assertEqual((48, 8, 6, 6, 18), (
+                result["train"],
+                result["validation"],
+                result["batchesPerEpoch"],
+                result["optimizerStepsPerEpoch"],
+                result["totalOptimizerSteps"],
+            ))
+            self.assertEqual(0, result["modelDeserializationCount"])
 
     def test_execution_enabled_path_structurally_excludes_holdout(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
