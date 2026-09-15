@@ -73,6 +73,14 @@ FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT = Path("him-final/final-evaluation/v1")
 FINAL_RAW_PREDICTION_OUTPUT_RELATIVE_PATH = FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT / "raw-predictions.v1.json"
 FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH = FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT / "evaluation-result.v1.json"
 FINAL_EXECUTION_REPORT_OUTPUT_RELATIVE_PATH = FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT / "execution-report.v1.json"
+DEFAULT_FINAL_HOLDOUT_AUTHORITY_ROOT = Path("/workspace/p2-expanded-validation-packet/packet/authority")
+FINAL_HOLDOUT_AUTHORITY_FILENAME = "p2-family-isolated-holdout-authority.v1.json"
+DEFAULT_FINAL_MODEL_ROOT = Path("/workspace/models/xlm-roberta-base/e73636d4f797dec63c3081bb6ed5c7b0bb3f2089")
+DEFAULT_FINAL_TOKENIZER_PATH = DEFAULT_FINAL_MODEL_ROOT / "tokenizer.json"
+FINAL_HOLDOUT_EXECUTION_ENTRYPOINT = "him_trainer.final_evaluation_authority_v1"
+FINAL_HOLDOUT_EXECUTION_COMMAND_MODE = "--execute-final-holdout"
+FINAL_HOLDOUT_PREFLIGHT_COMMAND_MODE = "--final-holdout-execution-preflight"
+REQUIRED_MODEL_ROOT_FILES = ("config.json", "model.safetensors", "tokenizer.json")
 REQUIRED_RUNTIME_MODULES = (
     "final_evaluation_authority_v1.py",
     "blind_expanded_validation_v2.py",
@@ -525,6 +533,204 @@ def preflight_final_evaluation_authority_v1(
     }
 
 
+def _path_status(path: Path, *, must_exist: bool, create_on_execution: bool = False) -> dict[str, Any]:
+    parent = path.parent
+    exists = path.exists()
+    return {
+        "path": str(path),
+        "exists": exists,
+        "mustExistBeforeExecution": must_exist,
+        "createOnExecution": create_on_execution,
+        "parentExists": parent.exists(),
+        "parentIsDirectoryOrCreatable": parent.is_dir() or not parent.exists(),
+        "resolved": (path.is_file() and not path.is_symlink()) if must_exist else (parent.is_dir() or not parent.exists()),
+    }
+
+
+def _default_final_checkpoint_manifest(execution_root: str | Path) -> Path:
+    return Path(execution_root) / FINAL_CHECKPOINT_MANIFEST_RELATIVE_PATH
+
+
+def _default_final_output_root(execution_root: str | Path) -> Path:
+    return Path(execution_root) / FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT
+
+
+def _load_checkpoint_manifest_for_path_binding(path: Path) -> dict[str, Any]:
+    manifest = _read_json(path)
+    _require(manifest.get("checkpointReference") == FINAL_CHECKPOINT_REFERENCE, "FINAL_CHECKPOINT_REFERENCE_MISMATCH")
+    _require(manifest.get("checkpointLogicalDigest") == FINAL_CHECKPOINT_LOGICAL_DIGEST, "FINAL_CHECKPOINT_DIGEST_MISMATCH")
+    model_state = manifest.get("modelState")
+    _require(isinstance(model_state, Mapping), "FINAL_MODEL_STATE_METADATA_INVALID")
+    relative = model_state.get("relativePath")
+    _require(isinstance(relative, str) and relative and not Path(relative).is_absolute(), "FINAL_MODEL_STATE_RELATIVE_PATH_INVALID")
+    return manifest
+
+
+def _final_model_state_path_from_manifest(manifest_path: Path, manifest: Mapping[str, Any]) -> Path:
+    relative = manifest["modelState"]["relativePath"]
+    root = manifest_path.parent
+    resolved = (root / relative).resolve()
+    _require(resolved.is_relative_to(root.resolve()), "FINAL_MODEL_STATE_ESCAPES_CHECKPOINT_ROOT")
+    return resolved
+
+
+def final_holdout_execution_command_v1(
+    *,
+    runtime_root: str | Path = "/opt/him",
+    execution_root: str | Path = "/workspace",
+    output_root: str | Path | None = None,
+    holdout_authority_root: str | Path | None = None,
+    checkpoint_manifest: str | Path | None = None,
+    model_root: str | Path | None = None,
+    tokenizer_path: str | Path | None = None,
+) -> tuple[str, ...]:
+    execution = Path(execution_root)
+    root = Path(runtime_root)
+    authority = root / FINAL_EVALUATION_AUTHORITY_RELATIVE_PATH
+    output = Path(output_root) if output_root is not None else _default_final_output_root(execution)
+    holdout_root = Path(holdout_authority_root) if holdout_authority_root is not None else DEFAULT_FINAL_HOLDOUT_AUTHORITY_ROOT
+    checkpoint = Path(checkpoint_manifest) if checkpoint_manifest is not None else _default_final_checkpoint_manifest(execution)
+    model = Path(model_root) if model_root is not None else DEFAULT_FINAL_MODEL_ROOT
+    tokenizer = Path(tokenizer_path) if tokenizer_path is not None else model / "tokenizer.json"
+    return (
+        "python",
+        "-m",
+        FINAL_HOLDOUT_EXECUTION_ENTRYPOINT,
+        FINAL_HOLDOUT_EXECUTION_COMMAND_MODE,
+        "--root",
+        str(root),
+        "--authority",
+        str(authority),
+        "--execution-root",
+        str(execution),
+        "--holdout-authority-root",
+        str(holdout_root),
+        "--checkpoint-manifest",
+        str(checkpoint),
+        "--model-root",
+        str(model),
+        "--tokenizer-path",
+        str(tokenizer),
+        "--output-root",
+        str(output),
+    )
+
+
+def verify_final_holdout_execution_path_v1(
+    runtime_root: str | Path,
+    authority_path: str | Path,
+    execution_root: str | Path | None = None,
+    *,
+    holdout_authority_root: str | Path | None = None,
+    checkpoint_manifest: str | Path | None = None,
+    model_root: str | Path | None = None,
+    tokenizer_path: str | Path | None = None,
+    output_root: str | Path | None = None,
+) -> dict[str, Any]:
+    execution = Path(execution_root) if execution_root is not None else default_execution_root_for_runtime_root(runtime_root)
+    output = Path(output_root) if output_root is not None else _default_final_output_root(execution)
+    holdout_root = Path(holdout_authority_root) if holdout_authority_root is not None else DEFAULT_FINAL_HOLDOUT_AUTHORITY_ROOT
+    checkpoint_path = Path(checkpoint_manifest) if checkpoint_manifest is not None else _default_final_checkpoint_manifest(execution)
+    model_root_path = Path(model_root) if model_root is not None else DEFAULT_FINAL_MODEL_ROOT
+    tokenizer_file = Path(tokenizer_path) if tokenizer_path is not None else model_root_path / "tokenizer.json"
+
+    binding = verify_final_holdout_execution_bindings_v1(runtime_root, authority_path, execution)
+    gaps: list[dict[str, Any]] = []
+    if binding["state"] != "FINAL_HOLDOUT_EXECUTION_BINDINGS_PASS":
+        gaps.append({"role": "preHoldoutBinding", "state": binding["state"]})
+
+    authority = reload_final_evaluation_authority_v1(authority_path)
+    if authority["authorityReference"] != f"him-final-evaluation-authority:v1:{authority['logicalDigest']}":
+        gaps.append({"role": "finalEvaluationAuthority", "state": "REFERENCE_INVALID"})
+
+    holdout_authority_path = holdout_root / FINAL_HOLDOUT_AUTHORITY_FILENAME
+    holdout_status = _path_status(holdout_authority_path, must_exist=True)
+    if not holdout_status["resolved"]:
+        gaps.append({"role": "holdoutAuthority", "state": "PATH_NOT_RESOLVED", "path": holdout_status["path"]})
+
+    checkpoint_status = _path_status(checkpoint_path, must_exist=True)
+    model_state_status: dict[str, Any] = {"path": "UNRESOLVED", "resolved": False}
+    if checkpoint_status["resolved"]:
+        manifest = _load_checkpoint_manifest_for_path_binding(checkpoint_path)
+        model_state_path = _final_model_state_path_from_manifest(checkpoint_path, manifest)
+        model_state_status = _path_status(model_state_path, must_exist=True)
+        if not model_state_status["resolved"]:
+            gaps.append({"role": "modelState", "state": "PATH_NOT_RESOLVED", "path": model_state_status["path"]})
+    else:
+        gaps.append({"role": "checkpointManifest", "state": "PATH_NOT_RESOLVED", "path": checkpoint_status["path"]})
+
+    model_files = {name: _path_status(model_root_path / name, must_exist=True) for name in REQUIRED_MODEL_ROOT_FILES}
+    for name, status in model_files.items():
+        if not status["resolved"]:
+            gaps.append({"role": f"modelRoot:{name}", "state": "PATH_NOT_RESOLVED", "path": status["path"]})
+    tokenizer_status = _path_status(tokenizer_file, must_exist=True)
+    if not tokenizer_status["resolved"]:
+        gaps.append({"role": "tokenizer", "state": "PATH_NOT_RESOLVED", "path": tokenizer_status["path"]})
+
+    raw_path = output / FINAL_RAW_PREDICTION_OUTPUT_RELATIVE_PATH.name
+    result_path = output / FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH.name
+    report_path = output / FINAL_EXECUTION_REPORT_OUTPUT_RELATIVE_PATH.name
+    raw_status = _path_status(raw_path, must_exist=False, create_on_execution=True)
+    result_status = _path_status(result_path, must_exist=False, create_on_execution=True)
+    report_status = _path_status(report_path, must_exist=False, create_on_execution=True)
+    for role, status in (("rawPredictionOutput", raw_status), ("resultOutput", result_status), ("reportOutput", report_status)):
+        if not status["resolved"]:
+            gaps.append({"role": role, "state": "OUTPUT_PATH_NOT_RESOLVED", "path": status["path"]})
+
+    command = final_holdout_execution_command_v1(
+        runtime_root=runtime_root,
+        execution_root=execution,
+        output_root=output,
+        holdout_authority_root=holdout_root,
+        checkpoint_manifest=checkpoint_path,
+        model_root=model_root_path,
+        tokenizer_path=tokenizer_file,
+    )
+    resolved = len(gaps) == 0
+    return {
+        "state": "FINAL_HOLDOUT_EXECUTION_PATH_RESOLVED" if resolved else "FINAL_HOLDOUT_EXECUTION_PATH_BLOCKED",
+        "finalHoldoutExecutionEntrypoint": FINAL_HOLDOUT_EXECUTION_ENTRYPOINT,
+        "executionCommand": list(command),
+        "finalEvaluationAuthorityReference": authority["authorityReference"],
+        "finalHoldoutAuthorityReference": FINAL_HOLDOUT_AUTHORITY_REFERENCE,
+        "finalCheckpointReference": FINAL_CHECKPOINT_REFERENCE,
+        "finalModelStateSha256": FINAL_MODEL_STATE_SHA256,
+        "holdoutAuthorityPath": holdout_status,
+        "checkpointManifestPath": checkpoint_status,
+        "modelStatePath": model_state_status,
+        "modelRoot": str(model_root_path),
+        "modelRootFiles": model_files,
+        "tokenizerPath": tokenizer_status,
+        "rawPredictionOutputPath": raw_status,
+        "resultOutputPath": result_status,
+        "resultReloadPath": result_status,
+        "reportOutputPath": report_status,
+        "reportReloadPath": report_status,
+        "finalHoldoutExecutionPathResolved": resolved,
+        "finalHoldoutRawPredictionPersistencePathResolved": raw_status["resolved"],
+        "finalHoldoutResultPersistencePathResolved": result_status["resolved"],
+        "finalHoldoutResultReloadPathResolved": result_status["resolved"],
+        "finalHoldoutReportPersistencePathResolved": report_status["resolved"],
+        "finalHoldoutReportReloadPathResolved": report_status["resolved"],
+        "finalPostHoldoutDeterministicIntegrationGapCount": len(gaps),
+        "gaps": gaps,
+        "newSemanticComponentRequiredCount": 0,
+        "newMetricDefinitionCount": 0,
+        "newOutputHeadCount": 0,
+        "holdoutFileOpenCount": 0,
+        "holdoutContentReadCount": 0,
+        "holdoutDeserializationCount": 0,
+        "holdoutExposureCount": 0,
+        "holdoutOpened": False,
+        "modelDeserializationCount": 0,
+        "forwardCount": 0,
+        "inferenceCount": 0,
+        "trainingCount": 0,
+        "backwardCount": 0,
+        "optimizerStepCount": 0,
+    }
+
+
 def verify_final_holdout_execution_bindings_v1(
     runtime_root: str | Path,
     authority_path: str | Path,
@@ -559,13 +765,44 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
     parser.add_argument("--root", default=".")
     parser.add_argument("--authority", required=True)
     parser.add_argument("--execution-root")
+    parser.add_argument("--holdout-authority-root")
+    parser.add_argument("--checkpoint-manifest")
+    parser.add_argument("--model-root")
+    parser.add_argument("--tokenizer-path")
+    parser.add_argument("--output-root")
     parser.add_argument("--write-authority", action="store_true")
     parser.add_argument("--preflight", action="store_true")
+    parser.add_argument("--final-holdout-execution-preflight", action="store_true")
+    parser.add_argument("--execute-final-holdout", action="store_true")
     args = parser.parse_args(list(arguments) if arguments is not None else None)
     try:
         if args.write_authority:
             persist_final_evaluation_authority_v1(args.authority, build_final_evaluation_authority_v1())
-        if args.preflight:
+        if args.final_holdout_execution_preflight:
+            print(json.dumps(verify_final_holdout_execution_path_v1(
+                args.root,
+                args.authority,
+                args.execution_root,
+                holdout_authority_root=args.holdout_authority_root,
+                checkpoint_manifest=args.checkpoint_manifest,
+                model_root=args.model_root,
+                tokenizer_path=args.tokenizer_path,
+                output_root=args.output_root,
+            ), sort_keys=True))
+        elif args.execute_final_holdout:
+            plan = verify_final_holdout_execution_path_v1(
+                args.root,
+                args.authority,
+                args.execution_root,
+                holdout_authority_root=args.holdout_authority_root,
+                checkpoint_manifest=args.checkpoint_manifest,
+                model_root=args.model_root,
+                tokenizer_path=args.tokenizer_path,
+                output_root=args.output_root,
+            )
+            _require(plan["state"] == "FINAL_HOLDOUT_EXECUTION_PATH_RESOLVED", "FINAL_HOLDOUT_EXECUTION_PATH_NOT_RESOLVED")
+            _require(False, "FINAL_HOLDOUT_REAL_EXECUTION_REQUIRES_AUTHORIZED_RUNTIME_EVALUATOR_CALLER")
+        elif args.preflight:
             print(json.dumps(preflight_final_evaluation_authority_v1(args.root, args.authority, args.execution_root), sort_keys=True))
         else:
             value = reload_final_evaluation_authority_v1(args.authority)

@@ -12,6 +12,8 @@ from him_trainer.final_evaluation_authority_v1 import (
     FINAL_HOLDOUT_AUTHORITY_REFERENCE,
     FINAL_MODEL_STATE_RELATIVE_PATH,
     FINAL_MODEL_STATE_SHA256,
+    FINAL_HOLDOUT_AUTHORITY_FILENAME,
+    REQUIRED_MODEL_ROOT_FILES,
     REQUIRED_RUNTIME_MODULES,
     build_final_evaluation_authority_v1,
     persist_final_evaluation_authority_v1,
@@ -19,6 +21,7 @@ from him_trainer.final_evaluation_authority_v1 import (
     reload_final_evaluation_authority_v1,
     validate_final_evaluation_authority_v1,
     verify_final_holdout_execution_bindings_v1,
+    verify_final_holdout_execution_path_v1,
 )
 
 
@@ -30,8 +33,27 @@ def _write_execution_fixture(root: Path) -> None:
     manifest = root / FINAL_CHECKPOINT_MANIFEST_RELATIVE_PATH
     model_state = root / FINAL_MODEL_STATE_RELATIVE_PATH
     manifest.parent.mkdir(parents=True, exist_ok=True)
-    manifest.write_text('{"fixture":"checkpoint-manifest"}\n', encoding="utf-8")
+    manifest.write_text(
+        '{"checkpointReference":"' + FINAL_CHECKPOINT_REFERENCE + '",'
+        '"checkpointLogicalDigest":"' + FINAL_CHECKPOINT_LOGICAL_DIGEST + '",'
+        '"modelState":{"relativePath":"model-state.pt","sha256":"' + FINAL_MODEL_STATE_SHA256 + '"}}\n',
+        encoding="utf-8",
+    )
     model_state.write_bytes(b"fixture-model-state")
+
+
+def _write_holdout_authority_fixture(root: Path) -> Path:
+    root.mkdir(parents=True, exist_ok=True)
+    path = root / FINAL_HOLDOUT_AUTHORITY_FILENAME
+    path.write_text('{"reference":"' + FINAL_HOLDOUT_AUTHORITY_REFERENCE + '","logicalDigest":"' + FINAL_HOLDOUT_AUTHORITY_LOGICAL_DIGEST + '"}\n', encoding="utf-8")
+    return path
+
+
+def _write_model_root_fixture(root: Path) -> Path:
+    root.mkdir(parents=True, exist_ok=True)
+    for name in REQUIRED_MODEL_ROOT_FILES:
+        (root / name).write_text(f"fixture {name}\n", encoding="utf-8")
+    return root
 
 
 def _write_runtime_authority_fixture(root: Path, authority_value: dict[str, object]) -> Path:
@@ -144,6 +166,46 @@ class FinalEvaluationAuthorityV1Test(unittest.TestCase):
             self.assertEqual("FINAL_EVALUATION_PREFLIGHT_PASS", result["state"])
             self.assertEqual(0, result["unresolvedDependencyCount"])
             self.assertIn("trainer/him_trainer", result["resolvedPaths"]["modulePaths"]["blind_expanded_validation_v2.py"])
+
+    def test_final_holdout_execution_path_is_resolved_without_opening_holdout(self) -> None:
+        value = build_final_evaluation_authority_v1()
+        with tempfile.TemporaryDirectory(prefix="him-final-holdout-path-") as directory:
+            root = Path(directory)
+            runtime_root = root / "opt-him"
+            execution_root = root / "workspace"
+            holdout_root = root / "holdout-authority"
+            model_root = root / "model-root"
+            output_root = root / "final-evaluation-output"
+            _write_execution_fixture(execution_root)
+            _write_holdout_authority_fixture(holdout_root)
+            _write_model_root_fixture(model_root)
+            authority_path = _write_deployed_runtime_fixture(runtime_root, value)
+            result = verify_final_holdout_execution_path_v1(
+                runtime_root,
+                authority_path,
+                execution_root,
+                holdout_authority_root=holdout_root,
+                checkpoint_manifest=execution_root / FINAL_CHECKPOINT_MANIFEST_RELATIVE_PATH,
+                model_root=model_root,
+                tokenizer_path=model_root / "tokenizer.json",
+                output_root=output_root,
+            )
+            self.assertEqual("FINAL_HOLDOUT_EXECUTION_PATH_RESOLVED", result["state"])
+            self.assertTrue(result["finalHoldoutExecutionPathResolved"])
+            self.assertTrue(result["finalHoldoutRawPredictionPersistencePathResolved"])
+            self.assertTrue(result["finalHoldoutResultPersistencePathResolved"])
+            self.assertTrue(result["finalHoldoutResultReloadPathResolved"])
+            self.assertTrue(result["finalHoldoutReportPersistencePathResolved"])
+            self.assertTrue(result["finalHoldoutReportReloadPathResolved"])
+            self.assertEqual(0, result["finalPostHoldoutDeterministicIntegrationGapCount"])
+            self.assertEqual(0, result["holdoutFileOpenCount"])
+            self.assertEqual(0, result["holdoutContentReadCount"])
+            self.assertEqual(0, result["holdoutDeserializationCount"])
+            self.assertFalse(result["holdoutOpened"])
+            self.assertEqual(0, result["modelDeserializationCount"])
+            self.assertEqual(0, result["forwardCount"])
+            self.assertEqual(0, result["trainingCount"])
+            self.assertIn("--execute-final-holdout", result["executionCommand"])
 
     def test_workspace_is_not_accepted_as_authority_root(self) -> None:
         value = build_final_evaluation_authority_v1()
