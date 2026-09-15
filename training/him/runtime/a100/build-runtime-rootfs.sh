@@ -29,6 +29,7 @@ readonly ROOTFS="$(cd "$1" 2>/dev/null && pwd)" || fail "rootfs does not exist"
 install -d -m 0755 \
     "$ROOTFS/opt/him/bin" \
     "$ROOTFS/opt/him/dependency-authority" \
+    "$ROOTFS/opt/him/final-training-authority-packet-v1" \
     "$ROOTFS/opt/him/validation" \
     "$ROOTFS/opt/him/python" \
     "$ROOTFS/workspace"
@@ -82,6 +83,8 @@ env -i \
 
 install -m 0644 "$DEFINITION_ROOT/runtime-identity.json" \
     "$ROOTFS/opt/him/runtime/runtime-identity.json"
+install -m 0644 "$DEFINITION_ROOT/final-training-authority-packet-v1/"*.json \
+    "$ROOTFS/opt/him/final-training-authority-packet-v1/"
 
 chroot "$ROOTFS" /opt/him/runtime/bin/python \
     /opt/him/validation/him_runtime_validation_v1.py \

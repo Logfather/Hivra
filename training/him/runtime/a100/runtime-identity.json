@@ -2,15 +2,15 @@
   "identitySchema": "HIM_A100_RUNTIME_IDENTITY_V2",
   "runtimeImageId": "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1",
   "referenceEnvironmentContractDigest": "e5bfa4442a50e154c7f23735def545cfc545798f8b326ff38051f2eea57111d9",
-  "buildContextDigest": "d0c4385c74a2af02e0c40f96de452427b6e5ec1ede243bda4935fefb0de9cde4",
-  "runtimeImageDefinitionDigest": "06d5dd647f2a1a0c642d09ae3c9e946b2599171167b78d720fe2784ee45b8422",
-  "buildDefinitionDigest": "06d5dd647f2a1a0c642d09ae3c9e946b2599171167b78d720fe2784ee45b8422",
+  "buildContextDigest": "07b36ee6bc7528b636080fff06a052d77ff925fbe98732607522c492c016b79a",
+  "runtimeImageDefinitionDigest": "bbed297b804e13642dbf87ef5f2b4328830f7263fe9fed692b2f3ca7a89c5a82",
+  "buildDefinitionDigest": "bbed297b804e13642dbf87ef5f2b4328830f7263fe9fed692b2f3ca7a89c5a82",
   "dependencyLockDigest": "90a18bf32eed8f5a5b042b34d4bc624fe63e8230e8f9a6d767eea1b2a98a1131",
-  "sourceGitHead": "15d0291cf0d248fbd5435adeb1adcb4bc95cbbb8",
-  "runtimeSourceLogicalDigest": "7e0039b1f5bff051a10437f5b4be2e318a22c859367830aafc2c6d692d00797e",
+  "sourceGitHead": "b3ef6c823098eb2646e19ca8d3ce44ccb6e07ab2",
+  "runtimeSourceLogicalDigest": "2ab25805255f404f31ec10be9ede4050d1894a037362712e6b049e8fd385b04b",
   "runtimeSourceClosure": {
     "manifest": "training/him/runtime/a100/build-context.manifest.tsv",
-    "fileCount": 30
+    "fileCount": 32
   },
   "sourceTreeFileDigests": [
     {
@@ -32,10 +32,16 @@
       "sha256": "d9ff3501178fd1d1a2fdb43a8a1940d00b5884c1bc81081deca92c1e1b4c2a01"
     },
     {
+      "sourcePath": "training/him/src/him_trainer/blind_expanded_validation_v2.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/blind_expanded_validation_v2.py",
+      "sizeBytes": 41771,
+      "sha256": "40d166b03068642773f9d43b409152a600bc3906871b48f42d7bec8c283f5c84"
+    },
+    {
       "sourcePath": "training/him/src/him_trainer/checkpoint_v2.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/checkpoint_v2.py",
-      "sizeBytes": 19970,
-      "sha256": "37972e3c762016899a0ddfcc1f75f93f328c70b7c6fa80ddbc6c40841e80f354"
+      "sizeBytes": 20487,
+      "sha256": "8d80cc83016393f7e2c95587eda4811a85d492180318b4c0135470693e2dcc74"
     },
     {
       "sourcePath": "training/him/src/him_trainer/execution_device_v1.py",
@@ -122,6 +128,12 @@
       "sha256": "610567aee05006a3b4abd8d6f2c910d695b4e41e84104000a72af9038e3e9958"
     },
     {
+      "sourcePath": "training/him/src/him_trainer/final_training_runtime_closure_v1.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/final_training_runtime_closure_v1.py",
+      "sizeBytes": 6242,
+      "sha256": "760f659577c433ee3ab03f3ca58e2aaf1286685a4726c8686c72fc6fb749cc88"
+    },
+    {
       "sourcePath": "training/him/src/him_trainer/partition_leakage_v2.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/partition_leakage_v2.py",
       "sizeBytes": 17098,
@@ -160,14 +172,14 @@
     {
       "sourcePath": "training/him/src/him_trainer/productive_training_p2_v2.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/productive_training_p2_v2.py",
-      "sizeBytes": 4619,
-      "sha256": "fb62e4a44ed9bef24512e8fc77637db08d4c938b3d25739d060e2d63f828ddd1"
+      "sizeBytes": 30595,
+      "sha256": "190cc975e688308c47f7d7a4381afa01c2098b6cff01a4d14f1a62fb7f9d06a7"
     },
     {
       "sourcePath": "training/him/src/him_trainer/runtime_source_closure_v2.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/runtime_source_closure_v2.py",
-      "sizeBytes": 2047,
-      "sha256": "18ef9cbd9f33fb80e3669280ed67be7ba820272c38e85722fa6f80577550d4d5"
+      "sizeBytes": 2126,
+      "sha256": "d1e99565a10bcac2a9929f37d9033831345782bc01026b4aec2446b5d9d548e2"
     },
     {
       "sourcePath": "training/him/src/him_trainer/sequence_length_authority_v2.py",
@@ -178,20 +190,20 @@
     {
       "sourcePath": "training/him/src/him_trainer/training_input_authority_v2.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/training_input_authority_v2.py",
-      "sizeBytes": 16459,
-      "sha256": "39a184f24f3501e2284b618aecaf54dc80e78f1ce0231fc4ed91ae9c38cf7509"
+      "sizeBytes": 23229,
+      "sha256": "ceea742a112ce9815676be48a25f107fe5cbaeab10be00f5c7183035a8924422"
     },
     {
       "sourcePath": "training/him/src/him_trainer/training_readiness_authority_v2.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/training_readiness_authority_v2.py",
-      "sizeBytes": 5007,
-      "sha256": "ede065caecbfd7a8f77a9352fd6c3c81e08afd43ffda1b85363ff3cc8c90352c"
+      "sizeBytes": 8199,
+      "sha256": "25c67d2f20f83569eab49047eb505c08720a11398e969469a0b48da0d359b2c2"
     },
     {
       "sourcePath": "training/him/src/him_trainer/training_runtime_authority_v2.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/training_runtime_authority_v2.py",
-      "sizeBytes": 6591,
-      "sha256": "35fecacaea840e86ea8e0aa0509e89dfccbc8786d18b80d7b4acbcae4e96c4e5"
+      "sizeBytes": 12229,
+      "sha256": "0cc565579f648d18d07e12a4242d864886497ed0c70dfd1e7d93b2f8d9b61e8b"
     }
   ],
   "ociImageDigest": null,
@@ -201,9 +213,11 @@
     "runtimeImageDefinitionDigest",
     "ociImageDigest"
   ],
-  "contentTagSchemeVersion": "V1",
+  "contentTagSchemeVersion": "V2",
+  "contentTagPrefix": "ctx-",
   "contentTagPrefixLength": 12,
-  "contentDerivedDeploymentTag": "def-06d5dd647f2a",
-  "previousContentDerivedDeploymentTag": "def-68f69540cf6c",
-  "buildContextDigestRule": "Canonical runtime-image-definition.json bytes exclude derived identity outputs; runtime-identity.json is derived metadata and excluded from the authority digest."
+  "contentDerivedDeploymentTag": "ctx-07b36ee6bc75",
+  "previousContentDerivedDeploymentTag": "def-06d5dd647f2a",
+  "legacyContentTagScheme": "V1:def-<runtimeImageDefinitionDigest[:12]>",
+  "buildContextDigestRule": "Canonical runtime-image-definition.json bytes exclude derived identity outputs; runtime-identity.json is derived metadata and excluded from the authority digest; the V2 content tag is derived from the complete build-context digest."
 }

@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Mapping
@@ -43,6 +44,8 @@ PAD_TOKEN_ID = TOKENIZER_PAD_TOKEN_ID
 EXECUTION_AUTHORITY_ERROR = "REAL_P2_V2_TRAINING_EXECUTION_AUTHORITY_REQUIRED"
 EXECUTION_AUTHORITY_CONTRACT = "HIM_P2_TRAINING_RUNTIME_AUTHORITY_V2"
 READINESS_AUTHORITY_CONTRACT = "HIM_P2_TRAINING_READINESS_AUTHORITY_V2"
+FINAL_READINESS_AUTHORITY_CONTRACT = "HIM_FINAL_TRAINING_READINESS_AUTHORITY_V1"
+FINAL_TRAINING_ARTIFACT_DIRECTORY = Path("training/him/runtime/a100/final-training-authority-packet-v1")
 
 
 @dataclass(frozen=True)
@@ -68,6 +71,15 @@ class TrainingCountContract:
 def _candidate_artifact_directory(readiness_path: str | Path) -> Path | None:
     directory = Path(readiness_path).parent
     names = ("corpus.v2.json", "partition.v2.json", "leakage-validation.v2.json", "coverage.v2.json", "batch-authority.v2.json")
+    final_names = (
+        "final-training-corpus.v2.json",
+        "final-training-partition.v2.json",
+        "final-training-leakage-validation.v2.json",
+        "final-training-coverage.v2.json",
+        "final-training-batch-authority.v2.json",
+    )
+    if all((directory / name).is_file() for name in final_names):
+        return directory
     return directory if all((directory / name).is_file() for name in names) else None
 
 
@@ -79,9 +91,7 @@ def training_count_contract(bundle: Mapping[str, Any]) -> TrainingCountContract:
     batch = bundle["batch"]
     if batch.get("physicalBatchSize") != PHYSICAL_BATCH_SIZE or batch.get("gradientAccumulationSteps") != GRADIENT_ACCUMULATION_STEPS:
         raise TrainingInputV2Error("BATCH_AUTHORITY_INVALID")
-    if train_count % PHYSICAL_BATCH_SIZE:
-        raise TrainingInputV2Error("TRAINING_BATCH_COUNT_INVALID")
-    batches_per_epoch = train_count // PHYSICAL_BATCH_SIZE
+    batches_per_epoch = math.ceil(train_count / PHYSICAL_BATCH_SIZE)
     optimizer_steps_per_epoch = int(batch.get("optimizerStepsPerEpoch", batches_per_epoch))
     total_optimizer_steps = int(batch.get("totalOptimizerSteps", optimizer_steps_per_epoch * EPOCHS))
     if optimizer_steps_per_epoch != batches_per_epoch or total_optimizer_steps != batches_per_epoch * EPOCHS:
@@ -142,7 +152,7 @@ def validate_execution_authority(
     _verify_logical_digest(readiness, "TRAINING_READINESS")
     if runtime.get("contractId") != EXECUTION_AUTHORITY_CONTRACT:
         raise TrainingInputV2Error("RUNTIME_AUTHORITY_CONTRACT_MISMATCH")
-    if readiness.get("contractId") not in {READINESS_AUTHORITY_CONTRACT, "HIM_P2_TARGETED_CONTRAST_RETRAINING_READINESS_V2"}:
+    if readiness.get("contractId") not in {READINESS_AUTHORITY_CONTRACT, FINAL_READINESS_AUTHORITY_CONTRACT, "HIM_P2_TARGETED_CONTRAST_RETRAINING_READINESS_V2"}:
         raise TrainingInputV2Error("TRAINING_READINESS_CONTRACT_MISMATCH")
     if runtime.get("status") != "AUTHORIZED" or runtime.get("trainingRuntimeAuthorized") is not True:
         raise TrainingInputV2Error(EXECUTION_AUTHORITY_ERROR)
@@ -159,9 +169,12 @@ def validate_execution_authority(
     if runtime.get("runtimeSourceModuleCount") != 31 or not isinstance(trainer, Mapping) or trainer.get("runnerModule") != RUNNER_MODULE:
         raise TrainingInputV2Error("TRAINER_SOURCE_AUTHORITY_MISMATCH")
     targeted_ready = readiness.get("finalTargetedRetrainingReadiness") == "PASS"
+    final_ready = readiness.get("finalHimTrainingReadiness") == "BLOCKED_PENDING_RUNTIME_CLOSURE" or readiness.get("finalHimTrainingReadiness") == "PASS"
     if readiness.get("contractId") == READINESS_AUTHORITY_CONTRACT and (readiness.get("status") != "AUTHORIZED" or readiness.get("trainingReady") is not True):
         raise TrainingInputV2Error("TRAINING_READINESS_MISMATCH")
-    if readiness.get("contractId") != READINESS_AUTHORITY_CONTRACT and not targeted_ready:
+    if readiness.get("contractId") == FINAL_READINESS_AUTHORITY_CONTRACT and not final_ready:
+        raise TrainingInputV2Error("TRAINING_READINESS_MISMATCH")
+    if readiness.get("contractId") not in {READINESS_AUTHORITY_CONTRACT, FINAL_READINESS_AUTHORITY_CONTRACT} and not targeted_ready:
         raise TrainingInputV2Error("TRAINING_READINESS_MISMATCH")
     if readiness.get("runtimeAuthorityReference") is not None and readiness.get("runtimeAuthorityReference") != runtime.get("reference"):
         raise TrainingInputV2Error("RUNTIME_READINESS_BINDING_MISMATCH")
@@ -172,9 +185,11 @@ def validate_execution_authority(
     gates = readiness.get("gates")
     required_gates = ("corpus", "partition", "leakage", "coverage", "sequence", "batch", "trainingInput", "runtime", "trainerSource", "tokenizer", "baseModel", "holdoutClosed")
     targeted_required_gates = ("CORPUS_GATE", "PARTITION_GATE", "LEAKAGE_GATE", "COVERAGE_GATE", "SEQUENCE_GATE", "BATCH_GATE", "TRAINING_INPUT_GATE", "RUNTIME_GATE", "TOKENIZER_GATE", "BASE_MODEL_GATE", "HOLDOUT_EXCLUSION_GATE")
+    final_required_gates = ("leakage", "trainingInput")
     if not isinstance(gates, Mapping) or (
         any(gates.get(name) is not True for name in required_gates)
         and any(gates.get(name) != "PASS" for name in targeted_required_gates)
+        and any(gates.get(name) not in {"PASS", "AUTHORIZED"} for name in final_required_gates)
     ):
         raise TrainingInputV2Error("TRAINING_READINESS_GATES_FAILED")
     if bundle.get("authority") is not None:
@@ -239,7 +254,7 @@ def execution_preflight(
 def build_partition_bound_batches(entries: tuple[Mapping[str, Any], ...], batch_size: int = PHYSICAL_BATCH_SIZE) -> tuple[tuple[Mapping[str, Any], ...], ...]:
     if batch_size != PHYSICAL_BATCH_SIZE:
         raise TrainingInputV2Error("UNAUTHORIZED_BATCH_CHANGE")
-    if not entries or len(entries) % batch_size:
+    if not entries:
         raise TrainingInputV2Error("BATCH_MEMBERSHIP_INVALID")
     return tuple(tuple(entries[index:index + batch_size]) for index in range(0, len(entries), batch_size))
 

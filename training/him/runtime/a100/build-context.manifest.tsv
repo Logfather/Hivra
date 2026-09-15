@@ -29,6 +29,7 @@ training/him/src/him_trainer/corpus_assembly_v2.py	trainer/him_trainer/corpus_as
 training/him/src/him_trainer/corpus_coverage_v2.py	trainer/him_trainer/corpus_coverage_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/evidence_projection_v2.py	trainer/him_trainer/evidence_projection_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/input_representation_v2.py	trainer/him_trainer/input_representation_v2.py	him-trainer-runtime-source	YES	NO
+training/him/src/him_trainer/final_training_runtime_closure_v1.py	trainer/him_trainer/final_training_runtime_closure_v1.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/partition_leakage_v2.py	trainer/him_trainer/partition_leakage_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/partition_v2.py	trainer/him_trainer/partition_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/point13_loss_v1.py	trainer/him_trainer/point13_loss_v1.py	him-trainer-runtime-source	YES	NO
@@ -41,3 +42,11 @@ training/him/src/him_trainer/sequence_length_authority_v2.py	trainer/him_trainer
 training/him/src/him_trainer/training_input_authority_v2.py	trainer/him_trainer/training_input_authority_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/training_readiness_authority_v2.py	trainer/him_trainer/training_readiness_authority_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/training_runtime_authority_v2.py	trainer/him_trainer/training_runtime_authority_v2.py	him-trainer-runtime-source	YES	NO
+training/him/runtime/a100/final-training-authority-packet-v1/final-training-corpus.v2.json	final-training-authority-packet-v1/final-training-corpus.v2.json	final-training-runtime-packet	YES	NO
+training/him/runtime/a100/final-training-authority-packet-v1/final-training-partition.v2.json	final-training-authority-packet-v1/final-training-partition.v2.json	final-training-runtime-packet	YES	NO
+training/him/runtime/a100/final-training-authority-packet-v1/final-training-leakage-validation.v2.json	final-training-authority-packet-v1/final-training-leakage-validation.v2.json	final-training-runtime-packet	YES	NO
+training/him/runtime/a100/final-training-authority-packet-v1/final-training-coverage.v2.json	final-training-authority-packet-v1/final-training-coverage.v2.json	final-training-runtime-packet	YES	NO
+training/him/runtime/a100/final-training-authority-packet-v1/final-training-batch-authority.v2.json	final-training-authority-packet-v1/final-training-batch-authority.v2.json	final-training-runtime-packet	YES	NO
+training/him/runtime/a100/final-training-authority-packet-v1/final-training-input-inventory.v2.json	final-training-authority-packet-v1/final-training-input-inventory.v2.json	final-training-runtime-packet	YES	NO
+training/him/runtime/a100/final-training-authority-packet-v1/final-training-input-authority.v2.json	final-training-authority-packet-v1/final-training-input-authority.v2.json	final-training-runtime-packet	YES	NO
+training/him/runtime/a100/final-training-authority-packet-v1/final-training-readiness.v2.json	final-training-authority-packet-v1/final-training-readiness.v2.json	final-training-runtime-packet	YES	NO

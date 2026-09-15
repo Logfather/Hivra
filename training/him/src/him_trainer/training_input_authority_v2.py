@@ -84,6 +84,17 @@ def artifact_set_from_directory(directory: str | Path) -> TrainingInputArtifactS
     """Bind a versioned assembly directory without changing semantic contents."""
 
     base = Path(directory)
+    if not (base / "corpus.v2.json").is_file() and (base / "final-training-corpus.v2.json").is_file():
+        return TrainingInputArtifactSet(
+            corpus=base / "final-training-corpus.v2.json",
+            partition=base / "final-training-partition.v2.json",
+            leakage=base / "final-training-leakage-validation.v2.json",
+            coverage=base / "final-training-coverage.v2.json",
+            batch=base / "final-training-batch-authority.v2.json",
+            runtime=None,
+            authority=base / "final-training-input-authority.v2.json",
+            inventory=base / "final-training-input-inventory.v2.json",
+        )
     return TrainingInputArtifactSet(
         corpus=base / "corpus.v2.json",
         partition=base / "partition.v2.json",
