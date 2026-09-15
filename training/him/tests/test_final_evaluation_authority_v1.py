@@ -36,7 +36,7 @@ def _write_execution_fixture(root: Path) -> None:
     manifest.write_text(
         '{"checkpointReference":"' + FINAL_CHECKPOINT_REFERENCE + '",'
         '"checkpointLogicalDigest":"' + FINAL_CHECKPOINT_LOGICAL_DIGEST + '",'
-        '"modelState":{"relativePath":"model-state.pt","sha256":"' + FINAL_MODEL_STATE_SHA256 + '"}}\n',
+        '"modelState":{"relativePath":"checkpoint/model-state.pt","sha256":"' + FINAL_MODEL_STATE_SHA256 + '"}}\n',
         encoding="utf-8",
     )
     model_state.write_bytes(b"fixture-model-state")
@@ -198,6 +198,8 @@ class FinalEvaluationAuthorityV1Test(unittest.TestCase):
             self.assertTrue(result["finalHoldoutReportPersistencePathResolved"])
             self.assertTrue(result["finalHoldoutReportReloadPathResolved"])
             self.assertEqual(0, result["finalPostHoldoutDeterministicIntegrationGapCount"])
+            self.assertEqual(str((execution_root / FINAL_MODEL_STATE_RELATIVE_PATH).resolve()), result["modelStatePath"]["path"])
+            self.assertNotIn("checkpoint/checkpoint/model-state.pt", result["modelStatePath"]["path"])
             self.assertEqual(0, result["holdoutFileOpenCount"])
             self.assertEqual(0, result["holdoutContentReadCount"])
             self.assertEqual(0, result["holdoutDeserializationCount"])

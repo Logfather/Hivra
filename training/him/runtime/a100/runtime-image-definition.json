@@ -112,5 +112,12 @@
     "Dockerfile",
     "start.sh",
     "runtime-image-definition.json"
-  ]
+  ],
+  "cudaCompatibility": {
+    "required": true,
+    "cudaVersion": "13.0",
+    "forwardCompatibilityPathPrefix": "/usr/local/cuda-13.0/compat/lib.real:/usr/local/cuda-13.0/compat",
+    "environmentVariable": "LD_LIBRARY_PATH",
+    "propagation": "OCI_ENV_AND_STARTUP_EXPORT_FOR_SSH_RUNNER_CHILD_PROCESSES"
+  }
 }

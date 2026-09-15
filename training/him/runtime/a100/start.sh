@@ -8,6 +8,7 @@ readonly HIM_RUNTIME_ROOT=/opt/him/runtime
 readonly HIM_RUNTIME_PYTHON=/opt/him/runtime/bin/python
 readonly HIM_RUNTIME_VALIDATOR=/opt/him/validation/him_runtime_validation_v1.py
 readonly HIM_WORKSPACE_ROOT=/workspace
+readonly HIM_CUDA_COMPAT_PREFIX=/usr/local/cuda-13.0/compat/lib.real:/usr/local/cuda-13.0/compat
 readonly SSH_CONFIG_DROP_IN=/etc/ssh/sshd_config.d/99-him-runtime.conf
 readonly AUTHORIZED_KEYS=/root/.ssh/authorized_keys
 
@@ -39,6 +40,10 @@ esac
 readonly PUBLIC_KEY_VALUE="${PUBLIC_KEY:-}"
 [[ -n "$PUBLIC_KEY_VALUE" ]] || fail_closed "provider public key is missing"
 [[ "$PUBLIC_KEY_VALUE" != *$'\n'* ]] || fail_closed "provider public key must be one line"
+
+export HIM_CUDA_COMPAT_REQUIRED=YES
+export HIM_CUDA_COMPAT_PREFIX
+export LD_LIBRARY_PATH="${HIM_CUDA_COMPAT_PREFIX}${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 
 "$HIM_RUNTIME_PYTHON" "$HIM_RUNTIME_VALIDATOR" --mode build \
     || fail_closed "Python/PyTorch runtime validation failed"

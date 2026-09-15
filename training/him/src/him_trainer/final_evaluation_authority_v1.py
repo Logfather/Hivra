@@ -568,9 +568,9 @@ def _load_checkpoint_manifest_for_path_binding(path: Path) -> dict[str, Any]:
 
 def _final_model_state_path_from_manifest(manifest_path: Path, manifest: Mapping[str, Any]) -> Path:
     relative = manifest["modelState"]["relativePath"]
-    root = manifest_path.parent
+    root = manifest_path.parent.parent
     resolved = (root / relative).resolve()
-    _require(resolved.is_relative_to(root.resolve()), "FINAL_MODEL_STATE_ESCAPES_CHECKPOINT_ROOT")
+    _require(resolved.is_relative_to((root / "checkpoint").resolve()), "FINAL_MODEL_STATE_ESCAPES_CHECKPOINT_ROOT")
     return resolved
 
 

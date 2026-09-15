@@ -100,6 +100,29 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertIn("--frozen", self.dockerfile)
         self.assertNotIn("pip install torch", self.dockerfile)
 
+    def test_cuda_forward_compat_environment_is_bound_and_propagated(self) -> None:
+        expected = "/usr/local/cuda-13.0/compat/lib.real:/usr/local/cuda-13.0/compat"
+        compatibility = self.metadata["cudaCompatibility"]
+        self.assertTrue(compatibility["required"])
+        self.assertEqual(compatibility["cudaVersion"], "13.0")
+        self.assertEqual(compatibility["forwardCompatibilityPathPrefix"], expected)
+        self.assertEqual(compatibility["environmentVariable"], "LD_LIBRARY_PATH")
+        self.assertIn("HIM_CUDA_COMPAT_REQUIRED=YES", self.dockerfile)
+        self.assertIn(f"HIM_CUDA_COMPAT_PREFIX={expected}", self.dockerfile)
+        self.assertIn(f"LD_LIBRARY_PATH={expected}", self.dockerfile)
+        self.assertIn(f"readonly HIM_CUDA_COMPAT_PREFIX={expected}", self.startup)
+        self.assertIn("export HIM_CUDA_COMPAT_REQUIRED=YES", self.startup)
+        self.assertIn("export HIM_CUDA_COMPAT_PREFIX", self.startup)
+        self.assertIn('export LD_LIBRARY_PATH="${HIM_CUDA_COMPAT_PREFIX}${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"', self.startup)
+        self.assertLess(
+            self.startup.index("export LD_LIBRARY_PATH="),
+            self.startup.index('"$HIM_RUNTIME_PYTHON" "$HIM_RUNTIME_VALIDATOR" --mode build'),
+        )
+        self.assertLess(
+            self.startup.index("export LD_LIBRARY_PATH="),
+            self.startup.index("exec /usr/sbin/sshd -D -e"),
+        )
+
     def test_expected_package_versions_and_no_transformers(self) -> None:
         lock = EXPECTED_UV_LOCK.read_text()
         self.assertIn('name = "tokenizers"\nversion = "0.23.1"', lock)

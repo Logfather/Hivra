@@ -24,7 +24,10 @@ RUN bash -o pipefail -c \
 
 ENV UV_PYTHON_INSTALL_DIR=/opt/him/python \
     PATH=/opt/him/runtime/bin:/opt/him/python/bin:/usr/local/bin:$PATH \
-    UV_PROJECT_ENVIRONMENT=/opt/him/runtime
+    UV_PROJECT_ENVIRONMENT=/opt/him/runtime \
+    HIM_CUDA_COMPAT_REQUIRED=YES \
+    HIM_CUDA_COMPAT_PREFIX=/usr/local/cuda-13.0/compat/lib.real:/usr/local/cuda-13.0/compat \
+    LD_LIBRARY_PATH=/usr/local/cuda-13.0/compat/lib.real:/usr/local/cuda-13.0/compat
 
 RUN install --directory --mode=0755 \
         /opt/him \
