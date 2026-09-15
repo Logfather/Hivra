@@ -34,6 +34,7 @@ EXPECTED_RUNTIME_SOURCE_FILES = {
     "training/him/src/him_trainer/corpus_coverage_v2.py",
     "training/him/src/him_trainer/evidence_projection_v2.py",
     "training/him/src/him_trainer/execution_device_v1.py",
+    "training/him/src/him_trainer/final_evaluation_authority_v1.py",
     "training/him/src/him_trainer/final_training_runtime_closure_v1.py",
     "training/him/src/him_trainer/input_representation_v2.py",
     "training/him/src/him_trainer/partition_leakage_v2.py",
@@ -169,7 +170,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertNotIn("EUR-IS-1", self.dockerfile)
 
     def test_manifest_is_bounded_and_deterministic(self) -> None:
-        self.assertEqual(len(self.manifest_rows), 52)
+        self.assertEqual(len(self.manifest_rows), 54)
         destinations = [row[1] for row in self.manifest_rows]
         self.assertEqual(len(destinations), len(set(destinations)))
         for source, destination, _role, _final, _build_only in self.manifest_rows:
@@ -214,7 +215,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
     def test_manifest_binds_unchanged_him_trainer_package(self) -> None:
         package_rows = [row for row in self.manifest_rows if row[2] == "him-trainer-runtime-source"]
         self.assertEqual(len(package_rows), len(EXPECTED_RUNTIME_SOURCE_FILES))
-        self.assertEqual(len(package_rows), 32)
+        self.assertEqual(len(package_rows), 33)
         self.assertEqual(
             {row[0] for row in package_rows},
             EXPECTED_RUNTIME_SOURCE_FILES,
@@ -426,7 +427,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertRegex(self.identity["dependencyLockDigest"], r"^[0-9a-f]{64}$")
         self.assertRegex(self.identity["runtimeSourceLogicalDigest"], r"^[0-9a-f]{64}$")
         self.assertEqual(self.identity["buildDefinitionDigest"], self.identity["runtimeImageDefinitionDigest"])
-        self.assertEqual(self.identity["runtimeSourceClosure"]["fileCount"], 32)
+        self.assertEqual(self.identity["runtimeSourceClosure"]["fileCount"], 33)
         self.assertEqual(
             {entry["sourcePath"] for entry in self.identity["sourceTreeFileDigests"]},
             EXPECTED_RUNTIME_SOURCE_FILES,
@@ -484,7 +485,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
             context = Path(output_dir) / "context"
             subprocess.check_call([str(ROOT / "build-context.sh"), str(context)], stdout=subprocess.DEVNULL)
             paths = [path.relative_to(context).as_posix() for path in context.rglob("*") if path.is_file()]
-        self.assertEqual(len(paths), 52)
+        self.assertEqual(len(paths), 54)
         self.assertFalse(any(".env" in path or "private" in path or "credential" in path for path in paths))
         forbidden_components = {"model", "models", "corpus", "dataset", "checkpoint", "knowledge"}
         self.assertFalse(
@@ -515,6 +516,14 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertIn(
             "training/him/runtime/a100/final-training-runtime-authority.v2.json",
             {row[0] for row in self.manifest_rows},
+        )
+        self.assertIn(
+            "training/him/runtime/a100/final-evaluation-authority-v1/final-evaluation-authority.v1.json",
+            {row[0] for row in self.manifest_rows},
+        )
+        self.assertIn(
+            "COPY training/him/runtime/a100/final-evaluation-authority-v1 /opt/him/training/him/runtime/a100/final-evaluation-authority-v1",
+            self.dockerfile,
         )
 
     def test_reference_environment_binding_is_separate(self) -> None:

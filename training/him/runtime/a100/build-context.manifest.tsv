@@ -28,6 +28,7 @@ training/him/src/him_trainer/batch_size_authority_v2.py	trainer/him_trainer/batc
 training/him/src/him_trainer/corpus_assembly_v2.py	trainer/him_trainer/corpus_assembly_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/corpus_coverage_v2.py	trainer/him_trainer/corpus_coverage_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/evidence_projection_v2.py	trainer/him_trainer/evidence_projection_v2.py	him-trainer-runtime-source	YES	NO
+training/him/src/him_trainer/final_evaluation_authority_v1.py	trainer/him_trainer/final_evaluation_authority_v1.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/input_representation_v2.py	trainer/him_trainer/input_representation_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/final_training_runtime_closure_v1.py	trainer/him_trainer/final_training_runtime_closure_v1.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/partition_leakage_v2.py	trainer/him_trainer/partition_leakage_v2.py	him-trainer-runtime-source	YES	NO
@@ -51,3 +52,4 @@ training/him/runtime/a100/final-training-authority-packet-v1/final-training-inpu
 training/him/runtime/a100/final-training-authority-packet-v1/final-training-input-authority.v2.json	training/him/runtime/a100/final-training-authority-packet-v1/final-training-input-authority.v2.json	final-training-runtime-packet	YES	NO
 training/him/runtime/a100/final-training-authority-packet-v1/final-training-readiness.v2.json	training/him/runtime/a100/final-training-authority-packet-v1/final-training-readiness.v2.json	final-training-runtime-packet	YES	NO
 training/him/runtime/a100/final-training-runtime-authority.v2.json	training/him/runtime/a100/final-training-runtime-authority.v2.json	final-training-runtime-authority	YES	NO
+training/him/runtime/a100/final-evaluation-authority-v1/final-evaluation-authority.v1.json	training/him/runtime/a100/final-evaluation-authority-v1/final-evaluation-authority.v1.json	final-evaluation-runtime-authority	YES	NO

@@ -29,6 +29,7 @@ readonly ROOTFS="$(cd "$1" 2>/dev/null && pwd)" || fail "rootfs does not exist"
 install -d -m 0755 \
     "$ROOTFS/opt/him/bin" \
     "$ROOTFS/opt/him/dependency-authority" \
+    "$ROOTFS/opt/him/training/him/runtime/a100/final-evaluation-authority-v1" \
     "$ROOTFS/opt/him/training/him/runtime/a100/final-training-authority-packet-v1" \
     "$ROOTFS/opt/him/validation" \
     "$ROOTFS/opt/him/python" \
@@ -87,6 +88,8 @@ install -m 0644 "$DEFINITION_ROOT/final-training-authority-packet-v1/"*.json \
     "$ROOTFS/opt/him/training/him/runtime/a100/final-training-authority-packet-v1/"
 install -m 0644 "$DEFINITION_ROOT/final-training-runtime-authority.v2.json" \
     "$ROOTFS/opt/him/training/him/runtime/a100/final-training-runtime-authority.v2.json"
+install -m 0644 "$DEFINITION_ROOT/final-evaluation-authority-v1/final-evaluation-authority.v1.json" \
+    "$ROOTFS/opt/him/training/him/runtime/a100/final-evaluation-authority-v1/final-evaluation-authority.v1.json"
 
 chroot "$ROOTFS" /opt/him/runtime/bin/python \
     /opt/him/validation/him_runtime_validation_v1.py \
@@ -111,7 +114,7 @@ done < "$BUILD_CONTEXT_MANIFEST"
 [[ "$runtime_source_count" -gt 0 ]] || fail "runtime source closure is empty"
 
 chroot "$ROOTFS" /opt/him/runtime/bin/python \
-    -c 'import him_trainer; import him_trainer.__main__ as entrypoint; assert callable(entrypoint.run)'
+    -c 'import him_trainer; import him_trainer.__main__ as entrypoint; import him_trainer.final_evaluation_authority_v1; assert callable(entrypoint.run)'
 
 for required_path in \
     "$ROOTFS/opt/him/python" \
@@ -120,6 +123,7 @@ for required_path in \
     "$ROOTFS/opt/him/runtime/lib/python3.13/site-packages" \
     "$ROOTFS/opt/him/runtime/lib/python3.13/site-packages/him_trainer/protocol_v1.py" \
     "$ROOTFS/opt/him/runtime/runtime-identity.json" \
+    "$ROOTFS/opt/him/training/him/runtime/a100/final-evaluation-authority-v1/final-evaluation-authority.v1.json" \
     "$ROOTFS/usr/local/bin/uv" \
     "$ROOTFS/opt/him/validation/build-lineage.json"; do
     [[ -e "$required_path" ]] || fail "required export path missing: $required_path"

@@ -100,6 +100,7 @@ jobs:
           source_digest=$(awk -F= '$1 == "RUNTIME_SOURCE_LOGICAL_DIGEST" { print $2 }' "$RUNNER_TEMP/build-context-output.txt")
           definition_digest_again=$(bash training/him/runtime/a100/runtime-identity.sh --definition-digest)
           context_digest_again=$(bash training/him/runtime/a100/runtime-identity.sh --build-context-digest)
+          manifest_count=$(awk -F '\t' 'NR > 1 && NF { count++ } END { print count + 0 }' training/him/runtime/a100/build-context.manifest.tsv)
           identity_definition=$(python3 -c 'import json; print(json.load(open("training/him/runtime/a100/runtime-identity.json"))["runtimeImageDefinitionDigest"])')
           identity_context=$(python3 -c 'import json; print(json.load(open("training/him/runtime/a100/runtime-identity.json"))["buildContextDigest"])')
           identity_tag=$(python3 -c 'import json; print(json.load(open("training/him/runtime/a100/runtime-identity.json"))["contentDerivedDeploymentTag"])')
@@ -119,7 +120,7 @@ jobs:
           test "$identity_source_digest" = "$source_digest"
           test "$identity_lock_digest" = "$(sha256sum training/him/uv.lock | awk '{print $1}')"
           test "$identity_build_definition" = "$definition_digest"
-          test "$build_context_count" = "52"
+          test "$build_context_count" = "$manifest_count"
           {
             echo "context=$context_dir"
             echo "definition_digest=$definition_digest"
