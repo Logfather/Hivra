@@ -13,6 +13,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
@@ -24,7 +25,7 @@ DIGEST_SCHEME = "sha256(canonical UTF-8 JSON; ensure_ascii=false, sort_keys=true
 FINAL_CHECKPOINT_REFERENCE = "him-training-checkpoint:v2:beba3ba4ba75ba1d117f3ed13482e8389b2f428406dd92d4cc41d1b476140197"
 FINAL_CHECKPOINT_LOGICAL_DIGEST = "923d0a479847b21e57ff4b1c5649c1a38f07bb3a431b8e06ea9bec50bcd54632"
 FINAL_MODEL_STATE_SHA256 = "6fd984f5375ef780ab81187e053bf468158ddb849932553ea4062a745796443e"
-FINAL_RUNTIME_OCI = "sha256:35812017eb5d73dc00c376193d7ba69e684467b24a34fe4e68ee1e322894d15a"
+RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT = "DEPLOYMENT_TIME_IMMUTABLE_OCI"
 SOURCE_HEAD = "545510e7547fd3b723ad17efca9a093390d381d6"
 
 FINAL_HOLDOUT_AUTHORITY_REFERENCE = "p2-family-isolated-holdout-authority:v1:dc19557950bb3737ea51fc94d04616f2f2c96233868be294773bd120509b7c5a"
@@ -321,7 +322,8 @@ def build_final_evaluation_authority_v1() -> dict[str, Any]:
             "checkpointLogicalDigest": FINAL_CHECKPOINT_LOGICAL_DIGEST,
             "modelStateSha256": FINAL_MODEL_STATE_SHA256,
             "sourceHead": SOURCE_HEAD,
-            "runtimeOciDigest": FINAL_RUNTIME_OCI,
+            "runtimeOciDigest": None,
+            "runtimeImageDigestBindingStage": RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT,
         },
         "holdoutAuthority": {
             "reference": FINAL_HOLDOUT_AUTHORITY_REFERENCE,
@@ -409,6 +411,11 @@ def build_final_evaluation_authority_v1() -> dict[str, Any]:
             "runnerBinding": "FINAL_EVALUATION_AUTHORITY_V1_TO_EXISTING_V2_EVALUATOR_PRIMITIVES",
             "futureEvaluationUses": "authorized final holdout caller reusing him_trainer.blind_expanded_validation_v2 primitives with final checkpoint binding",
             "preflightImportRequired": True,
+            "runtimeImageDigestBindingStage": RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT,
+            "runtimeImageDigestRequiredAtExecution": True,
+            "runtimeImageDigestSource": "HIM_RUNTIME_IMAGE_DIGEST",
+            "runtimeImageDigestImmutable": True,
+            "runtimeImageDigestVerifiedBeforeHoldoutOpen": True,
             "modelDeserializationCount": 0,
             "forwardCount": 0,
             "inferenceCount": 0,
@@ -445,6 +452,11 @@ def validate_final_evaluation_authority_v1(value: Mapping[str, Any]) -> dict[str
     _require(evaluated.get("checkpointReference") == FINAL_CHECKPOINT_REFERENCE, "CHECKPOINT_REFERENCE_INVALID")
     _require(evaluated.get("checkpointLogicalDigest") == FINAL_CHECKPOINT_LOGICAL_DIGEST, "CHECKPOINT_DIGEST_INVALID")
     _require(evaluated.get("modelStateSha256") == FINAL_MODEL_STATE_SHA256, "MODEL_STATE_DIGEST_INVALID")
+    _require(evaluated.get("runtimeOciDigest") is None, "STATIC_RUNTIME_OCI_DIGEST_FORBIDDEN")
+    _require(
+        evaluated.get("runtimeImageDigestBindingStage") == RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT,
+        "RUNTIME_IMAGE_DIGEST_BINDING_STAGE_INVALID",
+    )
     opaque = payload.get("holdoutAuthority")
     _require(isinstance(opaque, Mapping), "HOLDOUT_AUTHORITY_INVALID")
     _require(opaque.get("reference") == FINAL_HOLDOUT_AUTHORITY_REFERENCE, "HOLDOUT_REFERENCE_INVALID")
@@ -461,6 +473,14 @@ def validate_final_evaluation_authority_v1(value: Mapping[str, Any]) -> dict[str
     _require(isinstance(entrypoint, Mapping), "EXECUTION_ENTRYPOINT_INVALID")
     _require(entrypoint.get("module") == FINAL_HOLDOUT_EXECUTION_ENTRYPOINT, "EXECUTION_ENTRYPOINT_MISMATCH")
     _require(entrypoint.get("executionAuthorized") is True, "EXECUTION_NOT_AUTHORIZED")
+    _require(
+        entrypoint.get("runtimeImageDigestBindingStage") == RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT
+        and entrypoint.get("runtimeImageDigestRequiredAtExecution") is True
+        and entrypoint.get("runtimeImageDigestSource") == "HIM_RUNTIME_IMAGE_DIGEST"
+        and entrypoint.get("runtimeImageDigestImmutable") is True
+        and entrypoint.get("runtimeImageDigestVerifiedBeforeHoldoutOpen") is True,
+        "DEPLOYMENT_RUNTIME_OCI_BINDING_CONTRACT_INVALID",
+    )
     _require(entrypoint.get("newSemanticComponentRequiredCount", 0) == 0, "NEW_SEMANTIC_COMPONENT_REQUIRED")
     _require(entrypoint.get("newMetricDefinitionCount", 0) == 0, "NEW_METRIC_DEFINITION_REQUIRED")
     _require(entrypoint.get("newOutputHeadCount", 0) == 0, "NEW_OUTPUT_HEAD_REQUIRED")
@@ -481,6 +501,32 @@ def persist_final_evaluation_authority_v1(path: str | Path, value: Mapping[str, 
 
 def reload_final_evaluation_authority_v1(path: str | Path) -> dict[str, Any]:
     return validate_final_evaluation_authority_v1(_read_json(Path(path)))
+
+
+def validate_deployment_time_oci_binding_v1(
+    authority_path: str | Path,
+    runtime_image_digest: str | None,
+    runtime_identity_path: str | Path | None = None,
+) -> str:
+    """Resolve the immutable OCI identity supplied by deployment, never build time."""
+
+    authority = reload_final_evaluation_authority_v1(authority_path)
+    evaluated = authority["authorityPayload"]["evaluatedCheckpoint"]
+    _require(evaluated.get("runtimeOciDigest") is None, "STATIC_RUNTIME_OCI_DIGEST_FORBIDDEN")
+    _require(
+        evaluated.get("runtimeImageDigestBindingStage") == RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT,
+        "RUNTIME_IMAGE_DIGEST_BINDING_STAGE_INVALID",
+    )
+    _require(
+        isinstance(runtime_image_digest, str) and re.fullmatch(r"sha256:[0-9a-f]{64}", runtime_image_digest) is not None,
+        "DEPLOYMENT_RUNTIME_OCI_DIGEST_REQUIRED_OR_INVALID",
+    )
+    if runtime_identity_path is not None:
+        identity = _read_json(Path(runtime_identity_path))
+        observed = identity.get("ociImageDigest")
+        if observed is not None:
+            _require(observed == runtime_image_digest, "DEPLOYMENT_RUNTIME_OCI_DIGEST_MISMATCH")
+    return runtime_image_digest
 
 
 def preflight_final_evaluation_authority_v1(
@@ -809,6 +855,11 @@ def execute_final_holdout_v1(
     output head are introduced here.
     """
 
+    deployment_digest = validate_deployment_time_oci_binding_v1(
+        authority_path,
+        os.environ.get("HIM_RUNTIME_IMAGE_DIGEST"),
+        Path(runtime_root) / DEPLOYED_RUNTIME_IDENTITY_RELATIVE_PATH,
+    )
     plan = verify_final_holdout_execution_path_v1(
         runtime_root=runtime_root,
         authority_path=authority_path,
@@ -841,6 +892,8 @@ def execute_final_holdout_v1(
         "authorityReference": plan["finalEvaluationAuthorityReference"],
         "checkpointReference": FINAL_CHECKPOINT_REFERENCE,
         "holdoutAuthorityReference": FINAL_HOLDOUT_AUTHORITY_REFERENCE,
+        "runtimeImageDigest": deployment_digest,
+        "runtimeImageDigestBindingStage": RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT,
         "rawPredictionPath": str(result["rawPath"]),
         "resultPath": str(result["resultPath"]),
         "counters": {

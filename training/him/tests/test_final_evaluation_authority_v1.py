@@ -12,7 +12,7 @@ from him_trainer.final_evaluation_authority_v1 import (
     FINAL_HOLDOUT_AUTHORITY_REFERENCE,
     FINAL_MODEL_STATE_RELATIVE_PATH,
     FINAL_MODEL_STATE_SHA256,
-    FINAL_RUNTIME_OCI,
+    RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT,
     FINAL_HOLDOUT_AUTHORITY_FILENAME,
     FINAL_HOLDOUT_CUDA_COMPAT_PREFIX,
     REQUIRED_MODEL_ROOT_FILES,
@@ -24,6 +24,7 @@ from him_trainer.final_evaluation_authority_v1 import (
     validate_final_evaluation_authority_v1,
     verify_final_holdout_execution_bindings_v1,
     verify_final_holdout_execution_path_v1,
+    validate_deployment_time_oci_binding_v1,
 )
 
 
@@ -102,7 +103,11 @@ class FinalEvaluationAuthorityV1Test(unittest.TestCase):
         self.assertEqual(FINAL_CHECKPOINT_REFERENCE, payload["evaluatedCheckpoint"]["checkpointReference"])
         self.assertEqual(FINAL_CHECKPOINT_LOGICAL_DIGEST, payload["evaluatedCheckpoint"]["checkpointLogicalDigest"])
         self.assertEqual(FINAL_MODEL_STATE_SHA256, payload["evaluatedCheckpoint"]["modelStateSha256"])
-        self.assertEqual(FINAL_RUNTIME_OCI, payload["evaluatedCheckpoint"]["runtimeOciDigest"])
+        self.assertIsNone(payload["evaluatedCheckpoint"]["runtimeOciDigest"])
+        self.assertEqual(
+            RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT,
+            payload["evaluatedCheckpoint"]["runtimeImageDigestBindingStage"],
+        )
         self.assertEqual(FINAL_HOLDOUT_AUTHORITY_REFERENCE, payload["holdoutAuthority"]["reference"])
         self.assertEqual(FINAL_HOLDOUT_AUTHORITY_LOGICAL_DIGEST, payload["holdoutAuthority"]["logicalDigest"])
         self.assertFalse(payload["holdoutAuthority"]["membershipIncluded"])
@@ -120,6 +125,16 @@ class FinalEvaluationAuthorityV1Test(unittest.TestCase):
         value["authorityPayload"]["componentReuse"]["newSemanticComponentRequiredCount"] = 1
         with self.assertRaises(ValueError):
             validate_final_evaluation_authority_v1(value)
+
+    def test_deployment_time_oci_binding_is_required_and_external(self) -> None:
+        value = build_final_evaluation_authority_v1()
+        with tempfile.TemporaryDirectory(prefix="him-final-deployment-oci-") as directory:
+            authority_path = Path(directory) / "authority.json"
+            persist_final_evaluation_authority_v1(authority_path, value)
+            digest = "sha256:" + "a" * 64
+            self.assertEqual(digest, validate_deployment_time_oci_binding_v1(authority_path, digest))
+            with self.assertRaises(ValueError):
+                validate_deployment_time_oci_binding_v1(authority_path, None)
 
     def test_persist_reload_and_model_free_preflight(self) -> None:
         value = build_final_evaluation_authority_v1()
