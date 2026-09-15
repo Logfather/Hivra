@@ -80,6 +80,7 @@ DEFAULT_FINAL_TOKENIZER_PATH = DEFAULT_FINAL_MODEL_ROOT / "tokenizer.json"
 FINAL_HOLDOUT_EXECUTION_ENTRYPOINT = "him_trainer.final_evaluation_authority_v1"
 FINAL_HOLDOUT_EXECUTION_COMMAND_MODE = "--execute-final-holdout"
 FINAL_HOLDOUT_PREFLIGHT_COMMAND_MODE = "--final-holdout-execution-preflight"
+FINAL_HOLDOUT_CUDA_COMPAT_PREFIX = "/usr/local/cuda-13.0/compat/lib.real:/usr/local/cuda-13.0/compat"
 REQUIRED_MODEL_ROOT_FILES = ("config.json", "model.safetensors", "tokenizer.json")
 REQUIRED_RUNTIME_MODULES = (
     "final_evaluation_authority_v1.py",
@@ -593,7 +594,11 @@ def final_holdout_execution_command_v1(
     model = Path(model_root) if model_root is not None else DEFAULT_FINAL_MODEL_ROOT
     tokenizer = Path(tokenizer_path) if tokenizer_path is not None else model / "tokenizer.json"
     return (
-        "python",
+        "env",
+        "HIM_CUDA_COMPAT_REQUIRED=YES",
+        f"HIM_CUDA_COMPAT_PREFIX={FINAL_HOLDOUT_CUDA_COMPAT_PREFIX}",
+        f"LD_LIBRARY_PATH={FINAL_HOLDOUT_CUDA_COMPAT_PREFIX}",
+        str(root / "runtime/bin/python"),
         "-m",
         FINAL_HOLDOUT_EXECUTION_ENTRYPOINT,
         FINAL_HOLDOUT_EXECUTION_COMMAND_MODE,

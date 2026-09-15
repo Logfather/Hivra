@@ -13,6 +13,7 @@ from him_trainer.final_evaluation_authority_v1 import (
     FINAL_MODEL_STATE_RELATIVE_PATH,
     FINAL_MODEL_STATE_SHA256,
     FINAL_HOLDOUT_AUTHORITY_FILENAME,
+    FINAL_HOLDOUT_CUDA_COMPAT_PREFIX,
     REQUIRED_MODEL_ROOT_FILES,
     REQUIRED_RUNTIME_MODULES,
     build_final_evaluation_authority_v1,
@@ -208,6 +209,12 @@ class FinalEvaluationAuthorityV1Test(unittest.TestCase):
             self.assertEqual(0, result["forwardCount"])
             self.assertEqual(0, result["trainingCount"])
             self.assertIn("--execute-final-holdout", result["executionCommand"])
+            command = result["executionCommand"]
+            self.assertEqual("env", command[0])
+            self.assertIn("HIM_CUDA_COMPAT_REQUIRED=YES", command)
+            self.assertIn(f"HIM_CUDA_COMPAT_PREFIX={FINAL_HOLDOUT_CUDA_COMPAT_PREFIX}", command)
+            self.assertIn(f"LD_LIBRARY_PATH={FINAL_HOLDOUT_CUDA_COMPAT_PREFIX}", command)
+            self.assertEqual(str(runtime_root / "runtime/bin/python"), command[4])
 
     def test_workspace_is_not_accepted_as_authority_root(self) -> None:
         value = build_final_evaluation_authority_v1()
