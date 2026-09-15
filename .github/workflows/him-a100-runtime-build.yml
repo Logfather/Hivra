@@ -96,6 +96,7 @@ jobs:
           bash training/him/runtime/a100/build-context.sh "$context_dir" > "$RUNNER_TEMP/build-context-output.txt"
           definition_digest=$(bash training/him/runtime/a100/runtime-identity.sh --definition-digest)
           context_digest=$(bash training/him/runtime/a100/runtime-identity.sh --build-context-digest)
+          build_context_count=$(awk -F= '$1 == "BUILD_CONTEXT_FILE_COUNT" { print $2 }' "$RUNNER_TEMP/build-context-output.txt")
           source_digest=$(awk -F= '$1 == "RUNTIME_SOURCE_LOGICAL_DIGEST" { print $2 }' "$RUNNER_TEMP/build-context-output.txt")
           definition_digest_again=$(bash training/him/runtime/a100/runtime-identity.sh --definition-digest)
           context_digest_again=$(bash training/him/runtime/a100/runtime-identity.sh --build-context-digest)
@@ -118,7 +119,7 @@ jobs:
           test "$identity_source_digest" = "$source_digest"
           test "$identity_lock_digest" = "$(sha256sum training/him/uv.lock | awk '{print $1}')"
           test "$identity_build_definition" = "$definition_digest"
-          test "$(awk -F '\t' 'NR > 1 && NF { count++ } END { print count + 0 }' training/him/runtime/a100/build-context.manifest.tsv)" = "51"
+          test "$build_context_count" = "52"
           {
             echo "context=$context_dir"
             echo "definition_digest=$definition_digest"
