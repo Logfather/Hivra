@@ -12,6 +12,7 @@ from him_trainer.final_evaluation_authority_v1 import (
     FINAL_HOLDOUT_AUTHORITY_REFERENCE,
     FINAL_MODEL_STATE_RELATIVE_PATH,
     FINAL_MODEL_STATE_SHA256,
+    FINAL_RUNTIME_OCI,
     FINAL_HOLDOUT_AUTHORITY_FILENAME,
     FINAL_HOLDOUT_CUDA_COMPAT_PREFIX,
     REQUIRED_MODEL_ROOT_FILES,
@@ -101,6 +102,7 @@ class FinalEvaluationAuthorityV1Test(unittest.TestCase):
         self.assertEqual(FINAL_CHECKPOINT_REFERENCE, payload["evaluatedCheckpoint"]["checkpointReference"])
         self.assertEqual(FINAL_CHECKPOINT_LOGICAL_DIGEST, payload["evaluatedCheckpoint"]["checkpointLogicalDigest"])
         self.assertEqual(FINAL_MODEL_STATE_SHA256, payload["evaluatedCheckpoint"]["modelStateSha256"])
+        self.assertEqual(FINAL_RUNTIME_OCI, payload["evaluatedCheckpoint"]["runtimeOciDigest"])
         self.assertEqual(FINAL_HOLDOUT_AUTHORITY_REFERENCE, payload["holdoutAuthority"]["reference"])
         self.assertEqual(FINAL_HOLDOUT_AUTHORITY_LOGICAL_DIGEST, payload["holdoutAuthority"]["logicalDigest"])
         self.assertFalse(payload["holdoutAuthority"]["membershipIncluded"])
@@ -215,6 +217,8 @@ class FinalEvaluationAuthorityV1Test(unittest.TestCase):
             self.assertIn(f"HIM_CUDA_COMPAT_PREFIX={FINAL_HOLDOUT_CUDA_COMPAT_PREFIX}", command)
             self.assertIn(f"LD_LIBRARY_PATH={FINAL_HOLDOUT_CUDA_COMPAT_PREFIX}", command)
             self.assertEqual(str(runtime_root / "runtime/bin/python"), command[4])
+            self.assertIn("--evaluation-root", command)
+            self.assertIn("--runtime-authority", command)
 
     def test_workspace_is_not_accepted_as_authority_root(self) -> None:
         value = build_final_evaluation_authority_v1()

@@ -284,10 +284,10 @@ def build_synthetic_predictions(sealed: SealedV2Set) -> dict[str, Any]:
     return {"predictionReference": f"him-p2-blind-expanded-v2-predictions:{prediction_digest}", "logicalDigest": prediction_digest, "digestScheme": DIGEST_SCHEME, "payload": payload}
 
 
-def persist_raw_predictions(output_root: str | Path, predictions: Mapping[str, Any]) -> Path:
+def persist_raw_predictions(output_root: str | Path, predictions: Mapping[str, Any], *, filename: str = RAW_PREDICTIONS_FILENAME) -> Path:
     root = Path(output_root)
     root.mkdir(parents=True, exist_ok=True)
-    destination = root / RAW_PREDICTIONS_FILENAME
+    destination = root / filename
     _require(not destination.exists(), "RAW_PREDICTIONS_ALREADY_EXIST")
     content = _canonical(predictions) + b"\n"
     destination.write_bytes(content)
@@ -473,10 +473,10 @@ def build_scored_result(*, sealed: SealedV2Set, raw_predictions: Mapping[str, An
     return {"resultReference": f"him-p2-blind-expanded-validation-result:v2:{result_digest}", "logicalDigest": result_digest, "digestScheme": DIGEST_SCHEME, "resultPayload": result_payload}
 
 
-def persist_result(output_root: str | Path, result: Mapping[str, Any]) -> Path:
+def persist_result(output_root: str | Path, result: Mapping[str, Any], *, filename: str = RESULT_FILENAME) -> Path:
     root = Path(output_root)
     root.mkdir(parents=True, exist_ok=True)
-    destination = root / RESULT_FILENAME
+    destination = root / filename
     _require(not destination.exists(), "RESULT_ALREADY_EXIST")
     destination.write_bytes(_canonical(result) + b"\n")
     return destination
@@ -579,7 +579,7 @@ def _build_real_input_tensors(sealed: SealedV2Set, tokenizer: Any) -> tuple[Any,
     return input_ids, attention, rows
 
 
-def execute_real_v2(*, sealed_root: str | Path, output_root: str | Path, checkpoint_manifest_path: str | Path, runtime_authority_path: str | Path, model_root: str | Path, tokenizer_path: str | Path) -> dict[str, Any]:
+def execute_real_v2(*, sealed_root: str | Path, output_root: str | Path, checkpoint_manifest_path: str | Path, runtime_authority_path: str | Path, model_root: str | Path, tokenizer_path: str | Path, expected_checkpoint_reference: str = EXPECTED_CHECKPOINT_REFERENCE, expected_checkpoint_digest: str = EXPECTED_CHECKPOINT_DIGEST, raw_predictions_filename: str = RAW_PREDICTIONS_FILENAME, result_filename: str = RESULT_FILENAME) -> dict[str, Any]:
     """Execute one exact V2 evaluation after all model-blind gates have passed."""
 
     import torch
@@ -587,7 +587,7 @@ def execute_real_v2(*, sealed_root: str | Path, output_root: str | Path, checkpo
     sealed = load_sealed_v2_set(sealed_root)
     runtime = _runtime_binding(runtime_authority_path)
     manifest_path = Path(checkpoint_manifest_path)
-    manifest = validate_checkpoint_manifest(manifest_path)
+    manifest = validate_checkpoint_manifest(manifest_path, expected_reference=expected_checkpoint_reference, expected_digest=expected_checkpoint_digest)
     model_state_path = _checkpoint_model_state_path(manifest_path, manifest)
     model_binding_digest = manifest.get("identity", {}).get("modelBindingDigest")
     _require(isinstance(model_binding_digest, str) and len(model_binding_digest) == 64, "CHECKPOINT_MODEL_BINDING_INVALID")
@@ -643,12 +643,12 @@ def execute_real_v2(*, sealed_root: str | Path, output_root: str | Path, checkpo
     }
     prediction_digest = _digest(payload)
     raw = {"predictionReference": f"him-p2-blind-expanded-v2-predictions:{prediction_digest}", "logicalDigest": prediction_digest, "digestScheme": DIGEST_SCHEME, "payload": payload}
-    raw_path = persist_raw_predictions(output_root, raw)
+    raw_path = persist_raw_predictions(output_root, raw, filename=raw_predictions_filename)
     reloaded_raw = reload_raw_predictions(raw_path, sealed)
     counters = {"modelDeserializationCount": 1, "forwardCount": 1, "predictionCount": EXPECTED_TOTAL, "logitCount": EXPECTED_TOTAL, "trainingCount": 0, "backwardCount": 0, "optimizerCreatedCount": 0, "optimizerStepCount": 0, "holdoutExposureCount": 0}
-    result = build_scored_result(sealed=sealed, raw_predictions=reloaded_raw, checkpoint_reference=EXPECTED_CHECKPOINT_REFERENCE, checkpoint_digest=EXPECTED_CHECKPOINT_DIGEST, runtime_binding=runtime, reconstruction=reconstruction, counters=counters)
-    result_path = persist_result(output_root, result)
-    reloaded_result = reload_result(result_path, sealed, reloaded_raw, EXPECTED_CHECKPOINT_REFERENCE, EXPECTED_CHECKPOINT_DIGEST)
+    result = build_scored_result(sealed=sealed, raw_predictions=reloaded_raw, checkpoint_reference=expected_checkpoint_reference, checkpoint_digest=expected_checkpoint_digest, runtime_binding=runtime, reconstruction=reconstruction, counters=counters)
+    result_path = persist_result(output_root, result, filename=result_filename)
+    reloaded_result = reload_result(result_path, sealed, reloaded_raw, expected_checkpoint_reference, expected_checkpoint_digest)
     return {"sealed": sealed, "rawPath": raw_path, "resultPath": result_path, "raw": reloaded_raw, "result": reloaded_result}
 
 

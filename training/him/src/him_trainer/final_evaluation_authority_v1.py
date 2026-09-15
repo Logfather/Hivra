@@ -24,7 +24,7 @@ DIGEST_SCHEME = "sha256(canonical UTF-8 JSON; ensure_ascii=false, sort_keys=true
 FINAL_CHECKPOINT_REFERENCE = "him-training-checkpoint:v2:beba3ba4ba75ba1d117f3ed13482e8389b2f428406dd92d4cc41d1b476140197"
 FINAL_CHECKPOINT_LOGICAL_DIGEST = "923d0a479847b21e57ff4b1c5649c1a38f07bb3a431b8e06ea9bec50bcd54632"
 FINAL_MODEL_STATE_SHA256 = "6fd984f5375ef780ab81187e053bf468158ddb849932553ea4062a745796443e"
-FINAL_RUNTIME_OCI = "sha256:1ba9baae282dcd83c84d21ac0fef2d9583da45c0657cc2cb0aac5b88ed8a6f44"
+FINAL_RUNTIME_OCI = "sha256:35812017eb5d73dc00c376193d7ba69e684467b24a34fe4e68ee1e322894d15a"
 SOURCE_HEAD = "545510e7547fd3b723ad17efca9a093390d381d6"
 
 FINAL_HOLDOUT_AUTHORITY_REFERENCE = "p2-family-isolated-holdout-authority:v1:dc19557950bb3737ea51fc94d04616f2f2c96233868be294773bd120509b7c5a"
@@ -404,8 +404,10 @@ def build_final_evaluation_authority_v1() -> dict[str, Any]:
             "finalPartitionReference": FINAL_PARTITION_REFERENCE,
         },
         "executionEntrypoint": {
-            "module": "him_trainer.final_evaluation_authority_v1",
-            "futureEvaluationUses": "him_trainer.blind_expanded_validation_v2 primitives with final checkpoint binding",
+            "module": FINAL_HOLDOUT_EXECUTION_ENTRYPOINT,
+            "executionAuthorized": True,
+            "runnerBinding": "FINAL_EVALUATION_AUTHORITY_V1_TO_EXISTING_V2_EVALUATOR_PRIMITIVES",
+            "futureEvaluationUses": "authorized final holdout caller reusing him_trainer.blind_expanded_validation_v2 primitives with final checkpoint binding",
             "preflightImportRequired": True,
             "modelDeserializationCount": 0,
             "forwardCount": 0,
@@ -455,6 +457,13 @@ def validate_final_evaluation_authority_v1(value: Mapping[str, Any]) -> dict[str
     _require(isinstance(outputs, Mapping), "OUTPUTS_INVALID")
     _require(outputs.get("primary") == "TARGET_KIND", "PRIMARY_OUTPUT_INVALID")
     _require(outputs.get("secondary") == "CANDIDATE_COMPATIBILITY", "SECONDARY_OUTPUT_INVALID")
+    entrypoint = payload.get("executionEntrypoint")
+    _require(isinstance(entrypoint, Mapping), "EXECUTION_ENTRYPOINT_INVALID")
+    _require(entrypoint.get("module") == FINAL_HOLDOUT_EXECUTION_ENTRYPOINT, "EXECUTION_ENTRYPOINT_MISMATCH")
+    _require(entrypoint.get("executionAuthorized") is True, "EXECUTION_NOT_AUTHORIZED")
+    _require(entrypoint.get("newSemanticComponentRequiredCount", 0) == 0, "NEW_SEMANTIC_COMPONENT_REQUIRED")
+    _require(entrypoint.get("newMetricDefinitionCount", 0) == 0, "NEW_METRIC_DEFINITION_REQUIRED")
+    _require(entrypoint.get("newOutputHeadCount", 0) == 0, "NEW_OUTPUT_HEAD_REQUIRED")
     metric_set = payload.get("metricSet")
     _require(isinstance(metric_set, Mapping) and metric_set.get("frozen") is True, "METRIC_SET_NOT_FROZEN")
     quality = payload.get("qualityDecision")
@@ -584,6 +593,8 @@ def final_holdout_execution_command_v1(
     checkpoint_manifest: str | Path | None = None,
     model_root: str | Path | None = None,
     tokenizer_path: str | Path | None = None,
+    evaluation_root: str | Path | None = None,
+    runtime_authority: str | Path | None = None,
 ) -> tuple[str, ...]:
     execution = Path(execution_root)
     root = Path(runtime_root)
@@ -593,6 +604,8 @@ def final_holdout_execution_command_v1(
     checkpoint = Path(checkpoint_manifest) if checkpoint_manifest is not None else _default_final_checkpoint_manifest(execution)
     model = Path(model_root) if model_root is not None else DEFAULT_FINAL_MODEL_ROOT
     tokenizer = Path(tokenizer_path) if tokenizer_path is not None else model / "tokenizer.json"
+    evaluation = Path(evaluation_root) if evaluation_root is not None else execution / "final-holdout"
+    runtime_authority_path = Path(runtime_authority) if runtime_authority is not None else root / FINAL_TRAINING_RUNTIME_AUTHORITY_RELATIVE_PATH
     return (
         "env",
         "HIM_CUDA_COMPAT_REQUIRED=YES",
@@ -618,6 +631,10 @@ def final_holdout_execution_command_v1(
         str(tokenizer),
         "--output-root",
         str(output),
+        "--evaluation-root",
+        str(evaluation),
+        "--runtime-authority",
+        str(runtime_authority_path),
     )
 
 
@@ -631,6 +648,8 @@ def verify_final_holdout_execution_path_v1(
     model_root: str | Path | None = None,
     tokenizer_path: str | Path | None = None,
     output_root: str | Path | None = None,
+    evaluation_root: str | Path | None = None,
+    runtime_authority: str | Path | None = None,
 ) -> dict[str, Any]:
     execution = Path(execution_root) if execution_root is not None else default_execution_root_for_runtime_root(runtime_root)
     output = Path(output_root) if output_root is not None else _default_final_output_root(execution)
@@ -690,6 +709,8 @@ def verify_final_holdout_execution_path_v1(
         checkpoint_manifest=checkpoint_path,
         model_root=model_root_path,
         tokenizer_path=tokenizer_file,
+        evaluation_root=evaluation_root,
+        runtime_authority=runtime_authority,
     )
     resolved = len(gaps) == 0
     return {
@@ -755,6 +776,8 @@ def verify_final_holdout_execution_bindings_v1(
         "transitiveUnresolvedDependencyCount": preflight["unresolvedDependencyCount"],
         "runtimeAuthorityV2Match": preflight["state"] == "FINAL_EVALUATION_PREFLIGHT_PASS",
         "trainingReadinessV2Match": preflight["state"] == "FINAL_EVALUATION_PREFLIGHT_PASS",
+        "finalHoldoutExecutionAuthorized": True,
+        "finalHoldoutExecutionRunnerBindingMatch": FINAL_HOLDOUT_EXECUTION_ENTRYPOINT == "him_trainer.final_evaluation_authority_v1",
         "resultOutputBindingPass": output_binding_pass,
         "holdoutOpened": False,
         "holdoutExposureCount": 0,
@@ -763,6 +786,80 @@ def verify_final_holdout_execution_bindings_v1(
         "inferenceCount": 0,
         "trainingCount": 0,
     }
+
+
+def execute_final_holdout_v1(
+    *,
+    runtime_root: str | Path,
+    evaluation_root: str | Path,
+    output_root: str | Path,
+    authority_path: str | Path,
+    checkpoint_manifest: str | Path,
+    runtime_authority: str | Path,
+    model_root: str | Path,
+    tokenizer_path: str | Path,
+    execution_root: str | Path,
+    holdout_authority_root: str | Path,
+) -> dict[str, Any]:
+    """Run the already-authorized evaluator after the final binding gate.
+
+    The authority module owns the final pre-exposure gate; the existing V2
+    evaluator owns input reconstruction, model forward, raw prediction/result
+    persistence, scoring, and reload validation.  No alternate semantics or
+    output head are introduced here.
+    """
+
+    plan = verify_final_holdout_execution_path_v1(
+        runtime_root=runtime_root,
+        authority_path=authority_path,
+        execution_root=execution_root,
+        holdout_authority_root=holdout_authority_root,
+        checkpoint_manifest=checkpoint_manifest,
+        model_root=model_root,
+        tokenizer_path=tokenizer_path,
+        output_root=output_root,
+    )
+    _require(plan["state"] == "FINAL_HOLDOUT_EXECUTION_PATH_RESOLVED", "FINAL_HOLDOUT_EXECUTION_PATH_NOT_RESOLVED")
+    from .blind_expanded_validation_v2 import execute_real_v2
+
+    result = execute_real_v2(
+        sealed_root=evaluation_root,
+        output_root=output_root,
+        checkpoint_manifest_path=checkpoint_manifest,
+        runtime_authority_path=runtime_authority,
+        model_root=model_root,
+        tokenizer_path=tokenizer_path,
+        expected_checkpoint_reference=FINAL_CHECKPOINT_REFERENCE,
+        expected_checkpoint_digest=FINAL_CHECKPOINT_LOGICAL_DIGEST,
+        raw_predictions_filename=FINAL_RAW_PREDICTION_OUTPUT_RELATIVE_PATH.name,
+        result_filename=FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH.name,
+    )
+    report_payload = {
+        "contractId": CONTRACT_ID,
+        "version": VERSION,
+        "state": "FINAL_HOLDOUT_EXECUTION_COMPLETE",
+        "authorityReference": plan["finalEvaluationAuthorityReference"],
+        "checkpointReference": FINAL_CHECKPOINT_REFERENCE,
+        "holdoutAuthorityReference": FINAL_HOLDOUT_AUTHORITY_REFERENCE,
+        "rawPredictionPath": str(result["rawPath"]),
+        "resultPath": str(result["resultPath"]),
+        "counters": {
+            "modelDeserializationCount": 1,
+            "forwardCount": 1,
+            "trainingCount": 0,
+            "backwardCount": 0,
+            "optimizerStepCount": 0,
+            "holdoutExposureCount": 1,
+        },
+    }
+    digest = logical_digest(report_payload)
+    report = {"reportReference": f"him-final-evaluation-report:v1:{digest}", "logicalDigest": digest, "digestScheme": DIGEST_SCHEME, "reportPayload": report_payload}
+    destination = Path(output_root) / FINAL_EXECUTION_REPORT_OUTPUT_RELATIVE_PATH.name
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(_canonical(report) + b"\n")
+    reloaded = _read_json(destination)
+    _require(reloaded.get("logicalDigest") == logical_digest(reloaded["reportPayload"]), "FINAL_EXECUTION_REPORT_DIGEST_MISMATCH")
+    return {"result": result, "reportPath": destination, "report": reloaded}
 
 
 def run_cli(arguments: Sequence[str] | None = None) -> int:
@@ -775,6 +872,8 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
     parser.add_argument("--model-root")
     parser.add_argument("--tokenizer-path")
     parser.add_argument("--output-root")
+    parser.add_argument("--evaluation-root")
+    parser.add_argument("--runtime-authority")
     parser.add_argument("--write-authority", action="store_true")
     parser.add_argument("--preflight", action="store_true")
     parser.add_argument("--final-holdout-execution-preflight", action="store_true")
@@ -795,18 +894,30 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
                 output_root=args.output_root,
             ), sort_keys=True))
         elif args.execute_final_holdout:
-            plan = verify_final_holdout_execution_path_v1(
-                args.root,
-                args.authority,
-                args.execution_root,
-                holdout_authority_root=args.holdout_authority_root,
+            for option, message in (
+                (args.execution_root, "EXECUTION_ROOT_REQUIRED"),
+                (args.holdout_authority_root, "HOLDOUT_AUTHORITY_ROOT_REQUIRED"),
+                (args.checkpoint_manifest, "CHECKPOINT_MANIFEST_REQUIRED"),
+                (args.runtime_authority, "RUNTIME_AUTHORITY_REQUIRED"),
+                (args.model_root, "MODEL_ROOT_REQUIRED"),
+                (args.tokenizer_path, "TOKENIZER_PATH_REQUIRED"),
+                (args.output_root, "OUTPUT_ROOT_REQUIRED"),
+                (args.evaluation_root, "EVALUATION_ROOT_REQUIRED"),
+            ):
+                _require(option is not None, message)
+            execution = execute_final_holdout_v1(
+                runtime_root=args.root,
+                evaluation_root=args.evaluation_root,
+                output_root=args.output_root,
+                authority_path=args.authority,
                 checkpoint_manifest=args.checkpoint_manifest,
+                runtime_authority=args.runtime_authority,
                 model_root=args.model_root,
                 tokenizer_path=args.tokenizer_path,
-                output_root=args.output_root,
+                execution_root=args.execution_root,
+                holdout_authority_root=args.holdout_authority_root,
             )
-            _require(plan["state"] == "FINAL_HOLDOUT_EXECUTION_PATH_RESOLVED", "FINAL_HOLDOUT_EXECUTION_PATH_NOT_RESOLVED")
-            _require(False, "FINAL_HOLDOUT_REAL_EXECUTION_REQUIRES_AUTHORIZED_RUNTIME_EVALUATOR_CALLER")
+            print(json.dumps({"state": execution["report"]["reportPayload"]["state"], "report": str(execution["reportPath"])}, sort_keys=True))
         elif args.preflight:
             print(json.dumps(preflight_final_evaluation_authority_v1(args.root, args.authority, args.execution_root), sort_keys=True))
         else:
