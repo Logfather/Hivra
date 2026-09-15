@@ -61,7 +61,8 @@ RUN uv python install --install-dir "${UV_PYTHON_INSTALL_DIR}" "${PYTHON_VERSION
     && test -f /opt/him/runtime/lib/python3.13/site-packages/torch/__init__.py
 
 COPY runtime-identity.json /opt/him/runtime/runtime-identity.json
-COPY final-training-authority-packet-v1 /opt/him/final-training-authority-packet-v1
+COPY training/him/runtime/a100/final-training-authority-packet-v1 /opt/him/training/him/runtime/a100/final-training-authority-packet-v1
+COPY training/him/runtime/a100/final-training-runtime-authority.v2.json /opt/him/training/him/runtime/a100/final-training-runtime-authority.v2.json
 
 RUN /opt/him/runtime/bin/python \
         /opt/him/validation/him_runtime_validation_v1.py \
@@ -91,6 +92,7 @@ RUN chmod 0755 /opt/him/bin/start.sh \
     && chmod 0644 /opt/him/validation/build-lineage.json \
     && chmod 0644 /opt/him/runtime-image-definition.json \
     && chmod 0644 /opt/him/runtime/runtime-identity.json \
-    && find /opt/him/final-training-authority-packet-v1 -type f -name '*.json' -exec chmod 0644 {} +
+    && chmod 0644 /opt/him/training/him/runtime/a100/final-training-runtime-authority.v2.json \
+    && find /opt/him/training/him/runtime/a100/final-training-authority-packet-v1 -type f -name '*.json' -exec chmod 0644 {} +
 
 ENTRYPOINT ["/opt/him/bin/start.sh"]

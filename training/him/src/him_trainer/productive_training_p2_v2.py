@@ -28,6 +28,7 @@ from .training_input_authority_v2 import (
 
 
 RUNNER_MODULE = "him_trainer.productive_training_p2_v2"
+RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT = "DEPLOYMENT_TIME_IMMUTABLE_OCI"
 PHYSICAL_BATCH_SIZE = 8
 GRADIENT_ACCUMULATION_STEPS = 1
 EPOCHS = 3
@@ -46,6 +47,7 @@ EXECUTION_AUTHORITY_CONTRACT = "HIM_P2_TRAINING_RUNTIME_AUTHORITY_V2"
 READINESS_AUTHORITY_CONTRACT = "HIM_P2_TRAINING_READINESS_AUTHORITY_V2"
 FINAL_READINESS_AUTHORITY_CONTRACT = "HIM_FINAL_TRAINING_READINESS_AUTHORITY_V1"
 FINAL_TRAINING_ARTIFACT_DIRECTORY = Path("training/him/runtime/a100/final-training-authority-packet-v1")
+FINAL_TRAINING_RUNTIME_AUTHORITY_FILE = Path("training/him/runtime/a100/final-training-runtime-authority.v2.json")
 
 
 @dataclass(frozen=True)
@@ -159,14 +161,24 @@ def validate_execution_authority(
     if runtime.get("realTrainingExecutionAuthorized") is not True:
         raise TrainingInputV2Error(EXECUTION_AUTHORITY_ERROR)
     runtime_digest = runtime.get("runtimeImageDigest")
-    if not isinstance(runtime_digest, str) or not runtime_digest.startswith("sha256:"):
-        raise TrainingInputV2Error("RUNTIME_OCI_DIGEST_INVALID")
-    if expected_runtime_image_digest is not None and runtime_digest != expected_runtime_image_digest:
-        raise TrainingInputV2Error("RUNTIME_OCI_DIGEST_MISMATCH")
-    if runtime.get("runtimeImageReference") != f"ghcr.io/logfather/him-a100-reference-runtime@{runtime_digest}":
-        raise TrainingInputV2Error("RUNTIME_OCI_REFERENCE_MISMATCH")
+    deployment_bound_digest = runtime.get("runtimeImageDigestBindingStage") == RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT
+    if deployment_bound_digest:
+        if expected_runtime_image_digest is None:
+            raise TrainingInputV2Error("RUNTIME_OCI_DIGEST_REQUIRED_AT_DEPLOYMENT")
+        if not isinstance(expected_runtime_image_digest, str) or not expected_runtime_image_digest.startswith("sha256:") or len(expected_runtime_image_digest) != 71:
+            raise TrainingInputV2Error("RUNTIME_OCI_DIGEST_INVALID")
+        runtime_digest = expected_runtime_image_digest
+        if runtime.get("runtimeImageDigest") is not None or runtime.get("runtimeImageReference") is not None:
+            raise TrainingInputV2Error("RUNTIME_OCI_SELF_REFERENCE_FORBIDDEN")
+    else:
+        if not isinstance(runtime_digest, str) or not runtime_digest.startswith("sha256:"):
+            raise TrainingInputV2Error("RUNTIME_OCI_DIGEST_INVALID")
+        if expected_runtime_image_digest is not None and runtime_digest != expected_runtime_image_digest:
+            raise TrainingInputV2Error("RUNTIME_OCI_DIGEST_MISMATCH")
+        if runtime.get("runtimeImageReference") != f"ghcr.io/logfather/him-a100-reference-runtime@{runtime_digest}":
+            raise TrainingInputV2Error("RUNTIME_OCI_REFERENCE_MISMATCH")
     trainer = runtime.get("trainer")
-    if runtime.get("runtimeSourceModuleCount") != 31 or not isinstance(trainer, Mapping) or trainer.get("runnerModule") != RUNNER_MODULE:
+    if runtime.get("runtimeSourceModuleCount") != 32 or not isinstance(trainer, Mapping) or trainer.get("runnerModule") != RUNNER_MODULE:
         raise TrainingInputV2Error("TRAINER_SOURCE_AUTHORITY_MISMATCH")
     targeted_ready = readiness.get("finalTargetedRetrainingReadiness") == "PASS"
     final_ready = readiness.get("finalHimTrainingReadiness") == "BLOCKED_PENDING_RUNTIME_CLOSURE" or readiness.get("finalHimTrainingReadiness") == "PASS"
@@ -178,7 +190,14 @@ def validate_execution_authority(
         raise TrainingInputV2Error("TRAINING_READINESS_MISMATCH")
     if readiness.get("runtimeAuthorityReference") is not None and readiness.get("runtimeAuthorityReference") != runtime.get("reference"):
         raise TrainingInputV2Error("RUNTIME_READINESS_BINDING_MISMATCH")
-    if readiness.get("runtimeImageDigest") != runtime_digest:
+    readiness_digest = readiness.get("runtimeImageDigest")
+    readiness_deployment_bound_digest = readiness.get("runtimeImageDigestBindingStage") == RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT
+    if deployment_bound_digest or readiness_deployment_bound_digest:
+        if not (deployment_bound_digest and readiness_deployment_bound_digest):
+            raise TrainingInputV2Error("RUNTIME_READINESS_DIGEST_BINDING_MISMATCH")
+        if readiness_digest is not None:
+            raise TrainingInputV2Error("RUNTIME_READINESS_DIGEST_SELF_REFERENCE_FORBIDDEN")
+    elif readiness_digest != runtime_digest:
         raise TrainingInputV2Error("RUNTIME_READINESS_DIGEST_MISMATCH")
     if readiness.get("contractId") == READINESS_AUTHORITY_CONTRACT and (readiness.get("runtimeAuthorized") is not True or readiness.get("realTrainingExecutionAuthorized") is not True):
         raise TrainingInputV2Error("EXECUTION_AUTHORITY_GATE_FAILED")

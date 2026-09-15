@@ -15,7 +15,8 @@ from him_trainer.productive_training_p2_v2 import (
     main,
     training_count_contract,
 )
-from him_trainer.training_input_authority_v2 import logical_digest
+from him_trainer.final_training_runtime_closure_v1 import final_training_runtime_closure
+from him_trainer.training_input_authority_v2 import TrainingInputV2Error, logical_digest
 from him_trainer.training_readiness_authority_v2 import (
     evaluate_training_readiness_v2,
     persist_training_readiness_v2,
@@ -32,6 +33,8 @@ from him_trainer.training_runtime_authority_v2 import (
 ROOT = Path(__file__).resolve().parents[3]
 FINAL_AUTHORITY = ROOT / "build/knowledge/reports/him/p2-v2/runtime-workflow-retry/final-authority"
 TARGETED_AUTHORITY = ROOT / "data/knowledge/him/training/p2/canonical-catalog-expansion/v2/corpus-assembly-targeted-contrast-v2"
+FINAL_RUNTIME_AUTHORITY = ROOT / "training/him/runtime/a100/final-training-runtime-authority.v2.json"
+FINAL_TRAINING_PACKET = ROOT / "training/him/runtime/a100/final-training-authority-packet-v1"
 
 
 def _rebind(value: dict[str, object], *, reference_prefix: str) -> dict[str, object]:
@@ -48,7 +51,7 @@ def _authorities(directory: Path, *, execution: bool = True, readiness_ok: bool 
         {
             "runtimeImageDigest": "sha256:" + "a" * 64,
             "runtimeImageReference": "ghcr.io/logfather/him-a100-reference-runtime@sha256:" + "a" * 64,
-            "runtimeSourceModuleCount": 31,
+            "runtimeSourceModuleCount": 32,
             "trainer": {"runnerModule": RUNNER_MODULE, "supportsRealExecution": True},
             "trainingInputAuthorityReference": json.loads((ROOT / "data/knowledge/him/training/p2/canonical-catalog-expansion/v2/runtime-authority/training-input-authority.v2.json").read_text(encoding="utf-8"))["reference"],
             "batchAuthorityReference": bundle["batch"]["reference"],
@@ -157,7 +160,7 @@ class ProductiveTrainingP2V2ExecutionEnablementTest(unittest.TestCase):
                 {
                     "runtimeImageDigest": "sha256:357fa16d8d766c7d4c4d63a20b59513046023f6c9548dcc69b7075f9cd225531",
                     "runtimeImageReference": "ghcr.io/logfather/him-a100-reference-runtime@sha256:357fa16d8d766c7d4c4d63a20b59513046023f6c9548dcc69b7075f9cd225531",
-                    "runtimeSourceModuleCount": 31,
+                    "runtimeSourceModuleCount": 32,
                     "trainer": {"runnerModule": RUNNER_MODULE, "supportsRealExecution": True},
                     "trainingInputAuthorityReference": target_bundle["authority"]["reference"],
                     "batchAuthorityReference": target_bundle["batch"]["reference"],
@@ -189,6 +192,44 @@ class ProductiveTrainingP2V2ExecutionEnablementTest(unittest.TestCase):
                 result["totalOptimizerSteps"],
             ))
             self.assertEqual(0, result["modelDeserializationCount"])
+
+    def test_final_runtime_closure_accepts_canonical_packet_and_runtime_authority(self) -> None:
+        result = final_training_runtime_closure(ROOT)
+        self.assertEqual("HIM_FINAL_TRAINING_RUNTIME_CLOSURE_V1", result["contractId"])
+        self.assertEqual("training/him/runtime/a100/final-training-authority-packet-v1", result["packetRoot"])
+        self.assertEqual(8, result["packetFileCount"])
+        self.assertEqual(83, result["trainCount"])
+        self.assertEqual(19, result["validationCount"])
+        self.assertEqual(33, result["totalOptimizerSteps"])
+        self.assertEqual(0, result["finalRuntimeBindingGapCount"])
+        self.assertFalse(result["runtimeImageDigestSelfReferenceRisk"])
+
+    def test_final_execution_preflight_resolves_deployment_time_runtime_digest(self) -> None:
+        runtime_digest = "sha256:" + "e" * 64
+        result = execution_preflight(
+            ROOT,
+            runtime_authority_path=FINAL_RUNTIME_AUTHORITY,
+            readiness_path=FINAL_TRAINING_PACKET / "final-training-readiness.v2.json",
+            expected_runtime_image_digest=runtime_digest,
+        )
+        self.assertEqual("P2_V2_EXECUTION_AUTHORITY_ACCEPTED", result["state"])
+        self.assertEqual(runtime_digest, result["runtimeImageDigest"])
+        self.assertEqual((83, 19, 11, 11, 33), (
+            result["train"],
+            result["validation"],
+            result["batchesPerEpoch"],
+            result["optimizerStepsPerEpoch"],
+            result["totalOptimizerSteps"],
+        ))
+        self.assertEqual(0, result["modelDeserializationCount"])
+
+    def test_final_execution_preflight_requires_deployment_time_runtime_digest(self) -> None:
+        with self.assertRaisesRegex(TrainingInputV2Error, "RUNTIME_OCI_DIGEST_REQUIRED_AT_DEPLOYMENT"):
+            execution_preflight(
+                ROOT,
+                runtime_authority_path=FINAL_RUNTIME_AUTHORITY,
+                readiness_path=FINAL_TRAINING_PACKET / "final-training-readiness.v2.json",
+            )
 
     def test_execution_enabled_path_structurally_excludes_holdout(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

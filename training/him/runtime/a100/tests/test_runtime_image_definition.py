@@ -169,7 +169,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertNotIn("EUR-IS-1", self.dockerfile)
 
     def test_manifest_is_bounded_and_deterministic(self) -> None:
-        self.assertEqual(len(self.manifest_rows), 51)
+        self.assertEqual(len(self.manifest_rows), 52)
         destinations = [row[1] for row in self.manifest_rows]
         self.assertEqual(len(destinations), len(set(destinations)))
         for source, destination, _role, _final, _build_only in self.manifest_rows:
@@ -484,7 +484,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
             context = Path(output_dir) / "context"
             subprocess.check_call([str(ROOT / "build-context.sh"), str(context)], stdout=subprocess.DEVNULL)
             paths = [path.relative_to(context).as_posix() for path in context.rglob("*") if path.is_file()]
-        self.assertEqual(len(paths), 51)
+        self.assertEqual(len(paths), 52)
         self.assertFalse(any(".env" in path or "private" in path or "credential" in path for path in paths))
         forbidden_components = {"model", "models", "corpus", "dataset", "checkpoint", "knowledge"}
         self.assertFalse(
@@ -505,8 +505,16 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
             by_source,
         )
         self.assertIn(
-            "COPY final-training-authority-packet-v1 /opt/him/final-training-authority-packet-v1",
+            "COPY training/him/runtime/a100/final-training-authority-packet-v1 /opt/him/training/him/runtime/a100/final-training-authority-packet-v1",
             self.dockerfile,
+        )
+        self.assertIn(
+            "COPY training/him/runtime/a100/final-training-runtime-authority.v2.json /opt/him/training/him/runtime/a100/final-training-runtime-authority.v2.json",
+            self.dockerfile,
+        )
+        self.assertIn(
+            "training/him/runtime/a100/final-training-runtime-authority.v2.json",
+            {row[0] for row in self.manifest_rows},
         )
 
     def test_reference_environment_binding_is_separate(self) -> None:

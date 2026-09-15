@@ -12,7 +12,12 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any, Mapping
 
-from .productive_training_p2_v2 import FINAL_TRAINING_ARTIFACT_DIRECTORY, training_count_contract
+from .productive_training_p2_v2 import (
+    FINAL_TRAINING_ARTIFACT_DIRECTORY,
+    FINAL_TRAINING_RUNTIME_AUTHORITY_FILE,
+    RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT,
+    training_count_contract,
+)
 from .training_input_authority_v2 import TrainingInputV2Error, load_v2_input_bundle, logical_digest
 
 
@@ -30,7 +35,6 @@ PACKET_FILE_NAMES = (
 FINAL_CORPUS_REFERENCE = "him-final-training-corpus:v1:4e3621d8ff82e92f57af2262e819beae98dd438166e1b06f7bf7d511131b7b75"
 FINAL_PARTITION_REFERENCE = "him-final-training-partition:v1:b8f48b6b253c633965ed1bb7afebd6325b25d62f4f125b3055150b881b45e27f"
 FINAL_INPUT_AUTHORITY_REFERENCE = "him-final-training-input-authority:v1:9ceb2bb424978cdaf4ac5230eeba9c3fb3b64f319ec951d8f1e95f22fe045654"
-FINAL_READINESS_REFERENCE = "him-final-training-readiness:v1:5b6d3c59d454a99739c9682158eeb7346f3508964527cbf2302ded6844d6b53b"
 FINAL_EPOCH_COUNT = 3
 FINAL_PHYSICAL_BATCH_SIZE = 8
 
@@ -50,21 +54,48 @@ def final_training_packet_root(root: str | Path) -> Path:
     return Path(root) / FINAL_TRAINING_ARTIFACT_DIRECTORY
 
 
+def final_training_runtime_authority_path(root: str | Path) -> Path:
+    return Path(root) / FINAL_TRAINING_RUNTIME_AUTHORITY_FILE
+
+
 def final_training_runtime_closure(root: str | Path = ".") -> dict[str, Any]:
     repository = Path(root)
     packet_root = final_training_packet_root(repository)
+    runtime_authority_path = final_training_runtime_authority_path(repository)
     missing = [name for name in PACKET_FILE_NAMES if not (packet_root / name).is_file()]
     if missing:
         raise TrainingInputV2Error(f"FINAL_RUNTIME_PACKET_INCOMPLETE:{','.join(missing)}")
+    if not runtime_authority_path.is_file() or runtime_authority_path.is_symlink():
+        raise TrainingInputV2Error("FINAL_RUNTIME_AUTHORITY_MISSING")
 
     bundle = load_v2_input_bundle(repository, artifact_directory=packet_root)
     contract = training_count_contract(bundle)
     readiness = bundle["authority"]
     readiness_value = __import__("json").loads((packet_root / "final-training-readiness.v2.json").read_text(encoding="utf-8"))
+    runtime_authority_value = __import__("json").loads(runtime_authority_path.read_text(encoding="utf-8"))
     _verify_self_describing(bundle["corpus"], reference=FINAL_CORPUS_REFERENCE, code="FINAL_CORPUS")
     _verify_self_describing(bundle["partition"], reference=FINAL_PARTITION_REFERENCE, code="FINAL_PARTITION")
     _verify_self_describing(bundle["authority"], reference=FINAL_INPUT_AUTHORITY_REFERENCE, code="FINAL_INPUT_AUTHORITY")
-    _verify_self_describing(readiness_value, reference=FINAL_READINESS_REFERENCE, code="FINAL_READINESS")
+    _verify_self_describing(
+        readiness_value,
+        reference=readiness_value.get("reference", ""),
+        code="FINAL_READINESS",
+    )
+    _verify_self_describing(
+        runtime_authority_value,
+        reference=runtime_authority_value.get("reference", ""),
+        code="FINAL_RUNTIME_AUTHORITY",
+    )
+
+    if readiness_value.get("runtimeAuthorityReference") != runtime_authority_value.get("reference"):
+        raise TrainingInputV2Error("FINAL_READINESS_RUNTIME_AUTHORITY_REFERENCE_MISMATCH")
+    if (
+        readiness_value.get("runtimeImageDigestBindingStage") != RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT
+        or runtime_authority_value.get("runtimeImageDigestBindingStage") != RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT
+        or readiness_value.get("runtimeImageDigest") is not None
+        or runtime_authority_value.get("runtimeImageDigest") is not None
+    ):
+        raise TrainingInputV2Error("FINAL_RUNTIME_IMAGE_DIGEST_BINDING_MISMATCH")
 
     if bundle["batch"].get("physicalBatchSize") != FINAL_PHYSICAL_BATCH_SIZE:
         raise TrainingInputV2Error("FINAL_HYPERPARAMETER_AUTHORITY_MISMATCH")
@@ -88,6 +119,9 @@ def final_training_runtime_closure(root: str | Path = ".") -> dict[str, Any]:
         "finalPartitionReference": bundle["partition"]["reference"],
         "finalTrainingInputAuthorityReference": readiness["reference"],
         "finalReadinessReference": readiness_value["reference"],
+        "finalRuntimeAuthorityReference": runtime_authority_value["reference"],
+        "runtimeImageDigestBindingStage": runtime_authority_value["runtimeImageDigestBindingStage"],
+        "runtimeImageDigestSelfReferenceRisk": False,
         "trainCount": contract.train_count,
         "validationCount": contract.validation_count,
         "holdoutCount": 0,
@@ -114,8 +148,8 @@ __all__ = [
     "FINAL_CORPUS_REFERENCE",
     "FINAL_INPUT_AUTHORITY_REFERENCE",
     "FINAL_PARTITION_REFERENCE",
-    "FINAL_READINESS_REFERENCE",
     "PACKET_FILE_NAMES",
+    "final_training_runtime_authority_path",
     "final_training_packet_root",
     "final_training_runtime_closure",
 ]

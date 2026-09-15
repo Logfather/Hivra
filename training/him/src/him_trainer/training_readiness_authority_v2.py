@@ -68,7 +68,7 @@ def evaluate_training_readiness_v2(
             and isinstance(runtime_authority_reference, str)
             and bool(runtime_authority_reference)
         ),
-        "trainerSource": len(closure) == 31,
+        "trainerSource": len(closure) == 32,
         "tokenizer": True,
         "baseModel": True,
         "holdoutClosed": persisted["holdout"] == (),
