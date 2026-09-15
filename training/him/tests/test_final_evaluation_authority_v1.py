@@ -6,19 +6,68 @@ from pathlib import Path
 
 from him_trainer.final_evaluation_authority_v1 import (
     FINAL_CHECKPOINT_LOGICAL_DIGEST,
+    FINAL_CHECKPOINT_MANIFEST_RELATIVE_PATH,
     FINAL_CHECKPOINT_REFERENCE,
     FINAL_HOLDOUT_AUTHORITY_LOGICAL_DIGEST,
     FINAL_HOLDOUT_AUTHORITY_REFERENCE,
+    FINAL_MODEL_STATE_RELATIVE_PATH,
     FINAL_MODEL_STATE_SHA256,
+    REQUIRED_RUNTIME_MODULES,
     build_final_evaluation_authority_v1,
     persist_final_evaluation_authority_v1,
     preflight_final_evaluation_authority_v1,
     reload_final_evaluation_authority_v1,
     validate_final_evaluation_authority_v1,
+    verify_final_holdout_execution_bindings_v1,
 )
 
 
 ROOT = Path(__file__).resolve().parents[3]
+RUNTIME_AUTHORITY_ROOT = ROOT / "training/him/runtime/a100"
+
+
+def _write_execution_fixture(root: Path) -> None:
+    manifest = root / FINAL_CHECKPOINT_MANIFEST_RELATIVE_PATH
+    model_state = root / FINAL_MODEL_STATE_RELATIVE_PATH
+    manifest.parent.mkdir(parents=True, exist_ok=True)
+    manifest.write_text('{"fixture":"checkpoint-manifest"}\n', encoding="utf-8")
+    model_state.write_bytes(b"fixture-model-state")
+
+
+def _write_runtime_authority_fixture(root: Path, authority_value: dict[str, object]) -> Path:
+    for source in (
+        "final-training-runtime-authority.v2.json",
+        "final-training-authority-packet-v1/final-training-readiness.v2.json",
+        "final-training-authority-packet-v1/final-training-input-authority.v2.json",
+        "final-training-authority-packet-v1/final-training-partition.v2.json",
+        "final-training-authority-packet-v1/final-training-leakage-validation.v2.json",
+    ):
+        destination = root / "training/him/runtime/a100" / source
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes((RUNTIME_AUTHORITY_ROOT / source).read_bytes())
+    authority_path = root / "training/him/runtime/a100/final-evaluation-authority-v1/final-evaluation-authority.v1.json"
+    persist_final_evaluation_authority_v1(authority_path, authority_value)
+    return authority_path
+
+
+def _write_deployed_runtime_fixture(root: Path, authority_value: dict[str, object]) -> Path:
+    runtime_package = root / "runtime/lib/python3.13/site-packages/him_trainer"
+    runtime_package.mkdir(parents=True, exist_ok=True)
+    for module in REQUIRED_RUNTIME_MODULES:
+        (runtime_package / module).write_text(f"# fixture for {module}\n", encoding="utf-8")
+    runtime_identity = root / "runtime/runtime-identity.json"
+    runtime_identity.parent.mkdir(parents=True, exist_ok=True)
+    runtime_identity.write_text('{"identitySchema":"fixture"}\n', encoding="utf-8")
+    return _write_runtime_authority_fixture(root, authority_value)
+
+
+def _write_build_context_fixture(root: Path, authority_value: dict[str, object]) -> Path:
+    runtime_package = root / "trainer/him_trainer"
+    runtime_package.mkdir(parents=True, exist_ok=True)
+    for module in REQUIRED_RUNTIME_MODULES:
+        (runtime_package / module).write_text(f"# fixture for {module}\n", encoding="utf-8")
+    (root / "runtime-identity.json").write_text('{"identitySchema":"fixture"}\n', encoding="utf-8")
+    return _write_runtime_authority_fixture(root, authority_value)
 
 
 class FinalEvaluationAuthorityV1Test(unittest.TestCase):
@@ -50,10 +99,13 @@ class FinalEvaluationAuthorityV1Test(unittest.TestCase):
     def test_persist_reload_and_model_free_preflight(self) -> None:
         value = build_final_evaluation_authority_v1()
         with tempfile.TemporaryDirectory(prefix="him-final-evaluation-authority-") as directory:
-            path = Path(directory) / "final-evaluation-authority.v1.json"
+            root = Path(directory)
+            path = root / "final-evaluation-authority.v1.json"
+            execution_root = root / "workspace"
+            _write_execution_fixture(execution_root)
             persist_final_evaluation_authority_v1(path, value)
             self.assertEqual(value, reload_final_evaluation_authority_v1(path))
-            result = preflight_final_evaluation_authority_v1(ROOT, path)
+            result = preflight_final_evaluation_authority_v1(ROOT, path, execution_root)
             self.assertEqual("FINAL_EVALUATION_PREFLIGHT_PASS", result["state"])
             self.assertEqual(0, result["missingInputCount"])
             self.assertEqual(0, result["modelDeserializationCount"])
@@ -62,6 +114,50 @@ class FinalEvaluationAuthorityV1Test(unittest.TestCase):
             self.assertEqual(0, result["trainingCount"])
             self.assertFalse(result["holdoutOpened"])
             self.assertEqual(0, result["holdoutExposureCount"])
+
+    def test_deployed_runtime_root_passes_with_workspace_execution_root(self) -> None:
+        value = build_final_evaluation_authority_v1()
+        with tempfile.TemporaryDirectory(prefix="him-final-deployed-runtime-") as directory:
+            root = Path(directory)
+            runtime_root = root / "opt-him"
+            execution_root = root / "workspace"
+            _write_execution_fixture(execution_root)
+            authority_path = _write_deployed_runtime_fixture(runtime_root, value)
+            result = preflight_final_evaluation_authority_v1(runtime_root, authority_path, execution_root)
+            self.assertEqual("FINAL_EVALUATION_PREFLIGHT_PASS", result["state"])
+            self.assertEqual(0, result["unresolvedDependencyCount"])
+            self.assertIn("runtime/lib/python3.13/site-packages", result["resolvedPaths"]["modulePaths"]["final_evaluation_authority_v1.py"])
+            binding = verify_final_holdout_execution_bindings_v1(runtime_root, authority_path, execution_root)
+            self.assertEqual("FINAL_HOLDOUT_EXECUTION_BINDINGS_PASS", binding["state"])
+            self.assertEqual(0, binding["modelDeserializationCount"])
+            self.assertEqual(0, binding["holdoutExposureCount"])
+
+    def test_generated_build_context_root_passes_without_repo_source_paths(self) -> None:
+        value = build_final_evaluation_authority_v1()
+        with tempfile.TemporaryDirectory(prefix="him-final-build-context-") as directory:
+            root = Path(directory)
+            runtime_root = root / "context"
+            execution_root = root / "workspace"
+            _write_execution_fixture(execution_root)
+            authority_path = _write_build_context_fixture(runtime_root, value)
+            result = preflight_final_evaluation_authority_v1(runtime_root, authority_path, execution_root)
+            self.assertEqual("FINAL_EVALUATION_PREFLIGHT_PASS", result["state"])
+            self.assertEqual(0, result["unresolvedDependencyCount"])
+            self.assertIn("trainer/him_trainer", result["resolvedPaths"]["modulePaths"]["blind_expanded_validation_v2.py"])
+
+    def test_workspace_is_not_accepted_as_authority_root(self) -> None:
+        value = build_final_evaluation_authority_v1()
+        with tempfile.TemporaryDirectory(prefix="him-final-workspace-root-") as directory:
+            root = Path(directory)
+            workspace_root = root / "workspace"
+            runtime_root = root / "opt-him"
+            _write_execution_fixture(workspace_root)
+            authority_path = _write_deployed_runtime_fixture(runtime_root, value)
+            result = preflight_final_evaluation_authority_v1(workspace_root, authority_path, workspace_root)
+            self.assertEqual("FINAL_EVALUATION_PREFLIGHT_INVALID_AUTHORITY_ROOT", result["state"])
+            self.assertEqual("INVALID_BY_CONTRACT", result["workspaceRootAsAuthorityRoot"])
+            self.assertEqual(0, result["missingInputCount"])
+            self.assertEqual(0, result["unresolvedDependencyCount"])
 
 
 if __name__ == "__main__":

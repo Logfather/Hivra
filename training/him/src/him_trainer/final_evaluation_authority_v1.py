@@ -40,6 +40,46 @@ BASE_MODEL_REVISION = "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089"
 TOKENIZER_REFERENCE = "xlm-roberta-base-tokenizer@a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c"
 
 AUTHORITY_FILENAME = "final-evaluation-authority.v1.json"
+FINAL_EVALUATION_AUTHORITY_RELATIVE_PATH = Path(
+    "training/him/runtime/a100/final-evaluation-authority-v1/final-evaluation-authority.v1.json"
+)
+FINAL_TRAINING_RUNTIME_AUTHORITY_RELATIVE_PATH = Path(
+    "training/him/runtime/a100/final-training-runtime-authority.v2.json"
+)
+FINAL_TRAINING_READINESS_RELATIVE_PATH = Path(
+    "training/him/runtime/a100/final-training-authority-packet-v1/final-training-readiness.v2.json"
+)
+FINAL_TRAINING_INPUT_AUTHORITY_RELATIVE_PATH = Path(
+    "training/him/runtime/a100/final-training-authority-packet-v1/final-training-input-authority.v2.json"
+)
+FINAL_TRAINING_PARTITION_RELATIVE_PATH = Path(
+    "training/him/runtime/a100/final-training-authority-packet-v1/final-training-partition.v2.json"
+)
+FINAL_TRAINING_LEAKAGE_RELATIVE_PATH = Path(
+    "training/him/runtime/a100/final-training-authority-packet-v1/final-training-leakage-validation.v2.json"
+)
+REPOSITORY_TRAINER_ROOT = Path("training/him/src/him_trainer")
+BUILD_CONTEXT_TRAINER_ROOT = Path("trainer/him_trainer")
+DEPLOYED_TRAINER_ROOT = Path("runtime/lib/python3.13/site-packages/him_trainer")
+REPOSITORY_RUNTIME_IDENTITY_RELATIVE_PATH = Path("training/him/runtime/a100/runtime-identity.json")
+BUILD_CONTEXT_RUNTIME_IDENTITY_RELATIVE_PATH = Path("runtime-identity.json")
+DEPLOYED_RUNTIME_IDENTITY_RELATIVE_PATH = Path("runtime/runtime-identity.json")
+FINAL_CHECKPOINT_RELATIVE_ROOT = Path(
+    "him-final/final-training-v1/20260915T162921Z-545510e7-final/checkpoint"
+)
+FINAL_MODEL_STATE_RELATIVE_PATH = FINAL_CHECKPOINT_RELATIVE_ROOT / "model-state.pt"
+FINAL_CHECKPOINT_MANIFEST_RELATIVE_PATH = FINAL_CHECKPOINT_RELATIVE_ROOT / "checkpoint-manifest.json"
+FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT = Path("him-final/final-evaluation/v1")
+FINAL_RAW_PREDICTION_OUTPUT_RELATIVE_PATH = FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT / "raw-predictions.v1.json"
+FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH = FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT / "evaluation-result.v1.json"
+FINAL_EXECUTION_REPORT_OUTPUT_RELATIVE_PATH = FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT / "execution-report.v1.json"
+REQUIRED_RUNTIME_MODULES = (
+    "final_evaluation_authority_v1.py",
+    "blind_expanded_validation_v2.py",
+    "corpus_assembly_v2.py",
+    "point12_token_tensor_builder_v1.py",
+    "point13_model_forward_v1.py",
+)
 
 
 class FinalEvaluationAuthorityError(ValueError):
@@ -85,17 +125,165 @@ def existing_evaluation_components() -> tuple[str, ...]:
 def required_clean_environment_inputs(root: str | Path) -> tuple[Path, ...]:
     base = Path(root)
     return (
-        base / "training/him/src/him_trainer/final_evaluation_authority_v1.py",
-        base / "training/him/src/him_trainer/blind_expanded_validation_v2.py",
-        base / "training/him/src/him_trainer/corpus_assembly_v2.py",
-        base / "training/him/src/him_trainer/point12_token_tensor_builder_v1.py",
-        base / "training/him/src/him_trainer/point13_model_forward_v1.py",
-        base / "training/him/runtime/a100/final-training-runtime-authority.v2.json",
-        base / "training/him/runtime/a100/final-training-authority-packet-v1/final-training-readiness.v2.json",
-        base / "training/him/runtime/a100/final-training-authority-packet-v1/final-training-input-authority.v2.json",
-        base / "training/him/runtime/a100/final-training-authority-packet-v1/final-training-partition.v2.json",
-        base / "training/him/runtime/a100/final-training-authority-packet-v1/final-training-leakage-validation.v2.json",
+        *(base / REPOSITORY_TRAINER_ROOT / module for module in REQUIRED_RUNTIME_MODULES),
+        base / FINAL_TRAINING_RUNTIME_AUTHORITY_RELATIVE_PATH,
+        base / FINAL_TRAINING_READINESS_RELATIVE_PATH,
+        base / FINAL_TRAINING_INPUT_AUTHORITY_RELATIVE_PATH,
+        base / FINAL_TRAINING_PARTITION_RELATIVE_PATH,
+        base / FINAL_TRAINING_LEAKAGE_RELATIVE_PATH,
     )
+
+
+def _runtime_module_candidates(root: Path, module: str) -> tuple[Path, ...]:
+    return (
+        root / DEPLOYED_TRAINER_ROOT / module,
+        root / BUILD_CONTEXT_TRAINER_ROOT / module,
+        root / REPOSITORY_TRAINER_ROOT / module,
+    )
+
+
+def _runtime_identity_candidates(root: Path) -> tuple[Path, ...]:
+    return (
+        root / DEPLOYED_RUNTIME_IDENTITY_RELATIVE_PATH,
+        root / BUILD_CONTEXT_RUNTIME_IDENTITY_RELATIVE_PATH,
+        root / REPOSITORY_RUNTIME_IDENTITY_RELATIVE_PATH,
+    )
+
+
+def _first_existing_file(candidates: Sequence[Path]) -> Path | None:
+    for candidate in candidates:
+        if candidate.is_file() and not candidate.is_symlink():
+            return candidate
+    return None
+
+
+def _is_workspace_execution_root(root: Path) -> bool:
+    resolved = root.resolve()
+    return resolved == Path("/workspace") or resolved.name == "workspace"
+
+
+def _is_runtime_authority_root(root: Path) -> bool:
+    if _first_existing_file(_runtime_identity_candidates(root)) is not None:
+        return True
+    if all(_first_existing_file(_runtime_module_candidates(root, module)) is not None for module in REQUIRED_RUNTIME_MODULES):
+        return True
+    if (root / FINAL_TRAINING_RUNTIME_AUTHORITY_RELATIVE_PATH).is_file():
+        return True
+    return False
+
+
+def default_execution_root_for_runtime_root(root: str | Path) -> Path:
+    base = Path(root)
+    if (base / DEPLOYED_TRAINER_ROOT).is_dir() or (base / DEPLOYED_RUNTIME_IDENTITY_RELATIVE_PATH).is_file():
+        return Path("/workspace")
+    return base
+
+
+def resolve_final_evaluation_runtime_paths(
+    runtime_root: str | Path,
+    execution_root: str | Path | None = None,
+) -> dict[str, Any]:
+    runtime_base = Path(runtime_root)
+    execution_base = Path(execution_root) if execution_root is not None else default_execution_root_for_runtime_root(runtime_base)
+    module_paths: dict[str, str | None] = {}
+    unresolved: list[dict[str, Any]] = []
+
+    for module in REQUIRED_RUNTIME_MODULES:
+        candidates = _runtime_module_candidates(runtime_base, module)
+        resolved = _first_existing_file(candidates)
+        module_paths[module] = str(resolved) if resolved else None
+        if resolved is None:
+            unresolved.append(
+                {
+                    "role": f"runtime-module:{module}",
+                    "classification": "A_ALREADY_EXISTS_WRONG_RUNTIME_PATH_BINDING",
+                    "expectedCandidates": [str(candidate) for candidate in candidates],
+                    "actualRuntimePath": str(runtime_base / DEPLOYED_TRAINER_ROOT / module),
+                }
+            )
+
+    immutable_inputs = {
+        "finalTrainingRuntimeAuthority": runtime_base / FINAL_TRAINING_RUNTIME_AUTHORITY_RELATIVE_PATH,
+        "finalTrainingReadiness": runtime_base / FINAL_TRAINING_READINESS_RELATIVE_PATH,
+        "finalTrainingInputAuthority": runtime_base / FINAL_TRAINING_INPUT_AUTHORITY_RELATIVE_PATH,
+        "finalTrainingPartition": runtime_base / FINAL_TRAINING_PARTITION_RELATIVE_PATH,
+        "finalTrainingLeakageValidation": runtime_base / FINAL_TRAINING_LEAKAGE_RELATIVE_PATH,
+    }
+    resolved_immutable_inputs: dict[str, str] = {}
+    for role, input_path in immutable_inputs.items():
+        if input_path.is_file() and not input_path.is_symlink():
+            resolved_immutable_inputs[role] = str(input_path)
+        else:
+            unresolved.append(
+                {
+                    "role": role,
+                    "classification": "C_ALREADY_EXISTS_WRONG_ROOT_ASSUMPTION",
+                    "expectedPath": str(input_path),
+                }
+            )
+
+    runtime_identity = _first_existing_file(_runtime_identity_candidates(runtime_base))
+    if runtime_identity is None:
+        unresolved.append(
+            {
+                "role": "runtimeIdentity",
+                "classification": "A_ALREADY_EXISTS_WRONG_RUNTIME_PATH_BINDING",
+                "expectedCandidates": [str(candidate) for candidate in _runtime_identity_candidates(runtime_base)],
+                "actualRuntimePath": str(runtime_base / DEPLOYED_RUNTIME_IDENTITY_RELATIVE_PATH),
+            }
+        )
+
+    persistent_inputs = {
+        "finalCheckpointManifest": execution_base / FINAL_CHECKPOINT_MANIFEST_RELATIVE_PATH,
+        "finalModelState": execution_base / FINAL_MODEL_STATE_RELATIVE_PATH,
+    }
+    resolved_persistent_inputs: dict[str, str] = {}
+    for role, input_path in persistent_inputs.items():
+        if input_path.is_file() and not input_path.is_symlink():
+            resolved_persistent_inputs[role] = str(input_path)
+        else:
+            unresolved.append(
+                {
+                    "role": role,
+                    "classification": "PERSISTENT_EXECUTION_ARTIFACT_MISSING",
+                    "expectedPath": str(input_path),
+                }
+            )
+
+    planned_outputs = {
+        "rawPredictionOutput": execution_base / FINAL_RAW_PREDICTION_OUTPUT_RELATIVE_PATH,
+        "scoredResultOutput": execution_base / FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH,
+        "executionReportOutput": execution_base / FINAL_EXECUTION_REPORT_OUTPUT_RELATIVE_PATH,
+    }
+    output_status: dict[str, dict[str, Any]] = {}
+    for role, output_path in planned_outputs.items():
+        parent = output_path.parent
+        output_status[role] = {
+            "path": str(output_path),
+            "classification": "D_RESULT_OUTPUT_DIRECTORY_BINDING_MISSING",
+            "requiredBeforeExecution": False,
+            "createOnExecution": True,
+            "parentExists": parent.exists(),
+            "parentIsDirectoryOrCreatable": parent.is_dir() or not parent.exists(),
+            "preexistingOutputForbidden": True,
+            "preexistingOutputPresent": output_path.exists(),
+        }
+
+    return {
+        "runtimeRoot": str(runtime_base),
+        "executionRoot": str(execution_base),
+        "modulePaths": module_paths,
+        "immutableAuthorityInputs": resolved_immutable_inputs,
+        "runtimeIdentityPath": str(runtime_identity) if runtime_identity else None,
+        "persistentExecutionInputs": resolved_persistent_inputs,
+        "plannedCreateOnExecutionOutputs": output_status,
+        "unresolvedDependencies": unresolved,
+        "unresolvedDependencyCount": len(unresolved),
+        "newSemanticDependencyCount": 0,
+        "holdoutAuthorityPath": "NOT_A_FILE_PRE_HOLDOUT_OPAQUE_AUTHORITY_REFERENCE",
+        "holdoutAuthorityReference": FINAL_HOLDOUT_AUTHORITY_REFERENCE,
+        "holdoutAuthorityLogicalDigest": FINAL_HOLDOUT_AUTHORITY_LOGICAL_DIGEST,
+    }
 
 
 def build_final_evaluation_authority_v1() -> dict[str, Any]:
@@ -277,17 +465,86 @@ def reload_final_evaluation_authority_v1(path: str | Path) -> dict[str, Any]:
     return validate_final_evaluation_authority_v1(_read_json(Path(path)))
 
 
-def preflight_final_evaluation_authority_v1(root: str | Path, authority_path: str | Path) -> dict[str, Any]:
+def preflight_final_evaluation_authority_v1(
+    root: str | Path,
+    authority_path: str | Path,
+    execution_root: str | Path | None = None,
+) -> dict[str, Any]:
     authority = reload_final_evaluation_authority_v1(authority_path)
-    required = required_clean_environment_inputs(root)
-    missing = [str(path) for path in required if not path.is_file()]
+    runtime_root = Path(root)
+    if _is_workspace_execution_root(runtime_root) and not _is_runtime_authority_root(runtime_root):
+        return {
+            "state": "FINAL_EVALUATION_PREFLIGHT_INVALID_AUTHORITY_ROOT",
+            "authorityReference": authority["authorityReference"],
+            "authorityLogicalDigest": authority["logicalDigest"],
+            "runtimeRoot": str(runtime_root),
+            "workspaceRootAsAuthorityRoot": "INVALID_BY_CONTRACT",
+            "requiredInputCount": 0,
+            "missingInputCount": 0,
+            "missingInputs": [],
+            "unresolvedDependencyCount": 0,
+            "unresolvedDependencies": [],
+            "newSemanticDependencyCount": 0,
+            "holdoutOpened": False,
+            "holdoutExposureCount": 0,
+            "modelDeserializationCount": 0,
+            "forwardCount": 0,
+            "inferenceCount": 0,
+            "trainingCount": 0,
+        }
+
+    resolved = resolve_final_evaluation_runtime_paths(runtime_root, execution_root)
+    missing = [item.get("expectedPath") or item.get("actualRuntimePath") for item in resolved["unresolvedDependencies"]]
     return {
         "state": "FINAL_EVALUATION_PREFLIGHT_PASS" if not missing else "FINAL_EVALUATION_PREFLIGHT_BLOCKED",
         "authorityReference": authority["authorityReference"],
         "authorityLogicalDigest": authority["logicalDigest"],
-        "requiredInputCount": len(required),
+        "runtimeRoot": resolved["runtimeRoot"],
+        "executionRoot": resolved["executionRoot"],
+        "workspaceRootAsAuthorityRoot": "NO",
+        "requiredInputCount": 13,
         "missingInputCount": len(missing),
-        "missingInputs": missing,
+        "missingInputs": [str(item) for item in missing if item is not None],
+        "resolvedPaths": {
+            "modulePaths": resolved["modulePaths"],
+            "immutableAuthorityInputs": resolved["immutableAuthorityInputs"],
+            "runtimeIdentityPath": resolved["runtimeIdentityPath"],
+            "persistentExecutionInputs": resolved["persistentExecutionInputs"],
+            "plannedCreateOnExecutionOutputs": resolved["plannedCreateOnExecutionOutputs"],
+            "holdoutAuthorityPath": resolved["holdoutAuthorityPath"],
+        },
+        "unresolvedDependencyCount": resolved["unresolvedDependencyCount"],
+        "unresolvedDependencies": resolved["unresolvedDependencies"],
+        "newSemanticDependencyCount": resolved["newSemanticDependencyCount"],
+        "holdoutOpened": False,
+        "holdoutExposureCount": 0,
+        "modelDeserializationCount": 0,
+        "forwardCount": 0,
+        "inferenceCount": 0,
+        "trainingCount": 0,
+    }
+
+
+def verify_final_holdout_execution_bindings_v1(
+    runtime_root: str | Path,
+    authority_path: str | Path,
+    execution_root: str | Path | None = None,
+) -> dict[str, Any]:
+    preflight = preflight_final_evaluation_authority_v1(runtime_root, authority_path, execution_root)
+    output_paths = preflight.get("resolvedPaths", {}).get("plannedCreateOnExecutionOutputs", {})
+    output_binding_pass = all(
+        item.get("createOnExecution") is True and item.get("parentIsDirectoryOrCreatable") is True
+        for item in output_paths.values()
+    )
+    state = "FINAL_HOLDOUT_EXECUTION_BINDINGS_PASS" if preflight["state"] == "FINAL_EVALUATION_PREFLIGHT_PASS" and output_binding_pass else "FINAL_HOLDOUT_EXECUTION_BINDINGS_BLOCKED"
+    return {
+        "state": state,
+        "preflightState": preflight["state"],
+        "transitiveRequiredDependencyCount": preflight["requiredInputCount"],
+        "transitiveUnresolvedDependencyCount": preflight["unresolvedDependencyCount"],
+        "runtimeAuthorityV2Match": preflight["state"] == "FINAL_EVALUATION_PREFLIGHT_PASS",
+        "trainingReadinessV2Match": preflight["state"] == "FINAL_EVALUATION_PREFLIGHT_PASS",
+        "resultOutputBindingPass": output_binding_pass,
         "holdoutOpened": False,
         "holdoutExposureCount": 0,
         "modelDeserializationCount": 0,
@@ -301,6 +558,7 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="him_trainer.final_evaluation_authority_v1")
     parser.add_argument("--root", default=".")
     parser.add_argument("--authority", required=True)
+    parser.add_argument("--execution-root")
     parser.add_argument("--write-authority", action="store_true")
     parser.add_argument("--preflight", action="store_true")
     args = parser.parse_args(list(arguments) if arguments is not None else None)
@@ -308,7 +566,7 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
         if args.write_authority:
             persist_final_evaluation_authority_v1(args.authority, build_final_evaluation_authority_v1())
         if args.preflight:
-            print(json.dumps(preflight_final_evaluation_authority_v1(args.root, args.authority), sort_keys=True))
+            print(json.dumps(preflight_final_evaluation_authority_v1(args.root, args.authority, args.execution_root), sort_keys=True))
         else:
             value = reload_final_evaluation_authority_v1(args.authority)
             print(json.dumps({"state": "FINAL_EVALUATION_AUTHORITY_RELOAD_PASS", "authorityReference": value["authorityReference"], "logicalDigest": value["logicalDigest"]}, sort_keys=True))
