@@ -1279,6 +1279,7 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
                 model_root=args.model_root,
                 tokenizer_path=args.tokenizer_path,
                 output_root=args.output_root,
+                evaluation_root=args.evaluation_root,
                 execution_contract=args.execution_contract,
             ), sort_keys=True))
         elif args.execute_final_holdout:
