@@ -700,9 +700,6 @@ def final_holdout_execution_command_v1(
     runtime_authority_path = Path(runtime_authority) if runtime_authority is not None else root / FINAL_TRAINING_RUNTIME_AUTHORITY_RELATIVE_PATH
     return (
         "env",
-        "HIM_CUDA_COMPAT_REQUIRED=YES",
-        f"HIM_CUDA_COMPAT_PREFIX={FINAL_HOLDOUT_CUDA_COMPAT_PREFIX}",
-        f"LD_LIBRARY_PATH={FINAL_HOLDOUT_CUDA_COMPAT_PREFIX}",
         str(root / "runtime/bin/python"),
         "-m",
         FINAL_HOLDOUT_EXECUTION_ENTRYPOINT,

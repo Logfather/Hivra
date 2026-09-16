@@ -228,10 +228,10 @@ class FinalEvaluationAuthorityV1Test(unittest.TestCase):
             self.assertIn("--execute-final-holdout", result["executionCommand"])
             command = result["executionCommand"]
             self.assertEqual("env", command[0])
-            self.assertIn("HIM_CUDA_COMPAT_REQUIRED=YES", command)
-            self.assertIn(f"HIM_CUDA_COMPAT_PREFIX={FINAL_HOLDOUT_CUDA_COMPAT_PREFIX}", command)
-            self.assertIn(f"LD_LIBRARY_PATH={FINAL_HOLDOUT_CUDA_COMPAT_PREFIX}", command)
-            self.assertEqual(str(runtime_root / "runtime/bin/python"), command[4])
+            self.assertNotIn("HIM_CUDA_COMPAT_REQUIRED=YES", command)
+            self.assertNotIn(f"HIM_CUDA_COMPAT_PREFIX={FINAL_HOLDOUT_CUDA_COMPAT_PREFIX}", command)
+            self.assertNotIn("LD_LIBRARY_PATH=" + FINAL_HOLDOUT_CUDA_COMPAT_PREFIX, command)
+            self.assertEqual(str(runtime_root / "runtime/bin/python"), command[1])
             self.assertIn("--evaluation-root", command)
             self.assertIn("--runtime-authority", command)
 
