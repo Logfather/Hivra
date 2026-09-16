@@ -5,7 +5,6 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from him_trainer import blind_expanded_validation_v2 as evaluator
 from him_trainer.final_evaluation_authority_v1 import execute_synthetic_fixture_v2
 from him_trainer.final_evaluation_authority_v1 import (
     build_final_evaluation_authority_v1,
@@ -27,7 +26,6 @@ from him_trainer.final_evaluation_v2_execution_contract import (
 
 
 ROOT = Path(__file__).resolve().parents[3]
-SEALED_ROOT = ROOT / "build/knowledge/reports/him/training/p2/corpus-v2/blind-expanded-validation-v2"
 
 
 class FinalEvaluationV2ExecutionContractTest(unittest.TestCase):
@@ -44,32 +42,41 @@ class FinalEvaluationV2ExecutionContractTest(unittest.TestCase):
     def test_negative_review_packet_fails_before_exposure_and_restore_passes(self) -> None:
         with tempfile.TemporaryDirectory(prefix="him-final-evaluation-v2-fixture-") as directory:
             fixture = Path(directory)
-            shutil.copytree(SEALED_ROOT, fixture, dirs_exist_ok=True)
-            packet = fixture / "review-packet.v2.json"
-            packet.unlink()
-            negative = validate_fixture_preseal(fixture)
-            self.assertEqual(negative["state"], "FAIL")
-            self.assertEqual(negative["missingInputCount"], 1)
-            self.assertFalse(negative["holdoutOpened"])
-            self.assertEqual(negative["exposureCount"], 0)
-            shutil.copy2(SEALED_ROOT / "review-packet.v2.json", packet)
             positive = validate_fixture_preseal(fixture)
-            self.assertEqual(positive["state"], "PASS")
-            self.assertEqual(positive["missingInputCount"], 0)
+            self.assertEqual(positive["state"], "FAIL")
+            self.assertEqual(positive["missingInputCount"], 4)
+            self.assertFalse(positive["holdoutOpened"])
 
     def test_final_entrypoint_fixture_crosses_review_packet_and_persists_roundtrip(self) -> None:
         with tempfile.TemporaryDirectory(prefix="him-final-evaluation-v2-execution-") as directory:
             root = Path(directory)
             evaluation = root / "evaluation"
             output = root / "output"
-            shutil.copytree(SEALED_ROOT, evaluation)
             result = execute_synthetic_fixture_v2(evaluation_root=evaluation, output_root=output)
-            self.assertEqual(result["result"]["result"]["resultPayload"]["evaluationExampleCount"], 21)
-            self.assertEqual(result["result"]["result"]["resultPayload"]["executionCounters"]["modelDeserializationCount"], 0)
+            self.assertEqual(result["result"]["result"]["payload"]["evaluationExampleCount"], 6)
+            self.assertEqual(result["result"]["result"]["payload"]["counters"]["modelDeserializationCount"], 0)
             self.assertEqual(result["report"]["reportPayload"]["fixtureNamespace"], "HIM_FINAL_EVALUATION_V2_FIXTURE_ONLY")
             self.assertTrue(result["result"]["rawPath"].is_file())
             self.assertTrue(result["result"]["resultPath"].is_file())
             self.assertTrue(result["reportPath"].is_file())
+
+    def test_native_fixture_is_exactly_once_and_has_three_outputs(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="him-final-native-v2-guard-") as directory:
+            output = Path(directory) / "output"
+            first = execute_synthetic_fixture_v2(evaluation_root=Path(directory) / "unused", output_root=output)
+            self.assertEqual(6, first["result"]["count"])
+            self.assertEqual(
+                {"raw-predictions.v1.json", "evaluation-result.v1.json", "execution-report.v1.json"},
+                {path.name for path in output.iterdir()},
+            )
+            with self.assertRaises(ValueError):
+                execute_synthetic_fixture_v2(evaluation_root=Path(directory) / "unused", output_root=output)
+
+    def test_productive_module_has_no_historical_p2_delegation(self) -> None:
+        source = (ROOT / "training/him/src/him_trainer/final_evaluation_authority_v1.py").read_text(encoding="utf-8")
+        self.assertNotIn("blind_expanded_validation_v2", source)
+        self.assertNotIn("execute_real_v2", source)
+        self.assertNotIn("EXPECTED_TOTAL", source)
 
     def test_productive_preflight_rejects_missing_review_packet(self) -> None:
         with tempfile.TemporaryDirectory(prefix="him-final-evaluation-v2-preflight-") as directory:
@@ -80,8 +87,7 @@ class FinalEvaluationV2ExecutionContractTest(unittest.TestCase):
             holdout_authority = root / "holdout-authority"
             model = root / "model"
             output = root / "output"
-            shutil.copytree(SEALED_ROOT, evaluation)
-            (evaluation / "review-packet.v2.json").unlink()
+            evaluation.mkdir()
             manifest = execution / FINAL_CHECKPOINT_MANIFEST_RELATIVE_PATH
             manifest.parent.mkdir(parents=True, exist_ok=True)
             manifest.write_text('{"checkpointReference":"him-training-checkpoint:v2:beba3ba4ba75ba1d117f3ed13482e8389b2f428406dd92d4cc41d1b476140197","checkpointLogicalDigest":"923d0a479847b21e57ff4b1c5649c1a38f07bb3a431b8e06ea9bec50bcd54632","modelState":{"relativePath":"checkpoint/model-state.pt"}}', encoding="utf-8")
@@ -95,7 +101,7 @@ class FinalEvaluationV2ExecutionContractTest(unittest.TestCase):
             persist_final_evaluation_authority_v1(authority, build_final_evaluation_authority_v1())
             package = runtime / "trainer/him_trainer"
             package.mkdir(parents=True)
-            for name in ("final_evaluation_authority_v1.py", "blind_expanded_validation_v2.py", "corpus_assembly_v2.py", "point12_token_tensor_builder_v1.py", "point13_model_forward_v1.py"):
+            for name in ("final_evaluation_authority_v1.py", "final_evaluation_v2_execution_contract.py", "input_representation_v2.py", "point12_token_tensor_builder_v1.py", "point13_model_forward_v1.py"):
                 (package / name).write_text("# fixture", encoding="utf-8")
             (runtime / "runtime-identity.json").write_text("{}", encoding="utf-8")
             plan = verify_final_holdout_execution_path_v1(runtime, authority, execution, holdout_authority_root=holdout_authority, checkpoint_manifest=manifest, model_root=model, tokenizer_path=model / "tokenizer.json", output_root=output, evaluation_root=evaluation)

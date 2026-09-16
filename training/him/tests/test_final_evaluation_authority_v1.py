@@ -183,7 +183,7 @@ class FinalEvaluationAuthorityV1Test(unittest.TestCase):
             result = preflight_final_evaluation_authority_v1(runtime_root, authority_path, execution_root)
             self.assertEqual("FINAL_EVALUATION_PREFLIGHT_PASS", result["state"])
             self.assertEqual(0, result["unresolvedDependencyCount"])
-            self.assertIn("trainer/him_trainer", result["resolvedPaths"]["modulePaths"]["blind_expanded_validation_v2.py"])
+            self.assertIn("trainer/him_trainer", result["resolvedPaths"]["modulePaths"]["final_evaluation_v2_execution_contract.py"])
 
     def test_final_holdout_execution_path_is_resolved_without_opening_holdout(self) -> None:
         value = build_final_evaluation_authority_v1()

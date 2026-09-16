@@ -12,10 +12,13 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import tempfile
 import os
 import re
 from pathlib import Path
 from typing import Any, Mapping, Sequence
+
+from him_trainer.final_evaluation_v2_execution_contract import build_execution_contract
 
 
 CONTRACT_ID = "HIM_FINAL_EVALUATION_AUTHORITY_V1"
@@ -28,8 +31,12 @@ FINAL_MODEL_STATE_SHA256 = "6fd984f5375ef780ab81187e053bf468158ddb849932553ea406
 RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT = "DEPLOYMENT_TIME_IMMUTABLE_OCI"
 SOURCE_HEAD = "545510e7547fd3b723ad17efca9a093390d381d6"
 
-FINAL_HOLDOUT_AUTHORITY_REFERENCE = "p2-family-isolated-holdout-authority:v1:dc19557950bb3737ea51fc94d04616f2f2c96233868be294773bd120509b7c5a"
-FINAL_HOLDOUT_AUTHORITY_LOGICAL_DIGEST = "dc19557950bb3737ea51fc94d04616f2f2c96233868be294773bd120509b7c5a"
+FINAL_HOLDOUT_AUTHORITY_REFERENCE = "p2-family-isolated-holdout-authority:v1:5caa1788cfa7eff8d6d02d317aeebb6ef1b72ecba434ac211e3624f62a9e2a51"
+FINAL_HOLDOUT_AUTHORITY_LOGICAL_DIGEST = "5caa1788cfa7eff8d6d02d317aeebb6ef1b72ecba434ac211e3624f62a9e2a51"
+FINAL_HOLDOUT_V2_REFERENCE = "him-final-evaluation-v2-holdout:v1:28d61146b5181bc06020f35ec6eeb1b90262f75456b56fe1554135c3d052145b"
+FINAL_HOLDOUT_V2_LOGICAL_DIGEST = "28d61146b5181bc06020f35ec6eeb1b90262f75456b56fe1554135c3d052145b"
+FINAL_GROUND_TRUTH_REFERENCE = "him-final-evaluation-v2-prospective-ground-truth:v1:09084f0895a4d3c595996ed4194031f8a2210d581302b4f9fecc82d7b2b38958"
+FINAL_GROUND_TRUTH_LOGICAL_DIGEST = "09084f0895a4d3c595996ed4194031f8a2210d581302b4f9fecc82d7b2b38958"
 
 FINAL_RUNTIME_AUTHORITY_REFERENCE = "him-final-training-runtime-authority:v1:b7e4640ddf2ae719a418c8e435fd2c20a3a18a51dc46396be4dee244ab8fb24f"
 FINAL_READINESS_REFERENCE = "him-final-training-readiness:v1:f3f13bb47bd4382e073e05f43eab1efec6dca8619ffd06ac8784bf65389bd5b6"
@@ -91,7 +98,8 @@ FINAL_HOLDOUT_CUDA_COMPAT_PREFIX = "/usr/local/cuda-13.0/compat/lib.real:/usr/lo
 REQUIRED_MODEL_ROOT_FILES = ("config.json", "model.safetensors", "tokenizer.json")
 REQUIRED_RUNTIME_MODULES = (
     "final_evaluation_authority_v1.py",
-    "blind_expanded_validation_v2.py",
+    "final_evaluation_v2_execution_contract.py",
+    "input_representation_v2.py",
     "corpus_assembly_v2.py",
     "point12_token_tensor_builder_v1.py",
     "point13_model_forward_v1.py",
@@ -127,7 +135,7 @@ def _read_json(path: Path) -> dict[str, Any]:
 
 def existing_evaluation_components() -> tuple[str, ...]:
     return (
-        "Blind Expanded V2 evaluator",
+        "Native Final Evaluation V2 runner",
         "checkpoint loader",
         "Training Input V2 reconstruction",
         "prediction persistence",
@@ -304,6 +312,7 @@ def resolve_final_evaluation_runtime_paths(
 
 def build_final_evaluation_authority_v1() -> dict[str, Any]:
     components = existing_evaluation_components()
+    execution_contract = build_execution_contract()
     payload: dict[str, Any] = {
         "contractId": CONTRACT_ID,
         "version": VERSION,
@@ -338,6 +347,10 @@ def build_final_evaluation_authority_v1() -> dict[str, Any]:
             "opaqueMetadataOnly": True,
             "membershipIncluded": False,
             "labelsIncluded": False,
+            "holdoutV2Reference": FINAL_HOLDOUT_V2_REFERENCE,
+            "holdoutV2LogicalDigest": FINAL_HOLDOUT_V2_LOGICAL_DIGEST,
+            "groundTruthReference": FINAL_GROUND_TRUTH_REFERENCE,
+            "groundTruthLogicalDigest": FINAL_GROUND_TRUTH_LOGICAL_DIGEST,
         },
         "inputContract": {
             "frozen": True,
@@ -405,6 +418,10 @@ def build_final_evaluation_authority_v1() -> dict[str, Any]:
             "thresholdMutationAfterHoldoutOpen": "FORBIDDEN",
         },
         "authorityBindings": {
+            "executionContractReference": execution_contract["reference"],
+            "executionContractLogicalDigest": execution_contract["logicalDigest"],
+            "baseModelAuthorityReference": f"FacebookAI/xlm-roberta-base@{BASE_MODEL_REVISION}",
+            "baseModelRevision": BASE_MODEL_REVISION,
             "runtimeAuthorityReference": FINAL_RUNTIME_AUTHORITY_REFERENCE,
             "finalReadinessReference": FINAL_READINESS_REFERENCE,
             "trainingInputAuthorityReference": FINAL_INPUT_AUTHORITY_REFERENCE,
@@ -415,7 +432,7 @@ def build_final_evaluation_authority_v1() -> dict[str, Any]:
             "module": FINAL_HOLDOUT_EXECUTION_ENTRYPOINT,
             "executionAuthorized": True,
             "runnerBinding": "FINAL_EVALUATION_AUTHORITY_V1_TO_EXISTING_V2_EVALUATOR_PRIMITIVES",
-            "futureEvaluationUses": "authorized final holdout caller reusing him_trainer.blind_expanded_validation_v2 primitives with final checkpoint binding",
+            "futureEvaluationUses": "native Final Evaluation V2 runner with final checkpoint binding",
             "preflightImportRequired": True,
             "runtimeImageDigestBindingStage": RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT,
             "runtimeImageDigestRequiredAtExecution": True,
@@ -468,6 +485,15 @@ def validate_final_evaluation_authority_v1(value: Mapping[str, Any]) -> dict[str
     _require(opaque.get("reference") == FINAL_HOLDOUT_AUTHORITY_REFERENCE, "HOLDOUT_REFERENCE_INVALID")
     _require(opaque.get("logicalDigest") == FINAL_HOLDOUT_AUTHORITY_LOGICAL_DIGEST, "HOLDOUT_DIGEST_INVALID")
     _require(opaque.get("membershipIncluded") is False and opaque.get("labelsIncluded") is False, "HOLDOUT_CONTENT_INCLUDED")
+    _require(opaque.get("holdoutV2Reference") == FINAL_HOLDOUT_V2_REFERENCE, "HOLDOUT_V2_REFERENCE_INVALID")
+    _require(opaque.get("holdoutV2LogicalDigest") == FINAL_HOLDOUT_V2_LOGICAL_DIGEST, "HOLDOUT_V2_DIGEST_INVALID")
+    _require(opaque.get("groundTruthReference") == FINAL_GROUND_TRUTH_REFERENCE, "GROUND_TRUTH_REFERENCE_INVALID")
+    _require(opaque.get("groundTruthLogicalDigest") == FINAL_GROUND_TRUTH_LOGICAL_DIGEST, "GROUND_TRUTH_DIGEST_INVALID")
+    bindings = payload.get("authorityBindings")
+    contract = build_execution_contract()
+    _require(isinstance(bindings, Mapping), "AUTHORITY_BINDINGS_INVALID")
+    _require(bindings.get("executionContractReference") == contract["reference"], "EXECUTION_CONTRACT_REFERENCE_INVALID")
+    _require(bindings.get("executionContractLogicalDigest") == contract["logicalDigest"], "EXECUTION_CONTRACT_DIGEST_INVALID")
     input_contract = payload.get("inputContract")
     _require(isinstance(input_contract, Mapping) and input_contract.get("frozen") is True, "INPUT_CONTRACT_NOT_FROZEN")
     _require(input_contract.get("inputRepresentation") == "V2", "INPUT_REPRESENTATION_INVALID")
@@ -724,9 +750,7 @@ def verify_final_holdout_execution_path_v1(
     if not holdout_status["resolved"]:
         gaps.append({"role": "holdoutAuthority", "state": "PATH_NOT_RESOLVED", "path": holdout_status["path"]})
 
-    # Keep the model-blind sealed-root contract in parity with
-    # blind_expanded_validation_v2.load_sealed_v2_set/execute_real_v2.  The
-    # review packet is a required execution input, not an execution output.
+    # The review packet is a required execution input, not an execution output.
     sealed_root = Path(evaluation_root) if evaluation_root is not None else None
     sealed_root_files: dict[str, dict[str, Any]] = {}
     if sealed_root is not None:
@@ -867,12 +891,12 @@ def execute_final_holdout_v1(
     execution_root: str | Path,
     holdout_authority_root: str | Path,
 ) -> dict[str, Any]:
-    """Run the already-authorized evaluator after the final binding gate.
+    """Run the native Final Evaluation V2 path after the binding gate.
 
-    The authority module owns the final pre-exposure gate; the existing V2
-    evaluator owns input reconstruction, model forward, raw prediction/result
-    persistence, scoring, and reload validation.  No alternate semantics or
-    output head are introduced here.
+    This function intentionally owns the productive orchestration.  The
+    historical P2 evaluator is not part of this call graph: Final Evaluation
+    V2 derives its count and input rows from its sealed V2 root and fails
+    closed when the required model-input field is absent.
     """
 
     deployment_digest = validate_deployment_time_oci_binding_v1(
@@ -892,19 +916,14 @@ def execute_final_holdout_v1(
         evaluation_root=evaluation_root,
     )
     _require(plan["state"] == "FINAL_HOLDOUT_EXECUTION_PATH_RESOLVED", "FINAL_HOLDOUT_EXECUTION_PATH_NOT_RESOLVED")
-    from .blind_expanded_validation_v2 import execute_real_v2
-
-    result = execute_real_v2(
-        sealed_root=evaluation_root,
+    result = _execute_native_final_evaluation_v2(
+        evaluation_root=evaluation_root,
         output_root=output_root,
-        checkpoint_manifest_path=checkpoint_manifest,
-        runtime_authority_path=runtime_authority,
+        checkpoint_manifest=checkpoint_manifest,
         model_root=model_root,
         tokenizer_path=tokenizer_path,
-        expected_checkpoint_reference=FINAL_CHECKPOINT_REFERENCE,
-        expected_checkpoint_digest=FINAL_CHECKPOINT_LOGICAL_DIGEST,
-        raw_predictions_filename=FINAL_RAW_PREDICTION_OUTPUT_RELATIVE_PATH.name,
-        result_filename=FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH.name,
+        model_state_path=Path(plan["modelStatePath"]["path"]),
+        deployment_digest=deployment_digest,
     )
     report_payload = {
         "contractId": CONTRACT_ID,
@@ -918,12 +937,12 @@ def execute_final_holdout_v1(
         "rawPredictionPath": str(result["rawPath"]),
         "resultPath": str(result["resultPath"]),
         "counters": {
-            "modelDeserializationCount": 1,
-            "forwardCount": 1,
+            "modelDeserializationCount": result["counters"]["modelDeserializationCount"],
+            "forwardCount": result["counters"]["forwardCount"],
             "trainingCount": 0,
             "backwardCount": 0,
             "optimizerStepCount": 0,
-            "holdoutExposureCount": 1,
+            "holdoutExposureCount": result["counters"]["holdoutExposureCount"],
         },
     }
     digest = logical_digest(report_payload)
@@ -937,11 +956,10 @@ def execute_final_holdout_v1(
 
 
 def execute_synthetic_fixture_v2(*, evaluation_root: str | Path, output_root: str | Path) -> dict[str, Any]:
-    """Exercise the final caller's post-input orchestration without Holdout/model access."""
+    """Exercise native V2 persistence with an isolated model-free fixture."""
 
-    from .blind_expanded_validation_v2 import synthetic_end_to_end
-
-    result = synthetic_end_to_end(evaluation_root, output_root)
+    del evaluation_root
+    result = _execute_native_synthetic_fixture_v2(Path(output_root))
     payload = {
         "contractId": CONTRACT_ID,
         "version": VERSION,
@@ -956,12 +974,104 @@ def execute_synthetic_fixture_v2(*, evaluation_root: str | Path, output_root: st
     }
     digest = logical_digest(payload)
     report = {"reportReference": f"him-final-evaluation-fixture-report:v2:{digest}", "logicalDigest": digest, "digestScheme": DIGEST_SCHEME, "reportPayload": payload}
-    destination = Path(output_root) / "execution-report.v2.json"
+    destination = Path(output_root) / FINAL_EXECUTION_REPORT_OUTPUT_RELATIVE_PATH.name
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_bytes(_canonical(report) + b"\n")
     reloaded = _read_json(destination)
     _require(reloaded["logicalDigest"] == logical_digest(reloaded["reportPayload"]), "FIXTURE_REPORT_DIGEST_MISMATCH")
     return {"result": result, "reportPath": destination, "report": reloaded}
+
+
+def _validate_native_outer(path: Path, payload_key: str) -> dict[str, Any]:
+    value = _read_json(path)
+    payload = value.get(payload_key)
+    _require(isinstance(payload, Mapping), f"NATIVE_PAYLOAD_INVALID:{path.name}")
+    digest = logical_digest(payload)
+    _require(value.get("logicalDigest") == digest, f"NATIVE_DIGEST_INVALID:{path.name}")
+    reference = value.get("authorityReference", value.get("reportReference"))
+    _require(isinstance(reference, str) and reference.endswith(f":{digest}"), f"NATIVE_REFERENCE_INVALID:{path.name}")
+    return value
+
+
+def _load_native_sealed_root_v2(root: Path) -> dict[str, Any]:
+    """Load only the four sealed V2 execution inputs, without old P2 logic."""
+
+    packet = _validate_native_outer(root / "review-packet.v2.json", "authorityPayload")
+    ground_truth = _validate_native_outer(root / "ground-truth.v2.json", "authorityPayload")
+    sealed = _validate_native_outer(root / "sealed-evaluation-authority.v2.json", "authorityPayload")
+    report = _validate_native_outer(root / "final-validation-report.v2.json", "reportPayload")
+    packet_payload = packet["authorityPayload"]
+    truth_payload = ground_truth["authorityPayload"]
+    sealed_payload = sealed["authorityPayload"]
+    report_payload = report["reportPayload"]
+    _require(packet_payload.get("state") == "SEALED_UNEXPOSED", "NATIVE_REVIEW_PACKET_NOT_SEALED")
+    _require(truth_payload.get("state") == "SEALED_UNEXPOSED", "NATIVE_GROUND_TRUTH_NOT_SEALED")
+    _require(sealed_payload.get("state") == "SEALED_UNEXPOSED", "NATIVE_SEALED_AUTHORITY_NOT_SEALED")
+    _require(report_payload.get("state") == "SEALED_UNEXPOSED", "NATIVE_VALIDATION_REPORT_NOT_SEALED")
+    count = packet_payload.get("recordCount")
+    _require(isinstance(count, int) and count > 0, "NATIVE_SEALED_RECORD_COUNT_INVALID")
+    examples = truth_payload.get("evaluationExamples")
+    _require(isinstance(examples, list) and len(examples) == count, "NATIVE_GROUND_TRUTH_COUNT_INVALID")
+    _require(truth_payload.get("reviewPacketLogicalDigest") in (None, packet["logicalDigest"]), "NATIVE_PACKET_BINDING_INVALID")
+    return {"packet": packet, "groundTruth": ground_truth, "sealedAuthority": sealed, "validationReport": report, "examples": tuple(examples), "count": count}
+
+
+def _native_model_input_rows(sealed: Mapping[str, Any]) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for example in sealed["examples"]:
+        _require(isinstance(example, Mapping), "NATIVE_EXAMPLE_INVALID")
+        model_input = example.get("modelInput")
+        _require(isinstance(model_input, Mapping) and isinstance(model_input.get("serialized"), str) and model_input["serialized"], "NATIVE_MODEL_INPUT_UNRESOLVED")
+        rows.append({"evaluationExampleReference": str(example.get("evaluationExampleReference")), "serialized": model_input["serialized"]})
+    return rows
+
+
+def _write_native_output(path: Path, payload_key: str, payload: Mapping[str, Any], prefix: str) -> dict[str, Any]:
+    digest = logical_digest(payload)
+    value = {"reference": f"{prefix}:{digest}", "logicalDigest": digest, "digestScheme": DIGEST_SCHEME, payload_key: dict(payload)}
+    path.parent.mkdir(parents=True, exist_ok=True)
+    _require(not path.exists(), f"NATIVE_OUTPUT_ALREADY_EXISTS:{path.name}")
+    path.write_bytes(_canonical(value) + b"\n")
+    reloaded = _read_json(path)
+    _require(reloaded["logicalDigest"] == logical_digest(reloaded[payload_key]), f"NATIVE_OUTPUT_RELOAD_DIGEST_INVALID:{path.name}")
+    return reloaded
+
+
+def _execute_native_synthetic_fixture_v2(output_root: Path) -> dict[str, Any]:
+    """Use six local synthetic rows; no real sealed artifacts or model are read."""
+
+    output_root.mkdir(parents=True, exist_ok=True)
+    examples = tuple({"evaluationExampleReference": f"fixture-example-{index}", "modelInput": {"serialized": f"<HIMV2>\\nO=fixture-{index}\\n</HIMV2>"}} for index in range(6))
+    packet_payload = {"schema": "HIM_FINAL_EVALUATION_V2_REVIEW_PACKET", "version": 2, "state": "SEALED_UNEXPOSED", "recordCount": len(examples), "modelIndependent": True}
+    packet = {"authorityReference": f"fixture-packet:{logical_digest(packet_payload)}", "logicalDigest": logical_digest(packet_payload), "authorityPayload": packet_payload}
+    truth_payload = {"schema": "HIM_FINAL_EVALUATION_V2_GROUND_TRUTH", "version": 2, "state": "SEALED_UNEXPOSED", "reviewPacketLogicalDigest": packet["logicalDigest"], "evaluationExamples": list(examples)}
+    truth = {"authorityReference": f"fixture-truth:{logical_digest(truth_payload)}", "logicalDigest": logical_digest(truth_payload), "authorityPayload": truth_payload}
+    sealed_payload = {"schema": "HIM_FINAL_EVALUATION_V2_SEALED_AUTHORITY", "version": 2, "state": "SEALED_UNEXPOSED"}
+    sealed = {"authorityReference": f"fixture-sealed:{logical_digest(sealed_payload)}", "logicalDigest": logical_digest(sealed_payload), "authorityPayload": sealed_payload}
+    report_payload = {"schema": "HIM_FINAL_EVALUATION_V2_VALIDATION_REPORT", "version": 2, "state": "SEALED_UNEXPOSED"}
+    validation = {"reportReference": f"fixture-validation:{logical_digest(report_payload)}", "logicalDigest": logical_digest(report_payload), "reportPayload": report_payload}
+    with tempfile.TemporaryDirectory(prefix="him-final-native-sealed-") as directory:
+        root = Path(directory)
+        for filename, value in (("review-packet.v2.json", packet), ("ground-truth.v2.json", truth), ("sealed-evaluation-authority.v2.json", sealed), ("final-validation-report.v2.json", validation)):
+            (root / filename).write_bytes(_canonical(value) + b"\n")
+        loaded = _load_native_sealed_root_v2(root)
+        inputs = _native_model_input_rows(loaded)
+    raw_payload = {"schema": "HIM_FINAL_EVALUATION_V2_RAW_PREDICTIONS", "version": 1, "state": "FROZEN_BEFORE_SCORING", "evaluationExampleCount": loaded["count"], "predictions": [{"evaluationExampleReference": row["evaluationExampleReference"], "primaryPrediction": 1, "secondaryPrediction": 0} for row in inputs]}
+    raw = _write_native_output(output_root / FINAL_RAW_PREDICTION_OUTPUT_RELATIVE_PATH.name, "payload", raw_payload, "him-final-evaluation-v2-predictions")
+    result_payload = {"schema": "HIM_FINAL_EVALUATION_V2_RESULT", "version": 1, "state": "SYNTHETIC_FIXTURE_COMPLETE", "evaluationExampleCount": loaded["count"], "rawPredictionLogicalDigest": raw["logicalDigest"], "counters": {"modelDeserializationCount": 0, "forwardCount": 0, "holdoutExposureCount": 0}}
+    result = _write_native_output(output_root / FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH.name, "payload", result_payload, "him-final-evaluation-v2-result")
+    return {"rawPath": output_root / FINAL_RAW_PREDICTION_OUTPUT_RELATIVE_PATH.name, "resultPath": output_root / FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH.name, "raw": raw, "result": result, "counters": result_payload["counters"], "count": loaded["count"]}
+
+
+def _execute_native_final_evaluation_v2(*, evaluation_root: str | Path, output_root: str | Path, checkpoint_manifest: str | Path, model_root: str | Path, tokenizer_path: str | Path, model_state_path: Path, deployment_digest: str) -> dict[str, Any]:
+    """Native productive skeleton; model execution starts only after sealed inputs resolve."""
+
+    sealed = _load_native_sealed_root_v2(Path(evaluation_root))
+    inputs = _native_model_input_rows(sealed)
+    _require(Path(model_root).is_dir() and Path(tokenizer_path).is_file() and model_state_path.is_file(), "NATIVE_MODEL_INPUT_PATH_UNRESOLVED")
+    _require(Path(checkpoint_manifest).is_file(), "NATIVE_CHECKPOINT_MANIFEST_UNRESOLVED")
+    del output_root, deployment_digest
+    raise FinalEvaluationAuthorityError("NATIVE_MODEL_EXECUTION_REQUIRES_EXPLICIT_MODEL_FORWARD_IMPLEMENTATION")
 
 
 def run_cli(arguments: Sequence[str] | None = None) -> int:

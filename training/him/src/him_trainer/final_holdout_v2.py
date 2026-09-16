@@ -14,6 +14,12 @@ from him_trainer.final_evaluation_authority_v1 import (
     FINAL_CHECKPOINT_LOGICAL_DIGEST,
     FINAL_CHECKPOINT_REFERENCE,
     FINAL_MODEL_STATE_SHA256,
+    FINAL_HOLDOUT_V2_REFERENCE,
+    FINAL_HOLDOUT_V2_LOGICAL_DIGEST,
+    FINAL_GROUND_TRUTH_REFERENCE,
+    FINAL_GROUND_TRUTH_LOGICAL_DIGEST,
+    FINAL_HOLDOUT_AUTHORITY_REFERENCE,
+    FINAL_HOLDOUT_AUTHORITY_LOGICAL_DIGEST,
     preflight_final_evaluation_authority_v1,
 )
 
@@ -156,8 +162,9 @@ def build_holdout_authority(holdout: Mapping[str, Any], selection: Mapping[str, 
     return envelope("p2-family-isolated-holdout-authority", payload)
 
 
-def build_seal(holdout: Mapping[str, Any], authority: Mapping[str, Any], selection: Mapping[str, Any], packet: Mapping[str, Any], contract: Mapping[str, Any]) -> dict[str, Any]:
-    payload = {"schema": "HIM_FINAL_EVALUATION_V2_HOLDOUT_PRE_EXPOSURE_SEAL", "version": 1, "state": "SEALED_UNEXPOSED", "holdoutReference": holdout["reference"], "holdoutLogicalDigest": holdout["logicalDigest"], "holdoutAuthorityReference": authority["reference"], "selectionAuthorityReference": selection["reference"], "reviewPacketReference": packet["reference"], "executionContractReference": contract["reference"], "checkpointReference": FINAL_CHECKPOINT_REFERENCE, "checkpointLogicalDigest": FINAL_CHECKPOINT_LOGICAL_DIGEST, "modelStateSha256": FINAL_MODEL_STATE_SHA256, "modelIndependent": True, "holdoutOpened": False, "exposureCount": 0, "fixtureExecutionClosure": "PASS", "transitiveMissingDependencyCount": 0, "sealTimestamp": SELECTION_TIMESTAMP}
+def build_seal(holdout: Mapping[str, Any], authority: Mapping[str, Any], selection: Mapping[str, Any], packet: Mapping[str, Any], contract: Mapping[str, Any], execution_authority: Mapping[str, Any]) -> dict[str, Any]:
+    records = holdout["payload"]["records"]
+    payload = {"schema": "HIM_FINAL_EVALUATION_V2_HOLDOUT_PRE_EXPOSURE_SEAL", "version": 1, "state": "SEALED_UNEXPOSED", "holdoutReference": holdout["reference"], "holdoutLogicalDigest": holdout["logicalDigest"], "holdoutAuthorityReference": authority["reference"], "holdoutAuthorityLogicalDigest": authority["logicalDigest"], "selectionAuthorityReference": selection["reference"], "selectionAuthorityLogicalDigest": selection["logicalDigest"], "reviewPacketReference": packet["reference"], "reviewPacketLogicalDigest": packet["logicalDigest"], "groundTruthReference": records[0]["groundTruthReference"], "groundTruthLogicalDigest": FINAL_GROUND_TRUTH_LOGICAL_DIGEST, "humanReviewResultReference": records[0]["humanReviewResultReference"], "humanReviewResultLogicalDigest": records[0]["humanReviewResultReference"].rsplit(":", 1)[-1], "familyLineageReference": records[0]["familyLineageReference"], "familyLineageLogicalDigest": records[0]["familyLineageReference"].rsplit(":", 1)[-1], "executionAuthorityReference": execution_authority["authorityReference"], "executionAuthorityLogicalDigest": execution_authority["logicalDigest"], "executionContractReference": contract["reference"], "executionContractLogicalDigest": contract["logicalDigest"], "checkpointReference": FINAL_CHECKPOINT_REFERENCE, "checkpointLogicalDigest": FINAL_CHECKPOINT_LOGICAL_DIGEST, "modelStateSha256": FINAL_MODEL_STATE_SHA256, "modelIndependent": True, "holdoutOpened": False, "exposureCount": 0, "fixtureExecutionClosure": "PASS", "transitiveMissingDependencyCount": 0, "sealTimestamp": SELECTION_TIMESTAMP}
     return envelope("him-final-evaluation-v2-holdout-pre-exposure-seal", payload)
 
 
@@ -178,7 +185,7 @@ def persist_all() -> dict[str, Any]:
     corpus, result, lineage, truth = load_frozen_corpus()
     rows1, rows2 = select_records(corpus), select_records(corpus)
     if [r["recordId"] for r in rows1] != [r["recordId"] for r in rows2]: raise ValueError("SELECTION_NONDETERMINISTIC")
-    selection = build_selection(corpus, truth, rows1); holdout = build_holdout(corpus, result, lineage, truth, selection, rows1); packet = build_review_packet(holdout); authority = build_holdout_authority(holdout, selection, truth); contract = build_execution_contract(); seal = build_seal(holdout, authority, selection, packet, contract)
+    selection = build_selection(corpus, truth, rows1); holdout = build_holdout(corpus, result, lineage, truth, selection, rows1); packet = build_review_packet(holdout); authority = build_holdout_authority(holdout, selection, truth); contract = build_execution_contract(); execution_authority = read_json(EXECUTION_AUTHORITY_PATH); seal = build_seal(holdout, authority, selection, packet, contract, execution_authority)
     values = ((SELECTION_PATH, selection), (HOLDOUT_PATH, holdout), (HOLDOUT_AUTHORITY_PATH, authority), (REVIEW_PACKET_PATH, packet), (CONTRACT_PATH, contract), (SEAL_PATH, seal))
     for path, value in values:
         path.parent.mkdir(parents=True, exist_ok=True); path.write_bytes(canonical(value) + b"\n")
