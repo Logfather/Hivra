@@ -76,6 +76,12 @@ FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH = FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT
 FINAL_EXECUTION_REPORT_OUTPUT_RELATIVE_PATH = FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT / "execution-report.v1.json"
 DEFAULT_FINAL_HOLDOUT_AUTHORITY_ROOT = Path("/workspace/p2-expanded-validation-packet/packet/authority")
 FINAL_HOLDOUT_AUTHORITY_FILENAME = "p2-family-isolated-holdout-authority.v1.json"
+FINAL_SEALED_ROOT_REQUIRED_FILES = (
+    "review-packet.v2.json",
+    "ground-truth.v2.json",
+    "sealed-evaluation-authority.v2.json",
+    "final-validation-report.v2.json",
+)
 DEFAULT_FINAL_MODEL_ROOT = Path("/workspace/models/xlm-roberta-base/e73636d4f797dec63c3081bb6ed5c7b0bb3f2089")
 DEFAULT_FINAL_TOKENIZER_PATH = DEFAULT_FINAL_MODEL_ROOT / "tokenizer.json"
 FINAL_HOLDOUT_EXECUTION_ENTRYPOINT = "him_trainer.final_evaluation_authority_v1"
@@ -566,7 +572,7 @@ def preflight_final_evaluation_authority_v1(
         "runtimeRoot": resolved["runtimeRoot"],
         "executionRoot": resolved["executionRoot"],
         "workspaceRootAsAuthorityRoot": "NO",
-        "requiredInputCount": 13,
+        "requiredInputCount": 13 + len(FINAL_SEALED_ROOT_REQUIRED_FILES),
         "missingInputCount": len(missing),
         "missingInputs": [str(item) for item in missing if item is not None],
         "resolvedPaths": {
@@ -718,6 +724,18 @@ def verify_final_holdout_execution_path_v1(
     if not holdout_status["resolved"]:
         gaps.append({"role": "holdoutAuthority", "state": "PATH_NOT_RESOLVED", "path": holdout_status["path"]})
 
+    # Keep the model-blind sealed-root contract in parity with
+    # blind_expanded_validation_v2.load_sealed_v2_set/execute_real_v2.  The
+    # review packet is a required execution input, not an execution output.
+    sealed_root = Path(evaluation_root) if evaluation_root is not None else None
+    sealed_root_files: dict[str, dict[str, Any]] = {}
+    if sealed_root is not None:
+        for filename in FINAL_SEALED_ROOT_REQUIRED_FILES:
+            status = _path_status(sealed_root / filename, must_exist=True)
+            sealed_root_files[filename] = status
+            if not status["resolved"]:
+                gaps.append({"role": f"sealedRoot:{filename}", "state": "PATH_NOT_RESOLVED", "path": status["path"]})
+
     checkpoint_status = _path_status(checkpoint_path, must_exist=True)
     model_state_status: dict[str, Any] = {"path": "UNRESOLVED", "resolved": False}
     if checkpoint_status["resolved"]:
@@ -768,6 +786,8 @@ def verify_final_holdout_execution_path_v1(
         "finalCheckpointReference": FINAL_CHECKPOINT_REFERENCE,
         "finalModelStateSha256": FINAL_MODEL_STATE_SHA256,
         "holdoutAuthorityPath": holdout_status,
+        "sealedEvaluationRoot": str(sealed_root) if sealed_root is not None else None,
+        "sealedRootFiles": sealed_root_files,
         "checkpointManifestPath": checkpoint_status,
         "modelStatePath": model_state_status,
         "modelRoot": str(model_root_path),
@@ -869,6 +889,7 @@ def execute_final_holdout_v1(
         model_root=model_root,
         tokenizer_path=tokenizer_path,
         output_root=output_root,
+        evaluation_root=evaluation_root,
     )
     _require(plan["state"] == "FINAL_HOLDOUT_EXECUTION_PATH_RESOLVED", "FINAL_HOLDOUT_EXECUTION_PATH_NOT_RESOLVED")
     from .blind_expanded_validation_v2 import execute_real_v2
@@ -912,6 +933,34 @@ def execute_final_holdout_v1(
     destination.write_bytes(_canonical(report) + b"\n")
     reloaded = _read_json(destination)
     _require(reloaded.get("logicalDigest") == logical_digest(reloaded["reportPayload"]), "FINAL_EXECUTION_REPORT_DIGEST_MISMATCH")
+    return {"result": result, "reportPath": destination, "report": reloaded}
+
+
+def execute_synthetic_fixture_v2(*, evaluation_root: str | Path, output_root: str | Path) -> dict[str, Any]:
+    """Exercise the final caller's post-input orchestration without Holdout/model access."""
+
+    from .blind_expanded_validation_v2 import synthetic_end_to_end
+
+    result = synthetic_end_to_end(evaluation_root, output_root)
+    payload = {
+        "contractId": CONTRACT_ID,
+        "version": VERSION,
+        "state": "SYNTHETIC_FIXTURE_COMPLETE",
+        "fixtureNamespace": "HIM_FINAL_EVALUATION_V2_FIXTURE_ONLY",
+        "notFinalEvaluation": True,
+        "modelDeserializationCount": 0,
+        "forwardCount": 0,
+        "holdoutExposureCount": 0,
+        "rawPredictionPath": str(result["rawPath"]),
+        "resultPath": str(result["resultPath"]),
+    }
+    digest = logical_digest(payload)
+    report = {"reportReference": f"him-final-evaluation-fixture-report:v2:{digest}", "logicalDigest": digest, "digestScheme": DIGEST_SCHEME, "reportPayload": payload}
+    destination = Path(output_root) / "execution-report.v2.json"
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(_canonical(report) + b"\n")
+    reloaded = _read_json(destination)
+    _require(reloaded["logicalDigest"] == logical_digest(reloaded["reportPayload"]), "FIXTURE_REPORT_DIGEST_MISMATCH")
     return {"result": result, "reportPath": destination, "report": reloaded}
 
 
