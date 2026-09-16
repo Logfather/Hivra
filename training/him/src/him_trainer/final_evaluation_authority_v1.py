@@ -83,6 +83,7 @@ FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH = FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT
 FINAL_EXECUTION_REPORT_OUTPUT_RELATIVE_PATH = FINAL_EVALUATION_OUTPUT_RELATIVE_ROOT / "execution-report.v1.json"
 DEFAULT_FINAL_HOLDOUT_AUTHORITY_ROOT = Path("/workspace/p2-expanded-validation-packet/packet/authority")
 FINAL_HOLDOUT_AUTHORITY_FILENAME = "p2-family-isolated-holdout-authority.v1.json"
+FINAL_V3_EXECUTION_CONTRACT_FILENAME = "execution-contract.v3.json"
 FINAL_SEALED_ROOT_REQUIRED_FILES = (
     "review-packet.v2.json",
     "ground-truth.v2.json",
@@ -687,6 +688,7 @@ def final_holdout_execution_command_v1(
     tokenizer_path: str | Path | None = None,
     evaluation_root: str | Path | None = None,
     runtime_authority: str | Path | None = None,
+    execution_contract: str | Path | None = None,
 ) -> tuple[str, ...]:
     execution = Path(execution_root)
     root = Path(runtime_root)
@@ -698,7 +700,7 @@ def final_holdout_execution_command_v1(
     tokenizer = Path(tokenizer_path) if tokenizer_path is not None else model / "tokenizer.json"
     evaluation = Path(evaluation_root) if evaluation_root is not None else execution / "final-holdout"
     runtime_authority_path = Path(runtime_authority) if runtime_authority is not None else root / FINAL_TRAINING_RUNTIME_AUTHORITY_RELATIVE_PATH
-    return (
+    command = [
         "env",
         str(root / "runtime/bin/python"),
         "-m",
@@ -724,7 +726,10 @@ def final_holdout_execution_command_v1(
         str(evaluation),
         "--runtime-authority",
         str(runtime_authority_path),
-    )
+    ]
+    if execution_contract is not None:
+        command.extend(("--execution-contract", str(execution_contract)))
+    return tuple(command)
 
 
 def verify_final_holdout_execution_path_v1(
@@ -739,6 +744,7 @@ def verify_final_holdout_execution_path_v1(
     output_root: str | Path | None = None,
     evaluation_root: str | Path | None = None,
     runtime_authority: str | Path | None = None,
+    execution_contract: str | Path | None = None,
 ) -> dict[str, Any]:
     execution = Path(execution_root) if execution_root is not None else default_execution_root_for_runtime_root(runtime_root)
     output = Path(output_root) if output_root is not None else _default_final_output_root(execution)
@@ -747,7 +753,7 @@ def verify_final_holdout_execution_path_v1(
     model_root_path = Path(model_root) if model_root is not None else DEFAULT_FINAL_MODEL_ROOT
     tokenizer_file = Path(tokenizer_path) if tokenizer_path is not None else model_root_path / "tokenizer.json"
 
-    binding = verify_final_holdout_execution_bindings_v1(runtime_root, authority_path, execution)
+    binding = verify_final_holdout_execution_bindings_v1(runtime_root, authority_path, execution, execution_contract_path=execution_contract)
     gaps: list[dict[str, Any]] = []
     if binding["state"] != "FINAL_HOLDOUT_EXECUTION_BINDINGS_PASS":
         gaps.append({"role": "preHoldoutBinding", "state": binding["state"]})
@@ -765,11 +771,26 @@ def verify_final_holdout_execution_path_v1(
     sealed_root = Path(evaluation_root) if evaluation_root is not None else None
     sealed_root_files: dict[str, dict[str, Any]] = {}
     if sealed_root is not None:
-        for filename in FINAL_SEALED_ROOT_REQUIRED_FILES:
-            status = _path_status(sealed_root / filename, must_exist=True)
-            sealed_root_files[filename] = status
-            if not status["resolved"]:
-                gaps.append({"role": f"sealedRoot:{filename}", "state": "PATH_NOT_RESOLVED", "path": status["path"]})
+        if execution_contract is not None:
+            contract = _read_json(Path(execution_contract))
+            _load_contract_bound_sealed_root(Path(execution_contract), sealed_root)
+            for input_id in ("sealed_review_packet", "sealed_ground_truth", "sealed_evaluation_authority", "sealed_final_validation_report", "input_representation"):
+                try:
+                    bound = _contract_bound_path(contract, input_id, sealed_root)
+                except FinalEvaluationAuthorityError as error:
+                    gaps.append({"role": f"contract:{input_id}", "state": str(error)})
+                    continue
+                if input_id != "input_representation":
+                    status = _path_status(bound, must_exist=True)
+                    sealed_root_files[bound.name] = status
+                    if not status["resolved"]:
+                        gaps.append({"role": f"sealedRoot:{bound.name}", "state": "PATH_NOT_RESOLVED", "path": status["path"]})
+        else:
+            for filename in FINAL_SEALED_ROOT_REQUIRED_FILES:
+                status = _path_status(sealed_root / filename, must_exist=True)
+                sealed_root_files[filename] = status
+                if not status["resolved"]:
+                    gaps.append({"role": f"sealedRoot:{filename}", "state": "PATH_NOT_RESOLVED", "path": status["path"]})
 
     checkpoint_status = _path_status(checkpoint_path, must_exist=True)
     model_state_status: dict[str, Any] = {"path": "UNRESOLVED", "resolved": False}
@@ -810,6 +831,7 @@ def verify_final_holdout_execution_path_v1(
         tokenizer_path=tokenizer_file,
         evaluation_root=evaluation_root,
         runtime_authority=runtime_authority,
+        execution_contract=execution_contract,
     )
     resolved = len(gaps) == 0
     return {
@@ -862,6 +884,8 @@ def verify_final_holdout_execution_bindings_v1(
     runtime_root: str | Path,
     authority_path: str | Path,
     execution_root: str | Path | None = None,
+    *,
+    execution_contract_path: str | Path | None = None,
 ) -> dict[str, Any]:
     preflight = preflight_final_evaluation_authority_v1(runtime_root, authority_path, execution_root)
     output_paths = preflight.get("resolvedPaths", {}).get("plannedCreateOnExecutionOutputs", {})
@@ -901,15 +925,16 @@ def execute_final_holdout_v1(
     tokenizer_path: str | Path,
     execution_root: str | Path,
     holdout_authority_root: str | Path,
+    execution_contract: str | Path | None = None,
 ) -> dict[str, Any]:
-    """Run the native Final Evaluation V2 path after the binding gate.
+    """Run the contract-bound native Final Evaluation path after the binding gate.
 
     This function intentionally owns the productive orchestration.  The
-    historical P2 evaluator is not part of this call graph: Final Evaluation
-    V2 derives its count and input rows from its sealed V2 root and fails
-    closed when the required model-input field is absent.
+    historical P2 evaluator is not part of this call graph; sealed inputs are
+    resolved from the explicit execution-contract binding.
     """
 
+    _require(execution_contract is not None, "V3_EXECUTION_CONTRACT_REQUIRED")
     deployment_digest = validate_deployment_time_oci_binding_v1(
         authority_path,
         os.environ.get("HIM_RUNTIME_IMAGE_DIGEST"),
@@ -925,6 +950,7 @@ def execute_final_holdout_v1(
         tokenizer_path=tokenizer_path,
         output_root=output_root,
         evaluation_root=evaluation_root,
+        execution_contract=execution_contract,
     )
     _require(plan["state"] == "FINAL_HOLDOUT_EXECUTION_PATH_RESOLVED", "FINAL_HOLDOUT_EXECUTION_PATH_NOT_RESOLVED")
     result = _execute_native_final_evaluation_v2(
@@ -935,6 +961,7 @@ def execute_final_holdout_v1(
         tokenizer_path=tokenizer_path,
         model_state_path=Path(plan["modelStatePath"]["path"]),
         deployment_digest=deployment_digest,
+        execution_contract=execution_contract,
     )
     report_payload = {
         "contractId": CONTRACT_ID,
@@ -1040,6 +1067,49 @@ def _load_native_sealed_root_v2(root: Path) -> dict[str, Any]:
     return {"packet": packet, "groundTruth": ground_truth, "sealedAuthority": sealed, "validationReport": report, "derived": derived, "examples": tuple(examples), "modelInputs": tuple(model_inputs), "count": count}
 
 
+def _contract_bound_path(contract: Mapping[str, Any], input_id: str, evaluation_root: Path) -> Path:
+    inputs = contract.get("payload", {}).get("inputs")
+    _require(isinstance(inputs, list), "V3_EXECUTION_CONTRACT_INPUTS_INVALID")
+    matches = [item for item in inputs if isinstance(item, Mapping) and item.get("id") == input_id]
+    _require(len(matches) == 1, f"V3_EXECUTION_CONTRACT_BINDING_MISSING:{input_id}")
+    raw_path = matches[0].get("path")
+    _require(isinstance(raw_path, str) and raw_path.startswith("<evaluation-root>/"), f"V3_EXECUTION_CONTRACT_BINDING_PATH_INVALID:{input_id}")
+    relative_path = raw_path.split(":modelInputs", 1)[0]
+    relative = Path(relative_path.removeprefix("<evaluation-root>/"))
+    _require(not relative.is_absolute() and ".." not in relative.parts, f"V3_EXECUTION_CONTRACT_BINDING_PATH_UNSAFE:{input_id}")
+    return evaluation_root / relative
+
+
+def _load_contract_bound_sealed_root(contract_path: Path, evaluation_root: Path) -> dict[str, Any]:
+    contract = _read_json(contract_path)
+    _require(contract.get("logicalDigest") == logical_digest(contract.get("payload")), "V3_EXECUTION_CONTRACT_DIGEST_INVALID")
+    _require(contract.get("payload", {}).get("schema") == "HIM_FINAL_EVALUATION_V3_EXECUTION_CONTRACT", "V3_EXECUTION_CONTRACT_SCHEMA_INVALID")
+    paths = {input_id: _contract_bound_path(contract, input_id, evaluation_root) for input_id in (
+        "sealed_review_packet", "sealed_ground_truth", "sealed_evaluation_authority", "sealed_final_validation_report", "input_representation"
+    )}
+    packet = _validate_native_outer(paths["sealed_review_packet"], "payload")
+    ground_truth = _validate_native_outer(paths["sealed_ground_truth"], "payload")
+    sealed = _validate_native_outer(paths["sealed_evaluation_authority"], "payload")
+    report = _validate_native_outer(paths["sealed_final_validation_report"], "reportPayload")
+    derived = _validate_native_outer(paths["input_representation"], "payload")
+    packet_payload = packet.get("payload", packet.get("authorityPayload"))
+    truth_payload = ground_truth.get("payload", ground_truth.get("authorityPayload"))
+    sealed_payload = sealed.get("payload", sealed.get("authorityPayload"))
+    report_payload = report.get("reportPayload", report.get("payload"))
+    derived_payload = derived["payload"]
+    for payload, marker in ((packet_payload, "PACKET"), (truth_payload, "GROUND_TRUTH"), (sealed_payload, "SEALED_AUTHORITY"), (report_payload, "VALIDATION_REPORT"), (derived_payload, "DERIVED_ARTIFACT")):
+        _require(payload.get("state") == "SEALED_UNEXPOSED", f"V3_{marker}_NOT_SEALED")
+    count = packet_payload.get("recordCount")
+    examples = truth_payload.get("evaluationExamples")
+    model_inputs = derived_payload.get("modelInputs")
+    _require(isinstance(count, int) and count > 0, "V3_RECORD_COUNT_INVALID")
+    _require(isinstance(examples, list) and len(examples) == count, "V3_GROUND_TRUTH_COUNT_INVALID")
+    _require(isinstance(model_inputs, list) and len(model_inputs) == count, "V3_DERIVED_INPUT_COUNT_INVALID")
+    _require(derived_payload.get("holdoutReference") == packet_payload.get("holdoutReference"), "V3_DERIVED_HOLDOUT_BINDING_INVALID")
+    _require(derived_payload.get("recordIds") == [example.get("evaluationExampleReference") for example in examples], "V3_DERIVED_ORDER_INVALID")
+    return {"packet": packet, "groundTruth": ground_truth, "sealedAuthority": sealed, "validationReport": report, "derived": derived, "examples": tuple(examples), "modelInputs": tuple(model_inputs), "count": count, "contract": contract, "paths": paths}
+
+
 def _native_model_input_rows(sealed: Mapping[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for example, model_input in zip(sealed["examples"], sealed["modelInputs"]):
@@ -1096,8 +1166,8 @@ def _execute_native_synthetic_fixture_v2(output_root: Path) -> dict[str, Any]:
     return {"rawPath": output_root / FINAL_RAW_PREDICTION_OUTPUT_RELATIVE_PATH.name, "resultPath": output_root / FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH.name, "raw": raw, "result": result, "counters": result_payload["counters"], "count": loaded["count"]}
 
 
-def _execute_native_final_evaluation_v2(*, evaluation_root: str | Path, output_root: str | Path, checkpoint_manifest: str | Path, model_root: str | Path, tokenizer_path: str | Path, model_state_path: Path, deployment_digest: str) -> dict[str, Any]:
-    """Execute the frozen native V2 model path after all sealed gates resolve."""
+def _execute_native_final_evaluation_v2(*, evaluation_root: str | Path, output_root: str | Path, checkpoint_manifest: str | Path, model_root: str | Path, tokenizer_path: str | Path, model_state_path: Path, deployment_digest: str, execution_contract: str | Path) -> dict[str, Any]:
+    """Execute the frozen native model path after all sealed gates resolve."""
 
     import torch
     from .final_evaluation_v2_engine import score_predictions
@@ -1107,7 +1177,7 @@ def _execute_native_final_evaluation_v2(*, evaluation_root: str | Path, output_r
         load_pinned_him_multi_head_model_from_root_v1,
         load_pinned_model_config_from_root_v1,
     )
-    sealed = _load_native_sealed_root_v2(Path(evaluation_root))
+    sealed = _load_contract_bound_sealed_root(Path(execution_contract), Path(evaluation_root))
     inputs = _native_model_input_rows(sealed)
     _require(Path(model_root).is_dir() and Path(tokenizer_path).is_file() and model_state_path.is_file(), "NATIVE_MODEL_INPUT_PATH_UNRESOLVED")
     _require(Path(checkpoint_manifest).is_file(), "NATIVE_CHECKPOINT_MANIFEST_UNRESOLVED")
@@ -1162,6 +1232,7 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
     parser.add_argument("--output-root")
     parser.add_argument("--evaluation-root")
     parser.add_argument("--runtime-authority")
+    parser.add_argument("--execution-contract")
     parser.add_argument("--write-authority", action="store_true")
     parser.add_argument("--preflight", action="store_true")
     parser.add_argument("--final-holdout-execution-preflight", action="store_true")
@@ -1180,6 +1251,7 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
                 model_root=args.model_root,
                 tokenizer_path=args.tokenizer_path,
                 output_root=args.output_root,
+                execution_contract=args.execution_contract,
             ), sort_keys=True))
         elif args.execute_final_holdout:
             for option, message in (
@@ -1204,6 +1276,7 @@ def run_cli(arguments: Sequence[str] | None = None) -> int:
                 tokenizer_path=args.tokenizer_path,
                 execution_root=args.execution_root,
                 holdout_authority_root=args.holdout_authority_root,
+                execution_contract=args.execution_contract,
             )
             print(json.dumps({"state": execution["report"]["reportPayload"]["state"], "report": str(execution["reportPath"])}, sort_keys=True))
         elif args.preflight:
