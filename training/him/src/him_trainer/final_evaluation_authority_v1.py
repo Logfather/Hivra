@@ -103,6 +103,7 @@ REQUIRED_RUNTIME_MODULES = (
     "corpus_assembly_v2.py",
     "point12_token_tensor_builder_v1.py",
     "point13_model_forward_v1.py",
+    "final_evaluation_v2_engine.py",
 )
 
 
@@ -143,6 +144,11 @@ def existing_evaluation_components() -> tuple[str, ...]:
         "metric calculation",
         "result persistence",
         "result reload/digest verification",
+        "model-independent input projection authority",
+        "derived execution artifact",
+        "sealed N/A masking authority",
+        "exactly-once exposure state",
+        "post-exposure retry policy",
     )
 
 
@@ -364,6 +370,9 @@ def build_final_evaluation_authority_v1() -> dict[str, Any]:
             "padding": "FROZEN_BY_EXISTING_TOKEN_TENSOR_CONTRACT",
             "truncationPolicy": "TRUNCATION_FORBIDDEN",
             "tensorConstruction": "REUSE_EXISTING_POINT12_POINT13_PATH",
+            "derivedProjectionBuilder": "him_trainer.final_evaluation_v2_engine.project_model_input",
+            "derivedExecutionArtifact": "him-final-evaluation-v2-derived-execution-artifact:v1",
+            "candidateConditioningSource": "FROZEN_CANONICAL_FAMILY_AUTHORITY",
         },
         "outputs": {
             "primary": "TARGET_KIND",
@@ -390,6 +399,8 @@ def build_final_evaluation_authority_v1() -> dict[str, Any]:
                 "NEGATIVE_BOUNDARY_RESULTS",
             ],
             "metricMutationAfterHoldoutOpen": "FORBIDDEN",
+            "secondaryMasking": "CANDIDATE_COMPATIBILITY_NOT_APPLICABLE_EXCLUDED_FROM_DENOMINATOR",
+            "negativeBoundaryMetrics": "DESCRIPTIVE_PER_RECORD_AND_PER_FAMILY",
         },
         "rawPredictionPolicy": {
             "rawPredictionsPersisted": True,
@@ -411,6 +422,9 @@ def build_final_evaluation_authority_v1() -> dict[str, Any]:
             "executionReportArtifact": "Final evaluation execution report",
             "persistence": "IMMUTABLE_WRITE_ONCE",
             "reloadDigestVerification": True,
+            "derivedExecutionArtifact": "SEALED_UNEXPOSED_WRITE_ONCE",
+            "exactlyOnceState": "INVOCATION_AND_EXPOSURE_WRITE_ONCE",
+            "postExposureFailurePolicy": "FAIL_CLOSED_NO_RETRY_OR_SECOND_EXPOSURE",
         },
         "qualityDecision": {
             "thresholdAuthorityExists": False,
@@ -985,25 +999,33 @@ def execute_synthetic_fixture_v2(*, evaluation_root: str | Path, output_root: st
 def _validate_native_outer(path: Path, payload_key: str) -> dict[str, Any]:
     value = _read_json(path)
     payload = value.get(payload_key)
+    if payload is None:
+        for alternate in ("payload", "authorityPayload", "reportPayload"):
+            if isinstance(value.get(alternate), Mapping):
+                payload_key = alternate
+                payload = value[alternate]
+                break
     _require(isinstance(payload, Mapping), f"NATIVE_PAYLOAD_INVALID:{path.name}")
     digest = logical_digest(payload)
     _require(value.get("logicalDigest") == digest, f"NATIVE_DIGEST_INVALID:{path.name}")
-    reference = value.get("authorityReference", value.get("reportReference"))
+    reference = value.get("authorityReference", value.get("reportReference", value.get("reference")))
     _require(isinstance(reference, str) and reference.endswith(f":{digest}"), f"NATIVE_REFERENCE_INVALID:{path.name}")
     return value
 
 
 def _load_native_sealed_root_v2(root: Path) -> dict[str, Any]:
-    """Load only the four sealed V2 execution inputs, without old P2 logic."""
+    """Load sealed inputs plus the derived, model-independent input artifact."""
 
-    packet = _validate_native_outer(root / "review-packet.v2.json", "authorityPayload")
-    ground_truth = _validate_native_outer(root / "ground-truth.v2.json", "authorityPayload")
-    sealed = _validate_native_outer(root / "sealed-evaluation-authority.v2.json", "authorityPayload")
+    packet = _validate_native_outer(root / "review-packet.v2.json", "payload")
+    ground_truth = _validate_native_outer(root / "ground-truth.v2.json", "payload")
+    sealed = _validate_native_outer(root / "sealed-evaluation-authority.v2.json", "payload")
     report = _validate_native_outer(root / "final-validation-report.v2.json", "reportPayload")
-    packet_payload = packet["authorityPayload"]
-    truth_payload = ground_truth["authorityPayload"]
-    sealed_payload = sealed["authorityPayload"]
-    report_payload = report["reportPayload"]
+    derived = _validate_native_outer(root / "derived-execution-artifact.v1.json", "payload")
+    packet_payload = packet.get("payload", packet.get("authorityPayload"))
+    truth_payload = ground_truth.get("payload", ground_truth.get("authorityPayload"))
+    sealed_payload = sealed.get("payload", sealed.get("authorityPayload"))
+    report_payload = report.get("reportPayload", report.get("payload"))
+    derived_payload = derived["payload"]
     _require(packet_payload.get("state") == "SEALED_UNEXPOSED", "NATIVE_REVIEW_PACKET_NOT_SEALED")
     _require(truth_payload.get("state") == "SEALED_UNEXPOSED", "NATIVE_GROUND_TRUTH_NOT_SEALED")
     _require(sealed_payload.get("state") == "SEALED_UNEXPOSED", "NATIVE_SEALED_AUTHORITY_NOT_SEALED")
@@ -1013,15 +1035,20 @@ def _load_native_sealed_root_v2(root: Path) -> dict[str, Any]:
     examples = truth_payload.get("evaluationExamples")
     _require(isinstance(examples, list) and len(examples) == count, "NATIVE_GROUND_TRUTH_COUNT_INVALID")
     _require(truth_payload.get("reviewPacketLogicalDigest") in (None, packet["logicalDigest"]), "NATIVE_PACKET_BINDING_INVALID")
-    return {"packet": packet, "groundTruth": ground_truth, "sealedAuthority": sealed, "validationReport": report, "examples": tuple(examples), "count": count}
+    _require(derived_payload.get("state") == "SEALED_UNEXPOSED", "NATIVE_DERIVED_ARTIFACT_NOT_SEALED")
+    _require(derived_payload.get("holdoutReference") == packet_payload.get("holdoutReference"), "NATIVE_DERIVED_BINDING_INVALID")
+    model_inputs = derived_payload.get("modelInputs")
+    _require(isinstance(model_inputs, list) and len(model_inputs) == count, "NATIVE_DERIVED_INPUT_COUNT_INVALID")
+    _require(derived_payload.get("recordIds") == [example.get("evaluationExampleReference") for example in examples], "NATIVE_DERIVED_ORDER_INVALID")
+    return {"packet": packet, "groundTruth": ground_truth, "sealedAuthority": sealed, "validationReport": report, "derived": derived, "examples": tuple(examples), "modelInputs": tuple(model_inputs), "count": count}
 
 
 def _native_model_input_rows(sealed: Mapping[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    for example in sealed["examples"]:
+    for example, model_input in zip(sealed["examples"], sealed["modelInputs"]):
         _require(isinstance(example, Mapping), "NATIVE_EXAMPLE_INVALID")
-        model_input = example.get("modelInput")
         _require(isinstance(model_input, Mapping) and isinstance(model_input.get("serialized"), str) and model_input["serialized"], "NATIVE_MODEL_INPUT_UNRESOLVED")
+        _require(model_input.get("recordId") == example.get("evaluationExampleReference"), "NATIVE_MODEL_INPUT_ORDER_INVALID")
         rows.append({"evaluationExampleReference": str(example.get("evaluationExampleReference")), "serialized": model_input["serialized"]})
     return rows
 
@@ -1041,7 +1068,7 @@ def _execute_native_synthetic_fixture_v2(output_root: Path) -> dict[str, Any]:
     """Use six local synthetic rows; no real sealed artifacts or model are read."""
 
     output_root.mkdir(parents=True, exist_ok=True)
-    examples = tuple({"evaluationExampleReference": f"fixture-example-{index}", "modelInput": {"serialized": f"<HIMV2>\\nO=fixture-{index}\\n</HIMV2>"}} for index in range(6))
+    examples = tuple({"evaluationExampleReference": f"fixture-example-{index}", "modelInput": {"recordId": f"fixture-example-{index}", "serialized": f"<HIMV2>\\nO=fixture-{index}\\n</HIMV2>"}} for index in range(6))
     packet_payload = {"schema": "HIM_FINAL_EVALUATION_V2_REVIEW_PACKET", "version": 2, "state": "SEALED_UNEXPOSED", "recordCount": len(examples), "modelIndependent": True}
     packet = {"authorityReference": f"fixture-packet:{logical_digest(packet_payload)}", "logicalDigest": logical_digest(packet_payload), "authorityPayload": packet_payload}
     truth_payload = {"schema": "HIM_FINAL_EVALUATION_V2_GROUND_TRUTH", "version": 2, "state": "SEALED_UNEXPOSED", "reviewPacketLogicalDigest": packet["logicalDigest"], "evaluationExamples": list(examples)}
@@ -1052,7 +1079,16 @@ def _execute_native_synthetic_fixture_v2(output_root: Path) -> dict[str, Any]:
     validation = {"reportReference": f"fixture-validation:{logical_digest(report_payload)}", "logicalDigest": logical_digest(report_payload), "reportPayload": report_payload}
     with tempfile.TemporaryDirectory(prefix="him-final-native-sealed-") as directory:
         root = Path(directory)
-        for filename, value in (("review-packet.v2.json", packet), ("ground-truth.v2.json", truth), ("sealed-evaluation-authority.v2.json", sealed), ("final-validation-report.v2.json", validation)):
+        derived_payload = {
+            "schema": "HIM_FINAL_EVALUATION_V2_DERIVED_EXECUTION_ARTIFACT_V1",
+            "version": 1,
+            "state": "SEALED_UNEXPOSED",
+            "holdoutReference": packet_payload.get("holdoutReference"),
+            "recordIds": [example["evaluationExampleReference"] for example in examples],
+            "modelInputs": [example["modelInput"] for example in examples],
+        }
+        derived = {"reference": f"fixture-derived:{logical_digest(derived_payload)}", "logicalDigest": logical_digest(derived_payload), "payload": derived_payload}
+        for filename, value in (("review-packet.v2.json", packet), ("ground-truth.v2.json", truth), ("sealed-evaluation-authority.v2.json", sealed), ("final-validation-report.v2.json", validation), ("derived-execution-artifact.v1.json", derived)):
             (root / filename).write_bytes(_canonical(value) + b"\n")
         loaded = _load_native_sealed_root_v2(root)
         inputs = _native_model_input_rows(loaded)
@@ -1064,14 +1100,57 @@ def _execute_native_synthetic_fixture_v2(output_root: Path) -> dict[str, Any]:
 
 
 def _execute_native_final_evaluation_v2(*, evaluation_root: str | Path, output_root: str | Path, checkpoint_manifest: str | Path, model_root: str | Path, tokenizer_path: str | Path, model_state_path: Path, deployment_digest: str) -> dict[str, Any]:
-    """Native productive skeleton; model execution starts only after sealed inputs resolve."""
+    """Execute the frozen native V2 model path after all sealed gates resolve."""
 
+    import torch
+    from .final_evaluation_v2_engine import score_predictions
+    from .point12_token_tensor_builder_v1 import load_pinned_xlm_r_tokenizer_v1
+    from .point13_model_forward_v1 import (
+        build_him_model_execution_binding_v1,
+        load_pinned_him_multi_head_model_from_root_v1,
+        load_pinned_model_config_from_root_v1,
+    )
     sealed = _load_native_sealed_root_v2(Path(evaluation_root))
     inputs = _native_model_input_rows(sealed)
     _require(Path(model_root).is_dir() and Path(tokenizer_path).is_file() and model_state_path.is_file(), "NATIVE_MODEL_INPUT_PATH_UNRESOLVED")
     _require(Path(checkpoint_manifest).is_file(), "NATIVE_CHECKPOINT_MANIFEST_UNRESOLVED")
-    del output_root, deployment_digest
-    raise FinalEvaluationAuthorityError("NATIVE_MODEL_EXECUTION_REQUIRES_EXPLICIT_MODEL_FORWARD_IMPLEMENTATION")
+    manifest = _load_checkpoint_manifest_for_path_binding(Path(checkpoint_manifest), _read_json(Path(checkpoint_manifest)))
+    expected_sha = manifest["modelState"].get("sha256")
+    _require(hashlib.sha256(model_state_path.read_bytes()).hexdigest() == expected_sha == FINAL_MODEL_STATE_SHA256, "NATIVE_MODEL_STATE_DIGEST_MISMATCH")
+    model_binding_digest = manifest.get("authorityBindings", {}).get("modelBindingDigest")
+    _require(isinstance(model_binding_digest, str), "NATIVE_MODEL_BINDING_MISSING")
+    tokenizer = load_pinned_xlm_r_tokenizer_v1(tokenizer_path)
+    encoded = [tokenizer.encode(row["serialized"], add_special_tokens=True).ids for row in inputs]
+    _require(encoded and max(map(len, encoded)) <= 256, "NATIVE_SEQUENCE_LENGTH_INVALID")
+    width = max(map(len, encoded))
+    input_ids = torch.tensor([ids + [1] * (width - len(ids)) for ids in encoded], dtype=torch.int64, device="cuda:0")
+    attention = torch.tensor([[1] * len(ids) + [0] * (width - len(ids)) for ids in encoded], dtype=torch.int64, device="cuda:0")
+    config = load_pinned_model_config_from_root_v1(Path(model_root))
+    binding = build_him_model_execution_binding_v1(config, 7, model_binding_digest)
+    model = load_pinned_him_multi_head_model_from_root_v1(binding, model_binding_digest, 7, Path(model_root), "cuda:0")
+    state = torch.load(model_state_path, map_location="cpu", weights_only=True)
+    _require(isinstance(state, Mapping), "NATIVE_MODEL_STATE_INVALID")
+    model.load_state_dict(state, strict=True)
+    model.eval()
+    with torch.no_grad():
+        output = model(input_ids, attention)
+    primary_logits = output.primary_logits
+    secondary_logits = output.secondary_logits
+    _require(tuple(primary_logits.shape) == (sealed["count"], 5), "NATIVE_PRIMARY_OUTPUT_SHAPE_INVALID")
+    _require(tuple(secondary_logits.shape) == (sealed["count"], 2), "NATIVE_SECONDARY_OUTPUT_SHAPE_INVALID")
+    predictions = [{
+        "evaluationExampleReference": row["evaluationExampleReference"],
+        "primaryLogits": [float(v) for v in primary_logits[index].detach().cpu().tolist()],
+        "secondaryLogits": [float(v) for v in secondary_logits[index].detach().cpu().tolist()],
+        "primaryPrediction": int(primary_logits[index].argmax().item()),
+        "secondaryPrediction": int(secondary_logits[index].argmax().item()),
+    } for index, row in enumerate(inputs)]
+    raw_payload = {"schema": "HIM_FINAL_EVALUATION_V2_RAW_PREDICTIONS", "version": 1, "state": "FROZEN_BEFORE_SCORING", "evaluationExampleCount": sealed["count"], "predictions": predictions, "runtimeImageDigest": deployment_digest}
+    raw = _write_native_output(Path(output_root) / FINAL_RAW_PREDICTION_OUTPUT_RELATIVE_PATH.name, "payload", raw_payload, "him-final-evaluation-v2-predictions")
+    scored = score_predictions([dict(example) for example in sealed["examples"]], predictions)
+    result_payload = {"schema": "HIM_FINAL_EVALUATION_V2_RESULT", "version": 1, "state": "FINAL_EVALUATION_COMPLETE", "evaluationExampleCount": sealed["count"], "rawPredictionLogicalDigest": raw["logicalDigest"], "metrics": scored, "runtimeImageDigest": deployment_digest, "checkpointReference": FINAL_CHECKPOINT_REFERENCE, "modelStateSha256": FINAL_MODEL_STATE_SHA256, "counters": {"modelDeserializationCount": 1, "forwardCount": 1, "holdoutExposureCount": 1, "trainingCount": 0, "backwardCount": 0, "optimizerStepCount": 0}}
+    result = _write_native_output(Path(output_root) / FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH.name, "payload", result_payload, "him-final-evaluation-v2-result")
+    return {"rawPath": Path(output_root) / FINAL_RAW_PREDICTION_OUTPUT_RELATIVE_PATH.name, "resultPath": Path(output_root) / FINAL_SCORED_RESULT_OUTPUT_RELATIVE_PATH.name, "raw": raw, "result": result, "counters": result_payload["counters"], "count": sealed["count"]}
 
 
 def run_cli(arguments: Sequence[str] | None = None) -> int:

@@ -29,6 +29,7 @@ training/him/src/him_trainer/corpus_assembly_v2.py	trainer/him_trainer/corpus_as
 training/him/src/him_trainer/corpus_coverage_v2.py	trainer/him_trainer/corpus_coverage_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/evidence_projection_v2.py	trainer/him_trainer/evidence_projection_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/final_evaluation_authority_v1.py	trainer/him_trainer/final_evaluation_authority_v1.py	him-trainer-runtime-source	YES	NO
+training/him/src/him_trainer/final_evaluation_v2_engine.py	trainer/him_trainer/final_evaluation_v2_engine.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/final_evaluation_v2_execution_contract.py	trainer/him_trainer/final_evaluation_v2_execution_contract.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/input_representation_v2.py	trainer/him_trainer/input_representation_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/final_training_runtime_closure_v1.py	trainer/him_trainer/final_training_runtime_closure_v1.py	him-trainer-runtime-source	YES	NO

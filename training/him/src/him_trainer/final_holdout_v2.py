@@ -10,6 +10,11 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from him_trainer.final_evaluation_v2_execution_contract import build_execution_contract
+from him_trainer.final_evaluation_v2_engine import (
+    build_derived_execution_artifact,
+    build_model_input_projection_authority,
+    project_model_input,
+)
 from him_trainer.final_evaluation_authority_v1 import (
     FINAL_CHECKPOINT_LOGICAL_DIGEST,
     FINAL_CHECKPOINT_REFERENCE,
@@ -39,6 +44,12 @@ HOLDOUT_AUTHORITY_PATH = HOLDOUT_ROOT / "authority/p2-family-isolated-holdout-au
 REVIEW_PACKET_PATH = HOLDOUT_ROOT / "review-packet.v2.json"
 CONTRACT_PATH = HOLDOUT_ROOT / "execution-contract.v1.json"
 SEAL_PATH = HOLDOUT_ROOT / "pre-exposure-seal.v1.json"
+DERIVED_EXECUTION_PATH = HOLDOUT_ROOT / "derived-execution-artifact.v1.json"
+PROJECTION_AUTHORITY_PATH = HOLDOUT_ROOT / "model-input-projection-authority.v1.json"
+GROUND_TRUTH_EXECUTION_PATH = HOLDOUT_ROOT / "ground-truth.v2.json"
+SEALED_AUTHORITY_EXECUTION_PATH = HOLDOUT_ROOT / "sealed-evaluation-authority.v2.json"
+VALIDATION_REPORT_EXECUTION_PATH = HOLDOUT_ROOT / "final-validation-report.v2.json"
+FAMILY_AUTHORITY_PATH = ROOT / "data/knowledge/him/canonical-family/master/canonical-family-authority.v1.json"
 
 CORPUS_REFERENCE = "him-fresh-evaluation-corpus-v2:v1:9b3ecbdcc44e9f52c5370c56f092e9e60f6a922030783fa53cb2e51bd03f128a"
 CORPUS_DIGEST = "9b3ecbdcc44e9f52c5370c56f092e9e60f6a922030783fa53cb2e51bd03f128a"
@@ -168,6 +179,85 @@ def build_seal(holdout: Mapping[str, Any], authority: Mapping[str, Any], selecti
     return envelope("him-final-evaluation-v2-holdout-pre-exposure-seal", payload)
 
 
+def build_execution_layer_artifacts(holdout: Mapping[str, Any], corpus: Mapping[str, Any]) -> dict[str, Any]:
+    """Derive execution inputs from frozen holdout/corpus lineage only.
+
+    This function never changes membership or labels.  Family candidates are
+    read from the committed canonical-family authority and the input builder
+    is the exact builder used by training.
+    """
+    family_authority = json.loads(FAMILY_AUTHORITY_PATH.read_text(encoding="utf-8"))
+    families = {}
+    for family in family_authority.get("families", []):
+        canonical_id = family.get("canonicalId", {}).get("value")
+        if canonical_id:
+            families[f"family:v1:canonical:{canonical_id}"] = family
+    corpus_by_id = {row["recordId"]: row for row in corpus["payload"]["records"]}
+    projected = []
+    for row in holdout["payload"]["records"]:
+        family = families.get(row["familyId"])
+        if family is None:
+            raise ValueError(f"FAMILY_AUTHORITY_MISSING:{row['familyId']}")
+        source_row = corpus_by_id.get(row["recordId"])
+        if source_row is None:
+            raise ValueError(f"CORPUS_RECORD_MISSING:{row['recordId']}")
+        projected.append(project_model_input(source_row, family))
+    projection = build_model_input_projection_authority(
+        holdout["reference"], holdout["logicalDigest"], projected
+    )
+    derived = build_derived_execution_artifact(holdout, projection, projected)
+    records = holdout["payload"]["records"]
+    truth_payload = {
+        "schema": "HIM_FINAL_EVALUATION_V2_GROUND_TRUTH",
+        "version": 2,
+        "state": "SEALED_UNEXPOSED",
+        "holdoutReference": holdout["reference"],
+        "holdoutLogicalDigest": holdout["logicalDigest"],
+        "recordCount": len(records),
+        "reviewPacketLogicalDigest": REVIEW_PACKET_PATH.exists() and read_json(REVIEW_PACKET_PATH)["logicalDigest"],
+        "evaluationExamples": [
+            {"evaluationExampleReference": row["recordId"], "groundTruth": row["groundTruth"]}
+            for row in records
+        ],
+        "modelIndependent": True,
+        "holdoutOpened": False,
+        "exposureCount": 0,
+    }
+    sealed_payload = {
+        "schema": "HIM_FINAL_EVALUATION_V2_SEALED_AUTHORITY",
+        "version": 2,
+        "state": "SEALED_UNEXPOSED",
+        "holdoutReference": holdout["reference"],
+        "holdoutLogicalDigest": holdout["logicalDigest"],
+        "derivedExecutionArtifactReference": derived["reference"],
+        "derivedExecutionArtifactLogicalDigest": derived["logicalDigest"],
+        "recordCount": len(records),
+        "holdoutOpened": False,
+        "exposureCount": 0,
+        "modelIndependent": True,
+    }
+    validation_payload = {
+        "schema": "HIM_FINAL_EVALUATION_V2_VALIDATION_REPORT",
+        "version": 2,
+        "state": "SEALED_UNEXPOSED",
+        "holdoutReference": holdout["reference"],
+        "holdoutLogicalDigest": holdout["logicalDigest"],
+        "recordCount": len(records),
+        "projectionAuthorityReference": projection["reference"],
+        "derivedExecutionArtifactReference": derived["reference"],
+        "holdoutOpened": False,
+        "exposureCount": 0,
+        "modelIndependent": True,
+    }
+    return {
+        "projection": projection,
+        "derived": derived,
+        "truth": envelope("him-final-evaluation-v2-ground-truth", truth_payload),
+        "sealed": envelope("him-final-evaluation-v2-sealed-authority", sealed_payload),
+        "validation": envelope("him-final-evaluation-v2-validation-report", validation_payload),
+    }
+
+
 def fixture_execution_closure() -> dict[str, str]:
     with tempfile.TemporaryDirectory(prefix="him-final-holdout-fixture-") as d:
         root = Path(d); evaluation = root / "evaluation"; output = root / "output"; evaluation.mkdir(); output.mkdir()
@@ -186,10 +276,11 @@ def persist_all() -> dict[str, Any]:
     rows1, rows2 = select_records(corpus), select_records(corpus)
     if [r["recordId"] for r in rows1] != [r["recordId"] for r in rows2]: raise ValueError("SELECTION_NONDETERMINISTIC")
     selection = build_selection(corpus, truth, rows1); holdout = build_holdout(corpus, result, lineage, truth, selection, rows1); packet = build_review_packet(holdout); authority = build_holdout_authority(holdout, selection, truth); contract = build_execution_contract(); execution_authority = read_json(EXECUTION_AUTHORITY_PATH); seal = build_seal(holdout, authority, selection, packet, contract, execution_authority)
-    values = ((SELECTION_PATH, selection), (HOLDOUT_PATH, holdout), (HOLDOUT_AUTHORITY_PATH, authority), (REVIEW_PACKET_PATH, packet), (CONTRACT_PATH, contract), (SEAL_PATH, seal))
+    execution_artifacts = build_execution_layer_artifacts(holdout, corpus)
+    values = ((SELECTION_PATH, selection), (HOLDOUT_PATH, holdout), (HOLDOUT_AUTHORITY_PATH, authority), (REVIEW_PACKET_PATH, packet), (CONTRACT_PATH, contract), (SEAL_PATH, seal), (PROJECTION_AUTHORITY_PATH, execution_artifacts["projection"]), (DERIVED_EXECUTION_PATH, execution_artifacts["derived"]), (GROUND_TRUTH_EXECUTION_PATH, execution_artifacts["truth"]), (SEALED_AUTHORITY_EXECUTION_PATH, execution_artifacts["sealed"]), (VALIDATION_REPORT_EXECUTION_PATH, execution_artifacts["validation"]))
     for path, value in values:
         path.parent.mkdir(parents=True, exist_ok=True); path.write_bytes(canonical(value) + b"\n")
-    return {"corpus": corpus, "result": result, "lineage": lineage, "truth": truth, "selection": selection, "holdout": holdout, "authority": authority, "packet": packet, "contract": contract, "seal": seal, "fixture": fixture_execution_closure(), "selectionRunCount": 2}
+    return {"corpus": corpus, "result": result, "lineage": lineage, "truth": truth, "selection": selection, "holdout": holdout, "authority": authority, "packet": packet, "contract": contract, "seal": seal, "executionArtifacts": execution_artifacts, "fixture": fixture_execution_closure(), "selectionRunCount": 2}
 
 
 def reload_all() -> dict[str, Any]:
