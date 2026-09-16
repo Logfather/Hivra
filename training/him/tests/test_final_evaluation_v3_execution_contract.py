@@ -12,6 +12,7 @@ from him_trainer.final_evaluation_authority_v1 import (
     FINAL_CHECKPOINT_REFERENCE,
     FINAL_MODEL_STATE_SHA256,
     execute_final_holdout_v1,
+    verify_final_holdout_execution_bindings_v1,
 )
 
 
@@ -75,6 +76,41 @@ def test_contract_driven_v3_loader_resolves_all_sealed_inputs_without_v2_loader(
         loaded = _load_contract_bound_sealed_root(contract_path, root)
         assert loaded["count"] == 2
         assert len(loaded["paths"]) == 5
+
+
+def test_supplied_v3_contract_wins_over_legacy_v2_binding(monkeypatch):
+    with tempfile.TemporaryDirectory(prefix="him-v3-binding-preflight-") as directory:
+        root = Path(directory)
+        examples = [{"evaluationExampleReference": "example-0", "groundTruth": {}}]
+        payloads = {
+            "review-packet.v3.json": {"state": "SEALED_UNEXPOSED", "recordCount": 1, "holdoutReference": "h"},
+            "ground-truth.v3.json": {"state": "SEALED_UNEXPOSED", "evaluationExamples": examples},
+            "sealed-evaluation-authority.v3.json": {"state": "SEALED_UNEXPOSED"},
+            "final-validation-report.v3.json": {"state": "SEALED_UNEXPOSED"},
+            "derived-execution-artifact.v3.json": {"state": "SEALED_UNEXPOSED", "holdoutReference": "h", "recordIds": ["example-0"], "modelInputs": [{"recordId": "example-0", "serialized": "fixture"}]},
+        }
+        for name, payload in payloads.items():
+            (root / name).write_text(json.dumps(_envelope("fixture:v3", payload)), encoding="utf-8")
+        names = ["sealed_review_packet", "sealed_ground_truth", "sealed_evaluation_authority", "sealed_final_validation_report", "input_representation"]
+        paths = ["review-packet.v3.json", "ground-truth.v3.json", "sealed-evaluation-authority.v3.json", "final-validation-report.v3.json", "derived-execution-artifact.v3.json:modelInputs[].serialized"]
+        inputs = [{"id": name, "path": f"<evaluation-root>/{path}", "requiredBeforeExecution": True} for name, path in zip(names, paths)] + [{"id": f"other-{i}", "type": "json"} for i in range(12)]
+        contract = _envelope("fixture-contract:v3", {"schema": "HIM_FINAL_EVALUATION_V3_EXECUTION_CONTRACT", "inputs": inputs, "outputs": []})
+        contract_path = root / "execution-contract.v3.json"
+        contract_path.write_text(json.dumps(contract), encoding="utf-8")
+
+        def legacy_v2_must_not_run(*args, **kwargs):
+            raise AssertionError("legacy V2 binding fallback was used")
+
+        monkeypatch.setattr("him_trainer.final_evaluation_authority_v1.preflight_final_evaluation_authority_v1", legacy_v2_must_not_run)
+        binding = verify_final_holdout_execution_bindings_v1(
+            root,
+            root / "authority.v1.json",
+            root,
+            execution_contract_path=contract_path,
+            evaluation_root=root,
+        )
+        assert binding["state"] == "FINAL_HOLDOUT_EXECUTION_BINDINGS_PASS"
+        assert binding["resolvedV3InputCount"] == 5
 
 
 def test_v3_checkpoint_binding_still_accepts_exactly_one_path_argument():

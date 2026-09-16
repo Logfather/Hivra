@@ -2,12 +2,12 @@
   "identitySchema": "HIM_A100_RUNTIME_IDENTITY_V2",
   "runtimeImageId": "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1",
   "referenceEnvironmentContractDigest": "e5bfa4442a50e154c7f23735def545cfc545798f8b326ff38051f2eea57111d9",
-  "buildContextDigest": "bb65f626063b3f6b0b32049775458d9f97e8707f4bcc4dd0e3224cd3b882a4d1",
+  "buildContextDigest": "970446a8da331b5c4c0fd073d62d38f620d2472b00bdd0fa29df3863b56fe704",
   "runtimeImageDefinitionDigest": "026b2b6b8847a0e3770735ffc262be05ad67aa7fdd1d29d40a3a3b876d4086a6",
   "buildDefinitionDigest": "026b2b6b8847a0e3770735ffc262be05ad67aa7fdd1d29d40a3a3b876d4086a6",
   "dependencyLockDigest": "90a18bf32eed8f5a5b042b34d4bc624fe63e8230e8f9a6d767eea1b2a98a1131",
-  "sourceGitHead": "93ee9fce68e95a91ac0aae5dc4f77e94279d175f",
-  "runtimeSourceLogicalDigest": "7cbf24d9687f90e1d6d93ddde1b4d9fc8df8fd1669d860638a85876fe9a8c5b8",
+  "sourceGitHead": "cc03036e8a19a538b90f366d5b47bd761de14d62",
+  "runtimeSourceLogicalDigest": "5455b5f91f80fade7ec04dbf11afe3c951e72c985f2d611d63b5dd8add31cad2",
   "runtimeSourceClosure": {
     "manifest": "training/him/runtime/a100/build-context.manifest.tsv",
     "fileCount": 35
@@ -124,8 +124,8 @@
     {
       "sourcePath": "training/him/src/him_trainer/final_evaluation_authority_v1.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/final_evaluation_authority_v1.py",
-      "sizeBytes": 72560,
-      "sha256": "3308410d88fa20a41e3ac97f24ff98bf336e46a15328bd8bc15f6dd03c11f646"
+      "sizeBytes": 73773,
+      "sha256": "d03597b8b4c96188af34ddbf3f4e222d85880d1793bb47627a97624d254c6e9d"
     },
     {
       "sourcePath": "training/him/src/him_trainer/final_evaluation_v2_engine.py",
@@ -234,7 +234,7 @@
   "contentTagSchemeVersion": "V2",
   "contentTagPrefix": "ctx-",
   "contentTagPrefixLength": 12,
-  "contentDerivedDeploymentTag": "ctx-bb65f626063b",
+  "contentDerivedDeploymentTag": "ctx-970446a8da33",
   "previousContentDerivedDeploymentTag": "def-06d5dd647f2a",
   "legacyContentTagScheme": "V1:def-<runtimeImageDefinitionDigest[:12]>",
   "buildContextDigestRule": "Canonical runtime-image-definition.json bytes exclude derived identity outputs; runtime-identity.json is derived metadata and excluded from the authority digest; the V2 content tag is derived from the complete build-context digest."
