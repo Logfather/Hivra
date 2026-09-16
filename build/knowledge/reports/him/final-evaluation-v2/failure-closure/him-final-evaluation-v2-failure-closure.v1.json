@@ -1,0 +1,40 @@
+{
+  "bindings": {
+    "executionContractReference": "him-final-evaluation-v2-execution-contract:v1:99cdc077009edc9d6b83f60db72652e16138f4af5e86b2fc92a3613e19e8bc0b",
+    "finalEvaluationAuthorityReference": "him-final-evaluation-authority:v1:999ad03e8ca065225b8ed75d436c19fa9914278c5993c11fe16b90ff3459896c",
+    "holdoutReference": "him-final-evaluation-v2-holdout:v1:28d61146b5181bc06020f35ec6eeb1b90262f75456b56fe1554135c3d052145b",
+    "runtimeImageDigest": "sha256:ed8144a75bce38b3b2236b4c2c36607165520ba410aee074decd2ac611524546",
+    "runtimeSourceHead": "55dfad6ffd7c7de14ab8f27f65ca35f96396ceb6"
+  },
+  "execution": {
+    "evaluatedRecordCount": 0,
+    "forwardCount": 0,
+    "modelDeserializationCount": 0,
+    "productiveInvocationCount": 1,
+    "retryAllowed": false,
+    "sameHoldoutReuseAllowed": false
+  },
+  "failure": {
+    "phase": "after sealed Holdout inputs were read, before model deserialization",
+    "type": "TypeError",
+    "message": "_load_checkpoint_manifest_for_path_binding() takes 1 positional argument but 2 were given",
+    "function": "_load_checkpoint_manifest_for_path_binding"
+  },
+  "failureLog": {
+    "path": "him-final-evaluation-v2-productive-failure.log",
+    "bytes": 1591,
+    "sha256": "59710c868944ab467e26e785e48d2159f5026aa79f4a6607ef12bb2ce6572d68"
+  },
+  "holdout": {
+    "exposureCount": 1,
+    "reusable": false,
+    "state": "EXPOSED_CONSUMED"
+  },
+  "repair": {
+    "mode": "CALLSITE_FIX",
+    "status": "REPAIRED_LOCALLY",
+    "semanticChange": false
+  },
+  "schema": "HIM_FINAL_EVALUATION_V2_FAILED_EXECUTION_CLOSURE",
+  "version": 1
+}

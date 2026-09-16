@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -18,6 +19,7 @@ from him_trainer.final_evaluation_authority_v1 import (
     REQUIRED_MODEL_ROOT_FILES,
     REQUIRED_RUNTIME_MODULES,
     build_final_evaluation_authority_v1,
+    _load_checkpoint_manifest_for_path_binding,
     persist_final_evaluation_authority_v1,
     preflight_final_evaluation_authority_v1,
     reload_final_evaluation_authority_v1,
@@ -26,6 +28,7 @@ from him_trainer.final_evaluation_authority_v1 import (
     verify_final_holdout_execution_path_v1,
     validate_deployment_time_oci_binding_v1,
 )
+from him_trainer.final_evaluation_authority_v1 import FinalEvaluationAuthorityError
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -96,6 +99,30 @@ def _write_build_context_fixture(root: Path, authority_value: dict[str, object])
 
 
 class FinalEvaluationAuthorityV1Test(unittest.TestCase):
+    def test_checkpoint_manifest_binding_uses_single_path_argument(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="him-final-checkpoint-binding-") as directory:
+            manifest_path = Path(directory) / FINAL_CHECKPOINT_MANIFEST_RELATIVE_PATH
+            _write_execution_fixture(Path(directory))
+            manifest = _load_checkpoint_manifest_for_path_binding(manifest_path)
+            self.assertEqual(FINAL_CHECKPOINT_REFERENCE, manifest["checkpointReference"])
+            with self.assertRaises(FinalEvaluationAuthorityError):
+                _load_checkpoint_manifest_for_path_binding(manifest_path.with_name("missing-checkpoint-manifest.json"))
+            invalid_reference = dict(manifest)
+            invalid_reference["checkpointReference"] = "wrong-reference"
+            manifest_path.write_text(json.dumps(invalid_reference), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                _load_checkpoint_manifest_for_path_binding(manifest_path)
+            invalid_digest = dict(manifest)
+            invalid_digest["checkpointLogicalDigest"] = "wrong-digest"
+            manifest_path.write_text(json.dumps(invalid_digest), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                _load_checkpoint_manifest_for_path_binding(manifest_path)
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            with self.assertRaises(TypeError):
+                _load_checkpoint_manifest_for_path_binding(manifest_path, manifest)  # type: ignore[call-arg]
+            with self.assertRaises(TypeError):
+                _load_checkpoint_manifest_for_path_binding()  # type: ignore[call-arg]
+
     def test_authority_binds_final_checkpoint_and_opaque_holdout_only(self) -> None:
         value = build_final_evaluation_authority_v1()
         validate_final_evaluation_authority_v1(value)

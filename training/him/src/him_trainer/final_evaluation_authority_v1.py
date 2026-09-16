@@ -1111,7 +1111,7 @@ def _execute_native_final_evaluation_v2(*, evaluation_root: str | Path, output_r
     inputs = _native_model_input_rows(sealed)
     _require(Path(model_root).is_dir() and Path(tokenizer_path).is_file() and model_state_path.is_file(), "NATIVE_MODEL_INPUT_PATH_UNRESOLVED")
     _require(Path(checkpoint_manifest).is_file(), "NATIVE_CHECKPOINT_MANIFEST_UNRESOLVED")
-    manifest = _load_checkpoint_manifest_for_path_binding(Path(checkpoint_manifest), _read_json(Path(checkpoint_manifest)))
+    manifest = _load_checkpoint_manifest_for_path_binding(Path(checkpoint_manifest))
     expected_sha = manifest["modelState"].get("sha256")
     _require(hashlib.sha256(model_state_path.read_bytes()).hexdigest() == expected_sha == FINAL_MODEL_STATE_SHA256, "NATIVE_MODEL_STATE_DIGEST_MISMATCH")
     model_binding_digest = manifest.get("authorityBindings", {}).get("modelBindingDigest")

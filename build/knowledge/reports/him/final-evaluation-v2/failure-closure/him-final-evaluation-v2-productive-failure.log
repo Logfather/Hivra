@@ -1,0 +1,23 @@
+/opt/him/runtime/lib/python3.13/site-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/final_evaluation_authority_v1.py", line 1221, in <module>
+    raise SystemExit(run_cli())
+                     ~~~~~~~^^
+  File "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/final_evaluation_authority_v1.py", line 1196, in run_cli
+    execution = execute_final_holdout_v1(
+        runtime_root=args.root,
+    ...<8 lines>...
+        holdout_authority_root=args.holdout_authority_root,
+    )
+  File "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/final_evaluation_authority_v1.py", line 930, in execute_final_holdout_v1
+    result = _execute_native_final_evaluation_v2(
+        evaluation_root=evaluation_root,
+    ...<5 lines>...
+        deployment_digest=deployment_digest,
+    )
+  File "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/final_evaluation_authority_v1.py", line 1114, in _execute_native_final_evaluation_v2
+    manifest = _load_checkpoint_manifest_for_path_binding(Path(checkpoint_manifest), _read_json(Path(checkpoint_manifest)))
+TypeError: _load_checkpoint_manifest_for_path_binding() takes 1 positional argument but 2 were given
