@@ -2,11 +2,15 @@ import json
 import sqlite3
 
 import pytest
+import hashlib
+import torch
 
 from him_trainer.source_bound_multicandidate_v1 import (
     AuthorityError, RetrievalConfig, is_final_holdout_eligible,
     materialize_with_exclusion, resolve_candidates_for_base,
 )
+from him_trainer.input_representation_v2 import build_input_representation_v2
+from him_trainer.point12_token_tensor_builder_v1 import load_pinned_xlm_r_tokenizer_v1
 
 
 def fixture_index(tmp_path):
@@ -37,3 +41,20 @@ def test_materialization_is_atomic_semantic_and_excludes():
 def test_binding_and_bounds_fail_closed(fixture_index):
     with pytest.raises(AuthorityError): RetrievalConfig(max_query_results=1000)
     with pytest.raises(AuthorityError): resolve_candidates_for_base({"baseId":"b","term":"x"}, index_path=fixture_index, source_authority={"sourceSha256":"a"}, index_authority={"sourceSha256":"b"})
+
+
+def test_authoritative_model_input_distinguishes_candidates():
+    common = {"productName": "apple", "ingredients": "apple", "categories": ["fruit"]}
+    candidates = [
+        {"term": "Braeburn apple", "normalizedTerm": "braeburn apple", "taxonomyPaths": (("fruit", "apple"),)},
+        {"term": "Granny Smith apple", "normalizedTerm": "granny smith apple", "taxonomyPaths": (("fruit", "apple"),)},
+    ]
+    rendered = [build_input_representation_v2("apple", c, common).serialize() for c in candidates]
+    assert rendered[0] != rendered[1]
+    assert hashlib.sha256(rendered[0].encode()).hexdigest() != hashlib.sha256(rendered[1].encode()).hexdigest()
+    tokenizer = load_pinned_xlm_r_tokenizer_v1()
+    ids = [torch.tensor(tokenizer.encode(value, add_special_tokens=True).ids, dtype=torch.int64) for value in rendered]
+    assert not torch.equal(ids[0], ids[1])
+    masks = [torch.ones_like(value) for value in ids]
+    assert not torch.equal(torch.nn.utils.rnn.pad_sequence(ids, batch_first=True, padding_value=1)[0], torch.nn.utils.rnn.pad_sequence(ids, batch_first=True, padding_value=1)[1])
+    assert torch.equal(masks[0], masks[1]) is False or ids[0].numel() != ids[1].numel()
