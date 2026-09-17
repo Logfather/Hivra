@@ -1,0 +1,51 @@
+{
+  "schema": "HIM_V1_FINAL_EVALUATION_BASELINE",
+  "version": 1,
+  "state": "FROZEN",
+  "lineage": {
+    "state": "LINEAGE_PROVEN_WITH_HISTORICAL_METADATA_DISCREPANCY",
+    "discrepancyClass": "STALE_AUTHORITY_REFERENCE_BUT_EXECUTION_PROVEN_AGAINST_FINAL_V3_ELSEWHERE",
+    "evidencePath": "/Users/logfather/.codex/sessions/2026/08/22/rollout-2026-08-22T11-31-41-01a028cf-ca8f-7553-81cb-755113624994.jsonl",
+    "edges": {
+      "contractToExecution": "EXPLICIT",
+      "executionToHoldout": "EXPLICIT",
+      "executionToOutputs": "DETERMINISTICALLY_PROVEN",
+      "remoteOutputToLocalCopy": "EXPLICIT"
+    }
+  },
+  "finalEvaluation": {
+    "modelState": "FROZEN",
+    "evaluationState": "COMPLETE",
+    "holdoutState": "EXPOSED_CONSUMED",
+    "armedProductiveInvocationCount": 1,
+    "holdoutExposureCount": 1,
+    "modelDeserializationCount": 1,
+    "forwardCount": 1,
+    "trainingCount": 0,
+    "backwardCount": 0,
+    "optimizerStepCount": 0,
+    "evaluationRecordCount": 6,
+    "metrics": {
+      "primary": {"correct": 3, "total": 6, "accuracy": 0.5},
+      "secondary": {"correct": 0, "total": 6, "accuracy": 0.0},
+      "joint": {"correct": 0, "total": 6, "accuracy": 0.0},
+      "scientificResult": "MIXED",
+      "qualityThresholdAuthorityExists": false,
+      "qualityDecisionMode": "DESCRIPTIVE_ONLY_NO_PREEXISTING_THRESHOLD"
+    },
+    "outputDigests": {
+      "rawPredictionsSha256": "d77640a5c4e634a214a69bcd745ab9c682a4d607764084d272ddeb4e81997c36",
+      "evaluationResultSha256": "7304350096f2657ed25465653bc6aac64d0ba2b699aaaad70f502f56e8ed177f",
+      "executionReportSha256": "62b92693bc2f463edda86375156f283c683b6796409b3d4c386f64064cb207fc"
+    }
+  },
+  "developmentExclusion": {
+    "v3ReuseForTrainingAllowed": false,
+    "v3ReuseForDevelopmentAllowed": false,
+    "v3ReuseForValidationAllowed": false,
+    "v3ReuseForModelSelectionAllowed": false,
+    "v3ReuseForFutureFinalEvaluationAllowed": false,
+    "status": "PASS"
+  },
+  "diagnosticQuestion": "Why did HIM V1 predict CANDIDATE_COMPATIBILITY=REJECT for all six final V3 records whose expected value was COMPATIBLE?"
+}
