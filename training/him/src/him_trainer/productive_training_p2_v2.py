@@ -28,6 +28,7 @@ from .training_input_authority_v2 import (
 
 
 RUNNER_MODULE = "him_trainer.productive_training_p2_v2"
+EXECUTION_MODE_TRAINING_ONLY = "TRAINING_ONLY"
 RUNTIME_IMAGE_DIGEST_BINDING_STAGE_DEPLOYMENT = "DEPLOYMENT_TIME_IMMUTABLE_OCI"
 PHYSICAL_BATCH_SIZE = 8
 GRADIENT_ACCUMULATION_STEPS = 1
@@ -397,6 +398,7 @@ def execute_authorized_p2_v2(
     output_root: str | Path,
     expected_runtime_image_digest: str | None = None,
     model_loader: Callable[[], Any] | None = None,
+    execution_mode: str = EXECUTION_MODE_TRAINING_ONLY,
 ) -> dict[str, Any]:
     """Run the frozen P2 V2 trajectory after the execution gate has passed.
 
@@ -405,6 +407,8 @@ def execute_authorized_p2_v2(
     reached only after :func:`validate_execution_authority` succeeds.
     """
 
+    if execution_mode != EXECUTION_MODE_TRAINING_ONLY:
+        raise TrainingInputV2Error("UNSUPPORTED_EXECUTION_MODE")
     binding = validate_execution_authority(
         root,
         runtime_authority_path=runtime_authority_path,
@@ -440,7 +444,6 @@ def execute_authorized_p2_v2(
     tokenizer.no_truncation()
     corpus_examples = {item["exampleReference"]: item for item in bundle["corpus"]["examples"]}
     train_view = _build_execution_tensor_view(tuple(bundle["train"]), corpus_examples, tokenizer)
-    validation_view = _build_execution_tensor_view(tuple(bundle["validation"]), corpus_examples, tokenizer)
     if bundle["holdout"]:
         raise TrainingInputV2Error("HOLDOUT_EXECUTION_FORBIDDEN")
     device = resolve_him_execution_device_v1("CUDA", 0, torch_module=torch)
@@ -465,24 +468,6 @@ def execute_authorized_p2_v2(
     optimizer_step = 0
     metrics: list[dict[str, Any]] = []
 
-    def evaluate(epoch: int) -> None:
-        model.eval()
-        with torch.no_grad():
-            output = model(validation_view.input_ids.to(device), validation_view.attention_mask.to(device))
-            losses = compute_him_masked_multi_objective_loss_v1(
-                primary_logits=output.primary_logits,
-                secondary_logits=output.secondary_logits,
-                primary_target=validation_view.primary_target.to(device),
-                secondary_target=validation_view.secondary_target.to(device),
-                primary_mask=validation_view.primary_mask.to(device),
-                secondary_mask=validation_view.secondary_mask.to(device),
-                loss_contract=loss_contract,
-                selected_execution_device=device,
-                allow_primary_target_absence=True,
-            )
-            metrics.append({"epoch": epoch, "validationLoss": float(losses.total_loss.detach().cpu().item()), "validationExampleCount": count_contract.validation_count})
-        model.train()
-
     for epoch in range(EPOCHS):
         for start in range(0, count_contract.train_count, PHYSICAL_BATCH_SIZE):
             end = start + PHYSICAL_BATCH_SIZE
@@ -503,8 +488,6 @@ def execute_authorized_p2_v2(
             optimizer.step()
             optimizer_step += 1
             metrics.append({"epoch": epoch + 1, "optimizerStep": optimizer_step, "loss": float(losses.total_loss.detach().cpu().item())})
-        evaluate(epoch + 1)
-    evaluate(EPOCHS)
     if optimizer_step != count_contract.total_optimizer_steps:
         raise TrainingInputV2Error("OPTIMIZER_STEP_COUNT_INVALID")
     run_reference = f"productive-training-run:p2-v2:{binding.runtime_authority['logicalDigest']}:{binding.readiness['logicalDigest']}"
@@ -536,6 +519,7 @@ def future_training_command() -> tuple[str, ...]:
         "--training-readiness", "data/knowledge/him/training/p2/canonical-catalog-expansion/v2/executable-bundle-v2/training-readiness.v2.json",
         "--runtime-image-digest", "sha256:6d0cd017dfc5e34451a365f2e495cf347e7a46a1261ce2a74cee00f5a3df25f2",
         "--output-root", "training/him/runtime/a100/p2-v2-training-output",
+        "--execution-mode", EXECUTION_MODE_TRAINING_ONLY,
     )
 
 
@@ -551,6 +535,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--model-root")
     parser.add_argument("--tokenizer-path")
     parser.add_argument("--output-root")
+    parser.add_argument("--execution-mode", default=EXECUTION_MODE_TRAINING_ONLY)
     args = parser.parse_args(argv)
     if args.execute:
         if not args.runtime_authority or not args.training_readiness:
@@ -561,6 +546,7 @@ def main(argv: list[str] | None = None) -> int:
                 runtime_authority_path=args.runtime_authority,
                 readiness_path=args.training_readiness,
                 expected_runtime_image_digest=args.runtime_image_digest,
+                execution_mode=args.execution_mode,
             )
         except (TrainingInputV2Error, OSError, UnicodeError, ValueError) as error:
             parser.error(str(error))
