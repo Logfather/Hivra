@@ -2,12 +2,12 @@
   "identitySchema": "HIM_A100_RUNTIME_IDENTITY_V2",
   "runtimeImageId": "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1",
   "referenceEnvironmentContractDigest": "e5bfa4442a50e154c7f23735def545cfc545798f8b326ff38051f2eea57111d9",
-  "buildContextDigest": "dce154451eeb1338510fc194c8af75cad95412f53ec274f16751f0843748bb11",
+  "buildContextDigest": "a98ab8c2f2c0830d42a38566c2f9b313bb671999e894ade4c46101507f9bf3df",
   "runtimeImageDefinitionDigest": "026b2b6b8847a0e3770735ffc262be05ad67aa7fdd1d29d40a3a3b876d4086a6",
   "buildDefinitionDigest": "026b2b6b8847a0e3770735ffc262be05ad67aa7fdd1d29d40a3a3b876d4086a6",
   "dependencyLockDigest": "90a18bf32eed8f5a5b042b34d4bc624fe63e8230e8f9a6d767eea1b2a98a1131",
-  "sourceGitHead": "b12924d86d6794b03c470ee2bb21fd146de6ef48",
-  "runtimeSourceLogicalDigest": "036f2fe74574088deb081cf3ef39cf63f636a70e5f64faae9aaf7acded460a20",
+  "sourceGitHead": "44c58157289f0572615335a07ba37dfcb55a6592",
+  "runtimeSourceLogicalDigest": "56a4e1f523624d1d40bbd1e1af06cd45afe83cccac87c14e610570607e627f69",
   "runtimeSourceClosure": {
     "manifest": "training/him/runtime/a100/build-context.manifest.tsv",
     "fileCount": 35
@@ -59,7 +59,7 @@
       "sourcePath": "training/him/src/him_trainer/point12_token_tensor_builder_v1.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/point12_token_tensor_builder_v1.py",
       "sizeBytes": 18059,
-      "sha256": "b4665f853b70a4d01dc7c4341517d6561fb09fd80c2ba7589a9b27e1e9b08bab"
+      "sha256": "860311392efd20fca4b40777e53aa3dcd703c1563e760c52409791c155152ae8"
     },
     {
       "sourcePath": "training/him/src/him_trainer/point13_forward_rng_contract_v1.py",
@@ -77,7 +77,7 @@
       "sourcePath": "training/him/src/him_trainer/point13_model_forward_v1.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/point13_model_forward_v1.py",
       "sizeBytes": 47423,
-      "sha256": "5e0c9dc3dd5570ffdee24d1da721ff764edc38fb87fff932e3b1ad470befff97"
+      "sha256": "05348f9a30465509c57868dcc0ce97d6a3314c32f94c2be62714e060d5c1ec6f"
     },
     {
       "sourcePath": "training/him/src/him_trainer/point13_optimizer_execution_policy_v1.py",
@@ -234,7 +234,7 @@
   "contentTagSchemeVersion": "V2",
   "contentTagPrefix": "ctx-",
   "contentTagPrefixLength": 12,
-  "contentDerivedDeploymentTag": "ctx-dce154451eeb",
+  "contentDerivedDeploymentTag": "ctx-a98ab8c2f2c0",
   "previousContentDerivedDeploymentTag": "def-06d5dd647f2a",
   "legacyContentTagScheme": "V1:def-<runtimeImageDefinitionDigest[:12]>",
   "buildContextDigestRule": "Canonical runtime-image-definition.json bytes exclude derived identity outputs; runtime-identity.json is derived metadata and excluded from the authority digest; the V2 content tag is derived from the complete build-context digest."
