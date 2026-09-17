@@ -1,0 +1,54 @@
+{
+  "schema": "HIM_V2_CONTROLLED_TRAINING_EXECUTION_CONTRACT_V1",
+  "version": 1,
+  "state": "FROZEN",
+  "contractId": "HIM_V2_CONTROLLED_TRAINING_EXECUTION_CONTRACT_V1",
+  "repositoryHead": "ce7a0f63",
+  "mission6Decision": {
+    "id": "HIM_V2_IMPROVEMENT_DECISION_V1",
+    "digest": "d56b35af2ebc2f4ad9a1d17c7436d6503901b28bfd67d816299194172dab3406"
+  },
+  "corpus": {
+    "path": "data/knowledge/him/training/v2/v2-training-corpus.v1.json",
+    "digest": "00db71772e9b6ab3950d00a0805d7caef56bb1231eb576ac9ba14e6fdc8ab406",
+    "records": 319
+  },
+  "partition": {
+    "path": "data/knowledge/him/training/v2/v2-training-partition.v1.json",
+    "digest": "9b31f9d71b05e88c754fbe3f0e96a8910311cebbada3cf8d57d305ea2641a5e2"
+  },
+  "authorityPacket": {
+    "path": "data/knowledge/him/training/v2/v2-training-authority-packet.v1.json",
+    "digest": "ff88216ef2df4545d73a8410c46fcda35d70710706208fea3c8570fb3f0b75ed"
+  },
+  "runner": "training/him/src/him_trainer",
+  "baseModel": "FacebookAI/xlm-roberta-base",
+  "tokenizer": "FacebookAI/xlm-roberta-base",
+  "modelArchitecture": "V1_FROZEN_MULTI_HEAD",
+  "classMappings": {
+    "TARGET_KIND": "V1_FROZEN",
+    "CANDIDATE_COMPATIBILITY": [
+      "COMPATIBLE",
+      "REJECT"
+    ]
+  },
+  "objective": "CROSS_ENTROPY",
+  "multiObjectiveWeighting": "PRIMARY_1_SECONDARY_1",
+  "hyperparameters": "V1_FROZEN_CORE",
+  "initialization": "FRESH_BASE_MODEL_NO_CHECKPOINT",
+  "outputNamespace": "training/him/runtime/a100/v2-controlled-training-output",
+  "runtimeAuthority": {
+    "path": "training/him/runtime/a100/final-training-runtime-authority.v2.json",
+    "digest": "b7e4640ddf2ae719a418c8e435fd2c20a3a18a51dc46396be4dee244ab8fb24f"
+  },
+  "gpuAuthority": {
+    "gpu": "NVIDIA A100 80 GB",
+    "count": 1
+  },
+  "exactlyOnceGuard": {
+    "productiveTrainingInvocationCount": 1,
+    "duplicateLaunches": "FORBIDDEN"
+  },
+  "noExecutionPerformed": true,
+  "logicalDigest": "8bae33748ec51611c077eec72d2bb78a6c661915d60f888fb7b26db9fec54b28"
+}
