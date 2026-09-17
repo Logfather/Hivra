@@ -242,7 +242,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
     def test_manifest_binds_unchanged_him_trainer_package(self) -> None:
         package_rows = [row for row in self.manifest_rows if row[2] == "him-trainer-runtime-source"]
         self.assertEqual(len(package_rows), len(EXPECTED_RUNTIME_SOURCE_FILES))
-        self.assertEqual(len(package_rows), 36)
+        self.assertEqual(len(package_rows), 37)
         self.assertEqual(
             {row[0] for row in package_rows},
             EXPECTED_RUNTIME_SOURCE_FILES,
