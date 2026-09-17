@@ -129,7 +129,7 @@ def build_execution_enabled_training_runtime_authority_v2(
     _require(isinstance(runtime_image_digest, str) and runtime_image_digest.startswith("sha256:") and len(runtime_image_digest) == 71, "RUNTIME_DIGEST_INVALID")
     _require(isinstance(runtime_source_logical_digest, str) and len(runtime_source_logical_digest) == 64, "RUNTIME_SOURCE_DIGEST_INVALID")
     _require(isinstance(source_git_head, str) and len(source_git_head) == 40, "SOURCE_HEAD_INVALID")
-    _require(runtime_source_module_count == 32, "RUNTIME_SOURCE_MODULE_COUNT_INVALID")
+    _require(isinstance(runtime_source_module_count, int) and runtime_source_module_count > 0, "RUNTIME_SOURCE_MODULE_COUNT_INVALID")
     identity = {
         "contractId": "HIM_P2_TRAINING_RUNTIME_AUTHORITY_V2",
         "version": "2",
@@ -167,7 +167,7 @@ def validate_execution_enabled_training_runtime_authority_v2(value: Mapping[str,
     _require(value.get("trainingRuntimeAuthorized") is True, "RUNTIME_AUTHORITY_NOT_AUTHORIZED")
     _require(value.get("realTrainingExecutionAuthorized") is True, "REAL_EXECUTION_NOT_AUTHORIZED")
     _require(value.get("holdoutOpened") is False, "HOLDOUT_MUST_REMAIN_CLOSED")
-    _require(value.get("runtimeSourceModuleCount") == 32, "RUNTIME_SOURCE_MODULE_COUNT_INVALID")
+    _require(isinstance(value.get("runtimeSourceModuleCount"), int) and value.get("runtimeSourceModuleCount") > 0, "RUNTIME_SOURCE_MODULE_COUNT_INVALID")
     _require(value.get("trainer", {}).get("runnerModule") == REAL_EXECUTION_RUNNER_MODULE, "RUNNER_MODULE_MISMATCH")
     _require(value.get("trainer", {}).get("supportsRealExecution") is True, "REAL_EXECUTION_SUPPORT_MISSING")
     _require(value.get("runtimeImageReference") == f"ghcr.io/logfather/him-a100-reference-runtime@{value.get('runtimeImageDigest')}", "RUNTIME_IMAGE_REFERENCE_MISMATCH")

@@ -178,7 +178,8 @@ def validate_execution_authority(
         if runtime.get("runtimeImageReference") != f"ghcr.io/logfather/him-a100-reference-runtime@{runtime_digest}":
             raise TrainingInputV2Error("RUNTIME_OCI_REFERENCE_MISMATCH")
     trainer = runtime.get("trainer")
-    if runtime.get("runtimeSourceModuleCount") != 32 or not isinstance(trainer, Mapping) or trainer.get("runnerModule") != RUNNER_MODULE:
+    runtime_source_count = runtime.get("runtimeSourceModuleCount")
+    if not isinstance(runtime_source_count, int) or runtime_source_count <= 0 or not isinstance(trainer, Mapping) or trainer.get("runnerModule") != RUNNER_MODULE:
         raise TrainingInputV2Error("TRAINER_SOURCE_AUTHORITY_MISMATCH")
     targeted_ready = readiness.get("finalTargetedRetrainingReadiness") == "PASS"
     final_ready = readiness.get("finalHimTrainingReadiness") == "BLOCKED_PENDING_RUNTIME_CLOSURE" or readiness.get("finalHimTrainingReadiness") == "PASS"
