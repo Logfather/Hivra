@@ -546,7 +546,6 @@ def main(argv: list[str] | None = None) -> int:
                 runtime_authority_path=args.runtime_authority,
                 readiness_path=args.training_readiness,
                 expected_runtime_image_digest=args.runtime_image_digest,
-                execution_mode=args.execution_mode,
             )
         except (TrainingInputV2Error, OSError, UnicodeError, ValueError) as error:
             parser.error(str(error))
