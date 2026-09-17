@@ -1,0 +1,117 @@
+{
+  "schema": "HIM_V2_IMPROVEMENT_DECISION_AUTHORITY",
+  "version": 1,
+  "state": "FROZEN",
+  "decisionId": "HIM_V2_IMPROVEMENT_DECISION_V1",
+  "baseline": {
+    "path": "training/him/runtime/a100/final-evaluation-authority-v1/him-v1-final-evaluation-baseline.v1.json",
+    "sha256": "22987c3b22b6e02ac8aae5ffa9c93a55cfbbf6d7782cef0a7598407aeb80d4d5",
+    "metrics": {
+      "primaryAccuracy": 0.5,
+      "secondaryAccuracy": 0.0,
+      "jointAccuracy": 0.0,
+      "evaluationRecords": 6,
+      "scientificResult": "MIXED"
+    },
+    "holdout": "EXPOSED_CONSUMED"
+  },
+  "evidence": {
+    "rootCauseAudit": {
+      "D": "SUPPORTED",
+      "E": "NOT_SUPPORTED",
+      "I": "NOT_SUPPORTED",
+      "O": "CONFIRMED",
+      "P": "SUPPORTED",
+      "Q": "SUPPORTED",
+      "R": "SUPPORTED"
+    },
+    "candidateConditioning": "PASS_INPUT_PRESERVED_AND_CANDIDATE_SENSITIVE_HEAD_REPRESENTATION",
+    "v1Corpus": {
+      "fullRecords": 102,
+      "trainRecords": 83,
+      "validationRecords": 19,
+      "activeTrainSecondary": 73,
+      "trainCompatible": 52,
+      "trainReject": 21,
+      "sameBaseDifferentCandidatePairs": 0,
+      "directSecondaryContrastSupervision": false,
+      "labelFamilyConfounding": true
+    },
+    "combinedGroundTruth": {
+      "path": "data/knowledge/him/training/development/combined-multi-candidate-ground-truth-136.v1.json",
+      "logicalDigest": "8168bfd6fc4c1f375bd5509cd084a4974f0ab118907bcbdf46bd0d5faf3a0c20",
+      "relations": 136,
+      "compatible": 124,
+      "reject": 12,
+      "unresolved": 0,
+      "baseGroups": 47,
+      "mixedGroups": 7
+    },
+    "developmentSet": {
+      "path": "data/knowledge/him/training/development/development-set.v1.json",
+      "logicalDigest": "808073f0f1475369143bee500003404ada224d21c585d55b05d8eb98292e98b5",
+      "relations": 101,
+      "baseGroups": 35,
+      "compatible": 94,
+      "reject": 7
+    },
+    "validationSet": {
+      "path": "data/knowledge/him/training/development/validation-set.v1.json",
+      "logicalDigest": "c8efcaeac0479c0f6827c2cf4ed784958239b88087ff644a3e0e200e81b64512",
+      "relations": 35,
+      "baseGroups": 12,
+      "compatible": 30,
+      "reject": 5,
+      "coverageLimitation": "BATCH_2_ONLY"
+    }
+  },
+  "finding": {
+    "hypotheses": {
+      "H1_INPUT_ARCHITECTURE_REPAIR": "NOT_SUPPORTED",
+      "H2_MODEL_ARCHITECTURE_CHANGE": "UNRESOLVED_NOT_REQUIRED",
+      "H3_OBJECTIVE_CHANGE": "UNRESOLVED_NOT_REQUIRED",
+      "H4_HYPERPARAMETER_CHANGE": "UNRESOLVED_NOT_REQUIRED",
+      "H5_TRAINING_CORPUS_SUPERVISION_REDESIGN": "SUPPORTED"
+    },
+    "primaryHypothesis": "CANDIDATE_SENSITIVE_CONTRASTIVE_TRAINING_SUPERVISION_AND_CORPUS_REDESIGN",
+    "rationale": "Candidate information survives the pipeline and reaches a candidate-sensitive head, while V1 lacks same-base/different-candidate contrast supervision and shows family/context confounding with hard-negative scarcity."
+  },
+  "changeScope": {
+    "inputArchitecture": "HOLD_CONSTANT",
+    "modelArchitecture": "HOLD_CONSTANT",
+    "objective": "HOLD_CONSTANT_CROSS_ENTROPY",
+    "classMapping": "HOLD_CONSTANT",
+    "hyperparameters": "HOLD_CONSTANT",
+    "trainingCorpusAndSupervision": "CHANGE_IN_V2",
+    "baseModel": "FacebookAI/xlm-roberta-base",
+    "tokenizer": "HOLD_CONSTANT"
+  },
+  "v2TrainingDataRequirements": {
+    "mustAdd": "same-base/different-candidate contrast groups with human adjudication; hard negatives that are plausible and retrieval-relevant but REJECT; hard positives that are nontrivial contextual variants but COMPATIBLE",
+    "mustPreserve": "source-faithful provenance, direct/derived distinction, deterministic schema validation",
+    "ratioPolicy": "NOT_FROZEN_IN_MISSION_6",
+    "reusePolicy": "development_and_validation_136_records_MUST_NOT_BE_USED_FOR_V2_TRAINING"
+  },
+  "evaluationPlan": {
+    "development": "use frozen development-set.v1 for model selection and diagnostics only",
+    "validation": "use frozen validation-set.v1 for locked validation only; Batch-2-only limitation remains",
+    "finalEvaluation": "preserve V1 final V3 holdout exclusion and run a new separately frozen final evaluation after V2 training",
+    "successCriterion": "compare candidate compatibility and joint metrics against the V1 baseline; no threshold is invented here"
+  },
+  "nextMission": "MISSION_7_HIM_V2_CONTRASTIVE_TRAINING_EVIDENCE_CONSTRUCTION",
+  "limitations": [
+    "V1 final evaluation has only 6 records",
+    "V1 secondary accuracy is 0.0",
+    "combined ground truth has 124 COMPATIBLE and 12 REJECT relations",
+    "only 7 of 47 base groups are mixed",
+    "model-head and optimization effects are not isolated by existing evidence"
+  ],
+  "authorityRules": {
+    "trainingImplemented": false,
+    "modelLoaded": false,
+    "holdoutAccessed": false,
+    "corpusConstructed": false,
+    "idempotenceRequired": true
+  },
+  "logicalDigest": "d56b35af2ebc2f4ad9a1d17c7436d6503901b28bfd67d816299194172dab3406"
+}
