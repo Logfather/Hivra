@@ -530,13 +530,12 @@ def execute_authorized_p2_v2(
 
 def future_training_command() -> tuple[str, ...]:
     return (
-        "python", "-m", RUNNER_MODULE, "--execute",
-        "--corpus-v2", "<authoritative corpus.v2.json>",
-        "--partition-v2", "<authoritative partition.v2.json>",
-        "--batch-authority", "<updated authorized batch authority>",
-        "--training-input-authority", "<training-input-authority.v2.json>",
-        "--runtime-authority", "<updated training-runtime-authority.v2.json>",
-        "--output-root", "<fresh immutable p2-v2 qualification output root>",
+        "/opt/him/runtime/bin/python", "-m", RUNNER_MODULE, "--root", ".",
+        "--execute", "--execution-preflight",
+        "--runtime-authority", "data/knowledge/him/training/p2/canonical-catalog-expansion/v2/executable-bundle-v2/training-runtime-authority.v2.json",
+        "--training-readiness", "data/knowledge/him/training/p2/canonical-catalog-expansion/v2/executable-bundle-v2/training-readiness.v2.json",
+        "--runtime-image-digest", "sha256:6d0cd017dfc5e34451a365f2e495cf347e7a46a1261ce2a74cee00f5a3df25f2",
+        "--output-root", "training/him/runtime/a100/p2-v2-training-output",
     )
 
 
