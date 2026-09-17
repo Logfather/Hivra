@@ -1,0 +1,1995 @@
+{
+  "bases": [
+    {
+      "baseId": "off-base:aal",
+      "baseNormalizedTerm": "aal",
+      "baseTerm": "Aal",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:aal",
+          "baseNormalizedTerm": "aal",
+          "baseTerm": "Aal",
+          "candidateId": "4003011281365",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Aal",
+          "retrievalRank": -22.17102460143372,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4003011281365",
+            "rowOrdinal": 2633336
+          },
+          "sourceRecordReference": "off:product:row:2633336:code:4003011281365"
+        },
+        {
+          "baseId": "off-base:aal",
+          "baseNormalizedTerm": "aal",
+          "baseTerm": "Aal",
+          "candidateId": "00003295",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Aal",
+          "retrievalRank": -21.57131439096591,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "00003295",
+            "rowOrdinal": 3356294
+          },
+          "sourceRecordReference": "off:product:row:3356294:code:00003295"
+        },
+        {
+          "baseId": "off-base:aal",
+          "baseNormalizedTerm": "aal",
+          "baseTerm": "Aal",
+          "candidateId": "4260235089959",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Aal",
+          "retrievalRank": -20.569797670746716,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4260235089959",
+            "rowOrdinal": 1638269
+          },
+          "sourceRecordReference": "off:product:row:1638269:code:4260235089959"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4003011281365",
+        "rowOrdinal": 2633336
+      },
+      "sourceRecordReference": "off:product:row:2633336:code:4003011281365"
+    },
+    {
+      "baseId": "off-base:abendbrei",
+      "baseNormalizedTerm": "abendbrei",
+      "baseTerm": "Abendbrei",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:abendbrei",
+          "baseNormalizedTerm": "abendbrei",
+          "baseTerm": "Abendbrei",
+          "candidateId": "4018852028017",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Abendbrei",
+          "retrievalRank": -20.84877674633236,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4018852028017",
+            "rowOrdinal": 1170162
+          },
+          "sourceRecordReference": "off:product:row:1170162:code:4018852028017"
+        },
+        {
+          "baseId": "off-base:abendbrei",
+          "baseNormalizedTerm": "abendbrei",
+          "baseTerm": "Abendbrei",
+          "candidateId": "4260618521212",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Abendbrei",
+          "retrievalRank": -20.763647115084673,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4260618521212",
+            "rowOrdinal": 1690721
+          },
+          "sourceRecordReference": "off:product:row:1690721:code:4260618521212"
+        },
+        {
+          "baseId": "off-base:abendbrei",
+          "baseNormalizedTerm": "abendbrei",
+          "baseTerm": "Abendbrei",
+          "candidateId": "4058172623714",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Abendbrei",
+          "retrievalRank": -20.53014807629758,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4058172623714",
+            "rowOrdinal": 1851987
+          },
+          "sourceRecordReference": "off:product:row:1851987:code:4058172623714"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4018852028017",
+        "rowOrdinal": 1170162
+      },
+      "sourceRecordReference": "off:product:row:1170162:code:4018852028017"
+    },
+    {
+      "baseId": "off-base:adzukibohnen",
+      "baseNormalizedTerm": "adzukibohnen",
+      "baseTerm": "Adzukibohnen",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:adzukibohnen",
+          "baseNormalizedTerm": "adzukibohnen",
+          "baseTerm": "Adzukibohnen",
+          "candidateId": "4250598700059",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Adzukibohnen",
+          "retrievalRank": -22.634636478938102,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4250598700059",
+            "rowOrdinal": 3396340
+          },
+          "sourceRecordReference": "off:product:row:3396340:code:4250598700059"
+        },
+        {
+          "baseId": "off-base:adzukibohnen",
+          "baseNormalizedTerm": "adzukibohnen",
+          "baseTerm": "Adzukibohnen",
+          "candidateId": "0660357742819",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Adzukibohnen",
+          "retrievalRank": -22.38152031674795,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "0660357742819",
+            "rowOrdinal": 4294989
+          },
+          "sourceRecordReference": "off:product:row:4294989:code:0660357742819"
+        },
+        {
+          "baseId": "off-base:adzukibohnen",
+          "baseNormalizedTerm": "adzukibohnen",
+          "baseTerm": "Adzukibohnen",
+          "candidateId": "5017689693947",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Adzukibohnen",
+          "retrievalRank": -22.01228541363053,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "5017689693947",
+            "rowOrdinal": 2064225
+          },
+          "sourceRecordReference": "off:product:row:2064225:code:5017689693947"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4250598700059",
+        "rowOrdinal": 3396340
+      },
+      "sourceRecordReference": "off:product:row:3396340:code:4250598700059"
+    },
+    {
+      "baseId": "off-base:agar-agar",
+      "baseNormalizedTerm": "agar-agar",
+      "baseTerm": "Agar-Agar",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:agar-agar",
+          "baseNormalizedTerm": "agar-agar",
+          "baseTerm": "Agar-Agar",
+          "candidateId": "9317127061328",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Agar-Agar",
+          "retrievalRank": -14.094776752050159,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "9317127061328",
+            "rowOrdinal": 4241654
+          },
+          "sourceRecordReference": "off:product:row:4241654:code:9317127061328"
+        },
+        {
+          "baseId": "off-base:agar-agar",
+          "baseNormalizedTerm": "agar-agar",
+          "baseTerm": "Agar-Agar",
+          "candidateId": "8003600019450",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Agar-Agar",
+          "retrievalRank": -13.689220180957015,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "8003600019450",
+            "rowOrdinal": 1332082
+          },
+          "sourceRecordReference": "off:product:row:1332082:code:8003600019450"
+        },
+        {
+          "baseId": "off-base:agar-agar",
+          "baseNormalizedTerm": "agar-agar",
+          "baseTerm": "Agar-Agar",
+          "candidateId": "4035731805552",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Agar-Agar",
+          "retrievalRank": -13.634895537594033,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4035731805552",
+            "rowOrdinal": 2590742
+          },
+          "sourceRecordReference": "off:product:row:2590742:code:4035731805552"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "9317127061328",
+        "rowOrdinal": 4241654
+      },
+      "sourceRecordReference": "off:product:row:4241654:code:9317127061328"
+    },
+    {
+      "baseId": "off-base:agavendicksaft",
+      "baseNormalizedTerm": "agavendicksaft",
+      "baseTerm": "Agavendicksaft",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:agavendicksaft",
+          "baseNormalizedTerm": "agavendicksaft",
+          "baseTerm": "Agavendicksaft",
+          "candidateId": "4305615982557",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Agavendicksaft",
+          "retrievalRank": -15.863004731407196,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4305615982557",
+            "rowOrdinal": 2751821
+          },
+          "sourceRecordReference": "off:product:row:2751821:code:4305615982557"
+        },
+        {
+          "baseId": "off-base:agavendicksaft",
+          "baseNormalizedTerm": "agavendicksaft",
+          "baseTerm": "Agavendicksaft",
+          "candidateId": "4250780307530",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Agavendicksaft",
+          "retrievalRank": -15.763530802626331,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4250780307530",
+            "rowOrdinal": 1579861
+          },
+          "sourceRecordReference": "off:product:row:1579861:code:4250780307530"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4305615982557",
+        "rowOrdinal": 2751821
+      },
+      "sourceRecordReference": "off:product:row:2751821:code:4305615982557"
+    },
+    {
+      "baseId": "off-base:ahornsirup",
+      "baseNormalizedTerm": "ahornsirup",
+      "baseTerm": "Ahornsirup",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:ahornsirup",
+          "baseNormalizedTerm": "ahornsirup",
+          "baseTerm": "Ahornsirup",
+          "candidateId": "22048776",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Ahornsirup",
+          "retrievalRank": -18.485392784446308,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "22048776",
+            "rowOrdinal": 3021037
+          },
+          "sourceRecordReference": "off:product:row:3021037:code:22048776"
+        },
+        {
+          "baseId": "off-base:ahornsirup",
+          "baseNormalizedTerm": "ahornsirup",
+          "baseTerm": "Ahornsirup",
+          "candidateId": "4061462258879",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Ahornsirup",
+          "retrievalRank": -18.37650836847424,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4061462258879",
+            "rowOrdinal": 3507292
+          },
+          "sourceRecordReference": "off:product:row:3507292:code:4061462258879"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "22048776",
+        "rowOrdinal": 3021037
+      },
+      "sourceRecordReference": "off:product:row:3021037:code:22048776"
+    },
+    {
+      "baseId": "off-base:aioli",
+      "baseNormalizedTerm": "aioli",
+      "baseTerm": "Aioli",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:aioli",
+          "baseNormalizedTerm": "aioli",
+          "baseTerm": "Aioli",
+          "candidateId": "0000200486210",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Aioli",
+          "retrievalRank": -15.93344967401553,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "0000200486210",
+            "rowOrdinal": 4554194
+          },
+          "sourceRecordReference": "off:product:row:4554194:code:0000200486210"
+        },
+        {
+          "baseId": "off-base:aioli",
+          "baseNormalizedTerm": "aioli",
+          "baseTerm": "Aioli",
+          "candidateId": "06614377",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Aioli",
+          "retrievalRank": -15.93344967401553,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "06614377",
+            "rowOrdinal": 4563055
+          },
+          "sourceRecordReference": "off:product:row:4563055:code:06614377"
+        },
+        {
+          "baseId": "off-base:aioli",
+          "baseNormalizedTerm": "aioli",
+          "baseTerm": "Aioli",
+          "candidateId": "00217314",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Aioli",
+          "retrievalRank": -15.809788224387164,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "00217314",
+            "rowOrdinal": 4562953
+          },
+          "sourceRecordReference": "off:product:row:4562953:code:00217314"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "0000200486210",
+        "rowOrdinal": 4554194
+      },
+      "sourceRecordReference": "off:product:row:4554194:code:0000200486210"
+    },
+    {
+      "baseId": "off-base:ajvar",
+      "baseNormalizedTerm": "ajvar",
+      "baseTerm": "Ajvar",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:ajvar",
+          "baseNormalizedTerm": "ajvar",
+          "baseTerm": "Ajvar",
+          "candidateId": "4102590034826",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Ajvar",
+          "retrievalRank": -17.358030151045,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4102590034826",
+            "rowOrdinal": 3241388
+          },
+          "sourceRecordReference": "off:product:row:3241388:code:4102590034826"
+        },
+        {
+          "baseId": "off-base:ajvar",
+          "baseNormalizedTerm": "ajvar",
+          "baseTerm": "Ajvar",
+          "candidateId": "4032549040168",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Ajvar",
+          "retrievalRank": -16.7204744044352,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4032549040168",
+            "rowOrdinal": 3066143
+          },
+          "sourceRecordReference": "off:product:row:3066143:code:4032549040168"
+        },
+        {
+          "baseId": "off-base:ajvar",
+          "baseNormalizedTerm": "ajvar",
+          "baseTerm": "Ajvar",
+          "candidateId": "22389503",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Ajvar",
+          "retrievalRank": -16.656336258061646,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "22389503",
+            "rowOrdinal": 3318602
+          },
+          "sourceRecordReference": "off:product:row:3318602:code:22389503"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4102590034826",
+        "rowOrdinal": 3241388
+      },
+      "sourceRecordReference": "off:product:row:3241388:code:4102590034826"
+    },
+    {
+      "baseId": "off-base:akazienhonig",
+      "baseNormalizedTerm": "akazienhonig",
+      "baseTerm": "Akazienhonig",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:akazienhonig",
+          "baseNormalizedTerm": "akazienhonig",
+          "baseTerm": "Akazienhonig",
+          "candidateId": "4334011118116",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Akazienhonig",
+          "retrievalRank": -19.73614419667288,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4334011118116",
+            "rowOrdinal": 1155160
+          },
+          "sourceRecordReference": "off:product:row:1155160:code:4334011118116"
+        },
+        {
+          "baseId": "off-base:akazienhonig",
+          "baseNormalizedTerm": "akazienhonig",
+          "baseTerm": "Akazienhonig",
+          "candidateId": "4280001397965",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Akazienhonig",
+          "retrievalRank": -19.73614419667288,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4280001397965",
+            "rowOrdinal": 3727005
+          },
+          "sourceRecordReference": "off:product:row:3727005:code:4280001397965"
+        },
+        {
+          "baseId": "off-base:akazienhonig",
+          "baseNormalizedTerm": "akazienhonig",
+          "baseTerm": "Akazienhonig",
+          "candidateId": "4260093914059",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Akazienhonig",
+          "retrievalRank": -19.73614419667288,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4260093914059",
+            "rowOrdinal": 4416385
+          },
+          "sourceRecordReference": "off:product:row:4416385:code:4260093914059"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4334011118116",
+        "rowOrdinal": 1155160
+      },
+      "sourceRecordReference": "off:product:row:1155160:code:4334011118116"
+    },
+    {
+      "baseId": "off-base:altbier",
+      "baseNormalizedTerm": "altbier",
+      "baseTerm": "Altbier",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:altbier",
+          "baseNormalizedTerm": "altbier",
+          "baseTerm": "Altbier",
+          "candidateId": "4260484890252",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Altbier",
+          "retrievalRank": -22.831097593410295,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4260484890252",
+            "rowOrdinal": 2847433
+          },
+          "sourceRecordReference": "off:product:row:2847433:code:4260484890252"
+        },
+        {
+          "baseId": "off-base:altbier",
+          "baseNormalizedTerm": "altbier",
+          "baseTerm": "Altbier",
+          "candidateId": "4260257740029",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Altbier",
+          "retrievalRank": -22.34751037482231,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4260257740029",
+            "rowOrdinal": 4510564
+          },
+          "sourceRecordReference": "off:product:row:4510564:code:4260257740029"
+        },
+        {
+          "baseId": "off-base:altbier",
+          "baseNormalizedTerm": "altbier",
+          "baseTerm": "Altbier",
+          "candidateId": "4041131001203",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Altbier",
+          "retrievalRank": -21.223660450032728,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4041131001203",
+            "rowOrdinal": 2214981
+          },
+          "sourceRecordReference": "off:product:row:2214981:code:4041131001203"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4260484890252",
+        "rowOrdinal": 2847433
+      },
+      "sourceRecordReference": "off:product:row:2847433:code:4260484890252"
+    },
+    {
+      "baseId": "off-base:amaranth",
+      "baseNormalizedTerm": "amaranth",
+      "baseTerm": "Amaranth",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:amaranth",
+          "baseNormalizedTerm": "amaranth",
+          "baseTerm": "Amaranth",
+          "candidateId": "20897796",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Amaranth",
+          "retrievalRank": -14.644911373552778,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "20897796",
+            "rowOrdinal": 771105
+          },
+          "sourceRecordReference": "off:product:row:771105:code:20897796"
+        },
+        {
+          "baseId": "off-base:amaranth",
+          "baseNormalizedTerm": "amaranth",
+          "baseTerm": "Amaranth",
+          "candidateId": "0041224721661",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Amaranth",
+          "retrievalRank": -14.557620184177624,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "0041224721661",
+            "rowOrdinal": 42895
+          },
+          "sourceRecordReference": "off:product:row:42895:code:0041224721661"
+        },
+        {
+          "baseId": "off-base:amaranth",
+          "baseNormalizedTerm": "amaranth",
+          "baseTerm": "Amaranth",
+          "candidateId": "7613312456163",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Amaranth",
+          "retrievalRank": -14.421410083609686,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "7613312456163",
+            "rowOrdinal": 3524139
+          },
+          "sourceRecordReference": "off:product:row:3524139:code:7613312456163"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "20897796",
+        "rowOrdinal": 771105
+      },
+      "sourceRecordReference": "off:product:row:771105:code:20897796"
+    },
+    {
+      "baseId": "off-base:amarettini",
+      "baseNormalizedTerm": "amarettini",
+      "baseTerm": "Amarettini",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:amarettini",
+          "baseNormalizedTerm": "amarettini",
+          "baseTerm": "Amarettini",
+          "candidateId": "4305720000634",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Amarettini",
+          "retrievalRank": -21.29014007640381,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4305720000634",
+            "rowOrdinal": 1668684
+          },
+          "sourceRecordReference": "off:product:row:1668684:code:4305720000634"
+        },
+        {
+          "baseId": "off-base:amarettini",
+          "baseNormalizedTerm": "amarettini",
+          "baseTerm": "Amarettini",
+          "candidateId": "8008560003884",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Amarettini",
+          "retrievalRank": -21.29014007640381,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "8008560003884",
+            "rowOrdinal": 4453698
+          },
+          "sourceRecordReference": "off:product:row:4453698:code:8008560003884"
+        },
+        {
+          "baseId": "off-base:amarettini",
+          "baseNormalizedTerm": "amarettini",
+          "baseTerm": "Amarettini",
+          "candidateId": "4035532692405",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Amarettini",
+          "retrievalRank": -20.933018466323308,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4035532692405",
+            "rowOrdinal": 2486205
+          },
+          "sourceRecordReference": "off:product:row:2486205:code:4035532692405"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4305720000634",
+        "rowOrdinal": 1668684
+      },
+      "sourceRecordReference": "off:product:row:1668684:code:4305720000634"
+    },
+    {
+      "baseId": "off-base:amerikaner",
+      "baseNormalizedTerm": "amerikaner",
+      "baseTerm": "Amerikaner",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:amerikaner",
+          "baseNormalizedTerm": "amerikaner",
+          "baseTerm": "Amerikaner",
+          "candidateId": "2003291783018",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Amerikaner",
+          "retrievalRank": -22.294990468174287,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "2003291783018",
+            "rowOrdinal": 2154977
+          },
+          "sourceRecordReference": "off:product:row:2154977:code:2003291783018"
+        },
+        {
+          "baseId": "off-base:amerikaner",
+          "baseNormalizedTerm": "amerikaner",
+          "baseTerm": "Amerikaner",
+          "candidateId": "2070000195592",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Amerikaner",
+          "retrievalRank": -22.294990468174287,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "2070000195592",
+            "rowOrdinal": 2277710
+          },
+          "sourceRecordReference": "off:product:row:2277710:code:2070000195592"
+        },
+        {
+          "baseId": "off-base:amerikaner",
+          "baseNormalizedTerm": "amerikaner",
+          "baseTerm": "Amerikaner",
+          "candidateId": "2070000195813",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Amerikaner",
+          "retrievalRank": -22.294990468174287,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "2070000195813",
+            "rowOrdinal": 2287615
+          },
+          "sourceRecordReference": "off:product:row:2287615:code:2070000195813"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "2003291783018",
+        "rowOrdinal": 2154977
+      },
+      "sourceRecordReference": "off:product:row:2154977:code:2003291783018"
+    },
+    {
+      "baseId": "off-base:ananas",
+      "baseNormalizedTerm": "ananas",
+      "baseTerm": "Ananas",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:ananas",
+          "baseNormalizedTerm": "ananas",
+          "baseTerm": "Ananas",
+          "candidateId": "4311501425558",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Ananas",
+          "retrievalRank": -11.986229999015995,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4311501425558",
+            "rowOrdinal": 452093
+          },
+          "sourceRecordReference": "off:product:row:452093:code:4311501425558"
+        },
+        {
+          "baseId": "off-base:ananas",
+          "baseNormalizedTerm": "ananas",
+          "baseTerm": "Ananas",
+          "candidateId": "6430063960333",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Ananas",
+          "retrievalRank": -11.844413789223916,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "6430063960333",
+            "rowOrdinal": 2920687
+          },
+          "sourceRecordReference": "off:product:row:2920687:code:6430063960333"
+        },
+        {
+          "baseId": "off-base:ananas",
+          "baseNormalizedTerm": "ananas",
+          "baseTerm": "Ananas",
+          "candidateId": "4068706544590",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Ananas",
+          "retrievalRank": -11.653539583994537,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4068706544590",
+            "rowOrdinal": 4067116
+          },
+          "sourceRecordReference": "off:product:row:4067116:code:4068706544590"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4311501425558",
+        "rowOrdinal": 452093
+      },
+      "sourceRecordReference": "off:product:row:452093:code:4311501425558"
+    },
+    {
+      "baseId": "off-base:ananassaft",
+      "baseNormalizedTerm": "ananassaft",
+      "baseTerm": "Ananassaft",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:ananassaft",
+          "baseNormalizedTerm": "ananassaft",
+          "baseTerm": "Ananassaft",
+          "candidateId": "4026939000238",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Ananassaft",
+          "retrievalRank": -16.848155185384137,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4026939000238",
+            "rowOrdinal": 1560765
+          },
+          "sourceRecordReference": "off:product:row:1560765:code:4026939000238"
+        },
+        {
+          "baseId": "off-base:ananassaft",
+          "baseNormalizedTerm": "ananassaft",
+          "baseTerm": "Ananassaft",
+          "candidateId": "4021375070340",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Ananassaft",
+          "retrievalRank": -16.848155185384137,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4021375070340",
+            "rowOrdinal": 1620216
+          },
+          "sourceRecordReference": "off:product:row:1620216:code:4021375070340"
+        },
+        {
+          "baseId": "off-base:ananassaft",
+          "baseNormalizedTerm": "ananassaft",
+          "baseTerm": "Ananassaft",
+          "candidateId": "4029594001343",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Ananassaft",
+          "retrievalRank": -16.848155185384137,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4029594001343",
+            "rowOrdinal": 1929385
+          },
+          "sourceRecordReference": "off:product:row:1929385:code:4029594001343"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4026939000238",
+        "rowOrdinal": 1560765
+      },
+      "sourceRecordReference": "off:product:row:1560765:code:4026939000238"
+    },
+    {
+      "baseId": "off-base:anfangsmilch",
+      "baseNormalizedTerm": "anfangsmilch",
+      "baseTerm": "Anfangsmilch",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:anfangsmilch",
+          "baseNormalizedTerm": "anfangsmilch",
+          "baseTerm": "Anfangsmilch",
+          "candidateId": "4251099702931",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Anfangsmilch",
+          "retrievalRank": -20.354379889739512,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4251099702931",
+            "rowOrdinal": 1761918
+          },
+          "sourceRecordReference": "off:product:row:1761918:code:4251099702931"
+        },
+        {
+          "baseId": "off-base:anfangsmilch",
+          "baseNormalizedTerm": "anfangsmilch",
+          "baseTerm": "Anfangsmilch",
+          "candidateId": "4251099516170",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Anfangsmilch",
+          "retrievalRank": -20.12548329402013,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4251099516170",
+            "rowOrdinal": 1536299
+          },
+          "sourceRecordReference": "off:product:row:1536299:code:4251099516170"
+        },
+        {
+          "baseId": "off-base:anfangsmilch",
+          "baseNormalizedTerm": "anfangsmilch",
+          "baseTerm": "Anfangsmilch",
+          "candidateId": "4251099720140",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Anfangsmilch",
+          "retrievalRank": -20.12548329402013,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4251099720140",
+            "rowOrdinal": 1603417
+          },
+          "sourceRecordReference": "off:product:row:1603417:code:4251099720140"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4251099702931",
+        "rowOrdinal": 1761918
+      },
+      "sourceRecordReference": "off:product:row:1761918:code:4251099702931"
+    },
+    {
+      "baseId": "off-base:anis",
+      "baseNormalizedTerm": "anis",
+      "baseTerm": "Anis",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:anis",
+          "baseNormalizedTerm": "anis",
+          "baseTerm": "Anis",
+          "candidateId": "4061458000888",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Anis",
+          "retrievalRank": -14.17932412926713,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4061458000888",
+            "rowOrdinal": 1542840
+          },
+          "sourceRecordReference": "off:product:row:1542840:code:4061458000888"
+        },
+        {
+          "baseId": "off-base:anis",
+          "baseNormalizedTerm": "anis",
+          "baseTerm": "Anis",
+          "candidateId": "8413700001260",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Anis",
+          "retrievalRank": -13.970865847845706,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "8413700001260",
+            "rowOrdinal": 2335265
+          },
+          "sourceRecordReference": "off:product:row:2335265:code:8413700001260"
+        },
+        {
+          "baseId": "off-base:anis",
+          "baseNormalizedTerm": "anis",
+          "baseTerm": "Anis",
+          "candidateId": "40526744",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Anis",
+          "retrievalRank": -13.916860620046311,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "40526744",
+            "rowOrdinal": 1101451
+          },
+          "sourceRecordReference": "off:product:row:1101451:code:40526744"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4061458000888",
+        "rowOrdinal": 1542840
+      },
+      "sourceRecordReference": "off:product:row:1542840:code:4061458000888"
+    },
+    {
+      "baseId": "off-base:apfelchips",
+      "baseNormalizedTerm": "apfelchips",
+      "baseTerm": "Apfelchips",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:apfelchips",
+          "baseNormalizedTerm": "apfelchips",
+          "baseTerm": "Apfelchips",
+          "candidateId": "4068706319136",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelchips",
+          "retrievalRank": -20.960244504670037,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4068706319136",
+            "rowOrdinal": 3972134
+          },
+          "sourceRecordReference": "off:product:row:3972134:code:4068706319136"
+        },
+        {
+          "baseId": "off-base:apfelchips",
+          "baseNormalizedTerm": "apfelchips",
+          "baseTerm": "Apfelchips",
+          "candidateId": "4337256610339",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelchips",
+          "retrievalRank": -20.718053724914743,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4337256610339",
+            "rowOrdinal": 2861045
+          },
+          "sourceRecordReference": "off:product:row:2861045:code:4337256610339"
+        },
+        {
+          "baseId": "off-base:apfelchips",
+          "baseNormalizedTerm": "apfelchips",
+          "baseTerm": "Apfelchips",
+          "candidateId": "9100000019833",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelchips",
+          "retrievalRank": -20.713099201044454,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "9100000019833",
+            "rowOrdinal": 3504338
+          },
+          "sourceRecordReference": "off:product:row:3504338:code:9100000019833"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4068706319136",
+        "rowOrdinal": 3972134
+      },
+      "sourceRecordReference": "off:product:row:3972134:code:4068706319136"
+    },
+    {
+      "baseId": "off-base:apfelessig",
+      "baseNormalizedTerm": "apfelessig",
+      "baseTerm": "Apfelessig",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:apfelessig",
+          "baseNormalizedTerm": "apfelessig",
+          "baseTerm": "Apfelessig",
+          "candidateId": "9120046860725",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelessig",
+          "retrievalRank": -16.129309968167558,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "9120046860725",
+            "rowOrdinal": 3585731
+          },
+          "sourceRecordReference": "off:product:row:3585731:code:9120046860725"
+        },
+        {
+          "baseId": "off-base:apfelessig",
+          "baseNormalizedTerm": "apfelessig",
+          "baseTerm": "Apfelessig",
+          "candidateId": "4061458092944",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelessig",
+          "retrievalRank": -16.04004538966332,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4061458092944",
+            "rowOrdinal": 1090055
+          },
+          "sourceRecordReference": "off:product:row:1090055:code:4061458092944"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "9120046860725",
+        "rowOrdinal": 3585731
+      },
+      "sourceRecordReference": "off:product:row:3585731:code:9120046860725"
+    },
+    {
+      "baseId": "off-base:apfelkompott",
+      "baseNormalizedTerm": "apfelkompott",
+      "baseTerm": "Apfelkompott",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:apfelkompott",
+          "baseNormalizedTerm": "apfelkompott",
+          "baseTerm": "Apfelkompott",
+          "candidateId": "40397184",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelkompott",
+          "retrievalRank": -21.671444024770125,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "40397184",
+            "rowOrdinal": 1095061
+          },
+          "sourceRecordReference": "off:product:row:1095061:code:40397184"
+        },
+        {
+          "baseId": "off-base:apfelkompott",
+          "baseNormalizedTerm": "apfelkompott",
+          "baseTerm": "Apfelkompott",
+          "candidateId": "4334011201887",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelkompott",
+          "retrievalRank": -20.93406310286467,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4334011201887",
+            "rowOrdinal": 3683172
+          },
+          "sourceRecordReference": "off:product:row:3683172:code:4334011201887"
+        },
+        {
+          "baseId": "off-base:apfelkompott",
+          "baseNormalizedTerm": "apfelkompott",
+          "baseTerm": "Apfelkompott",
+          "candidateId": "4306205011725",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelkompott",
+          "retrievalRank": -20.81701351568499,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4306205011725",
+            "rowOrdinal": 2125491
+          },
+          "sourceRecordReference": "off:product:row:2125491:code:4306205011725"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "40397184",
+        "rowOrdinal": 1095061
+      },
+      "sourceRecordReference": "off:product:row:1095061:code:40397184"
+    },
+    {
+      "baseId": "off-base:apfelkuchen",
+      "baseNormalizedTerm": "apfelkuchen",
+      "baseTerm": "Apfelkuchen",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:apfelkuchen",
+          "baseNormalizedTerm": "apfelkuchen",
+          "baseTerm": "Apfelkuchen",
+          "candidateId": "4260283505470",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelkuchen",
+          "retrievalRank": -20.789273668231168,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4260283505470",
+            "rowOrdinal": 3538872
+          },
+          "sourceRecordReference": "off:product:row:3538872:code:4260283505470"
+        },
+        {
+          "baseId": "off-base:apfelkuchen",
+          "baseNormalizedTerm": "apfelkuchen",
+          "baseTerm": "Apfelkuchen",
+          "candidateId": "4260347896346",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelkuchen",
+          "retrievalRank": -20.789273668231168,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4260347896346",
+            "rowOrdinal": 3642184
+          },
+          "sourceRecordReference": "off:product:row:3642184:code:4260347896346"
+        },
+        {
+          "baseId": "off-base:apfelkuchen",
+          "baseNormalizedTerm": "apfelkuchen",
+          "baseTerm": "Apfelkuchen",
+          "candidateId": "26165189",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelkuchen",
+          "retrievalRank": -20.789273668231168,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "26165189",
+            "rowOrdinal": 4214922
+          },
+          "sourceRecordReference": "off:product:row:4214922:code:26165189"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4260283505470",
+        "rowOrdinal": 3538872
+      },
+      "sourceRecordReference": "off:product:row:3538872:code:4260283505470"
+    },
+    {
+      "baseId": "off-base:apfelmus",
+      "baseNormalizedTerm": "apfelmus",
+      "baseTerm": "Apfelmus",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:apfelmus",
+          "baseNormalizedTerm": "apfelmus",
+          "baseTerm": "Apfelmus",
+          "candidateId": "9008281006460",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelmus",
+          "retrievalRank": -17.02094988084031,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "9008281006460",
+            "rowOrdinal": 2010269
+          },
+          "sourceRecordReference": "off:product:row:2010269:code:9008281006460"
+        },
+        {
+          "baseId": "off-base:apfelmus",
+          "baseNormalizedTerm": "apfelmus",
+          "baseTerm": "Apfelmus",
+          "candidateId": "4061461019716",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelmus",
+          "retrievalRank": -17.02094988084031,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4061461019716",
+            "rowOrdinal": 4104530
+          },
+          "sourceRecordReference": "off:product:row:4104530:code:4061461019716"
+        },
+        {
+          "baseId": "off-base:apfelmus",
+          "baseNormalizedTerm": "apfelmus",
+          "baseTerm": "Apfelmus",
+          "candidateId": "4070308036755",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelmus",
+          "retrievalRank": -16.955407725713254,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4070308036755",
+            "rowOrdinal": 4082661
+          },
+          "sourceRecordReference": "off:product:row:4082661:code:4070308036755"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "9008281006460",
+        "rowOrdinal": 2010269
+      },
+      "sourceRecordReference": "off:product:row:2010269:code:9008281006460"
+    },
+    {
+      "baseId": "off-base:apfelsaft",
+      "baseNormalizedTerm": "apfelsaft",
+      "baseTerm": "Apfelsaft",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:apfelsaft",
+          "baseNormalizedTerm": "apfelsaft",
+          "baseTerm": "Apfelsaft",
+          "candidateId": "4018852010265",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelsaft",
+          "retrievalRank": -14.182963377656927,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4018852010265",
+            "rowOrdinal": 956872
+          },
+          "sourceRecordReference": "off:product:row:956872:code:4018852010265"
+        },
+        {
+          "baseId": "off-base:apfelsaft",
+          "baseNormalizedTerm": "apfelsaft",
+          "baseTerm": "Apfelsaft",
+          "candidateId": "8056370941643",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelsaft",
+          "retrievalRank": -13.820626885037685,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "8056370941643",
+            "rowOrdinal": 1542025
+          },
+          "sourceRecordReference": "off:product:row:1542025:code:8056370941643"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4018852010265",
+        "rowOrdinal": 956872
+      },
+      "sourceRecordReference": "off:product:row:956872:code:4018852010265"
+    },
+    {
+      "baseId": "off-base:apfelschorle",
+      "baseNormalizedTerm": "apfelschorle",
+      "baseTerm": "Apfelschorle",
+      "candidateRelations": [
+        {
+          "baseId": "off-base:apfelschorle",
+          "baseNormalizedTerm": "apfelschorle",
+          "baseTerm": "Apfelschorle",
+          "candidateId": "4004880748157",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelschorle",
+          "retrievalRank": -17.533194517880613,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4004880748157",
+            "rowOrdinal": 1857102
+          },
+          "sourceRecordReference": "off:product:row:1857102:code:4004880748157"
+        },
+        {
+          "baseId": "off-base:apfelschorle",
+          "baseNormalizedTerm": "apfelschorle",
+          "baseTerm": "Apfelschorle",
+          "candidateId": "4027425000541",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelschorle",
+          "retrievalRank": -17.39513196533531,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4027425000541",
+            "rowOrdinal": 1451211
+          },
+          "sourceRecordReference": "off:product:row:1451211:code:4027425000541"
+        },
+        {
+          "baseId": "off-base:apfelschorle",
+          "baseNormalizedTerm": "apfelschorle",
+          "baseTerm": "Apfelschorle",
+          "candidateId": "4001513003140",
+          "candidateTerm": "",
+          "groundTruthState": "UNRESOLVED",
+          "indexAuthority": {
+            "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+            "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "retrievalQuery": "Apfelschorle",
+          "retrievalRank": -17.39513196533531,
+          "sourceAuthority": {
+            "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+            "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+          },
+          "sourceNativeIdentifier": {
+            "code": "4001513003140",
+            "rowOrdinal": 1774751
+          },
+          "sourceRecordReference": "off:product:row:1774751:code:4001513003140"
+        }
+      ],
+      "developmentOnly": true,
+      "finalHoldoutEligible": false,
+      "sourceNativeIdentifier": {
+        "code": "4004880748157",
+        "rowOrdinal": 1857102
+      },
+      "sourceRecordReference": "off:product:row:1857102:code:4004880748157"
+    }
+  ],
+  "exclusionPolicy": {
+    "finalHoldoutEligible": false,
+    "trigger": "MATERIALIZED_FOR_DEVELOPMENT"
+  },
+  "indexAuthority": {
+    "logicalDigest": "627ad847e9038961e2ffad790db8dbb5fc23a358720fc6dbdc542eb2323cd743",
+    "manifestDigest": "892cfd0814abd94b06169375a550e023de660609a89336bf779284b21b76d56",
+    "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+  },
+  "logicalDigest": "41da5cb8b940696ee60c7e5ed6b54dacab4460c7f648b8c579a84d93b41c1834",
+  "schema": "HIM_DEVELOPMENT_CANDIDATE_POOL_V1",
+  "selectionConfig": {
+    "maxBases": 24,
+    "queryOrder": "catalog ordinal",
+    "retrieval": {
+      "maxDistinctCandidatesPerBase": 3,
+      "maxQueryResults": 10
+    }
+  },
+  "sourceAuthority": {
+    "authority": "HIM_CURRENT_OFF_SOURCE_V1",
+    "sourceSha256": "63b20183229a6f3f648c3d189c265d5d5a4b332d530d084af5640081d060a236"
+  }
+}
