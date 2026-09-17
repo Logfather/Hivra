@@ -1,0 +1,18 @@
+{
+  "schema": "HIM_V2_TRAINING_AUTHORITY_PACKET_V1",
+  "version": 1,
+  "state": "FROZEN",
+  "authorityId": "HIM_V2_TRAINING_AUTHORITY_PACKET_V1",
+  "corpusPath": "v2-training-corpus.v1.json",
+  "corpusDigest": "00db71772e9b6ab3950d00a0805d7caef56bb1231eb576ac9ba14e6fdc8ab406",
+  "partitionPath": "v2-training-partition.v1.json",
+  "partitionDigest": "9b31f9d71b05e88c754fbe3f0e96a8910311cebbada3cf8d57d305ea2641a5e2",
+  "mission6DecisionId": "HIM_V2_IMPROVEMENT_DECISION_V1",
+  "contrastiveGroundTruthDigest": "2b28d32631a15d42b326de6285c05cfa27089081b515fba918a6adbb19b5cd23",
+  "inputRepresentationChange": false,
+  "modelArchitectureChange": false,
+  "lossChange": false,
+  "hyperparameterChange": false,
+  "trainingSupervisionChange": true,
+  "logicalDigest": "ff88216ef2df4545d73a8410c46fcda35d70710706208fea3c8570fb3f0b75ed"
+}
