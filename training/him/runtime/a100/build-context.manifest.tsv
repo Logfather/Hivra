@@ -40,6 +40,7 @@ training/him/src/him_trainer/point13_optimizer_construction_v1.py	trainer/him_tr
 training/him/src/him_trainer/point13_trainability_projection_v1.py	trainer/him_trainer/point13_trainability_projection_v1.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/post_review_eligibility_v2.py	trainer/him_trainer/post_review_eligibility_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/productive_training_p2_v2.py	trainer/him_trainer/productive_training_p2_v2.py	him-trainer-runtime-source	YES	NO
+training/him/src/him_trainer/productive_training_v2.py	trainer/him_trainer/productive_training_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/runtime_source_closure_v2.py	trainer/him_trainer/runtime_source_closure_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/sequence_length_authority_v2.py	trainer/him_trainer/sequence_length_authority_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/training_input_authority_v2.py	trainer/him_trainer/training_input_authority_v2.py	him-trainer-runtime-source	YES	NO
