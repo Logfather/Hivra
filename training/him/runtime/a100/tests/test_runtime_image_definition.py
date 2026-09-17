@@ -33,6 +33,7 @@ EXPECTED_RUNTIME_SOURCE_FILES = {
     "training/him/src/him_trainer/corpus_assembly_v2.py",
     "training/him/src/him_trainer/corpus_coverage_v2.py",
     "training/him/src/him_trainer/evidence_projection_v2.py",
+    "training/him/src/him_trainer/exactly_once_claim_v2.py",
     "training/him/src/him_trainer/execution_device_v1.py",
     "training/him/src/him_trainer/final_evaluation_authority_v1.py",
     "training/him/src/him_trainer/final_evaluation_v2_engine.py",
