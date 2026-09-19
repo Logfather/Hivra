@@ -71,8 +71,8 @@ jobs:
           print("RUNTIME_IDENTITY_BINDING=PASS")
           PY
           docker cp "$container:/opt/him/runtime/lib/python3.13/site-packages/him_trainer/expanded_validation_p2.py" /tmp/expanded_validation_p2.py
-          docker cp "$container:/opt/him/runtime/lib/python3.13/site-packages/him_trainer/productive_v2.py" /tmp/productive_v2.py
-          docker cp "$container:/opt/him/runtime/lib/python3.13/site-packages/him_trainer/productive-v2-authority.json" /tmp/productive-v2-authority.json
+          docker cp "$container:/opt/him/runtime/lib/python3.13/site-packages/him_trainer/evaluation_authorities/productive_v2.py" /tmp/productive_v2.py
+          docker cp "$container:/opt/him/runtime/lib/python3.13/site-packages/him_trainer/evaluation_authorities/productive-v2-authority.json" /tmp/productive-v2-authority.json
           test -s /tmp/expanded_validation_p2.py
           test -s /tmp/productive_v2.py
           test -s /tmp/productive-v2-authority.json

@@ -322,6 +322,9 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         self.assertEqual(self.identity["contentTagPrefix"], "ctx-")
         self.assertEqual(self.identity["contentTagPrefixLength"], 12)
         self.assertEqual(self.identity["contentDerivedDeploymentTag"], f"ctx-{context_digest[:12]}")
+        self.assertNotIn("contentTag", self.identity)
+        self.assertIsInstance(self.identity["contentDerivedDeploymentTag"], str)
+        self.assertTrue(self.identity["contentDerivedDeploymentTag"])
         self.assertEqual(self.identity["previousContentDerivedDeploymentTag"], "def-06d5dd647f2a")
         self.assertNotEqual(self.identity["contentDerivedDeploymentTag"], self.identity["previousContentDerivedDeploymentTag"])
 
