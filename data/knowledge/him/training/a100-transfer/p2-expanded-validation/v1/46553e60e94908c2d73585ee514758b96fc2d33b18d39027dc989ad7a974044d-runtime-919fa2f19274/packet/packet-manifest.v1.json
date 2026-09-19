@@ -79,17 +79,17 @@
     },
     {
       "path": "runtime/him_trainer/expanded_validation_p2.py",
-      "sha256": "ab51670ebd46b1620a278d99f0d1703f5d4390f4d18febf51be67bec0679cb4d",
-      "size": 70239
+      "sha256": "0121d828f7851696202da9ca7243515ca19e7ee98285c95525874f06db349b49",
+      "size": 70991
     },
     {
       "path": "runtime/runtime-binding.v1.json",
-      "sha256": "711733854cc0b4a84c04e740ce7a7acc9aba817dab1d2726241e0f5025494dd8",
-      "size": 885
+      "sha256": "db34513d66c883894db7551cd53c6900bbb4a40f2201829fa9201e0dd23a4503",
+      "size": 712
     }
   ],
-  "logicalDigest": "d46014b0b29223960692c320d3e64a217a214b234bc56bb1c5b4a01ad042f8ed",
-  "reference": "p2-expanded-validation-packet-manifest:v1:d46014b0b29223960692c320d3e64a217a214b234bc56bb1c5b4a01ad042f8ed",
-  "totalBytes": 333523,
+  "logicalDigest": "d34a55e2fe790725fe6b1a3a0381957411089c208db5053bc476d290b6cc1af9",
+  "reference": "p2-expanded-validation-packet-manifest:v1:d34a55e2fe790725fe6b1a3a0381957411089c208db5053bc476d290b6cc1af9",
+  "totalBytes": 334102,
   "version": 1
 }

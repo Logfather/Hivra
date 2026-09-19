@@ -67,10 +67,23 @@ EXPECTED_RUNTIME_BINDING = {
     "runtimeImageDefinitionDigest": "b016c8805c52f2fab3d4883dcae3f859fda40332c3c4ce17507f09a6cc541b4e",
 }
 PRODUCTIVE_V2_RUNTIME_BINDING = {
-    **EXPECTED_RUNTIME_BINDING,
-    "ociImage": "ghcr.io/logfather/him-a100-reference-runtime@sha256:919fa2f19274a4b009405fb71f0e899dc4d08eb97996f20875c7c9fbbde267ec",
-    "runtimeImageDefinitionDigest": "7819f4b0de5c83a52dbe2a9e9caf7f2deba5e803f1d642a0c02598202b53c774",
+    "sourceGitHead": "7a25690a7ee8f86a763c19f624647316d6cde777",
+    "runtimeSourceLogicalDigest": "86e8292f66eda117ccd64af73dbfc6d87ef3134b6a7d3097bb4b52ae61729a55",
+    "buildContextDigest": "6c843304007a098163b0367096456c7ea664b1b8e7434f5fa7dcfc72d0b508c5",
+    "contentTag": "ctx-6c843304007a",
+    "runtimeSourceClosureFileCount": 40,
+    "buildContextFileCount": 61,
 }
+
+def validate_external_image_digest(observed_digest: str, expected_digest: str) -> None:
+    """Validate deployment identity supplied by the external control plane.
+
+    The expected OCI digest is deliberately caller-supplied and is never
+    embedded in the runtime source being built into that image.
+    """
+    _require(isinstance(observed_digest, str) and observed_digest.startswith("sha256:"), "EXTERNAL_IMAGE_DIGEST_INVALID")
+    _require(observed_digest == expected_digest, "EXTERNAL_IMAGE_DIGEST_MISMATCH")
+
 PACKET_DRY_RUN_OUTPUT_NAME = "expanded-validation-dry-run.v1.json"
 REAL_EVALUATION_RESULT_FILENAME = "expanded-validation-result.v1.json"
 REAL_EVALUATION_RESULT_CONTRACT_ID = "HIM_P2_EXPANDED_VALIDATION_RESULT_V1"
@@ -319,7 +332,8 @@ def validate_evaluation_execution_binding(
     _require(candidate_binding.get("checkpointReference") == EXPECTED_CHECKPOINT_REFERENCE, "CHECKPOINT_EXECUTION_BINDING_MISMATCH")
     _require(candidate_binding.get("checkpointLogicalDigest") == EXPECTED_CHECKPOINT_DIGEST, "CHECKPOINT_EXECUTION_DIGEST_MISMATCH")
     _require(candidate_binding.get("modelDeserializationThisMission") is False, "MODEL_DESERIALIZATION_AUTHORITY_INVALID")
-    for field, expected in EXPECTED_RUNTIME_BINDING.items():
+    expected_runtime = PRODUCTIVE_V2_RUNTIME_BINDING if runtime_binding.get("contentTag") == "ctx-6c843304007a" else EXPECTED_RUNTIME_BINDING
+    for field, expected in expected_runtime.items():
         _require(runtime_binding.get(field) == expected, f"RUNTIME_EXECUTION_BINDING_MISMATCH:{field}")
 
 
@@ -985,7 +999,7 @@ def _load_packet_context(packet_root: str | Path) -> tuple[AuthorityBundle, tupl
     _require(candidate_binding.get("modelDeserializationThisMission") is False, "MODEL_DESERIALIZATION_AUTHORITY_INVALID")
 
     runtime = _packet_json(root, "runtime/runtime-binding.v1.json")
-    expected_runtime = PRODUCTIVE_V2_RUNTIME_BINDING if runtime.get("contentTag") == "ctx-eb0654be5f39" else EXPECTED_RUNTIME_BINDING
+    expected_runtime = PRODUCTIVE_V2_RUNTIME_BINDING if runtime.get("contentTag") == "ctx-6c843304007a" else EXPECTED_RUNTIME_BINDING
     for field, expected in expected_runtime.items():
         _require(runtime.get(field) == expected, f"RUNTIME_BINDING_INVALID:{field}")
     _require(runtime.get("evaluatorSource") == "training/him/src/him_trainer/expanded_validation_p2.py", "RUNTIME_EVALUATOR_SOURCE_INVALID")
