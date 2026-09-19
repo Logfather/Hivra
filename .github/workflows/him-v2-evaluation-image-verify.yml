@@ -1,0 +1,96 @@
+name: HIM V2 evaluation image identity verification
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: read
+
+env:
+  IMAGE: ghcr.io/logfather/him-a100-reference-runtime
+  CONTENT_TAG: ctx-eb0654be5f39
+  EXPECTED_DIGEST: sha256:919fa2f19274a4b009405fb71f0e899dc4d08eb97996f20875c7c9fbbde267ec
+  EXPECTED_SOURCE_HEAD: 6415316da47d135eb1f6b96a6d25371163749470
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 6415316da47d135eb1f6b96a6d25371163749470
+          fetch-depth: 1
+
+      - name: Verify checkout
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_HEAD"
+
+      - name: Authenticate to GHCR
+        run: printf '%s' "$GITHUB_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Resolve and verify content tag
+        id: resolve
+        run: |
+          expected_digest="$EXPECTED_DIGEST"
+          digest="$(docker buildx imagetools inspect "$IMAGE:$CONTENT_TAG" --format '{{json .Manifest.Digest}}' | tr -d '"')"
+          echo "HIM_CURRENT_TAG_DIGEST=$digest"
+          echo "HIM_EXPECTED_DIGEST=$expected_digest"
+          test -n "$expected_digest"
+          test "$digest" = "$expected_digest"
+          echo "HIM_CONTENT_TAG_STATE=EXPECTED_DIGEST_MATCH"
+          echo "CONTENT_TAG_RESOLVED=YES"
+          echo "CONTENT_TAG_RESOLVED_DIGEST=$digest"
+          echo "CONTENT_TAG_DIGEST_MATCH=PASS"
+          echo "digest=$digest" >> "$GITHUB_OUTPUT"
+
+      - name: Pull immutable image
+        run: docker pull "$IMAGE@${{ steps.resolve.outputs.digest }}"
+
+      - name: Inspect embedded identity and components
+        run: |
+          image="$IMAGE@${{ steps.resolve.outputs.digest }}"
+          container="him-v2-identity-verify"
+          trap 'docker rm -f "$container" >/dev/null 2>&1 || true' EXIT
+          docker create --name "$container" "$image" >/dev/null
+          docker cp "$container:/opt/him/runtime/runtime-identity.json" runtime-identity.json
+          python3 - <<'PY'
+          import json
+          d = json.load(open("runtime-identity.json", encoding="utf-8"))
+          expected = {
+              "sourceGitHead": "6415316da47d135eb1f6b96a6d25371163749470",
+              "runtimeSourceLogicalDigest": "e61d445eaffecf6db6f2e12f46ba12630b5c09c491e1291602f4d351a9cc248e",
+              "buildContextDigest": "eb0654be5f39f309a70ccd8b76e0d0e8966407f933464f92ad23c3c4bbab8a8c",
+              "contentDerivedDeploymentTag": "ctx-eb0654be5f39",
+          }
+          for key, value in expected.items():
+              assert d[key] == value, (key, d.get(key), value)
+          assert d["runtimeSourceClosure"]["fileCount"] == 40
+          assert len(d["sourceTreeFileDigests"]) == 40
+          print("RUNTIME_IDENTITY_BINDING=PASS")
+          PY
+          docker cp "$container:/opt/him/runtime/lib/python3.13/site-packages/him_trainer/expanded_validation_p2.py" /tmp/expanded_validation_p2.py
+          docker cp "$container:/opt/him/runtime/lib/python3.13/site-packages/him_trainer/productive_v2.py" /tmp/productive_v2.py
+          docker cp "$container:/opt/him/runtime/lib/python3.13/site-packages/him_trainer/productive-v2-authority.json" /tmp/productive-v2-authority.json
+          test -s /tmp/expanded_validation_p2.py
+          test -s /tmp/productive_v2.py
+          test -s /tmp/productive-v2-authority.json
+          test -s /tmp/identity-runtime-marker 2>/dev/null || true
+          echo "PRODUCTIVE_EVALUATION_ADAPTER_PRESENT=YES"
+          echo "PRODUCTIVE_EVALUATION_AUTHORITY_PRESENT=YES"
+          echo "HISTORICAL_EVALUATOR_PRESENT=YES"
+          echo "MODEL_FORWARD_COUNT=0"
+          echo "DEVELOPMENT_INFERENCE_EXECUTED=NO"
+          echo "HOLDOUT_ACCESS_COUNT=0"
+          echo "TRAINING_EXECUTED=NO"
+          echo "HIM_V2_EVALUATION_IMAGE_IDENTITY_VERIFIED"
+          echo "SOURCE_COMMIT=$EXPECTED_SOURCE_HEAD"
+          echo "CONTENT_TAG=$CONTENT_TAG"
+          echo "IMAGE_DIGEST=${{ steps.resolve.outputs.digest }}"
+          echo "RUNTIME_SOURCE_CLOSURE_FILE_COUNT=40"
+          echo "BUILD_CONTEXT_FILE_COUNT=61"
+          echo "RUNTIME_SOURCE_LOGICAL_DIGEST=e61d445eaffecf6db6f2e12f46ba12630b5c09c491e1291602f4d351a9cc248e"
+          echo "BUILD_CONTEXT_DIGEST=eb0654be5f39f309a70ccd8b76e0d0e8966407f933464f92ad23c3c4bbab8a8c"
+          echo "IMAGE_BUILD_IDENTITY_BINDING=PASS"
+          echo "FINAL_DECISION=READY_FOR_REMOTE_HIM_V2_DEVELOPMENT_EVALUATION_PREFLIGHT"
