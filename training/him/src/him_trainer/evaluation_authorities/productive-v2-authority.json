@@ -1,0 +1,20 @@
+{
+  "authorityVersion": "HIM_P2_EXPANDED_VALIDATION_PRODUCTIVE_V2",
+  "checkpointReference": "him-training-checkpoint:v2:229444ee6b1c0fd29956ca9d2f68d879ecb1b9e10ce01b849aa37bfcc1906c88",
+  "checkpointDigest": "ba5e3b773ccf4b0a49066f8f738426ca2ea72d57f343636c274b8c5164befc8f",
+  "runtimeAuthorityDigest": "eded7e5b895cce0c6512f526af8a9b5afec02c200dad2d3b7a54ec353b2e3374",
+  "modelRevision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+  "tokenizerSha256": "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c",
+  "recordCount": 19,
+  "semantics": {
+    "targetKind": "PRIMARY_AND_SECONDARY",
+    "candidateCompatibility": "COMPATIBLE_OR_REJECT",
+    "candidateConditioning": "CANDIDATE_CANONICAL_NAME",
+    "tokenization": "HISTORICAL_EVALUATOR_V1",
+    "inputSerialization": "OBSERVED_TERM_PLUS_CANDIDATE",
+    "classOrdering": "HISTORICAL_EVALUATOR_V1",
+    "metricDefinitions": "HISTORICAL_EVALUATOR_V1",
+    "decoding": "HISTORICAL_EVALUATOR_V1",
+    "developmentMembershipOrder": "HISTORICAL_AUTHORITY_ORDER"
+  }
+}
