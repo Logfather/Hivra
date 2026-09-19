@@ -33,8 +33,13 @@ jobs:
       - name: Resolve and verify content tag
         id: resolve
         run: |
+          expected_digest="$EXPECTED_DIGEST"
           digest="$(docker buildx imagetools inspect "$IMAGE:$CONTENT_TAG" --format '{{json .Manifest.Digest}}' | tr -d '"')"
-          test "$digest" = "$EXPECTED_DIGEST"
+          echo "HIM_CURRENT_TAG_DIGEST=$digest"
+          echo "HIM_EXPECTED_DIGEST=$expected_digest"
+          test -n "$expected_digest"
+          test "$digest" = "$expected_digest"
+          echo "HIM_CONTENT_TAG_STATE=EXPECTED_DIGEST_MATCH"
           echo "CONTENT_TAG_RESOLVED=YES"
           echo "CONTENT_TAG_RESOLVED_DIGEST=$digest"
           echo "CONTENT_TAG_DIGEST_MATCH=PASS"
