@@ -252,7 +252,7 @@ class RuntimeImageDefinitionTest(unittest.TestCase):
         )
         self.assertEqual(
             {row[1] for row in package_rows},
-            {f"trainer/him_trainer/{Path(source).name}" for source in EXPECTED_RUNTIME_SOURCE_FILES},
+            {"trainer/him_trainer/" + source.split("training/him/src/him_trainer/", 1)[1] for source in EXPECTED_RUNTIME_SOURCE_FILES},
         )
         self.assertTrue(all(row[3:] == ["YES", "NO"] for row in package_rows))
         self.assertIn(

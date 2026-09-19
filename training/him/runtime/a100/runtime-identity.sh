@@ -105,7 +105,7 @@ def runtime_source_file_digests() -> list[dict[str, object]]:
         entries.append(
             {
                 "sourcePath": source_path,
-                "runtimePath": f"/opt/him/runtime/lib/python3.13/site-packages/him_trainer/{Path(destination_path).name}",
+                "runtimePath": f"/opt/him/runtime/lib/python3.13/site-packages/him_trainer/{destination_path.removeprefix('trainer/him_trainer/')}",
                 "sizeBytes": len(content),
                 "sha256": sha256_bytes(content),
             }

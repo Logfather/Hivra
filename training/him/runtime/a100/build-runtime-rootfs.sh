@@ -104,17 +104,18 @@ while IFS=$'\t' read -r source_path destination_path role copied_to_final_image 
     [[ "$role" == "$RUNTIME_SOURCE_ROLE" ]] || continue
     [[ "$copied_to_final_image" == "YES" && "$build_only" == "NO" ]] \
         || fail "runtime source closure row is not final-image material"
-    [[ "$destination_path" == trainer/him_trainer/*.py ]] \
+    [[ "$destination_path" == trainer/him_trainer/* ]] \
         || fail "runtime source closure destination is not a trainer module: $destination_path"
     trainer_source="$REPOSITORY_ROOT/$source_path"
     [[ -f "$trainer_source" ]] || fail "runtime source closure source missing: $source_path"
-    install -m 0644 "$trainer_source" "$TRAINER_RUNTIME_PACKAGE_ROOT/$(basename "$destination_path")"
+    relative_destination="${destination_path#trainer/him_trainer/}"
+    install -D -m 0644 "$trainer_source" "$TRAINER_RUNTIME_PACKAGE_ROOT/$relative_destination"
     runtime_source_count=$((runtime_source_count + 1))
 done < "$BUILD_CONTEXT_MANIFEST"
 [[ "$runtime_source_count" -gt 0 ]] || fail "runtime source closure is empty"
 
 chroot "$ROOTFS" /opt/him/runtime/bin/python \
-    -c 'import him_trainer; import him_trainer.__main__ as entrypoint; import him_trainer.final_evaluation_authority_v1; assert callable(entrypoint.run)'
+    -c 'import him_trainer; import him_trainer.__main__ as entrypoint; import him_trainer.final_evaluation_authority_v1; import him_trainer.evaluation_authorities.productive_v2; assert callable(entrypoint.run)'
 
 for required_path in \
     "$ROOTFS/opt/him/python" \
@@ -122,6 +123,7 @@ for required_path in \
     "$ROOTFS/opt/him/runtime/bin/python" \
     "$ROOTFS/opt/him/runtime/lib/python3.13/site-packages" \
     "$ROOTFS/opt/him/runtime/lib/python3.13/site-packages/him_trainer/protocol_v1.py" \
+    "$ROOTFS/opt/him/runtime/lib/python3.13/site-packages/him_trainer/evaluation_authorities/productive_v2.py" \
     "$ROOTFS/opt/him/runtime/runtime-identity.json" \
     "$ROOTFS/opt/him/training/him/runtime/a100/final-evaluation-authority-v1/final-evaluation-authority.v1.json" \
     "$ROOTFS/usr/local/bin/uv" \
