@@ -1,0 +1,11 @@
+{
+  "candidateReference": "p2-trained-candidate:v1:f3c4105735ee742c53638784bf07fb19db11df52456a11d5918176030c61ee00",
+  "checkpointReference": "him-training-checkpoint:v2:229444ee6b1c0fd29956ca9d2f68d879ecb1b9e10ce01b849aa37bfcc1906c88",
+  "command": "/opt/him/runtime/bin/python -m him_trainer.expanded_validation_p2 --packet-root /opt/him/expanded-validation-packet/packet --output-root /opt/him/expanded-validation-output --execute",
+  "contractId": "HIM_P2_EXPANDED_VALIDATION_EXECUTION_COMMAND_V1",
+  "executed": false,
+  "executionAuthorized": false,
+  "holdoutInputAccepted": false,
+  "inputAuthority": "p2-expanded-validation-authority:v1:46553e60e94908c2d73585ee514758b96fc2d33b18d39027dc989ad7a974044d",
+  "version": 1
+}

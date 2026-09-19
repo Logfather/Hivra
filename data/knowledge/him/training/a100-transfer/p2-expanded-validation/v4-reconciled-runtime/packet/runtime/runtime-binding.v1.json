@@ -1,0 +1,18 @@
+{
+  "buildContextDigest": "41ddae079dad13cb41158dc540bb9a43c907f4e1ad9d3e05e66a9466e9918899",
+  "buildContextFileCount": 61,
+  "contentDerivedDeploymentTag": "ctx-41ddae079dad",
+  "contractId": "HIM_P2_EXPANDED_VALIDATION_RUNTIME_BINDING_V1",
+  "cuda": "13.0",
+  "evaluatorSource": "training/him/src/him_trainer/expanded_validation_p2.py",
+  "python": "3.13.14",
+  "pytorch": "2.14.0+cu130",
+  "runtimeAuthorityChanged": false,
+  "runtimeSourceClosureFileCount": 40,
+  "runtimeSourceLogicalDigest": "dd771eb97c2c8cd151251e081bdb73ea3b312e159193b31207002ab86b75d429",
+  "sentencepiece": "0.2.2",
+  "sourceGitHead": "cd369d2ff3750d7f7a9448243a828d3742bd1e83",
+  "tokenizers": "0.23.1",
+  "transformers": "ABSENT",
+  "version": 1
+}

@@ -82,20 +82,14 @@ EXPECTED_RUNTIME_BINDING = {
     "ociImage": "ghcr.io/logfather/him-a100-reference-runtime@sha256:87b74e2b58b3918840890209c42f1a0bf468135cc37156e00d2d3591dd20723a",
     "runtimeImageDefinitionDigest": "b016c8805c52f2fab3d4883dcae3f859fda40332c3c4ce17507f09a6cc541b4e",
 }
-PRODUCTIVE_RUNTIME_BINDING_FIELDS = ("sourceGitHead", "runtimeSourceLogicalDigest", "buildContextDigest", "contentDerivedDeploymentTag", "runtimeSourceClosureFileCount", "buildContextFileCount")
-
-def _validate_productive_runtime_binding(runtime_binding: Mapping[str, Any]) -> None:
-    _require(all(field in runtime_binding for field in PRODUCTIVE_RUNTIME_BINDING_FIELDS), "RUNTIME_EXECUTION_BINDING_INCOMPLETE")
-    digest = runtime_binding["buildContextDigest"]
-    _require(isinstance(digest, str) and len(digest) == 64, "RUNTIME_BUILD_CONTEXT_DIGEST_INVALID")
-    _require(runtime_binding["contentDerivedDeploymentTag"] == f"ctx-{digest[:12]}", "RUNTIME_CONTENT_TAG_INVALID")
-    _require(runtime_binding["runtimeSourceClosureFileCount"] == 40, "RUNTIME_SOURCE_CLOSURE_COUNT_INVALID")
-    _require(runtime_binding["buildContextFileCount"] == 61, "BUILD_CONTEXT_COUNT_INVALID")
-
-def _runtime_deployment_tag(runtime_binding: Mapping[str, Any]) -> str | None:
-    """Resolve the canonical V2 tag, with historical-schema compatibility."""
-    return runtime_binding.get("contentDerivedDeploymentTag") or runtime_binding.get("contentTag")
-
+PRODUCTIVE_V2_RUNTIME_BINDING = {
+    "sourceGitHead": "7a25690a7ee8f86a763c19f624647316d6cde777",
+    "runtimeSourceLogicalDigest": "86e8292f66eda117ccd64af73dbfc6d87ef3134b6a7d3097bb4b52ae61729a55",
+    "buildContextDigest": "6c843304007a098163b0367096456c7ea664b1b8e7434f5fa7dcfc72d0b508c5",
+    "contentTag": "ctx-6c843304007a",
+    "runtimeSourceClosureFileCount": 40,
+    "buildContextFileCount": 61,
+}
 
 def validate_external_image_digest(observed_digest: str, expected_digest: str) -> None:
     """Validate deployment identity supplied by the external control plane.
@@ -353,11 +347,9 @@ def validate_evaluation_execution_binding(
     _require(candidate_binding.get("candidateReference") == EXPECTED_CANDIDATE_REFERENCE, "CANDIDATE_EXECUTION_BINDING_MISMATCH")
     _checkpoint_authority(candidate_binding)
     _require(candidate_binding.get("modelDeserializationThisMission") is False, "MODEL_DESERIALIZATION_AUTHORITY_INVALID")
-    if "contentDerivedDeploymentTag" in runtime_binding:
-        _validate_productive_runtime_binding(runtime_binding)
-    else:
-        for field, expected in EXPECTED_RUNTIME_BINDING.items():
-            _require(runtime_binding.get(field) == expected, f"RUNTIME_EXECUTION_BINDING_MISMATCH:{field}")
+    expected_runtime = PRODUCTIVE_V2_RUNTIME_BINDING if runtime_binding.get("contentTag") == "ctx-6c843304007a" else EXPECTED_RUNTIME_BINDING
+    for field, expected in expected_runtime.items():
+        _require(runtime_binding.get(field) == expected, f"RUNTIME_EXECUTION_BINDING_MISMATCH:{field}")
 
 
 def _load_model_state_read_only(
@@ -1023,11 +1015,9 @@ def _load_packet_context(packet_root: str | Path) -> tuple[AuthorityBundle, tupl
     _require(candidate_binding.get("modelDeserializationThisMission") is False, "MODEL_DESERIALIZATION_AUTHORITY_INVALID")
 
     runtime = _packet_json(root, "runtime/runtime-binding.v1.json")
-    if "contentDerivedDeploymentTag" in runtime:
-        _validate_productive_runtime_binding(runtime)
-    else:
-        for field, expected in EXPECTED_RUNTIME_BINDING.items():
-            _require(runtime.get(field) == expected, f"RUNTIME_BINDING_INVALID:{field}")
+    expected_runtime = PRODUCTIVE_V2_RUNTIME_BINDING if runtime.get("contentTag") == "ctx-6c843304007a" else EXPECTED_RUNTIME_BINDING
+    for field, expected in expected_runtime.items():
+        _require(runtime.get(field) == expected, f"RUNTIME_BINDING_INVALID:{field}")
     _require(runtime.get("evaluatorSource") == "training/him/src/him_trainer/expanded_validation_p2.py", "RUNTIME_EVALUATOR_SOURCE_INVALID")
 
     holdout_exclusion = _packet_json(root, "holdout/exclusion-binding.v1.json")

@@ -1,0 +1,95 @@
+{
+  "contractId": "HIM_P2_EXPANDED_VALIDATION_PACKET_MANIFEST_V1",
+  "fileCount": 17,
+  "files": [
+    {
+      "path": "authority/evaluation-authorities.v1.json",
+      "sha256": "147442d9bda1b5730e798113b03c7aecc1f1c7ec995c8f84e0bc7423c1505931",
+      "size": 2746
+    },
+    {
+      "path": "authority/p2-evaluation-limitations-authority.v1.json",
+      "sha256": "a4bb92502dc594a7a3fdd07a74454fe425b2e941db40102e28a8cdb7763eb8c5",
+      "size": 4114
+    },
+    {
+      "path": "authority/p2-expanded-validation-authority.v1.json",
+      "sha256": "6e47f4e788d7c3ce6e9aa0799cccc863721257d91d3da5a78ec971e5fbf34be0",
+      "size": 43910
+    },
+    {
+      "path": "authority/p2-family-isolated-holdout-authority.v1.json",
+      "sha256": "ad716e0bb25e7a47628f45b698ed7a1378b45c5f03d0756288be9001c71308ea",
+      "size": 16275
+    },
+    {
+      "path": "authority/p2-final-candidate-compatibility-authority.v1.json",
+      "sha256": "7a6d302a48a966805899f0c00de922631756bcd8f44fddaf475156613c98aa31",
+      "size": 37016
+    },
+    {
+      "path": "authority/p2-final-negative-boundary-authority.v1.json",
+      "sha256": "bd0d7c4762cf5d9d2ea62cf21b2c1242167130af1cd280a378291edb4ace48bc",
+      "size": 32323
+    },
+    {
+      "path": "authority/p2-final-primary-target-authority.v1.json",
+      "sha256": "1883a1a8af4dad05c58831804e055f2980c4ab4e8e59f75b019dce0d4f88c5c0",
+      "size": 28705
+    },
+    {
+      "path": "authority/p2-final-relation-authority.v1.json",
+      "sha256": "6121d0544df17e0cf4e02266679f70af88364a227fa5c2b2668f2a8b4b83156a",
+      "size": 59724
+    },
+    {
+      "path": "candidate/frozen-candidate-checkpoint-binding.v1.json",
+      "sha256": "530dd190cba392473babc848c31eabc037f6abb9ca96c56d3b86914bc570c31b",
+      "size": 1080
+    },
+    {
+      "path": "contracts/evidence-contract.v1.json",
+      "sha256": "cafcd801565ac82ce56a041640278612ca556142b666a3397aea56c4d0fd8bef",
+      "size": 986
+    },
+    {
+      "path": "evaluation/expanded-validation-input.v1.json",
+      "sha256": "0854244fb7de432afb2e719d36fffe0a78e9ca52fd0765d4f0bdad78fdab3acb",
+      "size": 32901
+    },
+    {
+      "path": "execution/execution-command.v1.json",
+      "sha256": "5ec23251615e3191913f84009b83190d18a3013287cda715fb41125274520760",
+      "size": 731
+    },
+    {
+      "path": "holdout/exclusion-binding.v1.json",
+      "sha256": "729d587fdc5965df4ae34e91a6b52389103b1bfe756760a2746e9e57547d5d1c",
+      "size": 1343
+    },
+    {
+      "path": "packet-readiness.v1.json",
+      "sha256": "77d566b9cbacbc8178d0ed49a3c512c80a09bad987e0dc7b955fe513e444a5e8",
+      "size": 481
+    },
+    {
+      "path": "runtime/ENTRYPOINT.txt",
+      "sha256": "4ee5b0744ee68509d6605535991e1ea52356d9d5da1943203c74c3602bdb8d62",
+      "size": 56
+    },
+    {
+      "path": "runtime/him_trainer/expanded_validation_p2.py",
+      "sha256": "3180965bb426f4a341f3e3830f870a3a305936c09b77854bbb7d67d16884f5b3",
+      "size": 71745
+    },
+    {
+      "path": "runtime/runtime-binding.v1.json",
+      "sha256": "efee0fb15c1350a885c2d6fb73647cad89e026fdfc4b16473d65da0c07e1b3c1",
+      "size": 729
+    }
+  ],
+  "logicalDigest": "f7973a5044df1e9f47b9fd0c63f7939e595852cda44d01178f6a1e8014339716",
+  "reference": "p2-expanded-validation-packet-manifest:v1:f7973a5044df1e9f47b9fd0c63f7939e595852cda44d01178f6a1e8014339716",
+  "totalBytes": 334865,
+  "version": 1
+}

@@ -2,12 +2,12 @@
   "identitySchema": "HIM_A100_RUNTIME_IDENTITY_V2",
   "runtimeImageId": "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1",
   "referenceEnvironmentContractDigest": "e5bfa4442a50e154c7f23735def545cfc545798f8b326ff38051f2eea57111d9",
-  "buildContextDigest": "46875ee3113deaa319234d876467fc99ac17f760e57f98927be26a41a4d13456",
-  "runtimeImageDefinitionDigest": "f834edd30e0d4d7c8a5389e195d0edc0d507eb043d7cfcb783a3a38cc3807285",
-  "buildDefinitionDigest": "f834edd30e0d4d7c8a5389e195d0edc0d507eb043d7cfcb783a3a38cc3807285",
+  "buildContextDigest": "b9dc03930043c9720809b71ad56a9bfdf56ada8710c3cee013c1fab54baf07eb",
+  "runtimeImageDefinitionDigest": "6c14b4063f8a1eb831ed8fa1faae5f7b5c07bc4e9af914eba3f592ba106c67dd",
+  "buildDefinitionDigest": "6c14b4063f8a1eb831ed8fa1faae5f7b5c07bc4e9af914eba3f592ba106c67dd",
   "dependencyLockDigest": "90a18bf32eed8f5a5b042b34d4bc624fe63e8230e8f9a6d767eea1b2a98a1131",
-  "sourceGitHead": "772190a90cf81d083ade7b261074856703a70f10",
-  "runtimeSourceLogicalDigest": "dd771eb97c2c8cd151251e081bdb73ea3b312e159193b31207002ab86b75d429",
+  "sourceGitHead": "cd369d2ff3750d7f7a9448243a828d3742bd1e83",
+  "runtimeSourceLogicalDigest": "7a1a88d90e5861cf84f8c4f98e556ad6c2ecc88b52882d036733bf127f73e400",
   "runtimeSourceClosure": {
     "manifest": "training/him/runtime/a100/build-context.manifest.tsv",
     "fileCount": 40
@@ -136,8 +136,8 @@
     {
       "sourcePath": "training/him/src/him_trainer/expanded_validation_p2.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/expanded_validation_p2.py",
-      "sizeBytes": 72034,
-      "sha256": "b65526e5320b18924b7db30e5ba8a9db31c8ffe00e2cf646bec9f1aa618483b3"
+      "sizeBytes": 72473,
+      "sha256": "9d91cfe37c70f6d7aa379376079764a1b5694e414709e428f565e6d28e318d52"
     },
     {
       "sourcePath": "training/him/src/him_trainer/final_evaluation_authority_v1.py",
@@ -264,7 +264,7 @@
   "contentTagSchemeVersion": "V2",
   "contentTagPrefix": "ctx-",
   "contentTagPrefixLength": 12,
-  "contentDerivedDeploymentTag": "ctx-46875ee3113d",
+  "contentDerivedDeploymentTag": "ctx-b9dc03930043",
   "previousContentDerivedDeploymentTag": "def-06d5dd647f2a",
   "legacyContentTagScheme": "V1:def-<runtimeImageDefinitionDigest[:12]>",
   "buildContextDigestRule": "Canonical runtime-image-definition.json bytes exclude derived identity outputs; runtime-identity.json is derived metadata and excluded from the authority digest; the V2 content tag is derived from the complete build-context digest."
