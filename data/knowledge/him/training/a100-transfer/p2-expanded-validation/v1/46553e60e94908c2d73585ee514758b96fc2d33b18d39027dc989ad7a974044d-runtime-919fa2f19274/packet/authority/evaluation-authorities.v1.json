@@ -1,0 +1,45 @@
+{
+  "authorities": {
+    "boundary": {
+      "logicalDigest": "02243b70a4eec7bcac8f6afb353b9d5f81e2c517a653e6604fd20e7083c5ac9f",
+      "reference": "p2-evaluation-negative-boundary-authority:v1:02243b70a4eec7bcac8f6afb353b9d5f81e2c517a653e6604fd20e7083c5ac9f",
+      "sourcePath": "authority/p2-final-negative-boundary-authority.v1.json"
+    },
+    "compatibility": {
+      "logicalDigest": "9863774999927b44afe0ade907475d2e7f9f9312c8fd770ab91d3a20614ad1b8",
+      "reference": "p2-evaluation-candidate-compatibility-authority:v1:9863774999927b44afe0ade907475d2e7f9f9312c8fd770ab91d3a20614ad1b8",
+      "sourcePath": "authority/p2-final-candidate-compatibility-authority.v1.json"
+    },
+    "expanded": {
+      "logicalDigest": "46553e60e94908c2d73585ee514758b96fc2d33b18d39027dc989ad7a974044d",
+      "reference": "p2-expanded-validation-authority:v1:46553e60e94908c2d73585ee514758b96fc2d33b18d39027dc989ad7a974044d",
+      "sourcePath": "authority/p2-expanded-validation-authority.v1.json"
+    },
+    "holdout": {
+      "logicalDigest": "dc19557950bb3737ea51fc94d04616f2f2c96233868be294773bd120509b7c5a",
+      "reference": "p2-family-isolated-holdout-authority:v1:dc19557950bb3737ea51fc94d04616f2f2c96233868be294773bd120509b7c5a",
+      "sourcePath": "authority/p2-family-isolated-holdout-authority.v1.json"
+    },
+    "limitations": {
+      "logicalDigest": "dd63d332d8c6e152b5a0c431213f4806853559f69f73f68f836050c8bdea4de1",
+      "reference": "p2-evaluation-limitations-authority:v1:dd63d332d8c6e152b5a0c431213f4806853559f69f73f68f836050c8bdea4de1",
+      "sourcePath": "authority/p2-evaluation-limitations-authority.v1.json"
+    },
+    "primary": {
+      "logicalDigest": "797eddea0a7e2dafcccf3eb84e4c1c2067d706c8bad59a75f7285181e948902d",
+      "reference": "p2-evaluation-primary-target-authority:v1:797eddea0a7e2dafcccf3eb84e4c1c2067d706c8bad59a75f7285181e948902d",
+      "sourcePath": "authority/p2-final-primary-target-authority.v1.json"
+    },
+    "relation": {
+      "logicalDigest": "ba2025505c6c82fd2f9f169a8fbb77c0651961204982eaedf9866f5b7fa21e7f",
+      "reference": "p2-evaluation-relation-authority:v1:ba2025505c6c82fd2f9f169a8fbb77c0651961204982eaedf9866f5b7fa21e7f",
+      "sourcePath": "authority/p2-final-relation-authority.v1.json"
+    }
+  },
+  "authoritySource": "FINALIZED_EVALUATION_AUTHORITIES",
+  "contractId": "HIM_P2_EXPANDED_VALIDATION_PACKET_AUTHORITY_BINDINGS_V1",
+  "expandedValidationAuthorityReference": "p2-expanded-validation-authority:v1:46553e60e94908c2d73585ee514758b96fc2d33b18d39027dc989ad7a974044d",
+  "holdoutAuthorityReference": "p2-family-isolated-holdout-authority:v1:dc19557950bb3737ea51fc94d04616f2f2c96233868be294773bd120509b7c5a",
+  "holdoutExecutableInputIncluded": false,
+  "version": 1
+}
