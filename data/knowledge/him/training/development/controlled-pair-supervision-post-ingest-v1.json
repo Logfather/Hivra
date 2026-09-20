@@ -1,0 +1,597 @@
+{
+  "artifactId": "HIM_V2_CONTROLLED_PAIR_SUPERVISION_POST_INGEST_V1",
+  "artifactVersion": 1,
+  "sourcePacketLogicalDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753",
+  "sealedGroundTruthLogicalDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+  "historicalArtifactsModified": 0,
+  "qualifyingGroupCount": 5,
+  "qualifyingGroups": [
+    "Eier",
+    "Fruchteis",
+    "Milchbrei",
+    "Pomelos",
+    "Teff"
+  ],
+  "nonQualifyingGroups": [
+    "Austern",
+    "Ricotta"
+  ],
+  "records": [
+    {
+      "observedTerm": "Eier",
+      "candidateTerm": "Eier",
+      "candidateCompatibility": "COMPATIBLE",
+      "targetKind": "IDENTITY",
+      "authority": "HISTORICAL",
+      "lineage": {
+        "adjudicationReference": "him-final-selective-human-adjudication:v1:4c02a7ae156da1a677eb6620647ab0d2d8803652f91cbdb1aaa99d2937f10a59",
+        "proofCoverageReference": "him-final-selective-human-proof-coverage:v1:fb017c4f2f8fa0caf0e5bdaf5ad1e06b33488d535d43414a969e902bef0cdb25",
+        "provenance": "EXPLICIT_HUMAN_AUTHORIZATION",
+        "relation": "IDENTITY_OF",
+        "reviewPacketReference": "him-final-selective-review-packet:v1:636b3f61e54a8652bcf1e739214538e9e7a0e6d78bb92797124ebdbbde3a61b1",
+        "reviewUnitReference": "him-final-selective-review-unit:v1:1d28d52e233705c007129bf1d33ce14fd25323fa2cab9bd8d594d3ee91b4aee5",
+        "reviewer": "human-reviewer:christian-glatschke:v1"
+      },
+      "groupKey": "observed:Eier",
+      "partition": "TRAIN",
+      "v3Input": {
+        "observedTerm": "Eier",
+        "candidateTerm": "Eier",
+        "sourceFaithfulLabel": "Eier",
+        "categoryContext": [
+          "en:chicken-eggs",
+          "en:eggs",
+          "en:farming-products"
+        ],
+        "foodGroupContext": [
+          "eggs",
+          "en:eggs",
+          "en:fish-meat-eggs",
+          "fish meat eggs"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Eier",
+      "candidateTerm": "Fruchteis",
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "authority": "SEALED_HUMAN",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:05:02",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "v3Context": {
+        "categoryContext": [
+          "en:chicken-eggs",
+          "en:eggs",
+          "en:farming-products"
+        ],
+        "foodGroupContext": [
+          "eggs",
+          "en:eggs",
+          "en:fish-meat-eggs",
+          "fish meat eggs"
+        ],
+        "sourceFaithfulLabel": "Eier"
+      },
+      "groupKey": "observed:Eier",
+      "partition": "TRAIN",
+      "v3Input": {
+        "observedTerm": "Eier",
+        "candidateTerm": "Fruchteis",
+        "sourceFaithfulLabel": "Eier",
+        "categoryContext": [
+          "en:chicken-eggs",
+          "en:eggs",
+          "en:farming-products"
+        ],
+        "foodGroupContext": [
+          "eggs",
+          "en:eggs",
+          "en:fish-meat-eggs",
+          "fish meat eggs"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Eier",
+      "candidateTerm": "Pomelos",
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "authority": "SEALED_HUMAN",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:05:01",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "v3Context": {
+        "categoryContext": [
+          "en:chicken-eggs",
+          "en:eggs",
+          "en:farming-products"
+        ],
+        "foodGroupContext": [
+          "eggs",
+          "en:eggs",
+          "en:fish-meat-eggs",
+          "fish meat eggs"
+        ],
+        "sourceFaithfulLabel": "Eier"
+      },
+      "groupKey": "observed:Eier",
+      "partition": "TRAIN",
+      "v3Input": {
+        "observedTerm": "Eier",
+        "candidateTerm": "Pomelos",
+        "sourceFaithfulLabel": "Eier",
+        "categoryContext": [
+          "en:chicken-eggs",
+          "en:eggs",
+          "en:farming-products"
+        ],
+        "foodGroupContext": [
+          "eggs",
+          "en:eggs",
+          "en:fish-meat-eggs",
+          "fish meat eggs"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Fruchteis",
+      "candidateTerm": "Fruchteis",
+      "candidateCompatibility": "COMPATIBLE",
+      "targetKind": "VARIANT",
+      "authority": "HISTORICAL",
+      "lineage": {
+        "adjudicationReference": "p2-human-structured-relation-decision:v1:bc2a382e34c36b5b68dfe086385ce0251fb9612e3102c37dc6745832a8c9d7b0",
+        "candidateCompatibilityAuthorityReference": "p2-human-candidate-compatibility-authority-record:v1:3227b62ff94d9598a0dab49c2eaa871ac7d0cbf56c78723c5157e6c9a7fd599f",
+        "provenance": "EXPLICIT_HUMAN_AUTHORIZATION",
+        "relationAuthorityReference": "p2-human-structured-relation-authority-record:v1:1112be2d18259d5edf07e0a50a55c54abea596149202a03551ce9f569f69c3a1",
+        "reviewPacketReference": "p2-mixed-supervision-human-review-authority:v1",
+        "reviewUnitReference": "p2-human-structured-relation-review-unit:v1:3wwAoj",
+        "reviewer": "human-reviewer:christian-glatschke:v1"
+      },
+      "groupKey": "observed:Fruchteis",
+      "partition": "TRAIN",
+      "v3Input": {
+        "observedTerm": "Fruchteis",
+        "candidateTerm": "Fruchteis",
+        "sourceFaithfulLabel": "Fruchteis Sticks",
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Fruchteis",
+      "candidateTerm": "Pomelos",
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "authority": "SEALED_HUMAN",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:04:01",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "v3Context": {
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ],
+        "sourceFaithfulLabel": "Fruchteis Sticks"
+      },
+      "groupKey": "observed:Fruchteis",
+      "partition": "TRAIN",
+      "v3Input": {
+        "observedTerm": "Fruchteis",
+        "candidateTerm": "Pomelos",
+        "sourceFaithfulLabel": "Fruchteis Sticks",
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Fruchteis",
+      "candidateTerm": "Teff",
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "authority": "SEALED_HUMAN",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:04:02",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "v3Context": {
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ],
+        "sourceFaithfulLabel": "Fruchteis Sticks"
+      },
+      "groupKey": "observed:Fruchteis",
+      "partition": "TRAIN",
+      "v3Input": {
+        "observedTerm": "Fruchteis",
+        "candidateTerm": "Teff",
+        "sourceFaithfulLabel": "Fruchteis Sticks",
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Milchbrei",
+      "candidateTerm": "Milchbrei",
+      "candidateCompatibility": "COMPATIBLE",
+      "targetKind": "VARIANT",
+      "authority": "HISTORICAL",
+      "lineage": {
+        "adjudicationReference": "p2-human-structured-relation-decision:v1:5afc27cd685e423b16e08509899fd193d6d966b367e2dc688461eea19fd55376",
+        "candidateCompatibilityAuthorityReference": "p2-human-candidate-compatibility-authority-record:v1:fd2911932d541af4f6fe6a96ce51909c3a51fa521ce58bd5c50ea5095343f25a",
+        "provenance": "EXPLICIT_HUMAN_AUTHORIZATION",
+        "relationAuthorityReference": "p2-human-structured-relation-authority-record:v1:5cabf0bc6629ab9bd87e23678d3bf97f25348df5bc33988a63fb6314996bf3c3",
+        "reviewPacketReference": "p2-mixed-supervision-human-review-authority:v1",
+        "reviewUnitReference": "p2-human-structured-relation-review-unit:v1:507Fyb",
+        "reviewer": "human-reviewer:christian-glatschke:v1"
+      },
+      "groupKey": "observed:Milchbrei",
+      "partition": "DEVELOPMENT",
+      "v3Input": {
+        "observedTerm": "Milchbrei",
+        "candidateTerm": "Milchbrei",
+        "sourceFaithfulLabel": "Milchbrei Kakao",
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Milchbrei",
+      "candidateTerm": "Pomelos",
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "authority": "SEALED_HUMAN",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:07:02",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "v3Context": {
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ],
+        "sourceFaithfulLabel": "Milchbrei Kakao"
+      },
+      "groupKey": "observed:Milchbrei",
+      "partition": "DEVELOPMENT",
+      "v3Input": {
+        "observedTerm": "Milchbrei",
+        "candidateTerm": "Pomelos",
+        "sourceFaithfulLabel": "Milchbrei Kakao",
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Milchbrei",
+      "candidateTerm": "Teff",
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "authority": "SEALED_HUMAN",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:07:01",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "v3Context": {
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ],
+        "sourceFaithfulLabel": "Milchbrei Kakao"
+      },
+      "groupKey": "observed:Milchbrei",
+      "partition": "DEVELOPMENT",
+      "v3Input": {
+        "observedTerm": "Milchbrei",
+        "candidateTerm": "Teff",
+        "sourceFaithfulLabel": "Milchbrei Kakao",
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Pomelos",
+      "candidateTerm": "Pomelos",
+      "candidateCompatibility": "COMPATIBLE",
+      "targetKind": "IDENTITY",
+      "authority": "HISTORICAL",
+      "lineage": {
+        "adjudicationReference": "p2-human-structured-relation-decision:v1:7cde061ff032aa2ef23351e811b3c2d9df43e369161af7c98a2333acdeae2cac",
+        "candidateCompatibilityAuthorityReference": "p2-human-candidate-compatibility-authority-record:v1:fe5ff11ffd1f062e718eb4ceea9522556e78c7aa3a5ab5dab8c6473f0e1fb216",
+        "provenance": "EXPLICIT_HUMAN_AUTHORIZATION",
+        "relationAuthorityReference": "p2-human-structured-relation-authority-record:v1:7109182445791c72453e0324c4fa0c8357d23634d9a56290e45942bb010f8424",
+        "reviewPacketReference": "p2-mixed-supervision-human-review-authority:v1",
+        "reviewUnitReference": "p2-human-structured-relation-review-unit:v1:9pihHp",
+        "reviewer": "human-reviewer:christian-glatschke:v1"
+      },
+      "groupKey": "observed:Pomelos",
+      "partition": "TRAIN",
+      "v3Input": {
+        "observedTerm": "Pomelos",
+        "candidateTerm": "Pomelos",
+        "sourceFaithfulLabel": "Pomelo",
+        "categoryContext": [
+          "en:citrus",
+          "en:corsican-pomelos",
+          "en:fresh-fruits",
+          "en:fresh-grapefruits",
+          "en:fresh-pomelos",
+          "en:fruits",
+          "en:fruits-and-vegetables-based-foods",
+          "en:fruits-based-foods",
+          "en:grapefruits",
+          "en:plant-based-foods",
+          "en:plant-based-foods-and-beverages",
+          "en:pomelos"
+        ],
+        "foodGroupContext": [
+          "en:fruits",
+          "en:fruits-and-vegetables"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Pomelos",
+      "candidateTerm": "Sorbet",
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "authority": "SEALED_HUMAN",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:01:01",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "v3Context": {
+        "categoryContext": [
+          "en:citrus",
+          "en:corsican-pomelos",
+          "en:fresh-fruits",
+          "en:fresh-grapefruits",
+          "en:fresh-pomelos",
+          "en:fruits",
+          "en:fruits-and-vegetables-based-foods",
+          "en:fruits-based-foods",
+          "en:grapefruits",
+          "en:plant-based-foods",
+          "en:plant-based-foods-and-beverages",
+          "en:pomelos"
+        ],
+        "foodGroupContext": [
+          "en:fruits",
+          "en:fruits-and-vegetables"
+        ],
+        "sourceFaithfulLabel": "Pomelo"
+      },
+      "groupKey": "observed:Pomelos",
+      "partition": "TRAIN",
+      "v3Input": {
+        "observedTerm": "Pomelos",
+        "candidateTerm": "Sorbet",
+        "sourceFaithfulLabel": "Pomelo",
+        "categoryContext": [
+          "en:citrus",
+          "en:corsican-pomelos",
+          "en:fresh-fruits",
+          "en:fresh-grapefruits",
+          "en:fresh-pomelos",
+          "en:fruits",
+          "en:fruits-and-vegetables-based-foods",
+          "en:fruits-based-foods",
+          "en:grapefruits",
+          "en:plant-based-foods",
+          "en:plant-based-foods-and-beverages",
+          "en:pomelos"
+        ],
+        "foodGroupContext": [
+          "en:fruits",
+          "en:fruits-and-vegetables"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Pomelos",
+      "candidateTerm": "Teff",
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "authority": "SEALED_HUMAN",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:01:02",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "v3Context": {
+        "categoryContext": [
+          "en:citrus",
+          "en:corsican-pomelos",
+          "en:fresh-fruits",
+          "en:fresh-grapefruits",
+          "en:fresh-pomelos",
+          "en:fruits",
+          "en:fruits-and-vegetables-based-foods",
+          "en:fruits-based-foods",
+          "en:grapefruits",
+          "en:plant-based-foods",
+          "en:plant-based-foods-and-beverages",
+          "en:pomelos"
+        ],
+        "foodGroupContext": [
+          "en:fruits",
+          "en:fruits-and-vegetables"
+        ],
+        "sourceFaithfulLabel": "Pomelo"
+      },
+      "groupKey": "observed:Pomelos",
+      "partition": "TRAIN",
+      "v3Input": {
+        "observedTerm": "Pomelos",
+        "candidateTerm": "Teff",
+        "sourceFaithfulLabel": "Pomelo",
+        "categoryContext": [
+          "en:citrus",
+          "en:corsican-pomelos",
+          "en:fresh-fruits",
+          "en:fresh-grapefruits",
+          "en:fresh-pomelos",
+          "en:fruits",
+          "en:fruits-and-vegetables-based-foods",
+          "en:fruits-based-foods",
+          "en:grapefruits",
+          "en:plant-based-foods",
+          "en:plant-based-foods-and-beverages",
+          "en:pomelos"
+        ],
+        "foodGroupContext": [
+          "en:fruits",
+          "en:fruits-and-vegetables"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Teff",
+      "candidateTerm": "Fruchteis",
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "authority": "SEALED_HUMAN",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:02:02",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "v3Context": {
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ],
+        "sourceFaithfulLabel": "Teff Ivory Grain"
+      },
+      "groupKey": "observed:Teff",
+      "partition": "DEVELOPMENT",
+      "v3Input": {
+        "observedTerm": "Teff",
+        "candidateTerm": "Fruchteis",
+        "sourceFaithfulLabel": "Teff Ivory Grain",
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Teff",
+      "candidateTerm": "Reis",
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "authority": "SEALED_HUMAN",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:02:01",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "v3Context": {
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ],
+        "sourceFaithfulLabel": "Teff Ivory Grain"
+      },
+      "groupKey": "observed:Teff",
+      "partition": "DEVELOPMENT",
+      "v3Input": {
+        "observedTerm": "Teff",
+        "candidateTerm": "Reis",
+        "sourceFaithfulLabel": "Teff Ivory Grain",
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ]
+      }
+    },
+    {
+      "observedTerm": "Teff",
+      "candidateTerm": "Teff",
+      "candidateCompatibility": "COMPATIBLE",
+      "targetKind": "VARIANT",
+      "authority": "HISTORICAL",
+      "lineage": {
+        "adjudicationReference": "p2-human-structured-relation-decision:v1:30656a3173e236fb8b5b8a9a3b86973247b590811799aaf49e54b85581ccabdc",
+        "candidateCompatibilityAuthorityReference": "p2-human-candidate-compatibility-authority-record:v1:096eabd6d1ad357da9cb6b2072be4ccae98aba6d14e9eac4ffeba125f5007c25",
+        "provenance": "EXPLICIT_HUMAN_AUTHORIZATION",
+        "relationAuthorityReference": "p2-human-structured-relation-authority-record:v1:16637d26f7bea3205c622f7041edc1694496f0ba71d008b06c4adf44aeb89d78",
+        "reviewPacketReference": "p2-mixed-supervision-human-review-authority:v1",
+        "reviewUnitReference": "p2-human-structured-relation-review-unit:v1:3pMmZU",
+        "reviewer": "human-reviewer:christian-glatschke:v1"
+      },
+      "groupKey": "observed:Teff",
+      "partition": "DEVELOPMENT",
+      "v3Input": {
+        "observedTerm": "Teff",
+        "candidateTerm": "Teff",
+        "sourceFaithfulLabel": "Teff Ivory Grain",
+        "categoryContext": [
+          "food"
+        ],
+        "foodGroupContext": [
+          "food"
+        ]
+      }
+    }
+  ],
+  "partitionPolicy": "SEMANTIC_GROUP_DISJOINT_TRAIN_DEVELOPMENT",
+  "v3Serializer": "him_trainer.input_representation_v3.serialize_contextual_input_v3",
+  "holdoutRecordCount": 0,
+  "modelForwardCount": 0,
+  "trainingExecuted": false,
+  "logicalDigest": "065d7427780ddd0c7d5582fb165b6b86e717b951f1989150e837b68b2fd53a8d"
+}
