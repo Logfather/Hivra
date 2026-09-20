@@ -1,0 +1,10 @@
+{
+  "contractId": "HIM_V2_INPUT_REPRESENTATION_V3",
+  "version": 3,
+  "representationId": "HIM_V2_INPUT_REPRESENTATION_V3",
+  "fieldOrder": ["O", "C", "L", "K", "G"],
+  "modelVisibleFields": ["observedTerm", "candidateTerm", "sourceFaithfulLabel", "categoryContext", "foodGroupContext"],
+  "minimumTargetKindContextFields": ["sourceFaithfulLabel", "categoryContext", "foodGroupContext"],
+  "missingContextPolicy": "UNKNOWN",
+  "historicalRepresentationsUnchanged": true
+}

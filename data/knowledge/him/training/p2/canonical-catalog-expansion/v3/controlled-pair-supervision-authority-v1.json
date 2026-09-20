@@ -1,0 +1,16 @@
+{
+  "contractId": "CONTROLLED_PAIR_SUPERVISION_AUTHORITY_V1",
+  "version": 1,
+  "authorityId": "CONTROLLED_PAIR_SUPERVISION_AUTHORITY_V1",
+  "allowedRelationClasses": ["IDENTITY", "VARIANT", "COMPATIBLE", "REJECT"],
+  "evidenceRequired": true,
+  "lexicalOnlyLabelAssignmentForbidden": true,
+  "recordSchema": ["recordId", "observedTerm", "candidateTerm", "relationType", "targetKind", "candidateCompatibility", "evidenceReferences", "semanticGroupingKey", "partitionGroupingKey", "lineageDigest"],
+  "sameObservedMultiCandidateRequired": true,
+  "controlledCompatibleRejectSwapRequired": true,
+  "groupingKey": "semantic observed-term/family unit plus candidate relationship family",
+  "futureDevelopmentControlledSwapRequired": true,
+  "futureDevelopmentNonSelfPairRequired": true,
+  "visibleContradictionsRequired": 0,
+  "materializedRecordCount": 0
+}
