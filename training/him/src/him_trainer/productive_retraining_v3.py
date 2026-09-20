@@ -109,16 +109,65 @@ class ProductiveExecutionPrimitives:
     development: Callable[..., Mapping[str, Any]]
 
 def _training_primitive(inputs: tuple[dict[str, Any], ...], plan: ProductiveRetrainingPlan) -> Mapping[str, Any]:
-    """Bind the repository training authority and fail closed if unavailable."""
-    from .productive_training_p2_v2 import PHYSICAL_BATCH_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS
-    if len(inputs) != plan.train_count or (PHYSICAL_BATCH_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS) != (8, 1, 3):
+    """Execute the frozen V3 loop with the repository's model primitives."""
+    if len(inputs) != plan.train_count or training_count_contract(len(inputs)) != {"batchesPerEpoch": 41, "optimizerStepsPerEpoch": 41, "totalOptimizerSteps": 123}:
         raise RuntimeError("TRAINING_COUNT_OR_POLICY_DRIFT")
-    raise RuntimeError("PRODUCTIVE_TRAINING_AUTHORITY_BINDING_REQUIRES_DEPLOYED_EXECUTION_ARTIFACTS")
+    import torch
+    from tokenizers import Tokenizer
+    from .point13_model_forward_v1 import build_him_model_execution_binding_v1, load_pinned_him_multi_head_model_from_root_v1, load_pinned_model_config_from_root_v1
+    from .point13_loss_contract_v1 import build_him_masked_multi_objective_loss_contract_v1
+    from .point13_loss_v1 import compute_him_masked_multi_objective_loss_v1
+    from .point13_optimizer_construction_v1 import construct_him_adamw_v1
+    from .point13_optimizer_execution_policy_v1 import build_him_optimizer_execution_policy_v1
+    from .point13_trainability_policy_v1 import build_him_base_encoder_trainability_policy_v1
+    from .point13_trainability_projection_v1 import project_him_trainability_policy_v1
+    from .execution_device_v1 import resolve_him_execution_device_v1
+    from .checkpoint_v2 import persist_checkpoint
+    root = plan.output_root.parents[1]
+    model_root = root / "training/him/models/xlm-roberta-base" / MODEL_REVISION
+    tokenizer_path = model_root / "tokenizer.json"
+    if not model_root.is_dir() or not tokenizer_path.is_file() or hashlib.sha256((model_root / "model.safetensors").read_bytes()).hexdigest() != MODEL_WEIGHTS_SHA256 or hashlib.sha256(tokenizer_path.read_bytes()).hexdigest() != TOKENIZER_SHA256:
+        raise RuntimeError("V3_MODEL_TOKENIZER_AUTHORITY_MISMATCH")
+    tokenizer = Tokenizer.from_file(str(tokenizer_path)); tokenizer.no_truncation()
+    device = resolve_him_execution_device_v1("CUDA", 0, torch_module=torch)
+    config = load_pinned_model_config_from_root_v1(model_root)
+    binding = build_him_model_execution_binding_v1(config, 7, "V3_RETRAINING_MODEL_BINDING")
+    model = load_pinned_him_multi_head_model_from_root_v1(binding, "V3_RETRAINING_MODEL_BINDING", 7, model_root, device)
+    model.train()
+    policy = build_him_optimizer_execution_policy_v1(device_policy="CUDA", gradient_accumulation_steps=1)
+    projection = project_him_trainability_policy_v1(model, build_him_base_encoder_trainability_policy_v1())
+    optimizer, _ = construct_him_adamw_v1(model, policy, projection)
+    loss_contract = build_him_masked_multi_objective_loss_contract_v1()
+    optimizer_steps, metrics = 0, []
+    for epoch in range(EPOCHS):
+        for start in range(0, len(inputs), PHYSICAL_BATCH_SIZE):
+            batch = inputs[start:start + PHYSICAL_BATCH_SIZE]
+            encoded = [tokenizer.encode(x["serializedInput"], add_special_tokens=True).ids for x in batch]
+            if any(len(ids) > 256 or not ids for ids in encoded): raise RuntimeError("V3_SEQUENCE_LENGTH_DRIFT")
+            width = max(map(len, encoded)); ids = torch.tensor([x + [1] * (width-len(x)) for x in encoded], dtype=torch.int64, device=device); mask = torch.tensor([[1]*len(x)+[0]*(width-len(x)) for x in encoded], dtype=torch.int64, device=device)
+            primary = torch.tensor([{"IDENTITY":2,"VARIANT":3}.get(x["record"].get("targetKind"), 0) for x in batch], dtype=torch.int64, device=device)
+            secondary = torch.tensor([{"COMPATIBLE":0,"REJECT":1}.get(x["record"].get("candidateCompatibility"), 0) for x in batch], dtype=torch.int64, device=device)
+            primary_mask = torch.tensor([0.0 if x["record"].get("targetKind") in (None,"NOT_APPLICABLE") else 1.0 for x in batch], device=device); secondary_mask = torch.ones(len(batch), device=device)
+            optimizer.zero_grad(set_to_none=True); output = model(ids, mask)
+            losses = compute_him_masked_multi_objective_loss_v1(primary_logits=output.primary_logits, secondary_logits=output.secondary_logits, primary_target=primary, secondary_target=secondary, primary_mask=primary_mask, secondary_mask=secondary_mask, loss_contract=loss_contract, selected_execution_device=device, allow_primary_target_absence=True)
+            losses.total_loss.backward(); optimizer.step(); optimizer_steps += 1; metrics.append({"epoch":epoch+1,"optimizerStep":optimizer_steps,"loss":float(losses.total_loss.detach().cpu())})
+    if optimizer_steps != 123: raise RuntimeError("OPTIMIZER_STEP_COUNT_INVALID")
+    checkpoint = persist_checkpoint(plan.checkpoint_root, model=model, optimizer=optimizer, run_reference=f"productive-retraining-v3:{plan.run_id}", optimizer_step=optimizer_steps, authority_bindings={"serializer": "him_trainer.input_representation_v3.serialize_contextual_input_v3"}, runtime_identity={"device":str(device)}, optimizer_identity={"optimizerId":"optimizer:adamw:v1"}, training_history=tuple(metrics))
+    return {"state":"V3_TRAINING_COMPLETED","model":model,"optimizer":optimizer,"checkpoint":checkpoint.evidence_fields(),"optimizerSteps":optimizer_steps,"metrics":metrics}
 
 def _development_primitive(inputs: tuple[dict[str, Any], ...], checkpoint: Any, plan: ProductiveRetrainingPlan) -> Mapping[str, Any]:
     if len(inputs) != plan.development_count:
         raise RuntimeError("DEVELOPMENT_COUNT_DRIFT")
-    raise RuntimeError("PRODUCTIVE_DEVELOPMENT_AUTHORITY_BINDING_REQUIRES_DEPLOYED_EVALUATION_ARTIFACTS")
+    from .productive_development_v3 import evaluate_v3_development
+    model = checkpoint.get("model") if isinstance(checkpoint, Mapping) else checkpoint
+    if not hasattr(model, "predict_v3"):
+        raise RuntimeError("V3_DEVELOPMENT_MODEL_PREDICTION_PROTOCOL_MISSING")
+    return evaluate_v3_development(
+        authority_path=DEVELOPMENT_PATH,
+        model=model,
+        checkpoint=checkpoint,
+        output_path=plan.output_root / "development-result.json",
+    )
 
 def resolve_productive_execution_primitives() -> ProductiveExecutionPrimitives:
     return ProductiveExecutionPrimitives(create_claim_atomically, reload_claim, transition_claim, _training_primitive, _development_primitive)
@@ -130,6 +179,8 @@ def execute_productive_retraining_v3(*, root: str | Path = ".", execute: bool = 
         return {"state":"PRE_FIRST_FORWARD_READY", "plan":pre["plan"], "modelForwardCount":0,
                 "backwardCount":0,"optimizerStepCount":0,"checkpointWriteCount":0}
     plan: ProductiveRetrainingPlan = pre["plan"]
+    from .retraining_authority_materialization_v1 import materialize_model_tokenizer
+    materialization = materialize_model_tokenizer(root)
     primitives = resolve_productive_execution_primitives()
     primitives.claim_create(plan.claim_path, {"executionFamily":"HIM_V2_RETRAINING_V3","executionMode":"TRAINING_ONLY","bundleReference":manifest_ref(pre["manifest"]),"runId":plan.run_id})
     try:
@@ -137,7 +188,7 @@ def execute_productive_retraining_v3(*, root: str | Path = ".", execute: bool = 
         checkpoint = training.get("checkpoint")
         if checkpoint is None: raise RuntimeError("CHECKPOINT_REQUIRED_BEFORE_EVALUATION")
         evaluation = dict(primitives.development(pre["developmentInputs"], checkpoint, plan))
-        result = {"runId":plan.run_id,"training":training,"development":evaluation,"claim":primitives.claim_transition(plan.claim_path,"COMPLETED")}
+        result = {"runId":plan.run_id,"materialization":materialization,"training":training,"development":evaluation,"claim":primitives.claim_transition(plan.claim_path,"COMPLETED")}
         plan.output_root.mkdir(parents=True, exist_ok=True); (plan.output_root/"execution-result.json").write_text(json.dumps(result,ensure_ascii=False,sort_keys=True,indent=2)+"\n")
         return result
     except Exception:

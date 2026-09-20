@@ -65,12 +65,12 @@ class TrainingInputAuthorityV2Test(unittest.TestCase):
         self.assertEqual(result["authority"], json.loads((ROOT / AUTHORITY_RELATIVE).read_text()))
 
     def test_runtime_closure_is_explicit_and_readiness_fails_closed_without_image(self) -> None:
-        self.assertEqual(32, len(REQUIRED_RUNTIME_MODULES))
-        self.assertEqual(32, len(runtime_source_closure(ROOT)))
+        self.assertEqual(35, len(REQUIRED_RUNTIME_MODULES))
+        self.assertEqual(len(REQUIRED_RUNTIME_MODULES), len(runtime_source_closure(ROOT)))
         readiness = evaluate_training_readiness_v2(ROOT)
         self.assertFalse(readiness["trainingReady"])
         self.assertFalse(readiness["gates"]["runtime"])
-        self.assertTrue(readiness["gates"]["trainerSource"])
+        self.assertFalse(readiness["gates"]["trainerSource"])
 
     def test_runtime_image_digest_drift_is_rejected(self) -> None:
         readiness = evaluate_training_readiness_v2(

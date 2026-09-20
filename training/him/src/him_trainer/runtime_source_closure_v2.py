@@ -16,7 +16,7 @@ REQUIRED_RUNTIME_MODULES = (
     "point13_loss_contract_v1.py", "point13_loss_v1.py", "point13_model_forward_v1.py",
     "point13_optimizer_construction_v1.py", "point13_optimizer_execution_policy_v1.py",
     "point13_trainability_policy_v1.py", "point13_trainability_projection_v1.py", "post_review_eligibility_v2.py",
-    "productive_training_p2_v2.py", "protocol_v1.py", "runtime_source_closure_v2.py", "sequence_length_authority_v2.py",
+    "productive_training_p2_v2.py", "productive_retraining_v3.py", "productive_development_v3.py", "retraining_authority_materialization_v1.py", "protocol_v1.py", "runtime_source_closure_v2.py", "sequence_length_authority_v2.py",
     "training_input_authority_v2.py", "training_readiness_authority_v2.py", "training_runtime_authority_v2.py",
 )
 
