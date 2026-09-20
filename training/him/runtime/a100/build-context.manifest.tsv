@@ -35,6 +35,7 @@ training/him/src/him_trainer/final_evaluation_authority_v1.py	trainer/him_traine
 training/him/src/him_trainer/final_evaluation_v2_engine.py	trainer/him_trainer/final_evaluation_v2_engine.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/final_evaluation_v2_execution_contract.py	trainer/him_trainer/final_evaluation_v2_execution_contract.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/input_representation_v2.py	trainer/him_trainer/input_representation_v2.py	him-trainer-runtime-source	YES	NO
+training/him/src/him_trainer/input_representation_v3.py	trainer/him_trainer/input_representation_v3.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/final_training_runtime_closure_v1.py	trainer/him_trainer/final_training_runtime_closure_v1.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/partition_leakage_v2.py	trainer/him_trainer/partition_leakage_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/partition_v2.py	trainer/him_trainer/partition_v2.py	him-trainer-runtime-source	YES	NO
@@ -43,6 +44,7 @@ training/him/src/him_trainer/point13_optimizer_construction_v1.py	trainer/him_tr
 training/him/src/him_trainer/point13_trainability_projection_v1.py	trainer/him_trainer/point13_trainability_projection_v1.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/post_review_eligibility_v2.py	trainer/him_trainer/post_review_eligibility_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/productive_training_p2_v2.py	trainer/him_trainer/productive_training_p2_v2.py	him-trainer-runtime-source	YES	NO
+training/him/src/him_trainer/productive_retraining_v3.py	trainer/him_trainer/productive_retraining_v3.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/productive_training_v2.py	trainer/him_trainer/productive_training_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/runtime_source_closure_v2.py	trainer/him_trainer/runtime_source_closure_v2.py	him-trainer-runtime-source	YES	NO
 training/him/src/him_trainer/sequence_length_authority_v2.py	trainer/him_trainer/sequence_length_authority_v2.py	him-trainer-runtime-source	YES	NO
