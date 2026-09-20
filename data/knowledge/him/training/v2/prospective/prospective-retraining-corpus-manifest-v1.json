@@ -1,0 +1,13 @@
+{
+  "manifestId": "HIM_V2_RETRAINING_CORPUS_MANIFEST_V1",
+  "version": 1,
+  "trainArtifactDigest": "1dd057734e9f560c87aac6ce13f24a2a513be4e7d1d1e26289a2b59ca9d2befc",
+  "developmentArtifactDigest": "fb3b2589fdb7276ee6b94f64b71b4b5bfbd984a508dce8d6566603fa08fcfa00",
+  "historicalTrainDigest": "00db71772e9b6ab3950d00a0805d7caef56bb1231eb576ac9ba14e6fdc8ab406",
+  "controlledPairDigest": "065d7427780ddd0c7d5582fb165b6b86e717b951f1989150e837b68b2fd53a8d",
+  "sealedGroundTruthDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+  "recordOrdering": "HISTORICAL_TRAIN_THEN_CONTROLLED_PAIR_SORTED",
+  "trainCount": 328,
+  "developmentCount": 6,
+  "logicalDigest": "6ccec1620703e13807144ed7be54901ceed5dc6c89f950fb6ac356b09a7d9c44"
+}

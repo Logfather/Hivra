@@ -1,0 +1,208 @@
+{
+  "artifactId": "HIM_V2_RELATIONAL_DEVELOPMENT_V1",
+  "version": 1,
+  "state": "FROZEN",
+  "historicalDevelopmentPreserved": true,
+  "controlledPairArtifactDigest": "065d7427780ddd0c7d5582fb165b6b86e717b951f1989150e837b68b2fd53a8d",
+  "inputRepresentationAuthority": "HIM_V2_INPUT_REPRESENTATION_V3",
+  "records": [
+    {
+      "recordId": "controlled-pair:observed:Milchbrei:Milchbrei:COMPATIBLE",
+      "partition": "DEVELOPMENT",
+      "observedTerm": "Milchbrei",
+      "candidateTerm": "Milchbrei",
+      "inputRepresentation": {
+        "id": "HIM_V2_INPUT_REPRESENTATION_V3",
+        "version": "3",
+        "context": {
+          "observedTerm": "Milchbrei",
+          "candidateTerm": "Milchbrei",
+          "sourceFaithfulLabel": "Milchbrei Kakao",
+          "categoryContext": [
+            "food"
+          ],
+          "foodGroupContext": [
+            "food"
+          ]
+        }
+      },
+      "candidateCompatibility": "COMPATIBLE",
+      "targetKind": "VARIANT",
+      "lineage": {
+        "adjudicationReference": "p2-human-structured-relation-decision:v1:5afc27cd685e423b16e08509899fd193d6d966b367e2dc688461eea19fd55376",
+        "candidateCompatibilityAuthorityReference": "p2-human-candidate-compatibility-authority-record:v1:fd2911932d541af4f6fe6a96ce51909c3a51fa521ce58bd5c50ea5095343f25a",
+        "provenance": "EXPLICIT_HUMAN_AUTHORIZATION",
+        "relationAuthorityReference": "p2-human-structured-relation-authority-record:v1:5cabf0bc6629ab9bd87e23678d3bf97f25348df5bc33988a63fb6314996bf3c3",
+        "reviewPacketReference": "p2-mixed-supervision-human-review-authority:v1",
+        "reviewUnitReference": "p2-human-structured-relation-review-unit:v1:507Fyb",
+        "reviewer": "human-reviewer:christian-glatschke:v1"
+      },
+      "controlledPairAuthority": "HIM_V2_CONTROLLED_PAIR_SUPERVISION_POST_INGEST_V1",
+      "v3Serializer": "him_trainer.input_representation_v3.serialize_contextual_input_v3",
+      "groupKey": "observed:Milchbrei"
+    },
+    {
+      "recordId": "controlled-pair:observed:Milchbrei:Pomelos:REJECT",
+      "partition": "DEVELOPMENT",
+      "observedTerm": "Milchbrei",
+      "candidateTerm": "Pomelos",
+      "inputRepresentation": {
+        "id": "HIM_V2_INPUT_REPRESENTATION_V3",
+        "version": "3",
+        "context": {
+          "observedTerm": "Milchbrei",
+          "candidateTerm": "Pomelos",
+          "sourceFaithfulLabel": "Milchbrei Kakao",
+          "categoryContext": [
+            "food"
+          ],
+          "foodGroupContext": [
+            "food"
+          ]
+        }
+      },
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:07:02",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "controlledPairAuthority": "HIM_V2_CONTROLLED_PAIR_SUPERVISION_POST_INGEST_V1",
+      "v3Serializer": "him_trainer.input_representation_v3.serialize_contextual_input_v3",
+      "groupKey": "observed:Milchbrei"
+    },
+    {
+      "recordId": "controlled-pair:observed:Milchbrei:Teff:REJECT",
+      "partition": "DEVELOPMENT",
+      "observedTerm": "Milchbrei",
+      "candidateTerm": "Teff",
+      "inputRepresentation": {
+        "id": "HIM_V2_INPUT_REPRESENTATION_V3",
+        "version": "3",
+        "context": {
+          "observedTerm": "Milchbrei",
+          "candidateTerm": "Teff",
+          "sourceFaithfulLabel": "Milchbrei Kakao",
+          "categoryContext": [
+            "food"
+          ],
+          "foodGroupContext": [
+            "food"
+          ]
+        }
+      },
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:07:01",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "controlledPairAuthority": "HIM_V2_CONTROLLED_PAIR_SUPERVISION_POST_INGEST_V1",
+      "v3Serializer": "him_trainer.input_representation_v3.serialize_contextual_input_v3",
+      "groupKey": "observed:Milchbrei"
+    },
+    {
+      "recordId": "controlled-pair:observed:Teff:Fruchteis:REJECT",
+      "partition": "DEVELOPMENT",
+      "observedTerm": "Teff",
+      "candidateTerm": "Fruchteis",
+      "inputRepresentation": {
+        "id": "HIM_V2_INPUT_REPRESENTATION_V3",
+        "version": "3",
+        "context": {
+          "observedTerm": "Teff",
+          "candidateTerm": "Fruchteis",
+          "sourceFaithfulLabel": "Teff Ivory Grain",
+          "categoryContext": [
+            "food"
+          ],
+          "foodGroupContext": [
+            "food"
+          ]
+        }
+      },
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:02:02",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "controlledPairAuthority": "HIM_V2_CONTROLLED_PAIR_SUPERVISION_POST_INGEST_V1",
+      "v3Serializer": "him_trainer.input_representation_v3.serialize_contextual_input_v3",
+      "groupKey": "observed:Teff"
+    },
+    {
+      "recordId": "controlled-pair:observed:Teff:Reis:REJECT",
+      "partition": "DEVELOPMENT",
+      "observedTerm": "Teff",
+      "candidateTerm": "Reis",
+      "inputRepresentation": {
+        "id": "HIM_V2_INPUT_REPRESENTATION_V3",
+        "version": "3",
+        "context": {
+          "observedTerm": "Teff",
+          "candidateTerm": "Reis",
+          "sourceFaithfulLabel": "Teff Ivory Grain",
+          "categoryContext": [
+            "food"
+          ],
+          "foodGroupContext": [
+            "food"
+          ]
+        }
+      },
+      "candidateCompatibility": "REJECT",
+      "targetKind": "NOT_APPLICABLE",
+      "lineage": {
+        "reviewUnitId": "controlled-pair-review-v1:02:01",
+        "sealedDigest": "79d6c1ed729e44f48eb60eeef977d6ee504efffb2cb00d45420e9c21bac98b2e",
+        "packetDigest": "d1435b76bb310d34d477571c71337a741f52da7b409c8b173bd893efe2ecc753"
+      },
+      "controlledPairAuthority": "HIM_V2_CONTROLLED_PAIR_SUPERVISION_POST_INGEST_V1",
+      "v3Serializer": "him_trainer.input_representation_v3.serialize_contextual_input_v3",
+      "groupKey": "observed:Teff"
+    },
+    {
+      "recordId": "controlled-pair:observed:Teff:Teff:COMPATIBLE",
+      "partition": "DEVELOPMENT",
+      "observedTerm": "Teff",
+      "candidateTerm": "Teff",
+      "inputRepresentation": {
+        "id": "HIM_V2_INPUT_REPRESENTATION_V3",
+        "version": "3",
+        "context": {
+          "observedTerm": "Teff",
+          "candidateTerm": "Teff",
+          "sourceFaithfulLabel": "Teff Ivory Grain",
+          "categoryContext": [
+            "food"
+          ],
+          "foodGroupContext": [
+            "food"
+          ]
+        }
+      },
+      "candidateCompatibility": "COMPATIBLE",
+      "targetKind": "VARIANT",
+      "lineage": {
+        "adjudicationReference": "p2-human-structured-relation-decision:v1:30656a3173e236fb8b5b8a9a3b86973247b590811799aaf49e54b85581ccabdc",
+        "candidateCompatibilityAuthorityReference": "p2-human-candidate-compatibility-authority-record:v1:096eabd6d1ad357da9cb6b2072be4ccae98aba6d14e9eac4ffeba125f5007c25",
+        "provenance": "EXPLICIT_HUMAN_AUTHORIZATION",
+        "relationAuthorityReference": "p2-human-structured-relation-authority-record:v1:16637d26f7bea3205c622f7041edc1694496f0ba71d008b06c4adf44aeb89d78",
+        "reviewPacketReference": "p2-mixed-supervision-human-review-authority:v1",
+        "reviewUnitReference": "p2-human-structured-relation-review-unit:v1:3pMmZU",
+        "reviewer": "human-reviewer:christian-glatschke:v1"
+      },
+      "controlledPairAuthority": "HIM_V2_CONTROLLED_PAIR_SUPERVISION_POST_INGEST_V1",
+      "v3Serializer": "him_trainer.input_representation_v3.serialize_contextual_input_v3",
+      "groupKey": "observed:Teff"
+    }
+  ],
+  "recordCount": 6,
+  "historicalDevelopmentRecordsModified": 0,
+  "holdoutRecordCount": 0,
+  "logicalDigest": "fb3b2589fdb7276ee6b94f64b71b4b5bfbd984a508dce8d6566603fa08fcfa00"
+}
