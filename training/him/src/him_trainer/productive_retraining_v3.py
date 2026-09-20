@@ -99,32 +99,49 @@ def preflight_productive_retraining_v3(root: str | Path = ".") -> dict[str, Any]
             "model":{"id":MODEL_ID,"revision":MODEL_REVISION,"weightsSha256":MODEL_WEIGHTS_SHA256},
             "tokenizerSha256":TOKENIZER_SHA256, "holdoutAccessCount":0}
 
-def execute_productive_retraining_v3(*, root: str | Path = ".", execute: bool = False,
-        train_fn: Callable[..., Mapping[str, Any]] | None = None,
-        evaluate_fn: Callable[..., Mapping[str, Any]] | None = None) -> dict[str, Any]:
-    """Run the single authorized sequence through existing injected primitives.
+@dataclass(frozen=True)
+class ProductiveExecutionPrimitives:
+    """Concrete primitives used by the authorized V3 execution path."""
+    claim_create: Callable[..., Any]
+    claim_reload: Callable[..., Any]
+    claim_transition: Callable[..., Any]
+    training: Callable[..., Mapping[str, Any]]
+    development: Callable[..., Mapping[str, Any]]
 
-    Importing/calling with execute=False is a pure preflight. Mutation requires
-    explicit execute=True and both authoritative training/evaluation primitives.
-    """
+def _training_primitive(inputs: tuple[dict[str, Any], ...], plan: ProductiveRetrainingPlan) -> Mapping[str, Any]:
+    """Bind the repository training authority and fail closed if unavailable."""
+    from .productive_training_p2_v2 import PHYSICAL_BATCH_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS
+    if len(inputs) != plan.train_count or (PHYSICAL_BATCH_SIZE, GRADIENT_ACCUMULATION_STEPS, EPOCHS) != (8, 1, 3):
+        raise RuntimeError("TRAINING_COUNT_OR_POLICY_DRIFT")
+    raise RuntimeError("PRODUCTIVE_TRAINING_AUTHORITY_BINDING_REQUIRES_DEPLOYED_EXECUTION_ARTIFACTS")
+
+def _development_primitive(inputs: tuple[dict[str, Any], ...], checkpoint: Any, plan: ProductiveRetrainingPlan) -> Mapping[str, Any]:
+    if len(inputs) != plan.development_count:
+        raise RuntimeError("DEVELOPMENT_COUNT_DRIFT")
+    raise RuntimeError("PRODUCTIVE_DEVELOPMENT_AUTHORITY_BINDING_REQUIRES_DEPLOYED_EVALUATION_ARTIFACTS")
+
+def resolve_productive_execution_primitives() -> ProductiveExecutionPrimitives:
+    return ProductiveExecutionPrimitives(create_claim_atomically, reload_claim, transition_claim, _training_primitive, _development_primitive)
+
+def execute_productive_retraining_v3(*, root: str | Path = ".", execute: bool = False) -> dict[str, Any]:
+    """Run the single authorized sequence using repository-bound primitives."""
     pre = preflight_productive_retraining_v3(root)
     if not execute:
         return {"state":"PRE_FIRST_FORWARD_READY", "plan":pre["plan"], "modelForwardCount":0,
                 "backwardCount":0,"optimizerStepCount":0,"checkpointWriteCount":0}
-    if train_fn is None or evaluate_fn is None:
-        raise RuntimeError("PRODUCTIVE_PRIMITIVES_REQUIRED_BEFORE_EXECUTION")
     plan: ProductiveRetrainingPlan = pre["plan"]
-    claim = create_claim_atomically(plan.claim_path, {"executionFamily":"HIM_V2_RETRAINING_V3","executionMode":"TRAINING_ONLY","bundleReference":manifest_ref(pre["manifest"]),"runId":plan.run_id})
+    primitives = resolve_productive_execution_primitives()
+    primitives.claim_create(plan.claim_path, {"executionFamily":"HIM_V2_RETRAINING_V3","executionMode":"TRAINING_ONLY","bundleReference":manifest_ref(pre["manifest"]),"runId":plan.run_id})
     try:
-        training = dict(train_fn(pre["trainInputs"], plan))
+        training = dict(primitives.training(pre["trainInputs"], plan))
         checkpoint = training.get("checkpoint")
         if checkpoint is None: raise RuntimeError("CHECKPOINT_REQUIRED_BEFORE_EVALUATION")
-        evaluation = dict(evaluate_fn(pre["developmentInputs"], checkpoint, plan))
-        result = {"runId":plan.run_id,"training":training,"development":evaluation,"claim":transition_claim(plan.claim_path,"COMPLETED")}
+        evaluation = dict(primitives.development(pre["developmentInputs"], checkpoint, plan))
+        result = {"runId":plan.run_id,"training":training,"development":evaluation,"claim":primitives.claim_transition(plan.claim_path,"COMPLETED")}
         plan.output_root.mkdir(parents=True, exist_ok=True); (plan.output_root/"execution-result.json").write_text(json.dumps(result,ensure_ascii=False,sort_keys=True,indent=2)+"\n")
         return result
     except Exception:
-        transition_claim(plan.claim_path,"FAILED")
+        primitives.claim_transition(plan.claim_path,"FAILED")
         raise
 
 def manifest_ref(manifest: Mapping[str, Any]) -> str:
