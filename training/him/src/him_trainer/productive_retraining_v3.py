@@ -59,3 +59,73 @@ def training_count_contract(record_count: int = 328) -> dict[str, int]:
 def new_run_namespace(corpus_digest: str = CORPUS_DIGEST) -> dict[str, str]:
     run = "retraining-v3-" + corpus_digest[:16]
     return {"runId": run, "outputRoot": f"training-output/{run}", "checkpointRoot": f"training-output/{run}/checkpoint", "claimPath": f"training-output/{run}/exactly-once-claim.json", "state": "NOT_STARTED"}
+
+# --- Productive orchestration contract (versioned; model execution is opt-in) ---
+from dataclasses import dataclass
+from typing import Callable
+from .exactly_once_claim_v2 import create_claim_atomically, reload_claim, transition_claim
+
+EXECUTION_ENTRYPOINT = "him_trainer.productive_retraining_v3.execute_productive_retraining_v3"
+MODEL_ID = "FacebookAI/xlm-roberta-base"
+MODEL_REVISION = "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089"
+MODEL_WEIGHTS_SHA256 = "6fd4797bc397c3b8b55d6bb5740366b57e6a3ce91c04c77f22aafc0c128e6feb"
+TOKENIZER_SHA256 = "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c"
+
+@dataclass(frozen=True)
+class ProductiveRetrainingPlan:
+    run_id: str
+    output_root: Path
+    checkpoint_root: Path
+    claim_path: Path
+    train_count: int = 328
+    development_count: int = 6
+    epochs: int = 3
+    batches_per_epoch: int = 41
+    total_optimizer_steps: int = 123
+    serializer_entrypoint: str = "him_trainer.input_representation_v3.serialize_contextual_input_v3"
+
+def build_productive_retraining_plan(root: str | Path = ".") -> ProductiveRetrainingPlan:
+    root = Path(root); ns = new_run_namespace()
+    return ProductiveRetrainingPlan(ns["runId"], root/ns["outputRoot"], root/ns["checkpointRoot"], root/ns["claimPath"])
+
+def preflight_productive_retraining_v3(root: str | Path = ".") -> dict[str, Any]:
+    corpus, development, manifest = load_retraining_authorities(root)
+    plan = build_productive_retraining_plan(root)
+    if plan.claim_path.exists():
+        raise RuntimeError("RETRAINING_NAMESPACE_ALREADY_CLAIMED")
+    return {"state":"PREFLIGHT_PASS", "plan":plan, "corpus":corpus, "development":development,
+            "manifest":manifest, "trainInputs":prepare_partition(corpus["records"]),
+            "developmentInputs":prepare_partition(development["records"]),
+            "model":{"id":MODEL_ID,"revision":MODEL_REVISION,"weightsSha256":MODEL_WEIGHTS_SHA256},
+            "tokenizerSha256":TOKENIZER_SHA256, "holdoutAccessCount":0}
+
+def execute_productive_retraining_v3(*, root: str | Path = ".", execute: bool = False,
+        train_fn: Callable[..., Mapping[str, Any]] | None = None,
+        evaluate_fn: Callable[..., Mapping[str, Any]] | None = None) -> dict[str, Any]:
+    """Run the single authorized sequence through existing injected primitives.
+
+    Importing/calling with execute=False is a pure preflight. Mutation requires
+    explicit execute=True and both authoritative training/evaluation primitives.
+    """
+    pre = preflight_productive_retraining_v3(root)
+    if not execute:
+        return {"state":"PRE_FIRST_FORWARD_READY", "plan":pre["plan"], "modelForwardCount":0,
+                "backwardCount":0,"optimizerStepCount":0,"checkpointWriteCount":0}
+    if train_fn is None or evaluate_fn is None:
+        raise RuntimeError("PRODUCTIVE_PRIMITIVES_REQUIRED_BEFORE_EXECUTION")
+    plan: ProductiveRetrainingPlan = pre["plan"]
+    claim = create_claim_atomically(plan.claim_path, {"executionFamily":"HIM_V2_RETRAINING_V3","executionMode":"TRAINING_ONLY","bundleReference":manifest_ref(pre["manifest"]),"runId":plan.run_id})
+    try:
+        training = dict(train_fn(pre["trainInputs"], plan))
+        checkpoint = training.get("checkpoint")
+        if checkpoint is None: raise RuntimeError("CHECKPOINT_REQUIRED_BEFORE_EVALUATION")
+        evaluation = dict(evaluate_fn(pre["developmentInputs"], checkpoint, plan))
+        result = {"runId":plan.run_id,"training":training,"development":evaluation,"claim":transition_claim(plan.claim_path,"COMPLETED")}
+        plan.output_root.mkdir(parents=True, exist_ok=True); (plan.output_root/"execution-result.json").write_text(json.dumps(result,ensure_ascii=False,sort_keys=True,indent=2)+"\n")
+        return result
+    except Exception:
+        transition_claim(plan.claim_path,"FAILED")
+        raise
+
+def manifest_ref(manifest: Mapping[str, Any]) -> str:
+    return f"HIM_V2_RETRAINING_MANIFEST_V1:{manifest['logicalDigest']}"

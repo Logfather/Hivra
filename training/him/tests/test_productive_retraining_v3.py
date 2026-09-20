@@ -14,3 +14,11 @@ class ProductiveRetrainingV3Test(unittest.TestCase):
   xs=[x for x in self.a['train'] if x['record'].get('observedTerm')=='Pomelos']
   self.assertGreaterEqual(len(xs),2); self.assertEqual(len({x['serializedInput'] for x in xs}),len(xs))
 if __name__=='__main__': unittest.main()
+
+class OrchestrationContractTest(unittest.TestCase):
+ def test_preflight_is_non_mutating(self):
+  from him_trainer.productive_retraining_v3 import preflight_productive_retraining_v3, execute_productive_retraining_v3
+  p=preflight_productive_retraining_v3(); self.assertEqual(p['state'],'PREFLIGHT_PASS'); r=execute_productive_retraining_v3(); self.assertEqual(r['state'],'PRE_FIRST_FORWARD_READY'); self.assertEqual(r['optimizerStepCount'],0)
+ def test_execute_requires_explicit_primitives(self):
+  from him_trainer.productive_retraining_v3 import execute_productive_retraining_v3
+  with self.assertRaises(RuntimeError): execute_productive_retraining_v3(execute=True)
