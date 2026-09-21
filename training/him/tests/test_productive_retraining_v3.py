@@ -49,6 +49,23 @@ class RuntimeIdentityBindingRegressionTest(unittest.TestCase):
    self.assertFalse((workspace/'training/him/runtime/a100/runtime-identity.json').exists())
    self.assertEqual(plan['plan'].output_root, workspace/('training-output/'+plan['plan'].run_id))
 
+ def test_frozen_source_and_productive_target_topology(self):
+  import hashlib
+  import him_trainer.retraining_authority_materialization_v1 as mat
+  with tempfile.TemporaryDirectory() as directory:
+   base=Path(directory); workspace=base/'workspace'; productive=workspace/'him'; source=workspace/'training'/'him'/'models'/'xlm-roberta-base'/mat.MODEL_REVISION
+   source.mkdir(parents=True); target=productive/'retraining-v3-authority'
+   files={'model.safetensors':b'model-fixture','tokenizer.json':b'tokenizer-fixture','config.json':b'config','tokenizer_config.json':b'tokconfig','sentencepiece.bpe.model':b'sp'}
+   for name,data in files.items(): (source/name).write_bytes(data)
+   old=(mat.MODEL_WEIGHTS_SHA256,mat.TOKENIZER_SHA256)
+   mat.MODEL_WEIGHTS_SHA256=hashlib.sha256(files['model.safetensors']).hexdigest(); mat.TOKENIZER_SHA256=hashlib.sha256(files['tokenizer.json']).hexdigest()
+   try:
+    result=mat.materialize_model_tokenizer(productive,target)
+    self.assertEqual(Path(result['modelRoot']),target/'model'); self.assertEqual(Path(result['tokenizerRoot']),target/'tokenizer')
+    self.assertFalse((productive/'training/him/models').exists())
+    second=mat.materialize_model_tokenizer(productive,target); self.assertEqual(result['modelSha256'],second['modelSha256'])
+   finally: mat.MODEL_WEIGHTS_SHA256,mat.TOKENIZER_SHA256=old
+
  def test_repaired_runtime_identity_roundtrip(self):
   from him_trainer.checkpoint_v2 import persist_checkpoint, reload_checkpoint
   from him_trainer.productive_retraining_v3 import _load_deployed_runtime_identity

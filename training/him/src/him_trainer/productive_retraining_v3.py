@@ -9,6 +9,13 @@ from pathlib import Path
 from typing import Any, Mapping
 from .input_representation_v3 import serialize_contextual_input_v3
 
+def _frozen_authority_root(workspace_root: Path) -> Path:
+    if workspace_root.name == "him" and workspace_root.parent.name == "workspace":
+        return workspace_root.parent / "training/him"
+    if (workspace_root / "training/him/models").is_dir():
+        return workspace_root / "training/him"
+    return workspace_root
+
 CORPUS_PATH = Path("data/knowledge/him/training/v2/prospective/prospective-retraining-corpus-v1.json")
 DEVELOPMENT_PATH = Path("data/knowledge/him/training/v2/prospective/prospective-relational-development-v1.json")
 MANIFEST_PATH = Path("data/knowledge/him/training/v2/prospective/prospective-retraining-corpus-manifest-v1.json")
@@ -156,7 +163,7 @@ def _training_primitive(inputs: tuple[dict[str, Any], ...], plan: ProductiveRetr
     from .execution_device_v1 import resolve_him_execution_device_v1
     from .checkpoint_v2 import persist_checkpoint
     root = plan.output_root.parents[1]
-    model_root = root / "training/him/models/xlm-roberta-base" / MODEL_REVISION
+    model_root = _frozen_authority_root(root) / "models/xlm-roberta-base" / MODEL_REVISION
     tokenizer_path = model_root / "tokenizer.json"
     if not model_root.is_dir() or not tokenizer_path.is_file() or hashlib.sha256((model_root / "model.safetensors").read_bytes()).hexdigest() != MODEL_WEIGHTS_SHA256 or hashlib.sha256(tokenizer_path.read_bytes()).hexdigest() != TOKENIZER_SHA256:
         raise RuntimeError("V3_MODEL_TOKENIZER_AUTHORITY_MISMATCH")

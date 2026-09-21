@@ -24,10 +24,18 @@ def _verified_copy(source: Path, target: Path, expected: str) -> None:
     if _digest(target) != expected:
         raise ValueError(f"FROZEN_AUTHORITY_TARGET_DIGEST_MISMATCH:{target}")
 
+def _frozen_authority_root(workspace_root: Path) -> Path:
+    """Frozen repository mirror is sibling to the productive /workspace/him tree."""
+    if workspace_root.name == "him" and workspace_root.parent.name == "workspace":
+        return workspace_root.parent / "training/him"
+    if (workspace_root / "training/him/models").is_dir():
+        return workspace_root / "training/him"
+    return workspace_root
+
 def materialize_model_tokenizer(root: str | Path = ".", target_root: str | Path | None = None) -> dict[str, str]:
     root = Path(root)
     target_root = Path(target_root) if target_root is not None else root / "retraining-v3-authority"
-    source = root / "training/him/models/xlm-roberta-base" / MODEL_REVISION
+    source = _frozen_authority_root(root) / "models/xlm-roberta-base" / MODEL_REVISION
     model_target = target_root / "model"
     tokenizer_target = target_root / "tokenizer"
     _verified_copy(source / "model.safetensors", model_target / "model.safetensors", MODEL_WEIGHTS_SHA256)
