@@ -161,7 +161,7 @@ def _training_primitive(inputs: tuple[dict[str, Any], ...], plan: ProductiveRetr
     from .point13_trainability_policy_v1 import build_him_base_encoder_trainability_policy_v1
     from .point13_trainability_projection_v1 import project_him_trainability_policy_v1
     from .execution_device_v1 import resolve_him_execution_device_v1
-    from .checkpoint_v2 import persist_checkpoint
+    from .checkpoint_v2 import persist_checkpoint, reload_checkpoint
     root = plan.output_root.parents[1]
     model_root = _frozen_authority_root(root) / "models/xlm-roberta-base" / MODEL_REVISION
     tokenizer_path = model_root / "tokenizer.json"
@@ -199,20 +199,28 @@ def _training_primitive(inputs: tuple[dict[str, Any], ...], plan: ProductiveRetr
         "optimizerIdentity": optimizer_identity,
     }
     checkpoint = persist_checkpoint(plan.checkpoint_root, model=model, optimizer=optimizer, run_reference=f"productive-retraining-v3:{plan.run_id}", optimizer_step=optimizer_steps, authority_bindings=authority_bindings, runtime_identity=runtime_identity, optimizer_identity=optimizer_identity, training_history=tuple(metrics))
-    return {"state":"V3_TRAINING_COMPLETED","model":model,"optimizer":optimizer,"checkpoint":checkpoint.evidence_fields(),"optimizerSteps":optimizer_steps,"metrics":metrics}
+    # A Development run is only valid after the persisted state has been
+    # loaded and validated, even though this reload uses the same in-memory
+    # objects as the training result.
+    reload_checkpoint(checkpoint.manifest_path, model=model, optimizer=optimizer,
+                      expected_bindings=authority_bindings, expected_optimizer_step=optimizer_steps)
+    return {"state":"V3_TRAINING_COMPLETED","model":model,"optimizer":optimizer,"checkpoint":{**checkpoint.evidence_fields(),"model":model,"optimizer":optimizer},"optimizerSteps":optimizer_steps,"metrics":metrics,"checkpointReload":"PASS"}
 
 def _development_primitive(inputs: tuple[dict[str, Any], ...], checkpoint: Any, plan: ProductiveRetrainingPlan) -> Mapping[str, Any]:
     if len(inputs) != plan.development_count:
         raise RuntimeError("DEVELOPMENT_COUNT_DRIFT")
     from .productive_development_v3 import evaluate_v3_development
     model = checkpoint.get("model") if isinstance(checkpoint, Mapping) else checkpoint
-    if not hasattr(model, "predict_v3"):
-        raise RuntimeError("V3_DEVELOPMENT_MODEL_PREDICTION_PROTOCOL_MISSING")
+    if model is None:
+        raise RuntimeError("V3_DEVELOPMENT_MODEL_MISSING_AFTER_CHECKPOINT_RELOAD")
+    from tokenizers import Tokenizer
+    tokenizer = Tokenizer.from_file(str(_frozen_authority_root(plan.output_root.parents[1]) / "models/xlm-roberta-base" / MODEL_REVISION / "tokenizer.json"))
     return evaluate_v3_development(
         authority_path=DEVELOPMENT_PATH,
         model=model,
         checkpoint=checkpoint,
         output_path=plan.output_root / "development-result.json",
+        tokenizer=tokenizer,
     )
 
 def resolve_productive_execution_primitives() -> ProductiveExecutionPrimitives:

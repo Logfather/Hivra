@@ -4,6 +4,7 @@ import hashlib, json
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 from .input_representation_v3 import serialize_contextual_input_v3
+from .v3_prediction_adapter import predict_v3_v1
 
 DEVELOPMENT_DIGEST = "fb3b2589fdb7276ee6b94f64b71b4b5bfbd984a508dce8d6566603fa08fcfa00"
 DEVELOPMENT_RECORD_COUNT = 6
@@ -39,18 +40,26 @@ def _metrics(rows: list[dict[str, Any]]) -> dict[str, Any]:
     partial = sum(any(x["targetKindCorrect"] and x["compatibilityCorrect"] for x in rs) and not all(x["targetKindCorrect"] and x["compatibilityCorrect"] for x in rs) for rs in groups.values())
     return {"developmentTargetKindApplicableCount":len(applicable),"developmentTargetKindCorrectCount":target_correct,"developmentTargetKindAccuracy":target_correct/len(applicable) if applicable else None,"identitySupport":support("IDENTITY"),"identityCorrect":correct("IDENTITY"),"variantSupport":support("VARIANT"),"variantCorrect":correct("VARIANT"),"targetKindSingleClassCollapse":len({r["predictedTargetKind"] for r in applicable}) <= 1 if applicable else False,"developmentCompatibilityCount":len(rows),"developmentCompatibilityCorrectCount":compat_correct,"developmentCompatibilityAccuracy":compat_correct/len(rows),"compatibleSupport":sum(r["expectedCompatibility"]=="COMPATIBLE" for r in rows),"compatibleCorrect":sum(r["expectedCompatibility"]=="COMPATIBLE" and r["compatibilityCorrect"] for r in rows),"rejectSupport":sum(r["expectedCompatibility"]=="REJECT" for r in rows),"rejectCorrect":sum(r["expectedCompatibility"]=="REJECT" and r["compatibilityCorrect"] for r in rows),"compatibilitySingleClassCollapse":len({r["predictedCompatibility"] for r in rows}) <= 1,"controlledSwapGroupsFullyCorrect":full,"controlledSwapGroupsPartiallyCorrect":partial,"controlledSwapGroupsFailed":len(groups)-full-partial}
 
-def evaluate_v3_development(*, authority_path: str | Path, model: Any, checkpoint: Any, output_path: str | Path | None = None) -> dict[str, Any]:
+def evaluate_v3_development(*, authority_path: str | Path, model: Any, checkpoint: Any, output_path: str | Path | None = None, tokenizer: Any | None = None) -> dict[str, Any]:
     """Evaluate exactly six V3 records using the supplied loaded model state.
 
-    The model is a loaded production model object exposing ``predict_v3``;
-    this is an object protocol, not an evaluator callback or test fake.
+    The model is a loaded production model and predictions use the versioned
+    runtime adapter.  No evaluator callback or model protocol is required.
     """
     records = _load_authority(authority_path)
     rows = []
     for record in records:
         context = record["inputRepresentation"]["context"]
         serialized = serialize_contextual_input_v3(context)
-        prediction = model.predict_v3(serialized, checkpoint)
+        if tokenizer is not None:
+            prediction = predict_v3_v1(serialized_input=serialized, model=model, tokenizer=tokenizer, checkpoint=checkpoint).as_dict()
+        else:
+            # Compatibility for bounded evaluator fixtures only.  The
+            # productive path always supplies a tokenizer and uses V3 adapter.
+            legacy = getattr(model, "predict_v3", None)
+            if legacy is None:
+                raise ValueError("V3_TOKENIZER_REQUIRED")
+            prediction = legacy(serialized, checkpoint)
         expected_t = str(record.get("targetKind", "NOT_APPLICABLE"))
         expected_c = str(record["candidateCompatibility"])
         predicted_t = _decode(prediction.get("targetKind", "NOT_APPLICABLE"), ("IDENTITY", "VARIANT", "NOT_APPLICABLE"), "TARGET_KIND")

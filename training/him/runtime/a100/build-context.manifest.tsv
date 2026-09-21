@@ -64,3 +64,5 @@ training/him/runtime/a100/final-training-authority-packet-v1/final-training-read
 training/him/runtime/a100/final-training-runtime-authority.v2.json	training/him/runtime/a100/final-training-runtime-authority.v2.json	final-training-runtime-authority	YES	NO
 training/him/runtime/a100/final-evaluation-authority-v1/final-evaluation-authority.v1.json	training/him/runtime/a100/final-evaluation-authority-v1/final-evaluation-authority.v1.json	final-evaluation-runtime-authority	YES	NO
 training/him/src/him_trainer/exactly_once_claim_v2.py	trainer/him_trainer/exactly_once_claim_v2.py	him-trainer-runtime-source	YES	NO
+training/him/src/him_trainer/v3_prediction_adapter.py	trainer/him_trainer/v3_prediction_adapter.py	him-trainer-runtime-source	YES	NO
+training/him/src/him_trainer/v3_recovery_evaluation.py	trainer/him_trainer/v3_recovery_evaluation.py	him-trainer-runtime-source	YES	NO

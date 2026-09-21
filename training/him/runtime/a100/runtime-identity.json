@@ -2,15 +2,15 @@
   "identitySchema": "HIM_A100_RUNTIME_IDENTITY_V2",
   "runtimeImageId": "HIM_A100_REFERENCE_TRAINING_RUNTIME_IMAGE_V1",
   "referenceEnvironmentContractDigest": "e5bfa4442a50e154c7f23735def545cfc545798f8b326ff38051f2eea57111d9",
-  "buildContextDigest": "fb709f8ba1b6edfecacb27a6e91549eaef35efd2325cc6549f6c134e3d8a61c5",
-  "runtimeImageDefinitionDigest": "69362e3c5fe0ac37842c88961dea6ad8eafdb9abba7e68f0bc7f1937704e425a",
-  "buildDefinitionDigest": "69362e3c5fe0ac37842c88961dea6ad8eafdb9abba7e68f0bc7f1937704e425a",
+  "buildContextDigest": "705c33d284151b90534c1a25f3a7920790870d76d9bba765ad32439185a7e75d",
+  "runtimeImageDefinitionDigest": "7a73935aa4f6f2ee85a415cb8daebe00c6341a97d99a8caca7b0049f7486bebf",
+  "buildDefinitionDigest": "7a73935aa4f6f2ee85a415cb8daebe00c6341a97d99a8caca7b0049f7486bebf",
   "dependencyLockDigest": "90a18bf32eed8f5a5b042b34d4bc624fe63e8230e8f9a6d767eea1b2a98a1131",
-  "sourceGitHead": "78cb284b9a236a441ad6a2fd68257a5eaa6f4946",
-  "runtimeSourceLogicalDigest": "cc50fa6ed3363e61eb95f50a542dffd507e8cb7a824c2980c448a0c5d2122c5f",
+  "sourceGitHead": "77be35ac8f82367fe8e43c927124c8535bc99217",
+  "runtimeSourceLogicalDigest": "3b8fabab0b089a46bcde3dd08a6487953b094262a9e9ff3c4afb496d6075b013",
   "runtimeSourceClosure": {
     "manifest": "training/him/runtime/a100/build-context.manifest.tsv",
-    "fileCount": 44
+    "fileCount": 46
   },
   "sourceTreeFileDigests": [
     {
@@ -220,14 +220,14 @@
     {
       "sourcePath": "training/him/src/him_trainer/productive_retraining_v3.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/productive_retraining_v3.py",
-      "sizeBytes": 16544,
-      "sha256": "3453d795ca1e2bed9051c5d3a1e9fe2f671df63f3eb6db987af69dc35629639e"
+      "sizeBytes": 17208,
+      "sha256": "ca9bb3e049e451f2a08af19c3cff3af266ef6448a1b969df2e3b4f698b4a61c2"
     },
     {
       "sourcePath": "training/him/src/him_trainer/productive_development_v3.py",
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/productive_development_v3.py",
-      "sizeBytes": 5521,
-      "sha256": "8091027ebd2000afb110af9a1fa05d692ae3f46ef349ea0f1fc25d5326b6c548"
+      "sizeBytes": 6076,
+      "sha256": "831b1cb1a57657fb156e716fe81868efd1dc72b554cce5ebf9c0866464a18cb6"
     },
     {
       "sourcePath": "training/him/src/him_trainer/retraining_authority_materialization_v1.py",
@@ -276,6 +276,18 @@
       "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/exactly_once_claim_v2.py",
       "sizeBytes": 2447,
       "sha256": "f83460698581abfe5905d8d830945052dc4c99ba25011bd18fd4a387c375a056"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/v3_prediction_adapter.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/v3_prediction_adapter.py",
+      "sizeBytes": 2221,
+      "sha256": "b85017189ff6b24447271b28f6b231344a3c116b41fc52f0d410d569805203dc"
+    },
+    {
+      "sourcePath": "training/him/src/him_trainer/v3_recovery_evaluation.py",
+      "runtimePath": "/opt/him/runtime/lib/python3.13/site-packages/him_trainer/v3_recovery_evaluation.py",
+      "sizeBytes": 2708,
+      "sha256": "e2856fab1cffb32ab0bfc355a3a7cca2bc6032ae2983636798ecf1d4e39ec849"
     }
   ],
   "ociImageDigest": null,
@@ -288,7 +300,7 @@
   "contentTagSchemeVersion": "V2",
   "contentTagPrefix": "ctx-",
   "contentTagPrefixLength": 12,
-  "contentDerivedDeploymentTag": "ctx-fb709f8ba1b6",
+  "contentDerivedDeploymentTag": "ctx-705c33d28415",
   "previousContentDerivedDeploymentTag": "def-06d5dd647f2a",
   "legacyContentTagScheme": "V1:def-<runtimeImageDefinitionDigest[:12]>",
   "buildContextDigestRule": "Canonical runtime-image-definition.json bytes exclude derived identity outputs; runtime-identity.json is derived metadata and excluded from the authority digest; the V2 content tag is derived from the complete build-context digest."
