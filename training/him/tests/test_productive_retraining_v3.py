@@ -1,5 +1,7 @@
 import unittest
 import tempfile
+import shutil
+from pathlib import Path
 import torch
 from him_trainer.productive_retraining_v3 import *
 class ProductiveRetrainingV3Test(unittest.TestCase):
@@ -34,6 +36,19 @@ class OrchestrationContractTest(unittest.TestCase):
   self.assertIn("execute", inspect.signature(execute_productive_retraining_v3).parameters)
 
 class RuntimeIdentityBindingRegressionTest(unittest.TestCase):
+ def test_real_container_two_root_topology(self):
+  from him_trainer.productive_retraining_v3 import preflight_productive_retraining_v3
+  with tempfile.TemporaryDirectory() as directory:
+   base=Path(directory); workspace=base/'workspace'; runtime=base/'opt'/'him'/'runtime'
+   for rel in ('data/knowledge/him/training/v2/prospective/prospective-retraining-corpus-v1.json','data/knowledge/him/training/v2/prospective/prospective-relational-development-v1.json','data/knowledge/him/training/v2/prospective/prospective-retraining-corpus-manifest-v1.json'):
+    target=workspace/rel; target.parent.mkdir(parents=True, exist_ok=True); shutil.copyfile(rel,target)
+   runtime.mkdir(parents=True); shutil.copyfile('training/him/runtime/a100/runtime-identity.json', runtime/'runtime-identity.json')
+   plan=preflight_productive_retraining_v3(workspace, runtime_root=runtime)
+   identity=json.loads((runtime/'runtime-identity.json').read_text())
+   self.assertEqual(plan['plan'].run_id, 'retraining-v3-'+identity['buildContextDigest'][:12])
+   self.assertFalse((workspace/'training/him/runtime/a100/runtime-identity.json').exists())
+   self.assertEqual(plan['plan'].output_root, workspace/('training-output/'+plan['plan'].run_id))
+
  def test_repaired_runtime_identity_roundtrip(self):
   from him_trainer.checkpoint_v2 import persist_checkpoint, reload_checkpoint
   from him_trainer.productive_retraining_v3 import _load_deployed_runtime_identity

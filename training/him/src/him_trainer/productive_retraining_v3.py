@@ -18,6 +18,25 @@ MANIFEST_DIGEST = "6ccec1620703e13807144ed7be54901ceed5dc6c89f950fb6ac356b09a7d9
 PHYSICAL_BATCH_SIZE = 8
 EPOCHS = 3
 HISTORICAL_RUN_ID = "5af227d4-7ed1-4367-aec4-f42d2b83042d"
+RUNTIME_ROOT = Path("/opt/him/runtime")
+WORKSPACE_ROOT = Path("/workspace")
+
+def _runtime_identity_path(workspace_root: str | Path = ".", runtime_root: str | Path | None = None) -> Path:
+    if runtime_root is not None:
+        return Path(runtime_root) / "runtime-identity.json"
+    canonical = RUNTIME_ROOT / "runtime-identity.json"
+    if canonical.is_file():
+        return canonical
+    return Path(workspace_root) / "training/him/runtime/a100/runtime-identity.json"
+
+def _load_runtime_identity(workspace_root: str | Path = ".", runtime_root: str | Path | None = None) -> dict[str, Any]:
+    path = _runtime_identity_path(workspace_root, runtime_root)
+    if not path.is_file():
+        raise RuntimeError(f"RUNTIME_IDENTITY_AUTHORITY_MISSING:{path}")
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict) or not value:
+        raise RuntimeError("RUNTIME_IDENTITY_AUTHORITY_INVALID")
+    return dict(value)
 
 def _digest_without_logical(value: Mapping[str, Any]) -> str:
     body = dict(value); body.pop("logicalDigest", None)
@@ -56,11 +75,10 @@ def training_count_contract(record_count: int = 328) -> dict[str, int]:
     batches = (record_count + PHYSICAL_BATCH_SIZE - 1) // PHYSICAL_BATCH_SIZE
     return {"batchesPerEpoch": batches, "optimizerStepsPerEpoch": batches, "totalOptimizerSteps": batches * EPOCHS}
 
-def new_run_namespace(corpus_digest: str = CORPUS_DIGEST, build_context_digest: str | None = None, root: str | Path = ".") -> dict[str, str]:
+def new_run_namespace(corpus_digest: str = CORPUS_DIGEST, build_context_digest: str | None = None, root: str | Path = ".", runtime_root: str | Path | None = None) -> dict[str, str]:
     """Derive a stable namespace from both frozen data and runtime generation."""
     if build_context_digest is None:
-        identity_path = Path(root) / "training/him/runtime/a100/runtime-identity.json"
-        identity = json.loads(identity_path.read_text(encoding="utf-8"))
+        identity = _load_runtime_identity(root, runtime_root)
         build_context_digest = str(identity["buildContextDigest"])
     if len(corpus_digest) != 64 or len(build_context_digest) != 64:
         raise ValueError("RUN_NAMESPACE_DIGEST_INVALID")
@@ -79,18 +97,7 @@ MODEL_WEIGHTS_SHA256 = "6fd4797bc397c3b8b55d6bb5740366b57e6a3ce91c04c77f22aafc0c
 TOKENIZER_SHA256 = "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c"
 
 def _load_deployed_runtime_identity() -> dict[str, Any]:
-    """Load the immutable runtime identity authority used by the deployed image."""
-    candidates = (
-        Path("/opt/him/runtime/runtime-identity.json"),
-        Path("training/him/runtime/a100/runtime-identity.json"),
-    )
-    for path in candidates:
-        if path.is_file():
-            value = json.loads(path.read_text(encoding="utf-8"))
-            if not isinstance(value, dict) or not value:
-                raise RuntimeError("RUNTIME_IDENTITY_AUTHORITY_INVALID")
-            return dict(value)
-    raise RuntimeError("RUNTIME_IDENTITY_AUTHORITY_MISSING")
+    return _load_runtime_identity()
 
 @dataclass(frozen=True)
 class ProductiveRetrainingPlan:
@@ -107,14 +114,14 @@ class ProductiveRetrainingPlan:
     corpus_digest: str = CORPUS_DIGEST
     build_context_digest: str = ""
 
-def build_productive_retraining_plan(root: str | Path = ".") -> ProductiveRetrainingPlan:
-    root = Path(root); ns = new_run_namespace(root=root)
+def build_productive_retraining_plan(root: str | Path = ".", runtime_root: str | Path | None = None) -> ProductiveRetrainingPlan:
+    root = Path(root); ns = new_run_namespace(root=root, runtime_root=runtime_root)
     return ProductiveRetrainingPlan(ns["runId"], root/ns["outputRoot"], root/ns["checkpointRoot"], root/ns["claimPath"], corpus_digest=ns["corpusDigest"], build_context_digest=ns["buildContextDigest"])
 
-def preflight_productive_retraining_v3(root: str | Path = ".") -> dict[str, Any]:
+def preflight_productive_retraining_v3(root: str | Path = ".", runtime_root: str | Path | None = None) -> dict[str, Any]:
     corpus, development, manifest = load_retraining_authorities(root)
-    plan = build_productive_retraining_plan(root)
-    if plan.corpus_digest != CORPUS_DIGEST or plan.build_context_digest != json.loads((Path(root) / "training/him/runtime/a100/runtime-identity.json").read_text(encoding="utf-8"))["buildContextDigest"]:
+    plan = build_productive_retraining_plan(root, runtime_root=runtime_root)
+    if plan.corpus_digest != CORPUS_DIGEST or plan.build_context_digest != _load_runtime_identity(root, runtime_root)["buildContextDigest"]:
         raise RuntimeError("RUN_NAMESPACE_AUTHORITY_BINDING_MISMATCH")
     if plan.claim_path.exists():
         raise RuntimeError("RETRAINING_NAMESPACE_ALREADY_CLAIMED")
@@ -204,9 +211,9 @@ def _development_primitive(inputs: tuple[dict[str, Any], ...], checkpoint: Any, 
 def resolve_productive_execution_primitives() -> ProductiveExecutionPrimitives:
     return ProductiveExecutionPrimitives(create_claim_atomically, reload_claim, transition_claim, _training_primitive, _development_primitive)
 
-def execute_productive_retraining_v3(*, root: str | Path = ".", execute: bool = False) -> dict[str, Any]:
+def execute_productive_retraining_v3(*, root: str | Path = ".", runtime_root: str | Path | None = None, execute: bool = False) -> dict[str, Any]:
     """Run the single authorized sequence using repository-bound primitives."""
-    pre = preflight_productive_retraining_v3(root)
+    pre = preflight_productive_retraining_v3(root, runtime_root=runtime_root)
     if not execute:
         return {"state":"PRE_FIRST_FORWARD_READY", "plan":pre["plan"], "modelForwardCount":0,
                 "backwardCount":0,"optimizerStepCount":0,"checkpointWriteCount":0}
