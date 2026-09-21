@@ -6,7 +6,7 @@
   "runtimeImageDefinitionDigest": "7a73935aa4f6f2ee85a415cb8daebe00c6341a97d99a8caca7b0049f7486bebf",
   "buildDefinitionDigest": "7a73935aa4f6f2ee85a415cb8daebe00c6341a97d99a8caca7b0049f7486bebf",
   "dependencyLockDigest": "90a18bf32eed8f5a5b042b34d4bc624fe63e8230e8f9a6d767eea1b2a98a1131",
-  "sourceGitHead": "77be35ac8f82367fe8e43c927124c8535bc99217",
+  "sourceGitHead": "570015e1f9eae3b2b92fa26cbe1b6250660b6314",
   "runtimeSourceLogicalDigest": "3b8fabab0b089a46bcde3dd08a6487953b094262a9e9ff3c4afb496d6075b013",
   "runtimeSourceClosure": {
     "manifest": "training/him/runtime/a100/build-context.manifest.tsv",
