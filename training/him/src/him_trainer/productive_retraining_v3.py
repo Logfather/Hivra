@@ -71,6 +71,20 @@ MODEL_REVISION = "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089"
 MODEL_WEIGHTS_SHA256 = "6fd4797bc397c3b8b55d6bb5740366b57e6a3ce91c04c77f22aafc0c128e6feb"
 TOKENIZER_SHA256 = "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c"
 
+def _load_deployed_runtime_identity() -> dict[str, Any]:
+    """Load the immutable runtime identity authority used by the deployed image."""
+    candidates = (
+        Path("/opt/him/runtime/runtime-identity.json"),
+        Path("training/him/runtime/a100/runtime-identity.json"),
+    )
+    for path in candidates:
+        if path.is_file():
+            value = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(value, dict) or not value:
+                raise RuntimeError("RUNTIME_IDENTITY_AUTHORITY_INVALID")
+            return dict(value)
+    raise RuntimeError("RUNTIME_IDENTITY_AUTHORITY_MISSING")
+
 @dataclass(frozen=True)
 class ProductiveRetrainingPlan:
     run_id: str
@@ -152,7 +166,14 @@ def _training_primitive(inputs: tuple[dict[str, Any], ...], plan: ProductiveRetr
             losses = compute_him_masked_multi_objective_loss_v1(primary_logits=output.primary_logits, secondary_logits=output.secondary_logits, primary_target=primary, secondary_target=secondary, primary_mask=primary_mask, secondary_mask=secondary_mask, loss_contract=loss_contract, selected_execution_device=device, allow_primary_target_absence=True)
             losses.total_loss.backward(); optimizer.step(); optimizer_steps += 1; metrics.append({"epoch":epoch+1,"optimizerStep":optimizer_steps,"loss":float(losses.total_loss.detach().cpu())})
     if optimizer_steps != 123: raise RuntimeError("OPTIMIZER_STEP_COUNT_INVALID")
-    checkpoint = persist_checkpoint(plan.checkpoint_root, model=model, optimizer=optimizer, run_reference=f"productive-retraining-v3:{plan.run_id}", optimizer_step=optimizer_steps, authority_bindings={"serializer": "him_trainer.input_representation_v3.serialize_contextual_input_v3"}, runtime_identity={"device":str(device)}, optimizer_identity={"optimizerId":"optimizer:adamw:v1"}, training_history=tuple(metrics))
+    runtime_identity = _load_deployed_runtime_identity()
+    optimizer_identity = {"optimizerId": "optimizer:adamw:v1"}
+    authority_bindings = {
+        "serializer": "him_trainer.input_representation_v3.serialize_contextual_input_v3",
+        "runtimeIdentity": runtime_identity,
+        "optimizerIdentity": optimizer_identity,
+    }
+    checkpoint = persist_checkpoint(plan.checkpoint_root, model=model, optimizer=optimizer, run_reference=f"productive-retraining-v3:{plan.run_id}", optimizer_step=optimizer_steps, authority_bindings=authority_bindings, runtime_identity=runtime_identity, optimizer_identity=optimizer_identity, training_history=tuple(metrics))
     return {"state":"V3_TRAINING_COMPLETED","model":model,"optimizer":optimizer,"checkpoint":checkpoint.evidence_fields(),"optimizerSteps":optimizer_steps,"metrics":metrics}
 
 def _development_primitive(inputs: tuple[dict[str, Any], ...], checkpoint: Any, plan: ProductiveRetrainingPlan) -> Mapping[str, Any]:
