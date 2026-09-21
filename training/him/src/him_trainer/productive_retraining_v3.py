@@ -56,9 +56,16 @@ def training_count_contract(record_count: int = 328) -> dict[str, int]:
     batches = (record_count + PHYSICAL_BATCH_SIZE - 1) // PHYSICAL_BATCH_SIZE
     return {"batchesPerEpoch": batches, "optimizerStepsPerEpoch": batches, "totalOptimizerSteps": batches * EPOCHS}
 
-def new_run_namespace(corpus_digest: str = CORPUS_DIGEST) -> dict[str, str]:
-    run = "retraining-v3-" + corpus_digest[:16]
-    return {"runId": run, "outputRoot": f"training-output/{run}", "checkpointRoot": f"training-output/{run}/checkpoint", "claimPath": f"training-output/{run}/exactly-once-claim.json", "state": "NOT_STARTED"}
+def new_run_namespace(corpus_digest: str = CORPUS_DIGEST, build_context_digest: str | None = None, root: str | Path = ".") -> dict[str, str]:
+    """Derive a stable namespace from both frozen data and runtime generation."""
+    if build_context_digest is None:
+        identity_path = Path(root) / "training/him/runtime/a100/runtime-identity.json"
+        identity = json.loads(identity_path.read_text(encoding="utf-8"))
+        build_context_digest = str(identity["buildContextDigest"])
+    if len(corpus_digest) != 64 or len(build_context_digest) != 64:
+        raise ValueError("RUN_NAMESPACE_DIGEST_INVALID")
+    run = "retraining-v3-" + build_context_digest[:12]
+    return {"runId": run, "outputRoot": f"training-output/{run}", "checkpointRoot": f"training-output/{run}/checkpoint", "claimPath": f"training-output/{run}/exactly-once-claim.json", "state": "NOT_STARTED", "corpusDigest": corpus_digest, "buildContextDigest": build_context_digest}
 
 # --- Productive orchestration contract (versioned; model execution is opt-in) ---
 from dataclasses import dataclass
@@ -97,14 +104,18 @@ class ProductiveRetrainingPlan:
     batches_per_epoch: int = 41
     total_optimizer_steps: int = 123
     serializer_entrypoint: str = "him_trainer.input_representation_v3.serialize_contextual_input_v3"
+    corpus_digest: str = CORPUS_DIGEST
+    build_context_digest: str = ""
 
 def build_productive_retraining_plan(root: str | Path = ".") -> ProductiveRetrainingPlan:
-    root = Path(root); ns = new_run_namespace()
-    return ProductiveRetrainingPlan(ns["runId"], root/ns["outputRoot"], root/ns["checkpointRoot"], root/ns["claimPath"])
+    root = Path(root); ns = new_run_namespace(root=root)
+    return ProductiveRetrainingPlan(ns["runId"], root/ns["outputRoot"], root/ns["checkpointRoot"], root/ns["claimPath"], corpus_digest=ns["corpusDigest"], build_context_digest=ns["buildContextDigest"])
 
 def preflight_productive_retraining_v3(root: str | Path = ".") -> dict[str, Any]:
     corpus, development, manifest = load_retraining_authorities(root)
     plan = build_productive_retraining_plan(root)
+    if plan.corpus_digest != CORPUS_DIGEST or plan.build_context_digest != json.loads((Path(root) / "training/him/runtime/a100/runtime-identity.json").read_text(encoding="utf-8"))["buildContextDigest"]:
+        raise RuntimeError("RUN_NAMESPACE_AUTHORITY_BINDING_MISMATCH")
     if plan.claim_path.exists():
         raise RuntimeError("RETRAINING_NAMESPACE_ALREADY_CLAIMED")
     return {"state":"PREFLIGHT_PASS", "plan":plan, "corpus":corpus, "development":development,

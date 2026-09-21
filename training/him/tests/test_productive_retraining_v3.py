@@ -12,6 +12,13 @@ class ProductiveRetrainingV3Test(unittest.TestCase):
  def test_steps_namespace(self):
   self.assertEqual(training_count_contract()['totalOptimizerSteps'],123)
   self.assertNotEqual(new_run_namespace()['runId'],HISTORICAL_RUN_ID)
+ def test_namespace_binds_build_generation_and_corpus(self):
+  a=new_run_namespace(CORPUS_DIGEST, "c87d22e2ddf3"*5 + "c87d")
+  b=new_run_namespace(CORPUS_DIGEST, "d"*64)
+  self.assertEqual(a['runId'], 'retraining-v3-c87d22e2ddf3')
+  self.assertNotEqual(a['runId'], b['runId'])
+  self.assertEqual(a['corpusDigest'], CORPUS_DIGEST)
+  self.assertEqual(a['claimPath'], a['outputRoot'] + '/exactly-once-claim.json')
  def test_pomelos_context(self):
   xs=[x for x in self.a['train'] if x['record'].get('observedTerm')=='Pomelos']
   self.assertGreaterEqual(len(xs),2); self.assertEqual(len({x['serializedInput'] for x in xs}),len(xs))
